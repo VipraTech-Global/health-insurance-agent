@@ -1,0 +1,97 @@
+{
+  "acquired_at": "2026-09-10T11:55:57.161475+00:00",
+  "associations": [],
+  "byte_count": 247428,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/Group_Medi_Care_CIS_JAN_2022_f9ad0ea8c3.PDF",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 418,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 9,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "decb71f01dc9240a281e5dbf9288ce3d438c8eeb8a3a6ca2fb397013dc718bef",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/Group_Medi_Care_CIS_JAN_2022_f9ad0ea8c3.PDF"
+}

@@ -1,0 +1,65 @@
+{
+  "acquired_at": "2026-09-10T12:04:16.115541+00:00",
+  "associations": [],
+  "byte_count": 1438854,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/BoB%20Proposal%20Form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "national",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 2033,
+  "linking_url": "https://nationalinsurance.nic.co.in/products/all-products/health/bob-national-health-policy",
+  "page_count": 5,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "e5d2d70161d1868fe58ad848a91223b8b160a3354abec22e5b1184197648cab2",
+  "status": "acquired",
+  "url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/BoB%20Proposal%20Form.pdf"
+}

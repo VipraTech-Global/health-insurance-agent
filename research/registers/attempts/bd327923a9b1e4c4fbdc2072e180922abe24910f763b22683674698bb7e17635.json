@@ -1,0 +1,89 @@
+{
+  "acquired_at": "2026-09-10T12:01:27.816605+00:00",
+  "associations": [],
+  "byte_count": 372118,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://acko-cms.ackoassets.com/Proposal_Form_Acko_Health_III_c8bfca0e7e.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "acko",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 634,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": 8,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "9aafd6e7590fb288411214a2bd8e4c34fc68399c2224388bdccd69d3dd719feb",
+  "status": "acquired",
+  "url": "https://acko-cms.ackoassets.com/Proposal_Form_Acko_Health_III_c8bfca0e7e.pdf"
+}

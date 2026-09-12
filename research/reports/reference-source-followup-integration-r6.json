@@ -1,0 +1,67 @@
+{
+  "format_version": 1,
+  "generated_at_utc": "2026-09-10T19:16:54.454822+00:00",
+  "scope": "All 200 reference source follow-ups integrated; bounded public-source reassessment, not full customer decision completion.",
+  "canonical_sha256": "531a6c3a99f2dd8e9dba99db95aff4de70409d085fd12be3d3b07fbbdbf6bff1",
+  "followup_sha256": "c1e71bdd2c157c8e981942d9bf235e7c47dde827493de3a3fe9fb55c9ad8e1ce",
+  "reference_cases": 200,
+  "per_family": {
+    "1": 10,
+    "2": 10,
+    "3": 10,
+    "4": 10,
+    "5": 10,
+    "6": 10,
+    "7": 10,
+    "8": 10,
+    "9": 10,
+    "10": 10,
+    "11": 10,
+    "12": 10,
+    "13": 10,
+    "14": 10,
+    "15": 10,
+    "16": 10,
+    "17": 10,
+    "18": 10,
+    "19": 10,
+    "20": 10
+  },
+  "dispositions": {
+    "unchanged": 138,
+    "partially_resolved": 62
+  },
+  "canonical_input_hashes_verified": 200,
+  "canonical_values_compared": {
+    "questions_and_customer_facts_first100": 100,
+    "preserved_input_fields_families11_19": 90,
+    "operational_questions_family20": 10
+  },
+  "existing_calculations_preserved": 56,
+  "distinct_evidence_records_before_locator_normalization": 80,
+  "source_originals": 21,
+  "new_eighty_independently_reviewed": false,
+  "complete_customer_decisions": 0,
+  "adviser_attempts": 0,
+  "advice_passes": 0,
+  "evaluation_bodies_accessed": false,
+  "evaluation_safe_export_counts": {
+    "cases": 200,
+    "bounded_scopes_complete": 39,
+    "broader_scopes_unresolved": 161,
+    "frozen": 0
+  },
+  "input_sha256": {
+    "reference/reference-source-followup-families01-10-r6.jsonl": "2d11973bbdae2fd723b354981b7302c6002d7d835e35fe082061ca17f7d5b5c2",
+    "reference/reference-source-followup-families11-19-r6.jsonl": "5d6172ec17466584722e67cb531ca65e7ba8c7016d6121b7f99cc6e3ee5b92fb",
+    "reference/reference-source-followup-family20-r6.jsonl": "c545d610364605f799b3dd8b351ef5f4fcc7a3b2edaebe15c51d3f250c67581c",
+    "reports/evaluation-safe-summary.json": "c18db43dc32daeb473b76137c6439227ec2de8f06824179597e589ddd2eeae82",
+    "reports/evaluation-information-requirements.json": "58f404816c084f3619c6fb02027a16d6ae4f8aa6e63181d44350693804949199"
+  },
+  "limits": [
+    "Independent evaluation remains unfrozen; shared filesystem is not hard isolation.",
+    "Original-backed classification and candidate association are not full reconciliation or rule-denominator coverage.",
+    "Case-specific unanswered public dependencies remain explicit; synthetic stipulations are not actual insurer-issued evidence.",
+    "New eighty follow-ups have author verification only."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "format_version": 1,
+  "generated_at_utc": "2026-09-10T19:21:04.201871+00:00",
+  "basis": "Frozen r22 accounting plus new NPPA acquisition attempts; no reclassification or new original asserted.",
+  "baseline": "registers/source-corpus-accounting-r22.json",
+  "baseline_sha256": "b129b1318039aea06b6d81d62829fb054a47785776aa1f454839d72fba108202",
+  "current_object_count": 2942,
+  "current_object_hashes_verified": 2942,
+  "object_hash_mismatches": [],
+  "baseline_object_count": 2942,
+  "acquisition_attempt_count": 3422,
+  "attempt_status_counts": {
+    "acquired": 2725,
+    "failed": 697
+  },
+  "new_attempts": [
+    {
+      "path": "registers/attempts/1700452802344a736c1be71fd228ffd13434ebf32083aa87fcb3476e5ff34874.json",
+      "sha256": "5520104b711d812f02543b87e76ac27e7e8f1cb0a00d2e97c8aa063b50f0a605",
+      "status": "failed",
+      "issues": [
+        "ConnectError"
+      ]
+    },
+    {
+      "path": "registers/attempts/6161124e30622eeb1327e8b0c7a07faf4f636a37a128999f9f3a46c60a706ea0.json",
+      "sha256": "7f786a19cfb17fb1418d43682f779fe2282261006a86f1a4b9e13cd70dfed6fe",
+      "status": "failed",
+      "issues": [
+        "ConnectError"
+      ]
+    }
+  ],
+  "prior_attempts_changed_or_missing": [],
+  "current_manual_scope_register": "registers/document-scope-r22.json",
+  "manual_pdf_count": 352,
+  "manual_nonpdf_count": 16,
+  "independent_rule_denominator": null,
+  "source_reconciliation_complete": false,
+  "limits": [
+    "The official 2026 NPPA notice is a search-discovered candidate; failed original acquisition cannot support a price rule.",
+    "Full object hash verification does not establish document relevance, completeness or contractual applicability."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T12:04:27.223962+00:00",
+  "associations": [],
+  "byte_count": 425829,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/NGMP%20-%20Schedule.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "national",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 941,
+  "linking_url": "https://nationalinsurance.nic.co.in/products/all-products/health/national-group-mediclaim-policy",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "17219711366f47ed3cf62667726b23adee970b4838e08ad3a5afe180089c5975",
+  "status": "acquired",
+  "url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/NGMP%20-%20Schedule.pdf"
+}

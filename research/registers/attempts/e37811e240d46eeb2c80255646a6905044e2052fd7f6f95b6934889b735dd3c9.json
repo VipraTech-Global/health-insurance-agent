@@ -1,0 +1,89 @@
+{
+  "acquired_at": "2026-09-10T11:57:46.389493+00:00",
+  "associations": [],
+  "byte_count": 196562,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/SBI_General_Bharat_Laghu_Udyam_Suraksha_Prospectus_a3440319dd.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 290,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 8,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.273
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.274
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.274
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.274
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.274
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.274
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.274
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "36f1dc87bfda073a0feda72b11d4552c82c50b08906a78f52188588d40693e6f",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/SBI_General_Bharat_Laghu_Udyam_Suraksha_Prospectus_a3440319dd.pdf"
+}

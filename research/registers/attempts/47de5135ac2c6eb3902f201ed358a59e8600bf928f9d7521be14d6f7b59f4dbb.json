@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:58:43.584071+00:00",
+  "associations": [],
+  "byte_count": 333896,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/health/Corona%20Rakshak%20Policy%20Go%20Digit%20-%20Proposal%20Form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "go-digit",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 234,
+  "linking_url": "https://www.godigit.com/downloads",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "41bc89a8b0b9ac750da62ddd6dbc15047b8464cd23a22fa07a2ec1a25546e75c",
+  "status": "acquired",
+  "url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/health/Corona%20Rakshak%20Policy%20Go%20Digit%20-%20Proposal%20Form.pdf"
+}

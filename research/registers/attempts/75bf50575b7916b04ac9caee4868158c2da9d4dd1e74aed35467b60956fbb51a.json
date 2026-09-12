@@ -1,0 +1,81 @@
+{
+  "acquired_at": "2026-09-10T11:56:51.592727+00:00",
+  "associations": [],
+  "byte_count": 642808,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/SBIG_Health_Super_Top_Up_CIS_20260302_24f8ea3cff.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 547,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 7,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "e0aae19694177f40dedaf76249941710d9df005b9712d4341a1a64d54e898519",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/SBIG_Health_Super_Top_Up_CIS_20260302_24f8ea3cff.pdf"
+}

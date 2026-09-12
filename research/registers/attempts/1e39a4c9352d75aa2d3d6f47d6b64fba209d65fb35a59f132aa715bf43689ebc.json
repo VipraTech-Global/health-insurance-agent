@@ -1,0 +1,81 @@
+{
+  "acquired_at": "2026-09-10T11:59:20.447810+00:00",
+  "associations": [],
+  "byte_count": 280104,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://cms.zurichkotak.com/uploads/Prospectus_Zurich_Kotak_Medi_Shield_26092024_Final_docx_13f3ade63e_cf408934d5_b636117794.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "zurich-kotak",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 527,
+  "linking_url": "https://www.zurichkotak.com/product-documents",
+  "page_count": 7,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "71effcbfebd81d82066185616472e9bf24e41d2b3e9327b755caa5f494c73f37",
+  "status": "acquired",
+  "url": "https://cms.zurichkotak.com/uploads/Prospectus_Zurich_Kotak_Medi_Shield_26092024_Final_docx_13f3ade63e_cf408934d5_b636117794.pdf"
+}

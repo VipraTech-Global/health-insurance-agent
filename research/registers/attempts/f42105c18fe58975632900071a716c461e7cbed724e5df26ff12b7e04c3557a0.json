@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:53:03.455831+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/surveyor_management_policy/AFTER%20APPEAL%20-%20Final%20Result%20for%20SMP%20Exercise%202025-26.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 6257,
+  "linking_url": "https://www.newindia.co.in/health-insurance/atmanirbhar-health-policy",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "10a009829ca5cb288c007721946d8dfcb2a5a5b1d5ba8a01bae31b1d9cb3898a",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/surveyor_management_policy/AFTER APPEAL - Final Result for SMP Exercise 2025-26.pdf"
+}

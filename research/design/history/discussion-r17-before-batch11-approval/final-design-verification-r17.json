@@ -1,0 +1,101 @@
+{
+  "revision": "discussion-r17",
+  "generated_at_utc": "2026-09-12T13:00:24.989518+00:00",
+  "status": "passed",
+  "scope": "Structural verification of the user-approved buyer-only scope revision. Customer claim administration is excluded; no complete-design or implementation approval is claimed.",
+  "checks": [
+    {
+      "check": "78 unique buyer-adviser entities",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "697 unique application fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "201 FK relationships exactly match dictionary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all FK targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all ten claim and treatment administration models removed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "generic deterministic Calculation retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Calculation retains buyer comparison inputs, operations and result",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "case and supplementary maps contain no removed model references",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all remaining case and supplementary targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "fixed assessment archive retained as 200 reference and 200 evaluation-safe projections",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "buyer-only evaluation refresh requirement recorded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "r17 reverse trace covers every live field exactly",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "r17 trace hashes match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all JSON fields resolve to reachable contracts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all retained JSON contracts are reachable",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "scope approval and implementation boundary recorded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no replacement Django models or migrations created",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 17,
+  "failed": 0,
+  "application_entities": 78,
+  "application_fields": 697,
+  "foreign_keys": 201,
+  "json_definitions": 44,
+  "approved_batches": "1 through 8; Batch 9 revised to Calculation only; Batch 10 approved as scope exclusion",
+  "overall_design_approval": false
+}

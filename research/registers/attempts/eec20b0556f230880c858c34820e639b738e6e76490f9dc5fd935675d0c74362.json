@@ -1,0 +1,65 @@
+{
+  "acquired_at": "2026-09-10T12:04:20.172789+00:00",
+  "associations": [],
+  "byte_count": 303060,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/NSIP%20Proposal%20Form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "national",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 458,
+  "linking_url": "https://nationalinsurance.nic.co.in/products/all-products/health/national-surrogacy-insurance-policy",
+  "page_count": 5,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "ecc9ced100dd4bab2cb49f9a0e19e59058fb119174ae89a05549f98cd4655f14",
+  "status": "acquired",
+  "url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/NSIP%20Proposal%20Form.pdf"
+}

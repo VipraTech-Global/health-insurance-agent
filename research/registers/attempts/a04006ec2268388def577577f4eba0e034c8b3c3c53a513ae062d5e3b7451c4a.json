@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:38:23.543007+00:00",
+  "associations": [],
+  "byte_count": 3538,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/captcha?url=//pages/doc/brochure/Health_Recharge_SS.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1392,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "b13aae917a6ece62ea0f39f2bf3e20658256858cb290e61e52ae51de2c87512d",
+  "status": "failed",
+  "url": "https://transactions.nivabupa.com/pages/doc/brochure/Health_Recharge_SS.pdf"
+}

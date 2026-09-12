@@ -1,0 +1,73 @@
+{
+  "acquired_at": "2026-09-10T11:58:23.515445+00:00",
+  "associations": [],
+  "byte_count": 148613,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/38bf49e01a874c319b924665066b78fb.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 590,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 6,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.8898,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.8898,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.8898,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.8898,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.8898,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.8898,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2756
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "6dd5ca8d17698334a10a9410086dd286b8a2390b914557ed67e27446cd5a7458",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/38bf49e01a874c319b924665066b78fb.pdf"
+}

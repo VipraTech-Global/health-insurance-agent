@@ -1,0 +1,527 @@
+{
+  "denominator_complete": false,
+  "format_version": 1,
+  "pages_examined": [
+    26,
+    34,
+    36
+  ],
+  "pages_total": 83,
+  "publication_status": "not_publishable; partial original reading only",
+  "rule_coverage_percent": null,
+  "rules": [
+    {
+      "critical": true,
+      "dependencies": [
+        "care-supreme-ped-enhancement",
+        "care-supreme-ped-credit",
+        "care-supreme-ped-disclosure"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 34,
+          "passage": "Expenses related to the treatment of a pre-existing Disease (PED) and\nits direct complications shall be excluded until the expiry of 36\nmonths of continuous coverage after the date of inception of the first\npolicy with insurer.",
+          "section": "4.1(a)(i)(a)",
+          "source_sha256": "1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+          "table_context": []
+        }
+      ],
+      "format_version": 1,
+      "insurer_id": "care",
+      "inventoried_by": "Codex: original PDF pages 26, 34 and 36 visually inspected; native text checked against those pages",
+      "method": "original_document_reading",
+      "product_version": "CHIHLIP27061V032627 / SHA256 1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+      "requirement": "PED treatment and direct complications have a 36-month continuous-coverage wait from first inception.",
+      "rule_id": "care-supreme-ped-wait",
+      "status": "inventoried",
+      "topic": "ped-wait"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "care-supreme-ped-wait"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 34,
+          "passage": "In case of enhancement of sum insured the exclusion shall apply\na fresh to the extent of sum insured increase.",
+          "section": "4.1(a)(i)(b)",
+          "source_sha256": "1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+          "table_context": []
+        }
+      ],
+      "format_version": 1,
+      "insurer_id": "care",
+      "inventoried_by": "Codex: original PDF pages 26, 34 and 36 visually inspected; native text checked against those pages",
+      "method": "original_document_reading",
+      "product_version": "CHIHLIP27061V032627 / SHA256 1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+      "requirement": "PED exclusion applies afresh only to the increased sum-insured portion.",
+      "rule_id": "care-supreme-ped-enhancement",
+      "status": "inventoried",
+      "topic": "ped-enhancement"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "care-supreme-ped-wait",
+        "care-supreme-external-portability-norms"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 34,
+          "passage": "If the Insured Person is continuously covered without any break as\ndefined under the portability norms of the extant IRDAI (Health\nInsurance) Regulations, then waiting period for the same would be\nreduced to the extent of prior coverage.",
+          "section": "4.1(a)(i)(c)",
+          "source_sha256": "1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+          "table_context": []
+        }
+      ],
+      "format_version": 1,
+      "insurer_id": "care",
+      "inventoried_by": "Codex: original PDF pages 26, 34 and 36 visually inspected; native text checked against those pages",
+      "method": "original_document_reading",
+      "product_version": "CHIHLIP27061V032627 / SHA256 1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+      "requirement": "Prior uninterrupted coverage reduces the PED wait subject to the referenced portability norms.",
+      "rule_id": "care-supreme-ped-credit",
+      "status": "inventoried",
+      "topic": "ped-credit"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "care-supreme-ped-wait",
+        "care-supreme-individual-underwriting"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 34,
+          "passage": "Coverage under the policy after the expiry of 36 months for any\npre-existing disease is subject to the same being declared at the time\nof application and accepted by Insurer.",
+          "section": "4.1(a)(i)(d)",
+          "source_sha256": "1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+          "table_context": []
+        }
+      ],
+      "format_version": 1,
+      "insurer_id": "care",
+      "inventoried_by": "Codex: original PDF pages 26, 34 and 36 visually inspected; native text checked against those pages",
+      "method": "original_document_reading",
+      "product_version": "CHIHLIP27061V032627 / SHA256 1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+      "requirement": "Expiry of the PED wait still requires disclosure and insurer acceptance.",
+      "rule_id": "care-supreme-ped-disclosure",
+      "status": "inventoried",
+      "topic": "ped-disclosure"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "care-supreme-named-condition-list",
+        "care-supreme-named-wait-other-conditions"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 34,
+          "passage": "Expenses related to the treatment of the listed Conditions, surgeries/\ntreatments and its direct complications shall be excluded until the\nexpiry of 24 months of continuous coverage, as may be the case after\nthe date of inception of the first policy with the Company. This\nexclusion shall not beapplicable for claims arising due to an accident.",
+          "section": "4.1(a)(ii)(a)",
+          "source_sha256": "1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+          "table_context": []
+        }
+      ],
+      "format_version": 1,
+      "insurer_id": "care",
+      "inventoried_by": "Codex: original PDF pages 26, 34 and 36 visually inspected; native text checked against those pages",
+      "method": "original_document_reading",
+      "product_version": "CHIHLIP27061V032627 / SHA256 1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+      "requirement": "Listed conditions, procedures and complications have a 24-month wait with an accident exception.",
+      "rule_id": "care-supreme-named-wait",
+      "status": "inventoried",
+      "topic": "named-wait"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "care-supreme-initial-continuity",
+        "care-supreme-initial-enhancement",
+        "care-supreme-per-person-waits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 36,
+          "passage": "Expenses related to the treatment of any illness within 30 days\nfrom the first policy commencement date shall be excluded\nexcept claims arising due to an accident, provided the same are\ncovered.",
+          "section": "4.1(a)(iii)(a)",
+          "source_sha256": "1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+          "table_context": []
+        }
+      ],
+      "format_version": 1,
+      "insurer_id": "care",
+      "inventoried_by": "Codex: original PDF pages 26, 34 and 36 visually inspected; native text checked against those pages",
+      "method": "original_document_reading",
+      "product_version": "CHIHLIP27061V032627 / SHA256 1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+      "requirement": "Illness expenses within 30 days of first commencement are excluded; covered accident claims are excepted.",
+      "rule_id": "care-supreme-initial-wait",
+      "status": "inventoried",
+      "topic": "initial-wait"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "care-supreme-initial-wait"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 36,
+          "passage": "This exclusion shall not, however, apply if the Insured Person has\nContinuous Coverage for more than twelve months.",
+          "section": "4.1(a)(iii)(b)",
+          "source_sha256": "1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+          "table_context": []
+        }
+      ],
+      "format_version": 1,
+      "insurer_id": "care",
+      "inventoried_by": "Codex: original PDF pages 26, 34 and 36 visually inspected; native text checked against those pages",
+      "method": "original_document_reading",
+      "product_version": "CHIHLIP27061V032627 / SHA256 1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+      "requirement": "The 30-day exclusion does not apply with continuous coverage exceeding twelve months.",
+      "rule_id": "care-supreme-initial-continuity",
+      "status": "inventoried",
+      "topic": "initial-continuity"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "care-supreme-initial-wait"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 36,
+          "passage": "The referred waiting period is made applicable to the enhanced\nsum insured in the event of granting higher sum insured\nsubsequently.",
+          "section": "4.1(a)(iii)(c)",
+          "source_sha256": "1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+          "table_context": []
+        }
+      ],
+      "format_version": 1,
+      "insurer_id": "care",
+      "inventoried_by": "Codex: original PDF pages 26, 34 and 36 visually inspected; native text checked against those pages",
+      "method": "original_document_reading",
+      "product_version": "CHIHLIP27061V032627 / SHA256 1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+      "requirement": "The initial wait applies to subsequently enhanced sum insured.",
+      "rule_id": "care-supreme-initial-enhancement",
+      "status": "inventoried",
+      "topic": "initial-enhancement"
+    },
+    {
+      "critical": true,
+      "dependencies": [],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 36,
+          "passage": "The Waiting Periods as defined above shall be applicable\nindividually for each Insured Person and Claims shall be\nassessed accordingly.",
+          "section": "4.1(a) note (i)",
+          "source_sha256": "1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+          "table_context": []
+        }
+      ],
+      "format_version": 1,
+      "insurer_id": "care",
+      "inventoried_by": "Codex: original PDF pages 26, 34 and 36 visually inspected; native text checked against those pages",
+      "method": "original_document_reading",
+      "product_version": "CHIHLIP27061V032627 / SHA256 1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+      "requirement": "Waits apply independently to each insured person.",
+      "rule_id": "care-supreme-per-person-waits",
+      "status": "inventoried",
+      "topic": "per-person-waits"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "care-supreme-individual-schedule"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 36,
+          "passage": "If Coverage for Optional Benefits (if applicable) are added\nafresh at the time of renewal of this Policy, the Waiting\nPeriods as defined above shall be applicable afresh to the\nnewly added Optional Benefits (if applicable), from the time\nof such renewal.",
+          "section": "4.1(a) note (ii)",
+          "source_sha256": "1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+          "table_context": []
+        }
+      ],
+      "format_version": 1,
+      "insurer_id": "care",
+      "inventoried_by": "Codex: original PDF pages 26, 34 and 36 visually inspected; native text checked against those pages",
+      "method": "original_document_reading",
+      "product_version": "CHIHLIP27061V032627 / SHA256 1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+      "requirement": "New optional benefits added at renewal incur the applicable waits afresh from that renewal.",
+      "rule_id": "care-supreme-new-optional-waits",
+      "status": "inventoried",
+      "topic": "new-optional-waits"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "care-supreme-individual-schedule",
+        "care-supreme-copay-each-claim"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 26,
+          "passage": "If this Optional Benefit is opted, then the Insured Person will have an\noption to bear a Co-payment, as specified in the Policy Schedule, and the\nCompany's liability shall be restricted to the balance amount payable.",
+          "section": "3.2.7",
+          "source_sha256": "1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+          "table_context": []
+        }
+      ],
+      "format_version": 1,
+      "insurer_id": "care",
+      "inventoried_by": "Codex: original PDF pages 26, 34 and 36 visually inspected; native text checked against those pages",
+      "method": "original_document_reading",
+      "product_version": "CHIHLIP27061V032627 / SHA256 1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+      "requirement": "The optional copay applies when selected, at the percentage stated in the individual schedule.",
+      "rule_id": "care-supreme-optional-copay-selection",
+      "status": "inventoried",
+      "topic": "optional-copay-selection"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "care-supreme-optional-copay-selection"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 26,
+          "passage": "The Co-payment shall be applicable to each and every claim for each\nInsured member as defined in the Policy.",
+          "section": "3.2.7",
+          "source_sha256": "1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+          "table_context": []
+        }
+      ],
+      "format_version": 1,
+      "insurer_id": "care",
+      "inventoried_by": "Codex: original PDF pages 26, 34 and 36 visually inspected; native text checked against those pages",
+      "method": "original_document_reading",
+      "product_version": "CHIHLIP27061V032627 / SHA256 1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+      "requirement": "The selected copay applies to every claim for every insured member.",
+      "rule_id": "care-supreme-copay-each-claim",
+      "status": "inventoried",
+      "topic": "copay-each-claim"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "care-supreme-newborn-waits",
+        "care-supreme-newborn-premium",
+        "care-supreme-individual-schedule"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 26,
+          "passage": "Notwithstanding anything to the contrary in the Policy, by choosing this\nOptional Benefit, the Company will allow the addition of New Born baby\nfrom day 1.",
+          "section": "3.2.8",
+          "source_sha256": "1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+          "table_context": []
+        }
+      ],
+      "format_version": 1,
+      "insurer_id": "care",
+      "inventoried_by": "Codex: original PDF pages 26, 34 and 36 visually inspected; native text checked against those pages",
+      "method": "original_document_reading",
+      "product_version": "CHIHLIP27061V032627 / SHA256 1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+      "requirement": "Selecting the newborn option permits addition from day one; it does not erase waits.",
+      "rule_id": "care-supreme-newborn-entry",
+      "status": "inventoried",
+      "topic": "newborn-entry"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "care-supreme-newborn-entry"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 26,
+          "passage": "All the applicable waiting period shall stand valid for this benefit.",
+          "section": "3.2.8 note",
+          "source_sha256": "1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+          "table_context": []
+        }
+      ],
+      "format_version": 1,
+      "insurer_id": "care",
+      "inventoried_by": "Codex: original PDF pages 26, 34 and 36 visually inspected; native text checked against those pages",
+      "method": "original_document_reading",
+      "product_version": "CHIHLIP27061V032627 / SHA256 1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+      "requirement": "Applicable waits remain valid for the newborn option.",
+      "rule_id": "care-supreme-newborn-waits",
+      "status": "inventoried",
+      "topic": "newborn-waits"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "care-supreme-newborn-entry"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 26,
+          "passage": "Premium of this optional Benefit shall be payable only at the time\nof addition of new born and will be pro-rated for the exposure\nperiod.",
+          "section": "3.2.8 note",
+          "source_sha256": "1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+          "table_context": []
+        }
+      ],
+      "format_version": 1,
+      "insurer_id": "care",
+      "inventoried_by": "Codex: original PDF pages 26, 34 and 36 visually inspected; native text checked against those pages",
+      "method": "original_document_reading",
+      "product_version": "CHIHLIP27061V032627 / SHA256 1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+      "requirement": "Newborn-option premium is payable at addition and prorated to the exposure period.",
+      "rule_id": "care-supreme-newborn-premium",
+      "status": "inventoried",
+      "topic": "newborn-premium"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "care-supreme-plus-full-conditions",
+        "care-supreme-individual-schedule"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 26,
+          "passage": "This Plus Benefit would be applied on the base Sum Insured only.",
+          "section": "3.2.9(a)",
+          "source_sha256": "1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+          "table_context": []
+        }
+      ],
+      "format_version": 1,
+      "insurer_id": "care",
+      "inventoried_by": "Codex: original PDF pages 26, 34 and 36 visually inspected; native text checked against those pages",
+      "method": "original_document_reading",
+      "product_version": "CHIHLIP27061V032627 / SHA256 1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+      "requirement": "Plus benefit uses base sum insured as its basis.",
+      "rule_id": "care-supreme-plus-base-basis",
+      "status": "inventoried",
+      "topic": "plus-base-basis"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "care-supreme-plus-full-conditions"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 26,
+          "passage": "Any unutilized amount will not be carried forward to the subsequent\nPolicy Year.",
+          "section": "3.2.9(b)",
+          "source_sha256": "1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+          "table_context": []
+        }
+      ],
+      "format_version": 1,
+      "insurer_id": "care",
+      "inventoried_by": "Codex: original PDF pages 26, 34 and 36 visually inspected; native text checked against those pages",
+      "method": "original_document_reading",
+      "product_version": "CHIHLIP27061V032627 / SHA256 1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+      "requirement": "Unused Plus benefit does not carry to the next policy year.",
+      "rule_id": "care-supreme-plus-no-carryforward",
+      "status": "inventoried",
+      "topic": "plus-no-carryforward"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "care-supreme-contrary-cover-check"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 36,
+          "passage": "Expenses related to any admission primarily for diagnostics and\nevaluation purposes only are excluded.",
+          "section": "4.1(b)(1)(a)",
+          "source_sha256": "1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+          "table_context": []
+        }
+      ],
+      "format_version": 1,
+      "insurer_id": "care",
+      "inventoried_by": "Codex: original PDF pages 26, 34 and 36 visually inspected; native text checked against those pages",
+      "method": "original_document_reading",
+      "product_version": "CHIHLIP27061V032627 / SHA256 1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+      "requirement": "Admissions primarily for investigation and evaluation are excluded unless contrary cover is stated elsewhere.",
+      "rule_id": "care-supreme-investigation-exclusion",
+      "status": "inventoried",
+      "topic": "investigation-exclusion"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "care-supreme-contrary-cover-check"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 36,
+          "passage": "Any diagnostic expenses which are not related or not incidental to the\ncurrent diagnosis and treatment are excluded.",
+          "section": "4.1(b)(1)(b)",
+          "source_sha256": "1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+          "table_context": []
+        }
+      ],
+      "format_version": 1,
+      "insurer_id": "care",
+      "inventoried_by": "Codex: original PDF pages 26, 34 and 36 visually inspected; native text checked against those pages",
+      "method": "original_document_reading",
+      "product_version": "CHIHLIP27061V032627 / SHA256 1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+      "requirement": "Unrelated or non-incidental diagnostic costs are excluded, subject to any express contrary provision.",
+      "rule_id": "care-supreme-unrelated-diagnostics",
+      "status": "inventoried",
+      "topic": "unrelated-diagnostics"
+    }
+  ],
+  "source_sha256": "1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+  "unresolved_dependencies": [
+    "care-supreme-contrary-cover-check",
+    "care-supreme-external-portability-norms",
+    "care-supreme-individual-schedule",
+    "care-supreme-individual-underwriting",
+    "care-supreme-named-condition-list",
+    "care-supreme-named-wait-other-conditions",
+    "care-supreme-plus-full-conditions"
+  ]
+}

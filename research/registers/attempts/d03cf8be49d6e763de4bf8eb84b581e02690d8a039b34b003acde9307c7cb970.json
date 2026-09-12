@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:01:00.039598+00:00",
+  "associations": [],
+  "byte_count": 274381,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html;charset=UTF-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.manipalcigna.com/documents/20124/0/Arogya%20Sanjeevani_Accordian_24Sep27/e7cb8c28-0fef-d900-307e-ac067f95b108",
+  "format_version": 1,
+  "http_status": 404,
+  "insurer_id": "manipalcigna",
+  "issues": [
+    "http_404"
+  ],
+  "language": "unknown",
+  "latency_ms": 516,
+  "linking_url": "https://www.manipalcigna.com/hospitalization-cover/arogya-sanjeevani-policy",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "860d17142abfd27a3e976931c0194530c8f0e22f063cab78b8746803dbcad45c",
+  "status": "failed",
+  "url": "https://www.manipalcigna.com/documents/20124/0/Arogya Sanjeevani_Accordian_24Sep27/e7cb8c28-0fef-d900-307e-ac067f95b108"
+}

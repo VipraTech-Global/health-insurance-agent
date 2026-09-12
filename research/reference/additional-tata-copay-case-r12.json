@@ -1,0 +1,239 @@
+{
+  "format_version": 1,
+  "case_id": "additional-r12-10-01",
+  "family": 10,
+  "split": "additional_reference_outside_required_400",
+  "synthetic_customer": true,
+  "title": "Does correcting prior Tata policy history remove one co-payment before the aggregate deductible?",
+  "customer": {
+    "buyer": "Priya,39, paying for father Dev,62",
+    "insured": "Dev,62",
+    "contract_fixture": "Accepted Health Supercharge Geo Plan, illness admission under B1 in Zone A; resident Zone C. Exact preserved wording used solely as a synthetic calculation fixture.",
+    "admissible_claim_after_prior_deductions_INR": "200000",
+    "remaining_annual_aggregate_deductible_INR": "50000",
+    "selection_and_usage": "Aggregate deductible selected; no prior deductible utilization; sufficient remaining SI. No mandatory or voluntary ailment sub-limit applies, no age/zone waiver endorsement, no accident, no over-SI benefit. These are explicit synthetic premises, not product-wide claims.",
+    "initial_history": "First cover with Tata at62, inferred from this product inception",
+    "corrected_history": "Continuous active Tata indemnity policy began at59; accepted migration into this product at62 without break, stipulated verified for the calculation fixture."
+  },
+  "conversation": [
+    {
+      "role": "customer",
+      "text": "My father joined this plan at62. For a200000 admissible illness claim in Mumbai, how do the two20% co-payments and50000 deductible interact?"
+    },
+    {
+      "role": "adviser",
+      "text": "The table adds applicable co-payments before the aggregate deductible. Confirm his first Tata indemnity coverage and whether this was accepted migration without a break; the age-linked clause has a specific exception."
+    },
+    {
+      "role": "customer",
+      "text": "Correction: he first held a Tata indemnity policy at59. It remained active and this was an accepted migration with no break."
+    },
+    {
+      "role": "adviser",
+      "text": "Under those stipulated facts the migration exception removes the age-linked20%; the higher-zone20% remains. The resulting conditional amount is110000, replacing70000 under the original history. Preserve the correction and both calculation inputs."
+    }
+  ],
+  "known": [
+    "B1 illness claim and Geo plan stipulations",
+    "Same200000INR admissible-claim base for additive co-payments",
+    "50000INR remaining annual aggregate deductible",
+    "Corrected continuous Tata indemnity history meets stated migration exception"
+  ],
+  "unknown": [
+    "Actual complete governing bundle, identity/version match and accepted schedule",
+    "Actual admissibility, receipt and acceptance of prior policy/migration evidence",
+    "Actual historical dated zone list and all issued add-on/waiver terms"
+  ],
+  "corrections": [
+    {
+      "fact": "first_Tata_indemnity_entry_age_and_continuity",
+      "initial": 62,
+      "corrected": 59,
+      "continuity_and_accepted_migration": true,
+      "effect": "Remove age co-pay under specified migration exception; do not remove zone co-pay; invalidate prior calculation."
+    }
+  ],
+  "candidate_dispositions": [
+    {
+      "configuration": "Stipulated Geo Plan claim",
+      "status": "Conditional arithmetic only; actual customer entitlement unestablished"
+    }
+  ],
+  "expected_answer": "Table steps47\u201348 apply the sum of applicable age and higher-zone co-pay percentages to the same admissible claim before the remaining aggregate deductible. Initial history:200000\u00d7(1\u22120.20\u22120.20)\u221250000=70000. Corrected history satisfies the specific continuous active Tata indemnity migration exception, so age co-pay is0 and200000\u00d7(1\u22120.20)\u221250000=110000. Do not multiply the two percentages, apply the deductible first, treat current product-entry age alone as decisive, or remove higher-zone co-pay because age co-pay ceased. Both figures rely on express premises and are not final insurer payment assertions.",
+  "acceptable_alternatives": [
+    "Explain both conditional branches and request actual acceptance evidence before presenting an entitlement."
+  ],
+  "evidence": [
+    {
+      "source_sha256": "b388674a3162a9e0b7e3055ec7c6e79588a03cf08a2f360ae5c4807ea1f8e172",
+      "physical_page": 42,
+      "bbox": [
+        0,
+        0,
+        612.0,
+        792.0
+      ],
+      "exact_passage": "direction or instruction on Our behalf unless We have expressly stated to the\ncontrary in writing.\n21. Zone & Applicability of Plan\nPremium payable under the 'Geo Plan' will be computed based on the residential\nlocation/address as provided by the proposer/Insured Person in the proposal form.\nPremium to be received by Company before Policy Commencement date.\nThe payment of premium and applicability of Plan shall be as per the grid given below:\nAvailable for\nPremium\nPlan insured Network Specific Co-Payment\nApplicable as\nSelected person(s) Applicable applicable#\nper:\nresiding in*\nValue Anywhere within Premium as per Valued Provider 30% Co-Payment if\nPlan India Value Plan - Pan India/\\ Hospitalization\nhappens outside Our\nnetwork of Valued\nProvider - Pan India.\nGeo Plan Zone B or Zone Premium as per Network 20% Co-Payment if\nC Geo Plan for Provider Hospitalization\nZone B or Zone happens in Zone A. This\nC Co-Payment shall be\napplied on both, cashless\nas well as\nreimbursement claims.\n*Premium payable under the Policy will be computed based on the residential\nlocation/address as provided by the proposer/Insured Person in the proposal form and the\nplan opted.\n# This is over and above any other Co-Payment applicable under the Policy.\nChange from Value Plan to Geo Plan shall not be permitted. Any change from Geo Plan to\nValue Plan shall only be allowed at the time of Renewal and shall be subject to underwriting.\nAFor clarity: The \"Valued Provider - Pan India\" network list is different from Our standard\nlist of \"Network Provider\". The standard list of Network Provider shall not be applicable to\nthe Insured Person, if covered under Value Plan. List of Valued Provider - Pan India will\nbe updated from time to time and will be available on Our website www.tataaig.com\nTATA AIG General Insurance Company Ltd.\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai -400013,\nMaharashtra, India 24*7 Customer Support No. 022 6489 8282/1800 267 1955 (For Senior Citizens)\n\u2022 Email: customersupport@tataaig.com \u2022 Website: www.tataaig.com IRDA of India Registration No.:",
+      "reader_parameters": {
+        "x_tolerance": 2,
+        "y_tolerance": 3
+      },
+      "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+    },
+    {
+      "source_sha256": "b388674a3162a9e0b7e3055ec7c6e79588a03cf08a2f360ae5c4807ea1f8e172",
+      "physical_page": 47,
+      "bbox": [
+        0,
+        0,
+        612.0,
+        792.0
+      ],
+      "exact_passage": "Where an ailment/ Illness/ disease is excluded under both exclusions with waiting\nPeriods (as specified under Section 3 (i) Sub section (1) and under any other Policy exclusion, then\nfor assessment of liability, any expense related to that ailment/ Illness/ disease shall not be covered\nunder this Policy.\nii. Sequence of applicability & Utilization\na. The sequence of assessment of claim shall be as per table given below:\nWhere Age specific\nWhere Age specific Co-\nAssessment Co-Payment is not\nPayment is applicable\nSteps applicable\n1 Amount of Claim Intimated \u2713 \u2713\n2 Less Non-Payable expenses# \u2713 \u2713\n3 =Admissible Expenses \u2713 \u2713\nLess Associated Medical\nExpenses as defined under the\n4 Policy (if applicable) \u2713 \u2713\n5 =Admissible Claim \u2713 \u2713\nIf Geo Plan is opted:\nLess\n(Higher Zone Co-Payment*+ Age\nLinked Co-Payment)\n(20%*+20%) 20%*\nOR\nOR OR\nAge linked Co-Payment;\n20% 0%\n6\"\nIf Value Plan is opted:\n(30%*+20%) 30%*\nLess\n(Out of Our network of Valued\nProvider - Pan India Co-Payment*\nTATA AIG General Insurance Company Ltd.\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai - 400013,\nMaharashtra, India 24*7 Customer Support No. 022 6489 8282/1800 267 1955 (For Senior Citizens)\n\u2022 Email: customersupport@tataaig.com \u2022 Website: www.tataaig.com IRDA of India Registration No.:",
+      "reader_parameters": {
+        "x_tolerance": 2,
+        "y_tolerance": 3
+      },
+      "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+    },
+    {
+      "source_sha256": "b388674a3162a9e0b7e3055ec7c6e79588a03cf08a2f360ae5c4807ea1f8e172",
+      "physical_page": 48,
+      "bbox": [
+        0,
+        0,
+        612.0,
+        792.0
+      ],
+      "exact_passage": "as defined in Policy + Age Linked\nCo-Payment)\nOR OR\nOR\n20% 0%\nAge linked Co-Payment\n7 =Final Assessed Amount \u2713 \u2713\nLess Aggregate Deductible (if\n8 Opted)** If applicable If applicable\n9 =Final Assessed Liability \u2713 \u2713\nSublimit/ Voluntary Sublimit */ Balance Sum Insured\n(including accrued 5X Supercharge Bonus)/ Benefit\n10 Claim Payable subject to applicable Limit\n# Deduction would vary depending upon whether optional cover 'Consumables Benefit' is opted.\n,.. Depending upon the opted Plan - Value Plan or Geo Plan\n* If applicable\n** Aggregate Deductible, if opted, shall be applicable on aggregate of all claims as assessed under\nthe final assessed amount for a given Policy Year.\nThe payment of any claim under this Policy shall be subject to Aggregate Deductible (if applicable),\nsublimits/benefit limits, balance Sum Insured and accrued 5X supercharge bonus, if available.\nFor claims related to specific ailment/ Surgical Procedure where either mandatory sublimit or\nvoluntary sublimit (if opted) are applied during claim assessment, there neither Higher zone Co\u00ad\nPayment nor outside Our network of Valued Provider- Pan India Co-Payment shall be applicable.\nHowever, the Age linked Co-Payment shall be applicable.\nb. The sequence of utilization of benefit for a claim shall be in the following order:\n1. Sub-Limit subject to balance Sum Insured/Sum Insured (as applicable),\nTATA AIG General Insurance Company Ltd.\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai - 400013,\nMaharashtra, India 24*7 Customer Support No. 022 6489 8282/1800 267 1955 (For Senior Citizens)\n\u2022 Email: customersupport@tataaig.com \u2022 Website: www.tataaig.com IRDA of India Registration No.:",
+      "reader_parameters": {
+        "x_tolerance": 2,
+        "y_tolerance": 3
+      },
+      "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+    },
+    {
+      "source_sha256": "b388674a3162a9e0b7e3055ec7c6e79588a03cf08a2f360ae5c4807ea1f8e172",
+      "physical_page": 49,
+      "bbox": [
+        0,
+        0,
+        612.0,
+        792.0
+      ],
+      "exact_passage": "2. Any accrued 5X Supercharge Bonus, if applicable (B1 7)\n3. Restore benefit amount, if applicable (B9)\n4. Restore infinity amount, if applicable (C1)\nAccidental Death Benefit (C6) shall be assessed as per the Sum Insured of the Optional\nCover.\niii. Cost Sharing\nA The following four cost sharing methods are mandatory and inbuilt in the Policy\nCost Sharing Mechanism Applicability on\n1 Age linked Co-Payment Geo Plan & Value Plan\n2 Higher Zone Co-Payment Geo Plan\nOut of Our network of Valued Provider - Pan\n3 Value Plan\nIndia Co-Payment\n4 Mandatory Sub-Limits Geo Plan (Table I) & Value Plan (Table II)\nThe following three cost sharing methods, are optional and applicable if opted by the policyholder\nin lieu of which premium discount has been provided. The Optional cost sharing method, if opted\nB shall be mentioned in the Policy Schedule. Once opted, they shall mandatorily continue for all\nthe subsequent Renewals of the Policy, provided the Policy is renewed with Us without any\nbreak.\nCan be availed by the\nCost Sharing Mechanism Available under\npolicyholder/Insured\nAt Inception of first\n5 Voluntary Sub-Limits Geo Plan & Value Plan\nPolicy/coverage OR Renewal\nAt Inception of first\n6 Aggregate Deductible Geo Plan & Value Plan\nPolicy/coverage OR Renewal\nAt Inception of first\n7 Shared Accommodation Geo Plan\nPolicy/coverage OR Renewal\na. Age linked Co-Payment\nIf the entry Age of the Insured Person is 61 years or above at the time of first coverage under\nthis Policy, then such Insured Person shall bear 20% of each admissible claim (over and above\nTATA AIG General Insurance Company Ltd.\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai - 400013,\nMaharashtra, India 24*7 Customer Support No. 022 6489 8282/1800 267 1955 (For Senior Citizens)\n\u2022 Email: customersupport@tataaig.com \u2022 Website: www.tataaig.com IRDA of India Registration No.:",
+      "reader_parameters": {
+        "x_tolerance": 2,
+        "y_tolerance": 3
+      },
+      "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+    },
+    {
+      "source_sha256": "b388674a3162a9e0b7e3055ec7c6e79588a03cf08a2f360ae5c4807ea1f8e172",
+      "physical_page": 50,
+      "bbox": [
+        0,
+        0,
+        612.0,
+        792.0
+      ],
+      "exact_passage": "any other Co-Payment, if applicable). This shall be applicable even in Portability\ncases, irrespective of previous coverage.\nThis Co-Payment shall be applicable for all claims admitted under:\n\u2022 B1, B2, B3, B4, B5, B6, B7, B8 and C3 (if opted); and\n\u2022 if B9, B17 and C1 (if opted) utilized for payment of claim under aforementioned sections.\nThis Co-Payment shall not be applicable for benefits which are over and above the Sum\nInsured.\nException to this clause:\nThis Co-Payment shall not be applicable in case of Migration from any active Tata AIG\nindemnity health Policy to this product provided, entry Age of the Insured Person was less\nthan 61 years at the time of first coverage under the first indemnity health Policy with Us, subject\nto continuous coverage without any break in the Policy.\nb. Higher Zone Co-Payment\nWherever, Geo Plan has been opted and the Insured Person(s) undergoes medical\ntreatment at a Hospital/ Day Care Centre/ AYUSH Hospital/ AYUSH Day Care Centre in\nZone A, then an additional Co-Payment of 20% will be applicable on each such claim.\nHigher Zone Co-Payment shall be applicable for all claims except for claims for emergency\nHospitalization due to Injury arising from an Accident. Higher Zone Co-Payment shall not\nbe applicable for benefits which are over and above the Sum Insured.\nFor Clarity: This Co-Payment shall be applicable on claims admitted under:\n\u2022 B1, B4, B6, B7 and C3 (if opted); and\n\u2022 if B9, B17 and C1 (if opted) utilized for payment of claim under aforementioned sections.\nc. Co-Payment for treatment availed out of Our Network of Valued Provider - Pan India\nWherever, Value Plan has been opted and the Insured Person avails treatment outside Our\nnetwork of \"Valued Provider-Pan India\", then a Co-Payment of 30% will be applicable for each\nsuch claim resulting from admission of the Insured Person in a Hospital/ Day Care Centre/\nAYUSH Hospital/ AYUSH Day Care Centre. However, no Co-Payment under this sub section shall\nbe applicable if Hospitalization is for an Injury arising from an Accident.\nFor Clarity: This Co-Payment shall be applicable on claims admitted under:\n\u2022 B1, B4, B6, B7 and C3 (if opted); and\n\u2022 B9, B17 and C1 (if opted) if utilized for payment of claim under aforementioned sections.\nTATA AIG General Insurance Company Ltd.\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai -400013,\nMaharashtra, India 24*7 Customer Support No. 022 6489 8282/1800 267 1955 (For Senior Citizens)\n\u2022 Email: customersupport@tataaig.com \u2022 Website: www.tataaig.com IRDA of India Registration No.:",
+      "reader_parameters": {
+        "x_tolerance": 2,
+        "y_tolerance": 3
+      },
+      "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+    }
+  ],
+  "calculations": [
+    {
+      "inputs": {
+        "admissible_claim_INR": "200000",
+        "age_copay_fraction": "0.20",
+        "zone_copay_fraction": "0.20",
+        "remaining_aggregate_deductible_INR": "50000"
+      },
+      "unit": "INR",
+      "expression": "max(0, admissible_claim_INR * (1 - age_copay_fraction - zone_copay_fraction) - remaining_aggregate_deductible_INR)",
+      "expected": "70000",
+      "assumptions": [
+        "Every configuration/admissibility/remaining-limit premise in customer.contract_fixture and selection_and_usage applies. Result remains conditional, not an observed payment."
+      ]
+    },
+    {
+      "inputs": {
+        "admissible_claim_INR": "200000",
+        "age_copay_fraction": "0",
+        "zone_copay_fraction": "0.20",
+        "remaining_aggregate_deductible_INR": "50000"
+      },
+      "unit": "INR",
+      "expression": "max(0, admissible_claim_INR * (1 - age_copay_fraction - zone_copay_fraction) - remaining_aggregate_deductible_INR)",
+      "expected": "110000",
+      "assumptions": [
+        "Every configuration/admissibility/remaining-limit premise in customer.contract_fixture and selection_and_usage applies. Result remains conditional, not an observed payment."
+      ]
+    }
+  ],
+  "information_requirements": {
+    "customer_information": [
+      "Buyer/insured separation",
+      "Original Tata entry age, product entry age, continuous active prior cover and accepted migration, correction provenance"
+    ],
+    "product_applicability": [
+      "Geo plan, exact wording, B1 benefit, selected aggregate deductible and waiver/ailment-cap absence stipulated"
+    ],
+    "policy_knowledge": [
+      "Table steps47\u201348 and connected cost-sharing exceptions49\u201350",
+      "Specific versus generic network and zone predicates42"
+    ],
+    "calculations": [
+      "Additive rates on a named common base",
+      "Co-pay before aggregate deductible",
+      "Remaining aggregate usage and later limits",
+      "Corrected rate recomputation"
+    ],
+    "changing_observations": [
+      "Dated treatment location/zone and actual accepted prior-policy history"
+    ],
+    "retrieval": [
+      "Load calculation sequence and mandatory exceptions before rates",
+      "Retrieve prior-policy continuity and migration evidence"
+    ],
+    "saved_decisions": [
+      "Retain both fact snapshots and resulting calculation dependency sets"
+    ],
+    "lifecycle": [
+      "Append correction, invalidate earlier result, preserve audit and erase private copies on deletion"
+    ]
+  },
+  "general_requirement_ids": [
+    "CUS-01",
+    "CUS-02",
+    "INS-01",
+    "INS-02",
+    "INS-03",
+    "INS-04",
+    "INS-05",
+    "INS-07",
+    "CAL-01",
+    "CAL-02",
+    "CAL-03",
+    "RET-01",
+    "DEC-01"
+  ],
+  "pass_criteria": [
+    "Distinguish buyer and father insured",
+    "Use actual first Tata indemnity entry age and accepted continuous migration exception",
+    "Compute70000then110000 under stated premises",
+    "Apply additive rates then aggregate deductible",
+    "Keep zone and age co-pay exceptions distinct",
+    "Cite connected table and exception pages; label payment conditional and gaps explicit"
+  ],
+  "assessment_status": "individually_assessed_bounded_source_pattern_with_visible_material_gaps",
+  "complete_customer_insurance_decision": false,
+  "counts_as_advice_acceptance_success": false,
+  "adviser_attempts": 0,
+  "schema_implementation_approved": false,
+  "source_completeness": "Five connected original pages reviewed; full rule inventory and actual issued/historical applicability incomplete."
+}

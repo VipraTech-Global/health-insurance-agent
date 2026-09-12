@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:37:56.704426+00:00",
+  "associations": [],
+  "byte_count": 34512,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/SavePlus-Endorsement-Document.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 320,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "9cebb66b8df4d13bffe7b3739304a65310ab95d2f4333a717ff09fb3e73dc5fb",
+  "status": "acquired",
+  "url": "https://transactions.nivabupa.com/pages/doc/policy_wording/SavePlus-Endorsement-Document.pdf"
+}

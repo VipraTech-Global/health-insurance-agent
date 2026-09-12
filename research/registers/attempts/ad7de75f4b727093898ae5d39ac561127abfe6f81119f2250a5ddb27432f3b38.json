@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:03:39.652641+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/universal-health-insurance/Universal%20Health%20Insurance%20Proposal%20Form%20WEF%2001%20Oct%202024.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 4945,
+  "linking_url": "https://www.newindia.co.in/health-insurance/universal-health-insurance",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "604fd9f30fed11b74569b27437fb96ea9f37609a2dad8fc1d3e02f1a5bde0923",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/universal-health-insurance/Universal Health Insurance Proposal Form WEF 01 Oct 2024.pdf"
+}

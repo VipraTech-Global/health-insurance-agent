@@ -1,0 +1,65 @@
+{
+  "acquired_at": "2026-09-10T11:52:23.011844+00:00",
+  "associations": [],
+  "byte_count": 299652,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_HealthRecharge.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1581,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": 5,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "ac95aa54a6fa9b774f5639a7e867e31f65916baed40e0337c8b27fcf9064e138",
+  "status": "acquired",
+  "url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_HealthRecharge.pdf"
+}

@@ -1,0 +1,111 @@
+{
+  "artifact_sha256": {
+    "reference/additional-cases-original-derived.jsonl": "d8b2e411d3af8a0681b367aa25f75a654a8598b94a42384a973a26fe6710764c",
+    "reference/assessments-conversation-behavior.jsonl": "fae37677b95e9aa1ba001b6f2fc19c2b63b3fe351aff3d90f0af44789159731c",
+    "reference/assessments-lifecycle-original-backed.jsonl": "e35da99cecbefb0b1cca4d1077c1f094b024fae45ec2c4f7dadcab3c1e610658",
+    "reference/assessments-original-backed.jsonl": "b485132fedb7c5190a5d0a94a9d5426d9f965b1ee926644b671a7be1d0b2f0f5",
+    "reference/assessments-topup-original-backed.jsonl": "018d768c1114c0188de2ee75d229d3b44e7475a5fe9c1a3475185e07c20fbfa1",
+    "reference/information-map-r2.json": "cef3448aff11b46b897c40f8bfd4b1d58fa120f00d51098674ddfed9792c099a",
+    "registers/document-classifications-20260910-r2.json": "88b25e950dae94847ab82a61ce5e5b071420b654448032144efb60913aa546f4",
+    "registers/hdfc-regulatory-image-table.json": "7ab3cdf18751f23d02e5b22cb68665207f2eb075b1d79a7381ad17c75a8187f7",
+    "registers/legacy-assessment-20260910-r2.json": "44c7324889f71387bd98b8b8eef168c553801857e1dd212711fc51f16d70e5df",
+    "registers/star-ssf-tables-original-reading.json": "665f7be3d6c67a41e315bb21a3ec395103466b4f2b360b33761d486865cc93ce",
+    "reports/assessment-verification-20260910-r2.json": "b39b93a54c30166293ce42288ca50677187f563aab25a03b2b4b96ab6ce6d58a",
+    "reports/evaluation-information-requirements.json": "039f39b928dbcbf96deaba7cf4fd4243af3d07e1b9cd883fea08393b1bdb8997",
+    "reports/evaluation-safe-summary.json": "db2b85c4bef49a0d58ab12bad1cccda6253fa9c1c8892e403b28d8d6e7c5c029",
+    "reports/information-requirements-original-derived-r2.json": "eea3ed1c2467ff10f115fbdbc1927d33583990dbd90aff21d625ce00a0b955ed",
+    "reports/reference-conversation-review.json": "a3209aeed6124b15038a8d3f0644095aa0f4e1a7635620b3b15a304a10924d56",
+    "reports/reference-conversation-structure-check.json": "7040c56181e747d70f46777f0a8423cb83423bfa474a745dd94ff1d5a67b8520",
+    "reports/reference-date-checks.json": "e4f66cc9f27aedd4b4306adfa2a4ab27ee63e030e31992ce3eaffbe44b4254eb",
+    "reports/reference-topup-review.json": "b39d14de0537e31a9adadea0029c0120deaf5bd2d6090dceadc240393a8b0c96"
+  },
+  "checked_at": "2026-09-10T13:39:36.397572+00:00",
+  "design_approved": false,
+  "evaluation": {
+    "adviser_attempts": 0,
+    "completed_full_customer_decisions": 0,
+    "concrete_scripts": 200,
+    "frozen_cases": 0,
+    "hard_filesystem_isolation": false,
+    "partial_broader_assessments": 184,
+    "replacement_candidates": 200,
+    "retired_exposed_drafts": 200,
+    "safe_summary": "reports/evaluation-safe-summary.json",
+    "scope_counts": {
+      "bounded_synthetic_conditional_calculation": 6,
+      "operational_or_explicit_clarification": 10
+    },
+    "scoped_assessments_complete": 16,
+    "successful_advice_cases": 0
+  },
+  "format_version": 2,
+  "information_requirements": {
+    "database_proposal_complete": false,
+    "full_case_to_field_traceability_complete": false,
+    "new_consolidated_requirements": 16
+  },
+  "legacy": {
+    "candidate_original_associations": 8,
+    "completed_reconciliations": 0,
+    "identities_preserved": 203,
+    "latest_register": "registers/legacy-assessment-20260910-r2.json"
+  },
+  "originals": {
+    "all_insurer_coverage_established": false,
+    "complete_rule_denominator": null,
+    "hdfc_image_product_rows_manually_transcribed": 23,
+    "integrity_failures": 0,
+    "later_regulatory_amendment_completeness_established": false,
+    "manual_scope_classifications": 9,
+    "new_original_observation_locations_verified": 107,
+    "newly_acquired_regulator_pdfs": 2,
+    "preserved_objects": 2758,
+    "preserved_pdf_objects": 2313,
+    "previous_first_two_page_triage_pdf_count": 2311,
+    "previous_selected_observations": 64,
+    "star_procedure_table_cells_manually_transcribed": 120,
+    "star_recharge_rows_manually_transcribed": 4,
+    "verified_non_pdf_objects": 445
+  },
+  "previous_checkpoint": "reports/assessment-progress-20260910.json",
+  "reference": {
+    "additional_source_derived_partial_cases": 3,
+    "adviser_attempts": 0,
+    "calendar_checks_passed": 8,
+    "completed_full_customer_decisions": 0,
+    "individually_authored_information_maps": 200,
+    "new_independently_reviewed_arithmetic_results": 8,
+    "original_active_cases": 200,
+    "original_cases_requirements_only": 158,
+    "original_cases_with_substantive_assessment_or_operational_script": 42,
+    "partial_policy_decisions": 28,
+    "policy_original_backed_records": 32,
+    "recorded_calculation_illustrations": 12,
+    "reviewed_operational_reference_scripts": 10,
+    "reviewed_scoped_threshold_assessments": 4,
+    "supplementary_cases": 3
+  },
+  "release_ready": false,
+  "schema_implementation_started": false,
+  "stage": "Original evidence and scenario assessment before the complete database proposal",
+  "status": "Partial. Full requested assessment and database proposal remain unfinished.",
+  "unfinished_requirements": [
+    "Reconcile all legacy identities, exact versions and variants",
+    "Finish medical-expense scope classification and original discovery for all 20 insurers",
+    "Complete independent page, table, figure, footnote and rule inventories; resolve connected clauses and original conflicts",
+    "Complete all 400 substantive worked decisions, calculations, alternatives and multi-turn scripts",
+    "Independently verify distinctness and compound coverage in both splits",
+    "Establish access-controlled benchmark custody and freeze independent cases",
+    "Derive complete ERD, field dictionary, rule representations, constraints, retrieval catalogue and migration mappings from finished assessments",
+    "Discuss and explicitly approve resulting design before models and migrations"
+  ],
+  "verification": {
+    "arithmetic_review": "reports/reference-topup-review.json",
+    "conversation_review": "reports/reference-conversation-review.json",
+    "date_checks": "reports/reference-date-checks.json",
+    "new_code_or_schema_changes_this_continuation": false,
+    "operational_structure": "reports/reference-conversation-structure-check.json",
+    "prior_code_checks_not_rerun": "No code changed in this continuation. Earlier research test/type/lint results remain in the previous checkpoint; no new claim of broader app verification.",
+    "structural_and_original_quote_checks": "reports/assessment-verification-20260910-r2.json"
+  }
+}

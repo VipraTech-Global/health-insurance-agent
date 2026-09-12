@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T11:53:45.878043+00:00",
+  "associations": [],
+  "byte_count": 976870,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/retail_personal_accident_df914eb28e.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1670,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.8898,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.8898,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.8898,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.8898,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2756
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "5a60c04f561c5653d18ee18342cab0df203a1b841184a48b242234b482bfd14c",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/retail_personal_accident_df914eb28e.pdf"
+}

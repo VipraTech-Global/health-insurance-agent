@@ -1,0 +1,53 @@
+{
+  "attempts": [
+    {
+      "insurer_id": "care",
+      "url": "https://www.careinsurance.com/other-downloads.html",
+      "status": "failed",
+      "issues": [
+        "http_403"
+      ],
+      "sha256": "5f7ce56aac0448278f76a189b29f112e696331dd0214a881637dcea306981896",
+      "acquired_at": "2026-09-10T14:11:00.454536+00:00",
+      "http_status": 403,
+      "document_type": "unclassified"
+    },
+    {
+      "insurer_id": "oriental",
+      "url": "https://csc.orientalinsurance.org.in/download-policy-terms-conditions",
+      "status": "failed",
+      "issues": [
+        "ConnectTimeout"
+      ],
+      "sha256": null,
+      "acquired_at": "2026-09-10T14:11:00.699991+00:00",
+      "http_status": null,
+      "document_type": "unclassified"
+    },
+    {
+      "insurer_id": "united-india",
+      "url": "https://uiic.co.in/en/downloadforms/downloads",
+      "status": "failed",
+      "issues": [
+        "http_404"
+      ],
+      "sha256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880",
+      "acquired_at": "2026-09-10T14:11:10.861423+00:00",
+      "http_status": 404,
+      "document_type": "unclassified"
+    },
+    {
+      "insurer_id": "icici-lombard",
+      "url": "https://www.icicilombard.com/downloads?download=true",
+      "status": "failed",
+      "issues": [
+        "http_403"
+      ],
+      "sha256": "8b1c3ac4a949823d8893df28ccd4b5e306a32e68771e093d4b826a0014661da9",
+      "acquired_at": "2026-09-10T14:11:11.280119+00:00",
+      "http_status": 403,
+      "document_type": "unclassified"
+    }
+  ],
+  "method": "Existing acquisition module on exact selected official seed pages; original bytes and failures retained in attempt/object registers."
+}

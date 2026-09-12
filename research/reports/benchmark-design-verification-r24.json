@@ -1,0 +1,75 @@
+{
+  "revision": "discussion-r24",
+  "generated_at_utc": "2026-09-12T15:14:38.918770+00:00",
+  "status": "passed",
+  "scope": "Structural verification of approved Batch 17 benchmark proposal; no implementation, freeze, run or result is claimed.",
+  "checks": [
+    {
+      "check": "24 unique benchmark models",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "field count is internally consistent",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all foreign-key targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no application foreign keys",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no generic artifact or local principal model",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "protected case and oracle stores are typed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "exact immutable freeze joins exist",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all acceptance result types exist",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "fixed evaluation denominators preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "buying/comparison scope resolved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "closed contracts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no actual protected benchmark records claimed",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 12,
+  "failed": 0,
+  "benchmark_entities": 24,
+  "benchmark_fields": 296,
+  "foreign_keys": 39,
+  "payload_contracts": 12,
+  "overall_database_design_approval": false
+}

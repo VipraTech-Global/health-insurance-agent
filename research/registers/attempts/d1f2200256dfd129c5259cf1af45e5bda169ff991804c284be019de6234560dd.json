@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:38:34.663204+00:00",
+  "associations": [],
+  "byte_count": 3544,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/captcha?url=//pages/doc/premium_chart/Health%20Recharge.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1367,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "d49ceea33b19b1e2eaf9eaabc76470b75aa7abdfbcdd4fcecb9ab83d7b88dac7",
+  "status": "failed",
+  "url": "https://transactions.nivabupa.com/pages/doc/premium_chart/Health Recharge.pdf"
+}

@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:51:57.443773+00:00",
+  "associations": [],
+  "byte_count": 471836,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/pages/doc/brochure/Niva_Axis_Xpress%20Health_SS_v10%20revised.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 401,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "ae5189af12b5a129e678af2932da93138095708c5a85c39003adab8bc3c51e92",
+  "status": "acquired",
+  "url": "https://transactions.nivabupa.com/pages/doc/brochure/Niva_Axis_Xpress Health_SS_v10 revised.pdf"
+}

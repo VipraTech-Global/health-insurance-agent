@@ -1,0 +1,368 @@
+{
+  "revision": "discussion-r16",
+  "scope": "Nine supplemental original-derived reference cases; not replacements for or increments in the fixed200+200 acceptance denominator. Selected field trace is illustrative and not proof of full schema sufficiency.",
+  "dictionary_sha256": "e3c5093b08c09d2b0c3fe0f780eddb082340385c27833b19b4ff9ed3e399241a",
+  "cases": [
+    {
+      "case_id": "additional-r13-combi-01",
+      "title": "Can I cancel only the life policy during the Health Maximiser free-look period?",
+      "assessment_artifact": "research/reference/additional-combi-case-r13.json",
+      "assessment_sha256": "e2aa82f4debb20d44b08cb84683bd550fd5ce1421207e9b07049d608b6f2d088",
+      "split": "additional_reference_outside_fixed400",
+      "derived_requirements": [
+        {
+          "purpose": "Preserve wrapper/component identity, actual owned package membership, component-specific insured people, corrected package receipts and coupled consequences",
+          "proposed_fields": [
+            "TermsComponent.id",
+            "TermsComponent.created_at",
+            "TermsComponent.wrapper_terms_id",
+            "TermsComponent.slot_code",
+            "TermsComponent.component_product_id",
+            "TermsComponent.component_terms_id",
+            "TermsComponent.asserted_component_uin",
+            "TermsComponent.role",
+            "TermsComponent.selection_kind",
+            "TermsComponent.selection_policy_rule_id",
+            "TermsComponent.source_span_id",
+            "TermsComponent.status",
+            "TermsComponent.supersedes_id",
+            "ContractBundle.id",
+            "ContractBundle.created_at",
+            "ContractBundle.owner_id",
+            "ContractBundle.label",
+            "ContractBundle.external_reference",
+            "ContractBundle.current_revision_id",
+            "ContractBundleRevision.id",
+            "ContractBundleRevision.created_at",
+            "ContractBundleRevision.owner_id",
+            "ContractBundleRevision.bundle_id",
+            "ContractBundleRevision.revision",
+            "ContractBundleRevision.wrapper_configuration_id",
+            "ContractBundleRevision.previous_id",
+            "ContractBundleRevision.membership_state",
+            "ContractBundleRevision.status",
+            "ContractBundleRevision.source_span_id",
+            "ContractBundleRevision.sealed_at",
+            "ContractBundleRevision.membership_sha256",
+            "ContractBundleRevision.seal_format_version",
+            "ContractBundleMember.id",
+            "ContractBundleMember.created_at",
+            "ContractBundleMember.owner_id",
+            "ContractBundleMember.bundle_revision_id",
+            "ContractBundleMember.terms_component_id",
+            "ContractBundleMember.customer_policy_revision_id",
+            "ContractBundleMember.selection_status",
+            "ContractBundleMember.source_span_id",
+            "ContractBundleMember.source_fact_id",
+            "Product.recommendation_role",
+            "Product.insurer_id",
+            "CustomerStatement.kind",
+            "CustomerFact.value",
+            "CustomerFact.logical_key",
+            "PolicyEvent.customer_policy_id",
+            "PolicyEvent.event_type",
+            "PolicyEvent.authority_evidence_id",
+            "PolicyRule.body",
+            "PolicyMember.person_id",
+            "Artifact.kind"
+          ],
+          "field_requirement_basis": [
+            "CAL-01",
+            "CAL-02",
+            "CAL-03",
+            "CAL-04",
+            "CUS-01",
+            "CUS-02",
+            "CUS-03",
+            "DEC-01",
+            "INS-01",
+            "INS-03",
+            "INS-05",
+            "INS-06",
+            "INS-07",
+            "INS-08",
+            "INS-10",
+            "OPS-02",
+            "OPS-03",
+            "OPS-06"
+          ]
+        }
+      ],
+      "complete_customer_decision": false,
+      "counts_as_advice_success": false
+    },
+    {
+      "case_id": "additional-r12-10-01",
+      "title": "Does correcting prior Tata policy history remove one co-payment before the aggregate deductible?",
+      "assessment_artifact": "research/reference/additional-tata-copay-case-r12.json",
+      "assessment_sha256": "2b5384d3ec9f9c7372a78ec6e5a385fc89e6c0b930cd31b67bc18fd84ae41041",
+      "split": "additional_reference_outside_fixed400",
+      "derived_requirements": [
+        {
+          "purpose": "Correct prior insurer entry age and accepted continuity to recompute additive co-pay before the annual aggregate deductible",
+          "proposed_fields": [
+            "PolicyRule.body",
+            "Calculation.inputs",
+            "Calculation.operations",
+            "Calculation.result",
+            "Calculation.assumptions",
+            "Calculation.status",
+            "UsageEntry.scope",
+            "UsageEntry.occurred_on",
+            "PolicyVersion.applicability"
+          ],
+          "field_requirement_basis": [
+            "CAL-01",
+            "CAL-02",
+            "CAL-03",
+            "CAL-04",
+            "DEC-01",
+            "INS-02",
+            "INS-05",
+            "INS-07"
+          ]
+        }
+      ],
+      "complete_customer_decision": false,
+      "counts_as_advice_success": false
+    },
+    {
+      "case_id": "ref-09-11",
+      "title": "A modern-treatment table changes its input column between variants.",
+      "assessment_artifact": "research/reference/additional-cases-original-derived.jsonl",
+      "assessment_sha256": "d8b2e411d3af8a0681b367aa25f75a654a8598b94a42384a973a26fe6710764c",
+      "split": "additional_reference_outside_fixed400",
+      "derived_requirements": [
+        {
+          "purpose": "Preserve variant-dependent table input axes, exact headings/cells/footnotes and unknown final payment",
+          "proposed_fields": [
+            "ProductVariant.choices",
+            "PolicyRule.body",
+            "PolicyRuleEvidence.evidence_span_id",
+            "PolicyRuleTableCell.selectors",
+            "PolicyRuleTableCell.value",
+            "Calculation.inputs",
+            "Calculation.result"
+          ],
+          "field_requirement_basis": [
+            "CAL-01",
+            "CAL-02",
+            "CAL-03",
+            "CAL-04",
+            "DEC-01",
+            "INS-01",
+            "INS-03",
+            "INS-04",
+            "INS-05"
+          ]
+        }
+      ],
+      "complete_customer_decision": false,
+      "counts_as_advice_success": false
+    },
+    {
+      "case_id": "ref-05-11",
+      "title": "A PED amendment names applicable products in an image-only table.",
+      "assessment_artifact": "research/reference/additional-cases-original-derived.jsonl",
+      "assessment_sha256": "d8b2e411d3af8a0681b367aa25f75a654a8598b94a42384a973a26fe6710764c",
+      "split": "additional_reference_outside_fixed400",
+      "derived_requirements": [
+        {
+          "purpose": "Bind image-table amendment applicability to exact underlying product and edition, with visible original evidence",
+          "proposed_fields": [
+            "PolicyVersion.applicability",
+            "PolicyVersionDocument.role",
+            "PolicyVersionDocument.applicability",
+            "PolicyVersionDocument.precedence_evidence_id",
+            "ProductVariant.identity_evidence_id",
+            "PolicyRule.body"
+          ],
+          "field_requirement_basis": [
+            "CAL-01",
+            "CAL-02",
+            "CAL-03",
+            "CAL-04",
+            "INS-01",
+            "INS-02",
+            "INS-03",
+            "INS-04",
+            "INS-05"
+          ]
+        }
+      ],
+      "complete_customer_decision": false,
+      "counts_as_advice_success": false
+    },
+    {
+      "case_id": "ref-16-11",
+      "title": "Policy terms changed for regulatory compliance while the UIN stayed the same.",
+      "assessment_artifact": "research/reference/additional-cases-original-derived.jsonl",
+      "assessment_sha256": "d8b2e411d3af8a0681b367aa25f75a654a8598b94a42384a973a26fe6710764c",
+      "split": "additional_reference_outside_fixed400",
+      "derived_requirements": [
+        {
+          "purpose": "Allow separate actual term revisions under one UIN and retain their original bundle and applicable dates",
+          "proposed_fields": [
+            "PolicyVersion.uin",
+            "PolicyVersion.supersedes_id",
+            "PolicyVersion.applicability",
+            "PolicyVersionDocument.document_version_id",
+            "SourceObservation.label_or_context",
+            "SourceObservation.created_at"
+          ],
+          "field_requirement_basis": [
+            "INS-02",
+            "INS-04",
+            "INS-05"
+          ]
+        }
+      ],
+      "complete_customer_decision": false,
+      "counts_as_advice_success": false
+    },
+    {
+      "case_id": "additional-r8-12-01",
+      "title": "Does last year’s cancer reinstatement prevent this year’s fracture reinstatement, and does the same-member 15-day gap still apply?",
+      "assessment_artifact": "research/reference/additional-original-derived-cases-r8.jsonl",
+      "assessment_sha256": "76de9166b8df013fe5e0d8197e7e68cac899d907d035c7ed011fe1c41dea1d4e",
+      "split": "additional_reference_outside_fixed400",
+      "derived_requirements": [
+        {
+          "purpose": "Scope reinstatement frequency by annual period, insured lifetime, condition and selected benefit; compare corrected discharge/admission events",
+          "proposed_fields": [
+            "PolicyRule.body",
+            "UsageEntry.scope",
+            "UsageEntry.occurred_on",
+            "UsageEntry.claim_payment_id",
+            "Calculation.operations",
+            "Calculation.inputs",
+            "Calculation.result",
+            "Calculation.assumptions"
+          ],
+          "field_requirement_basis": [
+            "CAL-01",
+            "CAL-02",
+            "CAL-03",
+            "CAL-04",
+            "DEC-01",
+            "INS-05",
+            "INS-07",
+            "INS-09"
+          ]
+        }
+      ],
+      "complete_customer_decision": false,
+      "counts_as_advice_success": false
+    },
+    {
+      "case_id": "additional-r8-11-01",
+      "title": "Can the Health Care Supreme Plan A total of INR 642500 all fund a hospitalization?",
+      "assessment_artifact": "research/reference/additional-original-derived-cases-r8.jsonl",
+      "assessment_sha256": "76de9166b8df013fe5e0d8197e7e68cac899d907d035c7ed011fe1c41dea1d4e",
+      "split": "additional_reference_outside_fixed400",
+      "derived_requirements": [
+        {
+          "purpose": "Keep component total separate from claim-usable hospitalization pool and unknown Plan A tier identity",
+          "proposed_fields": [
+            "PolicyRule.body",
+            "PolicyRuleTableCell.selectors",
+            "PolicyRuleTableCell.value",
+            "ProductVariant.choices",
+            "Calculation.status",
+            "Calculation.inputs",
+            "Calculation.result"
+          ],
+          "field_requirement_basis": [
+            "CAL-01",
+            "CAL-02",
+            "CAL-03",
+            "CAL-04",
+            "DEC-01",
+            "INS-01",
+            "INS-03",
+            "INS-04",
+            "INS-05"
+          ]
+        }
+      ],
+      "complete_customer_decision": false,
+      "counts_as_advice_success": false
+    },
+    {
+      "case_id": "additional-r8-11-02",
+      "title": "Which Golden Shield room rule applies when the same wording contains A and B inpatient structures?",
+      "assessment_artifact": "research/reference/additional-original-derived-cases-r8.jsonl",
+      "assessment_sha256": "76de9166b8df013fe5e0d8197e7e68cac899d907d035c7ed011fe1c41dea1d4e",
+      "split": "additional_reference_outside_fixed400",
+      "derived_requirements": [
+        {
+          "purpose": "Select A/B inpatient room structure before evaluating percent/cap and per-day cost difference",
+          "proposed_fields": [
+            "ProductVariant.choices",
+            "PolicyRuleTableCell.selectors",
+            "PolicyRule.body",
+            "Calculation.operations",
+            "Calculation.inputs",
+            "Calculation.status",
+            "Calculation.assumptions",
+            "Calculation.result"
+          ],
+          "field_requirement_basis": [
+            "CAL-01",
+            "CAL-02",
+            "CAL-03",
+            "CAL-04",
+            "DEC-01",
+            "INS-01",
+            "INS-03",
+            "INS-04",
+            "INS-05"
+          ]
+        }
+      ],
+      "complete_customer_decision": false,
+      "counts_as_advice_success": false
+    },
+    {
+      "case_id": "additional-r10-19-01",
+      "title": "Do a reimbursement deadline and delayed-payment interest start on the same event?",
+      "assessment_artifact": "research/reference/additional-claim-clock-case-r10.json",
+      "assessment_sha256": "193d4b7d3b6ec349985e4b80dd75049eaace604c4b33bd2c5e411f8f67c95197",
+      "split": "additional_reference_outside_fixed400",
+      "derived_requirements": [
+        {
+          "purpose": "Distinguish submission, app upload, confirmed insurer receipt, requirement necessity and actual payment; preserve unknown interest amount",
+          "proposed_fields": [
+            "ClaimEvent.kind",
+            "ClaimEvent.occurred_at",
+            "ClaimEvent.sender",
+            "ClaimEvent.recipient",
+            "ClaimEvent.documentation",
+            "ClaimEvent.supersedes_id",
+            "ClaimDocumentRequirement.necessity",
+            "ClaimDocumentRequirement.accepted_form",
+            "ClaimDocumentRequirement.authority_span_id",
+            "ClaimDocumentReceipt.receipt_event_id",
+            "ClaimDocumentReceipt.requirement_id",
+            "ClaimDocumentReceipt.assessment",
+            "ClaimPayment.payment_event_id",
+            "ClaimPayment.indemnity",
+            "ClaimPayment.interest",
+            "Calculation.inputs",
+            "Calculation.result",
+            "Calculation.assumptions"
+          ],
+          "field_requirement_basis": [
+            "CAL-01",
+            "CAL-02",
+            "CAL-03",
+            "DEC-01",
+            "INS-09"
+          ]
+        }
+      ],
+      "complete_customer_decision": false,
+      "counts_as_advice_success": false
+    }
+  ]
+}

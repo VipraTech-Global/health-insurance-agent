@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T11:59:02.939416+00:00",
+  "associations": [],
+  "byte_count": 161920,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/property/policy-wordings-digit-flexi-griha-raksha-policy-add-ons.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "go-digit",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 282,
+  "linking_url": "https://www.godigit.com/downloads",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "bc1b738c9b60c5cbebe72722d307158039579f3a689c820b270ecaf520126001",
+  "status": "acquired",
+  "url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/property/policy-wordings-digit-flexi-griha-raksha-policy-add-ons.pdf"
+}

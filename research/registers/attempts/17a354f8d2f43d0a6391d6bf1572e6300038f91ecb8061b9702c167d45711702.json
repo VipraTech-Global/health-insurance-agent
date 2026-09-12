@@ -1,0 +1,81 @@
+{
+  "acquired_at": "2026-09-10T11:53:58.955451+00:00",
+  "associations": [],
+  "byte_count": 1387805,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/tata_aig_travel_insurance_student_proposal_0523e2b8d5.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1024,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 7,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "1ccff6bd2d1c09c12663b14e03b37183afd0a1835ee6f85879f108dcaadf4fd2",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/tata_aig_travel_insurance_student_proposal_0523e2b8d5.pdf"
+}

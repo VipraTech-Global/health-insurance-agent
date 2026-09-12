@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T12:00:09.934723+00:00",
+  "associations": [],
+  "byte_count": 498799,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.generalicentralinsurance.com/downloads/health-insurance/saral-suraksha-bima,-generali-central-insurance-company-limited/claim-forms/saral-suraksha-bima-gci-claim-form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "generali-central",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 505,
+  "linking_url": "https://www.generalicentralinsurance.com/customer-service/downloads",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "61e0dd0b83442e778f7b8054aab22624ac5f335a4ad3e8cda5541c6b8c301bc5",
+  "status": "acquired",
+  "url": "https://www.generalicentralinsurance.com/downloads/health-insurance/saral-suraksha-bima,-generali-central-insurance-company-limited/claim-forms/saral-suraksha-bima-gci-claim-form.pdf"
+}

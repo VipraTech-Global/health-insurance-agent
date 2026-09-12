@@ -1,0 +1,91 @@
+{
+  "review_revision": "database-proposal-review-r6",
+  "reviewed_at_utc": "2026-09-10T18:39:15.172287+00:00",
+  "scope": "Bounded discussion-r6 combi proposal delta only; no schema/application implementation and no private evaluation read.",
+  "status": "material_proposal_corrections_required",
+  "proposal_approval": "not_approved",
+  "reviewed_files": [
+    {
+      "path": "research/design/entity-field-dictionary.json",
+      "sha256": "21ff6633ae59c3ee2fc68f5450e78221da3cc2aee7679d221023e07ce0a85bbd"
+    },
+    {
+      "path": "research/design/json-contracts.schema.json",
+      "sha256": "7beccca0f95c108f742283f679a8f9296b84cfa8aeb4a3c09fb28182e7c4dfb4"
+    },
+    {
+      "path": "research/design/relationships.json",
+      "sha256": "83733f63b39592b5452b0067baf63e7f8771440185aa086187c433093f71ac9b"
+    },
+    {
+      "path": "research/design/combi-worked-records-r6.json",
+      "sha256": "140d4655a6574d6ae83c33ed1aa7a5b5508edc1b38c7020f297b7ef8e0154cc9"
+    },
+    {
+      "path": "research/design/combi-design-change-r6.json",
+      "sha256": "7ee4e8f46d4d4feb49c7ba6043bcb49ad1e76fe83cbdc4bf21a8c5f268b3759a"
+    },
+    {
+      "path": "research/design/relationships-and-lifecycle.md",
+      "sha256": "5c4308dd9f1fb9b0825ebd6724a194d6715d9f7dfe297b6eb0bf3efab56d7177"
+    },
+    {
+      "path": "research/design/value-and-rule-contracts.md",
+      "sha256": "99978d8166ac280789c42d6c80b167e7374a600be06b97e5bbe1816735da2025"
+    }
+  ],
+  "material_findings": [
+    {
+      "id": "COMBI-R6-01",
+      "severity": "HIGH",
+      "title": "Cancellation consequences have no distinct event vocabulary for confirmation and refund",
+      "locations": [
+        "entity-field-dictionary.json: PolicyEvent.kind",
+        "entity-field-dictionary.json: ContractBundleRevision.status/constraints",
+        "relationships-and-lifecycle.md: Combi identities, package revisions and consequences"
+      ],
+      "issue": "The proposal says enquiry, request, insurer receipt, effective termination and refund are distinct assertions, and verified cancelled status requires insurer-event evidence. PolicyEvent.kind retains only cancellation_notice among cancellation events and no refund-paid/termination-effective/insurer-receipt kinds. Generic receipt or cancellation_notice plus confirmed status cannot distinguish notice confirmation from actual effective termination. The new amount field cannot tell a quoted refund from payment without an appropriate event type.",
+      "counterexample": "The insurer acknowledges receipt of a cancellation request, without deciding it. A verified cancellation_notice row is still not evidence that both component policies terminated. The proposed kind set cannot express the later insurer termination and actual refund as the distinct events promised by the lifecycle.",
+      "required_revision": "Add or explicitly map separate typed cancellation request, insurer receipt/decision, effective termination and refund payment/reversal events, retaining source authority, actual occurrence time and linkage. Define exactly which authoritative event can support each package/component status. Do not infer actual events from RuleV1 effects or customer enquiry."
+    },
+    {
+      "id": "COMBI-R6-02",
+      "severity": "HIGH",
+      "title": "Membership sealing has no explicit enforceable persistence boundary",
+      "locations": [
+        "entity-field-dictionary.json: ContractBundleRevision fields and constraints",
+        "entity-field-dictionary.json: ContractBundleMember constraints",
+        "relationships-and-lifecycle.md: Create a new immutable package revision"
+      ],
+      "issue": "Member immutability is described as applying after revision sealing, but the revision has no seal/publication state or time, while status is a separate contractual state. No equivalent database guard defines when a member INSERT is no longer allowed. Atomic creation and current-pointer movement alone do not prevent a later transaction adding another optional member to a formerly current revision and changing saved consequence targets.",
+      "counterexample": "Revision1 was current and used by a saved answer; revision2 later becomes current. A new member can be appended to revision1 unless the database recognizes its prior seal independently of the current pointer. Existing field vocabulary cannot identify that historical seal.",
+      "required_revision": "Specify an explicit immutable seal state/time/digest or an equivalent enforceable construction/commit protocol. Seal the exact member set, check closure, and only then advance the current pointer. Reject member INSERT/UPDATE/DELETE after sealing, including old and abandoned revisions, except authorized erasure under its separate policy."
+    },
+    {
+      "id": "COMBI-R6-03",
+      "severity": "HIGH",
+      "title": "Duplicate-component guard uses revision identity instead of underlying policy identity",
+      "locations": [
+        "entity-field-dictionary.json: ContractBundleMember contract_revision_id and duplicate-slot constraint"
+      ],
+      "issue": "The constraint forbids the same owned contract revision in two slots, but two distinct revisions of one PolicyContract can bypass it. Same-owner/product/issuer checks do not prevent this when a wrapper has multiple slots for the same product. Two required component policies could therefore be reported present when only one underlying policy exists.",
+      "counterexample": "Slots health_a and health_b both allow productP. MemberA uses ContractRevision7 and memberB ContractRevision8, both belonging to the same PolicyContract. Revision IDs are different, but there is only one legal component policy.",
+      "required_revision": "Enforce default uniqueness of the underlying contract_id across distinct selected slots in a bundle revision as well as revision identity. If a reviewed source explicitly permits the same legal policy to fill multiple slots, represent and verify that exception. Validate the chosen revision applicability and do not silently treat historical versions as simultaneous separate cover."
+    }
+  ],
+  "supported_design_points": [
+    "ContractBundle is explicitly an owned package identity, not a manufactured third PolicyContract; original component issuers/UINs remain separate.",
+    "Public TermsComponent evidence and selection rules require public scope; private membership verification explicitly requires issued private proof, not the public specimen acceptance letter.",
+    "Composite owner FKs and deferred wrapper/product/issuer/edition lineage checks are specified, along with same-bundle current/previous-pointer constraints and compare-and-swap fencing.",
+    "Missing component wording may remain unresolved through nullable component_terms_id; asserted UIN does not manufacture complete component terms.",
+    "Component ContractMember rows determine insured people. Public nonmedical-reference life products remain excluded from medical recommendations and the selected20-insurer denominator.",
+    "BundleConsequenceV1 is a closed explanation-only effect with exact slots and mandatory scope/dependency checks; worked records contain no actual cancellations or manufactured refund.",
+    "Package receipt corrections use an explicit owned bundle fact subject; dependency/artifact additions retain historical source/member revisions."
+  ],
+  "verification_limits": [
+    "Read-only proposal review; no models, migrations, database, Django settings/services or external cancellation actions were exercised.",
+    "Parent-reported structural/shape results were not rerun and were not treated as semantic approval. No claim that proposed constraints already run.",
+    "The design-change source_sha256 is the case-file hash (verified), while the worked record original_identity retains the distinct insurer-original hash."
+  ],
+  "followup_casework": "Resume separate first100-reference reassessment; do not alter canonical200."
+}

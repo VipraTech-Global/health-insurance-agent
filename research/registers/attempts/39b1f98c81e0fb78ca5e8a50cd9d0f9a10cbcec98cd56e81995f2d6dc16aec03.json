@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:03:09.178311+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/paripoorna-ayush-bima/PMAB%20Health%20Exam%20Slip.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 6375,
+  "linking_url": "https://www.newindia.co.in/health-insurance/paripoorna-ayush-bima",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "953e076ba85bac0bc114ef08c79e6553e63f0df0093e2c248ce225fa7d03acd3",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/paripoorna-ayush-bima/PMAB Health Exam Slip.pdf"
+}

@@ -1,0 +1,73 @@
+{
+  "acquired_at": "2026-09-10T11:58:20.052981+00:00",
+  "associations": [],
+  "byte_count": 194113,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/Group_Domestic_Travel_Policy_CIS_KEN_7b07bf1659.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 729,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 6,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.891,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.891,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "d5df0422b70fb83c2a53cfea0bca0084e782d04c9f33b5242ff1f100013aab0d",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/Group_Domestic_Travel_Policy_CIS_KEN_7b07bf1659.pdf"
+}

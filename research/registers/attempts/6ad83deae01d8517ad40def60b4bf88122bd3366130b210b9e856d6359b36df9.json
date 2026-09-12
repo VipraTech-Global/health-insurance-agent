@@ -1,0 +1,97 @@
+{
+  "acquired_at": "2026-09-10T11:58:21.524313+00:00",
+  "associations": [],
+  "byte_count": 180910,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/d1709886ff2a4d2da1abc7f7b068a7f0.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 303,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 9,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "5b6202751449c847b842a79fd2111e96b93e7cf65ad88c530a0ea98928e0b0c8",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/d1709886ff2a4d2da1abc7f7b068a7f0.pdf"
+}

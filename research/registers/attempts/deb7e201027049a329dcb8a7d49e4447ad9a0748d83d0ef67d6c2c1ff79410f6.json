@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:52:42.173461+00:00",
+  "associations": [],
+  "byte_count": 267723,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://stgaccinwbsprdlrs01.blob.core.windows.net/nhilprd/Claims_FAQ_General_102f302b75.pdf?sv=2025-05-05&spr=https&st=2025-07-14T17%3A04%3A47Z&se=2035-07-12T17%3A04%3A47Z&sr=b&sp=r&sig=yhfE9iU0hIz%2Bozj0Fbjdv9z1kxjL5e7ptO5%2FI%2FSgwds%3D",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "narayana",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 436,
+  "linking_url": "https://www.narayanahealth.insurance/customer-support",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.25,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.5
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.25,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.5
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.25,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.5
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "dc5d8f41ebce6049c35cd5cd36cf4ddc2a5def8c104698af2d2361e705f038c1",
+  "status": "acquired",
+  "url": "https://stgaccinwbsprdlrs01.blob.core.windows.net/nhilprd/Claims_FAQ_General_102f302b75.pdf?sv=2025-05-05&spr=https&st=2025-07-14T17%3A04%3A47Z&se=2035-07-12T17%3A04%3A47Z&sr=b&sp=r&sig=yhfE9iU0hIz%2Bozj0Fbjdv9z1kxjL5e7ptO5%2FI%2FSgwds%3D"
+}

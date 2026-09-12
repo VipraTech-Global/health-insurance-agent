@@ -1,0 +1,73 @@
+{
+  "acquired_at": "2026-09-10T11:57:41.169752+00:00",
+  "associations": [],
+  "byte_count": 866176,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/Surety_Bond_Un_Conditional_CIS_eec10566bf.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 510,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 6,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 870.236,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 623.622
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 870.237,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 623.622
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 870.237,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 623.622
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 870.236,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 623.622
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 870.236,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 623.622
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 870.236,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 623.622
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "5a67d972b1931e962f8d1eade8f69db688e537c3fe8beab4368b5e3fa6b8499c",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/Surety_Bond_Un_Conditional_CIS_eec10566bf.pdf"
+}

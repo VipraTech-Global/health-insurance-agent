@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T11:57:45.053101+00:00",
+  "associations": [],
+  "byte_count": 529748,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/jan-arogya-bima-insurance/Jan%20Arogya%20Bima%20policy%20Proposal%20form%20WEF%2001%20OCT%202024.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 3626,
+  "linking_url": "https://www.newindia.co.in/health-insurance/jan-arogya-bima-policy",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.52
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "c5b300e3105dfa34678ea1edeed65d40d4b08e3c5d3a67f3f32f1d21b6d30efc",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/jan-arogya-bima-insurance/Jan Arogya Bima policy Proposal form WEF 01 OCT 2024.pdf"
+}

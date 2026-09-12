@@ -1,0 +1,65 @@
+{
+  "acquired_at": "2026-09-10T11:58:22.559739+00:00",
+  "associations": [],
+  "byte_count": 150576,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/Pradhan_Mantri_Fasal_Bima_Yojana_PMFBY_Wording_285c29c75f.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 284,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 5,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.273
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.274
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.274
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.274
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "579b6e0a9fa0a78da5b3e8b1e19d8d9b194f124174974e513fe24a7e2ff40cb2",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/Pradhan_Mantri_Fasal_Bima_Yojana_PMFBY_Wording_285c29c75f.pdf"
+}

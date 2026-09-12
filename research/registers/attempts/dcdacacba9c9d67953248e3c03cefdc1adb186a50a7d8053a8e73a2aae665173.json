@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:51:47.582931+00:00",
+  "associations": [],
+  "byte_count": 3633472,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/pages/doc/brochure/ReAssure_2.0_Bronze_plus_SS_with_Deductible.pdf?v=1.2",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1785,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "1083779f5213ea644b64cb25760c4ca40f3a0705b513a2e3c18ed9d9734625c2",
+  "status": "acquired",
+  "url": "https://transactions.nivabupa.com/pages/doc/brochure/ReAssure_2.0_Bronze_plus_SS_with_Deductible.pdf?v=1.2"
+}

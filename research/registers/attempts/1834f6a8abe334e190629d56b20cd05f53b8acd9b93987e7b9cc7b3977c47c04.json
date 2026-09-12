@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:56:33.816453+00:00",
+  "associations": [],
+  "byte_count": 240971,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/mediprime_tariff_sheet_3e39e38c2c.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 418,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "dcf55592588f737ad7e1978da89bf72ee23f06c317442d8798ce2d15a18a6071",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/mediprime_tariff_sheet_3e39e38c2c.pdf"
+}

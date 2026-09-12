@@ -1,0 +1,73 @@
+{
+  "acquired_at": "2026-09-10T12:04:09.446658+00:00",
+  "associations": [],
+  "byte_count": 283636,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/NMP%20CIS.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "national",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 714,
+  "linking_url": "https://nationalinsurance.nic.co.in/products/all-products/health/national-mediclaim-policy-individual-plan",
+  "page_count": 6,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "fe98a3e6eb2d5aff11c3afec0353cf59b8646b78749d3aa6dd52daa3fd3beae4",
+  "status": "acquired",
+  "url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/NMP%20CIS.pdf"
+}

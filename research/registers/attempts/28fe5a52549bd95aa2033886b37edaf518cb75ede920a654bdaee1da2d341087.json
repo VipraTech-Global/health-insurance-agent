@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:53:28.267148+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/list_of_sundry_creditors/Outstanding%20dues%20to%20creditors%20of%20The%20New%20India%20Assurance%20Co.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 2061,
+  "linking_url": "https://www.newindia.co.in/health-insurance/atmanirbhar-health-policy",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "24d1ee9f869dcd83ac12eb3602425dc598569c0d074f25d158d84ddd8c5fb087",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/list_of_sundry_creditors/Outstanding dues to creditors of The New India Assurance Co.pdf"
+}

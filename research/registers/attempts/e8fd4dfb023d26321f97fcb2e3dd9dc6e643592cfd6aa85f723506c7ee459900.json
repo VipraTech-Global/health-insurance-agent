@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T12:00:27.981775+00:00",
+  "associations": [],
+  "byte_count": 153078,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.generalicentralinsurance.com/downloads/other-insurance/business-suraksha/prospectus-forms/business-suraksha-policy-prospectus-retail.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "generali-central",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 372,
+  "linking_url": "https://www.generalicentralinsurance.com/customer-service/downloads",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.889763779528,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.303937007874
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889763779528,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.303937007874
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889763779528,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.303937007874
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889763779528,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.303937007874
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "e2607dfe913eafbcd1da5afb463390089cd0ac4145a2f3bf3e809876bb44ab62",
+  "status": "acquired",
+  "url": "https://www.generalicentralinsurance.com/downloads/other-insurance/business-suraksha/prospectus-forms/business-suraksha-policy-prospectus-retail.pdf"
+}

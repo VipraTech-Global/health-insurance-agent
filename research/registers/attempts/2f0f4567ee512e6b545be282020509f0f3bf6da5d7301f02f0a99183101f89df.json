@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:38:29.730882+00:00",
+  "associations": [],
+  "byte_count": 3541,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/captcha?url=//pages/doc/brochure/Niva_Axis_CASA_SS_v17.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1327,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "a66b1659bcabdeea78a53a327cf3d8530d6301ab3e515a274a502065b1b5bd0a",
+  "status": "failed",
+  "url": "https://transactions.nivabupa.com/pages/doc/brochure/Niva_Axis_CASA_SS_v17.pdf"
+}

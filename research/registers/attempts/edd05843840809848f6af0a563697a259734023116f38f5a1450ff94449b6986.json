@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:58:32.703130+00:00",
+  "associations": [],
+  "byte_count": 52565,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/EQUAL_opportunity_notice_d9aa9f76b4.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 221,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.22
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "c9ac0fa55f8f5a1e377ff7de6bd956de020958468ef737f91c541281d7de5f24",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/EQUAL_opportunity_notice_d9aa9f76b4.pdf"
+}

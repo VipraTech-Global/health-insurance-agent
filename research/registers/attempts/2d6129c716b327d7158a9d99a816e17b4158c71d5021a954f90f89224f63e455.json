@@ -1,0 +1,81 @@
+{
+  "acquired_at": "2026-09-10T11:57:39.765713+00:00",
+  "associations": [],
+  "byte_count": 174085,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/1a6c381721464cefbd8df89bc384fed0.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 441,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 7,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.032,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.008
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.032,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.008
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.032,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.008
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.032,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.008
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.032,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.008
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.032,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.008
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.032,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.008
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "1f1640d7ba5bdb22d6e3a562a45587b57ba088b5165969a9466ced227f961a86",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/1a6c381721464cefbd8df89bc384fed0.pdf"
+}

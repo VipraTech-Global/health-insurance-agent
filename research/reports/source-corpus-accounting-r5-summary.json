@@ -1,0 +1,56 @@
+{
+  "format_version": 1,
+  "started_at": "2026-09-10T15:12:07.887308+00:00",
+  "finished_at": "2026-09-10T15:12:21.806081+00:00",
+  "snapshot_manifest": "registers/source-corpus-inputs-r5.json",
+  "snapshot_manifest_sha256": "a5beaedb7565098199185364f5ccde7d220ea04c37ea928936d6f0d58b6b725d",
+  "snapshot_object_set_stable_during_scan": true,
+  "object_files_added_during_scan": [],
+  "attempt_files_added_during_scan": [],
+  "object_count": 2814,
+  "byte_format_counts": {
+    "pdf": 2357,
+    "non_pdf": 457
+  },
+  "status_counts": {
+    "automated_preview_only_scope_unreviewed": 2222,
+    "nonpdf_scope_unreviewed": 453,
+    "r5_manual_pdf_scope": 128,
+    "r5_manual_nonpdf_scope": 4,
+    "prior_manual_scope_not_reconciled_in_r5": 7
+  },
+  "integrity_counts": {
+    "verified": 2814
+  },
+  "provenance_counts": {
+    "acquisition_attempt_recorded": 2801,
+    "no_attempt_found_requires_import_reconciliation": 12,
+    "legacy_import_recorded_acquisition_time_unknown": 1
+  },
+  "r4_manual_pdf_count": 100,
+  "r5_additional_manual_pdf_count": 28,
+  "r5_manual_pdf_count": 128,
+  "r5_manual_nonpdf_count": 4,
+  "prior_r2_manual_scope_count": 9,
+  "manual_scope_sources_missing_from_snapshot": [],
+  "acquisition_attempt_file_count": 3284,
+  "parsed_attempt_count": 3284,
+  "attempt_status_counts": {
+    "acquired": 2596,
+    "failed": 688
+  },
+  "attempts_without_preserved_bytes_count": 296,
+  "attempts_with_missing_object_count": 0,
+  "reader_errors": [],
+  "scope_classification_complete": false,
+  "independent_relevant_rule_denominator": null,
+  "rule_inventory_complete": false,
+  "design_ready": false,
+  "limitations": [
+    "Frozen filesystem and register snapshot; later acquisitions are outside this count. Every enumerated object has exactly one accounting row.",
+    "Manual scope proves document relevance at cited original passages, not complete inventory of pages, tables, figures, footnotes or connected rules.",
+    "Automated preview signals never promote scope to reviewed. Non-PDF bytes, access responses and unsupported media remain visible.",
+    "Prior manual assertions are preserved and separately attributed; they are not represented as newly reviewed in this subtask.",
+    "Acquisition records without bytes remain explicit failures/outcomes; an acquired object without a recorded attempt needs import provenance reconciliation."
+  ]
+}

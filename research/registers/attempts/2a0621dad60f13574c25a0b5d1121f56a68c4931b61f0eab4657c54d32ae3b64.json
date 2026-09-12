@@ -1,0 +1,73 @@
+{
+  "acquired_at": "2026-09-10T11:58:07.289843+00:00",
+  "associations": [],
+  "byte_count": 551305,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/Sampoorna_Arogya_Group_Enrollment_Form2402_683c5c9466.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 5032,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 6,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "a517d65e28f64c6fca7bb17823a098083f4f79aaab34887b10b0ad43b854cee5",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/Sampoorna_Arogya_Group_Enrollment_Form2402_683c5c9466.pdf"
+}

@@ -1,0 +1,129 @@
+{
+  "acquired_at": "2026-09-10T12:01:47.004359+00:00",
+  "associations": [],
+  "byte_count": 344564,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://acko-cms.ackoassets.com/Prospectus_Corona_Kavach_Policy_54369cc749.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "acko",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 580,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": 13,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 11,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 12,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 13,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "239b9d0fd0a98d5907da2bd50c14ed28528c23ac84157212fd7f903929408120",
+  "status": "acquired",
+  "url": "https://acko-cms.ackoassets.com/Prospectus_Corona_Kavach_Policy_54369cc749.pdf"
+}

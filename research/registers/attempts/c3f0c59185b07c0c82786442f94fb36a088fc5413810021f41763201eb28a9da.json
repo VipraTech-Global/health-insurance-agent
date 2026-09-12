@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:02:05.447030+00:00",
+  "associations": [],
+  "byte_count": 243,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/xml",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.acko.com/wp-content/uploads/2020/10/Corona-Kavach-Policy-Acko-General-Insurance-Ltd.pdf",
+  "format_version": 1,
+  "http_status": 403,
+  "insurer_id": "acko",
+  "issues": [
+    "http_403"
+  ],
+  "language": "unknown",
+  "latency_ms": 148,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "e9b27a876998d0cedcf35cfc7ab08ab6d2933d0313db9b257265829d523efa1d",
+  "status": "failed",
+  "url": "https://www.acko.com/wp-content/uploads/2020/10/Corona-Kavach-Policy-Acko-General-Insurance-Ltd.pdf"
+}

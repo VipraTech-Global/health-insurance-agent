@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:01:09.471281+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/arogya-sanjeevani/Arogya%20Sanjeevani%20Premium%20Chart.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1358,
+  "linking_url": "https://www.newindia.co.in/health-insurance/arogya-sanjeevani-policy",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "cf40f4baf2bd69d9258fec4b81fc0fa80e8f147f728b1d6e690b465df24e8462",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/arogya-sanjeevani/Arogya Sanjeevani Premium Chart.pdf"
+}

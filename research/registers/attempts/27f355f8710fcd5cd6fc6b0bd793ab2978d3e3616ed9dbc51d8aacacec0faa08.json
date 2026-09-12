@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:51:43.582333+00:00",
+  "associations": [],
+  "byte_count": 2016897,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/pages/doc/brochure/Empower_Health_Plan_SS.pdf?v=1.1",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 734,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "a55b0f97c85ee9a0ae28f3ef7dcb7a00c5ce9cd99e659b8f88c4468ecc3f9105",
+  "status": "acquired",
+  "url": "https://transactions.nivabupa.com/pages/doc/brochure/Empower_Health_Plan_SS.pdf?v=1.1"
+}

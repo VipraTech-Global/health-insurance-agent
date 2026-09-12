@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:53:39.736818+00:00",
+  "associations": [],
+  "byte_count": 130514,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.bajajgeneralinsurance.com/download-documents/other-information/BAGIC-Citizen-Charter.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "bajaj-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 248,
+  "linking_url": "https://www.bajajgeneralinsurance.com/health-insurance-plans.html",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "bc4c75062889663be633e9a1b9f75367273d35e2467658782f7b4dbc2515aa89",
+  "status": "acquired",
+  "url": "https://www.bajajgeneralinsurance.com/download-documents/other-information/BAGIC-Citizen-Charter.pdf"
+}

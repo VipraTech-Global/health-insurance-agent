@@ -1,0 +1,21 @@
+{
+  "acquired_at": "2026-09-10T11:59:17.349333+00:00",
+  "associations": [],
+  "component_version": "research-acquisition/1",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "format_version": 1,
+  "insurer_id": "acko",
+  "issues": [
+    "host_not_approved"
+  ],
+  "language": "unknown",
+  "latency_ms": 2,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": null,
+  "status": "failed",
+  "url": "https://assets.ctfassets.net/uwf0n1j71a7j/oLY9Lk88eGRJeAQhzUzVC/9c99b3cb5f24e3fefb977b112794639a/arogya-sanjeevani-policyclaim-form-a.pdf"
+}

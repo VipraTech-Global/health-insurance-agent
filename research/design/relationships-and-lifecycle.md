@@ -1,0 +1,19 @@
+# Relationships, ownership and lifecycle
+
+Every private row is reached through its owning `Account`; selectors check ownership even when a caller supplies a UUID. People, conversations, messages, uploads, policies, quotes, recommendations, turns, model attempts and deletion/audit records cannot cross owners. A nullable `OriginalFile.owner_id` has strict meaning: NULL is a public-corpus object and non-NULL is a private owner namespace; ownership can never be removed to make a private file public.
+
+`PersonRelationship` describes family context. `PolicyMember` separately proves membership in an issued policy. `CustomerFact` and `CustomerRequirement` versions share logical keys; the latest accepted version at a `CustomerProfileRevision` is current. `Conversation.current_profile_revision_id` is the only current pointer.
+
+A customer submission creates an immutable `Message` and `Turn` in one short transaction. `Turn.starting_profile_revision_id` is optional because the first message has no prior profile. Fact interpretation may create a new profile revision. A published `Recommendation.profile_revision_id` points to the final evaluated profile. Concurrent incompatible corrections cause a stale outcome rather than publishing against the wrong facts.
+
+Long conversations use owner-scoped `ConversationMessageChunk` rows for BM25 and vector ranking. Current structured facts and requirements override historical chunk matches. Retrieval loads exact messages after ranking, uses summaries only as hints and never treats an old contradicted message as current truth.
+
+Public evidence follows typed provenance from `DiscoveryRun` through `SourceURL`, `SourceObservation`, `SourceCapture`, `OriginalFile`, `DocumentVersion`, `DocumentPage` and `EvidenceSpan`. Policy publication uses complete applicable document membership and reviewed rule dependencies. A changed source creates a new capture/version; it never overwrites history.
+
+Existing customer policies are stored only to compare current cover or individual offers with a proposed purchase. Revisions, members, options and personal terms are evidenced. There is no customer policy-event or claim-administration workflow. Public claim, cancellation and renewal procedures may remain `PolicyRule` records because customers compare those terms.
+
+`KnowledgeRelease` membership is immutable. `KnowledgeChannel` switches to a validated published release atomically. Saved recommendations continue to point to the exact old release. Changes to customer facts, applicable product versions, mandatory rules, evidence availability, quote validity or provider snapshots mark dependent advice stale.
+
+`Outbox` is committed with its typed target before Celery dispatch. A worker lease fences stale workers. `TurnEvent.sequence` supports reconnect without new inference. Model attempts and processing jobs expose timeouts, transport/schema/identity errors, retries and retained encrypted outputs.
+
+Deletion first fences pending work through account erasure generation, then erases selected private content, derived chunks, copied model payloads, caches and applicable backups. Minimal tombstones and safe audit metadata remain only under the approved retention policy. No legal-hold subsystem is assumed by this proposal.

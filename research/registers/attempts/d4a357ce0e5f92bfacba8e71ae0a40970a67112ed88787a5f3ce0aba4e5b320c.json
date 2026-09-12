@@ -1,0 +1,73 @@
+{
+  "acquired_at": "2026-09-10T11:55:56.885956+00:00",
+  "associations": [],
+  "byte_count": 298929,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/Corona_kavach_Policy_CIS_fa6cc3c7dc.PDF",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 255,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 6,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.56,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.56,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.56,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.56,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.56,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.56,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.04
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "b2db227245679d1bdd39935d9ac988260b5c81dcf4239c4d31807c8854dd3487",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/Corona_kavach_Policy_CIS_fa6cc3c7dc.PDF"
+}

@@ -1,0 +1,1643 @@
+{
+  "generated_at": "2026-09-09T14:06:06.647284+00:00",
+  "listings": [
+    {
+      "displayed_name": "Platinum Health",
+      "ditto_path": "/health-insurance/acko/platinum-health/",
+      "insurer__name": "Acko",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Standard Health",
+      "ditto_path": "/health-insurance/acko/standard-health/",
+      "insurer__name": "Acko",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Activ Assured Diamond",
+      "ditto_path": "/health-insurance/aditya-birla/Activ-assured-diamond/",
+      "insurer__name": "Aditya Birla",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Activ Care Classic",
+      "ditto_path": "/health-insurance/aditya-birla/Activ-care-classic/",
+      "insurer__name": "Aditya Birla",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Activ Care Premier",
+      "ditto_path": "/health-insurance/aditya-birla/Activ-care-premier/",
+      "insurer__name": "Aditya Birla",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Activ Care Standard",
+      "ditto_path": "/health-insurance/aditya-birla/Activ-care-standard/",
+      "insurer__name": "Aditya Birla",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Activ Fit Preferred",
+      "ditto_path": "/health-insurance/aditya-birla/activ-fit-preferred/",
+      "insurer__name": "Aditya Birla",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Activ Health Platinum Enhanced",
+      "ditto_path": "/health-insurance/aditya-birla/activ-health-platinum-enhanced/",
+      "insurer__name": "Aditya Birla",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Activ Health Platinum Essential",
+      "ditto_path": "/health-insurance/aditya-birla/activ-health-platinum-essential/",
+      "insurer__name": "Aditya Birla",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Activ One Max",
+      "ditto_path": "/health-insurance/aditya-birla/activ-one-max/",
+      "insurer__name": "Aditya Birla",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Activ One Max Plus",
+      "ditto_path": "/health-insurance/aditya-birla/activ-one-max-plus/",
+      "insurer__name": "Aditya Birla",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Activ One Nxt",
+      "ditto_path": "/health-insurance/aditya-birla/activ-one-nxt/",
+      "insurer__name": "Aditya Birla",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Activ One Savr",
+      "ditto_path": "/health-insurance/aditya-birla/activ-one-savr/",
+      "insurer__name": "Aditya Birla",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Activ One Vip",
+      "ditto_path": "/health-insurance/aditya-birla/activ-one-vip/",
+      "insurer__name": "Aditya Birla",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Activ One Vip Plus",
+      "ditto_path": "/health-insurance/aditya-birla/activ-one-vip-plus/",
+      "insurer__name": "Aditya Birla",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Activ One Vytl",
+      "ditto_path": "/health-insurance/aditya-birla/activ-one-vytl/",
+      "insurer__name": "Aditya Birla",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Aditya Birla Activ Fit Plus",
+      "ditto_path": "/health-insurance/aditya-birla/aditya-birla-activ-fit-plus/",
+      "insurer__name": "Aditya Birla",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Super Health Plus Top Up",
+      "ditto_path": "/health-insurance/aditya-birla/super-health-plus-top-up/",
+      "insurer__name": "Aditya Birla",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Test",
+      "ditto_path": "/health-insurance/apollo-munich/test/",
+      "insurer__name": "Apollo Munich",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Extra Care Plus Super Top Up",
+      "ditto_path": "/health-insurance/bajaj-general/extra-care-plus-super-top-up/",
+      "insurer__name": "Bajaj General",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Extra Care Top Up",
+      "ditto_path": "/health-insurance/bajaj-general/extra-care-top-up/",
+      "insurer__name": "Bajaj General",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Care Supreme Smart",
+      "ditto_path": "/health-insurance/bajaj-general/health-care-supreme-smart/",
+      "insurer__name": "Bajaj General",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Care Supreme Ultimo",
+      "ditto_path": "/health-insurance/bajaj-general/health-care-supreme-ultimo/",
+      "insurer__name": "Bajaj General",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Care Supreme Vital",
+      "ditto_path": "/health-insurance/bajaj-general/health-care-supreme-vital/",
+      "insurer__name": "Bajaj General",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Ensure Family Plan",
+      "ditto_path": "/health-insurance/bajaj-general/health-ensure-family-plan/",
+      "insurer__name": "Bajaj General",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Guard Gold",
+      "ditto_path": "/health-insurance/bajaj-general/health-guard-gold/",
+      "insurer__name": "Bajaj General",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Guard Platinum",
+      "ditto_path": "/health-insurance/bajaj-general/health-guard-platinum/",
+      "insurer__name": "Bajaj General",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Guard Silver",
+      "ditto_path": "/health-insurance/bajaj-general/health-guard-silver/",
+      "insurer__name": "Bajaj General",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Silver Health",
+      "ditto_path": "/health-insurance/bajaj-general/silver-health/",
+      "insurer__name": "Bajaj General",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Care",
+      "ditto_path": "/health-insurance/care/care/",
+      "insurer__name": "Care",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Care Advantage",
+      "ditto_path": "/health-insurance/care/care-advantage/",
+      "insurer__name": "Care",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Care Classic",
+      "ditto_path": "/health-insurance/care/care-classic/",
+      "insurer__name": "Care",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Care Freedom Plan",
+      "ditto_path": "/health-insurance/care/care-freedom-plan/",
+      "insurer__name": "Care",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Care Heart",
+      "ditto_path": "/health-insurance/care/care-heart/",
+      "insurer__name": "Care",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Care Plus Complete",
+      "ditto_path": "/health-insurance/care/care-plus-complete/",
+      "insurer__name": "Care",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Care Plus Youth",
+      "ditto_path": "/health-insurance/care/care-plus-youth/",
+      "insurer__name": "Care",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Care Senior",
+      "ditto_path": "/health-insurance/care/care-senior/",
+      "insurer__name": "Care",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Care Supreme",
+      "ditto_path": "/health-insurance/care/care-supreme/",
+      "insurer__name": "Care Health Insurance Limited",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "active",
+      "status_reason": "One-plan local pilot: current official wording and four decision-relevant facts verified. Premium, hospital network, rating, and underwriting remain unverified."
+    },
+    {
+      "displayed_name": "Care Supreme Senior Premium",
+      "ditto_path": "/health-insurance/care/care-supreme-senior-premium/",
+      "insurer__name": "Care",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Care Supreme Senior Super",
+      "ditto_path": "/health-insurance/care/care-supreme-senior-super/",
+      "insurer__name": "Care",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Care Supreme Super Saver",
+      "ditto_path": "/health-insurance/care/care-supreme-super-saver/",
+      "insurer__name": "Care",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Care Supreme Value For Money",
+      "ditto_path": "/health-insurance/care/care-supreme-value-for-money/",
+      "insurer__name": "Care",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Care Ultimate",
+      "ditto_path": "/health-insurance/care/care-ultimate/",
+      "insurer__name": "Care",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Enhance Super Top Up",
+      "ditto_path": "/health-insurance/care/enhance-super-top-up/",
+      "insurer__name": "Care",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Joy Today",
+      "ditto_path": "/health-insurance/care/joy-today/",
+      "insurer__name": "Care",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Joy Tomorrow",
+      "ditto_path": "/health-insurance/care/joy-tomorrow/",
+      "insurer__name": "Care",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Senior Health Advantage",
+      "ditto_path": "/health-insurance/care/senior-health-advantage/",
+      "insurer__name": "Care",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Supreme Enhance Super Top Up",
+      "ditto_path": "/health-insurance/care/supreme-enhance-super-top-up/",
+      "insurer__name": "Care",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Double Wallet",
+      "ditto_path": "/health-insurance/digit/double-wallet/",
+      "insurer__name": "Digit",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Infinity Wallet",
+      "ditto_path": "/health-insurance/digit/infinity-wallet/",
+      "insurer__name": "Digit",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Worldwide Treatment",
+      "ditto_path": "/health-insurance/digit/worldwide-treatment/",
+      "insurer__name": "Digit",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Easy Health Exclusive",
+      "ditto_path": "/health-insurance/hdfc-ergo/easy-health-exclusive/",
+      "insurer__name": "Hdfc Ergo",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Easy Health Premium",
+      "ditto_path": "/health-insurance/hdfc-ergo/easy-health-premium/",
+      "insurer__name": "Hdfc Ergo",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Easy Health Standard",
+      "ditto_path": "/health-insurance/hdfc-ergo/easy-health-standard/",
+      "insurer__name": "Hdfc Ergo",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Energy Gold",
+      "ditto_path": "/health-insurance/hdfc-ergo/energy-gold/",
+      "insurer__name": "Hdfc Ergo",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Energy Silver",
+      "ditto_path": "/health-insurance/hdfc-ergo/energy-silver/",
+      "insurer__name": "Hdfc Ergo",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Equicover",
+      "ditto_path": "/health-insurance/hdfc-ergo/equicover/",
+      "insurer__name": "Hdfc Ergo",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Wallet",
+      "ditto_path": "/health-insurance/hdfc-ergo/health-wallet/",
+      "insurer__name": "Hdfc Ergo",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Myhealth Koti Suraksha",
+      "ditto_path": "/health-insurance/hdfc-ergo/myhealth-koti-suraksha/",
+      "insurer__name": "Hdfc Ergo",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Myhealth Medisure Super Top Up",
+      "ditto_path": "/health-insurance/hdfc-ergo/myhealth-medisure-super-top-up/",
+      "insurer__name": "Hdfc Ergo",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Myhealth Suraksha Gold",
+      "ditto_path": "/health-insurance/hdfc-ergo/myhealth-suraksha-gold/",
+      "insurer__name": "Hdfc Ergo",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Myhealth Suraksha Platinum",
+      "ditto_path": "/health-insurance/hdfc-ergo/myhealth-suraksha-platinum/",
+      "insurer__name": "Hdfc Ergo",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Myhealth Suraksha Silver",
+      "ditto_path": "/health-insurance/hdfc-ergo/myhealth-suraksha-silver/",
+      "insurer__name": "Hdfc Ergo",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Optima Lite",
+      "ditto_path": "/health-insurance/hdfc-ergo/optima-lite/",
+      "insurer__name": "Hdfc Ergo",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Optima Restore",
+      "ditto_path": "/health-insurance/hdfc-ergo/optima-restore/",
+      "insurer__name": "Hdfc Ergo",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Optima Secure",
+      "ditto_path": "/health-insurance/hdfc-ergo/optima-secure/",
+      "insurer__name": "Hdfc Ergo",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Optima Secure Global",
+      "ditto_path": "/health-insurance/hdfc-ergo/optima-secure-global/",
+      "insurer__name": "Hdfc Ergo",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Optima Secure Global Plus",
+      "ditto_path": "/health-insurance/hdfc-ergo/optima-secure-global-plus/",
+      "insurer__name": "Hdfc Ergo",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Optima Secure Plus",
+      "ditto_path": "/health-insurance/hdfc-ergo/optima-secure-plus/",
+      "insurer__name": "Hdfc Ergo",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Optima Senior",
+      "ditto_path": "/health-insurance/hdfc-ergo/optima-senior/",
+      "insurer__name": "Hdfc Ergo",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Optima Super Secure",
+      "ditto_path": "/health-insurance/hdfc-ergo/optima-super-secure/",
+      "insurer__name": "Hdfc Ergo",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Elevate",
+      "ditto_path": "/health-insurance/icici-lombard/elevate/",
+      "insurer__name": "Icici Lombard",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Golden Shield",
+      "ditto_path": "/health-insurance/icici-lombard/golden-shield/",
+      "insurer__name": "Icici Lombard",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Advantedge",
+      "ditto_path": "/health-insurance/icici-lombard/health-advantedge/",
+      "insurer__name": "Icici Lombard",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Booster Super Top Up",
+      "ditto_path": "/health-insurance/icici-lombard/health-booster-super-top-up/",
+      "insurer__name": "Icici Lombard",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Elite Plus",
+      "ditto_path": "/health-insurance/icici-lombard/health-elite-plus/",
+      "insurer__name": "Icici Lombard",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Shield 360",
+      "ditto_path": "/health-insurance/icici-lombard/health-shield-360/",
+      "insurer__name": "Icici Lombard",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Shield 360 Retail",
+      "ditto_path": "/health-insurance/icici-lombard/health-shield-360-retail/",
+      "insurer__name": "Icici Lombard",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Ihealth",
+      "ditto_path": "/health-insurance/icici-lombard/ihealth/",
+      "insurer__name": "Icici Lombard",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Ihealth Plus",
+      "ditto_path": "/health-insurance/icici-lombard/ihealth-plus/",
+      "insurer__name": "Icici Lombard",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Max Protect Classic",
+      "ditto_path": "/health-insurance/icici-lombard/max-protect-classic/",
+      "insurer__name": "Icici Lombard",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Max Protect Premium",
+      "ditto_path": "/health-insurance/icici-lombard/max-protect-premium/",
+      "insurer__name": "Icici Lombard",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Family Health Protector",
+      "ditto_path": "/health-insurance/iffco-tokio/family-health-protector/",
+      "insurer__name": "Iffco Tokio",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Individual Health Protector",
+      "ditto_path": "/health-insurance/iffco-tokio/individual-health-protector/",
+      "insurer__name": "Iffco Tokio",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Lifetime Health",
+      "ditto_path": "/health-insurance/manipal-cigna/lifetime-health/",
+      "insurer__name": "Manipal Cigna",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Lifetime Health Global",
+      "ditto_path": "/health-insurance/manipal-cigna/lifetime-health-global/",
+      "insurer__name": "Manipal Cigna",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Prohealth Accumulate",
+      "ditto_path": "/health-insurance/manipal-cigna/prohealth-accumulate/",
+      "insurer__name": "Manipal Cigna",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Prohealth Plus",
+      "ditto_path": "/health-insurance/manipal-cigna/prohealth-plus/",
+      "insurer__name": "Manipal Cigna",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Prohealth Preferred",
+      "ditto_path": "/health-insurance/manipal-cigna/prohealth-preferred/",
+      "insurer__name": "Manipal Cigna",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Prohealth Premier",
+      "ditto_path": "/health-insurance/manipal-cigna/prohealth-premier/",
+      "insurer__name": "Manipal Cigna",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Prohealth Prime Active",
+      "ditto_path": "/health-insurance/manipal-cigna/prohealth-prime-active/",
+      "insurer__name": "Manipal Cigna",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Prohealth Prime Advantage",
+      "ditto_path": "/health-insurance/manipal-cigna/prohealth-prime-advantage/",
+      "insurer__name": "Manipal Cigna",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Prohealth Prime Protect",
+      "ditto_path": "/health-insurance/manipal-cigna/prohealth-prime-protect/",
+      "insurer__name": "Manipal Cigna",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Prohealth Prime Senior Classic",
+      "ditto_path": "/health-insurance/manipal-cigna/prohealth-prime-senior-classic/",
+      "insurer__name": "Manipal Cigna",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Prohealth Prime Senior Elite",
+      "ditto_path": "/health-insurance/manipal-cigna/prohealth-prime-senior-elite/",
+      "insurer__name": "Manipal Cigna",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Prohealth Protect",
+      "ditto_path": "/health-insurance/manipal-cigna/prohealth-protect/",
+      "insurer__name": "Manipal Cigna",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Prohealth Select",
+      "ditto_path": "/health-insurance/manipal-cigna/prohealth-select/",
+      "insurer__name": "Manipal Cigna",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Securehealth",
+      "ditto_path": "/health-insurance/manipal-cigna/securehealth/",
+      "insurer__name": "Manipal Cigna",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Super Top Up",
+      "ditto_path": "/health-insurance/manipal-cigna/super-top-up/",
+      "insurer__name": "Manipal Cigna",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "National Mediclaim Plus Policy",
+      "ditto_path": "/health-insurance/national-insurance/national-mediclaim-plus-policy/",
+      "insurer__name": "National Insurance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "National Mediclaim Policy",
+      "ditto_path": "/health-insurance/national-insurance/national-mediclaim-policy/",
+      "insurer__name": "National Insurance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "National Parivar Mediclaim Plus Policy",
+      "ditto_path": "/health-insurance/national-insurance/national-parivar-mediclaim-plus-policy/",
+      "insurer__name": "National Insurance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "National Parivar Mediclaim Policy",
+      "ditto_path": "/health-insurance/national-insurance/national-parivar-mediclaim-policy/",
+      "insurer__name": "National Insurance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "National Senior Citizen Mediclaim Policy",
+      "ditto_path": "/health-insurance/national-insurance/national-senior-citizen-mediclaim-policy/",
+      "insurer__name": "National Insurance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Super Top Up Mediclaim",
+      "ditto_path": "/health-insurance/national-insurance/super-top-up-mediclaim/",
+      "insurer__name": "National Insurance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Navi Health",
+      "ditto_path": "/health-insurance/navi/navi-health/",
+      "insurer__name": "Navi",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Floater Mediclaim",
+      "ditto_path": "/health-insurance/new-india-assurance/floater-mediclaim/",
+      "insurer__name": "New India Assurance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Mediclaim",
+      "ditto_path": "/health-insurance/new-india-assurance/mediclaim/",
+      "insurer__name": "New India Assurance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "New India Top Up Mediclaim",
+      "ditto_path": "/health-insurance/new-india-assurance/new-india-top-up-mediclaim/",
+      "insurer__name": "New India Assurance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Premier Mediclaim",
+      "ditto_path": "/health-insurance/new-india-assurance/premier-mediclaim/",
+      "insurer__name": "New India Assurance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Senior Citizen Mediclaim",
+      "ditto_path": "/health-insurance/new-india-assurance/senior-citizen-mediclaim/",
+      "insurer__name": "New India Assurance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Sixty Plus Mediclaim",
+      "ditto_path": "/health-insurance/new-india-assurance/sixty-plus-mediclaim/",
+      "insurer__name": "New India Assurance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Yuva Bharat Health",
+      "ditto_path": "/health-insurance/new-india-assurance/yuva-bharat-health/",
+      "insurer__name": "New India Assurance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Yuva Bharat Health Gold",
+      "ditto_path": "/health-insurance/new-india-assurance/yuva-bharat-health-gold/",
+      "insurer__name": "New India Assurance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Yuva Bharat Health Platinum",
+      "ditto_path": "/health-insurance/new-india-assurance/yuva-bharat-health-platinum/",
+      "insurer__name": "New India Assurance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Aspire Diamond Plus",
+      "ditto_path": "/health-insurance/niva-bupa/aspire-diamond-plus/",
+      "insurer__name": "Niva Bupa",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Aspire Gold Plus",
+      "ditto_path": "/health-insurance/niva-bupa/aspire-gold-plus/",
+      "insurer__name": "Niva Bupa",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Aspire Platinum Plus",
+      "ditto_path": "/health-insurance/niva-bupa/aspire-platinum-plus/",
+      "insurer__name": "Niva Bupa",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Aspire Titanium Plus",
+      "ditto_path": "/health-insurance/niva-bupa/aspire-titanium-plus/",
+      "insurer__name": "Niva Bupa",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Goactive",
+      "ditto_path": "/health-insurance/niva-bupa/goactive/",
+      "insurer__name": "Niva Bupa",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Companion",
+      "ditto_path": "/health-insurance/niva-bupa/health-companion/",
+      "insurer__name": "Niva Bupa",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Premia Gold",
+      "ditto_path": "/health-insurance/niva-bupa/health-premia-gold/",
+      "insurer__name": "Niva Bupa",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Premia Platinum",
+      "ditto_path": "/health-insurance/niva-bupa/health-premia-platinum/",
+      "insurer__name": "Niva Bupa",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Premia Silver",
+      "ditto_path": "/health-insurance/niva-bupa/health-premia-silver/",
+      "insurer__name": "Niva Bupa",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Pulse Classic",
+      "ditto_path": "/health-insurance/niva-bupa/health-pulse-classic/",
+      "insurer__name": "Niva Bupa",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Pulse Enhanced",
+      "ditto_path": "/health-insurance/niva-bupa/health-pulse-enhanced/",
+      "insurer__name": "Niva Bupa",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Recharge Super Top Up",
+      "ditto_path": "/health-insurance/niva-bupa/health-recharge-super-top-up/",
+      "insurer__name": "Niva Bupa",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Heartbeat Gold",
+      "ditto_path": "/health-insurance/niva-bupa/heartbeat-gold/",
+      "insurer__name": "Niva Bupa",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Heartbeat Platinum",
+      "ditto_path": "/health-insurance/niva-bupa/heartbeat-platinum/",
+      "insurer__name": "Niva Bupa",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Reassure",
+      "ditto_path": "/health-insurance/niva-bupa/reassure/",
+      "insurer__name": "Niva Bupa",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Reassure 2 Bronze",
+      "ditto_path": "/health-insurance/niva-bupa/reassure-2-bronze/",
+      "insurer__name": "Niva Bupa",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Reassure 2 Platinum",
+      "ditto_path": "/health-insurance/niva-bupa/reassure-2-platinum/",
+      "insurer__name": "Niva Bupa",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Reassure 2 Titanium",
+      "ditto_path": "/health-insurance/niva-bupa/reassure-2-titanium/",
+      "insurer__name": "Niva Bupa",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Senior First Gold",
+      "ditto_path": "/health-insurance/niva-bupa/senior-first-gold/",
+      "insurer__name": "Niva Bupa",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Senior First Platinum",
+      "ditto_path": "/health-insurance/niva-bupa/senior-first-platinum/",
+      "insurer__name": "Niva Bupa",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Happy Family Floater Policy Diamond",
+      "ditto_path": "/health-insurance/oriental-insurance/happy-family-floater-policy-diamond/",
+      "insurer__name": "Oriental Insurance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Happy Family Floater Policy Gold",
+      "ditto_path": "/health-insurance/oriental-insurance/happy-family-floater-policy-gold/",
+      "insurer__name": "Oriental Insurance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Happy Family Floater Policy Platinum",
+      "ditto_path": "/health-insurance/oriental-insurance/happy-family-floater-policy-platinum/",
+      "insurer__name": "Oriental Insurance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Happy Family Floater Policy Silver",
+      "ditto_path": "/health-insurance/oriental-insurance/happy-family-floater-policy-silver/",
+      "insurer__name": "Oriental Insurance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Of Privileged Elders",
+      "ditto_path": "/health-insurance/oriental-insurance/health-of-privileged-elders/",
+      "insurer__name": "Oriental Insurance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Mediclaim Insurance Policy",
+      "ditto_path": "/health-insurance/oriental-insurance/mediclaim-insurance-policy/",
+      "insurer__name": "Oriental Insurance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Super Health Top Up",
+      "ditto_path": "/health-insurance/oriental-insurance/super-health-top-up/",
+      "insurer__name": "Oriental Insurance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Gain Plus",
+      "ditto_path": "/health-insurance/reliance/health-gain-plus/",
+      "insurer__name": "Reliance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Gain Power",
+      "ditto_path": "/health-insurance/reliance/health-gain-power/",
+      "insurer__name": "Reliance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Gain Prime",
+      "ditto_path": "/health-insurance/reliance/health-gain-prime/",
+      "insurer__name": "Reliance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Infinity",
+      "ditto_path": "/health-insurance/reliance/health-infinity/",
+      "insurer__name": "Reliance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Super Top Up",
+      "ditto_path": "/health-insurance/reliance/super-top-up/",
+      "insurer__name": "Reliance",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Advanced Top Up",
+      "ditto_path": "/health-insurance/royal-sundaram/advanced-top-up/",
+      "insurer__name": "Royal Sundaram",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Family Plus",
+      "ditto_path": "/health-insurance/royal-sundaram/family-plus/",
+      "insurer__name": "Royal Sundaram",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Lifeline Classic",
+      "ditto_path": "/health-insurance/royal-sundaram/lifeline-classic/",
+      "insurer__name": "Royal Sundaram",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Lifeline Elite",
+      "ditto_path": "/health-insurance/royal-sundaram/lifeline-elite/",
+      "insurer__name": "Royal Sundaram",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Lifeline Supreme",
+      "ditto_path": "/health-insurance/royal-sundaram/lifeline-supreme/",
+      "insurer__name": "Royal Sundaram",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Multiplier Health",
+      "ditto_path": "/health-insurance/royal-sundaram/multiplier-health/",
+      "insurer__name": "Royal Sundaram",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Nextgen",
+      "ditto_path": "/health-insurance/royal-sundaram/nextgen/",
+      "insurer__name": "Royal Sundaram",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Arogya Plus",
+      "ditto_path": "/health-insurance/sbi/arogya-plus/",
+      "insurer__name": "Sbi",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Arogya Premier",
+      "ditto_path": "/health-insurance/sbi/arogya-premier/",
+      "insurer__name": "Sbi",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Arogya Supreme Plus",
+      "ditto_path": "/health-insurance/sbi/arogya-supreme-plus/",
+      "insurer__name": "Sbi",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Arogya Supreme Premium",
+      "ditto_path": "/health-insurance/sbi/arogya-supreme-premium/",
+      "insurer__name": "Sbi",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Arogya Supreme Pro",
+      "ditto_path": "/health-insurance/sbi/arogya-supreme-pro/",
+      "insurer__name": "Sbi",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Arogya Top Up",
+      "ditto_path": "/health-insurance/sbi/arogya-top-up/",
+      "insurer__name": "Sbi",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Retail Health Policy",
+      "ditto_path": "/health-insurance/sbi/retail-health-policy/",
+      "insurer__name": "Sbi",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Super Health Elite",
+      "ditto_path": "/health-insurance/sbi/super-health-elite/",
+      "insurer__name": "Sbi",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Super Health Platinum",
+      "ditto_path": "/health-insurance/sbi/super-health-platinum/",
+      "insurer__name": "Sbi",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Super Health Platinum Infinite",
+      "ditto_path": "/health-insurance/sbi/super-health-platinum-infinite/",
+      "insurer__name": "Sbi",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Super Health Premier",
+      "ditto_path": "/health-insurance/sbi/super-health-premier/",
+      "insurer__name": "Sbi",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Super Health Prime",
+      "ditto_path": "/health-insurance/sbi/super-health-prime/",
+      "insurer__name": "Sbi",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Assure",
+      "ditto_path": "/health-insurance/star-health/assure/",
+      "insurer__name": "Star Health",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Cancer Care Platinum",
+      "ditto_path": "/health-insurance/star-health/cancer-care-platinum/",
+      "insurer__name": "Star Health",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Cardiac Care Platinum",
+      "ditto_path": "/health-insurance/star-health/cardiac-care-platinum/",
+      "insurer__name": "Star Health",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Comprehensive",
+      "ditto_path": "/health-insurance/star-health/comprehensive/",
+      "insurer__name": "Star Health",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Diabetes Safe",
+      "ditto_path": "/health-insurance/star-health/diabetes-safe/",
+      "insurer__name": "Star Health",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Family Health Optima",
+      "ditto_path": "/health-insurance/star-health/family-health-optima/",
+      "insurer__name": "Star Health",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Gain",
+      "ditto_path": "/health-insurance/star-health/health-gain/",
+      "insurer__name": "Star Health",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Premier",
+      "ditto_path": "/health-insurance/star-health/health-premier/",
+      "insurer__name": "Star Health",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Medi Classic",
+      "ditto_path": "/health-insurance/star-health/medi-classic/",
+      "insurer__name": "Star Health",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Medi Classic Gold",
+      "ditto_path": "/health-insurance/star-health/medi-classic-gold/",
+      "insurer__name": "Star Health",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Red Carpet Senior Citizens",
+      "ditto_path": "/health-insurance/star-health/red-carpet-senior-citizens/",
+      "insurer__name": "Star Health",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Smart Health Pro",
+      "ditto_path": "/health-insurance/star-health/smart-health-pro/",
+      "insurer__name": "Star Health",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Special Care",
+      "ditto_path": "/health-insurance/star-health/special-care/",
+      "insurer__name": "Star Health",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Special Care Gold",
+      "ditto_path": "/health-insurance/star-health/special-care-gold/",
+      "insurer__name": "Star Health",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Super Star",
+      "ditto_path": "/health-insurance/star-health/super-star/",
+      "insurer__name": "Star Health",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Super Surplus Gold",
+      "ditto_path": "/health-insurance/star-health/super-surplus-gold/",
+      "insurer__name": "Star Health",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Women Care",
+      "ditto_path": "/health-insurance/star-health/women-care/",
+      "insurer__name": "Star Health",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Youngstar",
+      "ditto_path": "/health-insurance/star-health/youngstar/",
+      "insurer__name": "Star Health",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Elder Care",
+      "ditto_path": "/health-insurance/tata-aig/elder-care/",
+      "insurer__name": "Tata Aig",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Supercharge",
+      "ditto_path": "/health-insurance/tata-aig/health-supercharge/",
+      "insurer__name": "Tata Aig",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Medicare",
+      "ditto_path": "/health-insurance/tata-aig/medicare/",
+      "insurer__name": "Tata Aig",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Medicare Lite",
+      "ditto_path": "/health-insurance/tata-aig/medicare-lite/",
+      "insurer__name": "Tata Aig",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Medicare Plus Super Top Up",
+      "ditto_path": "/health-insurance/tata-aig/medicare-plus-super-top-up/",
+      "insurer__name": "Tata Aig",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Medicare Premier",
+      "ditto_path": "/health-insurance/tata-aig/medicare-premier/",
+      "insurer__name": "Tata Aig",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Medicare Protect",
+      "ditto_path": "/health-insurance/tata-aig/medicare-protect/",
+      "insurer__name": "Tata Aig",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Medicare Senior",
+      "ditto_path": "/health-insurance/tata-aig/medicare-senior/",
+      "insurer__name": "Tata Aig",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Family Medicare",
+      "ditto_path": "/health-insurance/united-india/family-medicare/",
+      "insurer__name": "United India",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Individual Gold Plan",
+      "ditto_path": "/health-insurance/united-india/individual-gold-plan/",
+      "insurer__name": "United India",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Individual Platinum Plan",
+      "ditto_path": "/health-insurance/united-india/individual-platinum-plan/",
+      "insurer__name": "United India",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Medicare Super Top Up",
+      "ditto_path": "/health-insurance/united-india/medicare-super-top-up/",
+      "insurer__name": "United India",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Senior Citizen Plan",
+      "ditto_path": "/health-insurance/united-india/senior-citizen-plan/",
+      "insurer__name": "United India",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Complete Healthcare Basic",
+      "ditto_path": "/health-insurance/universal-sompo/complete-healthcare-basic/",
+      "insurer__name": "Universal Sompo",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Complete Healthcare Essential",
+      "ditto_path": "/health-insurance/universal-sompo/complete-healthcare-essential/",
+      "insurer__name": "Universal Sompo",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Complete Healthcare Privilege",
+      "ditto_path": "/health-insurance/universal-sompo/complete-healthcare-privilege/",
+      "insurer__name": "Universal Sompo",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Insurance Gold",
+      "ditto_path": "/health-insurance/zuno/health-insurance-gold/",
+      "insurer__name": "Zuno",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Insurance Platinum",
+      "ditto_path": "/health-insurance/zuno/health-insurance-platinum/",
+      "insurer__name": "Zuno",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    },
+    {
+      "displayed_name": "Health Insurance Silver",
+      "ditto_path": "/health-insurance/zuno/health-insurance-silver/",
+      "insurer__name": "Zuno",
+      "last_observed_at": "2026-09-09T13:15:07.618624+00:00",
+      "status": "discovered",
+      "status_reason": ""
+    }
+  ],
+  "schema_version": 1,
+  "summary": {
+    "active_for_recommendation": 1,
+    "discovered": 203,
+    "documents": 1,
+    "extraction_revisions": 2,
+    "plan_versions": 1,
+    "published_extractions": 1,
+    "status_counts": {
+      "active": 1,
+      "discovered": 202
+    },
+    "verified_facts": 0
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "acquired_at": "2026-09-10T12:00:34.855413+00:00",
+  "associations": [],
+  "byte_count": 295829,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.generalicentralinsurance.com/downloads/other-insurance/jewellers-block-insurance/customer-information-sheet/jewellers-block-insurance-retail-cis.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "generali-central",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 323,
+  "linking_url": "https://www.generalicentralinsurance.com/customer-service/downloads",
+  "page_count": 9,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "8a881e1fb9c0d36585eee3e53034b4aa0e7a91caac5a32bbaec0758d95511c5a",
+  "status": "acquired",
+  "url": "https://www.generalicentralinsurance.com/downloads/other-insurance/jewellers-block-insurance/customer-information-sheet/jewellers-block-insurance-retail-cis.pdf"
+}

@@ -1,0 +1,105 @@
+{
+  "acquired_at": "2026-09-10T11:58:23.123352+00:00",
+  "associations": [],
+  "byte_count": 254064,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/SME_PACKAGE_INSURANCE_POLICY_Wording_af4b6fa270.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 361,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 10,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "d96fc619f33723e71b346dbe7a875ce1aa51ab030daa854fc390b082dafa5e79",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/SME_PACKAGE_INSURANCE_POLICY_Wording_af4b6fa270.pdf"
+}

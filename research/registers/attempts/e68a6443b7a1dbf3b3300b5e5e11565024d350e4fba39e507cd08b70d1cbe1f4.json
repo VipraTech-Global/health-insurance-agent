@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:52:45.414087+00:00",
+  "associations": [],
+  "byte_count": 596212,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://stgaccinwbsprdlrs01.blob.core.windows.net/nhilprd/List_of_Products_Offered_60ad7ebe6d.pdf?sv=2025-05-05&spr=https&st=2026-07-17T16%3A52%3A22Z&se=2036-07-14T16%3A52%3A22Z&sr=b&sp=r&sig=oyXLsXE8V0ZWuy63z3poHFeeac8F0XNenRBpYF5slWs%3D",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "narayana",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 520,
+  "linking_url": "https://www.narayanahealth.insurance/customer-support",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "f50fcdc80a8ac1eff7280400e67348b6390c1d3b7b4836154f6605ede2b90832",
+  "status": "acquired",
+  "url": "https://stgaccinwbsprdlrs01.blob.core.windows.net/nhilprd/List_of_Products_Offered_60ad7ebe6d.pdf?sv=2025-05-05&spr=https&st=2026-07-17T16%3A52%3A22Z&se=2036-07-14T16%3A52%3A22Z&sr=b&sp=r&sig=oyXLsXE8V0ZWuy63z3poHFeeac8F0XNenRBpYF5slWs%3D"
+}

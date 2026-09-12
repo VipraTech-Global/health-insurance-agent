@@ -1,0 +1,81 @@
+{
+  "acquired_at": "2026-09-10T12:01:48.716251+00:00",
+  "associations": [],
+  "byte_count": 459448,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://acko-cms.ackoassets.com/corona_kavach_policy_acko_general_insurance_ltd_proposal_form_49440079ef.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "acko",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 588,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": 7,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "93a8d5bc8ad7c98137a1ed3ea4d7bf1cb0b5521a043baa9b7a7fb971e144872b",
+  "status": "acquired",
+  "url": "https://acko-cms.ackoassets.com/corona_kavach_policy_acko_general_insurance_ltd_proposal_form_49440079ef.pdf"
+}

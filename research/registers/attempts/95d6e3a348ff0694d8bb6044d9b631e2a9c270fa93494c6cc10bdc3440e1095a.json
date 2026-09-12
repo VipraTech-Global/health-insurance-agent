@@ -1,0 +1,81 @@
+{
+  "acquired_at": "2026-09-10T12:01:51.078241+00:00",
+  "associations": [],
+  "byte_count": 156335,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://acko-cms.ackoassets.com/Policy_Wordings_Acko_Car_Package_Policy_Add_on_Covers_1_f8adc5e949.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "acko",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 306,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": 7,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "517ac7647fa471e4419c676296c8c24762bb46ca50093ac5626a0828ae462ebd",
+  "status": "acquired",
+  "url": "https://acko-cms.ackoassets.com/Policy_Wordings_Acko_Car_Package_Policy_Add_on_Covers_1_f8adc5e949.pdf"
+}

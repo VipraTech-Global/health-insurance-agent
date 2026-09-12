@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:52:12.264946+00:00",
+  "associations": [],
+  "byte_count": 695275,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/pages/doc/premium_chart/Elixir%20Rate%20card.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1744,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.8898,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.8898,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.8898,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2756
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "74e7c60f36f479282e2b1b18d8255da5b9e64bde6b8413f78856271b584a1fe4",
+  "status": "acquired",
+  "url": "https://transactions.nivabupa.com/pages/doc/premium_chart/Elixir Rate card.pdf"
+}

@@ -1,0 +1,252 @@
+{
+  "all400fullassessments_complete": false,
+  "evaluation_case_specific_content_included": false,
+  "field_dictionary_derivation_ready": false,
+  "format_version": 1,
+  "operational_requirements_separate_prefix": "OPS",
+  "requirements": [
+    {
+      "category": "Product applicability",
+      "information_requirement": "Retain product UIN separately from immutable terms revision and original hash. Record the policy event that selects the revision and the scope of each amendment.",
+      "observed_reason": "Regulatory revisions can retain the UIN. Acquisition date alone cannot select terms for an old claim.",
+      "original_or_operational_basis": [
+        "original-irdai-health-master-003",
+        "original-irdai-health-master-005"
+      ],
+      "reference_cases": [
+        "ref-16-11",
+        "ref-15-01"
+      ],
+      "requirement_id": "INS-REV-01"
+    },
+    {
+      "category": "Policy knowledge",
+      "information_requirement": "Preserve table selector, column value, units, procedure row, variant and connected footnote.",
+      "observed_reason": "The Silver procedure table uses the deductible as its selector; Gold uses sum insured. Both are INR amounts but have different meanings.",
+      "original_or_operational_basis": [
+        "registers/star-ssf-tables-original-reading.json"
+      ],
+      "reference_cases": [
+        "ref-09-11"
+      ],
+      "requirement_id": "INS-TABLE-01"
+    },
+    {
+      "category": "Calculations",
+      "information_requirement": "Distinguish fixed money, a dependent limit, unlimited, zero, unknown and not applicable.",
+      "observed_reason": "Some Gold modern-treatment rows say up to sum insured, a finite bound. The New India CIS describes its deductible as not applicable.",
+      "original_or_operational_basis": [
+        "registers/star-ssf-tables-original-reading.json",
+        "original-new-india-cis-003"
+      ],
+      "reference_cases": [
+        "ref-09-11",
+        "ref-11-04"
+      ],
+      "requirement_id": "INS-LIMIT-01"
+    },
+    {
+      "category": "Calculations",
+      "information_requirement": "Track expense admissibility and accumulation by episode, policy year and covered members, with prior usage and the revisions that established it.",
+      "observed_reason": "Two claims in different top-up years cannot be combined merely because they share an employer policy year.",
+      "original_or_operational_basis": [
+        "original-star-ssf-002",
+        "original-star-ssf-013",
+        "original-star-ssf-014",
+        "original-star-ssf-015",
+        "original-star-ssf-016"
+      ],
+      "reference_cases": [
+        "ref-14-02",
+        "ref-14-05",
+        "ref-14-06",
+        "ref-14-07"
+      ],
+      "requirement_id": "INS-ACCUM-01"
+    },
+    {
+      "category": "Calculations",
+      "information_requirement": "Separate gross expenses, admitted amounts, threshold consumption, insurer payments and unpaid eligible balances.",
+      "observed_reason": "A standalone excess of INR500000 is not the final payment when only INR400000 of an INR800000 loss remains unpaid.",
+      "original_or_operational_basis": [
+        "original-star-ssf-025",
+        "IRDAIhealthmasterI.18a",
+        "StarSSFV.4ivphysical6"
+      ],
+      "reference_cases": [
+        "ref-14-03",
+        "ref-14-09",
+        "ref-13-04"
+      ],
+      "requirement_id": "INS-PAYMENT-01"
+    },
+    {
+      "category": "Calculations",
+      "information_requirement": "Retain credited cover layers with their inception and enhancement dates, continuity and waiting-period type.",
+      "observed_reason": "Moratorium, PED lookback and prospective waiting periods use different clocks. An increased amount does not inherit every credit of the original amount.",
+      "original_or_operational_basis": [
+        "original-irdai-products-2024-010",
+        "original-irdai-products-2024-011",
+        "original-hdfc-regulatory-notice-010"
+      ],
+      "reference_cases": [
+        "ref-15-03",
+        "ref-15-06",
+        "ref-14-10"
+      ],
+      "requirement_id": "INS-LAYER-01"
+    },
+    {
+      "category": "Policy knowledge",
+      "information_requirement": "Retain the literal comparison operator, cutoff, triggering event, applicable timezone and any unassigned boundary.",
+      "observed_reason": "The72-hour information clock and five-day decision clock start at different receipts. Before/after wording can leave the exact cutoff unassigned.",
+      "original_or_operational_basis": [
+        "original-hdfc-regulatory-notice-002",
+        "original-hdfc-regulatory-notice-003",
+        "original-hdfc-regulatory-notice-006",
+        "original-irdai-health-master-019",
+        "original-irdai-health-master-020"
+      ],
+      "reference_cases": [
+        "ref-15-04",
+        "ref-15-05",
+        "ref-05-11"
+      ],
+      "requirement_id": "INS-DATE-01"
+    },
+    {
+      "category": "Product applicability",
+      "information_requirement": "Separate policy term, annual renewal, instalment due dates, continuity protection, claim cover and accelerated premium debt.",
+      "observed_reason": "A delay can protect continuity without covering an admission during unpaid renewal; within-term instalment grace has a different cover rule.",
+      "original_or_operational_basis": [
+        "original-irdai-products-2024-003",
+        "original-irdai-products-2024-004",
+        "original-star-ssf-026",
+        "original-star-ssf-028",
+        "original-star-ssf-029"
+      ],
+      "reference_cases": [
+        "ref-16-01",
+        "ref-16-02",
+        "ref-01-06"
+      ],
+      "requirement_id": "INS-GRACE-01"
+    },
+    {
+      "category": "Policy knowledge",
+      "information_requirement": "Retain conflicting assertions, printed cross-references, reviewed destinations, express precedence and unresolved dependencies.",
+      "observed_reason": "Agreement between a CIS and one wording clause does not settle a contradiction elsewhere in the wording. Incorrect printed references still need to be preserved.",
+      "original_or_operational_basis": [
+        "registers/source-conflicts-supplement-20260910.json"
+      ],
+      "reference_cases": [
+        "ref-05-01",
+        "ref-16-02",
+        "ref-11-04"
+      ],
+      "requirement_id": "INS-CONFLICT-01"
+    },
+    {
+      "category": "Retrieval",
+      "information_requirement": "Retrieve image and table regions, physical and printed page identities, headers, footnotes and language alongside text.",
+      "observed_reason": "Text extraction missed23 HDFC product/UIN rows. The Gold table continues across rotated regions on two pages.",
+      "original_or_operational_basis": [
+        "registers/hdfc-regulatory-image-table.json",
+        "registers/star-ssf-tables-original-reading.json"
+      ],
+      "reference_cases": [
+        "ref-05-11",
+        "ref-09-11"
+      ],
+      "requirement_id": "INS-SOURCE-01"
+    },
+    {
+      "category": "Changing observations",
+      "information_requirement": "Retain exact provider branch, dated network and exclusion status, authorization events, clinical stabilization and time-attributed expenses.",
+      "observed_reason": "An excluded-provider emergency exception stops at stabilization. Being outside a network is a separate status.",
+      "original_or_operational_basis": [
+        "original-star-ssf-020",
+        "original-star-ssf-023",
+        "original-irdai-health-master-031"
+      ],
+      "reference_cases": [
+        "ref-17-03",
+        "ref-17-09"
+      ],
+      "requirement_id": "INS-PROVIDER-01"
+    },
+    {
+      "category": "Product applicability",
+      "information_requirement": "Separate insurer-wide availability duties, product eligibility, proposal, underwriting offer, acceptance and commencement.",
+      "observed_reason": "A requirement to offer choices does not mean one product covers everyone or that a port application has been accepted.",
+      "original_or_operational_basis": [
+        "original-irdai-health-master-006",
+        "original-irdai-products-2024-017"
+      ],
+      "reference_cases": [
+        "ref-15-01",
+        "ref-15-08",
+        "ref-19-10"
+      ],
+      "requirement_id": "INS-OFFER-01"
+    },
+    {
+      "category": "Customer information",
+      "information_requirement": "Attribute each assertion to its person, original utterance, unit, language and turn. Link corrections to superseded assertions and distinguish unknown from reported negative facts.",
+      "observed_reason": "A35-year-old buyer and70-year-old mother are separate subjects. Father-positive and buyer-negative diabetes statements must remain separate.",
+      "original_or_operational_basis": [
+        "Userplansections2,3and5"
+      ],
+      "reference_cases": [
+        "ref-20-01",
+        "ref-20-02",
+        "ref-20-03",
+        "ref-20-06",
+        "ref-20-08"
+      ],
+      "requirement_id": "CUS-FACT-01"
+    },
+    {
+      "category": "Saved decisions",
+      "information_requirement": "Bind saved decisions and worker inputs to explicit fact and corpus revisions. Persist durable, idempotent events and invalidate obsolete results.",
+      "observed_reason": "A worker that finishes last must not overwrite a customer correction. Reconnecting should replay saved work.",
+      "original_or_operational_basis": [
+        "Userplansections3,4and5"
+      ],
+      "reference_cases": [
+        "ref-20-04",
+        "ref-20-09"
+      ],
+      "requirement_id": "OPS-REV-01"
+    },
+    {
+      "category": "Lifecycle",
+      "information_requirement": "Check conversation ownership and explicit context-reuse preferences before retrieval. Deletion must reach derived copies, queued payloads and decisions, with status for each affected store.",
+      "observed_reason": "Owning both conversations does not override a no-reuse request. A stale index or worker must not recreate a deleted fact.",
+      "original_or_operational_basis": [
+        "Userplansections3,4and5"
+      ],
+      "reference_cases": [
+        "ref-20-05",
+        "ref-20-10"
+      ],
+      "requirement_id": "OPS-OWN-01"
+    },
+    {
+      "category": "Operational research requirement",
+      "information_requirement": "Record authoring, original reading, scoped reference assessment, full customer decision and executed adviser attempt as distinct completion states.",
+      "observed_reason": "A correct hypothetical threshold calculation cannot count as a successful independent adviser attempt.",
+      "original_or_operational_basis": [
+        "Userplansections2and5",
+        "reports/reference-topup-review.json",
+        "reports/reference-conversation-review.json"
+      ],
+      "reference_cases": [
+        "ref-14-02",
+        "ref-20-10"
+      ],
+      "requirement_id": "OPS-RESEARCH-01"
+    }
+  ],
+  "status": "Evidence-derived requirements, not proposed database entities or fields"
+}

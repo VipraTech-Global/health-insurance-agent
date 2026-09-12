@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:53:49.359814+00:00",
+  "associations": [],
+  "byte_count": 743593,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/Claims_Forms_marine_specific_policy.pdf_c5d4076d5e.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1244,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "5252ee29abb2a15eee9d8f47158136a9607d7aa2777db432bc6bb88cdb78cefd",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/Claims_Forms_marine_specific_policy.pdf_c5d4076d5e.pdf"
+}

@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:58:19.476467+00:00",
+  "associations": [],
+  "byte_count": 256620,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/Kutumbh_Swasthya_Bima_group_6a986d8f7f.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 407,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "5177e52204a7811c2b5462f0d0aa860edf23ed25a7d734ad3c7de012f2f9e699",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/Kutumbh_Swasthya_Bima_group_6a986d8f7f.pdf"
+}

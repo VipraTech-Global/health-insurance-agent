@@ -1,0 +1,46 @@
+{
+  "method": "Exact original-domain URLs observed in web search on 2026-09-10; not inferred from names",
+  "results": [
+    {
+      "insurer_id": "care",
+      "issues": [
+        "http_406"
+      ],
+      "page_count": null,
+      "sha256": "1b282a8b6ee333a1b8cd4fd4ba09868f732d2449fc71157e45298dcf3931aca7",
+      "status": "failed",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---policy-terms-and-conditions.pdf"
+    },
+    {
+      "insurer_id": "care",
+      "issues": [
+        "http_406"
+      ],
+      "page_count": null,
+      "sha256": "88a84eb89ca0a9dc04afc6f1fbe3410634ec71fdb60c3134140bf1483b98ae84",
+      "status": "failed",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---prospectus-cum-sales-literature.pdf"
+    },
+    {
+      "insurer_id": "icici-lombard",
+      "issues": [
+        "http_403"
+      ],
+      "page_count": null,
+      "sha256": "f41ef983954e40439a0a3c82486ce12c2c2cfcaed7f56b9fccfdd3a32614733c",
+      "status": "failed",
+      "url": "https://www.icicilombard.com/docs/default-source/apps/elevateapp/assets/pdf/elevate-policy-wordings.pdf"
+    },
+    {
+      "insurer_id": "united-india",
+      "issues": [
+        "ReadTimeout"
+      ],
+      "page_count": null,
+      "sha256": null,
+      "status": "failed",
+      "url": "https://www.uiic.co.in/web/sites/default/files/Policy-Document/20241001%20-%20CIS-%20IHP.pdf"
+    }
+  ],
+  "scope": "Discovery and acquisition only; documents may be historical, no current-version assertion"
+}

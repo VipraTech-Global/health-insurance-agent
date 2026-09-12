@@ -1,0 +1,82 @@
+{
+  "records": [
+    {
+      "insurer_id": "manipalcigna",
+      "url": "https://www.manipalcigna.com/documents/20124/350424/ProHealth-V8-TnC-Withdrawn.pdf",
+      "linking_url": "https://www.manipalcigna.com/products-withdrawn-or-modified",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "f3a79349a6fb6614f4d2f51eab97219137c7d143c96a5288c046c6df3570bcb8",
+      "acquired_at": "2026-09-10T14:37:40.585685+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 60,
+      "discovery_method": "Exact href followed on official insurer page through web reader; original raw bytes preserved through existing acquisition module."
+    },
+    {
+      "insurer_id": "manipalcigna",
+      "url": "https://www.manipalcigna.com/documents/d/guest/prohealth_v8_prospectus_25april22_01",
+      "linking_url": "https://www.manipalcigna.com/products-withdrawn-or-modified",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "d90b20cd19b64d4c1238eaaa382cf71ea7f158b041e3c9f246420823211b1340",
+      "acquired_at": "2026-09-10T14:37:40.560899+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 33,
+      "discovery_method": "Exact href followed on official insurer page through web reader; original raw bytes preserved through existing acquisition module."
+    },
+    {
+      "insurer_id": "manipalcigna",
+      "url": "https://www.manipalcigna.com/documents/d/guest/24-a-prohealth-prime-active-v1-tnc",
+      "linking_url": "https://www.manipalcigna.com/products-withdrawn-or-modified",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "1b4b258721ae525d873c1192bd805a8c4f331f1bffad380aba36e0b493081d2d",
+      "acquired_at": "2026-09-10T14:37:40.555719+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 49,
+      "discovery_method": "Exact href followed on official insurer page through web reader; original raw bytes preserved through existing acquisition module."
+    },
+    {
+      "insurer_id": "manipalcigna",
+      "url": "https://www.manipalcigna.com/documents/d/guest/24-b-prohealth-prime-pa-v1-tnc",
+      "linking_url": "https://www.manipalcigna.com/products-withdrawn-or-modified",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "84309b397c5f0d45d4384163b8e2f505d7f67755b09e4684734c3499fb5e9758",
+      "acquired_at": "2026-09-10T14:37:40.556943+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 61,
+      "discovery_method": "Exact href followed on official insurer page through web reader; original raw bytes preserved through existing acquisition module."
+    },
+    {
+      "insurer_id": "manipalcigna",
+      "url": "https://www.manipalcigna.com/documents/20124/0/SecureHealth-TnC/34f5982f-2e16-bb69-8a05-48eeb9c4c6e3?t=15",
+      "linking_url": "https://www.manipalcigna.com/downloads/products/-/categories/4395901?_com_liferay_asset_categories_navigation_web_portlet_AssetCategoriesNavigationPortlet_INSTANCE_ibpFWBmnsYQg_vocabularyId=37736",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "80aa00ac377c2fa186ec0589fbae13043b341c2e7010536d0b55e25c29d7578a",
+      "acquired_at": "2026-09-10T14:37:42.177863+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 31,
+      "discovery_method": "Exact href followed on official insurer page through web reader; original raw bytes preserved through existing acquisition module."
+    },
+    {
+      "insurer_id": "manipalcigna",
+      "url": "https://www.manipalcigna.com/products-withdrawn-or-modified",
+      "linking_url": "https://www.manipalcigna.com/downloads/products",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "424bf7fba9c60aa8114157b6a04ea11b09d7099fa7a1df21e6924a09f0ec4780",
+      "acquired_at": "2026-09-10T14:37:42.659768+00:00",
+      "http_status": 200,
+      "document_type": "source_page",
+      "page_count": null,
+      "discovery_method": "Exact href followed on official insurer page through web reader; original raw bytes preserved through existing acquisition module."
+    }
+  ]
+}

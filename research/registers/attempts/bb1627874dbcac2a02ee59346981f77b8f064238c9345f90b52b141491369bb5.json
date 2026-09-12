@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T11:59:00.808580+00:00",
+  "associations": [],
+  "byte_count": 470701,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/health/claim-form-for-health-insurance-policies.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "go-digit",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 539,
+  "linking_url": "https://www.godigit.com/downloads",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "16a4ba25f51a09b2ceb7c9f411fd37aa7faa2ad4d3c310681ca7751f0e1c8873",
+  "status": "acquired",
+  "url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/health/claim-form-for-health-insurance-policies.pdf"
+}

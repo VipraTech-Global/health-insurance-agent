@@ -1,0 +1,65 @@
+{
+  "acquired_at": "2026-09-10T12:01:05.035347+00:00",
+  "associations": [],
+  "byte_count": 540722,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/universal-health-insurance/Universal%20Health%20Insurance%20Proposal%20Form%20WEF%2001%20Oct%202024.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 4287,
+  "linking_url": "https://www.newindia.co.in/health-insurance/universal-health-insurance",
+  "page_count": 5,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.52
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "644a02266fcfa638974c9b25d8d3c0b0650287ebc3968bd09db9fbb7319ccd7f",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/universal-health-insurance/Universal Health Insurance Proposal Form WEF 01 Oct 2024.pdf"
+}

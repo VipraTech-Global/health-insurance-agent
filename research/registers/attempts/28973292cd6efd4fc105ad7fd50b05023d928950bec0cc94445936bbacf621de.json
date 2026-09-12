@@ -1,0 +1,21 @@
+{
+  "acquired_at": "2026-09-10T11:59:19.860206+00:00",
+  "associations": [],
+  "component_version": "research-acquisition/1",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "format_version": 1,
+  "insurer_id": "acko",
+  "issues": [
+    "host_not_approved"
+  ],
+  "language": "unknown",
+  "latency_ms": 27,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": null,
+  "status": "failed",
+  "url": "https://acko-cms.ackoassets.com/Acko_Asset_Protect_Insurance_Plan_Policy_Wording_239134f41f.pdf"
+}

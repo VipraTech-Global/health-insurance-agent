@@ -1,0 +1,185 @@
+{
+  "format_version": 1,
+  "component_version": "research-acquisition/2",
+  "insurer_id": "icici-lombard",
+  "url": "https://www.icicilombard.com/docs/default-source/downloads/website-list-of-products.pdf",
+  "linking_url": "https://www.icicilombard.com/health-insurance/elevate-health-policy?opt=elevate&source=nav",
+  "acquired_at": "2026-09-10T14:20:59.742840+00:00",
+  "status": "acquired",
+  "issues": [],
+  "sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+  "page_count": 20,
+  "document_type": "pdf_unclassified",
+  "language": "unknown",
+  "associations": [],
+  "effective_from": null,
+  "effective_to": null,
+  "review_status": "not_reviewed",
+  "http_status": 200,
+  "final_url": "https://www.icicilombard.com/docs/default-source/downloads/website-list-of-products.pdf",
+  "byte_count": 755004,
+  "content_type": "application/pdf",
+  "pages": [
+    {
+      "page": 1,
+      "status": "preserved_not_read",
+      "width": 792.0,
+      "height": 612.0,
+      "tables": "not_inventoried",
+      "figures": "not_inventoried"
+    },
+    {
+      "page": 2,
+      "status": "preserved_not_read",
+      "width": 792.0,
+      "height": 612.0,
+      "tables": "not_inventoried",
+      "figures": "not_inventoried"
+    },
+    {
+      "page": 3,
+      "status": "preserved_not_read",
+      "width": 792.0,
+      "height": 612.0,
+      "tables": "not_inventoried",
+      "figures": "not_inventoried"
+    },
+    {
+      "page": 4,
+      "status": "preserved_not_read",
+      "width": 792.0,
+      "height": 612.0,
+      "tables": "not_inventoried",
+      "figures": "not_inventoried"
+    },
+    {
+      "page": 5,
+      "status": "preserved_not_read",
+      "width": 792.0,
+      "height": 612.0,
+      "tables": "not_inventoried",
+      "figures": "not_inventoried"
+    },
+    {
+      "page": 6,
+      "status": "preserved_not_read",
+      "width": 792.0,
+      "height": 612.0,
+      "tables": "not_inventoried",
+      "figures": "not_inventoried"
+    },
+    {
+      "page": 7,
+      "status": "preserved_not_read",
+      "width": 792.0,
+      "height": 612.0,
+      "tables": "not_inventoried",
+      "figures": "not_inventoried"
+    },
+    {
+      "page": 8,
+      "status": "preserved_not_read",
+      "width": 792.0,
+      "height": 612.0,
+      "tables": "not_inventoried",
+      "figures": "not_inventoried"
+    },
+    {
+      "page": 9,
+      "status": "preserved_not_read",
+      "width": 792.0,
+      "height": 612.0,
+      "tables": "not_inventoried",
+      "figures": "not_inventoried"
+    },
+    {
+      "page": 10,
+      "status": "preserved_not_read",
+      "width": 792.0,
+      "height": 612.0,
+      "tables": "not_inventoried",
+      "figures": "not_inventoried"
+    },
+    {
+      "page": 11,
+      "status": "preserved_not_read",
+      "width": 792.0,
+      "height": 612.0,
+      "tables": "not_inventoried",
+      "figures": "not_inventoried"
+    },
+    {
+      "page": 12,
+      "status": "preserved_not_read",
+      "width": 792.0,
+      "height": 612.0,
+      "tables": "not_inventoried",
+      "figures": "not_inventoried"
+    },
+    {
+      "page": 13,
+      "status": "preserved_not_read",
+      "width": 792.0,
+      "height": 612.0,
+      "tables": "not_inventoried",
+      "figures": "not_inventoried"
+    },
+    {
+      "page": 14,
+      "status": "preserved_not_read",
+      "width": 792.0,
+      "height": 612.0,
+      "tables": "not_inventoried",
+      "figures": "not_inventoried"
+    },
+    {
+      "page": 15,
+      "status": "preserved_not_read",
+      "width": 792.0,
+      "height": 612.0,
+      "tables": "not_inventoried",
+      "figures": "not_inventoried"
+    },
+    {
+      "page": 16,
+      "status": "preserved_not_read",
+      "width": 792.0,
+      "height": 612.0,
+      "tables": "not_inventoried",
+      "figures": "not_inventoried"
+    },
+    {
+      "page": 17,
+      "status": "preserved_not_read",
+      "width": 792.0,
+      "height": 612.0,
+      "tables": "not_inventoried",
+      "figures": "not_inventoried"
+    },
+    {
+      "page": 18,
+      "status": "preserved_not_read",
+      "width": 792.0,
+      "height": 612.0,
+      "tables": "not_inventoried",
+      "figures": "not_inventoried"
+    },
+    {
+      "page": 19,
+      "status": "preserved_not_read",
+      "width": 792.0,
+      "height": 612.0,
+      "tables": "not_inventoried",
+      "figures": "not_inventoried"
+    },
+    {
+      "page": 20,
+      "status": "preserved_not_read",
+      "width": 792.0,
+      "height": 612.0,
+      "tables": "not_inventoried",
+      "figures": "not_inventoried"
+    }
+  ],
+  "latency_ms": 387
+}

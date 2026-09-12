@@ -1,0 +1,97 @@
+{
+  "revision": "discussion-r10",
+  "generated_at_utc": "2026-09-12T08:07:31.272052+00:00",
+  "status": "passed",
+  "scope": "Structural verification of the user-approved Batch 3 source, discovery, version and evidence design. No Django models, migrations, PostgreSQL runtime constraints or complete-design approval claimed.",
+  "checks": [
+    {
+      "check": "101 unique application entities",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "992 unique application fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "303 FK relationships match dictionary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all FK targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "relationship ledger exactly covers FK fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "approved ten-model Batch 3 present with exact fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "superseded Batch 3 entities removed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "approved redundant fields absent",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "case and supplementary field targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "fixed 400 case map retained as 200 reference and 200 evaluation-safe projections",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "r10 reverse trace covers every field exactly",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "r10 trace input hashes match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "additional-case dictionary hash matches",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all JSON field contracts resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Batch 3 approval and overall design boundary recorded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "autonomous Codex browsing has no insurer host allowlist",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 16,
+  "failed": 0,
+  "application_entities": 101,
+  "application_fields": 992,
+  "foreign_keys": 303,
+  "batch1_approval": "explicit user approval on 2026-09-11",
+  "batch2_approval": "explicit user approval on 2026-09-11",
+  "batch3_approval": "explicit user approval on 2026-09-12",
+  "overall_design_approval": false
+}

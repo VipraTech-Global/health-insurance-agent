@@ -1,0 +1,185 @@
+{
+  "acquired_at": "2026-09-10T11:59:41.135103+00:00",
+  "associations": [],
+  "byte_count": 3560087,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.generalicentralinsurance.com/downloads/health-insurance/d-i-y-health/product-brochures/diy-health-brochure.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "generali-central",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1931,
+  "linking_url": "https://www.generalicentralinsurance.com/customer-service/downloads",
+  "page_count": 20,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 576.062,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.062
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.25,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.25
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.25,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.25
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.25,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.25
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.25,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.25
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.25,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.25
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.25,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.25
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.25,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.25
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.25,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.25
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.25,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.25
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.25,
+      "page": 11,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.25
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 12,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 13,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 14,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 15,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.25,
+      "page": 16,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.25
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.25,
+      "page": 17,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.25
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.25,
+      "page": 18,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.25
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.36,
+      "page": 19,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.36
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.25,
+      "page": 20,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.25
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "38f52ba1acd155b43781bb3450a7508df44cc374154ad5104009bdf7da67c4e7",
+  "status": "acquired",
+  "url": "https://www.generalicentralinsurance.com/downloads/health-insurance/d-i-y-health/product-brochures/diy-health-brochure.pdf"
+}

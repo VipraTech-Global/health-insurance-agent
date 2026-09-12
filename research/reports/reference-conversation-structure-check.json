@@ -1,0 +1,18 @@
+{
+  "artifact_sha256": "fae37677b95e9aa1ba001b6f2fc19c2b63b3fe351aff3d90f0af44789159731c",
+  "assertions": 41,
+  "cases": 10,
+  "checked_at": "2026-09-10T13:33:44.825383+00:00",
+  "checks_passed": [
+    "Identityunique",
+    "Eachcustomerassertionpointsatcustomerturn",
+    "Correctionsupersedesearlierassertionofsameperson/predicate",
+    "Onecurrentvalueperperson/predicate",
+    "Knownstateequalslatestassertions",
+    "Noinsurancecompletionoradvisertestclaim"
+  ],
+  "distinct_operation_sets": 10,
+  "format_version": 1,
+  "limit": "Structural checks do not prove implementation behavior or replace independent scenario review.",
+  "post_check_note": "Reviewed completion label and additive-medicine prose updated after independent review; assertion histories and current facts unchanged."
+}

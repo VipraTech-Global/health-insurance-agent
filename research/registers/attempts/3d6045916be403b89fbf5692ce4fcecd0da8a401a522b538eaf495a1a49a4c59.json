@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:53:51.331862+00:00",
+  "associations": [],
+  "byte_count": 754476,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/Claims_Forms_erection_all_risks_policy.pdf_7fbe50fd49.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 469,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 810.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 630.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 810.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 630.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "5476766266392cd37d9ea8f93e45006e266d035aac00342942f70855431082ce",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/Claims_Forms_erection_all_risks_policy.pdf_7fbe50fd49.pdf"
+}

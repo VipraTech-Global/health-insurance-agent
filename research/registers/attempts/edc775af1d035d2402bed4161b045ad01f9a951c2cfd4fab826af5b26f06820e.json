@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:54:27.990787+00:00",
+  "associations": [],
+  "byte_count": 153776,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/tata_aig_modification_of_mandatory_sub_limits_add_on_policy_wordings_0ea50bc524.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 400,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.528
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.528
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "6f454082ff26fb364877cd714827277a538167884e9adf10c7529ab7840ab061",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/tata_aig_modification_of_mandatory_sub_limits_add_on_policy_wordings_0ea50bc524.pdf"
+}

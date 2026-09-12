@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:59:27.582044+00:00",
+  "associations": [],
+  "byte_count": 84764,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.zurichkotak.com/documents/media-release-section",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "zurich-kotak",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 612,
+  "linking_url": "https://www.zurichkotak.com/product-documents",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "ff7f0b89ee2b0c9377262b76f13a4062a7dde0e4cb49aa4cca48d6ce232a2cb9",
+  "status": "failed",
+  "url": "https://www.zurichkotak.com/documents/media-release-section"
+}

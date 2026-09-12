@@ -1,0 +1,81 @@
+{
+  "acquired_at": "2026-09-10T11:59:09.023158+00:00",
+  "associations": [],
+  "byte_count": 399420,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/others/prospectus-digit-money-insurance-policy.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "go-digit",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 406,
+  "linking_url": "https://www.godigit.com/downloads",
+  "page_count": 7,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "48bfff8299e2dcf8c646ef1fb5b0b94fb8b986fb6b70ceaa01186c259bd0e237",
+  "status": "acquired",
+  "url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/others/prospectus-digit-money-insurance-policy.pdf"
+}

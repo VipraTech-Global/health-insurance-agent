@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:57:52.306759+00:00",
+  "associations": [],
+  "byte_count": 113721,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/Annexure_I_List_of_Ombudsman_Office_and_Contact_Details_05_01_2026_5be8d0eb12.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 279,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.274
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.274
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.274
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "568cef29fe040f0990e6f3491df928fde7869cf00659f47cc513ffb2b7fee493",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/Annexure_I_List_of_Ombudsman_Office_and_Contact_Details_05_01_2026_5be8d0eb12.pdf"
+}

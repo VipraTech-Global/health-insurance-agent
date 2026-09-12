@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T12:00:35.101225+00:00",
+  "associations": [],
+  "byte_count": 199605,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.generalicentralinsurance.com/downloads/other-insurance/jewellers-block-insurance/claim-forms/jewellers-block-insurance-retail-claim-form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "generali-central",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 505,
+  "linking_url": "https://www.generalicentralinsurance.com/customer-service/downloads",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "0477c42a03c11c374d62a64fd3c3255be7e4d8406780370fe5678613bb32baa1",
+  "status": "acquired",
+  "url": "https://www.generalicentralinsurance.com/downloads/other-insurance/jewellers-block-insurance/claim-forms/jewellers-block-insurance-retail-claim-form.pdf"
+}

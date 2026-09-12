@@ -1,0 +1,65 @@
+{
+  "acquired_at": "2026-09-10T12:01:41.049821+00:00",
+  "associations": [],
+  "byte_count": 112815,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://assets.ctfassets.net/uwf0n1j71a7j/oLY9Lk88eGRJeAQhzUzVC/9c99b3cb5f24e3fefb977b112794639a/arogya-sanjeevani-policyclaim-form-a.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "acko",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 7655,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": 5,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "13488bf2573783873ae2987d336fcd65003cce30b0cb4f52f22aae10517dffeb",
+  "status": "acquired",
+  "url": "https://assets.ctfassets.net/uwf0n1j71a7j/oLY9Lk88eGRJeAQhzUzVC/9c99b3cb5f24e3fefb977b112794639a/arogya-sanjeevani-policyclaim-form-a.pdf"
+}

@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:38:00.824926+00:00",
+  "associations": [],
+  "byte_count": 607747,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/pages/doc/proposal_form/Health_Multiplier_Master_Proposal_Form_v7_form_2020.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 2920,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.8898,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.8898,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.8898,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2756
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "d8d206586658ba4d628586a5597c8799288b946e5b624a4bdf29d3d4fa942894",
+  "status": "acquired",
+  "url": "https://transactions.nivabupa.com/pages/doc/proposal_form/Health_Multiplier_Master_Proposal_Form_v7_form_2020.pdf"
+}

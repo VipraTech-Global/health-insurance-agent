@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:38:21.668845+00:00",
+  "associations": [],
+  "byte_count": 3564,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/captcha?url=//pages/doc/brochure/Niva_Health_Companion_SS_V2022_with_PA.pdf?v=1.2",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1346,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "577c3925a37e21ec611a82cd62586e83b6d3d6eb0d009ac378180fcce76a4537",
+  "status": "failed",
+  "url": "https://transactions.nivabupa.com/pages/doc/brochure/Niva_Health_Companion_SS_V2022_with_PA.pdf?v=1.2"
+}

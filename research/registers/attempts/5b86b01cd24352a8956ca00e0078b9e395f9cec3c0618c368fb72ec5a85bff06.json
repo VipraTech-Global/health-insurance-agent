@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:57:50.568655+00:00",
+  "associations": [],
+  "byte_count": 427104,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/arogya-sanjeevani/Arogya%20Sanjeevani%20Premium%20Illustration.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 5898,
+  "linking_url": "https://www.newindia.co.in/health-insurance/arogya-sanjeevani-policy",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "12f6f14f604591e3f305307d867d9a7550646ba8ad7e77715f47ecdeaaf5caf7",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/arogya-sanjeevani/Arogya Sanjeevani Premium Illustration.pdf"
+}

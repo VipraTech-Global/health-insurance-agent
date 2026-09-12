@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:56:35.942721+00:00",
+  "associations": [],
+  "byte_count": 424493,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/TPA_Website_de63765b0e_b754c11655.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 325,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "390b0ad7dadaa14f6738f4b8c489aa052ad440e8d7fd152fd01618ae9f596006",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/TPA_Website_de63765b0e_b754c11655.pdf"
+}

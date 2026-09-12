@@ -1,0 +1,131 @@
+{
+  "records": [
+    {
+      "insurer_id": "united-india",
+      "url": "https://uiic.co.in/web/sites/default/files/Policy-Document/Super%20Top-Up%20Medicare%20Policy%20Wordings.pdf",
+      "linking_url": "",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "b9f36f87a6808dae0b679140ef1cc1b9195f4532e91768f0e19bda7e17b392ff",
+      "acquired_at": "2026-09-10T14:39:23.267356+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 30,
+      "discovery_method": "Exact original URL observed in official-domain web result; ICICI PDF links directly followed from official CHI plan page. UIIC /web is a newly observed migrated site path, not a guessed legacy replacement."
+    },
+    {
+      "insurer_id": "united-india",
+      "url": "https://www.uiic.co.in/web/sites/default/files/Policy-Document/20231009-CIS-FMP.pdf",
+      "linking_url": "",
+      "status": "failed",
+      "issues": [
+        "http_404"
+      ],
+      "sha256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880",
+      "acquired_at": "2026-09-10T14:39:23.312769+00:00",
+      "http_status": 404,
+      "document_type": "unclassified",
+      "page_count": null,
+      "discovery_method": "Exact original URL observed in official-domain web result; ICICI PDF links directly followed from official CHI plan page. UIIC /web is a newly observed migrated site path, not a guessed legacy replacement."
+    },
+    {
+      "insurer_id": "united-india",
+      "url": "https://www.uiic.co.in/web/sites/default/files/Policy-Document/20230913-CIS-IHIP.pdf",
+      "linking_url": "",
+      "status": "failed",
+      "issues": [
+        "http_404"
+      ],
+      "sha256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880",
+      "acquired_at": "2026-09-10T14:39:23.312070+00:00",
+      "http_status": 404,
+      "document_type": "unclassified",
+      "page_count": null,
+      "discovery_method": "Exact original URL observed in official-domain web result; ICICI PDF links directly followed from official CHI plan page. UIIC /web is a newly observed migrated site path, not a guessed legacy replacement."
+    },
+    {
+      "insurer_id": "united-india",
+      "url": "https://www.uiic.co.in/web/sites/default/files/Policy-Document/20240325_Prospectus_IHIP.pdf",
+      "linking_url": "",
+      "status": "failed",
+      "issues": [
+        "http_404"
+      ],
+      "sha256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880",
+      "acquired_at": "2026-09-10T14:39:23.313241+00:00",
+      "http_status": 404,
+      "document_type": "unclassified",
+      "page_count": null,
+      "discovery_method": "Exact original URL observed in official-domain web result; ICICI PDF links directly followed from official CHI plan page. UIIC /web is a newly observed migrated site path, not a guessed legacy replacement."
+    },
+    {
+      "insurer_id": "icici-lombard",
+      "url": "https://www.icicilombard.com/docs/default-source/policy-wordings-product-brochure/complete-health-insurance-%28health-elite-plus%29.pdf",
+      "linking_url": "https://www.icicilombard.com/health-insurance/get-quote/select-chi-plans",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "d684a4770319f258ccdef91576c2e0c33766508d44f3147c435693e60367122a",
+      "acquired_at": "2026-09-10T14:39:24.089010+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 21,
+      "discovery_method": "Exact original URL observed in official-domain web result; ICICI PDF links directly followed from official CHI plan page. UIIC /web is a newly observed migrated site path, not a guessed legacy replacement."
+    },
+    {
+      "insurer_id": "icici-lombard",
+      "url": "https://www.icicilombard.com/docs/default-source/Policy-Wordings-product-Brochure/chi_policy_wordings.pdf",
+      "linking_url": "https://www.icicilombard.com/health-insurance/get-quote/select-chi-plans",
+      "status": "failed",
+      "issues": [
+        "http_404"
+      ],
+      "sha256": "838b4d950846c0a847af4f0813dc3921da080a3c1555dddade200bf777b4a02c",
+      "acquired_at": "2026-09-10T14:39:24.131507+00:00",
+      "http_status": 404,
+      "document_type": "unclassified",
+      "page_count": null,
+      "discovery_method": "Exact original URL observed in official-domain web result; ICICI PDF links directly followed from official CHI plan page. UIIC /web is a newly observed migrated site path, not a guessed legacy replacement."
+    },
+    {
+      "insurer_id": "icici-lombard",
+      "url": "https://www.icicilombard.com/health-insurance/get-quote/select-chi-plans",
+      "linking_url": "https://www.icicilombard.com/health-insurance/get-quote/select-chi-plans",
+      "status": "failed",
+      "issues": [
+        "http_403"
+      ],
+      "sha256": "2b90f2df98ead122319495e22ec00a4a5a315965bb2049e03afcf85ed52bca0f",
+      "acquired_at": "2026-09-10T14:39:24.170383+00:00",
+      "http_status": 403,
+      "document_type": "unclassified",
+      "page_count": null,
+      "discovery_method": "Exact original URL observed in official-domain web result; ICICI PDF links directly followed from official CHI plan page. UIIC /web is a newly observed migrated site path, not a guessed legacy replacement."
+    },
+    {
+      "insurer_id": "oriental",
+      "url": "https://orientalinsurance.org.in/download-policy-terms-conditions",
+      "linking_url": "",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "060dcc574acaa370e0436d642385a43bcfdac1fb3659ad15aaf4c7cbebcc3836",
+      "acquired_at": "2026-09-10T14:39:24.216975+00:00",
+      "http_status": 200,
+      "document_type": "source_page",
+      "page_count": null,
+      "discovery_method": "Exact original URL observed in official-domain web result; ICICI PDF links directly followed from official CHI plan page. UIIC /web is a newly observed migrated site path, not a guessed legacy replacement."
+    },
+    {
+      "insurer_id": "oriental",
+      "url": "https://www.orientalinsurance.org.in/policies-related-document",
+      "linking_url": "",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "060dcc574acaa370e0436d642385a43bcfdac1fb3659ad15aaf4c7cbebcc3836",
+      "acquired_at": "2026-09-10T14:39:24.359814+00:00",
+      "http_status": 200,
+      "document_type": "source_page",
+      "page_count": null,
+      "discovery_method": "Exact original URL observed in official-domain web result; ICICI PDF links directly followed from official CHI plan page. UIIC /web is a newly observed migrated site path, not a guessed legacy replacement."
+    }
+  ]
+}

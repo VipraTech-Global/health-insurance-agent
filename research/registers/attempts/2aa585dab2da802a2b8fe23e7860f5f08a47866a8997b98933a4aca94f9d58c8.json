@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T11:39:58.223710+00:00",
+  "associations": [],
+  "byte_count": 106384,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://customer-portal-assets.hdfcergo.com/documents/parenthood_PW-574376010343.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "hdfc-ergo",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 300,
+  "linking_url": "https://www.hdfcergo.com/download/policy-wordings/health",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "79f7a05830b5428f2ab140a23e7e1b333fd4e225eec36dfcf9b4f592952f723c",
+  "status": "acquired",
+  "url": "https://customer-portal-assets.hdfcergo.com/documents/parenthood_PW-574376010343.pdf"
+}

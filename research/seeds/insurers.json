@@ -1,0 +1,360 @@
+[
+  {
+    "aliases": [
+      "Star Health"
+    ],
+    "hosts": [
+      "starhealth.in",
+      "d28c6jni2fmamz.cloudfront.net"
+    ],
+    "id": "star",
+    "name": "Star",
+    "pages": [
+      "https://www.starhealth.in/downloads/"
+    ]
+  },
+  {
+    "aliases": [
+      "Care",
+      "Care Health Insurance Limited"
+    ],
+    "hosts": [
+      "careinsurance.com"
+    ],
+    "id": "care",
+    "name": "Care",
+    "pages": [
+      "https://www.careinsurance.com/other-downloads.html"
+    ]
+  },
+  {
+    "aliases": [
+      "Niva Bupa"
+    ],
+    "hosts": [
+      "nivabupa.com"
+    ],
+    "id": "niva-bupa",
+    "name": "Niva Bupa",
+    "pages": [
+      "https://transactions.nivabupa.com/pages/downloads.aspx"
+    ]
+  },
+  {
+    "aliases": [
+      "Aditya Birla"
+    ],
+    "hosts": [
+      "adityabirlacapital.com",
+      "healthinsuranceblob.abhicl.in"
+    ],
+    "id": "aditya-birla",
+    "name": "Aditya Birla Health",
+    "pages": [
+      "https://www.adityabirlacapital.com/healthinsurance/downloads",
+      "https://www.adityabirlacapital.com/healthinsurance/activ-yuva-homepage",
+      "https://www.adityabirlacapital.com/healthinsurance/activ-one?ActivOneMax=activ-one-max",
+      "https://www.adityabirlacapital.com/healthinsurance/activ-one?ActivOneMaxplus=activ-one-max-plus",
+      "https://www.adityabirlacapital.com/healthinsurance/activ-one",
+      "https://www.adityabirlacapital.com/healthinsurance/activ-one?ActivOneVytl=activ-one-vytl&utm_source=website&utm_medium=masthead&utm_campaign=website_masthead",
+      "https://www.adityabirlacapital.com/healthinsurance/activ-travel",
+      "https://www.adityabirlacapital.com/healthinsurance/activ-assure-diamond",
+      "https://www.adityabirlacapital.com/healthinsurance/activ-assure-classic",
+      "https://www.adityabirlacapital.com/healthinsurance/activ-fit",
+      "https://www.adityabirlacapital.com/healthinsurance/activ-assure-diamond-super-health-topup"
+    ]
+  },
+  {
+    "aliases": [
+      "Manipal Cigna"
+    ],
+    "hosts": [
+      "manipalcigna.com"
+    ],
+    "id": "manipalcigna",
+    "name": "ManipalCigna",
+    "pages": [
+      "https://www.manipalcigna.com/downloads/products",
+      "https://www.manipalcigna.com/hospitalization-cover/manipalcigna-infinix",
+      "https://www.manipalcigna.com/hospitalization-cover/manipalcigna-sarvah",
+      "https://www.manipalcigna.com/hospitalization-cover/lifetime-health",
+      "https://www.manipalcigna.com/hospitalization-cover/senior-citizen-health-insurance",
+      "https://www.manipalcigna.com/hospitalization-cover/prohealth-insurance",
+      "https://www.manipalcigna.com/hospitalization-cover/super-topup",
+      "https://www.manipalcigna.com/hospitalization-cover/prohealth-select",
+      "https://www.manipalcigna.com/hospitalization-cover/arogya-sanjeevani-policy"
+    ]
+  },
+  {
+    "aliases": [],
+    "hosts": [
+      "galaxyhealth.com"
+    ],
+    "id": "galaxy",
+    "name": "Galaxy",
+    "pages": [
+      "https://www.galaxyhealth.com/health-insurance/galaxy-plus-insurance-policy",
+      "https://www.galaxyhealth.com/",
+      "https://www.galaxyhealth.com/health-insurance/galaxy-marvel-insurance-policy",
+      "https://www.galaxyhealth.com/health-insurance/galaxy-promise-insurance-policy",
+      "https://www.galaxyhealth.com/health-insurance/galaxy-twin-360-insurance-policy",
+      "https://www.galaxyhealth.com/health-insurance/galaxy-arogya-sanjeevani-insurance-policy",
+      "https://www.galaxyhealth.com/health-insurance/galaxy-empower-insurance-policy",
+      "https://www.galaxyhealth.com/health-insurance/galaxy-guardian-insurance-policy",
+      "https://www.galaxyhealth.com/health-insurance/galaxy-top-up-insurance-policy",
+      "https://www.galaxyhealth.com/health-insurance/galaxy-personal-accident-insurance-policy",
+      "https://www.galaxyhealth.com/health-insurance/galaxy-privilege-insurance-policy",
+      "https://www.galaxyhealth.com/health-insurance/galaxy-smart-outpatient-rider-insurance-policy",
+      "https://www.galaxyhealth.com/health-insurance/galaxy-unlimited-automatic-restoration-rider-insurance-policy",
+      "https://www.galaxyhealth.com/health-insurance/consumables-rider-insurance-policy",
+      "https://www.galaxyhealth.com/health-insurance/galaxy-companion-rider-insurance-policy"
+    ]
+  },
+  {
+    "aliases": [],
+    "hosts": [
+      "narayanahealth.insurance",
+      "stgaccinwbsprdlrs01.blob.core.windows.net"
+    ],
+    "id": "narayana",
+    "name": "Narayana",
+    "pages": [
+      "https://www.narayanahealth.insurance/customer-support"
+    ]
+  },
+  {
+    "aliases": [
+      "New India Assurance"
+    ],
+    "hosts": [
+      "newindia.co.in"
+    ],
+    "id": "new-india",
+    "name": "New India",
+    "pages": [
+      "https://www.newindia.co.in/health-insurance/atmanirbhar-health-policy",
+      "https://www.newindia.co.in/health-insurance/no-proportionate-deduction-rider",
+      "https://www.newindia.co.in/health-insurance/jan-arogya-bima-policy",
+      "https://www.newindia.co.in/health-insurance/arogya-sanjeevani-policy",
+      "https://www.newindia.co.in/health-insurance/arogya-pragati-plus",
+      "https://www.newindia.co.in/health-insurance/new-india-bhavishya-arogya-policy",
+      "https://www.newindia.co.in/health-insurance/cancer-mediclaim",
+      "https://www.newindia.co.in/health-insurance/new-india-assurance-flexi-group-mediclaim-policy",
+      "https://www.newindia.co.in/health-insurance/group-mediclaim-policy-for-workers",
+      "https://www.newindia.co.in/health-insurance/janata-mediclaim-policy",
+      "https://www.newindia.co.in/health-insurance/asha-kiran-insurance",
+      "https://www.newindia.co.in/health-insurance/new-india-cancer-guard-policy",
+      "https://www.newindia.co.in/health-insurance/new-india-criti-protect-policy",
+      "https://www.newindia.co.in/health-insurance/new-india-modern-treatment-rider",
+      "https://www.newindia.co.in/health-insurance/critical-illness-rider",
+      "https://www.newindia.co.in/health-insurance/durable-medical-devices-rider",
+      "https://www.newindia.co.in/health-insurance/maternity-rider",
+      "https://www.newindia.co.in/health-insurance/non-medical-expenses-rider",
+      "https://www.newindia.co.in/health-insurance/pre-post-hospitalisation-rider",
+      "https://www.newindia.co.in/health-insurance/restoration-of-sum-insured-rider",
+      "https://www.newindia.co.in/health-insurance/deductible-rider",
+      "https://www.newindia.co.in/health-insurance/cb-protect-rider",
+      "https://www.newindia.co.in/health-insurance/enhance-cataract-benefit-rider",
+      "https://www.newindia.co.in/health-insurance/dayone-protection-rider",
+      "https://www.newindia.co.in/health-insurance/new-india-assurance-floater-mediclaim-policy",
+      "https://www.newindia.co.in/health-insurance/new-india-assurance-flexi-floater-mediclaim-policy",
+      "https://www.newindia.co.in/health-insurance/health-insurance-policy",
+      "https://www.newindia.co.in/health-insurance/new-india-top-up-mediclaim-insurance",
+      "https://www.newindia.co.in/health-insurance/premier-mediclaim-insurance",
+      "https://www.newindia.co.in/health-insurance/new-india-sixty-plus-mediclaim-policy",
+      "https://www.newindia.co.in/health-insurance/paripoorna-ayush-bima",
+      "https://www.newindia.co.in/health-insurance/rashtriya-swasthya-bima-yojana",
+      "https://www.newindia.co.in/health-insurance/senior-citizen-mediclaim-policy",
+      "https://www.newindia.co.in/health-insurance/standard-group-janata-mediclaim",
+      "https://www.newindia.co.in/health-insurance/standard-group-mediclaim-policy",
+      "https://www.newindia.co.in/health-insurance/tertiary-care-insurance-individual",
+      "https://www.newindia.co.in/health-insurance/universal-health-insurance",
+      "https://www.newindia.co.in/health-insurance/young-india-digi-health-policy",
+      "https://www.newindia.co.in/health-insurance/new-india-yuva-bharat-health-policy",
+      "https://www.newindia.co.in/health-insurance/vatsalya-health-policy"
+    ]
+  },
+  {
+    "aliases": [
+      "National Insurance"
+    ],
+    "hosts": [
+      "nationalinsurance.nic.co.in",
+      "nationalinsurance.nic.in"
+    ],
+    "id": "national",
+    "name": "National",
+    "pages": [
+      "https://nationalinsurance.nic.co.in/",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/national-health-make-your-own-policy",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/national-young-india-mediclaim-plus-policy",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/new-national-parivar-mediclaim-policy",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/national-super-top-mediclaim-policy",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/national-parivar-mediclaim-plus-policy-floater-policy",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/national-mediclaim-plus-policy-individual-plan",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/national-young-india-mediclaim-policy",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/national-mediclaim-policy-individual-plan",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/national-senior-citizen-mediclaim-policy-nscmp",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/vidyarthi-mediclaim-policy-students",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/arogya-sanjeevani-policy-national",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/bob-national-health-policy",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/universal-health-insurance",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/divyangjan-sanjeevani-policy-national",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/national-surrogacy-insurance-policy",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/national-critical-illness-policy",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/national-hospi-cash-policy",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/critical-illness-insurance-policy",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/national-home-care-treatment-add",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/non-medical-expenses-add-on",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/national-group-mediclaim-policy",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/group-national-hospi-cash-policy",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/national-senior-citizen-mediclaim-policy-revised",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/national-super-top-mediclaim-policy-revised",
+      "https://nationalinsurance.nic.co.in/products/all-products/health/students-accident-welfare-policy"
+    ]
+  },
+  {
+    "aliases": [
+      "Oriental Insurance"
+    ],
+    "hosts": [
+      "orientalinsurance.org.in"
+    ],
+    "id": "oriental",
+    "name": "Oriental",
+    "pages": [
+      "https://csc.orientalinsurance.org.in/download-policy-terms-conditions"
+    ]
+  },
+  {
+    "aliases": [
+      "United India"
+    ],
+    "hosts": [
+      "uiic.co.in"
+    ],
+    "id": "united-india",
+    "name": "United India",
+    "pages": [
+      "https://uiic.co.in/en/downloadforms/downloads"
+    ]
+  },
+  {
+    "aliases": [
+      "Hdfc Ergo"
+    ],
+    "hosts": [
+      "hdfcergo.com"
+    ],
+    "id": "hdfc-ergo",
+    "name": "HDFC ERGO",
+    "pages": [
+      "https://www.hdfcergo.com/download/policy-wordings/health"
+    ]
+  },
+  {
+    "aliases": [
+      "Icici Lombard"
+    ],
+    "hosts": [
+      "icicilombard.com"
+    ],
+    "id": "icici-lombard",
+    "name": "ICICI Lombard",
+    "pages": [
+      "https://www.icicilombard.com/downloads?download=true"
+    ]
+  },
+  {
+    "aliases": [
+      "Bajaj General"
+    ],
+    "hosts": [
+      "bajajgeneralinsurance.com",
+      "bajajallianz.com"
+    ],
+    "id": "bajaj-general",
+    "name": "Bajaj General",
+    "pages": [
+      "https://www.bajajgeneralinsurance.com/health-insurance-plans.html"
+    ]
+  },
+  {
+    "aliases": [
+      "Tata Aig"
+    ],
+    "hosts": [
+      "tataaig.com"
+    ],
+    "id": "tata-aig",
+    "name": "Tata AIG",
+    "pages": [
+      "https://www.tataaig.com/downloads"
+    ]
+  },
+  {
+    "aliases": [
+      "Sbi"
+    ],
+    "hosts": [
+      "sbigeneral.in"
+    ],
+    "id": "sbi-general",
+    "name": "SBI General",
+    "pages": [
+      "https://www.sbigeneral.in/downloads"
+    ]
+  },
+  {
+    "aliases": [
+      "Digit"
+    ],
+    "hosts": [
+      "godigit.com"
+    ],
+    "id": "go-digit",
+    "name": "Go Digit",
+    "pages": [
+      "https://www.godigit.com/downloads"
+    ]
+  },
+  {
+    "aliases": [
+      "Acko"
+    ],
+    "hosts": [
+      "acko.com",
+      "assets.ctfassets.net",
+      "acko-cms.ackoassets.com",
+      "acko-wordpress.s3.ap-south-1.amazonaws.com"
+    ],
+    "id": "acko",
+    "name": "ACKO",
+    "pages": [
+      "https://www.acko.com/download/"
+    ]
+  },
+  {
+    "aliases": [],
+    "hosts": [
+      "zurichkotak.com",
+      "d2t12sefhwd9tk.cloudfront.net"
+    ],
+    "id": "zurich-kotak",
+    "name": "Zurich Kotak",
+    "pages": [
+      "https://www.zurichkotak.com/product-documents"
+    ]
+  },
+  {
+    "aliases": [],
+    "hosts": [
+      "generalicentralinsurance.com"
+    ],
+    "id": "generali-central",
+    "name": "Generali Central",
+    "pages": [
+      "https://www.generalicentralinsurance.com/customer-service/downloads"
+    ]
+  }
+]

@@ -1,0 +1,81 @@
+{
+  "acquired_at": "2026-09-10T11:58:04.895123+00:00",
+  "associations": [],
+  "byte_count": 549873,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/Hospital_Daily_Cash_Group_23282b96be.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 693,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 7,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "c9e463c891f884ff6f8abec0acfe26356bc6c39771909d074cf1576ba0d9222f",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/Hospital_Daily_Cash_Group_23282b96be.pdf"
+}

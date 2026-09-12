@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:55:32.430222+00:00",
+  "associations": [],
+  "byte_count": 1838785,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/Brochures_business_Guard_commercial_Package_Policy_f1619bfbd6.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1325,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 648.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 864.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 648.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 864.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "1e04048b80796afecaada2026096461c8ea913a8e7c3e62af7671159b7ba8d65",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/Brochures_business_Guard_commercial_Package_Policy_f1619bfbd6.pdf"
+}

@@ -1,0 +1,89 @@
+{
+  "acquired_at": "2026-09-10T11:55:30.828356+00:00",
+  "associations": [],
+  "byte_count": 1287288,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/tata_aig_travel_brochure_international_42ee23cc21.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1440,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 8,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.275,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.945
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.945
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.945
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.945
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.945
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.945
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.945
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.945
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "183052957ef13c243cb7c16643d0fa158f49f14e650980ac07a899a741b42f67",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/tata_aig_travel_brochure_international_42ee23cc21.pdf"
+}

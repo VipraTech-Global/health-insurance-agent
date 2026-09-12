@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T12:04:21.697139+00:00",
+  "associations": [],
+  "byte_count": 395389,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/National%20Critical%20Illness%20Claim%20Form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "national",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 511,
+  "linking_url": "https://nationalinsurance.nic.co.in/products/all-products/health/national-critical-illness-policy",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "f08d0e6baaa9c35bdb74e4ab8d820b38257ec5d0d43877b48df78479cd8bce36",
+  "status": "acquired",
+  "url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/National%20Critical%20Illness%20Claim%20Form.pdf"
+}

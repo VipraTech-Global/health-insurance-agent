@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:56:20.896494+00:00",
+  "associations": [],
+  "byte_count": 141615,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/Tata_AIG_Medi_Care_Revision_Rationale_f4cc19f187.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 371,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "6e8151c17b2be8d02b216cf0796f522a1b68aea6930a335b52f5a4be374af2d0",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/Tata_AIG_Medi_Care_Revision_Rationale_f4cc19f187.pdf"
+}

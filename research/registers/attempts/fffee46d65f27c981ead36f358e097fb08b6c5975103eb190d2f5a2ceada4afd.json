@@ -1,0 +1,137 @@
+{
+  "acquired_at": "2026-09-10T14:09:16.427205+00:00",
+  "associations": [],
+  "byte_count": 1474926,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Smart_Health_Pro_V_3_51c653ee1a.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "star",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1632,
+  "linking_url": "https://www.starhealth.in/downloads/",
+  "page_count": 14,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 11,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 12,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 13,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 14,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "5a558c4218c54fe54b5fd2db7b5b86fa3f1a17efb215cb060ebd694ab99e1f60",
+  "status": "acquired",
+  "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Smart_Health_Pro_V_3_51c653ee1a.pdf"
+}

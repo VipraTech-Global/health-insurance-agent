@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:58:14.702825+00:00",
+  "associations": [],
+  "byte_count": 180031,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/Vector_Borne_Disease_Group_2a5f3d2164.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1468,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "ae5f4adaedec54bcb9542c1e243999fa158bbadc8e82e5c4d478cf2e5c1aa010",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/Vector_Borne_Disease_Group_2a5f3d2164.pdf"
+}

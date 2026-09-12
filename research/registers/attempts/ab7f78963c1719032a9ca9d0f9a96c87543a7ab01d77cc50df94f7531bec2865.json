@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T12:00:10.214899+00:00",
+  "associations": [],
+  "byte_count": 262768,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.generalicentralinsurance.com/downloads/health-insurance/secure-premium/proposal-forms/secure-premium-proposal-form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "generali-central",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 387,
+  "linking_url": "https://www.generalicentralinsurance.com/customer-service/downloads",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "63c75c3cd49e292bb18833aa5fa854e40cd7a812cd762213a275df94dc1441cd",
+  "status": "acquired",
+  "url": "https://www.generalicentralinsurance.com/downloads/health-insurance/secure-premium/proposal-forms/secure-premium-proposal-form.pdf"
+}

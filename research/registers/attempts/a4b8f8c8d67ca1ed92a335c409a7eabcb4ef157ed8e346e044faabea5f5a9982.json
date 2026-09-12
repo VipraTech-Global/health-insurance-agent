@@ -1,0 +1,105 @@
+{
+  "acquired_at": "2026-09-10T11:58:52.527366+00:00",
+  "associations": [],
+  "byte_count": 613142,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-criti-protect-policy/Prospectus_New_India_Criti_Protect_Policy_NC_%20wef%2001%2010%202024.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 7044,
+  "linking_url": "https://www.newindia.co.in/health-insurance/new-india-criti-protect-policy",
+  "page_count": 10,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "930c9d7bcc2f432fea409b23b3f243d6cf333ed32e319c13b4b2d9cc2248cbcc",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-criti-protect-policy/Prospectus_New_India_Criti_Protect_Policy_NC_ wef 01 10 2024.pdf"
+}

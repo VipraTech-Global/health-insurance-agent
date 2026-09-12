@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T14:11:00.454536+00:00",
+  "associations": [],
+  "byte_count": 403,
+  "component_version": "research-acquisition/2",
+  "content_type": "text/html",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.careinsurance.com/other-downloads.html",
+  "format_version": 1,
+  "http_status": 403,
+  "insurer_id": "care",
+  "issues": [
+    "http_403"
+  ],
+  "language": "unknown",
+  "latency_ms": 229,
+  "linking_url": "",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "5f7ce56aac0448278f76a189b29f112e696331dd0214a881637dcea306981896",
+  "status": "failed",
+  "url": "https://www.careinsurance.com/other-downloads.html"
+}

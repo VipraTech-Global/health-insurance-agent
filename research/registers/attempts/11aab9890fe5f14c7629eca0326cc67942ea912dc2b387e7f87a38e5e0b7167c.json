@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T12:00:37.821986+00:00",
+  "associations": [],
+  "byte_count": 157992,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.generalicentralinsurance.com/downloads/commercial-insurance/burglary-(housebreaking)-insurance/prospectus-forms/burglary-housebreaking-insurance-commercial-prospectus.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "generali-central",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 284,
+  "linking_url": "https://www.generalicentralinsurance.com/customer-service/downloads",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "784b6c544e4181d38168479aa4eb33d096872fefc8d58438e7e329b4934d3dd8",
+  "status": "acquired",
+  "url": "https://www.generalicentralinsurance.com/downloads/commercial-insurance/burglary-(housebreaking)-insurance/prospectus-forms/burglary-housebreaking-insurance-commercial-prospectus.pdf"
+}

@@ -1,0 +1,23 @@
+{
+  "acquired_at": "2026-09-10T11:51:41.122095+00:00",
+  "associations": [],
+  "component_version": "research-acquisition/1",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.adityabirlacapital.com/healthinsurance/assets/PDF/AgentCode.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "aditya-birla",
+  "issues": [
+    "RemoteProtocolError"
+  ],
+  "language": "unknown",
+  "latency_ms": 34868,
+  "linking_url": "https://www.adityabirlacapital.com/healthinsurance/downloads",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": null,
+  "status": "failed",
+  "url": "https://www.adityabirlacapital.com/healthinsurance/assets/PDF/AgentCode.pdf"
+}

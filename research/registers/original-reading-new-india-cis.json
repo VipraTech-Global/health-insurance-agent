@@ -1,0 +1,150 @@
+{
+  "complete_rule_inventory": false,
+  "coverage_limit": "Selected observations only. IRDAI English pages2-3,19-30 read; Hindi equivalents and annexures not fully reconciled. HDFC all4 pages read including page2 image. CIS all3 pages read and page2 visually checked.",
+  "format_version": 1,
+  "generated_at": "2026-09-10T13:11:47.828807+00:00",
+  "independent_rule_denominator": null,
+  "method": "Manual original reading independent of later extraction system",
+  "rules": [
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 2,
+          "passage": "Policy Document shall prevail",
+          "section": "Disclaimer",
+          "source_sha256": "ff4c3d125c311611f999a72023ba21ee53d2c31d1674e2c5d6cc4630276afe39",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "CIS expressly defers to wording on conflict, so agreement with one wording passage does not resolve contradictions inside that wording.",
+      "rule_id": "original-new-india-cis-001",
+      "section": "Disclaimer",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 2,
+          "passage": "Excl01)-36 Months",
+          "section": "7",
+          "source_sha256": "ff4c3d125c311611f999a72023ba21ee53d2c31d1674e2c5d6cc4630276afe39",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "CIS supports 36-month PED value but wording page21 says four years; preserve both, plus regulatory and version dependencies.",
+      "rule_id": "original-new-india-cis-002",
+      "section": "7",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 2,
+          "passage": "Not applicable",
+          "section": "8 iii",
+          "source_sha256": "ff4c3d125c311611f999a72023ba21ee53d2c31d1674e2c5d6cc4630276afe39",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Deductible state is explicitly not applicable; this is distinct from zero and unknown.",
+      "rule_id": "original-new-india-cis-003",
+      "section": "8 iii",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 2,
+          "passage": "whichever is lower, per eye",
+          "section": "8 cataract",
+          "source_sha256": "ff4c3d125c311611f999a72023ba21ee53d2c31d1674e2c5d6cc4630276afe39",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Cataract summary must be joined to wording section4.3 per-eye-per-policy-year scope; literal CIS reference4.1(b) is defective.",
+      "rule_id": "original-new-india-cis-004",
+      "section": "8 cataract",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 2,
+          "passage": "Co-Payment",
+          "section": "8 ii",
+          "source_sha256": "ff4c3d125c311611f999a72023ba21ee53d2c31d1674e2c5d6cc4630276afe39",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "CIS co-pay5% literal reference12 leads to benefit table; full controlling wording9.5 supplies admissible-payable base.",
+      "rule_id": "original-new-india-cis-005",
+      "section": "8 ii",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 3,
+          "passage": "Please disclose all pre-existing",
+          "section": "13",
+          "source_sha256": "ff4c3d125c311611f999a72023ba21ee53d2c31d1674e2c5d6cc4630276afe39",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Disclosure obligations attach to insured conditions and insurer-facing proposal; app deletion cannot imply amendment of an issued insurance contract.",
+      "rule_id": "original-new-india-cis-006",
+      "section": "13",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    }
+  ],
+  "source_sha256": "ff4c3d125c311611f999a72023ba21ee53d2c31d1674e2c5d6cc4630276afe39",
+  "verification_errors": []
+}

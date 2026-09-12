@@ -1,0 +1,89 @@
+{
+  "acquired_at": "2026-09-10T11:58:13.686529+00:00",
+  "associations": [],
+  "byte_count": 669952,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/VECTOR_BORNE_DISEASE_COVER_GROUP_Policy_Wording_f1709ab241.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 569,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 8,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "e9c6bd00a41096d0d331f6abcc31c47f0ea5c6b6f48fd94e86944e88c1f315c7",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/VECTOR_BORNE_DISEASE_COVER_GROUP_Policy_Wording_f1709ab241.pdf"
+}

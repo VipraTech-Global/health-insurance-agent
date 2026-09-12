@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:58:31.880608+00:00",
+  "associations": [],
+  "byte_count": 197576,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/769e5bd23f634bdda6113503e0032046_792d807b98.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 710,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "e42aece87771950dbec8274a8e605dc212739ac985c4b85f23d4ba068163e3a7",
+  "status": "failed",
+  "url": "https://content.sbigeneral.in/uploads/769e5bd23f634bdda6113503e0032046_792d807b98.pdf"
+}

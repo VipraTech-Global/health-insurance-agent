@@ -1,0 +1,73 @@
+{
+  "acquired_at": "2026-09-10T11:54:01.733413+00:00",
+  "associations": [],
+  "byte_count": 3067800,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/Medi_Care_Plus_Proposal_f9213f5b09.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 827,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 6,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.0001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.0001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.0001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.0001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.032,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.008
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.0,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.0001
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "37d71d245e2c7501d0c620f8c6acdbcc95a0510074f2d4436ae0fd6b258cf7ee",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/Medi_Care_Plus_Proposal_f9213f5b09.pdf"
+}

@@ -1,0 +1,81 @@
+{
+  "acquired_at": "2026-09-10T11:55:56.761719+00:00",
+  "associations": [],
+  "byte_count": 312616,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/Medi_Care_Plus_eef8916f2b.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 304,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 7,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.56,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.56,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.56,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.56,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.56,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.56,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.56,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.04
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "26ecda9b408960b8ea0a787e4e42d05de58eac8553010d091412bff2e49972f1",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/Medi_Care_Plus_eef8916f2b.pdf"
+}

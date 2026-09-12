@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:56:07.047621+00:00",
+  "associations": [],
+  "byte_count": 464748,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/tata_aig_travel_insurance_student_tariff_sheet_bd674fabfb.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 610,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.528
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.528
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.528
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "e875bb6231b2699ab8ad47cb10852f2c4f0c03f9c27d6e1d208ecf86ca6acde0",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/tata_aig_travel_insurance_student_tariff_sheet_bd674fabfb.pdf"
+}

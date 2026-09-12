@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T12:01:11.987628+00:00",
+  "associations": [],
+  "byte_count": 628332,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/vatsalya-health-policy/CIS%20VATSALYA%20HEALTH%20POLICY(COVER%20FOR%20SURROGATE%20MOTHER%20AND%20OOCYTE%20DONOR).pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1396,
+  "linking_url": "https://www.newindia.co.in/health-insurance/vatsalya-health-policy",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "0bce72c4dcd95793727b912c429ef3f0c197ead0dc0614addf17fc34b15d981c",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/vatsalya-health-policy/CIS VATSALYA HEALTH POLICY(COVER FOR SURROGATE MOTHER AND OOCYTE DONOR).pdf"
+}

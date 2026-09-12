@@ -1,0 +1,36 @@
+{
+  "revision": "discussion-r6",
+  "generated_at_utc": "2026-09-10T19:18:46.771096+00:00",
+  "status": "author_recheck_passed_independent_recheck_pending",
+  "independent_review": false,
+  "original_review": "reports/database-proposal-review-r6.json",
+  "before_dictionary_sha256": "64aeb37c889c3d4b204ae62b72ef0b7c48adbcc9f985bb80d74be41e8f58a18e",
+  "current_dictionary_sha256": "cd69328329ca30d961d10b08a01a1c3d482813106f96fc76097a91f4d87e1660",
+  "findings": [
+    {
+      "finding": "COMBI-R6-01",
+      "author_recheck_passed": true,
+      "evidence": "Typed stages, issuer sender/recipient authority, reversal linkage and no automatic policy action are specified."
+    },
+    {
+      "finding": "COMBI-R6-02",
+      "author_recheck_passed": true,
+      "evidence": "Explicit sealed membership with commit guard, locked member writes and immutable historical member set."
+    },
+    {
+      "finding": "COMBI-R6-03",
+      "author_recheck_passed": true,
+      "evidence": "Duplicate slots are checked using underlying policy identity even when contract revision IDs differ; exceptions require exact reviewed slot rules."
+    }
+  ],
+  "remaining_review_limit": "The previous independent reviewer is not active in this fresh context. This report is author verification and does not replace an independent recheck or human design discussion.",
+  "runtime_implemented": false,
+  "proposal_approved": false,
+  "reviewed_sha256": {
+    "design/entity-field-dictionary.json": "cd69328329ca30d961d10b08a01a1c3d482813106f96fc76097a91f4d87e1660",
+    "design/field-dictionary.md": "7e3ef66457250ecad1635300f7c400a9f2e6d6a9bb11faef2f7d0007ca0e9e76",
+    "design/relationships-and-lifecycle.md": "d7f712cbfd71a511f32da4e5d38db7ac357d01f596b2311cf47073adbf946a93",
+    "design/json-contracts.schema.json": "360665343f1ddd8a37112fde062c0fff450b5bd2c4550cd1b9de797f70b89bf1",
+    "design/combi-design-change-r6.json": "6658f3841a711ff92b29b59017ebc7a3e1a5869c6e6d820f005cdccd0a0bd008"
+  }
+}

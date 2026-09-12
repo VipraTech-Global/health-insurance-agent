@@ -1,0 +1,113 @@
+{
+  "acquired_at": "2026-09-10T11:57:18.261433+00:00",
+  "associations": [],
+  "byte_count": 305850,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/Arogya_Sanjeevani_Prospectus_20240704_KEN_43df031293.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1239,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 11,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.274
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.274
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.274
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.273
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.274
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.888,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.274
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.274
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.274
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.274
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 11,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.274
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "0f5950766fa2592e2810fb8efb9237ce6172dc98c1f7b27c4d8943fabbe97f43",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/Arogya_Sanjeevani_Prospectus_20240704_KEN_43df031293.pdf"
+}

@@ -1,0 +1,97 @@
+{
+  "acquired_at": "2026-09-10T11:57:13.733280+00:00",
+  "associations": [],
+  "byte_count": 609505,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/atmanirbhar-health-policy/Atmanirbhar%20Health%20Policy%20Proposal%20Form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 6331,
+  "linking_url": "https://www.newindia.co.in/health-insurance/atmanirbhar-health-policy",
+  "page_count": 9,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.52
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "61b527e0c91522c493b846e511630977afcebe2eeea15f62814313c36269c12b",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/atmanirbhar-health-policy/Atmanirbhar Health Policy Proposal Form.pdf"
+}

@@ -1,0 +1,1239 @@
+{
+  "independent_rule_denominator": null,
+  "passage_verification_errors": [],
+  "physical_page_count": 33,
+  "printed_page_total_conflict": "Pages 1-25 state of 31; later pages state of 33. Use physical page ordinal.",
+  "rules": [
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 1,
+          "passage": "Age means age of the Insured person on last birthday as on date of commencement of the Policy.",
+          "section": "3.2",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Age has an insured-person subject, calculation method and reference event.",
+      "rule_id": "original-nia-as-001",
+      "section": "3.2",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 1,
+          "passage": "relapse within forty-five days",
+          "section": "3.3",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Illness episodes depend on last consultation and an inclusive duration requiring explicit interpretation.",
+      "rule_id": "original-nia-as-002",
+      "section": "3.3",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 2,
+          "passage": "A co- payment does not reduce the Sum Insured.",
+          "section": "3.13",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Payment cost share and consumption of nominal cover are separate concepts; retain full claim accounting evidence.",
+      "rule_id": "original-nia-as-003",
+      "section": "3.13",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 3,
+          "passage": "Treatment normally taken on an out-patient basis is not included in the scope of this definition.",
+          "section": "3.16",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Daycare cannot be inferred solely from short duration; the treatment type matters.",
+      "rule_id": "original-nia-as-004",
+      "section": "3.16",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 3,
+          "passage": "Legally wedded spouse.",
+          "section": "3.20",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Permitted relationship must have a precise meaning and evidence.",
+      "rule_id": "original-nia-as-005",
+      "section": "3.20",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 3,
+          "passage": "If the child above 18 years of age is financially independent",
+          "section": "3.20",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Dependent eligibility needs age, income/dependency and renewal timing together.",
+      "rule_id": "original-nia-as-006",
+      "section": "3.20",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 6,
+          "passage": "period of 30 days preceding the hospitalisation",
+          "section": "3.42",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Pre-hospital expenses need date window, same condition and admissible main claim.",
+      "rule_id": "original-nia-as-007",
+      "section": "3.42",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 6,
+          "passage": "period of 60 days immediately after",
+          "section": "3.43",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Post-hospital expenses need discharge anchor, same condition and main-claim dependency.",
+      "rule_id": "original-nia-as-008",
+      "section": "3.43",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 6,
+          "passage": "any applicable endorsements or extensions",
+          "section": "3.44",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "A wording alone is not the complete individual contract.",
+      "rule_id": "original-nia-as-009",
+      "section": "3.44",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 7,
+          "passage": "maximum of Rs.5000/-, per day.",
+          "section": "4.1a",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Room limit is the lower of 2 percent of SI and INR 5000 per day.",
+      "rule_id": "original-nia-as-010",
+      "section": "4.1a",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 7,
+          "passage": "maximum of Rs.10,000/- per day.",
+          "section": "4.1b",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "ICU limit uses 5 percent of SI capped at INR 10000 per day, separately from ordinary room.",
+      "rule_id": "original-nia-as-011",
+      "section": "4.1b",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 7,
+          "passage": "maximum of Rs.2000/- per",
+          "section": "4.1.1e",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Road ambulance benefit has a per-hospitalisation cap and a conflicting excluded-item row requiring resolution.",
+      "rule_id": "original-nia-as-012",
+      "section": "4.1.1e",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 8,
+          "passage": "with the exception of cost of medicines",
+          "section": "4.1 note b",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "The proportional-deduction item set excludes medicines and includes room/ICU context.",
+      "rule_id": "original-nia-as-013",
+      "section": "4.1 note b",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 8,
+          "passage": "covered up to 100% of Sum Insured",
+          "section": "4.2",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "AYUSH benefit is annual and requires eligible inpatient treatment and facility definitions.",
+      "rule_id": "original-nia-as-014",
+      "section": "4.2",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 8,
+          "passage": "per eye in one policy year.",
+          "section": "4.3",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Cataract limit is min(25 percent SI, INR 40000), scoped by eye and policy year.",
+      "rule_id": "original-nia-as-015",
+      "section": "4.3",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 8,
+          "passage": "up to 50% of Sum Insured",
+          "section": "4.6",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Modern-treatment limits require procedure membership, indication, setting, percentage base and policy period.",
+      "rule_id": "original-nia-as-016",
+      "section": "4.6",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 8,
+          "passage": "List-II, List-III and List-IV",
+          "section": "4.7",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Excluded items and items subsumed in package prices must not be conflated.",
+      "rule_id": "original-nia-as-017",
+      "section": "4.7",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 9,
+          "passage": "maximum of 50% of the sum insured",
+          "section": "5",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Bonus has earned amount, rate, ceiling and year context.",
+      "rule_id": "original-nia-as-018",
+      "section": "5",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 9,
+          "passage": "the lowest among all the Insured Persons",
+          "section": "5 note d",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Converting individual policies to floater can require a minimum operation across members' bonuses.",
+      "rule_id": "original-nia-as-019",
+      "section": "5 note d",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 9,
+          "passage": "in the proportion of the Sum Insured of each Renewed",
+          "section": "5 note e",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Splitting a floater needs allocation weights and resulting ownership.",
+      "rule_id": "original-nia-as-020",
+      "section": "5 note e",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 9,
+          "passage": "Sum Insured of the last completed Policy Year.",
+          "section": "5 note g",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "After increasing SI, bonus can still use the previous year's SI as calculation base.",
+      "rule_id": "original-nia-as-021",
+      "section": "5 note g",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 9,
+          "passage": "36 months of continuous coverage",
+          "section": "6.1a",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "PED clause conflicts with four-year benefit-table row; do not silently pick one.",
+      "rule_id": "original-nia-as-022",
+      "section": "6.1a",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 10,
+          "passage": "the longer of the two waiting periods shall apply.",
+          "section": "6.2c",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Overlapping waits combine by maximum when expressly stated, with accident and enhancement exceptions.",
+      "rule_id": "original-nia-as-023",
+      "section": "6.2c",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 10,
+          "passage": "Internal Congenital Anomalies",
+          "section": "6.2 list",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "A condition-list row is an independently inventoryable rule membership, not a blanket congenital exclusion.",
+      "rule_id": "original-nia-as-024",
+      "section": "6.2 list",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 12,
+          "passage": "expenses up to the stage of stabilization are payable",
+          "section": "7.8",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Excluded providers have an emergency/accident exception whose duration and expense boundary must be represented.",
+      "rule_id": "original-nia-as-025",
+      "section": "7.8",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 12,
+          "passage": "except ectopic pregnancy",
+          "section": "7.15",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Maternity exclusions have specific exceptions; negation must preserve the exception.",
+      "rule_id": "original-nia-as-026",
+      "section": "7.15",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 13,
+          "passage": "Any expenses incurred on Domiciliary Hospitalization and OPD treatment",
+          "section": "7.18",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Definitions of services do not establish that this product covers them.",
+      "rule_id": "original-nia-as-027",
+      "section": "7.18",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 13,
+          "passage": "specified ICD codes.",
+          "section": "7.20",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Individual accepted exclusions need coded scope, affected person, consent and schedule evidence.",
+      "rule_id": "original-nia-as-028",
+      "section": "7.20",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 13,
+          "passage": "After completion of sixty continuous months",
+          "section": "8",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Moratorium has continuity and enhanced-layer clocks plus an established-fraud exception and regulatory dependency.",
+      "rule_id": "original-nia-as-029",
+      "section": "8",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 14,
+          "passage": "claim settlement advice",
+          "section": "9.4 note b",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Coordination needs prior settlement evidence and accepted certified copies, not reuse of a gross bill.",
+      "rule_id": "original-nia-as-030",
+      "section": "9.4 note b",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 15,
+          "passage": "Co-Payment of 5%",
+          "section": "9.5",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Apply co-pay to the admissible payable amount after contractual restrictions.",
+      "rule_id": "original-nia-as-031",
+      "section": "9.5",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 16,
+          "passage": "primary Insurer",
+          "section": "10.8",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Multiple policies require owner selection, primary insurer and separate remaining eligible balances.",
+      "rule_id": "original-nia-as-032",
+      "section": "10.8",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 18,
+          "passage": "the entire policy along with all the members of the family",
+          "section": "10.14",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Requested partial portability may not satisfy the documented entire-family condition.",
+      "rule_id": "original-nia-as-033",
+      "section": "10.14",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 19,
+          "passage": "No loading shall apply on renewals based on individual claims experience.",
+          "section": "10.15",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Renewal pricing grounds need explicit evidence rather than inference from claims history.",
+      "rule_id": "original-nia-as-034",
+      "section": "10.15",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 19,
+          "passage": "notwithstanding any terms contrary elsewhere in the Policy",
+          "section": "10.16",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "A clause can carry explicit precedence over conflicting general terms; record the scope of that precedence.",
+      "rule_id": "original-nia-as-035",
+      "section": "10.16",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 19,
+          "passage": "coverage will be available during",
+          "section": "10.16b",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Instalment grace coverage must be distinguished from unpaid annual renewal.",
+      "rule_id": "original-nia-as-036",
+      "section": "10.16b",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 20,
+          "passage": "written endorsement signed and stamped.",
+          "section": "10.20",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Contract changes need issuer-authorised written evidence and effective dates.",
+      "rule_id": "original-nia-as-037",
+      "section": "10.20",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 20,
+          "passage": "waiting period shall start afresh only",
+          "section": "10.21",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": []
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Cover enhancements require amount layers with separate waiting clocks.",
+      "rule_id": "original-nia-as-038",
+      "section": "10.21",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 21,
+          "passage": "waiting period of 4 years",
+          "section": "12 PED row",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": [
+            "Column and row context retained in physical original; clause and table must be read together"
+          ]
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "This table contradicts section 6.1; preserve row/column context and block a definitive waiting-period answer pending resolution.",
+      "rule_id": "original-nia-as-039",
+      "section": "12 PED row",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 21,
+          "passage": "all other modes of payment a fixed period of 15 days",
+          "section": "12 grace row",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": [
+            "Column and row context retained in physical original; clause and table must be read together"
+          ]
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Quarterly/half-yearly grace differs from section 10.16; explicit override must be assessed and retained.",
+      "rule_id": "original-nia-as-040",
+      "section": "12 grace row",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 23,
+          "passage": "AMBULANCE",
+          "section": "Annexure A List I row 67",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": [
+            "Column and row context retained in physical original; clause and table must be read together"
+          ]
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Excluded ambulance item conflicts with road ambulance grant; matching by noun alone cannot resolve the conflict.",
+      "rule_id": "original-nia-as-041",
+      "section": "Annexure A List I row 67",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 24,
+          "passage": "BABY CHARGES (UNLESS SPECIFIED/INDICATED)",
+          "section": "Annexure A List II row 1",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": [
+            "Column and row context retained in physical original; clause and table must be read together"
+          ]
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "An item-level exception qualifies package inclusion and needs connected benefit evidence.",
+      "rule_id": "original-nia-as-042",
+      "section": "Annexure A List II row 1",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 25,
+          "passage": "EYE KIT",
+          "section": "Annexure A List III row 14",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": [
+            "Column and row context retained in physical original; clause and table must be read together"
+          ]
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Items subsumed into a procedure charge are not automatically a separately payable reimbursement.",
+      "rule_id": "original-nia-as-043",
+      "section": "Annexure A List III row 14",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 31,
+          "passage": "Surgery for cataract",
+          "section": "Annexure C row 66",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": [
+            "Column and row context retained in physical original; clause and table must be read together"
+          ]
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Daycare listing must be joined with cataract wait, cap, eye and co-pay rules.",
+      "rule_id": "original-nia-as-044",
+      "section": "Annexure C row 66",
+      "status": "inventoried_not_reviewed"
+    },
+    {
+      "critical": true,
+      "dependencies": [
+        "Individual schedule and endorsements",
+        "Applicable regulation and effective version",
+        "Connected definitions, exclusions and limits"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 32,
+          "passage": "Haemodialysis",
+          "section": "Annexure C row 90",
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "table_context": [
+            "Column and row context retained in physical original; clause and table must be read together"
+          ]
+        }
+      ],
+      "insurer_id": "new-india",
+      "inventoried_by": "Codex primary, independent of any proposed extraction pipeline",
+      "method": "original_document_reading",
+      "product_version": "NIAHLIP25044V022425",
+      "requirement": "Listed dialysis must be assessed together with eligible facility, waits and outpatient exclusion.",
+      "rule_id": "original-nia-as-045",
+      "section": "Annexure C row 90",
+      "status": "inventoried_not_reviewed"
+    }
+  ],
+  "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+  "status": "partial inventory; 33 pages read as original text; table p21 visually checked; full rule denominator not established"
+}

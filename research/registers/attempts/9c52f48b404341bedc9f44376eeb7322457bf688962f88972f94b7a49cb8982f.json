@@ -1,0 +1,73 @@
+{
+  "acquired_at": "2026-09-10T11:55:32.205050+00:00",
+  "associations": [],
+  "byte_count": 3866718,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/accident_guard_plus_brochure_22_9_2025_4d6b7e3421.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 4098,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 6,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.68,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.44
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.68,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.44
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.68,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.44
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.68,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.44
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.68,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.44
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.68,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.44
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "645653f71ed838a6dea9b7fc065d3976c11d88aaaa99eb9c8f6b9f95fdb57dac",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/accident_guard_plus_brochure_22_9_2025_4d6b7e3421.pdf"
+}

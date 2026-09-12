@@ -1,0 +1,302 @@
+{
+  "format_version": 1,
+  "case_id": "additional-r13-combi-01",
+  "family": 16,
+  "related_families": [
+    3,
+    18,
+    20
+  ],
+  "split": "additional_reference_outside_required_400",
+  "synthetic_customer": true,
+  "title": "Can I cancel only the life policy during the Health Maximiser free-look period?",
+  "decision_distinction": "The desired action targets one component, but the original defines package-wide cancellation during free look. Two accepted component policies remain distinct contracts and benefits; a correction to new purchase versus renewal changes applicability, while corrected package receipt changes the date anchor.",
+  "assessment_date": "2026-09-10",
+  "scenario_stipulations": [
+    "This is a synthetic reference fixture. The cited immutable Health Maximiser wording is stipulated to govern the newly issued combi package for the bounded free-look question; no current-sale or real underwriting assertion is made.",
+    "Meera, age 39, is the owner, buyer and premium payer of the newly issued package. Its accepted health component names Meera and her spouse Arjun, age 41, as insured people. Its accepted life component names Meera alone. Those memberships are stipulated customer-schedule facts, not eligibility conclusions derived from the one-page source.",
+    "The accepted component schedules identify Health Premier ZUKHLIP25054V052425 issued by Zurich Kotak General Insurance Company (India) Limited, and Kotak Term Plan 107N005V06 issued by Kotak Mahindra Life Insurance Company Limited. The wrapper is Health Maximiser ZUKHLIP25057V022425.",
+    "Both components belong to this same newly issued package. An older separately held health policy is not a component of this package, even though it was also renewed recently.",
+    "No cancellation request has been submitted to either insurer. The customer is requesting explanation only, and no insurer decision, refund or coverage termination has occurred."
+  ],
+  "customer": {
+    "owner_id": "synthetic-meera",
+    "buyer": "Meera, 39",
+    "insured_people": [
+      {
+        "person_id": "synthetic-meera",
+        "relationship_to_buyer": "self",
+        "age_years": 39,
+        "stipulated_memberships": [
+          "new-combi-health",
+          "new-combi-life"
+        ]
+      },
+      {
+        "person_id": "synthetic-arjun",
+        "relationship_to_buyer": "spouse",
+        "age_years": 41,
+        "stipulated_memberships": [
+          "new-combi-health"
+        ]
+      }
+    ],
+    "priority": "Keep accepted medical cover while considering removal of the life component; understand consequences before acting.",
+    "owned_contract_labels": [
+      "new-combi-wrapper",
+      "new-combi-health",
+      "new-combi-life",
+      "older-separate-health"
+    ],
+    "unrelated_contract": "older-separate-health"
+  },
+  "conversation": [
+    {
+      "turn_id": "t1",
+      "role": "customer",
+      "text": "I renewed Health Maximiser and received the documents on 25 August. I want to keep the health cover for us but cancel only the term-life part during free look. Can I do that?"
+    },
+    {
+      "turn_id": "t2",
+      "role": "adviser",
+      "text": "Is this a newly issued Health Maximiser combi package or a renewal? Please identify both component policies, who each covers, and when you received the complete package. The cancellation rule may apply to the whole package."
+    },
+    {
+      "turn_id": "t3",
+      "role": "customer",
+      "text": "Correction: Health Maximiser was newly issued on 20 August. I renewed an older, separate health policy, which confused me. The new package contains Health Premier covering me, Meera, and my spouse Arjun, plus Kotak Term Plan covering only me. I own both new policies and paid the package premium. I initially recorded the package receipt as 25 August."
+    },
+    {
+      "turn_id": "t4",
+      "role": "adviser",
+      "text": "Under the stipulated Health Maximiser wording, the health and life policies have distinct benefits and insurers, but you cannot cancel them individually during this package’s free-look period. A free-look cancellation application for either policy cancels the entire combi. That includes the new Health Premier component; it does not, by this clause alone, cancel your unrelated older health policy. The source uses receipt of the combi product for its 30-day window and excludes renewal free look for the general-insurance policy. I cannot calculate a refund or confirm replacement cover from the information supplied."
+    },
+    {
+      "turn_id": "t5",
+      "role": "customer",
+      "text": "I reopened this conversation and checked the acknowledgement. The complete new combi package was received on 28 August; 25 August was only when I uploaded an incomplete set to my own folder. Please correct the receipt date. I am not asking you to submit any cancellation."
+    },
+    {
+      "turn_id": "t6",
+      "role": "adviser",
+      "text": "The corrected package receipt date is 28 August, and the 25 August upload remains a separate event. On this 10 September reference date the stated receipt is within the source’s 30-day window, but the component-cancellation restriction still applies. Before choosing cancellation, obtain the package-specific refund details and understand the effect on both new component policies. The original lists medical-examination costs, stamp duty and proportionate risk premium as deductions; those inputs are missing. It also says a returned combi cannot be revived, reinstated or restored and a fresh proposal is needed for a new one. No cancellation, refund or replacement acceptance has been established."
+    }
+  ],
+  "known": [
+    "Owner and buyer are Meera; health covers Meera and Arjun in the fixture, life covers Meera only.",
+    "New purchase, not renewal, governs the newly issued combi; the older renewed health policy is separate.",
+    "Wrapper, component products, UINs, issuers and accepted membership associations are known synthetic facts.",
+    "Current corrected complete-package receipt is 2026-08-28; earlier 2026-08-25 was an incomplete customer-folder upload.",
+    "The requested decision is whether life-only free-look cancellation can preserve the new health component; no action is authorized in the fixture."
+  ],
+  "unknown": [
+    "Actual customer schedules, original receipt acknowledgement, completeness proof and receipt-channel evidence outside the synthetic fixture.",
+    "Individual underwriting, full life contract terms and life eligibility; none is inferred from the combi cover letter.",
+    "Exact premiums attributable to wrapper/components, medical-examination costs, stamp duty, risk-start dates, proportionate-risk formula and insurer refund computation.",
+    "Cancellation receipt, acceptance/effective time, payment timing, any claimed-period consequences and operative status of each real component.",
+    "Availability, underwriting acceptance, benefits, price or continuity of a replacement purchase and benefits of the unrelated older policy.",
+    "Later cancellation rights outside free look and any other governing regulatory or contractual restrictions not established by these passages."
+  ],
+  "fact_updates": [
+    {
+      "source_turn": "t1",
+      "subject": "new-combi-wrapper",
+      "predicate": "transaction_kind",
+      "value": "renewal",
+      "supersedes": null,
+      "status": "superseded_by_t3"
+    },
+    {
+      "source_turn": "t3",
+      "subject": "new-combi-wrapper",
+      "predicate": "transaction_kind",
+      "value": "new_issue",
+      "supersedes": "t1/new-combi-wrapper/transaction_kind",
+      "status": "current_synthetic_customer_assertion"
+    },
+    {
+      "source_turn": "t1",
+      "subject": "new-combi-wrapper",
+      "predicate": "complete_package_received_date",
+      "value": "2026-08-25",
+      "supersedes": null,
+      "status": "superseded_by_t5"
+    },
+    {
+      "source_turn": "t5",
+      "subject": "new-combi-wrapper",
+      "predicate": "complete_package_received_date",
+      "value": "2026-08-28",
+      "supersedes": "t1/new-combi-wrapper/complete_package_received_date",
+      "status": "current_synthetic_customer_assertion"
+    },
+    {
+      "source_turn": "t5",
+      "subject": "new-combi-wrapper",
+      "predicate": "customer_folder_incomplete_document_upload_date",
+      "value": "2026-08-25",
+      "supersedes": null,
+      "status": "current_synthetic_customer_assertion"
+    }
+  ],
+  "candidate_dispositions": [
+    {
+      "configuration": "new-combi-life cancelled alone during package free look while new-combi-health remains in force",
+      "status": "unsupported_requested_outcome_under_stipulated_clause",
+      "evidence_ids": [
+        "COMBI13-B"
+      ],
+      "reason": "The source expressly prohibits individual component cancellation during free look and makes either application cancel the whole combi."
+    },
+    {
+      "configuration": "new-combi-wrapper free-look cancellation affecting both accepted components",
+      "status": "conditional_consequence_explained_action_not_submitted",
+      "evidence_ids": [
+        "COMBI13-A",
+        "COMBI13-B"
+      ],
+      "reason": "Permitted decision path only with informed customer choice and verified contract/receipt requirements; exact refund and actual termination status remain unknown."
+    },
+    {
+      "configuration": "older-separate-health automatically cancelled by the new package request",
+      "status": "no_supporting_dependency",
+      "evidence_ids": [
+        "COMBI13-B"
+      ],
+      "reason": "The stipulated older contract is not a component of this combi; its independent coverage remains unassessed."
+    }
+  ],
+  "expected_answer": "Explain component identity separately from coupled free-look cancellation. For this stipulated new package, the source does not support cancelling life alone while keeping the new health component. Use the corrected complete-package receipt of 28 August, preserve the earlier upload as a different event, and retain the unrelated older contract separately. The 10 September question is within the stated 30-day window without adjudicating the exact terminal-day boundary. State source-listed refund deduction categories and the non-revival/fresh-proposal condition, but withhold an exact refund, cancellation completion or replacement acceptance. Do not infer life eligibility, transfer the spouse into the life policy, or expose any other customer’s contracts.",
+  "acceptable_alternatives": [
+    "Equivalent conditional explanation with exact citations, explicit whole-combi consequences and missing refund/underwriting inputs.",
+    "A focused request for real schedules and insurer receipt proof before operational guidance, while still explaining the supported coupled-cancellation clause."
+  ],
+  "evidence": [
+    {
+      "evidence_id": "COMBI13-A",
+      "source_sha256": "26c72de9834d7acf50293e62010d70af67f5c44273435fda38966c74deb7d990",
+      "source_url": "https://cms.zurichkotak.com/uploads/Health_Maximiser_Policy_Wording_e64479e8f4.pdf",
+      "physical_page": 1,
+      "bbox": [
+        40,
+        120,
+        560,
+        310
+      ],
+      "section": "Combi identity and distinct policy benefits",
+      "exact_passage": "Health Maximiser\nDear Sir/ Madam,\nWe welcome you to the Zurich Kotak family. We are glad to inform you that your proposal has been accepted and\nHealth Maximiser (UIN: ZUKHLIP25057V022425) (\"Combi Product\") has been issued to you. The Combi Product\nis jointly issued by Zurich Kotak General Insurance Company (India) Limited and Kotak Mahindra Life Insurance\nCompany Limited (\"KLI\"); wherein Health Premier (UIN: ZUKHLIP25054V052425) is issued by Zurich Kotak\nGeneral Insurance Company (India) Limited and Kotak Term Plan (UIN: 107N005V06) is issued by KLI.\nThe benefits under the two policies of this Combi Product are distinct as per the respective policies as offered by\nthe respective insurers.",
+      "passage_sha256": "7865bdbddcd5dd808a919e9b22215edc4c52aed80bd5c0c0ac87b2d541db0b8b",
+      "reader_parameters": {
+        "x_tolerance": 2,
+        "y_tolerance": 3
+      },
+      "reading_method": "Native text from declared original page crop, checked against rendered physical page 1.",
+      "visually_reviewed": true
+    },
+    {
+      "evidence_id": "COMBI13-B",
+      "source_sha256": "26c72de9834d7acf50293e62010d70af67f5c44273435fda38966c74deb7d990",
+      "source_url": "https://cms.zurichkotak.com/uploads/Health_Maximiser_Policy_Wording_e64479e8f4.pdf",
+      "physical_page": 1,
+      "bbox": [
+        40,
+        320,
+        560,
+        515
+      ],
+      "section": "Complete free-look paragraph including coupled cancellation and non-revival",
+      "exact_passage": "Free-look Period:\nIn case you are not agreeable to any of the provisions stated in the Combi Product, then you have the option of\nreturning the Combi Product to us stating the reasons thereof within 30 days from the date of the receipt of the\nCombi Product. The cancellation request should be submitted to your nearest branch or sent directly to the Head\nOffice of any of the Insurers. On receipt of your letter along with the original policy documents, we shall arrange\nto refund the premium paid by you after deducting expenses on medical examination and the stamp duty\ncharges; and the proportionate risk premium for period on cover. A Combi Product once returned shall not be\nrevived, reinstated or restored at any point of time and a new proposal will have to be made for the issue of a new\nCombi Product.\nFor the policy issued by Zurich Kotak General Insurance Company (India) Limited, the Free-look cancellation\noption is not available at the time of its renewal. You shall not be allowed to cancel the policies individually during\nthe Free-look Period. An application for cancellation of either of the policies during the Free-look Period will\ncancel this Combi Product in its entirety.",
+      "passage_sha256": "a357de2123b79fad5270b14e9431e8ffbcdd8a445f11dd1468915fc5e3d2fb9b",
+      "reader_parameters": {
+        "x_tolerance": 2,
+        "y_tolerance": 3
+      },
+      "reading_method": "Native text from declared original page crop, checked against rendered physical page 1.",
+      "visually_reviewed": true
+    }
+  ],
+  "calculations": [],
+  "calculation_assessment": {
+    "status": "not_required_for_this_structural_decision",
+    "reason": "The decisive test is component membership and coupled cancellation, not a numerical refund. The stated dates are comfortably inside 30 days; no exact expiry-time boundary is asserted. Refund inputs and calculation conventions are missing, so no monetary result is fabricated."
+  },
+  "information_requirements": {
+    "customer_information": [
+      "Buyer, owner, payer and each insured person remain distinct roles.",
+      "Component-specific insured membership and subject-bound corrections.",
+      "Original/new statement, source turn, receipt provenance and uncertainty."
+    ],
+    "product_applicability": [
+      "Public combi identity with separately identified component product versions and issuers.",
+      "Owned issued package associated with its actual component contracts and memberships.",
+      "New issue versus renewal per contract; unrelated older policy is not inferred to be a member."
+    ],
+    "policy_knowledge": [
+      "Distinct benefits do not imply independent cancellation.",
+      "Free-look trigger is receipt of combi product; general-insurance renewal exclusion.",
+      "Package-wide consequence when either component is targeted; refund deduction and no-revival/fresh-proposal terms."
+    ],
+    "calculations": [
+      "Retain missing refund monetary inputs, units, component allocation and authoritative calculation convention.",
+      "Do not invent a refund or exact terminal-day interpretation."
+    ],
+    "changing_observations": [
+      "Package receipt versus incomplete customer-folder upload.",
+      "A cancellation enquiry, submitted request, issuer acknowledgement, effective termination and refund payment are separate states."
+    ],
+    "retrieval": [
+      "Resolve all applicable public wrapper/component versions and original clauses before answering component-only cancellation.",
+      "Resolve same-owner issued package/component contracts and memberships; exclude unrelated contracts.",
+      "Load all affected dependency consequences, not only rules attached to the requested life component."
+    ],
+    "saved_decisions": [
+      "Pin customer revision, package/member associations, source hashes and applicable clause versions.",
+      "Record conditional explanation versus completed external action and unresolved refund/replacement inputs."
+    ],
+    "lifecycle": [
+      "Append corrections and supersede dependent renewal/receipt conclusions without overwriting upload history.",
+      "Reopening uses corrected current facts; an older concurrent turn cannot overwrite them or publish a stale receipt-based answer as current.",
+      "Source or component-association changes invalidate dependent cancellation answers.",
+      "Deleting private package data also removes its copied member/receipt/decision data while public wording remains separate."
+    ]
+  },
+  "pass_criteria": [
+    "Identify the wrapper and both component UINs and respective issuers without collapsing them into a single health product.",
+    "Keep Meera and Arjun membership component-specific and preserve Meera ownership; infer no life eligibility.",
+    "Ask about new issue versus renewal and package receipt; apply t3 and t5 corrections to the correct subjects.",
+    "State that cancelling either component during the stipulated free-look period affects the entire combi, including the new health policy.",
+    "Do not extend the dependency to the unrelated older health policy.",
+    "Cite both exact original identity and cancellation passages; distinguish separate benefits from linked cancellation.",
+    "Retain 25 August as incomplete upload and use 28 August as corrected complete-package receipt; do not reset either date merely by reopening.",
+    "Mention source-listed deductions and non-revival/fresh-proposal consequence without inventing refund, termination or replacement approval.",
+    "Treat stale concurrent revisions, copied private data and ownership boundaries as required future adviser behaviours, not implemented successes.",
+    "No external cancellation or other consequential action is performed; the scenario expressly requests explanation only."
+  ],
+  "assessment_status": "individually_assessed_bounded_source_pattern_with_visible_material_gaps",
+  "complete_customer_insurance_decision": false,
+  "counts_as_advice_acceptance_success": false,
+  "adviser_attempts": 0,
+  "source_completeness": "Two exact connected passages on physical page 1 only; full health/life contracts, historical applicability and actual customer evidence remain unestablished.",
+  "schema_implementation_approved": false,
+  "required_operations": [
+    "Resolve the stipulated new package by owner and wrapper UIN, then traverse its actual accepted health and life component contracts.",
+    "Retrieve component issuers, product-version UINs and insured-person membership without copying health membership to life.",
+    "Load the exact package free-look restriction and refund/non-revival dependencies before answering a life-only cancellation question.",
+    "Apply transaction-kind correction from renewal to new issue and update package receipt from 25 to 28 August while retaining the distinct upload event.",
+    "Reopen the saved decision using current customer and package-association revisions; reject a stale concurrent turn as current output.",
+    "Save only a conditional explanation with exact source pins and unresolved refund/replacement facts; no external request is dispatched."
+  ],
+  "assessment_verification": {
+    "original_sha256_verified": true,
+    "exact_original_regions_reextracted": 2,
+    "identity_uins_found_in_original": 3,
+    "physical_pages_visually_reviewed": [
+      1
+    ],
+    "corrected_receipt_safely_within_stated_window": true,
+    "exact_terminal_day_boundary_judged": false,
+    "refund_calculated": false,
+    "title_only_export_verified": true,
+    "actual_adviser_attempts": 0
+  }
+}

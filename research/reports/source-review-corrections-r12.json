@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-09-10T18:00:18.045824+00:00",
+  "findings": [
+    "TataPlus p7 false midpoint-column boundary",
+    "Mixed-family supporting-role sentence"
+  ],
+  "corrections": [
+    {
+      "path": "research/registers/tata-family-reconciliation-r12.json",
+      "before_sha256": "5fe3e686f48e08b05b8e73249bb4b368686ab6332ec5181b04ccd8086226e423",
+      "after_sha256": "b29b8dcb4f9a6e8603f896b5ebb29f263043ddd018cfdd489f4de597f8572f90",
+      "corrected_containers": 1
+    },
+    {
+      "path": "research/registers/digit-niva-family-reconciliation-r11.json",
+      "before_sha256": "2904d7edd1d5cb7eab1804b74a5cea8e96d279539d52b14ba7da22477472773f",
+      "after_sha256": "579e42a67b749ee767092118d5c1f50aaa6b8cb0d8c307a038cb98d4574fa07c",
+      "corrected_containers": 7
+    },
+    {
+      "path": "research/registers/document-scope-r17.json",
+      "before_sha256": "c5ff374410379b8d61594ac68a5a8c3ed4bd2436317bf869326a1fd3a79e56dc",
+      "after_sha256": "7660c5b4850c2471fcfbd69cf1d43c551924c9667b8659419d5c051b7975a69f",
+      "corrected_containers": 1
+    },
+    {
+      "path": "research/registers/legacy-assessment-r17.json",
+      "before_sha256": "728506243ed970e9d433b6831271f582e7a8f8e69a821da8e9fdaa05ba27c2d2",
+      "after_sha256": "71cbf62fc6e15a19b9625d8c628dde69d371b0c07a2bb13f4f7b6de816fc0390",
+      "corrected_containers": 8
+    }
+  ],
+  "original_bytes_changed": false,
+  "prior_cumulative_revisions": "Preserved; latest r17 corrects current derivative assertions, older r15/r16 retain their historical reading state."
+}

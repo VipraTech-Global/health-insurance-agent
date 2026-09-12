@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:59:25.666622+00:00",
+  "associations": [],
+  "byte_count": 102532,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.zurichkotak.com/documents/notice-of-general-meeting-and-annual-reports",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "zurich-kotak",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 350,
+  "linking_url": "https://www.zurichkotak.com/product-documents",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "451eda4a227fe2c8df76259703ad18ef8dbf2e28b07b10195f7d1434e38d56a2",
+  "status": "failed",
+  "url": "https://www.zurichkotak.com/documents/notice-of-general-meeting-and-annual-reports"
+}

@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:38:39.826913+00:00",
+  "associations": [],
+  "byte_count": 3555,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/captcha?url=//pages/doc/premium_chart/Rate-Card_HC_2022_v3-UIN.pdf?v=1.0",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1258,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "eaf6c473926d0c0f7fd0661bce046662c474b4cadc901314f8b2cae14aee9f42",
+  "status": "failed",
+  "url": "https://transactions.nivabupa.com/pages/doc/premium_chart/Rate-Card_HC_2022_v3-UIN.pdf?v=1.0"
+}

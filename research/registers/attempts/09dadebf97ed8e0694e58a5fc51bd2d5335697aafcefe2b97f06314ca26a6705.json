@@ -1,0 +1,177 @@
+{
+  "acquired_at": "2026-09-10T11:54:07.839159+00:00",
+  "associations": [],
+  "byte_count": 847897,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/group_credit_secure_plus_microinsurance_cfa247463c.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 677,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 19,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.32001,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.51999
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32001,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.51999
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32001,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.51999
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32001,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.51999
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32001,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.51999
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32001,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.51999
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32001,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.51999
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32001,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.51999
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32001,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.51999
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32001,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.51999
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32001,
+      "page": 11,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.51999
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32001,
+      "page": 12,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.51999
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32001,
+      "page": 13,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.51999
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32001,
+      "page": 14,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.51999
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32001,
+      "page": 15,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.51999
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32001,
+      "page": 16,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.51999
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32001,
+      "page": 17,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.51999
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32001,
+      "page": 18,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.51999
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32001,
+      "page": 19,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.51999
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "338e5a813dbcb427b2baf99eeedde637aa090b1f3273003a9d36aed86734a40a",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/group_credit_secure_plus_microinsurance_cfa247463c.pdf"
+}

@@ -1,0 +1,100 @@
+{
+  "format_version": 1,
+  "review_kind": "final_database_proposal_delta_recheck",
+  "revision_reviewed": "discussion-r3",
+  "status": "six_r2_residuals_resolved_at_proposal_level_with_one_low_prose_cleanup",
+  "source_fingerprints": {
+    "research/design/entity-field-dictionary.json": "634a1edbf4563fcd1d04965eca427cae2629be38ff318f0b073ae779215d6432",
+    "research/design/relationships.json": "ac68f8b078f2da0a13c9b756d0f5168cef637528b089dace12c5fea687f41dbc",
+    "research/design/relationships-and-lifecycle.md": "16f82f60917d93cadd9ab4afa7d7067b9f21e2c527d9d1b01341b32be73679a2",
+    "research/design/json-contracts.schema.json": "64e0c97f87310fa173c24c8b577e9a41bd4931cc6289842852db517666bf2c80"
+  },
+  "reviewed_scope": {
+    "entities": 84,
+    "fields": 825,
+    "relationships": 250,
+    "scope": "Six r2 residuals and the archive locator/content-role additions. This is not an exhaustive re-review of all fields or an implementation acceptance."
+  },
+  "prior_finding_resolutions": [
+    {
+      "id": "DB2-01",
+      "status": "resolved_in_proposal",
+      "evidence": "Global targets now use ordinary role-limited FKs. Mixed ModelAttempt rows require owner_id whenever turn_id is present; the composite owner FK remains. Mixed processing parents enforce public-or-same-owner compatibility."
+    },
+    {
+      "id": "DB2-02",
+      "status": "resolved_in_proposal",
+      "evidence": "FactAssertion now has subject_kind, subject_contract_id and subject_provider_id in addition to person_id. Kind-specific mutually exclusive subject constraints and predicate-kind matching preserve scalar identity."
+    },
+    {
+      "id": "DB2-03",
+      "status": "resolved_in_proposal",
+      "evidence": "Every relationship separates physical on_delete from orm_on_delete. Native Permission -> ContentType uses ORM CASCADE and explicitly preserves physical native NO ACTION pending catalog rehearsal; nullable admin content type uses ORM SET_NULL."
+    },
+    {
+      "id": "DB2-04",
+      "status": "resolved_in_proposal",
+      "evidence": "Both ContentCopy endpoints use same_scope_owner and owner IS NOT DISTINCT FROM source owner; private copy rows cannot point to public artifacts. Dependent output scope and containment are also explicit."
+    },
+    {
+      "id": "DB2-05",
+      "status": "resolved_in_proposal",
+      "evidence": "source_assertion_id and import_grant_id are required for authorized_import, with exact grant membership/conversation checks. Supersession is restricted to the destination conversation in dictionary constraints and r3 clarification."
+    },
+    {
+      "id": "DB2-06",
+      "status": "resolved_in_proposal",
+      "evidence": "ProviderObservation.insurer_id is optional for insurer-independent wheelchair accessibility, while insurer-specific network/exclusion/authorization kinds require it. Configuration must match its insurer."
+    }
+  ],
+  "archive_additions": {
+    "status": "present_and_consistent_at_proposal_level",
+    "evidence": [
+      "LegacyMapping.archive_blob_id is a required FK to OriginalBlob using exact same-scope ownership. Its validation requires legacy_record_archive and the source record fingerprint.",
+      "OriginalBlob.content_role distinguishes acquired_original,legacy_record_archive,processing_derivative.",
+      "Acquisition requires acquired_original and matching source scope; ProcessingJob.result_blob_id requires processing_derivative and matching scope. DocumentRevision excludes archive/derivative roles from contractual truth and the independent original denominator.",
+      "Erased source payloads cannot be reimported; archive is a retained source payload locator, not translated insurer knowledge."
+    ],
+    "implementation_limits": [
+      "Native archive hash serialization and actual preservation/erasure must be rehearsed only after design approval.",
+      "The acquired_original default does not replace acquisition/provenance and content-role validation; archivers and derivative writers must satisfy the explicit role constraints."
+    ]
+  },
+  "findings": [
+    {
+      "id": "DB3-DOC-01",
+      "severity": "low",
+      "file": "research/design/relationships-and-lifecycle.md",
+      "issue": "Earlier conversation-lineage prose still allows supersession across conversations under an authorized import. The r3 dictionary and later clarification correctly use source_assertion_id for import and keep supersedes within the destination.",
+      "fix": "Remove the obsolete unless-an-authorized-import exception from the supersession paragraph; preserve the separate import lineage description.",
+      "effect": "Documentation consistency cleanup; the revised dictionary already expresses the intended rule."
+    }
+  ],
+  "checks": {
+    "all_250_fk_names_targets_required_flags_match": true,
+    "owner_predicates_only_reference_targets_with_owner_fields": true,
+    "all_json_field_contract_references_resolve": true,
+    "jsonschema_meta_schema_valid": true,
+    "new_schema_runtime_tests": false,
+    "reason_no_repeated_json_probes": "The r3 delta changes dictionary and relationship declarations; the JSON contract schema remains r2 and its previously focused probes remain scoped evidence, not database runtime verification."
+  },
+  "pending_next_revision": [
+    {
+      "change": "Non-PDF evidence location support",
+      "status": "announced_by_parent_not_part_of_this_reviewed_delta",
+      "requirements": "Required document identity and immutable original hash; PDF page optional only for non-PDF kinds; strict PDF-region/HTML-element/JSON-pointer/text-range locator; preserve actual source media and method without inventing a PDF page."
+    },
+    {
+      "change": "Pilot AIPreference preservation mapping",
+      "status": "announced_by_parent_not_part_of_this_reviewed_delta",
+      "requirements": "Verify the existing preference fields and ownership against the source inventory, then represent the selected route and timestamp without inferring successful qualification or resetting user preference."
+    }
+  ],
+  "bm25_note": "Parent restored the selected pg_textsearch 1.4.0 choice. This bounded delta review does not newly qualify its PostgreSQL/Django compatibility or runtime private-search behavior.",
+  "approval_boundary": "All six r2 residuals are addressed in the proposal. Database design still requires the user discussion/approval; full scenario/evidence completeness and the announced next changes are not certified here.",
+  "evaluation_material_read": false,
+  "proposal_files_edited": false,
+  "application_files_edited": false,
+  "database_implementation_approved": false,
+  "verification_limit": "Read-only JSON/document inspection and structural assertions only. No Django setup, native database catalog, migrations, constraints, RLS, workers or customer data were executed/read."
+}

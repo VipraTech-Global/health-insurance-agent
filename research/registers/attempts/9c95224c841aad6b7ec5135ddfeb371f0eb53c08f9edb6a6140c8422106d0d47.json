@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:52:10.209855+00:00",
+  "associations": [],
+  "byte_count": 149772,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/pages/doc/premium_chart/SurroGuard.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 2876,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "4494eafc6e1278c9f60565d8b52ef143c3263b408b4883d91a85ffa3c5a44ed5",
+  "status": "acquired",
+  "url": "https://transactions.nivabupa.com/pages/doc/premium_chart/SurroGuard.pdf"
+}

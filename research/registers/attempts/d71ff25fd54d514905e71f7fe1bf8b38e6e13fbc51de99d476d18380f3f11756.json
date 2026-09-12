@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:52:32.935157+00:00",
+  "associations": [],
+  "byte_count": 5076254,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.galaxyhealth.com/assets/preloaded/galaxy-smart-opd-rider-brochure.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "galaxy",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 3191,
+  "linking_url": "https://www.galaxyhealth.com/",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "70a63a5804d54678ce1173682d131eef41ce2be7f279201df434e190f6af1855",
+  "status": "acquired",
+  "url": "https://www.galaxyhealth.com/assets/preloaded/galaxy-smart-opd-rider-brochure.pdf"
+}

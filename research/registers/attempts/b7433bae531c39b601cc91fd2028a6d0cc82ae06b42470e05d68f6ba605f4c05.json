@@ -1,0 +1,73 @@
+{
+  "acquired_at": "2026-09-10T11:57:42.044448+00:00",
+  "associations": [],
+  "byte_count": 2139616,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/Money_Insurance_Proposal_Form_7b3ba2e4c2.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 721,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 6,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 859.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.0001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.0001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.0001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.0001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.0,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.0001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.0,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.0001
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "3cc6ba4589f1e62c8f5b172856aebba5d0adbff11c9dc3a6be3aa50ac3ba2049",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/Money_Insurance_Proposal_Form_7b3ba2e4c2.pdf"
+}

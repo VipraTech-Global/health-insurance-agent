@@ -1,0 +1,623 @@
+{
+  "generated_at": "2026-09-10T15:12:22.285685+00:00",
+  "status": "focused_artifact_checks_passed",
+  "checks": [
+    {
+      "check": "all203 exact identity values and order preserved",
+      "status": "pass"
+    },
+    {
+      "check": "203 unique exact identities",
+      "status": "pass"
+    },
+    {
+      "check": "only32 selected unresolved entries revised",
+      "status": "pass"
+    },
+    {
+      "check": "other171 complete entries unchanged",
+      "status": "pass"
+    },
+    {
+      "check": "r4 prior file hashes unchanged",
+      "status": "pass"
+    },
+    {
+      "check": "all100 prior scope records retained unchanged",
+      "status": "pass"
+    },
+    {
+      "check": "family status aggregate recomputes",
+      "status": "pass"
+    },
+    {
+      "check": "no final historical reconciliation or design readiness promoted",
+      "status": "pass"
+    },
+    {
+      "check": "128 unique scopedPDF originals",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash 0277b1549573",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 0277b1549573:6",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 0277b1549573:6",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash def7689a51aa",
+      "status": "pass"
+    },
+    {
+      "check": "original passage def7689a51aa:4",
+      "status": "pass"
+    },
+    {
+      "check": "original passage def7689a51aa:4",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash a939c9e4faca",
+      "status": "pass"
+    },
+    {
+      "check": "original passage a939c9e4faca:2",
+      "status": "pass"
+    },
+    {
+      "check": "original passage a939c9e4faca:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash 7033e517f381",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 7033e517f381:1",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 7033e517f381:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash 3dbee900eab4",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 3dbee900eab4:1",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 3dbee900eab4:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash 8f1c6e8f60f6",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 8f1c6e8f60f6:3",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 8f1c6e8f60f6:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash 08323d983e39",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 08323d983e39:11",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 08323d983e39:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash c9baf8e38cb5",
+      "status": "pass"
+    },
+    {
+      "check": "original passage c9baf8e38cb5:11",
+      "status": "pass"
+    },
+    {
+      "check": "original passage c9baf8e38cb5:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash 0fce1d0716a6",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 0fce1d0716a6:1",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 0fce1d0716a6:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash 5c06ca8a4058",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 5c06ca8a4058:4",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 5c06ca8a4058:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash d24d8fbc51de",
+      "status": "pass"
+    },
+    {
+      "check": "original passage d24d8fbc51de:1",
+      "status": "pass"
+    },
+    {
+      "check": "original passage d24d8fbc51de:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash 65b86fe7f0f0",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 65b86fe7f0f0:1",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 65b86fe7f0f0:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash f3a79349a6fb",
+      "status": "pass"
+    },
+    {
+      "check": "original passage f3a79349a6fb:8",
+      "status": "pass"
+    },
+    {
+      "check": "original passage f3a79349a6fb:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash d90b20cd19b6",
+      "status": "pass"
+    },
+    {
+      "check": "original passage d90b20cd19b6:1",
+      "status": "pass"
+    },
+    {
+      "check": "original passage d90b20cd19b6:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash 1b4b258721ae",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 1b4b258721ae:8",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 1b4b258721ae:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash 84309b397c5f",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 84309b397c5f:8",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 84309b397c5f:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash 80aa00ac377c",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 80aa00ac377c:1",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 80aa00ac377c:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash b9f36f87a680",
+      "status": "pass"
+    },
+    {
+      "check": "original passage b9f36f87a680:1",
+      "status": "pass"
+    },
+    {
+      "check": "original passage b9f36f87a680:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash d684a4770319",
+      "status": "pass"
+    },
+    {
+      "check": "original passage d684a4770319:6",
+      "status": "pass"
+    },
+    {
+      "check": "original passage d684a4770319:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash 028fb47fa2b2",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 028fb47fa2b2:1",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 028fb47fa2b2:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash a616358a9eaf",
+      "status": "pass"
+    },
+    {
+      "check": "original passage a616358a9eaf:1",
+      "status": "pass"
+    },
+    {
+      "check": "original passage a616358a9eaf:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash 382f2900bd33",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 382f2900bd33:1",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 382f2900bd33:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash 8ad0ad9a6dc5",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 8ad0ad9a6dc5:13",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 8ad0ad9a6dc5:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash e1cb21831418",
+      "status": "pass"
+    },
+    {
+      "check": "original passage e1cb21831418:7",
+      "status": "pass"
+    },
+    {
+      "check": "original passage e1cb21831418:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash 4947138a5937",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 4947138a5937:1",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 4947138a5937:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash 7c56abf26f4c",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 7c56abf26f4c:1",
+      "status": "pass"
+    },
+    {
+      "check": "original passage 7c56abf26f4c:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash caa3c9fe0f5e",
+      "status": "pass"
+    },
+    {
+      "check": "original passage caa3c9fe0f5e:1",
+      "status": "pass"
+    },
+    {
+      "check": "original passage caa3c9fe0f5e:1",
+      "status": "pass"
+    },
+    {
+      "check": "new manual scope original hash c76616d0ee70",
+      "status": "pass"
+    },
+    {
+      "check": "original passage c76616d0ee70:6",
+      "status": "pass"
+    },
+    {
+      "check": "original passage c76616d0ee70:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 7:28",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 7:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 8:28",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 8:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 63:4",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 75:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 78:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 78:13",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 79:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 86:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 86:11",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 87:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 87:11",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 88:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 88:11",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 89:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 89:11",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 95:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 95:11",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 90:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 91:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 92:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 93:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 93:4",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 94:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 94:4",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 97:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 135:7",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 136:7",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 137:7",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 138:7",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 139:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 140:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 141:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 160:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 160:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 191:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 192:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 193:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 193:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 194:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 194:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 196:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 196:1",
+      "status": "pass"
+    },
+    {
+      "check": "listing passage 195:1",
+      "status": "pass"
+    },
+    {
+      "check": "manual public nonpdf original hash cb3770713cb7",
+      "status": "pass"
+    },
+    {
+      "check": "manual public nonpdf original hash f3ebfe3c3cd6",
+      "status": "pass"
+    },
+    {
+      "check": "manual public nonpdf original hash 424bf7fba9c6",
+      "status": "pass"
+    },
+    {
+      "check": "manual public nonpdf original hash c99a5f06375b",
+      "status": "pass"
+    },
+    {
+      "check": "all2357PDFs and457nonPDFs counted once",
+      "status": "pass"
+    },
+    {
+      "check": "full object path set agrees with current filesystem",
+      "status": "pass"
+    },
+    {
+      "check": "all accounted object hashes verified during scan",
+      "status": "pass"
+    },
+    {
+      "check": "snapshot manifest hash valid",
+      "status": "pass"
+    },
+    {
+      "check": "scope and identity input manifest hashes valid",
+      "status": "pass"
+    },
+    {
+      "check": "all acquisition attempts accounted",
+      "status": "pass"
+    },
+    {
+      "check": "no missing referenced objects",
+      "status": "pass"
+    },
+    {
+      "check": "automated preview remains unreviewed and not rule inventory",
+      "status": "pass"
+    },
+    {
+      "check": "denominator and completeness remain explicitly unknown",
+      "status": "pass"
+    }
+  ],
+  "check_count": 151,
+  "selected_original_passages_verified": 101,
+  "manual_originals_added": 28,
+  "full_stored_object_count": 2814,
+  "artifact_hashes": {
+    "registers/legacy-assessment-r5.json": "5429f5a290b7eacb5fbeb98b04173ef514e3a656ace7ce64b098ec9e23760652",
+    "registers/document-scope-r5.json": "0965ca872d8fba61ba1ab400a477aafc7f19387f5872297edeee94055cf5d8f6",
+    "registers/source-corpus-accounting-r5.json": "5881ebd8535bf7ba6694310a1d687eaf16df0f02b9f7fa3d6e04c9a4648ceb00",
+    "registers/source-corpus-inputs-r5.json": "a5beaedb7565098199185364f5ccde7d220ea04c37ea928936d6f0d58b6b725d",
+    "reports/source-reconciliation-r5.md": "8f3751ff37ccb3656253e93340f3fff484caac867ffe8e8c05b7bcb62369817f"
+  },
+  "boundary": "These checks establish artifact integrity, count accuracy, selected original passage resolution and preserved uncertainty. They do not prove full source reconciliation, complete rule inventory, adviser success or database approval.",
+  "design_ready": false
+}

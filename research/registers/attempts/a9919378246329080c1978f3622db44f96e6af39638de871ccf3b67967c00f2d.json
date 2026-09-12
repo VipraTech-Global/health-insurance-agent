@@ -1,0 +1,21 @@
+{
+  "acquired_at": "2026-09-10T12:00:47.616276+00:00",
+  "associations": [],
+  "component_version": "research-acquisition/1",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "format_version": 1,
+  "insurer_id": "aditya-birla",
+  "issues": [
+    "ReadTimeout"
+  ],
+  "language": "unknown",
+  "latency_ms": 30257,
+  "linking_url": "https://www.adityabirlacapital.com/healthinsurance/activ-one?ActivOneMax=activ-one-max",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": null,
+  "status": "failed",
+  "url": "https://www.adityabirlacapital.com/healthinsurance/assets/pdf/Annexure-I_(List_of_Non-Medical_Expenses)_Activ One_NXT.pdf"
+}

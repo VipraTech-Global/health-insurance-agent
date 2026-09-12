@@ -1,0 +1,377 @@
+{
+  "acquired_at": "2026-09-10T12:01:29.164477+00:00",
+  "associations": [],
+  "byte_count": 892223,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://acko-cms.ackoassets.com/5_Policy_Wordings_AH_II_b6ad49f686.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "acko",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1179,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": 44,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 11,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 12,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 13,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 14,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 15,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 16,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 17,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 18,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 19,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 20,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 21,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 22,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 23,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 24,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 25,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 26,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 27,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 28,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 29,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 30,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 31,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 32,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 33,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 34,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 35,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 36,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 37,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 38,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 39,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 40,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 41,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 42,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 43,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 44,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "08323d983e393e40a9837fa20e07ae7181b304bdada9590c6a0765ae2b59529c",
+  "status": "acquired",
+  "url": "https://acko-cms.ackoassets.com/5_Policy_Wordings_AH_II_b6ad49f686.pdf"
+}

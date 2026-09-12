@@ -1,0 +1,121 @@
+{
+  "acquired_at": "2026-09-10T11:56:51.606836+00:00",
+  "associations": [],
+  "byte_count": 6928805,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/surveyor_management_policy/Final%20List%20of%20Surveyors%20qualified%20under%20SMP%20Exercise%202026-27.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 22864,
+  "linking_url": "https://www.newindia.co.in/health-insurance/atmanirbhar-health-policy",
+  "page_count": 12,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 525.1
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 512.7
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 518.3
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 511.6
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 528.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 515.5
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 504.8
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 504.9
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 508.8
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 528.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 11,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 528.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 12,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 528.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "cbe0930ab0d72f8930e6e8b2d14d5a63f1cc5f4dd43eeca7b5692ec0223078eb",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/surveyor_management_policy/Final List of Surveyors qualified under SMP Exercise 2026-27.pdf"
+}

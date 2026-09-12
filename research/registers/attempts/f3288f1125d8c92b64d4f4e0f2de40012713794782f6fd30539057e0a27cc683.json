@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:02:03.659535+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/new-india-mediclaim-policy/new-mediclaim-claim-form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 7254,
+  "linking_url": "https://www.newindia.co.in/health-insurance/health-insurance-policy",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "daca1067c18cee9f9568c0f6bea9f4fd8130e438fac3ee8b6f8c8ab7a09a9eec",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/new-india-mediclaim-policy/new-mediclaim-claim-form.pdf"
+}

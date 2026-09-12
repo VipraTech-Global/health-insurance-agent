@@ -1,0 +1,417 @@
+{
+  "acquired_at": "2026-09-10T14:44:54.565038+00:00",
+  "associations": [],
+  "byte_count": 1258985,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://oicl-cms-media.s3.ap-south-1.amazonaws.com/Happy_Family_Floater_2021_policy_wordings_1_e31b8d9fe9.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "oriental",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1011,
+  "linking_url": "https://cms.orientalinsurance.org.in/cms/api/download-policy-terms-conditions?populate=*&locale=en",
+  "page_count": 49,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 11,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 12,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 13,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 14,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 15,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 16,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 17,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 18,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 19,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 20,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 21,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 22,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 23,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 24,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 25,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 26,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 27,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 28,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 29,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 30,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 31,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 32,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 33,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 34,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 35,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 36,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 37,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 38,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 39,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 40,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 41,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 42,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 43,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 44,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 45,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 46,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 47,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 48,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 49,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "e1cb2183141818a1215529947f4c9758a3da80204dec937235cf713e84084459",
+  "status": "acquired",
+  "url": "https://oicl-cms-media.s3.ap-south-1.amazonaws.com/Happy_Family_Floater_2021_policy_wordings_1_e31b8d9fe9.pdf"
+}

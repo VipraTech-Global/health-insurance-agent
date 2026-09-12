@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:58:00.890081+00:00",
+  "associations": [],
+  "byte_count": 3121097,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/arogya-pragati-plus-policy/1%20Arogya%20Pragati%20Pamphlet.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 6447,
+  "linking_url": "https://www.newindia.co.in/health-insurance/arogya-pragati-plus",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 396.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 540.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 396.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 540.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "28195e6cbfa89cda4380c9ab4b4f137ae6a480d6a8ea5ff32517d88aec0d2129",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/arogya-pragati-plus-policy/1 Arogya Pragati Pamphlet.pdf"
+}

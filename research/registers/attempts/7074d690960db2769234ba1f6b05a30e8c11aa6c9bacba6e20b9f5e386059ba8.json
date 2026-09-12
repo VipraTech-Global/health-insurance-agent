@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T11:56:34.562253+00:00",
+  "associations": [],
+  "byte_count": 49596,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/hudhud-cyclone-claim-settlement-status_49bc8f442a.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 148,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "7298e20800fe6768942835d3fcb44e96155d0a014c9de89a455dfb923db5e95d",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/hudhud-cyclone-claim-settlement-status_49bc8f442a.pdf"
+}

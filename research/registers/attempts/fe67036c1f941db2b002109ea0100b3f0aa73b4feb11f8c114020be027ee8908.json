@@ -1,0 +1,65 @@
+{
+  "acquired_at": "2026-09-10T11:57:39.357622+00:00",
+  "associations": [],
+  "byte_count": 127171,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/SBIGI_Flexi_Home_Insurance_Terrorism_Damage_Cover_Add_no_Wordings_V1_4e6b8ae164.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 263,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 5,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "e38e0ead7ba362907ef0fe15691f99a6133e8816d5d2b7c2c62d6536cb809f52",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/SBIGI_Flexi_Home_Insurance_Terrorism_Damage_Cover_Add_no_Wordings_V1_4e6b8ae164.pdf"
+}

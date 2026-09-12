@@ -1,0 +1,81 @@
+{
+  "acquired_at": "2026-09-10T11:59:26.034273+00:00",
+  "associations": [],
+  "byte_count": 514904,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://cms.zurichkotak.com/uploads/Excluded_hospital_JAN_26_Webiste_4c93a46fa3.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "zurich-kotak",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 341,
+  "linking_url": "https://www.zurichkotak.com/product-documents",
+  "page_count": 7,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 1224.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1224.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1224.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1224.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1224.0,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1224.0,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1224.0,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "e24250e32f88d48b1bd2dcf788d6d31217b98ba276a0a69b178289cec3df63ba",
+  "status": "acquired",
+  "url": "https://cms.zurichkotak.com/uploads/Excluded_hospital_JAN_26_Webiste_4c93a46fa3.pdf"
+}

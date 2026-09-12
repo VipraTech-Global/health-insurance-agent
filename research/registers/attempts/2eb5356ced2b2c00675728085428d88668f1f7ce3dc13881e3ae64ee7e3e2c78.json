@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:59:26.406299+00:00",
+  "associations": [],
+  "byte_count": 190445,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://cms.zurichkotak.com/uploads/Citizens_Charter_b2295da7e5.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "zurich-kotak",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 511,
+  "linking_url": "https://www.zurichkotak.com/product-documents",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "20389114eb0819965555f3303a782ddff48850dee19f67e8fdc8ec6979bb6c03",
+  "status": "acquired",
+  "url": "https://cms.zurichkotak.com/uploads/Citizens_Charter_b2295da7e5.pdf"
+}

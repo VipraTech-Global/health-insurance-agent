@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T11:52:36.355939+00:00",
+  "associations": [],
+  "byte_count": 2577785,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.galaxyhealth.com/assets/preloaded/Arogya-Brochure.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "galaxy",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 2733,
+  "linking_url": "https://www.galaxyhealth.com/",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.945
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.945
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.945
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.945
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "b9d989c1756424b22496c7cf9327eb155f04fa67ff20ace00877038adee68081",
+  "status": "acquired",
+  "url": "https://www.galaxyhealth.com/assets/preloaded/Arogya-Brochure.pdf"
+}

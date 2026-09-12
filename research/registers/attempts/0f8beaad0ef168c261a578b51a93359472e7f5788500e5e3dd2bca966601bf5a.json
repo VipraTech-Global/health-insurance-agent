@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T18:10:10.706083+00:00",
+  "associations": [],
+  "byte_count": 224625,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://stgaccinwbsprdlrs01.blob.core.windows.net/nhilprd/Products_updated_and_withdrawn_f2b7ed78c7.pdf?sv=2025-05-05&spr=https&st=2025-07-14T17%3A07%3A41Z&se=2035-07-12T17%3A07%3A41Z&sr=b&sp=r&sig=tSFyGUIlLem%2B%2F4fAuxXP2HHSIbGsxvFdu0JZL3fBdDc%3D",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "narayana",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 149,
+  "linking_url": "https://uat.narayanahealth.insurance/product",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "6f8e98dc433a592ab5bf8c8f20506cacb8b43eff9b4b083b3cb961c583324a65",
+  "status": "acquired",
+  "url": "https://stgaccinwbsprdlrs01.blob.core.windows.net/nhilprd/Products_updated_and_withdrawn_f2b7ed78c7.pdf?sv=2025-05-05&spr=https&st=2025-07-14T17%3A07%3A41Z&se=2035-07-12T17%3A07%3A41Z&sr=b&sp=r&sig=tSFyGUIlLem%2B%2F4fAuxXP2HHSIbGsxvFdu0JZL3fBdDc%3D"
+}

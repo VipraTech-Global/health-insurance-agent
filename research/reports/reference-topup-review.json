@@ -1,0 +1,163 @@
+{
+  "format_version": 1,
+  "reviewed_at": "2026-09-10T13:22:28.011156+00:00",
+  "reviewer": "independent_reference_review_agent",
+  "review_status": "supported_scoped_assessments_with_citation_observation",
+  "scope": "Ten reference family-14 cases; four worked threshold assessments and eight numerical reference records. Not an adviser test, independent evaluation result, full scenario completion certification, or complete policy-rule inventory.",
+  "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+  "assessment_file": "research/reference/assessments-topup-original-backed.jsonl",
+  "review_basis": "Independently read preserved original PDF text on physical pages 2, 3, 4 and 6; navigation register used only to locate source scope. No benchmark evaluation data accessed. Numerical derivations use explicit arithmetic and conservation identities, not evaluation of authored expression strings or adviser calculator code.",
+  "source_findings": [
+    {
+      "pages": [
+        2,
+        3
+      ],
+      "finding": "Silver operative grant uses deductible per hospitalization; Gold operative grant uses defined limit. Defined Limit means admissible hospitalization expenses under selected schedule terms."
+    },
+    {
+      "pages": [
+        4
+      ],
+      "finding": "Gold note 3 accumulates admissible hospitalization expenses during the policy period; liability starts only above the defined limit. Notes 4 and 5 exclude pre/post expenses from that accumulator and prevent year-to-year carry-over. Note 7 states the sum insured floats among insured members."
+    },
+    {
+      "pages": [
+        6
+      ],
+      "finding": "Multiple Policies condition V.4 requires settlement under applicable terms and limits indemnification to treatment costs. V.2G requires Gold hospitalization intimation, including episodes with no claim."
+    }
+  ],
+  "arithmetic_results": [
+    {
+      "case_id": "ref-14-01",
+      "expected_inr": 150000,
+      "verified": true,
+      "independent_derivation": "Two admissions total 450000. A 300000 threshold plus 150000 exhausts that total. Individually 200000 and 250000 each fall below Silver threshold, giving Silver zero under stipulated terms.",
+      "scope": "Conditional comparison; incomplete suitability status appropriate."
+    },
+    {
+      "case_id": "ref-14-02",
+      "expected_inr": 150000,
+      "verified": true,
+      "independent_derivation": "First 200000 leaves 100000 of annual threshold. Of the second 250000, 100000 consumes that remainder and 150000 remains.",
+      "scope": "Supported worked threshold assessment with stipulated admissibility and zero prior usage."
+    },
+    {
+      "case_id": "ref-14-03",
+      "expected_inr": 400000,
+      "verified": true,
+      "independent_derivation": "700000 consists of threshold 300000 and excess 400000. Employer payment 200000 plus excess 400000 leaves 100000 funding gap.",
+      "scope": "Conditional illustration only; actual coordination remains unresolved."
+    },
+    {
+      "case_id": "ref-14-04",
+      "expected_inr": 200000,
+      "verified": true,
+      "independent_derivation": "500000 consists of threshold 300000 and excess 200000. Savings 400000 cover the illustrated threshold and leave 100000.",
+      "scope": "Does not independently establish issuance eligibility, available quote or cashless arrangement without base insurance."
+    },
+    {
+      "case_id": "ref-14-05",
+      "expected_inr": 0,
+      "verified": true,
+      "independent_derivation": "200000 is 100000 below the first policy-year threshold; 250000 is 50000 below the renewed year threshold. No positive excess occurs in either year.",
+      "scope": "Supported worked period-allocation assessment; employer year cannot combine separate top-up years."
+    },
+    {
+      "case_id": "ref-14-06",
+      "expected_inr": 100000,
+      "verified": true,
+      "independent_derivation": "First member uses 180000 and leaves 120000 threshold. Second member expense 220000 consists of that 120000 remainder and 100000 excess.",
+      "scope": "Supported worked shared-threshold assessment for both explicitly insured members of one Gold policy."
+    },
+    {
+      "case_id": "ref-14-07",
+      "expected_inr": 0,
+      "verified": true,
+      "independent_derivation": "Gross inpatient bill 320000 less stipulated excluded 40000 leaves 280000. This is 20000 below 300000. Separate pre/post 15000 plus 10000 cannot fill that shortfall.",
+      "scope": "Followup explicitly establishes no prior admissible policy-year usage, zero prior paid excess and a dated in-period admission. Supported worked threshold-membership assessment; pre/post payment remains outside the question."
+    },
+    {
+      "case_id": "ref-14-09",
+      "expected_inr": 500000,
+      "verified": true,
+      "independent_derivation": "800000 consists of threshold 300000 and standalone excess 500000. After base payment 400000 only 400000 expense remains; adding both nominal insurer amounts would exceed loss by 100000.",
+      "scope": "Standalone excess is not final Star payment; incomplete coordination status appropriate."
+    }
+  ],
+  "worked_case_review": [
+    {
+      "case_id": "ref-14-02",
+      "status": "supported_within_explicit_threshold_scope"
+    },
+    {
+      "case_id": "ref-14-05",
+      "status": "supported_within_explicit_period_scope"
+    },
+    {
+      "case_id": "ref-14-06",
+      "status": "supported_within_explicit_shared_membership_scope"
+    },
+    {
+      "case_id": "ref-14-07",
+      "status": "supported_after_explicit_accumulator_and_date_correction",
+      "finding": "Followup reviewed: named insured,10August2026 within stated2026 policy year, zero prior admissible usage and zero prior paid excess are now explicit. Earlier50000 usage counterexample is retained as a correction criterion."
+    }
+  ],
+  "findings": [
+    {
+      "id": "RT-01",
+      "severity": "high",
+      "case_id": "ref-14-07",
+      "issue": "Annual accumulator history is not established. With earlier admissible usage of 50000, current 280000 causes 30000 excess, rather than zero. Admission date is also absent.",
+      "required_change": "Explicitly stipulate no prior or other admissible usage in the same policy year and date the episode within that year; otherwise retain evidence_incomplete status.",
+      "status": "resolved",
+      "resolution": "Verified named membership, admission date and zero prior admissible usage/paid excess added. Threshold result0 is now established within explicit hypothetical scope."
+    },
+    {
+      "id": "RT-02",
+      "severity": "medium",
+      "case_id": "ref-14-08",
+      "issue": "Buyer and self insured are age35 while first_entry_age is47 and continuous_years is3. These are inconsistent facts for the same person.",
+      "required_change": "Correct current and entry ages consistently for the covered people, or record a customer correction rather than retaining incompatible accepted facts.",
+      "status": "resolved",
+      "resolution": "Verified current self age50, spouse52 and self entry47 with3continuous years; original age contradiction removed."
+    },
+    {
+      "id": "RT-03",
+      "severity": "high",
+      "case_id": "ref-14-10",
+      "issue": "Diagnosis2020 alone does not satisfy the original page2 PED definition for commencement July2026: definition uses diagnosis, advice or treatment within preceding36months. Current draft does not establish recent advice or treatment.",
+      "required_change": "Stipulate ongoing/recent diabetes treatment or advice within36months, or make PED classification and consequent waiting conclusion conditional on establishing that fact.",
+      "status": "resolved",
+      "resolution": "Verified ongoing physician-prescribed diabetes treatment and consultation15June2026 added, before1July2026 commencement and within36-month lookback."
+    },
+    {
+      "id": "RT-04",
+      "severity": "medium",
+      "case_id": "ref-14-09",
+      "issue": "The cited V.4ii passage concerns independently claiming disallowed amounts; V.4iv is the direct supporting passage for indemnification bounded by treatment costs.",
+      "required_change": "Add page6 V.4iv to exact evidence for the no-double-recovery answer.",
+      "status": "open_nonblocking_citation_specificity"
+    },
+    {
+      "id": "RT-05",
+      "severity": "medium",
+      "case_id": "all_eight_arithmetic_records",
+      "issue": "Reviewed initial records exposed only defined_limit in numeric inputs although they depend on episode amounts and other values. Parent has separately identified and is repairing this.",
+      "required_change": "Retain every numeric input with membership, period, unit and provenance rather than relying on expression literals or prose.",
+      "status": "resolved",
+      "resolution": "Verified all eight primary expression input sets now explicitly include episode/bill operands and threshold. Other explanatory funding/coordination values remain in customer_facts."
+    }
+  ],
+  "completion_limits": [
+    "Four narrowly worked calculations must not be represented as four complete insurance-purchase or real claim adjudications.",
+    "Eight verified arithmetic values do not measure adviser correctness.",
+    "No full-original completeness or total rule-denominator claim is made.",
+    "Original findings and resolutions are retained. Four worked labels support only the stated threshold/period/member arithmetic questions; adviser acceptance and complete400-case assessment remain unmeasured."
+  ],
+  "evaluation_accessed": false,
+  "adviser_acceptance_claimed": false,
+  "assessment_sha256_at_followup": "037490e9a20489b3dff59f1f1fc299530dbca4f5bb07a0b49c00dd39c6d146a7"
+}

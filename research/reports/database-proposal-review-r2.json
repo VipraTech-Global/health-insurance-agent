@@ -1,0 +1,499 @@
+{
+  "format_version": 1,
+  "review_kind": "django_database_proposal_thirteen_finding_recheck",
+  "revision_reviewed": "discussion-r2",
+  "status": "revise_before_database_design_approval",
+  "source_fingerprints": {
+    "research/design/entity-field-dictionary.json": "f5d79ea7f222ef42eeae60c3a10a5a80dbb5e0b4477a89d7c8acc6610efe7087",
+    "research/design/relationships.json": "bdefedf0292dcb0686685292a472fb2b6cdca5cfabbeee823f69e471d4bedd89",
+    "research/design/json-contracts.schema.json": "64e0c97f87310fa173c24c8b577e9a41bd4931cc6289842852db517666bf2c80",
+    "research/design/relationships-and-lifecycle.md": "64bc2b4944150a20ca20ab743d21d9cc8deffc1471c3684ba6e5b7632946fec0",
+    "research/design/value-and-rule-contracts.md": "947e65eb296c4154ec4b8215688df09cafc8849b107aa0e5c900b386873d3ece"
+  },
+  "reviewed_scope": {
+    "entities": 84,
+    "fields": 819,
+    "fk_relationships": 246,
+    "named_json_contracts": 45,
+    "scope": "Recheck the 13 previous design findings; no replacement code or migrations."
+  },
+  "prior_finding_resolutions": [
+    {
+      "id": "DB-R1",
+      "status": "partially_resolved",
+      "evidence": "Per-edge ledger, unique(id,owner_id), mixed/public triggers and staff exceptions now present; DB2-01 and DB2-04 remain."
+    },
+    {
+      "id": "DB-R2",
+      "status": "partially_resolved",
+      "evidence": "Deferred conversation/revision/subject/contract lineage and FactPredicate cardinality are explicit; DB2-02 and DB2-05 remain."
+    },
+    {
+      "id": "DB-R3",
+      "status": "partially_resolved",
+      "evidence": "ContentType, AdminLogEntry, native field/PK layouts and typed legacy target keys now represented; DB2-03 remains."
+    },
+    {
+      "id": "DB-R4",
+      "status": "resolved_in_proposal",
+      "evidence": "UsageEntry has stable posting_key unique per owner, exact event/assessment provenance and locked bounded reversals; assessments have immutable numbered supersession."
+    },
+    {
+      "id": "DB-R5",
+      "status": "partially_resolved",
+      "evidence": "Selective assertion/message scope, Artifact kinds, ContentCopy closure and owner erasure-generation fencing added; DB2-04 remains."
+    },
+    {
+      "id": "DB-R6",
+      "status": "partially_resolved",
+      "evidence": "Default no-reuse and explicit scoped grant/revocation added; exact imported-assertion lineage DB2-05 remains."
+    },
+    {
+      "id": "DB-R7",
+      "status": "resolved_in_proposal",
+      "evidence": "ExpenseLine.service_extent plus evidenced/stipulated ExpenseAllocation supports an instant boundary without invented midnight."
+    },
+    {
+      "id": "DB-R8",
+      "status": "partially_resolved",
+      "evidence": "Clinician identity, observation kind/value and negative-search completeness now represented; insurer-independent branch facts need DB2-06."
+    },
+    {
+      "id": "DB-R9",
+      "status": "resolved_in_proposal",
+      "evidence": "Rule and SearchChunk uniqueness includes owner with NULLS NOT DISTINCT, preserving public dedup and private owner separation."
+    },
+    {
+      "id": "DB-R10",
+      "status": "resolved_in_proposal",
+      "evidence": "Duration known/unknown/not_applicable alternatives added; absolute-limit percentage base and absent waiting credit may be explicit null."
+    },
+    {
+      "id": "DB-R11",
+      "status": "resolved_in_proposal",
+      "evidence": "Temporal formats/precision, operator arity, event payload requirements and dimension-keyed reconciliation tightened; explicit versioned semantic publication checks cover relational and unit obligations."
+    },
+    {
+      "id": "DB-R12",
+      "status": "partially_resolved",
+      "evidence": "246 FK action records and explicit erasure ordering now exist; global-target owner predicates and native ORM-versus-SQL actions need DB2-01/03."
+    },
+    {
+      "id": "DB-R13",
+      "status": "resolved_in_proposal",
+      "evidence": "ExpenseAllocation models package parent, time/scope portions, source/status and separate accounting roles with conservation/cycle validation."
+    }
+  ],
+  "findings": [
+    {
+      "id": "DB2-01",
+      "severity": "high",
+      "prior_findings": [
+        "DB-R1",
+        "DB-R12"
+      ],
+      "file": "research/design/relationships.json",
+      "title": "Generated owner predicates are invalid for globally scoped targets and incomplete for a nullable source.",
+      "issue": "24 public_only relationships propose target.owner_id IS NULL even though those target entities have no owner_id field. ModelAttempt.turn_id is same_owner but the source ModelAttempt.owner_id is nullable, so its composite equality FK alone can skip checking a referenced private Turn. The prose NOT NULL owner is not an executable conditional constraint and cannot be unconditional on mixed public processing attempts.",
+      "instances_without_target_owner": [
+        {
+          "source_entity": "Insurer",
+          "field": "successor_id",
+          "target_entity": "Insurer"
+        },
+        {
+          "source_entity": "LegacyListing",
+          "field": "insurer_id",
+          "target_entity": "Insurer"
+        },
+        {
+          "source_entity": "ListingCandidate",
+          "field": "listing_id",
+          "target_entity": "LegacyListing"
+        },
+        {
+          "source_entity": "ListingCandidate",
+          "field": "product_id",
+          "target_entity": "Product"
+        },
+        {
+          "source_entity": "ListingCandidate",
+          "field": "configuration_id",
+          "target_entity": "Configuration"
+        },
+        {
+          "source_entity": "ListingCandidate",
+          "field": "terms_id",
+          "target_entity": "TermsRevision"
+        },
+        {
+          "source_entity": "Product",
+          "field": "insurer_id",
+          "target_entity": "Insurer"
+        },
+        {
+          "source_entity": "TermsRevision",
+          "field": "product_id",
+          "target_entity": "Product"
+        },
+        {
+          "source_entity": "TermsRevision",
+          "field": "supersedes_id",
+          "target_entity": "TermsRevision"
+        },
+        {
+          "source_entity": "TermsDocument",
+          "field": "terms_id",
+          "target_entity": "TermsRevision"
+        },
+        {
+          "source_entity": "Configuration",
+          "field": "terms_id",
+          "target_entity": "TermsRevision"
+        },
+        {
+          "source_entity": "ConfigurationOption",
+          "field": "configuration_id",
+          "target_entity": "Configuration"
+        },
+        {
+          "source_entity": "ConfigurationOption",
+          "field": "option_terms_id",
+          "target_entity": "TermsRevision"
+        },
+        {
+          "source_entity": "CorpusRevision",
+          "field": "previous_id",
+          "target_entity": "CorpusRevision"
+        },
+        {
+          "source_entity": "CorpusRevision",
+          "field": "coverage_report_id",
+          "target_entity": "CoverageReport"
+        },
+        {
+          "source_entity": "CorpusMember",
+          "field": "corpus_id",
+          "target_entity": "CorpusRevision"
+        },
+        {
+          "source_entity": "CorpusMember",
+          "field": "terms_id",
+          "target_entity": "TermsRevision"
+        },
+        {
+          "source_entity": "CorpusPointer",
+          "field": "corpus_id",
+          "target_entity": "CorpusRevision"
+        },
+        {
+          "source_entity": "ModelQualification",
+          "field": "route_id",
+          "target_entity": "ModelRoute"
+        },
+        {
+          "source_entity": "CoverageReport",
+          "field": "corpus_id",
+          "target_entity": "CorpusRevision"
+        },
+        {
+          "source_entity": "CoverageReport",
+          "field": "insurer_id",
+          "target_entity": "Insurer"
+        },
+        {
+          "source_entity": "AuthPermission",
+          "field": "content_type_id",
+          "target_entity": "ContentType"
+        },
+        {
+          "source_entity": "GroupPermission",
+          "field": "group_id",
+          "target_entity": "AuthGroup"
+        },
+        {
+          "source_entity": "GroupPermission",
+          "field": "permission_id",
+          "target_entity": "AuthPermission"
+        }
+      ],
+      "nullable_source_instance": {
+        "source_entity": "ModelAttempt",
+        "field": "turn_id",
+        "target_entity": "Turn"
+      },
+      "fix": "Use ordinary typed FKs for physically global targets; use public-owner predicates only on mixed targets. Add an explicit CHECK turn_id IS NULL OR owner_id IS NOT NULL and retain composite ownership checking for a turn parent. Validate mixed processing-job parent ownership as well."
+    },
+    {
+      "id": "DB2-02",
+      "severity": "high",
+      "prior_findings": [
+        "DB-R2"
+      ],
+      "file": "research/design/entity-field-dictionary.json",
+      "entities": [
+        "FactPredicate",
+        "FactAssertion"
+      ],
+      "title": "Contract/provider fact subjects have no corresponding identity fields.",
+      "issue": "FactPredicate.subject_kind permits person,conversation,contract,provider. FactAssertion has person_id and conversation_id but no contract/provider subject reference. Two contracts or providers in one conversation therefore cannot be reliably distinguished as subjects of the same scalar predicate; placing a reference in the value would conflate subject with value.",
+      "fix": "Add closed typed subject identity fields/reference with exactly the required identity for each predicate subject kind and appropriate owner checks. Define scalar uniqueness/supersession against that subject identity. Alternatively explicitly limit the vocabulary to the subject kinds actually represented, with case coverage implications retained."
+    },
+    {
+      "id": "DB2-03",
+      "severity": "high",
+      "prior_findings": [
+        "DB-R3",
+        "DB-R12"
+      ],
+      "file": "research/design/relationships.json",
+      "entities": [
+        "AuthPermission",
+        "ContentType",
+        "AccountGroup",
+        "AccountPermission",
+        "GroupPermission",
+        "AdminLogEntry"
+      ],
+      "title": "Native deletion semantics need a separate ORM/SQL contract.",
+      "issue": "AuthPermission.content_type_id is listed NO ACTION even though the preserved native Django Permission field uses on_delete=CASCADE. Other native rows call CASCADE/SET NULL native without distinguishing the ORM collector action from the physical database FK action. Treating these labels as native SQL cascade DDL would change existing behavior. The public-only owner predicate on ContentType is separately invalid.",
+      "fix": "Record native Django on_delete and physical SQL FK actions separately. Preserve Permission -> ContentType ORM CASCADE and the actual native physical constraint semantics. Mark framework relationships as native role-limited FKs without fabricated owner columns. This is a design mapping correction, not authorization to change native constraints."
+    },
+    {
+      "id": "DB2-04",
+      "severity": "high",
+      "prior_findings": [
+        "DB-R5",
+        "DB-R1"
+      ],
+      "file": "research/design/relationships.json",
+      "entities": [
+        "ContentCopy",
+        "Artifact"
+      ],
+      "title": "Copy ownership contract permits a private disclosure to target a public artifact.",
+      "issue": "ContentCopy.source_artifact_id and destination_artifact_id both say Same owner in the dictionary but are public_or_same_owner in the relationship ledger. In particular a private fact source plus a public destination passes the listed access predicates, contrary to the private-copy and selective-erasure boundary.",
+      "fix": "Require the destination artifact owner to equal the ContentCopy owner for private content copies; define whether public-source-to-private derivative is permitted separately. Never allow private source content to produce an owner-NULL destination through this registry. Keep copy closure registration and generation fencing."
+    },
+    {
+      "id": "DB2-05",
+      "severity": "high",
+      "prior_findings": [
+        "DB-R6",
+        "DB-R2"
+      ],
+      "file": "research/design/entity-field-dictionary.json",
+      "entities": [
+        "FactAssertion",
+        "ConversationReuseGrant"
+      ],
+      "title": "An imported fact does not identify its exact source assertion.",
+      "issue": "The grant may list several assertion IDs, but the imported FactAssertion only records import_grant_id. There is no separate source_assertion_id. Reusing supersedes_id would treat a copied assertion as correction of the source conversation, mix two lineage concepts and conflict with ordinary same-conversation supersession rules.",
+      "fix": "Add an explicit import source assertion FK, required only for authorized_import, validate source membership in the grant and source/destination conversation match, and preserve supersedes_id solely for correction lineage. Revoke/erase dependent copies through the exact source edge."
+    },
+    {
+      "id": "DB2-06",
+      "severity": "medium",
+      "prior_findings": [
+        "DB-R8"
+      ],
+      "file": "research/design/entity-field-dictionary.json",
+      "entities": [
+        "ProviderObservation"
+      ],
+      "title": "Insurer-independent accessibility facts still require an insurer.",
+      "issue": "The new wheelchair_access kind represents a physical branch property but insurer_id remains mandatory. A directly evidenced accessible entrance with no insurer context requires invented insurer attribution or unnecessary per-insurer duplication. Network/exclusion and authorization observations do require insurer context.",
+      "fix": "Make insurer_id optional with kind-specific requirements and scope checks: mandatory for insurer-specific observations, absent/explicitly optional for branch or clinician facts. Retain provider identity, dated evidence and completeness."
+    }
+  ],
+  "checks": {
+    "jsonschema_meta_schema_valid": true,
+    "all_dictionary_fk_names_and_required_flags_match_relationship_ledger": true,
+    "all_dictionary_json_types_resolve": true,
+    "isolated_jsonschema_probes": [
+      {
+        "contract": "DurationV1",
+        "fixture": {
+          "state": "unknown",
+          "reason": "Credit pending"
+        },
+        "expected_valid": true,
+        "observed_valid": true,
+        "passed": true
+      },
+      {
+        "contract": "DurationV1",
+        "fixture": {
+          "state": "not_applicable",
+          "reason": "No wait applies"
+        },
+        "expected_valid": true,
+        "observed_valid": true,
+        "passed": true
+      },
+      {
+        "contract": "DurationV1",
+        "fixture": {
+          "state": "known",
+          "value": 0,
+          "unit": "calendar_month",
+          "anchor_event": "inception",
+          "boundary": "inclusive"
+        },
+        "expected_valid": true,
+        "observed_valid": true,
+        "passed": true
+      },
+      {
+        "contract": "TemporalExtentV1",
+        "fixture": {
+          "kind": "interval",
+          "start": "not-a-date",
+          "end": "also-not-a-date",
+          "precision": "date",
+          "lower_inclusive": true,
+          "upper_inclusive": false,
+          "timezone": "Asia/Kolkata"
+        },
+        "expected_valid": false,
+        "observed_valid": false,
+        "passed": true
+      },
+      {
+        "contract": "TemporalExtentV1",
+        "fixture": {
+          "kind": "interval",
+          "start": "2026-08-11T13:00:00+05:30",
+          "end": "2026-08-11T15:00:00+05:30",
+          "precision": "instant",
+          "lower_inclusive": true,
+          "upper_inclusive": false,
+          "timezone": "Asia/Kolkata"
+        },
+        "expected_valid": true,
+        "observed_valid": true,
+        "passed": true
+      },
+      {
+        "contract": "TurnEventV1",
+        "fixture": {
+          "schema_version": 1,
+          "kind": "decision"
+        },
+        "expected_valid": false,
+        "observed_valid": false,
+        "passed": true
+      },
+      {
+        "contract": "TurnEventV1",
+        "fixture": {
+          "schema_version": 1,
+          "kind": "failed"
+        },
+        "expected_valid": false,
+        "observed_valid": false,
+        "passed": true
+      },
+      {
+        "contract": "ExpressionV1",
+        "fixture": {
+          "node": "operation",
+          "operator": "divide",
+          "arguments": [
+            {
+              "node": "input",
+              "key": "bill"
+            }
+          ]
+        },
+        "expected_valid": false,
+        "observed_valid": false,
+        "passed": true
+      },
+      {
+        "contract": "ExpressionV1",
+        "fixture": {
+          "node": "operation",
+          "operator": "divide",
+          "arguments": [
+            {
+              "node": "input",
+              "key": "bill"
+            },
+            {
+              "node": "input",
+              "key": "count"
+            }
+          ]
+        },
+        "expected_valid": true,
+        "observed_valid": true,
+        "passed": true
+      },
+      {
+        "contract": "ReconciliationV1",
+        "fixture": {
+          "dimensions": [
+            {
+              "dimension": "family",
+              "status": "resolved",
+              "reason": "Fixture",
+              "span_ids": []
+            },
+            {
+              "dimension": "family",
+              "status": "resolved",
+              "reason": "Fixture",
+              "span_ids": []
+            },
+            {
+              "dimension": "family",
+              "status": "resolved",
+              "reason": "Fixture",
+              "span_ids": []
+            },
+            {
+              "dimension": "family",
+              "status": "resolved",
+              "reason": "Fixture",
+              "span_ids": []
+            },
+            {
+              "dimension": "family",
+              "status": "resolved",
+              "reason": "Fixture",
+              "span_ids": []
+            }
+          ],
+          "aliases": [],
+          "material_unresolved": []
+        },
+        "expected_valid": false,
+        "observed_valid": false,
+        "passed": true
+      }
+    ],
+    "invalid_global_owner_predicates_found": 24,
+    "nullable_source_same_owner_relationships_requiring_conditional_guard": [
+      "ModelAttempt.turn_id"
+    ]
+  },
+  "pending_parent_additions": [
+    {
+      "status": "not_present_in_reviewed_snapshot",
+      "proposal": "LegacyMapping.archive_blob_id -> OriginalBlob; OriginalBlob.content_role = acquired_original,legacy_record_archive,processing_derivative",
+      "assessment": "Needed to resolve the preserved-unmapped payload locator gap. Add the FK to the relationship ledger with exact owner/public scope. Coverage/original-citation eligibility must require acquired_original, not merely media_type or a source hash; archival source rows and processing derivatives cannot count as insurer original evidence. Validate the locator against archive hashes and preserve private ownership. Recheck after insertion; no claim this change is already implemented."
+    }
+  ],
+  "positive_findings": [
+    "The original 13 problems were addressed substantively; six are closed at proposal level and seven have narrower residuals.",
+    "No database implementation approval is claimed.",
+    "Exact quantity and temporal states preserve uncertainty; numeric or schema validity does not become insurance acceptance.",
+    "Erasure closure, copy registration, stable posting keys and immutable assessment revisions now have concrete representations."
+  ],
+  "verification_limit": "Read-only proposal inspection and in-memory JSON Schema probes only. No Django setup/checks, database constraints, migrations, services, customer rows, secrets or app code were exercised. Proposed triggers and RLS still require implementation-phase concurrency and erasure tests after design approval.",
+  "evaluation_material_read": false,
+  "proposal_files_edited": false,
+  "application_files_edited": false,
+  "database_implementation_approved": false
+}

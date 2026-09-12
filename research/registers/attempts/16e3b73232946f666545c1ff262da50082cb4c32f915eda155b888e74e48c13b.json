@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T11:59:48.074013+00:00",
+  "associations": [],
+  "byte_count": 487925,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.generalicentralinsurance.com/downloads/health-insurance/health-elite/proposal-forms/health-elite-proposal-form.pdf.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "generali-central",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 737,
+  "linking_url": "https://www.generalicentralinsurance.com/customer-service/downloads",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 1190.52,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1190.52,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1190.52,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1190.52,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.92
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "cb48e78ba65356dae0427438ff5946c649d4280b60a5644168a39adeebe94584",
+  "status": "acquired",
+  "url": "https://www.generalicentralinsurance.com/downloads/health-insurance/health-elite/proposal-forms/health-elite-proposal-form.pdf.pdf"
+}

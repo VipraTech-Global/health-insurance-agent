@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:56:18.961405+00:00",
+  "associations": [],
+  "byte_count": 236700,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/Accident_Shield_Policy_FAQ_TATPAIP_23088_V032223_26c45dcb0a.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 239,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "0745b6d3599c3251f41c85da15b3ae6e5d6156de4fc8d81d8fc28a2b40d5674a",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/Accident_Shield_Policy_FAQ_TATPAIP_23088_V032223_26c45dcb0a.pdf"
+}

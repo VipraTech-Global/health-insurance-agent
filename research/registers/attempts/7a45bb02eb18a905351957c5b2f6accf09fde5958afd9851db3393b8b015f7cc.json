@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:58:40.029620+00:00",
+  "associations": [],
+  "byte_count": 126699,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/cancer-guard-policy/1%20Cancer%20Guard%20Pamphlet.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 5494,
+  "linking_url": "https://www.newindia.co.in/health-insurance/new-india-cancer-guard-policy",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "94e99cd8d1a8edb1b9a8564cfa1f323423bd927678fc930a1220d23ecc0f4eec",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/cancer-guard-policy/1 Cancer Guard Pamphlet.pdf"
+}

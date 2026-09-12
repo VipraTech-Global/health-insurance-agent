@@ -1,0 +1,65 @@
+{
+  "acquired_at": "2026-09-10T11:59:24.373847+00:00",
+  "associations": [],
+  "byte_count": 676000,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://cms.zurichkotak.com/uploads/33_Maxima_Professional_Iiability_Non_Tech_Prospectus_8326055816.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "zurich-kotak",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 414,
+  "linking_url": "https://www.zurichkotak.com/product-documents",
+  "page_count": 5,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "0836e1404f0e113c7bb8a94c798e9c417b7acc32147d3c2cb55ed2479b6bd2e9",
+  "status": "acquired",
+  "url": "https://cms.zurichkotak.com/uploads/33_Maxima_Professional_Iiability_Non_Tech_Prospectus_8326055816.pdf"
+}

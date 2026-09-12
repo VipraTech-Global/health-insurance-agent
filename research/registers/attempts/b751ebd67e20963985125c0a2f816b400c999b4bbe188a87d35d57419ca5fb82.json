@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T12:02:00.714269+00:00",
+  "associations": [],
+  "byte_count": 203347,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://acko-cms.ackoassets.com/Proposal_form_Acko_International_Travel_Insurance_aa125c3172.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "acko",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 457,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "3694912734dfd07b6852cd02c07b0dccf1aa120f5e75df8803fc51e9a73b4776",
+  "status": "acquired",
+  "url": "https://acko-cms.ackoassets.com/Proposal_form_Acko_International_Travel_Insurance_aa125c3172.pdf"
+}

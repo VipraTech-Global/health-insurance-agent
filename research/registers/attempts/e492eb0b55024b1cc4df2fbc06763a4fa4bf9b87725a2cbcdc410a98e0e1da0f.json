@@ -1,0 +1,89 @@
+{
+  "acquired_at": "2026-09-10T14:09:17.615823+00:00",
+  "associations": [],
+  "byte_count": 2171745,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Special_Care_Gold_V_5_e9a939e041.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "star",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1325,
+  "linking_url": "https://www.starhealth.in/downloads/",
+  "page_count": 8,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "6c4d5707e289ef3a259089356d333658abf4df1df2e9fb8377eb9a1a8e1f663b",
+  "status": "acquired",
+  "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Special_Care_Gold_V_5_e9a939e041.pdf"
+}

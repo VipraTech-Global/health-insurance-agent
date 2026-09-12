@@ -1,0 +1,73 @@
+{
+  "acquired_at": "2026-09-10T11:55:54.625068+00:00",
+  "associations": [],
+  "byte_count": 1286160,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/TATA_AIG_Travel_Insurance_Group_Student_CIS_Static_V1_e5c2a4ddca.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1104,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 6,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "639ca53ce90875865fde6ddd2c8bd3b1479c6701e28439a612462c476389f0f6",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/TATA_AIG_Travel_Insurance_Group_Student_CIS_Static_V1_e5c2a4ddca.pdf"
+}

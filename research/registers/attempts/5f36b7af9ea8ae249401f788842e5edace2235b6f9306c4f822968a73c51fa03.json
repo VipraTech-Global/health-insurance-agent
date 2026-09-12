@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:03:44.290338+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/universal-health-insurance/Premium%20chart%20Universal%20Health%20Insurance%20%20WEF%2001%20NOV%202024.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 6763,
+  "linking_url": "https://www.newindia.co.in/health-insurance/universal-health-insurance",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "8bad2e61652bf4f117e963692c72f5d82b35137a72061afd587ecf403c11f4ee",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/universal-health-insurance/Premium chart Universal Health Insurance  WEF 01 NOV 2024.pdf"
+}

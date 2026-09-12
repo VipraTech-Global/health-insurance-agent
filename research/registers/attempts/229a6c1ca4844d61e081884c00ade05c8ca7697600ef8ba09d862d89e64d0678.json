@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:56:31.314911+00:00",
+  "associations": [],
+  "byte_count": 277554,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/wellsurance_family_tariff_chart_1_d8f38e8732.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 957,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "0679990fe98fd0ec9d9ee5061740785524c451a0885bdd543fbe781f72c5baf6",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/wellsurance_family_tariff_chart_1_d8f38e8732.pdf"
+}

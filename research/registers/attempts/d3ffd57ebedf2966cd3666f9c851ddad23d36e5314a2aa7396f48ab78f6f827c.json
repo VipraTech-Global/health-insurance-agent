@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:38:28.365721+00:00",
+  "associations": [],
+  "byte_count": 3556,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/captcha?url=//pages/doc/brochure/TravelAssure_SS_Student_Travel.pdf?v=1.2",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1351,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "42f964e52f22e7a648385eca2eff6a5e65e4fdf34c10b0dd9c4362f52f29c691",
+  "status": "failed",
+  "url": "https://transactions.nivabupa.com/pages/doc/brochure/TravelAssure_SS_Student_Travel.pdf?v=1.2"
+}

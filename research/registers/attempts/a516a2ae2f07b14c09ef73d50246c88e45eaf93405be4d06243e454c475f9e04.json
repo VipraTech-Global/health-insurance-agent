@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:59:14.750799+00:00",
+  "associations": [],
+  "byte_count": 685713,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/ProspectusandFAQsDeductibleRider.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1229,
+  "linking_url": "https://www.newindia.co.in/health-insurance/deductible-rider",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "4e3cb71741c40e4d60b0cc24bec9a85305b1ffad9e256a0f10d7e6b93cb5ea10",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/ProspectusandFAQsDeductibleRider.pdf"
+}

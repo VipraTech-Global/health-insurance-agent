@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:44:48.676122+00:00",
+  "associations": [],
+  "byte_count": 1065,
+  "component_version": "research-acquisition/2",
+  "content_type": "text/html; charset=UTF-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---prospectus-cum-sales-literature.pdf",
+  "format_version": 1,
+  "http_status": 406,
+  "insurer_id": "care",
+  "issues": [
+    "http_406"
+  ],
+  "language": "unknown",
+  "latency_ms": 313,
+  "linking_url": "",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "88a84eb89ca0a9dc04afc6f1fbe3410634ec71fdb60c3134140bf1483b98ae84",
+  "status": "failed",
+  "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---prospectus-cum-sales-literature.pdf"
+}

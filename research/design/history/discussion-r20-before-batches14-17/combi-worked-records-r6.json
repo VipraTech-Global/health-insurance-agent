@@ -1,0 +1,225 @@
+{
+  "revision": "discussion-r6",
+  "case_id": "additional-r13-combi-01",
+  "boundary": "Illustrative records/identifiers only; not an issued customer record, executed rule, accepted database design or external action. Dates are those of the fixed synthetic case, even though the work continues on 11 September.",
+  "original_identity": {
+    "source_sha256": "26c72de9834d7acf50293e62010d70af67f5c44273435fda38966c74deb7d990",
+    "physical_page": 1,
+    "wrapper_name": "Health Maximiser",
+    "wrapper_uin": "ZUKHLIP25057V022425",
+    "components": [
+      {
+        "slot_code": "health",
+        "product": "Health Premier",
+        "uin": "ZUKHLIP25054V052425",
+        "issuer": "Zurich Kotak General Insurance Company (India) Limited"
+      },
+      {
+        "slot_code": "life",
+        "product": "Kotak Term Plan",
+        "uin": "107N005V06",
+        "issuer": "Kotak Mahindra Life Insurance Company Limited",
+        "advice_scope": "nonmedical_reference"
+      }
+    ]
+  },
+  "synthetic_owned_mapping": {
+    "bundle_id": "0704c9c1-36ba-5bdf-a9b7-e700395a0a9f",
+    "owner_id": "56ec7fb3-ddf9-54c7-8a2a-5802f16894f1",
+    "bundle_revision": 2,
+    "membership_state": "stipulated",
+    "wrapper_configuration_id": "51d20b0f-4bba-5c6d-8ca4-fba8697c5599",
+    "members": [
+      {
+        "slot_code": "health",
+        "customer_policy_revision_id": "0aec5661-8abd-5fd0-858f-3a95bb9364a0",
+        "insured_people": [
+          "Meera",
+          "Arjun"
+        ]
+      },
+      {
+        "slot_code": "life",
+        "customer_policy_revision_id": "28ca8cb0-7907-54f3-8820-234cd9eb3d08",
+        "insured_people": [
+          "Meera"
+        ]
+      }
+    ],
+    "not_a_member": {
+      "customer_policy_revision_id": "0ae5c2af-2b6d-5f52-81f5-226847d821fa",
+      "reason": "Separate older cover explicitly stipulated not to belong to this package"
+    }
+  },
+  "corrected_subject_facts": {
+    "subject_kind": "contract_bundle",
+    "subject_bundle_id": "0704c9c1-36ba-5bdf-a9b7-e700395a0a9f",
+    "transaction_kind": "new_issue",
+    "complete_package_received_date": "2026-08-28",
+    "separate_incomplete_upload_date": "2026-08-25",
+    "superseded_receipt_assertion_retained": true
+  },
+  "bundle_consequence": {
+    "kind": "bundle_consequence",
+    "target_key": "combi_free_look_consequence",
+    "scope": {
+      "subject": "contract_bundle",
+      "subject_ids": [],
+      "period": "per_event",
+      "benefit_keys": [
+        "free_look"
+      ],
+      "reset": "never"
+    },
+    "trigger_action": "free_look_cancellation",
+    "trigger_component_slots": [
+      "health",
+      "life"
+    ],
+    "affected_component_slots": [
+      "health",
+      "life"
+    ],
+    "individual_action_allowed": false,
+    "reinstatement": "prohibited",
+    "new_proposal_required": true
+  },
+  "rule_example": {
+    "schema_version": 1,
+    "applies_when": {
+      "node": "all",
+      "arguments": [
+        {
+          "node": "compare",
+          "operator": "eq",
+          "left": {
+            "node": "input",
+            "key": "exact_wrapper_selected"
+          },
+          "right": {
+            "node": "literal",
+            "value": {
+              "kind": "boolean",
+              "value": true
+            }
+          }
+        },
+        {
+          "node": "compare",
+          "operator": "eq",
+          "left": {
+            "node": "input",
+            "key": "new_combi_free_look_applies"
+          },
+          "right": {
+            "node": "literal",
+            "value": {
+              "kind": "boolean",
+              "value": true
+            }
+          }
+        },
+        {
+          "node": "compare",
+          "operator": "eq",
+          "left": {
+            "node": "input",
+            "key": "component_membership_resolved"
+          },
+          "right": {
+            "node": "literal",
+            "value": {
+              "kind": "boolean",
+              "value": true
+            }
+          }
+        }
+      ]
+    },
+    "inputs": [
+      {
+        "key": "exact_wrapper_selected",
+        "value_kind": "boolean",
+        "unit": "truth",
+        "required": true,
+        "provenance_required": true
+      },
+      {
+        "key": "new_combi_free_look_applies",
+        "value_kind": "boolean",
+        "unit": "truth",
+        "required": true,
+        "provenance_required": true
+      },
+      {
+        "key": "component_membership_resolved",
+        "value_kind": "boolean",
+        "unit": "truth",
+        "required": true,
+        "provenance_required": true
+      }
+    ],
+    "effects": [
+      {
+        "kind": "bundle_consequence",
+        "target_key": "combi_free_look_consequence",
+        "scope": {
+          "subject": "contract_bundle",
+          "subject_ids": [],
+          "period": "per_event",
+          "benefit_keys": [
+            "free_look"
+          ],
+          "reset": "never"
+        },
+        "trigger_action": "free_look_cancellation",
+        "trigger_component_slots": [
+          "health",
+          "life"
+        ],
+        "affected_component_slots": [
+          "health",
+          "life"
+        ],
+        "individual_action_allowed": false,
+        "reinstatement": "prohibited",
+        "new_proposal_required": true
+      }
+    ],
+    "mandatory_rule_keys": [
+      "combi-original-identity",
+      "combi-receipt-clock-and-new-issue-scope",
+      "combi-refund-deduction-inputs"
+    ],
+    "source_span_ids": [
+      "63ebc8d7-181d-57a6-ba35-1536d5808590",
+      "babfe535-2615-5289-9645-34f338eef4b7"
+    ],
+    "unresolved": [
+      "Illustrative record only: referenced registry keys and synthetic IDs are not published database rows. Actual component terms and refund inputs remain unresolved."
+    ],
+    "rounding": {
+      "mode": "unresolved",
+      "scale": 2,
+      "authority_span_ids": []
+    }
+  },
+  "expected_explanation_targets": [
+    "0aec5661-8abd-5fd0-858f-3a95bb9364a0",
+    "28ca8cb0-7907-54f3-8820-234cd9eb3d08"
+  ],
+  "actual_cancelled_contracts": [],
+  "refund": {
+    "state": "unknown",
+    "expected_unit": "money",
+    "reason": "Medical-examination cost, stamp duty, risk-period premium and authoritative computation are not supplied."
+  },
+  "runtime_semantic_requirements": [
+    "The PolicyRule.policy_version_id must equal each selected TermsComponent.wrapper_terms_id. All slot names resolve in that edition.",
+    "The runtime context resolves exactly one same-owner ContractBundleRevision and every selected component membership; missing/ambiguous membership prevents a complete consequence claim.",
+    "A public rule has no private subject IDs. Bind the current package revision from authorized turn inputs, never search all policies by insurer or product name.",
+    "The effect is explanatory. Actual cancellation/receipt/refund events need independently attributed evidence and cannot be manufactured by evaluating the effect.",
+    "Distinct component PolicyMember records determine insured people; package membership does not add Arjun to the life policy.",
+    "Package scope does not pool sum insured or apply life-product advice eligibility; selected20-insurer medical coverage denominators remain unchanged."
+  ]
+}

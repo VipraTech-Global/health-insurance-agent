@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T12:02:05.636219+00:00",
+  "associations": [],
+  "byte_count": 17122,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://assets.ctfassets.net/uwf0n1j71a7j/KpWzq8z93kC6N4uesYOOk/ff8ccd01b0b05151c321845f44e7548c/acko-health-insurance-add-on-initial-30-days-waiting-period-waiver.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "acko",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 874,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "fd1d09fbe2ab40c63179deba4b3cf144cb9aaf9273907df3e4d82b34a013cd0d",
+  "status": "acquired",
+  "url": "https://assets.ctfassets.net/uwf0n1j71a7j/KpWzq8z93kC6N4uesYOOk/ff8ccd01b0b05151c321845f44e7548c/acko-health-insurance-add-on-initial-30-days-waiting-period-waiver.pdf"
+}

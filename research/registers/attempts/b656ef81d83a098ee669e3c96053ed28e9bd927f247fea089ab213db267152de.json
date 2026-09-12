@@ -1,0 +1,73 @@
+{
+  "acquired_at": "2026-09-10T12:00:34.750787+00:00",
+  "associations": [],
+  "byte_count": 191434,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.generalicentralinsurance.com/downloads/other-insurance/jewellers-block-insurance/prospectus-forms/jewellers-block-insurance-prospectus-retail.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "generali-central",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 346,
+  "linking_url": "https://www.generalicentralinsurance.com/customer-service/downloads",
+  "page_count": 6,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.889763779528,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.303937007874
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889763779528,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.303937007874
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889763779528,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.303937007874
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889763779528,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.303937007874
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889763779528,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.303937007874
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889763779528,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.303937007874
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "97320bdca714bf47434c2200812c38d928f59799216f2b423318bd0600035b02",
+  "status": "acquired",
+  "url": "https://www.generalicentralinsurance.com/downloads/other-insurance/jewellers-block-insurance/prospectus-forms/jewellers-block-insurance-prospectus-retail.pdf"
+}

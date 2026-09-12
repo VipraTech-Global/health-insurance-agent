@@ -1,0 +1,73 @@
+{
+  "acquired_at": "2026-09-10T12:03:56.911190+00:00",
+  "associations": [],
+  "byte_count": 832274,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-06/National%20Health%20Make%20Your%20Own%20Policy%20Claim%20Form_0.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "national",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1729,
+  "linking_url": "https://nationalinsurance.nic.co.in/products/all-products/health/national-health-make-your-own-policy",
+  "page_count": 6,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.8,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.8,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.8,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.8,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.8,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.8,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "203451d86b8bcac15b4e3fd9bc0f15b52751afe803eb733716bf760c3b992e53",
+  "status": "acquired",
+  "url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-06/National%20Health%20Make%20Your%20Own%20Policy%20Claim%20Form_0.pdf"
+}

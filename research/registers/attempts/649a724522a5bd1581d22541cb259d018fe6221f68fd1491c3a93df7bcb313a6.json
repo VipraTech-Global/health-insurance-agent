@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:51:41.114558+00:00",
+  "associations": [],
+  "byte_count": 540184,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://healthinsuranceblob.abhicl.in/marketingcontent/assets/pdf/complain-form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "aditya-birla",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 478,
+  "linking_url": "https://www.adityabirlacapital.com/healthinsurance/downloads",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 484.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 260.276
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "025e1d5567b1276294e6058e638169a688599110b166caf2e0479eb22261f6ff",
+  "status": "acquired",
+  "url": "https://healthinsuranceblob.abhicl.in/marketingcontent/assets/pdf/complain-form.pdf"
+}

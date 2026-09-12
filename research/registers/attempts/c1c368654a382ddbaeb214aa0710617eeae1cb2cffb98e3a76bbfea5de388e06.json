@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:34:47.154120+00:00",
+  "associations": [],
+  "byte_count": 388,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.icicilombard.com/downloads?download=true",
+  "format_version": 1,
+  "http_status": 403,
+  "insurer_id": "icici-lombard",
+  "issues": [
+    "http_403"
+  ],
+  "language": "unknown",
+  "latency_ms": 87,
+  "linking_url": "",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "5b702d5b1d6a924aaff5ae23fc82f4cf3116d6ecb21144d6d5a0307eedd3806e",
+  "status": "failed",
+  "url": "https://www.icicilombard.com/downloads?download=true"
+}

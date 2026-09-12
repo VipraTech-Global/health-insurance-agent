@@ -1,0 +1,73 @@
+{
+  "acquired_at": "2026-09-10T12:00:36.032286+00:00",
+  "associations": [],
+  "byte_count": 402916,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.generalicentralinsurance.com/downloads/other-insurance/warranty-insurance/proposal-forms/warranty-insurance-retail-proposal-form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "generali-central",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 475,
+  "linking_url": "https://www.generalicentralinsurance.com/customer-service/downloads",
+  "page_count": 6,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.68,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.44
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.68,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.44
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.68,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.44
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.68,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.44
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.68,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.44
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.68,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.44
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "001057abbcfae7d82567709e91d86c3bf7f24fb67e0e741e280a5f5d68ad97c7",
+  "status": "acquired",
+  "url": "https://www.generalicentralinsurance.com/downloads/other-insurance/warranty-insurance/proposal-forms/warranty-insurance-retail-proposal-form.pdf"
+}

@@ -1,0 +1,108 @@
+{
+  "revision": "source-design-review-r4",
+  "reviewed_at": "2026-09-10T15:32:14.439662+00:00",
+  "design_revision": "discussion-r4",
+  "status": "structural_findings_resolved_source_example_corrections_remaining",
+  "review_scope": "Only the three source-design r3 findings, their r4 representation and authentic r5 source examples were rechecked. No core design edits, evaluation access, independent full contractual rereading or database implementation.",
+  "reviewed_file_hashes": {
+    "design/entity-field-dictionary.json": "9aad7745d30764ec89b6c733fd0f5b59371a2128fff462f05f97120e020d36e2",
+    "design/json-contracts.schema.json": "0249aca9fc8af21b6908961077ff5aea5c4727f21b571ff60e66e7e48677f391",
+    "design/relationships-and-lifecycle.md": "47cf6ff058572a3d024a0b875d0b318615e79990d66c251d4e80e4748a1af8d5",
+    "design/value-and-rule-contracts.md": "cb5619de1e2ca418cf148bc83160227e8ec17d06e9a42cc03d27a1c64e5cbaee",
+    "design/information-requirements.json": "4999e1db448188b97ef74f1bd71e3985296a7bbe470ab3cbc406b0629e6e8926",
+    "registers/document-scope-r5.json": "0965ca872d8fba61ba1ab400a477aafc7f19387f5872297edeee94055cf5d8f6",
+    "registers/legacy-assessment-r5.json": "5429f5a290b7eacb5fbeb98b04173ef514e3a656ace7ce64b098ec9e23760652",
+    "registers/oriental-original-links-r5.json": "efad0a02929ff35070b4a60a81d2fe6d191cf11e918887d8c668b6c7cc5b2060"
+  },
+  "r3_finding_dispositions": [
+    {
+      "id": "SDR3-01",
+      "status": "resolved_at_design_level",
+      "evidence": "EvidenceSpan now binds exact DocumentRevision/hash and typed OriginalLocatorV1; PDF pages/bbox conditional and non-PDF locators expressly reject fabricated pages. HTML, JSON and text methods/locators preserve original bytes and semantic support remains separately reviewed."
+    },
+    {
+      "id": "SDR3-02",
+      "status": "resolved_at_design_level",
+      "evidence": "Append-only SourceLinkObservation retains parent acquisition, target locator, exact raw href/label/row/time and supersession; Acquisition can point to its initiating observation while SourceLocator keeps only an immutable first-known hint."
+    },
+    {
+      "id": "SDR3-03",
+      "status": "partially_resolved_exact_example_corrections_required",
+      "evidence": "INS-01/02/04 now cite r5; authentic URL, role and plan examples were added. Exact original labels and normalized product names are checked separately below."
+    }
+  ],
+  "authentic_example_checks": [
+    {
+      "field": "DocumentRevision.title",
+      "expected_exact_original": "ACKO Health III (Platinum) – Policy Wordings",
+      "actual": "ACKO Health III (Platinum)",
+      "pass": false
+    },
+    {
+      "field": "SourceLinkObservation.observed_label",
+      "expected_exact_original": "Happy Family Floater - 2021",
+      "actual": "Happy Family Floater-2021",
+      "pass": false
+    },
+    {
+      "field": "SourceLinkObservation.record_key",
+      "expected_record_key": "82",
+      "actual": "82",
+      "pass": true,
+      "qualification": "Observed integer row ID represented in proposed varchar; attachment17252 is a separate record identity."
+    },
+    {
+      "field": "Product.canonical_name",
+      "expected_derived_heading": "ACKO Health III (Platinum)",
+      "actual": "No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md.",
+      "pass": false,
+      "qualification": "A normalized product label must be identified as derived, not copied into exact document title."
+    }
+  ],
+  "remaining_corrections": [
+    {
+      "field": "DocumentRevision.title",
+      "actual": "ACKO Health III (Platinum)",
+      "expected": "ACKO Health III (Platinum) – Policy Wordings",
+      "action": "Use exact r5 original string for exact-text field; label the product heading explicitly normalized/derived."
+    },
+    {
+      "field": "SourceLinkObservation.observed_label",
+      "actual": "Happy Family Floater-2021",
+      "expected": "Happy Family Floater - 2021",
+      "action": "Use exact r5 original string for exact-text field; label the product heading explicitly normalized/derived."
+    },
+    {
+      "field": "Product.canonical_name",
+      "actual": "No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md.",
+      "expected": "ACKO Health III (Platinum)",
+      "action": "Use exact r5 original string for exact-text field; label the product heading explicitly normalized/derived."
+    }
+  ],
+  "focused_schema_shape_checks": {
+    "positive_cases": 4,
+    "negative_cases": 4,
+    "result": "passed",
+    "scope": "PDF/HTML/JSON/text locator shapes; invalid HTML attribute condition, malformed JSON-pointer escape, fabricated HTML physical_page and missing PDF bbox rejected. Synthetic fixtures only.",
+    "limitation": "Resolver semantics, actual byte location resolution, database constraints and runtime ownership remain unimplemented and were not proved by shape validation."
+  },
+  "r6_handoff": {
+    "report": "reports/source-completion-dependencies-r6.json",
+    "legacy_rows": 203,
+    "selected_insurer_rows": 181,
+    "with_associated_wording_candidate": 99,
+    "without_associated_wording_candidate": 82,
+    "original_roster_insurers": 20,
+    "zero_selected_legacy_row_insurers": [
+      "Galaxy",
+      "Narayana",
+      "Zurich Kotak",
+      "Generali Central"
+    ],
+    "limitation": "No unavailable whole bundle role or complete historical bundle established;2,222 PDFs remain preview-only.178 is a listing-row finding count, not178 distinct families."
+  },
+  "source_completion_claim": false,
+  "database_design_approval": false,
+  "implementation_approval": false,
+  "ownership_returned_to_parent": true
+}

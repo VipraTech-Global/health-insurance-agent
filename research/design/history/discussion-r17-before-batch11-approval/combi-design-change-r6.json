@@ -1,0 +1,86 @@
+{
+  "revision": "discussion-r6",
+  "basis_case": "reference/additional-combi-case-r13.json",
+  "prior_dictionary_snapshot": "design/history/discussion-r5/entity-field-dictionary.json",
+  "new_entities": [
+    "TermsComponent",
+    "ContractBundle",
+    "ContractBundleRevision",
+    "ContractBundleMember"
+  ],
+  "additional_fields": [
+    "ContractBundle.created_at",
+    "ContractBundle.current_revision_id",
+    "ContractBundle.external_reference",
+    "ContractBundle.id",
+    "ContractBundle.label",
+    "ContractBundle.owner_id",
+    "ContractBundleMember.bundle_revision_id",
+    "ContractBundleMember.customer_policy_revision_id",
+    "ContractBundleMember.created_at",
+    "ContractBundleMember.id",
+    "ContractBundleMember.owner_id",
+    "ContractBundleMember.selection_status",
+    "ContractBundleMember.source_fact_id",
+    "ContractBundleMember.source_span_id",
+    "ContractBundleMember.terms_component_id",
+    "ContractBundleRevision.bundle_id",
+    "ContractBundleRevision.created_at",
+    "ContractBundleRevision.id",
+    "ContractBundleRevision.membership_sha256",
+    "ContractBundleRevision.membership_state",
+    "ContractBundleRevision.owner_id",
+    "ContractBundleRevision.previous_id",
+    "ContractBundleRevision.revision",
+    "ContractBundleRevision.seal_format_version",
+    "ContractBundleRevision.sealed_at",
+    "ContractBundleRevision.source_span_id",
+    "ContractBundleRevision.status",
+    "ContractBundleRevision.wrapper_configuration_id",
+    "FactAssertion.subject_bundle_id",
+    "PolicyEvent.authority_evidence_id",
+    "Product.advice_scope",
+    "TermsComponent.asserted_component_uin",
+    "TermsComponent.component_product_id",
+    "TermsComponent.component_terms_id",
+    "TermsComponent.created_at",
+    "TermsComponent.id",
+    "TermsComponent.role",
+    "TermsComponent.selection_kind",
+    "TermsComponent.selection_policy_rule_id",
+    "TermsComponent.slot_code",
+    "TermsComponent.source_span_id",
+    "TermsComponent.status",
+    "TermsComponent.supersedes_id",
+    "TermsComponent.wrapper_terms_id"
+  ],
+  "changed_existing_fields": [
+    "Artifact.kind",
+    "FactAssertion.subject_kind",
+    "FactPredicate.subject_kind",
+    "PolicyEvent.customer_policy_id",
+    "PolicyEvent.event_type",
+    "Product.insurer_id"
+  ],
+  "approval": "not_approved",
+  "runtime_implemented": false,
+  "source_sha256": "e2aa82f4debb20d44b08cb84683bd550fd5ce1421207e9b07049d608b6f2d088",
+  "new_json_contracts": [
+    "BundleConsequenceV1"
+  ],
+  "review_corrections": "reports/combi-review-corrections-r6.json",
+  "author_recheck_additions": [
+    "Explicit insurer cancellation refusal and actual refund reversal events; original-event linkage, authority, remaining-balance and no-inferred-reinstatement constraints."
+  ],
+  "batch6_disposition": {
+    "approved_policy_event_fields": [
+      "PolicyEvent.authority_evidence_id",
+      "PolicyEvent.customer_policy_id",
+      "PolicyEvent.event_type"
+    ],
+    "deferred": [
+      "Package-revision event targeting remains outside approved Batch 6 and will be reviewed with package models.",
+      "Sender and recipient payloads were removed from PolicyEvent; verification uses source and delegated-authority evidence."
+    ]
+  }
+}

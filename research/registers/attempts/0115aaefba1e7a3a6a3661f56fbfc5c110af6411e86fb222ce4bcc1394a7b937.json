@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:39:59.872640+00:00",
+  "associations": [],
+  "byte_count": 270558,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.hdfcergo.com/additional_disclaimer.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "hdfc-ergo",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 480,
+  "linking_url": "https://www.hdfcergo.com/download/policy-wordings/health",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "f2f321612f5a95a6665ae62d22af070d093dd1eef4ffe88068ebefbbf6e9b04f",
+  "status": "acquired",
+  "url": "https://www.hdfcergo.com/additional_disclaimer.pdf"
+}

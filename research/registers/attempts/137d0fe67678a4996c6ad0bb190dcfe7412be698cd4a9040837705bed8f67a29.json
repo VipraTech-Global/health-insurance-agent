@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T14:35:48.325921+00:00",
+  "associations": [],
+  "byte_count": 661842,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://customer-portal-assets.hdfcergo.com/assets/v2/docs/default-source/downloads/brochures/optima-lite-plan---leaflet-391756672580.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "hdfc-ergo",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 636,
+  "linking_url": "https://www.hdfcergo.com/download/brochure/health",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.528
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.528
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.528
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.528
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "5c06ca8a405846f46d2fd61b1bf80521c7401b2ca052881f64056b9a8628e5b2",
+  "status": "acquired",
+  "url": "https://customer-portal-assets.hdfcergo.com/assets/v2/docs/default-source/downloads/brochures/optima-lite-plan---leaflet-391756672580.pdf"
+}

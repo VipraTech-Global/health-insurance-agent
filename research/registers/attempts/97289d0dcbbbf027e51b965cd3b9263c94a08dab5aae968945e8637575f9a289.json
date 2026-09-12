@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:56:42.967442+00:00",
+  "associations": [],
+  "byte_count": 292572,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/7_Claim_Form_Residual_Value_Insurance_90cbd59a8b.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 390,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.8898,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.8898,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.8898,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2756
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "a73d9d06133b1ed72edeb86935acafe3302b149235bc14eeab3ca3d66d95b0f2",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/7_Claim_Form_Residual_Value_Insurance_90cbd59a8b.pdf"
+}

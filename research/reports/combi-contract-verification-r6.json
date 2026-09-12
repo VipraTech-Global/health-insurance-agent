@@ -1,0 +1,124 @@
+{
+  "revision": "discussion-r6",
+  "scope": "Structural JSON example and rejection probes only; ownership, composition closure, membership, consequence correctness and PostgreSQL constraints are proposed, not executed or certified.",
+  "checks": [
+    {
+      "check": "typed bundle consequence",
+      "passed": true,
+      "expected_valid": true,
+      "errors": []
+    },
+    {
+      "check": "outer conditional rule and dependencies",
+      "passed": true,
+      "expected_valid": true,
+      "errors": []
+    },
+    {
+      "check": "unknown refund preserves reason",
+      "passed": true,
+      "expected_valid": true,
+      "errors": []
+    },
+    {
+      "check": "wrong event action",
+      "passed": true,
+      "expected_valid": false,
+      "errors": []
+    },
+    {
+      "check": "empty triggering slots",
+      "passed": true,
+      "expected_valid": false,
+      "errors": []
+    },
+    {
+      "check": "duplicate affected slots",
+      "passed": true,
+      "expected_valid": false,
+      "errors": []
+    },
+    {
+      "check": "unknown reinstatement state",
+      "passed": true,
+      "expected_valid": false,
+      "errors": []
+    },
+    {
+      "check": "invalid slot identifier",
+      "passed": true,
+      "expected_valid": false,
+      "errors": []
+    },
+    {
+      "check": "nonboolean individual allowance",
+      "passed": true,
+      "expected_valid": false,
+      "errors": []
+    },
+    {
+      "check": "missing individual_action_allowed",
+      "passed": true,
+      "expected_valid": false,
+      "errors": []
+    },
+    {
+      "check": "missing new_proposal_required",
+      "passed": true,
+      "expected_valid": false,
+      "errors": []
+    },
+    {
+      "check": "missing scope",
+      "passed": true,
+      "expected_valid": false,
+      "errors": []
+    },
+    {
+      "check": "person scope cannot substitute package",
+      "passed": true,
+      "expected_valid": false,
+      "errors": []
+    },
+    {
+      "check": "execution property not accepted",
+      "passed": true,
+      "expected_valid": false,
+      "errors": []
+    },
+    {
+      "check": "malformed evidence identity",
+      "passed": true,
+      "expected_valid": false,
+      "errors": []
+    },
+    {
+      "check": "unknown outer predicate remains representable",
+      "passed": true,
+      "expected_valid": true,
+      "errors": []
+    },
+    {
+      "check": "policy event unknown party",
+      "passed": true,
+      "expected_valid": true,
+      "errors": []
+    },
+    {
+      "check": "policy event fabricated party identity rejected",
+      "passed": true,
+      "expected_valid": false,
+      "errors": []
+    }
+  ],
+  "checks_count": 18,
+  "all_checks_passed": true,
+  "source_fingerprints": {
+    "research/design/json-contracts.schema.json": "360665343f1ddd8a37112fde062c0fff450b5bd2c4550cd1b9de797f70b89bf1",
+    "research/design/combi-worked-records-r6.json": "140d4655a6574d6ae83c33ed1aa7a5b5508edc1b38c7020f297b7ef8e0154cc9",
+    "research/design/entity-field-dictionary.json": "64aeb37c889c3d4b204ae62b72ef0b7c48adbcc9f985bb80d74be41e8f58a18e",
+    "research/reference/additional-combi-case-r13.json": "e2aa82f4debb20d44b08cb84683bd550fd5ce1421207e9b07049d608b6f2d088"
+  },
+  "no_database_or_application_changes": true,
+  "no_external_actions": true
+}

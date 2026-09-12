@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:59:21.902252+00:00",
+  "associations": [],
+  "byte_count": 68621,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.zurichkotak.com/docs/default-source/download-center/motor/other-forms/battery_protect_add_on_cover_to_kotak_car_secure_add_on_cover_wordings.pdf?sfvrsn=d5bba3ab_4",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "zurich-kotak",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 303,
+  "linking_url": "https://www.zurichkotak.com/product-documents",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.8898,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.8898,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.8898,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2756
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "ccf7b49618017faa73a7788948b615d00cf7ef249d3044063c8d1ef2c7df6cd9",
+  "status": "acquired",
+  "url": "https://www.zurichkotak.com/docs/default-source/download-center/motor/other-forms/battery_protect_add_on_cover_to_kotak_car_secure_add_on_cover_wordings.pdf?sfvrsn=d5bba3ab_4"
+}

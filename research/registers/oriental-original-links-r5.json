@@ -1,0 +1,169 @@
+{
+  "source_sha256": "c99a5f06375b45fa18dcc80eecf7c5ca4f4b4cb6f6b86927bd91f0000776452d",
+  "raw_cms_http_status": 200,
+  "module_status": "failed_unsupported_media_type",
+  "manual_reading_status": "valid_original_public_cms_json_read",
+  "public_request_authenticated": false,
+  "record_count": 93,
+  "selected_records": [
+    {
+      "cms_row_id": 82,
+      "row_name": "Happy Family Floater - 2021",
+      "attachment": {
+        "id": 17252,
+        "attributes": {
+          "name": "Happy Family Floater 2021 policy wordings (1)",
+          "alternativeText": null,
+          "caption": null,
+          "width": null,
+          "height": null,
+          "formats": null,
+          "hash": "Happy_Family_Floater_2021_policy_wordings_1_e31b8d9fe9",
+          "ext": ".pdf",
+          "mime": "application/pdf",
+          "size": 1258.98,
+          "url": "https://oicl-cms-media.s3.ap-south-1.amazonaws.com/Happy_Family_Floater_2021_policy_wordings_1_e31b8d9fe9.pdf",
+          "previewUrl": null,
+          "provider": "aws-s3",
+          "provider_metadata": null,
+          "createdAt": "2024-04-08T05:26:27.579Z",
+          "updatedAt": "2024-04-08T05:26:27.579Z"
+        }
+      },
+      "other_attachment_names": [
+        "ORIENTAL INSURANCE BANK SAATHI POLICY-DOCUMENT"
+      ],
+      "insurer_id": "oriental",
+      "url": "https://oicl-cms-media.s3.ap-south-1.amazonaws.com/Happy_Family_Floater_2021_policy_wordings_1_e31b8d9fe9.pdf",
+      "linking_url": "https://cms.orientalinsurance.org.in/cms/api/download-policy-terms-conditions?populate=*&locale=en",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "e1cb2183141818a1215529947f4c9758a3da80204dec937235cf713e84084459",
+      "acquired_at": "2026-09-10T14:44:54.565038+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 49,
+      "linking_source_sha256": "c99a5f06375b45fa18dcc80eecf7c5ca4f4b4cb6f6b86927bd91f0000776452d",
+      "host_qualification": "Exact official CMS attachment URL from anonymous public document listing; this host was not inferred from a third-party mirror."
+    },
+    {
+      "cms_row_id": 83,
+      "row_name": "Health of Privileged Elders (w.e.f. 01st October 2020)",
+      "attachment": {
+        "id": 17253,
+        "attributes": {
+          "name": "Health of Privileged Elders-Policy Wordings (1)",
+          "alternativeText": null,
+          "caption": null,
+          "width": null,
+          "height": null,
+          "formats": null,
+          "hash": "Health_of_Privileged_Elders_Policy_Wordings_1_225b002f43",
+          "ext": ".pdf",
+          "mime": "application/pdf",
+          "size": 1657.68,
+          "url": "https://oicl-cms-media.s3.ap-south-1.amazonaws.com/Health_of_Privileged_Elders_Policy_Wordings_1_225b002f43.pdf",
+          "previewUrl": null,
+          "provider": "aws-s3",
+          "provider_metadata": null,
+          "createdAt": "2024-04-08T05:27:49.564Z",
+          "updatedAt": "2024-04-08T05:27:49.564Z"
+        }
+      },
+      "other_attachment_names": [
+        "Oriental Super Health Top Up -Policy Wordings"
+      ],
+      "insurer_id": "oriental",
+      "url": "https://oicl-cms-media.s3.ap-south-1.amazonaws.com/Health_of_Privileged_Elders_Policy_Wordings_1_225b002f43.pdf",
+      "linking_url": "https://cms.orientalinsurance.org.in/cms/api/download-policy-terms-conditions?populate=*&locale=en",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "4947138a5937fc8f0d375b6f72bafd9b5e37991c0e0547fba4a98e2f95c1a880",
+      "acquired_at": "2026-09-10T14:44:54.564818+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 29,
+      "linking_source_sha256": "c99a5f06375b45fa18dcc80eecf7c5ca4f4b4cb6f6b86927bd91f0000776452d",
+      "host_qualification": "Exact official CMS attachment URL from anonymous public document listing; this host was not inferred from a third-party mirror."
+    },
+    {
+      "cms_row_id": 85,
+      "row_name": "Mediclaim Insurance (Individual) (w.e.f. 01st October 2020)",
+      "attachment": {
+        "id": 17255,
+        "attributes": {
+          "name": "Mediclaim Insurance Policy (Individual)-Policy Wordings (1)",
+          "alternativeText": null,
+          "caption": null,
+          "width": null,
+          "height": null,
+          "formats": null,
+          "hash": "Mediclaim_Insurance_Policy_Individual_Policy_Wordings_1_9533ad3b04",
+          "ext": ".pdf",
+          "mime": "application/pdf",
+          "size": 533.86,
+          "url": "https://oicl-cms-media.s3.ap-south-1.amazonaws.com/Mediclaim_Insurance_Policy_Individual_Policy_Wordings_1_9533ad3b04.pdf",
+          "previewUrl": null,
+          "provider": "aws-s3",
+          "provider_metadata": null,
+          "createdAt": "2024-04-08T05:36:20.040Z",
+          "updatedAt": "2024-04-08T05:36:20.040Z"
+        }
+      },
+      "other_attachment_names": [
+        "Policy"
+      ],
+      "insurer_id": "oriental",
+      "url": "https://oicl-cms-media.s3.ap-south-1.amazonaws.com/Mediclaim_Insurance_Policy_Individual_Policy_Wordings_1_9533ad3b04.pdf",
+      "linking_url": "https://cms.orientalinsurance.org.in/cms/api/download-policy-terms-conditions?populate=*&locale=en",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "7c56abf26f4c4daf88f80924c2dc8700a185a0a90392dbf29ea221153f3e2e2d",
+      "acquired_at": "2026-09-10T14:44:54.565519+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 35,
+      "linking_source_sha256": "c99a5f06375b45fa18dcc80eecf7c5ca4f4b4cb6f6b86927bd91f0000776452d",
+      "host_qualification": "Exact official CMS attachment URL from anonymous public document listing; this host was not inferred from a third-party mirror."
+    },
+    {
+      "cms_row_id": 89,
+      "row_name": "Oriental Super Health Top-up (w.e.f. 01st October 2020)",
+      "attachment": {
+        "id": 17259,
+        "attributes": {
+          "name": "Oriental Super Health Top Up -Policy Wordings (1)",
+          "alternativeText": null,
+          "caption": null,
+          "width": null,
+          "height": null,
+          "formats": null,
+          "hash": "Oriental_Super_Health_Top_Up_Policy_Wordings_1_e5ff41edb3",
+          "ext": ".pdf",
+          "mime": "application/pdf",
+          "size": 1737.2,
+          "url": "https://oicl-cms-media.s3.ap-south-1.amazonaws.com/Oriental_Super_Health_Top_Up_Policy_Wordings_1_e5ff41edb3.pdf",
+          "previewUrl": null,
+          "provider": "aws-s3",
+          "provider_metadata": null,
+          "createdAt": "2024-04-08T05:41:51.825Z",
+          "updatedAt": "2024-04-08T05:41:51.825Z"
+        }
+      },
+      "other_attachment_names": [],
+      "insurer_id": "oriental",
+      "url": "https://oicl-cms-media.s3.ap-south-1.amazonaws.com/Oriental_Super_Health_Top_Up_Policy_Wordings_1_e5ff41edb3.pdf",
+      "linking_url": "https://cms.orientalinsurance.org.in/cms/api/download-policy-terms-conditions?populate=*&locale=en",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "caa3c9fe0f5eedff8ca32066a1091855204b20f6d23490c4fd0e156420a95231",
+      "acquired_at": "2026-09-10T14:44:54.566833+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 38,
+      "linking_source_sha256": "c99a5f06375b45fa18dcc80eecf7c5ca4f4b4cb6f6b86927bd91f0000776452d",
+      "host_qualification": "Exact official CMS attachment URL from anonymous public document listing; this host was not inferred from a third-party mirror."
+    }
+  ],
+  "limitation": "Multiple rows contain mixed or mismatched attachment labels. Candidate document identities must come from the PDF originals; a parent row label is not sufficient."
+}

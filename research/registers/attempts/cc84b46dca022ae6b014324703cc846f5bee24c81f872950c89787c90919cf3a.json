@@ -1,0 +1,65 @@
+{
+  "acquired_at": "2026-09-10T11:59:13.128153+00:00",
+  "associations": [],
+  "byte_count": 263021,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/others/cis-digit-my-business-laghu-udhyam-suraksha.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "go-digit",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 252,
+  "linking_url": "https://www.godigit.com/downloads",
+  "page_count": 5,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 1190.52,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1190.52,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1190.52,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1190.52,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1190.52,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.92
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "93568dd497505c40977ea154f505c71f2ff9f8a9198698cab50ac56a6498ec27",
+  "status": "acquired",
+  "url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/others/cis-digit-my-business-laghu-udhyam-suraksha.pdf"
+}

@@ -1,0 +1,137 @@
+{
+  "acquired_at": "2026-09-10T12:01:33.685244+00:00",
+  "associations": [],
+  "byte_count": 251289,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://acko-cms.ackoassets.com/Policy_Wordings_Acko_Event_Based_Personal_Accident_Policy_a4c4f0257b.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "acko",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 555,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": 14,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 11,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 12,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 13,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 14,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "1e6c7d3a7f5824941629383d0168617c4882a5d5e3074af5d770d274f1dd7fd2",
+  "status": "acquired",
+  "url": "https://acko-cms.ackoassets.com/Policy_Wordings_Acko_Event_Based_Personal_Accident_Policy_a4c4f0257b.pdf"
+}

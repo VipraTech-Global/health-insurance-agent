@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:37:52.969546+00:00",
+  "associations": [],
+  "byte_count": 35435,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Fast-Forward-Add-o-Endorsment-Document.pdf?v=1.0",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 263,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "d96a1083ed9218ff637778fa3fbf207d23a133c7c5b8c8cf2bb9dbd44a38bfb4",
+  "status": "acquired",
+  "url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Fast-Forward-Add-o-Endorsment-Document.pdf?v=1.0"
+}

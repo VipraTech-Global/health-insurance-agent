@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:59:52.682486+00:00",
+  "associations": [],
+  "byte_count": 639315,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/top-up-mediclaim-policy/1%20Topup%20Mediclaim%20Pamphlets.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 6989,
+  "linking_url": "https://www.newindia.co.in/health-insurance/new-india-top-up-mediclaim-insurance",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "c8cb00f7b4d9f8e209b7e99594fa93e58e19da647f2d846acfae6c6f5617841d",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/top-up-mediclaim-policy/1 Topup Mediclaim Pamphlets.pdf"
+}

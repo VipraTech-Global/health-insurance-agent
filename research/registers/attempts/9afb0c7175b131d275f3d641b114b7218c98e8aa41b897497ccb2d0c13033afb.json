@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T12:04:23.167967+00:00",
+  "associations": [],
+  "byte_count": 370995,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/NHCP%20Claim%20Form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "national",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 500,
+  "linking_url": "https://nationalinsurance.nic.co.in/products/all-products/health/national-hospi-cash-policy",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "df8d1c23a5955b64c987b1f8303ddb73c03c09ae6a817acd55858992d9150336",
+  "status": "acquired",
+  "url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/NHCP%20Claim%20Form.pdf"
+}

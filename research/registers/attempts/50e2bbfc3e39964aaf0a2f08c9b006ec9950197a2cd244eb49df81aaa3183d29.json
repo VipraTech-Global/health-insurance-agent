@@ -1,0 +1,73 @@
+{
+  "acquired_at": "2026-09-10T12:00:19.895242+00:00",
+  "associations": [],
+  "byte_count": 588899,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-sixty-plus-mediclaim-policy/Proposal%20Form%20New%20India%20Sixty%20Plus%20Mediclaim%20Policy.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 5669,
+  "linking_url": "https://www.newindia.co.in/health-insurance/new-india-sixty-plus-mediclaim-policy",
+  "page_count": 6,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.52
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "d22dfc888f31d7fcde6ccadc9e334e44ab7a58e4676ac3e4e5c07a6c376134ea",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-sixty-plus-mediclaim-policy/Proposal Form New India Sixty Plus Mediclaim Policy.pdf"
+}

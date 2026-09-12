@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:01:56.453601+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/floater-mediclaim-policy/Dos_and_Donts_for_Health_Insurance.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 2983,
+  "linking_url": "https://www.newindia.co.in/health-insurance/new-india-assurance-floater-mediclaim-policy",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "32621bb301d4ae360c68c0984b89cb675450e3fea69a852ea4e59ea6c9a79ec6",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/floater-mediclaim-policy/Dos_and_Donts_for_Health_Insurance.pdf"
+}

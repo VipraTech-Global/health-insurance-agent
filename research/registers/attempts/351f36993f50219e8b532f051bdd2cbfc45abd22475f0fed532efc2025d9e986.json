@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:01:59.554531+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/floater-mediclaim-policy/Claim_Form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 2298,
+  "linking_url": "https://www.newindia.co.in/health-insurance/new-india-assurance-floater-mediclaim-policy",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "d23e3d2d845f3f099cf45e9e87d86d381b6004f0590799ed1dbed5b0c0583636",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/floater-mediclaim-policy/Claim_Form.pdf"
+}

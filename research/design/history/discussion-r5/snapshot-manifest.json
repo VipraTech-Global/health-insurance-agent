@@ -1,0 +1,106 @@
+{
+  "captured_at": "2026-09-10T18:31:14.294497+00:00",
+  "boundary": "Historical bytes before source-derived discussion-r6 changes. Relative links in copied prose describe original paths, not relocated destinations.",
+  "files": [
+    {
+      "original_path": "research/design/README.md",
+      "archived_path": "research/design/history/discussion-r5/README.md",
+      "sha256": "db37b162af0e4e9a10926c1c51c970ece3452489df6e7598cafb741cff2e3237"
+    },
+    {
+      "original_path": "research/design/additional-case-field-map.json",
+      "archived_path": "research/design/history/discussion-r5/additional-case-field-map.json",
+      "sha256": "2a9d50fb0b2aa5daccaaec8d629ed968d45e7573c27188ea7c7f73849fb13a35"
+    },
+    {
+      "original_path": "research/design/benchmark-storage-fields.json",
+      "archived_path": "research/design/history/discussion-r5/benchmark-storage-fields.json",
+      "sha256": "e59ebe1b9f7cdf8a187a667440791ce07b9132b4ffed0945a283718eb8434d54"
+    },
+    {
+      "original_path": "research/design/benchmark-storage-proposal.md",
+      "archived_path": "research/design/history/discussion-r5/benchmark-storage-proposal.md",
+      "sha256": "99b7a98d8a2e8d302decd7a8e9d74d862430ea3976c8d522d934e9d018476dc0"
+    },
+    {
+      "original_path": "research/design/case-requirement-field-map.json",
+      "archived_path": "research/design/history/discussion-r5/case-requirement-field-map.json",
+      "sha256": "5f6dc2c7abb7f9227a03b02ab1252e852eddc0c26fe484bb3094271520442515"
+    },
+    {
+      "original_path": "research/design/compatibility-and-verification.md",
+      "archived_path": "research/design/history/discussion-r5/compatibility-and-verification.md",
+      "sha256": "bb0ed16a0b6abfe8e9e55a68b219da590a70f7024b3c8dae32d3b6d618c093c2"
+    },
+    {
+      "original_path": "research/design/complete-entity-relationships.mmd",
+      "archived_path": "research/design/history/discussion-r5/complete-entity-relationships.mmd",
+      "sha256": "f7301c44145e43cccbc9cde1becb1e47ac5196169296a020b4908d4f4d6c3340"
+    },
+    {
+      "original_path": "research/design/dependency-metadata-check.json",
+      "archived_path": "research/design/history/discussion-r5/dependency-metadata-check.json",
+      "sha256": "dbc53e026a31cb21f504b73280f383fe8146b6eae2342f23539493e28e7ff095"
+    },
+    {
+      "original_path": "research/design/entity-field-dictionary.json",
+      "archived_path": "research/design/history/discussion-r5/entity-field-dictionary.json",
+      "sha256": "9173ea6ad097b7baf1aff6fa58c791ae1a434f5c7d9575e11292999621189e3d"
+    },
+    {
+      "original_path": "research/design/field-dictionary.md",
+      "archived_path": "research/design/history/discussion-r5/field-dictionary.md",
+      "sha256": "9f43485af39f362eae70e4c29529232cafc781a8207a7054697bf808b08c3c5b"
+    },
+    {
+      "original_path": "research/design/information-requirements.json",
+      "archived_path": "research/design/history/discussion-r5/information-requirements.json",
+      "sha256": "c86987d8d37c37540b0f325a113854042fa95c2a88a504b093cd93df3b03fdf4"
+    },
+    {
+      "original_path": "research/design/json-contracts.schema.json",
+      "archived_path": "research/design/history/discussion-r5/json-contracts.schema.json",
+      "sha256": "45630fc0d6c84482c15faed606c9f662fdce1c4b3b0680e8dd8ae2751f566acd"
+    },
+    {
+      "original_path": "research/design/migration-and-cutover.md",
+      "archived_path": "research/design/history/discussion-r5/migration-and-cutover.md",
+      "sha256": "ed8c02d9d4f4143af8731fd5e5be5fed206e493eb0ff1fbc47be25b3f67c71fe"
+    },
+    {
+      "original_path": "research/design/migration-field-map.json",
+      "archived_path": "research/design/history/discussion-r5/migration-field-map.json",
+      "sha256": "d198ef456232971c17529c5e15d8160582b0e3168dc7ff72d4ff618c2fcadea3"
+    },
+    {
+      "original_path": "research/design/relationships-and-lifecycle.md",
+      "archived_path": "research/design/history/discussion-r5/relationships-and-lifecycle.md",
+      "sha256": "0d53f8fb63ac6a0ce597f14be6ad665c4198a552bb156b77d9eb03988a2e098d"
+    },
+    {
+      "original_path": "research/design/relationships.json",
+      "archived_path": "research/design/history/discussion-r5/relationships.json",
+      "sha256": "bd9d8883983d1a5f0b2e37150f47d48b539c64e0ad382f9e9c3f38207a09e1dc"
+    },
+    {
+      "original_path": "research/design/retrieval-operations.md",
+      "archived_path": "research/design/history/discussion-r5/retrieval-operations.md",
+      "sha256": "3c1563f8f8c31cfca678d482dff978e533479fae1af4ff1481c598059f21252b"
+    },
+    {
+      "original_path": "research/design/value-and-rule-contracts.md",
+      "archived_path": "research/design/history/discussion-r5/value-and-rule-contracts.md",
+      "sha256": "cba872f4bcc0076fc2ada21230317a9b1771e6bc136a7d1dfead7f87e6c8d8ed"
+    },
+    {
+      "original_path": "research/design/worked-examples.md",
+      "archived_path": "research/design/history/discussion-r5/worked-examples.md",
+      "sha256": "17e402678db1c1ef1091f26530863fe6ee4d39471b1ab8bf951af5ccf34190a3"
+    },
+    {
+      "original_path": "research/design/worked-record-examples.json",
+      "archived_path": "research/design/history/discussion-r5/worked-record-examples.json",
+      "sha256": "77db6d5308d1dc812ed9b79468e40987df8db4a29866a1c59ba515bfb9235cee"
+    }
+  ]
+}

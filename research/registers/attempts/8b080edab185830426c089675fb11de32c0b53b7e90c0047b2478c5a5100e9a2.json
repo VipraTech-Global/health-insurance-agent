@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T12:01:50.567179+00:00",
+  "associations": [],
+  "byte_count": 256473,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://acko-cms.ackoassets.com/Claim_Form_Acko_Car_Package_Policy_Add_on_Covers_3f0ff8bf82.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "acko",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 498,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 1583.04,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1119.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1583.04,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1119.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1583.04,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1119.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "78d11b5215063660047e63481e16d1c87ceca60b854bfa43809afa9b0a4b6c16",
+  "status": "acquired",
+  "url": "https://acko-cms.ackoassets.com/Claim_Form_Acko_Car_Package_Policy_Add_on_Covers_3f0ff8bf82.pdf"
+}

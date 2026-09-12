@@ -1,0 +1,113 @@
+{
+  "acquired_at": "2026-09-10T12:00:58.383916+00:00",
+  "associations": [],
+  "byte_count": 2841958,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.manipalcigna.com/documents/20124/9267615/ProHealthPrime-Protect-and-Advantage-Accordion.pdf/8aa36945-b0a9-1037-e9c4-579b9a44149e?t=1748797241394",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "manipalcigna",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1673,
+  "linking_url": "https://www.manipalcigna.com/hospitalization-cover/prohealth-insurance",
+  "page_count": 11,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 287.902
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.527,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 288.055
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.702,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 288.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 288.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.702,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 288.055
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 288.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 288.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.702,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 288.18
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.702,
+      "page": 11,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 288.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "0277b1549573873d00c31ba364e24d2c13457da6e766225dab4f92e566914583",
+  "status": "acquired",
+  "url": "https://www.manipalcigna.com/documents/20124/9267615/ProHealthPrime-Protect-and-Advantage-Accordion.pdf/8aa36945-b0a9-1037-e9c4-579b9a44149e?t=1748797241394"
+}

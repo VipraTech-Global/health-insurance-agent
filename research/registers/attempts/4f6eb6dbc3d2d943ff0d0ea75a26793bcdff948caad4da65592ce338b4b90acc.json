@@ -1,0 +1,65 @@
+{
+  "acquired_at": "2026-09-10T11:57:30.079162+00:00",
+  "associations": [],
+  "byte_count": 1177425,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/Hospital_Daily_Cash_Insurance_Policy_CIS_41749a234d.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 649,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 5,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "6c5a3f08f836c5082f612fd054181c49fbc0c0e945238a91785f3e11dc986a68",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/Hospital_Daily_Cash_Insurance_Policy_CIS_41749a234d.pdf"
+}

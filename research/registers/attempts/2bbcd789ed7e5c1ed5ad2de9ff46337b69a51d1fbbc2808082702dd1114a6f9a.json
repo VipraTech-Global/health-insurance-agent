@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:53:39.088887+00:00",
+  "associations": [],
+  "byte_count": 124430,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.bajajgeneralinsurance.com/download-documents/Arbitration-Notice.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "bajaj-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 627,
+  "linking_url": "https://www.bajajgeneralinsurance.com/health-insurance-plans.html",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "50ed693899c77822fa624f25fb508a86f76a9e78ad59cf9e7068d1df874afd06",
+  "status": "acquired",
+  "url": "https://www.bajajgeneralinsurance.com/download-documents/Arbitration-Notice.pdf"
+}

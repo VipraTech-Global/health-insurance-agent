@@ -1,0 +1,348 @@
+{
+  "complete_rule_inventory": false,
+  "currency": "INR",
+  "derivatives": [
+    {
+      "path": "assessment/visual-review/star-ssf-03.png",
+      "sha256": "c09382257ce3eb33c9e4c523358f4d8357548a74c70051836ff07c5d8d88184b"
+    },
+    {
+      "path": "assessment/visual-review/star-ssf-04.png",
+      "sha256": "4bb60025e674da551910d52786aef31df9da62e679829a237db6139eb56044a2"
+    }
+  ],
+  "footnotes": [
+    {
+      "applies_to": "Star-marked Oral Chemotherapy row; repeated on page4",
+      "physical_page": 3,
+      "read_method": "visual and text",
+      "text": "*Sublimit all inclusive with or without hospitalization where ever hospitalization includes pre and post hospitalization"
+    },
+    {
+      "applies_to": "Continuation of Gold table",
+      "physical_page": 4,
+      "text": "*Sublimit all inclusive with or without hospitalization where ever hospitalization includes pre and post hospitalization"
+    }
+  ],
+  "format_version": 1,
+  "geometry_note": "Gold table onp3isrightcolumnlowerpage; continued rotated table onp4leftcolumnupperpage. Row/column reading direction is rotated; raw extracted character order is not table order.",
+  "material_unresolved": [
+    "Modern-treatment cap order relative to deductible/defined limit requires complete connected-clause adjudication before calculating a claim.",
+    "Oral chemotherapy footnote covers non-hospitalisation settings, while threshold requires hospitalisation expense; linked applicability must remain explicit.",
+    "Full website Other Excluded Expenses original missing."
+  ],
+  "method": "Manual reading of original column text plus rendered physical pages3and4. No candidate extraction output used. Not independently double reviewed.",
+  "period_scope": "per policy period for each treatment/procedure, joined to annual reset notes",
+  "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+  "tables": [
+    {
+      "column_values": [
+        300000,
+        500000
+      ],
+      "physical_pages": [
+        3
+      ],
+      "rows": [
+        {
+          "limits_inr": [
+            75000,
+            125000
+          ],
+          "procedure": "Uterine artery Embolization and HIFU"
+        },
+        {
+          "limits_inr": [
+            30000,
+            50000
+          ],
+          "procedure": "Balloon Sinuplasty"
+        },
+        {
+          "limits_inr": [
+            150000,
+            250000
+          ],
+          "procedure": "Deep Brain Stimulation"
+        },
+        {
+          "limits_inr": [
+            75000,
+            125000
+          ],
+          "procedure": "Oral Chemotherapy*"
+        },
+        {
+          "limits_inr": [
+            150000,
+            250000
+          ],
+          "procedure": "Immunotherapy-Monoclonal Antibody to be given as injection"
+        },
+        {
+          "limits_inr": [
+            30000,
+            50000
+          ],
+          "procedure": "Intra Vitreal injections"
+        },
+        {
+          "limits_inr": [
+            150000,
+            250000
+          ],
+          "procedure": "Robotic surgeries"
+        },
+        {
+          "limits_inr": [
+            150000,
+            250000
+          ],
+          "procedure": "Stereotactic radio surgeries"
+        },
+        {
+          "limits_inr": [
+            300000,
+            500000
+          ],
+          "procedure": "Bronchial Thermoplasty"
+        },
+        {
+          "limits_inr": [
+            300000,
+            500000
+          ],
+          "procedure": "Vaporisation of the prostate (Green laser treatment or holmium laser treatment)"
+        },
+        {
+          "limits_inr": [
+            300000,
+            500000
+          ],
+          "procedure": "IONM-(Intra Operative Neuro Monitoring)"
+        },
+        {
+          "limits_inr": [
+            150000,
+            250000
+          ],
+          "procedure": "Stem cell therapy: Hematopoietic stem cells for bone marrow transplant for haematological conditions"
+        }
+      ],
+      "section": "II.E",
+      "selector": "deductible_inr",
+      "variant": "Silver"
+    },
+    {
+      "column_values": [
+        500000,
+        1000000,
+        1500000,
+        2000000,
+        2500000,
+        5000000,
+        7500000,
+        10000000
+      ],
+      "physical_pages": [
+        3,
+        4
+      ],
+      "rows": [
+        {
+          "limits_inr_or_expression": [
+            125000,
+            150000,
+            175000,
+            200000,
+            200000,
+            225000,
+            250000,
+            300000
+          ],
+          "procedure": "Uterine artery Embolization and HIFU"
+        },
+        {
+          "limits_inr_or_expression": [
+            50000,
+            100000,
+            125000,
+            150000,
+            150000,
+            175000,
+            200000,
+            200000
+          ],
+          "procedure": "Balloon Sinuplasty"
+        },
+        {
+          "limits_inr_or_expression": [
+            250000,
+            300000,
+            400000,
+            450000,
+            500000,
+            600000,
+            700000,
+            750000
+          ],
+          "procedure": "Deep Brain Stimulation"
+        },
+        {
+          "limits_inr_or_expression": [
+            125000,
+            200000,
+            250000,
+            275000,
+            300000,
+            400000,
+            500000,
+            600000
+          ],
+          "procedure": "Oral Chemotherapy*"
+        },
+        {
+          "limits_inr_or_expression": [
+            250000,
+            400000,
+            500000,
+            550000,
+            600000,
+            750000,
+            900000,
+            1000000
+          ],
+          "procedure": "Immunotherapy-Monoclonal Antibody to be given as injection"
+        },
+        {
+          "limits_inr_or_expression": [
+            50000,
+            75000,
+            100000,
+            125000,
+            150000,
+            175000,
+            200000,
+            200000
+          ],
+          "procedure": "Intra Vitreal injections"
+        },
+        {
+          "limits_inr_or_expression": [
+            250000,
+            300000,
+            400000,
+            450000,
+            500000,
+            600000,
+            700000,
+            750000
+          ],
+          "procedure": "Robotic surgeries"
+        },
+        {
+          "limits_inr_or_expression": [
+            200000,
+            225000,
+            250000,
+            275000,
+            300000,
+            350000,
+            375000,
+            400000
+          ],
+          "procedure": "Stereotactic radio surgeries"
+        },
+        {
+          "limits_inr_or_expression": [
+            "up_to_sum_insured",
+            "up_to_sum_insured",
+            "up_to_sum_insured",
+            "up_to_sum_insured",
+            "up_to_sum_insured",
+            "up_to_sum_insured",
+            "up_to_sum_insured",
+            "up_to_sum_insured"
+          ],
+          "procedure": "Bronchial Thermoplasty"
+        },
+        {
+          "limits_inr_or_expression": [
+            "up_to_sum_insured",
+            "up_to_sum_insured",
+            "up_to_sum_insured",
+            "up_to_sum_insured",
+            "up_to_sum_insured",
+            "up_to_sum_insured",
+            "up_to_sum_insured",
+            "up_to_sum_insured"
+          ],
+          "procedure": "Vaporisation of the prostate (Green laser treatment or holmium laser treatment)"
+        },
+        {
+          "limits_inr_or_expression": [
+            "up_to_sum_insured",
+            "up_to_sum_insured",
+            "up_to_sum_insured",
+            "up_to_sum_insured",
+            "up_to_sum_insured",
+            "up_to_sum_insured",
+            "up_to_sum_insured",
+            "up_to_sum_insured"
+          ],
+          "procedure": "IONM-(Intra Operative Neuro Monitoring)"
+        },
+        {
+          "limits_inr_or_expression": [
+            250000,
+            300000,
+            400000,
+            450000,
+            500000,
+            750000,
+            900000,
+            1000000
+          ],
+          "procedure": "Stem cell therapy: Hematopoietic stem cells for bone marrow transplant for haematological conditions"
+        }
+      ],
+      "section": "III.J",
+      "selector": "sum_insured_inr",
+      "variant": "Gold"
+    },
+    {
+      "connected_restrictions": [
+        "Once in remaining policy period after SI exhausted/exceeded",
+        "Same hospitalisation/illness may use it",
+        "No carry forward",
+        "Not available for Modern Treatments",
+        "V.23 automatic expiry on exhaustion requires precedence review"
+      ],
+      "physical_pages": [
+        4
+      ],
+      "rows": [
+        {
+          "defined_limit": 300000,
+          "recharge_limit": 50000
+        },
+        {
+          "defined_limit": 500000,
+          "recharge_limit": 75000
+        },
+        {
+          "defined_limit": 1000000,
+          "recharge_limit": 100000
+        },
+        {
+          "defined_limit": 1500000,
+          "operator": ">=",
+          "recharge_limit": 250000
+        }
+      ],
+      "section": "III.L",
+      "selector": "defined_limit_inr",
+      "variant": "Gold"
+    }
+  ]
+}

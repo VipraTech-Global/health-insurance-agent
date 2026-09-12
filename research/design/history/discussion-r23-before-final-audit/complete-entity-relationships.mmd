@@ -1,0 +1,910 @@
+erDiagram
+    Account {
+        uuid id
+        varchar_254 email
+        varchar_128 password
+        instant last_login
+        boolean is_superuser
+        boolean is_staff
+        boolean is_active
+        varchar_150 first_name
+        varchar_150 last_name
+        instant date_joined
+        instant deleted_at
+        bigint erasure_generation
+    }
+    AIPreference {
+        fk_Account user_id
+        fk_ModelRoute route_id
+        instant updated_at
+    }
+    Person {
+        uuid id
+        timestamptz created_at
+        fk_Account owner_id
+        varchar_200 display_name
+    }
+    PersonRelationship {
+        uuid id
+        timestamptz created_at
+        fk_Account owner_id
+        fk_Person from_person_id
+        fk_Person to_person_id
+        enum relationship_type
+        fk_CustomerStatement source_statement_id
+        date valid_from
+        date valid_to
+    }
+    Conversation {
+        uuid id
+        timestamptz created_at
+        fk_Account owner_id
+        varchar_200 title
+        fk_CustomerProfileRevision current_profile_revision_id
+        enum status
+        instant updated_at
+        varchar_35 preferred_language
+    }
+    Message {
+        uuid id
+        timestamptz created_at
+        fk_Account owner_id
+        fk_Conversation conversation_id
+        bigint sequence
+        enum role
+        text content
+        enum origin
+        uuid client_request_id
+        char_64 payload_sha256
+        instant submitted_at
+        fk_Turn turn_id
+        fk_Recommendation recommendation_id
+        instant redacted_at
+    }
+    ConversationMessageChunk {
+        uuid id
+        timestamptz created_at
+        fk_Account owner_id
+        fk_Conversation conversation_id
+        fk_Message message_id
+        integer chunk_index
+        integer start_offset
+        integer end_offset
+        tsvector lexical_vector
+        vector_1024 embedding
+        varchar_160 index_revision
+        char_64 content_sha256
+        instant invalidated_at
+    }
+    CustomerStatement {
+        uuid id
+        timestamptz created_at
+        fk_Account owner_id
+        fk_Message source_message_id
+        integer start_offset
+        integer end_offset
+        fk_Person subject_person_id
+        enum kind
+        enum status
+        text resolution_note
+    }
+    CustomerProfileRevision {
+        uuid id
+        timestamptz created_at
+        fk_Account owner_id
+        fk_Conversation conversation_id
+        bigint revision
+    }
+    CustomerFact {
+        uuid id
+        timestamptz created_at
+        fk_Account owner_id
+        fk_CustomerProfileRevision introduced_in_revision_id
+        fk_CustomerStatement source_statement_id
+        uuid logical_key
+        varchar_100 fact_type
+        positive_integer schema_version
+        json_FactValueV1 value
+        enum status
+    }
+    CustomerRequirement {
+        uuid id
+        timestamptz created_at
+        fk_Account owner_id
+        fk_CustomerProfileRevision introduced_in_revision_id
+        fk_CustomerStatement source_statement_id
+        uuid logical_key
+        varchar_120 criterion
+        enum operator
+        json_FactValueV1 target_value
+        enum priority
+        enum scope
+        fk_Person subject_person_id
+        enum status
+    }
+    AdviceRequest {
+        uuid id
+        timestamptz created_at
+        fk_Account owner_id
+        fk_Conversation conversation_id
+        fk_CustomerStatement source_statement_id
+        enum request_type
+        enum status
+    }
+    Insurer {
+        uuid id
+        timestamptz created_at
+        varchar_250 name
+    }
+    DiscoveryRun {
+        uuid id
+        timestamptz created_at
+        instant updated_at
+        fk_Insurer insurer_id
+        text instructions
+        varchar_250 session_id
+        varchar_160 model_name
+        instant completed_at
+        enum status
+        text error_summary
+    }
+    SourceURL {
+        uuid id
+        timestamptz created_at
+        instant updated_at
+        text url
+        enum source_type
+    }
+    SourceObservation {
+        uuid id
+        timestamptz created_at
+        fk_DiscoveryRun discovery_run_id
+        fk_SourceURL source_url_id
+        fk_SourceCapture found_in_capture_id
+        enum observation_type
+        text label_or_context
+        enum disposition
+        text disposition_reason
+    }
+    SourceCapture {
+        uuid id
+        timestamptz created_at
+        instant updated_at
+        fk_DiscoveryRun discovery_run_id
+        fk_SourceURL source_url_id
+        instant completed_at
+        enum status
+        smallint http_status
+        fk_OriginalFile original_file_id
+        fk_DocumentVersion document_version_id
+        text error_summary
+    }
+    OriginalFile {
+        uuid id
+        timestamptz created_at
+        instant updated_at
+        fk_Account owner_id
+        char_64 sha256
+        varchar_500 storage_key
+        bigint byte_size
+        varchar_150 media_type
+        enum availability
+        instant last_verified_at
+    }
+    CustomerUploadedDocument {
+        uuid id
+        timestamptz created_at
+        instant updated_at
+        fk_Account owner_id
+        fk_OriginalFile original_file_id
+        fk_Message source_message_id
+        varchar_300 display_name
+        enum kind
+        enum review_status
+    }
+    DocumentSeries {
+        uuid id
+        timestamptz created_at
+        instant updated_at
+        fk_Insurer issuer_id
+        text name
+        enum kind
+        enum authority
+        enum relevance
+    }
+    DocumentVersion {
+        uuid id
+        timestamptz created_at
+        instant updated_at
+        fk_DocumentSeries document_series_id
+        varchar_200 version_label
+        json_IdentifiersV1 identifiers
+        varchar_35 language
+        date published_on
+        date effective_from
+        date effective_to
+        fk_DocumentVersion supersedes_id
+        enum review_status
+    }
+    DocumentPage {
+        uuid id
+        timestamptz created_at
+        instant updated_at
+        fk_OriginalFile original_file_id
+        integer page_number
+        varchar_80 printed_label
+        enum review_state
+    }
+    EvidenceSpan {
+        uuid id
+        timestamptz created_at
+        fk_SourceCapture source_capture_id
+        fk_CustomerUploadedDocument customer_uploaded_document_id
+        fk_DocumentPage page_id
+        varchar_200 section_label
+        text quote
+        json_EvidenceContextV1 context
+        enum method
+        enum verification
+        json_OriginalLocatorV1 locator
+    }
+    Product {
+        uuid id
+        timestamptz created_at
+        instant updated_at
+        fk_Insurer insurer_id
+        varchar_250 name
+        enum benefit_type
+        enum lifecycle_status
+        enum recommendation_role
+        fk_EvidenceSpan identity_evidence_id
+    }
+    PolicyVersion {
+        uuid id
+        timestamptz created_at
+        instant updated_at
+        fk_Product product_id
+        varchar_100 uin
+        varchar_200 version_label
+        enum publication_status
+        fk_PolicyVersion supersedes_id
+        json_ApplicabilityV1 applicability
+    }
+    PolicyVersionDocument {
+        uuid id
+        timestamptz created_at
+        fk_PolicyVersion policy_version_id
+        fk_DocumentVersion document_version_id
+        enum role
+        boolean required_for_policy
+        json_ApplicabilityV1 applicability
+        fk_EvidenceSpan precedence_evidence_id
+    }
+    ProductVariant {
+        uuid id
+        timestamptz created_at
+        instant updated_at
+        fk_PolicyVersion policy_version_id
+        varchar_200 name
+        json_ConfigurationV1 choices
+        json_ApplicabilityV1 availability
+        fk_EvidenceSpan identity_evidence_id
+    }
+    ProductOption {
+        uuid id
+        timestamptz created_at
+        instant updated_at
+        fk_ProductVariant product_variant_id
+        fk_PolicyVersion option_policy_version_id
+        varchar_200 name
+        enum selection_kind
+        json_ApplicabilityV1 conditions
+        fk_EvidenceSpan identity_evidence_id
+    }
+    CustomerPolicy {
+        uuid id
+        timestamptz created_at
+        instant updated_at
+        fk_Account owner_id
+        encrypted_varchar_200 policy_number
+        fk_Insurer insurer_id
+        fk_Person proposer_id
+        fk_Person payer_id
+        enum coverage_type
+        enum lifecycle_status
+        encrypted_varchar_250 group_master_reference
+    }
+    CustomerPolicyRevision {
+        uuid id
+        timestamptz created_at
+        instant updated_at
+        fk_Account owner_id
+        fk_CustomerPolicy customer_policy_id
+        positive_integer revision_number
+        fk_ProductVariant product_variant_id
+        daterange policy_term
+        daterange effective_during
+        json_CustomerPolicySelectionV1 selected_choices
+        fk_EvidenceSpan selection_evidence_id
+        enum verification_status
+    }
+    PolicyMember {
+        uuid id
+        timestamptz created_at
+        instant updated_at
+        fk_Account owner_id
+        fk_CustomerPolicyRevision customer_policy_revision_id
+        fk_Person person_id
+        daterange covered_during
+        encrypted_varchar_160 member_identifier
+        fk_EvidenceSpan evidence_span_id
+        enum verification_status
+    }
+    CustomerPolicyOption {
+        uuid id
+        timestamptz created_at
+        instant updated_at
+        fk_Account owner_id
+        fk_CustomerPolicyRevision customer_policy_revision_id
+        fk_ProductOption product_option_id
+        enum selection_status
+        fk_EvidenceSpan evidence_span_id
+        enum verification_status
+    }
+    CustomerPolicyFact {
+        uuid id
+        timestamptz created_at
+        instant updated_at
+        fk_Account owner_id
+        fk_CustomerPolicyRevision customer_policy_revision_id
+        fk_Person person_id
+        varchar_100 fact_type
+        json_CustomerPolicyFactValueV1 value
+        fk_CustomerPolicy related_customer_policy_id
+        fk_EvidenceSpan evidence_span_id
+        enum verification_status
+        fk_CustomerPolicyFact supersedes_id
+    }
+    PolicyEvent {
+        uuid id
+        timestamptz created_at
+        fk_Account owner_id
+        fk_CustomerPolicy customer_policy_id
+        varchar_100 event_type
+        json_TemporalExtentV1 occurred_at
+        json_QuantityV1 amount
+        fk_EvidenceSpan source_evidence_id
+        fk_Message source_message_id
+        enum verification_status
+        fk_PolicyEvent related_event_id
+        fk_PolicyEvent supersedes_event_id
+        fk_EvidenceSpan authority_evidence_id
+    }
+    PolicyRule {
+        uuid id
+        timestamptz created_at
+        fk_PolicyVersion policy_version_id
+        varchar_160 rule_key
+        enum rule_type
+        json_RuleV1 body
+        enum review_status
+        fk_PolicyRule supersedes_id
+    }
+    PolicyRuleEvidence {
+        uuid id
+        timestamptz created_at
+        fk_PolicyRule policy_rule_id
+        fk_EvidenceSpan evidence_span_id
+        enum role
+        boolean is_required
+    }
+    PolicyRuleLink {
+        uuid id
+        timestamptz created_at
+        fk_PolicyRule from_policy_rule_id
+        fk_PolicyRule to_policy_rule_id
+        enum link_type
+    }
+    PolicyRuleTableCell {
+        uuid id
+        timestamptz created_at
+        fk_PolicyRule policy_rule_id
+        json_TableSelectorsV1 selectors
+        json_ExpressionV1 value
+        fk_EvidenceSpan evidence_span_id
+    }
+    ProviderLocation {
+        uuid id
+        timestamptz created_at
+        varchar_300 facility_name
+        varchar_250 organization_name
+        text address
+        varchar_150 city
+        varchar_20 postal_code
+        char_2 country_code
+        json_IdentifiersV1 external_identifiers
+        enum identity_status
+        fk_ProviderLocation supersedes_id
+    }
+    ProviderNetworkSnapshot {
+        uuid id
+        timestamptz created_at
+        fk_Insurer insurer_id
+        fk_ProductVariant product_variant_id
+        fk_SourceCapture source_capture_id
+        json_ProviderNetworkScopeV1 scope
+        instant observed_at
+        enum completeness
+        fk_EvidenceSpan scope_evidence_id
+    }
+    ProviderNetworkEntry {
+        uuid id
+        timestamptz created_at
+        fk_ProviderNetworkSnapshot provider_network_snapshot_id
+        fk_ProviderLocation provider_location_id
+        enum network_status
+        json_NetworkRestrictionsV1 restrictions
+        date effective_from
+        date effective_to
+        fk_EvidenceSpan evidence_span_id
+    }
+    Quote {
+        uuid id
+        timestamptz created_at
+        fk_Account owner_id
+        fk_CustomerProfileRevision profile_revision_id
+        fk_ProductVariant product_variant_id
+        json_AcceptedSelectionV1 quoted_selection
+        varchar_200 insurer_quote_reference
+        instant issued_at
+        instant valid_until
+        json_QuantityV1 total
+        json_TemporalExtentV1 coverage_term
+        json_QuotePriceBreakdownV1 price_breakdown
+        json_QuotePaymentScheduleV1 payment_schedule
+        fk_EvidenceSpan source_evidence_id
+    }
+    KnowledgeRelease {
+        uuid id
+        timestamptz created_at
+        bigint release_number
+        enum state
+        json_CapabilityScopeV1 supported_scope
+        char_64 manifest_sha256
+        instant published_at
+        fk_KnowledgeRelease previous_release_id
+    }
+    KnowledgeReleaseRule {
+        uuid id
+        timestamptz created_at
+        fk_KnowledgeRelease knowledge_release_id
+        fk_PolicyRule policy_rule_id
+    }
+    KnowledgeChannel {
+        uuid id
+        timestamptz created_at
+        timestamptz updated_at
+        varchar_80 name
+        fk_KnowledgeRelease current_release_id
+        bigint generation
+    }
+    PolicySearchChunk {
+        uuid id
+        timestamptz created_at
+        fk_DocumentVersion document_version_id
+        json_UuidListV1 evidence_span_ids
+        text text
+        tsvector lexical_vector
+        vector_1024 embedding
+        varchar_160 index_version
+        char_64 chunk_sha256
+    }
+    Recommendation {
+        uuid id
+        timestamptz created_at
+        fk_Account owner_id
+        fk_Turn turn_id
+        fk_AdviceRequest advice_request_id
+        fk_CustomerProfileRevision profile_revision_id
+        fk_KnowledgeRelease knowledge_release_id
+        enum outcome
+        fk_Recommendation supersedes_id
+    }
+    PolicyCandidateAssessment {
+        uuid id
+        timestamptz created_at
+        fk_Account owner_id
+        fk_Recommendation recommendation_id
+        fk_ProductVariant product_variant_id
+        json_AcceptedSelectionV1 evaluated_selection
+        char_64 selection_sha256
+        enum disposition
+        integer rank
+        fk_Quote quote_id
+    }
+    PolicyRequirementMatch {
+        uuid id
+        timestamptz created_at
+        fk_Account owner_id
+        fk_PolicyCandidateAssessment candidate_assessment_id
+        fk_CustomerRequirement customer_requirement_id
+        enum outcome
+        json_TypedValueV1 comparison_value
+        fk_ProviderNetworkEntry provider_network_entry_id
+    }
+    InformationNeed {
+        uuid id
+        timestamptz created_at
+        fk_Account owner_id
+        fk_Recommendation recommendation_id
+        fk_Person subject_person_id
+        enum need_kind
+        varchar_120 information_key
+        text reason
+        enum priority
+        enum status
+        fk_Message asked_in_message_id
+        fk_CustomerProfileRevision resolved_in_profile_revision_id
+    }
+    RecommendationStatement {
+        uuid id
+        timestamptz created_at
+        fk_Account owner_id
+        fk_Recommendation recommendation_id
+        integer ordinal
+        fk_PolicyCandidateAssessment candidate_assessment_id
+        fk_PolicyRequirementMatch requirement_match_id
+        fk_InformationNeed information_need_id
+        fk_Calculation calculation_id
+        text text
+        enum statement_type
+        boolean critical
+        enum support_status
+    }
+    RecommendationCitation {
+        uuid id
+        timestamptz created_at
+        fk_Account owner_id
+        fk_RecommendationStatement recommendation_statement_id
+        fk_EvidenceSpan evidence_span_id
+        fk_PolicyRule policy_rule_id
+        enum role
+        integer ordinal
+    }
+    Calculation {
+        uuid id
+        timestamptz created_at
+        fk_Account owner_id
+        fk_AdviceRequest advice_request_id
+        varchar_120 calculation_type
+        varchar_120 engine_version
+        json_CalculationInputsV1 inputs
+        json_CalculationOperationsV1 operations
+        json_TypedValueV1 result
+        json_AssumptionsV1 assumptions
+        enum status
+    }
+    Turn {
+        uuid id
+        timestamptz created_at
+        timestamptz updated_at
+        fk_Account owner_id
+        fk_Conversation conversation_id
+        uuid request_id
+        fk_Message input_message_id
+        fk_CustomerProfileRevision profile_revision_id
+        enum state
+        uuid lease_token
+        instant lease_until
+        instant deadline
+        instant cancelled_at
+        varchar_100 error_code
+    }
+    TurnEvent {
+        uuid id
+        timestamptz created_at
+        fk_Account owner_id
+        fk_Turn turn_id
+        bigint sequence
+        enum event_type
+        json_TurnEventV1 payload
+    }
+    Outbox {
+        uuid id
+        timestamptz created_at
+        timestamptz updated_at
+        fk_Account owner_id
+        enum event_type
+        fk_Turn turn_id
+        fk_ProcessingJob processing_job_id
+        fk_KnowledgeRelease knowledge_release_id
+        varchar_200 idempotency_key
+        enum state
+        integer attempt_count
+        instant available_at
+        instant lease_until
+        varchar_100 last_error_code
+    }
+    ModelRoute {
+        uuid id
+        timestamptz created_at
+        varchar_120 route_key
+        varchar_120 endpoint_profile
+        varchar_160 requested_model
+        varchar_120 adapter_version
+        char_64 configuration_sha256
+        instant disabled_at
+    }
+    ModelQualification {
+        uuid id
+        timestamptz created_at
+        fk_ModelRoute route_id
+        enum schema_name
+        char_64 schema_sha256
+        varchar_160 observed_model
+        json_QualificationV1 capabilities
+        enum result
+    }
+    ModelAttempt {
+        uuid id
+        timestamptz created_at
+        fk_Account owner_id
+        fk_Turn turn_id
+        fk_ProcessingJob processing_job_id
+        fk_ModelQualification qualification_id
+        integer attempt_number
+        instant started_at
+        instant completed_at
+        varchar_160 observed_model
+        enum status
+        json_UsageV1 usage
+        varchar_100 error_code
+        char_64 request_sha256
+        varchar_500 response_storage_key
+        char_64 response_sha256
+    }
+    ProcessingJob {
+        uuid id
+        timestamptz created_at
+        timestamptz updated_at
+        fk_Account owner_id
+        fk_SourceCapture source_capture_id
+        fk_CustomerUploadedDocument customer_uploaded_document_id
+        enum stage
+        varchar_160 adapter_version
+        char_64 input_sha256
+        integer attempt_number
+        fk_ProcessingJob parent_job_id
+        enum state
+        uuid lease_token
+        instant lease_until
+        varchar_500 result_storage_key
+        char_64 result_sha256
+        json_ProcessingIssuesV1 issues
+        varchar_100 error_code
+    }
+    ConsentRecord {
+        uuid id
+        timestamptz created_at
+        fk_Account owner_id
+        fk_Person person_id
+        enum consent_type
+        varchar_80 notice_version
+        enum capture_method
+        enum status
+        fk_Message source_message_id
+        instant revoked_at
+    }
+    DeletionRequest {
+        uuid id
+        timestamptz created_at
+        timestamptz updated_at
+        fk_Account owner_id
+        json_DeletionScopeV1 scope
+        enum state
+        instant completed_at
+        json_DeletionVerificationV1 verification
+        varchar_100 error_code
+    }
+    AuditEvent {
+        uuid id
+        timestamptz created_at
+        fk_Account owner_id
+        fk_Account actor_id
+        varchar_100 operation
+        varchar_100 object_kind
+        uuid object_id
+        enum outcome
+        json_AuditMetadataV1 metadata
+    }
+    PolicyPackageComponent {
+        uuid id
+        timestamptz created_at
+        fk_PolicyVersion package_policy_version_id
+        varchar_80 slot_key
+        fk_Product component_product_id
+        fk_PolicyVersion component_policy_version_id
+        varchar_100 asserted_component_uin
+        enum role
+        enum selection_kind
+        fk_PolicyRule selection_policy_rule_id
+        fk_EvidenceSpan evidence_span_id
+        enum review_status
+    }
+    ModelRoute |o--o{ AIPreference : "route_id"
+    Account ||--o{ AIPreference : "user_id"
+    Conversation ||--o{ AdviceRequest : "conversation_id"
+    Account ||--o{ AdviceRequest : "owner_id"
+    CustomerStatement ||--o{ AdviceRequest : "source_statement_id"
+    Account |o--o{ AuditEvent : "actor_id"
+    Account |o--o{ AuditEvent : "owner_id"
+    AdviceRequest ||--o{ Calculation : "advice_request_id"
+    Account ||--o{ Calculation : "owner_id"
+    Account ||--o{ ConsentRecord : "owner_id"
+    Person |o--o{ ConsentRecord : "person_id"
+    Message |o--o{ ConsentRecord : "source_message_id"
+    CustomerProfileRevision |o--o{ Conversation : "current_profile_revision_id"
+    Account ||--o{ Conversation : "owner_id"
+    Conversation ||--o{ ConversationMessageChunk : "conversation_id"
+    Message ||--o{ ConversationMessageChunk : "message_id"
+    Account ||--o{ ConversationMessageChunk : "owner_id"
+    CustomerProfileRevision ||--o{ CustomerFact : "introduced_in_revision_id"
+    Account ||--o{ CustomerFact : "owner_id"
+    CustomerStatement ||--o{ CustomerFact : "source_statement_id"
+    Insurer ||--o{ CustomerPolicy : "insurer_id"
+    Account ||--o{ CustomerPolicy : "owner_id"
+    Person |o--o{ CustomerPolicy : "payer_id"
+    Person |o--o{ CustomerPolicy : "proposer_id"
+    CustomerPolicyRevision ||--o{ CustomerPolicyFact : "customer_policy_revision_id"
+    EvidenceSpan ||--o{ CustomerPolicyFact : "evidence_span_id"
+    Account ||--o{ CustomerPolicyFact : "owner_id"
+    Person |o--o{ CustomerPolicyFact : "person_id"
+    CustomerPolicy |o--o{ CustomerPolicyFact : "related_customer_policy_id"
+    CustomerPolicyFact |o--o{ CustomerPolicyFact : "supersedes_id"
+    CustomerPolicyRevision ||--o{ CustomerPolicyOption : "customer_policy_revision_id"
+    EvidenceSpan |o--o{ CustomerPolicyOption : "evidence_span_id"
+    Account ||--o{ CustomerPolicyOption : "owner_id"
+    ProductOption ||--o{ CustomerPolicyOption : "product_option_id"
+    CustomerPolicy ||--o{ CustomerPolicyRevision : "customer_policy_id"
+    Account ||--o{ CustomerPolicyRevision : "owner_id"
+    ProductVariant |o--o{ CustomerPolicyRevision : "product_variant_id"
+    EvidenceSpan |o--o{ CustomerPolicyRevision : "selection_evidence_id"
+    Conversation ||--o{ CustomerProfileRevision : "conversation_id"
+    Account ||--o{ CustomerProfileRevision : "owner_id"
+    CustomerProfileRevision ||--o{ CustomerRequirement : "introduced_in_revision_id"
+    Account ||--o{ CustomerRequirement : "owner_id"
+    CustomerStatement ||--o{ CustomerRequirement : "source_statement_id"
+    Person |o--o{ CustomerRequirement : "subject_person_id"
+    Account ||--o{ CustomerStatement : "owner_id"
+    Message ||--o{ CustomerStatement : "source_message_id"
+    Person |o--o{ CustomerStatement : "subject_person_id"
+    OriginalFile ||--o{ CustomerUploadedDocument : "original_file_id"
+    Account ||--o{ CustomerUploadedDocument : "owner_id"
+    Message |o--o{ CustomerUploadedDocument : "source_message_id"
+    Account ||--o{ DeletionRequest : "owner_id"
+    Insurer ||--o{ DiscoveryRun : "insurer_id"
+    OriginalFile ||--o{ DocumentPage : "original_file_id"
+    Insurer |o--o{ DocumentSeries : "issuer_id"
+    DocumentSeries ||--o{ DocumentVersion : "document_series_id"
+    DocumentVersion |o--o{ DocumentVersion : "supersedes_id"
+    CustomerUploadedDocument |o--o{ EvidenceSpan : "customer_uploaded_document_id"
+    DocumentPage |o--o{ EvidenceSpan : "page_id"
+    SourceCapture |o--o{ EvidenceSpan : "source_capture_id"
+    Message |o--o{ InformationNeed : "asked_in_message_id"
+    Account ||--o{ InformationNeed : "owner_id"
+    Recommendation ||--o{ InformationNeed : "recommendation_id"
+    CustomerProfileRevision |o--o{ InformationNeed : "resolved_in_profile_revision_id"
+    Person |o--o{ InformationNeed : "subject_person_id"
+    KnowledgeRelease |o--o{ KnowledgeChannel : "current_release_id"
+    KnowledgeRelease |o--o{ KnowledgeRelease : "previous_release_id"
+    KnowledgeRelease ||--o{ KnowledgeReleaseRule : "knowledge_release_id"
+    PolicyRule ||--o{ KnowledgeReleaseRule : "policy_rule_id"
+    Conversation ||--o{ Message : "conversation_id"
+    Account ||--o{ Message : "owner_id"
+    Recommendation |o--o{ Message : "recommendation_id"
+    Turn |o--o{ Message : "turn_id"
+    Account |o--o{ ModelAttempt : "owner_id"
+    ProcessingJob |o--o{ ModelAttempt : "processing_job_id"
+    ModelQualification ||--o{ ModelAttempt : "qualification_id"
+    Turn |o--o{ ModelAttempt : "turn_id"
+    ModelRoute ||--o{ ModelQualification : "route_id"
+    Account |o--o{ OriginalFile : "owner_id"
+    KnowledgeRelease |o--o{ Outbox : "knowledge_release_id"
+    Account |o--o{ Outbox : "owner_id"
+    ProcessingJob |o--o{ Outbox : "processing_job_id"
+    Turn |o--o{ Outbox : "turn_id"
+    Account ||--o{ Person : "owner_id"
+    Person ||--o{ PersonRelationship : "from_person_id"
+    Account ||--o{ PersonRelationship : "owner_id"
+    CustomerStatement ||--o{ PersonRelationship : "source_statement_id"
+    Person ||--o{ PersonRelationship : "to_person_id"
+    Account ||--o{ PolicyCandidateAssessment : "owner_id"
+    ProductVariant ||--o{ PolicyCandidateAssessment : "product_variant_id"
+    Quote |o--o{ PolicyCandidateAssessment : "quote_id"
+    Recommendation ||--o{ PolicyCandidateAssessment : "recommendation_id"
+    EvidenceSpan |o--o{ PolicyEvent : "authority_evidence_id"
+    CustomerPolicy ||--o{ PolicyEvent : "customer_policy_id"
+    Account ||--o{ PolicyEvent : "owner_id"
+    PolicyEvent |o--o{ PolicyEvent : "related_event_id"
+    EvidenceSpan |o--o{ PolicyEvent : "source_evidence_id"
+    Message |o--o{ PolicyEvent : "source_message_id"
+    PolicyEvent |o--o{ PolicyEvent : "supersedes_event_id"
+    CustomerPolicyRevision ||--o{ PolicyMember : "customer_policy_revision_id"
+    EvidenceSpan |o--o{ PolicyMember : "evidence_span_id"
+    Account ||--o{ PolicyMember : "owner_id"
+    Person ||--o{ PolicyMember : "person_id"
+    PolicyVersion |o--o{ PolicyPackageComponent : "component_policy_version_id"
+    Product |o--o{ PolicyPackageComponent : "component_product_id"
+    EvidenceSpan ||--o{ PolicyPackageComponent : "evidence_span_id"
+    PolicyVersion ||--o{ PolicyPackageComponent : "package_policy_version_id"
+    PolicyRule |o--o{ PolicyPackageComponent : "selection_policy_rule_id"
+    PolicyCandidateAssessment ||--o{ PolicyRequirementMatch : "candidate_assessment_id"
+    CustomerRequirement ||--o{ PolicyRequirementMatch : "customer_requirement_id"
+    Account ||--o{ PolicyRequirementMatch : "owner_id"
+    ProviderNetworkEntry |o--o{ PolicyRequirementMatch : "provider_network_entry_id"
+    PolicyVersion ||--o{ PolicyRule : "policy_version_id"
+    PolicyRule |o--o{ PolicyRule : "supersedes_id"
+    EvidenceSpan ||--o{ PolicyRuleEvidence : "evidence_span_id"
+    PolicyRule ||--o{ PolicyRuleEvidence : "policy_rule_id"
+    PolicyRule ||--o{ PolicyRuleLink : "from_policy_rule_id"
+    PolicyRule ||--o{ PolicyRuleLink : "to_policy_rule_id"
+    EvidenceSpan ||--o{ PolicyRuleTableCell : "evidence_span_id"
+    PolicyRule ||--o{ PolicyRuleTableCell : "policy_rule_id"
+    DocumentVersion ||--o{ PolicySearchChunk : "document_version_id"
+    Product ||--o{ PolicyVersion : "product_id"
+    PolicyVersion |o--o{ PolicyVersion : "supersedes_id"
+    DocumentVersion ||--o{ PolicyVersionDocument : "document_version_id"
+    PolicyVersion ||--o{ PolicyVersionDocument : "policy_version_id"
+    EvidenceSpan |o--o{ PolicyVersionDocument : "precedence_evidence_id"
+    CustomerUploadedDocument |o--o{ ProcessingJob : "customer_uploaded_document_id"
+    Account |o--o{ ProcessingJob : "owner_id"
+    ProcessingJob |o--o{ ProcessingJob : "parent_job_id"
+    SourceCapture |o--o{ ProcessingJob : "source_capture_id"
+    EvidenceSpan ||--o{ Product : "identity_evidence_id"
+    Insurer ||--o{ Product : "insurer_id"
+    EvidenceSpan ||--o{ ProductOption : "identity_evidence_id"
+    PolicyVersion |o--o{ ProductOption : "option_policy_version_id"
+    ProductVariant ||--o{ ProductOption : "product_variant_id"
+    EvidenceSpan ||--o{ ProductVariant : "identity_evidence_id"
+    PolicyVersion ||--o{ ProductVariant : "policy_version_id"
+    ProviderLocation |o--o{ ProviderLocation : "supersedes_id"
+    EvidenceSpan ||--o{ ProviderNetworkEntry : "evidence_span_id"
+    ProviderLocation ||--o{ ProviderNetworkEntry : "provider_location_id"
+    ProviderNetworkSnapshot ||--o{ ProviderNetworkEntry : "provider_network_snapshot_id"
+    Insurer ||--o{ ProviderNetworkSnapshot : "insurer_id"
+    ProductVariant |o--o{ ProviderNetworkSnapshot : "product_variant_id"
+    EvidenceSpan |o--o{ ProviderNetworkSnapshot : "scope_evidence_id"
+    SourceCapture ||--o{ ProviderNetworkSnapshot : "source_capture_id"
+    Account ||--o{ Quote : "owner_id"
+    ProductVariant ||--o{ Quote : "product_variant_id"
+    CustomerProfileRevision ||--o{ Quote : "profile_revision_id"
+    EvidenceSpan ||--o{ Quote : "source_evidence_id"
+    AdviceRequest ||--o{ Recommendation : "advice_request_id"
+    KnowledgeRelease ||--o{ Recommendation : "knowledge_release_id"
+    Account ||--o{ Recommendation : "owner_id"
+    CustomerProfileRevision ||--o{ Recommendation : "profile_revision_id"
+    Recommendation |o--o{ Recommendation : "supersedes_id"
+    Turn ||--o{ Recommendation : "turn_id"
+    EvidenceSpan ||--o{ RecommendationCitation : "evidence_span_id"
+    Account ||--o{ RecommendationCitation : "owner_id"
+    PolicyRule |o--o{ RecommendationCitation : "policy_rule_id"
+    RecommendationStatement ||--o{ RecommendationCitation : "recommendation_statement_id"
+    Calculation |o--o{ RecommendationStatement : "calculation_id"
+    PolicyCandidateAssessment |o--o{ RecommendationStatement : "candidate_assessment_id"
+    InformationNeed |o--o{ RecommendationStatement : "information_need_id"
+    Account ||--o{ RecommendationStatement : "owner_id"
+    Recommendation ||--o{ RecommendationStatement : "recommendation_id"
+    PolicyRequirementMatch |o--o{ RecommendationStatement : "requirement_match_id"
+    DiscoveryRun ||--o{ SourceCapture : "discovery_run_id"
+    DocumentVersion |o--o{ SourceCapture : "document_version_id"
+    OriginalFile |o--o{ SourceCapture : "original_file_id"
+    SourceURL ||--o{ SourceCapture : "source_url_id"
+    DiscoveryRun ||--o{ SourceObservation : "discovery_run_id"
+    SourceCapture |o--o{ SourceObservation : "found_in_capture_id"
+    SourceURL ||--o{ SourceObservation : "source_url_id"
+    Conversation ||--o{ Turn : "conversation_id"
+    Message ||--o{ Turn : "input_message_id"
+    Account ||--o{ Turn : "owner_id"
+    CustomerProfileRevision ||--o{ Turn : "profile_revision_id"
+    Account ||--o{ TurnEvent : "owner_id"
+    Turn ||--o{ TurnEvent : "turn_id"

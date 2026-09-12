@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T11:59:12.318573+00:00",
+  "associations": [],
+  "byte_count": 383576,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/others/cis-digit-asset-care.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "go-digit",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 520,
+  "linking_url": "https://www.godigit.com/downloads",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 1190.52,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1190.52,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1190.52,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1190.52,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.92
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "2aadaaeae5db176893f3ba46f68a2db4eb7302f559a60a1c6a28ecff6e8a9f00",
+  "status": "acquired",
+  "url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/others/cis-digit-asset-care.pdf"
+}

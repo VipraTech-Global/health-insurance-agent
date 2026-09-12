@@ -1,0 +1,3493 @@
+{
+  "boundary": "Fourteen product-page preserved serialized download cards identify original wording links; actual returned originals determine medical/add-on/fixed-benefit relevance. Remaining78unique-links corpus not acquired by this batch.",
+  "sources": [
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-twin-360-insurance-policy",
+        "source_sha256": "d8636bd5e6859f2c8d659b2023ea2a310acf6cb144e0a49de83b38c33d728a1d",
+        "props_attribute_occurrence": 8,
+        "decoded_json_pointer": "/data/1/2/1",
+        "section_label": "<p>Policy Wording</p>",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Twin%2520360%2520Policy%2520Wording.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Twin%2520360%2520Policy%2520Wording.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20Twin%20360%20Policy%20Wording.pdf?VersionId=YOEgDNhW9has7t7yMTR_7GeYoEt2so1h",
+        "raw_attribute_char_start": 325879,
+        "raw_attribute_char_end_exclusive": 336679,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Twin%2520360%2520Policy%2520Wording.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-twin-360-insurance-policy",
+        "acquired_at": "2026-09-10T18:02:20.082787+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "f021eaa723c790cae811e15e8696100ddfad2c5a57cd3c17456bbde8be6b6094",
+        "page_count": 27,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Twin%2520360%2520Policy%2520Wording.pdf",
+        "byte_count": 693156,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 17,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 18,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 19,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 20,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 21,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 22,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 23,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 24,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 25,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 26,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 27,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 3069
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-promise-insurance-policy",
+        "source_sha256": "2932a162d2e47900f4654762e571608a5e8738dd9183fce052e2cc8525208538",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/field_promise_downloads_cards/1/3/1",
+        "section_label": "Policy Wording",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Promise%2520Policy%2520Wording.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Promise%2520Policy%2520Wording.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/s3fs-public/2026-07/Galaxy%20Promise%20Policy%20Wording.pdf?VersionId=kuDSly3U3X90HQArfuCahN4GzXGSrFdY",
+        "raw_attribute_char_start": 220484,
+        "raw_attribute_char_end_exclusive": 661591,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Promise%2520Policy%2520Wording.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-promise-insurance-policy",
+        "acquired_at": "2026-09-10T18:02:20.078031+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "7b65b65428dcda1a1a776793d3f3dc54a0805ddf3df37659aa08120b6406e45c",
+        "page_count": 40,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Promise%2520Policy%2520Wording.pdf",
+        "byte_count": 1081593,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 17,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 18,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 19,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 20,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 21,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 22,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 23,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 24,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 25,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 26,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 27,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 28,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 29,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 30,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 31,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 32,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 33,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 34,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 35,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 36,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 37,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 38,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 39,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 40,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 3644
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-plus-insurance-policy",
+        "source_sha256": "26f0ff06b7621cc4b6291bae1e2fd5298db7a0e3c878b1851c93e58c6b584a15",
+        "props_attribute_occurrence": 5,
+        "decoded_json_pointer": "/data/1/0/1",
+        "section_label": "Policy Wording",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Plus%2520Policy%2520wording.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Plus%2520Policy%2520wording.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20Plus%20Policy%20wording.pdf?VersionId=_KOUby1W8WxWIfNTHZs_U4ECQyxJxxCW",
+        "raw_attribute_char_start": 171213,
+        "raw_attribute_char_end_exclusive": 174759,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Plus%2520Policy%2520wording.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-plus-insurance-policy",
+        "acquired_at": "2026-09-10T18:02:20.077890+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "8abebbb3ccdf4159ec393c62c21b80f70b8e5ac45c6d00948998cd5c7c6e6212",
+        "page_count": 91,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Plus%2520Policy%2520wording.pdf",
+        "byte_count": 1463469,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 17,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 18,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 19,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 20,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 21,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 22,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 23,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 24,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 25,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 26,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 27,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 28,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 29,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 30,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 31,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 32,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 33,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 34,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 35,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 36,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 37,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 38,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 39,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 40,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 41,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 42,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 43,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 44,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 45,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 46,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 47,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 48,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 49,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 50,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 51,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 52,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 53,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 54,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 55,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 56,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 57,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 58,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 59,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 60,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 61,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 62,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 63,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 64,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 65,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 66,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 67,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 68,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 69,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 70,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 71,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 72,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 73,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 74,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 75,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 76,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 77,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 78,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 79,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 80,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 81,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 82,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 83,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 84,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 85,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 86,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 87,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 88,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 89,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 90,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 91,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 4308
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-companion-rider-insurance-policy",
+        "source_sha256": "5f937b568c4019708dccc2a7123807e09132d28d4a9028eac037eef06dd3c0ab",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/1/1",
+        "section_label": "<p><strong>Policy-wording</strong></p>",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Companion%2520%2528Rider%2529%2520Policy%2520Wording.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Companion%2520%2528Rider%2529%2520Policy%2520Wording.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20Companion%20%28Rider%29%20Policy%20Wording.pdf?VersionId=bYtTEzhonoIofnXX2nO7yp9q_gYKyVGa",
+        "raw_attribute_char_start": 208651,
+        "raw_attribute_char_end_exclusive": 219738,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Companion%2520%2528Rider%2529%2520Policy%2520Wording.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-companion-rider-insurance-policy",
+        "acquired_at": "2026-09-10T18:02:23.161405+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "6ae2e35fa0887ea819f1ad59c6b2c8d1bf3ecd423db8ea07ef05c851d39567cd",
+        "page_count": 9,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Companion%2520%2528Rider%2529%2520Policy%2520Wording.pdf",
+        "byte_count": 359799,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 1815
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-arogya-sanjeevani-insurance-policy",
+        "source_sha256": "a4e0c4c10c0b1d4c9d400ad4f1c7fb9bffc8bd6138b197be10da8d7308157993",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/4/1",
+        "section_label": "Policy Wording",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Arogya%2520Sanjeevani%2520Policy%252C%2520GHICL%2520Policy%2520Wording.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Arogya%2520Sanjeevani%2520Policy%252C%2520GHICL%2520Policy%2520Wording.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/s3fs-public/2026-07/Arogya%20Sanjeevani%20Policy%2C%20GHICL%20Policy%20Wording.pdf?VersionId=5qCoaUs7RprQ58elDQxMcf.9ocLeiXEi",
+        "raw_attribute_char_start": 213625,
+        "raw_attribute_char_end_exclusive": 225887,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Arogya%2520Sanjeevani%2520Policy%252C%2520GHICL%2520Policy%2520Wording.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-arogya-sanjeevani-insurance-policy",
+        "acquired_at": "2026-09-10T18:02:23.730065+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "69b22453dfdc1c3940e1021f6dfdfbb2d7e93c9ee2a2b3703c5af04b0e298a74",
+        "page_count": 16,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Arogya%2520Sanjeevani%2520Policy%252C%2520GHICL%2520Policy%2520Wording.pdf",
+        "byte_count": 599464,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 1631
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-empower-insurance-policy",
+        "source_sha256": "30932ea6f7c1e99d32a02025ff22d94b74495b8fa479fa5984eaaeb83e1cc43c",
+        "props_attribute_occurrence": 5,
+        "decoded_json_pointer": "/data/1/2/1",
+        "section_label": "Policy Wording",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Empower%252C%2520GHICL%2520Policy%2520wording.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Empower%252C%2520GHICL%2520Policy%2520wording.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20Empower%2C%20GHICL%20Policy%20wording.pdf?VersionId=_GdmzpcCkJlcXTUBR4HlLeNFn3vv67P7",
+        "raw_attribute_char_start": 171317,
+        "raw_attribute_char_end_exclusive": 182021,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Empower%252C%2520GHICL%2520Policy%2520wording.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-empower-insurance-policy",
+        "acquired_at": "2026-09-10T18:02:24.396166+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "7b9b44c85021c3aaaa948a95683915ec18f1eda9ac51b55db7ff0cbed33a4cd6",
+        "page_count": 25,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Empower%252C%2520GHICL%2520Policy%2520wording.pdf",
+        "byte_count": 467078,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 17,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 18,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 19,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 20,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 21,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 22,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 23,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 24,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 25,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 1812
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-unlimited-automatic-restoration-rider-insurance-policy",
+        "source_sha256": "02a36293b13bd77e473e81339b1594c4d6770d3a7a2cf270dffbc65d3a9794b5",
+        "props_attribute_occurrence": 5,
+        "decoded_json_pointer": "/data/1/1/1",
+        "section_label": "Policy-wording",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Unlimited%2520Automatic%2520Restoration-Rider%2520Policy%2520Wording.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Unlimited%2520Automatic%2520Restoration-Rider%2520Policy%2520Wording.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Unlimited%20Automatic%20Restoration-Rider%20Policy%20Wording.pdf?VersionId=IRdkzwjUEcH8NX14qrnhVwPi5ZUxtmSi",
+        "raw_attribute_char_start": 171458,
+        "raw_attribute_char_end_exclusive": 180749,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Unlimited%2520Automatic%2520Restoration-Rider%2520Policy%2520Wording.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-unlimited-automatic-restoration-rider-insurance-policy",
+        "acquired_at": "2026-09-10T18:02:24.985191+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "b93671f8eaf491d4303ea067e9b853a38392649fe1559182c6396869a9534929",
+        "page_count": 2,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Unlimited%2520Automatic%2520Restoration-Rider%2520Policy%2520Wording.pdf",
+        "byte_count": 214190,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 1229
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/consumables-rider-insurance-policy",
+        "source_sha256": "7ee8b527a20e811be1e6b45259dbe73753b3dae681df7a4421b6a7e82ca05797",
+        "props_attribute_occurrence": 5,
+        "decoded_json_pointer": "/data/1/1/1",
+        "section_label": "Policy-wording",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Consumables%2520-%2520Rider%2520Policy%2520Wording_0.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Consumables%2520-%2520Rider%2520Policy%2520Wording_0.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Consumables%20-%20Rider%20Policy%20Wording_0.pdf?VersionId=muy1sNa_b6AYhIePV25w1EDuiXqxA4sK",
+        "raw_attribute_char_start": 171400,
+        "raw_attribute_char_end_exclusive": 180318,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Consumables%2520-%2520Rider%2520Policy%2520Wording_0.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/consumables-rider-insurance-policy",
+        "acquired_at": "2026-09-10T18:02:25.369731+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "6971e29ea00b59c6a04a3935cf19bc4cb972f048ca159afde7b9ae5d2bba24bd",
+        "page_count": 3,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Consumables%2520-%2520Rider%2520Policy%2520Wording_0.pdf",
+        "byte_count": 287791,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 953
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-marvel-insurance-policy",
+        "source_sha256": "0f0cf12b967c58256573a49a2223241bc713207c49462acad372ef3bb9ba9efa",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/2/1",
+        "section_label": "Policy Wording",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Marvel%2520Policy%2520Wording.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Marvel%2520Policy%2520Wording.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/s3fs-public/2026-07/Galaxy%20Marvel%20Policy%20Wording.pdf?VersionId=eTmJDL_.N8HnsSq1lheS4rAuBuDByKE.",
+        "raw_attribute_char_start": 289277,
+        "raw_attribute_char_end_exclusive": 301281,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Marvel%2520Policy%2520Wording.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-marvel-insurance-policy",
+        "acquired_at": "2026-09-10T18:02:26.223509+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "c5b0ab6243a3ce29c878cf380d09c14ca08f502804e2298a6b864f8240b1a8aa",
+        "page_count": 40,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Marvel%2520Policy%2520Wording.pdf",
+        "byte_count": 757833,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 17,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 18,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 19,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 20,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 21,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 22,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 23,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 24,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 25,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 26,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 27,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 28,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 29,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 30,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 31,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 32,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 33,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 34,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 35,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 36,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 37,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 38,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 39,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 40,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 1908
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-smart-outpatient-rider-insurance-policy",
+        "source_sha256": "079e5d7ae753f76f85a41b1228ac6c458467ca4f9bba9a2761137fa0d920d30b",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/2/1",
+        "section_label": "<p><strong>Policy Wording</strong></p>",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Smart%2520Outpatient%2520-%2520Rider%2520Policy%2520Wording.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Smart%2520Outpatient%2520-%2520Rider%2520Policy%2520Wording.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20Smart%20Outpatient%20-%20Rider%20Policy%20Wording.pdf?VersionId=jWN5PYU3TziiAEnfw2DWvYwSSOclxTG.",
+        "raw_attribute_char_start": 198894,
+        "raw_attribute_char_end_exclusive": 209951,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Smart%2520Outpatient%2520-%2520Rider%2520Policy%2520Wording.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-smart-outpatient-rider-insurance-policy",
+        "acquired_at": "2026-09-10T18:02:26.228761+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "380b6eba9d669970c9d611a4b06175b40e606adb71dfe38973bf2939e93b388d",
+        "page_count": 8,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Smart%2520Outpatient%2520-%2520Rider%2520Policy%2520Wording.pdf",
+        "byte_count": 322304,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 664
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-guardian-insurance-policy",
+        "source_sha256": "887ada8be9886896b9ab935f1706312da9ae7a19a738cb3bd9a006efdc2078e3",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/2/1",
+        "section_label": "Policy Wording",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Guardian%2520Policy%2520wording.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Guardian%2520Policy%2520wording.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20Guardian%20Policy%20wording.pdf?VersionId=If_t0Def9n6uHLrlCjS5NsEvYYLAx8T.",
+        "raw_attribute_char_start": 234359,
+        "raw_attribute_char_end_exclusive": 245134,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Guardian%2520Policy%2520wording.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-guardian-insurance-policy",
+        "acquired_at": "2026-09-10T18:02:26.332656+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "7b843012930c765fcddcdd39321b46c64132c6849e73c924837fbea39ec7863f",
+        "page_count": 28,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Guardian%2520Policy%2520wording.pdf",
+        "byte_count": 538900,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 17,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 18,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 19,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 20,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 21,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 22,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 23,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 24,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 25,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 26,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 27,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 28,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 971
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-personal-accident-insurance-policy",
+        "source_sha256": "393fd429027a66bd3613cf473af90600e84c12710cdf58c562e394e948d70306",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/2/1",
+        "section_label": "<p><strong>Policy Wording</strong></p>",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Personal%2520Accident%2520Shield%2520Policy%2520Wording.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Personal%2520Accident%2520Shield%2520Policy%2520Wording.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20Personal%20Accident%20Shield%20Policy%20Wording.pdf?VersionId=pbGfBmbECITeRENtXfVNn8KtCUpyWoB2",
+        "raw_attribute_char_start": 237835,
+        "raw_attribute_char_end_exclusive": 249150,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Personal%2520Accident%2520Shield%2520Policy%2520Wording.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-personal-accident-insurance-policy",
+        "acquired_at": "2026-09-10T18:02:26.900304+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "0a771de64b0a9063548cc73db0512f9266fcbda7e24e755aae3150847a27fa5a",
+        "page_count": 14,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Personal%2520Accident%2520Shield%2520Policy%2520Wording.pdf",
+        "byte_count": 347064,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 567
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-privilege-insurance-policy",
+        "source_sha256": "c48c6d3cc537437a54c86115cd9880619e20beeec88fb2aaf1a1a571fe277f1b",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/1/1",
+        "section_label": "<p><strong>Policy-Wording</strong></p>",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Privilege%2520Policy%2520Wording.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Privilege%2520Policy%2520Wording.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20Privilege%20Policy%20Wording.pdf?VersionId=6ZHUJ2CsQKKQ0f.3bbOAGiZDk7MMRZug",
+        "raw_attribute_char_start": 242546,
+        "raw_attribute_char_end_exclusive": 253431,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Privilege%2520Policy%2520Wording.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-privilege-insurance-policy",
+        "acquired_at": "2026-09-10T18:02:27.312551+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "dfbe93d819085d276119b341a22f64d9f30f27252394d71919684fdf7e6fe9ad",
+        "page_count": 20,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Privilege%2520Policy%2520Wording.pdf",
+        "byte_count": 496089,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 17,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 18,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 19,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 20,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 936
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-top-up-insurance-policy",
+        "source_sha256": "32d5e7b57f5b3bb0c730ec8b2e383d82694d4af4fd3166147c524d8acb007e5f",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/2/1",
+        "section_label": "<p><strong>Policy Wording</strong></p>",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Top%2520up%2520Policy%2520Wording.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Top%2520up%2520Policy%2520Wording.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20Top%20up%20Policy%20Wording.pdf?VersionId=R2EyXdOhE_yGq121RTltap6asw.D6U9P",
+        "raw_attribute_char_start": 225986,
+        "raw_attribute_char_end_exclusive": 236973,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Top%2520up%2520Policy%2520Wording.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-top-up-insurance-policy",
+        "acquired_at": "2026-09-10T18:02:27.482098+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "a6b9ef878159374bbcc93fd9f8333c2cf4e4b167115ed628759d27282976d9cb",
+        "page_count": 43,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Top%2520up%2520Policy%2520Wording.pdf",
+        "byte_count": 747809,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 17,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 18,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 19,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 20,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 21,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 22,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 23,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 24,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 25,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 26,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 27,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 28,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 29,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 30,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 31,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 32,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 33,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 34,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 35,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 36,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 37,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 38,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 39,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 40,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 41,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 42,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 43,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 631
+      }
+    }
+  ]
+}

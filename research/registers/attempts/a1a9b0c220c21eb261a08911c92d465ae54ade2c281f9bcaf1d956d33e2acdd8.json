@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T12:01:50.844046+00:00",
+  "associations": [],
+  "byte_count": 145936,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://acko-cms.ackoassets.com/Prospectus_Acko_Car_Package_Policy_Add_on_Covers_40be838ee4.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "acko",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 400,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "130922e6285e09d39d9cd5103253f838cda95ab3cb73b76cbf064d95b73dfaaa",
+  "status": "acquired",
+  "url": "https://acko-cms.ackoassets.com/Prospectus_Acko_Car_Package_Policy_Add_on_Covers_40be838ee4.pdf"
+}

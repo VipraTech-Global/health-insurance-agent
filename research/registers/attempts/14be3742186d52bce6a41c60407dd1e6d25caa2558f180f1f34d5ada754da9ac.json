@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T14:35:48.359186+00:00",
+  "associations": [],
+  "byte_count": 425884,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.adityabirlacapital.com/healthinsurance/assets/pdf/activ-health-platinum-essential.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "aditya-birla",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 641,
+  "linking_url": "https://www.adityabirlacapital.com/abcd/health-insurance/health-and-wellness-plans/activ-health-platinum-essential",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.528
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.528
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.528
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.528
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "0fce1d0716a6e2d0dd2e4b9ad4bfbf080e6fc4bf3060bc18da1f3dd13eacd20e",
+  "status": "acquired",
+  "url": "https://www.adityabirlacapital.com/healthinsurance/assets/pdf/activ-health-platinum-essential.pdf"
+}

@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:59:12.800159+00:00",
+  "associations": [],
+  "byte_count": 206859,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/others/cis-digit-money-insurance-policy.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "go-digit",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 210,
+  "linking_url": "https://www.godigit.com/downloads",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 1190.52,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1190.52,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1190.52,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.92
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "1d29514ad8dace3f18ea6b856f527a1f447384b686c69bcf4773a27e516520e1",
+  "status": "acquired",
+  "url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/others/cis-digit-money-insurance-policy.pdf"
+}

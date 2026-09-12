@@ -1,0 +1,65 @@
+{
+  "acquired_at": "2026-09-10T11:55:54.059424+00:00",
+  "associations": [],
+  "byte_count": 1354528,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/tata_aig_travel_insurance_asia_cis_a6c6228995.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 714,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 5,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "fe2a0cdd2892c6f134dd906b91c246369eab5e6035ab6120e7510d0c96a399e2",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/tata_aig_travel_insurance_asia_cis_a6c6228995.pdf"
+}

@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T12:00:54.211824+00:00",
+  "associations": [],
+  "byte_count": 1476660,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.adityabirlacapital.com/healthinsurance/assets/pdf/planpdf/Super-Top-Up-Brochure.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "aditya-birla",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 823,
+  "linking_url": "https://www.adityabirlacapital.com/healthinsurance/activ-assure-diamond-super-health-topup",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.945
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.945
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.945
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.945
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "f7772375d5efc8089da41e0fc459790020c6bf13da3936fb1389bc8ba47f8f5b",
+  "status": "acquired",
+  "url": "https://www.adityabirlacapital.com/healthinsurance/assets/pdf/planpdf/Super-Top-Up-Brochure.pdf"
+}

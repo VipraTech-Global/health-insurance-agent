@@ -1,0 +1,862 @@
+{
+  "artifact_version": "galaxy-original-review-r13/1",
+  "generated_at_utc": "2026-09-10T18:24:41.155863+00:00",
+  "reviewer": "independent source reviewer /root/research_code_review",
+  "reviewed_artifacts": [
+    {
+      "path": "research/registers/galaxy-original-inventory-r13.json",
+      "sha256": "bf65886a46dc2720b7773164cafd5d5fb8c3677a6e62e8d44786f718ef3b788e"
+    },
+    {
+      "path": "research/reports/galaxy-original-inventory-r13.md",
+      "sha256": "9e6e973da4109d3759051a1f521b79703830f4dde6300e3db9a95b4259d13089"
+    }
+  ],
+  "decision": "approved_for_bounded_original_assessment",
+  "material_findings": [],
+  "required_corrections": [],
+  "checks": [
+    {
+      "id": "GAL-R13-01",
+      "topic": "Mixed Galaxy Plus classification",
+      "status": "supported",
+      "sources": [
+        {
+          "sha256": "8abebbb3ccdf4159ec393c62c21b80f70b8e5ac45c6d00948998cd5c7c6e6212",
+          "physical_pages": [
+            21,
+            40,
+            49,
+            50,
+            59,
+            60
+          ]
+        }
+      ],
+      "assessment": "Plan 1 pays scheduled hospital cash; Plan 5 indemnifies hospital expenses; Plan 6 indemnifies excess over aggregate limit; Plan 8 includes outpatient expenses with schedule-selected coverage. Medical-expense scope is justified with mixed fixed/service components explicitly retained. No whole-product fixed-benefit or automatic all-plan coverage assertion."
+    },
+    {
+      "id": "GAL-R13-02",
+      "topic": "Personal Accident Shield medical-expense component",
+      "status": "supported",
+      "sources": [
+        {
+          "sha256": "0a771de64b0a9063548cc73db0512f9266fcbda7e24e755aae3150847a27fa5a",
+          "physical_pages": [
+            2,
+            4,
+            5
+          ]
+        }
+      ],
+      "assessment": "Fixed death/disability compensation coexists with medical-expense benefits. Optional comprehensive medical-expense extension on p5 is individual-only, premium-dependent and accident/grievous-injury triggered. Classification does not imply general illness or automatic floater coverage."
+    },
+    {
+      "id": "GAL-R13-03",
+      "topic": "Guardian CIS points to Marvel",
+      "status": "supported",
+      "sources": [
+        {
+          "sha256": "7b843012930c765fcddcdd39321b46c64132c6849e73c924837fbea39ec7863f",
+          "physical_pages": [
+            1,
+            8
+          ]
+        },
+        {
+          "sha256": "97700af9842315129c89eabfdd4f35b26bd671fbefeca1dd9ff00b9672bbeabf",
+          "physical_pages": [
+            1
+          ]
+        }
+      ],
+      "assessment": "Visible wrong-link CIS title and row1 say Galaxy Marvel and UIN GHIHLIP26042V012526. Guardian wording/prospectus UIN is GHIHLIP25037V012425. Discovery pointer on original Guardian page and acquired SHA match. Excluding it from Guardian companions while retaining Marvel identity is correct; legitimate Guardian CIS remains unresolved."
+    },
+    {
+      "id": "GAL-R13-04",
+      "topic": "Four rider base attachments",
+      "status": "supported",
+      "sources": [
+        {
+          "sha256": "6ae2e35fa0887ea819f1ad59c6b2c8d1bf3ecd423db8ea07ef05c851d39567cd",
+          "physical_pages": [
+            1
+          ]
+        },
+        {
+          "sha256": "6971e29ea00b59c6a04a3935cf19bc4cb972f048ca159afde7b9ae5d2bba24bd",
+          "physical_pages": [
+            1
+          ]
+        },
+        {
+          "sha256": "380b6eba9d669970c9d611a4b06175b40e606adb71dfe38973bf2939e93b388d",
+          "physical_pages": [
+            1
+          ]
+        },
+        {
+          "sha256": "b93671f8eaf491d4303ea067e9b853a38392649fe1559182c6396869a9534929",
+          "physical_pages": [
+            1
+          ]
+        }
+      ],
+      "assessment": "Companion, Consumables and Smart Outpatient each define Base Policy as any individual Galaxy health policy to which the rider is attached. Unlimited Automatic Restoration explicitly names Galaxy Promise Elite Plan. Definitions do not establish actual purchased attachment. Restoration p2 retains inception/renewal purchase, schedule opt-in, migration availability and base-policy dependencies."
+    },
+    {
+      "id": "GAL-R13-05",
+      "topic": "Top-up deductible accumulation membership",
+      "status": "supported",
+      "sources": [
+        {
+          "sha256": "a6b9ef878159374bbcc93fd9f8333c2cf4e4b167115ed628759d27282976d9cb",
+          "physical_pages": [
+            10,
+            24,
+            25
+          ]
+        }
+      ],
+      "assessment": "P24 notes trigger insurer liability only when admissible aggregate hospitalization expenses in the policy period exceed the deductible. P25 note3 expressly excludes pre/post-hospitalization from accumulation. The p24 table nevertheless marks those benefits part of SI. The report correctly separates expense eligibility for accumulation from benefit inclusion. No complete payout calculation is claimed."
+    },
+    {
+      "id": "GAL-R13-06",
+      "topic": "Variant tables and original pagination",
+      "status": "supported",
+      "sources": [
+        {
+          "sha256": "f021eaa723c790cae811e15e8696100ddfad2c5a57cd3c17456bbde8be6b6094",
+          "physical_pages": [
+            4
+          ]
+        },
+        {
+          "sha256": "7b65b65428dcda1a1a776793d3f3dc54a0805ddf3df37659aa08120b6406e45c",
+          "physical_pages": [
+            5,
+            6
+          ]
+        },
+        {
+          "sha256": "6ae2e35fa0887ea819f1ad59c6b2c8d1bf3ecd423db8ea07ef05c851d39567cd",
+          "physical_pages": [
+            2
+          ]
+        },
+        {
+          "sha256": "380b6eba9d669970c9d611a4b06175b40e606adb71dfe38973bf2939e93b388d",
+          "physical_pages": [
+            1
+          ]
+        }
+      ],
+      "assessment": "Twin Core/Max/Ultra room categories, Promise Premier/Elite/Signature table axes, and rider individual/floater plus Silver/Gold/Platinum/Diamond axes are visible. Promise has40 physical pages while reviewed labels show5/39 and6/39. Extra reviewer visual p6 checks table alignment; original author only claims visual p5. Monetary, unlimited and unavailable cells are not interchangeable."
+    },
+    {
+      "id": "GAL-R13-07",
+      "topic": "Other base medical grants",
+      "status": "supported",
+      "sources": [
+        {
+          "sha256": "69b22453dfdc1c3940e1021f6dfdfbb2d7e93c9ee2a2b3703c5af04b0e298a74",
+          "physical_pages": [
+            4
+          ]
+        },
+        {
+          "sha256": "7b9b44c85021c3aaaa948a95683915ec18f1eda9ac51b55db7ff0cbed33a4cd6",
+          "physical_pages": [
+            8
+          ]
+        },
+        {
+          "sha256": "c5b0ab6243a3ce29c878cf380d09c14ca08f502804e2298a6b864f8240b1a8aa",
+          "physical_pages": [
+            10
+          ]
+        },
+        {
+          "sha256": "7b843012930c765fcddcdd39321b46c64132c6849e73c924837fbea39ec7863f",
+          "physical_pages": [
+            8
+          ]
+        },
+        {
+          "sha256": "dfbe93d819085d276119b341a22f64d9f30f27252394d71919684fdf7e6fe9ad",
+          "physical_pages": [
+            5
+          ]
+        }
+      ],
+      "assessment": "Selected original grants support medical-expense classification. Marvel Neo/Prime shares medical grant despite other fixed-benefit definitions. Empower expressly includes disability/HIV/AIDS hospitalisation; full eligibility remains unreviewed. Privilege distinguishes room, ICU, fee and other-expense caps. None of these selected grants establishes a complete policy-rule inventory."
+    },
+    {
+      "id": "GAL-R13-08",
+      "topic": "Evidence provenance and bounded completion",
+      "status": "supported",
+      "assessment": "All41 preserved PDF hashes, page counts and UIN checks pass. All69 exact stored text regions reproduce using recorded crop/tolerance parameters. All41 discovery HTML hashes, exact raw attribute JSON pointers, relative linked file strings, role labels and immutable acquisition records match. Read-only corroboration does not upgrade selection-based review to all-page inventory or historical bundle completion."
+    }
+  ],
+  "verification": {
+    "original_hashes_verified": 41,
+    "document_page_counts_verified": 41,
+    "observed_uin_checks_passed": 41,
+    "exact_crop_reproductions": 69,
+    "crop_mismatches": [],
+    "original_hash_failures": [],
+    "discovery_provenance_checks_passed": 41,
+    "original_author_visual_pages_reread": 6,
+    "additional_reviewer_visual_pages": 8,
+    "total_reviewer_visual_pages": 14,
+    "visually_reviewed_original_pages": [
+      {
+        "sha256": "f021eaa723c790cae811e15e8696100ddfad2c5a57cd3c17456bbde8be6b6094",
+        "physical_page": 4
+      },
+      {
+        "sha256": "7b65b65428dcda1a1a776793d3f3dc54a0805ddf3df37659aa08120b6406e45c",
+        "physical_page": 5
+      },
+      {
+        "sha256": "7b65b65428dcda1a1a776793d3f3dc54a0805ddf3df37659aa08120b6406e45c",
+        "physical_page": 6
+      },
+      {
+        "sha256": "8abebbb3ccdf4159ec393c62c21b80f70b8e5ac45c6d00948998cd5c7c6e6212",
+        "physical_page": 40
+      },
+      {
+        "sha256": "8abebbb3ccdf4159ec393c62c21b80f70b8e5ac45c6d00948998cd5c7c6e6212",
+        "physical_page": 50
+      },
+      {
+        "sha256": "6ae2e35fa0887ea819f1ad59c6b2c8d1bf3ecd423db8ea07ef05c851d39567cd",
+        "physical_page": 2
+      },
+      {
+        "sha256": "b93671f8eaf491d4303ea067e9b853a38392649fe1559182c6396869a9534929",
+        "physical_page": 1
+      },
+      {
+        "sha256": "6971e29ea00b59c6a04a3935cf19bc4cb972f048ca159afde7b9ae5d2bba24bd",
+        "physical_page": 1
+      },
+      {
+        "sha256": "380b6eba9d669970c9d611a4b06175b40e606adb71dfe38973bf2939e93b388d",
+        "physical_page": 1
+      },
+      {
+        "sha256": "7b843012930c765fcddcdd39321b46c64132c6849e73c924837fbea39ec7863f",
+        "physical_page": 8
+      },
+      {
+        "sha256": "0a771de64b0a9063548cc73db0512f9266fcbda7e24e755aae3150847a27fa5a",
+        "physical_page": 5
+      },
+      {
+        "sha256": "a6b9ef878159374bbcc93fd9f8333c2cf4e4b167115ed628759d27282976d9cb",
+        "physical_page": 24
+      },
+      {
+        "sha256": "a6b9ef878159374bbcc93fd9f8333c2cf4e4b167115ed628759d27282976d9cb",
+        "physical_page": 25
+      },
+      {
+        "sha256": "97700af9842315129c89eabfdd4f35b26bd671fbefeca1dd9ff00b9672bbeabf",
+        "physical_page": 1
+      }
+    ],
+    "per_document_hash_region_checks": [
+      {
+        "sha256": "f021eaa723c790cae811e15e8696100ddfad2c5a57cd3c17456bbde8be6b6094",
+        "family": "Twin 360",
+        "role": "policy_wording",
+        "evidence_count": 2
+      },
+      {
+        "sha256": "7b65b65428dcda1a1a776793d3f3dc54a0805ddf3df37659aa08120b6406e45c",
+        "family": "Promise",
+        "role": "policy_wording",
+        "evidence_count": 3
+      },
+      {
+        "sha256": "8abebbb3ccdf4159ec393c62c21b80f70b8e5ac45c6d00948998cd5c7c6e6212",
+        "family": "Plus",
+        "role": "policy_wording",
+        "evidence_count": 7
+      },
+      {
+        "sha256": "6ae2e35fa0887ea819f1ad59c6b2c8d1bf3ecd423db8ea07ef05c851d39567cd",
+        "family": "Companion Rider",
+        "role": "policy_wording",
+        "evidence_count": 4
+      },
+      {
+        "sha256": "69b22453dfdc1c3940e1021f6dfdfbb2d7e93c9ee2a2b3703c5af04b0e298a74",
+        "family": "Arogya Sanjeevani",
+        "role": "policy_wording",
+        "evidence_count": 2
+      },
+      {
+        "sha256": "7b9b44c85021c3aaaa948a95683915ec18f1eda9ac51b55db7ff0cbed33a4cd6",
+        "family": "Empower",
+        "role": "policy_wording",
+        "evidence_count": 2
+      },
+      {
+        "sha256": "b93671f8eaf491d4303ea067e9b853a38392649fe1559182c6396869a9534929",
+        "family": "Unlimited Automatic Restoration Rider",
+        "role": "policy_wording",
+        "evidence_count": 3
+      },
+      {
+        "sha256": "6971e29ea00b59c6a04a3935cf19bc4cb972f048ca159afde7b9ae5d2bba24bd",
+        "family": "Consumables Rider",
+        "role": "policy_wording",
+        "evidence_count": 2
+      },
+      {
+        "sha256": "c5b0ab6243a3ce29c878cf380d09c14ca08f502804e2298a6b864f8240b1a8aa",
+        "family": "Marvel",
+        "role": "policy_wording",
+        "evidence_count": 2
+      },
+      {
+        "sha256": "380b6eba9d669970c9d611a4b06175b40e606adb71dfe38973bf2939e93b388d",
+        "family": "Smart Outpatient Rider",
+        "role": "policy_wording",
+        "evidence_count": 3
+      },
+      {
+        "sha256": "7b843012930c765fcddcdd39321b46c64132c6849e73c924837fbea39ec7863f",
+        "family": "Guardian",
+        "role": "policy_wording",
+        "evidence_count": 2
+      },
+      {
+        "sha256": "0a771de64b0a9063548cc73db0512f9266fcbda7e24e755aae3150847a27fa5a",
+        "family": "Personal Accident Shield",
+        "role": "policy_wording",
+        "evidence_count": 4
+      },
+      {
+        "sha256": "dfbe93d819085d276119b341a22f64d9f30f27252394d71919684fdf7e6fe9ad",
+        "family": "Privilege",
+        "role": "policy_wording",
+        "evidence_count": 2
+      },
+      {
+        "sha256": "a6b9ef878159374bbcc93fd9f8333c2cf4e4b167115ed628759d27282976d9cb",
+        "family": "Top-up",
+        "role": "policy_wording",
+        "evidence_count": 4
+      },
+      {
+        "sha256": "03e6bfcd113107f5bc74b6b7c33012ef3b60d3cdb21d49a33d539df2a7239dc6",
+        "family": "Twin 360",
+        "role": "prospectus",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "a9f1dbe0f2b927523886c08f5709f87402932510e122787463320e113181fd11",
+        "family": "Twin 360",
+        "role": "customer_information_sheet",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "d8e1990c66e741e4deb5d4f0644b1090cf6cf153b825f2bf73001e3ff616b57e",
+        "family": "Promise",
+        "role": "prospectus",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "c6159d585ff86b8936ffdf19b01d382fd818a0c35c81cf33417e158c064b0651",
+        "family": "Promise",
+        "role": "customer_information_sheet",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "eff739ba69ace7b1b99c8a922ed6ca4e98a05f00680ebe9a0c6fb81f67c7ab22",
+        "family": "Plus",
+        "role": "customer_information_sheet",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "909242fbb5c09892322f18714e2370760e1a007fc34cc788da09efbc92c79ebb",
+        "family": "Companion Rider",
+        "role": "prospectus",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "2ebc8f0f221b7ada0df0e949a3fea59b2b9adc6a2f9690822b6eeb7b33defe5f",
+        "family": "Companion Rider",
+        "role": "customer_information_sheet",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "40f08775717477939db43cbe5e6a6bd7e42afa3cd043d6cd4cbbca87f80702a8",
+        "family": "Arogya Sanjeevani",
+        "role": "customer_information_sheet",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "c1854ab572eecf3b044f9e56076b26ca360721f0c77debb15b064337af144a21",
+        "family": "Arogya Sanjeevani",
+        "role": "prospectus",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "add60c15218a5fdcde27ed242f7a94fe661b8a8a9247172bf31287725b81d74a",
+        "family": "Empower",
+        "role": "prospectus",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "e4976edaf3df0c0786ae3a86d63ca3eadb9fd1ad9cb8896ae63e4f63a8230d3e",
+        "family": "Empower",
+        "role": "customer_information_sheet",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "4a33adecd7eb94f2ace40455fdbdfbe40cb49cb5a8b9190f8aa68a99f9e12e7b",
+        "family": "Unlimited Automatic Restoration Rider",
+        "role": "prospectus",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "1646435a2c25dc95ed8e842d5cf9e9ed437683e9a97540ec32d2028488491777",
+        "family": "Unlimited Automatic Restoration Rider",
+        "role": "customer_information_sheet",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "f51ee6affce847223120a35e3731a03c53a808a7fb62d580799365b459776475",
+        "family": "Consumables Rider",
+        "role": "prospectus",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "92ce972fc8ce094169ae3f11d79cd8d89c49dccdf40b5ab61a13e0caf643b2bc",
+        "family": "Consumables Rider",
+        "role": "customer_information_sheet",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "5472b87b26b416dcda23300ce10a519df524a43b4dc8c614bd009ce5d8d67a74",
+        "family": "Marvel",
+        "role": "prospectus",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "ca1ab942d93ffeeef7c5028a97765e4eb490db52c8ad255e9dc0b8482f658300",
+        "family": "Marvel",
+        "role": "customer_information_sheet",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "d592a1cc7511add0feea660b94218d853ef5869f7167614c93070980c13cb324",
+        "family": "Smart Outpatient Rider",
+        "role": "prospectus",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "2ab2cf85c3ff7a77c1c145898494d6a3825869f71be4902db4262aca1a0f10c5",
+        "family": "Smart Outpatient Rider",
+        "role": "customer_information_sheet",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "885a8ef13d446d55827ac08cf2b0c1109b54e24242aa4f1c05369da4e313a82d",
+        "family": "Guardian",
+        "role": "prospectus",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "97700af9842315129c89eabfdd4f35b26bd671fbefeca1dd9ff00b9672bbeabf",
+        "family": "Marvel",
+        "role": "customer_information_sheet",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "6a4126e47410332f86ff4707e8dcae66a77579c75fadf0950a2837f266f265c5",
+        "family": "Personal Accident Shield",
+        "role": "prospectus",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "2edab5c4f5587666d633f58b07658ed7006cc398763cb94fbcb42633bf4d99bf",
+        "family": "Personal Accident Shield",
+        "role": "customer_information_sheet",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "6700653ab8de9f7ae94849a253ce8dd54711e49841485e036f358e905d0a777e",
+        "family": "Privilege",
+        "role": "prospectus",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "c4322dc52dfe1cf04c372c605fd51d5cf6693f5eb1438c8f304012b31c0fb8b9",
+        "family": "Privilege",
+        "role": "customer_information_sheet",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "72e5b6bc0ed34dea48e04edf5675f0bec0356180216a98cce2db0b948b8f897c",
+        "family": "Top-up",
+        "role": "prospectus",
+        "evidence_count": 1
+      },
+      {
+        "sha256": "3da67b237d15aaed73cf7d8e61a1c5c313f7eb6e4a07949b27f03d0e43b3974a",
+        "family": "Top-up",
+        "role": "customer_information_sheet",
+        "evidence_count": 1
+      }
+    ],
+    "per_document_discovery_checks": [
+      {
+        "sha256": "f021eaa723c790cae811e15e8696100ddfad2c5a57cd3c17456bbde8be6b6094",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "7b65b65428dcda1a1a776793d3f3dc54a0805ddf3df37659aa08120b6406e45c",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "8abebbb3ccdf4159ec393c62c21b80f70b8e5ac45c6d00948998cd5c7c6e6212",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "6ae2e35fa0887ea819f1ad59c6b2c8d1bf3ecd423db8ea07ef05c851d39567cd",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "69b22453dfdc1c3940e1021f6dfdfbb2d7e93c9ee2a2b3703c5af04b0e298a74",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "7b9b44c85021c3aaaa948a95683915ec18f1eda9ac51b55db7ff0cbed33a4cd6",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "b93671f8eaf491d4303ea067e9b853a38392649fe1559182c6396869a9534929",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "6971e29ea00b59c6a04a3935cf19bc4cb972f048ca159afde7b9ae5d2bba24bd",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "c5b0ab6243a3ce29c878cf380d09c14ca08f502804e2298a6b864f8240b1a8aa",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "380b6eba9d669970c9d611a4b06175b40e606adb71dfe38973bf2939e93b388d",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "7b843012930c765fcddcdd39321b46c64132c6849e73c924837fbea39ec7863f",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "0a771de64b0a9063548cc73db0512f9266fcbda7e24e755aae3150847a27fa5a",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "dfbe93d819085d276119b341a22f64d9f30f27252394d71919684fdf7e6fe9ad",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "a6b9ef878159374bbcc93fd9f8333c2cf4e4b167115ed628759d27282976d9cb",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "03e6bfcd113107f5bc74b6b7c33012ef3b60d3cdb21d49a33d539df2a7239dc6",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "a9f1dbe0f2b927523886c08f5709f87402932510e122787463320e113181fd11",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "d8e1990c66e741e4deb5d4f0644b1090cf6cf153b825f2bf73001e3ff616b57e",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "c6159d585ff86b8936ffdf19b01d382fd818a0c35c81cf33417e158c064b0651",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "eff739ba69ace7b1b99c8a922ed6ca4e98a05f00680ebe9a0c6fb81f67c7ab22",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "909242fbb5c09892322f18714e2370760e1a007fc34cc788da09efbc92c79ebb",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "2ebc8f0f221b7ada0df0e949a3fea59b2b9adc6a2f9690822b6eeb7b33defe5f",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "40f08775717477939db43cbe5e6a6bd7e42afa3cd043d6cd4cbbca87f80702a8",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "c1854ab572eecf3b044f9e56076b26ca360721f0c77debb15b064337af144a21",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "add60c15218a5fdcde27ed242f7a94fe661b8a8a9247172bf31287725b81d74a",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "e4976edaf3df0c0786ae3a86d63ca3eadb9fd1ad9cb8896ae63e4f63a8230d3e",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "4a33adecd7eb94f2ace40455fdbdfbe40cb49cb5a8b9190f8aa68a99f9e12e7b",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "1646435a2c25dc95ed8e842d5cf9e9ed437683e9a97540ec32d2028488491777",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "f51ee6affce847223120a35e3731a03c53a808a7fb62d580799365b459776475",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "92ce972fc8ce094169ae3f11d79cd8d89c49dccdf40b5ab61a13e0caf643b2bc",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "5472b87b26b416dcda23300ce10a519df524a43b4dc8c614bd009ce5d8d67a74",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "ca1ab942d93ffeeef7c5028a97765e4eb490db52c8ad255e9dc0b8482f658300",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "d592a1cc7511add0feea660b94218d853ef5869f7167614c93070980c13cb324",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "2ab2cf85c3ff7a77c1c145898494d6a3825869f71be4902db4262aca1a0f10c5",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "885a8ef13d446d55827ac08cf2b0c1109b54e24242aa4f1c05369da4e313a82d",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "97700af9842315129c89eabfdd4f35b26bd671fbefeca1dd9ff00b9672bbeabf",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "6a4126e47410332f86ff4707e8dcae66a77579c75fadf0950a2837f266f265c5",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "2edab5c4f5587666d633f58b07658ed7006cc398763cb94fbcb42633bf4d99bf",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "6700653ab8de9f7ae94849a253ce8dd54711e49841485e036f358e905d0a777e",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "c4322dc52dfe1cf04c372c605fd51d5cf6693f5eb1438c8f304012b31c0fb8b9",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "72e5b6bc0ed34dea48e04edf5675f0bec0356180216a98cce2db0b948b8f897c",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      },
+      {
+        "sha256": "3da67b237d15aaed73cf7d8e61a1c5c313f7eb6e4a07949b27f03d0e43b3974a",
+        "discovery_sha256_verified": true,
+        "pointer_resolves": true,
+        "relative_file_present": true,
+        "role_label_present": true,
+        "attempt_matches_sha_url": true
+      }
+    ]
+  },
+  "limitations": [
+    "Review is bounded to source identity, selected grants, configuration tables and specifically connected conditions. It is not a full original-page/rule/footnote/annexure inventory.",
+    "69 exact crop reproductions are extraction reproducibility checks, not69 independently counted rule instances. Companion checks are title/UIN only and do not reconcile every companion clause.",
+    "Full historical versions, issued schedules, underwriting, endorsements, dependent base-policy availability and legitimate Guardian CIS remain uncompleted where recorded by the author.",
+    "Original-region fields can include surrounding text outside the assessed proposition; that inclusion does not establish every surrounding rule was independently inventoried."
+  ],
+  "independent_rule_denominator": null,
+  "original_bundles_completed": 0,
+  "adviser_acceptance_claimed": false,
+  "no_evaluation_access": true,
+  "changes_made": [
+    "Created only this review report; originals and root-owned artifacts left unchanged."
+  ]
+}

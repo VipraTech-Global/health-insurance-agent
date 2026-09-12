@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:53:33.724928+00:00",
+  "associations": [],
+  "byte_count": 414638,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-08/Office%20relocation%20merged_0.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "national",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1044,
+  "linking_url": "https://nationalinsurance.nic.co.in/",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "c4bcd81be8c72681d32b46bedd4928b692253b0d1d6bc64fdebf158b0920ea17",
+  "status": "acquired",
+  "url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-08/Office%20relocation%20merged_0.pdf"
+}

@@ -1,0 +1,133 @@
+{
+  "format_version": 1,
+  "case_id": "additional-r13-combi-01",
+  "purpose": "Entity-free information needs from a supplementary source-derived reference case; root derives a proposal only.",
+  "source_refs": [
+    {
+      "evidence_id": "COMBI13-A",
+      "source_sha256": "26c72de9834d7acf50293e62010d70af67f5c44273435fda38966c74deb7d990",
+      "physical_page": 1,
+      "bbox": [
+        40,
+        120,
+        560,
+        310
+      ],
+      "passage_sha256": "7865bdbddcd5dd808a919e9b22215edc4c52aed80bd5c0c0ac87b2d541db0b8b"
+    },
+    {
+      "evidence_id": "COMBI13-B",
+      "source_sha256": "26c72de9834d7acf50293e62010d70af67f5c44273435fda38966c74deb7d990",
+      "physical_page": 1,
+      "bbox": [
+        40,
+        320,
+        560,
+        515
+      ],
+      "passage_sha256": "a357de2123b79fad5270b14e9431e8ffbcdd8a445f11dd1468915fc5e3d2fb9b"
+    }
+  ],
+  "requirements": [
+    {
+      "category": "customer_information",
+      "needs": [
+        "Buyer, owner, payer and each insured person remain distinct roles.",
+        "Component-specific insured membership and subject-bound corrections.",
+        "Original/new statement, source turn, receipt provenance and uncertainty."
+      ],
+      "case_evidence_ids": [],
+      "derivation": "Source clauses plus synthetic interaction requirements; lifecycle/concurrency/deletion are operational preservation requirements, not insurer clauses."
+    },
+    {
+      "category": "product_applicability",
+      "needs": [
+        "Public combi identity with separately identified component product versions and issuers.",
+        "Owned issued package associated with its actual component contracts and memberships.",
+        "New issue versus renewal per contract; unrelated older policy is not inferred to be a member."
+      ],
+      "case_evidence_ids": [
+        "COMBI13-A",
+        "COMBI13-B"
+      ],
+      "derivation": "Source clauses plus synthetic interaction requirements; lifecycle/concurrency/deletion are operational preservation requirements, not insurer clauses."
+    },
+    {
+      "category": "policy_knowledge",
+      "needs": [
+        "Distinct benefits do not imply independent cancellation.",
+        "Free-look trigger is receipt of combi product; general-insurance renewal exclusion.",
+        "Package-wide consequence when either component is targeted; refund deduction and no-revival/fresh-proposal terms."
+      ],
+      "case_evidence_ids": [
+        "COMBI13-A",
+        "COMBI13-B"
+      ],
+      "derivation": "Source clauses plus synthetic interaction requirements; lifecycle/concurrency/deletion are operational preservation requirements, not insurer clauses."
+    },
+    {
+      "category": "calculations",
+      "needs": [
+        "Retain missing refund monetary inputs, units, component allocation and authoritative calculation convention.",
+        "Do not invent a refund or exact terminal-day interpretation."
+      ],
+      "case_evidence_ids": [
+        "COMBI13-B"
+      ],
+      "derivation": "Source clauses plus synthetic interaction requirements; lifecycle/concurrency/deletion are operational preservation requirements, not insurer clauses."
+    },
+    {
+      "category": "changing_observations",
+      "needs": [
+        "Package receipt versus incomplete customer-folder upload.",
+        "A cancellation enquiry, submitted request, issuer acknowledgement, effective termination and refund payment are separate states."
+      ],
+      "case_evidence_ids": [],
+      "derivation": "Source clauses plus synthetic interaction requirements; lifecycle/concurrency/deletion are operational preservation requirements, not insurer clauses."
+    },
+    {
+      "category": "retrieval",
+      "needs": [
+        "Resolve all applicable public wrapper/component versions and original clauses before answering component-only cancellation.",
+        "Resolve same-owner issued package/component contracts and memberships; exclude unrelated contracts.",
+        "Load all affected dependency consequences, not only rules attached to the requested life component."
+      ],
+      "case_evidence_ids": [
+        "COMBI13-A",
+        "COMBI13-B"
+      ],
+      "derivation": "Source clauses plus synthetic interaction requirements; lifecycle/concurrency/deletion are operational preservation requirements, not insurer clauses."
+    },
+    {
+      "category": "saved_decisions",
+      "needs": [
+        "Pin customer revision, package/member associations, source hashes and applicable clause versions.",
+        "Record conditional explanation versus completed external action and unresolved refund/replacement inputs."
+      ],
+      "case_evidence_ids": [
+        "COMBI13-A",
+        "COMBI13-B"
+      ],
+      "derivation": "Source clauses plus synthetic interaction requirements; lifecycle/concurrency/deletion are operational preservation requirements, not insurer clauses."
+    },
+    {
+      "category": "lifecycle",
+      "needs": [
+        "Append corrections and supersede dependent renewal/receipt conclusions without overwriting upload history.",
+        "Reopening uses corrected current facts; an older concurrent turn cannot overwrite them or publish a stale receipt-based answer as current.",
+        "Source or component-association changes invalidate dependent cancellation answers.",
+        "Deleting private package data also removes its copied member/receipt/decision data while public wording remains separate."
+      ],
+      "case_evidence_ids": [],
+      "derivation": "Source clauses plus synthetic interaction requirements; lifecycle/concurrency/deletion are operational preservation requirements, not insurer clauses."
+    }
+  ],
+  "database_design_approved": false,
+  "runtime_implemented": false,
+  "material_representation_tests": [
+    "Can a public combi version be related to several distinct issuer/product versions without implying identical benefits or legal identity?",
+    "Can an owned issued package relate only its actual same-owner issued component contracts and preserve their different insured memberships?",
+    "Can a consequence target either component but enumerate all affected package members, under a named versioned condition and supporting original?",
+    "Can changing component membership or correcting the triggering receipt invalidate every dependent answer while retaining historical associations?"
+  ]
+}

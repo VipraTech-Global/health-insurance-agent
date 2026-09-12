@@ -1,0 +1,321 @@
+{
+  "checks": [
+    {
+      "case_id": "ref-01-02",
+      "label": "Co-pay funding gap",
+      "expected": "5000",
+      "observed": "5000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-01-03",
+      "label": "Immediate second-admission cash shortfall",
+      "expected": "150000",
+      "observed": "150000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-01-07",
+      "label": "Eligible-room customer balance",
+      "expected": "5300",
+      "observed": "5300",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-01-07",
+      "label": "Upgrade incremental customer balance",
+      "expected": "44000",
+      "observed": "44000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-02-01",
+      "label": "Shared cover shortfall on second member claim",
+      "expected": "300000",
+      "observed": "300000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-02-03",
+      "label": "Uncommitted cover after paid amount and reserve",
+      "expected": "150000",
+      "observed": "150000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-02-08",
+      "label": "Hypothetical unchanged child sublimit gap",
+      "expected": "50000",
+      "observed": "50000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-03-01",
+      "label": "Baby elapsed age",
+      "expected": "40",
+      "observed": "40",
+      "unit": "elapsed_day",
+      "passed": true
+    },
+    {
+      "case_id": "ref-04-03",
+      "label": "Age on maximum-entry birthday",
+      "expected": "70",
+      "observed": "70",
+      "unit": "completed_year",
+      "passed": true
+    },
+    {
+      "case_id": "ref-04-04",
+      "label": "Hypothetical co-pay exceeds cash",
+      "expected": "10000",
+      "observed": "10000.00",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-04-05",
+      "label": "Annual recurring expenditure",
+      "expected": "60000",
+      "observed": "60000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-05-08",
+      "label": "Annual recurring expenditure",
+      "expected": "30000",
+      "observed": "30000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-10-01",
+      "label": "Annual recurring expenditure",
+      "expected": "18000",
+      "observed": "18000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-05-09",
+      "label": "Proposed personal cost share illustration",
+      "expected": "20000",
+      "observed": "20000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-08-02",
+      "label": "Calendar wait duration",
+      "expected": "25",
+      "observed": "25",
+      "unit": "calendar_month",
+      "passed": true
+    },
+    {
+      "case_id": "ref-08-06",
+      "label": "Delivery before anniversary",
+      "expected": "True",
+      "observed": "True",
+      "unit": "boolean",
+      "passed": true
+    },
+    {
+      "case_id": "ref-08-10",
+      "label": "Budget remaining for unpriced option",
+      "expected": "3000",
+      "observed": "3000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-09-02",
+      "label": "New India nominal modern-treatment cap",
+      "expected": "250000",
+      "observed": "250000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-10-03",
+      "label": "Post-discharge date60elapsed days",
+      "expected": "2026-08-30",
+      "observed": "2026-08-30",
+      "unit": "date",
+      "passed": true
+    },
+    {
+      "case_id": "ref-10-06",
+      "label": "Hypothetical OPD cap remaining",
+      "expected": "2000",
+      "observed": "2000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-11-02",
+      "label": "Deductible before co-pay counterfactual",
+      "expected": "72000",
+      "observed": "72000.0",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-11-02",
+      "label": "Co-pay before deductible counterfactual",
+      "expected": "70000",
+      "observed": "70000.0",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-11-05",
+      "label": "Remittance after premium recovery",
+      "expected": "70000",
+      "observed": "70000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-11-06",
+      "label": "ICU daily cap",
+      "expected": "5000",
+      "observed": "5000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-11-10",
+      "label": "Hypothetical inclusive cap excess",
+      "expected": "30000",
+      "observed": "30000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-12-02",
+      "label": "Relapse elapsed interval",
+      "expected": "40",
+      "observed": "40",
+      "unit": "elapsed_day",
+      "passed": true
+    },
+    {
+      "case_id": "ref-12-03",
+      "label": "Shared remaining base pool",
+      "expected": "200000",
+      "observed": "200000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-12-04",
+      "label": "Exhaustion equality boundary",
+      "expected": "False",
+      "observed": "False",
+      "unit": "boolean",
+      "passed": true
+    },
+    {
+      "case_id": "ref-12-09",
+      "label": "Bonus ceiling and displayed total",
+      "expected": "750000",
+      "observed": "750000.0",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-12-10",
+      "label": "Exhausted independent sublimit",
+      "expected": "0",
+      "observed": "0",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-13-08",
+      "label": "Funding shortfall after employer exit",
+      "expected": "250000",
+      "observed": "250000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-14-02",
+      "label": "Gold-admitted base-refused expense accumulation",
+      "expected": "150000",
+      "observed": "150000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-15-07",
+      "label": "Remaining wait on credited base",
+      "expected": "0",
+      "observed": "0",
+      "unit": "calendar_month",
+      "passed": true
+    },
+    {
+      "case_id": "ref-15-07",
+      "label": "Remaining wait on uncredited enhancement",
+      "expected": "12",
+      "observed": "12",
+      "unit": "calendar_month",
+      "passed": true
+    },
+    {
+      "case_id": "ref-16-05",
+      "label": "Renewal birthday age",
+      "expected": "42",
+      "observed": "42",
+      "unit": "completed_year",
+      "passed": true
+    },
+    {
+      "case_id": "ref-16-10",
+      "label": "Notice wait after accrued continuity",
+      "expected": "12",
+      "observed": "12",
+      "unit": "calendar_month",
+      "passed": true
+    },
+    {
+      "case_id": "ref-17-10",
+      "label": "Hypothetical zone share",
+      "expected": "20000",
+      "observed": "20000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-18-03",
+      "label": "Loading applied only to base component",
+      "expected": "14000",
+      "observed": "14000.0",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-18-05",
+      "label": "Twelve actual instalment amounts",
+      "expected": "13200",
+      "observed": "13200",
+      "unit": "INR",
+      "passed": true
+    }
+  ],
+  "passed": 39,
+  "failed": 0,
+  "adviser_engine_used": false,
+  "private_evaluation_read": false,
+  "independent_person_review": "Prior exact calculations have separate review reports; newly added checks are independently expressed offline arithmetic, not a separate reviewer approval."
+}

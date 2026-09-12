@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T17:55:45.238347+00:00",
+  "associations": [],
+  "byte_count": 490,
+  "component_version": "research-acquisition/2",
+  "content_type": "text/html",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.icicilombard.com/docs/default-source/Policy-Wordings-product-Brochure/chi_policy_wordings.pdf",
+  "format_version": 1,
+  "http_status": 403,
+  "insurer_id": "icici-lombard",
+  "issues": [
+    "http_403"
+  ],
+  "language": "unknown",
+  "latency_ms": 367,
+  "linking_url": "https://www.icicilombard.com/health-insurance/get-quote/select-chi-plans",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "1772654af45a2332ec30870cf8cbec661e47e5ebe6c4d06e2d9925b3aa4d9b0d",
+  "status": "failed",
+  "url": "https://www.icicilombard.com/docs/default-source/Policy-Wordings-product-Brochure/chi_policy_wordings.pdf"
+}

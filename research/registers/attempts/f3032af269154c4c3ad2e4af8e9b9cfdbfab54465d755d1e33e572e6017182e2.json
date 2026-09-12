@@ -1,0 +1,65 @@
+{
+  "acquired_at": "2026-09-10T11:55:53.728415+00:00",
+  "associations": [],
+  "byte_count": 1426200,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/tata_aig_travel_insurance_domestic_cis_f89b5367bd.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1934,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 5,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "323a84970a2820b968ee4fc4f663090f46c89bb936ae6f8563c3a1b05413fc68",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/tata_aig_travel_insurance_domestic_cis_f89b5367bd.pdf"
+}

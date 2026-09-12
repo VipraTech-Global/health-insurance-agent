@@ -1,0 +1,73 @@
+{
+  "acquired_at": "2026-09-10T11:58:20.454287+00:00",
+  "associations": [],
+  "byte_count": 596137,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/janata-mediclaim-policy/revised%20Janata%20Mediclaim%20Proposal%20Form%20.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 3670,
+  "linking_url": "https://www.newindia.co.in/health-insurance/janata-mediclaim-policy",
+  "page_count": 6,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.52
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "366f7bf6cb4d216775b1f96f0d46d24bbbe7471785e02e5229b267831c88031c",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/janata-mediclaim-policy/revised Janata Mediclaim Proposal Form .pdf"
+}

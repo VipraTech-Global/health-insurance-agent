@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T12:00:25.007317+00:00",
+  "associations": [],
+  "byte_count": 148048,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.generalicentralinsurance.com/downloads/lifestyle-insurance/dog-suraksha/prospectus-forms/dog-suraksha-retail-prospectus.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "generali-central",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 264,
+  "linking_url": "https://www.generalicentralinsurance.com/customer-service/downloads",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "47081b08f89ed96171bb4a92bd48bea33a9c7833650f27fd45c4764fcdeba455",
+  "status": "acquired",
+  "url": "https://www.generalicentralinsurance.com/downloads/lifestyle-insurance/dog-suraksha/prospectus-forms/dog-suraksha-retail-prospectus.pdf"
+}

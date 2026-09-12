@@ -1,0 +1,97 @@
+{
+  "records": [
+    {
+      "insurer_id": "united-india",
+      "url": "https://uiic.co.in/web/sites/default/files/Policy-Document/20231009-CIS-FMP.pdf",
+      "linking_url": "",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "028fb47fa2b2917ad5aff23fdc5dea667b340b8911a68afae44ba6e70c5a61d1",
+      "acquired_at": "2026-09-10T14:41:01.144001+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 6,
+      "discovery_method": "Canonical hostname retry of exact officially indexed www URL; preserve failed www attempt separately."
+    },
+    {
+      "insurer_id": "united-india",
+      "url": "https://uiic.co.in/web/sites/default/files/Policy-Document/20230913-CIS-IHIP.pdf",
+      "linking_url": "",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "a616358a9eaf81203c3d0b514e8d2845bcf3134d742c0756b5f5558ebb13668a",
+      "acquired_at": "2026-09-10T14:41:01.129208+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 5,
+      "discovery_method": "Canonical hostname retry of exact officially indexed www URL; preserve failed www attempt separately."
+    },
+    {
+      "insurer_id": "united-india",
+      "url": "https://uiic.co.in/web/sites/default/files/Policy-Document/20240325_Prospectus_IHIP.pdf",
+      "linking_url": "",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "382f2900bd333b4f6cf532ee49e67fd061479505d614b1663de362bd03f567c4",
+      "acquired_at": "2026-09-10T14:41:01.145095+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 19,
+      "discovery_method": "Canonical hostname retry of exact officially indexed www URL; preserve failed www attempt separately."
+    },
+    {
+      "insurer_id": "icici-lombard",
+      "url": "https://www.icicilombard.com/docs/default-source/Policy-Wordings-product-Brochure/complete-health-insurance-brochure.pdf",
+      "linking_url": "",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "8ad0ad9a6dc5a1720089c0b09a08af315d6b5fae459dbdd4ee01a1e5afcf59f2",
+      "acquired_at": "2026-09-10T14:41:01.136230+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 16,
+      "discovery_method": "Exact official brochure link followed from insurer CHI plan page."
+    },
+    {
+      "insurer_id": "acko",
+      "url": "https://www.acko.com/health-insurance/acko-standard-health-insurance-plan/",
+      "linking_url": "",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "cb3770713cb7e1e1d5db07fe254ecf347e1a8247e7b22869df8110b5e9b9c229",
+      "acquired_at": "2026-09-10T14:41:01.920473+00:00",
+      "http_status": 200,
+      "document_type": "source_page",
+      "page_count": null,
+      "discovery_method": "Official product page found by exact Standard Health search."
+    },
+    {
+      "insurer_id": "acko",
+      "url": "https://www.acko.com/health-insurance/",
+      "linking_url": "",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "f3ebfe3c3cd613be0e4bbd894e312168421ef3d1eeeec7f177e1495ccef7490d",
+      "acquired_at": "2026-09-10T14:41:01.929123+00:00",
+      "http_status": 200,
+      "document_type": "source_page",
+      "page_count": null,
+      "discovery_method": "Official product page explicitly describes Platinum Lite as also known as Standard Plan in web reader; preserve raw source."
+    },
+    {
+      "insurer_id": "oriental",
+      "url": "https://orientalinsurance.org.in/static/js/main.31a109d1.js",
+      "linking_url": "",
+      "status": "failed",
+      "issues": [
+        "unsupported_media_type"
+      ],
+      "sha256": "e43a8de5c97ad054e90a94c1c0440503ae47ef26da1d62dd6eb5623a8634815a",
+      "acquired_at": "2026-09-10T14:41:02.193283+00:00",
+      "http_status": 200,
+      "document_type": "unclassified",
+      "page_count": null,
+      "discovery_method": "Public script asset href observed in preserved official page060dcc57; read statically solely to locate public document routes; never execute script."
+    }
+  ]
+}

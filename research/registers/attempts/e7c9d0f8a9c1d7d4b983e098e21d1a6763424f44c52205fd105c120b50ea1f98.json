@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:55:37.943220+00:00",
+  "associations": [],
+  "byte_count": 1338293,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/external_congenital_rider_prospectus_c0168b1fe1.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 556,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "a1add8ed7e266c02483d5cee85b8550811bf3ec4de26151c43fecfd4e988fa04",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/external_congenital_rider_prospectus_c0168b1fe1.pdf"
+}

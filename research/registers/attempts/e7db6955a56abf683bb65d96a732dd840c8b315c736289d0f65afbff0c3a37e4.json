@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:53:15.813693+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/surveyor_management_policy/PARIPOORNA%20MEDICLAIM%20AYUSH%20BIMA%20ADVT%20EngHindi.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 6534,
+  "linking_url": "https://www.newindia.co.in/health-insurance/atmanirbhar-health-policy",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "b71ba9550e9cb11b622fb267c7cafed54d64f88e7e50309fc41c98d0a5847036",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/surveyor_management_policy/PARIPOORNA MEDICLAIM AYUSH BIMA ADVT EngHindi.pdf"
+}

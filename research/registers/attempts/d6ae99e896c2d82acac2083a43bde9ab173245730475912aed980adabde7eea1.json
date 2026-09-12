@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:02:01.936817+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/new-india-mediclaim-policy/1%20New%20India%20Mediclaim%20Pamphlet.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1639,
+  "linking_url": "https://www.newindia.co.in/health-insurance/health-insurance-policy",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "cd6c6d4b901cbe2e3b0aa9cc9de4c8b783cd8a8a6b03646128178b5eebaca9da",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/new-india-mediclaim-policy/1 New India Mediclaim Pamphlet.pdf"
+}

@@ -1,0 +1,65 @@
+{
+  "acquired_at": "2026-09-10T11:58:27.806467+00:00",
+  "associations": [],
+  "byte_count": 227110,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/Arogya_Sanjeevani_Policy_Group_Micro_Insurance_CIS_KEN_003_51e1af1b8a.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 591,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 5,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.891,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "767a84f0190e80ad8ddc8e572cee8ba73969072046a131b50f3b49b17686d42b",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/Arogya_Sanjeevani_Policy_Group_Micro_Insurance_CIS_KEN_003_51e1af1b8a.pdf"
+}

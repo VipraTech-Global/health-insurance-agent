@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T12:04:19.834019+00:00",
+  "associations": [],
+  "byte_count": 189436,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/DSPN%20Rate%20Chart.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "national",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 326,
+  "linking_url": "https://nationalinsurance.nic.co.in/products/all-products/health/divyangjan-sanjeevani-policy-national",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "53def1574121426c85c3e681dd1493797be6c0b0864c0dc4098f2726ead017c1",
+  "status": "acquired",
+  "url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/DSPN%20Rate%20Chart.pdf"
+}

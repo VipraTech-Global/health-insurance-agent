@@ -1,0 +1,105 @@
+{
+  "acquired_at": "2026-09-10T14:09:16.966886+00:00",
+  "associations": [],
+  "byte_count": 1214202,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Cancer_Care_Platinum_Insurance_Policy_V_8_5a4d8455f6.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "star",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1199,
+  "linking_url": "https://www.starhealth.in/downloads/",
+  "page_count": 10,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "f858c5f318520ff7404ef07094311e7fa69d3d51535144e526d7061a0c44df21",
+  "status": "acquired",
+  "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Cancer_Care_Platinum_Insurance_Policy_V_8_5a4d8455f6.pdf"
+}

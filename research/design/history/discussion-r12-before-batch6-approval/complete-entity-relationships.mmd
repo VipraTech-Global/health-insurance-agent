@@ -1,0 +1,608 @@
+erDiagram
+    Account {
+        string id PK
+    }
+    AIPreference {
+        string id PK
+    }
+    Person {
+        string id PK
+    }
+    PersonRelationship {
+        string id PK
+    }
+    Conversation {
+        string id PK
+    }
+    Message {
+        string id PK
+    }
+    ConversationMessageChunk {
+        string id PK
+    }
+    CustomerStatement {
+        string id PK
+    }
+    CustomerProfileRevision {
+        string id PK
+    }
+    CustomerFact {
+        string id PK
+    }
+    CustomerRequirement {
+        string id PK
+    }
+    AdviceRequest {
+        string id PK
+    }
+    Insurer {
+        string id PK
+    }
+    DiscoveryRun {
+        string id PK
+    }
+    SourceURL {
+        string id PK
+    }
+    SourceObservation {
+        string id PK
+    }
+    SourceCapture {
+        string id PK
+    }
+    OriginalFile {
+        string id PK
+    }
+    CustomerUploadedDocument {
+        string id PK
+    }
+    DocumentSeries {
+        string id PK
+    }
+    DocumentVersion {
+        string id PK
+    }
+    DocumentPage {
+        string id PK
+    }
+    EvidenceSpan {
+        string id PK
+    }
+    Product {
+        string id PK
+    }
+    PolicyVersion {
+        string id PK
+    }
+    PolicyVersionDocument {
+        string id PK
+    }
+    ProductVariant {
+        string id PK
+    }
+    ProductOption {
+        string id PK
+    }
+    CustomerPolicy {
+        string id PK
+    }
+    CustomerPolicyRevision {
+        string id PK
+    }
+    PolicyMember {
+        string id PK
+    }
+    CustomerPolicyOption {
+        string id PK
+    }
+    IndividualTerm {
+        string id PK
+    }
+    CoverageLayer {
+        string id PK
+    }
+    ContinuityCredit {
+        string id PK
+    }
+    PolicyEvent {
+        string id PK
+    }
+    Rule {
+        string id PK
+    }
+    RuleEvidence {
+        string id PK
+    }
+    RuleDependency {
+        string id PK
+    }
+    RuleIssue {
+        string id PK
+    }
+    RuleInventoryItem {
+        string id PK
+    }
+    Provider {
+        string id PK
+    }
+    ProviderObservation {
+        string id PK
+    }
+    Quote {
+        string id PK
+    }
+    QuoteComponent {
+        string id PK
+    }
+    PaymentScheduleItem {
+        string id PK
+    }
+    TreatmentEpisode {
+        string id PK
+    }
+    ExpenseLine {
+        string id PK
+    }
+    Claim {
+        string id PK
+    }
+    ClaimLineAssessment {
+        string id PK
+    }
+    UsageEntry {
+        string id PK
+    }
+    CorpusRevision {
+        string id PK
+    }
+    CorpusMember {
+        string id PK
+    }
+    CorpusPointer {
+        string id PK
+    }
+    SearchChunk {
+        string id PK
+    }
+    Artifact {
+        string id PK
+    }
+    Dependency {
+        string id PK
+    }
+    Decision {
+        string id PK
+    }
+    DecisionClaim {
+        string id PK
+    }
+    ClaimCitation {
+        string id PK
+    }
+    Calculation {
+        string id PK
+    }
+    Turn {
+        string id PK
+    }
+    TurnEvent {
+        string id PK
+    }
+    Outbox {
+        string id PK
+    }
+    ModelRoute {
+        string id PK
+    }
+    ModelQualification {
+        string id PK
+    }
+    ModelAttempt {
+        string id PK
+    }
+    ProcessingJob {
+        string id PK
+    }
+    CoverageReport {
+        string id PK
+    }
+    ReviewRecord {
+        string id PK
+    }
+    ConsentRecord {
+        string id PK
+    }
+    DeletionRequest {
+        string id PK
+    }
+    RetentionHold {
+        string id PK
+    }
+    AuditEvent {
+        string id PK
+    }
+    LegacyMapping {
+        string id PK
+    }
+    AuthGroup {
+        string id PK
+    }
+    AuthPermission {
+        string id PK
+    }
+    AccountGroup {
+        string id PK
+    }
+    AccountPermission {
+        string id PK
+    }
+    GroupPermission {
+        string id PK
+    }
+    AuthSession {
+        string id PK
+    }
+    RuleTable {
+        string id PK
+    }
+    RuleTableCell {
+        string id PK
+    }
+    ContentType {
+        string id PK
+    }
+    AdminLogEntry {
+        string id PK
+    }
+    ContentCopy {
+        string id PK
+    }
+    ExpenseAllocation {
+        string id PK
+    }
+    Clinician {
+        string id PK
+    }
+    ClaimEvent {
+        string id PK
+    }
+    ClaimDocumentRequirement {
+        string id PK
+    }
+    ClaimDocumentReceipt {
+        string id PK
+    }
+    ClaimPayment {
+        string id PK
+    }
+    InventoryRevision {
+        string id PK
+    }
+    InventoryMembership {
+        string id PK
+    }
+    InventoryLineage {
+        string id PK
+    }
+    RuleInventorySupport {
+        string id PK
+    }
+    CoverageReportSupport {
+        string id PK
+    }
+    TermsComponent {
+        string id PK
+    }
+    ContractBundle {
+        string id PK
+    }
+    ContractBundleRevision {
+        string id PK
+    }
+    ContractBundleMember {
+        string id PK
+    }
+    Account ||--o{ AIPreference : user_id
+    ModelRoute |o--o{ AIPreference : route_id
+    Account ||--o{ Person : owner_id
+    Account ||--o{ PersonRelationship : owner_id
+    Person ||--o{ PersonRelationship : from_person_id
+    Person ||--o{ PersonRelationship : to_person_id
+    CustomerStatement ||--o{ PersonRelationship : source_statement_id
+    Account ||--o{ Conversation : owner_id
+    CustomerProfileRevision |o--o{ Conversation : current_profile_revision_id
+    Account ||--o{ Message : owner_id
+    Conversation ||--o{ Message : conversation_id
+    Turn |o--o{ Message : turn_id
+    Decision |o--o{ Message : answer_id
+    Account ||--o{ ConversationMessageChunk : owner_id
+    Conversation ||--o{ ConversationMessageChunk : conversation_id
+    Message ||--o{ ConversationMessageChunk : message_id
+    Account ||--o{ CustomerStatement : owner_id
+    Message ||--o{ CustomerStatement : source_message_id
+    Person |o--o{ CustomerStatement : subject_person_id
+    Account ||--o{ CustomerProfileRevision : owner_id
+    Conversation ||--o{ CustomerProfileRevision : conversation_id
+    Account ||--o{ CustomerFact : owner_id
+    CustomerProfileRevision ||--o{ CustomerFact : introduced_in_revision_id
+    CustomerStatement ||--o{ CustomerFact : source_statement_id
+    Account ||--o{ CustomerRequirement : owner_id
+    CustomerProfileRevision ||--o{ CustomerRequirement : introduced_in_revision_id
+    CustomerStatement ||--o{ CustomerRequirement : source_statement_id
+    Person |o--o{ CustomerRequirement : subject_person_id
+    Account ||--o{ AdviceRequest : owner_id
+    Conversation ||--o{ AdviceRequest : conversation_id
+    CustomerStatement ||--o{ AdviceRequest : source_statement_id
+    Insurer ||--o{ DiscoveryRun : insurer_id
+    DiscoveryRun ||--o{ SourceObservation : discovery_run_id
+    SourceURL ||--o{ SourceObservation : source_url_id
+    SourceCapture |o--o{ SourceObservation : found_in_capture_id
+    DiscoveryRun ||--o{ SourceCapture : discovery_run_id
+    SourceURL ||--o{ SourceCapture : source_url_id
+    OriginalFile |o--o{ SourceCapture : original_file_id
+    DocumentVersion |o--o{ SourceCapture : document_version_id
+    Account |o--o{ OriginalFile : owner_id
+    Account ||--o{ CustomerUploadedDocument : owner_id
+    OriginalFile ||--o{ CustomerUploadedDocument : original_file_id
+    Message |o--o{ CustomerUploadedDocument : source_message_id
+    Insurer |o--o{ DocumentSeries : issuer_id
+    DocumentSeries ||--o{ DocumentVersion : document_series_id
+    DocumentVersion |o--o{ DocumentVersion : supersedes_id
+    OriginalFile ||--o{ DocumentPage : original_file_id
+    SourceCapture |o--o{ EvidenceSpan : source_capture_id
+    CustomerUploadedDocument |o--o{ EvidenceSpan : customer_uploaded_document_id
+    DocumentPage |o--o{ EvidenceSpan : page_id
+    Insurer ||--o{ Product : insurer_id
+    EvidenceSpan ||--o{ Product : identity_evidence_id
+    Product ||--o{ PolicyVersion : product_id
+    PolicyVersion |o--o{ PolicyVersion : supersedes_id
+    PolicyVersion ||--o{ PolicyVersionDocument : policy_version_id
+    DocumentVersion ||--o{ PolicyVersionDocument : document_version_id
+    EvidenceSpan |o--o{ PolicyVersionDocument : precedence_evidence_id
+    PolicyVersion ||--o{ ProductVariant : policy_version_id
+    EvidenceSpan ||--o{ ProductVariant : identity_evidence_id
+    ProductVariant ||--o{ ProductOption : product_variant_id
+    PolicyVersion |o--o{ ProductOption : option_policy_version_id
+    EvidenceSpan ||--o{ ProductOption : identity_evidence_id
+    Account ||--o{ CustomerPolicy : owner_id
+    Insurer ||--o{ CustomerPolicy : insurer_id
+    Person |o--o{ CustomerPolicy : proposer_id
+    Person |o--o{ CustomerPolicy : payer_id
+    Account ||--o{ CustomerPolicyRevision : owner_id
+    CustomerPolicy ||--o{ CustomerPolicyRevision : customer_policy_id
+    ProductVariant |o--o{ CustomerPolicyRevision : product_variant_id
+    EvidenceSpan |o--o{ CustomerPolicyRevision : selection_evidence_id
+    Account ||--o{ PolicyMember : owner_id
+    CustomerPolicyRevision ||--o{ PolicyMember : customer_policy_revision_id
+    Person ||--o{ PolicyMember : person_id
+    EvidenceSpan |o--o{ PolicyMember : evidence_span_id
+    Account ||--o{ CustomerPolicyOption : owner_id
+    CustomerPolicyRevision ||--o{ CustomerPolicyOption : customer_policy_revision_id
+    ProductOption ||--o{ CustomerPolicyOption : product_option_id
+    EvidenceSpan |o--o{ CustomerPolicyOption : evidence_span_id
+    Account ||--o{ IndividualTerm : owner_id
+    CustomerPolicyRevision ||--o{ IndividualTerm : customer_policy_revision_id
+    Person |o--o{ IndividualTerm : person_id
+    EvidenceSpan ||--o{ IndividualTerm : evidence_span_id
+    Account ||--o{ CoverageLayer : owner_id
+    CustomerPolicyRevision ||--o{ CoverageLayer : customer_policy_revision_id
+    Person |o--o{ CoverageLayer : person_id
+    EvidenceSpan |o--o{ CoverageLayer : source_span_id
+    Account ||--o{ ContinuityCredit : owner_id
+    CoverageLayer ||--o{ ContinuityCredit : layer_id
+    CustomerPolicy ||--o{ ContinuityCredit : prior_customer_policy_id
+    Person ||--o{ ContinuityCredit : person_id
+    EvidenceSpan |o--o{ ContinuityCredit : accepted_span_id
+    Account ||--o{ PolicyEvent : owner_id
+    CustomerPolicy |o--o{ PolicyEvent : customer_policy_id
+    EvidenceSpan |o--o{ PolicyEvent : source_span_id
+    Message |o--o{ PolicyEvent : source_message_id
+    PolicyEvent |o--o{ PolicyEvent : related_event_id
+    ContractBundleRevision |o--o{ PolicyEvent : bundle_revision_id
+    EvidenceSpan |o--o{ PolicyEvent : authority_span_id
+    Account |o--o{ Rule : owner_id
+    PolicyVersion |o--o{ Rule : terms_id
+    RuleInventoryItem |o--o{ Rule : inventory_item_id
+    Account |o--o{ RuleEvidence : owner_id
+    Rule ||--o{ RuleEvidence : rule_id
+    EvidenceSpan ||--o{ RuleEvidence : span_id
+    Account |o--o{ RuleDependency : owner_id
+    Rule ||--o{ RuleDependency : from_rule_id
+    Rule ||--o{ RuleDependency : to_rule_id
+    EvidenceSpan |o--o{ RuleDependency : precedence_span_id
+    Account |o--o{ RuleIssue : owner_id
+    DocumentVersion |o--o{ RuleIssue : document_id
+    Rule |o--o{ RuleIssue : rule_id
+    EvidenceSpan |o--o{ RuleIssue : resolution_span_id
+    DocumentVersion ||--o{ RuleInventoryItem : document_id
+    EvidenceSpan ||--o{ RuleInventoryItem : span_id
+    Account |o--o{ ProviderObservation : owner_id
+    Provider ||--o{ ProviderObservation : provider_id
+    Insurer |o--o{ ProviderObservation : insurer_id
+    ProductVariant |o--o{ ProviderObservation : configuration_id
+    EvidenceSpan ||--o{ ProviderObservation : span_id
+    ProviderObservation |o--o{ ProviderObservation : supersedes_id
+    Clinician |o--o{ ProviderObservation : clinician_id
+    Account ||--o{ Quote : owner_id
+    Conversation ||--o{ Quote : conversation_id
+    CustomerProfileRevision ||--o{ Quote : profile_revision_id
+    ProductVariant ||--o{ Quote : configuration_id
+    DocumentVersion ||--o{ Quote : source_document_id
+    Account ||--o{ QuoteComponent : owner_id
+    Quote ||--o{ QuoteComponent : quote_id
+    EvidenceSpan ||--o{ QuoteComponent : span_id
+    Account ||--o{ PaymentScheduleItem : owner_id
+    Quote |o--o{ PaymentScheduleItem : quote_id
+    CustomerPolicy |o--o{ PaymentScheduleItem : customer_policy_id
+    PolicyEvent |o--o{ PaymentScheduleItem : paid_event_id
+    EvidenceSpan ||--o{ PaymentScheduleItem : span_id
+    Account ||--o{ TreatmentEpisode : owner_id
+    Person ||--o{ TreatmentEpisode : person_id
+    Provider |o--o{ TreatmentEpisode : provider_id
+    DocumentVersion |o--o{ TreatmentEpisode : source_document_id
+    Account ||--o{ ExpenseLine : owner_id
+    TreatmentEpisode ||--o{ ExpenseLine : episode_id
+    CustomerFact |o--o{ ExpenseLine : relatedness_fact_id
+    EvidenceSpan |o--o{ ExpenseLine : span_id
+    Account ||--o{ Claim : owner_id
+    TreatmentEpisode ||--o{ Claim : episode_id
+    CustomerPolicyRevision ||--o{ Claim : customer_policy_revision_id
+    DocumentVersion |o--o{ Claim : settlement_document_id
+    Claim |o--o{ Claim : primary_claim_id
+    Account ||--o{ ClaimLineAssessment : owner_id
+    Claim ||--o{ ClaimLineAssessment : claim_id
+    ExpenseLine ||--o{ ClaimLineAssessment : expense_id
+    Rule |o--o{ ClaimLineAssessment : rule_id
+    EvidenceSpan |o--o{ ClaimLineAssessment : span_id
+    ClaimLineAssessment |o--o{ ClaimLineAssessment : supersedes_id
+    Account ||--o{ UsageEntry : owner_id
+    CoverageLayer ||--o{ UsageEntry : layer_id
+    ClaimLineAssessment |o--o{ UsageEntry : claim_line_id
+    UsageEntry |o--o{ UsageEntry : reverses_id
+    EvidenceSpan |o--o{ UsageEntry : source_span_id
+    PolicyEvent |o--o{ UsageEntry : policy_event_id
+    ClaimPayment |o--o{ UsageEntry : claim_payment_id
+    CorpusRevision |o--o{ CorpusRevision : previous_id
+    CoverageReport |o--o{ CorpusRevision : coverage_report_id
+    CorpusRevision ||--o{ CorpusMember : corpus_id
+    Rule ||--o{ CorpusMember : rule_id
+    PolicyVersion |o--o{ CorpusMember : terms_id
+    CorpusRevision ||--o{ CorpusPointer : corpus_id
+    Account |o--o{ SearchChunk : owner_id
+    DocumentVersion ||--o{ SearchChunk : document_id
+    CorpusRevision ||--o{ SearchChunk : corpus_id
+    Account |o--o{ Artifact : owner_id
+    Account |o--o{ Dependency : owner_id
+    Artifact ||--o{ Dependency : dependent_id
+    Artifact ||--o{ Dependency : input_id
+    Account ||--o{ Decision : owner_id
+    Conversation ||--o{ Decision : conversation_id
+    Turn ||--o{ Decision : turn_id
+    AdviceRequest ||--o{ Decision : advice_request_id
+    CustomerProfileRevision ||--o{ Decision : profile_revision_id
+    CorpusRevision ||--o{ Decision : corpus_id
+    Decision |o--o{ Decision : supersedes_id
+    Account ||--o{ DecisionClaim : owner_id
+    Decision ||--o{ DecisionClaim : decision_id
+    ProductVariant |o--o{ DecisionClaim : candidate_configuration_id
+    Account ||--o{ ClaimCitation : owner_id
+    DecisionClaim ||--o{ ClaimCitation : claim_id
+    EvidenceSpan ||--o{ ClaimCitation : span_id
+    Rule |o--o{ ClaimCitation : rule_id
+    Account ||--o{ Calculation : owner_id
+    Decision ||--o{ Calculation : decision_id
+    Account ||--o{ Turn : owner_id
+    Conversation ||--o{ Turn : conversation_id
+    Message ||--o{ Turn : input_message_id
+    CustomerProfileRevision ||--o{ Turn : profile_revision_id
+    Account ||--o{ TurnEvent : owner_id
+    Turn ||--o{ TurnEvent : turn_id
+    Account |o--o{ Outbox : owner_id
+    ModelRoute ||--o{ ModelQualification : route_id
+    Account |o--o{ ModelAttempt : owner_id
+    Turn |o--o{ ModelAttempt : turn_id
+    ProcessingJob |o--o{ ModelAttempt : processing_job_id
+    ModelQualification ||--o{ ModelAttempt : qualification_id
+    Account |o--o{ ProcessingJob : owner_id
+    DocumentVersion ||--o{ ProcessingJob : document_id
+    ProcessingJob |o--o{ ProcessingJob : parent_job_id
+    OriginalFile |o--o{ ProcessingJob : result_blob_id
+    CorpusRevision |o--o{ CoverageReport : corpus_id
+    Insurer |o--o{ CoverageReport : insurer_id
+    InventoryRevision ||--o{ CoverageReport : inventory_revision_id
+    Account |o--o{ ReviewRecord : owner_id
+    Artifact ||--o{ ReviewRecord : artifact_id
+    Account |o--o{ ReviewRecord : reviewer_account_id
+    Account ||--o{ ConsentRecord : owner_id
+    Person |o--o{ ConsentRecord : person_id
+    Message |o--o{ ConsentRecord : source_message_id
+    EvidenceSpan |o--o{ ConsentRecord : source_span_id
+    Account ||--o{ DeletionRequest : owner_id
+    Account ||--o{ RetentionHold : owner_id
+    DeletionRequest ||--o{ RetentionHold : deletion_request_id
+    Account |o--o{ RetentionHold : approved_by_id
+    Account |o--o{ AuditEvent : owner_id
+    Account |o--o{ AuditEvent : actor_id
+    Account |o--o{ LegacyMapping : owner_id
+    OriginalFile ||--o{ LegacyMapping : archive_blob_id
+    ContentType ||--o{ AuthPermission : content_type_id
+    Account ||--o{ AccountGroup : user_id
+    AuthGroup ||--o{ AccountGroup : group_id
+    Account ||--o{ AccountPermission : user_id
+    AuthPermission ||--o{ AccountPermission : permission_id
+    AuthGroup ||--o{ GroupPermission : group_id
+    AuthPermission ||--o{ GroupPermission : permission_id
+    Account |o--o{ RuleTable : owner_id
+    Rule ||--o{ RuleTable : rule_id
+    Account |o--o{ RuleTableCell : owner_id
+    RuleTable ||--o{ RuleTableCell : table_id
+    EvidenceSpan ||--o{ RuleTableCell : cell_span_id
+    Account ||--o{ AdminLogEntry : user_id
+    ContentType |o--o{ AdminLogEntry : content_type_id
+    Account ||--o{ ContentCopy : owner_id
+    Artifact ||--o{ ContentCopy : source_artifact_id
+    Artifact ||--o{ ContentCopy : destination_artifact_id
+    Account ||--o{ ExpenseAllocation : owner_id
+    ExpenseLine ||--o{ ExpenseAllocation : expense_id
+    ExpenseLine |o--o{ ExpenseAllocation : package_parent_id
+    CustomerFact |o--o{ ExpenseAllocation : boundary_fact_id
+    EvidenceSpan |o--o{ ExpenseAllocation : source_span_id
+    Account ||--o{ ClaimEvent : owner_id
+    Claim |o--o{ ClaimEvent : claim_id
+    TreatmentEpisode ||--o{ ClaimEvent : episode_id
+    CustomerPolicyRevision ||--o{ ClaimEvent : customer_policy_revision_id
+    EvidenceSpan |o--o{ ClaimEvent : source_span_id
+    Message |o--o{ ClaimEvent : source_message_id
+    ClaimEvent |o--o{ ClaimEvent : related_event_id
+    ClaimEvent |o--o{ ClaimEvent : supersedes_id
+    Account ||--o{ ClaimDocumentRequirement : owner_id
+    Claim ||--o{ ClaimDocumentRequirement : claim_id
+    ClaimEvent |o--o{ ClaimDocumentRequirement : request_event_id
+    Rule |o--o{ ClaimDocumentRequirement : rule_id
+    EvidenceSpan |o--o{ ClaimDocumentRequirement : authority_span_id
+    ClaimDocumentRequirement |o--o{ ClaimDocumentRequirement : supersedes_id
+    Account ||--o{ ClaimDocumentReceipt : owner_id
+    Claim ||--o{ ClaimDocumentReceipt : claim_id
+    ClaimEvent ||--o{ ClaimDocumentReceipt : receipt_event_id
+    ClaimDocumentRequirement |o--o{ ClaimDocumentReceipt : requirement_id
+    DocumentVersion |o--o{ ClaimDocumentReceipt : document_id
+    EvidenceSpan |o--o{ ClaimDocumentReceipt : assessment_span_id
+    ClaimDocumentReceipt |o--o{ ClaimDocumentReceipt : supersedes_id
+    Account ||--o{ ClaimPayment : owner_id
+    Claim ||--o{ ClaimPayment : claim_id
+    ClaimEvent ||--o{ ClaimPayment : payment_event_id
+    EvidenceSpan ||--o{ ClaimPayment : source_span_id
+    ClaimPayment |o--o{ ClaimPayment : reverses_id
+    ClaimPayment |o--o{ ClaimPayment : supersedes_id
+    InventoryRevision |o--o{ InventoryRevision : previous_id
+    InventoryRevision ||--o{ InventoryMembership : inventory_revision_id
+    RuleInventoryItem ||--o{ InventoryMembership : item_id
+    InventoryMembership |o--o{ InventoryMembership : previous_membership_id
+    InventoryRevision ||--o{ InventoryLineage : inventory_revision_id
+    InventoryMembership ||--o{ InventoryLineage : from_membership_id
+    InventoryMembership ||--o{ InventoryLineage : to_membership_id
+    InventoryMembership ||--o{ RuleInventorySupport : membership_id
+    Rule ||--o{ RuleInventorySupport : rule_id
+    RuleInventorySupport |o--o{ RuleInventorySupport : supersedes_id
+    CoverageReport ||--o{ CoverageReportSupport : coverage_report_id
+    InventoryMembership ||--o{ CoverageReportSupport : membership_id
+    RuleInventorySupport ||--o{ CoverageReportSupport : support_id
+    PolicyVersion ||--o{ TermsComponent : wrapper_terms_id
+    Product ||--o{ TermsComponent : component_product_id
+    PolicyVersion |o--o{ TermsComponent : component_terms_id
+    Rule |o--o{ TermsComponent : selection_rule_id
+    EvidenceSpan ||--o{ TermsComponent : source_span_id
+    TermsComponent |o--o{ TermsComponent : supersedes_id
+    Account ||--o{ ContractBundle : owner_id
+    ContractBundleRevision |o--o{ ContractBundle : current_revision_id
+    Account ||--o{ ContractBundleRevision : owner_id
+    ContractBundle ||--o{ ContractBundleRevision : bundle_id
+    ProductVariant |o--o{ ContractBundleRevision : wrapper_configuration_id
+    ContractBundleRevision |o--o{ ContractBundleRevision : previous_id
+    EvidenceSpan |o--o{ ContractBundleRevision : source_span_id
+    Account ||--o{ ContractBundleMember : owner_id
+    ContractBundleRevision ||--o{ ContractBundleMember : bundle_revision_id
+    TermsComponent ||--o{ ContractBundleMember : terms_component_id
+    CustomerPolicyRevision |o--o{ ContractBundleMember : customer_policy_revision_id
+    EvidenceSpan |o--o{ ContractBundleMember : source_span_id
+    CustomerFact |o--o{ ContractBundleMember : source_fact_id

@@ -1,0 +1,624 @@
+erDiagram
+    Account {
+        string id PK
+    }
+    AIPreference {
+        string user_id PK
+    }
+    Person {
+        string id PK
+    }
+    PersonRelationship {
+        string id PK
+    }
+    Conversation {
+        string id PK
+    }
+    Message {
+        string id PK
+    }
+    ConversationMessageChunk {
+        string id PK
+    }
+    FactAssertion {
+        string id PK
+    }
+    FactSnapshot {
+        string id PK
+    }
+    SnapshotFact {
+        string id PK
+    }
+    DecisionIntent {
+        string id PK
+    }
+    Insurer {
+        string id PK
+    }
+    SourceLocator {
+        string id PK
+    }
+    Acquisition {
+        string id PK
+    }
+    OriginalBlob {
+        string id PK
+    }
+    DocumentRevision {
+        string id PK
+    }
+    DocumentPage {
+        string id PK
+    }
+    EvidenceSpan {
+        string id PK
+    }
+    LegacyListing {
+        string id PK
+    }
+    ListingCandidate {
+        string id PK
+    }
+    Product {
+        string id PK
+    }
+    TermsRevision {
+        string id PK
+    }
+    TermsDocument {
+        string id PK
+    }
+    Configuration {
+        string id PK
+    }
+    ConfigurationOption {
+        string id PK
+    }
+    PolicyContract {
+        string id PK
+    }
+    ContractRevision {
+        string id PK
+    }
+    ContractMember {
+        string id PK
+    }
+    IndividualTerm {
+        string id PK
+    }
+    CoverageLayer {
+        string id PK
+    }
+    ContinuityCredit {
+        string id PK
+    }
+    PolicyEvent {
+        string id PK
+    }
+    Rule {
+        string id PK
+    }
+    RuleEvidence {
+        string id PK
+    }
+    RuleDependency {
+        string id PK
+    }
+    RuleIssue {
+        string id PK
+    }
+    RuleInventoryItem {
+        string id PK
+    }
+    Provider {
+        string id PK
+    }
+    ProviderObservation {
+        string id PK
+    }
+    Quote {
+        string id PK
+    }
+    QuoteComponent {
+        string id PK
+    }
+    PaymentScheduleItem {
+        string id PK
+    }
+    TreatmentEpisode {
+        string id PK
+    }
+    ExpenseLine {
+        string id PK
+    }
+    Claim {
+        string id PK
+    }
+    ClaimLineAssessment {
+        string id PK
+    }
+    UsageEntry {
+        string id PK
+    }
+    CorpusRevision {
+        string id PK
+    }
+    CorpusMember {
+        string id PK
+    }
+    CorpusPointer {
+        string id PK
+    }
+    SearchChunk {
+        string id PK
+    }
+    Artifact {
+        string id PK
+    }
+    Dependency {
+        string id PK
+    }
+    Decision {
+        string id PK
+    }
+    DecisionClaim {
+        string id PK
+    }
+    ClaimCitation {
+        string id PK
+    }
+    Calculation {
+        string id PK
+    }
+    Turn {
+        string id PK
+    }
+    TurnEvent {
+        string id PK
+    }
+    Outbox {
+        string id PK
+    }
+    ModelRoute {
+        string id PK
+    }
+    ModelQualification {
+        string id PK
+    }
+    ModelAttempt {
+        string id PK
+    }
+    ProcessingJob {
+        string id PK
+    }
+    CoverageReport {
+        string id PK
+    }
+    ReviewRecord {
+        string id PK
+    }
+    ConsentRecord {
+        string id PK
+    }
+    DeletionRequest {
+        string id PK
+    }
+    RetentionHold {
+        string id PK
+    }
+    AuditEvent {
+        string id PK
+    }
+    LegacyMapping {
+        string id PK
+    }
+    AuthGroup {
+        string id PK
+    }
+    AuthPermission {
+        string id PK
+    }
+    AccountGroup {
+        string id PK
+    }
+    AccountPermission {
+        string id PK
+    }
+    GroupPermission {
+        string id PK
+    }
+    AuthSession {
+        string session_key PK
+    }
+    RuleTable {
+        string id PK
+    }
+    RuleTableCell {
+        string id PK
+    }
+    FactPredicate {
+        string id PK
+    }
+    ConversationReuseGrant {
+        string id PK
+    }
+    ContentType {
+        string id PK
+    }
+    AdminLogEntry {
+        string id PK
+    }
+    ContentCopy {
+        string id PK
+    }
+    ExpenseAllocation {
+        string id PK
+    }
+    Clinician {
+        string id PK
+    }
+    SourceLinkObservation {
+        string id PK
+    }
+    ClaimEvent {
+        string id PK
+    }
+    ClaimDocumentRequirement {
+        string id PK
+    }
+    ClaimDocumentReceipt {
+        string id PK
+    }
+    ClaimPayment {
+        string id PK
+    }
+    InventoryRevision {
+        string id PK
+    }
+    InventoryMembership {
+        string id PK
+    }
+    InventoryLineage {
+        string id PK
+    }
+    RuleInventorySupport {
+        string id PK
+    }
+    CoverageReportSupport {
+        string id PK
+    }
+    TermsComponent {
+        string id PK
+    }
+    ContractBundle {
+        string id PK
+    }
+    ContractBundleRevision {
+        string id PK
+    }
+    ContractBundleMember {
+        string id PK
+    }
+    Account ||--o{ AIPreference : "user_id"
+    ModelRoute ||--o{ AIPreference : "route_id"
+    Account ||--o{ Person : "owner_id"
+    Account ||--o{ PersonRelationship : "owner_id"
+    Person ||--o{ PersonRelationship : "from_person_id"
+    Person ||--o{ PersonRelationship : "to_person_id"
+    FactAssertion ||--o{ PersonRelationship : "source_assertion_id"
+    Account ||--o{ Conversation : "owner_id"
+    FactSnapshot ||--o{ Conversation : "current_snapshot_id"
+    Account ||--o{ Message : "owner_id"
+    Conversation ||--o{ Message : "conversation_id"
+    Turn ||--o{ Message : "turn_id"
+    Decision ||--o{ Message : "answer_id"
+    Account ||--o{ ConversationMessageChunk : "owner_id"
+    Conversation ||--o{ ConversationMessageChunk : "conversation_id"
+    Message ||--o{ ConversationMessageChunk : "message_id"
+    Account ||--o{ FactAssertion : "owner_id"
+    Conversation ||--o{ FactAssertion : "conversation_id"
+    Person ||--o{ FactAssertion : "person_id"
+    Message ||--o{ FactAssertion : "source_message_id"
+    EvidenceSpan ||--o{ FactAssertion : "source_evidence_id"
+    FactAssertion ||--o{ FactAssertion : "supersedes_id"
+    Message ||--o{ FactAssertion : "confirmation_message_id"
+    FactPredicate ||--o{ FactAssertion : "predicate_definition_id"
+    ConversationReuseGrant ||--o{ FactAssertion : "import_grant_id"
+    PolicyContract ||--o{ FactAssertion : "subject_contract_id"
+    Provider ||--o{ FactAssertion : "subject_provider_id"
+    FactAssertion ||--o{ FactAssertion : "source_assertion_id"
+    ContractBundle ||--o{ FactAssertion : "subject_bundle_id"
+    Account ||--o{ FactSnapshot : "owner_id"
+    Conversation ||--o{ FactSnapshot : "conversation_id"
+    FactSnapshot ||--o{ FactSnapshot : "previous_id"
+    Account ||--o{ SnapshotFact : "owner_id"
+    FactSnapshot ||--o{ SnapshotFact : "snapshot_id"
+    FactAssertion ||--o{ SnapshotFact : "assertion_id"
+    Account ||--o{ DecisionIntent : "owner_id"
+    Conversation ||--o{ DecisionIntent : "conversation_id"
+    FactSnapshot ||--o{ DecisionIntent : "snapshot_id"
+    Message ||--o{ DecisionIntent : "source_message_id"
+    Insurer ||--o{ Insurer : "successor_id"
+    Account ||--o{ SourceLocator : "owner_id"
+    Insurer ||--o{ SourceLocator : "insurer_id"
+    Acquisition ||--o{ SourceLocator : "linking_observation_id"
+    Account ||--o{ Acquisition : "owner_id"
+    SourceLocator ||--o{ Acquisition : "locator_id"
+    OriginalBlob ||--o{ Acquisition : "blob_id"
+    SourceLinkObservation ||--o{ Acquisition : "source_link_observation_id"
+    Account ||--o{ OriginalBlob : "owner_id"
+    Account ||--o{ DocumentRevision : "owner_id"
+    OriginalBlob ||--o{ DocumentRevision : "blob_id"
+    Insurer ||--o{ DocumentRevision : "insurer_id"
+    DocumentRevision ||--o{ DocumentRevision : "supersedes_id"
+    EvidenceSpan ||--o{ DocumentRevision : "classification_evidence_id"
+    Account ||--o{ DocumentPage : "owner_id"
+    DocumentRevision ||--o{ DocumentPage : "document_id"
+    Account ||--o{ EvidenceSpan : "owner_id"
+    DocumentPage ||--o{ EvidenceSpan : "page_id"
+    DocumentRevision ||--o{ EvidenceSpan : "document_id"
+    Insurer ||--o{ LegacyListing : "insurer_id"
+    OriginalBlob ||--o{ LegacyListing : "source_blob_id"
+    LegacyListing ||--o{ ListingCandidate : "listing_id"
+    Product ||--o{ ListingCandidate : "product_id"
+    Configuration ||--o{ ListingCandidate : "configuration_id"
+    TermsRevision ||--o{ ListingCandidate : "terms_id"
+    Insurer ||--o{ Product : "insurer_id"
+    EvidenceSpan ||--o{ Product : "identity_span_id"
+    Product ||--o{ TermsRevision : "product_id"
+    TermsRevision ||--o{ TermsRevision : "supersedes_id"
+    TermsRevision ||--o{ TermsDocument : "terms_id"
+    DocumentRevision ||--o{ TermsDocument : "document_id"
+    EvidenceSpan ||--o{ TermsDocument : "precedence_span_id"
+    TermsRevision ||--o{ Configuration : "terms_id"
+    EvidenceSpan ||--o{ Configuration : "identity_span_id"
+    Configuration ||--o{ ConfigurationOption : "configuration_id"
+    TermsRevision ||--o{ ConfigurationOption : "option_terms_id"
+    Account ||--o{ PolicyContract : "owner_id"
+    Insurer ||--o{ PolicyContract : "insurer_id"
+    Person ||--o{ PolicyContract : "proposer_id"
+    Person ||--o{ PolicyContract : "payer_id"
+    EvidenceSpan ||--o{ PolicyContract : "acceptance_span_id"
+    Account ||--o{ ContractRevision : "owner_id"
+    PolicyContract ||--o{ ContractRevision : "contract_id"
+    Configuration ||--o{ ContractRevision : "configuration_id"
+    DocumentRevision ||--o{ ContractRevision : "schedule_document_id"
+    ContractRevision ||--o{ ContractRevision : "previous_id"
+    Account ||--o{ ContractMember : "owner_id"
+    ContractRevision ||--o{ ContractMember : "contract_revision_id"
+    Person ||--o{ ContractMember : "person_id"
+    EvidenceSpan ||--o{ ContractMember : "membership_span_id"
+    Account ||--o{ IndividualTerm : "owner_id"
+    ContractRevision ||--o{ IndividualTerm : "contract_revision_id"
+    Person ||--o{ IndividualTerm : "person_id"
+    EvidenceSpan ||--o{ IndividualTerm : "evidence_span_id"
+    Account ||--o{ CoverageLayer : "owner_id"
+    ContractRevision ||--o{ CoverageLayer : "contract_revision_id"
+    Person ||--o{ CoverageLayer : "person_id"
+    EvidenceSpan ||--o{ CoverageLayer : "source_span_id"
+    Account ||--o{ ContinuityCredit : "owner_id"
+    CoverageLayer ||--o{ ContinuityCredit : "layer_id"
+    PolicyContract ||--o{ ContinuityCredit : "prior_contract_id"
+    Person ||--o{ ContinuityCredit : "person_id"
+    EvidenceSpan ||--o{ ContinuityCredit : "accepted_span_id"
+    Account ||--o{ PolicyEvent : "owner_id"
+    PolicyContract ||--o{ PolicyEvent : "contract_id"
+    EvidenceSpan ||--o{ PolicyEvent : "source_span_id"
+    Message ||--o{ PolicyEvent : "source_message_id"
+    PolicyEvent ||--o{ PolicyEvent : "related_event_id"
+    ContractBundleRevision ||--o{ PolicyEvent : "bundle_revision_id"
+    EvidenceSpan ||--o{ PolicyEvent : "authority_span_id"
+    Account ||--o{ Rule : "owner_id"
+    TermsRevision ||--o{ Rule : "terms_id"
+    RuleInventoryItem ||--o{ Rule : "inventory_item_id"
+    Account ||--o{ RuleEvidence : "owner_id"
+    Rule ||--o{ RuleEvidence : "rule_id"
+    EvidenceSpan ||--o{ RuleEvidence : "span_id"
+    Account ||--o{ RuleDependency : "owner_id"
+    Rule ||--o{ RuleDependency : "from_rule_id"
+    Rule ||--o{ RuleDependency : "to_rule_id"
+    EvidenceSpan ||--o{ RuleDependency : "precedence_span_id"
+    Account ||--o{ RuleIssue : "owner_id"
+    DocumentRevision ||--o{ RuleIssue : "document_id"
+    Rule ||--o{ RuleIssue : "rule_id"
+    EvidenceSpan ||--o{ RuleIssue : "resolution_span_id"
+    DocumentRevision ||--o{ RuleInventoryItem : "document_id"
+    EvidenceSpan ||--o{ RuleInventoryItem : "span_id"
+    Account ||--o{ ProviderObservation : "owner_id"
+    Provider ||--o{ ProviderObservation : "provider_id"
+    Insurer ||--o{ ProviderObservation : "insurer_id"
+    Configuration ||--o{ ProviderObservation : "configuration_id"
+    EvidenceSpan ||--o{ ProviderObservation : "span_id"
+    ProviderObservation ||--o{ ProviderObservation : "supersedes_id"
+    Clinician ||--o{ ProviderObservation : "clinician_id"
+    Account ||--o{ Quote : "owner_id"
+    Conversation ||--o{ Quote : "conversation_id"
+    FactSnapshot ||--o{ Quote : "snapshot_id"
+    Configuration ||--o{ Quote : "configuration_id"
+    DocumentRevision ||--o{ Quote : "source_document_id"
+    Account ||--o{ QuoteComponent : "owner_id"
+    Quote ||--o{ QuoteComponent : "quote_id"
+    EvidenceSpan ||--o{ QuoteComponent : "span_id"
+    Account ||--o{ PaymentScheduleItem : "owner_id"
+    Quote ||--o{ PaymentScheduleItem : "quote_id"
+    PolicyContract ||--o{ PaymentScheduleItem : "contract_id"
+    PolicyEvent ||--o{ PaymentScheduleItem : "paid_event_id"
+    EvidenceSpan ||--o{ PaymentScheduleItem : "span_id"
+    Account ||--o{ TreatmentEpisode : "owner_id"
+    Person ||--o{ TreatmentEpisode : "person_id"
+    Provider ||--o{ TreatmentEpisode : "provider_id"
+    DocumentRevision ||--o{ TreatmentEpisode : "source_document_id"
+    Account ||--o{ ExpenseLine : "owner_id"
+    TreatmentEpisode ||--o{ ExpenseLine : "episode_id"
+    FactAssertion ||--o{ ExpenseLine : "relatedness_assertion_id"
+    EvidenceSpan ||--o{ ExpenseLine : "span_id"
+    Account ||--o{ Claim : "owner_id"
+    TreatmentEpisode ||--o{ Claim : "episode_id"
+    ContractRevision ||--o{ Claim : "contract_revision_id"
+    DocumentRevision ||--o{ Claim : "settlement_document_id"
+    Claim ||--o{ Claim : "primary_claim_id"
+    Account ||--o{ ClaimLineAssessment : "owner_id"
+    Claim ||--o{ ClaimLineAssessment : "claim_id"
+    ExpenseLine ||--o{ ClaimLineAssessment : "expense_id"
+    Rule ||--o{ ClaimLineAssessment : "rule_id"
+    EvidenceSpan ||--o{ ClaimLineAssessment : "span_id"
+    ClaimLineAssessment ||--o{ ClaimLineAssessment : "supersedes_id"
+    Account ||--o{ UsageEntry : "owner_id"
+    CoverageLayer ||--o{ UsageEntry : "layer_id"
+    ClaimLineAssessment ||--o{ UsageEntry : "claim_line_id"
+    UsageEntry ||--o{ UsageEntry : "reverses_id"
+    EvidenceSpan ||--o{ UsageEntry : "source_span_id"
+    PolicyEvent ||--o{ UsageEntry : "policy_event_id"
+    ClaimPayment ||--o{ UsageEntry : "claim_payment_id"
+    CorpusRevision ||--o{ CorpusRevision : "previous_id"
+    CoverageReport ||--o{ CorpusRevision : "coverage_report_id"
+    CorpusRevision ||--o{ CorpusMember : "corpus_id"
+    Rule ||--o{ CorpusMember : "rule_id"
+    TermsRevision ||--o{ CorpusMember : "terms_id"
+    CorpusRevision ||--o{ CorpusPointer : "corpus_id"
+    Account ||--o{ SearchChunk : "owner_id"
+    DocumentRevision ||--o{ SearchChunk : "document_id"
+    CorpusRevision ||--o{ SearchChunk : "corpus_id"
+    Account ||--o{ Artifact : "owner_id"
+    Account ||--o{ Dependency : "owner_id"
+    Artifact ||--o{ Dependency : "dependent_id"
+    Artifact ||--o{ Dependency : "input_id"
+    Account ||--o{ Decision : "owner_id"
+    Conversation ||--o{ Decision : "conversation_id"
+    Turn ||--o{ Decision : "turn_id"
+    DecisionIntent ||--o{ Decision : "intent_id"
+    FactSnapshot ||--o{ Decision : "snapshot_id"
+    CorpusRevision ||--o{ Decision : "corpus_id"
+    Decision ||--o{ Decision : "supersedes_id"
+    Account ||--o{ DecisionClaim : "owner_id"
+    Decision ||--o{ DecisionClaim : "decision_id"
+    Configuration ||--o{ DecisionClaim : "candidate_configuration_id"
+    Account ||--o{ ClaimCitation : "owner_id"
+    DecisionClaim ||--o{ ClaimCitation : "claim_id"
+    EvidenceSpan ||--o{ ClaimCitation : "span_id"
+    Rule ||--o{ ClaimCitation : "rule_id"
+    Account ||--o{ Calculation : "owner_id"
+    Decision ||--o{ Calculation : "decision_id"
+    Account ||--o{ Turn : "owner_id"
+    Conversation ||--o{ Turn : "conversation_id"
+    Message ||--o{ Turn : "input_message_id"
+    FactSnapshot ||--o{ Turn : "snapshot_id"
+    Account ||--o{ TurnEvent : "owner_id"
+    Turn ||--o{ TurnEvent : "turn_id"
+    Account ||--o{ Outbox : "owner_id"
+    ModelRoute ||--o{ ModelQualification : "route_id"
+    Account ||--o{ ModelAttempt : "owner_id"
+    Turn ||--o{ ModelAttempt : "turn_id"
+    ProcessingJob ||--o{ ModelAttempt : "processing_job_id"
+    ModelQualification ||--o{ ModelAttempt : "qualification_id"
+    Account ||--o{ ProcessingJob : "owner_id"
+    DocumentRevision ||--o{ ProcessingJob : "document_id"
+    ProcessingJob ||--o{ ProcessingJob : "parent_job_id"
+    OriginalBlob ||--o{ ProcessingJob : "result_blob_id"
+    CorpusRevision ||--o{ CoverageReport : "corpus_id"
+    Insurer ||--o{ CoverageReport : "insurer_id"
+    InventoryRevision ||--o{ CoverageReport : "inventory_revision_id"
+    Account ||--o{ ReviewRecord : "owner_id"
+    Artifact ||--o{ ReviewRecord : "artifact_id"
+    Account ||--o{ ReviewRecord : "reviewer_account_id"
+    Account ||--o{ ConsentRecord : "owner_id"
+    Person ||--o{ ConsentRecord : "person_id"
+    Message ||--o{ ConsentRecord : "source_message_id"
+    EvidenceSpan ||--o{ ConsentRecord : "source_span_id"
+    Account ||--o{ DeletionRequest : "owner_id"
+    Account ||--o{ RetentionHold : "owner_id"
+    DeletionRequest ||--o{ RetentionHold : "deletion_request_id"
+    Account ||--o{ RetentionHold : "approved_by_id"
+    Account ||--o{ AuditEvent : "owner_id"
+    Account ||--o{ AuditEvent : "actor_id"
+    Account ||--o{ LegacyMapping : "owner_id"
+    OriginalBlob ||--o{ LegacyMapping : "archive_blob_id"
+    ContentType ||--o{ AuthPermission : "content_type_id"
+    Account ||--o{ AccountGroup : "user_id"
+    AuthGroup ||--o{ AccountGroup : "group_id"
+    Account ||--o{ AccountPermission : "user_id"
+    AuthPermission ||--o{ AccountPermission : "permission_id"
+    AuthGroup ||--o{ GroupPermission : "group_id"
+    AuthPermission ||--o{ GroupPermission : "permission_id"
+    Account ||--o{ RuleTable : "owner_id"
+    Rule ||--o{ RuleTable : "rule_id"
+    Account ||--o{ RuleTableCell : "owner_id"
+    RuleTable ||--o{ RuleTableCell : "table_id"
+    EvidenceSpan ||--o{ RuleTableCell : "cell_span_id"
+    Account ||--o{ ConversationReuseGrant : "owner_id"
+    Conversation ||--o{ ConversationReuseGrant : "source_conversation_id"
+    Conversation ||--o{ ConversationReuseGrant : "destination_conversation_id"
+    Message ||--o{ ConversationReuseGrant : "authorization_message_id"
+    Account ||--o{ AdminLogEntry : "user_id"
+    ContentType ||--o{ AdminLogEntry : "content_type_id"
+    Account ||--o{ ContentCopy : "owner_id"
+    Artifact ||--o{ ContentCopy : "source_artifact_id"
+    Artifact ||--o{ ContentCopy : "destination_artifact_id"
+    Account ||--o{ ExpenseAllocation : "owner_id"
+    ExpenseLine ||--o{ ExpenseAllocation : "expense_id"
+    ExpenseLine ||--o{ ExpenseAllocation : "package_parent_id"
+    FactAssertion ||--o{ ExpenseAllocation : "boundary_assertion_id"
+    EvidenceSpan ||--o{ ExpenseAllocation : "source_span_id"
+    Account ||--o{ SourceLinkObservation : "owner_id"
+    Acquisition ||--o{ SourceLinkObservation : "parent_acquisition_id"
+    SourceLocator ||--o{ SourceLinkObservation : "target_locator_id"
+    SourceLinkObservation ||--o{ SourceLinkObservation : "supersedes_id"
+    Account ||--o{ ClaimEvent : "owner_id"
+    Claim ||--o{ ClaimEvent : "claim_id"
+    TreatmentEpisode ||--o{ ClaimEvent : "episode_id"
+    ContractRevision ||--o{ ClaimEvent : "contract_revision_id"
+    EvidenceSpan ||--o{ ClaimEvent : "source_span_id"
+    Message ||--o{ ClaimEvent : "source_message_id"
+    ClaimEvent ||--o{ ClaimEvent : "related_event_id"
+    ClaimEvent ||--o{ ClaimEvent : "supersedes_id"
+    Account ||--o{ ClaimDocumentRequirement : "owner_id"
+    Claim ||--o{ ClaimDocumentRequirement : "claim_id"
+    ClaimEvent ||--o{ ClaimDocumentRequirement : "request_event_id"
+    Rule ||--o{ ClaimDocumentRequirement : "rule_id"
+    EvidenceSpan ||--o{ ClaimDocumentRequirement : "authority_span_id"
+    ClaimDocumentRequirement ||--o{ ClaimDocumentRequirement : "supersedes_id"
+    Account ||--o{ ClaimDocumentReceipt : "owner_id"
+    Claim ||--o{ ClaimDocumentReceipt : "claim_id"
+    ClaimEvent ||--o{ ClaimDocumentReceipt : "receipt_event_id"
+    ClaimDocumentRequirement ||--o{ ClaimDocumentReceipt : "requirement_id"
+    DocumentRevision ||--o{ ClaimDocumentReceipt : "document_id"
+    EvidenceSpan ||--o{ ClaimDocumentReceipt : "assessment_span_id"
+    ClaimDocumentReceipt ||--o{ ClaimDocumentReceipt : "supersedes_id"
+    Account ||--o{ ClaimPayment : "owner_id"
+    Claim ||--o{ ClaimPayment : "claim_id"
+    ClaimEvent ||--o{ ClaimPayment : "payment_event_id"
+    EvidenceSpan ||--o{ ClaimPayment : "source_span_id"
+    ClaimPayment ||--o{ ClaimPayment : "reverses_id"
+    ClaimPayment ||--o{ ClaimPayment : "supersedes_id"
+    InventoryRevision ||--o{ InventoryRevision : "previous_id"
+    InventoryRevision ||--o{ InventoryMembership : "inventory_revision_id"
+    RuleInventoryItem ||--o{ InventoryMembership : "item_id"
+    InventoryMembership ||--o{ InventoryMembership : "previous_membership_id"
+    InventoryRevision ||--o{ InventoryLineage : "inventory_revision_id"
+    InventoryMembership ||--o{ InventoryLineage : "from_membership_id"
+    InventoryMembership ||--o{ InventoryLineage : "to_membership_id"
+    InventoryMembership ||--o{ RuleInventorySupport : "membership_id"
+    Rule ||--o{ RuleInventorySupport : "rule_id"
+    RuleInventorySupport ||--o{ RuleInventorySupport : "supersedes_id"
+    CoverageReport ||--o{ CoverageReportSupport : "coverage_report_id"
+    InventoryMembership ||--o{ CoverageReportSupport : "membership_id"
+    RuleInventorySupport ||--o{ CoverageReportSupport : "support_id"
+    TermsRevision ||--o{ TermsComponent : "wrapper_terms_id"
+    Product ||--o{ TermsComponent : "component_product_id"
+    TermsRevision ||--o{ TermsComponent : "component_terms_id"
+    Rule ||--o{ TermsComponent : "selection_rule_id"
+    EvidenceSpan ||--o{ TermsComponent : "source_span_id"
+    TermsComponent ||--o{ TermsComponent : "supersedes_id"
+    Account ||--o{ ContractBundle : "owner_id"
+    ContractBundleRevision ||--o{ ContractBundle : "current_revision_id"
+    Account ||--o{ ContractBundleRevision : "owner_id"
+    ContractBundle ||--o{ ContractBundleRevision : "bundle_id"
+    Configuration ||--o{ ContractBundleRevision : "wrapper_configuration_id"
+    ContractBundleRevision ||--o{ ContractBundleRevision : "previous_id"
+    EvidenceSpan ||--o{ ContractBundleRevision : "source_span_id"
+    Account ||--o{ ContractBundleMember : "owner_id"
+    ContractBundleRevision ||--o{ ContractBundleMember : "bundle_revision_id"
+    TermsComponent ||--o{ ContractBundleMember : "terms_component_id"
+    ContractRevision ||--o{ ContractBundleMember : "contract_revision_id"
+    EvidenceSpan ||--o{ ContractBundleMember : "source_span_id"
+    FactAssertion ||--o{ ContractBundleMember : "source_fact_id"

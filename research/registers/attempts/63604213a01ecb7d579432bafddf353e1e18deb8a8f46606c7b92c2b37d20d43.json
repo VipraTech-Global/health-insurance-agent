@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T12:01:49.275875+00:00",
+  "associations": [],
+  "byte_count": 196042,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://acko-cms.ackoassets.com/faq_covid_19_bb00abdb2c.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "acko",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 350,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "079db9b69ecb36fceeb148939f51cf55b8642f5f01a16ea0309d2b0e22807343",
+  "status": "acquired",
+  "url": "https://acko-cms.ackoassets.com/faq_covid_19_bb00abdb2c.pdf"
+}

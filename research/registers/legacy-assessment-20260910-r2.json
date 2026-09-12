@@ -1,0 +1,3541 @@
+{
+  "candidate_original_associations": 8,
+  "completed_reconciliations": 0,
+  "entries": [
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "acko",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/acko/platinum-health/",
+      "legacy_insurer": "Acko",
+      "legacy_name": "Platinum Health",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "acko",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/acko/standard-health/",
+      "legacy_insurer": "Acko",
+      "legacy_name": "Standard Health",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "aditya-birla",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/aditya-birla/Activ-assured-diamond/",
+      "legacy_insurer": "Aditya Birla",
+      "legacy_name": "Activ Assured Diamond",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "aditya-birla",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/aditya-birla/Activ-care-classic/",
+      "legacy_insurer": "Aditya Birla",
+      "legacy_name": "Activ Care Classic",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "aditya-birla",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/aditya-birla/Activ-care-premier/",
+      "legacy_insurer": "Aditya Birla",
+      "legacy_name": "Activ Care Premier",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "aditya-birla",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/aditya-birla/Activ-care-standard/",
+      "legacy_insurer": "Aditya Birla",
+      "legacy_name": "Activ Care Standard",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "aditya-birla",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/aditya-birla/activ-fit-preferred/",
+      "legacy_insurer": "Aditya Birla",
+      "legacy_name": "Activ Fit Preferred",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "aditya-birla",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/aditya-birla/activ-health-platinum-enhanced/",
+      "legacy_insurer": "Aditya Birla",
+      "legacy_name": "Activ Health Platinum Enhanced",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "aditya-birla",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/aditya-birla/activ-health-platinum-essential/",
+      "legacy_insurer": "Aditya Birla",
+      "legacy_name": "Activ Health Platinum Essential",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "aditya-birla",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/aditya-birla/activ-one-max/",
+      "legacy_insurer": "Aditya Birla",
+      "legacy_name": "Activ One Max",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "aditya-birla",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/aditya-birla/activ-one-max-plus/",
+      "legacy_insurer": "Aditya Birla",
+      "legacy_name": "Activ One Max Plus",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "aditya-birla",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/aditya-birla/activ-one-nxt/",
+      "legacy_insurer": "Aditya Birla",
+      "legacy_name": "Activ One Nxt",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "aditya-birla",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/aditya-birla/activ-one-savr/",
+      "legacy_insurer": "Aditya Birla",
+      "legacy_name": "Activ One Savr",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "aditya-birla",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/aditya-birla/activ-one-vip/",
+      "legacy_insurer": "Aditya Birla",
+      "legacy_name": "Activ One Vip",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "aditya-birla",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/aditya-birla/activ-one-vip-plus/",
+      "legacy_insurer": "Aditya Birla",
+      "legacy_name": "Activ One Vip Plus",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "aditya-birla",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/aditya-birla/activ-one-vytl/",
+      "legacy_insurer": "Aditya Birla",
+      "legacy_name": "Activ One Vytl",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "aditya-birla",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/aditya-birla/aditya-birla-activ-fit-plus/",
+      "legacy_insurer": "Aditya Birla",
+      "legacy_name": "Aditya Birla Activ Fit Plus",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "aditya-birla",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/aditya-birla/super-health-plus-top-up/",
+      "legacy_insurer": "Aditya Birla",
+      "legacy_name": "Super Health Plus Top Up",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": null,
+      "issues": [
+        "Historical insurer succession or identity requires original evidence"
+      ],
+      "legacy_identity": "/health-insurance/apollo-munich/test/",
+      "legacy_insurer": "Apollo Munich",
+      "legacy_name": "Test",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_insurer_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "bajaj-general",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/bajaj-general/extra-care-plus-super-top-up/",
+      "legacy_insurer": "Bajaj General",
+      "legacy_name": "Extra Care Plus Super Top Up",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "bajaj-general",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/bajaj-general/extra-care-top-up/",
+      "legacy_insurer": "Bajaj General",
+      "legacy_name": "Extra Care Top Up",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "bajaj-general",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/bajaj-general/health-care-supreme-smart/",
+      "legacy_insurer": "Bajaj General",
+      "legacy_name": "Health Care Supreme Smart",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "bajaj-general",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/bajaj-general/health-care-supreme-ultimo/",
+      "legacy_insurer": "Bajaj General",
+      "legacy_name": "Health Care Supreme Ultimo",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "bajaj-general",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/bajaj-general/health-care-supreme-vital/",
+      "legacy_insurer": "Bajaj General",
+      "legacy_name": "Health Care Supreme Vital",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "bajaj-general",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/bajaj-general/health-ensure-family-plan/",
+      "legacy_insurer": "Bajaj General",
+      "legacy_name": "Health Ensure Family Plan",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "bajaj-general",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/bajaj-general/health-guard-gold/",
+      "legacy_insurer": "Bajaj General",
+      "legacy_name": "Health Guard Gold",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "bajaj-general",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/bajaj-general/health-guard-platinum/",
+      "legacy_insurer": "Bajaj General",
+      "legacy_name": "Health Guard Platinum",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "bajaj-general",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/bajaj-general/health-guard-silver/",
+      "legacy_insurer": "Bajaj General",
+      "legacy_name": "Health Guard Silver",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "bajaj-general",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/bajaj-general/silver-health/",
+      "legacy_insurer": "Bajaj General",
+      "legacy_name": "Silver Health",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "care",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/care/care/",
+      "legacy_insurer": "Care",
+      "legacy_name": "Care",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "care",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/care/care-advantage/",
+      "legacy_insurer": "Care",
+      "legacy_name": "Care Advantage",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "care",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/care/care-classic/",
+      "legacy_insurer": "Care",
+      "legacy_name": "Care Classic",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "care",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/care/care-freedom-plan/",
+      "legacy_insurer": "Care",
+      "legacy_name": "Care Freedom Plan",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "care",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/care/care-heart/",
+      "legacy_insurer": "Care",
+      "legacy_name": "Care Heart",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "care",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/care/care-plus-complete/",
+      "legacy_insurer": "Care",
+      "legacy_name": "Care Plus Complete",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "care",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/care/care-plus-youth/",
+      "legacy_insurer": "Care",
+      "legacy_name": "Care Plus Youth",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "care",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/care/care-senior/",
+      "legacy_insurer": "Care",
+      "legacy_name": "Care Senior",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [
+        {
+          "association_status": "candidate_identity_not_final_mapping",
+          "observed_product_name": "Care Supreme",
+          "observed_uin": "CHIHLIP27061V032627",
+          "page": 1,
+          "reason": "Original product name/UIN available; legacy listing date, exact version and variant applicability still unestablished",
+          "source_sha256": "1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2"
+        }
+      ],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "care",
+      "issues": [
+        "Requires insurer-original identity and scope evidence",
+        "Candidate insurer original located; legacy historical version and exact configuration require reconciliation"
+      ],
+      "legacy_identity": "/health-insurance/care/care-supreme/",
+      "legacy_insurer": "Care Health Insurance Limited",
+      "legacy_name": "Care Supreme",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "care",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/care/care-supreme-senior-premium/",
+      "legacy_insurer": "Care",
+      "legacy_name": "Care Supreme Senior Premium",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "care",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/care/care-supreme-senior-super/",
+      "legacy_insurer": "Care",
+      "legacy_name": "Care Supreme Senior Super",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "care",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/care/care-supreme-super-saver/",
+      "legacy_insurer": "Care",
+      "legacy_name": "Care Supreme Super Saver",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "care",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/care/care-supreme-value-for-money/",
+      "legacy_insurer": "Care",
+      "legacy_name": "Care Supreme Value For Money",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "care",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/care/care-ultimate/",
+      "legacy_insurer": "Care",
+      "legacy_name": "Care Ultimate",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "care",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/care/enhance-super-top-up/",
+      "legacy_insurer": "Care",
+      "legacy_name": "Enhance Super Top Up",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "care",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/care/joy-today/",
+      "legacy_insurer": "Care",
+      "legacy_name": "Joy Today",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "care",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/care/joy-tomorrow/",
+      "legacy_insurer": "Care",
+      "legacy_name": "Joy Tomorrow",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "care",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/care/senior-health-advantage/",
+      "legacy_insurer": "Care",
+      "legacy_name": "Senior Health Advantage",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "care",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/care/supreme-enhance-super-top-up/",
+      "legacy_insurer": "Care",
+      "legacy_name": "Supreme Enhance Super Top Up",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "go-digit",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/digit/double-wallet/",
+      "legacy_insurer": "Digit",
+      "legacy_name": "Double Wallet",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "go-digit",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/digit/infinity-wallet/",
+      "legacy_insurer": "Digit",
+      "legacy_name": "Infinity Wallet",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "go-digit",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/digit/worldwide-treatment/",
+      "legacy_insurer": "Digit",
+      "legacy_name": "Worldwide Treatment",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "hdfc-ergo",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/hdfc-ergo/easy-health-exclusive/",
+      "legacy_insurer": "Hdfc Ergo",
+      "legacy_name": "Easy Health Exclusive",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "hdfc-ergo",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/hdfc-ergo/easy-health-premium/",
+      "legacy_insurer": "Hdfc Ergo",
+      "legacy_name": "Easy Health Premium",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "hdfc-ergo",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/hdfc-ergo/easy-health-standard/",
+      "legacy_insurer": "Hdfc Ergo",
+      "legacy_name": "Easy Health Standard",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "hdfc-ergo",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/hdfc-ergo/energy-gold/",
+      "legacy_insurer": "Hdfc Ergo",
+      "legacy_name": "Energy Gold",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "hdfc-ergo",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/hdfc-ergo/energy-silver/",
+      "legacy_insurer": "Hdfc Ergo",
+      "legacy_name": "Energy Silver",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "hdfc-ergo",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/hdfc-ergo/equicover/",
+      "legacy_insurer": "Hdfc Ergo",
+      "legacy_name": "Equicover",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "hdfc-ergo",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/hdfc-ergo/health-wallet/",
+      "legacy_insurer": "Hdfc Ergo",
+      "legacy_name": "Health Wallet",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [
+        {
+          "association": "Candidate matching name with punctuation differences; legacy listing does not identify UIN or historical version. Not a completed reconciliation.",
+          "physical_page": 2,
+          "product_name_literal": "my:health Koti Suraksha",
+          "source_sha256": "9bdf3e5379a494ffe61af7a07496bb0e7333124da45ec72fcf21583435d0352e",
+          "table_row": 22,
+          "uin_literal": "HDFHLIP21131V012021"
+        }
+      ],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "hdfc-ergo",
+      "issues": [
+        "Legacy name has a manually identified original candidate; exact historical version, variants and original-bundle reconciliation still required."
+      ],
+      "legacy_identity": "/health-insurance/hdfc-ergo/myhealth-koti-suraksha/",
+      "legacy_insurer": "Hdfc Ergo",
+      "legacy_name": "Myhealth Koti Suraksha",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "candidate_original_identified_version_unresolved",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "hdfc-ergo",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/hdfc-ergo/myhealth-medisure-super-top-up/",
+      "legacy_insurer": "Hdfc Ergo",
+      "legacy_name": "Myhealth Medisure Super Top Up",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "hdfc-ergo",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/hdfc-ergo/myhealth-suraksha-gold/",
+      "legacy_insurer": "Hdfc Ergo",
+      "legacy_name": "Myhealth Suraksha Gold",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "hdfc-ergo",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/hdfc-ergo/myhealth-suraksha-platinum/",
+      "legacy_insurer": "Hdfc Ergo",
+      "legacy_name": "Myhealth Suraksha Platinum",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "hdfc-ergo",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/hdfc-ergo/myhealth-suraksha-silver/",
+      "legacy_insurer": "Hdfc Ergo",
+      "legacy_name": "Myhealth Suraksha Silver",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "hdfc-ergo",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/hdfc-ergo/optima-lite/",
+      "legacy_insurer": "Hdfc Ergo",
+      "legacy_name": "Optima Lite",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "hdfc-ergo",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/hdfc-ergo/optima-restore/",
+      "legacy_insurer": "Hdfc Ergo",
+      "legacy_name": "Optima Restore",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "hdfc-ergo",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/hdfc-ergo/optima-secure/",
+      "legacy_insurer": "Hdfc Ergo",
+      "legacy_name": "Optima Secure",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "hdfc-ergo",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/hdfc-ergo/optima-secure-global/",
+      "legacy_insurer": "Hdfc Ergo",
+      "legacy_name": "Optima Secure Global",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "hdfc-ergo",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/hdfc-ergo/optima-secure-global-plus/",
+      "legacy_insurer": "Hdfc Ergo",
+      "legacy_name": "Optima Secure Global Plus",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "hdfc-ergo",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/hdfc-ergo/optima-secure-plus/",
+      "legacy_insurer": "Hdfc Ergo",
+      "legacy_name": "Optima Secure Plus",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "hdfc-ergo",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/hdfc-ergo/optima-senior/",
+      "legacy_insurer": "Hdfc Ergo",
+      "legacy_name": "Optima Senior",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "hdfc-ergo",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/hdfc-ergo/optima-super-secure/",
+      "legacy_insurer": "Hdfc Ergo",
+      "legacy_name": "Optima Super Secure",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "icici-lombard",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/icici-lombard/elevate/",
+      "legacy_insurer": "Icici Lombard",
+      "legacy_name": "Elevate",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "icici-lombard",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/icici-lombard/golden-shield/",
+      "legacy_insurer": "Icici Lombard",
+      "legacy_name": "Golden Shield",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "icici-lombard",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/icici-lombard/health-advantedge/",
+      "legacy_insurer": "Icici Lombard",
+      "legacy_name": "Health Advantedge",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "icici-lombard",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/icici-lombard/health-booster-super-top-up/",
+      "legacy_insurer": "Icici Lombard",
+      "legacy_name": "Health Booster Super Top Up",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "icici-lombard",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/icici-lombard/health-elite-plus/",
+      "legacy_insurer": "Icici Lombard",
+      "legacy_name": "Health Elite Plus",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "icici-lombard",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/icici-lombard/health-shield-360/",
+      "legacy_insurer": "Icici Lombard",
+      "legacy_name": "Health Shield 360",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "icici-lombard",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/icici-lombard/health-shield-360-retail/",
+      "legacy_insurer": "Icici Lombard",
+      "legacy_name": "Health Shield 360 Retail",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "icici-lombard",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/icici-lombard/ihealth/",
+      "legacy_insurer": "Icici Lombard",
+      "legacy_name": "Ihealth",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "icici-lombard",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/icici-lombard/ihealth-plus/",
+      "legacy_insurer": "Icici Lombard",
+      "legacy_name": "Ihealth Plus",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "icici-lombard",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/icici-lombard/max-protect-classic/",
+      "legacy_insurer": "Icici Lombard",
+      "legacy_name": "Max Protect Classic",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "icici-lombard",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/icici-lombard/max-protect-premium/",
+      "legacy_insurer": "Icici Lombard",
+      "legacy_name": "Max Protect Premium",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": null,
+      "issues": [
+        "Legacy insurer label falls outside the selected 20-insurer scope"
+      ],
+      "legacy_identity": "/health-insurance/iffco-tokio/family-health-protector/",
+      "legacy_insurer": "Iffco Tokio",
+      "legacy_name": "Family Health Protector",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "outside_selected_insurers",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": null,
+      "issues": [
+        "Legacy insurer label falls outside the selected 20-insurer scope"
+      ],
+      "legacy_identity": "/health-insurance/iffco-tokio/individual-health-protector/",
+      "legacy_insurer": "Iffco Tokio",
+      "legacy_name": "Individual Health Protector",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "outside_selected_insurers",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "manipalcigna",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/manipal-cigna/lifetime-health/",
+      "legacy_insurer": "Manipal Cigna",
+      "legacy_name": "Lifetime Health",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "manipalcigna",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/manipal-cigna/lifetime-health-global/",
+      "legacy_insurer": "Manipal Cigna",
+      "legacy_name": "Lifetime Health Global",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "manipalcigna",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/manipal-cigna/prohealth-accumulate/",
+      "legacy_insurer": "Manipal Cigna",
+      "legacy_name": "Prohealth Accumulate",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "manipalcigna",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/manipal-cigna/prohealth-plus/",
+      "legacy_insurer": "Manipal Cigna",
+      "legacy_name": "Prohealth Plus",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "manipalcigna",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/manipal-cigna/prohealth-preferred/",
+      "legacy_insurer": "Manipal Cigna",
+      "legacy_name": "Prohealth Preferred",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "manipalcigna",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/manipal-cigna/prohealth-premier/",
+      "legacy_insurer": "Manipal Cigna",
+      "legacy_name": "Prohealth Premier",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "manipalcigna",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/manipal-cigna/prohealth-prime-active/",
+      "legacy_insurer": "Manipal Cigna",
+      "legacy_name": "Prohealth Prime Active",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "manipalcigna",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/manipal-cigna/prohealth-prime-advantage/",
+      "legacy_insurer": "Manipal Cigna",
+      "legacy_name": "Prohealth Prime Advantage",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "manipalcigna",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/manipal-cigna/prohealth-prime-protect/",
+      "legacy_insurer": "Manipal Cigna",
+      "legacy_name": "Prohealth Prime Protect",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "manipalcigna",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/manipal-cigna/prohealth-prime-senior-classic/",
+      "legacy_insurer": "Manipal Cigna",
+      "legacy_name": "Prohealth Prime Senior Classic",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "manipalcigna",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/manipal-cigna/prohealth-prime-senior-elite/",
+      "legacy_insurer": "Manipal Cigna",
+      "legacy_name": "Prohealth Prime Senior Elite",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "manipalcigna",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/manipal-cigna/prohealth-protect/",
+      "legacy_insurer": "Manipal Cigna",
+      "legacy_name": "Prohealth Protect",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "manipalcigna",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/manipal-cigna/prohealth-select/",
+      "legacy_insurer": "Manipal Cigna",
+      "legacy_name": "Prohealth Select",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "manipalcigna",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/manipal-cigna/securehealth/",
+      "legacy_insurer": "Manipal Cigna",
+      "legacy_name": "Securehealth",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "manipalcigna",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/manipal-cigna/super-top-up/",
+      "legacy_insurer": "Manipal Cigna",
+      "legacy_name": "Super Top Up",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "national",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/national-insurance/national-mediclaim-plus-policy/",
+      "legacy_insurer": "National Insurance",
+      "legacy_name": "National Mediclaim Plus Policy",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "national",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/national-insurance/national-mediclaim-policy/",
+      "legacy_insurer": "National Insurance",
+      "legacy_name": "National Mediclaim Policy",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "national",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/national-insurance/national-parivar-mediclaim-plus-policy/",
+      "legacy_insurer": "National Insurance",
+      "legacy_name": "National Parivar Mediclaim Plus Policy",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "national",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/national-insurance/national-parivar-mediclaim-policy/",
+      "legacy_insurer": "National Insurance",
+      "legacy_name": "National Parivar Mediclaim Policy",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "national",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/national-insurance/national-senior-citizen-mediclaim-policy/",
+      "legacy_insurer": "National Insurance",
+      "legacy_name": "National Senior Citizen Mediclaim Policy",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "national",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/national-insurance/super-top-up-mediclaim/",
+      "legacy_insurer": "National Insurance",
+      "legacy_name": "Super Top Up Mediclaim",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": null,
+      "issues": [
+        "Legacy insurer label falls outside the selected 20-insurer scope"
+      ],
+      "legacy_identity": "/health-insurance/navi/navi-health/",
+      "legacy_insurer": "Navi",
+      "legacy_name": "Navi Health",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "outside_selected_insurers",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "new-india",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/new-india-assurance/floater-mediclaim/",
+      "legacy_insurer": "New India Assurance",
+      "legacy_name": "Floater Mediclaim",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "new-india",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/new-india-assurance/mediclaim/",
+      "legacy_insurer": "New India Assurance",
+      "legacy_name": "Mediclaim",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "new-india",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/new-india-assurance/new-india-top-up-mediclaim/",
+      "legacy_insurer": "New India Assurance",
+      "legacy_name": "New India Top Up Mediclaim",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "new-india",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/new-india-assurance/premier-mediclaim/",
+      "legacy_insurer": "New India Assurance",
+      "legacy_name": "Premier Mediclaim",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "new-india",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/new-india-assurance/senior-citizen-mediclaim/",
+      "legacy_insurer": "New India Assurance",
+      "legacy_name": "Senior Citizen Mediclaim",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "new-india",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/new-india-assurance/sixty-plus-mediclaim/",
+      "legacy_insurer": "New India Assurance",
+      "legacy_name": "Sixty Plus Mediclaim",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "new-india",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/new-india-assurance/yuva-bharat-health/",
+      "legacy_insurer": "New India Assurance",
+      "legacy_name": "Yuva Bharat Health",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "new-india",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/new-india-assurance/yuva-bharat-health-gold/",
+      "legacy_insurer": "New India Assurance",
+      "legacy_name": "Yuva Bharat Health Gold",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "new-india",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/new-india-assurance/yuva-bharat-health-platinum/",
+      "legacy_insurer": "New India Assurance",
+      "legacy_name": "Yuva Bharat Health Platinum",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "niva-bupa",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/niva-bupa/aspire-diamond-plus/",
+      "legacy_insurer": "Niva Bupa",
+      "legacy_name": "Aspire Diamond Plus",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "niva-bupa",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/niva-bupa/aspire-gold-plus/",
+      "legacy_insurer": "Niva Bupa",
+      "legacy_name": "Aspire Gold Plus",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "niva-bupa",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/niva-bupa/aspire-platinum-plus/",
+      "legacy_insurer": "Niva Bupa",
+      "legacy_name": "Aspire Platinum Plus",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "niva-bupa",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/niva-bupa/aspire-titanium-plus/",
+      "legacy_insurer": "Niva Bupa",
+      "legacy_name": "Aspire Titanium Plus",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "niva-bupa",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/niva-bupa/goactive/",
+      "legacy_insurer": "Niva Bupa",
+      "legacy_name": "Goactive",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "niva-bupa",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/niva-bupa/health-companion/",
+      "legacy_insurer": "Niva Bupa",
+      "legacy_name": "Health Companion",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "niva-bupa",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/niva-bupa/health-premia-gold/",
+      "legacy_insurer": "Niva Bupa",
+      "legacy_name": "Health Premia Gold",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "niva-bupa",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/niva-bupa/health-premia-platinum/",
+      "legacy_insurer": "Niva Bupa",
+      "legacy_name": "Health Premia Platinum",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "niva-bupa",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/niva-bupa/health-premia-silver/",
+      "legacy_insurer": "Niva Bupa",
+      "legacy_name": "Health Premia Silver",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "niva-bupa",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/niva-bupa/health-pulse-classic/",
+      "legacy_insurer": "Niva Bupa",
+      "legacy_name": "Health Pulse Classic",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "niva-bupa",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/niva-bupa/health-pulse-enhanced/",
+      "legacy_insurer": "Niva Bupa",
+      "legacy_name": "Health Pulse Enhanced",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "niva-bupa",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/niva-bupa/health-recharge-super-top-up/",
+      "legacy_insurer": "Niva Bupa",
+      "legacy_name": "Health Recharge Super Top Up",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "niva-bupa",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/niva-bupa/heartbeat-gold/",
+      "legacy_insurer": "Niva Bupa",
+      "legacy_name": "Heartbeat Gold",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "niva-bupa",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/niva-bupa/heartbeat-platinum/",
+      "legacy_insurer": "Niva Bupa",
+      "legacy_name": "Heartbeat Platinum",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "niva-bupa",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/niva-bupa/reassure/",
+      "legacy_insurer": "Niva Bupa",
+      "legacy_name": "Reassure",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "niva-bupa",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/niva-bupa/reassure-2-bronze/",
+      "legacy_insurer": "Niva Bupa",
+      "legacy_name": "Reassure 2 Bronze",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "niva-bupa",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/niva-bupa/reassure-2-platinum/",
+      "legacy_insurer": "Niva Bupa",
+      "legacy_name": "Reassure 2 Platinum",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "niva-bupa",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/niva-bupa/reassure-2-titanium/",
+      "legacy_insurer": "Niva Bupa",
+      "legacy_name": "Reassure 2 Titanium",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "niva-bupa",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/niva-bupa/senior-first-gold/",
+      "legacy_insurer": "Niva Bupa",
+      "legacy_name": "Senior First Gold",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "niva-bupa",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/niva-bupa/senior-first-platinum/",
+      "legacy_insurer": "Niva Bupa",
+      "legacy_name": "Senior First Platinum",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "oriental",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/oriental-insurance/happy-family-floater-policy-diamond/",
+      "legacy_insurer": "Oriental Insurance",
+      "legacy_name": "Happy Family Floater Policy Diamond",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "oriental",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/oriental-insurance/happy-family-floater-policy-gold/",
+      "legacy_insurer": "Oriental Insurance",
+      "legacy_name": "Happy Family Floater Policy Gold",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "oriental",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/oriental-insurance/happy-family-floater-policy-platinum/",
+      "legacy_insurer": "Oriental Insurance",
+      "legacy_name": "Happy Family Floater Policy Platinum",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "oriental",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/oriental-insurance/happy-family-floater-policy-silver/",
+      "legacy_insurer": "Oriental Insurance",
+      "legacy_name": "Happy Family Floater Policy Silver",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "oriental",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/oriental-insurance/health-of-privileged-elders/",
+      "legacy_insurer": "Oriental Insurance",
+      "legacy_name": "Health Of Privileged Elders",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "oriental",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/oriental-insurance/mediclaim-insurance-policy/",
+      "legacy_insurer": "Oriental Insurance",
+      "legacy_name": "Mediclaim Insurance Policy",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "oriental",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/oriental-insurance/super-health-top-up/",
+      "legacy_insurer": "Oriental Insurance",
+      "legacy_name": "Super Health Top Up",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": null,
+      "issues": [
+        "Legacy insurer label falls outside the selected 20-insurer scope"
+      ],
+      "legacy_identity": "/health-insurance/reliance/health-gain-plus/",
+      "legacy_insurer": "Reliance",
+      "legacy_name": "Health Gain Plus",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "outside_selected_insurers",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": null,
+      "issues": [
+        "Legacy insurer label falls outside the selected 20-insurer scope"
+      ],
+      "legacy_identity": "/health-insurance/reliance/health-gain-power/",
+      "legacy_insurer": "Reliance",
+      "legacy_name": "Health Gain Power",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "outside_selected_insurers",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": null,
+      "issues": [
+        "Legacy insurer label falls outside the selected 20-insurer scope"
+      ],
+      "legacy_identity": "/health-insurance/reliance/health-gain-prime/",
+      "legacy_insurer": "Reliance",
+      "legacy_name": "Health Gain Prime",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "outside_selected_insurers",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": null,
+      "issues": [
+        "Legacy insurer label falls outside the selected 20-insurer scope"
+      ],
+      "legacy_identity": "/health-insurance/reliance/health-infinity/",
+      "legacy_insurer": "Reliance",
+      "legacy_name": "Health Infinity",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "outside_selected_insurers",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": null,
+      "issues": [
+        "Legacy insurer label falls outside the selected 20-insurer scope"
+      ],
+      "legacy_identity": "/health-insurance/reliance/super-top-up/",
+      "legacy_insurer": "Reliance",
+      "legacy_name": "Super Top Up",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "outside_selected_insurers",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": null,
+      "issues": [
+        "Legacy insurer label falls outside the selected 20-insurer scope"
+      ],
+      "legacy_identity": "/health-insurance/royal-sundaram/advanced-top-up/",
+      "legacy_insurer": "Royal Sundaram",
+      "legacy_name": "Advanced Top Up",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "outside_selected_insurers",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": null,
+      "issues": [
+        "Legacy insurer label falls outside the selected 20-insurer scope"
+      ],
+      "legacy_identity": "/health-insurance/royal-sundaram/family-plus/",
+      "legacy_insurer": "Royal Sundaram",
+      "legacy_name": "Family Plus",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "outside_selected_insurers",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": null,
+      "issues": [
+        "Legacy insurer label falls outside the selected 20-insurer scope"
+      ],
+      "legacy_identity": "/health-insurance/royal-sundaram/lifeline-classic/",
+      "legacy_insurer": "Royal Sundaram",
+      "legacy_name": "Lifeline Classic",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "outside_selected_insurers",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": null,
+      "issues": [
+        "Legacy insurer label falls outside the selected 20-insurer scope"
+      ],
+      "legacy_identity": "/health-insurance/royal-sundaram/lifeline-elite/",
+      "legacy_insurer": "Royal Sundaram",
+      "legacy_name": "Lifeline Elite",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "outside_selected_insurers",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": null,
+      "issues": [
+        "Legacy insurer label falls outside the selected 20-insurer scope"
+      ],
+      "legacy_identity": "/health-insurance/royal-sundaram/lifeline-supreme/",
+      "legacy_insurer": "Royal Sundaram",
+      "legacy_name": "Lifeline Supreme",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "outside_selected_insurers",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": null,
+      "issues": [
+        "Legacy insurer label falls outside the selected 20-insurer scope"
+      ],
+      "legacy_identity": "/health-insurance/royal-sundaram/multiplier-health/",
+      "legacy_insurer": "Royal Sundaram",
+      "legacy_name": "Multiplier Health",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "outside_selected_insurers",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": null,
+      "issues": [
+        "Legacy insurer label falls outside the selected 20-insurer scope"
+      ],
+      "legacy_identity": "/health-insurance/royal-sundaram/nextgen/",
+      "legacy_insurer": "Royal Sundaram",
+      "legacy_name": "Nextgen",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "outside_selected_insurers",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "sbi-general",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/sbi/arogya-plus/",
+      "legacy_insurer": "Sbi",
+      "legacy_name": "Arogya Plus",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "sbi-general",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/sbi/arogya-premier/",
+      "legacy_insurer": "Sbi",
+      "legacy_name": "Arogya Premier",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "sbi-general",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/sbi/arogya-supreme-plus/",
+      "legacy_insurer": "Sbi",
+      "legacy_name": "Arogya Supreme Plus",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "sbi-general",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/sbi/arogya-supreme-premium/",
+      "legacy_insurer": "Sbi",
+      "legacy_name": "Arogya Supreme Premium",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "sbi-general",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/sbi/arogya-supreme-pro/",
+      "legacy_insurer": "Sbi",
+      "legacy_name": "Arogya Supreme Pro",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "sbi-general",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/sbi/arogya-top-up/",
+      "legacy_insurer": "Sbi",
+      "legacy_name": "Arogya Top Up",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "sbi-general",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/sbi/retail-health-policy/",
+      "legacy_insurer": "Sbi",
+      "legacy_name": "Retail Health Policy",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "sbi-general",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/sbi/super-health-elite/",
+      "legacy_insurer": "Sbi",
+      "legacy_name": "Super Health Elite",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "sbi-general",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/sbi/super-health-platinum/",
+      "legacy_insurer": "Sbi",
+      "legacy_name": "Super Health Platinum",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "sbi-general",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/sbi/super-health-platinum-infinite/",
+      "legacy_insurer": "Sbi",
+      "legacy_name": "Super Health Platinum Infinite",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "sbi-general",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/sbi/super-health-premier/",
+      "legacy_insurer": "Sbi",
+      "legacy_name": "Super Health Premier",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "sbi-general",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/sbi/super-health-prime/",
+      "legacy_insurer": "Sbi",
+      "legacy_name": "Super Health Prime",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [
+        {
+          "association_status": "candidate_identity_not_final_mapping",
+          "observed_product_name": "Star Health Assure Insurance Policy",
+          "observed_uin": "SHAHLIP26048V032526",
+          "page": 1,
+          "reason": "Original product name/UIN available; legacy listing date, exact version and variant applicability still unestablished",
+          "source_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a"
+        }
+      ],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "star",
+      "issues": [
+        "Requires insurer-original identity and scope evidence",
+        "Candidate insurer original located; legacy historical version and exact configuration require reconciliation"
+      ],
+      "legacy_identity": "/health-insurance/star-health/assure/",
+      "legacy_insurer": "Star Health",
+      "legacy_name": "Assure",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "star",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/star-health/cancer-care-platinum/",
+      "legacy_insurer": "Star Health",
+      "legacy_name": "Cancer Care Platinum",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "star",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/star-health/cardiac-care-platinum/",
+      "legacy_insurer": "Star Health",
+      "legacy_name": "Cardiac Care Platinum",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "star",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/star-health/comprehensive/",
+      "legacy_insurer": "Star Health",
+      "legacy_name": "Comprehensive",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [
+        {
+          "association_status": "candidate_identity_not_final_mapping",
+          "observed_product_name": "Diabetes Safe Insurance Policy",
+          "observed_uin": "SHAHLIP23081V082223",
+          "page": 1,
+          "reason": "Original product name/UIN available; legacy listing date, exact version and variant applicability still unestablished",
+          "source_sha256": "42919be2abea044626a58b39f884f92da2364e0b505da04dc69a3168dece06a5"
+        }
+      ],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "star",
+      "issues": [
+        "Requires insurer-original identity and scope evidence",
+        "Candidate insurer original located; legacy historical version and exact configuration require reconciliation"
+      ],
+      "legacy_identity": "/health-insurance/star-health/diabetes-safe/",
+      "legacy_insurer": "Star Health",
+      "legacy_name": "Diabetes Safe",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "star",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/star-health/family-health-optima/",
+      "legacy_insurer": "Star Health",
+      "legacy_name": "Family Health Optima",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "star",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/star-health/health-gain/",
+      "legacy_insurer": "Star Health",
+      "legacy_name": "Health Gain",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "star",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/star-health/health-premier/",
+      "legacy_insurer": "Star Health",
+      "legacy_name": "Health Premier",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "star",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/star-health/medi-classic/",
+      "legacy_insurer": "Star Health",
+      "legacy_name": "Medi Classic",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "star",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/star-health/medi-classic-gold/",
+      "legacy_insurer": "Star Health",
+      "legacy_name": "Medi Classic Gold",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [
+        {
+          "association_status": "candidate_identity_not_final_mapping",
+          "observed_product_name": "Senior Citizens Red Carpet Health Insurance Policy",
+          "observed_uin": "SHAHLIP26041V082526",
+          "page": 1,
+          "reason": "Original product name/UIN available; legacy listing date, exact version and variant applicability still unestablished",
+          "source_sha256": "116fa331f5cf4d24199ce99b7c4658887810bf7a0bd27fb47affe37d51a13dfc"
+        }
+      ],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "star",
+      "issues": [
+        "Requires insurer-original identity and scope evidence",
+        "Candidate insurer original located; legacy historical version and exact configuration require reconciliation"
+      ],
+      "legacy_identity": "/health-insurance/star-health/red-carpet-senior-citizens/",
+      "legacy_insurer": "Star Health",
+      "legacy_name": "Red Carpet Senior Citizens",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "star",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/star-health/smart-health-pro/",
+      "legacy_insurer": "Star Health",
+      "legacy_name": "Smart Health Pro",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [
+        {
+          "association_status": "candidate_identity_not_final_mapping",
+          "observed_product_name": "Star Special Care",
+          "observed_uin": "SHAHLIP21243V022021",
+          "page": 1,
+          "reason": "Original product name/UIN available; legacy listing date, exact version and variant applicability still unestablished",
+          "source_sha256": "c5a8a553c2c2a61d5e8fb3025dabdf5821a19e03e26371cf8b0a29f5420ae554"
+        }
+      ],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "star",
+      "issues": [
+        "Requires insurer-original identity and scope evidence",
+        "Candidate insurer original located; legacy historical version and exact configuration require reconciliation"
+      ],
+      "legacy_identity": "/health-insurance/star-health/special-care/",
+      "legacy_insurer": "Star Health",
+      "legacy_name": "Special Care",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "star",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/star-health/special-care-gold/",
+      "legacy_insurer": "Star Health",
+      "legacy_name": "Special Care Gold",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [
+        {
+          "association_status": "candidate_identity_not_final_mapping",
+          "observed_product_name": "Super Star",
+          "observed_uin": "SHAHLIP27049V022627",
+          "page": 1,
+          "reason": "Original product name/UIN available; legacy listing date, exact version and variant applicability still unestablished",
+          "source_sha256": "9b9e4ae76ad54ed77449011b4357eb5cbaa3081d9dc83f88e9c91d65b816e609"
+        }
+      ],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "star",
+      "issues": [
+        "Requires insurer-original identity and scope evidence",
+        "Candidate insurer original located; legacy historical version and exact configuration require reconciliation"
+      ],
+      "legacy_identity": "/health-insurance/star-health/super-star/",
+      "legacy_insurer": "Star Health",
+      "legacy_name": "Super Star",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [
+        {
+          "association_status": "candidate_identity_not_final_mapping",
+          "observed_product_name": "Star Super Surplus (Floater) Insurance Policy - Gold Plan",
+          "observed_uin": "SHAHLIP22034V062122",
+          "page": 1,
+          "reason": "Original product name/UIN available; legacy listing date, exact version and variant applicability still unestablished",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31"
+        }
+      ],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "star",
+      "issues": [
+        "Requires insurer-original identity and scope evidence",
+        "Candidate insurer original located; legacy historical version and exact configuration require reconciliation"
+      ],
+      "legacy_identity": "/health-insurance/star-health/super-surplus-gold/",
+      "legacy_insurer": "Star Health",
+      "legacy_name": "Super Surplus Gold",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "star",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/star-health/women-care/",
+      "legacy_insurer": "Star Health",
+      "legacy_name": "Women Care",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "star",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/star-health/youngstar/",
+      "legacy_insurer": "Star Health",
+      "legacy_name": "Youngstar",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "tata-aig",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/tata-aig/elder-care/",
+      "legacy_insurer": "Tata Aig",
+      "legacy_name": "Elder Care",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "tata-aig",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/tata-aig/health-supercharge/",
+      "legacy_insurer": "Tata Aig",
+      "legacy_name": "Health Supercharge",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "tata-aig",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/tata-aig/medicare/",
+      "legacy_insurer": "Tata Aig",
+      "legacy_name": "Medicare",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "tata-aig",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/tata-aig/medicare-lite/",
+      "legacy_insurer": "Tata Aig",
+      "legacy_name": "Medicare Lite",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "tata-aig",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/tata-aig/medicare-plus-super-top-up/",
+      "legacy_insurer": "Tata Aig",
+      "legacy_name": "Medicare Plus Super Top Up",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "tata-aig",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/tata-aig/medicare-premier/",
+      "legacy_insurer": "Tata Aig",
+      "legacy_name": "Medicare Premier",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "tata-aig",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/tata-aig/medicare-protect/",
+      "legacy_insurer": "Tata Aig",
+      "legacy_name": "Medicare Protect",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "tata-aig",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/tata-aig/medicare-senior/",
+      "legacy_insurer": "Tata Aig",
+      "legacy_name": "Medicare Senior",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "united-india",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/united-india/family-medicare/",
+      "legacy_insurer": "United India",
+      "legacy_name": "Family Medicare",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "united-india",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/united-india/individual-gold-plan/",
+      "legacy_insurer": "United India",
+      "legacy_name": "Individual Gold Plan",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "united-india",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/united-india/individual-platinum-plan/",
+      "legacy_insurer": "United India",
+      "legacy_name": "Individual Platinum Plan",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "united-india",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/united-india/medicare-super-top-up/",
+      "legacy_insurer": "United India",
+      "legacy_name": "Medicare Super Top Up",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": "united-india",
+      "issues": [
+        "Requires insurer-original identity and scope evidence"
+      ],
+      "legacy_identity": "/health-insurance/united-india/senior-citizen-plan/",
+      "legacy_insurer": "United India",
+      "legacy_name": "Senior Citizen Plan",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "unresolved_product_identity",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": null,
+      "issues": [
+        "Legacy insurer label falls outside the selected 20-insurer scope"
+      ],
+      "legacy_identity": "/health-insurance/universal-sompo/complete-healthcare-basic/",
+      "legacy_insurer": "Universal Sompo",
+      "legacy_name": "Complete Healthcare Basic",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "outside_selected_insurers",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": null,
+      "issues": [
+        "Legacy insurer label falls outside the selected 20-insurer scope"
+      ],
+      "legacy_identity": "/health-insurance/universal-sompo/complete-healthcare-essential/",
+      "legacy_insurer": "Universal Sompo",
+      "legacy_name": "Complete Healthcare Essential",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "outside_selected_insurers",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": null,
+      "issues": [
+        "Legacy insurer label falls outside the selected 20-insurer scope"
+      ],
+      "legacy_identity": "/health-insurance/universal-sompo/complete-healthcare-privilege/",
+      "legacy_insurer": "Universal Sompo",
+      "legacy_name": "Complete Healthcare Privilege",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "outside_selected_insurers",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": null,
+      "issues": [
+        "Legacy insurer label falls outside the selected 20-insurer scope"
+      ],
+      "legacy_identity": "/health-insurance/zuno/health-insurance-gold/",
+      "legacy_insurer": "Zuno",
+      "legacy_name": "Health Insurance Gold",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "outside_selected_insurers",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": null,
+      "issues": [
+        "Legacy insurer label falls outside the selected 20-insurer scope"
+      ],
+      "legacy_identity": "/health-insurance/zuno/health-insurance-platinum/",
+      "legacy_insurer": "Zuno",
+      "legacy_name": "Health Insurance Platinum",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "outside_selected_insurers",
+      "variant_id": null
+    },
+    {
+      "candidate_originals": [],
+      "evidence": [],
+      "format_version": 1,
+      "insurer_id": null,
+      "issues": [
+        "Legacy insurer label falls outside the selected 20-insurer scope"
+      ],
+      "legacy_identity": "/health-insurance/zuno/health-insurance-silver/",
+      "legacy_insurer": "Zuno",
+      "legacy_name": "Health Insurance Silver",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "product_version_id": null,
+      "reconciliation_complete": false,
+      "status": "outside_selected_insurers",
+      "variant_id": null
+    }
+  ],
+  "entry_count": 203,
+  "exact_legacy_identity_set_preserved": true,
+  "generated_at": "2026-09-10T13:26:50.657125+00:00",
+  "previous_revision": "registers/legacy-assessment-20260910.json",
+  "source_sha256": "6813dc4af9bca52c6b1a50775482188bc194149a5f95b88c5235d32ae59f39fc"
+}

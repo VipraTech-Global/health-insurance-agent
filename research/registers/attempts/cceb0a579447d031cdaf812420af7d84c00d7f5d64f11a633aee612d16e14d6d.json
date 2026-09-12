@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:38:38.466704+00:00",
+  "associations": [],
+  "byte_count": 3547,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/captcha?url=//pages/doc/premium_chart/Health%20Pulse.pdf?v=1.0",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1353,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "5d1df32250ce4619eb8a524e4996373a84de078179836e9e6da4e8afb4138ba2",
+  "status": "failed",
+  "url": "https://transactions.nivabupa.com/pages/doc/premium_chart/Health Pulse.pdf?v=1.0"
+}

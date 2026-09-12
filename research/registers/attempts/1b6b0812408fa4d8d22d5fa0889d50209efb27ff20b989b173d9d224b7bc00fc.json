@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:59:20.164316+00:00",
+  "associations": [],
+  "byte_count": 243,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/xml",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.acko.com/wp-content/uploads/2020/04/Arogya-Sanjeevani-Policy-Acko-General-Insurance-Limited.pdf",
+  "format_version": 1,
+  "http_status": 403,
+  "insurer_id": "acko",
+  "issues": [
+    "http_403"
+  ],
+  "language": "unknown",
+  "latency_ms": 133,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "16fdc94c86aecdb61ce054ef787a2f5b5ee9625860d977eaade006bbd1687289",
+  "status": "failed",
+  "url": "https://www.acko.com/wp-content/uploads/2020/04/Arogya-Sanjeevani-Policy-Acko-General-Insurance-Limited.pdf"
+}

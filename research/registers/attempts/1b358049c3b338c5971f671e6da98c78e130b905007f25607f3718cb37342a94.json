@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:56:30.443694+00:00",
+  "associations": [],
+  "byte_count": 151347,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/mediplus_tariff_sheet_43880caa1d.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 204,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "db3e8e570bb1a01e5299ff4b6f331c2a356299f1f97552514f1237c41e0c4216",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/mediplus_tariff_sheet_43880caa1d.pdf"
+}

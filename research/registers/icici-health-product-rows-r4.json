@@ -1,0 +1,272 @@
+{
+  "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+  "method": "Explicit named product rows read from original. Physical p16 visually checked to verify date/status columns. No benefit terms inferred.",
+  "rows_by_family": {
+    "MaxProtect": [
+      {
+        "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+        "physical_page": 14,
+        "row_number": "843",
+        "uin": "ICIHLIP24084V012324",
+        "name": "MaxProtect",
+        "offer_from_as_printed": "4-Sep-2023",
+        "offer_to_as_printed": "30-Sep-2024",
+        "status_as_printed": "Withdrawn",
+        "passage": "843 ICIHLIP24084V012324 MaxProtect 4-Sep-2023 30-Sep-2024 Withdrawn",
+        "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+      },
+      {
+        "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+        "physical_page": 16,
+        "row_number": "975",
+        "uin": "ICIHLIP25040V022425",
+        "name": "MaxProtect",
+        "offer_from_as_printed": "1-Oct-2024",
+        "offer_to_as_printed": null,
+        "status_as_printed": "Active",
+        "passage": "975 ICIHLIP25040V022425 MaxProtect 1-Oct-2024 Active",
+        "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+      }
+    ],
+    "Golden shield": [
+      {
+        "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+        "physical_page": 13,
+        "row_number": "781",
+        "uin": "ICIHLIP22012V012223",
+        "name": "Golden shield",
+        "offer_from_as_printed": "1-Jul-2022",
+        "offer_to_as_printed": "30-Sep-2024",
+        "status_as_printed": "Withdrawn",
+        "passage": "781 ICIHLIP22012V012223 Golden shield 1-Jul-2022 30-Sep-2024 Withdrawn",
+        "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+      },
+      {
+        "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+        "physical_page": 16,
+        "row_number": "977",
+        "uin": "ICIHLIP25042V022425",
+        "name": "Golden shield",
+        "offer_from_as_printed": "1-Oct-2024",
+        "offer_to_as_printed": null,
+        "status_as_printed": "Active",
+        "passage": "977 ICIHLIP25042V022425 Golden shield 1-Oct-2024 Active",
+        "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+      }
+    ],
+    "Elevate": [
+      {
+        "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+        "physical_page": 14,
+        "row_number": "867",
+        "uin": "ICIHLIP25031V012425",
+        "name": "Elevate",
+        "offer_from_as_printed": "5-Jun-2024",
+        "offer_to_as_printed": "30-Sep-2024",
+        "status_as_printed": "Withdrawn",
+        "passage": "867 ICIHLIP25031V012425 Elevate 5-Jun-2024 30-Sep-2024 Withdrawn",
+        "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+      },
+      {
+        "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+        "physical_page": 16,
+        "row_number": "974",
+        "uin": "ICIHLIP25039V022425",
+        "name": "Elevate",
+        "offer_from_as_printed": "1-Oct-2024",
+        "offer_to_as_printed": "18-Dec-2024",
+        "status_as_printed": "Withdrawn",
+        "passage": "974 ICIHLIP25039V022425 Elevate 1-Oct-2024 18-Dec-2024 Withdrawn",
+        "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+      },
+      {
+        "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+        "physical_page": 16,
+        "row_number": "986",
+        "uin": "ICIHLIP25047V032425",
+        "name": "Elevate",
+        "offer_from_as_printed": "19-Dec-2024",
+        "offer_to_as_printed": "28.02.2025",
+        "status_as_printed": "Withdrawn",
+        "passage": "986 ICIHLIP25047V032425 Elevate 19-Dec-2024 28.02.2025 Withdrawn",
+        "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+      },
+      {
+        "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+        "physical_page": 16,
+        "row_number": "992",
+        "uin": "ICIHLIP25048V042425",
+        "name": "Elevate",
+        "offer_from_as_printed": "1-Mar-2025",
+        "offer_to_as_printed": "23.12.2025",
+        "status_as_printed": "Withdrawn",
+        "passage": "992 ICIHLIP25048V042425 Elevate 1-Mar-2025 23.12.2025 Withdrawn",
+        "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+      },
+      {
+        "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+        "physical_page": 17,
+        "row_number": "1043",
+        "uin": "ICIHLIP26054V052526",
+        "name": "Elevate",
+        "offer_from_as_printed": "24-Dec-2025",
+        "offer_to_as_printed": "20-Jul-2026",
+        "status_as_printed": "Withdrawn",
+        "passage": "1043 ICIHLIP26054V052526 Elevate 24-Dec-2025 20-Jul-2026 Withdrawn",
+        "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+      },
+      {
+        "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+        "physical_page": 19,
+        "row_number": "1159",
+        "uin": "ICIHLIP27057V062627",
+        "name": "Elevate",
+        "offer_from_as_printed": "21-Jul-2026",
+        "offer_to_as_printed": null,
+        "status_as_printed": "Active",
+        "passage": "1159 ICIHLIP27057V062627 Elevate 21-Jul-2026 Active",
+        "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+      }
+    ],
+    "Health Shield 360 Retail": [
+      {
+        "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+        "physical_page": 14,
+        "row_number": "827",
+        "uin": "ICIHLIP23165V012223",
+        "name": "Health Shield 360 Retail",
+        "offer_from_as_printed": "14-Feb-2023",
+        "offer_to_as_printed": "30-Sep-2024",
+        "status_as_printed": "Withdrawn",
+        "passage": "827 ICIHLIP23165V012223 Health Shield 360 Retail 14-Feb-2023 30-Sep-2024 Withdrawn",
+        "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+      },
+      {
+        "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+        "physical_page": 16,
+        "row_number": "972",
+        "uin": "ICIHLIP25037V022425",
+        "name": "Health Shield 360 Retail",
+        "offer_from_as_printed": "1-Oct-2024",
+        "offer_to_as_printed": null,
+        "status_as_printed": "Active",
+        "passage": "972 ICIHLIP25037V022425 Health Shield 360 Retail 1-Oct-2024 Active",
+        "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+      }
+    ],
+    "Health AdvantEdge": [
+      {
+        "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+        "physical_page": 14,
+        "row_number": "864",
+        "uin": "ICIHLIP24182V042324",
+        "name": "Health AdvantEdge",
+        "offer_from_as_printed": "10-Apr-2024",
+        "offer_to_as_printed": "3-Oct-2024",
+        "status_as_printed": "Withdrawn",
+        "passage": "864 ICIHLIP24182V042324 Health AdvantEdge 10-Apr-2024 3-Oct-2024 Withdrawn",
+        "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+      },
+      {
+        "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+        "physical_page": 16,
+        "row_number": "980",
+        "uin": "ICIHLIP25043V052425",
+        "name": "Health AdvantEdge",
+        "offer_from_as_printed": "4-Oct-2024",
+        "offer_to_as_printed": "25-Jun-2026",
+        "status_as_printed": "Withdrawn",
+        "passage": "980 ICIHLIP25043V052425 Health AdvantEdge 4-Oct-2024 25-Jun-2026 Withdrawn",
+        "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+      },
+      {
+        "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+        "physical_page": 18,
+        "row_number": "1099",
+        "uin": "ICIHLIP27056V062627",
+        "name": "Health AdvantEdge",
+        "offer_from_as_printed": "26-Jun-2026",
+        "offer_to_as_printed": null,
+        "status_as_printed": "Active",
+        "passage": "1099 ICIHLIP27056V062627 Health AdvantEdge 26-Jun-2026 Active",
+        "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+      }
+    ],
+    "Health Shield 360": [
+      {
+        "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+        "physical_page": 12,
+        "row_number": "704",
+        "uin": "ICIHLGP22083V022122",
+        "name": "Health Shield 360",
+        "offer_from_as_printed": "3-Mar-2021",
+        "offer_to_as_printed": "30-Sep-2024",
+        "status_as_printed": "Withdrawn",
+        "passage": "704 ICIHLGP22083V022122 Health Shield 360 3-Mar-2021 30-Sep-2024 Withdrawn",
+        "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+      },
+      {
+        "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+        "physical_page": 16,
+        "row_number": "978",
+        "uin": "ICIHLGP25044V032425",
+        "name": "Health Shield 360",
+        "offer_from_as_printed": "1-Oct-2024",
+        "offer_to_as_printed": "09.03.2025",
+        "status_as_printed": "Withdrawn",
+        "passage": "978 ICIHLGP25044V032425 Health Shield 360 1-Oct-2024 09.03.2025 Withdrawn",
+        "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+      },
+      {
+        "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+        "physical_page": 17,
+        "row_number": "996",
+        "uin": "ICIHLGP25049V042425",
+        "name": "Health Shield 360",
+        "offer_from_as_printed": "10-Mar-2025",
+        "offer_to_as_printed": "12.09.2025",
+        "status_as_printed": "Withdrawn",
+        "passage": "996 ICIHLGP25049V042425 Health Shield 360 10-Mar-2025 12.09.2025 Withdrawn",
+        "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+      },
+      {
+        "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+        "physical_page": 17,
+        "row_number": "1041",
+        "uin": "ICIHLGP26051V052526",
+        "name": "Health Shield 360",
+        "offer_from_as_printed": "13-Sep-2025",
+        "offer_to_as_printed": null,
+        "status_as_printed": "Active",
+        "passage": "1041 ICIHLGP26051V052526 Health Shield 360 13-Sep-2025 Active",
+        "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+      }
+    ],
+    "Health Booster": [
+      {
+        "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+        "physical_page": 10,
+        "row_number": "606",
+        "uin": "ICIHLIP22100V032122",
+        "name": "Health Booster",
+        "offer_from_as_printed": "15-Apr-2016",
+        "offer_to_as_printed": "30-Sep-2024",
+        "status_as_printed": "Withdrawn",
+        "passage": "606 ICIHLIP22100V032122 Health Booster 15-Apr-2016 30-Sep-2024 Withdrawn",
+        "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+      },
+      {
+        "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+        "physical_page": 16,
+        "row_number": "973",
+        "uin": "ICIHLIP25038V042425",
+        "name": "Health Booster",
+        "offer_from_as_printed": "1-Oct-2024",
+        "offer_to_as_printed": null,
+        "status_as_printed": "Active",
+        "passage": "973 ICIHLIP25038V042425 Health Booster 1-Oct-2024 Active",
+        "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:59:16.003736+00:00",
+  "associations": [],
+  "byte_count": 475037,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/ProspectusandFAQs-EnhancedCataractLimitRider_.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1021,
+  "linking_url": "https://www.newindia.co.in/health-insurance/enhance-cataract-benefit-rider",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "3da7664d43607f848a2bd22d928ef0bbe7752aa638fc0eff244bac1e9e6ab54e",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/ProspectusandFAQs-EnhancedCataractLimitRider_.pdf"
+}

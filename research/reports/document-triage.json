@@ -1,0 +1,30 @@
+{
+  "all_preserved_objects": {
+    "pdf": 2311,
+    "scanned": 2754,
+    "verified_non_pdf": 443
+  },
+  "design_ready": false,
+  "independent_rule_denominator": null,
+  "input_hashes": {
+    "attempts": "fb50e113b5a74e284e4982af696644918c19136dd1f1edba5097589e3437872f",
+    "pdf_object_names": "b90594e620933aa435b1c19e38b681714eb756b8098b68abcc3e15cc54dbdb4a"
+  },
+  "objects_considered": 2311,
+  "provenance_status": {
+    "acquisition_recorded": 2310,
+    "requires_import_reconciliation": 1
+  },
+  "reading_status": {
+    "no_text_requires_visual_or_ocr": 42,
+    "text_preview_only": 2269
+  },
+  "resolved_scope_count": 0,
+  "signals_nonexclusive": {
+    "fixed_benefit_or_mixed_candidate": 668,
+    "medical_expense_candidate": 1219,
+    "other_business_candidate": 211,
+    "travel_or_mixed_candidate": 81
+  },
+  "version": "original-document-triage/1"
+}

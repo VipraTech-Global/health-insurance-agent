@@ -1,0 +1,102 @@
+{
+  "new_original_pdfs": 6,
+  "new_wordings": 5,
+  "new_supporting_cis": 1,
+  "updated_legacy_rows": [
+    {
+      "legacy_identity": "/health-insurance/icici-lombard/elevate/",
+      "family": "Elevate",
+      "variant": null,
+      "wording_sha256": "46d61cbee18e10a56dca3ff4924290a5f48565d71eb91cce7e079d48015a61d8",
+      "observed_wording_uins": [
+        "ICIHLIP25048V042425"
+      ],
+      "source_issues": []
+    },
+    {
+      "legacy_identity": "/health-insurance/icici-lombard/golden-shield/",
+      "family": "Golden Shield",
+      "variant": null,
+      "wording_sha256": "f27174a30be8ab9ee04d6e68d09953916bdb2ce997ae1add19070f0f8372d6c1",
+      "observed_wording_uins": [
+        "ICIHLIP25042V022425"
+      ],
+      "source_issues": [
+        {
+          "issue": "Base cover contains both A and B inpatient room/ICU structures on physical pages 10\u201312. The controlling selection between A and B is not established by the selected pages.",
+          "effect": "Do not publish one universal Golden Shield room cap; require benefit schedule and connected selection provisions."
+        }
+      ]
+    },
+    {
+      "legacy_identity": "/health-insurance/icici-lombard/health-booster-super-top-up/",
+      "family": "Health Booster - Super Top Up",
+      "variant": null,
+      "wording_sha256": "deb0b11e2e33a2251ab4e60af70f2f719cc585eec1a287f1c30bd6dec8c60a23",
+      "observed_wording_uins": [
+        "ICIHLIP16001V011516"
+      ],
+      "source_issues": [
+        {
+          "issue": "Old UIN ICIHLIP16001V011516 remains a preserved historical wording candidate. PDF text reader emitted Invalid least number of objects reading page offset hints table.",
+          "effect": "Original opens and the cited selected regions are readable, but full reading and per-page checks remain required; no current-product or aggregation claim follows from title alone."
+        }
+      ]
+    },
+    {
+      "legacy_identity": "/health-insurance/icici-lombard/health-shield-360-retail/",
+      "family": "Health Shield 360 Retail",
+      "variant": null,
+      "wording_sha256": "ca59dc74948afa30b33a43596378735430bc1b286670af16063fc959101abad0",
+      "observed_wording_uins": [
+        "ICIHLIP23165V012223"
+      ],
+      "source_issues": []
+    },
+    {
+      "legacy_identity": "/health-insurance/icici-lombard/max-protect-classic/",
+      "family": "MaxProtect",
+      "variant": "Classic",
+      "wording_sha256": "5a53a3a7c460df4f64de980d76d11a0c76cfbee5d84f7b2104d4de1082f75348",
+      "observed_wording_uins": [
+        "ICIHLIP24084V012324"
+      ],
+      "source_issues": [
+        {
+          "issue": "Preserved wording is observed UIN ICIHLIP24084V012324; prior register lists a later UIN.",
+          "effect": "Classic and Premium are explicitly named by this original; neither its terms nor UIN can be silently attributed to the later register edition."
+        }
+      ]
+    },
+    {
+      "legacy_identity": "/health-insurance/icici-lombard/max-protect-premium/",
+      "family": "MaxProtect",
+      "variant": "Premium",
+      "wording_sha256": "5a53a3a7c460df4f64de980d76d11a0c76cfbee5d84f7b2104d4de1082f75348",
+      "observed_wording_uins": [
+        "ICIHLIP24084V012324"
+      ],
+      "source_issues": [
+        {
+          "issue": "Preserved wording is observed UIN ICIHLIP24084V012324; prior register lists a later UIN.",
+          "effect": "Classic and Premium are explicitly named by this original; neither its terms nor UIN can be silently attributed to the later register edition."
+        }
+      ]
+    }
+  ],
+  "selected_rows_with_wording_candidate_previous": 108,
+  "selected_rows_with_wording_candidate_now": 114,
+  "selected_rows_without_wording_candidate_now": 67,
+  "historical_bundles_complete": 0,
+  "full_original_rule_inventory_complete": false,
+  "health_shield_group_not_substituted_with_retail": true,
+  "ihealth_not_substituted_with_ihealth_plus": true,
+  "manual_pdf_scope_total": 145,
+  "manual_nonpdf_scope_total": 5,
+  "new_information_requirements": [
+    "Retain multiple A/B inpatient structures under one wording UIN until schedule selects the controlling branch.",
+    "Track old wording UIN separately from later product-register assertions.",
+    "Preserve complete table headers and Classic/Premium optional benefit scope."
+  ],
+  "evaluation_material_used": false
+}

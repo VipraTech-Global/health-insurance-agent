@@ -1,0 +1,322 @@
+{
+  "commencement_interpretation": "2024-04-01; later of recorded Gazette publication and1April, pending independent legal review",
+  "complete_rule_inventory": false,
+  "current_law_completeness": "Later amendments not fully reconciled. This retained 2024 instrument supplies historical requirements, not a declaration of all current law.",
+  "format_version": 1,
+  "gazette_signature_date": "2024-03-22",
+  "generated_at": "2026-09-10T13:15:30.855907+00:00",
+  "independent_rule_denominator": null,
+  "notification_date": "2024-03-20",
+  "original_ref": "IRDAI/Reg/8/202/2024",
+  "physical_pages": 39,
+  "reading_coverage": "English general commencement/definitions pages21-22 and health schedule pages36-38; other life/general schedules outside this targeted reading. Physical page39 is text-empty, not inferred blank without visual check.",
+  "rules": [
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 21,
+          "passage": "whichever is later",
+          "section": "I.1(2)",
+          "source_sha256": "7127b069a5468ef8333f6ecaae6b77149026a7322feb2b1bdbc5c7ebce69ecbb",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Commencement is later of Gazette publication and1April2024; requires both dates.",
+      "rule_id": "original-irdai-products-2024-001",
+      "section": "I.1(2)",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 36,
+          "passage": "or grace period",
+          "section": "III.1.2",
+          "source_sha256": "7127b069a5468ef8333f6ecaae6b77149026a7322feb2b1bdbc5c7ebce69ecbb",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Break classification requires checking payment against the applicable grace period, not only renewal due date.",
+      "rule_id": "original-irdai-products-2024-002",
+      "section": "III.1.2",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 36,
+          "passage": "Coverage need not be available",
+          "section": "III.1.3",
+          "source_sha256": "7127b069a5468ef8333f6ecaae6b77149026a7322feb2b1bdbc5c7ebce69ecbb",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Unpaid renewal grace protects continuity without necessarily providing claim cover; instalment-during-term proviso must be joined.",
+      "rule_id": "original-irdai-products-2024-003",
+      "section": "III.1.3",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 36,
+          "passage": "shall offer coverage",
+          "section": "III.1.3 proviso",
+          "source_sha256": "7127b069a5468ef8333f6ecaae6b77149026a7322feb2b1bdbc5c7ebce69ecbb",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Instalments during policy term have compulsory grace coverage; annual renewal is a different event.",
+      "rule_id": "original-irdai-products-2024-004",
+      "section": "III.1.3 proviso",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 36,
+          "passage": "not more than 36 months",
+          "section": "III.1.6",
+          "source_sha256": "7127b069a5468ef8333f6ecaae6b77149026a7322feb2b1bdbc5c7ebce69ecbb",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "PED lookback is anchored to diagnosis, medical advice or treatment before commencement; it is different from prospective waiting.",
+      "rule_id": "original-irdai-products-2024-005",
+      "section": "III.1.6",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 36,
+          "passage": "except due to an accident",
+          "section": "III.1.7",
+          "source_sha256": "7127b069a5468ef8333f6ecaae6b77149026a7322feb2b1bdbc5c7ebce69ecbb",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Specific waiting has maximum36months, an accident exception and continuous-renewal condition.",
+      "rule_id": "original-irdai-products-2024-006",
+      "section": "III.1.7",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 37,
+          "passage": "compensates an insured for the loss",
+          "section": "III.2.1.1",
+          "source_sha256": "7127b069a5468ef8333f6ecaae6b77149026a7322feb2b1bdbc5c7ebce69ecbb",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Indemnity payment is loss-based and differs from event-triggered fixed benefit.",
+      "rule_id": "original-irdai-products-2024-007",
+      "section": "III.2.1.1",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 37,
+          "passage": "Premium shall remain unchanged for the policy term.",
+          "section": "III.4.1",
+          "source_sha256": "7127b069a5468ef8333f6ecaae6b77149026a7322feb2b1bdbc5c7ebce69ecbb",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Policy term and instalment frequency are separate; a multiyear term is not repeated annual repricing.",
+      "rule_id": "original-irdai-products-2024-008",
+      "section": "III.4.1",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 37,
+          "passage": "maximum up to 36",
+          "section": "III.7",
+          "source_sha256": "7127b069a5468ef8333f6ecaae6b77149026a7322feb2b1bdbc5c7ebce69ecbb",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Disclosed PED maximum36months of continuous coverage; overseas-travel exception explicitly retained.",
+      "rule_id": "original-irdai-products-2024-009",
+      "section": "III.7",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 37,
+          "passage": "sixty continuous months",
+          "section": "III.8",
+          "source_sha256": "7127b069a5468ef8333f6ecaae6b77149026a7322feb2b1bdbc5c7ebce69ecbb",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Moratorium contestability is distinct from waiting periods and excludes established fraud.",
+      "rule_id": "original-irdai-products-2024-010",
+      "section": "III.8",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 38,
+          "passage": "only on the enhanced limits",
+          "section": "III.8 continuation",
+          "source_sha256": "7127b069a5468ef8333f6ecaae6b77149026a7322feb2b1bdbc5c7ebce69ecbb",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Enhanced amount has its own60month moratorium clock.",
+      "rule_id": "original-irdai-products-2024-011",
+      "section": "III.8 continuation",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 38,
+          "passage": "except for benefit based policies",
+          "section": "III.9.2",
+          "source_sha256": "7127b069a5468ef8333f6ecaae6b77149026a7322feb2b1bdbc5c7ebce69ecbb",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Renewal after claims has exception for benefit policies terminating upon covered benefit payment.",
+      "rule_id": "original-irdai-products-2024-012",
+      "section": "III.9.2",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 38,
+          "passage": "without considering such condonation as a break",
+          "section": "III.9.3",
+          "source_sha256": "7127b069a5468ef8333f6ecaae6b77149026a7322feb2b1bdbc5c7ebce69ecbb",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Renewal within grace is not a continuity break.",
+      "rule_id": "original-irdai-products-2024-013",
+      "section": "III.9.3",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 38,
+          "passage": "at portfolio and not based upon any",
+          "section": "III.9.4",
+          "source_sha256": "7127b069a5468ef8333f6ecaae6b77149026a7322feb2b1bdbc5c7ebce69ecbb",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Individual renewal claim loading is prohibited; portfolio changes and good-claims discount are separate.",
+      "rule_id": "original-irdai-products-2024-014",
+      "section": "III.9.4",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 38,
+          "passage": "where there is no change in sum insured",
+          "section": "III.9.5",
+          "source_sha256": "7127b069a5468ef8333f6ecaae6b77149026a7322feb2b1bdbc5c7ebce69ecbb",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "No fresh underwriting for unchanged SI renewal; possible recognition of improved risk for removal of loading.",
+      "rule_id": "original-irdai-products-2024-015",
+      "section": "III.9.5",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 38,
+          "passage": "not continuously covered for 36 months",
+          "section": "III.10.1",
+          "source_sha256": "7127b069a5468ef8333f6ecaae6b77149026a7322feb2b1bdbc5c7ebce69ecbb",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Migration underwriting permission depends on continuous36months and previous sum-insured/benefit scope; PA/travel excluded.",
+      "rule_id": "original-irdai-products-2024-016",
+      "section": "III.10.1",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 38,
+          "passage": "Board approved underwriting policy",
+          "section": "III.10.2",
+          "source_sha256": "7127b069a5468ef8333f6ecaae6b77149026a7322feb2b1bdbc5c7ebce69ecbb",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Portability is subject to insurer underwriting policy, previousSI/benefits, and PA/travel exclusions; right to apply is not automatic acceptance.",
+      "rule_id": "original-irdai-products-2024-017",
+      "section": "III.10.2",
+      "status": "inventoried_not_independently_reviewed"
+    }
+  ],
+  "source_sha256": "7127b069a5468ef8333f6ecaae6b77149026a7322feb2b1bdbc5c7ebce69ecbb"
+}

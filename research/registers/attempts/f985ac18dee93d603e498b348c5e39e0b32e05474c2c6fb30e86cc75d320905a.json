@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:57:20.254230+00:00",
+  "associations": [],
+  "byte_count": 454762,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/atmanirbhar-health-policy/Premium%20Chart%20Atmanirbhar%20Health%20Policy.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 6694,
+  "linking_url": "https://www.newindia.co.in/health-insurance/atmanirbhar-health-policy",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "e0a1b593f51301318ae26cadb1eb1dbec85ad6068d643ecdecab0ff67ae55fe6",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/atmanirbhar-health-policy/Premium Chart Atmanirbhar Health Policy.pdf"
+}

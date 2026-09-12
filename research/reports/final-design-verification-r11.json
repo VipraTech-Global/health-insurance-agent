@@ -1,0 +1,98 @@
+{
+  "revision": "discussion-r11",
+  "generated_at_utc": "2026-09-12T09:03:31.002318+00:00",
+  "status": "passed",
+  "scope": "Structural verification of the user-approved Batch 4 product, policy-version, document-membership, variant and option design. No Django models, migrations, PostgreSQL runtime constraints or complete-design approval claimed.",
+  "checks": [
+    {
+      "check": "99 unique application entities",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "976 unique application fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "298 FK relationships match dictionary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all FK targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "relationship ledger exactly covers FK fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "approved five-model Batch 4 present with exact fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "superseded Batch 4 entities removed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "approved redundant fields absent",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "case and supplementary field targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "fixed 400 case map retained as 200 reference and 200 evaluation-safe projections",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "r11 reverse trace covers every field exactly",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "r11 trace input hashes match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "additional-case dictionary hash matches",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all JSON field contracts resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Batch 4 approval and overall design boundary recorded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "live design uses PolicyVersion vocabulary",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 16,
+  "failed": 0,
+  "application_entities": 99,
+  "application_fields": 976,
+  "foreign_keys": 298,
+  "batch1_approval": "explicit user approval on 2026-09-11",
+  "batch2_approval": "explicit user approval on 2026-09-11",
+  "batch3_approval": "explicit user approval on 2026-09-12",
+  "batch4_approval": "explicit user approval on 2026-09-12",
+  "overall_design_approval": false
+}

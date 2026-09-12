@@ -1,0 +1,25 @@
+{
+  "format_version": 1,
+  "component_version": "research-acquisition/2",
+  "insurer_id": "icici-lombard",
+  "url": "https://www.icicilombard.com/docs/default-source/downloads/website-list-of-products.pdf",
+  "linking_url": "https://www.icicilombard.com/health-insurance/elevate-health-policy?opt=elevate&source=nav",
+  "acquired_at": "2026-09-10T14:20:48.288188+00:00",
+  "status": "failed",
+  "issues": [
+    "http_403"
+  ],
+  "sha256": "2c3d4ff62f5d6828085668333526970b9e079e7d6c0689a406cf4c53adacfbee",
+  "page_count": null,
+  "document_type": "unclassified",
+  "language": "unknown",
+  "associations": [],
+  "effective_from": null,
+  "effective_to": null,
+  "review_status": "not_reviewed",
+  "http_status": 403,
+  "final_url": "https://www.icicilombard.com/docs/default-source/downloads/website-list-of-products.pdf",
+  "byte_count": 462,
+  "content_type": "text/html",
+  "latency_ms": 97
+}

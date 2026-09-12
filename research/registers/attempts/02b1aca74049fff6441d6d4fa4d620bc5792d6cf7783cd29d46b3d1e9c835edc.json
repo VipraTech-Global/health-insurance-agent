@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:52:32.817884+00:00",
+  "associations": [],
+  "byte_count": 4532759,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.galaxyhealth.com/assets/preloaded/galaxy-guardian-brochure.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "galaxy",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 3507,
+  "linking_url": "https://www.galaxyhealth.com/",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "ed12f995529e73f498dc16289addb5c6778bebd6c4ac544243fad2986025eec4",
+  "status": "acquired",
+  "url": "https://www.galaxyhealth.com/assets/preloaded/galaxy-guardian-brochure.pdf"
+}

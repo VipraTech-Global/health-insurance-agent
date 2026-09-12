@@ -1,0 +1,540 @@
+{
+  "revision": "discussion-r7",
+  "generated_at_utc": "2026-09-11T02:58:22.777724+00:00",
+  "status": "passed",
+  "scope": "Offline proposal, traceability, JSON shape, source hashes, link consistency and pilot source-preservation verification. No models, migrations, runtime constraints, adviser acceptance, complete source reconciliation or deployment claimed.",
+  "checks": [
+    {
+      "check": "98 unique entities",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "1011 unique fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "field metadata and known requirement basis",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "entity constraints and indexes explicit",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "28 requirement groups",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "321 FK rows exactly match dictionary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "every FK target exists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "relationship enforcement metadata retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "52 JSON definitions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "JSON metaschema valid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "JSON field contracts resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "400 unique safe case maps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "200 reference and 200 evaluation maps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all reference cases have follow-up requirement links",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "requirement-level field targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all trace input hashes current",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "nine supplementary cases remain outside fixed400",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "supplemental field targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "supplemental dictionary fingerprint current",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "supplemental assessment hashes current",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "canonical200 unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all200followups and56calculations retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "80source regions reproduced or visually rechecked",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all20readable follow-up families present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all13pilot source fingerprints unchanged",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "benchmark proposal totals retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "valid bundle consequence",
+      "passed": true,
+      "detail": {
+        "expected_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "valid full rule",
+      "passed": true,
+      "detail": {
+        "expected_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "unknown refund quantity",
+      "passed": true,
+      "detail": {
+        "expected_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "reject invalid trigger_action",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "'cancel_now' is not one of ['free_look_cancellation']"
+        ]
+      }
+    },
+    {
+      "check": "reject invalid trigger_component_slots",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "[] should be non-empty"
+        ]
+      }
+    },
+    {
+      "check": "reject invalid affected_component_slots",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "['health', 'health'] has non-unique elements"
+        ]
+      }
+    },
+    {
+      "check": "reject invalid reinstatement",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "'certain' is not one of ['prohibited', 'conditional', 'unknown']"
+        ]
+      }
+    },
+    {
+      "check": "reject invalid trigger_component_slots",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "'bad slot' does not match '^[a-z][a-z0-9_]{0,79}$'"
+        ]
+      }
+    },
+    {
+      "check": "reject invalid individual_action_allowed",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "'false' is not of type 'boolean'"
+        ]
+      }
+    },
+    {
+      "check": "reject missing individual_action_allowed",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "'individual_action_allowed' is a required property"
+        ]
+      }
+    },
+    {
+      "check": "reject missing new_proposal_required",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "'new_proposal_required' is a required property"
+        ]
+      }
+    },
+    {
+      "check": "reject missing scope",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "'scope' is a required property"
+        ]
+      }
+    },
+    {
+      "check": "reject person scope",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "'contract_bundle' was expected"
+        ]
+      }
+    },
+    {
+      "check": "reject execution property",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "Additional properties are not allowed ('execute' was unexpected)"
+        ]
+      }
+    },
+    {
+      "check": "unknown event party valid",
+      "passed": true,
+      "detail": {
+        "expected_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "invented event party invalid",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "{'kind': 'insurer', 'id': 'not-a-uuid'} is not valid under any of the given schemas"
+        ]
+      }
+    },
+    {
+      "check": "cancellation and refund stages complete as proposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "seal and underlying policy guards retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "every scenario family has 10 cases in each split",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "case requirement IDs resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "requirement reference examples resolve including supplemental IDs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "every field has nonempty requirement provenance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all 1011 reverse field traces match declared basis",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "reverse field map input hashes current",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "reverse map case IDs refer to correct safe split",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "evaluation map has safe-only keys and no private content flag",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "embedded FK metadata exactly matches relationship ledger",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "readable dictionary has exactly every entity and field once",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "changed field validations appear in readable dictionary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "membership parent lock and fresh READ COMMITTED validation explicit",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "payment parent lock and logical revision identity explicit",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "policy-event linkage uses actual target types",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "comprehensive encryption and untrusted reader protocol present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "every internal JSON schema reference resolves",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "source object totals reconcile success/failure/imports",
+      "passed": true,
+      "detail": {
+        "with_acquired": 2601,
+        "failed_only": 328,
+        "no_attempt": 13
+      }
+    },
+    {
+      "check": "current source object bytes still match all 2942 recorded hashes",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all local current-package links resolve excluding two generated outputs",
+      "passed": true,
+      "detail": {
+        "targets": 228,
+        "missing": []
+      }
+    },
+    {
+      "check": "final proposal includes fixed approval and acceptance boundaries",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "simple guide names all 98 application entities",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "simple guide names all 36 benchmark entities",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "simple guide room calculation recomputes exactly",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "simple guide local links resolve",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 68,
+  "failed": 0,
+  "application_entities": 98,
+  "application_fields": 1011,
+  "foreign_keys": 321,
+  "json_definitions": 52,
+  "reference_cases": 200,
+  "evaluation_safe_maps": 200,
+  "supplementary_cases": 9,
+  "source_accounting": {
+    "with_acquired": 2601,
+    "failed_only": 328,
+    "no_attempt": 13
+  },
+  "review_coverage": {
+    "local_personas": [
+      "coherence",
+      "feasibility",
+      "product",
+      "design",
+      "scope",
+      "security",
+      "adversarial"
+    ],
+    "local_agent_contexts": 3,
+    "initial_database_findings_resolved": 4,
+    "additional_event_link_wording_corrected": true,
+    "database_recheck": "Reviewer confirmed original four fixes and combi constraints; final target name correction checked by author against actual FK types. No runtime qualification.",
+    "security_recheck": "Reviewer confirmed comprehensive at-rest and reader-isolation contracts; no remaining material contradictions in that narrow recheck.",
+    "cross_model": [
+      {
+        "lens": "product-lens",
+        "model_actual": "claude-opus-5",
+        "independence_verified": true,
+        "finding_count": 5,
+        "scope": "Prior README only; no linked files or private evaluation bodies provided"
+      },
+      {
+        "lens": "security-lens",
+        "model_actual": "claude-opus-5",
+        "independence_verified": true,
+        "finding_count": 5,
+        "scope": "Prior README only; no linked files or private evaluation bodies provided"
+      },
+      {
+        "lens": "adversarial",
+        "model_actual": "claude-opus-5",
+        "independence_verified": true,
+        "finding_count": 6,
+        "scope": "Prior README only; no linked files or private evaluation bodies provided"
+      },
+      {
+        "lens": "whole-doc",
+        "model_actual": "claude-opus-5",
+        "independence_verified": true,
+        "finding_count": 6,
+        "scope": "Prior README only; no linked files or private evaluation bodies provided"
+      }
+    ],
+    "scope_limit": "Document review only. Last80 reference follow-ups, source inventory closure, benchmark isolation and runtime acceptance remain unfinished."
+  },
+  "evaluation_inputs_read": [
+    "reports/evaluation-safe-summary.json",
+    "reports/evaluation-information-requirements.json"
+  ],
+  "input_sha256": {
+    "design/additional-case-field-map.json": "ce2920d21fd505ad50aa768cd422e17006cd478b04984417272f602ff3d29a14",
+    "design/benchmark-storage-fields.json": "e59ebe1b9f7cdf8a187a667440791ce07b9132b4ffed0945a283718eb8434d54",
+    "design/case-requirement-field-map.json": "2341c07caed87f4d2d07fecbf018f8f4f68f57f3fd4f471bf461b1fcac892441",
+    "design/combi-design-change-r6.json": "6658f3841a711ff92b29b59017ebc7a3e1a5869c6e6d820f005cdccd0a0bd008",
+    "design/combi-worked-records-r6.json": "140d4655a6574d6ae83c33ed1aa7a5b5508edc1b38c7020f297b7ef8e0154cc9",
+    "design/dependency-metadata-check.json": "dbc53e026a31cb21f504b73280f383fe8146b6eae2342f23539493e28e7ff095",
+    "design/entity-field-dictionary.json": "594c4f412777a16f4bdaf768011af1a4579ef5492208a551720e28a082550384",
+    "design/field-traceability-r7.json": "bbc30cc177e1c385852cdd464aad90f3f41786c6585e86aeeb85ad020bc76828",
+    "design/information-requirements.json": "d0cb8a87d450ba0f5ac758c4c6ba01d8994b7f44502e6da3769aca56b9c9f1aa",
+    "design/json-contracts.schema.json": "360665343f1ddd8a37112fde062c0fff450b5bd2c4550cd1b9de797f70b89bf1",
+    "design/migration-field-map.json": "d198ef456232971c17529c5e15d8160582b0e3168dc7ff72d4ff618c2fcadea3",
+    "design/relationships.json": "a730eb3ebcdf6a6a50961a537cef9705423501f0f452c73b6c3b7cdd55e3a5b9",
+    "design/worked-record-examples.json": "77db6d5308d1dc812ed9b79468e40987df8db4a29866a1c59ba515bfb9235cee",
+    "design/FINAL_DATABASE_DESIGN.md": "acb1d4bc2b5be83894cc6854a467f6680cb12ac2d00680913e8a2021e0024d16",
+    "design/README.md": "e0905cc9a080fbce1a3714cd0c2480115804bf76c1174f742250a072b0618ba1",
+    "design/SIMPLE_DATABASE_REVIEW_GUIDE.md": "dd09c3a3fe5cff9eebf0c726aabce608bd4a82ae69c727c14e79906db8bb5bd7",
+    "design/benchmark-storage-proposal.md": "99b7a98d8a2e8d302decd7a8e9d74d862430ea3976c8d522d934e9d018476dc0",
+    "design/compatibility-and-verification.md": "bb0ed16a0b6abfe8e9e55a68b219da590a70f7024b3c8dae32d3b6d618c093c2",
+    "design/entity-catalogue.md": "0a9adfd90a9aac83bd36eb6e42560c9446a0611e697bc3c5aaab591c4e2c6c0a",
+    "design/field-dictionary.md": "d2192104a714cce71cc699f269ad727dccc1c5c5ec0eb86dfbc21f97ccb6e188",
+    "design/migration-and-cutover.md": "ed8c02d9d4f4143af8731fd5e5be5fed206e493eb0ff1fbc47be25b3f67c71fe",
+    "design/relationships-and-lifecycle.md": "a51a58599a2bff1d1a413b30e5929be0006790a228cd1fbce823b4c1360eb58f",
+    "design/retrieval-operations.md": "8f4f1753dea1a572c1f15b2183937832ce5fdd3fc79f25773a87cc7e228fb451",
+    "design/storage-and-constraints.md": "27482a4d0243a8a2b1984991cfc457c2380e6e219636140fa93462442222d899",
+    "design/value-and-rule-contracts.md": "04655ecefd747dc5da4105f371bfae0e2a478caf4e995539c60c41fc9705f37a",
+    "design/worked-examples.md": "8826f14bd61909aad62b374ede48633f84d99c6b90b376ab8c5ec7323f414980",
+    "design/complete-entity-relationships.mmd": "bd00c4673e9cb6a4a41ed30481538cbb9aec6d5959913583354fc4df982bc333",
+    "reference/assessments-200-r5.jsonl": "531a6c3a99f2dd8e9dba99db95aff4de70409d085fd12be3d3b07fbbdbf6bff1",
+    "reference/source-followup-200-r6.jsonl": "c1e71bdd2c157c8e981942d9bf235e7c47dde827493de3a3fe9fb55c9ad8e1ce",
+    "reports/evaluation-safe-summary.json": "c18db43dc32daeb473b76137c6439227ec2de8f06824179597e589ddd2eeae82",
+    "reports/evaluation-information-requirements.json": "58f404816c084f3619c6fb02027a16d6ae4f8aa6e63181d44350693804949199"
+  },
+  "documentation_review": {
+    "guide": "design/SIMPLE_DATABASE_REVIEW_GUIDE.md",
+    "lines": 794,
+    "words": 6330,
+    "diataxis": "Combined explanation, reference and review how-to for the proposed design; technical field dictionary remains authoritative.",
+    "examples": [
+      "buyer and father correction",
+      "room choice and proportional deduction",
+      "policy enhancement continuity",
+      "claim document clock",
+      "payment correction and reversal",
+      "combi component cancellation"
+    ],
+    "implementation_claimed": false
+  }
+}

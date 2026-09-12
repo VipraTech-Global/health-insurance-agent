@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T12:00:55.572403+00:00",
+  "associations": [],
+  "byte_count": 230566,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/tertiary-care-insurance-individual/Customer%20Information%20Sheet%20TERTIARY%20CARE%20INSURANCE%20-%20INDIVIDUAL.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 3643,
+  "linking_url": "https://www.newindia.co.in/health-insurance/tertiary-care-insurance-individual",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "1349bc8e1b02fc2a890ec542baff7bb53ee18caac06f2db6929c0c133d9f17ad",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/tertiary-care-insurance-individual/Customer Information Sheet TERTIARY CARE INSURANCE - INDIVIDUAL.pdf"
+}

@@ -1,0 +1,288 @@
+{
+  "complete_rule_inventory": false,
+  "coverage_limit": "Selected observations only. IRDAI English pages2-3,19-30 read; Hindi equivalents and annexures not fully reconciled. HDFC all4 pages read including page2 image. CIS all3 pages read and page2 visually checked.",
+  "format_version": 1,
+  "generated_at": "2026-09-10T13:11:47.828807+00:00",
+  "independent_rule_denominator": null,
+  "method": "Manual original reading independent of later extraction system",
+  "rules": [
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 1,
+          "passage": "IRDAI/HLT/CIR/PRO/84/5/ 2024",
+          "section": "References",
+          "source_sha256": "9bdf3e5379a494ffe61af7a07496bb0e7333124da45ec72fcf21583435d0352e",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Insurer interpretation notice has four separately identified regulatory dependencies; retain each instrument.",
+      "rule_id": "original-hdfc-regulatory-notice-001",
+      "section": "References",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 2,
+          "passage": "maximum 36 months",
+          "section": "1 note 1",
+          "source_sha256": "9bdf3e5379a494ffe61af7a07496bb0e7333124da45ec72fcf21583435d0352e",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "36-month maximum applies to listed product/UIN rows for new issuance or renewal after 30 September 2024; image-only scope table must be linked.",
+      "rule_id": "original-hdfc-regulatory-notice-002",
+      "section": "1 note 1",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 2,
+          "passage": "on or before 30th September 2024",
+          "section": "1 note 2",
+          "source_sha256": "9bdf3e5379a494ffe61af7a07496bb0e7333124da45ec72fcf21583435d0352e",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "48-month maximum applies to listed rows issued/renewed on or before cutoff, with the 36-month rule after renewal; inclusive boundary is explicit.",
+      "rule_id": "original-hdfc-regulatory-notice-003",
+      "section": "1 note 2",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 3,
+          "passage": "irrespective of claims",
+          "section": "2a",
+          "source_sha256": "9bdf3e5379a494ffe61af7a07496bb0e7333124da45ec72fcf21583435d0352e",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "From 1 October 2024 renewal bonus is independent of claims, but only for group/retail products already offering cumulative bonus for claim-free years.",
+      "rule_id": "original-hdfc-regulatory-notice-004",
+      "section": "2a",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 3,
+          "passage": "shall not be reduced",
+          "section": "2b",
+          "source_sha256": "9bdf3e5379a494ffe61af7a07496bb0e7333124da45ec72fcf21583435d0352e",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Same scoped products retain bonus despite a claim; rates and maximum accrual remain those of their product.",
+      "rule_id": "original-hdfc-regulatory-notice-005",
+      "section": "2b",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 4,
+          "passage": "after 1st April 2024",
+          "section": "3A.1",
+          "source_sha256": "9bdf3e5379a494ffe61af7a07496bb0e7333124da45ec72fcf21583435d0352e",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Renewal after cutoff uses 60 months; exact 1 April is not assigned by this literal after/before text and needs controlling evidence.",
+      "rule_id": "original-hdfc-regulatory-notice-006",
+      "section": "3A.1",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 4,
+          "passage": "before 1st April 2024",
+          "section": "3A.2",
+          "source_sha256": "9bdf3e5379a494ffe61af7a07496bb0e7333124da45ec72fcf21583435d0352e",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Renewal before cutoff uses 96 months until renewed; do not silently turn before into on-or-before.",
+      "rule_id": "original-hdfc-regulatory-notice-007",
+      "section": "3A.2",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 4,
+          "passage": "Sum Insured initially",
+          "section": "3B.1",
+          "source_sha256": "9bdf3e5379a494ffe61af7a07496bb0e7333124da45ec72fcf21583435d0352e",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Moratorium follows original insurer inception and initial cover amount.",
+      "rule_id": "original-hdfc-regulatory-notice-008",
+      "section": "3B.1",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 4,
+          "passage": "entire course of",
+          "section": "3B.3",
+          "source_sha256": "9bdf3e5379a494ffe61af7a07496bb0e7333124da45ec72fcf21583435d0352e",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Actual break restarts moratorium according to notice; a payment delay is not automatically a break if grace protects continuity.",
+      "rule_id": "original-hdfc-regulatory-notice-009",
+      "section": "3B.3",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 4,
+          "passage": "only for the increased SI",
+          "section": "3B.4",
+          "source_sha256": "9bdf3e5379a494ffe61af7a07496bb0e7333124da45ec72fcf21583435d0352e",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Cover increase starts fresh moratorium only for the increase, not the retained layer.",
+      "rule_id": "original-hdfc-regulatory-notice-010",
+      "section": "3B.4",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 4,
+          "passage": "migration and portability",
+          "section": "3B.5",
+          "source_sha256": "9bdf3e5379a494ffe61af7a07496bb0e7333124da45ec72fcf21583435d0352e",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Credits survive both migration and portability subject to evidenced continuity.",
+      "rule_id": "original-hdfc-regulatory-notice-011",
+      "section": "3B.5",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 4,
+          "passage": "established fraud",
+          "section": "3B.6",
+          "source_sha256": "9bdf3e5379a494ffe61af7a07496bb0e7333124da45ec72fcf21583435d0352e",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Fraud remains an exception after moratorium; contestability and benefit admissibility are different questions.",
+      "rule_id": "original-hdfc-regulatory-notice-012",
+      "section": "3B.6",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    }
+  ],
+  "source_sha256": "9bdf3e5379a494ffe61af7a07496bb0e7333124da45ec72fcf21583435d0352e",
+  "verification_errors": []
+}

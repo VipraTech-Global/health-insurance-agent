@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:58:31.698605+00:00",
+  "associations": [],
+  "byte_count": 2905871,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/0248614_ENG_SBI_General_Insurance_Company_Limited_b700c5823b.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 735,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.68,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.44
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.68,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.44
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.68,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.44
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "7e02fda18f375b67ba6fdd0325a822a4e080d851e6f0631891a4a9b0ead92835",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/0248614_ENG_SBI_General_Insurance_Company_Limited_b700c5823b.pdf"
+}

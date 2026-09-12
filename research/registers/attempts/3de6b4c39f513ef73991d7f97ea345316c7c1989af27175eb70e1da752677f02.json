@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:53:49.320804+00:00",
+  "associations": [],
+  "byte_count": 743585,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/Claims_Forms_marine_open_policy.pdf_5e552b9c3d.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 2157,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "fd3f43596d43e506fd4fe04f937dd144c201313009ac0985bf289b9fc489fd6d",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/Claims_Forms_marine_open_policy.pdf_5e552b9c3d.pdf"
+}

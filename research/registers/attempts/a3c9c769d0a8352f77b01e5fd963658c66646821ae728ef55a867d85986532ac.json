@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T12:02:07.934928+00:00",
+  "associations": [],
+  "byte_count": 289117,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://d2t12sefhwd9tk.cloudfront.net/uploads/Speaking_Up_On_Integrity_Concerns_9ac66a293a.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "zurich-kotak",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 504,
+  "linking_url": "https://www.zurichkotak.com/product-documents",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 540.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 960.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "6bab687806a9ebaf4f89269bccc60f950f22182fcfa4da22b99d804e4c04f3e5",
+  "status": "acquired",
+  "url": "https://d2t12sefhwd9tk.cloudfront.net/uploads/Speaking_Up_On_Integrity_Concerns_9ac66a293a.pdf"
+}

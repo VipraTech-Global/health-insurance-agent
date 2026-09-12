@@ -1,0 +1,21 @@
+{
+  "acquired_at": "2026-09-10T19:12:01.870938+00:00",
+  "associations": [],
+  "component_version": "research-acquisition/2",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "format_version": 1,
+  "insurer_id": "nppa",
+  "issues": [
+    "ConnectError"
+  ],
+  "language": "unknown",
+  "latency_ms": 157,
+  "linking_url": "",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": null,
+  "status": "failed",
+  "url": "https://nppaindia.nic.in/storage/uploads/tender/7861f48beb2b1e5d2ec8ff7182385168.pdf"
+}

@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T12:02:00.328520+00:00",
+  "associations": [],
+  "byte_count": 125867,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://acko-cms.ackoassets.com/Policy_Wordings_Acko_International_Travel_Insurance_Add_on_cf29e14c2c.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "acko",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 338,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "5c6050ee00fbbcf6b71e63ba410dca7e92a9b17608e5fe89a00b8bd29dd8e5f3",
+  "status": "acquired",
+  "url": "https://acko-cms.ackoassets.com/Policy_Wordings_Acko_International_Travel_Insurance_Add_on_cf29e14c2c.pdf"
+}

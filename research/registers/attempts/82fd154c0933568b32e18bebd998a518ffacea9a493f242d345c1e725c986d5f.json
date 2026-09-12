@@ -1,0 +1,65 @@
+{
+  "acquired_at": "2026-09-10T12:00:15.643479+00:00",
+  "associations": [],
+  "byte_count": 462368,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.generalicentralinsurance.com/downloads/health-insurance/varishta-bima/proposal-forms/varishta-bima-proposal-form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "generali-central",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 468,
+  "linking_url": "https://www.generalicentralinsurance.com/customer-service/downloads",
+  "page_count": 5,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.68,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.44
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.68,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.44
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.68,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.44
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.68,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.44
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.68,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.44
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "a415e7fb962d98ea96acf0f36b1d4124c3d1297b4844ea067f7b6005a202e6e7",
+  "status": "acquired",
+  "url": "https://www.generalicentralinsurance.com/downloads/health-insurance/varishta-bima/proposal-forms/varishta-bima-proposal-form.pdf"
+}

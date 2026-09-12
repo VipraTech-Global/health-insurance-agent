@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:58:51.656303+00:00",
+  "associations": [],
+  "byte_count": 1823499,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-criti-protect-policy/1%20Criti%20Protect%20Pamphlet.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 8840,
+  "linking_url": "https://www.newindia.co.in/health-insurance/new-india-criti-protect-policy",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "42c9ab747198f1d337dda1e52fd262d9b2a471e95cd2aa1f44077fca1dd2003d",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-criti-protect-policy/1 Criti Protect Pamphlet.pdf"
+}

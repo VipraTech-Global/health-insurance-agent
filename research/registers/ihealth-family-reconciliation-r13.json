@@ -1,0 +1,153 @@
+{
+  "artifact_version": "r13",
+  "generated_at_utc": "2026-09-10T18:18:53.368169+00:00",
+  "newly_classified_documents": [
+    {
+      "source_sha256": "127930061732716c1ccdd73c376ed0e06dbd2e70e308defe7a35dcd39cf73d86",
+      "insurer_id": "icici-lombard",
+      "family": "iHealth",
+      "product_or_heading": "iHealth (ICICI Lombard Complete Health Insurance)",
+      "document_role": "policy_wording",
+      "embedded_supporting_roles": [
+        "key_information_sheet"
+      ],
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Physical page1 explicitly identifies iHealth; page3 starts Policy Wordings; page5 grants indemnity for inpatient medical expenses and separately day care/pre/post/AYUSH. Not an iHealth Plus substitution.",
+      "page_count": 17,
+      "observed_uins": [
+        "ICIHLIP22096V062122"
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            160,
+            595.2756,
+            610
+          ],
+          "exact_passage": "Key Information Sheet\nS. No. Title Description Refer To Policy Wordings\n1 Product Name iHealth (ICICI Lombard Complete Health Insurance)\n2 What am I Benefit as per Sum Insured Opted\ncovered for\nSum Insured 2 lacs 3 lacs/ 7 lacs/ 15Lacs/\n(`) 4 lacs / 10 lacs 20Lacs /\n5 lacs / 30Lacs\n50Lacs\nIn Patient treatment Covers Hospital expenses for admission longer than 24 hours\nPre & Post Medical Expenses incurred due to Illness up to 30\nHospitalisation days period immediately before nd 60 days immediately after an d. Benefits covered under the\nInsured a Person's admission to a Hospital policy\nDay Care Procedure Medical expenses for day care procedures where such\nprocedures are undertaken by an Insured Person as an In-patient\nin a Hospital for continuous period of less than 24 hours\nIn Patient AYUSH Reimbursement of expenses for AYUSH treatment Extension 5 - Domestic Road\nHospitalisation Emergency Ambulance Cover\nDomestic Road Ambulance expenses incurred to transfer the Insured Person\nEmergency following an emergency to the nearest Hospital. Maximum d. Benefits covered under the\nAmbulance amount payable is ` 1,500 per event of emergency policy\nhospitalization\nCover for Pre After 4 Years After 2 Years\nExisting disease\nWellness Program Wellness program intends to promote, incentivize and reward the\ninsured person for their healthy behavior. Wellness points\naccumulated can be redeemed against out-patient expenses like\nconsultation charges, medicines/drugs, diagnostic expenses etc.\nAdditional Sum An additional sum insured of 10% of annual sum insured for each\nInsured completed and continuous claim free Policy Year subject to a\n(Cumulative bonus) maximum of 50%\nReset Benefit Not Applicable Applicable",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded original title, preamble, medical-expense grant and UIN; not full rule inventory."
+        },
+        {
+          "physical_page": 3,
+          "bbox": [
+            20,
+            0,
+            297.6378,
+            220
+          ],
+          "exact_passage": "Policy Wordings\nb. Preamble\nICICI Lombard General Insurance Company Limited (\"We/ Us\"), having\nreceived a Proposal and the premium from the Policy Holder named in Part a of\nthe Policy (hereinafter referred to as the \"Policy Schedule\") and the said\nProposal and Declaration together with any statement, report or other\ndocument leading to the issue of this Policy and referred to therein having\nbeen accepted and agreed to by Us and the Policy Holder as the basis of this\ncontract do, by this Policy agree, in consideration of and subject to the due\nreceipt of the subsequent premiums, as set out in the Policy Schedule, and\nfurther, subject to the terms and conditions contained in this Policy that on\nproof to Our satisfaction of the compensation having become payable as set\nout in the Policy Schedule to the title of the said person or persons claiming\npayment or upon the happening of an event upon which one or more benefits\nbecome payable under this Policy, the Annual Sum Insured/ appropriate\nbenefit amount will be paid by Us.",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded original title, preamble, medical-expense grant and UIN; not full rule inventory."
+        },
+        {
+          "physical_page": 5,
+          "bbox": [
+            297.6378,
+            325,
+            595.2756,
+            800
+          ],
+          "exact_passage": "Limited\nd. Benefits covered under the policy\n1. In-patient Treatment\nWe hereby agree subject to terms, conditions and exclusions herein\ncontained or otherwise expressed here on that, if during the Policy -\nyear, You require Hospitalisation for any Illness or Injury on the written\nadvice of a Medical Practitioner, then We will indemnify the Medical\nExpenses so incurred by You.\nHowever, Our total liability under this Policy for payment of any and all\nClaims in aggregate during each Policy Year of the Policy Period shall\nnot exceed the Maximum Limit of Indemnity as stated in the Policy\nSchedule.\n2. Day Care Procedures/Treatment\nWe hereby agree subject to terms, conditions and exclusions herein\ncontained or otherwise expressed hereon that, if during the Policy -\nyear, You require Hospitalisation as an inpatient for less than 24 hours in\na Hospital (but not in the outpatient department of a Hospital) on the\nwritten advice of a Medical Practitioner, then We will pay You for the\nMedical Expenses incurred for undergoing such Day Care Procedure/\nTreatment or surgery, However, Our total liability under this cover for\npayment of any and all Claims in aggregate during each Policy Year of\nthe Policy Period shall not exceed the Maximum Limit of Indemnity as\nstated in the Policy Schedule.\n3. Pre-Hospitalisation and Post-Hospitalisation Expenses\nWe hereby agree subject to the terms, conditions and exclusions\nherein contained or otherwise expressed here on that, We will\ncompensate You for the relevant Medical Expenses incurred by You in\nrelation to:\ni. Pre-hospitalisation Medical Expenses incurred by You for a 30-day\nperiod immediately prior to Your Hospitalisation; and\nii. Post-hospitalisation Medical Expenses incurred by You for a 60-day\nperiod immediately post Hospitalisation, provided that Your\nHospitalisation falls within the Policy year and We have accepted\nYour Claim under \"In-patient Treatment\" or \"Day Care Procedures\"\nsection of the Policy. However, Our total liability under this Policy for\npayment of any and all Claims in aggregate during each Policy Year\nof the Policy Period shall not exceed the Maximum Limit of\nIndemnity as stated in the Policy Schedule.\n4. In Patient AYUSH Hospitalisation - We will reimburse expenses for\nAYUSHtreatment only when the treatment has been undergone in a\nAYUSH Hospital or AYUSH Day Care centre.",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded original title, preamble, medical-expense grant and UIN; not full rule inventory."
+        },
+        {
+          "physical_page": 5,
+          "bbox": [
+            0,
+            815,
+            595.2756,
+            841.8898
+          ],
+          "exact_passage": "UIN: ICIHLIP22096V062122",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded original title, preamble, medical-expense grant and UIN; not full rule inventory."
+        }
+      ],
+      "visually_reviewed_physical_pages": [
+        1,
+        5
+      ],
+      "acquisition_provenance": [
+        {
+          "attempt_register": "research/registers/attempts/62cc0e141e0035c66b6a0bcc224b4ab8827a1d0e9edea825a31f3bf5233980fc.json",
+          "url": "https://www.icicilombard.com/docs/default-source/policy-wordings-product-brochure/chi_policy_wordings.pdf?sfvrsn=12",
+          "final_url": "https://www.icicilombard.com/docs/default-source/policy-wordings-product-brochure/chi_policy_wordings.pdf?sfvrsn=12",
+          "linking_url": "https://www.icicilombard.com/health-insurance/get-quote/select-chi-plans",
+          "acquired_at": "2026-09-10T18:16:52.635523+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "127930061732716c1ccdd73c376ed0e06dbd2e70e308defe7a35dcd39cf73d86",
+          "linking_url_qualification": "Related official page, not verified linking anchor. Exact PDF URL discovered by web search; failed direct context-page acquisition is preserved separately."
+        }
+      ],
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "source_issues": [
+        "Current retrieval does not prove current sale applicability or exact legacy edition. Same product UIN is also used in other named CHI plan documents; retain plan identity and selected configuration independently.",
+        "Key information sheet contains benefit selectors and optional covers, not an issued selection. Its first-page AYUSH reference points to Extension5 Domestic Road Emergency Ambulance Cover, requiring source-reference correction review.",
+        "pdftotext emitted an invalid least-number-of-objects hint-table warning; selected native text and rendered pages resolved. Do not interpret successful bounded read as whole-file semantic validation."
+      ]
+    }
+  ],
+  "reread_existing_documents": [],
+  "per_listing_results": [
+    {
+      "legacy_identity": "/health-insurance/icici-lombard/ihealth/",
+      "legacy_name": "Ihealth",
+      "insurer_id": "icici-lombard",
+      "family": "iHealth (ICICI Lombard Complete Health Insurance)",
+      "family_identity_supported": true,
+      "wording_sha256s": [
+        "127930061732716c1ccdd73c376ed0e06dbd2e70e308defe7a35dcd39cf73d86"
+      ],
+      "companion_cis_sha256s": [],
+      "observed_wording_uins": [
+        "ICIHLIP22096V062122"
+      ],
+      "variant_or_form_result": {
+        "status": "explicit_iHealth_original_family_candidate",
+        "qualification": "iHealth title is explicit; optional cover selection, historical edition and issued terms unresolved."
+      },
+      "source_document_versions": {
+        "status": "observed_V06_UIN_original",
+        "historical_version_reconciled": false
+      },
+      "remaining_evidence": [
+        "Exact legacy observation and applicable issue/renewal edition are unknown.",
+        "Full wording, connected exclusions, KIS cross-references and all applicable companions/endorsements remain to be reviewed.",
+        "Accepted customer plan, sum insured, options and underwriting terms remain missing.",
+        "Earlier iHealth URL403/404 access failures remain true observations for those URLs, not proof this family has no accessible wording."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false
+    }
+  ],
+  "verification": {
+    "original_hashes_verified": 1,
+    "visible_original_regions": 4,
+    "visually_reviewed_pages": 2
+  },
+  "acquisition_register": "registers/ihealth-chi-acquisition-r13.json",
+  "historical_bundles_complete": 0,
+  "full_rule_inventory_complete": false
+}

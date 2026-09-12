@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:56:18.968359+00:00",
+  "associations": [],
+  "byte_count": 245558,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/Accident_Guard_Policy_FAQ_TATPAIP_23087v032223_eaf93a6a53.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1588,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "71b0d4a8cac39f9bbd2f6662efca6648b4a8453ea7cfd0980b51d3dc7d0e4e0c",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/Accident_Guard_Policy_FAQ_TATPAIP_23087v032223_eaf93a6a53.pdf"
+}

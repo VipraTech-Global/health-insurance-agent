@@ -1,0 +1,65 @@
+{
+  "acquired_at": "2026-09-10T14:41:01.129208+00:00",
+  "associations": [],
+  "byte_count": 342373,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://uiic.co.in/web/sites/default/files/Policy-Document/20230913-CIS-IHIP.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "united-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 717,
+  "linking_url": "",
+  "page_count": 5,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "a616358a9eaf81203c3d0b514e8d2845bcf3134d742c0756b5f5558ebb13668a",
+  "status": "acquired",
+  "url": "https://uiic.co.in/web/sites/default/files/Policy-Document/20230913-CIS-IHIP.pdf"
+}

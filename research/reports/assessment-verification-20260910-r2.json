@@ -1,0 +1,32 @@
+{
+  "artifact_sha256": {
+    "reference/assessments-lifecycle-original-backed.jsonl": "e35da99cecbefb0b1cca4d1077c1f094b024fae45ec2c4f7dadcab3c1e610658",
+    "reference/assessments-original-backed.jsonl": "b485132fedb7c5190a5d0a94a9d5426d9f965b1ee926644b671a7be1d0b2f0f5",
+    "reference/assessments-topup-original-backed.jsonl": "018d768c1114c0188de2ee75d229d3b44e7475a5fe9c1a3475185e07c20fbfa1",
+    "registers/original-reading-hdfc-regulatory-notice.json": "35f04a730d2d2edaf184c68615418dca0d1acebcc1a92c1bdf8ec8a359dac631",
+    "registers/original-reading-irdai-health-master.json": "50338d5c3aaac98987a35c349149b84a5cadb149b0bfa820037395c3858728ad",
+    "registers/original-reading-irdai-products-2024.json": "244ef8de08eb630c40116621c643c2ce15e81502e7e7c158727de5d95ef13656",
+    "registers/original-reading-new-india-cis.json": "635b2b57f3f9e6f6f4e78c7c6044120f44fb6ba669ca2799b234f8aaa9c563f7",
+    "registers/original-reading-star-ssf.json": "9f9e2d91ceb8aa21b1c91c18773e6c6fd47c7eb10880cc9fe95efabe262eb6d6"
+  },
+  "case_id_unique": true,
+  "case_records_validated": 32,
+  "checked_at": "2026-09-10T13:28:59.349413+00:00",
+  "format_version": 1,
+  "hash_errors": [],
+  "no_evaluation_material_loaded": true,
+  "numeric_review": "Eight new threshold calculations independently rederived in reference-topup-review.json; earlier five arithmetic checks retained.",
+  "object_integrity": {
+    "all": 2758,
+    "new_observation_locations": 107,
+    "non_pdf": 445,
+    "pdf": 2313
+  },
+  "reference_arithmetic_records": 12,
+  "status_counts": {
+    "evidence_incomplete": 28,
+    "worked": 4
+  },
+  "unique_case_evidence_locations_verified": 63,
+  "validation_limit": "Lexical/structural verification is not entailment, full decision completion or whole-corpus coverage. Four worked statuses are explicitly scoped threshold assessments."
+}

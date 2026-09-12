@@ -1,0 +1,97 @@
+{
+  "acquired_at": "2026-09-10T11:55:34.181962+00:00",
+  "associations": [],
+  "byte_count": 310509,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/MAHARAKSHA_PERSONAL_INJURY_PLAN_POLICY_e99b1c9b48.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 435,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 9,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "dc9e633cd6e2f04371ff15625cb56f95ddfab67a9ae2c8369e2ba9c6bcc67077",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/MAHARAKSHA_PERSONAL_INJURY_PLAN_POLICY_e99b1c9b48.pdf"
+}

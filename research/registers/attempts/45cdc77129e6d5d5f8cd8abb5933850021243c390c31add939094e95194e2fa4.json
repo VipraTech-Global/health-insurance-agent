@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:03:02.688333+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/paripoorna-ayush-bima/PMAB%20Proposal%20Form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 6510,
+  "linking_url": "https://www.newindia.co.in/health-insurance/paripoorna-ayush-bima",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "b9e0db86db7ed7c52908653cdb36fd01fa2e9b8835805569ea1bb3c35c26481d",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/paripoorna-ayush-bima/PMAB Proposal Form.pdf"
+}

@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T18:02:24.985191+00:00",
+  "associations": [],
+  "byte_count": 214190,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.galaxyhealth.com/assets/preloaded/Unlimited%2520Automatic%2520Restoration-Rider%2520Policy%2520Wording.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "galaxy",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1229,
+  "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-unlimited-automatic-restoration-rider-insurance-policy",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "b93671f8eaf491d4303ea067e9b853a38392649fe1559182c6396869a9534929",
+  "status": "acquired",
+  "url": "https://www.galaxyhealth.com/assets/preloaded/Unlimited%2520Automatic%2520Restoration-Rider%2520Policy%2520Wording.pdf"
+}

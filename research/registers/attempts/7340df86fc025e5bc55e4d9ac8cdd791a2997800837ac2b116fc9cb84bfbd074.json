@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:51:44.016422+00:00",
+  "associations": [],
+  "byte_count": 862304,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/pages/doc/brochure/Health_Assurance_PA_SS.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 537,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "309a2b0b2ddc1d45ce5e1fef5967d45c27d3900d7db14dd181c4b3876f6b423b",
+  "status": "acquired",
+  "url": "https://transactions.nivabupa.com/pages/doc/brochure/Health_Assurance_PA_SS.pdf"
+}

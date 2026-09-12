@@ -1,0 +1,81 @@
+{
+  "acquired_at": "2026-09-10T12:00:36.193414+00:00",
+  "associations": [],
+  "byte_count": 603276,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/senior-citizen-mediclaim-policy/Senior%20Citizen%20Mediclaim%20Proposal%20Form%20WEF%2001%20Oct%202024.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 7687,
+  "linking_url": "https://www.newindia.co.in/health-insurance/senior-citizen-mediclaim-policy",
+  "page_count": 7,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "d06ebdf9cb07672639a545209d72ce33a7c9530728e6d384a15a70d7b5fd179c",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/senior-citizen-mediclaim-policy/Senior Citizen Mediclaim Proposal Form WEF 01 Oct 2024.pdf"
+}

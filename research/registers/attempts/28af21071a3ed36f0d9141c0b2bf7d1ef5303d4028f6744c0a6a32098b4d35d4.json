@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T12:01:51.026116+00:00",
+  "associations": [],
+  "byte_count": 378571,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://acko-cms.ackoassets.com/Proposal_Form_Acko_Car_Package_Policy_Add_on_Covers_1_8826d8be12.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "acko",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 417,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 1583.04,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1119.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1583.04,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1119.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1583.04,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1119.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1583.04,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1119.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "542357da6b729aa01db2acf057503e7f0e9f318e28e5087b1d2fb236b8c5c6bd",
+  "status": "acquired",
+  "url": "https://acko-cms.ackoassets.com/Proposal_Form_Acko_Car_Package_Policy_Add_on_Covers_1_8826d8be12.pdf"
+}

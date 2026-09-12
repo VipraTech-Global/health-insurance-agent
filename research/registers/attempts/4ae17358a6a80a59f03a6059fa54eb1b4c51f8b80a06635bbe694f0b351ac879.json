@@ -1,0 +1,89 @@
+{
+  "acquired_at": "2026-09-10T11:56:02.827911+00:00",
+  "associations": [],
+  "byte_count": 1529814,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/auto_secure_motor_trade_internal_risks_cis_91b424a7b4.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1340,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 8,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "aa2e3f319f65ba0bd6fe72e94b5746bbf74ced6dc52fa05865847ce5953cdc49",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/auto_secure_motor_trade_internal_risks_cis_91b424a7b4.pdf"
+}

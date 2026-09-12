@@ -1,0 +1,81 @@
+{
+  "reference_cases": 200,
+  "unique_originals_verified": 5,
+  "unique_passages_verified": 139,
+  "physical_pages_with_case_anchors": 40,
+  "region_only_passages": [
+    {
+      "sha": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+      "page": 7,
+      "section": "V.14 receipt clock and refund conditions",
+      "reason": "Exact bounded-region reading; full-page extraction interleaves columns or rotated table characters."
+    },
+    {
+      "sha": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+      "page": 5,
+      "section": "IV.6 obesity exception and all four requirements",
+      "reason": "Exact bounded-region reading; full-page extraction interleaves columns or rotated table characters."
+    },
+    {
+      "sha": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+      "page": 3,
+      "section": "III.J Gold modern-treatment table",
+      "reason": "Exact bounded-region reading; full-page extraction interleaves columns or rotated table characters."
+    },
+    {
+      "sha": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+      "page": 5,
+      "section": "IV.27 Excl28 stromal vascular fraction,chondrocytes,PRP and intraarticular therapies",
+      "reason": "Exact bounded-region reading; full-page extraction interleaves columns or rotated table characters."
+    },
+    {
+      "sha": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+      "page": 4,
+      "section": "III.J table footnote",
+      "reason": "Exact bounded-region reading; full-page extraction interleaves columns or rotated table characters."
+    },
+    {
+      "sha": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+      "page": 4,
+      "section": "M.1 online doctor chat, bottom left column",
+      "reason": "Exact bounded-region reading; full-page extraction interleaves columns or rotated table characters."
+    },
+    {
+      "sha": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+      "page": 7,
+      "section": "V.12 premium instalments i-viii",
+      "reason": "Exact bounded-region reading; full-page extraction interleaves columns or rotated table characters."
+    },
+    {
+      "sha": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+      "page": 4,
+      "section": "III.M wellness conditions including midterm member1year",
+      "reason": "Exact bounded-region reading; full-page extraction interleaves columns or rotated table characters."
+    },
+    {
+      "sha": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+      "page": 3,
+      "section": "III.D air ambulance route,license,SI and percentage",
+      "reason": "Exact bounded-region reading; full-page extraction interleaves columns or rotated table characters."
+    },
+    {
+      "sha": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+      "page": 3,
+      "section": "III.H maternity grant and all special conditions",
+      "reason": "Exact bounded-region reading; full-page extraction interleaves columns or rotated table characters."
+    },
+    {
+      "sha": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+      "page": 7,
+      "section": "V.23 death/exhaustion and surviving family cover",
+      "reason": "Exact bounded-region reading; full-page extraction interleaves columns or rotated table characters."
+    }
+  ],
+  "errors": [],
+  "all_case_ids_preserved": true,
+  "all_cases_have_conversations": true,
+  "all_cases_have_pass_criteria": true,
+  "full_rule_inventory_complete": false,
+  "lexical_verification_is_not_entailment": true,
+  "evaluation_content_read": false
+}

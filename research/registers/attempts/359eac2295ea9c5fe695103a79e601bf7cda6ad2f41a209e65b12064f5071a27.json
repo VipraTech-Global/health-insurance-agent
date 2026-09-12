@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T11:52:36.890979+00:00",
+  "associations": [],
+  "byte_count": 3296729,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.galaxyhealth.com/assets/preloaded/GALAXY%2520TWIN%2520360%2520BROCHURE%2520FINAL%2520%2528WEB%2529%2520-%252013-12-2025_0.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "galaxy",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 873,
+  "linking_url": "https://www.galaxyhealth.com/",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1190.55
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1190.55
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1190.55
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1190.55
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "9d910473d0f78bc24d7398e01e2a878b5e09ff88a97a1b51d2d4eefc5976f0a7",
+  "status": "acquired",
+  "url": "https://www.galaxyhealth.com/assets/preloaded/GALAXY%2520TWIN%2520360%2520BROCHURE%2520FINAL%2520%2528WEB%2529%2520-%252013-12-2025_0.pdf"
+}

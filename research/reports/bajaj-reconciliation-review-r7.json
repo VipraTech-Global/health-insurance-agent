@@ -1,0 +1,684 @@
+{
+  "artifact_version": "bajaj-reconciliation-independent-review/r7",
+  "reviewed_at_utc": "2026-09-10T16:58:31.169399+00:00",
+  "reviewer": "/root/research_code_review",
+  "scope": "Nine legacy associations and11new original PDF identity/scope checks, historical product-register page1, and official directory HTML; not full document rule review or independent evaluation.",
+  "approval": "approve_family_and_scope_results_after_recorded_corrections; historical_version_and_bundle_reconciliation_remain_incomplete",
+  "findings": [
+    {
+      "severity": "high",
+      "id": "BAJAJ-R7-VERSION",
+      "issue": "All nine source_document_versions statuses said multiple_original_revisions_preserved even though evidence establishes product-register UIN assertions plus observed wording/CIS. HealthEnsure has only one UIN string across these sources.",
+      "fix": "Changed to distinct-UIN-assertion versus same-UIN status, added source role/hash/page and explicitly unverified historical-wording preservation.",
+      "status": "fixed"
+    },
+    {
+      "severity": "medium",
+      "id": "BAJAJ-R7-RIDER-UIN",
+      "issue": "HealthGuard brochure has two UINs without typed ownership. The second is an optional Waiver of Room Capping rider, not another base-product version.",
+      "fix": "Added typed base/rider assertions and conditional rider relationship to scope, companion associations and report.",
+      "status": "fixed"
+    },
+    {
+      "severity": "medium",
+      "id": "BAJAJ-R7-VARIANT",
+      "issue": "Variant candidates listed all tiers for each tier-specific legacy row, conflated HealthEnsure cover form with named variant, and retained unrelated Bronze+ boilerplate for ExtraCarePlus.",
+      "fix": "Added exact observed named-tier matches for six rows, explicit unselected PlanA/B status for SilverHealth, cover-form status for HealthEnsure and aggregate-deductible mechanism for ExtraCarePlus. No historical mapping promoted.",
+      "status": "fixed"
+    },
+    {
+      "severity": "medium",
+      "id": "BAJAJ-R7-HCS-A",
+      "issue": "HCS PlanA has a blank/separately bordered tier cell above the Vital merged label; adjacency alone does not explicitly establish its tier membership.",
+      "fix": "Recorded the grouping uncertainty while retaining clear Vital/Smart/Ultimo identities and all numerical rows.",
+      "status": "qualified_unresolved"
+    },
+    {
+      "severity": "low",
+      "id": "BAJAJ-R7-COUNTS",
+      "issue": "additional_sources_classified retained51 although139PDFs minus77r3PDFs is62; directory416 refers to PDF anchor occurrences, representing414uniqueURLs.",
+      "fix": "Retained r5 snapshot, corrected current classified count, specified count populations and classified directory as fifth non-PDF support source.",
+      "status": "fixed"
+    }
+  ],
+  "per_listing_results": [
+    {
+      "legacy_identity": "/health-insurance/bajaj-general/extra-care-plus-super-top-up/",
+      "family": "Extra Care Plus",
+      "observed_wording_uin": "BAJHLIP23069V032223",
+      "product_register_uins": [
+        "BAJHLIP20147V021920"
+      ],
+      "family_identity_supported": true,
+      "variant_or_form_result": {
+        "status": "aggregate_deductible_mechanism_supported_no_named_tier_selected",
+        "candidates": [],
+        "qualification": "Extra Care Plus is the printed product name. The legacy Super Top Up phrase is supported by the aggregate-deductible mechanism, not a separately identified named tier. Extra Care remains a distinct register product/UIN.",
+        "r7_initial_status": "not_established",
+        "legacy_label_selection_verified_for_issued_policy": false,
+        "identity_kind": "coverage_mechanism",
+        "coverage_mechanism": "Aggregate hospitalization deductible over policy period",
+        "evidence_physical_pages": [
+          1,
+          6
+        ]
+      },
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false
+    },
+    {
+      "legacy_identity": "/health-insurance/bajaj-general/health-care-supreme-smart/",
+      "family": "Health Care Supreme",
+      "observed_wording_uin": "BAJHLIP23210V042223",
+      "product_register_uins": [
+        "BAJHLIP21143V022021"
+      ],
+      "family_identity_supported": true,
+      "variant_or_form_result": {
+        "status": "legacy_named_tier_supported_by_observed_wording",
+        "candidates": [
+          "Vital",
+          "Smart",
+          "Ultimo"
+        ],
+        "qualification": "Tier name is explicitly present in observed table. Historical applicability and selected subplan remain unverified. Physical page26 places PlanA above the merged Vital label with a blank/separate family cell; do not silently assign its tier from adjacency.",
+        "r7_initial_status": "named_in_wording",
+        "legacy_label_selection_verified_for_issued_policy": false,
+        "identity_kind": "named_product_tier",
+        "matched_legacy_label_variant": "Smart",
+        "evidence_physical_pages": [
+          27
+        ],
+        "explicitly_labeled_subplans": [
+          "D",
+          "E",
+          "F",
+          "G"
+        ]
+      },
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false
+    },
+    {
+      "legacy_identity": "/health-insurance/bajaj-general/health-care-supreme-ultimo/",
+      "family": "Health Care Supreme",
+      "observed_wording_uin": "BAJHLIP23210V042223",
+      "product_register_uins": [
+        "BAJHLIP21143V022021"
+      ],
+      "family_identity_supported": true,
+      "variant_or_form_result": {
+        "status": "legacy_named_tier_supported_by_observed_wording",
+        "candidates": [
+          "Vital",
+          "Smart",
+          "Ultimo"
+        ],
+        "qualification": "Tier name is explicitly present in observed table. Historical applicability and selected subplan remain unverified. Physical page26 places PlanA above the merged Vital label with a blank/separate family cell; do not silently assign its tier from adjacency.",
+        "r7_initial_status": "named_in_wording",
+        "legacy_label_selection_verified_for_issued_policy": false,
+        "identity_kind": "named_product_tier",
+        "matched_legacy_label_variant": "Ultimo",
+        "evidence_physical_pages": [
+          27
+        ],
+        "explicitly_labeled_subplans": [
+          "H",
+          "I",
+          "J",
+          "K"
+        ]
+      },
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false
+    },
+    {
+      "legacy_identity": "/health-insurance/bajaj-general/health-care-supreme-vital/",
+      "family": "Health Care Supreme",
+      "observed_wording_uin": "BAJHLIP23210V042223",
+      "product_register_uins": [
+        "BAJHLIP21143V022021"
+      ],
+      "family_identity_supported": true,
+      "variant_or_form_result": {
+        "status": "legacy_named_tier_supported_by_observed_wording",
+        "candidates": [
+          "Vital",
+          "Smart",
+          "Ultimo"
+        ],
+        "qualification": "Tier name is explicitly present in observed table. Historical applicability and selected subplan remain unverified. Physical page26 places PlanA above the merged Vital label with a blank/separate family cell; do not silently assign its tier from adjacency.",
+        "r7_initial_status": "named_in_wording",
+        "legacy_label_selection_verified_for_issued_policy": false,
+        "identity_kind": "named_product_tier",
+        "matched_legacy_label_variant": "Vital",
+        "evidence_physical_pages": [
+          26
+        ],
+        "explicitly_labeled_subplans": [
+          "B",
+          "C"
+        ],
+        "additional_subplan_grouping_candidate": {
+          "subplan": "A",
+          "status": "adjacent_to_Vital_rows_but_family_cell_blank_or_separately_bordered",
+          "requires": "Matching prospectus/brochure or insurer confirmation of tier grouping; numerical row remains preserved."
+        }
+      },
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false
+    },
+    {
+      "legacy_identity": "/health-insurance/bajaj-general/health-ensure-family-plan/",
+      "family": "Health Ensure",
+      "observed_wording_uin": "BAJHLIP24149V062324",
+      "product_register_uins": [
+        "BAJHLIP24149V062324"
+      ],
+      "family_identity_supported": true,
+      "variant_or_form_result": {
+        "status": "cover_form_supported_not_named_variant",
+        "candidates": [],
+        "qualification": "Observed wording explicitly defines Family Floater and permits a separate parents/parents-in-law floater. The legacy phrase Family Plan is a cover-form association, not proof of a printed named tier or issued family configuration.",
+        "r7_initial_status": "named_in_wording",
+        "legacy_label_selection_verified_for_issued_policy": false,
+        "identity_kind": "cover_form",
+        "matched_cover_form": "Family Floater",
+        "evidence_physical_pages": [
+          4,
+          7
+        ]
+      },
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false
+    },
+    {
+      "legacy_identity": "/health-insurance/bajaj-general/health-guard-gold/",
+      "family": "Health Guard",
+      "observed_wording_uin": "BAJHLIP26073V082526",
+      "product_register_uins": [
+        "BAJHLIP25035V072425"
+      ],
+      "family_identity_supported": true,
+      "variant_or_form_result": {
+        "status": "legacy_named_tier_supported_by_observed_wording",
+        "candidates": [
+          "Silver",
+          "Gold",
+          "Platinum"
+        ],
+        "qualification": "The legacy tier name is explicitly present in the observed wording. This supports tier identity only; exact historical version, SI/options, schedule and underwriting remain unresolved.",
+        "r7_initial_status": "named_in_wording",
+        "legacy_label_selection_verified_for_issued_policy": false,
+        "identity_kind": "named_product_tier",
+        "matched_legacy_label_variant": "Gold",
+        "evidence_physical_pages": [
+          8
+        ]
+      },
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false
+    },
+    {
+      "legacy_identity": "/health-insurance/bajaj-general/health-guard-platinum/",
+      "family": "Health Guard",
+      "observed_wording_uin": "BAJHLIP26073V082526",
+      "product_register_uins": [
+        "BAJHLIP25035V072425"
+      ],
+      "family_identity_supported": true,
+      "variant_or_form_result": {
+        "status": "legacy_named_tier_supported_by_observed_wording",
+        "candidates": [
+          "Silver",
+          "Gold",
+          "Platinum"
+        ],
+        "qualification": "The legacy tier name is explicitly present in the observed wording. This supports tier identity only; exact historical version, SI/options, schedule and underwriting remain unresolved.",
+        "r7_initial_status": "named_in_wording",
+        "legacy_label_selection_verified_for_issued_policy": false,
+        "identity_kind": "named_product_tier",
+        "matched_legacy_label_variant": "Platinum",
+        "evidence_physical_pages": [
+          8
+        ]
+      },
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false
+    },
+    {
+      "legacy_identity": "/health-insurance/bajaj-general/health-guard-silver/",
+      "family": "Health Guard",
+      "observed_wording_uin": "BAJHLIP26073V082526",
+      "product_register_uins": [
+        "BAJHLIP25035V072425"
+      ],
+      "family_identity_supported": true,
+      "variant_or_form_result": {
+        "status": "legacy_named_tier_supported_by_observed_wording",
+        "candidates": [
+          "Silver",
+          "Gold",
+          "Platinum"
+        ],
+        "qualification": "The legacy tier name is explicitly present in the observed wording. This supports tier identity only; exact historical version, SI/options, schedule and underwriting remain unresolved.",
+        "r7_initial_status": "named_in_wording",
+        "legacy_label_selection_verified_for_issued_policy": false,
+        "identity_kind": "named_product_tier",
+        "matched_legacy_label_variant": "Silver",
+        "evidence_physical_pages": [
+          8
+        ]
+      },
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false
+    },
+    {
+      "legacy_identity": "/health-insurance/bajaj-general/silver-health/",
+      "family": "Silver Health",
+      "observed_wording_uin": "BAJHLIP23213V052223",
+      "product_register_uins": [
+        "BAJHLIP21183V022021"
+      ],
+      "family_identity_supported": true,
+      "variant_or_form_result": {
+        "status": "named_plans_observed_legacy_selection_unspecified",
+        "candidates": [
+          "Plan A",
+          "Plan B"
+        ],
+        "qualification": "Observed wording names PlanA and PlanB. Both allow individual cover; only PlanB allows family floater. The generic legacy name selects neither plan.",
+        "r7_initial_status": "named_in_wording",
+        "legacy_label_selection_verified_for_issued_policy": false,
+        "identity_kind": "named_plan_and_cover_form",
+        "evidence_physical_pages": [
+          5
+        ],
+        "plan_cover_forms": {
+          "Plan A": [
+            "Individual"
+          ],
+          "Plan B": [
+            "Individual",
+            "Family Floater"
+          ]
+        }
+      },
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false
+    }
+  ],
+  "original_integrity_and_uin_checks": [
+    {
+      "sha256": "193417d10fda72111f8e7c45929075020330af619f9bbdcc292f3965a1b1e95a",
+      "hash_verified": true,
+      "physical_pages": 32,
+      "observed_uins": [
+        "BAJHLIP26073V082526"
+      ]
+    },
+    {
+      "sha256": "66d1837c3c0df51f0f3835761df2a37d26da71986f46497d835fdd0b0e8c4d50",
+      "hash_verified": true,
+      "physical_pages": 22,
+      "observed_uins": [
+        "BAJHLIP23069V032223"
+      ]
+    },
+    {
+      "sha256": "3c07c19ae314fb287047c0419a33ee03e962502fe4ac67d87eb3c5de7c6040be",
+      "hash_verified": true,
+      "physical_pages": 27,
+      "observed_uins": [
+        "BAJHLIP23210V042223"
+      ]
+    },
+    {
+      "sha256": "65ba0c2e260c498a7a28acc97d8396e059390b72466342dfa37f4ba00fd41983",
+      "hash_verified": true,
+      "physical_pages": 22,
+      "observed_uins": [
+        "BAJHLIP23213V052223"
+      ]
+    },
+    {
+      "sha256": "08633c7190545874483102f6fa16e9963aad2173e18c7269ea5ae8b2f62aae0c",
+      "hash_verified": true,
+      "physical_pages": 27,
+      "observed_uins": [
+        "BAJHLIP24149V062324"
+      ]
+    },
+    {
+      "sha256": "b1b03949cf9198b4ad6c1016df51267a00f3346e27c1fd2ef4c67ba43f13e53a",
+      "hash_verified": true,
+      "physical_pages": 7,
+      "observed_uins": [
+        "BAJHLIP26073V082526"
+      ]
+    },
+    {
+      "sha256": "aea9a62b8e57ac1e835909a5fb09a0026ad37fb1e86b56437487e30b3a83aa05",
+      "hash_verified": true,
+      "physical_pages": 6,
+      "observed_uins": [
+        "BAJHLIP23069V032223"
+      ]
+    },
+    {
+      "sha256": "ff1a2874866116c3ea63964712f9f71fe9e13de0007f537118b987d361756e97",
+      "hash_verified": true,
+      "physical_pages": 10,
+      "observed_uins": [
+        "BAJHLIP23210V042223"
+      ]
+    },
+    {
+      "sha256": "76a3c48a23d34c0c170a1ea08d591feeab41328992836c74a056acfa6c8d65fc",
+      "hash_verified": true,
+      "physical_pages": 7,
+      "observed_uins": [
+        "BAJHLIP23213V052223"
+      ]
+    },
+    {
+      "sha256": "e375501ef4ecb863341fff7b17134ba8f29754313ccc72f095358df3249c018c",
+      "hash_verified": true,
+      "physical_pages": 7,
+      "observed_uins": [
+        "BAJHLIP24149V062324"
+      ]
+    },
+    {
+      "sha256": "a413bc85b4412efacdef631f6671709cc6525058b9fb106316349f29efa9f25f",
+      "hash_verified": true,
+      "physical_pages": 12,
+      "observed_uins": [
+        "BAJHLAP21577V012021",
+        "BAJHLIP26073V082526"
+      ]
+    }
+  ],
+  "selected_original_evidence": [
+    {
+      "source_sha256": "193417d10fda72111f8e7c45929075020330af619f9bbdcc292f3965a1b1e95a",
+      "physical_page": 8,
+      "passage": "CIN: U66010PN2000PLC015329 | UIN: BAJHLIP26073V082526 \n \n \nBajaj General Insurance Limited (Formerly known as Bajaj Allianz General Insurance Co. Ltd.)  \nRegd. Office & Head Office: Bajaj Insurance House, Airport Road, Yerawada, Pune - 411006. \nIRDAI Reg No.: 113 | CIN: U66010PN2000PLC015329 \nFor more details, log on to: www.bajajgeneralinsurance.com | Email: careforyou@bajajgeneral.com or \nCall at: Sales - 1800 209 0144 / Service - 1800 209 5858 (Toll Free No.) \n• Silver Plan: \n- Up to 1% of Sum Insured per day (Excluding Cumulative Bonus). \n \n• Gold Plan and Platinum Plan: \n- Sum Insured 3 lacs to 7.5 lacs- maximum eligible room is Single Private Air-Conditioned room. \n- Sum Insured 10 Lacs and above - eligible for any room category. \n \nii. If admitted in ICU, the Company will pay up to actual ICU expenses provided by Hospital. \niii. Nursing Expenses as provided by the hospital. \niv. Surgeon, Anesthetist, Medical Practitioner, Consultants, Specialists Fees. \nv. Anesthesia, Blood, Oxygen, Operation Theatre Charges, surgical appliances, Medicines & Drugs, Dialysis, \nChemotherapy, Radiotherapy, cost of Artificial Limbs, cost of prosthetic devices implanted during surgical \nprocedure like Pacemaker, orthopedic implants, infra cardiac valve replacements, vascular stents. \nvi. Relevant laboratory diagnostic tests, X-ray and such similar expenses that are medically necessary \nprescribed by the treating Medical Practitioner. \nNote: \na) In case of admission to a room at rates exceeding the limits as mentioned under (i), the reimbursement of all \nother expenses incurred at the Hospital, with the exception of cost of Pharmacy/medicines, consumables, \nimplants, medical devices & diagnostics, shall be payable in the same proportion as the admissible rate per \nday bears to the actual rate per day of room rent charges. \nb) Proportionate deductions shall not apply in respect of the Hospitals which do not follow differential billings \nor for those expenses in respect of which differential billing is not adopted based on the room category. \n \n2. Pre-Hospitalization: \nThe Medical Expenses incurred during the 60 days immediately before You Were Hospitalized, provided that: \nSuch Medical Expenses were incurred for the same Illness/Injury for which subsequent Hospitalization was \nrequired, and We have accepted an inpatient Hospitalization claim under In-patient Hospitalization Treatment. \n(Section C. 1) \n \n3. Post-Hospitalization: \nThe Medical Expenses incurred during the 90 days immediately after You were discharged post Hospitalization \nprovided that: Such costs are incurred in respect of the same Illness/Injury for which the earlier Hospitalization \nwas required, and We have accepted an inpatient Hospitalization claim under In-patient Hospitalization \nTreatment. (Section C. 1) \n \n4. Road Ambulance: \nWe will pay the reasonable cost to a maximum of ₹ 20,000/- per Policy Year incurred on an ambulance offered \nby a healthcare or ambulance service provider for transferring You to the nearest Hospital with adequate \nemergency facilities for the provision of health services following an Emergency. \nWe will also reimburse the expenses incurred on an ambulance offered by a healthcare or ambulance service \nprovider for transferring You from the Hospital where You were admitted initially to another hospital with \nhigher medical facilities. \nClaim under this section shall be payable by Us only when: \ni. Such life-threatening emergency condition is certified by the Medical Practitioner, and \nii. We have accepted Your Claim under “In-patient Hospitalization Treatment” or “Day Care Procedures” section \nof the Policy. \nSubject otherwise to the terms, conditions and exclusions of the Policy. \nThis benefit will be applicable each year for policies with term more than 1 year. \n \n5. Day Care Procedures: \nWe will pay You the Medical Expenses as listed above under Section C. 1- In-patient Hospitalization Treatment \nfor Day care procedures / Surgeries taken as an inpatient in a hospital or day care center but not in the \noutpatient department. Refer Annexure I of Policy Wordings for list of Day Care Procedures. \n \n6. Organ Donor Expenses: \nWe will pay expenses towards organ donor’s treatment for harvesting of the donated organ, provided that, \n1. The organ donor is any person whose organ has been made available in accordance and in compliance with \nTHE TRANSPLANTATION OF HUMAN ORGANS (AMENDMENT) BILL, 2011and the organ donated is for the use \nof the Insured Person, and \n2. We have accepted an inpatient Hospitalization claim for the Insured Person under In-patient Hospitalization \nTreatment. (Section C.1)",
+      "region": "Original physical page, selected identity/variant/operative context; native text retained",
+      "review_method": "Independent original reading; nontrivial variant tables inspected visually; this is not a full rule inventory."
+    },
+    {
+      "source_sha256": "66d1837c3c0df51f0f3835761df2a37d26da71986f46497d835fdd0b0e8c4d50",
+      "physical_page": 1,
+      "passage": "2. Aggregate Deductible: \nAggregate deductible is a cost sharing requirement under this policy that provides the company will not be liable \nfor a specified rupee amount of the covered expenses, which will apply before any benefits are payable by the \ncompany. A deductible does not reduce the sum insured. The deductible is applicable in aggregate towards \nhospitalization expenses incurred during the policy period. \n \n3. Any one illness: \nAny one illness means continuous period of illness and includes relapse within 45 days from the date of last \nconsultation with the Hospital/Nursing Home where treatment was taken. \n \n4. AYUSH Hospital: \nAn AYUSH Hospital is a healthcare facility wherein medical/surgical/para-surgical treatment procedures and \ninterventions are carried out by AYUSH Medical Practitioner(s) comprising of any of the following: \na. Central or State Government AYUSH Hospital; or \nb. Teaching hospital attached to AYUSH College recognized by the Central Government/Central Council of \nIndian Medicine/Central Council for Homeopathy; or \nc. AYUSH Hospital, standalone or co-located with in-patient healthcare facility of any recognized system of \nmedicine, registered with the local authorities, wherever applicable, and is under the supervision of a qualified \nregistered AYUSH Medical Practitioner and must comply with all the following criterion: \ni. Having at least 5 in-patient beds; \nii. Having qualified AYUSH Medical Practitioner in charge round the clock; \niii. Having dedicated AYUSH therapy sections as required and/or has equipped operation theatre where \nsurgical procedures are to be carried out; \niv. Maintaining daily records of the patients and making them accessible to the insurance company’s \nauthorized representative. \n \n5. AYUSH Day Care Centre: \nAYUSH Day Care Centre means and includes Community Health Centre (CHC), Primary Health Centre (PHC), \nDispensary, Clinic, Polyclinic or any such health centre which is registered with the local authorities, wherever \napplicable and having facilities for carrying out treatment procedures and medical or surgical/para-surgical \ninterventions or both under the supervision of registered AYUSH Medical Practitioner (s) on day care basis \nwithout in-patient services and must comply with all the following criterion: \ni. Having qualified registered AYUSH Medical Practitioner(s) in charge; \nii. Having dedicated AYUSH therapy sections as required and/or has equipped operation theatre where surgical \nprocedures are to be carried out; \niii. Maintaining daily records of the patients and making them accessible to the insurance company’s authorized \nrepresentative. \n \n6. Cashless facility: \nCashless facility means a facility extended by the Insurer to the Insured where the payments, of the costs of \ntreatment undergone by the Insured in accordance with the Policy terms and conditions, are directly made to \nthe network provider by the Insurer to the extent pre-authorization is approved.",
+      "region": "Original physical page, selected identity/variant/operative context; native text retained",
+      "review_method": "Independent original reading; nontrivial variant tables inspected visually; this is not a full rule inventory."
+    },
+    {
+      "source_sha256": "3c07c19ae314fb287047c0419a33ee03e962502fe4ac67d87eb3c5de7c6040be",
+      "physical_page": 26,
+      "passage": "Table of Benefits \n \nMedical Expenses Section - Sum Insured in INR \n \n \n \n \n \n \n \n \nPlans \nHospitalizati\non SI \n(Hospitalizat\nion \nExpenses \n+Pre-\nHospitalizati\non \n+ Post \nHospitalizatio\nn \n+ \nRoad \nAmbulance \n+Day \ncare \nProcedures+ \nAYUSH \nTreatment \nHospitalizati\non \nOPD SI \nPhysioth\nerapy on \nOPD \nbasis \nMaternit\ny \nSI \n(Includin\ng \nNew \nBorn \nbaby \ncover) \nDonor \nExpense \nAir \nAmbulanc\ne \nReimburs\nement \nExpenses \nRecove \nry \nbenefit \nTotal Sum \nInsured \n \nPlan A \n500,000 \n2,500 \n5,000 \n25,000 \n50,000 \n50,000 \n10,000 \n642,500 \nHealth \nCare \nSupreme \n– \nVital \nPlan B \n800,000 \n4,000 \n8,000 \n30,000 \n80,000 \n80,000 \n10,000 \n1,012,000 \nPlan C \n1,000,000 \n5,000 \n10,000 \n35,000 \n100,000 \n100,000 \n10,000 \n1,260,000",
+      "region": "Original physical page, selected identity/variant/operative context; native text retained",
+      "review_method": "Independent original reading; nontrivial variant tables inspected visually; this is not a full rule inventory."
+    },
+    {
+      "source_sha256": "3c07c19ae314fb287047c0419a33ee03e962502fe4ac67d87eb3c5de7c6040be",
+      "physical_page": 27,
+      "passage": "31 \nCIN U66010PN2000PLC015329, UIN: BAJHLIP23210V042223 \n \n \nBajaj General Insurance Limited (Formerly known as Bajaj Allianz General Insurance Co. Ltd.)  \nBajaj Insurance House, Airport Road, Yerawada, Pune - 411006. IRDAI Reg No.: 113 | CIN: U66010PN2000PLC015329 \nWeb: www.bajajgeneralinsurance.com | Email ID: careforyou@bajajgeneral.com  \nToll Free: Service- 1800 209 5858 /Sales- 1800 209 0144 \n \nHealth \nCare \nSupreme \n– Smart \nPlan D \n1,500,000 \n10,000 \n15,000 \n40,000 \n150,000 \n150,000 \n25,000 \n1,890,000 \nPlan E \n2,000,000 \n15,000 \n20,000 \n40,000 \n200,000 \n200,000 \n25,000 \n2,500,000 \nPlan F \n2,500,000 \n15,000 \n25,000 \n40,000 \n250,000 \n250,000 \n25,000 \n3,105,000 \nPlan G \n3,000,000 \n15,000 \n30,000 \n50,000 \n300,000 \n300,000 \n25,000 \n3,720,000 \n \nHealth \nCare \nSupreme \n- Ultimo \nPlan H \n3,500,000 \n17,500 \n35,000 \n75,000 \n350,000 \n350,000 \n50,000 \n4,377,500 \nPlan I \n4,000,000 \n20,000 \n40,000 \n75,000 \n400,000 \n400,000 \n50,000 \n4,985,000 \nPlan J \n4,500,000 \n25,000 \n45,000 \n75,000 \n450,000 \n450,000 \n50,000 \n5,595,000 \nPlan K \n5,000,000 \n25,000 \n50,000 \n100,000 \n500,000 \n500,000 \n50,000 \n6,225,000",
+      "region": "Original physical page, selected identity/variant/operative context; native text retained",
+      "review_method": "Independent original reading; nontrivial variant tables inspected visually; this is not a full rule inventory."
+    },
+    {
+      "source_sha256": "65ba0c2e260c498a7a28acc97d8396e059390b72466342dfa37f4ba00fd41983",
+      "physical_page": 5,
+      "passage": "SECTION C) COVERAGE \n \nTypes of Policy \n• “Silver Health-Individual”- For Plan A & Plan B \n• “Silver Health-Family Floater” – For Plan B only \n \nTenure of Policy: 1year, 2 years or 3 years  \n \nScope of cover: \nThe Company hereby agrees to pay reasonable and customary expenses in respect of an admissible claim, any or all of the following covers \nsubject to the Sum Insured, sub-limits, terms, conditions and definitions, exclusions contained or otherwise expressed in this Policy. \n \nFeatures \nSilver Health \nPlan A \nPlan B \nEntry age Min \n46 Years \nEntry age Max \n80 Years \nRenewal age \nLife Long \nFamily definition \nSelf and Spouse \nSelf + Spouse + Parents/Parents-in- \nlaw \nSum insured type \nIndividual \nIndividual & Floater \nCumulative bonus \n10%, Max upto 100% \nSum Insured \n50,000 / 1 Lacs /1.5 Lacs / 2 Lacs / \n3Lacs / 4 Lacs / 5 Lacs \n3 Lacs / 5 Lacs / 7.5 Lacs / 10 Lacs \n \n \n \nI. \nBASE COVERAGE \n \n1.  In-patient Hospitalization Treatment – (Applicable for Plan A & Plan B)  \nIf You are hospitalized on the advice of a Medical practitioner as defined under Policy because of Illness or Accidental Bodily Injury sustained \nor contracted during the Policy Period, then We will pay You, Reasonable and Customary Medical Expenses incurred subject to \n \ni. Room rent and Boarding expenses as provided by the Hospital/Nursing Home subject to maximum eligible room is Single Private Air-\nConditioned room \nii. If admitted in ICU, the Company will pay up to actual ICU expenses provided by Hospital. \niii. Nursing Expenses as provided by the hospital \niv. Surgeon, Anesthetist, Medical Practitioner, Consultants, Specialists Fees. \nv. Anesthesia, Blood, Oxygen, Operation Theatre Charges, surgical appliances, Medicines & Drugs, Dialysis, Chemotherapy, Radiotherapy, cost \nof Artificial Limbs, cost of prosthetic devices implanted during surgical procedure like Pacemaker, orthopedic implants, infra cardiac \nvalve replacements, vascular stents. \nvi. Relevant laboratory diagnostic tests, X-ray and such similar expenses that are medically necessary prescribed by the treating \nMedical Practitioner. \nNote: \na. In case of admission to a room at rates exceeding the limits as mentioned under (i), the reimbursement of all other expenses incurred at \nthe Hospital, with the exception of cost of Pharmacy/medicines, consumables, implants, medical devices & diagnostics, shall be payable in \nthe same proportion as the admissible rate per day bears to the actual rate per day of room rent charges \nb. Proportionate deductions shall not apply in respect of the Hospitals which do not follow differential billings or for those expenses in respect of \nwhich differential billing is not adopted based on the room category. \nc. Proportionate deductions shall not apply for ICU charges in case of admission to ICU. \n \n2.  Pre- & Post Hospitalization: (Applicable for Plan A & Plan B)  \n Plan A: An amount equivalent to 3% of the admissible Hospitalization expenses covered in Section C-I.1 in respect of any and all pre-\nHospitalization and post Hospitalization expenses. \n \nPlan B : \nThe Medical Expenses Incurred during 30 days for Pre-Hospitalization & 60 Days for Post Hospitalization \n \nDefinitions \n• Pre-Hospitalization is defined as: “The Medical Expenses incurred immediately before You were Hospitalized, provided that: Such Medical \nExpenses were incurred for the same illness/injury for which subsequent Hospitalization was required, and We have accepted an \ninpatient Hospitalization claim under Inpatient Hospitalization Treatment. \n• Post Hospitalization is defined as: “The Medical Expenses incurred immediately after You were discharged post Hospitalization provided \nthat: Such costs are incurred in respect of the same illness/injury for which the earlier Hospitalization was required, and We have \naccepted an inpatient Hospitalization claim under Section C-I. 1. Inpatient Hospitalization Treatment.” \n \n3.  Roa d Ambulance (Applicable for Plan A & Plan B)  \nWe will pay the reasonable cost to a maximum of Rs. 1000/- per claim incurred on an ambulance offered by a healthcare or ambulance \nservice provider for transferring You to the nearest Hospital with adequate emergency facilities for the provision of health services following an \nEmergency.  \nRoom Rent \nActual Up to Single Private Air-Conditioned room \nICU Charges \nActual \nPre-Hospitalization \n3% of hospital expenses \n30 Days \nPost Hospitalization \n60 Days \nRoad Ambulance \n1000 Per claim \nDay Care Procedures \nCovered \nPreventive Health Check Up \nAfter every 4 Claim Free Year \nAfter every 2 Year, Limit upto 1% or \nmax 5000 Whichever is lower \nModern \nTreatment \nMethods \nand \nAdvancement in Technologies \nCovered up to Base Sum Insured \nMental Illness Treatment (on IPD basis) \nCovered up to Base Sum Insured \nDomiciliary Expense \nNot Covered \nCovered up to 10% of Sum Insured",
+      "region": "Original physical page, selected identity/variant/operative context; native text retained",
+      "review_method": "Independent original reading; nontrivial variant tables inspected visually; this is not a full rule inventory."
+    },
+    {
+      "source_sha256": "08633c7190545874483102f6fa16e9963aad2173e18c7269ea5ae8b2f62aae0c",
+      "physical_page": 4,
+      "passage": "For the purpose of Family Floater- includes the insured; his/her lawfully wedded spouse and dependent children. For Parents and \nparents In laws separate floater policy can be taken. \n \n6. Limit of Indemnity represents Our maximum liability to make payment for each and every claim per person and collectively for all \npersons (for floater policies) mentioned in the Schedule annually during the policy period and in the aggregate for the person(s) named in \nthe schedule annually during the policy period, and means the amount stated in the Schedule against each Cover. \n \n7. Insured / Insured Member/ Insured Person means the persons, or his Family members, named in the Schedule. \n \n8. Single Private Air-Conditioned room: \nSingle Private Air-Conditioned Room means a single occupancy air-conditioned room with an attached washroom / toilet and it \nexcludes a suite. \n \n9. Schedule/Policy Schedule means the schedule and any annexure to it. \n \n10. You, Your, Yourself, Your Family means the person or persons that We insure as set out in the Schedule. \n \n11. We, Our, Ours, Company means the Bajaj General Insurance Limited.",
+      "region": "Original physical page, selected identity/variant/operative context; native text retained",
+      "review_method": "Independent original reading; nontrivial variant tables inspected visually; this is not a full rule inventory."
+    },
+    {
+      "source_sha256": "a413bc85b4412efacdef631f6671709cc6525058b9fb106316349f29efa9f25f",
+      "physical_page": 10,
+      "passage": "WAIVER OF ROOM CAPPING (UIN- BAJHLAP21577V012021)\n\t\nPART A: OPERATIVE PARTS\n\t\nWaiver of Room Capping:\n\t\n\u0007In consideration of payment of additional premium by the Proposer to the Company and realization thereof by the Company, it \nis hereby agreed to waive off the room type restriction “up to Single Private Air Conditioned room” as stated under the “Health \nGuard-Gold” plan and “Health Guard-Platinum” Plan.\n\t\n\u0007If this Optional Cover is opted at the time of inception of the Policy or during renewal, the room rent expenses as defined under \nthe base “Health Guard” Policy would be provided at actuals. \n•\t\nThis Optional Cover can be availed with Sum Insured options of (i) INR 5,00,000/- and 7,50,000/- under “Health Guard-Gold” \nplan and “Health Guard-Platinum” Plan. \n•\t\nThis Optional Cover would be covered within Sum Insured of Base Policy Section A 1. “In-patient Hospitalization Treatment”.\n\t\n\t\nPART B: DEFINITIONS\n1.\t\n“Optional Cover” means the cover mentioned in PART A Operative Clause hereinabove.\n2.\t\nAll other DEFINITIONS as defined in “SECTION 2: DEFINITIONS” in the Policy Wordings title “Health Guard” are applicable mutatis \nmutandis, to these Optional Cover.\n\t\n PART C: GENERAL EXCLUSIONS APPLICABLE TO ALL SECTIONS\n1.\t\nAll exclusions applicable in Base Policy title “Health Guard” shall be applicable to Optional Cover.\n\t\nPART D: SPECIFIC GENERAL CONDITIONS APPLICABLE TO ALL SECTIONS\n\t\n\u0007All Policy Terms and Conditions and General conditions of Base Policy title “Health Guard” read with Policy Schedule are \napplicable mutatis mutandis.\n1.\t\nOpting Optional Cover-\ni.\t\nThese Optional Cover cannot be opted during mid-term of Policy.\nii.\t\nOnce opted, the Optional Cover has to be continued for all renewals there on.\n2.\t\nCancellation of Optional Cover- \n\t\nAll the terms and conditions as to Cancellation of Base Policy shall mutatis mutandis apply to the Cancelation of Optional \nCover.\n3.\t\nRenewal of Optional Cover-\n\t\nIn case of renewal of Base Policy “Health Guard”, opted Optional Cover shall be automatically renewed subject to Company’s \nreceipt of prescribed premium. Once Optional Cover are opted by Insured, Company will renew Base Policy together with \nOptional Cover and shall not renew only Base Policy.\n4.\t\nWithdrawal of Optional Cover:\n1.\t\nIf Base Policy “Health Guard” is withdrawn, then these Optional Cover shall also stand withdrawn.\n\t\n\tList of Claim documents:\n•\t\nClaim form with NEFT details & cancelled cheque duly signed by Insured \n•\t\nOriginal/Attested copies of Discharge Summary / Discharge Certificate / Death Summary with Surgical & anesthetics notes \n•\t\nAttested copies of Indoor case papers (if available) \n•\t\nOriginal/Attested copies Final Hospital Bill with break up of surgical charges, surgeon’s fees, OT charges etc\n•\t\nOriginal Paid Receipt against the final Hospital Bill. \n•\t\nOriginal bills towards Investigations done / Laboratory Bills. \n•\t\nOriginal/Attested copies of Investigation Reports against Investigations done. \n•\t\nOriginal bills and receipts paid for the transportation from Registered Ambulance Service Provider. Treating Medical Practitioner \ncertificate to transfer the Injured person to a higher medical centre for further treatment (if Applicable).\n•\t\nCashless settlement letter or other company settlement letter \n•\t\nFirst consultation letter for the current ailment.\n•\t\nIn case of implant surgery, invoice & sticker. \n\t\nPlease send the documents on below address\t\n\t\nBajaj General Insurance Limited\n\t\n2nd Floor, Bajaj Finserv Building,\n\t\nBehind Weikfield IT park,\n\t\nOff Nagar Road, Viman Nagar\n\t\nPune 411014| Toll free: 1800-103-2529, 1800-22-5858\n\t\nAll Claims will be settled by In house claims settlement team of the company and no TPA is engaged.\n•\t\nPremium\n\t\n\tPlease refer Annexure - rate Chart (Link - https://www.bajajgeneralinsurance.com/download-documents/health-insurance/health-guard/\nNew-Health-Guard-Premium-Chart.pdf)  for detailed premium rates.\n\t\n\tAnnexure for ICD specific for Mental Illness\nICD Codes\nICD Description\nICD Codes\nICD Description\nF00\nDementia in Alzheimer disease\nF22\nPersistent delusional disorders\nF02\nDementia in other diseases classified elsewhere\nF23\nAcute and transient psychotic disorders\nF03\nUnspecified dementia\nF24\nInduced delusional disorder\nF05\nDelirium, not induced by alcohol and other \npsychoactive substances\nF25\nSchizoaffective disorders\nF07\nPersonality and behavioural disorders due to brain disease, \ndamage and dysfunction\nF31\nBipolar affective disorder\nF09\nUnspecified organic or symptomatic mental \ndisorder\nF32\nDepressive episode\nF20\nSchizophrenia\nF33\nRecurrent depressive disorder\nF21\nSchizotypal disorder\nF40\nPhobic anxiety disorders\n•\t\nHow do I Buy this policy?\n•\t\nDiscuss the policy benefits, coverage and premium details with your insurance advisor or visit our website (www.bajajgeneralinsurance.com) \nfor details \n•\t\nActively seek information on the charges and exclusions under the policy \n•\t\nFill the proposal form stating your personal details and health profile \n•\t\nEnsure that the information given in the form is complete and accurate \n•\t\nWe will process your proposal. Based on the information provided, you may be required to undergo pre-policy medical examination at our \nnetwork diagnostic centers. Please note that you will have to pay the necessary amount for undergoing the specified medical examination \nand such tests shall be valid for a maximum period of 30days only \n•\t\nDepending on our evaluation if your proposal is accepted, then we will issue the policy subject to receipt of annual single premium as",
+      "region": "Original physical page, selected identity/variant/operative context; native text retained",
+      "review_method": "Independent original reading; nontrivial variant tables inspected visually; this is not a full rule inventory."
+    }
+  ],
+  "historical_register_evidence": {
+    "source_sha256": "10f0a6fdd67449b06593caf29abd9d0ec4dfb1b17e03d88a0e0c53514eb05f82",
+    "physical_page": 1,
+    "passage": "PRODUCT WISE SPECIFIC LIST OF EXCLUDED ITEMS \nS. No. \nProduct \nUIN \n1 \nHealth Guard \nBAJHLIP25035V072425  \n2 \nHealth Infinity \nBAJHLIP21005V022021 \n3 \nArogya Sanjeevani \nBAJHLIP20164V011920 \n4 \nExtra Care \nBAJHLIP21146V022021 \n5 \nExtra Care Plus \nBAJHLIP20147V021920 \n6 \nStar Package \nIRDA/NL-HLT/BAGI/P-H/\nV.I/150/13-14 \n7 \nHealth Care Supreme \nBAJHLIP21143V022021 \n8 \nSilver Health \nBAJHLIP21183V022021 \n9 \nTax Gain \nBAJHLIP21184V022021 \n10 \nHealth Ensure \n BAJHLIP24149V062324 \n12 \nFamily Health Care \nBAJHLIP21182V022021 \n13 \nHealth Guard (Group) \nBAJHLGP21181V022021 \n14 \nBajaj Allianz Suraksha Kavach Group \nBAJPAGP20054V011920 \n15 \nCredit Linked Health Plan (Group) \nBAJHLGP21052V022021 \n16 \nUnion Suraksha Kavach Group \nBAJPAGP20060V011920 \n17 \nMediclaim Insurance \nBAJHLIP21536V022021 \n20 \nCorona Kavach Policy \nBAJHLIP21100V012021 \n21 \nCorona Protection Policy \nBAJHLGP21133V012021 \nList I: List of Non-Medical Items \nS. \nNo. \nItem \n1 \nBABY FOOD \nNot Payable \n2 \nBABY UTILITIES CHARGES \nNot Payable \n3 \nBEAUTY SERV ICES \nNot Payable \n4 \nBELTS/ BRACES \nNot Payable \n5 \nBUDS \nNot Payable \n6 \nCOLD PACK/HOT PACK \nNot Payable \n7 \nCARRY BAGS \nNot Payable \n8 \nEMAIL / INTERNET CHARGES \nNot Payable \n9 \nFOOD CHARGES (OTHER THAN PATIENT's DIET \nPROVIDED BY HOSPITA L) \nNot Payable \n22 \nFlexi Health Protect Plan - Group\n BAJHLGP22165V012122 \n23 \nFlexi Guard (Group)\nBAJHLGP25018V012425 \n24 \nMy Health Care Plan \nBAJHLIP25038V022425",
+    "role": "Product-wise specific excluded-items register; product/UIN observations, not complete historical wording"
+  },
+  "directory_review": {
+    "source_sha256": "f0de1a42243f153588b7fa02ce5c1fe2589bbf0332dfa32e3fb4bdc995f6047d",
+    "hash_verified": true,
+    "pdf_anchor_occurrences": 416,
+    "unique_pdf_urls": 414,
+    "all_href_anchor_occurrences": 794,
+    "all_selected_original_links_verified_in_product_rows": true,
+    "evidence": [
+      {
+        "locator": {
+          "kind": "html",
+          "selector": "a[href=\"https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-PW/Health-Guard_PW.pdf\"]",
+          "selection_rule": "Matching original href plus parent tr first td; element IDs are duplicated and are not unique locators.",
+          "byte_start": 266381,
+          "byte_end": 266690
+        },
+        "exact_parent_row_label": "Health Guard",
+        "exact_anchor_title": "Policy Wordings",
+        "exact_anchor_text": "",
+        "raw_href": "https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-PW/Health-Guard_PW.pdf",
+        "passage": "<a target=\"blank\" href=\"https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-PW/Health-Guard_PW.pdf\" id=\"HD-ihgDownloadBrochure\" title=\"Policy Wordings\" rel=\"noopener noreferrer\"><img src=\"/content/dam/bagic/aboutus/pdf-icon.jpg\" alt=\"Policy Wordings\" width=\"20\" height=\"20\"/> </a>",
+        "passage_kind": "Exact original UTF-8 HTML bytes decoded as text; no serialization or whitespace normalization",
+        "row_label_passage": "Health Guard",
+        "supports": "Official directory association/navigation only; not contractual grant or historical applicability."
+      },
+      {
+        "locator": {
+          "kind": "html",
+          "selector": "a[href=\"https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-PW/Extra-Care-Plus_PW.pdf\"]",
+          "selection_rule": "Matching original href plus parent tr first td; element IDs are duplicated and are not unique locators.",
+          "byte_start": 277804,
+          "byte_end": 278116
+        },
+        "exact_parent_row_label": "Extra Care Plus",
+        "exact_anchor_title": "Policy Wordings",
+        "exact_anchor_text": "",
+        "raw_href": "https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-PW/Extra-Care-Plus_PW.pdf",
+        "passage": "<a target=\"blank\" href=\"https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-PW/Extra-Care-Plus_PW.pdf\" id=\"HD-ihgDownloadBrochure\" title=\"Policy Wordings\" rel=\"noopener noreferrer\"><img src=\"/content/dam/bagic/aboutus/pdf-icon.jpg\" alt=\"Policy Wordings\" width=\"20\" height=\"20\"/> </a>",
+        "passage_kind": "Exact original UTF-8 HTML bytes decoded as text; no serialization or whitespace normalization",
+        "row_label_passage": "Extra Care Plus",
+        "supports": "Official directory association/navigation only; not contractual grant or historical applicability."
+      },
+      {
+        "locator": {
+          "kind": "html",
+          "selector": "a[href=\"https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-PW/Health-Care-Supreme_PW.pdf\"]",
+          "selection_rule": "Matching original href plus parent tr first td; element IDs are duplicated and are not unique locators.",
+          "byte_start": 320758,
+          "byte_end": 321074
+        },
+        "exact_parent_row_label": "Health Care Supreme",
+        "exact_anchor_title": "Policy Wordings",
+        "exact_anchor_text": "",
+        "raw_href": "https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-PW/Health-Care-Supreme_PW.pdf",
+        "passage": "<a target=\"blank\" href=\"https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-PW/Health-Care-Supreme_PW.pdf\" id=\"HD-ihgDownloadBrochure\" title=\"Policy Wordings\" rel=\"noopener noreferrer\"><img src=\"/content/dam/bagic/aboutus/pdf-icon.jpg\" alt=\"Policy Wordings\" width=\"20\" height=\"20\"/> </a>",
+        "passage_kind": "Exact original UTF-8 HTML bytes decoded as text; no serialization or whitespace normalization",
+        "row_label_passage": "Health Care Supreme",
+        "supports": "Official directory association/navigation only; not contractual grant or historical applicability."
+      },
+      {
+        "locator": {
+          "kind": "html",
+          "selector": "a[href=\"https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-PW/Silver-Health_PW.pdf\"]",
+          "selection_rule": "Matching original href plus parent tr first td; element IDs are duplicated and are not unique locators.",
+          "byte_start": 322916,
+          "byte_end": 323226
+        },
+        "exact_parent_row_label": "Silver Health",
+        "exact_anchor_title": "Policy Wordings",
+        "exact_anchor_text": "",
+        "raw_href": "https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-PW/Silver-Health_PW.pdf",
+        "passage": "<a target=\"blank\" href=\"https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-PW/Silver-Health_PW.pdf\" id=\"HD-ihgDownloadBrochure\" title=\"Policy Wordings\" rel=\"noopener noreferrer\"><img src=\"/content/dam/bagic/aboutus/pdf-icon.jpg\" alt=\"Policy Wordings\" width=\"20\" height=\"20\"/> </a>",
+        "passage_kind": "Exact original UTF-8 HTML bytes decoded as text; no serialization or whitespace normalization",
+        "row_label_passage": "Silver Health",
+        "supports": "Official directory association/navigation only; not contractual grant or historical applicability."
+      },
+      {
+        "locator": {
+          "kind": "html",
+          "selector": "a[href=\"https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-PW/Health_Ensure_PW.pdf\"]",
+          "selection_rule": "Matching original href plus parent tr first td; element IDs are duplicated and are not unique locators.",
+          "byte_start": 325024,
+          "byte_end": 325333
+        },
+        "exact_parent_row_label": "Health Ensure",
+        "exact_anchor_title": "Policy Wordings",
+        "exact_anchor_text": "",
+        "raw_href": "https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-PW/Health_Ensure_PW.pdf",
+        "passage": "<a target=\"blank\" href=\"https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-PW/Health_Ensure_PW.pdf\" id=\"HD-ihgDownloadBrochure\" title=\"Policy Wordings\" rel=\"noopener noreferrer\"><img src=\"/content/dam/bagic/aboutus/pdf-icon.jpg\" alt=\"Policy Wordings\" width=\"20\" height=\"20\"/></a>",
+        "passage_kind": "Exact original UTF-8 HTML bytes decoded as text; no serialization or whitespace normalization",
+        "row_label_passage": "Health Ensure",
+        "supports": "Official directory association/navigation only; not contractual grant or historical applicability."
+      },
+      {
+        "locator": {
+          "kind": "html",
+          "selector": "a[href=\"https://www.bajajgeneralinsurance.com/download-documents/health-insurance/health-guard/Health-Guard-CIS-print.pdf\"]",
+          "selection_rule": "Matching original href plus parent tr first td; element IDs are duplicated and are not unique locators.",
+          "byte_start": 265933,
+          "byte_end": 266268
+        },
+        "exact_parent_row_label": "Health Guard",
+        "exact_anchor_title": "Customer Information Sheet",
+        "exact_anchor_text": "",
+        "raw_href": "https://www.bajajgeneralinsurance.com/download-documents/health-insurance/health-guard/Health-Guard-CIS-print.pdf",
+        "passage": "<a target=\"blank\" href=\"https://www.bajajgeneralinsurance.com/download-documents/health-insurance/health-guard/Health-Guard-CIS-print.pdf\" id=\"HD-ihgDownloadCIS\" title=\"Customer Information Sheet\" rel=\"noopener noreferrer\"><img src=\"/content/dam/bagic/aboutus/pdf-icon.jpg\" alt=\"Customer Information Sheet\" width=\"20\" height=\"20\"/></a>",
+        "passage_kind": "Exact original UTF-8 HTML bytes decoded as text; no serialization or whitespace normalization",
+        "row_label_passage": "Health Guard",
+        "supports": "Official directory association/navigation only; not contractual grant or historical applicability."
+      },
+      {
+        "locator": {
+          "kind": "html",
+          "selector": "a[href=\"https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-CIS/Extra-Care-Plus_CIS.pdf\"]",
+          "selection_rule": "Matching original href plus parent tr first td; element IDs are duplicated and are not unique locators.",
+          "byte_start": 277361,
+          "byte_end": 277691
+        },
+        "exact_parent_row_label": "Extra Care Plus",
+        "exact_anchor_title": "Customer Information Sheet",
+        "exact_anchor_text": "",
+        "raw_href": "https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-CIS/Extra-Care-Plus_CIS.pdf",
+        "passage": "<a target=\"blank\" href=\"https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-CIS/Extra-Care-Plus_CIS.pdf\" id=\"HD-ihgDownloadCIS\" title=\"Customer Information Sheet\" rel=\"noopener noreferrer\"><img src=\"/content/dam/bagic/aboutus/pdf-icon.jpg\" alt=\"Customer Information Sheet\" width=\"20\" height=\"20\"/></a>",
+        "passage_kind": "Exact original UTF-8 HTML bytes decoded as text; no serialization or whitespace normalization",
+        "row_label_passage": "Extra Care Plus",
+        "supports": "Official directory association/navigation only; not contractual grant or historical applicability."
+      },
+      {
+        "locator": {
+          "kind": "html",
+          "selector": "a[href=\"https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-CIS/Health-Care-Supreme_CIS.pdf\"]",
+          "selection_rule": "Matching original href plus parent tr first td; element IDs are duplicated and are not unique locators.",
+          "byte_start": 320311,
+          "byte_end": 320645
+        },
+        "exact_parent_row_label": "Health Care Supreme",
+        "exact_anchor_title": "Customer Information Sheet",
+        "exact_anchor_text": "",
+        "raw_href": "https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-CIS/Health-Care-Supreme_CIS.pdf",
+        "passage": "<a target=\"blank\" href=\"https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-CIS/Health-Care-Supreme_CIS.pdf\" id=\"HD-ihgDownloadCIS\" title=\"Customer Information Sheet\" rel=\"noopener noreferrer\"><img src=\"/content/dam/bagic/aboutus/pdf-icon.jpg\" alt=\"Customer Information Sheet\" width=\"20\" height=\"20\"/></a>",
+        "passage_kind": "Exact original UTF-8 HTML bytes decoded as text; no serialization or whitespace normalization",
+        "row_label_passage": "Health Care Supreme",
+        "supports": "Official directory association/navigation only; not contractual grant or historical applicability."
+      },
+      {
+        "locator": {
+          "kind": "html",
+          "selector": "a[href=\"https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-CIS/Silver-Health_CIS.pdf\"]",
+          "selection_rule": "Matching original href plus parent tr first td; element IDs are duplicated and are not unique locators.",
+          "byte_start": 322475,
+          "byte_end": 322803
+        },
+        "exact_parent_row_label": "Silver Health",
+        "exact_anchor_title": "Customer Information Sheet",
+        "exact_anchor_text": "",
+        "raw_href": "https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-CIS/Silver-Health_CIS.pdf",
+        "passage": "<a target=\"blank\" href=\"https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-CIS/Silver-Health_CIS.pdf\" id=\"HD-ihgDownloadCIS\" title=\"Customer Information Sheet\" rel=\"noopener noreferrer\"><img src=\"/content/dam/bagic/aboutus/pdf-icon.jpg\" alt=\"Customer Information Sheet\" width=\"20\" height=\"20\"/></a>",
+        "passage_kind": "Exact original UTF-8 HTML bytes decoded as text; no serialization or whitespace normalization",
+        "row_label_passage": "Silver Health",
+        "supports": "Official directory association/navigation only; not contractual grant or historical applicability."
+      },
+      {
+        "locator": {
+          "kind": "html",
+          "selector": "a[href=\"https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-CIS/Health-Ensure_CIS.pdf\"]",
+          "selection_rule": "Matching original href plus parent tr first td; element IDs are duplicated and are not unique locators.",
+          "byte_start": 324583,
+          "byte_end": 324911
+        },
+        "exact_parent_row_label": "Health Ensure",
+        "exact_anchor_title": "Customer Information Sheet",
+        "exact_anchor_text": "",
+        "raw_href": "https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-CIS/Health-Ensure_CIS.pdf",
+        "passage": "<a target=\"blank\" href=\"https://www.bajajgeneralinsurance.com/download-documents/health-insurance/Health-CIS/Health-Ensure_CIS.pdf\" id=\"HD-ihgDownloadCIS\" title=\"Customer Information Sheet\" rel=\"noopener noreferrer\"><img src=\"/content/dam/bagic/aboutus/pdf-icon.jpg\" alt=\"Customer Information Sheet\" width=\"20\" height=\"20\"/></a>",
+        "passage_kind": "Exact original UTF-8 HTML bytes decoded as text; no serialization or whitespace normalization",
+        "row_label_passage": "Health Ensure",
+        "supports": "Official directory association/navigation only; not contractual grant or historical applicability."
+      },
+      {
+        "locator": {
+          "kind": "html",
+          "selector": "a[href=\"https://www.bajajgeneralinsurance.com/download-documents/health-insurance/health-guard/Health-Guard-Brochure-print.pdf\"]",
+          "selection_rule": "Matching original href plus parent tr first td; element IDs are duplicated and are not unique locators.",
+          "byte_start": 265184,
+          "byte_end": 265493
+        },
+        "exact_parent_row_label": "Health Guard",
+        "exact_anchor_title": "Brochure",
+        "exact_anchor_text": "",
+        "raw_href": "https://www.bajajgeneralinsurance.com/download-documents/health-insurance/health-guard/Health-Guard-Brochure-print.pdf",
+        "passage": "<a target=\"blank\" href=\"https://www.bajajgeneralinsurance.com/download-documents/health-insurance/health-guard/Health-Guard-Brochure-print.pdf\" id=\"HD-ihgDownloadBrochure\" title=\"Brochure\" rel=\"noopener noreferrer\"><img src=\"/content/dam/bagic/aboutus/pdf-icon.jpg\" alt=\"Brochure\" width=\"20\" height=\"20\"/></a>",
+        "passage_kind": "Exact original UTF-8 HTML bytes decoded as text; no serialization or whitespace normalization",
+        "row_label_passage": "Health Guard",
+        "supports": "Official directory association/navigation only; not contractual grant or historical applicability."
+      }
+    ],
+    "classification": "supporting_mixed_navigation_identity_only",
+    "all11_exact_anchor_byte_slices_verified": true
+  },
+  "classification_totals": {
+    "manual_pdfs": 139,
+    "manual_nonpdfs": 5,
+    "manual_objects": 144,
+    "corpus_classification_complete": false
+  },
+  "preserved_boundaries": {
+    "exact_203_legacy_identity_order": true,
+    "fully_reconciled_historical_listings": 0,
+    "matching_uin_does_not_prove_clause_agreement": true,
+    "full_original_rule_inventory_complete": false,
+    "no_original_bytes_changed": true,
+    "no_acquisition_or_frozen_r5_changes": true,
+    "no_evaluation_or_app_access": true
+  },
+  "modified_files": [
+    "research/registers/document-scope-r7.json",
+    "research/registers/legacy-assessment-r7.json",
+    "research/reports/bajaj-reconciliation-r7.json",
+    "research/reports/bajaj-reconciliation-review-r7.json"
+  ],
+  "input_sha256_before_review": {
+    "scope": "f79d284b60243993f87c6c975b33aa043cef129ba0c7d0a352749b4c729fa1b3",
+    "legacy": "4db0ecde9c82bea4d13173d72d6ce999d2819290206a6ed651fd86f8c4828df7",
+    "report": "9244d3640b2cfaf1d2ebfb58190e7c80f03c34d87e7236e5e4409f22a1bd3736"
+  }
+}

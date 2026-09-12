@@ -1,0 +1,322 @@
+{
+  "revision": "discussion-r6-source-followup",
+  "generated_at_utc": "2026-09-10T19:23:27.611224+00:00",
+  "scope": "Current offline artifact, schema-shape, source-anchor and pilot-source-preservation checks. No runtime constraints, adviser, migrations, acceptance, independent review or complete source coverage claimed.",
+  "checks": [
+    {
+      "check": "98 unique entities",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "1011 unique fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "field metadata and known requirement basis",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "entity constraints and indexes explicit",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "28 requirement groups",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "321 FK rows exactly match dictionary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "every FK target exists",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "relationship enforcement metadata retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "52 JSON definitions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "JSON metaschema valid",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "JSON field contracts resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "400 unique safe case maps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "200 reference and 200 evaluation maps",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all reference cases have follow-up requirement links",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "requirement-level field targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all trace input hashes current",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "nine supplementary cases remain outside fixed400",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "supplemental field targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "supplemental dictionary fingerprint current",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "supplemental assessment hashes current",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "canonical200 unchanged",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all200followups and56calculations retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "80source regions reproduced or visually rechecked",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all20readable follow-up families present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all13pilot source fingerprints unchanged",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "benchmark proposal totals retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "valid bundle consequence",
+      "passed": true,
+      "detail": {
+        "expected_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "valid full rule",
+      "passed": true,
+      "detail": {
+        "expected_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "unknown refund quantity",
+      "passed": true,
+      "detail": {
+        "expected_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "reject invalid trigger_action",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "'cancel_now' is not one of ['free_look_cancellation']"
+        ]
+      }
+    },
+    {
+      "check": "reject invalid trigger_component_slots",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "[] should be non-empty"
+        ]
+      }
+    },
+    {
+      "check": "reject invalid affected_component_slots",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "['health', 'health'] has non-unique elements"
+        ]
+      }
+    },
+    {
+      "check": "reject invalid reinstatement",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "'certain' is not one of ['prohibited', 'conditional', 'unknown']"
+        ]
+      }
+    },
+    {
+      "check": "reject invalid trigger_component_slots",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "'bad slot' does not match '^[a-z][a-z0-9_]{0,79}$'"
+        ]
+      }
+    },
+    {
+      "check": "reject invalid individual_action_allowed",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "'false' is not of type 'boolean'"
+        ]
+      }
+    },
+    {
+      "check": "reject missing individual_action_allowed",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "'individual_action_allowed' is a required property"
+        ]
+      }
+    },
+    {
+      "check": "reject missing new_proposal_required",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "'new_proposal_required' is a required property"
+        ]
+      }
+    },
+    {
+      "check": "reject missing scope",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "'scope' is a required property"
+        ]
+      }
+    },
+    {
+      "check": "reject person scope",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "'contract_bundle' was expected"
+        ]
+      }
+    },
+    {
+      "check": "reject execution property",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "Additional properties are not allowed ('execute' was unexpected)"
+        ]
+      }
+    },
+    {
+      "check": "unknown event party valid",
+      "passed": true,
+      "detail": {
+        "expected_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "invented event party invalid",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "{'kind': 'insurer', 'id': 'not-a-uuid'} is not valid under any of the given schemas"
+        ]
+      }
+    },
+    {
+      "check": "cancellation and refund stages complete as proposed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "seal and underlying policy guards retained",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 44,
+  "failed": 0,
+  "application_entities": 98,
+  "application_fields": 1011,
+  "foreign_keys": 321,
+  "json_definitions": 52,
+  "reference_followups": 200,
+  "evaluation_inputs_read": [
+    "reports/evaluation-safe-summary.json",
+    "reports/evaluation-information-requirements.json"
+  ],
+  "independent_combi_recheck": "pending",
+  "input_sha256": {
+    "design/entity-field-dictionary.json": "cd69328329ca30d961d10b08a01a1c3d482813106f96fc76097a91f4d87e1660",
+    "design/json-contracts.schema.json": "360665343f1ddd8a37112fde062c0fff450b5bd2c4550cd1b9de797f70b89bf1",
+    "design/case-requirement-field-map.json": "ed8a22ee4ef3fe20b32daed3983956855949a950cf03025e00cfb769dcde4aa3",
+    "design/additional-case-field-map.json": "4b948da6e067e7377baef87158cfad6038263ddd7f1d6a7f51a24fb144e8cb8b",
+    "design/information-requirements.json": "40964054c878516cd71aaa0c840526e3e5c0849f6cb913186056217d2b5dd099",
+    "reference/source-followup-200-r6.jsonl": "c1e71bdd2c157c8e981942d9bf235e7c47dde827493de3a3fe9fb55c9ad8e1ce",
+    "reference/information-map-r6.json": "efb3c5a18ebcc038845a2003ccd753aabe8778eb182c3ef2909a246a52c15e87",
+    "reports/evaluation-safe-summary.json": "c18db43dc32daeb473b76137c6439227ec2de8f06824179597e589ddd2eeae82",
+    "reports/evaluation-information-requirements.json": "58f404816c084f3619c6fb02027a16d6ae4f8aa6e63181d44350693804949199"
+  }
+}

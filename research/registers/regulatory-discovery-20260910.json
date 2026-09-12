@@ -1,0 +1,31 @@
+{
+  "method": "Exact official-domain URLs observed in web search, tried via independent HTTP acquisition",
+  "results": [
+    {
+      "insurer_id": "irdai",
+      "issues": [],
+      "page_count": null,
+      "sha256": "b7dbad0960b278769df4904aafde0edf63ba8344e01dc7ee17194acab365095a",
+      "status": "acquired",
+      "url": "https://irdai.gov.in/health-dept"
+    },
+    {
+      "insurer_id": "irdai",
+      "issues": [],
+      "page_count": 30,
+      "sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+      "status": "acquired",
+      "url": "https://irdai.gov.in/documents/37343/365525/स्वास्थ्य+बीमा+व्यवसाय+पर+मास्टर+परिपत्र+_+Master+Circular++on+Health++Insurance+Business++29052024.pdf/5e707a91-b5de-1ec1-cf18-b66273a6839d"
+    },
+    {
+      "insurer_id": "oriental",
+      "issues": [
+        "ConnectTimeout"
+      ],
+      "page_count": null,
+      "sha256": null,
+      "status": "failed",
+      "url": "https://csc.orientalinsurance.org.in/pnb-oriental-royal-mediclaim-insurance-policy"
+    }
+  ]
+}

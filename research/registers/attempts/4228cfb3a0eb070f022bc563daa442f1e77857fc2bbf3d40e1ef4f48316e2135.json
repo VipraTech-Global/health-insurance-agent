@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:38:17.919136+00:00",
+  "associations": [],
+  "byte_count": 3543,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/captcha?url=//pages/doc/prospectus/Rise_Prospectus.pdf?v=1.0",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1404,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "9aa73800a23193258b6b9362d2715dd5fa826089b669c3b23db6f84d2f28d1b4",
+  "status": "failed",
+  "url": "https://transactions.nivabupa.com/pages/doc/prospectus/Rise_Prospectus.pdf?v=1.0"
+}

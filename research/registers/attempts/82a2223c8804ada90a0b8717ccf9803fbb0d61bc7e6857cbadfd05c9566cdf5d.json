@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:01:45.682777+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/non-medical-expenses-rider/Non%20Medical%20Expenses%20Rider%20Clause.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 2994,
+  "linking_url": "https://www.newindia.co.in/health-insurance/non-medical-expenses-rider",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "b8ba5663111dcf2cf1106828c9eb0542120b4d7ab81cc731554b8884403eabfe",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/non-medical-expenses-rider/Non Medical Expenses Rider Clause.pdf"
+}

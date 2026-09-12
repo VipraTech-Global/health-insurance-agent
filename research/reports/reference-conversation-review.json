@@ -1,0 +1,116 @@
+{
+  "format_version": 1,
+  "review_kind": "bounded_operational_reference_review",
+  "source": "research/reference/assessments-conversation-behavior.jsonl",
+  "source_sha256": "5b604bdb24852b7f2af57835d020914fa3d6bba8496700499a15718b73f5dd61",
+  "reviewed_case_ids": [
+    "ref-20-01",
+    "ref-20-02",
+    "ref-20-03",
+    "ref-20-04",
+    "ref-20-05",
+    "ref-20-06",
+    "ref-20-07",
+    "ref-20-08",
+    "ref-20-09",
+    "ref-20-10"
+  ],
+  "disposition": "accepted_for_scoped_operational_reference_use_with_nonblocking_observations",
+  "review_scope": "Authored reference conversation behavior and information requirements only; no adviser execution, schema approval, original policy verification, evaluation review or insurance-case completion.",
+  "findings": [
+    {
+      "id": "CONV-R1",
+      "severity": "high",
+      "cases": [
+        "ref-20-01",
+        "ref-20-02",
+        "ref-20-03",
+        "ref-20-04",
+        "ref-20-05",
+        "ref-20-06",
+        "ref-20-07",
+        "ref-20-08",
+        "ref-20-09",
+        "ref-20-10"
+      ],
+      "field": "required_operations",
+      "issue": "Every case repeats the same five generic operations. These omit the actual distinguishing operations needed to derive the design, including account-scoped history loading, explicit no-reuse enforcement, revision conflict checks, durable event replay and deletion dependency traversal. Policy-bundle selection is listed even when the operational oracle ends before a policy decision.",
+      "required_revision": "Replace or supplement with case-specific operations, explicitly distinguish operations needed for this scoped conversation assessment from deferred insurer decision operations, and map each operation to its observable pass criterion.",
+      "status": "resolved",
+      "resolution": "Verified all 10 cases now have distinct, case-specific operations covering the relevant person attribution, correction, reopening, no-reuse, concurrency and deletion boundaries."
+    },
+    {
+      "id": "CONV-R2",
+      "severity": "high",
+      "cases": [
+        "ref-20-01",
+        "ref-20-04",
+        "ref-20-05",
+        "ref-20-06",
+        "ref-20-08",
+        "ref-20-09"
+      ],
+      "field": "known / customer_facts / conversation",
+      "issue": "Fact snapshots are not anchored to a turn or revision. For example ref-20-01 retains intended_insured=null after turn 3 confirms self-only coverage; ref-20-06 omits confirmed mother residence and insurance status; ref-20-08 omits the newly stated age and treatment. Other cases mix preconditions with post-correction state. A downstream consumer cannot tell whether known means initial or final.",
+      "required_revision": "Label initial/precondition facts separately from expected facts after each relevant turn, including subject, source turn and state. Record final current facts and the material unknowns remaining at the scripted stopping point. Treat a new medicine as an additive disclosure unless the customer actually retracts an earlier statement.",
+      "status": "resolved",
+      "resolution": "Verified known is explicitly scoped to turn 3 and contains only current assertions; fact_updates retains source turn, subject, predicate, value and supersession history. Author-supplied preconditions are separated as scenario_stipulations. Self/budget, mother residence/insurance and father age/treatment are included."
+    },
+    {
+      "id": "CONV-R3",
+      "severity": "high",
+      "cases": [
+        "ref-20-07"
+      ],
+      "field": "conversation[3].text / original_policy_claims / original_policy_evidence",
+      "issue": "The adviser states that savings do not provide insurer continuity or waiting-period credit, while the record declares no original policy claims and no policy evidence. This introduces an uncited contractual consequence into a deliberately operational oracle.",
+      "required_revision": "Keep the oracle at the interpretation boundary: reported savings establish no insurance policy or continuity-credit evidence, and any entitlement must be checked against applicable originals. Alternatively, explicitly inventory and support the contractual claim with original evidence.",
+      "status": "resolved",
+      "resolution": "Verified ref-20-07 now states that no continuity or waiting-period credit can be inferred from reported savings. This is an evidence-sufficiency boundary rather than a categorical policy entitlement claim."
+    }
+  ],
+  "observations": [
+    {
+      "severity": "medium",
+      "cases": [
+        "ref-20-04",
+        "ref-20-09",
+        "ref-20-10"
+      ],
+      "observation": "Ownership, reconnect and deletion protections are described as pass criteria, but negative account-access and concrete event/race schedules are not scripted. They remain requirements rather than independently executable robustness cases."
+    },
+    {
+      "severity": "medium",
+      "cases": [
+        "ref-20-10"
+      ],
+      "observation": "Deletion handling correctly reserves retention policy for design discussion and forbids premature completion. The eventual oracle should explicitly cover original message text, model/provider retention, backups and stale processing retries when retention architecture is approved; no present guarantee about those stores is established."
+    },
+    {
+      "severity": "medium",
+      "cases": [
+        "ref-20-04"
+      ],
+      "observation": "fact_updates correctly treats the newly reported medicine as additive (supersedes=null). The legacy corrections prose still says it supersedes an assumption of unchanged history; align that prose with the additive event before final corpus polishing. No earlier customer assertion was retracted."
+    }
+  ],
+  "positive_findings": [
+    "Buyer, payer, proposer and insured roles are explicitly distinguished.",
+    "Age corrections invalidate dependent decisions without guaranteeing a premium change.",
+    "Explicit refusal to reuse medical context is respected across owned conversations.",
+    "Concurrent worker completion does not authorize stale fact or answer overwrites.",
+    "Deletion includes derived copies and resurrection risks, with completion reserved for verified execution.",
+    "All 10 mark complete_customer_insurance_decision=false, adviser_attempts=0 and schema_dependent_implementation_approved=false; none claims implemented behavior or completed insurance assessment."
+  ],
+  "evaluation_material_read": false,
+  "application_or_schema_edits": false,
+  "database_or_service_operations": false,
+  "benchmark_independence_claim": "No evaluation content was inspected by this reviewer; this review does not establish global benchmark independence.",
+  "previous_source_sha256": "f3098d9274b89ad7de0476b35e374ce2c32c5a76ac09298c556e57ee6abb6189",
+  "open_material_findings": 0,
+  "revision_verification": {
+    "method": "Read revised case-specific operations, source-attributed assertion updates, final known state and ref-20-07 dialogue; verify structural consistency across all 10 records.",
+    "records_checked": 10,
+    "execution_claim": "Structural checks and reference-oracle review only; no adviser inference or insurance decision tested."
+  }
+}

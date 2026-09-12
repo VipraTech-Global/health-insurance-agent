@@ -1,0 +1,1589 @@
+{
+  "artifact_version": "remaining-five-family-reconciliation/r12",
+  "generated_at_utc": "2026-09-10T18:00:50.167959+00:00",
+  "reviewer": "bounded_original_source_research_agent",
+  "scope": "Five specified legacy rows; source-backed candidates and precise unresolved access. No forced name equivalence, historical bundle completion or final rule denominator.",
+  "baseline_scope_register": "research/registers/document-scope-r13.json",
+  "baseline_legacy_register": "research/registers/legacy-assessment-r13.json",
+  "counts": {
+    "legacy_rows": 5,
+    "rows_with_reviewed_wording_candidates": 4,
+    "rows_wording_unresolved": 1,
+    "reviewed_PDFs": 6,
+    "newly_classified_PDFs": 5,
+    "reread_existing_PDFs": 1,
+    "new_medical_expense_PDFs": 4,
+    "new_supporting_PDFs": 1,
+    "newly_classified_HTML_sources": 2,
+    "reread_existing_HTML_sources": 1,
+    "new_acquisition_attempts": 7,
+    "successful_PDF_acquisitions": 3,
+    "successful_HTML_acquisitions": 2,
+    "failed_original_access_attempts": 2,
+    "historical_version_or_bundle_completed_rows": 0
+  },
+  "newly_classified_documents": [
+    {
+      "source_sha256": "b3907566a7ab56bc63f442d37d3cf47044cd19d31af4a252b21e46d8d36e5a60",
+      "insurer_id": "sbi-general",
+      "product_or_heading": "Arogya Plus Policy",
+      "heading_is_normalized_display_label": true,
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Arogya Plus operative medical-expense indemnity, separate from Supreme products; individual/family basis and OPD limits require issued schedule.",
+      "page_count": 16,
+      "observed_uins": [
+        "SBIHLIP22135V032122"
+      ],
+      "typed_uin_assertions": [
+        {
+          "value": "SBIHLIP22135V032122",
+          "kind": "printed_product_uin",
+          "physical_page": 1,
+          "issue_applicability_verified": false
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            595.276,
+            90
+          ],
+          "exact_passage": "SBI General Insurance Company Limited\nAROGYA PLUS POLICY\nPOLICY WORDING",
+          "passage_sha256": "32b276e49e5709ebdae509f0d5f62e5ccefc01c577e87ea7f23cfa79e216adbd",
+          "meaning": "Arogya Plus operative medical-expense indemnity, separate from Supreme products; individual/family basis and OPD limits require issued schedule.",
+          "locator": "Visible original region; SBI body columns kept separate where applicable",
+          "transcription_method": "native_text_within_declared_visible_crop",
+          "visually_reviewed": true
+        },
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            90,
+            297.638,
+            776.89
+          ],
+          "exact_passage": "POLICY W\nI. PREAMBLE\nThis Policy is issued to the Insured based on the proposal and\ndeclaration together with any statement, report or other document\nwhich shall be the basis of this contract and shall be deemed to be\nincorporated herein, upon payment of the premium to Insurer and\nthe realisation thereof by the Insurer. This Policy records the\nagreement between Insurer and Insured and sets out the terms of\nInsurance and the obligations of each party.\nII. OPERATIVE CLAUSE\nSubject to the terms, conditions, exclusions and definitions\ncontained herein or endorsed or otherwise expressed hereon, Insurer\nundertakes to indemnify the Insured the medical expenses which are\nmedically necessary and mentioned in scope of cover up to the Sum\nInsured for the Insured as mentioned in the schedule of the Policy.\nIII. DEFINITIONS\nThe following words or terms shall have the meaning ascribed to\nthem wherever they appear in this Policy, and references to the\nsingular or to the masculine shall include references to the plural and\nto the feminine and vice versa, wherever the context so permits:\nAccident\n1. An accident is a sudden, unforeseen and involuntary\nevent caused by external, visible and violent means.\nAn AYUSH Hospital\n2. is a healthcare facility wherein medical/\nsurgical/para-surgical treatment procedures and interventions\nare carried out by AYUSH Medical Practitioner(s) comprising of\nany of the following.\na) Central or State Government AYUSH Hospital or\nb) Teaching hospital attached to AYUSH College recognized\nby the Central Government/Central Council of Indian Medicine/\nCentral Council for Homeopathy;\nOr\nc) AYUSH Hospital, standalone or co-located with in-patient\nhealthcare facility of any recognized system of medicine,\nregistered with the local authorities, wherever applicable,\nand is under the supervision of a qualified registered\nAYUSH Medical Practitioner and must comply with all the\nfollowing criterion:\ni. Having at least 5 in-patient beds;\nii. Having qualified AYUSH Medical Practitioner in charge\nround the clocks;\niii. Having dedicated AYUSH therapy sections as required\nand/or has equipped operation theatre where surgical\nprocedures are to be carried out,\niv. Maintaining daily records of the patients and making them\naccessible to the insurance company's authorized\nrepresentative.\nAYUSH Day CareCentre\n3. means and includes Community Health\nCentre (CHC), Primary Health Centre (PHC), Dispensary, Clinic,\nPolyclinic or any such health centre which is registered with the\nlocal authorities, wherever applicable and having facilities for\ncarrying out treatment procedures and medical or surgical/\npara-surgical interventions or both under the supervision of\nregistered AYUSH Medical Practitioner (s) on day care basis\nwithout in-patient services and must comply with all the\nfollowing criterion:\ni. Having qualified registered AYUSH Medical Practitioner(s) in\ncharge,",
+          "passage_sha256": "ebf9f234c51b0214fc7f57a90b7bf7953bc7125a0c53651584f359226378ac2e",
+          "meaning": "Arogya Plus operative medical-expense indemnity, separate from Supreme products; individual/family basis and OPD limits require issued schedule.",
+          "locator": "Visible original region; SBI body columns kept separate where applicable",
+          "transcription_method": "native_text_within_declared_visible_crop",
+          "visually_reviewed": true
+        },
+        {
+          "physical_page": 1,
+          "bbox": [
+            297.638,
+            90,
+            595.276,
+            776.89
+          ],
+          "exact_passage": "WORDING\nii. Having dedicated AYUSH therapy sections as required and /or\nhas equipped operation theatre where surgical procedures are\nto be carried out;\niii. Maintaining daily records of the patients and making\nthem accessible to the insurance Company’s authorized\nrepresentative.\nAlternative treatments\n4.\nAlternative treatments are forms of treatments other than\ntreatment \"Allopathy\" or \"modem medicine\" and includes\nAyurveda, Unani, Sidha and Homeopathy in the Indian context\nAny one illness\n5.\nAny one illness means continuous period of illness and it includes\nrelapse within 45 days from the date of last consultation with the\nHospital/Nursing Home where treatment may have been taken.\nBreak in Policy\n6. means the period of gap that occurs at the end of\nthe existing policy term/ installment premium due date, when\nthe premium due for renewal on a given policy or installment\npremium due is not paid on or before the premium renewal date\nor Grace Period.\nCashless Facility\n7. means a facility extended by the Insurer to the\nInsured where the payments, of the costs of treatment\nundergone by the Insured in accordance with the policy terms\nand conditions, are directly made to the network provider by the\nInsurer to the extent pre-authorization approved.\nComplaint or Grievance\n8. means written expression (includes\ncommunication in the form of electronic mail or voice based\nelectronic scripts) of dissatisfaction by a complainant with\nrespect to solicitation or sale or purchase of an insurance policy\nor related services by insurer and /or by distribution channel.\nComplainant\n9. means a Policyholder or prospect or Nominee\nor assignee or any beneficiary of an insurance Policy who has filed\na Complaint or Grievance against an Insurer and /or distribution\nchannel.\nCondition Precedent\n10. means a Policy term or condition upon\nwhich the Company’s liability under the Policy is conditional upon.\nCongenital Anomaly\n11. means a condition which is present since\nbirth and which is abnormal with reference to form, structure\nor position.\nInternal Congenital Anomaly\ni.\nCongenital Anomaly which is not in the visible and accessible\nparts of the body.\nExternal Congenital Anomaly\nii.\nCongenital Anomaly which is in the visible and accessible parts\nof the body.\nCo-payment\n12. is a cost-sharing requirement under a health\ninsurance policy that provides that the policyholder/Insured will\nbear a specified percentage of the admissible claim amount. A\nco-payment does not reduce the Sum Insured.\nCumulative Bonus\n13. shall mean any increase in the Sum Insured\ngranted by the Insurer without an associated increase in\npremium.\nDay Care Centre\n14. means any institution established for day care\ntreatment of illness and/or injuries or a medical setup within a\nhospital and which has been registered with the local authorities,\nwherever applicable, and is under the supervision of a registered\nand qualified medical practitioner AND must comply with all\nminimum criteria as under",
+          "passage_sha256": "983cea1b325ae460657e42a2f2874e69a56a4c90ef5cf796f0b6d126fdc5787f",
+          "meaning": "Arogya Plus operative medical-expense indemnity, separate from Supreme products; individual/family basis and OPD limits require issued schedule.",
+          "locator": "Visible original region; SBI body columns kept separate where applicable",
+          "transcription_method": "native_text_within_declared_visible_crop",
+          "visually_reviewed": true
+        },
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            776.89,
+            595.276,
+            841.89
+          ],
+          "exact_passage": "charge,\nffi\nSBI General Insurance Company Limited, Corporate & Registered O ce: Fulcrum Building, 9th Floor, A & B Wing, Sahar Road, Andheri (East), Mumbai - 400099.\nCIN: U66000MH2009PLC190546 | Tollfree: 91 22 42412000 | customer.care@sbigeneral.in | www.sbigeneral.in | SBI Logo displayed belongs to State Bank of\nIndia and used by SBI General Insurance Company Limited under license | IRDAI Reg No: 144 | Arogya Plus Policy UIN: SBIHLIP22135V032122 | SBI General Insurance\nand SBI are separate legal entities and SBI is working as Corporate Agent of the company for sourcing of insurance products.",
+          "passage_sha256": "f8e8be0cfb3a47455f59e9bf439c5c1016ab2d11004065de7061a36cc0248dcf",
+          "meaning": "Arogya Plus operative medical-expense indemnity, separate from Supreme products; individual/family basis and OPD limits require issued schedule.",
+          "locator": "Visible original region; SBI body columns kept separate where applicable",
+          "transcription_method": "native_text_within_declared_visible_crop",
+          "visually_reviewed": true
+        },
+        {
+          "physical_page": 4,
+          "bbox": [
+            0,
+            0,
+            297.637,
+            776.889
+          ],
+          "exact_passage": "SBI General Insurance Company Limited\nUnproven/Experimental treatment\n53. including drug experimental\ntherapy which is not based on established medical practice in\nIndia, is treatment experimental or unproven.\nAdministrator\n54. means any third party administrator (TPA)\nengaged by the Insurer for providing policy and claims facilitation\nservices to the Insured as well as to the Insurer and who is duly\nlicensed by IRDA for the said purpose.\nAge\n55. means completed years as at the commencement date of\nthe Policy Period.\nDiagnostic centre\n56. means the diagnostic centrewhich have been\nempanelled by Insurer (or administrator) as per the latest version\nof the schedule of diagnostic centre maintained by Insurer, which\nis available to Insured on request.\nEpidemic disease\n57. means a disease which occurs when new cases\nof a certain disease, in a given human population, and during a\ngiven period, substantially exceed what is the normal \"expected\"\nincidence rate based on recent experience (the number of new\ncases in the population during a specified period of time is called\nthe \"incidence rate\").\nFamily\n58. means the legal spouse, dependent children, parents and\nparents in law.\nFamily Cover\n59. means the cover under the Policy which is available\nin aggregate not separately for all members of family who are\nspecified as Insureds in policy schedule and which can be used by\nall or any of them.\nFamily non floater cover means the cover under the Policy which\nis available separately for all members of family who are specified\nas Insureds in policy schedule.\nGroup\n60. means any association of persons who assemble together\nwith a commonality of purpose or engaging in a common\neconomic activity like employees of a company.\nNon-employer-employee groups, like employee associations,\nholders of credit cards issued by a specific company, customers\nof a particular business where Insurance is offered as an add on\nbenefit, borrowers of a bank, professional associations or\nsocieties may also be treated as a group. However, an\nassociation of persons coming together with a purpose of\navailing an insurance cover, will not be treated as a group for the\npurpose of this Policy.\nInsured\n61. means a person named as Insured in the policy schedule.\nInsurer\n62. means SBI General Insurance Company Limited.\nMental illness/ disease\n63. means any mental disease or bodily\ncondition marked by disorganization of personality, mind, and\nemotions to impair the normal psychological, social or work\nperformance of the individual regardless of its cause or origin.\nOther Insurer\n64. means any of the registered Insurers in India other\nthan SBI General Insurance Company Limited.\nPackage service expenses\n65. means expenses levied by the\nhospital/nursing home for treatment of specific surgical\nprocedures/medical ailments as a lump sum amount under\nagreed package charges based on the room criteria as defined in\nthe tariff schedule of the hospital.\nPolicy\n66. means the complete documents consisting of the policy\nwording, schedule and endorsements and attachments if any.\nPolicy period\n67. means the period commencing with the\ncommencement date of the Policy and terminating with the\nexpiry date of the Policy as stated in the policy schedule.\nProposal\n68. means application form which the Insured duly fills in\nand signs for this insurance and any other information Insured\nprovides in the said form or otherwise to Insurer.",
+          "passage_sha256": "7ed86df93a2b22cbe7222af0bc717ddb64a74ddceeca3e7ae00bb18fc200e4b4",
+          "meaning": "Arogya Plus operative medical-expense indemnity, separate from Supreme products; individual/family basis and OPD limits require issued schedule.",
+          "locator": "Visible original region; SBI body columns kept separate where applicable",
+          "transcription_method": "native_text_within_declared_visible_crop",
+          "visually_reviewed": false
+        },
+        {
+          "physical_page": 4,
+          "bbox": [
+            297.637,
+            0,
+            595.274,
+            776.889
+          ],
+          "exact_passage": "Proposer\n69. means the person furnishing complete details and\ninformation in the proposal form for availing the benefits either\nfor himself and/or towards the person to be covered under the\nPolicy and consents to the terms of the contract of insurance by\nway of signing the same.\nSchedule\n70. means that portion of the Policy which sets out\nInsured’s details, the type of insurance cover in force, the Policy\nperiod and the sum insured. Any annexure and/or endorsement\nto the schedule shall also be a part of the schedule.\nSum insured\n71. means the specified amount mentioned in the\nschedule to this policy which represents the Insurer’s maximum\nliability for any or all claims under this policy during the currency\nof the policy subject to terms and conditions.\nTele-consultation\n72. means engagement between licensed\ntele-consultation service provider/ professional and the insured/\ncovered member that is provided via a range of technology\nenabled communication media other than face-to-face\ninteractions, such as telephone, internet, and others.\nIV. SCOPE OF COVER\nIf the Insured suffers an illness/disease and/or injury during the\nPolicy period, this Policy covers below medical expenses incurred\nfor medical treatment arising out of that illness/disease and/or\ninjury:\nEligible hospitalisation expenses\n1. : while the Insured was under\ninpatient care medical expenses incurred for:\na. Room rent, boarding expenses\nb. Medical practitioners fees,\n(including consultation through telemedicine )\nc. Intensive care unit\nd. Nursing expenses\ne. Anesthesia, blood, oxygen, operation theatre expenses,\nsurgical appliances, medicines & consumables, diagnostic\nexpenses and x-ray, dialysis, chemotherapy, radiotherapy,\ncost of pacemaker, prosthesis/internal implants and any\nmedical expenses incurred which is integral part of the\noperation\nf. Physiotherapy as inpatient care and being part of the\ntreatment.\ng. Drugs, medicines and consumables consumed during\nhospitalization period.\nh. Diagnostic procedures\ni. Dressing, ordinary splints and plaster casts.\nOPD treatment and Teleconsultation\n2. : expenses for OPD\nconsultation or Teleconsultation and treatment up to limit\nspecified in policy schedule on advice of a medical practitioner\nbecause of illness/disease and/or injury sustained or contracted\nduring the Policy.\nPre-hospitalisation expenses:\n3. the maximum amount that can\nbe claimed under this head is limited to 60 days for each of the\nadmitted hospitalisation and domiciliary hospitalization claim\nunder the Policy.\nPost-hospitalisation expenses:\n4. the maximum amount that can\nbe claimed under this head is limited to 90 days for each of the\nadmitted hospitalisation and domiciliary hospitalization claim\nunder the Policy.\nDay care expenses\n5. : Insurer shall pay for day care expenses\nincurred on technological surgeries and procedures requiring\nless than 24 hours of hospitalisation up to the sum insured.",
+          "passage_sha256": "94dc37fee04d58fa4e4698b68e753a08ef325bc50c9812789ecdf62a7537596c",
+          "meaning": "Arogya Plus operative medical-expense indemnity, separate from Supreme products; individual/family basis and OPD limits require issued schedule.",
+          "locator": "Visible original region; SBI body columns kept separate where applicable",
+          "transcription_method": "native_text_within_declared_visible_crop",
+          "visually_reviewed": false
+        },
+        {
+          "physical_page": 4,
+          "bbox": [
+            0,
+            776.889,
+            595.274,
+            841.889
+          ],
+          "exact_passage": "provides in the said form or otherwise to Insurer.\nffi\nSBI General Insurance Company Limited, Corporate & Registered O ce: Fulcrum Building, 9th Floor, A & B Wing, Sahar Road, Andheri (East), Mumbai - 400099.\nCIN: U66000MH2009PLC190546 | Tollfree: 91 22 42412000 | customer.care@sbigeneral.in | www.sbigeneral.in | SBI Logo displayed belongs to State Bank of\nIndia and used by SBI General Insurance Company Limited under license | IRDAI Reg No: 144 | Arogya Plus Policy UIN: SBIHLIP22135V032122 | SBI General Insurance\nand SBI are separate legal entities and SBI is working as Corporate Agent of the company for sourcing of insurance products.",
+          "passage_sha256": "646c5e5fc3d5fa9645f7c4acb0ea9ffb7bc7c5bf83d09fff877f39eba0e9ee10",
+          "meaning": "Arogya Plus operative medical-expense indemnity, separate from Supreme products; individual/family basis and OPD limits require issued schedule.",
+          "locator": "Visible original region; SBI body columns kept separate where applicable",
+          "transcription_method": "native_text_within_declared_visible_crop",
+          "visually_reviewed": false
+        },
+        {
+          "physical_page": 5,
+          "bbox": [
+            0,
+            0,
+            297.637,
+            776.889
+          ],
+          "exact_passage": "SBI General Insurance Company Limited\nAmbulance expenses\n6. : Actual ambulance expenses or INR 1500\nwhichever is lower will be reimbursed for per valid hospitalization\nclaim for transferring insured to or between Hospitals in the\nHospital’s ambulance or in an ambulance provided by any\nambulance service provider.\nAlternative treatment:\n7. taken in a government hospital or in any\ninstitute recognized by government and/or accredited by quality\ncouncil of India/national accreditation board on health.\nDomiciliary hospitalisation\n8. : Insurer will cover reasonable and\ncustomary charges towards domiciliary hospitalisation including\npre and post hospitalization expenses.\nMaternity Expenses:\n9. are covered but only under OPD section\nand up to OPD Limit specified in policy schedule.\n10. Admissibility of certain incidental expenses will be as per\nStandard List of Excluded expenses in Hospitalisation indemnity\n(Annexure B)\npolicies ( as per IRDA health Insurance guidelines) -\nHIV/AIDS Cover:\n11. We will cover expenses incurred for Inpatient\ntreatment due to any condition caused by or associated with\nhuman immunodeficiency virus or variant/mutant viruses and or\nany syndrome or condition of a similar kind commonly referred to\nas AIDS upto the Sum Insured as specified in Policy Schedule,\nexcept for the conditions which are permanently excluded.\nMental Illness Cover:\n12. If Insured is hospitalized for any Mental\nIllness contracted during the Policy Period, We will pay Medical\nExpenses -upto the limit as specified in Policy Schedule, under\nSection 1 in accordance with The Mental Health Care Act, 2017,\nsubsequent amendments and other applicable laws and Rules\nprovided that;\ni. The Hospitalization is prescribed by a Medical Practitioner\nfor Mental Illness\nii. The Hospitalization is done in Mental Health Establishment\nSub-limit:\na. The following disorders / conditions shall be covered only up to\nRs. 50,000/-. This sub-limit shall apply for all the following\ndisorders / conditions on cumulative basis.\nb. Pre-hospitalization and Post-hospitalization Medical Expenses\nare also covered within the overall benefit sub-limit as specified\nabove in point (a).\nDisorder / Condition Description\nSevere Depression\nSevere depression is characterized by\na persistent feeling of sadness or a lack\nof interest in outside stimuli. It affects\nthe way one feels, thinks, and behaves.\nSchizophrenia\nSchizophrenia is mental disorder, that\ndistorts the way a person thinks, acts,\nexpresses emotions, perceives reality,\nand relates to others. Schizophrenia\nresult in combination of hallucinations,\ndelusions, and extremely disordered\nthinking and behaviour that impairs\ndaily functioning,\nBipolar Disorder\nBipolar disorder is a mental illness that\nbrings severe high and low moods and\nchanges in sleep, energy, thinking, and\nbehaviour. It includes periods of\nextreme mood swings with emotional\nhighs and lows.",
+          "passage_sha256": "fd3a576d65a366827d7cbd3a25dcaf4a4b6ae68a7d5009981f82b49f8d5f70f0",
+          "meaning": "Arogya Plus operative medical-expense indemnity, separate from Supreme products; individual/family basis and OPD limits require issued schedule.",
+          "locator": "Visible original region; SBI body columns kept separate where applicable",
+          "transcription_method": "native_text_within_declared_visible_crop",
+          "visually_reviewed": false
+        },
+        {
+          "physical_page": 5,
+          "bbox": [
+            297.637,
+            0,
+            595.274,
+            776.889
+          ],
+          "exact_passage": "Disorder / Condition Description\nPost-traumatic stress\nPost-traumatic stress disorder is an\ndisorder\nanxiety disorder caused by very\nstressful, frightening, or distressing\nevents. It includes flashbacks,\nnightmares, severe anxiety and\nuncontrollable thoughts about the\nevent.\nEating disorder\nEating disorder is a mental condition\nwhere people experience severe\ndisturbances in their eating behaviours\nand related thoughts and emotions.\nGeneralized anxiety\nGeneralized Anxiety Disorder is a\ndisorder\nmental health disorder characterized\nby a perpetual state of worry, fear,\napprehension, inability to relax.\nObsessive compulsive\nObsessive-compulsive disorder is an\ndisorders\nanxiety disorder in which people have\nrecurring, unwanted thoughts, ideas\nor sensations (obsessions) that make\nthem feel driven to do something\nrepetitively (compulsions).\nPanic disorders Panic disorder is an anxiety disorder\ncharacterized by reoccurring\nunexpected panic attacks with sudden\nperiods of intense fear. It may include\npalpitations, sweating, shaking,\nshortness of breath, numbness, or a\nfeeling that something terrible is\ngoing to happen.\nPersonality disorders\nPersonality disorder is a type of\nmental disorder in which people have a\nrigid and unhealthy pattern of\nthinking, functioning and behaving. It\nincludes trouble in perceiving and\nrelating to situations and people.\nConversion disorders\nConversion disorder is a type of\nmental disorder where mental or\nemotional distress causes physical\nsymptoms without the existence of an\nactual physical condition.\nDissociative disorders\nDissociative disorders are mental\ndisorders that involve experiencing a\ndisconnection and lack of continuity\nbetween thoughts, memories,\nsurroundings, actions and identity\n*ICD codes for the above disorders/conditions are provided\nbelow.\nWhat is not covered:\na. Treatment related to intentional self-inflicted Injury or\nattempted suicide by any means.\nb. Treatment and complications related to disorders of\nintoxication, dependence, abuse, and withdrawal caused by\ndrugs and other substances such as alcohol, opioids or\nnicotine.",
+          "passage_sha256": "f95b5a8f5fc5eda8b36d80616927dbed530bc042fccdcaf8c62eb22bea6fb38e",
+          "meaning": "Arogya Plus operative medical-expense indemnity, separate from Supreme products; individual/family basis and OPD limits require issued schedule.",
+          "locator": "Visible original region; SBI body columns kept separate where applicable",
+          "transcription_method": "native_text_within_declared_visible_crop",
+          "visually_reviewed": false
+        },
+        {
+          "physical_page": 5,
+          "bbox": [
+            0,
+            776.889,
+            595.274,
+            841.889
+          ],
+          "exact_passage": "ffi\nSBI General Insurance Company Limited, Corporate & Registered O ce: Fulcrum Building, 9th Floor, A & B Wing, Sahar Road, Andheri (East), Mumbai - 400099.\nCIN: U66000MH2009PLC190546 | Tollfree: 91 22 42412000 | customer.care@sbigeneral.in | www.sbigeneral.in | SBI Logo displayed belongs to State Bank of\nIndia and used by SBI General Insurance Company Limited under license | IRDAI Reg No: 144 | Arogya Plus Policy UIN: SBIHLIP22135V032122 | SBI General Insurance\nand SBI are separate legal entities and SBI is working as Corporate Agent of the company for sourcing of insurance products.",
+          "passage_sha256": "1ae06b72d09c821674de44cf579a8e54eb6eab14daa760cd4d29ace6931c217a",
+          "meaning": "Arogya Plus operative medical-expense indemnity, separate from Supreme products; individual/family basis and OPD limits require issued schedule.",
+          "locator": "Visible original region; SBI body columns kept separate where applicable",
+          "transcription_method": "native_text_within_declared_visible_crop",
+          "visually_reviewed": false
+        }
+      ],
+      "identity_evidence": [
+        {
+          "physical_page": 1,
+          "exact_passage": "SBI General Insurance Company Limited\nAROGYA PLUS POLICY\nPOLICY WORDING",
+          "bbox": [
+            0,
+            0,
+            595.276,
+            90
+          ],
+          "meaning": "Exact original title/UIN context, no inferred issue dates."
+        },
+        {
+          "physical_page": 1,
+          "exact_passage": "charge,\nffi\nSBI General Insurance Company Limited, Corporate & Registered O ce: Fulcrum Building, 9th Floor, A & B Wing, Sahar Road, Andheri (East), Mumbai - 400099.\nCIN: U66000MH2009PLC190546 | Tollfree: 91 22 42412000 | customer.care@sbigeneral.in | www.sbigeneral.in | SBI Logo displayed belongs to State Bank of\nIndia and used by SBI General Insurance Company Limited under license | IRDAI Reg No: 144 | Arogya Plus Policy UIN: SBIHLIP22135V032122 | SBI General Insurance\nand SBI are separate legal entities and SBI is working as Corporate Agent of the company for sourcing of insurance products.",
+          "bbox": [
+            0,
+            776.89,
+            595.276,
+            841.89
+          ],
+          "meaning": "Exact original title/UIN context, no inferred issue dates."
+        }
+      ],
+      "acquisition_provenance": [
+        {
+          "url": "https://content.sbigeneral.in/uploads/c983715b738f4f88b4dd0fc684d796c3.pdf",
+          "final_url": "https://content.sbigeneral.in/uploads/c983715b738f4f88b4dd0fc684d796c3.pdf",
+          "linking_url": "https://www.sbigeneral.in/downloads",
+          "acquired_at": "2026-09-10T11:57:30.740398+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "b3907566a7ab56bc63f442d37d3cf47044cd19d31af4a252b21e46d8d36e5a60",
+          "source_register": "research/registers/sources.json",
+          "source_id": "cc0ebab64787414461bd19cfb81f77e7609118f60bfde4838cf0e3461549a63a",
+          "observed_links": [
+            {
+              "label": "Policy Wordings ( 341.98 KB)",
+              "linking_url": "https://www.sbigeneral.in/downloads",
+              "page_sha256": "afb0dc7f439914f2e871434766ef6c0a506408641290d0f99c6b9d9c23bc2602"
+            }
+          ]
+        }
+      ],
+      "selected_physical_pages_read_for_identity_scope": [
+        1,
+        4,
+        5
+      ],
+      "visually_reviewed_physical_pages": [
+        1
+      ],
+      "review_extent": "Bounded original identity/operative grant and connected selected conditions; no exhaustive full-original or rule-instance inventory.",
+      "already_manually_classified_r13": false,
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": {
+        "status": "unmeasured",
+        "value": null
+      },
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Mixed fixed/optional benefits may coexist; only medical-expense scope classified here."
+    },
+    {
+      "source_sha256": "52934bb434c473bc0cef5b9f8d1b02372da8bea4560d7c49c0e9a23f56c867e0",
+      "insurer_id": "sbi-general",
+      "product_or_heading": "Arogya Plus Policy",
+      "heading_is_normalized_display_label": true,
+      "document_role": "customer_information_sheet",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Matching-UIN CIS with unfilled insured names/SI fields; no actual customer or selected SI.",
+      "page_count": 6,
+      "observed_uins": [
+        "SBIHLIP22135V032122"
+      ],
+      "typed_uin_assertions": [
+        {
+          "value": "SBIHLIP22135V032122",
+          "kind": "printed_product_uin",
+          "physical_page": 1,
+          "issue_applicability_verified": false
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0.0,
+            0.0,
+            595.276,
+            841.89
+          ],
+          "exact_passage": "AROGYA PLUS POLICY\nCUSTOMER INFORMATION SHEET / KNOW YOUR POLICY\nThis document provides key information about your policy. You are also advised to go through your\npolicy document.\nSl. Description Policy Clause\nTitle\nNo. (Please refer to applicable policy clause number in next column) Number\n1. Name of\nInsurance\nProduct/ Arogya Plus Policy\nPolicy\n2. Policy XXXXXXXXXXXXXXXXXXXXXX\nNumber\n3. Type of Both Indemnity and Benefit\nInsurance\nProduct/\nPolicy\n4. Sum Individual Sum Insured\nInsured\nSr. No. Insured Name Base Sum Insured\n(Basis)\nFamily Floater Sum Insured\nSr. No. Insured Name Base Sum Insured\nNote: This is the base Sum Insured for policy. Please refer the\npolicy schedule for cover wise limits.\n5. Policy Covers Expenses with respect of: IV. Scope\nCoverage of Cover\n1. Eligible Hospitalization Expenses: Admission in hospital\n(What the\nbeyond 24 hours.\nPolicy\nCovers) 2. OPD Treatment and Teleconsultation: Expenses for OPD\nconsultation and treatment up to limit specified in policy\nschedule on advice of a medical practitioner.\n3. Pre-hospitalization Expenses: Covered prior to 60 days of\nhospitalisation.\n4. Post-hospitalization Expenses: Covered post 90 days of\nhospitalization\nSBI General Insurance Company Limited | Arogya Plus Policy | UIN: SBIHLIP22135V032122\nTollfree: 18001021111 | Visit: www.sbigeneral.in",
+          "passage_sha256": "ecf932a62cb72216bcb64470258d572d8d08b669c0f181929afed9ebf1c4650a",
+          "meaning": "Matching-UIN CIS with unfilled insured names/SI fields; no actual customer or selected SI.",
+          "locator": "Visible original region; SBI body columns kept separate where applicable",
+          "transcription_method": "native_text_within_declared_visible_crop",
+          "visually_reviewed": true
+        }
+      ],
+      "identity_evidence": [
+        {
+          "physical_page": 1,
+          "exact_passage": "AROGYA PLUS POLICY\nCUSTOMER INFORMATION SHEET / KNOW YOUR POLICY\nThis document provides key information about your policy. You are also advised to go through your\npolicy document.\nSl. Description Policy Clause\nTitle\nNo. (Please refer to applicable policy clause number in next column) Number\n1. Name of\nInsurance\nProduct/ Arogya Plus Policy\nPolicy\n2. Policy XXXXXXXXXXXXXXXXXXXXXX\nNumber\n3. Type of Both Indemnity and Benefit\nInsurance\nProduct/\nPolicy\n4. Sum Individual Sum Insured\nInsured\nSr. No. Insured Name Base Sum Insured\n(Basis)\nFamily Floater Sum Insured\nSr. No. Insured Name Base Sum Insured\nNote: This is the base Sum Insured for policy. Please refer the\npolicy schedule for cover wise limits.\n5. Policy Covers Expenses with respect of: IV. Scope\nCoverage of Cover\n1. Eligible Hospitalization Expenses: Admission in hospital\n(What the\nbeyond 24 hours.\nPolicy\nCovers) 2. OPD Treatment and Teleconsultation: Expenses for OPD\nconsultation and treatment up to limit specified in policy\nschedule on advice of a medical practitioner.\n3. Pre-hospitalization Expenses: Covered prior to 60 days of\nhospitalisation.\n4. Post-hospitalization Expenses: Covered post 90 days of\nhospitalization\nSBI General Insurance Company Limited | Arogya Plus Policy | UIN: SBIHLIP22135V032122\nTollfree: 18001021111 | Visit: www.sbigeneral.in",
+          "bbox": [
+            0.0,
+            0.0,
+            595.276,
+            841.89
+          ],
+          "meaning": "Exact original title/UIN context, no inferred issue dates."
+        }
+      ],
+      "acquisition_provenance": [
+        {
+          "url": "https://content.sbigeneral.in/uploads/9ce5861739bb466388980cfb26edd423.pdf",
+          "final_url": "https://content.sbigeneral.in/uploads/9ce5861739bb466388980cfb26edd423.pdf",
+          "linking_url": "https://www.sbigeneral.in/downloads",
+          "acquired_at": "2026-09-10T11:57:31.079710+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "52934bb434c473bc0cef5b9f8d1b02372da8bea4560d7c49c0e9a23f56c867e0",
+          "source_register": "research/registers/sources.json",
+          "source_id": "bf86ff4c274341b90806c3c4aa5dcf431d086f0cb46a85a4b98bd56dc5a5cdc3",
+          "observed_links": [
+            {
+              "label": "CIS ( 619.96 KB)",
+              "linking_url": "https://www.sbigeneral.in/downloads",
+              "page_sha256": "afb0dc7f439914f2e871434766ef6c0a506408641290d0f99c6b9d9c23bc2602"
+            }
+          ]
+        }
+      ],
+      "selected_physical_pages_read_for_identity_scope": [
+        1
+      ],
+      "visually_reviewed_physical_pages": [
+        1
+      ],
+      "review_extent": "Bounded original identity/operative grant and connected selected conditions; no exhaustive full-original or rule-instance inventory.",
+      "already_manually_classified_r13": false,
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": {
+        "status": "unmeasured",
+        "value": null
+      },
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Mixed fixed/optional benefits may coexist; only medical-expense scope classified here."
+    },
+    {
+      "source_sha256": "865b7327ee091654213e98f849c53945ec0d371427566d8cf66a369115d8519e",
+      "insurer_id": "bajaj-general",
+      "product_or_heading": "Extra Care",
+      "heading_is_normalized_display_label": true,
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Extra Care per-hospitalization claim deductible, with relapse within 45 days treated as same claim; distinct from Extra Care Plus.",
+      "page_count": 24,
+      "observed_uins": [
+        "BAJHLIP21146V022021"
+      ],
+      "typed_uin_assertions": [
+        {
+          "value": "BAJHLIP21146V022021",
+          "kind": "printed_product_uin",
+          "physical_page": 1,
+          "issue_applicability_verified": false
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0.0,
+            0.0,
+            595.276,
+            841.89
+          ],
+          "exact_passage": "Bajaj Allianz General Insurance Company Limited\nBajaj Allianz House, Airport Road, Yerawada, Pune - 411 006. Reg. No.: 113\nFor more details, log on to : www.bajajallianz.com or\ncall at : Sales - 1800 209 0144 / Service - 1800 209 5858 (Toll Free No.)\nIssuing Office :\nExtra CarE\nPolicy Wordings\nPreamble\nOur agreement to insure You is based on Your Proposal to Us, which is the basis of this agreement, and Your payment of the premium.\nThis Policy records the entire agreement between Us and sets out what We insure, how We insure it, and what We expect of You and\nwhat You can expect of Us.\nScope of Cover-\nThe Company hereby agrees to pay reasonable and customary expenses in respect of an admissible claim, any or all of the following\ncovers subject to the Sum Insured, limits, terms, conditions and definitions, exclusions contained or otherwise expressed in this Policy.\nA. Tenure of Policy:\n• Extra Care :1year, 2 years or 3 years\nB. Cover\n1. Medical Expenses\nIf You/Your family member(s) named in the schedule are hospitalised on the advice of a Doctor because of Illness or accidental Bodily\nInjury sustained or contracted during the Policy Period, then We will pay You, Reasonable charges of Medical Expenses incurred , in\nexcess of the deductible stated in the schedule. (As explained below)\nThe company’s liability to make any payment for each and every claim under the policy is in excess of the deductible. Each and every\nhospitalization would be considered as a separate claim. (If You suffer a relapse within 45 days of the date when You last obtained\nmedical treatment or consulted a Doctor and for which a claim has been made, then such relapse shall be deemed to be part of the\nsame claim.)\na. Hospitalization Expenses:\nAs an in-patient in a Hospital for accommodation; Boarding Expenses including patients’ diet as provided by the hospital / nursing home,\nnursing care, the attention of medically qualified staff, undergoing medically necessary procedures, medical consumables.\nb. Pre-Hospitalization Expenses:\nIn respect of the medical treatment of an Illness during the consecutive 60-day period immediately preceding Your admission to Hospital\nfor that Illness, provided that the aforesaid 60 day period commences and ends within the Policy Period.\nc. Post-Hospitalization Expenses:\nIn respect of medical treatment and essential investigations for a period of up to 90 days after discharge from a Hospital for medical\ntreatment related to the Illness or Accidental Bodily Injury;\n2. Ambulance Expenses:\nIf a claim under Cover 1) is accepted, We will also pay the ambulance expenses to a maximum of Rs 3000 per valid hospitalization\nclaim for transferring You/Your family member(s) named in the schedule to or between Hospitals in the Hospital’s ambulance or in an\nambulance provided by any ambulance service provider.\n3. Modern Treatment:\nModern Treatment Methods and Advancement in Technologies (as per below list) shall be restricted to 50% of Sum Insured or 5 Lacs\nwhichever is lower, subject to policy terms, conditions, coverage, waiting periods and exclusions.\nA. Uterine Artery Embolization and HIFU\nB. Balloon Sinuplasty\nC. Deep Brain stimulation\nCIN: U66010PN2000PLC015329, UIN: BAJHLIP21146V022021 1",
+          "passage_sha256": "2ee2882afdd43cae971f3b417a7819b0c6d10558ebd0f2a18027f1a59453c18e",
+          "meaning": "Extra Care per-hospitalization claim deductible, with relapse within 45 days treated as same claim; distinct from Extra Care Plus.",
+          "locator": "Visible original region; SBI body columns kept separate where applicable",
+          "transcription_method": "native_text_within_declared_visible_crop",
+          "visually_reviewed": true
+        },
+        {
+          "physical_page": 2,
+          "bbox": [
+            0.0,
+            0.0,
+            595.276,
+            841.89
+          ],
+          "exact_passage": "Bajaj Allianz General Insurance Company Limited\nExtra CarE\nD. Oral chemotherapy\nE. Immunotherapy- Monoclonal Antibody to be given as injection\nF. Intra vitreal injections\nG. Robotic surgeries\nH. Stereotactic radio surgeries\nI. Bronchical Thermoplasty\nJ. Vaporisation of the prostrate (Green laser treatment or holmium laser treatment)\nK. IONM -(Intra Operative Neuro Monitoring)\nL. Stem cell therapy: Hematopoietic stem cells for bone marrow transplant for haematological conditions to be covered.\nC. Definitions\nWords or terms mentioned below have the meaning ascribed to them wherever they appear in this Policy, and references to the singular\nor to the masculine include references to the plural or to the female wherever the context permits:\n1. Accident, Accidental\nAn accident is a sudden, unforeseen and involuntary event caused by external, visible and violent means.\n2. Alternative treatments\nAlternative treatments are forms of treatments other than treatment “Allopathy” or “modern medicine” and includes Ayurveda, Unani,\nSidha and Homeopathy in the Indian context.\n3. Any one illness\nAny one illness means continuous Period of illness and it includes relapse within 45 days from the date of last consultation with the\nHospital/Nursing Home where treatment may have been taken.\n4. Bajaj Allianz Network Hospitals / Network Hospitals\nBajaj Allianz Network Hospitals / Network Hospitals means the Hospitals which have been empanelled by Us as per the latest version of\nthe schedule of Hospitals maintained by Us, which is available to You on request.\n5. Cashless facility\n“Cashless facility” means a facility extended by the insurer to the insured where the payments, of the costs of treatment undergone by\nthe insured in accordance with the policy terms and conditions, are directly made to the network provider by the insurer to the extent\npre-authorization approved.\n6. Condition Precedent\nCondition Precedent shall mean a policy term or condition upon which the Insurer’s liability under the policy is conditional upon.\n7. Congenital Anomaly\nCongenital Anomaly refers to a condition(s) which is present since birth, and which is abnormal with reference to form, structure or\nposition.\na. Internal Congenital Anomaly: Congenital anomaly which is not in the visible and accessible parts of the body\nb. External Congenital Anomaly: Congenital anomaly which is in the visible and accessible parts of the body\nCIN: U66010PN2000PLC015329, UIN: BAJHLIP21146V022021 2",
+          "passage_sha256": "73b1c33aa581915f52c285dda0cf3790f1e5dae162169cb933ad131ad5518903",
+          "meaning": "Extra Care per-hospitalization claim deductible, with relapse within 45 days treated as same claim; distinct from Extra Care Plus.",
+          "locator": "Visible original region; SBI body columns kept separate where applicable",
+          "transcription_method": "native_text_within_declared_visible_crop",
+          "visually_reviewed": false
+        }
+      ],
+      "identity_evidence": [
+        {
+          "physical_page": 1,
+          "exact_passage": "Bajaj Allianz General Insurance Company Limited\nBajaj Allianz House, Airport Road, Yerawada, Pune - 411 006. Reg. No.: 113\nFor more details, log on to : www.bajajallianz.com or\ncall at : Sales - 1800 209 0144 / Service - 1800 209 5858 (Toll Free No.)\nIssuing Office :\nExtra CarE\nPolicy Wordings\nPreamble\nOur agreement to insure You is based on Your Proposal to Us, which is the basis of this agreement, and Your payment of the premium.\nThis Policy records the entire agreement between Us and sets out what We insure, how We insure it, and what We expect of You and\nwhat You can expect of Us.\nScope of Cover-\nThe Company hereby agrees to pay reasonable and customary expenses in respect of an admissible claim, any or all of the following\ncovers subject to the Sum Insured, limits, terms, conditions and definitions, exclusions contained or otherwise expressed in this Policy.\nA. Tenure of Policy:\n• Extra Care :1year, 2 years or 3 years\nB. Cover\n1. Medical Expenses\nIf You/Your family member(s) named in the schedule are hospitalised on the advice of a Doctor because of Illness or accidental Bodily\nInjury sustained or contracted during the Policy Period, then We will pay You, Reasonable charges of Medical Expenses incurred , in\nexcess of the deductible stated in the schedule. (As explained below)\nThe company’s liability to make any payment for each and every claim under the policy is in excess of the deductible. Each and every\nhospitalization would be considered as a separate claim. (If You suffer a relapse within 45 days of the date when You last obtained\nmedical treatment or consulted a Doctor and for which a claim has been made, then such relapse shall be deemed to be part of the\nsame claim.)\na. Hospitalization Expenses:\nAs an in-patient in a Hospital for accommodation; Boarding Expenses including patients’ diet as provided by the hospital / nursing home,\nnursing care, the attention of medically qualified staff, undergoing medically necessary procedures, medical consumables.\nb. Pre-Hospitalization Expenses:\nIn respect of the medical treatment of an Illness during the consecutive 60-day period immediately preceding Your admission to Hospital\nfor that Illness, provided that the aforesaid 60 day period commences and ends within the Policy Period.\nc. Post-Hospitalization Expenses:\nIn respect of medical treatment and essential investigations for a period of up to 90 days after discharge from a Hospital for medical\ntreatment related to the Illness or Accidental Bodily Injury;\n2. Ambulance Expenses:\nIf a claim under Cover 1) is accepted, We will also pay the ambulance expenses to a maximum of Rs 3000 per valid hospitalization\nclaim for transferring You/Your family member(s) named in the schedule to or between Hospitals in the Hospital’s ambulance or in an\nambulance provided by any ambulance service provider.\n3. Modern Treatment:\nModern Treatment Methods and Advancement in Technologies (as per below list) shall be restricted to 50% of Sum Insured or 5 Lacs\nwhichever is lower, subject to policy terms, conditions, coverage, waiting periods and exclusions.\nA. Uterine Artery Embolization and HIFU\nB. Balloon Sinuplasty\nC. Deep Brain stimulation\nCIN: U66010PN2000PLC015329, UIN: BAJHLIP21146V022021 1",
+          "bbox": [
+            0.0,
+            0.0,
+            595.276,
+            841.89
+          ],
+          "meaning": "Exact original title/UIN context, no inferred issue dates."
+        }
+      ],
+      "acquisition_provenance": [
+        {
+          "format_version": 1,
+          "component_version": "research-acquisition/2",
+          "insurer_id": "bajaj-general",
+          "url": "https://irdai.gov.in/documents/37343/931203/BAJHLIP21146V022021_2020-2021.pdf/d2b214ec-6122-2518-0906-f3285f1506bb?version=1.1&t=1668581706141&download=true",
+          "linking_url": "https://irdai.gov.in/en/health-insurance-products?_com_irdai_document_media_IRDAIDocumentMediaPortlet_cur=2&_com_irdai_document_media_IRDAIDocumentMediaPortlet_delta=40&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByCol=uin_String_sortable&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByType=asc&p_p_id=com_irdai_document_media_IRDAIDocumentMediaPortlet&p_p_lifecycle=0&p_p_mode=view&p_p_state=normal",
+          "acquired_at": "2026-09-10T17:53:30.305416+00:00",
+          "status": "acquired",
+          "issues": [],
+          "sha256": "865b7327ee091654213e98f849c53945ec0d371427566d8cf66a369115d8519e",
+          "page_count": 24,
+          "document_type": "pdf_unclassified",
+          "language": "unknown",
+          "associations": [],
+          "effective_from": null,
+          "effective_to": null,
+          "review_status": "not_reviewed",
+          "http_status": 200,
+          "final_url": "https://irdai.gov.in/documents/37343/931203/BAJHLIP21146V022021_2020-2021.pdf/d2b214ec-6122-2518-0906-f3285f1506bb?version=1.1&t=1668581706141&download=true",
+          "byte_count": 168630,
+          "content_type": "application/pdf",
+          "latency_ms": 510,
+          "discovery": {
+            "label": "BAJHLIP21146V022021_2020-2021.pdf",
+            "raw_href": "https://irdai.gov.in/documents/37343/931203/BAJHLIP21146V022021_2020-2021.pdf/d2b214ec-6122-2518-0906-f3285f1506bb?version=1.1&t=1668581706141&download=true",
+            "source_page_sha256": "56e9b869c47663eab85c84ce094efac3afe2ddbdbda957c8532dc0bd822672fe"
+          },
+          "attempt_register": "research/registers/remaining-five-acquisition-r12.json"
+        }
+      ],
+      "selected_physical_pages_read_for_identity_scope": [
+        1,
+        2
+      ],
+      "visually_reviewed_physical_pages": [
+        1
+      ],
+      "review_extent": "Bounded original identity/operative grant and connected selected conditions; no exhaustive full-original or rule-instance inventory.",
+      "already_manually_classified_r13": false,
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": {
+        "status": "unmeasured",
+        "value": null
+      },
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Mixed fixed/optional benefits may coexist; only medical-expense scope classified here."
+    },
+    {
+      "source_sha256": "24187905233ed5eaa53dc2b0ba270a3727bb55ee26863fb78f69d9640df3d355",
+      "insurer_id": "icici-lombard",
+      "product_or_heading": "Health Shield 360",
+      "heading_is_normalized_display_label": true,
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Regulator-hosted historical Health Shield 360 wording and blank schedule; minimum-24-hour indemnity and group-selected room limits. Not Retail.",
+      "page_count": 78,
+      "observed_uins": [
+        "ICIHLGP22083V022122"
+      ],
+      "typed_uin_assertions": [
+        {
+          "value": "ICIHLGP22083V022122",
+          "kind": "printed_product_uin",
+          "physical_page": 1,
+          "issue_applicability_verified": false
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0.0,
+            595.32,
+            841.92
+          ],
+          "exact_passage": "UIN: ICIHLGP22083V022122\nHEALTH SHIELD 360\na. Policy Schedule\nPolicy No. Issued at Stamp Duty\n1. Name of the Proposer:\n2. Mailing address of the Proposer:\n3. Contact No. of the Proposer:\n4. Policy Period:\n Start Date: Time________ Hour__________\n End Date: Time________ Hour__________\n5. Period of Insurance\n Start Date\n End Date\n Territorial Scope:\n6. Details of Previous Policy:\n Previous Policy No.\n Previous Policy Period\n Claims (if any)\nDetails of the Insured Person(s) under the Policy:\nName of the Insured/s\nAddress for correspondence\nRelationship with the Proposer\nDate of Birth MM/DD/YY\nDate of Joining (DOJ)\nSex M / F M/ F / M / F M / F / M / F\n/ T / T /\nName of the Nominee\nRelation of the Nominee with the\nInsured\nPre-existing Condition\n1",
+          "passage_sha256": "3983466647311e7dd27364cfa979afb2666aff37388a87a9b13d4409d9217e5e",
+          "meaning": "Regulator-hosted historical Health Shield 360 wording and blank schedule; minimum-24-hour indemnity and group-selected room limits. Not Retail.",
+          "locator": "Visible original region; SBI body columns kept separate where applicable",
+          "transcription_method": "native_text_within_declared_visible_crop",
+          "visually_reviewed": false
+        },
+        {
+          "physical_page": 13,
+          "bbox": [
+            0,
+            0.0,
+            595.32,
+            841.92
+          ],
+          "exact_passage": "UIN: ICIHLGP22083V022122\nPolicy Period means the period commencing from the Policy Period Start Date, Time and ending at\nthe Policy Period End Date, Time of the Policy and as specifically appearing in the Policy Schedule.\nPolicy Year means a period of twelve months beginning from the Policy Period Start Date and ending\non the last day of such twelve-month period. For the purpose of subsequent years, “Policy Year” shall\nmean a period of twelve months beginning from the end of the previous Policy Year and lapsing on the\nlast day of such twelve-month period, till the Policy Period End Date, as specified in the Policy Schedule\nService Provider means any person, organization, institution, or company that has been empanelled\nwith Us to provide services specified under the Benefits (including add-ons) to The Insured person.\nThese shall also include all healthcare providers empanelled to form a part of network other than\nhospitals.\nThe list of the Service Providers is available on our digital platform and is subject to amendment from\ntime to time.\nYou/Your/ Yours/ Yourself means the person(s) that We insure and is/are specifically named as\nInsured / Insured Person(s) in the Policy Schedule.\nWe/ Our/ Ours/ Us means the ICICI Lombard General Insurance Company Limited\nd) Benefits Covered Under the Policy\nThis Policy is a contract of insurance between the Policyholder and Us which is subject to the receipt\nof premium against each Benefit in full (first instalment in case the customer has opted for Periodic\nPremium Payment option) in respect of the Insured Persons and the terms, conditions and exclusions\nof this Policy.\nClaims made in respect of an Insured Person for any Benefit applicable to the Insured Person shall be\nsubject to the availability of the Annual Sum Insured, applicable sub-limits (if any) and/or deductible (if\nany),and /or Co-payment(if any) for the Benefit claimed as specified in the Policy Schedule/Certificate\nand the terms, conditions and exclusions of this Policy.\nAll claims shall be made in accordance with the procedures set out in this Policy. Admitted claims will\nbe payable to the Insured Person or the Nominee (as applicable).\nA. Base Covers (Mandatory)\n1 Hospitalization Expenses\nWe hereby agree subject to terms, conditions and exclusions herein contained or otherwise\nexpressed hereon that, if during the Policy Year, You require minimum 24 hours Hospitalisation\nfor any Illness or Injury on the written advice of a Medical Practitioner, then We will cover the\nMedical Expenses so incurred by you for,\ni. Room Rent, Boarding, Nursing Expenses as provided by the Hospital / Nursing Home.\nii. Intensive Care Unit (ICU) / Intensive Cardiac Care Unit (ICCU) expenses\niii. Surgeon, Anesthetist, Medical Practitioner, Consultants, Specialist Fees whether paid\ndirectly to the treating doctor / surgeon or to the hospital\n13",
+          "passage_sha256": "d6fb3c0ec6699b2b5e4777f5c3e960ec247ca287b8c8f96f1827b59b6b3e3f0b",
+          "meaning": "Regulator-hosted historical Health Shield 360 wording and blank schedule; minimum-24-hour indemnity and group-selected room limits. Not Retail.",
+          "locator": "Visible original region; SBI body columns kept separate where applicable",
+          "transcription_method": "native_text_within_declared_visible_crop",
+          "visually_reviewed": true
+        },
+        {
+          "physical_page": 14,
+          "bbox": [
+            0,
+            0.0,
+            595.32,
+            841.92
+          ],
+          "exact_passage": "UIN: ICIHLGP22083V022122\niv. Anesthesia, blood, oxygen, operation theatre charges, surgical appliances, medicines and\ndrugs, costs towards diagnostics, diagnostic imaging modalities and such similar other\nexpenses.\nIn case the group has opted for room rent capping the same shall be applicable to room rent of\na hospital room, ICU/ICCU and will be specified in policy schedule/Key Information Sheet\nagainst the benefit.\nIf the insured chooses a higher room category than the category that is eligible as per terms and\nconditions of the policy then the insured person shall bear the rateable proportion of the total\nassociated medical expenses. However, proportionate deductions shall not be applied in respect\nof the hospitals which do not follow differential billing or for those expenses in respect of which\ndifferential billing is not adopted based on the room category.\nHowever, our total liability under this Policy for payment of any and all Claims in aggregate during\neach Policy Year of the Policy Period shall not exceed the Maximum Limit of Indemnity as stated\nin the Policy Schedule.\n2 Day Care Treatment /Surgeries\nWe hereby agree subject to terms, conditions and exclusions herein contained or otherwise\nexpressed hereon that, if during the Policy Year, You require Hospitalisation as an inpatient for\nless than 24 hours in a Hospital (but not in the outpatient department of a Hospital) on the written\nadvice of a Medical Practitioner, then We will pay You for the Medical Expenses incurred for\nundergoing such Day Care Procedure/Treatment or surgery.\nHowever, Our total liability under this cover for payment of any and all Claims in aggregate during\neach Policy Year of the Policy Period shall not exceed the Maximum Limit of Indemnity as stated\nin the Policy Schedule.\n3 Pre-Hospitalisation and Post-Hospitalisation Expenses\nWe hereby agree subject to the terms, conditions and exclusions herein contained or otherwise\nexpressed hereon that, we will compensate you for the relevant Medical Expenses incurred by\nyou in relation to:\n Pre-hospitalisation Medical Expenses incurred by You for a period immediately prior to Your\nHospitalisation as specified against this benefit in the policy schedule/Key Information Sheet\nand\n Post-hospitalisation Medical Expenses incurred by You for a period immediately post\nHospitalisation, as specified against this benefit in the policy schedule/Key Information Sheet,\nprovided that Your Hospitalisation falls within the Policy Year and\nWe have accepted Your Claim under “In-patient Treatment” or “Day Care Procedures” section\nof the Policy.\n4 In Patient AYUSH Hospitalisation\nWe will cover expenses for AYUSH treatment only when the treatment has been undergone in\nan AYUSH Hospital or AYUSH day care centre. We will not cover expenses for hospitalisation\n14",
+          "passage_sha256": "27d3e9e2c3d2d9bca3c8645820321ee403c178e7ddebedfb90ca9954992eadee",
+          "meaning": "Regulator-hosted historical Health Shield 360 wording and blank schedule; minimum-24-hour indemnity and group-selected room limits. Not Retail.",
+          "locator": "Visible original region; SBI body columns kept separate where applicable",
+          "transcription_method": "native_text_within_declared_visible_crop",
+          "visually_reviewed": false
+        }
+      ],
+      "identity_evidence": [
+        {
+          "physical_page": 1,
+          "exact_passage": "UIN: ICIHLGP22083V022122\nHEALTH SHIELD 360\na. Policy Schedule\nPolicy No. Issued at Stamp Duty\n1. Name of the Proposer:\n2. Mailing address of the Proposer:\n3. Contact No. of the Proposer:\n4. Policy Period:\n Start Date: Time________ Hour__________\n End Date: Time________ Hour__________\n5. Period of Insurance\n Start Date\n End Date\n Territorial Scope:\n6. Details of Previous Policy:\n Previous Policy No.\n Previous Policy Period\n Claims (if any)\nDetails of the Insured Person(s) under the Policy:\nName of the Insured/s\nAddress for correspondence\nRelationship with the Proposer\nDate of Birth MM/DD/YY\nDate of Joining (DOJ)\nSex M / F M/ F / M / F M / F / M / F\n/ T / T /\nName of the Nominee\nRelation of the Nominee with the\nInsured\nPre-existing Condition\n1",
+          "bbox": [
+            0,
+            0.0,
+            595.32,
+            841.92
+          ],
+          "meaning": "Exact original title/UIN context, no inferred issue dates."
+        }
+      ],
+      "acquisition_provenance": [
+        {
+          "format_version": 1,
+          "component_version": "research-acquisition/2",
+          "insurer_id": "icici-lombard",
+          "url": "https://irdai.gov.in/documents/37343/931203/ICIHLGP22083V022122_HEALTH2101.pdf/6b5ac086-3668-d92b-1d2d-0935976be059?version=1.1&t=1668842885975&download=true",
+          "linking_url": "https://irdai.gov.in/en/health-insurance-products?_com_irdai_document_media_IRDAIDocumentMediaPortlet_cur=19&_com_irdai_document_media_IRDAIDocumentMediaPortlet_delta=60&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByCol=title&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByType=desc&p_p_id=com_irdai_document_media_IRDAIDocumentMediaPortlet&p_p_lifecycle=0&p_p_mode=view&p_p_state=normal",
+          "acquired_at": "2026-09-10T17:53:31.999438+00:00",
+          "status": "acquired",
+          "issues": [],
+          "sha256": "24187905233ed5eaa53dc2b0ba270a3727bb55ee26863fb78f69d9640df3d355",
+          "page_count": 78,
+          "document_type": "pdf_unclassified",
+          "language": "unknown",
+          "associations": [],
+          "effective_from": null,
+          "effective_to": null,
+          "review_status": "not_reviewed",
+          "http_status": 200,
+          "final_url": "https://irdai.gov.in/documents/37343/931203/ICIHLGP22083V022122_HEALTH2101.pdf/6b5ac086-3668-d92b-1d2d-0935976be059?version=1.1&t=1668842885975&download=true",
+          "byte_count": 1289344,
+          "content_type": "application/pdf",
+          "latency_ms": 831,
+          "discovery": {
+            "label": "ICIHLGP22083V022122_HEALTH2101.pdf",
+            "raw_href": "https://irdai.gov.in/documents/37343/931203/ICIHLGP22083V022122_HEALTH2101.pdf/6b5ac086-3668-d92b-1d2d-0935976be059?version=1.1&t=1668842885975&download=true",
+            "source_page_sha256": "2936e8d1094104ed9485a9d555b196974d8b7c13d9469f9597804aa0bbd8a059"
+          },
+          "attempt_register": "research/registers/remaining-five-acquisition-r12.json"
+        }
+      ],
+      "selected_physical_pages_read_for_identity_scope": [
+        1,
+        13,
+        14
+      ],
+      "visually_reviewed_physical_pages": [
+        13
+      ],
+      "review_extent": "Bounded original identity/operative grant and connected selected conditions; no exhaustive full-original or rule-instance inventory.",
+      "already_manually_classified_r13": false,
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": {
+        "status": "unmeasured",
+        "value": null
+      },
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Mixed fixed/optional benefits may coexist; only medical-expense scope classified here."
+    },
+    {
+      "source_sha256": "6168a4f97203b6fbdf00adb3aaaa5caadaf5cefb7c7e6c18c0da038fe53c1065",
+      "insurer_id": "icici-lombard",
+      "product_or_heading": "Health Shield 360",
+      "heading_is_normalized_display_label": true,
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Regulator-hosted historical Health Shield 360 wording and blank schedule; original UIN retained separately from later revision. Not Retail.",
+      "page_count": 76,
+      "observed_uins": [
+        "ICIHLGP21601V012021"
+      ],
+      "typed_uin_assertions": [
+        {
+          "value": "ICIHLGP21601V012021",
+          "kind": "printed_product_uin",
+          "physical_page": 1,
+          "issue_applicability_verified": false
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0.0,
+            595.32,
+            841.92
+          ],
+          "exact_passage": "UIN: ICIHLGP21601V012021\nHEALTH SHIELD 360\nPREAMBLE\nICICI Lombard General Insurance Company Limited (“We / Us”), having received a Proposal and the\npremium from the Proposer named in Part I of the Policy (hereinafter referred to as the “Policy\nSchedule”) and the said Proposal and Declaration together with any statement, report or other\ndocument leading to the issue of this Policy and referred to therein having been accepted and agreed\nto by Us and the Proposer as the basis of this contract do, by this Policy agree, in consideration of and\nsubject to the due receipt of the subsequent premiums, as set out in the Policy Schedule, and further,\nsubject to the terms and conditions contained in this Policy that on proof to Our satisfaction of the\ncompensation having become payable as set out in the Policy Schedule to the title of the said person\nor persons claiming payment or upon the happening of an event upon which one or more benefits\nbecome payable under this Policy, the Annual Sum Insured / appropriate benefit amount will be paid by\nUs.\nPART I OF POLICY- POLICY SCHEDULE\nPolicy No. Issued at Stamp Duty\n1. Name of the Proposer:\n2. Mailing address of the Proposer:\n3. Contact No. of the Proposer:\n4. Policy Period:\n Start Date: Time________ Hour__________\n End Date: Time________ Hour__________\n5. Period of Insurance\n Start Date\n End Date\n Territorial Scope:\n6. Details of Previous Policy:\n Previous Policy No.\n Previous Policy Period\n Claims (if any)\nDetails of the Insured Person(s) under the Policy:\nName of the Insured/s\nAddress for correspondence\nRelationship with the Proposer\nDate of Birth MM/DD/YY\n1",
+          "passage_sha256": "8cef78913c0ed880919c71bcc6b47e3258fa485b653ef5a2d61989b082c1a38f",
+          "meaning": "Regulator-hosted historical Health Shield 360 wording and blank schedule; original UIN retained separately from later revision. Not Retail.",
+          "locator": "Visible original region; SBI body columns kept separate where applicable",
+          "transcription_method": "native_text_within_declared_visible_crop",
+          "visually_reviewed": false
+        },
+        {
+          "physical_page": 14,
+          "bbox": [
+            0,
+            0.0,
+            595.32,
+            841.92
+          ],
+          "exact_passage": "UIN: ICIHLGP21601V012021\nII. WHAT WE WILL PAY (SCOPE OF COVER)\nThis Policy is a contract of insurance between the Policyholder and Us which is subject to the receipt\nof premium against each Benefit in full (first instalment in case the customer has opted for Periodic\nPremium Payment option) in respect of the Insured Persons and the terms, conditions and exclusions\nof this Policy.\nClaims made in respect of an Insured Person for any Benefit applicable to the Insured Person shall be\nsubject to the availability of the Annual Sum Insured, applicable sub-limits (if any) and/or deductible (if\nany),and /or Co-payment(if any) for the Benefit claimed as specified in the Policy Schedule/Certificate\nand the terms, conditions and exclusions of this Policy.\nAll claims shall be made in accordance with the procedures set out in this Policy. Admitted claims will\nbe payable to the Insured Person or the Nominee (as applicable).\nA. Base Covers (Mandatory)\n1 Hospitalization Expenses\nWe hereby agree subject to terms, conditions and exclusions herein contained or otherwise\nexpressed hereon that, if during the Policy Year, You require minimum 24 hours Hospitalisation\nfor any Illness or Injury on the written advice of a Medical Practitioner, then We will cover the\nMedical Expenses so incurred by you for,\ni. Room Rent, Boarding, Nursing Expenses as provided by the Hospital / Nursing Home.\nii. Intensive Care Unit (ICU) / Intensive Cardiac Care Unit (ICCU) expenses\niii. Surgeon, Anesthetist, Medical Practitioner, Consultants, Specialist Fees whether paid\ndirectly to the treating doctor / surgeon or to the hospital\niv. Anesthesia, blood, oxygen, operation theatre charges, surgical appliances, medicines and\ndrugs, costs towards diagnostics, diagnostic imaging modalities and such similar other\nexpenses.\nIn case the group has opted for room rent capping the same shall be applicable to room rent of\na hospital room, ICU/ICCU and will be specified in policy schedule/Key Information Sheet\nagainst the benefit.\n14",
+          "passage_sha256": "8ca83e55ff185e3522c5e32389a616e34cca10634fa0b8cb1b3f9a2c61e90d84",
+          "meaning": "Regulator-hosted historical Health Shield 360 wording and blank schedule; original UIN retained separately from later revision. Not Retail.",
+          "locator": "Visible original region; SBI body columns kept separate where applicable",
+          "transcription_method": "native_text_within_declared_visible_crop",
+          "visually_reviewed": true
+        },
+        {
+          "physical_page": 15,
+          "bbox": [
+            0,
+            0.0,
+            595.32,
+            841.92
+          ],
+          "exact_passage": "UIN: ICIHLGP21601V012021\nIf the insured chooses a higher room category than the category that is eligible as per terms and\nconditions of the policy then the insured person shall bear the rateable proportion of the total\nassociated medical expenses. However, proportionate deductions shall not be applied in respect\nof the hospitals which do not follow differential billing or for those expenses in respect of which\ndifferential billing is not adopted based on the room category.\nHowever, our total liability under this Policy for payment of any and all Claims in aggregate during\neach Policy Year of the Policy Period shall not exceed the Maximum Limit of Indemnity as stated\nin the Policy Schedule.\n2 Day Care Treatment /Surgeries\nWe hereby agree subject to terms, conditions and exclusions herein contained or otherwise\nexpressed hereon that, if during the Policy Year, You require Hospitalisation as an inpatient for\nless than 24 hours in a Hospital (but not in the outpatient department of a Hospital) on the written\nadvice of a Medical Practitioner, then We will pay You for the Medical Expenses incurred for\nundergoing such Day Care Procedure/Treatment or surgery.\nHowever, Our total liability under this cover for payment of any and all Claims in aggregate during\neach Policy Year of the Policy Period shall not exceed the Maximum Limit of Indemnity as stated\nin the Policy Schedule.\n3 Pre-Hospitalisation and Post-Hospitalisation Expenses\nWe hereby agree subject to the terms, conditions and exclusions herein contained or otherwise\nexpressed hereon that, we will compensate you for the relevant Medical Expenses incurred by\nyou in relation to:\n Pre-hospitalisation Medical Expenses incurred by You for a period immediately prior to Your\nHospitalisation as specified against this benefit in the policy schedule/Key Information Sheet\nand\n Post-hospitalisation Medical Expenses incurred by You for a period immediately post\nHospitalisation, as specified against this benefit in the policy schedule/Key Information Sheet,\nprovided that Your Hospitalisation falls within the Policy Year and\nWe have accepted Your Claim under “In-patient Treatment” or “Day Care Procedures” section\nof the Policy.\n4 In Patient AYUSH Hospitalisation\nWe will cover expenses for AYUSH treatment only when the treatment has been undergone in\nan AYUSH Hospital or AYUSH day care centre. We will not cover expenses for hospitalisation\ndone for evaluation or investigation only. Treatment taken at a healthcare facility which is not a\nHospital are also excluded.\nHowever, our total liability under this Policy for payment of any and all Claims in aggregate\nduring each Policy Year of the Policy Period shall not exceed the Maximum Limit of Indemnity\nas stated in the Policy Schedule\n15",
+          "passage_sha256": "b64d006e093692a916dce138e6380a2c4c12d0a365ca532e88398e89c25ae119",
+          "meaning": "Regulator-hosted historical Health Shield 360 wording and blank schedule; original UIN retained separately from later revision. Not Retail.",
+          "locator": "Visible original region; SBI body columns kept separate where applicable",
+          "transcription_method": "native_text_within_declared_visible_crop",
+          "visually_reviewed": false
+        }
+      ],
+      "identity_evidence": [
+        {
+          "physical_page": 1,
+          "exact_passage": "UIN: ICIHLGP21601V012021\nHEALTH SHIELD 360\nPREAMBLE\nICICI Lombard General Insurance Company Limited (“We / Us”), having received a Proposal and the\npremium from the Proposer named in Part I of the Policy (hereinafter referred to as the “Policy\nSchedule”) and the said Proposal and Declaration together with any statement, report or other\ndocument leading to the issue of this Policy and referred to therein having been accepted and agreed\nto by Us and the Proposer as the basis of this contract do, by this Policy agree, in consideration of and\nsubject to the due receipt of the subsequent premiums, as set out in the Policy Schedule, and further,\nsubject to the terms and conditions contained in this Policy that on proof to Our satisfaction of the\ncompensation having become payable as set out in the Policy Schedule to the title of the said person\nor persons claiming payment or upon the happening of an event upon which one or more benefits\nbecome payable under this Policy, the Annual Sum Insured / appropriate benefit amount will be paid by\nUs.\nPART I OF POLICY- POLICY SCHEDULE\nPolicy No. Issued at Stamp Duty\n1. Name of the Proposer:\n2. Mailing address of the Proposer:\n3. Contact No. of the Proposer:\n4. Policy Period:\n Start Date: Time________ Hour__________\n End Date: Time________ Hour__________\n5. Period of Insurance\n Start Date\n End Date\n Territorial Scope:\n6. Details of Previous Policy:\n Previous Policy No.\n Previous Policy Period\n Claims (if any)\nDetails of the Insured Person(s) under the Policy:\nName of the Insured/s\nAddress for correspondence\nRelationship with the Proposer\nDate of Birth MM/DD/YY\n1",
+          "bbox": [
+            0,
+            0.0,
+            595.32,
+            841.92
+          ],
+          "meaning": "Exact original title/UIN context, no inferred issue dates."
+        }
+      ],
+      "acquisition_provenance": [
+        {
+          "format_version": 1,
+          "component_version": "research-acquisition/2",
+          "insurer_id": "icici-lombard",
+          "url": "https://irdai.gov.in/documents/37343/931203/ICIHLGP21601V012021_2020-2021.pdf/2484e655-f13b-4846-f682-621523791938?version=1.1&t=1668583601492&download=true",
+          "linking_url": "https://irdai.gov.in/en/health-insurance-products?_com_irdai_document_media_IRDAIDocumentMediaPortlet_cur=19&_com_irdai_document_media_IRDAIDocumentMediaPortlet_delta=60&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByCol=title&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByType=desc&p_p_id=com_irdai_document_media_IRDAIDocumentMediaPortlet&p_p_lifecycle=0&p_p_mode=view&p_p_state=normal",
+          "acquired_at": "2026-09-10T17:53:32.834167+00:00",
+          "status": "acquired",
+          "issues": [],
+          "sha256": "6168a4f97203b6fbdf00adb3aaaa5caadaf5cefb7c7e6c18c0da038fe53c1065",
+          "page_count": 76,
+          "document_type": "pdf_unclassified",
+          "language": "unknown",
+          "associations": [],
+          "effective_from": null,
+          "effective_to": null,
+          "review_status": "not_reviewed",
+          "http_status": 200,
+          "final_url": "https://irdai.gov.in/documents/37343/931203/ICIHLGP21601V012021_2020-2021.pdf/2484e655-f13b-4846-f682-621523791938?version=1.1&t=1668583601492&download=true",
+          "byte_count": 1270636,
+          "content_type": "application/pdf",
+          "latency_ms": 1015,
+          "discovery": {
+            "label": "ICIHLGP21601V012021_2020-2021.pdf",
+            "raw_href": "https://irdai.gov.in/documents/37343/931203/ICIHLGP21601V012021_2020-2021.pdf/2484e655-f13b-4846-f682-621523791938?version=1.1&t=1668583601492&download=true",
+            "source_page_sha256": "2936e8d1094104ed9485a9d555b196974d8b7c13d9469f9597804aa0bbd8a059"
+          },
+          "attempt_register": "research/registers/remaining-five-acquisition-r12.json"
+        }
+      ],
+      "selected_physical_pages_read_for_identity_scope": [
+        1,
+        14,
+        15
+      ],
+      "visually_reviewed_physical_pages": [
+        14
+      ],
+      "review_extent": "Bounded original identity/operative grant and connected selected conditions; no exhaustive full-original or rule-instance inventory.",
+      "already_manually_classified_r13": false,
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": {
+        "status": "unmeasured",
+        "value": null
+      },
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Mixed fixed/optional benefits may coexist; only medical-expense scope classified here."
+    },
+    {
+      "source_sha256": "56e9b869c47663eab85c84ce094efac3afe2ddbdbda957c8532dc0bd822672fe",
+      "insurer_id": "bajaj-general",
+      "product_or_heading": "IRDAI historical health product register: selected Extra Care rows",
+      "document_role": "historical_product_version_register",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Exact original HTML rows distinguish product/UIN and approval-date semantics; links led to actual insurer-authored wording PDFs.",
+      "page_count": null,
+      "observed_uins": [
+        "BAJHLIP21146V022021"
+      ],
+      "typed_uin_assertions": [
+        {
+          "value": "BAJHLIP21146V022021",
+          "kind": "regulator_register_product_uin",
+          "issue_applicability_verified": false
+        }
+      ],
+      "evidence": [
+        {
+          "locator": {
+            "kind": "html_element",
+            "tag": "tr",
+            "zero_based_document_tag_index": 39,
+            "original_sha256": "56e9b869c47663eab85c84ce094efac3afe2ddbdbda957c8532dc0bd822672fe"
+          },
+          "exact_passage": "Non-Archived 2020-2021 Bajaj Allianz General Insurance Co. Ltd BAJHLIP21146V022021 Extra Care 08-12-2020 BAJHLIP21146V022021_2020-2021.pdf 165 KB Revision",
+          "exact_outer_html": "<tr class=\"\">\n<td class=\"table-cell nosort first\" colspan=\"1\">\n<div class=\"form-group form-inline input-checkbox-wrapper\">\n<input class=\"field checkSingle\" id=\"_com_irdai_document_media_IRDAIDocumentMediaPortlet_fileCheck_941872\" name=\"_com_irdai_document_media_IRDAIDocumentMediaPortlet_fileCheck_941872\" onclick=\"\" title=\"file-check_941872\" type=\"checkbox\" value=\"941872\"/>\n</div>\n</td>\n<td class=\"table-cell table-col-archive-nonarchive\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\tNon-Archived\n\t\t\t\t\t\t\n\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-fy\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t2020-2021\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-insurer\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tBajaj Allianz General Insurance Co. Ltd \n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-uin\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tBAJHLIP21146V022021 \n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-productName\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tExtra Care \n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-cell-minw-100 table-col-approvalDate\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t08-12-2020\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-cell-maxw-150 table-col-documents\" colspan=\"1\">\n<div class=\"row position-relative\">\n<div class=\"col-lg-2 col-md-2 col-sm-2 col-2\">\n<img alt=\"pdf \" class=\"pdf-img\" src=\"https://irdai.gov.in/o/irdai-theme/images/svg/icons/pdficon.svg\" title=\"pdf\"/>\n</div>\n<div class=\"col-lg-8 col-md-8 col-sm-8 col-8\">\n<a href=\"https://irdai.gov.in/documents/37343/931203/BAJHLIP21146V022021_2020-2021.pdf/d2b214ec-6122-2518-0906-f3285f1506bb?version=1.1&amp;t=1668581706141&amp;download=true\" style=\"margin-bottom: 0rem\">BAJHLIP21146V022021_2020-2021.pdf</a>\n<p class=\"text-muted\" style=\"margin-bottom: 0rem\">165 KB</p>\n</div>\n<div class=\"doc-download px-0\">\n<a href=\"https://irdai.gov.in/documents/37343/931203/BAJHLIP21146V022021_2020-2021.pdf/d2b214ec-6122-2518-0906-f3285f1506bb?version=1.1&amp;t=1668581706141&amp;download=true\" title=\"Download\">\n<img alt=\"Download\" class=\"\" src=\"https://irdai.gov.in/o/irdai-theme/images/svg/icons/download-green.png\" width=\"15\">\n</img></a>\n</div>\n</div>\n</td>\n<td class=\"table-cell table-col-top last\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tRevision\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n</tr>",
+          "table_header_exact_passage": "Archive / Non Archive Financial Year Name of the Insurer UIN Product Name Date of Approval Documents Type Of Product",
+          "meaning": "Regulator original product row and linked document. Date column is Date of Approval, not offer dates, issue dates or policy expiry.",
+          "transcription_method": "html_original"
+        }
+      ],
+      "identity_evidence": [
+        {
+          "locator": {
+            "kind": "html_element",
+            "tag": "tr",
+            "zero_based_document_tag_index": 39,
+            "original_sha256": "56e9b869c47663eab85c84ce094efac3afe2ddbdbda957c8532dc0bd822672fe"
+          },
+          "exact_passage": "Non-Archived 2020-2021 Bajaj Allianz General Insurance Co. Ltd BAJHLIP21146V022021 Extra Care 08-12-2020 BAJHLIP21146V022021_2020-2021.pdf 165 KB Revision",
+          "exact_outer_html": "<tr class=\"\">\n<td class=\"table-cell nosort first\" colspan=\"1\">\n<div class=\"form-group form-inline input-checkbox-wrapper\">\n<input class=\"field checkSingle\" id=\"_com_irdai_document_media_IRDAIDocumentMediaPortlet_fileCheck_941872\" name=\"_com_irdai_document_media_IRDAIDocumentMediaPortlet_fileCheck_941872\" onclick=\"\" title=\"file-check_941872\" type=\"checkbox\" value=\"941872\"/>\n</div>\n</td>\n<td class=\"table-cell table-col-archive-nonarchive\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\tNon-Archived\n\t\t\t\t\t\t\n\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-fy\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t2020-2021\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-insurer\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tBajaj Allianz General Insurance Co. Ltd \n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-uin\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tBAJHLIP21146V022021 \n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-productName\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tExtra Care \n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-cell-minw-100 table-col-approvalDate\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t08-12-2020\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-cell-maxw-150 table-col-documents\" colspan=\"1\">\n<div class=\"row position-relative\">\n<div class=\"col-lg-2 col-md-2 col-sm-2 col-2\">\n<img alt=\"pdf \" class=\"pdf-img\" src=\"https://irdai.gov.in/o/irdai-theme/images/svg/icons/pdficon.svg\" title=\"pdf\"/>\n</div>\n<div class=\"col-lg-8 col-md-8 col-sm-8 col-8\">\n<a href=\"https://irdai.gov.in/documents/37343/931203/BAJHLIP21146V022021_2020-2021.pdf/d2b214ec-6122-2518-0906-f3285f1506bb?version=1.1&amp;t=1668581706141&amp;download=true\" style=\"margin-bottom: 0rem\">BAJHLIP21146V022021_2020-2021.pdf</a>\n<p class=\"text-muted\" style=\"margin-bottom: 0rem\">165 KB</p>\n</div>\n<div class=\"doc-download px-0\">\n<a href=\"https://irdai.gov.in/documents/37343/931203/BAJHLIP21146V022021_2020-2021.pdf/d2b214ec-6122-2518-0906-f3285f1506bb?version=1.1&amp;t=1668581706141&amp;download=true\" title=\"Download\">\n<img alt=\"Download\" class=\"\" src=\"https://irdai.gov.in/o/irdai-theme/images/svg/icons/download-green.png\" width=\"15\">\n</img></a>\n</div>\n</div>\n</td>\n<td class=\"table-cell table-col-top last\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tRevision\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n</tr>",
+          "table_header_exact_passage": "Archive / Non Archive Financial Year Name of the Insurer UIN Product Name Date of Approval Documents Type Of Product",
+          "meaning": "Regulator original product row and linked document. Date column is Date of Approval, not offer dates, issue dates or policy expiry.",
+          "transcription_method": "html_original"
+        }
+      ],
+      "acquisition_provenance": [
+        {
+          "format_version": 1,
+          "component_version": "research-acquisition/2",
+          "insurer_id": "bajaj-general",
+          "url": "https://irdai.gov.in/en/health-insurance-products?_com_irdai_document_media_IRDAIDocumentMediaPortlet_cur=2&_com_irdai_document_media_IRDAIDocumentMediaPortlet_delta=40&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByCol=uin_String_sortable&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByType=asc&p_p_id=com_irdai_document_media_IRDAIDocumentMediaPortlet&p_p_lifecycle=0&p_p_mode=view&p_p_state=normal",
+          "linking_url": "",
+          "acquired_at": "2026-09-10T17:53:28.257062+00:00",
+          "status": "acquired",
+          "issues": [],
+          "sha256": "56e9b869c47663eab85c84ce094efac3afe2ddbdbda957c8532dc0bd822672fe",
+          "page_count": null,
+          "document_type": "source_page",
+          "language": "unknown",
+          "associations": [],
+          "effective_from": null,
+          "effective_to": null,
+          "review_status": "not_reviewed",
+          "http_status": 200,
+          "final_url": "https://irdai.gov.in/en/health-insurance-products?_com_irdai_document_media_IRDAIDocumentMediaPortlet_cur=2&_com_irdai_document_media_IRDAIDocumentMediaPortlet_delta=40&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByCol=uin_String_sortable&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByType=asc&p_p_id=com_irdai_document_media_IRDAIDocumentMediaPortlet&p_p_lifecycle=0&p_p_mode=view&p_p_state=normal",
+          "byte_count": 514667,
+          "content_type": "text/html;charset=UTF-8",
+          "latency_ms": 1956,
+          "attempt_register": "research/registers/remaining-five-acquisition-r12.json"
+        }
+      ],
+      "selected_physical_pages_read_for_identity_scope": [],
+      "visually_reviewed_physical_pages": [],
+      "review_extent": "Selected HTML product rows only; no complete register reconciliation.",
+      "already_manually_classified_r13": false,
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": {
+        "status": "unmeasured",
+        "value": null
+      },
+      "bundle_completeness": "not_established"
+    },
+    {
+      "source_sha256": "2936e8d1094104ed9485a9d555b196974d8b7c13d9469f9597804aa0bbd8a059",
+      "insurer_id": "icici-lombard",
+      "product_or_heading": "IRDAI historical health product register: selected Health Shield 360 rows",
+      "document_role": "historical_product_version_register",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Exact original HTML rows distinguish product/UIN and approval-date semantics; links led to actual insurer-authored wording PDFs.",
+      "page_count": null,
+      "observed_uins": [
+        "ICIHLGP22083V022122",
+        "ICIHLGP21601V012021"
+      ],
+      "typed_uin_assertions": [
+        {
+          "value": "ICIHLGP22083V022122",
+          "kind": "regulator_register_product_uin",
+          "issue_applicability_verified": false
+        },
+        {
+          "value": "ICIHLGP21601V012021",
+          "kind": "regulator_register_product_uin",
+          "issue_applicability_verified": false
+        }
+      ],
+      "evidence": [
+        {
+          "locator": {
+            "kind": "html_element",
+            "tag": "tr",
+            "zero_based_document_tag_index": 14,
+            "original_sha256": "2936e8d1094104ed9485a9d555b196974d8b7c13d9469f9597804aa0bbd8a059"
+          },
+          "exact_passage": "Non-Archived 2021-2022 ICICI Lombard GI Co. Ltd. ICIHLGP22083V022122 Health Shield 360 02-07-2021 ICIHLGP22083V022122_HEALTH2101.pdf 1.2 MB Revision",
+          "exact_outer_html": "<tr class=\"\">\n<td class=\"table-cell nosort first\" colspan=\"1\">\n<div class=\"form-group form-inline input-checkbox-wrapper\">\n<input class=\"field checkSingle\" id=\"_com_irdai_document_media_IRDAIDocumentMediaPortlet_fileCheck_1047331\" name=\"_com_irdai_document_media_IRDAIDocumentMediaPortlet_fileCheck_1047331\" onclick=\"\" title=\"file-check_1047331\" type=\"checkbox\" value=\"1047331\"/>\n</div>\n</td>\n<td class=\"table-cell table-col-archive-nonarchive\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\tNon-Archived\n\t\t\t\t\t\t\n\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-fy\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t2021-2022\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-insurer\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tICICI Lombard GI Co. Ltd.\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-uin\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tICIHLGP22083V022122\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-productName\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tHealth Shield 360\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-cell-minw-100 table-col-approvalDate\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t02-07-2021\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-cell-maxw-150 table-col-documents\" colspan=\"1\">\n<div class=\"row position-relative\">\n<div class=\"col-lg-2 col-md-2 col-sm-2 col-2\">\n<img alt=\"pdf \" class=\"pdf-img\" src=\"https://irdai.gov.in/o/irdai-theme/images/svg/icons/pdficon.svg\" title=\"pdf\"/>\n</div>\n<div class=\"col-lg-8 col-md-8 col-sm-8 col-8\">\n<a href=\"https://irdai.gov.in/documents/37343/931203/ICIHLGP22083V022122_HEALTH2101.pdf/6b5ac086-3668-d92b-1d2d-0935976be059?version=1.1&amp;t=1668842885975&amp;download=true\" style=\"margin-bottom: 0rem\">ICIHLGP22083V022122_HEALTH2101.pdf</a>\n<p class=\"text-muted\" style=\"margin-bottom: 0rem\">1.2 MB</p>\n</div>\n<div class=\"doc-download px-0\">\n<a href=\"https://irdai.gov.in/documents/37343/931203/ICIHLGP22083V022122_HEALTH2101.pdf/6b5ac086-3668-d92b-1d2d-0935976be059?version=1.1&amp;t=1668842885975&amp;download=true\" title=\"Download\">\n<img alt=\"Download\" class=\"\" src=\"https://irdai.gov.in/o/irdai-theme/images/svg/icons/download-green.png\" width=\"15\">\n</img></a>\n</div>\n</div>\n</td>\n<td class=\"table-cell table-col-top last\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tRevision\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n</tr>",
+          "table_header_exact_passage": "Archive / Non Archive Financial Year Name of the Insurer UIN Product Name Date of Approval Documents Type Of Product",
+          "meaning": "Regulator original product row and linked document. Date column is Date of Approval, not offer dates, issue dates or policy expiry.",
+          "transcription_method": "html_original"
+        },
+        {
+          "locator": {
+            "kind": "html_element",
+            "tag": "tr",
+            "zero_based_document_tag_index": 15,
+            "original_sha256": "2936e8d1094104ed9485a9d555b196974d8b7c13d9469f9597804aa0bbd8a059"
+          },
+          "exact_passage": "Non-Archived 2020-2021 ICICI Lombard General Insurance Co Ltd ICIHLGP21601V012021 Health Shield 360 03-03-2021 ICIHLGP21601V012021_2020-2021.pdf 1.2 MB Group",
+          "exact_outer_html": "<tr class=\"\">\n<td class=\"table-cell nosort first\" colspan=\"1\">\n<div class=\"form-group form-inline input-checkbox-wrapper\">\n<input class=\"field checkSingle\" id=\"_com_irdai_document_media_IRDAIDocumentMediaPortlet_fileCheck_943675\" name=\"_com_irdai_document_media_IRDAIDocumentMediaPortlet_fileCheck_943675\" onclick=\"\" title=\"file-check_943675\" type=\"checkbox\" value=\"943675\"/>\n</div>\n</td>\n<td class=\"table-cell table-col-archive-nonarchive\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\tNon-Archived\n\t\t\t\t\t\t\n\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-fy\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t2020-2021\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-insurer\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tICICI Lombard General Insurance Co Ltd\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-uin\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tICIHLGP21601V012021\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-productName\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tHealth Shield 360\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-cell-minw-100 table-col-approvalDate\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t03-03-2021\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-cell-maxw-150 table-col-documents\" colspan=\"1\">\n<div class=\"row position-relative\">\n<div class=\"col-lg-2 col-md-2 col-sm-2 col-2\">\n<img alt=\"pdf \" class=\"pdf-img\" src=\"https://irdai.gov.in/o/irdai-theme/images/svg/icons/pdficon.svg\" title=\"pdf\"/>\n</div>\n<div class=\"col-lg-8 col-md-8 col-sm-8 col-8\">\n<a href=\"https://irdai.gov.in/documents/37343/931203/ICIHLGP21601V012021_2020-2021.pdf/2484e655-f13b-4846-f682-621523791938?version=1.1&amp;t=1668583601492&amp;download=true\" style=\"margin-bottom: 0rem\">ICIHLGP21601V012021_2020-2021.pdf</a>\n<p class=\"text-muted\" style=\"margin-bottom: 0rem\">1.2 MB</p>\n</div>\n<div class=\"doc-download px-0\">\n<a href=\"https://irdai.gov.in/documents/37343/931203/ICIHLGP21601V012021_2020-2021.pdf/2484e655-f13b-4846-f682-621523791938?version=1.1&amp;t=1668583601492&amp;download=true\" title=\"Download\">\n<img alt=\"Download\" class=\"\" src=\"https://irdai.gov.in/o/irdai-theme/images/svg/icons/download-green.png\" width=\"15\">\n</img></a>\n</div>\n</div>\n</td>\n<td class=\"table-cell table-col-top last\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tGroup\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n</tr>",
+          "table_header_exact_passage": "Archive / Non Archive Financial Year Name of the Insurer UIN Product Name Date of Approval Documents Type Of Product",
+          "meaning": "Regulator original product row and linked document. Date column is Date of Approval, not offer dates, issue dates or policy expiry.",
+          "transcription_method": "html_original"
+        }
+      ],
+      "identity_evidence": [
+        {
+          "locator": {
+            "kind": "html_element",
+            "tag": "tr",
+            "zero_based_document_tag_index": 14,
+            "original_sha256": "2936e8d1094104ed9485a9d555b196974d8b7c13d9469f9597804aa0bbd8a059"
+          },
+          "exact_passage": "Non-Archived 2021-2022 ICICI Lombard GI Co. Ltd. ICIHLGP22083V022122 Health Shield 360 02-07-2021 ICIHLGP22083V022122_HEALTH2101.pdf 1.2 MB Revision",
+          "exact_outer_html": "<tr class=\"\">\n<td class=\"table-cell nosort first\" colspan=\"1\">\n<div class=\"form-group form-inline input-checkbox-wrapper\">\n<input class=\"field checkSingle\" id=\"_com_irdai_document_media_IRDAIDocumentMediaPortlet_fileCheck_1047331\" name=\"_com_irdai_document_media_IRDAIDocumentMediaPortlet_fileCheck_1047331\" onclick=\"\" title=\"file-check_1047331\" type=\"checkbox\" value=\"1047331\"/>\n</div>\n</td>\n<td class=\"table-cell table-col-archive-nonarchive\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\tNon-Archived\n\t\t\t\t\t\t\n\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-fy\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t2021-2022\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-insurer\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tICICI Lombard GI Co. Ltd.\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-uin\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tICIHLGP22083V022122\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-productName\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tHealth Shield 360\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-cell-minw-100 table-col-approvalDate\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t02-07-2021\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-cell-maxw-150 table-col-documents\" colspan=\"1\">\n<div class=\"row position-relative\">\n<div class=\"col-lg-2 col-md-2 col-sm-2 col-2\">\n<img alt=\"pdf \" class=\"pdf-img\" src=\"https://irdai.gov.in/o/irdai-theme/images/svg/icons/pdficon.svg\" title=\"pdf\"/>\n</div>\n<div class=\"col-lg-8 col-md-8 col-sm-8 col-8\">\n<a href=\"https://irdai.gov.in/documents/37343/931203/ICIHLGP22083V022122_HEALTH2101.pdf/6b5ac086-3668-d92b-1d2d-0935976be059?version=1.1&amp;t=1668842885975&amp;download=true\" style=\"margin-bottom: 0rem\">ICIHLGP22083V022122_HEALTH2101.pdf</a>\n<p class=\"text-muted\" style=\"margin-bottom: 0rem\">1.2 MB</p>\n</div>\n<div class=\"doc-download px-0\">\n<a href=\"https://irdai.gov.in/documents/37343/931203/ICIHLGP22083V022122_HEALTH2101.pdf/6b5ac086-3668-d92b-1d2d-0935976be059?version=1.1&amp;t=1668842885975&amp;download=true\" title=\"Download\">\n<img alt=\"Download\" class=\"\" src=\"https://irdai.gov.in/o/irdai-theme/images/svg/icons/download-green.png\" width=\"15\">\n</img></a>\n</div>\n</div>\n</td>\n<td class=\"table-cell table-col-top last\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tRevision\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n</tr>",
+          "table_header_exact_passage": "Archive / Non Archive Financial Year Name of the Insurer UIN Product Name Date of Approval Documents Type Of Product",
+          "meaning": "Regulator original product row and linked document. Date column is Date of Approval, not offer dates, issue dates or policy expiry.",
+          "transcription_method": "html_original"
+        },
+        {
+          "locator": {
+            "kind": "html_element",
+            "tag": "tr",
+            "zero_based_document_tag_index": 15,
+            "original_sha256": "2936e8d1094104ed9485a9d555b196974d8b7c13d9469f9597804aa0bbd8a059"
+          },
+          "exact_passage": "Non-Archived 2020-2021 ICICI Lombard General Insurance Co Ltd ICIHLGP21601V012021 Health Shield 360 03-03-2021 ICIHLGP21601V012021_2020-2021.pdf 1.2 MB Group",
+          "exact_outer_html": "<tr class=\"\">\n<td class=\"table-cell nosort first\" colspan=\"1\">\n<div class=\"form-group form-inline input-checkbox-wrapper\">\n<input class=\"field checkSingle\" id=\"_com_irdai_document_media_IRDAIDocumentMediaPortlet_fileCheck_943675\" name=\"_com_irdai_document_media_IRDAIDocumentMediaPortlet_fileCheck_943675\" onclick=\"\" title=\"file-check_943675\" type=\"checkbox\" value=\"943675\"/>\n</div>\n</td>\n<td class=\"table-cell table-col-archive-nonarchive\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\n\t\t\t\t\t\tNon-Archived\n\t\t\t\t\t\t\n\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-fy\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t2020-2021\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-insurer\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tICICI Lombard General Insurance Co Ltd\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-uin\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tICIHLGP21601V012021\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-col-productName\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tHealth Shield 360\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-cell-minw-100 table-col-approvalDate\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t03-03-2021\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n<td class=\"table-cell table-cell-maxw-150 table-col-documents\" colspan=\"1\">\n<div class=\"row position-relative\">\n<div class=\"col-lg-2 col-md-2 col-sm-2 col-2\">\n<img alt=\"pdf \" class=\"pdf-img\" src=\"https://irdai.gov.in/o/irdai-theme/images/svg/icons/pdficon.svg\" title=\"pdf\"/>\n</div>\n<div class=\"col-lg-8 col-md-8 col-sm-8 col-8\">\n<a href=\"https://irdai.gov.in/documents/37343/931203/ICIHLGP21601V012021_2020-2021.pdf/2484e655-f13b-4846-f682-621523791938?version=1.1&amp;t=1668583601492&amp;download=true\" style=\"margin-bottom: 0rem\">ICIHLGP21601V012021_2020-2021.pdf</a>\n<p class=\"text-muted\" style=\"margin-bottom: 0rem\">1.2 MB</p>\n</div>\n<div class=\"doc-download px-0\">\n<a href=\"https://irdai.gov.in/documents/37343/931203/ICIHLGP21601V012021_2020-2021.pdf/2484e655-f13b-4846-f682-621523791938?version=1.1&amp;t=1668583601492&amp;download=true\" title=\"Download\">\n<img alt=\"Download\" class=\"\" src=\"https://irdai.gov.in/o/irdai-theme/images/svg/icons/download-green.png\" width=\"15\">\n</img></a>\n</div>\n</div>\n</td>\n<td class=\"table-cell table-col-top last\" colspan=\"1\">\n\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\tGroup\n\t\t\t\t\t\t\t\t\n\n\t\t\t\t</td>\n</tr>",
+          "table_header_exact_passage": "Archive / Non Archive Financial Year Name of the Insurer UIN Product Name Date of Approval Documents Type Of Product",
+          "meaning": "Regulator original product row and linked document. Date column is Date of Approval, not offer dates, issue dates or policy expiry.",
+          "transcription_method": "html_original"
+        }
+      ],
+      "acquisition_provenance": [
+        {
+          "format_version": 1,
+          "component_version": "research-acquisition/2",
+          "insurer_id": "icici-lombard",
+          "url": "https://irdai.gov.in/en/health-insurance-products?_com_irdai_document_media_IRDAIDocumentMediaPortlet_cur=19&_com_irdai_document_media_IRDAIDocumentMediaPortlet_delta=60&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByCol=title&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByType=desc&p_p_id=com_irdai_document_media_IRDAIDocumentMediaPortlet&p_p_lifecycle=0&p_p_mode=view&p_p_state=normal",
+          "linking_url": "",
+          "acquired_at": "2026-09-10T17:53:30.818685+00:00",
+          "status": "acquired",
+          "issues": [],
+          "sha256": "2936e8d1094104ed9485a9d555b196974d8b7c13d9469f9597804aa0bbd8a059",
+          "page_count": null,
+          "document_type": "source_page",
+          "language": "unknown",
+          "associations": [],
+          "effective_from": null,
+          "effective_to": null,
+          "review_status": "not_reviewed",
+          "http_status": 200,
+          "final_url": "https://irdai.gov.in/en/health-insurance-products?_com_irdai_document_media_IRDAIDocumentMediaPortlet_cur=19&_com_irdai_document_media_IRDAIDocumentMediaPortlet_delta=60&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByCol=title&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByType=desc&p_p_id=com_irdai_document_media_IRDAIDocumentMediaPortlet&p_p_lifecycle=0&p_p_mode=view&p_p_state=normal",
+          "byte_count": 581060,
+          "content_type": "text/html;charset=UTF-8",
+          "latency_ms": 1087,
+          "attempt_register": "research/registers/remaining-five-acquisition-r12.json"
+        }
+      ],
+      "selected_physical_pages_read_for_identity_scope": [],
+      "visually_reviewed_physical_pages": [],
+      "review_extent": "Selected HTML product rows only; no complete register reconciliation.",
+      "already_manually_classified_r13": false,
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": {
+        "status": "unmeasured",
+        "value": null
+      },
+      "bundle_completeness": "not_established"
+    }
+  ],
+  "reread_existing_documents": [
+    {
+      "source_sha256": "e8aecfa89e68c8361bae088130c6a71148fc183beb2830eaacfe4d3542030ef3",
+      "insurer_id": "acko",
+      "product_or_heading": "ACKO Health III (Platinum Lite)",
+      "heading_is_normalized_display_label": true,
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Current named Platinum Lite wording candidate through explicit Standard alias on official HTML; not established as the historical Standard contract.",
+      "page_count": 18,
+      "observed_uins": [
+        "ACKHLIP27040V012627"
+      ],
+      "typed_uin_assertions": [
+        {
+          "value": "ACKHLIP27040V012627",
+          "kind": "printed_product_uin",
+          "physical_page": 1,
+          "issue_applicability_verified": false
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "exact_passage": "Acko General Insurance Limited\nAcko Health III\nACKO Health III (Platinum Lite) – Policy Wordings\n1. Introduction & How the Policy Works\nWhat this policy is\nThis policy wording + your Schedule/ disclosures made during the buy journey and Pre-policy medical check-\nup reports together form an insurance contract between You and Us (ACKO General Insurance Limited).\nWhat we promise\nIf you pay the premium shown in the Schedule, we will provide insurance, subject to:\n• the terms and conditions in this document,\n• applicable waiting periods,\n• exclusions.\n2. What is Covered?\n2.1. In-Patient Hospitalization - Part of base SI\nIf anyone insured under this policy is hospitalized for more than 24 hours, we cover In-patient Medical\nExpenses. The following In-patient Medical Expenses are included if applicable:\n• Hospital room rent (includes associated medical expenses like RMO, nursing & monitoring)\n• ICU/CCU/HDU charges\n• Operation room charges (if any surgery done)\n• Treating doctor/medical practitioner fees\n• Medicines prescribed and used in treatment during the course of hospitalization by the treating medical\npractitioner.\n• Diagnostic tests directly related to the current hospitalization during the course of hospitalization.\n• Associated medical expenditures (IV fluids, blood transfusion, surgical appliances used, consumables,\nenteral feedings).\n• Cost of prosthetics/surgical devices/medical appliances if implanted internally during surgery, e.g.\nstent (Note: External Prosthesis are not covered).\n2.2. Room Rent / ICU- Part of base SI\nWe cover actual room rent and ICU charges without any capping.\n2.3. Day Care Treatment- Part of base SI\nIf any insured under this policy undergoes Day Care Treatment (including AYUSH treatment) in a\nHospital/Nursing Home/Day Care Centre, we cover the expenses. OPD treatments are out of scope of\ncoverage.\n• List of day care procedures is hosted on our website at https://acko-\ncms.ackoassets.com/Acko_Day_Care_List_2d5b412dbf.pdf\n2.4. Pre & Post Hospitalization Medical Expenses- Part of base SI\nWe cover relevant medical expenses (consultations, investigations, diagnostics, medicines) incurred:\n• In the pre-hospitalization period up to 60 days, and\n• In the post-hospitalization period up to 180 days,\nonly if the related hospitalization/day care claim is admissible.\n2.5. Road Ambulance Limit- Part of base SI\nIf an insured needs emergency transport to a Hospital/Day Care Centre by ambulance or public transport,\nwe cover the reasonable cost of such transportation up to the sum insured.\nPayable only if:\nAcko General Insurance Limited, 2nd Floor, #36/5, Hustlehub One East, Somasandrapalya, 27th Main Rd, Sector 2, HSR\nLayout, Bengaluru, Karnataka: 560102 || IRDAI Reg No: 157 | UIN: ACKHLIP27040V012627\nWeb: www.acko.com/gi | Toll Free: 1800 266 2256 | Mail: hello@acko.com\nPage 1 of 18",
+          "passage_sha256": "cc62bc90c48e6a49c9cc1a272a8a0b432fc9a2ce4906f43dcf6e5a45831bd646",
+          "meaning": "Current named Platinum Lite wording candidate through explicit Standard alias on official HTML; not established as the historical Standard contract.",
+          "locator": "Visible original region; SBI body columns kept separate where applicable",
+          "transcription_method": "native_text_within_declared_visible_crop",
+          "visually_reviewed": true
+        },
+        {
+          "physical_page": 2,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "exact_passage": "Acko General Insurance Limited\nAcko Health III\n• Transport was medically necessary for emergency care to reach the facility\n• We admit the claim for in-patient (2.1) or day care (2.3).\n2.6. Domestic Emergency Evacuation Limit (India)- Part of base SI\nIf there is a medical emergency and adequate facilities are not available locally, we cover emergency\nevacuation to the nearest facility which is able to provide adequate care up to the sum insured.\nKey conditions:\n• Attending a Medical Practitioner must certify in writing that evacuation is medically necessary to\nprevent immediate and significant effects of illness/injury.\n• Pre-authorization is required by calling our call center, unless it is not reasonably possible; then seek\nauthorization immediately after evacuation.\n• We will consider illness/injury nature, condition, ability to travel, airport availability, weather, and\ndistance, while reviewing the request.\n• If the condition requires accompaniment of a qualified Medical Practitioner during transport, we treat it\nas emergency evacuation.\n• Transport modes may include medically equipped specialty aircraft, commercial airline, train,\nambulance, or air ambulance.\n• Territory: within India only.\n2.7. Domiciliary Treatment (Domiciliary Hospitalization)- Part of base SI\nWe cover costs of such domiciliary hospitalization if anyone insured takes treatment at home (instead of a\nhospital) due to:\n• Inability to be moved, OR\n• Non-availability of hospital beds.\nConditions:\n• Must continue for at least 3 consecutive days.\n▪ If 3 days or more→ covered from day 1\n▪ If less than 3 days → not payable\n• The treating Medical Practitioner must confirm in writing that domiciliary hospitalization was medically\nnecessary.\n• Payable on reimbursement basis only.\n2.8. Organ Donor Expenses- Part of base SI\nIf anyone insured requires organ transplant, we cover the organ donor’s in-patient hospitalization expenses\nfor harvesting the organ within the Sum insured of the insured.\nPayable only if all the following conditions are met:\n• We admit the insured person’s claim under In-patient Hospitalization (2.1) related to the same\nillness/injury.\n• Donation complies with Transplantation of Human Organs Act, 1994 (and amendments) and other\napplicable laws.\n• The organ is for use by the insured person and transplant is advised in writing by the treating Medical\nPractitioner.\nNot covered:\n• Donor’s pre/post-hospitalization expenses\n• Donor screening costs\n• Organ acquisition costs\n• Transport/preservation costs of the organ\n• Experimental/investigational transplants\nAcko General Insurance Limited, 2nd Floor, #36/5, Hustlehub One East, Somasandrapalya, 27th Main Rd, Sector 2, HSR\nLayout, Bengaluru, Karnataka: 560102 || IRDAI Reg No: 157 | UIN: ACKHLIP27040V012627\nWeb: www.acko.com/gi | Toll Free: 1800 266 2256 | Mail: hello@acko.com\nPage 2 of 18",
+          "passage_sha256": "8aee6dbdc8b80be87349a0552f73372db5a8a9e8152ccd270e08e48242df8dcb",
+          "meaning": "Current named Platinum Lite wording candidate through explicit Standard alias on official HTML; not established as the historical Standard contract.",
+          "locator": "Visible original region; SBI body columns kept separate where applicable",
+          "transcription_method": "native_text_within_declared_visible_crop",
+          "visually_reviewed": false
+        }
+      ],
+      "identity_evidence": [
+        {
+          "physical_page": 1,
+          "exact_passage": "Acko General Insurance Limited\nAcko Health III\nACKO Health III (Platinum Lite) – Policy Wordings\n1. Introduction & How the Policy Works\nWhat this policy is\nThis policy wording + your Schedule/ disclosures made during the buy journey and Pre-policy medical check-\nup reports together form an insurance contract between You and Us (ACKO General Insurance Limited).\nWhat we promise\nIf you pay the premium shown in the Schedule, we will provide insurance, subject to:\n• the terms and conditions in this document,\n• applicable waiting periods,\n• exclusions.\n2. What is Covered?\n2.1. In-Patient Hospitalization - Part of base SI\nIf anyone insured under this policy is hospitalized for more than 24 hours, we cover In-patient Medical\nExpenses. The following In-patient Medical Expenses are included if applicable:\n• Hospital room rent (includes associated medical expenses like RMO, nursing & monitoring)\n• ICU/CCU/HDU charges\n• Operation room charges (if any surgery done)\n• Treating doctor/medical practitioner fees\n• Medicines prescribed and used in treatment during the course of hospitalization by the treating medical\npractitioner.\n• Diagnostic tests directly related to the current hospitalization during the course of hospitalization.\n• Associated medical expenditures (IV fluids, blood transfusion, surgical appliances used, consumables,\nenteral feedings).\n• Cost of prosthetics/surgical devices/medical appliances if implanted internally during surgery, e.g.\nstent (Note: External Prosthesis are not covered).\n2.2. Room Rent / ICU- Part of base SI\nWe cover actual room rent and ICU charges without any capping.\n2.3. Day Care Treatment- Part of base SI\nIf any insured under this policy undergoes Day Care Treatment (including AYUSH treatment) in a\nHospital/Nursing Home/Day Care Centre, we cover the expenses. OPD treatments are out of scope of\ncoverage.\n• List of day care procedures is hosted on our website at https://acko-\ncms.ackoassets.com/Acko_Day_Care_List_2d5b412dbf.pdf\n2.4. Pre & Post Hospitalization Medical Expenses- Part of base SI\nWe cover relevant medical expenses (consultations, investigations, diagnostics, medicines) incurred:\n• In the pre-hospitalization period up to 60 days, and\n• In the post-hospitalization period up to 180 days,\nonly if the related hospitalization/day care claim is admissible.\n2.5. Road Ambulance Limit- Part of base SI\nIf an insured needs emergency transport to a Hospital/Day Care Centre by ambulance or public transport,\nwe cover the reasonable cost of such transportation up to the sum insured.\nPayable only if:\nAcko General Insurance Limited, 2nd Floor, #36/5, Hustlehub One East, Somasandrapalya, 27th Main Rd, Sector 2, HSR\nLayout, Bengaluru, Karnataka: 560102 || IRDAI Reg No: 157 | UIN: ACKHLIP27040V012627\nWeb: www.acko.com/gi | Toll Free: 1800 266 2256 | Mail: hello@acko.com\nPage 1 of 18",
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "meaning": "Exact original title/UIN context, no inferred issue dates."
+        }
+      ],
+      "acquisition_provenance": [
+        {
+          "url": "https://acko-cms.ackoassets.com/Policy_Wordings_ACKO_Health_III_Platinum_Lite_749c872319.pdf",
+          "final_url": "https://acko-cms.ackoassets.com/Policy_Wordings_ACKO_Health_III_Platinum_Lite_749c872319.pdf",
+          "linking_url": "https://www.acko.com/download/",
+          "acquired_at": "2026-09-10T12:01:28.447166+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "e8aecfa89e68c8361bae088130c6a71148fc183beb2830eaacfe4d3542030ef3",
+          "source_register": "research/registers/sources.json",
+          "source_id": "fc00d2145317b4ac9c6038dd6c771e53bd9a8bd513228f0b31f0f3dad06591ea",
+          "observed_links": [
+            {
+              "label": "ACKO Health III - (Platinum Lite) - Policy Wordings",
+              "linking_url": "https://www.acko.com/download/",
+              "page_sha256": "8f39db536cb29426c10b7d0ddee9613fb0f213b23bcaab04b4f755e9338f6fcb"
+            }
+          ]
+        }
+      ],
+      "selected_physical_pages_read_for_identity_scope": [
+        1,
+        2
+      ],
+      "visually_reviewed_physical_pages": [
+        1
+      ],
+      "review_extent": "Bounded original identity/operative grant and connected selected conditions; no exhaustive full-original or rule-instance inventory.",
+      "already_manually_classified_r13": true,
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": {
+        "status": "unmeasured",
+        "value": null
+      },
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Mixed fixed/optional benefits may coexist; only medical-expense scope classified here."
+    },
+    {
+      "source_sha256": "f3ebfe3c3cd613be0e4bbd894e312168421ef3d1eeeec7f177e1495ccef7490d",
+      "insurer_id": "acko",
+      "product_or_heading": "ACKO Standard / Platinum Lite explicit alias",
+      "document_role": "official_product_page",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Explicit marketing alias Standard to Platinum Lite. This paragraph prints no UIN and cannot date-align a historical Standard policy to Health III.",
+      "page_count": null,
+      "observed_uins": [],
+      "typed_uin_assertions": [],
+      "evidence": [
+        {
+          "locator": {
+            "kind": "html_element",
+            "tag": "p",
+            "zero_based_document_tag_index": 28,
+            "original_sha256": "f3ebfe3c3cd613be0e4bbd894e312168421ef3d1eeeec7f177e1495ccef7490d"
+          },
+          "exact_passage": "The ACKO Platinum Lite Health Plan (also known as the ACKO Standard Plan) is a great value option that covers all the essentials you actually need. Here’s what you get:",
+          "exact_outer_html": "<p dir=\"ltr\">The ACKO Platinum Lite Health Plan (also known as the ACKO Standard Plan) is a great value option that covers all the essentials you actually need. Here’s what you get:</p>",
+          "meaning": "Explicit marketing alias Standard to Platinum Lite. This paragraph prints no UIN and cannot date-align a historical Standard policy to Health III.",
+          "transcription_method": "html_original"
+        }
+      ],
+      "identity_evidence": [
+        {
+          "locator": {
+            "kind": "html_element",
+            "tag": "p",
+            "zero_based_document_tag_index": 28,
+            "original_sha256": "f3ebfe3c3cd613be0e4bbd894e312168421ef3d1eeeec7f177e1495ccef7490d"
+          },
+          "exact_passage": "The ACKO Platinum Lite Health Plan (also known as the ACKO Standard Plan) is a great value option that covers all the essentials you actually need. Here’s what you get:",
+          "exact_outer_html": "<p dir=\"ltr\">The ACKO Platinum Lite Health Plan (also known as the ACKO Standard Plan) is a great value option that covers all the essentials you actually need. Here’s what you get:</p>",
+          "meaning": "Explicit marketing alias Standard to Platinum Lite. This paragraph prints no UIN and cannot date-align a historical Standard policy to Health III.",
+          "transcription_method": "html_original"
+        }
+      ],
+      "acquisition_provenance": [
+        {
+          "url": "https://www.acko.com/health-insurance/",
+          "linking_url": "",
+          "acquired_at": "2026-09-10T14:41:01.929123+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "f3ebfe3c3cd613be0e4bbd894e312168421ef3d1eeeec7f177e1495ccef7490d",
+          "source_register": "research/registers/source-access-supplement-r5.json"
+        }
+      ],
+      "selected_physical_pages_read_for_identity_scope": [],
+      "visually_reviewed_physical_pages": [],
+      "review_extent": "One explicit alias paragraph only.",
+      "already_manually_classified_r13": true,
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": {
+        "status": "unmeasured",
+        "value": null
+      },
+      "bundle_completeness": "not_established"
+    }
+  ],
+  "per_listing_results": [
+    {
+      "legacy_identity": "/health-insurance/acko/standard-health/",
+      "legacy_name": "Standard Health",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "insurer_id": "acko",
+      "family": "ACKO Standard / Platinum Lite",
+      "family_identity_supported": true,
+      "family_identity_status": "source_backed_original_wording_candidate",
+      "wording_sha256s": [
+        "e8aecfa89e68c8361bae088130c6a71148fc183beb2830eaacfe4d3542030ef3"
+      ],
+      "companion_cis_sha256s": [],
+      "observed_wording_uins": [
+        "ACKHLIP27040V012627"
+      ],
+      "variant_or_form_result": {
+        "matched_legacy_label_variant": "Platinum Lite",
+        "status": "explicit_current_alias_wording_candidate_historical_version_unresolved",
+        "candidates": [
+          "Platinum Lite"
+        ],
+        "qualification": "Explicit official marketing alias plus exact named Platinum Lite wording establishes a current candidate chain. Not proof that Health III governed the historical Standard listing; no assignment to Health I or II by keyword.",
+        "issued_customer_selection_verified": false
+      },
+      "source_document_versions": {
+        "status": "typed_observations_preserved_historical_mapping_unresolved",
+        "historical_version_reconciled": false,
+        "wording_observations": [
+          {
+            "source_sha256": "e8aecfa89e68c8361bae088130c6a71148fc183beb2830eaacfe4d3542030ef3",
+            "type": "printed_product_uin",
+            "values": [
+              "ACKHLIP27040V012627"
+            ]
+          }
+        ],
+        "prior_register_or_brochure_observations": {
+          "status": "identifier_not_established",
+          "uins": [],
+          "qualification": "Observed source document identifiers, not a verified mapping to legacy issuance/observation date."
+        },
+        "date_semantics": "IRDAI Date of Approval, insurer offer dates, acquisition timestamps and customer issue dates remain distinct."
+      },
+      "original_bundle_roles": {
+        "wording": "Bounded reviewed candidate(s), not proof of complete issued bundle.",
+        "CIS": "Not established as a complete matching companion set.",
+        "prospectus_and_brochure": "Prior candidates retained; no full version alignment.",
+        "endorsements_addons": "Applicable set not established.",
+        "issued_schedule_underwriting": "Not supplied."
+      },
+      "official_bundle_link_candidates": [],
+      "remaining_evidence": [
+        "Exact historical legacy observation/issuance date and corresponding contract revision remain unknown.",
+        "Issued schedule/certificate, insured people, selected configuration, optional benefits, underwriting and endorsements not supplied.",
+        "Complete original bundle and exhaustive original rule inventory not established.",
+        "Marketing alias does not prove which historical Standard wording applied; acquire an original date/UIN alias crosswalk or issued schedule.",
+        "Current wording referenced day-care list and full applicable companion/endorsement set need reconciliation."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false,
+      "reconciliation_complete": false
+    },
+    {
+      "legacy_identity": "/health-insurance/bajaj-general/extra-care-top-up/",
+      "legacy_name": "Extra Care Top Up",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "insurer_id": "bajaj-general",
+      "family": "Extra Care",
+      "family_identity_supported": true,
+      "family_identity_status": "source_backed_original_wording_candidate",
+      "wording_sha256s": [
+        "865b7327ee091654213e98f849c53945ec0d371427566d8cf66a369115d8519e"
+      ],
+      "companion_cis_sha256s": [],
+      "observed_wording_uins": [
+        "BAJHLIP21146V022021"
+      ],
+      "variant_or_form_result": {
+        "matched_legacy_label_variant": null,
+        "status": "per_claim_deductible_mechanism_supported",
+        "candidates": [],
+        "qualification": "Each hospitalization is a separate claim with a per-claim deductible and 45-day relapse exception; not Extra Care Plus or annual aggregate deductible by analogy.",
+        "issued_customer_selection_verified": false
+      },
+      "source_document_versions": {
+        "status": "typed_observations_preserved_historical_mapping_unresolved",
+        "historical_version_reconciled": false,
+        "wording_observations": [
+          {
+            "source_sha256": "865b7327ee091654213e98f849c53945ec0d371427566d8cf66a369115d8519e",
+            "type": "printed_product_uin",
+            "values": [
+              "BAJHLIP21146V022021"
+            ]
+          }
+        ],
+        "prior_register_or_brochure_observations": {
+          "status": "observed_uin_known",
+          "uins": [
+            "BAJHLIP21146V022021"
+          ]
+        },
+        "date_semantics": "IRDAI Date of Approval, insurer offer dates, acquisition timestamps and customer issue dates remain distinct."
+      },
+      "original_bundle_roles": {
+        "wording": "Bounded reviewed candidate(s), not proof of complete issued bundle.",
+        "CIS": "Not established as a complete matching companion set.",
+        "prospectus_and_brochure": "Prior candidates retained; no full version alignment.",
+        "endorsements_addons": "Applicable set not established.",
+        "issued_schedule_underwriting": "Not supplied."
+      },
+      "official_bundle_link_candidates": [],
+      "remaining_evidence": [
+        "Exact historical legacy observation/issuance date and corresponding contract revision remain unknown.",
+        "Issued schedule/certificate, insured people, selected configuration, optional benefits, underwriting and endorsements not supplied.",
+        "Complete original bundle and exhaustive original rule inventory not established.",
+        "Deductible amount, family configuration and claims chronology need the issued schedule; no assumption that current Plus terms replace historical Extra Care."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false,
+      "reconciliation_complete": false
+    },
+    {
+      "legacy_identity": "/health-insurance/sbi/arogya-plus/",
+      "legacy_name": "Arogya Plus",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "insurer_id": "sbi-general",
+      "family": "Arogya Plus Policy",
+      "family_identity_supported": true,
+      "family_identity_status": "source_backed_original_wording_candidate",
+      "wording_sha256s": [
+        "b3907566a7ab56bc63f442d37d3cf47044cd19d31af4a252b21e46d8d36e5a60"
+      ],
+      "companion_cis_sha256s": [
+        "52934bb434c473bc0cef5b9f8d1b02372da8bea4560d7c49c0e9a23f56c867e0"
+      ],
+      "observed_wording_uins": [
+        "SBIHLIP22135V032122"
+      ],
+      "variant_or_form_result": {
+        "matched_legacy_label_variant": null,
+        "status": "family_supported_issued_configuration_unresolved",
+        "candidates": [],
+        "qualification": "Original name, operative grant and matching-UIN CIS; distinct from Arogya Supreme/Plus. Family floater and non-floater definitions do not select a customer basis.",
+        "issued_customer_selection_verified": false
+      },
+      "source_document_versions": {
+        "status": "typed_observations_preserved_historical_mapping_unresolved",
+        "historical_version_reconciled": false,
+        "wording_observations": [
+          {
+            "source_sha256": "b3907566a7ab56bc63f442d37d3cf47044cd19d31af4a252b21e46d8d36e5a60",
+            "type": "printed_product_uin",
+            "values": [
+              "SBIHLIP22135V032122"
+            ]
+          }
+        ],
+        "prior_register_or_brochure_observations": {
+          "status": "observed_uin_known",
+          "uins": [
+            "SBIHLIP22135V032122"
+          ]
+        },
+        "date_semantics": "IRDAI Date of Approval, insurer offer dates, acquisition timestamps and customer issue dates remain distinct."
+      },
+      "original_bundle_roles": {
+        "wording": "Bounded reviewed candidate(s), not proof of complete issued bundle.",
+        "CIS": "Matching-UIN SBI template only; no issued selection.",
+        "prospectus_and_brochure": "Prior candidates retained; no full version alignment.",
+        "endorsements_addons": "Applicable set not established.",
+        "issued_schedule_underwriting": "Not supplied."
+      },
+      "official_bundle_link_candidates": [],
+      "remaining_evidence": [
+        "Exact historical legacy observation/issuance date and corresponding contract revision remain unknown.",
+        "Issued schedule/certificate, insured people, selected configuration, optional benefits, underwriting and endorsements not supplied.",
+        "Complete original bundle and exhaustive original rule inventory not established.",
+        "Preserved official directory labels Arogya Plus withdrawn on 05-10-2024; confirm original directory status separately from any in-force issued policy.",
+        "Do not infer every template option is selected; maternity is limited to the OPD section under wording p5."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false,
+      "reconciliation_complete": false
+    },
+    {
+      "legacy_identity": "/health-insurance/icici-lombard/health-shield-360/",
+      "legacy_name": "Health Shield 360",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "insurer_id": "icici-lombard",
+      "family": "Health Shield 360",
+      "family_identity_supported": true,
+      "family_identity_status": "source_backed_original_wording_candidate",
+      "wording_sha256s": [
+        "24187905233ed5eaa53dc2b0ba270a3727bb55ee26863fb78f69d9640df3d355",
+        "6168a4f97203b6fbdf00adb3aaaa5caadaf5cefb7c7e6c18c0da038fe53c1065"
+      ],
+      "companion_cis_sha256s": [],
+      "observed_wording_uins": [
+        "ICIHLGP22083V022122",
+        "ICIHLGP21601V012021"
+      ],
+      "variant_or_form_result": {
+        "matched_legacy_label_variant": null,
+        "status": "group_family_historical_wordings_supported",
+        "candidates": [],
+        "qualification": "Regulator register and operative wording explicitly reference group selection. Do not equate with Health Shield 360 Retail or infer any issued group terms or bank eligibility.",
+        "issued_customer_selection_verified": false
+      },
+      "source_document_versions": {
+        "status": "typed_observations_preserved_historical_mapping_unresolved",
+        "historical_version_reconciled": false,
+        "wording_observations": [
+          {
+            "source_sha256": "24187905233ed5eaa53dc2b0ba270a3727bb55ee26863fb78f69d9640df3d355",
+            "type": "printed_product_uin",
+            "values": [
+              "ICIHLGP22083V022122"
+            ]
+          },
+          {
+            "source_sha256": "6168a4f97203b6fbdf00adb3aaaa5caadaf5cefb7c7e6c18c0da038fe53c1065",
+            "type": "printed_product_uin",
+            "values": [
+              "ICIHLGP21601V012021"
+            ]
+          }
+        ],
+        "prior_register_or_brochure_observations": {
+          "status": "observed_uin_and_offer_dates_known",
+          "uins": [
+            "ICIHLGP22083V022122",
+            "ICIHLGP25044V032425",
+            "ICIHLGP25049V042425",
+            "ICIHLGP26051V052526"
+          ],
+          "offer_register_rows": [
+            {
+              "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+              "physical_page": 12,
+              "row_number": "704",
+              "uin": "ICIHLGP22083V022122",
+              "name": "Health Shield 360",
+              "offer_from_as_printed": "3-Mar-2021",
+              "offer_to_as_printed": "30-Sep-2024",
+              "status_as_printed": "Withdrawn",
+              "passage": "704 ICIHLGP22083V022122 Health Shield 360 3-Mar-2021 30-Sep-2024 Withdrawn",
+              "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+            },
+            {
+              "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+              "physical_page": 16,
+              "row_number": "978",
+              "uin": "ICIHLGP25044V032425",
+              "name": "Health Shield 360",
+              "offer_from_as_printed": "1-Oct-2024",
+              "offer_to_as_printed": "09.03.2025",
+              "status_as_printed": "Withdrawn",
+              "passage": "978 ICIHLGP25044V032425 Health Shield 360 1-Oct-2024 09.03.2025 Withdrawn",
+              "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+            },
+            {
+              "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+              "physical_page": 17,
+              "row_number": "996",
+              "uin": "ICIHLGP25049V042425",
+              "name": "Health Shield 360",
+              "offer_from_as_printed": "10-Mar-2025",
+              "offer_to_as_printed": "12.09.2025",
+              "status_as_printed": "Withdrawn",
+              "passage": "996 ICIHLGP25049V042425 Health Shield 360 10-Mar-2025 12.09.2025 Withdrawn",
+              "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+            },
+            {
+              "source_sha256": "3631f44d981b1e01897cc4f2ce72a7a8de46fde4f29187794b28d6a51d557d48",
+              "physical_page": 17,
+              "row_number": "1041",
+              "uin": "ICIHLGP26051V052526",
+              "name": "Health Shield 360",
+              "offer_from_as_printed": "13-Sep-2025",
+              "offer_to_as_printed": null,
+              "status_as_printed": "Active",
+              "passage": "1041 ICIHLGP26051V052526 Health Shield 360 13-Sep-2025 Active",
+              "date_semantics": "Offer-to-public dates, not automatic policy effective/expiry dates; read with column headers on physical p1."
+            }
+          ]
+        },
+        "date_semantics": "IRDAI Date of Approval, insurer offer dates, acquisition timestamps and customer issue dates remain distinct."
+      },
+      "original_bundle_roles": {
+        "wording": "Bounded reviewed candidate(s), not proof of complete issued bundle.",
+        "CIS": "Not established as a complete matching companion set.",
+        "prospectus_and_brochure": "Prior candidates retained; no full version alignment.",
+        "endorsements_addons": "Applicable set not established.",
+        "issued_schedule_underwriting": "Not supplied."
+      },
+      "official_bundle_link_candidates": [],
+      "remaining_evidence": [
+        "Exact historical legacy observation/issuance date and corresponding contract revision remain unknown.",
+        "Issued schedule/certificate, insured people, selected configuration, optional benefits, underwriting and endorsements not supplied.",
+        "Complete original bundle and exhaustive original rule inventory not established.",
+        "Later register UINs ICIHLGP25044V032425, ICIHLGP25049V042425 and ICIHLGP26051V052526 still lack corresponding reviewed wording in this batch.",
+        "Group-approved benefit/SI/sub-limit/deductible/copay and room-cap choices require master schedule and member certificate.",
+        "IRDAI approval dates and insurer offer-register dates are separate observations, not interchangeable chronology."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false,
+      "reconciliation_complete": false
+    },
+    {
+      "legacy_identity": "/health-insurance/icici-lombard/ihealth/",
+      "legacy_name": "Ihealth",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "insurer_id": "icici-lombard",
+      "family": "ICICI Lombard Complete Health Insurance / I Health",
+      "family_identity_supported": true,
+      "family_identity_status": "prior_original_brochure_named_candidate_wording_unresolved",
+      "wording_sha256s": [],
+      "companion_cis_sha256s": [],
+      "observed_wording_uins": [],
+      "variant_or_form_result": {
+        "matched_legacy_label_variant": "I Health",
+        "status": "prior_brochure_named_candidate_wording_access_unresolved",
+        "candidates": [
+          "I Health"
+        ],
+        "qualification": "Prior visually reviewed brochure names I Health separately. Current exact iHealth policy link is inaccessible; iHealth Plus is a distinct link and is not substituted.",
+        "issued_customer_selection_verified": false
+      },
+      "source_document_versions": {
+        "status": "typed_observations_preserved_historical_mapping_unresolved",
+        "historical_version_reconciled": false,
+        "wording_observations": [],
+        "prior_register_or_brochure_observations": {
+          "status": "identifier_not_established",
+          "uins": [],
+          "qualification": "Observed source document identifiers, not a verified mapping to legacy issuance/observation date."
+        },
+        "date_semantics": "IRDAI Date of Approval, insurer offer dates, acquisition timestamps and customer issue dates remain distinct."
+      },
+      "original_bundle_roles": {
+        "wording": "No accessible exact iHealth wording established.",
+        "CIS": "Not established as a complete matching companion set.",
+        "prospectus_and_brochure": "Prior candidates retained; no full version alignment.",
+        "endorsements_addons": "Applicable set not established.",
+        "issued_schedule_underwriting": "Not supplied."
+      },
+      "official_bundle_link_candidates": [],
+      "remaining_evidence": [
+        "Exact historical legacy observation/issuance date and corresponding contract revision remain unknown.",
+        "Issued schedule/certificate, insured people, selected configuration, optional benefits, underwriting and endorsements not supplied.",
+        "Complete original bundle and exhaustive original rule inventory not established.",
+        "Exact iHealth/CHI wording URL returned HTTP 403 in direct acquisition; web fetch reports 404 separately. Preserved error bytes are not wording.",
+        "Retrieve the exact original iHealth wording, CIS and UIN/variant relationship; old brochure printed 3288 must not be rewritten as a modern product UIN."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false,
+      "reconciliation_complete": false
+    }
+  ],
+  "acquisition_audit": {
+    "register": "research/registers/remaining-five-acquisition-r12.json",
+    "attempts": [
+      {
+        "url": "https://www.icicilombard.com/health-insurance/get-quote/select-chi-plans",
+        "linking_url": "",
+        "acquired_at": "2026-09-10T17:53:27.726893+00:00",
+        "status": "failed",
+        "http_status": 403,
+        "sha256": "eb60a04f8108f0cb05af492c1109ec53fdcfaa9bdac9aa09cc0c3a459bd71b7c",
+        "issues": [
+          "http_403"
+        ]
+      },
+      {
+        "url": "https://irdai.gov.in/en/health-insurance-products?_com_irdai_document_media_IRDAIDocumentMediaPortlet_cur=2&_com_irdai_document_media_IRDAIDocumentMediaPortlet_delta=40&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByCol=uin_String_sortable&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByType=asc&p_p_id=com_irdai_document_media_IRDAIDocumentMediaPortlet&p_p_lifecycle=0&p_p_mode=view&p_p_state=normal",
+        "linking_url": "",
+        "acquired_at": "2026-09-10T17:53:28.257062+00:00",
+        "status": "acquired",
+        "http_status": 200,
+        "sha256": "56e9b869c47663eab85c84ce094efac3afe2ddbdbda957c8532dc0bd822672fe",
+        "issues": []
+      },
+      {
+        "url": "https://irdai.gov.in/documents/37343/931203/BAJHLIP21146V022021_2020-2021.pdf/d2b214ec-6122-2518-0906-f3285f1506bb?version=1.1&t=1668581706141&download=true",
+        "linking_url": "https://irdai.gov.in/en/health-insurance-products?_com_irdai_document_media_IRDAIDocumentMediaPortlet_cur=2&_com_irdai_document_media_IRDAIDocumentMediaPortlet_delta=40&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByCol=uin_String_sortable&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByType=asc&p_p_id=com_irdai_document_media_IRDAIDocumentMediaPortlet&p_p_lifecycle=0&p_p_mode=view&p_p_state=normal",
+        "acquired_at": "2026-09-10T17:53:30.305416+00:00",
+        "status": "acquired",
+        "http_status": 200,
+        "sha256": "865b7327ee091654213e98f849c53945ec0d371427566d8cf66a369115d8519e",
+        "issues": []
+      },
+      {
+        "url": "https://irdai.gov.in/en/health-insurance-products?_com_irdai_document_media_IRDAIDocumentMediaPortlet_cur=19&_com_irdai_document_media_IRDAIDocumentMediaPortlet_delta=60&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByCol=title&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByType=desc&p_p_id=com_irdai_document_media_IRDAIDocumentMediaPortlet&p_p_lifecycle=0&p_p_mode=view&p_p_state=normal",
+        "linking_url": "",
+        "acquired_at": "2026-09-10T17:53:30.818685+00:00",
+        "status": "acquired",
+        "http_status": 200,
+        "sha256": "2936e8d1094104ed9485a9d555b196974d8b7c13d9469f9597804aa0bbd8a059",
+        "issues": []
+      },
+      {
+        "url": "https://irdai.gov.in/documents/37343/931203/ICIHLGP22083V022122_HEALTH2101.pdf/6b5ac086-3668-d92b-1d2d-0935976be059?version=1.1&t=1668842885975&download=true",
+        "linking_url": "https://irdai.gov.in/en/health-insurance-products?_com_irdai_document_media_IRDAIDocumentMediaPortlet_cur=19&_com_irdai_document_media_IRDAIDocumentMediaPortlet_delta=60&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByCol=title&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByType=desc&p_p_id=com_irdai_document_media_IRDAIDocumentMediaPortlet&p_p_lifecycle=0&p_p_mode=view&p_p_state=normal",
+        "acquired_at": "2026-09-10T17:53:31.999438+00:00",
+        "status": "acquired",
+        "http_status": 200,
+        "sha256": "24187905233ed5eaa53dc2b0ba270a3727bb55ee26863fb78f69d9640df3d355",
+        "issues": []
+      },
+      {
+        "url": "https://irdai.gov.in/documents/37343/931203/ICIHLGP21601V012021_2020-2021.pdf/2484e655-f13b-4846-f682-621523791938?version=1.1&t=1668583601492&download=true",
+        "linking_url": "https://irdai.gov.in/en/health-insurance-products?_com_irdai_document_media_IRDAIDocumentMediaPortlet_cur=19&_com_irdai_document_media_IRDAIDocumentMediaPortlet_delta=60&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByCol=title&_com_irdai_document_media_IRDAIDocumentMediaPortlet_orderByType=desc&p_p_id=com_irdai_document_media_IRDAIDocumentMediaPortlet&p_p_lifecycle=0&p_p_mode=view&p_p_state=normal",
+        "acquired_at": "2026-09-10T17:53:32.834167+00:00",
+        "status": "acquired",
+        "http_status": 200,
+        "sha256": "6168a4f97203b6fbdf00adb3aaaa5caadaf5cefb7c7e6c18c0da038fe53c1065",
+        "issues": []
+      },
+      {
+        "url": "https://www.icicilombard.com/docs/default-source/Policy-Wordings-product-Brochure/chi_policy_wordings.pdf",
+        "linking_url": "https://www.icicilombard.com/health-insurance/get-quote/select-chi-plans",
+        "acquired_at": "2026-09-10T17:55:45.238347+00:00",
+        "status": "failed",
+        "http_status": 403,
+        "sha256": "1772654af45a2332ec30870cf8cbec661e47e5ebe6c4d06e2d9925b3aa4d9b0d",
+        "issues": [
+          "http_403"
+        ]
+      }
+    ],
+    "web_retrieval_observations": [
+      {
+        "url": "https://www.icicilombard.com/docs/default-source/Policy-Wordings-product-Brochure/chi_policy_wordings.pdf",
+        "status": "web_fetch_reported_404",
+        "qualification": "Separate web retrieval path from direct HTTP 403 attempts; no original PDF returned."
+      }
+    ],
+    "search_scope": "Official insurer pages and IRDAI product register discovery. Search snippets used only for navigation; no third-party customer documents read or used."
+  },
+  "findings": [
+    {
+      "id": "R12-NAME-SEPARATION",
+      "finding": "Extra Care, Arogya Plus, group Health Shield 360 and iHealth are not replaced with similarly named Plus/Retail/Supreme products."
+    },
+    {
+      "id": "R12-ACKO-HISTORICAL",
+      "finding": "Current explicit Standard/Platinum Lite alias supports a named Health III candidate, but historical Standard UIN applicability remains unresolved."
+    },
+    {
+      "id": "R12-CLAIM-DEDUCTIBLE",
+      "finding": "Extra Care original distinguishes separate hospitalization claims with a 45-day relapse exception. Do not convert it into annual aggregate deductible."
+    },
+    {
+      "id": "R12-GROUP-SCHEDULE",
+      "finding": "Health Shield 360 has mandatory base grants but group-selected limits and scope; a public wording does not establish member eligibility, selected cover or configured amounts."
+    },
+    {
+      "id": "R12-IHEALTH-ACCESS",
+      "finding": "The exact official iHealth link has no readable PDF in this batch; its row correctly retains wording_sha256s=[]."
+    },
+    {
+      "id": "R12-DATE-SEMANTICS",
+      "finding": "IRDAI approval date 02-07-2021 for ICIHLGP22083V022122 and insurer register offer-from 3-Mar-2021 are separate source assertions. Do not collapse them or treat either as a customer policy date."
+    }
+  ],
+  "generalized_information_requirements": [
+    "Per-claim deductible with defined relapse/claim grouping must remain distinct from aggregate-period deductibles.",
+    "Group-selected benefit configuration must retain master-policy scope and member-specific certificate evidence.",
+    "Current marketing aliases require dated version evidence before historical applicability.",
+    "Regulator approval dates and insurer offer dates need separate provenance and conflict handling."
+  ],
+  "verification": {
+    "original_hashes_verified": 9,
+    "evaluation_read": false,
+    "application_or_database_changed": false,
+    "cumulative_registers_modified": false,
+    "independent_rule_coverage": "unmeasured",
+    "adviser_acceptance_claimed": false,
+    "exact_region_or_element_reextraction_checks": 25
+  }
+}

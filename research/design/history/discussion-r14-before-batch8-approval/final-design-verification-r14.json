@@ -1,0 +1,141 @@
+{
+  "revision": "discussion-r14",
+  "generated_at_utc": "2026-09-12T10:21:10.176995+00:00",
+  "status": "passed",
+  "scope": "Structural verification of the user-approved Batch 7 four-model public policy-rule design and removal of independent inventory measurement from the customer-advice schema. No Django models, migrations, PostgreSQL runtime constraints, quality-store model approval or complete-design approval claimed.",
+  "checks": [
+    {
+      "check": "90 unique application entities",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "865 unique application fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "268 FK relationships match dictionary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all FK targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "relationship ledger exactly covers FK fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "approved four-model Batch 7 present with exact 25 fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "superseded live rule models removed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "independent inventory and coverage models removed from advice database",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "policy rules are public and version-bound",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "table definition lives in RuleV1 and table cells remain relational",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "rule links contain no duplicate scope or precedence field",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "dependent application FKs use PolicyRule",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "case and supplementary field targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "fixed 400 case map retained as 200 reference and 200 evaluation-safe projections",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "r14 reverse trace covers every field exactly",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "r14 trace input hashes match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "case-map dictionary hash matches",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "additional-case dictionary hash matches",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all JSON field contracts resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all migration target entities resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "legacy catalogue migrates only to archived mapping",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Batch 7 approval and overall design boundary recorded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "review documents use verified r14 counts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "quality-store separation is visible",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 24,
+  "failed": 0,
+  "application_entities": 90,
+  "application_fields": 865,
+  "foreign_keys": 268,
+  "batch1_approval": "explicit user approval on 2026-09-11",
+  "batch2_approval": "explicit user approval on 2026-09-11",
+  "batch3_approval": "explicit user approval on 2026-09-12",
+  "batch4_approval": "explicit user approval on 2026-09-12",
+  "batch5_approval": "explicit user approval on 2026-09-12",
+  "batch6_approval": "explicit user approval on 2026-09-12",
+  "batch7_approval": "explicit user approval on 2026-09-12",
+  "overall_design_approval": false
+}

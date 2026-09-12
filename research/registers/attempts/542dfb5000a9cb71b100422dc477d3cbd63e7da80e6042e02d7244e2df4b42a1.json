@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:02:05.331845+00:00",
+  "associations": [],
+  "byte_count": 263,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/xml",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.acko.com/wp-content/uploads/2018/11/secure-shield-policy-wordings.pdf",
+  "format_version": 1,
+  "http_status": 403,
+  "insurer_id": "acko",
+  "issues": [
+    "http_403"
+  ],
+  "language": "unknown",
+  "latency_ms": 155,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "c75fe07136eb4794a2c1b16ca6ff817247d14872754a9aa6cbf30ea3a3abb259",
+  "status": "failed",
+  "url": "https://www.acko.com/wp-content/uploads/2018/11/secure-shield-policy-wordings.pdf"
+}

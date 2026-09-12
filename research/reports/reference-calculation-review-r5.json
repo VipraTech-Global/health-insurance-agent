@@ -1,0 +1,178 @@
+{
+  "format_version": 1,
+  "source": "research/reference/assessments-200-r5.jsonl",
+  "source_sha256": "531a6c3a99f2dd8e9dba99db95aff4de70409d085fd12be3d3b07fbbdbf6bff1",
+  "parent_calculation_report": "research/reports/reference-calculation-checks-r5.json",
+  "parent_report_sha256": "b58918b9481e3f3ab5cb64e0530db6fb8cfcc96fc4c8bd5c6f86861ca86026af",
+  "status": "All eight corrected canonical arithmetic records verified; identified proposal gaps addressed in discussion-r5 JSON, with parent regeneration/review pending",
+  "checks": [
+    {
+      "case_id": "ref-01-01",
+      "label": "Elapsed days from first receipt",
+      "expression": "request - receipt",
+      "all_variable_names_bound": true,
+      "expression_kind": "human_readable_reference_not_executable_code",
+      "expected": "28",
+      "independently_recomputed": "28",
+      "unit": "elapsed_day",
+      "passed": true,
+      "source_roles": "Original establishes the receipt trigger and scope; customer dates, no-claim state and applicability are synthetic."
+    },
+    {
+      "case_id": "ref-01-01",
+      "label": "Elapsed days from inception for comparison",
+      "expression": "request - inception",
+      "all_variable_names_bound": true,
+      "expression_kind": "human_readable_reference_not_executable_code",
+      "expected": "37",
+      "independently_recomputed": "37",
+      "unit": "elapsed_day",
+      "passed": true,
+      "source_roles": "Original establishes the receipt trigger and scope; customer dates, no-claim state and applicability are synthetic."
+    },
+    {
+      "case_id": "ref-02-07",
+      "label": "Marginal joint quote cost",
+      "expression": "joint_premium_inr - couple_premium_inr",
+      "all_variable_names_bound": true,
+      "expression_kind": "human_readable_reference_not_executable_code",
+      "expected": "8000",
+      "independently_recomputed": "8000",
+      "unit": "INR",
+      "passed": true,
+      "source_roles": "Numeric inputs and offer/cap conditions are explicit synthetic or broker-reported premises. Empty insurer-evidence arrays correctly avoid fabricating an offer."
+    },
+    {
+      "case_id": "ref-02-07",
+      "label": "Split policy quote total",
+      "expression": "couple_premium_inr + mother_premium_inr",
+      "all_variable_names_bound": true,
+      "expression_kind": "human_readable_reference_not_executable_code",
+      "expected": "29000",
+      "independently_recomputed": "29000",
+      "unit": "INR",
+      "passed": true,
+      "source_roles": "Numeric inputs and offer/cap conditions are explicit synthetic or broker-reported premises. Empty insurer-evidence arrays correctly avoid fabricating an offer."
+    },
+    {
+      "case_id": "ref-02-07",
+      "label": "Additional cost of split quotes",
+      "expression": "split_premium_inr - joint_premium_inr",
+      "all_variable_names_bound": true,
+      "expression_kind": "human_readable_reference_not_executable_code",
+      "expected": "3000",
+      "independently_recomputed": "3000",
+      "unit": "INR",
+      "passed": true,
+      "source_roles": "Numeric inputs and offer/cap conditions are explicit synthetic or broker-reported premises. Empty insurer-evidence arrays correctly avoid fabricating an offer."
+    },
+    {
+      "case_id": "ref-04-04",
+      "label": "Conditional capped customer share",
+      "expression": "min(admissible_inr * copay_ratio, reported_cap_inr)",
+      "all_variable_names_bound": true,
+      "expression_kind": "human_readable_reference_not_executable_code",
+      "expected": "10000",
+      "independently_recomputed": "10000",
+      "unit": "INR",
+      "passed": true,
+      "source_roles": "Numeric inputs and offer/cap conditions are explicit synthetic or broker-reported premises. Empty insurer-evidence arrays correctly avoid fabricating an offer."
+    },
+    {
+      "case_id": "ref-04-04",
+      "label": "Uncapped customer funding shortfall",
+      "expression": "max(admissible_inr * copay_ratio - cash_inr, 0)",
+      "all_variable_names_bound": true,
+      "expression_kind": "human_readable_reference_not_executable_code",
+      "expected": "15000",
+      "independently_recomputed": "15000.00",
+      "unit": "INR",
+      "passed": true,
+      "source_roles": "Numeric inputs and offer/cap conditions are explicit synthetic or broker-reported premises. Empty insurer-evidence arrays correctly avoid fabricating an offer."
+    },
+    {
+      "case_id": "ref-17-07",
+      "label": "Air ambulance numerical ceiling",
+      "expression": "sum_insured_inr * ceiling_ratio",
+      "all_variable_names_bound": true,
+      "expression_kind": "human_readable_reference_not_executable_code",
+      "expected": "100000",
+      "independently_recomputed": "100000.00",
+      "unit": "INR",
+      "passed": true,
+      "source_roles": "Original establishes 10% of SI and route predicates; selected SI and clinical/route facts are synthetic. Result is a ceiling only."
+    }
+  ],
+  "passed": 8,
+  "failed": 0,
+  "retained_records": 48,
+  "retained_records_equal_r4_records": true,
+  "total_records": 56,
+  "corrected_during_review": {
+    "unbound_expression_names": "Six monetary reference expressions now use their exact input keys.",
+    "expression_marker": "All eight explicitly identify human-readable non-executable reference expressions.",
+    "current_arithmetic_residuals": []
+  },
+  "assumption_review": [
+    "Dates are hypothetical, and elapsed-day results do not adjudicate exact last-day inclusion. Free-look refund composition remains unresolved.",
+    "Three quote calculations compare complete same-term fixture totals without equating different cover pools or inventing age-loading formulas.",
+    "Reported 30% co-pay and its cap are unverified premises; the counterfactual cash shortfall is not an insurer offer.",
+    "The air-ambulance amount is a ceiling, not payment; the preferred Delhi route still fails the stated nearest-appropriate condition.",
+    "Source applicability and customer/clinical facts remain distinct. Original passages support only their cited contractual conditions."
+  ],
+  "inventory_delta_review": {
+    "scope": "Reviewed both candidate inventories’ categories, source issues, external dependencies, counting protocols and selected exact claim/nomination/interest passages against the current dictionary and rule contracts. This is a requirement-gap review, not a new independent reading of every original page or a final segmentation adjudication.",
+    "design_revision": "discussion-r4",
+    "source_hashes": {
+      "research/registers/independent-original-inventory-star-ssf-r6.json": "867dc0ac49fe55770311c1d763d75a33b96f866d6b5ad3ee9788846d87e4eeff",
+      "research/registers/independent-original-inventory-new-india-as-r6.json": "64a2f2a18b4672d06fab10d7d39213b6f6d260864f47a03b6323aed13a4ea99f",
+      "research/design/entity-field-dictionary.json": "c6bd0c362ccf5deed241d27ce5482cca86d6e2089ea5293ed6c75b26db8f020e",
+      "research/design/json-contracts.schema.json": "0249aca9fc8af21b6908961077ff5aea5c4727f21b571ff60e66e7e48677f391"
+    },
+    "material_findings": [
+      {
+        "id": "DESIGN-CLAIM-EVENTS",
+        "severity": "high",
+        "status": "addressed_in_proposal_json_discussion_r5; parent companion regeneration and review pending",
+        "source_instances": [
+          "NIA-AS-R6-9.6-1",
+          "NIA-AS-R6-9.6-2",
+          "NIA-AS-R6-3.8-1",
+          "NIA-AS-R6-9.7-2",
+          "STAR-SSF-R6-V.2-14",
+          "STAR-SSF-R6-V.2-15",
+          "STAR-SSF-R6-V.2-16",
+          "STAR-SSF-R6-V.2-33"
+        ],
+        "issue": "Claim submission, insurer receipt of the last necessary document, hospitalization notice and actual claim payment are distinct events. PolicyEvent is contract-only and its narrow kind enum lacks these claim/document/payment events; Claim.submitted_at cannot retain multiple requests, receipts, completion disputes or corrections. Private FactAssertion lacks a claim subject, so a date value alone cannot bind these facts to the correct concurrent claim.",
+        "required_proposal_change": "An owner-bound claim event/document-receipt/payment representation with exact claim, actor/recipient, event time versus recorded time, evidence, necessity/completeness, correction history and separate payment identity. Deadline/interest inputs must resolve to these records and preserve missing rate/day-count/rounding authority."
+      },
+      {
+        "id": "DESIGN-INVENTORY-REVISION",
+        "severity": "high",
+        "status": "addressed_in_proposal_json_discussion_r5; parent companion regeneration and review pending",
+        "source_instances": [
+          "NIA-AS-AMBIG-C181-183",
+          "NIA-AS-DUPLICATE-CLINICAL-TERMS"
+        ],
+        "source_note": "Annexure C exact IDs must be taken from the source inventory; the issue is numbered source occurrences 181–183 and the inventories’ explicit provisional segmentation protocol.",
+        "issue": "Both completed page readings retain candidate source assertions and explicitly leave the final denominator unmeasured pending atomic segmentation and hierarchy adjudication. RuleInventoryItem is mutable-status single-document/key with positive weight; CoverageReport.inventory_revision is an unbound string. No immutable membership or split/merge lineage fixes which accepted instances constituted a historical denominator, and Rule.inventory_item_id alone cannot map one supported rule to multiple independent source instances.",
+        "required_proposal_change": "Immutable inventory revisions and explicit per-revision memberships, stable source occurrence identity, adjudicated candidate split/merge/hierarchy lineage and rule-to-member support mappings. Coverage reports must bind the exact sealed membership revision, with denominator unknown until closure and segmentation are resolved."
+      }
+    ],
+    "covered_requirements": [
+      "Conditional benefit grants, failed eligibility predicates, exceptions, unresolved precedence and alternative deduction orders use Rule/RuleDependency/RuleIssue.",
+      "Modern configuration cells and footnotes use RuleTable/RuleTableCell; missing CB discount grid remains unknown rather than interpolated.",
+      "Treatment allocation versus independent admissibility uses ExpenseAllocation and ClaimLineAssessment.",
+      "Insurer-independent dated regulatory rates can be represented by general original-backed Rule definitions with applicability and evidence; they must not be fabricated as hospital observations.",
+      "Nominee selection can use owner-bound contract facts referencing Person, original accepted endorsement evidence and effective intervals; an explicit worked mapping is still desirable."
+    ],
+    "not_certified": "Candidate counts do not establish final per-original or insurer denominators."
+  },
+  "canonical_files_edited": false,
+  "evaluation_material_read": false,
+  "adviser_engine_used": false,
+  "database_implementation_approved": false,
+  "proposal_corrections_next": "Parent authorized proposal-only edits in entity-field-dictionary.json, json-contracts.schema.json and information-requirements.json; no model/migration/application work.",
+  "proposal_resolution_report": "research/reports/database-proposal-review-r5.json"
+}

@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T11:58:30.515407+00:00",
+  "associations": [],
+  "byte_count": 220037,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/KUTUMB_SWASTHYA_BIMA_MICRO_INSURANCE_PRODUCT_GROUP_CIS_5cc5118baa.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 300,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "ab7a01a536f38e93cd1547f8aa9b07304ddcbed7044306f64a82fd3b8656a26e",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/KUTUMB_SWASTHYA_BIMA_MICRO_INSURANCE_PRODUCT_GROUP_CIS_5cc5118baa.pdf"
+}

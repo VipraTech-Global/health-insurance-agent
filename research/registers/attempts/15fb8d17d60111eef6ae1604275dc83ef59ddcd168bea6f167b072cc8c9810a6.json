@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T12:00:25.919362+00:00",
+  "associations": [],
+  "byte_count": 499037,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/paripoorna-ayush-bima/PMAB%20Policy%20Highlights.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 5730,
+  "linking_url": "https://www.newindia.co.in/health-insurance/paripoorna-ayush-bima",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.06
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.06
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "1c4fa2dd7ad83f0c16c2697b6e1c91079d804e7d2e36f9dfd9c1002a5eb0f286",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/paripoorna-ayush-bima/PMAB Policy Highlights.pdf"
+}

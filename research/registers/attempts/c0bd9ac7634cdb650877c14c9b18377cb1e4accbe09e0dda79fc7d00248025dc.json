@@ -1,0 +1,23 @@
+{
+  "acquired_at": "2026-09-10T11:54:28.762448+00:00",
+  "associations": [],
+  "component_version": "research-acquisition/1",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/Medicare_LITE_Policy_Wordings_4fdf058f02.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [
+    "size_limit_exceeded"
+  ],
+  "language": "unknown",
+  "latency_ms": 33802,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": null,
+  "status": "failed",
+  "url": "https://www.tataaig.com/s3/Medicare_LITE_Policy_Wordings_4fdf058f02.pdf"
+}

@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T12:00:31.577329+00:00",
+  "associations": [],
+  "byte_count": 554752,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/paripoorna-ayush-bima/PMAB%20PED%20Waiver%20Form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 4602,
+  "linking_url": "https://www.newindia.co.in/health-insurance/paripoorna-ayush-bima",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "6e8c9c55f429b698f54093a576bf064177c9c7821cd05cec76214ab735644169",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/paripoorna-ayush-bima/PMAB PED Waiver Form.pdf"
+}

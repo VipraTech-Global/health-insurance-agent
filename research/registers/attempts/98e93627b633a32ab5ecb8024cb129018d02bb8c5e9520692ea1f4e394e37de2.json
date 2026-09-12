@@ -1,0 +1,65 @@
+{
+  "acquired_at": "2026-09-10T11:52:46.912404+00:00",
+  "associations": [],
+  "byte_count": 223664,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://stgaccinwbsprdlrs01.blob.core.windows.net/nhilprd/Value_added_service_providers_e0cd7d0b91.pdf?sv=2025-05-05&spr=https&st=2026-03-09T03%3A55%3A50Z&se=2036-03-06T03%3A55%3A50Z&sr=b&sp=r&sig=ws%2FLXsZIOfo1oHYhVPOTZZL7u5O6Vl7tPjqLGiH3HKc%3D",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "narayana",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 354,
+  "linking_url": "https://www.narayanahealth.insurance/customer-support",
+  "page_count": 5,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "927dd16078c15d12e51f2e763acc23ca575ae96f46ca00d8acc1d7f0a4813d18",
+  "status": "acquired",
+  "url": "https://stgaccinwbsprdlrs01.blob.core.windows.net/nhilprd/Value_added_service_providers_e0cd7d0b91.pdf?sv=2025-05-05&spr=https&st=2026-03-09T03%3A55%3A50Z&se=2036-03-06T03%3A55%3A50Z&sr=b&sp=r&sig=ws%2FLXsZIOfo1oHYhVPOTZZL7u5O6Vl7tPjqLGiH3HKc%3D"
+}

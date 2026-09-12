@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T12:04:05.364991+00:00",
+  "associations": [],
+  "byte_count": 749757,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/NPMPP%20Rate%20Chart.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "national",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1294,
+  "linking_url": "https://nationalinsurance.nic.co.in/products/all-products/health/national-parivar-mediclaim-plus-policy-floater-policy",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "194df19b1dfb42f9594f408b910a937a1a143f8ed118a4e522b1aa50749f182e",
+  "status": "acquired",
+  "url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/NPMPP%20Rate%20Chart.pdf"
+}

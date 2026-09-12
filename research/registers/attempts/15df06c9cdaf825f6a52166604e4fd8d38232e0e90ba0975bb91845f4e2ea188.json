@@ -1,0 +1,65 @@
+{
+  "acquired_at": "2026-09-10T11:57:16.383649+00:00",
+  "associations": [],
+  "byte_count": 220902,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/aa0a487faf644942a5192be221a4fafd.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 668,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 5,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 288.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 288.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 288.554
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 473.884
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 287.948
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "56b93017032f3949e92c8c88c933a93425bd0313cc347ba87079f9fba80e846c",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/aa0a487faf644942a5192be221a4fafd.pdf"
+}

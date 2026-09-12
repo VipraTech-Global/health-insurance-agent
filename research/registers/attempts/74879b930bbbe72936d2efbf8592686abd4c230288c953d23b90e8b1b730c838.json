@@ -1,0 +1,121 @@
+{
+  "acquired_at": "2026-09-10T12:00:55.594524+00:00",
+  "associations": [],
+  "byte_count": 8498576,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.manipalcigna.com/pdfs/sarvahAccordion.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "manipalcigna",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 3238,
+  "linking_url": "https://www.manipalcigna.com/hospitalization-cover/manipalcigna-sarvah",
+  "page_count": 12,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 576.745,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 359.745
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.401,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 360.241
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.523,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 365.627
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.604,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 359.966
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.612,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 359.83
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.532,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 360.255
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.532,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 359.729
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.21,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 359.834
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.106,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 359.968
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.193,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 359.872
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.147,
+      "page": 11,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 360.039
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 575.979,
+      "page": 12,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 365.872
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "bf0040c519e133812d52b1794b858df2a709ba1e6879d4b8d45294b16bc2d631",
+  "status": "acquired",
+  "url": "https://www.manipalcigna.com/pdfs/sarvahAccordion.pdf"
+}

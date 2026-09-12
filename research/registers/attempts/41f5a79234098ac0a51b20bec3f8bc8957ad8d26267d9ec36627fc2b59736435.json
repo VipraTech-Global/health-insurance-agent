@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:01:06.411710+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/arogya-sanjeevani/Prospectus%20Arogya%20Sanjeevani%20Policy.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 3111,
+  "linking_url": "https://www.newindia.co.in/health-insurance/arogya-sanjeevani-policy",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "a251777ca28d848809936ae7d6c00f6f31370db08450dc471f9734af9663f091",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/arogya-sanjeevani/Prospectus Arogya Sanjeevani Policy.pdf"
+}

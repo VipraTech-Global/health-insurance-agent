@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:01:24.578498+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/cancer-guard-policy/Policy%20clause%20New%20India%20Cancer%20Guard.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 2037,
+  "linking_url": "https://www.newindia.co.in/health-insurance/new-india-cancer-guard-policy",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "21e0afb75ecf7157d5857b3846a5f7ed25087043593f9b3ab48f34bc311b2f38",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/cancer-guard-policy/Policy clause New India Cancer Guard.pdf"
+}

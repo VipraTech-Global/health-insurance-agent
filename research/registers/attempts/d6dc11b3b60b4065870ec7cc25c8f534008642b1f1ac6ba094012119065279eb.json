@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:56:34.300453+00:00",
+  "associations": [],
+  "byte_count": 228207,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/wellsurance_senior_tariff_chart_867ad7f96d.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 189,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "548e50c249cc1ce1543e0fce16f1d62d330398ad5609788fa6c437565ad41357",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/wellsurance_senior_tariff_chart_867ad7f96d.pdf"
+}

@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:59:15.185445+00:00",
+  "associations": [],
+  "byte_count": 443535,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/miscellaneous/product-withdrawal-list.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "go-digit",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 418,
+  "linking_url": "https://www.godigit.com/downloads",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 1031.76001,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 728.52002
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "0e5292fcea85e9cc89a369cae133493610861d9a3dd1498e4dc7852aeac7e402",
+  "status": "acquired",
+  "url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/miscellaneous/product-withdrawal-list.pdf"
+}

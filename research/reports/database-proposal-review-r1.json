@@ -1,0 +1,280 @@
+{
+  "format_version": 1,
+  "review_kind": "django_and_database_proposal_consistency",
+  "status": "revise_before_database_design_approval",
+  "source_fingerprints": {
+    "research/design/entity-field-dictionary.json": "e7d8f268339e2d1ffacf25c06f524bce63e72eb9a5870b0dd55a161855440206",
+    "research/design/json-contracts.schema.json": "0b496f943e782e26eb3af1e3cdec6ec2c89faca469dd0c157c6a2fe28ac882c5"
+  },
+  "reviewed_scope": {
+    "entities": 77,
+    "fields": 753,
+    "named_json_contracts": 40,
+    "companions": "Lifecycle/retrieval/migration prose was still being authored and was not used as an implicit fix for missing dictionary/schema constraints."
+  },
+  "findings": [
+    {
+      "id": "DB-R1",
+      "severity": "critical",
+      "locations": [
+        "common_rules[3]",
+        "Person.constraints",
+        "EvidenceSpan.owner_id",
+        "Product.identity_span_id",
+        "TermsDocument.document_id",
+        "ClaimCitation.span_id"
+      ],
+      "case_ids": [
+        "ref-18-06",
+        "ref-20-05",
+        "ref-20-10"
+      ],
+      "title": "The ownership promise is not yet an enforceable relationship design.",
+      "issue": "The dictionary says all private FKs use composite database constraints, but most target entities do not declare unique(id,owner_id). Private-to-mixed links are described as same owner OR public, which an equality composite FK cannot express. Public Product/TermsDocument links to mixed EvidenceSpan/DocumentRevision also need an explicit public-target restriction. NULL owner values need deliberate handling; they must not bypass existence/scope checks. Staff approver/reviewer actor references cannot be forced to equal the customer owner.",
+      "required_revision": "Specify a relationship-by-relationship access matrix: owner-bound, public-only, public-or-owner, and independently authorized actor. Declare required composite target keys and the exact trigger/check strategy for nullable mixed targets, with update/delete enforcement and actor exceptions. Include public corpus rejection of private sources.",
+      "status": "open_proposal_issue"
+    },
+    {
+      "id": "DB-R2",
+      "severity": "high",
+      "locations": [
+        "FactAssertion.supersedes_id",
+        "SnapshotFact.assertion_id",
+        "Decision.snapshot_id",
+        "Decision.turn_id",
+        "Conversation.current_snapshot_id",
+        "ContractMember.constraints"
+      ],
+      "case_ids": [
+        "ref-20-02",
+        "ref-20-09",
+        "ref-02-10"
+      ],
+      "title": "Same owner does not enforce the required conversation, revision or contract lineage.",
+      "issue": "Several fields require same conversation/revision/person/predicate or member scope, while physical child rows contain only FK IDs and owner_id. SnapshotFact one accepted scalar value per subject/predicate depends on FactAssertion fields in another row. These cannot be enforced by an ordinary CHECK over the child row or by owner equality alone. Supersession currently says same owner/subject/predicate, without explicitly requiring the intended conversation lineage.",
+      "required_revision": "Provide exact composite keys or deferred constraint triggers for conversation/revision/subject lineage and sealed snapshot membership. Define scalar versus multivalued predicates and a concrete invariant for accepted snapshot facts. Validate cyclic insertion and erasure transitions; do not rely on ORM save hooks for bulk import correctness.",
+      "status": "open_proposal_issue"
+    },
+    {
+      "id": "DB-R3",
+      "severity": "high",
+      "locations": [
+        "AuthPermission",
+        "AccountGroup",
+        "AccountPermission",
+        "AuthSession.native_framework_mapping",
+        "LegacyMapping.target_id"
+      ],
+      "case_ids": [],
+      "title": "Native Django authentication mapping remains internally incomplete.",
+      "issue": "AuthPermission declares app_label/model_name as fields although native django.contrib.auth.Permission stores content_type_id referencing ContentType; no ContentType entity/mapping is present. AccountGroup/AccountPermission use logical owner_id but native joins use user_id; their IDs are BigAutoField in the pilot accounts app, whereas the proposal says integer. Native auth Group/Permission use AutoField. Native admin LogEntry/content-type history is not explicitly accounted for. LegacyMapping.target_id is UUID-only and cannot directly identify native integer/string targets.",
+      "required_revision": "Distinguish logical projections from physical native fields. Include native ContentType plus Permission.content_type_id, explicit user_id aliases for account joins and correct native ID widths. Identify retained admin/session tables and a target-key representation for UUID, integer and session-string identities. Preserve encoded passwords and existing sessions without a custom auth-table substitute.",
+      "status": "open_proposal_issue"
+    },
+    {
+      "id": "DB-R4",
+      "severity": "high",
+      "locations": [
+        "UsageEntry.constraints",
+        "UsageEntry.fields",
+        "ClaimLineAssessment"
+      ],
+      "case_ids": [
+        "ref-02-03",
+        "ref-11-05",
+        "ref-14-07",
+        "ref-14-09"
+      ],
+      "title": "Ledger idempotency references an event key that does not exist.",
+      "issue": "UsageEntry promises idempotency via claim_line,kind,scope,event, but has no event_id or stable posting/idempotency key and no declared unique constraint implementing that combination. occurred_on is not an event identity. Repeating a worker/import or partial settlement can duplicate reserves, threshold use, cover consumption or payment. Nullable claim_line_id also permits legitimate non-claim postings requiring their own identity.",
+      "required_revision": "Add a stable posting/event identity with a concrete scoped unique constraint for all posting kinds. Specify how claim-line assessment revisions and source settlement events generate distinct postings, and how reversals are limited atomically. Define immutable assessment revision/current-selection semantics so usage cannot point ambiguously at repeated assessments.",
+      "status": "open_proposal_issue"
+    },
+    {
+      "id": "DB-R5",
+      "severity": "high",
+      "locations": [
+        "Artifact.kind",
+        "Dependency",
+        "DeletionScopeV1",
+        "DeletionRequest.scope"
+      ],
+      "case_ids": [
+        "ref-20-10"
+      ],
+      "title": "Selective medical-fact deletion has no complete typed target/dependency representation.",
+      "issue": "DeletionScopeV1 supports account, conversation, person or artifacts; Artifact.kind excludes fact assertions, messages, search chunks, processing outputs and model-response copies. The worked case requests deletion of one disclosure and its derived copies while retaining unrelated facts. Mapping it only to a fact_snapshot would either leave copies outside the graph or erase a broader snapshot. The generic immutable-artifact graph does not yet identify all physical copies whose erasure must be verified.",
+      "required_revision": "Specify an explicit assertion/content target and how its copied values are indexed through messages, snapshots, decisions, search chunks, model/worker payloads, exports and retention-managed stores. Keep lineage tombstones separate from erased payloads and prevent old workers or migrations from resurrecting erased data. Define a scoped receipt without retained medical values.",
+      "status": "open_proposal_issue"
+    },
+    {
+      "id": "DB-R6",
+      "severity": "high",
+      "locations": [
+        "Conversation",
+        "ConsentRecord.purpose",
+        "FactAssertion.source_kind",
+        "SnapshotFact"
+      ],
+      "case_ids": [
+        "ref-20-05"
+      ],
+      "title": "No explicit conversation-context reuse authorization is represented.",
+      "issue": "The case requires a new conversation to prohibit reuse of old medical facts and later permit only explicitly scoped reuse. Conversation has no import/reuse policy, ConsentRecord purposes do not include cross-conversation reuse, and source_kind has no traceable authorized import. Same-owner checks alone cannot implement the user preference; copying old assertions into new ones would hide their origin.",
+      "required_revision": "Define the persisted no-reuse/default policy, a source-to-destination conversation grant or import event, scoped facts/persons and revocation behavior. Ensure retrieval, prompts and derived dependencies obey it. If the design forbids all cross-conversation reuse, state how an explicit later reuse request is handled rather than implicitly treating account ownership as permission.",
+      "status": "open_proposal_issue"
+    },
+    {
+      "id": "DB-R7",
+      "severity": "high",
+      "locations": [
+        "ExpenseLine.service_on",
+        "TreatmentEpisode.started_at",
+        "TreatmentEpisode.ended_at"
+      ],
+      "case_ids": [
+        "ref-17-03",
+        "ref-12-08",
+        "ref-16-10"
+      ],
+      "title": "Date-only expense timing cannot support a stabilization-time expense boundary.",
+      "issue": "ExpenseLine has only service_on:date. The excluded-provider exception case requires allocating expenses before versus after a specific stabilization instant. Episode-wide start/end and a clinical assertion do not locate individual room/procedure charges within that boundary. A single bill line may also span the boundary.",
+      "required_revision": "Represent expense service instants/intervals and precision, with an explicit original-backed allocation for lines spanning a boundary. Preserve date-only unknown precision without inventing midnight. Link the authoritative clinical stabilization event and any approved allocation assumption to the calculation.",
+      "status": "open_proposal_issue"
+    },
+    {
+      "id": "DB-R8",
+      "severity": "high",
+      "locations": [
+        "ProviderObservation.status",
+        "ProviderScopeV1",
+        "Provider",
+        "FactAssertion.person_id"
+      ],
+      "case_ids": [
+        "ref-01-04",
+        "ref-07-05",
+        "ref-17-02",
+        "ref-17-07"
+      ],
+      "title": "Hospital observations omit decisive accessibility, clinician and observation-completeness dimensions.",
+      "issue": "ProviderObservation.status is network/nonnetwork/restricted/excluded/unknown, while the cases independently require wheelchair accessibility, participation of a named specialist, authorization and whether a negative directory search was complete. Provider is a facility branch, and ProviderScopeV1 contains only services/network tier/territories/scope status. A generic services string cannot express the independently dated boolean/unknown observation, clinician identity or search completeness without an unspecified convention.",
+      "required_revision": "Add a typed observation kind/value and relevant subject identities/provenance, or another explicit representation covering each independent requirement. Keep non-network and excluded state separately observable, and retain query coverage so a missing hit cannot become a verified negative.",
+      "status": "open_proposal_issue"
+    },
+    {
+      "id": "DB-R9",
+      "severity": "high",
+      "locations": [
+        "Rule.constraints",
+        "SearchChunk.constraints",
+        "Rule.owner_id",
+        "SearchChunk.owner_id"
+      ],
+      "case_ids": [
+        "ref-18-06"
+      ],
+      "title": "Mixed/private uniqueness is not consistently scoped to ownership.",
+      "issue": "Rule is mixed/private but unique(terms_id,rule_key,revision) omits owner_id. Two customers with different private versions of the same logical rule collide, including terms_id NULL because NULLS NOT DISTINCT is requested. SearchChunk uniqueness likewise omits owner despite mixed/private use; identical scoped derivatives need an explicit sharing/deduplication policy.",
+      "required_revision": "Separate public and private rule namespaces or include the appropriate scope/owner key in uniqueness. Define whether private chunks can reference shared public sources and whether equal derivatives are separate owner records; ensure uniqueness errors cannot couple independent customer state.",
+      "status": "open_proposal_issue"
+    },
+    {
+      "id": "DB-R10",
+      "severity": "high",
+      "locations": [
+        "DurationV1",
+        "RuleV1.effects.waiting",
+        "ContinuityCredit.period"
+      ],
+      "case_ids": [
+        "ref-05-01",
+        "ref-15-01",
+        "ref-15-06"
+      ],
+      "title": "Unknown waiting/credit durations cannot be represented by the required duration type.",
+      "issue": "DurationV1 requires a nonnegative integer value, unit, anchor and boundary, with no unknown variant. ContinuityCredit.period is required even when the credit is pending/unmeasured, and a waiting effect requires DurationV1 directly. The broader design promises unknown distinct from zero; a placeholder zero or omitted pending record would lose that distinction.",
+      "required_revision": "Provide a tagged unknown/unresolved duration or a distinct pending-credit representation, and specify how unknown trigger/boundary propagates. Do not fabricate zero months or a credit anchor to satisfy a required shape. Confirm absolute caps and waits without a credit also have non-invented ways to represent inapplicable percentage/credit inputs.",
+      "status": "open_proposal_issue"
+    },
+    {
+      "id": "DB-R11",
+      "severity": "medium",
+      "locations": [
+        "TemporalExtentV1",
+        "ReconciliationV1",
+        "ExpressionV1",
+        "TurnEventV1",
+        "TableSelectorsV1"
+      ],
+      "case_ids": [],
+      "title": "Named strict JSON shapes still need explicit semantic validators and event-specific requirements.",
+      "issue": "With Draft202012Validator and a FormatChecker, invalid interval strings pass TemporalExtentV1; five repeated family dimensions pass ReconciliationV1; a decision event without decision_id passes TurnEventV1; and a one-argument divide passes ExpressionV1. AdditionalProperties=false does not establish these invariants. Table selector axis uniqueness/range composition also remains a prose obligation.",
+      "required_revision": "Tighten shapes where feasible and enumerate mandatory semantic validation gates for parsing/chronology, exactly-once reconciliation dimensions, AST arity/units/depth, event-kind required fields and axis/range completeness. Persist validator versions and prevent publication/indexing until these checks pass. These findings do not imply schema-invalid JSON itself.",
+      "status": "open_proposal_issue"
+    },
+    {
+      "id": "DB-R12",
+      "severity": "high",
+      "locations": [
+        "all FK relationships",
+        "OriginalBlob",
+        "EvidenceSpan",
+        "RuleEvidence",
+        "Account",
+        "RetentionHold"
+      ],
+      "case_ids": [],
+      "title": "Delete/update actions and erasure transitions are not yet specified for the relationships.",
+      "issue": "The field dictionary describes FK targets and purposes but does not provide a complete on_delete/on_update/deferred constraint contract. Account erasure, reviewer retention and immutable source/citation graphs require different actions. A default CASCADE or a broad PROTECT can respectively erase retained evidence or make authorized deletion impossible.",
+      "required_revision": "Specify every relationship deletion/update action, nullability transition and deferral requirement, including reviewer identity minimization and retained public originals. Demonstrate a selective erasure and an account purge against those exact constraints before calling the proposed migration design complete.",
+      "status": "open_proposal_issue"
+    },
+    {
+      "id": "DB-R13",
+      "severity": "high",
+      "locations": [
+        "ExpenseLine",
+        "ClaimLineAssessment",
+        "ClinicalFactsV1"
+      ],
+      "case_ids": [
+        "ref-09-08",
+        "ref-10-10",
+        "ref-11-03",
+        "ref-11-10"
+      ],
+      "title": "Package/subsumed expense relationships are not structurally represented.",
+      "issue": "The cases require distinguishing separately payable lines, excluded items and supplies already included in a room/procedure package. ExpenseLine has a category and relation-to-hospitalisation assertion but no package parent, included-line relationship or explicit allocation grouping. A text label cannot prevent counting an implant or consumable both as a package component and a separate allowance.",
+      "required_revision": "Specify the typed package/inclusion/allocation relation and its provenance, including whether inclusion affects billing, admissibility, cap membership or all three. Validate cycles and duplicate allocation and expose the membership used by calculation traces.",
+      "status": "open_proposal_issue"
+    }
+  ],
+  "checks": {
+    "json_schema_metaschema_valid": true,
+    "all_declared_fk_entity_targets_resolve": true,
+    "all_json_field_contract_names_resolve": true,
+    "seven_explicit_empty_collection_or_object_defaults_validate": true,
+    "counterexample_validation_used_format_checker": true,
+    "schema_only_counterexamples_accepted": [
+      "invalid date strings in an interval",
+      "five repeated reconciliation family dimensions",
+      "decision event without decision ID",
+      "division with one operand"
+    ],
+    "unknown_duration_rejected": true
+  },
+  "positive_findings": [
+    "Proposal and user-approval boundary are explicitly marked; no model or migration implementation is claimed.",
+    "Encoded passwords are explicitly preserved without rehashing, and native session layout is retained.",
+    "Original hashes, immutable fact snapshots, exact rule/evidence links, durable turn events and distinct failure outcomes are represented.",
+    "Threshold contribution, cover consumption and actual payment are separate fields; unknown quantities are distinct from zero for QuantityV1.",
+    "RuleTable/RuleTableCell retain axis selectors, cell evidence and connected footnotes.",
+    "Public BM25 versus PostgreSQL text-search fallback and private prefiltering are explicitly distinguished."
+  ],
+  "approval_boundary": "These are required proposal revisions for discussion, not authorization to implement schema changes. Full derivation from all 400 independently assessed cases remains outside this source-structure check.",
+  "verification_limit": "No Django check, migrations, database connections, service calls or actual customer/authentication rows were used; this is a source/JSON design review with isolated jsonschema probes. It does not establish runtime database enforcement or compatibility.",
+  "evaluation_material_read": false,
+  "proposal_files_edited": false,
+  "application_files_edited": false
+}

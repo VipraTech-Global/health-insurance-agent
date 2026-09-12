@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:59:22.059676+00:00",
+  "associations": [],
+  "byte_count": 365328,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.zurichkotak.com/docs/default-source/default-document-library/battery_protect_add_on_cover_under_kotak_car_secure_prospectus.pdf?sfvrsn=4da8a4ab_0",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "zurich-kotak",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 829,
+  "linking_url": "https://www.zurichkotak.com/product-documents",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "b24557afee4397fabd46eb181abffb9fe5c4b6123a35268796fad177c6a773f7",
+  "status": "acquired",
+  "url": "https://www.zurichkotak.com/docs/default-source/default-document-library/battery_protect_add_on_cover_under_kotak_car_secure_prospectus.pdf?sfvrsn=4da8a4ab_0"
+}

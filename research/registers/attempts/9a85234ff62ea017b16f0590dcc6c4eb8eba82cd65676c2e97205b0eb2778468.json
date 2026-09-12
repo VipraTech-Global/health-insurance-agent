@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:51:43.593443+00:00",
+  "associations": [],
+  "byte_count": 422422,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/pages/doc/brochure/Goactive_SS.pdf?v=1.0",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 403,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.897,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.577
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.897,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.577
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "a6cdd17a8bcc43eb7d434eba7f47959b7d874db46be0ab8d3b653dad62b583d0",
+  "status": "acquired",
+  "url": "https://transactions.nivabupa.com/pages/doc/brochure/Goactive_SS.pdf?v=1.0"
+}

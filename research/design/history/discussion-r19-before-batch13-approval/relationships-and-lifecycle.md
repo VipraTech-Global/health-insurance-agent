@@ -1,0 +1,109 @@
+# Relationships, ownership and lifecycle — discussion revision 2
+
+[relationships.json](relationships.json) specifies all proposed foreign-key relationships individually: source field, target, required/optional state, access mode, deletion/update behavior, deferral and enforcement. This is a design contract. No constraints have been installed or runtime-tested.
+
+## Access and database invariants
+
+“Public” in the dictionary means globally scoped data, not an unauthenticated HTTP endpoint. Operational metadata, authentication and reviews still require the relevant API role. Public insurance originals are served through citation access checks; private originals never enter a shared public corpus.
+
+Every owned row has a nonnull owner and `UNIQUE(id, owner_id)`. A private-to-private relationship uses the composite FK plus a direct existence FK. Public/mixed relationships cannot use nullable equality to prove ownership. They have a normal target FK and a deferred constraint trigger requiring the target owner to be NULL or equal to the source owner, as appropriate. The predicate must evaluate TRUE; NULL is rejected. A globally scoped source must point only to globally scoped targets. Target ownership and primary keys are immutable. Triggers take key-share locks to protect immutable referenced identities and validate insertion, reference update and target change/deletion so bulk loading cannot bypass them. These compatible locks do not serialize set-wide membership or balance checks; the stronger parent-lock protocols below apply.
+
+Actor relationships are different from resource ownership. A reviewer or retention approver may be an authorized staff account, not the customer owner. Authorization checks happen under the authenticated service role; the audit receipt identifies operation, role, target and result without copying medical content. Nullable actor identities may be erased while retaining the permitted minimal historical review receipt.
+
+Application owner filters are mandatory. Proposed PostgreSQL RLS is an additional protection for private tables, using a transaction-local owner setting under a non-owner, non-superuser role without BYPASSRLS. Worker transactions set context from persisted owned work, not client-supplied owner IDs. Connection pools reset transaction-local context; privileged migrations/publication use separate restricted roles. Native auth/session tables use their native role-limited access. Public search uses only approved corpus members. Private retrieval materializes the authorized owner/conversation input set before scoring; post-ranking filtering is insufficient.
+
+## Conversation and lineage invariants
+
+`CustomerStatement` points to one meaningful Unicode span in an immutable customer `Message`; it does not copy the text. A decision-relevant span must be mapped or marked `clarification_required` before an advice request becomes ready. Ignoring a span requires a reason. Customer facts and requirements point to these statements, preserving exact customer provenance.
+
+`CustomerProfileRevision` is a small conversation-local checkpoint created only when facts or requirements change. `CustomerFact` and `CustomerRequirement` rows are append-only versions introduced by one revision. Corrections reuse a stable `logical_key`; the active value at revision N is the latest version for that key introduced at or before N. A latest `retracted` fact or `withdrawn` requirement is inactive. Registry-declared scalar facts with multiple terminal logical keys form a conflict and require clarification; set-valued facts remain multiple.
+
+`Conversation.current_profile_revision_id` is the only current-state pointer. `Recommendation` and `Turn` pin the exact profile revision they evaluated, while `AdviceRequest` remains the longer-lived customer goal. All related rows share owner and conversation. A completion transaction rechecks that the turn's pinned revision is still current before publishing current advice. Contract membership continues to point to its exact contract revision and owned person.
+
+New conversations start without imported facts. Cross-conversation reuse is deferred from the current design. Reopening the same owned conversation retains its own revision history but rechecks stale evidence, quotes and observations.
+
+## Durable turns and events
+
+One short transaction validates ownership/idempotency/revision, records the message, customer statements and accepted fact/requirement versions, creates the profile revision and turn and outbox entry, and commits. Duplicate request IDs with the same canonical payload return the saved turn; different payloads return a conflict. One active turn per conversation is proposed; a correction can supersede/cancel older work while creating a new revision.
+
+Workers claim persisted work with leases and fencing tokens. Network/model calls occur outside database transactions. Completion reacquires the turn/conversation lock and verifies lease token, cancellation, owner erasure generation, pinned customer profile revision and corpus/observation dependencies. A stale result is retained only within the authorized historical scope and cannot publish as current. A material source invalidation blocks publication even if inference succeeded.
+
+Each user-visible event is committed once with a monotonically increasing cursor. Reconnect returns events after the supplied cursor. It neither redispatches nor repeats inference. Cancellation is durable and does not erase already accepted facts. Explicit retries create visible attempts under the same work lineage; unknown provider completion is `indeterminate`, not silent retry success. Outbox delivery may repeat; consumers deduplicate its stable key.
+
+## Policy and corpus changes
+
+Product identity, UIN, terms revision and blob hash are separate. Select by the original-supported event predicate, person/variant/options and policy interval. “Latest downloaded” is never a legal precedence rule. Regulatory changes under the same UIN create a new terms revision; existing-policy extension requires an applicable instrument. Personal endorsements and underwriting terms have separate accepted state and scope. Unknown edition selection blocks the affected answer, while unrelated supported claims can remain usable.
+
+Publication first seals a manifest with all exact rule/document/table dependencies and independent review results. It validates each capability and blocks material unresolved issues. A short transaction switches `KnowledgeChannel` by generation and creates an invalidation outbox event. Existing decisions retain their original corpus ID; current validity is separate from historical reproducibility. URL changes preserve prior acquisitions and bytes. Unread originals and unknown rule denominators do not become coverage through publication.
+
+Quotes bind owner, facts, people, options, term, validity and priced components. A fact correction invalidates affected quotes even if their expiry is later. Hospital observations bind exact branch, insurer, service, observation time and property type. Network participation, exclusion, accessibility, clinician participation and authorization are separate observations. A negative search is unknown unless its scope was completely observed or the source explicitly states absence.
+
+## Erasure and deletion actions
+
+Default domain FK deletion is `NO ACTION`, deferred for authorized graph operations; no broad automatic cascading of insurance evidence. The relationship ledger lists nullable actor `SET NULL` exceptions and retained native Django cascade semantics. Ordinary users cannot delete referenced public originals or rewrite immutable primary keys. Authorized erasure is an explicit operation, not an ordinary cascading model delete.
+
+For selective disclosure erasure: identify the customer statement, fact or requirement; advance the owner's erasure generation; block affected jobs; then follow the typed private-copy and recommendation links approved in the later privacy and recommendation batches. Redact or erase affected payloads in messages, customer profile history, model responses, decisions, chunks, caches, queue references and exports while preserving unrelated customer information. Exact original private files containing the disclosure are erased as originals; an authorized redacted derivative gets a different hash and cannot masquerade as the original. Historical citations become explicitly unavailable rather than exposing removed content. Minimal lineage tombstones retain no erased medical value.
+
+For account purge: authorize and record the request, stop publication by generation, complete scoped payload erasure and copy-store receipts, process valid bounded retention holds separately, delete owned relationship rows in dependency order within deferred-constraint transactions, then purge/anonymize the account according to the approved receipt/retention policy. Native sessions and user privilege joins are handled with their native semantics. Public originals and other customers' records survive. Required customer-owner references are never set to NULL to turn private records public. Reviewer identity minimization follows the individual relationship actions.
+
+Retention duration and legally required holds are unresolved policy decisions; the design provides explicit scope/basis/approver/expiry without inventing a universal retention period. Backups require access restriction, expiration and deletion tombstones applied before any restored data becomes accessible. Old workers, reimports and index rebuilds check erasure generation/tombstones to prevent resurrection. A deletion remains failed or held until every required storage-class receipt is verified. Runtime proof of these operations belongs to the approved implementation phase.
+
+## Revision 3 clarifications from review
+
+Global targets without an `owner_id` column use an ordinary FK and role check. Only genuinely mixed or owned targets use owner predicates; the relationship ledger does not reference nonexistent global-owner columns. Nullable mixed rows pointing to a private parent additionally require a nonnull source owner whenever that FK is present. Later privacy records must use explicit typed targets and enforce matching ownership; no private disclosure may be relabelled as public.
+
+Native Django ORM `on_delete` behavior is listed separately from physical SQL FK action. Existing native physical constraints remain verified/preserved at migration rehearsal; Django 5.2's ORM cascade is not described as an installed SQL ON DELETE CASCADE. Domain graph erasure still uses the explicit service and deferred NO ACTION constraints.
+
+Fact assertions have explicit subject kind and mutually exclusive person/contract/provider/package subject FKs; conversation is always the context and is the subject only for conversation predicates. Package facts use `subject_bundle_id`, never a fabricated policy or person. An imported assertion records its exact `source_statement_id` and grant. Superseding a fact within the destination never overwrites its source conversation. Branch accessibility may be observed without an insurer; network/exclusion/authorization observations require the appropriate insurer and scope.
+
+Legacy source payloads retain an `archive_blob_id`, but that field does not make an archive or parser result contractual evidence. A public SourceCapture tied to an independently identified DocumentVersion establishes how an OriginalFile entered the corpus. Migration archives and processing results remain operational artifacts and cannot qualify as independently inventoried insurer originals.
+
+
+## Original locations and link lineage (revision 6)
+
+Every EvidenceSpan points to the exact successful SourceCapture, which identifies the SourceURL, OriginalFile and DocumentVersion. PDF citations require a matching DocumentPage and a precise region in `locator`; page geometry and rotation are read from the preserved PDF rather than duplicated in the database. HTML uses a selector and occurrence, JSON uses an RFC 6901 pointer, and plain text uses an encoding and half-open byte range. Non-PDF citations have no page_id. A resolver rejects missing or ambiguous selectors, malformed decoding, out-of-range locations and media mismatches. Lexical resolution alone does not establish contractual entailment.
+
+DiscoveryRun records one autonomous Codex session and its exact instructions. SourceURL deduplicates the public address, while SourceObservation retains each search result, page link, attachment, register entry or other path that led to it. Irrelevant observations remain with a reason so future sessions do not repeatedly rediscover them. SourceCapture records each attempt independently because one URL may return different bytes over time and several URLs may return the same OriginalFile. DocumentSeries groups the continuing publication, and DocumentVersion stores edition labels, identifiers, effective dates and explicit supersession. Latest discovered, latest published and currently applicable are calculated separately; no `is_latest` flag is stored.
+
+AIPreference.route_id and updated_at preserve the pilot's separate one-to-one preference record without selecting a replacement model. Preference is not qualification: a disabled/unqualified preferred route produces an explicit operational result until an authorized user selects an eligible route. No fallback or preference reset follows migration.
+
+
+## Buyer-adviser claim boundary
+
+Public claim procedures, restrictions and calculations remain versioned PolicyRule knowledge. Customer-specific claims, treatment bills, document receipts, payments and utilization ledgers are outside application scope. Relevant prior-claim statements remain sourced CustomerFact records.
+
+## Reproducible knowledge denominators added in discussion revision 6
+
+The independent rule inventory, its original occurrences, sealed revisions, segmentation lineage, support adjudication and coverage reports belong to a separately isolated quality store. The customer-advice application cannot manufacture its own denominator from successfully parsed rules. Candidate counts such as the earlier Star and New India parser totals cannot be promoted into measured coverage.
+
+`InventoryLineage` records split, merge, qualification and restatement decisions without deleting the former segmentation. Shared source cells expanded into several configurations must retain that expansion policy; adjacent qualifier rows cannot become independent covered procedures by default. Source closure, relevant scope and segmentation must be settled before a measured denominator is sealed.
+
+`RuleInventorySupport` is an immutable review linking an inventory member to the represented rule and exact supporting review. `CoverageReportSupport` pins which reviewed support records contributed to a historical report. The report counts each included member once even when several rules support it, and retains its exact sealed inventory revision. A later segmentation or support correction creates a new report; it cannot change an earlier percentage retroactively. This public original-inventory accounting contains no private benchmark questions or solutions.
+
+## Combi identities, package revisions and consequences
+
+The [original-derived combi case](../reference/additional-combi-case-r13.json) requires a distinction that separate policy rows alone cannot express. `TermsComponent` records each component product, issuer, asserted UIN and optionally independently established edition under one wrapper edition. A wrapper naming a component does not establish complete component wording. Composition is acyclic and the published edges are immutable. A conflicting component UIN blocks the affected identity or rule; it is not silently overwritten.
+
+`ContractBundle` is a stable owned package identity, not a third insurance policy. `ContractBundleRevision` pins the interpreted wrapper configuration and membership; `ContractBundleMember` links each public slot to its actual same-owner `CustomerPolicyRevision`, or records a missing/unselected disposition. Deferred checks enforce wrapper/product/issuer/edition lineage, ownership, required and conditional slots, and duplicate-contract restrictions. Component `PolicyMember` rows retain the different insured people. A person named on health cover does not thereby have life cover.
+
+Create a new immutable package revision when association facts change. Lock the stable bundle row, check the expected revision, seal the complete member set and move `current_revision_id` atomically. A missing component or uncertain selection leaves membership unresolved/partial. Research stipulations can exercise a branch but cannot become verified production evidence. A public sample acceptance letter is insufficient to verify a private package.
+
+Package receipts and corrections have a package fact subject. `PolicyEvent` targets exactly one actual policy contract or exact bundle revision; each event retains its source and occurrence time. A cancellation enquiry, request, insurer receipt, effective termination and refund are distinct assertions. Evaluating a coupled-cancellation rule explains affected members; it cannot mark contracts cancelled or dispatch an external action. The unrelated older policy in the worked case is not a member and is not affected by this rule.
+
+Direct foreign keys identify `TermsComponent`, `ContractBundleRevision`, `ContractBundleMember` and `PolicyEvent`; no generic registry is used. Corrections, component-source changes or membership revisions make affected recommendations stale through the typed links reviewed with saved recommendations. Deletion covers package rows, subject facts, copied prompts, indexes, summaries, member links and retained results under the same erasure policy; it must not erase another owner's data or public originals.
+
+`Product.advice_scope` distinguishes medical catalogue use from a referenced nonmedical component. A life insurer referenced by an original combi does not enlarge the fixed 20-insurer medical acceptance roster. The wrapper's primary catalogue organization is not a claim of sole legal issuance; component issuers and the original joint-issuance passage remain explicit. No shared sum insured, merged benefits or life eligibility follows from composition.
+
+The revision seal is explicit: `sealed_at`, `membership_sha256` and `seal_format_version`. Construction may temporarily leave a revision unsealed only inside its short transaction; a deferred commit trigger rejects every persisted unsealed revision. A parent-row-locking guard covers member INSERT as well as UPDATE/DELETE, including late additions after the revision was made current. Sealing validates the exact ordered membership and computes its versioned digest. After sealing, unsealing and member/revision mutation are prohibited except the separately authorized erasure path. A partial interpretation can be sealed as partial; sealing is not verification of insurance acceptance. The bundle head points only to a sealed same-owner/same-bundle revision.
+
+The duplicate-membership check resolves each selected component revision to its underlying `CustomerPolicy`. Different revisions of the same policy cannot fill distinct package slots by default. An exception needs an explicit reviewed rule for the exact wrapper and slot pair. This is checked under parent/contract locks, not only by uniqueness of revision UUIDs.
+
+Policy events now distinguish cancellation enquiry, requested, received, accepted and effective coverage termination, plus refund calculated, paid and received. Typed sender/recipient records identify the relevant issuer or exact component issuer set; delegated authority requires its own evidence. A verified insurer receipt cannot come from a customer-folder upload, and a verified termination or paid refund cannot come from an explanatory model response. The older ambiguous `cancellation_notice` kind remains historical and must not be silently reclassified as acceptance.
+
+Cancellation refusal and refund reversal also have explicit event kinds (`cancellation_declined`, `refund_reversed`). An insurer refusal does not mean termination. A refund reversal references its original paid-refund event with the same owner and exact policy/package target, carries evidenced actual amount or explicit unknown, and cannot exceed a known unreversed balance. Lock the target payment and prior reversals before that check. Reversing money does not reinstate cover; that requires separate authoritative policy evidence.
+
+## Membership and payment concurrency — revision 7
+
+PolicyMember writes acquire `FOR UPDATE` on every affected CustomerPolicyRevision before changing membership, ordered by parent ID; a move locks old and new parents. Under READ COMMITTED, the deferred overlap check uses a fresh statement after acquiring the lock, so it sees earlier committed memberships as well as this transaction. Verified ranges must be nonempty and cannot overlap for the same revision/person. The parent revision identifies the policy scope. All writers, including bulk imports and authorized erasure, follow the protocol. Higher isolation levels require a separately qualified serialization/retry protocol; they cannot silently reuse an earlier snapshot for this check.
+
+These are proposed database-enforced protocols, awaiting two-connection execution tests after approval. PostgreSQL permits concurrent key-share locks; conflicting parent locks are necessary for these set-wide checks. [PostgreSQL 18 locking documentation](https://www.postgresql.org/docs/18/explicit-locking.html). Locks are held only for short database work; inference and downloads run outside the transaction.

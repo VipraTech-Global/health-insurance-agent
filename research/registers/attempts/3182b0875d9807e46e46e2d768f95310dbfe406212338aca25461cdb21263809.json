@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T12:00:27.932170+00:00",
+  "associations": [],
+  "byte_count": 141935,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.generalicentralinsurance.com/downloads/other-insurance/burglary-(housebreaking)-insurance/claim-forms/burglary-housebreaking-insurance-retail-claim-form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "generali-central",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 323,
+  "linking_url": "https://www.generalicentralinsurance.com/customer-service/downloads",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "d665fe4be3f92c63d292e348e2b9a54ec0c9e60f2754854856fd97f1de0d75df",
+  "status": "acquired",
+  "url": "https://www.generalicentralinsurance.com/downloads/other-insurance/burglary-(housebreaking)-insurance/claim-forms/burglary-housebreaking-insurance-retail-claim-form.pdf"
+}

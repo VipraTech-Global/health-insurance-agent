@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:44:48.697655+00:00",
+  "associations": [],
+  "byte_count": 1065,
+  "component_version": "research-acquisition/2",
+  "content_type": "text/html; charset=UTF-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---policy-terms-and-conditions.pdf",
+  "format_version": 1,
+  "http_status": 406,
+  "insurer_id": "care",
+  "issues": [
+    "http_406"
+  ],
+  "language": "unknown",
+  "latency_ms": 291,
+  "linking_url": "",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "1b282a8b6ee333a1b8cd4fd4ba09868f732d2449fc71157e45298dcf3931aca7",
+  "status": "failed",
+  "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---policy-terms-and-conditions.pdf"
+}

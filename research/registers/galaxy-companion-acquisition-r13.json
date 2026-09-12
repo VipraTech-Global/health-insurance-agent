@@ -1,0 +1,4765 @@
+{
+  "boundary": "Actual preserved serialized download cards identify companion CIS/prospectus originals for fourteen families whose wordings were classified first. Available roles are not complete version bundles.",
+  "sources": [
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-twin-360-insurance-policy",
+        "source_sha256": "d8636bd5e6859f2c8d659b2023ea2a310acf6cb144e0a49de83b38c33d728a1d",
+        "props_attribute_occurrence": 8,
+        "decoded_json_pointer": "/data/1/0/1",
+        "section_label": "<p>Prospectus&nbsp;</p>",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Twin%2520360%2520Prospectus.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Twin%2520360%2520Prospectus.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20Twin%20360%20Prospectus.pdf?VersionId=szhVwFO0BQQ_PVEgaKG_a5dTdcmfTsmI",
+        "raw_attribute_char_start": 325879,
+        "raw_attribute_char_end_exclusive": 336679,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Twin%2520360%2520Prospectus.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-twin-360-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:27.876128+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "03e6bfcd113107f5bc74b6b7c33012ef3b60d3cdb21d49a33d539df2a7239dc6",
+        "page_count": 45,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Twin%2520360%2520Prospectus.pdf",
+        "byte_count": 985358,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 17,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 18,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 19,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 20,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 21,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 22,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 23,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 24,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 25,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 26,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 27,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 28,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 29,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 30,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 31,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 32,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 33,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 34,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 35,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 36,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 37,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 38,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 39,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 40,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 41,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 42,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 43,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 44,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 45,
+            "status": "preserved_not_read",
+            "width": 841.92,
+            "height": 595.32,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 1581
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-twin-360-insurance-policy",
+        "source_sha256": "d8636bd5e6859f2c8d659b2023ea2a310acf6cb144e0a49de83b38c33d728a1d",
+        "props_attribute_occurrence": 8,
+        "decoded_json_pointer": "/data/1/1/1",
+        "section_label": "<p>Customer Information Sheet</p>",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Twin%2520360%2520CIS.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Twin%2520360%2520CIS.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20Twin%20360%20CIS.pdf?VersionId=aC2PMmsjGsS69XchHYFThq8us9zbyCZd",
+        "raw_attribute_char_start": 325879,
+        "raw_attribute_char_end_exclusive": 336679,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Twin%2520360%2520CIS.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-twin-360-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:27.873873+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "a9f1dbe0f2b927523886c08f5709f87402932510e122787463320e113181fd11",
+        "page_count": 16,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Twin%2520360%2520CIS.pdf",
+        "byte_count": 529592,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 792.0,
+            "height": 612.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 1304
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-promise-insurance-policy",
+        "source_sha256": "2932a162d2e47900f4654762e571608a5e8738dd9183fce052e2cc8525208538",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/field_promise_downloads_cards/1/1/1",
+        "section_label": "Prospectus",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Promise%2520Prospectus.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Promise%2520Prospectus.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/s3fs-public/2026-07/Galaxy%20Promise%20Prospectus.pdf?VersionId=VjygcmwVFMievHfqNqloZhQjEKMDP7U1",
+        "raw_attribute_char_start": 220484,
+        "raw_attribute_char_end_exclusive": 661591,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Promise%2520Prospectus.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-promise-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:27.873463+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "d8e1990c66e741e4deb5d4f0644b1090cf6cf153b825f2bf73001e3ff616b57e",
+        "page_count": 43,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Promise%2520Prospectus.pdf",
+        "byte_count": 867893,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 17,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 18,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 19,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 20,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 21,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 22,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 23,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 24,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 25,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 26,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 27,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 28,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 29,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 30,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 31,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 32,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 33,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 34,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 35,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 36,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 37,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 38,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 39,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 40,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 41,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 42,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 43,
+            "status": "preserved_not_read",
+            "width": 841.92,
+            "height": 595.32,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 5456
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-promise-insurance-policy",
+        "source_sha256": "2932a162d2e47900f4654762e571608a5e8738dd9183fce052e2cc8525208538",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/field_promise_downloads_cards/1/4/1",
+        "section_label": "Customer Information Sheet",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Promise%2520CIS.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Promise%2520CIS.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/s3fs-public/2026-07/Galaxy%20Promise%20CIS.pdf?VersionId=dZFtp8MFiwp3k4hx2HpLOQ5oVn0Jtp6K",
+        "raw_attribute_char_start": 220484,
+        "raw_attribute_char_end_exclusive": 661591,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Promise%2520CIS.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-promise-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:29.185217+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "c6159d585ff86b8936ffdf19b01d382fd818a0c35c81cf33417e158c064b0651",
+        "page_count": 21,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Promise%2520CIS.pdf",
+        "byte_count": 502516,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 17,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 18,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 19,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 20,
+            "status": "preserved_not_read",
+            "width": 792.0,
+            "height": 612.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 21,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 2229
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-plus-insurance-policy",
+        "source_sha256": "26f0ff06b7621cc4b6291bae1e2fd5298db7a0e3c878b1851c93e58c6b584a15",
+        "props_attribute_occurrence": 5,
+        "decoded_json_pointer": "/data/1/1/1",
+        "section_label": "Customer Information Sheet",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Plus%2520CIS.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Plus%2520CIS.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20Plus%20CIS.pdf?VersionId=EgxHDVExf6jK59grOz5CsxBO.ffelfMp",
+        "raw_attribute_char_start": 171213,
+        "raw_attribute_char_end_exclusive": 174759,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Plus%2520CIS.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-plus-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:29.465977+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "eff739ba69ace7b1b99c8a922ed6ca4e98a05f00680ebe9a0c6fb81f67c7ab22",
+        "page_count": 30,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Plus%2520CIS.pdf",
+        "byte_count": 599890,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 17,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 18,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 19,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 20,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 21,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 22,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 23,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 24,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 25,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 26,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 27,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 28,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 29,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 30,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 1857
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-companion-rider-insurance-policy",
+        "source_sha256": "5f937b568c4019708dccc2a7123807e09132d28d4a9028eac037eef06dd3c0ab",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/0/1",
+        "section_label": "<p>Prospectus</p>",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Companion%2520-%2520Rider%2520Prospectus.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Companion%2520-%2520Rider%2520Prospectus.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20Companion%20-%20Rider%20Prospectus.pdf?VersionId=3mN_z7REJVMSjHz1JstTaqgoh3yCjLDs",
+        "raw_attribute_char_start": 208651,
+        "raw_attribute_char_end_exclusive": 219738,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Companion%2520-%2520Rider%2520Prospectus.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-companion-rider-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:31.330181+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "909242fbb5c09892322f18714e2370760e1a007fc34cc788da09efbc92c79ebb",
+        "page_count": 14,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Companion%2520-%2520Rider%2520Prospectus.pdf",
+        "byte_count": 444109,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 841.92,
+            "height": 595.32,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 1146
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-companion-rider-insurance-policy",
+        "source_sha256": "5f937b568c4019708dccc2a7123807e09132d28d4a9028eac037eef06dd3c0ab",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/2/1",
+        "section_label": "<p><strong>Customer Information Sheet</strong></p>",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Companion%2520Rider%2520CIS.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Companion%2520Rider%2520CIS.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20Companion%20Rider%20CIS.pdf?VersionId=.1_IbfLdAlckX8aF6w.ymc._dVTL3gSl",
+        "raw_attribute_char_start": 208651,
+        "raw_attribute_char_end_exclusive": 219738,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Companion%2520Rider%2520CIS.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-companion-rider-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:31.421361+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "2ebc8f0f221b7ada0df0e949a3fea59b2b9adc6a2f9690822b6eeb7b33defe5f",
+        "page_count": 7,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Companion%2520Rider%2520CIS.pdf",
+        "byte_count": 396420,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 841.92,
+            "height": 595.32,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 1170
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-arogya-sanjeevani-insurance-policy",
+        "source_sha256": "a4e0c4c10c0b1d4c9d400ad4f1c7fb9bffc8bd6138b197be10da8d7308157993",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/1/1",
+        "section_label": "Customer Information Sheet",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Arogya%2520Sanjeevani%2520Policy%2520GHICL%2520CIS.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Arogya%2520Sanjeevani%2520Policy%2520GHICL%2520CIS.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/s3fs-public/2026-07/Arogya%20Sanjeevani%20Policy%20GHICL%20CIS.pdf?VersionId=fq9rPWpTRjZo9DSAPuzUn4nff09U2wwi",
+        "raw_attribute_char_start": 213625,
+        "raw_attribute_char_end_exclusive": 225887,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Arogya%2520Sanjeevani%2520Policy%2520GHICL%2520CIS.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-arogya-sanjeevani-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:32.488527+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "40f08775717477939db43cbe5e6a6bd7e42afa3cd043d6cd4cbbca87f80702a8",
+        "page_count": 11,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Arogya%2520Sanjeevani%2520Policy%2520GHICL%2520CIS.pdf",
+        "byte_count": 371023,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 841.92,
+            "height": 595.32,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 731
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-arogya-sanjeevani-insurance-policy",
+        "source_sha256": "a4e0c4c10c0b1d4c9d400ad4f1c7fb9bffc8bd6138b197be10da8d7308157993",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/3/1",
+        "section_label": "Prospectus",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Arogya%2520Sanjeevani%2520Policy%2520GHICL%2520Prospectus.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Arogya%2520Sanjeevani%2520Policy%2520GHICL%2520Prospectus.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/s3fs-public/2026-07/Arogya%20Sanjeevani%20Policy%20GHICL%20Prospectus.pdf?VersionId=sI6onJT9R9W4Q0K495fqW1VmWJuHhq3j",
+        "raw_attribute_char_start": 213625,
+        "raw_attribute_char_end_exclusive": 225887,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Arogya%2520Sanjeevani%2520Policy%2520GHICL%2520Prospectus.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-arogya-sanjeevani-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:32.602103+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "c1854ab572eecf3b044f9e56076b26ca360721f0c77debb15b064337af144a21",
+        "page_count": 13,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Arogya%2520Sanjeevani%2520Policy%2520GHICL%2520Prospectus.pdf",
+        "byte_count": 366264,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 841.92,
+            "height": 595.32,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 1036
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-empower-insurance-policy",
+        "source_sha256": "30932ea6f7c1e99d32a02025ff22d94b74495b8fa479fa5984eaaeb83e1cc43c",
+        "props_attribute_occurrence": 5,
+        "decoded_json_pointer": "/data/1/1/1",
+        "section_label": "Prospectus",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Empower%252C%2520GHICL%2520Prospectus.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Empower%252C%2520GHICL%2520Prospectus.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20Empower%2C%20GHICL%20Prospectus.pdf?VersionId=UwWDcOvSxuz.cO0PMbp2P44rn9z5SL.j",
+        "raw_attribute_char_start": 171317,
+        "raw_attribute_char_end_exclusive": 182021,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Empower%252C%2520GHICL%2520Prospectus.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-empower-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:33.261966+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "add60c15218a5fdcde27ed242f7a94fe661b8a8a9247172bf31287725b81d74a",
+        "page_count": 12,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Empower%252C%2520GHICL%2520Prospectus.pdf",
+        "byte_count": 375081,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 863
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-empower-insurance-policy",
+        "source_sha256": "30932ea6f7c1e99d32a02025ff22d94b74495b8fa479fa5984eaaeb83e1cc43c",
+        "props_attribute_occurrence": 5,
+        "decoded_json_pointer": "/data/1/3/1",
+        "section_label": "Customer Information Sheet ",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Empower%2520GHICL%2520CIS.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Empower%2520GHICL%2520CIS.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20Empower%20GHICL%20CIS.pdf?VersionId=p5MJFGO92zHdXAIE0yr22C4.FpIyHY5X",
+        "raw_attribute_char_start": 171317,
+        "raw_attribute_char_end_exclusive": 182021,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Empower%2520GHICL%2520CIS.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-empower-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:33.343617+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "e4976edaf3df0c0786ae3a86d63ca3eadb9fd1ad9cb8896ae63e4f63a8230d3e",
+        "page_count": 9,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Empower%2520GHICL%2520CIS.pdf",
+        "byte_count": 344714,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 647
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-unlimited-automatic-restoration-rider-insurance-policy",
+        "source_sha256": "02a36293b13bd77e473e81339b1594c4d6770d3a7a2cf270dffbc65d3a9794b5",
+        "props_attribute_occurrence": 5,
+        "decoded_json_pointer": "/data/1/0/1",
+        "section_label": "Prospectus",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Unlimited%2520Automatic%2520Restoration-Rider%2520Prospectus.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Unlimited%2520Automatic%2520Restoration-Rider%2520Prospectus.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Unlimited%20Automatic%20Restoration-Rider%20Prospectus.pdf?VersionId=mnH6rGNleZbgZ2tO7t7UFAitCI2ohzVe",
+        "raw_attribute_char_start": 171458,
+        "raw_attribute_char_end_exclusive": 180749,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Unlimited%2520Automatic%2520Restoration-Rider%2520Prospectus.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-unlimited-automatic-restoration-rider-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:33.646716+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "4a33adecd7eb94f2ace40455fdbdfbe40cb49cb5a8b9190f8aa68a99f9e12e7b",
+        "page_count": 1,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Unlimited%2520Automatic%2520Restoration-Rider%2520Prospectus.pdf",
+        "byte_count": 266511,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 607
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-unlimited-automatic-restoration-rider-insurance-policy",
+        "source_sha256": "02a36293b13bd77e473e81339b1594c4d6770d3a7a2cf270dffbc65d3a9794b5",
+        "props_attribute_occurrence": 5,
+        "decoded_json_pointer": "/data/1/2/1",
+        "section_label": "Customer Information Sheet",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Unlimited_Automatic_Restoration_Rider_CIS.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Unlimited_Automatic_Restoration_Rider_CIS.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-06/Unlimited_Automatic_Restoration_Rider_CIS.pdf?VersionId=9Mk5hwzZrVvDLZhPmPMZaxs9.jE3I28V",
+        "raw_attribute_char_start": 171458,
+        "raw_attribute_char_end_exclusive": 180749,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Unlimited_Automatic_Restoration_Rider_CIS.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-unlimited-automatic-restoration-rider-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:34.004861+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "1646435a2c25dc95ed8e842d5cf9e9ed437683e9a97540ec32d2028488491777",
+        "page_count": 8,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Unlimited_Automatic_Restoration_Rider_CIS.pdf",
+        "byte_count": 1849535,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 841.92,
+            "height": 595.32,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 841.92,
+            "height": 595.32,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 2233
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/consumables-rider-insurance-policy",
+        "source_sha256": "7ee8b527a20e811be1e6b45259dbe73753b3dae681df7a4421b6a7e82ca05797",
+        "props_attribute_occurrence": 5,
+        "decoded_json_pointer": "/data/1/0/1",
+        "section_label": "Prospectus",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Consumables%2520-%2520Rider%2520Prospectus_0.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Consumables%2520-%2520Rider%2520Prospectus_0.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Consumables%20-%20Rider%20Prospectus_0.pdf?VersionId=eWwZQ7YtgS4OHQ5QsNgXGrRqjwuRapz3",
+        "raw_attribute_char_start": 171400,
+        "raw_attribute_char_end_exclusive": 180318,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Consumables%2520-%2520Rider%2520Prospectus_0.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/consumables-rider-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:34.138480+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "f51ee6affce847223120a35e3731a03c53a808a7fb62d580799365b459776475",
+        "page_count": 2,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Consumables%2520-%2520Rider%2520Prospectus_0.pdf",
+        "byte_count": 357212,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 987
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/consumables-rider-insurance-policy",
+        "source_sha256": "7ee8b527a20e811be1e6b45259dbe73753b3dae681df7a4421b6a7e82ca05797",
+        "props_attribute_occurrence": 5,
+        "decoded_json_pointer": "/data/1/2/1",
+        "section_label": "Customer Information Sheet",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Consumables_Rider_CIS.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Consumables_Rider_CIS.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-06/Consumables_Rider_CIS.pdf?VersionId=nU0YoCvHMh0ieQCPoMh26.QsjUHrOuqh",
+        "raw_attribute_char_start": 171400,
+        "raw_attribute_char_end_exclusive": 180318,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Consumables_Rider_CIS.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/consumables-rider-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:34.262729+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "92ce972fc8ce094169ae3f11d79cd8d89c49dccdf40b5ab61a13e0caf643b2bc",
+        "page_count": 7,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Consumables_Rider_CIS.pdf",
+        "byte_count": 1571203,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 1224
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-marvel-insurance-policy",
+        "source_sha256": "0f0cf12b967c58256573a49a2223241bc713207c49462acad372ef3bb9ba9efa",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/1/1",
+        "section_label": "Prospectus",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Marvel%2520Prospectus.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Marvel%2520Prospectus.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/s3fs-public/2026-07/Galaxy%20Marvel%20Prospectus.pdf?VersionId=gI1OjMNEJl3JS82GjT8XZf7WpmZgkFYg",
+        "raw_attribute_char_start": 289277,
+        "raw_attribute_char_end_exclusive": 301281,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Marvel%2520Prospectus.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-marvel-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:35.135028+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "5472b87b26b416dcda23300ce10a519df524a43b4dc8c614bd009ce5d8d67a74",
+        "page_count": 52,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Marvel%2520Prospectus.pdf",
+        "byte_count": 974929,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 17,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 18,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 19,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 20,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 21,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 22,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 23,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 24,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 25,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 26,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 27,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 28,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 29,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 30,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 31,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 32,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 33,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 34,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 35,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 36,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 37,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 38,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 39,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 40,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 41,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 42,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 43,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 44,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 45,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 46,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 47,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 48,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 49,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 50,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 51,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 52,
+            "status": "preserved_not_read",
+            "width": 841.92,
+            "height": 595.32,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 5197
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-marvel-insurance-policy",
+        "source_sha256": "0f0cf12b967c58256573a49a2223241bc713207c49462acad372ef3bb9ba9efa",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/3/1",
+        "section_label": "Customer Information Sheet",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Marvel%2520CIS.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Marvel%2520CIS.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/s3fs-public/2026-07/Galaxy%20Marvel%20CIS.pdf?VersionId=IIr1Pit2REoNeT0D88FMpAFHtYxOPxCS",
+        "raw_attribute_char_start": 289277,
+        "raw_attribute_char_end_exclusive": 301281,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Marvel%2520CIS.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-marvel-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:35.494287+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "ca1ab942d93ffeeef7c5028a97765e4eb490db52c8ad255e9dc0b8482f658300",
+        "page_count": 16,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Marvel%2520CIS.pdf",
+        "byte_count": 550375,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 841.92,
+            "height": 595.32,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 673
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-smart-outpatient-rider-insurance-policy",
+        "source_sha256": "079e5d7ae753f76f85a41b1228ac6c458467ca4f9bba9a2761137fa0d920d30b",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/1/1",
+        "section_label": "<p><strong>Prospectus</strong></p>",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520SOPR%2520Prospectus.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520SOPR%2520Prospectus.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20SOPR%20Prospectus.pdf?VersionId=6Dw3IciGKwjPcwZU_oTOyDzhWnve4vpm",
+        "raw_attribute_char_start": 198894,
+        "raw_attribute_char_end_exclusive": 209951,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520SOPR%2520Prospectus.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-smart-outpatient-rider-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:36.181613+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "d592a1cc7511add0feea660b94218d853ef5869f7167614c93070980c13cb324",
+        "page_count": 10,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520SOPR%2520Prospectus.pdf",
+        "byte_count": 295146,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 841.92,
+            "height": 595.32,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 776
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-smart-outpatient-rider-insurance-policy",
+        "source_sha256": "079e5d7ae753f76f85a41b1228ac6c458467ca4f9bba9a2761137fa0d920d30b",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/3/1",
+        "section_label": "<p><strong>Customer Information Sheet</strong></p>",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/CIS_Galaxy_Smart_Outpatient_Rider.pdf",
+        "original_relative_astro_file": "/assets/preloaded/CIS_Galaxy_Smart_Outpatient_Rider.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-06/CIS_Galaxy_Smart_Outpatient_Rider.pdf?VersionId=SVcBykxYkNjxkL_1vv6sl9yV7.nq.XAG",
+        "raw_attribute_char_start": 198894,
+        "raw_attribute_char_end_exclusive": 209951,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/CIS_Galaxy_Smart_Outpatient_Rider.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-smart-outpatient-rider-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:36.243777+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "2ab2cf85c3ff7a77c1c145898494d6a3825869f71be4902db4262aca1a0f10c5",
+        "page_count": 6,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/CIS_Galaxy_Smart_Outpatient_Rider.pdf",
+        "byte_count": 1600680,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 841.92,
+            "height": 595.32,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 1610
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-guardian-insurance-policy",
+        "source_sha256": "887ada8be9886896b9ab935f1706312da9ae7a19a738cb3bd9a006efdc2078e3",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/1/1",
+        "section_label": "Prospectus",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Guardian%2520Prospectus.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Guardian%2520Prospectus.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20Guardian%20Prospectus.pdf?VersionId=kBw8EIts64jOUfBAxiomIezabKYQQmte",
+        "raw_attribute_char_start": 234359,
+        "raw_attribute_char_end_exclusive": 245134,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Guardian%2520Prospectus.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-guardian-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:36.966333+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "885a8ef13d446d55827ac08cf2b0c1109b54e24242aa4f1c05369da4e313a82d",
+        "page_count": 17,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Guardian%2520Prospectus.pdf",
+        "byte_count": 461059,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 17,
+            "status": "preserved_not_read",
+            "width": 841.92,
+            "height": 595.32,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 905
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-guardian-insurance-policy",
+        "source_sha256": "887ada8be9886896b9ab935f1706312da9ae7a19a738cb3bd9a006efdc2078e3",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/3/1",
+        "section_label": "Customer Information Sheet",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Guardian%2520CIS.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Guardian%2520CIS.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20Guardian%20CIS.pdf?VersionId=tTs3upjHDVLQGMldKKlOQQkVytweYX.S",
+        "raw_attribute_char_start": 234359,
+        "raw_attribute_char_end_exclusive": 245134,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Guardian%2520CIS.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-guardian-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:37.861071+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "97700af9842315129c89eabfdd4f35b26bd671fbefeca1dd9ff00b9672bbeabf",
+        "page_count": 16,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Guardian%2520CIS.pdf",
+        "byte_count": 550195,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 841.92,
+            "height": 595.32,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 866
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-personal-accident-insurance-policy",
+        "source_sha256": "393fd429027a66bd3613cf473af90600e84c12710cdf58c562e394e948d70306",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/1/1",
+        "section_label": "<p><strong>Prospectus</strong></p>",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Personal%2520Accident%2520Shield%2520Prospectus.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Personal%2520Accident%2520Shield%2520Prospectus.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20Personal%20Accident%20Shield%20Prospectus.pdf?VersionId=7jooIyObfQAFQC296ZlZ6qXupNbXeMDW",
+        "raw_attribute_char_start": 237835,
+        "raw_attribute_char_end_exclusive": 249150,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Personal%2520Accident%2520Shield%2520Prospectus.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-personal-accident-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:37.878739+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "6a4126e47410332f86ff4707e8dcae66a77579c75fadf0950a2837f266f265c5",
+        "page_count": 21,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Personal%2520Accident%2520Shield%2520Prospectus.pdf",
+        "byte_count": 450210,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 17,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 18,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 19,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 20,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 21,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 834
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-personal-accident-insurance-policy",
+        "source_sha256": "393fd429027a66bd3613cf473af90600e84c12710cdf58c562e394e948d70306",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/3/1",
+        "section_label": "<p><strong>Customer Information Sheet</strong></p>",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/CIS_Galaxy_Personal_Accident_Shield_Insurance_Policy.pdf",
+        "original_relative_astro_file": "/assets/preloaded/CIS_Galaxy_Personal_Accident_Shield_Insurance_Policy.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-06/CIS_Galaxy_Personal_Accident_Shield_Insurance_Policy.pdf?VersionId=3bwihqmWe7J.QO9.BrlXHpPMKtkSIhtv",
+        "raw_attribute_char_start": 237835,
+        "raw_attribute_char_end_exclusive": 249150,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/CIS_Galaxy_Personal_Accident_Shield_Insurance_Policy.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-personal-accident-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:38.735950+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "2edab5c4f5587666d633f58b07658ed7006cc398763cb94fbcb42633bf4d99bf",
+        "page_count": 9,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/CIS_Galaxy_Personal_Accident_Shield_Insurance_Policy.pdf",
+        "byte_count": 2508972,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 2949
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-privilege-insurance-policy",
+        "source_sha256": "c48c6d3cc537437a54c86115cd9880619e20beeec88fb2aaf1a1a571fe277f1b",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/2/1",
+        "section_label": "<p><strong>Prospectus</strong></p>",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Privilege%2520Prospectus.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Privilege%2520Prospectus.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20Privilege%20Prospectus.pdf?VersionId=nPRfUkSqnZrxYpbLUqILvVlVaC4iZXR3",
+        "raw_attribute_char_start": 242546,
+        "raw_attribute_char_end_exclusive": 253431,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Privilege%2520Prospectus.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-privilege-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:38.736103+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "6700653ab8de9f7ae94849a253ce8dd54711e49841485e036f358e905d0a777e",
+        "page_count": 25,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Privilege%2520Prospectus.pdf",
+        "byte_count": 528045,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 17,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 18,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 19,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 20,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 21,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 22,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 23,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 24,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 25,
+            "status": "preserved_not_read",
+            "width": 841.92,
+            "height": 595.32,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 673
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-privilege-insurance-policy",
+        "source_sha256": "c48c6d3cc537437a54c86115cd9880619e20beeec88fb2aaf1a1a571fe277f1b",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/3/1",
+        "section_label": "<p>Customer Information Sheet</p>",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Privilege%2520CIS.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Privilege%2520CIS.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20Privilege%20CIS.pdf?VersionId=1c0QKd3GBmc4rjZ5gjWMEdEcivn1N1D8",
+        "raw_attribute_char_start": 242546,
+        "raw_attribute_char_end_exclusive": 253431,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Privilege%2520CIS.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-privilege-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:39.422455+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "c4322dc52dfe1cf04c372c605fd51d5cf6693f5eb1438c8f304012b31c0fb8b9",
+        "page_count": 13,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Privilege%2520CIS.pdf",
+        "byte_count": 257641,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 841.92,
+            "height": 595.32,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 1378
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-top-up-insurance-policy",
+        "source_sha256": "32d5e7b57f5b3bb0c730ec8b2e383d82694d4af4fd3166147c524d8acb007e5f",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/1/1",
+        "section_label": "<p><strong>Prospectus</strong></p>",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Top-up%2520Prospectus.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Top-up%2520Prospectus.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20Top-up%20Prospectus.pdf?VersionId=OBIG7ec726HbD7BlbtEUxBgH8pK1Z455",
+        "raw_attribute_char_start": 225986,
+        "raw_attribute_char_end_exclusive": 236973,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Top-up%2520Prospectus.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-top-up-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:40.341557+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "72e5b6bc0ed34dea48e04edf5675f0bec0356180216a98cce2db0b948b8f897c",
+        "page_count": 26,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Top-up%2520Prospectus.pdf",
+        "byte_count": 655708,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 17,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 18,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 19,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 20,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 21,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 22,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 23,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 24,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 25,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 26,
+            "status": "preserved_not_read",
+            "width": 841.92,
+            "height": 595.32,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 903
+      }
+    },
+    {
+      "discovery": {
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-top-up-insurance-policy",
+        "source_sha256": "32d5e7b57f5b3bb0c730ec8b2e383d82694d4af4fd3166147c524d8acb007e5f",
+        "props_attribute_occurrence": 6,
+        "decoded_json_pointer": "/data/1/3/1",
+        "section_label": "<p><strong>Customer Information Sheet</strong></p>",
+        "target_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Top-up%2520CIS.pdf",
+        "original_relative_astro_file": "/assets/preloaded/Galaxy%2520Top-up%2520CIS.pdf",
+        "original_cms_url": "http://ghi-drupal-prod.s3.ap-south-2.amazonaws.com/2026-07/Galaxy%20Top-up%20CIS.pdf?VersionId=UKZQEHUIfZkjeolJAe5wtJwBvZEFj0Jv",
+        "raw_attribute_char_start": 225986,
+        "raw_attribute_char_end_exclusive": 236973,
+        "scope": "Unreviewed linked original; public serialized download card identifies document-role candidate only."
+      },
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "galaxy",
+        "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Top-up%2520CIS.pdf",
+        "linking_url": "https://www.galaxyhealth.com/health-insurance/galaxy-top-up-insurance-policy",
+        "acquired_at": "2026-09-10T18:12:40.809975+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "3da67b237d15aaed73cf7d8e61a1c5c313f7eb6e4a07949b27f03d0e43b3974a",
+        "page_count": 10,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520Top-up%2520CIS.pdf",
+        "byte_count": 474559,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 841.92,
+            "height": 595.32,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 735
+      }
+    }
+  ]
+}

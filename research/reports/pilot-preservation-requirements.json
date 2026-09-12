@@ -1,0 +1,1285 @@
+{
+  "format_version": 1,
+  "kind": "existing_pilot_preservation_inventory",
+  "status": "source_inventory_only_pending_approved_design_and_migration_rehearsal",
+  "source_fingerprints": {
+    "backend/apps/accounts/models.py": "86c3414090e052bc2d10c8f8d32887ed3fa1dd8fc59b574386464103080c3344",
+    "backend/apps/accounts/migrations/0001_initial.py": "823d1e17f01a7b684d9bd707bde8d6d0c9d3bd6df1d9135c1ae8cf75513be809",
+    "backend/apps/adviser/models.py": "6ea0730c6dc1962fb1583570e05e57590a7a617922244c7536a2f2549123d016",
+    "backend/apps/adviser/services.py": "a985560a3422b6e790467db81b471360c3d9e4f071c5c9b07f2621ce6c656a2f",
+    "backend/apps/adviser/ai_turns.py": "e4f45223e807f94af31c335d958ba04e5d160f0fa6f2da0385ef9db0ec13063b",
+    "backend/apps/adviser/source_maps.py": "ce28e506139349416e678139881b412910f22e4522eeae0b3aba7543246124a1",
+    "backend/apps/adviser/evidence.py": "707d74ca624a24572a622cb3b3232d3800d0426d548ffe4f239bbd25c5be6a5b",
+    "backend/apps/adviser/streaming.py": "54f75b426c6b7ba69814c6b2341d76514a55a30699afb09ceecf5096b8fb15ad",
+    "backend/apps/adviser/tasks.py": "baf70c23d8f327d3b8e703104c03afe7eab30acd3eb02583eba6817b62d75da2",
+    "backend/apps/accounts/views.py": "9e101edffb3e3382acea5c9342d7b49eaebf1609e4e0e1f468237091ff7d8fc2",
+    "backend/apps/adviser/migrations/0006_attempt_conversation_invariant.py": "0c3b1f823bd26b2c0a232c64fbc4bc9a470c196841e219b6fa7cb338a544b380",
+    "backend/apps/adviser/migrations/0007_link_messages_to_answers.py": "fba464649554acecbe2cc6d699ce8c29c415c3760cee04635aa6418ce0ace12a",
+    "backend/apps/adviser/migrations/0010_immutable_routes.py": "1b82fd6b4f703dcaf870cebff2ae08f77be22c16c9079b2e56b6c6bf7b6af0a8"
+  },
+  "model_declarations": [
+    {
+      "model": "User",
+      "source": "backend/apps/accounts/models.py",
+      "source_line": 23,
+      "abstract": false,
+      "inherits_uuid_fields": false,
+      "fields": [
+        {
+          "name": "id",
+          "declaration": "models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)",
+          "source_line": 24
+        },
+        {
+          "name": "email",
+          "declaration": "models.EmailField(unique=True)",
+          "source_line": 26
+        },
+        {
+          "name": "deleted_at",
+          "declaration": "models.DateTimeField(null=True, blank=True)",
+          "source_line": 27
+        }
+      ]
+    },
+    {
+      "model": "UUIDModel",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 12,
+      "abstract": true,
+      "inherits_uuid_fields": false,
+      "fields": [
+        {
+          "name": "id",
+          "declaration": "models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)",
+          "source_line": 13
+        },
+        {
+          "name": "created_at",
+          "declaration": "models.DateTimeField(auto_now_add=True)",
+          "source_line": 14
+        }
+      ]
+    },
+    {
+      "model": "Insurer",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 20,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "name",
+          "declaration": "models.CharField(max_length=200, unique=True)",
+          "source_line": 21
+        },
+        {
+          "name": "aliases",
+          "declaration": "models.JSONField(default=list)",
+          "source_line": 22
+        },
+        {
+          "name": "official_domains",
+          "declaration": "models.JSONField(default=list)",
+          "source_line": 23
+        }
+      ]
+    },
+    {
+      "model": "CatalogueListing",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 26,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "ditto_path",
+          "declaration": "models.CharField(max_length=500, unique=True)",
+          "source_line": 36
+        },
+        {
+          "name": "displayed_name",
+          "declaration": "models.CharField(max_length=250)",
+          "source_line": 37
+        },
+        {
+          "name": "insurer",
+          "declaration": "models.ForeignKey(Insurer, null=True, on_delete=models.PROTECT)",
+          "source_line": 38
+        },
+        {
+          "name": "status",
+          "declaration": "models.CharField(max_length=30, choices=Status, default=Status.DISCOVERED)",
+          "source_line": 39
+        },
+        {
+          "name": "status_reason",
+          "declaration": "models.TextField(blank=True)",
+          "source_line": 40
+        },
+        {
+          "name": "last_observed_at",
+          "declaration": "models.DateTimeField()",
+          "source_line": 41
+        }
+      ]
+    },
+    {
+      "model": "PlanVersion",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 44,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "insurer",
+          "declaration": "models.ForeignKey(Insurer, on_delete=models.PROTECT)",
+          "source_line": 45
+        },
+        {
+          "name": "uin",
+          "declaration": "models.CharField(max_length=100, blank=True)",
+          "source_line": 46
+        },
+        {
+          "name": "name",
+          "declaration": "models.CharField(max_length=250)",
+          "source_line": 47
+        },
+        {
+          "name": "variant",
+          "declaration": "models.CharField(max_length=200, blank=True)",
+          "source_line": 48
+        },
+        {
+          "name": "effective_from",
+          "declaration": "models.DateField(null=True, blank=True)",
+          "source_line": 49
+        },
+        {
+          "name": "effective_to",
+          "declaration": "models.DateField(null=True, blank=True)",
+          "source_line": 50
+        },
+        {
+          "name": "available_for_new_purchase",
+          "declaration": "models.BooleanField(null=True)",
+          "source_line": 51
+        },
+        {
+          "name": "review_state",
+          "declaration": "models.CharField(max_length=30, default='pending')",
+          "source_line": 52
+        }
+      ]
+    },
+    {
+      "model": "SourceLocator",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 64,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "url",
+          "declaration": "models.URLField(max_length=1000)",
+          "source_line": 65
+        },
+        {
+          "name": "source_organisation",
+          "declaration": "models.CharField(max_length=250)",
+          "source_line": 66
+        },
+        {
+          "name": "expected_document_type",
+          "declaration": "models.CharField(max_length=100)",
+          "source_line": 67
+        }
+      ]
+    },
+    {
+      "model": "SourceObservation",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 70,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "locator",
+          "declaration": "models.ForeignKey(SourceLocator, on_delete=models.PROTECT)",
+          "source_line": 71
+        },
+        {
+          "name": "fetched_at",
+          "declaration": "models.DateTimeField()",
+          "source_line": 72
+        },
+        {
+          "name": "status_code",
+          "declaration": "models.PositiveSmallIntegerField(null=True)",
+          "source_line": 73
+        },
+        {
+          "name": "final_url",
+          "declaration": "models.URLField(max_length=1000, blank=True)",
+          "source_line": 74
+        },
+        {
+          "name": "content_sha256",
+          "declaration": "models.CharField(max_length=64, blank=True)",
+          "source_line": 75
+        },
+        {
+          "name": "available",
+          "declaration": "models.BooleanField(default=False)",
+          "source_line": 76
+        },
+        {
+          "name": "error_code",
+          "declaration": "models.CharField(max_length=100, blank=True)",
+          "source_line": 77
+        }
+      ]
+    },
+    {
+      "model": "SourceBlob",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 80,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "sha256",
+          "declaration": "models.CharField(max_length=64, unique=True)",
+          "source_line": 81
+        },
+        {
+          "name": "stored_path",
+          "declaration": "models.CharField(max_length=500, unique=True)",
+          "source_line": 82
+        },
+        {
+          "name": "byte_size",
+          "declaration": "models.PositiveBigIntegerField()",
+          "source_line": 83
+        },
+        {
+          "name": "media_type",
+          "declaration": "models.CharField(max_length=100)",
+          "source_line": 84
+        }
+      ]
+    },
+    {
+      "model": "DocumentVersion",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 87,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "blob",
+          "declaration": "models.ForeignKey(SourceBlob, on_delete=models.PROTECT)",
+          "source_line": 88
+        },
+        {
+          "name": "document_type",
+          "declaration": "models.CharField(max_length=100)",
+          "source_line": 89
+        },
+        {
+          "name": "language",
+          "declaration": "models.CharField(max_length=20, default='en')",
+          "source_line": 90
+        },
+        {
+          "name": "identity",
+          "declaration": "models.CharField(max_length=300)",
+          "source_line": 91
+        },
+        {
+          "name": "effective_from",
+          "declaration": "models.DateField(null=True, blank=True)",
+          "source_line": 92
+        }
+      ]
+    },
+    {
+      "model": "PlanDocumentAssociation",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 95,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "plan_version",
+          "declaration": "models.ForeignKey(PlanVersion, on_delete=models.PROTECT)",
+          "source_line": 96
+        },
+        {
+          "name": "document_version",
+          "declaration": "models.ForeignKey(DocumentVersion, on_delete=models.PROTECT)",
+          "source_line": 97
+        },
+        {
+          "name": "role",
+          "declaration": "models.CharField(max_length=100)",
+          "source_line": 98
+        },
+        {
+          "name": "applicability",
+          "declaration": "models.JSONField(default=dict)",
+          "source_line": 99
+        },
+        {
+          "name": "reviewed",
+          "declaration": "models.BooleanField(default=False)",
+          "source_line": 100
+        }
+      ]
+    },
+    {
+      "model": "ExtractionRevision",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 111,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "document_version",
+          "declaration": "models.ForeignKey(DocumentVersion, on_delete=models.PROTECT)",
+          "source_line": 112
+        },
+        {
+          "name": "revision",
+          "declaration": "models.PositiveIntegerField()",
+          "source_line": 113
+        },
+        {
+          "name": "parser_manifest",
+          "declaration": "models.JSONField(default=dict)",
+          "source_line": 114
+        },
+        {
+          "name": "artifact_sha256",
+          "declaration": "models.CharField(max_length=64)",
+          "source_line": 115
+        },
+        {
+          "name": "source_map_path",
+          "declaration": "models.CharField(max_length=500)",
+          "source_line": 116
+        },
+        {
+          "name": "published",
+          "declaration": "models.BooleanField(default=False)",
+          "source_line": 117
+        }
+      ]
+    },
+    {
+      "model": "DocumentPage",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 127,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "extraction_revision",
+          "declaration": "models.ForeignKey(ExtractionRevision, on_delete=models.PROTECT)",
+          "source_line": 128
+        },
+        {
+          "name": "physical_index",
+          "declaration": "models.PositiveIntegerField()",
+          "source_line": 129
+        },
+        {
+          "name": "printed_label",
+          "declaration": "models.CharField(max_length=30, blank=True)",
+          "source_line": 130
+        },
+        {
+          "name": "width",
+          "declaration": "models.DecimalField(max_digits=12, decimal_places=4)",
+          "source_line": 131
+        },
+        {
+          "name": "height",
+          "declaration": "models.DecimalField(max_digits=12, decimal_places=4)",
+          "source_line": 132
+        },
+        {
+          "name": "rotation",
+          "declaration": "models.SmallIntegerField(default=0)",
+          "source_line": 133
+        },
+        {
+          "name": "geometry",
+          "declaration": "models.JSONField(default=dict)",
+          "source_line": 134
+        }
+      ]
+    },
+    {
+      "model": "EvidenceSpan",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 144,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "page",
+          "declaration": "models.ForeignKey(DocumentPage, on_delete=models.PROTECT)",
+          "source_line": 145
+        },
+        {
+          "name": "region_id",
+          "declaration": "models.CharField(max_length=100)",
+          "source_line": 146
+        },
+        {
+          "name": "start_line",
+          "declaration": "models.PositiveIntegerField()",
+          "source_line": 147
+        },
+        {
+          "name": "end_line",
+          "declaration": "models.PositiveIntegerField()",
+          "source_line": 148
+        },
+        {
+          "name": "source_word_ids",
+          "declaration": "models.JSONField(default=list)",
+          "source_line": 149
+        },
+        {
+          "name": "quote",
+          "declaration": "models.TextField()",
+          "source_line": 150
+        },
+        {
+          "name": "geometry",
+          "declaration": "models.JSONField(default=list)",
+          "source_line": 151
+        }
+      ]
+    },
+    {
+      "model": "EvidenceBundle",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 154,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "label",
+          "declaration": "models.CharField(max_length=250)",
+          "source_line": 155
+        },
+        {
+          "name": "review_state",
+          "declaration": "models.CharField(max_length=30, default='pending')",
+          "source_line": 156
+        },
+        {
+          "name": "spans",
+          "declaration": "models.ManyToManyField(EvidenceSpan, through='EvidenceBundleSpan')",
+          "source_line": 157
+        }
+      ]
+    },
+    {
+      "model": "EvidenceBundleSpan",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 162,
+      "abstract": false,
+      "inherits_uuid_fields": false,
+      "fields": [
+        {
+          "name": "bundle",
+          "declaration": "models.ForeignKey(EvidenceBundle, on_delete=models.CASCADE)",
+          "source_line": 163
+        },
+        {
+          "name": "span",
+          "declaration": "models.ForeignKey(EvidenceSpan, on_delete=models.PROTECT)",
+          "source_line": 164
+        },
+        {
+          "name": "role",
+          "declaration": "models.CharField(max_length=30, default='primary')",
+          "source_line": 165
+        },
+        {
+          "name": "order",
+          "declaration": "models.PositiveSmallIntegerField(default=0)",
+          "source_line": 166
+        }
+      ]
+    },
+    {
+      "model": "VerifiedFact",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 175,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "plan_version",
+          "declaration": "models.ForeignKey(PlanVersion, on_delete=models.PROTECT)",
+          "source_line": 176
+        },
+        {
+          "name": "category",
+          "declaration": "models.CharField(max_length=100)",
+          "source_line": 177
+        },
+        {
+          "name": "value_type",
+          "declaration": "models.CharField(max_length=30)",
+          "source_line": 178
+        },
+        {
+          "name": "value",
+          "declaration": "models.JSONField()",
+          "source_line": 179
+        },
+        {
+          "name": "applicability",
+          "declaration": "models.JSONField(default=dict)",
+          "source_line": 180
+        },
+        {
+          "name": "evidence_bundle",
+          "declaration": "models.ForeignKey(EvidenceBundle, on_delete=models.PROTECT)",
+          "source_line": 181
+        },
+        {
+          "name": "verification_state",
+          "declaration": "models.CharField(max_length=30, default='pending')",
+          "source_line": 182
+        },
+        {
+          "name": "conflict",
+          "declaration": "models.BooleanField(default=False)",
+          "source_line": 183
+        }
+      ]
+    },
+    {
+      "model": "Clause",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 186,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "document_version",
+          "declaration": "models.ForeignKey(DocumentVersion, on_delete=models.PROTECT)",
+          "source_line": 187
+        },
+        {
+          "name": "section_path",
+          "declaration": "models.JSONField(default=list)",
+          "source_line": 188
+        },
+        {
+          "name": "heading",
+          "declaration": "models.CharField(max_length=500, blank=True)",
+          "source_line": 189
+        },
+        {
+          "name": "evidence_bundles",
+          "declaration": "models.ManyToManyField(EvidenceBundle)",
+          "source_line": 190
+        }
+      ]
+    },
+    {
+      "model": "RatingObservation",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 193,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "plan_version",
+          "declaration": "models.ForeignKey(PlanVersion, on_delete=models.PROTECT)",
+          "source_line": 194
+        },
+        {
+          "name": "rating",
+          "declaration": "models.DecimalField(max_digits=6, decimal_places=3)",
+          "source_line": 195
+        },
+        {
+          "name": "scale",
+          "declaration": "models.DecimalField(max_digits=6, decimal_places=3)",
+          "source_line": 196
+        },
+        {
+          "name": "observed_at",
+          "declaration": "models.DateTimeField()",
+          "source_line": 197
+        },
+        {
+          "name": "evidence_bundle",
+          "declaration": "models.ForeignKey(EvidenceBundle, on_delete=models.PROTECT)",
+          "source_line": 198
+        }
+      ]
+    },
+    {
+      "model": "PremiumObservation",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 201,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "plan_version",
+          "declaration": "models.ForeignKey(PlanVersion, on_delete=models.PROTECT)",
+          "source_line": 202
+        },
+        {
+          "name": "amount",
+          "declaration": "models.DecimalField(max_digits=14, decimal_places=2)",
+          "source_line": 203
+        },
+        {
+          "name": "currency",
+          "declaration": "models.CharField(max_length=3, default='INR')",
+          "source_line": 204
+        },
+        {
+          "name": "assumptions",
+          "declaration": "models.JSONField(default=dict)",
+          "source_line": 205
+        },
+        {
+          "name": "tax_basis",
+          "declaration": "models.CharField(max_length=100, blank=True)",
+          "source_line": 206
+        },
+        {
+          "name": "observed_at",
+          "declaration": "models.DateTimeField()",
+          "source_line": 207
+        },
+        {
+          "name": "evidence_bundle",
+          "declaration": "models.ForeignKey(EvidenceBundle, on_delete=models.PROTECT)",
+          "source_line": 208
+        }
+      ]
+    },
+    {
+      "model": "ReviewEvent",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 211,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "object_type",
+          "declaration": "models.CharField(max_length=100)",
+          "source_line": 212
+        },
+        {
+          "name": "object_id",
+          "declaration": "models.UUIDField()",
+          "source_line": 213
+        },
+        {
+          "name": "expected_revision",
+          "declaration": "models.CharField(max_length=100)",
+          "source_line": 214
+        },
+        {
+          "name": "decision",
+          "declaration": "models.CharField(max_length=30)",
+          "source_line": 215
+        },
+        {
+          "name": "reason",
+          "declaration": "models.TextField()",
+          "source_line": 216
+        },
+        {
+          "name": "reviewer",
+          "declaration": "models.ForeignKey(settings.AUTH_USER_MODEL, null=True, on_delete=models.SET_NULL)",
+          "source_line": 217
+        }
+      ]
+    },
+    {
+      "model": "IngestionRun",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 220,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "stage",
+          "declaration": "models.CharField(max_length=50)",
+          "source_line": 221
+        },
+        {
+          "name": "state",
+          "declaration": "models.CharField(max_length=30)",
+          "source_line": 222
+        },
+        {
+          "name": "inputs",
+          "declaration": "models.JSONField(default=dict)",
+          "source_line": 223
+        },
+        {
+          "name": "outputs",
+          "declaration": "models.JSONField(default=dict)",
+          "source_line": 224
+        },
+        {
+          "name": "errors",
+          "declaration": "models.JSONField(default=list)",
+          "source_line": 225
+        },
+        {
+          "name": "retry_count",
+          "declaration": "models.PositiveSmallIntegerField(default=0)",
+          "source_line": 226
+        },
+        {
+          "name": "updated_at",
+          "declaration": "models.DateTimeField(auto_now=True)",
+          "source_line": 227
+        }
+      ]
+    },
+    {
+      "model": "CorpusRelease",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 230,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "name",
+          "declaration": "models.CharField(max_length=200, unique=True)",
+          "source_line": 231
+        },
+        {
+          "name": "manifest",
+          "declaration": "models.JSONField(default=dict)",
+          "source_line": 232
+        },
+        {
+          "name": "activated_at",
+          "declaration": "models.DateTimeField(null=True, blank=True)",
+          "source_line": 233
+        },
+        {
+          "name": "is_current",
+          "declaration": "models.BooleanField(default=False)",
+          "source_line": 234
+        }
+      ]
+    },
+    {
+      "model": "Conversation",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 246,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "owner",
+          "declaration": "models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)",
+          "source_line": 247
+        },
+        {
+          "name": "title",
+          "declaration": "models.CharField(max_length=200, default='New conversation')",
+          "source_line": 248
+        },
+        {
+          "name": "updated_at",
+          "declaration": "models.DateTimeField(auto_now=True)",
+          "source_line": 249
+        },
+        {
+          "name": "current_profile",
+          "declaration": "models.ForeignKey('ProfileRevision', null=True, blank=True, on_delete=models.SET_NULL, related_name='current_for')",
+          "source_line": 250
+        },
+        {
+          "name": "active_attempt",
+          "declaration": "models.OneToOneField('TurnAttempt', null=True, blank=True, on_delete=models.SET_NULL, related_name='active_for_conversation')",
+          "source_line": 257
+        }
+      ]
+    },
+    {
+      "model": "ProfileRevision",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 266,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "conversation",
+          "declaration": "models.ForeignKey(Conversation, on_delete=models.CASCADE, related_name='profiles')",
+          "source_line": 267
+        },
+        {
+          "name": "revision",
+          "declaration": "models.PositiveIntegerField()",
+          "source_line": 270
+        },
+        {
+          "name": "data",
+          "declaration": "models.JSONField(default=dict)",
+          "source_line": 271
+        },
+        {
+          "name": "field_provenance",
+          "declaration": "models.JSONField(default=dict)",
+          "source_line": 272
+        },
+        {
+          "name": "confirmed_at",
+          "declaration": "models.DateTimeField(null=True, blank=True)",
+          "source_line": 273
+        }
+      ]
+    },
+    {
+      "model": "Message",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 283,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "conversation",
+          "declaration": "models.ForeignKey(Conversation, on_delete=models.CASCADE, related_name='messages')",
+          "source_line": 284
+        },
+        {
+          "name": "role",
+          "declaration": "models.CharField(max_length=20, choices=[('user', 'User'), ('assistant', 'Assistant')])",
+          "source_line": 287
+        },
+        {
+          "name": "content",
+          "declaration": "models.TextField()",
+          "source_line": 288
+        },
+        {
+          "name": "origin",
+          "declaration": "models.CharField(max_length=30, default='text')",
+          "source_line": 289
+        },
+        {
+          "name": "answer",
+          "declaration": "models.OneToOneField('AnswerArtifact', null=True, blank=True, on_delete=models.SET_NULL, related_name='message')",
+          "source_line": 290
+        }
+      ]
+    },
+    {
+      "model": "Turn",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 299,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "conversation",
+          "declaration": "models.ForeignKey(Conversation, on_delete=models.CASCADE, related_name='turns')",
+          "source_line": 300
+        },
+        {
+          "name": "request_id",
+          "declaration": "models.UUIDField()",
+          "source_line": 301
+        },
+        {
+          "name": "payload_hash",
+          "declaration": "models.CharField(max_length=64)",
+          "source_line": 302
+        },
+        {
+          "name": "route",
+          "declaration": "models.ForeignKey('RouteConfiguration', null=True, on_delete=models.PROTECT)",
+          "source_line": 303
+        },
+        {
+          "name": "input_text",
+          "declaration": "models.TextField()",
+          "source_line": 304
+        },
+        {
+          "name": "operation",
+          "declaration": "models.CharField(max_length=50, default='chat')",
+          "source_line": 305
+        },
+        {
+          "name": "expected_profile_revision",
+          "declaration": "models.PositiveIntegerField(null=True)",
+          "source_line": 306
+        }
+      ]
+    },
+    {
+      "model": "TurnAttempt",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 316,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "turn",
+          "declaration": "models.ForeignKey(Turn, on_delete=models.CASCADE, related_name='attempts')",
+          "source_line": 328
+        },
+        {
+          "name": "conversation",
+          "declaration": "models.ForeignKey(Conversation, on_delete=models.CASCADE, related_name='attempts', editable=False)",
+          "source_line": 329
+        },
+        {
+          "name": "status",
+          "declaration": "models.CharField(max_length=30, choices=Status, default=Status.ACCEPTED)",
+          "source_line": 332
+        },
+        {
+          "name": "profile_revision",
+          "declaration": "models.PositiveIntegerField(null=True)",
+          "source_line": 333
+        },
+        {
+          "name": "corpus_release",
+          "declaration": "models.ForeignKey(CorpusRelease, null=True, on_delete=models.PROTECT)",
+          "source_line": 334
+        },
+        {
+          "name": "route",
+          "declaration": "models.ForeignKey('RouteConfiguration', null=True, on_delete=models.PROTECT)",
+          "source_line": 335
+        },
+        {
+          "name": "deadline_at",
+          "declaration": "models.DateTimeField()",
+          "source_line": 336
+        },
+        {
+          "name": "terminal_code",
+          "declaration": "models.CharField(max_length=100, blank=True)",
+          "source_line": 337
+        },
+        {
+          "name": "updated_at",
+          "declaration": "models.DateTimeField(auto_now=True)",
+          "source_line": 338
+        }
+      ]
+    },
+    {
+      "model": "RouteConfiguration",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 358,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "relay_type",
+          "declaration": "models.CharField(max_length=40)",
+          "source_line": 359
+        },
+        {
+          "name": "base_url",
+          "declaration": "models.URLField(max_length=1000)",
+          "source_line": 360
+        },
+        {
+          "name": "configured_model",
+          "declaration": "models.CharField(max_length=200)",
+          "source_line": 361
+        },
+        {
+          "name": "api_dialect",
+          "declaration": "models.CharField(max_length=50)",
+          "source_line": 362
+        },
+        {
+          "name": "capabilities",
+          "declaration": "models.JSONField(default=dict)",
+          "source_line": 363
+        },
+        {
+          "name": "context_limit",
+          "declaration": "models.PositiveIntegerField()",
+          "source_line": 364
+        },
+        {
+          "name": "timeout_policy",
+          "declaration": "models.JSONField(default=dict)",
+          "source_line": 365
+        },
+        {
+          "name": "configuration_hash",
+          "declaration": "models.CharField(max_length=64, unique=True)",
+          "source_line": 366
+        },
+        {
+          "name": "qualification_state",
+          "declaration": "models.CharField(max_length=30, default='unqualified')",
+          "source_line": 367
+        }
+      ]
+    },
+    {
+      "model": "RouteQualification",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 370,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "route",
+          "declaration": "models.ForeignKey(RouteConfiguration, on_delete=models.PROTECT)",
+          "source_line": 371
+        },
+        {
+          "name": "tested_configuration_hash",
+          "declaration": "models.CharField(max_length=64)",
+          "source_line": 372
+        },
+        {
+          "name": "evaluation_results",
+          "declaration": "models.JSONField(default=dict)",
+          "source_line": 373
+        },
+        {
+          "name": "state",
+          "declaration": "models.CharField(max_length=30)",
+          "source_line": 374
+        }
+      ]
+    },
+    {
+      "model": "ModelCallAttempt",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 377,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "turn_attempt",
+          "declaration": "models.ForeignKey(TurnAttempt, null=True, on_delete=models.CASCADE)",
+          "source_line": 378
+        },
+        {
+          "name": "task",
+          "declaration": "models.CharField(max_length=50)",
+          "source_line": 379
+        },
+        {
+          "name": "route",
+          "declaration": "models.ForeignKey(RouteConfiguration, on_delete=models.PROTECT)",
+          "source_line": 380
+        },
+        {
+          "name": "requested_model",
+          "declaration": "models.CharField(max_length=200)",
+          "source_line": 381
+        },
+        {
+          "name": "upstream_reported_model",
+          "declaration": "models.CharField(max_length=200, blank=True)",
+          "source_line": 382
+        },
+        {
+          "name": "status",
+          "declaration": "models.CharField(max_length=30)",
+          "source_line": 383
+        },
+        {
+          "name": "duration_ms",
+          "declaration": "models.PositiveIntegerField(null=True)",
+          "source_line": 384
+        },
+        {
+          "name": "reported_usage",
+          "declaration": "models.JSONField(default=dict)",
+          "source_line": 385
+        },
+        {
+          "name": "safe_error_code",
+          "declaration": "models.CharField(max_length=100, blank=True)",
+          "source_line": 386
+        }
+      ]
+    },
+    {
+      "model": "AnswerArtifact",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 389,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "attempt",
+          "declaration": "models.OneToOneField(TurnAttempt, on_delete=models.CASCADE, related_name='answer')",
+          "source_line": 390
+        },
+        {
+          "name": "outcome",
+          "declaration": "models.CharField(max_length=40)",
+          "source_line": 391
+        },
+        {
+          "name": "blocks",
+          "declaration": "models.JSONField(default=list)",
+          "source_line": 392
+        },
+        {
+          "name": "verification_status",
+          "declaration": "models.CharField(max_length=30)",
+          "source_line": 393
+        },
+        {
+          "name": "profile_revision",
+          "declaration": "models.PositiveIntegerField(null=True)",
+          "source_line": 394
+        },
+        {
+          "name": "corpus_release",
+          "declaration": "models.ForeignKey(CorpusRelease, null=True, on_delete=models.PROTECT)",
+          "source_line": 395
+        }
+      ]
+    },
+    {
+      "model": "AnswerClaim",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 398,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "answer",
+          "declaration": "models.ForeignKey(AnswerArtifact, on_delete=models.CASCADE, related_name='claims')",
+          "source_line": 399
+        },
+        {
+          "name": "claim_type",
+          "declaration": "models.CharField(max_length=40)",
+          "source_line": 400
+        },
+        {
+          "name": "display_text",
+          "declaration": "models.TextField()",
+          "source_line": 401
+        },
+        {
+          "name": "fact_ids",
+          "declaration": "models.JSONField(default=list)",
+          "source_line": 402
+        },
+        {
+          "name": "evidence_bundles",
+          "declaration": "models.ManyToManyField(EvidenceBundle)",
+          "source_line": 403
+        },
+        {
+          "name": "verification_result",
+          "declaration": "models.CharField(max_length=30)",
+          "source_line": 404
+        }
+      ]
+    },
+    {
+      "model": "RecommendationSnapshot",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 407,
+      "abstract": false,
+      "inherits_uuid_fields": true,
+      "fields": [
+        {
+          "name": "answer",
+          "declaration": "models.OneToOneField(AnswerArtifact, null=True, on_delete=models.CASCADE)",
+          "source_line": 408
+        },
+        {
+          "name": "owner",
+          "declaration": "models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)",
+          "source_line": 409
+        },
+        {
+          "name": "profile_revision",
+          "declaration": "models.PositiveIntegerField()",
+          "source_line": 410
+        },
+        {
+          "name": "corpus_release",
+          "declaration": "models.ForeignKey(CorpusRelease, on_delete=models.PROTECT)",
+          "source_line": 411
+        },
+        {
+          "name": "candidate_results",
+          "declaration": "models.JSONField(default=list)",
+          "source_line": 412
+        },
+        {
+          "name": "rankings",
+          "declaration": "models.JSONField(default=list)",
+          "source_line": 413
+        },
+        {
+          "name": "calculations",
+          "declaration": "models.JSONField(default=list)",
+          "source_line": 414
+        },
+        {
+          "name": "rule_version",
+          "declaration": "models.CharField(max_length=50)",
+          "source_line": 415
+        }
+      ]
+    },
+    {
+      "model": "AIPreference",
+      "source": "backend/apps/adviser/models.py",
+      "source_line": 418,
+      "abstract": false,
+      "inherits_uuid_fields": false,
+      "fields": [
+        {
+          "name": "user",
+          "declaration": "models.OneToOneField(settings.AUTH_USER_MODEL, primary_key=True, on_delete=models.CASCADE)",
+          "source_line": 419
+        },
+        {
+          "name": "route",
+          "declaration": "models.ForeignKey(RouteConfiguration, null=True, on_delete=models.PROTECT)",
+          "source_line": 420
+        },
+        {
+          "name": "updated_at",
+          "declaration": "models.DateTimeField(auto_now=True)",
+          "source_line": 421
+        }
+      ]
+    }
+  ],
+  "database_rows_read": false,
+  "evaluation_material_read": false,
+  "replacement_schema_proposed": false,
+  "migration_run": false,
+  "runtime_schema_verified": false,
+  "git_head_available": false,
+  "scope": "Existing technical persistence and operational preservation only; this inventory does not constrain insurance-derived replacement design."
+}

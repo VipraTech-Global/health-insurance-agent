@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:38:39.176385+00:00",
+  "associations": [],
+  "byte_count": 3578,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/captcha?url=//pages/doc/premium_chart/Rate%20Card%20of%20ReAssure_v4%20UIN%20copy.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1380,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "19c51449a5741c3c928b39d23fee97d91ab720031d501ee3e36abcd6eb740700",
+  "status": "failed",
+  "url": "https://transactions.nivabupa.com/pages/doc/premium_chart/Rate Card of ReAssure_v4 UIN copy.pdf"
+}

@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:56:07.678433+00:00",
+  "associations": [],
+  "byte_count": 263,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/xml",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/tata_aig_travel_insurance_international_tariff_sheet_134314410a.pdf",
+  "format_version": 1,
+  "http_status": 403,
+  "insurer_id": "tata-aig",
+  "issues": [
+    "http_403"
+  ],
+  "language": "unknown",
+  "latency_ms": 201,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "039212f2f81fae587a2551b08224cb93aa652e0e74df51fc0302c27095dee0a7",
+  "status": "failed",
+  "url": "https://www.tataaig.com/s3/tata_aig_travel_insurance_international_tariff_sheet_134314410a.pdf"
+}

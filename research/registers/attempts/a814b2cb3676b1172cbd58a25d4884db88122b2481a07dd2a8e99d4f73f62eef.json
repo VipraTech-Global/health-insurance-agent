@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:52:03.600948+00:00",
+  "associations": [],
+  "byte_count": 280274,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/pages/doc/premium_chart/Arogya%20Sanjeevani,%20Niva%20Bupa%20Health%20Insurance%20Co.%20Ltd..pdf?v=1.0",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 2118,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "2f6fde522853b13e35b37af0437cc5ca4c2a429530634b2d9114c89f472a3421",
+  "status": "acquired",
+  "url": "https://transactions.nivabupa.com/pages/doc/premium_chart/Arogya Sanjeevani, Niva Bupa Health Insurance Co. Ltd..pdf?v=1.0"
+}

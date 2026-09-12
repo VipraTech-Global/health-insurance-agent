@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:59:12.899171+00:00",
+  "associations": [],
+  "byte_count": 370384,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/pre-post-hospitalisation-rider/Pre%20and%20Post%20Hospitalisation%20Rider%20CLAUSE.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1140,
+  "linking_url": "https://www.newindia.co.in/health-insurance/pre-post-hospitalisation-rider",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "2b03e05e007177b94fbe5ab228ffd279cd26e9ad6936dad37080218fec122f91",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/pre-post-hospitalisation-rider/Pre and Post Hospitalisation Rider CLAUSE.pdf"
+}

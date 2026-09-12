@@ -1,0 +1,25 @@
+{
+  "format_version": 1,
+  "generated_at_utc": "2026-09-10T18:35:44.031684+00:00",
+  "assigned_cases": 100,
+  "assessed_cases": 20,
+  "batch_status": "in_progress",
+  "canonical_artifact_sha256": "531a6c3a99f2dd8e9dba99db95aff4de70409d085fd12be3d3b07fbbdbf6bff1",
+  "canonical_modified": false,
+  "disposition_definition": {
+    "unchanged": "No material previously missing public dependency is established for the requested customer decision; original-backed branch and case-specific missing facts are reassessed. Added contextual support may still narrow interpretation.",
+    "partially_resolved": "A specified public-source requirement is newly supported, often for a clearly conditional alternative; issued/customer or other material source dependencies remain.",
+    "resolved": "All stated public-source dependencies in this follow-up are resolved, not a customer-advice success."
+  },
+  "disposition_counts": {
+    "unchanged": 11,
+    "partially_resolved": 9,
+    "resolved": 0
+  },
+  "new_evidence_regions_unique": 12,
+  "new_adviser_acceptance_successes": 0,
+  "evaluation_read": false,
+  "insurer_rule_denominators_measured": false,
+  "source_publication_performed": false,
+  "method": "Individually authored assessments preserve canonical questions, facts and numeric stipulations. Selected original passages and connected exceptions are read for new dependencies; no complete customer decision is inferred from a new public wording."
+}

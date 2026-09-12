@@ -1,0 +1,24 @@
+{
+  "checks": {
+    "django_system_check": "passed",
+    "live_relay": "existing interview schema passed; exact gpt-6-astra identity",
+    "migration_drift": "no changes detected",
+    "mypy": "passed, 8 source files",
+    "original_passages": "19 hash/page/passage checks passed",
+    "pytest_workspace": "26 passed",
+    "ruff": "passed"
+  },
+  "format_version": 1,
+  "not_run": [
+    "Independent code reviewer agents",
+    "600 live adviser evaluation attempts",
+    "60 additional robustness checks",
+    "Replacement Next.js browser journeys",
+    "PostgreSQL 18.6 and extension integration",
+    "New extraction/review/image route qualification",
+    "Complete rule coverage",
+    "Performance and cutover rehearsal"
+  ],
+  "release_ready": false,
+  "scope": "Offline research_workspace; no v2 adviser implemented"
+}

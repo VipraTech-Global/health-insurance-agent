@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:59:11.321316+00:00",
+  "associations": [],
+  "byte_count": 472008,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/durable-medical-devices-rider/Prospectus%20durable%20Medical%20Devices.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1646,
+  "linking_url": "https://www.newindia.co.in/health-insurance/durable-medical-devices-rider",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "2cbc594d3577cac09bf2714bed879e772d93f960dbf6158900fbad07540a1e00",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/durable-medical-devices-rider/Prospectus durable Medical Devices.pdf"
+}

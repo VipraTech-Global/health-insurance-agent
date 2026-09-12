@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:03:39.288035+00:00",
+  "associations": [],
+  "byte_count": 4089344,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/universal-health-insurance/Prospectus%20Universal%20Health%20Insurance%20Policy%20(APL)%20.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 4997,
+  "linking_url": "https://www.newindia.co.in/health-insurance/universal-health-insurance",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "ba50a8e85b19114bd4a045eed49c0a23e4e605d8d9cdd455869f730f2c353347",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/universal-health-insurance/Prospectus Universal Health Insurance Policy (APL) .pdf"
+}

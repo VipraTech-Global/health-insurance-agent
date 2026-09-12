@@ -1,0 +1,73 @@
+{
+  "acquired_at": "2026-09-10T11:52:36.156884+00:00",
+  "associations": [],
+  "byte_count": 2001616,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy-Privilege-Brochure.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "galaxy",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 692,
+  "linking_url": "https://www.galaxyhealth.com/",
+  "page_count": 6,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.94501
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.94501
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.94501
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.94501
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.94501
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.94501
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "8e2b28c39fd5ae19b83ba7d558567bb35d8a2addb1ebafe079c9f51949bf4365",
+  "status": "acquired",
+  "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy-Privilege-Brochure.pdf"
+}

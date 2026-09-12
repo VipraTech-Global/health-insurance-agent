@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T18:10:09.090148+00:00",
+  "associations": [],
+  "byte_count": 503368,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://stgaccinwbsprdlrs01.blob.core.windows.net/nhilprd/Narayana_Aditi_CIS_Rev0_5db5c568ff.pdf?sv=2025-05-05&spr=https&st=2025-07-14T17%3A11%3A10Z&se=2035-07-12T17%3A11%3A10Z&sr=b&sp=r&sig=s%2B0FKVhGv6ODablAwSPfvG7n1M3e8WGozeyXKp0jlEc%3D",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "narayana",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 235,
+  "linking_url": "https://uat.narayanahealth.insurance/product",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.2499787,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.5
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.2499787,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.5
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.2499787,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.5
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.2499787,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.5
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "da45dc78e8e148df6104a877d87a8ca90fe3b24833e94b7a222c0ce75856fa4e",
+  "status": "acquired",
+  "url": "https://stgaccinwbsprdlrs01.blob.core.windows.net/nhilprd/Narayana_Aditi_CIS_Rev0_5db5c568ff.pdf?sv=2025-05-05&spr=https&st=2025-07-14T17%3A11%3A10Z&se=2035-07-12T17%3A11%3A10Z&sr=b&sp=r&sig=s%2B0FKVhGv6ODablAwSPfvG7n1M3e8WGozeyXKp0jlEc%3D"
+}

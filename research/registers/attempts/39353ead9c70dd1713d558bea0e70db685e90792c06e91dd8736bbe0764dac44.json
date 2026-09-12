@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:53:03.595922+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/atmanirbhar-health-policy/Customer%20Information%20Sheet%20Atmanirbhar%20Health%20Policy.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 6449,
+  "linking_url": "https://www.newindia.co.in/health-insurance/atmanirbhar-health-policy",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "74b117a289843a99e8d976bbb26a95c4f4a80875bcb84d0f6dd1a42305b366bf",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/atmanirbhar-health-policy/Customer Information Sheet Atmanirbhar Health Policy.pdf"
+}

@@ -1,0 +1,136 @@
+{
+  "format_version": 1,
+  "review_kind": "bounded_discussion_r4_delta_review",
+  "revision_reviewed": "discussion-r4",
+  "status": "new_proposal_structures_consistent_one_migration_timestamp_correction_pending",
+  "source_fingerprints": {
+    "research/design/entity-field-dictionary.json": "9aad7745d30764ec89b6c733fd0f5b59371a2128fff462f05f97120e020d36e2",
+    "research/design/relationships.json": "a314e4ab78a76723050ce5c99645e43e5822ee5051344754dae19f8b9db9b928",
+    "research/design/json-contracts.schema.json": "0249aca9fc8af21b6908961077ff5aea5c4727f21b571ff60e66e7e48677f391",
+    "research/design/migration-field-map.json": "d198ef456232971c17529c5e15d8160582b0e3168dc7ff72d4ff618c2fcadea3",
+    "research/design/worked-record-examples.json": "fc946fbcc70e5e78da80cb94fa1de356dad610a7c89e9397e288936fad92f391",
+    "research/design/relationships-and-lifecycle.md": "47cf6ff058572a3d024a0b875d0b318615e79990d66c251d4e80e4748a1af8d5"
+  },
+  "reviewed_scope": {
+    "entities": 85,
+    "fields": 845,
+    "relationships": 257,
+    "named_json_contracts": 46,
+    "scope": "Non-PDF evidence locators, source-link observation lineage, owned account route preference, six-dimensional reconciliation, migration destination existence, worked contract fragments and removal of obsolete import/supersession prose."
+  },
+  "findings": [
+    {
+      "id": "DB4-MIG-01",
+      "severity": "high",
+      "status": "parent_proposed_correction_pending_write",
+      "file": "research/design/migration-field-map.json",
+      "source": "SourceObservation.fetched_at",
+      "current_destination": "Acquisition.started_at",
+      "issue": "The legacy timestamp does not consistently represent the start of an individual request. ingest_document records timezone.now() after network download and PDF storage; discover_ditto reuses a batch timestamp taken before its fetch loop. Mapping either to a precise per-attempt start invents chronology.",
+      "source_evidence": [
+        "backend/apps/adviser/management/commands/ingest_document.py:94",
+        "backend/apps/adviser/management/commands/discover_ditto.py:53",
+        "backend/apps/adviser/management/commands/discover_ditto.py:97"
+      ],
+      "parent_proposed_resolution": "Remap fetched_at to the exact LegacyMapping.archive_blob_id source payload, preserve its original timestamp semantics, and make model-level promotion conditional on separately established required timing/provenance. An archived observation remains retrievable history and must not become a newly successful Acquisition or fabricated attempt start.",
+      "verification": "Not applied in the reviewed snapshot; parent will write the correction after ownership returns."
+    }
+  ],
+  "checked_design_additions": [
+    {
+      "area": "EvidenceSpan media identity",
+      "result": "consistent_in_proposal",
+      "details": "Required document_id and immutable hash apply to all media. PDF-region spans require the matching DocumentPage/physical page and identical in-page bbox; HTML/JSON/text spans require page_id and bbox NULL. Locator media and method constraints separate html_original/json_original/text_original from PDF extraction/transcription."
+    },
+    {
+      "area": "OriginalLocatorV1",
+      "result": "four_closed_variants_present",
+      "details": "pdf_region uses positive one-based page, PDF-point bbox and rotation; html_element uses encoding, selector language, explicit occurrence and text-versus-attribute interpretation; json_pointer has valid RFC6901 escape shape and explicit scalar/canonical interpretation; text_range uses encoding and half-open byte offsets. Parent hash and pinned resolver identify the preserved bytes. Geometry/order/bounds/decoder resolution remain semantic validation obligations."
+    },
+    {
+      "area": "SourceLinkObservation",
+      "result": "consistent_in_proposal",
+      "details": "Many observations may point to one URL locator; each retains exact parent acquisition, raw href, observed label, row key, original locator, resolver and observation time. Exact owner scope and preserved parent hash are required. Acquisition stores its optional exact initiating observation and validates destination locator, chronology and distinct parent attempt. Immutable/superseding observation records do not overwrite conflicting source labels."
+    },
+    {
+      "area": "Preference preservation",
+      "result": "source_verified_in_proposal",
+      "details": "Reread AIPreference source declarations: user primary-key OneToOne, nullable protected route FK, auto_now updated_at. Account.id/preferred_route_id/preferred_route_updated_at preserve those concepts. Disabled or unqualified saved routes remain selected history and cannot silently become a replacement route or successful model qualification."
+    },
+    {
+      "area": "Reconciliation dimensions",
+      "result": "all_six_explicit",
+      "details": "family, variant, observed_source_revision, historical_version, complete_bundle and applicability are required named dimensions. A five-dimension payload without observed_source_revision is rejected; unresolved states remain representable."
+    },
+    {
+      "area": "Supersession prose",
+      "result": "previous_low_finding_closed",
+      "details": "The obsolete authorized-import exception has been removed. Imports use source_assertion_id and do not supersede the source conversation."
+    }
+  ],
+  "checks": {
+    "all_257_dictionary_fk_targets_required_flags_and_embedded_relationship_metadata_match": true,
+    "original_locator_probes": {
+      "positive": 5,
+      "negative": 7,
+      "passed": 12,
+      "negative_cases": [
+        "PDF physical page zero",
+        "PDF unsupported rotation45",
+        "HTML text selector with nonnull attribute",
+        "HTML attribute selector with null attribute",
+        "JSON pointer invalid~2escape",
+        "Text negative byte start",
+        "JSON locator carrying fake PDF page"
+      ]
+    },
+    "reconciliation_probes": {
+      "six_dimensions_accepted": true,
+      "five_dimensions_rejected": true
+    },
+    "migration_inventory": {
+      "concrete_pilot_models": 33,
+      "explicit_source_fields": 188,
+      "explicit_mapping_records": 188,
+      "missing_source_fields": [],
+      "unknown_source_fields": [],
+      "all_destination_entities_and_fields_exist": true,
+      "direct_destinations": 25,
+      "archived_source_payload_destinations": 163,
+      "inherited_fields": "Eight scalar native account fields plus two native privilege collections and common UUIDModel identity/time handling are separately recorded.",
+      "limitation": "Destination existence is not semantic correctness or performed migration; the fetched_at mismatch is listed above. Most pilot payloads remain deliberately archived without unsafe translation."
+    },
+    "worked_contract_fragments": {
+      "passed": 8,
+      "failed": 0,
+      "fragments": [
+        "room_limit_rule as RuleV1",
+        "four value_states as QuantityV1",
+        "gold_robot_table_cell.selectors as TableSelectorsV1",
+        "gold_robot_table_cell.value as ExpressionV1",
+        "gold_robot_table_cell.final_payment as QuantityV1"
+      ],
+      "limit": "Validated strict shape with FormatChecker. Did not claim synthetic IDs resolve to installed rows or that the rule/table fixture establishes full entitlement."
+    }
+  },
+  "documentation_notes": [
+    {
+      "severity": "low",
+      "issue": "The discussion-r4 dictionary/relationship revision accompanies migration-field-map revision discussion-r3 and schema $id urn:coverguide:proposal:contracts:r2 with an r4 comment.",
+      "recommendation": "Before freezing an approved package, use an unambiguous package revision and immutable hashes for every companion artifact. These files are proposals and no installed schema compatibility is claimed."
+    }
+  ],
+  "remaining_implementation_obligations": [
+    "Validate parent original hashes, locator resolution, JSON pointer/HTML decoder behavior, byte bounds and PDF geometry against immutable bytes; structural schema acceptance alone is insufficient.",
+    "Test scoped foreign keys, source-link cycle/chronology constraints and acquisition provenance only after schema approval.",
+    "Resolve historical route identity and preserve encoded authentication data without exposing it.",
+    "Keep r5 authentic source examples under the separate source reviewer; this report does not duplicate that source-verification claim."
+  ],
+  "evaluation_material_read": false,
+  "core_proposal_files_edited": false,
+  "application_files_edited": false,
+  "database_rows_read": false,
+  "runtime_schema_verified": false,
+  "database_implementation_approved": false,
+  "approval_boundary": "This bounded r4 proposal delta review does not approve database implementation, certify all400 scenario assessments or count any adviser success."
+}

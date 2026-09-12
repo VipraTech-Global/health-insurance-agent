@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T14:39:23.312070+00:00",
+  "associations": [],
+  "byte_count": 196,
+  "component_version": "research-acquisition/2",
+  "content_type": "text/html; charset=iso-8859-1",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://uiic.co.in/sites/default/files/Policy-Document/20230913-CIS-IHIP.pdf",
+  "format_version": 1,
+  "http_status": 404,
+  "insurer_id": "united-india",
+  "issues": [
+    "http_404"
+  ],
+  "language": "unknown",
+  "latency_ms": 849,
+  "linking_url": "",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "80c3fe2ae1062abf56456f52518bd670f9ec3917b7f85e152b347ac6b6faf880",
+  "status": "failed",
+  "url": "https://www.uiic.co.in/web/sites/default/files/Policy-Document/20230913-CIS-IHIP.pdf"
+}

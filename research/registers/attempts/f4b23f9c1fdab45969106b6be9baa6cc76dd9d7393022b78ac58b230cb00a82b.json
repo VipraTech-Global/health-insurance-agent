@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:57:52.138460+00:00",
+  "associations": [],
+  "byte_count": 307474,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/SBI_General_GPA_Flexi_Rate_Chart_Website_7838e0194b.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 338,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "7fa7671f48b8663d00b0c18e789092414a7bb8be2225104871ff6f701e9d26ee",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/SBI_General_GPA_Flexi_Rate_Chart_Website_7838e0194b.pdf"
+}

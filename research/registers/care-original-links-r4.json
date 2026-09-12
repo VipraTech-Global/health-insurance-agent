@@ -1,0 +1,139 @@
+{
+  "official_listing_url": "https://www.careinsurance.com/other-downloads.html",
+  "raw_linking_page_acquired": false,
+  "web_listing_observed": true,
+  "records": [
+    {
+      "product_label_observed_on_official_page": "Care",
+      "discovery_method": "Official Care downloads page read through web tool; PDF href retained exactly, including observed query. Linking-page raw HTTP403 is separately preserved, and web click returned406. No raw HTML success is claimed.",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care---policy-terms-%26-conditions-%28effective-from-21-march-2026%29.pdf?rv=0.36432400+1789049332",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "2ea8d71b49dc273ad78e65428a1303e8458ee2e4dcfe46f97e5427829d6813d3",
+      "acquired_at": "2026-09-10T14:12:43.833764+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 80
+    },
+    {
+      "product_label_observed_on_official_page": "Care Advantage",
+      "discovery_method": "Official Care downloads page read through web tool; PDF href retained exactly, including observed query. Linking-page raw HTTP403 is separately preserved, and web click returned406. No raw HTML success is claimed.",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-advantage---policy-terms-%26-condition-%28effective-from-02-jun-2026%29.pdf?rv=0.36437800+1789049332",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "3c3dbc9034dfa4c103976ee52c7f18af317720caf4b96a30dfb3ad163310c595",
+      "acquired_at": "2026-09-10T14:12:43.833201+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 103
+    },
+    {
+      "product_label_observed_on_official_page": "Senior Health Advantage",
+      "discovery_method": "Official Care downloads page read through web tool; PDF href retained exactly, including observed query. Linking-page raw HTTP403 is separately preserved, and web click returned406. No raw HTML success is claimed.",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/senior-health-advantage---policy-terms-and-conditions-%28effective-from-29-september-2024-%29.pdf?rv=0.36444300+1789049332",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "02aa51777a8769d055bd90beaa54fbda378cc8cc80df12820b54e42336953457",
+      "acquired_at": "2026-09-10T14:12:43.831549+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 42
+    },
+    {
+      "product_label_observed_on_official_page": "Care Classic",
+      "discovery_method": "Official Care downloads page read through web tool; PDF href retained exactly, including observed query. Linking-page raw HTTP403 is separately preserved, and web click returned406. No raw HTML success is claimed.",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-classic---policy-terms--conditions-%28effective-from-09-april-2025-%29.pdf?rv=0.36445000+1789049332",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "781ac6b9dc41d70ae08cabde7902f76ded910fa36f0f7133cf53a5ac5edd3eac",
+      "acquired_at": "2026-09-10T14:12:43.867254+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 38
+    },
+    {
+      "product_label_observed_on_official_page": "Care Plus",
+      "discovery_method": "Official Care downloads page read through web tool; PDF href retained exactly, including observed query. Linking-page raw HTTP403 is separately preserved, and web click returned406. No raw HTML success is claimed.",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-plus----policy-terms-and-conditions-%28effective-from-29-september-2024-%29.pdf?rv=0.36447100+1789049332",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "a8d3fe2acd658891ff44a7c1c9b3640199a116d01e68738414dac337635c9180",
+      "acquired_at": "2026-09-10T14:12:46.123996+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 42
+    },
+    {
+      "product_label_observed_on_official_page": "Joy",
+      "discovery_method": "Official Care downloads page read through web tool; PDF href retained exactly, including observed query. Linking-page raw HTTP403 is separately preserved, and web click returned406. No raw HTML success is claimed.",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/joy----t%26c-%28effective-from-12-september-2024-%29.pdf?rv=0.36450100+1789049332",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "6e58814aec628c402da27896296ecd40f3fa704a6875c6b0963b77f207af878f",
+      "acquired_at": "2026-09-10T14:12:46.142940+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 43
+    },
+    {
+      "product_label_observed_on_official_page": "Enhance",
+      "discovery_method": "Official Care downloads page read through web tool; PDF href retained exactly, including observed query. Linking-page raw HTTP403 is separately preserved, and web click returned406. No raw HTML success is claimed.",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/enhance---t%26c-%28effective-from-12-september-2024-%29.pdf?rv=0.36452800+1789049332",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "941953e73191b029d0903818d24c19f790c5f73e10d00bd36a3435c959e04a74",
+      "acquired_at": "2026-09-10T14:12:46.389285+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 45
+    },
+    {
+      "product_label_observed_on_official_page": "Care Heart",
+      "discovery_method": "Official Care downloads page read through web tool; PDF href retained exactly, including observed query. Linking-page raw HTTP403 is separately preserved, and web click returned406. No raw HTML success is claimed.",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-heart---policy-terms-and-conditions-%28effective-from-03-september-2025%29.pdf?rv=0.36453500+1789049332",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "c7129fd19a356f30c4e6939c1cac49b1660b968f8fde53e7ab0b9c9ce5d0700c",
+      "acquired_at": "2026-09-10T14:12:46.891581+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 56
+    },
+    {
+      "product_label_observed_on_official_page": "Care Freedom",
+      "discovery_method": "Official Care downloads page read through web tool; PDF href retained exactly, including observed query. Linking-page raw HTTP403 is separately preserved, and web click returned406. No raw HTML success is claimed.",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-freedom----t%26c-%28effective-from-3-september-2025-%29.pdf?rv=0.36454100+1789049332",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "17935f320d714e6aa7976724f4f7bc3b25fcfce01b2e5c799ce9c77a362c30c2",
+      "acquired_at": "2026-09-10T14:12:48.406004+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 45
+    },
+    {
+      "product_label_observed_on_official_page": "Ultimate Care",
+      "discovery_method": "Official Care downloads page read through web tool; PDF href retained exactly, including observed query. Linking-page raw HTTP403 is separately preserved, and web click returned406. No raw HTML success is claimed.",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/ultimate-care---policy-terms-%26-conditions-%28effective-from-16-january-2026%29.pdf?rv=0.36433100+1789049332",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "a63e2aa8b7370a37b15318a075e02c064c433856ae87291a7c4d33524c262cf5",
+      "acquired_at": "2026-09-10T14:12:48.549994+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 121
+    },
+    {
+      "product_label_observed_on_official_page": "Supreme Enhance",
+      "discovery_method": "Official Care downloads page read through web tool; PDF href retained exactly, including observed query. Linking-page raw HTTP403 is separately preserved, and web click returned406. No raw HTML success is claimed.",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/supreme-enhance---policy-terms-and-conditions.pdf?rv=0.36437100+1789049332",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "f7c50e9fa20abaf23943fded62a124cf589b830caf9ce9ed1cb3e42f3eb04c30",
+      "acquired_at": "2026-09-10T14:12:48.888130+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 49
+    }
+  ]
+}

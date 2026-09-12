@@ -1,0 +1,65 @@
+{
+  "acquired_at": "2026-09-10T11:59:40.232704+00:00",
+  "associations": [],
+  "byte_count": 350207,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-mediclaim-policy/Customer%20information%20sheet%20_%20New%20India%20Mediclaim%20Policy.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 6268,
+  "linking_url": "https://www.newindia.co.in/health-insurance/health-insurance-policy",
+  "page_count": 5,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "67a81e3cf1beac7d9e3b2205aa92eec67bbf2e57d3ebed71eac941ab3b91e34a",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-mediclaim-policy/Customer information sheet _ New India Mediclaim Policy.pdf"
+}

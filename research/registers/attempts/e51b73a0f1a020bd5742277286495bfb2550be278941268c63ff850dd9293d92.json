@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:38:40.348180+00:00",
+  "associations": [],
+  "byte_count": 3582,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/captcha?url=//pages/doc/Customer-Information/Arogya-Sanjeevani-Customer-Information-Sheet.pdf?v=1.0",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1249,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "32e589469f2e4bbd0997a6a49e4f1a5a6c92d1e956a427ea303ee995c1b5c023",
+  "status": "failed",
+  "url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/Arogya-Sanjeevani-Customer-Information-Sheet.pdf?v=1.0"
+}

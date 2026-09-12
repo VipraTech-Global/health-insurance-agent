@@ -1,0 +1,110 @@
+{
+  "revision": "discussion-r8",
+  "generated_at_utc": "2026-09-11T06:33:42.222690+00:00",
+  "status": "passed",
+  "scope": "Structural and traceability verification of the user-approved Batch 1 design delta. No Django models, migrations, PostgreSQL runtime constraints or complete-design approval claimed.",
+  "checks": [
+    {
+      "check": "100 unique application entities",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "1020 unique application fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "323 FK relationships match dictionary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all FK targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Account maps to AbstractUser without duplicate created_at or inline preference",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "separate AIPreference retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Person reduced to approved fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "PersonRelationship approved field set",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Conversation reuse policy removed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Conversation revision and snapshot retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "approved Message vocabularies retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "ConversationMessageChunk exact-source hybrid fields retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "chunk retrieval indexes explicit",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "requirement field targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "migration AIPreference targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "r8 reverse trace covers every field exactly",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "approval boundary recorded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "fixed 400 safe case map retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "benchmark proposal unchanged",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 19,
+  "failed": 0,
+  "application_entities": 100,
+  "application_fields": 1020,
+  "foreign_keys": 323,
+  "batch1_approval": "explicit user approval on 2026-09-11",
+  "overall_design_approval": false
+}

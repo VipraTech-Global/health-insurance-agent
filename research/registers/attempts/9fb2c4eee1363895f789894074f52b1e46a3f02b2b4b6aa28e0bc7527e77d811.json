@@ -1,0 +1,89 @@
+{
+  "acquired_at": "2026-09-10T12:00:11.501773+00:00",
+  "associations": [],
+  "byte_count": 612175,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/new-premier-mediclaim-claim-policy/New%20India%20Premier%20Mediclaim%20Proposal%20Form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 6457,
+  "linking_url": "https://www.newindia.co.in/health-insurance/premier-mediclaim-insurance",
+  "page_count": 8,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 597.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "c9bb9eb71477b23fc332ff0e2e75c762d2cde281484058b4bd4c91f12d4adb0d",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-premier-mediclaim-claim-policy/New India Premier Mediclaim Proposal Form.pdf"
+}

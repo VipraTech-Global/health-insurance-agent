@@ -1,0 +1,73 @@
+{
+  "acquired_at": "2026-09-10T11:57:50.560521+00:00",
+  "associations": [],
+  "byte_count": 866698,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/Standard_Fire_and_Special_Perils_SFSP_Insurance_Policy_CIS_da35d1b3dc.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 375,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 6,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 870.236,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 623.622
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 870.236,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 623.622
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 870.237,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 623.622
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 870.237,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 623.622
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 870.237,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 623.622
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 870.237,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 623.623
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "6e5eb049f6d2bc6161ee35ba98482577802ee7667936ee6ee3578ebfbfca4de5",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/Standard_Fire_and_Special_Perils_SFSP_Insurance_Policy_CIS_da35d1b3dc.pdf"
+}

@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:01:21.208329+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/janata-mediclaim-policy/List%20of%20excluded%20items.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1686,
+  "linking_url": "https://www.newindia.co.in/health-insurance/janata-mediclaim-policy",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "d70cf93a8950c4f98639c424c49e6c9cb0b807d7eec69f3e8ee949c4b1fdb860",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/janata-mediclaim-policy/List of excluded items.pdf"
+}

@@ -1,0 +1,91 @@
+{
+  "artifact_sha256": {
+    "reference/assessments-original-backed.jsonl": "b485132fedb7c5190a5d0a94a9d5426d9f965b1ee926644b671a7be1d0b2f0f5",
+    "reference/information-map.json": "8ecbcd73d7ca0aa4798c21373432b720b032debb9e2f69bea0fed742e327e174",
+    "registers/document-classifications-20260910.json": "f8497210d98b4cd2787c6c4427f9b22af84e486547933df2a66974d45713adbb",
+    "registers/legacy-assessment-20260910.json": "a2bfb45e2fc0a1c28253169d9972a4b3630cff9677da5049b130e913a35b75bf",
+    "registers/original-reading-new-india.json": "d3ad638a960aa3279e0fb62ebff91318458eb9ff21a7f1e22cb1f188c7a5cbd2",
+    "reports/calculations-check.json": "36db605b7faf3503dcf82741b8d63bd47966d9f32519d066f69891c609918702",
+    "reports/document-triage.json": "438a1c4ecaac54be0918ce880758781980c07045de2a7238cf5a3407561c9b94",
+    "reports/evaluation-information-requirements.json": "0c6724ed539f7a8df4dd2f84f13c35d262e5bf3d6247c10f58e86cdb6f1b3dff",
+    "reports/evaluation-safe-summary.json": "3a38e994720f88d93bfaecacd6c95c30bdfc3f8c02384cedc26529ab9b3c0dff",
+    "reports/source-coverage.json": "461dc3f1a56f7d931a63f7d73cc6a4f36bab7e7074986e004938668a0e446dfd"
+  },
+  "checked_at": "2026-09-10T12:51:48.604054+00:00",
+  "design_approved": false,
+  "evaluation": {
+    "adviser_attempts": 0,
+    "assessment_counts": {
+      "operational_assessment_pending_approved_behavior": 10,
+      "partial_original_assessment": 190
+    },
+    "completed_worked_cases": 0,
+    "compound_authored": 80,
+    "conditional_calculations": 11,
+    "frozen_cases": 0,
+    "hard_filesystem_isolation": false,
+    "replacement_candidates": 200,
+    "retired_exposed_drafts": 200,
+    "safe_summary": "reports/evaluation-safe-summary.json"
+  },
+  "legacy": {
+    "candidate_original_associations": 7,
+    "completed_reconciliations": 0,
+    "exact_identities_preserved": 203
+  },
+  "originals": {
+    "acquisition_registered_unique_pdfs": 2310,
+    "all_object_integrity_checks": {
+      "pdf": 2311,
+      "scanned": 2754,
+      "verified_non_pdf": 443
+    },
+    "complete_rule_denominator": null,
+    "legacy_import_pdf_objects": 1,
+    "manual_scope_classifications": 5,
+    "new_original_rule_observations": 45,
+    "other_missing_insurer_discovery_complete": false,
+    "preserved_pdf_objects": 2311,
+    "previews": {
+      "no_text_requires_visual_or_ocr": 42,
+      "text_preview_only": 2269
+    },
+    "previous_sample_rule_observations": 19,
+    "star_discovered_links": 322,
+    "star_new_acquired_originals": 10
+  },
+  "reference": {
+    "active_cases": 200,
+    "additional_partial_original_backed_assessments": 6,
+    "completed_worked_cases": 0,
+    "compound_cases_independently_assessed": null,
+    "conditional_calculations": 4,
+    "individually_authored_information_maps": 200
+  },
+  "release_ready": false,
+  "schema_implementation_started": false,
+  "stage": "original evidence and scenario assessment, before complete database proposal",
+  "status": "partial; full requested evidence assessment and design package unfinished",
+  "unfinished_requirements": [
+    "Reconcile all legacy identities, exact versions and variants",
+    "Finish medical-expense scope classification and original discovery for all 20 insurers",
+    "Complete independent page, table, figure, footnote and rule inventories; resolve connected clauses and original conflicts",
+    "Complete all 400 substantive worked decisions, calculations, alternatives and multi-turn scripts",
+    "Independently verify distinctness and compound coverage in both splits",
+    "Establish access-controlled benchmark custody and freeze independent cases",
+    "Derive complete ERD, field dictionary, rule representations, constraints, retrieval catalogue and migration mappings from finished assessments",
+    "Discuss and explicitly approve resulting design before models and migrations"
+  ],
+  "verification": {
+    "conditional_arithmetic_checks_passed": 5,
+    "database_or_migration_changes": false,
+    "live_adviser_evaluation": "not run",
+    "mypy": "passed; 9 source files",
+    "new_original_passages_resolve": 45,
+    "new_reference_passage_locations_resolve": 14,
+    "reader_error_diagnostic_regression": "passed",
+    "research_tests_passed": 30,
+    "ruff": "passed",
+    "service_or_relay_changes": false
+  }
+}

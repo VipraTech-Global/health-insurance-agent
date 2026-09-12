@@ -1,0 +1,89 @@
+{
+  "acquired_at": "2026-09-10T11:51:41.084186+00:00",
+  "associations": [],
+  "byte_count": 284539,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.adityabirlacapital.com/healthinsurance/assets/pdf/GrievanceRedressalPolicy_New.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "aditya-birla",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 707,
+  "linking_url": "https://www.adityabirlacapital.com/healthinsurance/downloads",
+  "page_count": 8,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.98
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.98
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.98
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.98
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.98
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.98
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.98
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.98
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "38508d31f2774928a10e65e3a2d03232655e16f2edac5d69375995fcaa977e7b",
+  "status": "acquired",
+  "url": "https://www.adityabirlacapital.com/healthinsurance/assets/pdf/GrievanceRedressalPolicy_New.pdf"
+}

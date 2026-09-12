@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T12:00:46.799413+00:00",
+  "associations": [],
+  "byte_count": 487888,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.generalicentralinsurance.com/footer-pdf/health-insurance-underwriting-philosophy.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "generali-central",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 290,
+  "linking_url": "https://www.generalicentralinsurance.com/customer-service/downloads",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "a0905c3897e7a5bb60e209b2a3a51a1b879c051b3bc3dc47b15fac260c731c2b",
+  "status": "acquired",
+  "url": "https://www.generalicentralinsurance.com/footer-pdf/health-insurance-underwriting-philosophy.pdf"
+}

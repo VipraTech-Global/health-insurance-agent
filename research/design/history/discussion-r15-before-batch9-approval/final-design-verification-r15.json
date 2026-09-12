@@ -1,0 +1,153 @@
+{
+  "revision": "discussion-r15",
+  "generated_at_utc": "2026-09-12T11:05:20.727128+00:00",
+  "status": "passed",
+  "scope": "Structural verification of the user-approved Batch 8 provider-network snapshot/entry and evidence-backed quote design. No Django models, migrations, PostgreSQL runtime constraints, clinician/accessibility subsystem or complete-design approval claimed.",
+  "checks": [
+    {
+      "check": "88 unique application entities",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "843 unique application fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "260 FK relationships match dictionary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all FK targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "relationship ledger exactly covers FK fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "approved four-model Batch 8 present with exact 43 fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "superseded provider and pricing models removed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Quote contains closed breakdown and payment schedule",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "provider entry derives insurer variant and date from snapshot",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "provider snapshot retains failed and zero-result source capability",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "TreatmentEpisode references exact ProviderLocation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "case and supplementary field targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "fixed 400 case map retained as 200 reference and 200 evaluation-safe projections",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "r15 reverse trace covers every field exactly",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "r15 trace input hashes match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "case-map dictionary hash matches",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "additional-case dictionary hash matches",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all JSON field contracts resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "approved provider and quote JSON contracts exist",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "removed observation contracts are absent",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all migration target entities resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "legacy catalogue migrates only to archived mapping",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Batch 8 approval and overall design boundary recorded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "review documents use verified r15 counts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "review documents use 56 JSON definitions",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "clinician and accessibility deferral remains visible",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 26,
+  "failed": 0,
+  "application_entities": 88,
+  "application_fields": 843,
+  "foreign_keys": 260,
+  "json_definitions": 56,
+  "batch1_approval": "explicit user approval on 2026-09-11",
+  "batch2_approval": "explicit user approval on 2026-09-11",
+  "batch3_approval": "explicit user approval on 2026-09-12",
+  "batch4_approval": "explicit user approval on 2026-09-12",
+  "batch5_approval": "explicit user approval on 2026-09-12",
+  "batch6_approval": "explicit user approval on 2026-09-12",
+  "batch7_approval": "explicit user approval on 2026-09-12",
+  "batch8_approval": "explicit user approval on 2026-09-12",
+  "overall_design_approval": false
+}

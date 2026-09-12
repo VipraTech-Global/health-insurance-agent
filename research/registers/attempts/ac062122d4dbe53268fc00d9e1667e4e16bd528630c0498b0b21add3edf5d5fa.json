@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:56:51.607727+00:00",
+  "associations": [],
+  "byte_count": 1373949,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/surveyor_management_policy/Re_PARIPOORNA%20MEDICLAIM%20AYUSH%20BIMA%20ADVT%20FINAL%20NEW.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 16614,
+  "linking_url": "https://www.newindia.co.in/health-insurance/atmanirbhar-health-policy",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 708.661,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 453.543
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 708.661,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 453.543
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "15fa946b859853c3c3de3f8b32fcef4b17466e7578c8afeca1574567ed8f1c33",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/surveyor_management_policy/Re_PARIPOORNA MEDICLAIM AYUSH BIMA ADVT FINAL NEW.pdf"
+}

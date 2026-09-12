@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:51:43.857686+00:00",
+  "associations": [],
+  "byte_count": 570704,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/pages/doc/brochure/Health_Assurance_Br.pdf?v=1.0",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 581,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 629.292,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 2338.02
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 629.292,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 2338.02
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "0c1ee6e975a720ac528591f6f3453387eb9648054e82a1c71420975be6880e9c",
+  "status": "acquired",
+  "url": "https://transactions.nivabupa.com/pages/doc/brochure/Health_Assurance_Br.pdf?v=1.0"
+}

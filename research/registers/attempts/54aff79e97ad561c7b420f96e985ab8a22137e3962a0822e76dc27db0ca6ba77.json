@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:59:11.269128+00:00",
+  "associations": [],
+  "byte_count": 384357,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/durable-medical-devices-rider/Durable%20Medical%20Devices%20Rider%20CLAUS02306.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1605,
+  "linking_url": "https://www.newindia.co.in/health-insurance/durable-medical-devices-rider",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.4,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.4,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.92
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "b1f8aa35735ae27959b88608442a10425de9b4814249eb2c8d23c742bb9ef8fb",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/durable-medical-devices-rider/Durable Medical Devices Rider CLAUS02306.pdf"
+}

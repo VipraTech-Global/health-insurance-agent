@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:52:11.498545+00:00",
+  "associations": [],
+  "byte_count": 238894,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/pages/doc/premium_chart/Empower%20Health%20Plan%20Rate%20card.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1517,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.8898,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2756
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "593b05e0eec281cfd69fec293d6f193e6c132a762cb1000fa8fa7a9bee1caf8c",
+  "status": "acquired",
+  "url": "https://transactions.nivabupa.com/pages/doc/premium_chart/Empower Health Plan Rate card.pdf"
+}

@@ -1,0 +1,73 @@
+{
+  "acquired_at": "2026-09-10T11:57:45.514691+00:00",
+  "associations": [],
+  "byte_count": 839996,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/Saral_Bharat_Sookshma_Udyam_Suraksha_CIS_2e1dc3f970.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 526,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 6,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 870.236,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 623.622
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 870.237,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 623.622
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 870.237,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 623.622
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 870.237,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 623.622
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 870.236,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 623.622
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 870.237,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 623.622
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "9f1e453edf5baa5c675f55f851ff056e7ce80b3b18af9ac63240eee4741bc5bf",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/Saral_Bharat_Sookshma_Udyam_Suraksha_CIS_2e1dc3f970.pdf"
+}

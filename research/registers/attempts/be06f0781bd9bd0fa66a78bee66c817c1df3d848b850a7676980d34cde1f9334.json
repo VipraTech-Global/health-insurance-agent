@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T11:59:13.866811+00:00",
+  "associations": [],
+  "byte_count": 347827,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/others/cis-digit-golfers-package-insurance-policy.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "go-digit",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 312,
+  "linking_url": "https://www.godigit.com/downloads",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 1190.52,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1190.52,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1190.52,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1190.52,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.92
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "faf4962b0e3dd20e8a8ddfeb8c73b2b3d72f8cfc2cfba067f13991b030b598bd",
+  "status": "acquired",
+  "url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/others/cis-digit-golfers-package-insurance-policy.pdf"
+}

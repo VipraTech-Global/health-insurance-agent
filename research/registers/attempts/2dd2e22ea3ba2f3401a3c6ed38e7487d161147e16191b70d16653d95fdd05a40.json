@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:38:50.436832+00:00",
+  "associations": [],
+  "byte_count": 167466,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.nivabupa.com/content/dam/nivabupa/PDF/Modified%20and%20Withdrawn%20Products_22nd%20November%202023.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 3673,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "40045d97a32dbe74d2ebaa0d1659d34210d7e6f10492ee23f3408cedecbb5fb4",
+  "status": "acquired",
+  "url": "https://www.nivabupa.com/content/dam/nivabupa/PDF/Modified%20and%20Withdrawn%20Products_22nd%20November%202023.pdf"
+}

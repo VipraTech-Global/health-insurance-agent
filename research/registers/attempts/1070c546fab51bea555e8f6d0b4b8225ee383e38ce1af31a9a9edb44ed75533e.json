@@ -1,0 +1,105 @@
+{
+  "acquired_at": "2026-09-10T12:01:29.946597+00:00",
+  "associations": [],
+  "byte_count": 8689944,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://acko-cms.ackoassets.com/ACKO_Platinum_Brochure_209ebf02b9.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "acko",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 2465,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": 10,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 648.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1152.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 648.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1152.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1931.85,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1152.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 2452.45,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1152.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 810.193,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1152.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1421.12,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1152.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1054.83,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1152.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1852.05,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1152.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1905.75,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1152.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1969.29,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1152.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "fd2fd11559d777b065413939864284f03833a6c8719f9cf6f4bd6e565e42337c",
+  "status": "acquired",
+  "url": "https://acko-cms.ackoassets.com/ACKO_Platinum_Brochure_209ebf02b9.pdf"
+}

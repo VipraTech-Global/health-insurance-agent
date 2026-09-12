@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:02:35.349325+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/new-premier-mediclaim-claim-policy/New%20India%20Premier%20Mediclaim%20Premium%20Illustration.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 6685,
+  "linking_url": "https://www.newindia.co.in/health-insurance/premier-mediclaim-insurance",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "afbcd32b24122627aa94e49a3e2549e7f4880737dc829adaa1a82eb988c77fc1",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/new-premier-mediclaim-claim-policy/New India Premier Mediclaim Premium Illustration.pdf"
+}

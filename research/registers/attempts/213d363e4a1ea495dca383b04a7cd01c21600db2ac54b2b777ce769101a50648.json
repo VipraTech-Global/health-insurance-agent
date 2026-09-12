@@ -1,0 +1,65 @@
+{
+  "acquired_at": "2026-09-10T12:01:09.374240+00:00",
+  "associations": [],
+  "byte_count": 279162,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/yuva-bharat-health-policy/Customer%20Information%20Sheet%20YUVA%20BHARAT%20.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 672,
+  "linking_url": "https://www.newindia.co.in/health-insurance/new-india-yuva-bharat-health-policy",
+  "page_count": 5,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "f3d571e838020b6af462d6135b3d690288c2c78973a074f28733813f7d4ca68d",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/yuva-bharat-health-policy/Customer Information Sheet YUVA BHARAT .pdf"
+}

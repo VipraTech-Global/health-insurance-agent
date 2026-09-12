@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:57:48.689079+00:00",
+  "associations": [],
+  "byte_count": 238907,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/arogya-sanjeevani/Customer%20Information%20Sheet%20AROGYA%20SANJEEVANI%20POLICY.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 5476,
+  "linking_url": "https://www.newindia.co.in/health-insurance/arogya-sanjeevani-policy",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "ff4c3d125c311611f999a72023ba21ee53d2c31d1674e2c5d6cc4630276afe39",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/arogya-sanjeevani/Customer Information Sheet AROGYA SANJEEVANI POLICY.pdf"
+}

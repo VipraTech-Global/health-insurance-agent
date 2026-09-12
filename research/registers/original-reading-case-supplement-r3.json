@@ -1,0 +1,345 @@
+{
+  "format_version": 1,
+  "method": "direct original reading; exact physical-page spans; no parser-output-derived rule inventory",
+  "independent_rule_denominator": null,
+  "rules": [
+    {
+      "alias": "E1",
+      "rule_id": "original-supplement-e1",
+      "status": "original_passage_verified_not_full_dependency_closure",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "page": 21,
+          "section": "12 Eligibility",
+          "passage": "Policy can be availed by persons between the age of 18 years and 65years, as\nProposer. Proposer with higher age can obtain policy for family, without covering\nself.",
+          "bbox": null,
+          "table_context": []
+        }
+      ]
+    },
+    {
+      "alias": "E2",
+      "rule_id": "original-supplement-e2",
+      "status": "original_passage_verified_not_full_dependency_closure",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "page": 21,
+          "section": "12 Sum insured",
+          "passage": "On Individual basis \u2013 SI shall apply to each individual family member\nOn Floater basis \u2013 SI shall apply to the entire family",
+          "bbox": null,
+          "table_context": []
+        }
+      ]
+    },
+    {
+      "alias": "E4",
+      "rule_id": "original-supplement-e4",
+      "status": "original_passage_verified_not_full_dependency_closure",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "page": 8,
+          "section": "4.4-4.5",
+          "passage": "4.4. Pre Hospitalization\nThe company shall indemnify pre-hospitalization medical expenses incurred, related to an\nadmissible hospitalization requiring inpatient care, for a fixed period of 30 days prior to the date\nof admissible hospitalization covered under the policy.\n4.5. Post Hospitalisation\nThe company shall indemnify post hospitalization medical expenses incurred, related to an\nadmissible hospitalization requiring inpatient care, for a fixed period of 60 days from the date\nof discharge from the hospital, following an admissible hospitalization covered under the policy.",
+          "bbox": null,
+          "table_context": []
+        }
+      ]
+    },
+    {
+      "alias": "E5",
+      "rule_id": "original-supplement-e5",
+      "status": "original_passage_verified_not_full_dependency_closure",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "page": 8,
+          "section": "4.6",
+          "passage": "4.6. The following procedures will be covered (wherever medically indicated) either as in patient\nor as part of day care treatment in a hospital up to 50% of Sum Insured, specified in the policy\nschedule, during the policy period:\na. Uterine Artery Embolization and HIFU (High intensity focused ultrasound)\nb. Balloon Sinuplasty.\nc. Deep Brain stimulation.\nd. Oral chemotherapy.\ne. Immunotherapy- Monoclonal Antibody to be given as injection.\nf. Intra vitreal injections.\ng. Robotic surgeries.\nh. Stereotactic radio surgeries.\ni. Bronchial Thermoplasty.\nj. Vaporisation of the prostrate (Green laser treatment or holmium laser treatment).\nk. IONM - (Intra Operative Neuro Monitoring).\nl. Stem cell therapy: Hematopoietic stem cells for bone marrow transplant for haematological\nconditions to be covered.",
+          "bbox": null,
+          "table_context": []
+        }
+      ]
+    },
+    {
+      "alias": "E6",
+      "rule_id": "original-supplement-e6",
+      "status": "original_passage_verified_not_full_dependency_closure",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "page": 12,
+          "section": "7.14",
+          "passage": "7.14 Sterility and Infertility: (Code- Excl17)\nExpenses related to sterility and infertility. This includes:\na. Any type of contraception, sterilization\nb. Assisted Reproduction services including artificial insemination and advanced reproductive\ntechnologies such as IVF, ZIFT, GIFT, ICSI\nc. Gestational Surrogacy\nd. Reversal of sterilization",
+          "bbox": null,
+          "table_context": []
+        }
+      ]
+    },
+    {
+      "alias": "E7",
+      "rule_id": "original-supplement-e7",
+      "status": "original_passage_verified_not_full_dependency_closure",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "page": 12,
+          "section": "7.9",
+          "passage": "7.9 Treatment for, Alcoholism, drug or substance abuse or any addictive condition and\nconsequences thereof. (Code- Excl12)",
+          "bbox": null,
+          "table_context": []
+        }
+      ]
+    },
+    {
+      "alias": "E8",
+      "rule_id": "original-supplement-e8",
+      "status": "original_passage_verified_not_full_dependency_closure",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "page": 12,
+          "section": "7.13",
+          "passage": "7.13 Unproven Treatments:(Code- Excl16)\nExpenses related to any unproven treatment, services and supplies for or in connection with any\ntreatment. Unproven treatments are treatments, procedures or supplies that lack significant medical\ndocumentation to support their effectiveness.",
+          "bbox": null,
+          "table_context": []
+        }
+      ]
+    },
+    {
+      "alias": "E9",
+      "rule_id": "original-supplement-e9",
+      "status": "original_passage_verified_not_full_dependency_closure",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "page": 11,
+          "section": "7.2",
+          "passage": "7.2 Rest Cure, rehabilitation and respite care (Code- Excl05) Expenses related to any admission\nprimarily for enforced bed rest and not for receiving treatment. This also includes:\na. Custodial care either at home or in a nursing facility for personal care such as help with activities\nof daily living such as bathing, dressing, moving around either by skilled nurses or assistant or\nnon-skilled persons.\nb. Any services for people who are terminally ill to address physical, social, emotional and spiritual\nneeds.",
+          "bbox": null,
+          "table_context": []
+        }
+      ]
+    },
+    {
+      "alias": "E10",
+      "rule_id": "original-supplement-e10",
+      "status": "original_passage_verified_not_full_dependency_closure",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "page": 9,
+          "section": "5 including notes a-h",
+          "passage": "5. Cumulative Bonus (CB)\nCumulative Bonus will be increased by 5% in respect of each claim free policy year (where no claims are\nreported), provided the policy is renewed with the company without a break subject to maximum of\n50% of the sum insured under the current policy year. If a claim is made in any particular year, the\ncumulative bonus accrued shall be reduced at the same rate at which it has accrued. However, sum\ninsured will be maintained and will not be reduced in the policy year.\nNotes:\na. In case where the policy is on individual basis, the CB shall be added and available individually\nto the insured person, if no claim has been reported. CB shall reduce only in case of claim from\nthe same Insured Person.\nb. In case where the policy is on floater basis, the CB shall be added and available to the family\non floater basis, provided no claim has been reported from any member of the family. CB shall\nreduce in case of claim from any of the Insured Persons.\nc. CB shall be available only if the Policy is renewed/ premium paid within the Grace Period.\nd. If the Insured Persons in the expiring policy are covered on an individual basis as specified in\nthe Policy Schedule and there is an accumulated CB for such Insured Person under the expiring\npolicy, and such expiring policy has been Renewed on a floater policy basis as specified in the\nPolicy Schedule then the CB to be carried forward for credit in such Renewed Policy shall be\nthe one that is applicable to the lowest among all the Insured Persons\ne. In case of floater policies where Insured Persons Renew their expiring policy by splitting the\nSum Insured in to two or more floater policies/individual policies or in cases where the policy\nis split due to the child attaining the age of 25 years, the CB of the expiring policy shall be\napportioned to such Renewed Policies in the proportion of the Sum Insured of each Renewed\nPolicy\nf. If the Sum Insured has been reduced at the time of Renewal, the applicable CB shall be reduced\nin the same proportion to the Sum Insured in current Policy.\ng. If the Sum Insured under the Policy has been increased at the time of Renewal the CB shall be\ncalculated on the Sum Insured of the last completed Policy Year.\nh. If a claim is made in the expiring Policy Year, and is notified to Us after the acceptance of\nRenewal premium any awarded CB shall be withdrawn.\nYou also have the option of opting for a premium discount at the time of renewal in lieu of the accrued\nCumulative Bonus (if available). If you opt for a discount as above the accrued Cumulative Bonus will become\nzero. The Cumulative bonus in the range of 5% to 50% will have a discount in the base premium from 0.73% to\n4.12%.",
+          "bbox": null,
+          "table_context": []
+        }
+      ]
+    },
+    {
+      "alias": "E11",
+      "rule_id": "original-supplement-e11",
+      "status": "original_passage_verified_not_full_dependency_closure",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "page": 20,
+          "section": "Chapter I paragraph 3",
+          "passage": "3) Products are to be made available in compliance with various laws:\nInsurers shall offer products in accordance with relevant provisions of the following Laws:\na) The Mental Healthcare Act, 2017;\nb) The Rights of Persons with Disabilities Act, 2016;\nc) The Surrogacy (Regulation) Act, 2021;\nd) The Transgender Persons (Protection of Rights) Act, 2019, and\ne) The HIV and AIDS (Prevention and Control) Act, 2017",
+          "bbox": null,
+          "table_context": []
+        }
+      ]
+    },
+    {
+      "alias": "E12",
+      "rule_id": "original-supplement-e12",
+      "status": "original_geometry_visually_verified_not_full_dependency_closure",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "page": 3,
+          "section": "III.J Gold modern-treatment table",
+          "passage": "table below:-\n000,00,52\n000,00,02\n000,00,51\n000,00,01\n000,00,5\n.sR\nderusnI\nmuS\n.sR\nerudecorp/tnemtaert\nhcae\nrof\ndoirep\nycilop\nrep\ntimiL\nerudecorP\n/ tnemtaerT\n000,00,2\n000,00,2\n000,57,1\n000,05,1\n000,52,1\nUFIH\ndna\nnoitazilobmE\nyretra eniretU\n000,05,1\n000,05,1\n000,52,1\n000,00,1\n000,05\nytsalponiS\nnoollaB\n000,00,5\n000,05,4\n000,00,4\n000,00,3\n000,05,2\nnoitalumitS\nniarB\npeeD\n000,00,3\n000,57,2\n000,05,2\n000,00,2\n000,52,1\n*yhparehtomehC\nlarO\neb\not\nydobitnA\nlanolconoM-yhparehtonummI\n000,00,6\n000,05,5\n000,00,5\n000,00,4\n000,05,2\nnoitcejni\nsa\nnevig\n000,05,1\n000,52,1\n000,00,1\n000,57\n000,05\nsnoitcejni\nlaertiV\nartnI\n000,00,5\n000,05,4\n000,00,4\n000,00,3\n000,05,2\nseiregrus\ncitoboR\n000,00,3\n000,57,2\n000,05,2\n000,52,2\n000,00,2\nseiregrus\noidar\ncitcatoeretS\nytsalpomrehT\nlacihcnorB\nresal\nneerG(\netatsorp\neht\nfo\nnoitasiropaV\nderusnI\nmuS\not\npU\n)tnemtaert\nresal\nmuimloh\nro tnemtaert\n)gnirotinoM\norueN\nevitarepO\nartnI( -\nMNOI\nmets\nciteiopotameH\n:yhpareht\nllec\nmetS\n000,00,5\n000,05,4\n000,00,4\n000,00,3\n000,05,2\nrof\ntnalpsnart\nworram\nenob rof\nsllec\nsnoitidnoc\nlacigolotameah",
+          "bbox": [
+            325,
+            497,
+            595,
+            832
+          ],
+          "table_context": [
+            "Original manually viewed on physical page3; continued page4.",
+            "Gold selector = Sum Insured Rs.; column INR1000000.",
+            "Procedure row Robotic surgeries; cap INR300000 per policy period for each treatment/procedure.",
+            "Cell is rotated; complete row/column transcription in registers/star-ssf-tables-original-reading.json."
+          ]
+        }
+      ]
+    },
+    {
+      "alias": "E13",
+      "rule_id": "original-supplement-e13",
+      "status": "original_geometry_visually_verified_not_full_dependency_closure",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "page": 4,
+          "section": "III.J table footnote",
+          "passage": "*Sublimit all inclusive with or without hospitalization where ever hospitalization includes\npre and post hospitalization",
+          "bbox": [
+            56,
+            339,
+            318,
+            359
+          ],
+          "table_context": [
+            "Oral Chemotherapy star-marked row linked to footnote.",
+            "Sublimit all inclusive with or without hospitalization; where hospitalization includes pre and post hospitalization.",
+            "Do not infer nonhospital expense contributes to III note3 hospitalisation threshold."
+          ]
+        }
+      ]
+    },
+    {
+      "alias": "E14",
+      "rule_id": "original-supplement-e14",
+      "status": "exact_full_original_clause_read",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "page": 7,
+          "section": "4.1a-d",
+          "passage": "4.1. Hospitalization\nThe Company shall indemnify medical expenses incurred for Hospitalization of the Insured Person\nduring the Policy year, up to the Sum Insured and Cumulative Bonus specified in the policy schedule,\nfor,\na. Room Rent, Boarding, Nursing Expenses as provided by the Hospital / Nursing Home up to\n2% of the sum insured subject to maximum of Rs.5000/-, per day.\nb. Intensive Care Unit (ICU) / Intensive Cardiac Care Unit (ICCU) expenses up to 5% of sum\ninsured subject to maximum of Rs.10,000/- per day.\nc. Surgeon, Anaesthetist, Medical Practitioner, Consultants, Specialist Fees whether paid\ndirectly to the treating doctor / surgeon or to the hospital.\nd. Anaesthesia, blood, oxygen, operation theatre charges, surgical appliances, medicines and\ndrugs, costs towards diagnostics, diagnostic imaging modalities and such similar other\nexpenses.",
+          "bbox": null,
+          "table_context": []
+        }
+      ]
+    },
+    {
+      "alias": "E15",
+      "rule_id": "original-supplement-e15",
+      "status": "exact_full_original_clause_read",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "page": 8,
+          "section": "4.1 note and 4.2-4.3",
+          "passage": "Note:\na. Expenses of Hospitalization for a minimum period of 24 consecutive hours only shall be\nadmissible. However, the time limit shall not apply in respect of Day Care Treatment.\nb. In case of admission to a room/ICU/ICCU at rates exceeding the aforesaid limits, the\nreimbursement/payment of all other expenses incurred at the Hospital, with the exception of cost of\nmedicines, shall be effected in the same proportion as the admissible rate per day bears to the\nactual rate per day of Room Rent/ICU/ICCU charges.\n4.2. COVERAGE UNDER AYUSH TREATMENT\nExpenses incurred for inpatient care treatment under Ayurveda, Yoga and Naturopathy, Unani,\nSiddha and Homeopathy systems of medicines is covered up to 100% of Sum Insured, during\neach policy year as specified in the policy schedule.\n4.3. Cataract Treatment\nThe Company shall indemnify medical expenses incurred for treatment of Cataract, subject to a\nlimit of 25% of Sum Insured or Rs. 40,000/-, whichever is lower, per eye in one policy year.",
+          "bbox": null,
+          "table_context": []
+        }
+      ]
+    },
+    {
+      "alias": "E16",
+      "rule_id": "original-supplement-e16",
+      "status": "exact_full_original_clause_read",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "page": 15,
+          "section": "9.5",
+          "passage": "9.5 Co-payment\nEach and every claim under the Policy shall be subject to a Co-Payment of 5% applicable to claim\namount admissible and payable as per the terms and conditions of the Policy. The amount\npayable shall be after deduction of the Co-Payment.",
+          "bbox": null,
+          "table_context": []
+        }
+      ]
+    },
+    {
+      "alias": "E17",
+      "rule_id": "original-supplement-e17",
+      "status": "exact_full_original_clause_read",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+          "page": 3,
+          "section": "3.15-3.16",
+          "passage": "3.15. Day Care Centre means any institution established for day care treatment of disease/ injuries or\na medical setup within a hospital and which has been registered with the local authorities,\nwherever applicable, and is under the supervision of a registered and qualified medical\npractitioner AND must comply with all minimum criteria as under:\na. has qualified nursing staff under its employment;\nb. has qualified medical practitioner (s) in charge;\nc. has a fully equipped operation theatre of its own where surgical procedures are carried\nout;\nd. Maintains daily records of patients and shall make these accessible to the Company\u2019s\nauthorized personnel.\n3.16. Day Care Treatment means medical treatment, and/or surgical procedure which is:\na. undertaken under general or local anaesthesia in a hospital/day care centre in less than\ntwenty-four hours because of technological advancement, and\nb. Which would have otherwise required a hospitalisation of more than twenty-four hours.\nTreatment normally taken on an out-patient basis is not included in the scope of this definition.",
+          "bbox": null,
+          "table_context": []
+        }
+      ]
+    },
+    {
+      "alias": "E18",
+      "rule_id": "original-supplement-e18",
+      "status": "exact_full_original_clause_read",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "page": 7,
+          "section": "V.12 premium instalments i-viii",
+          "passage": "12. Premium Payment in Instalments: lf the insured person has opted for Payment of\nPremium on an instalment basis i.e. Half Yearly or Quarterly or as mentioned in the\npolicy Schedule/Certificate of Insurance, the following Conditions shall apply\n(notwithstanding any terms contrary elsewhere in the policy)\ni. For monthly instalment option: Grace Period of 15 days would be given to pay the\ninstalment premium due for the policy.\nii. For Quarterly and Half yearly instalment option: Grace Period of 30 days would\nbe given to pay the instalment premium due for the policy.\niii. The insured person will get the accrued continuity benefit in respect of the\n\"Waiting Periods\", \"Specific Waiting Periods\" in the event of payment of premium\nwithin the stipulated grace Period.\niv. No interest will be charged lf the instalment premium is not paid on due date.\nv. ln case of instalment premium due not received within the grace period, the policy\nwill get cancelled.\nvi. ln the event of a claim, all subsequent premium instalments shall immediately\nbecome due and payable.\nvii. The company has the right to recover and deduct all the pending installments\nfrom the claim amount due under the policy.\nviii. For premium paid in instalments during the policy period, coverage is available\nduring the grace period also",
+          "bbox": [
+            55,
+            40,
+            319,
+            833
+          ],
+          "table_context": []
+        }
+      ]
+    },
+    {
+      "alias": "E19",
+      "rule_id": "original-supplement-e19",
+      "status": "exact_M1_original_restriction_read; general wellness availability conditions remain connected dependencies",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "page": 4,
+          "section": "M.1 online doctor chat, bottom left column",
+          "passage": "7. The Sum Insured floats amongst the insured members.\nM. Wellness Services: The following wellness services can be availed through \"Star\nHealth\" Mobile App.\n1. Online Chat with Doctor: Insured can consult qualified healthcare\nprofessionals at their convenience. The Doctor Chat feature allows Insured to\n\u201cChat\u201d with qualified Doctors to help Insured with advice and quick consultations\nincluding on Diet & Nutrition and Second Medical Opinion. They do not prescribe\nany medications or diagnose any health issues.\n2. Medical Concierge Services: The Insured can also contact Star Health to avail\nthe following services: - Emergency assistance information such as nearest\nambulance / hospital / blood bank etc.",
+          "bbox": [
+            56,
+            730,
+            318,
+            831
+          ],
+          "table_context": []
+        }
+      ]
+    },
+    {
+      "alias": "E20",
+      "rule_id": "original-supplement-e20",
+      "status": "exact_original_region_read",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "page": 3,
+          "section": "III.B coronary stent pricing reference",
+          "passage": "B. Surgeon, Anesthetist, Medical Practitioner, Consultants, Specialist Fees, Anesthesia,\nBlood, Oxygen, Operation Theatre charges, ICU Charges, Surgical Appliances,\nMedicines and Drugs, Diagnostic Materials and X-ray, cost of Pacemaker and similar\nexpenses. With regard to coronary stenting, medicines, Implants and such other\nsimilar items the Company will pay cost of stent as per the Drug Price Control Order\n(DPCO) / National Pharmaceuticals Pricing Authority (NPPA) Capping.",
+          "bbox": [
+            55,
+            40,
+            319,
+            833
+          ],
+          "table_context": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8133 @@
+{
+  "format_version": 1,
+  "generated_at": "2026-09-10T18:37:43.633663+00:00",
+  "safe_export": true,
+  "contains_case_questions_expected_answers_or_values": false,
+  "coverage_status": "Generalized requirements and opaque mapping cover all 200 cases. Expanded original reading revised 12 source-dependent records and corrected one overbroad bounded-scope blocker; 39 bounded scopes complete and 161 broader scopes remain unresolved. No full-decision, corpus-denominator, freeze or approval claim.",
+  "requirements": [
+    {
+      "requirement_group": "customer_facts",
+      "generalized_information_requirements": [
+        "Separate proposer, payer, account owner, decision target and each insured person.",
+        "Represent legal relationships, guardianship, financial dependency and enrolment separately.",
+        "Retain fact provenance, uncertainty, contradiction, supersession and effective versus recorded time.",
+        "Keep case-author stipulations, customer statements, documentary evidence and verified insurer acceptance distinguishable.",
+        "Separate required dependencies from currently unknown facts, so clarification does not request facts already supplied.",
+        "Record explicit follow-up stipulations separately from original facts and distinguish a genuinely unknown dependency from an input already supplied."
+      ],
+      "traceability": "Private case-level traceability retained only inside evaluation; shared design receives no questions or solutions."
+    },
+    {
+      "requirement_group": "product_applicability",
+      "generalized_information_requirements": [
+        "Keep product identity and version distinct from offered and accepted configurations.",
+        "Resolve complete schedules, authorised modifications, underwriting acceptance and individual restrictions.",
+        "Represent scope-specific availability without treating a source omission as contractual absence.",
+        "Keep document-link labels distinct from identifiers printed in original bytes; unresolved revision disagreements block assumed applicability.",
+        "Allow regulatory changes under an unchanged product identifier and preserve old, new and claim-date applicability independently.",
+        "Represent regulatory commencement, product-modification deadlines and optional extension to existing policies as different applicability mechanisms.",
+        "Keep eligibility for a product, eligibility for a benefit and actual accepted membership separate; a defined term alone need not confer cover.",
+        "Support separate individual and shared benefit pools in the same contract, with each person\u2019s exhaustion prerequisite and shared remaining balance."
+      ],
+      "traceability": "Private case-level traceability retained only inside evaluation; shared design receives no questions or solutions."
+    },
+    {
+      "requirement_group": "knowledge",
+      "generalized_information_requirements": [
+        "Store conditional inclusions, exclusions, exceptions, competing conditions and dependency graphs.",
+        "Keep exact original spans with surrounding context, document hashes and physical page coordinates.",
+        "Retain conflicts between tables, definitions and operative clauses together with precedence evidence and unresolved status.",
+        "Link exact original clause spans across physical pages and preserve raw surrounding table or column context.",
+        "Track referenced controlling laws, product-specific documents and later amendments as explicit unresolved dependencies.",
+        "Keep duties across an insurer\u2019s product range separate from a promise that every individual product covers every circumstance.",
+        "Represent a finding that a specific candidate fails a stated requirement separately from market-wide exclusion or unresolved alternative availability.",
+        "Preserve the exact unresolved dependency and its effect on each finding, rather than using one generic corpus-incomplete status.",
+        "Keep a newly discovered alternative product separate from the customer\u2019s accepted contract; evidence availability does not establish selection or endorsement.",
+        "Retain a benefit grant with all connected scope, claim-order, exception, definition and external-list dependencies.",
+        "Distinguish a service-access platform, a clinical referral, a fixed daily benefit and reimbursement of treatment expenses.",
+        "Retain exact exception targets and base/rider incorporation; the title of an add-on does not establish which base exclusions it overrides.",
+        "Store contradictory native-text statements and table conditions as unresolved assertions with precedence decisions, rather than silently normalizing them.",
+        "Represent provider specialty, prescription author, clinical purpose and care setting as separate benefit predicates."
+      ],
+      "traceability": "Private case-level traceability retained only inside evaluation; shared design receives no questions or solutions."
+    },
+    {
+      "requirement_group": "calculations",
+      "generalized_information_requirements": [
+        "Keep currency, percentage bases, unit dimensions, calendar units and strict or inclusive boundary operators.",
+        "Represent person, family, illness, admission, claim, body-part and policy-year scopes independently.",
+        "Store layered sum insured, enhancements, accumulated bonus, scoped utilisation and provisional claim amounts.",
+        "Express operation order, limit interactions, member eligibility, expense membership, rounding and explicit assumptions.",
+        "Use distinct states for zero, unknown, unlimited, not applicable and unavailable evidence.",
+        "Keep benefit payability, threshold accumulation membership and sum-insured consumption as separate rule properties.",
+        "Represent alternative accumulation scopes within variants of one product and explicit annual reset/carryover rules.",
+        "Support expressly hypothetical calculations with complete stipulated inputs without pretending the fixture is an insurer-issued policy.",
+        "Keep completed intermediate or conditional arithmetic separate from an unresolved final entitlement, with scope and assumptions attached to each result.",
+        "Represent trigger frequency and monetary amount ceilings independently, including when one is unlimited and another is bounded.",
+        "Represent annual use limits, lifetime use limits and disease/person-specific scope without collapsing them into a single benefit maximum.",
+        "Keep benefit payment, parent-benefit limit consumption, base-cover consumption and later replenishment as separate dimensions.",
+        "Model selected-option overrides to expense membership and cost-sharing exceptions without assuming a universal deduction order.",
+        "Represent conversion of accrued benefit to a premium discount as a selected configuration transition, preserving a genuine zero benefit and unresolved price evidence.",
+        "Track payment-mode-specific cost sharing and amount/count ceilings separately from provider-network availability.",
+        "Distinguish total exhaustion from insufficiency triggers and record table-versus-operative-clause differences before computing replenishment.",
+        "Separate conversion rate date, payment date, discharge date and missing-observation fallback date."
+      ],
+      "traceability": "Private case-level traceability retained only inside evaluation; shared design receives no questions or solutions."
+    },
+    {
+      "requirement_group": "observations",
+      "generalized_information_requirements": [
+        "Bind each quote to its owner, people, facts, configuration, validity, acceptance and source version.",
+        "Distinguish public rates, derived comparisons and issued payment schedules.",
+        "Bind provider status to legal identity, branch, insurer, service, observation time and relevant treatment time.",
+        "Record external service availability by location, eligible provider discipline and observation time; published coverage does not prove a service can presently be obtained."
+      ],
+      "traceability": "Private case-level traceability retained only inside evaluation; shared design receives no questions or solutions."
+    },
+    {
+      "requirement_group": "retrieval",
+      "generalized_information_requirements": [
+        "Resolve facts and contract version before mandatory rules and dependency closure.",
+        "Retrieve expense-level conditions and exceptions using person, time, claim, treatment and scope filters.",
+        "Support uncertainty and conflict retrieval instead of dropping unresolved requirements.",
+        "Return the supported finding, precise missing dependency and permissible next action together without retrieving private evaluation solutions.",
+        "Retrieve beneficiary, territory, provider jurisdiction, timing, table scope, rider dependencies and explicit exclusion overrides with a candidate grant."
+      ],
+      "traceability": "Private case-level traceability retained only inside evaluation; shared design receives no questions or solutions."
+    },
+    {
+      "requirement_group": "saved_decisions",
+      "generalized_information_requirements": [
+        "Persist input, customer-fact, quote, provider-observation and corpus revisions used by each decision.",
+        "Keep conditional, clarification, insufficient-evidence, complete and technical-failure states distinct.",
+        "Retain calculation input evidence, cited claims and dependency-based invalidation."
+      ],
+      "traceability": "Private case-level traceability retained only inside evaluation; shared design receives no questions or solutions."
+    },
+    {
+      "requirement_group": "lifecycle",
+      "generalized_information_requirements": [
+        "Preserve historical originals and decisions when a URL changes, documents are replaced or facts are corrected.",
+        "Keep inference cancellation distinct from accepted fact persistence.",
+        "Handle concurrent edits, revision conflicts, duplicate submissions, durable event cursors and retries.",
+        "Specify account ownership, private-original access, deletion scope and approved retention exceptions."
+      ],
+      "traceability": "Private case-level traceability retained only inside evaluation; shared design receives no questions or solutions."
+    },
+    {
+      "requirement_group": "benchmark_operations",
+      "generalized_information_requirements": [
+        "Separate exposed retired material, unfrozen replacement candidates and frozen complete evaluation cases.",
+        "Track authoring, independent adjudication, semantic overlap, exposure events and safe requirement exports.",
+        "Keep missing evidence and unverified denominators visible; abstention does not count as completed advice.",
+        "Use fresh conversations and independent attempts with family-level and critical-failure accounting.",
+        "Track reference-assessment completeness, expected outcome, successful-advice eligibility, freeze eligibility and actual attempt results separately.",
+        "Store concrete ordered user, assistant and external-event fixtures with observable pass/fail criteria and critical failure assertions.",
+        "Version the oracle when new original evidence becomes available even if the authored customer question is unchanged; distinguish resolved source availability from unresolved personal applicability.",
+        "Keep unavailable total-claim calculations outside a genuinely authored necessity-only question; completing that scope does not become a full customer-decision or adviser acceptance pass."
+      ],
+      "traceability": "Private case-level traceability retained only inside evaluation; shared design receives no questions or solutions."
+    }
+  ],
+  "counts": {
+    "families_reviewed_for_information_needs": 20,
+    "replacement_candidates_with_information_maps": 200,
+    "completed_reference_assessments": 39,
+    "successful_advice_eligible_cases": 0,
+    "partial_reference_assessments": 161,
+    "concrete_multi_turn_scripts": 200,
+    "completed_full_customer_decisions": 0,
+    "independent_adviser_attempts": 0,
+    "frozen_cases": 0
+  },
+  "limitations": [
+    "Requirements are not a substitute for completed cases or original-source completeness.",
+    "Do not use these aggregates to claim benchmark independence or achievement of acceptance targets."
+  ],
+  "opaque_case_requirement_mapping": {
+    "status": "Complete generalized traceability for the current replacement set; does not certify full customer decisions or benchmark acceptance.",
+    "privacy_boundary": "Opaque identifiers, original family numbers and closed-vocabulary general categories only. No customer facts, questions, values, expected outcomes, original-source selections or case-specific rule predicates are exported.",
+    "case_count": 200,
+    "requirement_catalog": [
+      {
+        "requirement_id": "R01",
+        "description": "Account ownership, authenticated identity and resource access scope"
+      },
+      {
+        "requirement_id": "R02",
+        "description": "Separate requester, payer, insured person, relative and decision-target roles"
+      },
+      {
+        "requirement_id": "R03",
+        "description": "Fact and document provenance, corrections and superseded revisions"
+      },
+      {
+        "requirement_id": "R04",
+        "description": "Explicit uncertainty, missing evidence and the effect on each finding"
+      },
+      {
+        "requirement_id": "R05",
+        "description": "Product identity, available configuration and variant selection"
+      },
+      {
+        "requirement_id": "R06",
+        "description": "Contract, document and endorsement effective applicability"
+      },
+      {
+        "requirement_id": "R07",
+        "description": "Corpus publication state and dependent knowledge revisions"
+      },
+      {
+        "requirement_id": "R08",
+        "description": "Typed eligibility and definition predicates with alternative branches"
+      },
+      {
+        "requirement_id": "R09",
+        "description": "Benefits, exclusions, exceptions and mandatory dependencies"
+      },
+      {
+        "requirement_id": "R10",
+        "description": "Treatment, expense, care-setting and item classification"
+      },
+      {
+        "requirement_id": "R11",
+        "description": "Dated events, temporal windows, comparison boundaries and trigger selection"
+      },
+      {
+        "requirement_id": "R12",
+        "description": "Exact quantities, currency, units and value states"
+      },
+      {
+        "requirement_id": "R13",
+        "description": "Percentage, fixed and historical calculation bases"
+      },
+      {
+        "requirement_id": "R14",
+        "description": "Person, family, event, body-part and period limit scopes"
+      },
+      {
+        "requirement_id": "R15",
+        "description": "Calculation order, transformations and conditional assumptions"
+      },
+      {
+        "requirement_id": "R16",
+        "description": "Historical continuity, coverage layers and transferred credits"
+      },
+      {
+        "requirement_id": "R17",
+        "description": "Claim, payment, pending utilisation and remaining-benefit ledgers"
+      },
+      {
+        "requirement_id": "R18",
+        "description": "Owned price observations, rate versions and offer acceptance/validity"
+      },
+      {
+        "requirement_id": "R19",
+        "description": "Provider identity, facility attributes and scoped dated status observations"
+      },
+      {
+        "requirement_id": "R20",
+        "description": "Exact original evidence resolution and claim-level support"
+      },
+      {
+        "requirement_id": "R21",
+        "description": "Saved decisions with fact/corpus dependencies and invalidation"
+      },
+      {
+        "requirement_id": "R22",
+        "description": "Concurrent revisions, durable request identity and idempotency"
+      },
+      {
+        "requirement_id": "R23",
+        "description": "Persisted processing events, reconnect, cancellation and explicit retry"
+      },
+      {
+        "requirement_id": "R24",
+        "description": "Owned deletion, retained-history dependencies and approved retention scope"
+      },
+      {
+        "requirement_id": "R25",
+        "description": "Conversation language, reference resolution and person-specific state"
+      },
+      {
+        "requirement_id": "R26",
+        "description": "Distinct completed, conditional, clarification, evidence-limited and operational-failure outcomes"
+      },
+      {
+        "requirement_id": "R27",
+        "description": "Conflicting observations, source precedence and unresolved interpretations"
+      },
+      {
+        "requirement_id": "R28",
+        "description": "Procedural events, required documents, clocks and acceptance stages"
+      },
+      {
+        "requirement_id": "R29",
+        "description": "Authority, nomination and beneficiary roles with effective change records"
+      },
+      {
+        "requirement_id": "R30",
+        "description": "Customer priorities, hard constraints, premium budgets and available financial resources"
+      }
+    ],
+    "retrieval_operation_catalog": [
+      {
+        "operation_id": "O01",
+        "description": "Retrieve owned customer facts at the required revision"
+      },
+      {
+        "operation_id": "O02",
+        "description": "Apply attributed fact corrections while retaining prior revisions"
+      },
+      {
+        "operation_id": "O03",
+        "description": "Resolve applicable product configuration and contract/document revisions"
+      },
+      {
+        "operation_id": "O04",
+        "description": "Load mandatory rules, exceptions and connected dependencies"
+      },
+      {
+        "operation_id": "O05",
+        "description": "Evaluate eligibility or definition predicates without inventing unknowns"
+      },
+      {
+        "operation_id": "O06",
+        "description": "Classify treatment and expense components against the applicable rules"
+      },
+      {
+        "operation_id": "O07",
+        "description": "Evaluate temporal triggers, boundaries and effective intervals"
+      },
+      {
+        "operation_id": "O08",
+        "description": "Compute exact quantities with units, bases and explicit assumptions"
+      },
+      {
+        "operation_id": "O09",
+        "description": "Resolve scoped limits and allocate established utilisation"
+      },
+      {
+        "operation_id": "O10",
+        "description": "Reconstruct coverage layers and continuity or transfer histories"
+      },
+      {
+        "operation_id": "O11",
+        "description": "Resolve owned offers and dated pricing observations"
+      },
+      {
+        "operation_id": "O12",
+        "description": "Resolve provider identity and relevant facility/status observations"
+      },
+      {
+        "operation_id": "O13",
+        "description": "Resolve exact supporting original evidence with provenance"
+      },
+      {
+        "operation_id": "O14",
+        "description": "Retrieve conflicting sources and record unresolved precedence"
+      },
+      {
+        "operation_id": "O15",
+        "description": "Save or reopen a decision with its input and evidence snapshot"
+      },
+      {
+        "operation_id": "O16",
+        "description": "Invalidate or reassess decisions affected by changed dependencies"
+      },
+      {
+        "operation_id": "O17",
+        "description": "Resolve durable request identity and concurrent revision conflicts"
+      },
+      {
+        "operation_id": "O18",
+        "description": "Resume persisted processing events without repeating completed work"
+      },
+      {
+        "operation_id": "O19",
+        "description": "Cancel processing or create an explicit retry with durable history"
+      },
+      {
+        "operation_id": "O20",
+        "description": "Enforce ownership on conversations, documents and processing resources"
+      },
+      {
+        "operation_id": "O21",
+        "description": "Evaluate approved deletion scope and dependent retained records"
+      },
+      {
+        "operation_id": "O22",
+        "description": "Resolve legal/representative authority and effective role changes"
+      },
+      {
+        "operation_id": "O23",
+        "description": "Resolve the current conversation's target people and references"
+      },
+      {
+        "operation_id": "O24",
+        "description": "Resolve procedural documents, trigger events and acceptance stages"
+      }
+    ],
+    "cases": [
+      {
+        "opaque_case_id": "EVAL-001d9cc027d2476c9da6",
+        "family": 7,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-00dbbbfd07c74a98826d",
+        "family": 13,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R14",
+          "R17",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-0527ee1539cc4b7ab787",
+        "family": 3,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R16",
+          "R17",
+          "R19",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O10",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-05b015209ac540db8e07",
+        "family": 3,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R17",
+          "R20",
+          "R21",
+          "R26",
+          "R28",
+          "R29"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O22",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-07206201b1b2485ba91d",
+        "family": 16,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-09a54d1eb34844a19e96",
+        "family": 10,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-0a5b6c4fad8d456f979f",
+        "family": 1,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R18",
+          "R20",
+          "R21",
+          "R26",
+          "R30"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O11",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-0a8b3f3d29834aa3ba2a",
+        "family": 10,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R19",
+          "R20",
+          "R21",
+          "R26",
+          "R28",
+          "R30"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O11",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-0c32d29b99274f6ab6e4",
+        "family": 20,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R20",
+          "R21",
+          "R25",
+          "R26",
+          "R27"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O04",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-0f7ad7f50bad4855bb79",
+        "family": 3,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R16",
+          "R18",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O10",
+          "O11",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-10fe1a2407624f3d8f70",
+        "family": 10,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R20",
+          "R21",
+          "R26",
+          "R27",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-111fbd44201c4b29a22e",
+        "family": 17,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-11e4281b1b424f3eb2ec",
+        "family": 8,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-1300b8712b9c4eab8036",
+        "family": 6,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R19",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-16b3f0fd2a374b0aa736",
+        "family": 16,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R18",
+          "R20",
+          "R21",
+          "R26",
+          "R27"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O11",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-1a42199ab03d4299b30d",
+        "family": 2,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R16",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-1c4255830af44747b4a2",
+        "family": 3,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R20",
+          "R21",
+          "R26",
+          "R28",
+          "R29"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O22",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-1d1115dab54e4bddbb2b",
+        "family": 12,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R16",
+          "R17",
+          "R19",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O10",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-1f106953d8dc4d13b7d3",
+        "family": 12,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R16",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-200f132ec79946468b31",
+        "family": 18,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R16",
+          "R18",
+          "R20",
+          "R21",
+          "R26",
+          "R27"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O10",
+          "O11",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-2153440d66a245cdb766",
+        "family": 13,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R20",
+          "R21",
+          "R26",
+          "R28",
+          "R30"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O11",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-2170abe3ab344298af1c",
+        "family": 13,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-24a76212f1bb4344845a",
+        "family": 9,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R19",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-2534803d15e14b1db2c2",
+        "family": 14,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R14",
+          "R17",
+          "R20",
+          "R21",
+          "R26",
+          "R30"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O11",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-2552302253ce4ee4b1bc",
+        "family": 4,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R20",
+          "R21",
+          "R26",
+          "R30"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O11",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-29deb82aff7043599441",
+        "family": 15,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-2a85c3d0569b40089f5e",
+        "family": 11,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R13",
+          "R14",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-2bfbc11f43444eb4ad42",
+        "family": 19,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-2f3e84689b744493afe2",
+        "family": 9,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R13",
+          "R14",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-2f96816dc95b46c6a9d8",
+        "family": 12,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R16",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-32bd82dd3ca9452097ee",
+        "family": 17,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R16",
+          "R19",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O10",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-34b34322f4094e3abfa0",
+        "family": 9,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R18",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O11",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-36212951cf9e442c9b3e",
+        "family": 6,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R20",
+          "R21",
+          "R26",
+          "R30"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O11",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-37329a8861084796bcfb",
+        "family": 13,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R14",
+          "R17",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-3734468fa75b407dad95",
+        "family": 15,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-37b17eed9b1d48cda205",
+        "family": 8,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R12",
+          "R14",
+          "R16",
+          "R17",
+          "R18",
+          "R20",
+          "R21",
+          "R26",
+          "R27",
+          "R28",
+          "R29"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O10",
+          "O11",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O22",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-3e909f803e534f33ad45",
+        "family": 10,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-3eafa21eaf2c427094e5",
+        "family": 2,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-3f2fbd64db76427781c9",
+        "family": 1,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R18",
+          "R20",
+          "R21",
+          "R26",
+          "R27",
+          "R30"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O11",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-3fd5c0363cfe4d9685ad",
+        "family": 7,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R14",
+          "R19",
+          "R20",
+          "R21",
+          "R26",
+          "R27",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O09",
+          "O12",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-415c4ac1e88d4f9889c8",
+        "family": 14,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R14",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-4226ae273ba84f62baf6",
+        "family": 6,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R13",
+          "R14",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-42fdeb0021cf434d8263",
+        "family": 5,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-441ae5e35d5b48fb8c54",
+        "family": 18,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R20",
+          "R21",
+          "R26",
+          "R27",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-45b01f6c206d41e38260",
+        "family": 7,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R18",
+          "R20",
+          "R21",
+          "R26",
+          "R27",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O11",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-460e1e20aa684ceca0ce",
+        "family": 14,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R14",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-4619d0f9a3f94bb6a00e",
+        "family": 7,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-463af16e1f5d406daff5",
+        "family": 10,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-47a8675c0bc1452ebae8",
+        "family": 13,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R14",
+          "R17",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-4a550b2ee0d141d0bb56",
+        "family": 13,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R14",
+          "R17",
+          "R20",
+          "R21",
+          "R26",
+          "R27",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O09",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-4c28b514282b43a59c13",
+        "family": 4,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-4ddd23b3e32d451c8726",
+        "family": 16,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R12",
+          "R16",
+          "R18",
+          "R20",
+          "R21",
+          "R25",
+          "R26",
+          "R27",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O10",
+          "O11",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-4df9e229b39c4edbb713",
+        "family": 18,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R18",
+          "R20",
+          "R21",
+          "R26",
+          "R27"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O11",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-4f960553874744e88e30",
+        "family": 16,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R12",
+          "R18",
+          "R20",
+          "R21",
+          "R26",
+          "R27",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O11",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-4fb66c8a566a4c63b6d3",
+        "family": 15,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R16",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-50600c9f80264c748ca7",
+        "family": 9,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-510e69e0085c4852a3ad",
+        "family": 5,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R16",
+          "R18",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O10",
+          "O11",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-5144cd0032114d68b671",
+        "family": 17,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-51c57e59e1c24227805d",
+        "family": 2,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R14",
+          "R17",
+          "R18",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O09",
+          "O11",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-5279f06f8d77430b8fb6",
+        "family": 2,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R12",
+          "R14",
+          "R17",
+          "R18",
+          "R19",
+          "R20",
+          "R21",
+          "R26",
+          "R27"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O11",
+          "O12",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-52e5e9faa6a648638a61",
+        "family": 12,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R16",
+          "R17",
+          "R20",
+          "R21",
+          "R26",
+          "R27",
+          "R28",
+          "R29"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O10",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O22",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-5304d340d6e246e5b2cf",
+        "family": 11,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-5649a5f91fcd491a9c15",
+        "family": 9,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R19",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-5737a5a701b14c8585e3",
+        "family": 3,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-57b0a1a9507d4c269844",
+        "family": 7,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-5ac5db700597400fa0d5",
+        "family": 15,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-5c15bc26784b4b2c955b",
+        "family": 1,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R18",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O11",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-5c28a1e36b6e418f9a9c",
+        "family": 4,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R16",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-5cd6de0348e040fc8df9",
+        "family": 16,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R17",
+          "R18",
+          "R20",
+          "R21",
+          "R26",
+          "R28",
+          "R29",
+          "R30"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O11",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O22",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-5d1d31922b384e2d922b",
+        "family": 15,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-5e63e44c398d4e40859c",
+        "family": 6,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-5fc333eea6264ba3add1",
+        "family": 10,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-60b5294b21874b6483e0",
+        "family": 12,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R16",
+          "R17",
+          "R18",
+          "R20",
+          "R21",
+          "R26",
+          "R27"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O10",
+          "O11",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-64b21c90510e472ca828",
+        "family": 1,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26",
+          "R30"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O10",
+          "O11",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-66272570a165436e93fb",
+        "family": 19,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-680ebae38b4240afaf64",
+        "family": 5,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-6827cd8bc20c45638277",
+        "family": 11,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-689a45b6af024253bc2d",
+        "family": 11,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-6dc4e50cc19a40f48d39",
+        "family": 3,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-6dd1206008b9437a9012",
+        "family": 18,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R16",
+          "R18",
+          "R20",
+          "R21",
+          "R26",
+          "R27",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O10",
+          "O11",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-6e7e465ce18d436ca591",
+        "family": 15,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-7001a277a49543bc80ee",
+        "family": 10,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R12",
+          "R19",
+          "R20",
+          "R21",
+          "R26",
+          "R27"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O12",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-709f1b70ccc04e4d9061",
+        "family": 13,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R14",
+          "R17",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-71a5b8df961c442c804e",
+        "family": 19,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-71c354d54e9b422d9bf8",
+        "family": 19,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R19",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-71db5d82aa434a939d90",
+        "family": 3,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-739a6e08d530418bac27",
+        "family": 18,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R18",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O11",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-74a3bd8850d14a5f91a3",
+        "family": 16,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R20",
+          "R21",
+          "R26",
+          "R28",
+          "R29"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O22",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-7544606fc0b1495dadb3",
+        "family": 18,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R18",
+          "R20",
+          "R21",
+          "R26",
+          "R27"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O11",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-78628035c06449a59b95",
+        "family": 5,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R16",
+          "R19",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O10",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-7b135c5a8b0f47999d40",
+        "family": 1,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R14",
+          "R18",
+          "R19",
+          "R20",
+          "R21",
+          "R26",
+          "R27",
+          "R28",
+          "R30"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O11",
+          "O12",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-7b376d38c33e4b8e96aa",
+        "family": 5,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-7d5afa55cc3641a0af02",
+        "family": 20,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R07",
+          "R20",
+          "R21",
+          "R25",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-7da3c96e805d483d9bb6",
+        "family": 4,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-827031a3f3e94c3f928f",
+        "family": 9,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R13",
+          "R14",
+          "R17",
+          "R19",
+          "R20",
+          "R21",
+          "R26",
+          "R27"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O12",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-82ec0e426a0f41dd9db1",
+        "family": 9,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R13",
+          "R14",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-82f6a61da4b745388ba5",
+        "family": 8,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-83f99aec678f476b8421",
+        "family": 17,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R07",
+          "R08",
+          "R09",
+          "R19",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-8466234321d14dc9a2fc",
+        "family": 8,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-84c97df44db34a6a89e3",
+        "family": 17,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R19",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-84cd3031ac11421284ab",
+        "family": 8,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R14",
+          "R20",
+          "R21",
+          "R26",
+          "R27"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O09",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-8550c42ced4f4a0a957d",
+        "family": 16,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R12",
+          "R16",
+          "R18",
+          "R20",
+          "R21",
+          "R26",
+          "R27",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O10",
+          "O11",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-878262e841344cf59f37",
+        "family": 20,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R20",
+          "R21",
+          "R22",
+          "R23",
+          "R25",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O04",
+          "O13",
+          "O15",
+          "O16",
+          "O17",
+          "O18",
+          "O19",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-8d620f29c98640cf8227",
+        "family": 17,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R18",
+          "R19",
+          "R20",
+          "R21",
+          "R26",
+          "R28",
+          "R30"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O11",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-8d6e88b846024466928f",
+        "family": 6,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-9141f61f99404220b718",
+        "family": 19,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-9437ceeedc194832bcf3",
+        "family": 4,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R13",
+          "R14",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-956b07c1e0bf40579db3",
+        "family": 8,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R14",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-95ebc23ca58b484795b5",
+        "family": 2,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R16",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-9668ff28c169486c8d2f",
+        "family": 11,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-97279501552b49db837b",
+        "family": 7,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R14",
+          "R19",
+          "R20",
+          "R21",
+          "R26",
+          "R27"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O09",
+          "O12",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-98123e4434bc495ba6de",
+        "family": 14,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R12",
+          "R14",
+          "R16",
+          "R17",
+          "R18",
+          "R20",
+          "R21",
+          "R26",
+          "R27",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O10",
+          "O11",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-98925d44abfa47cfb0e3",
+        "family": 12,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R16",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-9ab5e30e0bd44975a661",
+        "family": 1,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-9aef317e27b243718db6",
+        "family": 9,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R20",
+          "R21",
+          "R22",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O17",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-9bad310e4f9c41b58bb9",
+        "family": 9,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R19",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-a04901ce27d747b5af16",
+        "family": 1,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R14",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-a11e17e73c9e49ddbaea",
+        "family": 7,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-a167ab056c7448bd83b2",
+        "family": 16,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R16",
+          "R17",
+          "R19",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O10",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-a1c783cc7c3f4f95b99c",
+        "family": 20,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R20",
+          "R21",
+          "R22",
+          "R24",
+          "R25",
+          "R26",
+          "R27"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O04",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O17",
+          "O20",
+          "O21",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-a2eeee9c7e1a483fa352",
+        "family": 2,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-a436acd36eb94e16acd2",
+        "family": 18,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R18",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O11",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-a4c84cbce92b48909954",
+        "family": 14,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R12",
+          "R13",
+          "R14",
+          "R16",
+          "R17",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-a4e41bfd16fd49f58174",
+        "family": 20,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R20",
+          "R21",
+          "R22",
+          "R25",
+          "R26",
+          "R27"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O04",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O17",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-a6a0ca5f39214d279746",
+        "family": 7,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R19",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-a70e96795d8f455b89d2",
+        "family": 9,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R13",
+          "R14",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-a7e4cb9d9cbe490daea2",
+        "family": 8,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-a964cb20e27b46b78ea6",
+        "family": 2,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R14",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-aa654b3f6d3a42b1980b",
+        "family": 15,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-aa87658d38b64faea09e",
+        "family": 4,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R16",
+          "R18",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O10",
+          "O11",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-aca57bb0239d4f2e9ca9",
+        "family": 11,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R20",
+          "R21",
+          "R26",
+          "R27",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-ace69068840c4e268db6",
+        "family": 18,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R07",
+          "R08",
+          "R09",
+          "R20",
+          "R21",
+          "R26",
+          "R27",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-ad11b7c700084233a00a",
+        "family": 11,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R14",
+          "R15",
+          "R17",
+          "R20",
+          "R21",
+          "R26",
+          "R27",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-ad2de36dc03c475aa3e1",
+        "family": 19,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-af868415aaa64cec996f",
+        "family": 5,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-afe2ee4397874814bd00",
+        "family": 15,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-b0329ce2b2a940a890ae",
+        "family": 12,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R16",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-b039d54dbfa64d2ab195",
+        "family": 14,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R12",
+          "R14",
+          "R16",
+          "R17",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-b134e3676c4443068cb1",
+        "family": 7,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26",
+          "R27"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O10",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-b22dd88842d34b20a666",
+        "family": 8,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R16",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-b588c86a9d6e4cdc9809",
+        "family": 12,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R16",
+          "R17",
+          "R18",
+          "R20",
+          "R21",
+          "R26",
+          "R28",
+          "R29"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O10",
+          "O11",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O22",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-b68a7641765442139369",
+        "family": 11,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-b6be451a8a1e4cbc9515",
+        "family": 3,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-b808ac573ec8425a94cb",
+        "family": 6,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26",
+          "R27"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O10",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-b886b5e84efd4ea4bd71",
+        "family": 19,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-b8f6d159e17d4d8d825f",
+        "family": 1,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R19",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-bd2c571dad7d4eda8cfc",
+        "family": 7,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26",
+          "R27"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O10",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-bdd8cbc1d9824ee58847",
+        "family": 15,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-be7ce035d6d541a7a2d4",
+        "family": 17,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R19",
+          "R20",
+          "R21",
+          "R26",
+          "R27"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O12",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-bfed3ce5fee146e18174",
+        "family": 4,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R13",
+          "R15",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-c10f796a89b8439f8f66",
+        "family": 3,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R16",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-c112587dee7242798684",
+        "family": 3,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-c1e1a0768ca44afe9409",
+        "family": 10,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-c29546079d44404eb528",
+        "family": 1,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-c2cb2a18355c4deda4fa",
+        "family": 4,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R13",
+          "R14",
+          "R17",
+          "R18",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O11",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-c4bb5bc8bf434d1cb91f",
+        "family": 14,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-c52553821951410b8ead",
+        "family": 8,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R20",
+          "R21",
+          "R26",
+          "R27",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-c553be70184846a58109",
+        "family": 17,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R19",
+          "R20",
+          "R21",
+          "R26",
+          "R28",
+          "R30"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O11",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-c844f625aaa544a6972b",
+        "family": 18,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R20",
+          "R21",
+          "R26",
+          "R27",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-c872b42777e9401884a1",
+        "family": 10,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R13",
+          "R14",
+          "R15",
+          "R19",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-cb78bd3622a04b6493eb",
+        "family": 20,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R20",
+          "R21",
+          "R25",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O04",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-cccf0b9e331a4c0587de",
+        "family": 20,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R20",
+          "R21",
+          "R25",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O04",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-ce397b6a767042bcaf9f",
+        "family": 20,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R20",
+          "R21",
+          "R22",
+          "R23",
+          "R25",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O04",
+          "O13",
+          "O15",
+          "O16",
+          "O17",
+          "O18",
+          "O19",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-ce3c7a9c95574e70aa0e",
+        "family": 5,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R12",
+          "R13",
+          "R14",
+          "R16",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-cf51d292bbb24757a9fc",
+        "family": 2,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R20",
+          "R21",
+          "R26",
+          "R27"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-d050604931c64dfc8ffa",
+        "family": 8,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-d184718000ba48949f33",
+        "family": 14,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R14",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-d19b8538ee664249ab11",
+        "family": 13,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R14",
+          "R17",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-d29860b65d964231864d",
+        "family": 17,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R19",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-d5c22af297b7439090af",
+        "family": 19,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-d757a6b0080b48aebb68",
+        "family": 20,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R18",
+          "R20",
+          "R21",
+          "R25",
+          "R26",
+          "R27"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O04",
+          "O11",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-dc420053386c473d90bd",
+        "family": 15,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26",
+          "R27",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O10",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-ddc55c5563dd4f7eb9db",
+        "family": 6,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-ddfd49ed226a4061b03e",
+        "family": 13,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-df7646cb8a6b4e6398e4",
+        "family": 13,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-dfec48e67344437ba759",
+        "family": 6,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R19",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-e087a6d281654415a8ca",
+        "family": 10,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R14",
+          "R17",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-e178a634969344efa30e",
+        "family": 12,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R16",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-e1fb84fe1c8e4913bc30",
+        "family": 6,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-e2763d2964ef4262b2cf",
+        "family": 16,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R12",
+          "R20",
+          "R21",
+          "R26",
+          "R28",
+          "R30"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O11",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-e2e30d1e27d64c2cbb11",
+        "family": 14,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R14",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-e3f10abeda0a43cd9ceb",
+        "family": 5,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-e4407677314e40dcbe9e",
+        "family": 19,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R19",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-e90f103ff25b4b9399bd",
+        "family": 4,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R19",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-ea076f582b1542fc857a",
+        "family": 1,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R14",
+          "R18",
+          "R19",
+          "R20",
+          "R21",
+          "R26",
+          "R27",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O09",
+          "O11",
+          "O12",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-ea91e87e81dc484392fc",
+        "family": 2,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R20",
+          "R21",
+          "R26",
+          "R28"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-eb73fd757dce4f35b996",
+        "family": 5,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-ebad1c0cb89a403886e0",
+        "family": 18,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R12",
+          "R13",
+          "R15",
+          "R18",
+          "R20",
+          "R21",
+          "R26",
+          "R28",
+          "R30"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O11",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-ec6e051951ba4a2299b1",
+        "family": 11,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R20",
+          "R21",
+          "R26",
+          "R27"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-eed3df6bea534e1386be",
+        "family": 5,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-efb9ac6ac6894216828f",
+        "family": 6,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R16",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O10",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-f37f02ea9a30458d956c",
+        "family": 4,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R13",
+          "R14",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-f3d8c50d54ee4accb322",
+        "family": 2,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R17",
+          "R20",
+          "R21",
+          "R26",
+          "R27",
+          "R28",
+          "R29"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O09",
+          "O13",
+          "O14",
+          "O15",
+          "O16",
+          "O20",
+          "O22",
+          "O23",
+          "O24"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-f496a7b7029e4b6bae56",
+        "family": 19,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R11",
+          "R12",
+          "R16",
+          "R19",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O10",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-f4ed1f7a18534d49ab55",
+        "family": 17,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R19",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-f7f4b74f7e6e43ba8abd",
+        "family": 11,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O06",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-fd2a7d78d69a4c75ae45",
+        "family": 14,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R14",
+          "R17",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-ff39d1fb75ea42d8beeb",
+        "family": 20,
+        "general_requirement_ids": [
+          "R01",
+          "R02",
+          "R03",
+          "R04",
+          "R07",
+          "R20",
+          "R21",
+          "R22",
+          "R23",
+          "R25",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O13",
+          "O15",
+          "O16",
+          "O17",
+          "O18",
+          "O19",
+          "O20",
+          "O23"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-ffd121d929a74f61a234",
+        "family": 12,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R12",
+          "R13",
+          "R14",
+          "R15",
+          "R16",
+          "R17",
+          "R18",
+          "R19",
+          "R20",
+          "R21",
+          "R26"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O09",
+          "O10",
+          "O11",
+          "O12",
+          "O13",
+          "O15",
+          "O16",
+          "O20"
+        ]
+      },
+      {
+        "opaque_case_id": "EVAL-fff7e9b9bd32418789a2",
+        "family": 16,
+        "general_requirement_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06",
+          "R08",
+          "R09",
+          "R11",
+          "R12",
+          "R18",
+          "R20",
+          "R21",
+          "R26",
+          "R28",
+          "R30"
+        ],
+        "retrieval_operation_ids": [
+          "O01",
+          "O02",
+          "O03",
+          "O04",
+          "O05",
+          "O07",
+          "O08",
+          "O11",
+          "O13",
+          "O15",
+          "O16",
+          "O20",
+          "O24"
+        ]
+      }
+    ]
+  },
+  "root_requirement_crosswalk": {
+    "shared_requirement_file": "research/design/information-requirements.json",
+    "shared_requirement_revision": "discussion-r1",
+    "shared_general_projection_sha256": "a06e9274363601e53f5b44f3a6c15b3d4d2f7a2435badec8298b33b856136749",
+    "root_requirement_count": 25,
+    "evaluation_category_count": 30,
+    "retrieval_operation_category_count": 24,
+    "semantics": "Many-to-many general-category alignment. Do not treat a linked category as proof every field or complete operational requirement has been exercised by every linked case. No private facts, questions, values, solutions or source selections are included.",
+    "general_requirement_links": [
+      {
+        "evaluation_requirement_id": "R01",
+        "root_requirement_ids": [
+          "CUS-01",
+          "OPS-01",
+          "RET-01"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R02",
+        "root_requirement_ids": [
+          "CUS-01",
+          "INS-03"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R03",
+        "root_requirement_ids": [
+          "CUS-02",
+          "INS-04",
+          "DEC-01"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R04",
+        "root_requirement_ids": [
+          "CUS-02",
+          "INS-05",
+          "DEC-01"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R05",
+        "root_requirement_ids": [
+          "INS-01",
+          "INS-03"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R06",
+        "root_requirement_ids": [
+          "INS-02",
+          "INS-03",
+          "INS-05"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R07",
+        "root_requirement_ids": [
+          "OPS-03",
+          "INS-02",
+          "DEC-01"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R08",
+        "root_requirement_ids": [
+          "INS-03",
+          "INS-05"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R09",
+        "root_requirement_ids": [
+          "INS-05",
+          "RET-01"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R10",
+        "root_requirement_ids": [
+          "INS-06",
+          "CAL-02",
+          "INS-05"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R11",
+        "root_requirement_ids": [
+          "CAL-01",
+          "INS-06",
+          "INS-07",
+          "INS-08"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R12",
+        "root_requirement_ids": [
+          "CAL-01"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R13",
+        "root_requirement_ids": [
+          "CAL-01",
+          "CAL-02",
+          "CAL-04"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R14",
+        "root_requirement_ids": [
+          "CAL-03",
+          "INS-07"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R15",
+        "root_requirement_ids": [
+          "CAL-02",
+          "CAL-04",
+          "DEC-01"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R16",
+        "root_requirement_ids": [
+          "INS-07"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R17",
+        "root_requirement_ids": [
+          "CAL-03",
+          "INS-08",
+          "DEC-01"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R18",
+        "root_requirement_ids": [
+          "OBS-01",
+          "INS-03"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R19",
+        "root_requirement_ids": [
+          "OBS-02",
+          "CAL-02",
+          "INS-05"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R20",
+        "root_requirement_ids": [
+          "INS-04",
+          "RET-01",
+          "DEC-01"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R21",
+        "root_requirement_ids": [
+          "DEC-01",
+          "CUS-02",
+          "INS-02"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R22",
+        "root_requirement_ids": [
+          "OPS-02",
+          "CUS-02"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R23",
+        "root_requirement_ids": [
+          "OPS-02"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R24",
+        "root_requirement_ids": [
+          "OPS-01",
+          "DEC-01"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R25",
+        "root_requirement_ids": [
+          "CUS-01",
+          "CUS-02",
+          "RET-01"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R26",
+        "root_requirement_ids": [
+          "DEC-01",
+          "OPS-04"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R27",
+        "root_requirement_ids": [
+          "INS-04",
+          "INS-05",
+          "INS-02"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R28",
+        "root_requirement_ids": [
+          "INS-08",
+          "INS-03",
+          "INS-07"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R29",
+        "root_requirement_ids": [
+          "CUS-01",
+          "INS-03",
+          "INS-08"
+        ],
+        "relation": "supports relevant aspects"
+      },
+      {
+        "evaluation_requirement_id": "R30",
+        "root_requirement_ids": [
+          "CUS-03",
+          "CAL-01"
+        ],
+        "relation": "supports relevant aspects"
+      }
+    ],
+    "retrieval_operation_links": [
+      {
+        "evaluation_operation_id": "O01",
+        "root_requirement_ids": [
+          "CUS-02",
+          "OPS-01",
+          "RET-01"
+        ],
+        "relation": "supports relevant operations"
+      },
+      {
+        "evaluation_operation_id": "O02",
+        "root_requirement_ids": [
+          "CUS-02",
+          "DEC-01",
+          "OPS-02"
+        ],
+        "relation": "supports relevant operations"
+      },
+      {
+        "evaluation_operation_id": "O03",
+        "root_requirement_ids": [
+          "INS-01",
+          "INS-02",
+          "INS-03",
+          "RET-01"
+        ],
+        "relation": "supports relevant operations"
+      },
+      {
+        "evaluation_operation_id": "O04",
+        "root_requirement_ids": [
+          "INS-05",
+          "RET-01"
+        ],
+        "relation": "supports relevant operations"
+      },
+      {
+        "evaluation_operation_id": "O05",
+        "root_requirement_ids": [
+          "INS-03",
+          "INS-05",
+          "INS-06"
+        ],
+        "relation": "supports relevant operations"
+      },
+      {
+        "evaluation_operation_id": "O06",
+        "root_requirement_ids": [
+          "CAL-02",
+          "INS-05"
+        ],
+        "relation": "supports relevant operations"
+      },
+      {
+        "evaluation_operation_id": "O07",
+        "root_requirement_ids": [
+          "CAL-01",
+          "INS-02",
+          "INS-06",
+          "INS-07",
+          "INS-08"
+        ],
+        "relation": "supports relevant operations"
+      },
+      {
+        "evaluation_operation_id": "O08",
+        "root_requirement_ids": [
+          "CAL-01",
+          "CAL-02",
+          "CAL-04"
+        ],
+        "relation": "supports relevant operations"
+      },
+      {
+        "evaluation_operation_id": "O09",
+        "root_requirement_ids": [
+          "CAL-03",
+          "CAL-04"
+        ],
+        "relation": "supports relevant operations"
+      },
+      {
+        "evaluation_operation_id": "O10",
+        "root_requirement_ids": [
+          "INS-07"
+        ],
+        "relation": "supports relevant operations"
+      },
+      {
+        "evaluation_operation_id": "O11",
+        "root_requirement_ids": [
+          "OBS-01",
+          "CUS-03"
+        ],
+        "relation": "supports relevant operations"
+      },
+      {
+        "evaluation_operation_id": "O12",
+        "root_requirement_ids": [
+          "OBS-02"
+        ],
+        "relation": "supports relevant operations"
+      },
+      {
+        "evaluation_operation_id": "O13",
+        "root_requirement_ids": [
+          "INS-04"
+        ],
+        "relation": "supports relevant operations"
+      },
+      {
+        "evaluation_operation_id": "O14",
+        "root_requirement_ids": [
+          "INS-02",
+          "INS-04",
+          "INS-05"
+        ],
+        "relation": "supports relevant operations"
+      },
+      {
+        "evaluation_operation_id": "O15",
+        "root_requirement_ids": [
+          "DEC-01"
+        ],
+        "relation": "supports relevant operations"
+      },
+      {
+        "evaluation_operation_id": "O16",
+        "root_requirement_ids": [
+          "DEC-01",
+          "OPS-03"
+        ],
+        "relation": "supports relevant operations"
+      },
+      {
+        "evaluation_operation_id": "O17",
+        "root_requirement_ids": [
+          "OPS-02"
+        ],
+        "relation": "supports relevant operations"
+      },
+      {
+        "evaluation_operation_id": "O18",
+        "root_requirement_ids": [
+          "OPS-02"
+        ],
+        "relation": "supports relevant operations"
+      },
+      {
+        "evaluation_operation_id": "O19",
+        "root_requirement_ids": [
+          "OPS-02"
+        ],
+        "relation": "supports relevant operations"
+      },
+      {
+        "evaluation_operation_id": "O20",
+        "root_requirement_ids": [
+          "OPS-01"
+        ],
+        "relation": "supports relevant operations"
+      },
+      {
+        "evaluation_operation_id": "O21",
+        "root_requirement_ids": [
+          "OPS-01"
+        ],
+        "relation": "supports relevant operations"
+      },
+      {
+        "evaluation_operation_id": "O22",
+        "root_requirement_ids": [
+          "CUS-01",
+          "INS-03",
+          "INS-08"
+        ],
+        "relation": "supports relevant operations"
+      },
+      {
+        "evaluation_operation_id": "O23",
+        "root_requirement_ids": [
+          "CUS-01",
+          "CUS-02"
+        ],
+        "relation": "supports relevant operations"
+      },
+      {
+        "evaluation_operation_id": "O24",
+        "root_requirement_ids": [
+          "INS-03",
+          "INS-07",
+          "INS-08"
+        ],
+        "relation": "supports relevant operations"
+      }
+    ],
+    "root_requirement_coverage": [
+      {
+        "root_requirement_id": "CUS-01",
+        "root_title": "Customer identity and roles",
+        "evaluation_general_requirement_ids": [
+          "R01",
+          "R02",
+          "R25",
+          "R29"
+        ],
+        "coverage_scope": "General-category alignment only; individual cases support the relevant aspect, not automatic completion of the entire shared requirement.",
+        "basis": "general category crosswalk; partial aspects where applicable"
+      },
+      {
+        "root_requirement_id": "CUS-02",
+        "root_title": "Facts and corrections",
+        "evaluation_general_requirement_ids": [
+          "R03",
+          "R04",
+          "R21",
+          "R22",
+          "R25"
+        ],
+        "coverage_scope": "General-category alignment only; individual cases support the relevant aspect, not automatic completion of the entire shared requirement.",
+        "basis": "general category crosswalk; partial aspects where applicable"
+      },
+      {
+        "root_requirement_id": "CUS-03",
+        "root_title": "Priorities and resources",
+        "evaluation_general_requirement_ids": [
+          "R30"
+        ],
+        "coverage_scope": "General-category alignment only; individual cases support the relevant aspect, not automatic completion of the entire shared requirement.",
+        "basis": "general category crosswalk; partial aspects where applicable"
+      },
+      {
+        "root_requirement_id": "INS-01",
+        "root_title": "Product identities and configurations",
+        "evaluation_general_requirement_ids": [
+          "R05"
+        ],
+        "coverage_scope": "General-category alignment only; individual cases support the relevant aspect, not automatic completion of the entire shared requirement.",
+        "basis": "general category crosswalk; partial aspects where applicable"
+      },
+      {
+        "root_requirement_id": "INS-02",
+        "root_title": "Terms applicability over time",
+        "evaluation_general_requirement_ids": [
+          "R06",
+          "R07",
+          "R21",
+          "R27"
+        ],
+        "coverage_scope": "General-category alignment only; individual cases support the relevant aspect, not automatic completion of the entire shared requirement.",
+        "basis": "general category crosswalk; partial aspects where applicable"
+      },
+      {
+        "root_requirement_id": "INS-03",
+        "root_title": "Individual acceptance and membership",
+        "evaluation_general_requirement_ids": [
+          "R02",
+          "R05",
+          "R06",
+          "R08",
+          "R18",
+          "R28",
+          "R29"
+        ],
+        "coverage_scope": "General-category alignment only; individual cases support the relevant aspect, not automatic completion of the entire shared requirement.",
+        "basis": "general category crosswalk; partial aspects where applicable"
+      },
+      {
+        "root_requirement_id": "INS-04",
+        "root_title": "Evidence and connected context",
+        "evaluation_general_requirement_ids": [
+          "R03",
+          "R20",
+          "R27"
+        ],
+        "coverage_scope": "General-category alignment only; individual cases support the relevant aspect, not automatic completion of the entire shared requirement.",
+        "basis": "general category crosswalk; partial aspects where applicable"
+      },
+      {
+        "root_requirement_id": "INS-05",
+        "root_title": "Rules, exceptions and conflicts",
+        "evaluation_general_requirement_ids": [
+          "R04",
+          "R06",
+          "R08",
+          "R09",
+          "R10",
+          "R19",
+          "R27"
+        ],
+        "coverage_scope": "General-category alignment only; individual cases support the relevant aspect, not automatic completion of the entire shared requirement.",
+        "basis": "general category crosswalk; partial aspects where applicable"
+      },
+      {
+        "root_requirement_id": "INS-06",
+        "root_title": "Medical disclosures and clocks",
+        "evaluation_general_requirement_ids": [
+          "R10",
+          "R11"
+        ],
+        "coverage_scope": "General-category alignment only; individual cases support the relevant aspect, not automatic completion of the entire shared requirement.",
+        "basis": "general category crosswalk; partial aspects where applicable"
+      },
+      {
+        "root_requirement_id": "INS-07",
+        "root_title": "Periods, layers and continuity",
+        "evaluation_general_requirement_ids": [
+          "R11",
+          "R14",
+          "R16",
+          "R28"
+        ],
+        "coverage_scope": "General-category alignment only; individual cases support the relevant aspect, not automatic completion of the entire shared requirement.",
+        "basis": "general category crosswalk; partial aspects where applicable"
+      },
+      {
+        "root_requirement_id": "INS-08",
+        "root_title": "Payment, renewal and rights events",
+        "evaluation_general_requirement_ids": [
+          "R11",
+          "R17",
+          "R28",
+          "R29"
+        ],
+        "coverage_scope": "General-category alignment only; individual cases support the relevant aspect, not automatic completion of the entire shared requirement.",
+        "basis": "general category crosswalk; partial aspects where applicable"
+      },
+      {
+        "root_requirement_id": "CAL-01",
+        "root_title": "Typed quantities and comparisons",
+        "evaluation_general_requirement_ids": [
+          "R11",
+          "R12",
+          "R13",
+          "R30"
+        ],
+        "coverage_scope": "General-category alignment only; individual cases support the relevant aspect, not automatic completion of the entire shared requirement.",
+        "basis": "general category crosswalk; partial aspects where applicable"
+      },
+      {
+        "root_requirement_id": "CAL-02",
+        "root_title": "Expense admissibility and cost shares",
+        "evaluation_general_requirement_ids": [
+          "R10",
+          "R13",
+          "R15",
+          "R19"
+        ],
+        "coverage_scope": "General-category alignment only; individual cases support the relevant aspect, not automatic completion of the entire shared requirement.",
+        "basis": "general category crosswalk; partial aspects where applicable"
+      },
+      {
+        "root_requirement_id": "CAL-03",
+        "root_title": "Scope, accumulation and limits",
+        "evaluation_general_requirement_ids": [
+          "R14",
+          "R17"
+        ],
+        "coverage_scope": "General-category alignment only; individual cases support the relevant aspect, not automatic completion of the entire shared requirement.",
+        "basis": "general category crosswalk; partial aspects where applicable"
+      },
+      {
+        "root_requirement_id": "CAL-04",
+        "root_title": "Dependent tables and restoration",
+        "evaluation_general_requirement_ids": [
+          "R13",
+          "R15"
+        ],
+        "coverage_scope": "General-category alignment only; individual cases support the relevant aspect, not automatic completion of the entire shared requirement.",
+        "basis": "general category crosswalk; partial aspects where applicable"
+      },
+      {
+        "root_requirement_id": "OBS-01",
+        "root_title": "Owned dated quotes",
+        "evaluation_general_requirement_ids": [
+          "R18"
+        ],
+        "coverage_scope": "General-category alignment only; individual cases support the relevant aspect, not automatic completion of the entire shared requirement.",
+        "basis": "general category crosswalk; partial aspects where applicable"
+      },
+      {
+        "root_requirement_id": "OBS-02",
+        "root_title": "Provider observations",
+        "evaluation_general_requirement_ids": [
+          "R19"
+        ],
+        "coverage_scope": "General-category alignment only; individual cases support the relevant aspect, not automatic completion of the entire shared requirement.",
+        "basis": "general category crosswalk; partial aspects where applicable"
+      },
+      {
+        "root_requirement_id": "RET-01",
+        "root_title": "Deterministic mandatory retrieval",
+        "evaluation_general_requirement_ids": [
+          "R01",
+          "R09",
+          "R20",
+          "R25"
+        ],
+        "coverage_scope": "General-category alignment only; individual cases support the relevant aspect, not automatic completion of the entire shared requirement.",
+        "basis": "general category crosswalk; partial aspects where applicable"
+      },
+      {
+        "root_requirement_id": "DEC-01",
+        "root_title": "Saved claims and replay",
+        "evaluation_general_requirement_ids": [
+          "R03",
+          "R04",
+          "R07",
+          "R15",
+          "R17",
+          "R20",
+          "R21",
+          "R24",
+          "R26"
+        ],
+        "coverage_scope": "General-category alignment only; individual cases support the relevant aspect, not automatic completion of the entire shared requirement.",
+        "basis": "general category crosswalk; partial aspects where applicable"
+      },
+      {
+        "root_requirement_id": "OPS-01",
+        "root_title": "Ownership, privacy and deletion",
+        "evaluation_general_requirement_ids": [
+          "R01",
+          "R24"
+        ],
+        "coverage_scope": "General-category alignment only; individual cases support the relevant aspect, not automatic completion of the entire shared requirement.",
+        "basis": "general category crosswalk; partial aspects where applicable"
+      },
+      {
+        "root_requirement_id": "OPS-02",
+        "root_title": "Concurrent durable turns",
+        "evaluation_general_requirement_ids": [
+          "R22",
+          "R23"
+        ],
+        "coverage_scope": "General-category alignment only; individual cases support the relevant aspect, not automatic completion of the entire shared requirement.",
+        "basis": "general category crosswalk; partial aspects where applicable"
+      },
+      {
+        "root_requirement_id": "OPS-03",
+        "root_title": "Processing and publication",
+        "evaluation_general_requirement_ids": [
+          "R07"
+        ],
+        "coverage_scope": "Case categories cover publication/dependency state; full reader/extractor/reviewer recovery and coverage-denominator operations remain separately derived operational requirements.",
+        "basis": "general category crosswalk; partial aspects where applicable"
+      },
+      {
+        "root_requirement_id": "OPS-04",
+        "root_title": "Model qualification and telemetry",
+        "evaluation_general_requirement_ids": [
+          "R26"
+        ],
+        "coverage_scope": "Case categories support explicit operational-failure outcomes only; relay/model/schema qualification, usage and latency telemetry remain separate operational requirements.",
+        "basis": "general category crosswalk; partial aspects where applicable"
+      },
+      {
+        "root_requirement_id": "OPS-05",
+        "root_title": "Independent acceptance",
+        "evaluation_general_requirement_ids": [],
+        "coverage_scope": "The independent benchmark workflow itself supplies the exposure, segregation and freeze requirements; they are not inferred from private customer case questions.",
+        "basis": "separate benchmark workflow requirement"
+      },
+      {
+        "root_requirement_id": "OPS-06",
+        "root_title": "Reversible migration and engineering",
+        "evaluation_general_requirement_ids": [],
+        "coverage_scope": "Reversible migration, preservation of pilot authentication and performance/robustness verification remain explicit engineering requirements; no customer-case category is forced to imply them.",
+        "basis": "separate engineering requirement"
+      }
+    ],
+    "added_general_category": "Customer financial resources and priorities are separated from quote observations so the crosswalk does not force distinct customer and observation requirements together."
+  },
+  "semantic_review_update": {
+    "reference_revision": "r5",
+    "current_cases_reviewed": 200,
+    "changed_reference_titles": 11,
+    "private_collision_revisions": 1,
+    "compound_candidates_preserved": 80,
+    "compound_candidates_per_family": 4,
+    "new_private_case_content_exported": false,
+    "historical_exposure_limitations_retained": true
+  },
+  "additional_original_review_update": {
+    "revision": "r18",
+    "source_dependent_case_records_reassessed": 12,
+    "bounded_scope_classification_corrected": 1,
+    "new_originals_independently_read": 5,
+    "opaque_mapping_records_revalidated": 200,
+    "complete_customer_decisions_added": 0,
+    "questions_or_case_source_selections_exported": false
+  },
+  "additional_reference_title_review_r11": {
+    "reviewed_at": "2026-09-10T17:38:45.202239+00:00",
+    "additional_reference_titles_reviewed": 7,
+    "incremental_to_canonical_reference_revision": "r5",
+    "evaluation_questions_screened": 200,
+    "apparent_title_level_collisions": 0,
+    "private_questions_revised": 0,
+    "broad_titles_requiring_concrete_question_scope_before_final_semantic_certification": 3,
+    "source_assessments_or_solution_fields_read": false,
+    "private_questions_answers_or_source_selections_exported": false,
+    "scope": "Incremental title screening only; no new freeze or independent acceptance qualification."
+  },
+  "additional_reference_title_review_r12": {
+    "reviewed_at": "2026-09-10T17:56:30.202931+00:00",
+    "new_additional_reference_titles_reviewed": 1,
+    "cumulative_supplemental_titles_reviewed": 8,
+    "incremental_to_canonical_reference_revision": "r5",
+    "evaluation_questions_screened": 200,
+    "new_apparent_title_level_collisions": 0,
+    "private_questions_revised": 0,
+    "new_titles_with_insufficient_decision_scope": 0,
+    "prior_broad_titles_requiring_question_scope_before_final_semantic_certification": 3,
+    "source_assessments_or_solution_fields_read": false,
+    "private_questions_answers_or_source_selections_exported": false,
+    "scope": "Incremental title screening only; existing scope/isolation/exposure limits and acceptance targets unchanged."
+  },
+  "supplemental_title_review_r13": {
+    "reviewed_at": "2026-09-10T18:37:43.633663+00:00",
+    "new_additional_reference_titles_reviewed": 1,
+    "cumulative_supplemental_titles_reviewed": 9,
+    "evaluation_questions_screened": 200,
+    "apparent_title_level_collisions": 0,
+    "private_questions_revised": 0,
+    "prior_broad_titles_requiring_question_scope_before_final_semantic_certification": 3,
+    "source_assessments_or_solution_fields_read": false,
+    "private_questions_answers_or_source_selections_exported": false,
+    "freeze_status_changed": false
+  }
+}

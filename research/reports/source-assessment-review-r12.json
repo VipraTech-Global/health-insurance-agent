@@ -1,0 +1,167 @@
+{
+  "artifact_version": "source-assessment-review-r12/1",
+  "reviewed_at_utc": "2026-09-10T18:02:12.847227+00:00",
+  "reviewer": "independent source assessment reviewer",
+  "status": "approved_for_bounded_source_assessment_after_corrections",
+  "boundary": "Review of specified source associations and one synthetic additional-reference calculation only. No protected evaluation, application, customer or core design data accessed. No complete original inventory, historical bundle, issued entitlement or adviser acceptance approval.",
+  "reviewed_artifacts": [
+    {
+      "path": "research/registers/digit-niva-family-reconciliation-r11.json",
+      "sha256": "579e42a67b749ee767092118d5c1f50aaa6b8cb0d8c307a038cb98d4574fa07c"
+    },
+    {
+      "path": "research/registers/tata-family-reconciliation-r12.json",
+      "sha256": "b29b8dcb4f9a6e8603f896b5ebb29f263043ddd018cfdd489f4de597f8572f90"
+    },
+    {
+      "path": "research/reference/additional-tata-copay-case-r12.json",
+      "sha256": "2b5384d3ec9f9c7372a78ec6e5a385fc89e6c0b930cd31b67bc18fd84ae41041"
+    }
+  ],
+  "verification": {
+    "unique_original_objects_hash_verified": 21,
+    "pdf_originals": 20,
+    "html_originals": 1,
+    "current_pdf_regions_reproduced": 47,
+    "html_byte_regions_verified": 2,
+    "case_regions_reproduced_separately": 5,
+    "physical_pages_independently_visually_reviewed": 15,
+    "source_documents_mutated_by_reviewer": false,
+    "report_only_write": true
+  },
+  "resolved_findings": [
+    {
+      "id": "r12-review-01",
+      "severity": "high",
+      "status": "corrected_and_independently_verified",
+      "artifact": "research/registers/tata-family-reconciliation-r12.json",
+      "source_sha256": "2e27c2193486e94ae2b51302ac83c834e95141713124ac5335077c2c3d957858",
+      "physical_page": 7,
+      "issue": "Original midpoint x306 crops were called separate columns, but actual column boundary is near x212. The left excerpt interleaved incomplete right-column fragments, and the right excerpt lost clause starts. Mechanical reproduction alone did not detect this semantic citation defect.",
+      "resolution": "Root replaced body crops with [25,0,212,520] and [212,0,410,520] and separate footer [25,535,440,610]. All three excerpts reproduced from original bytes and independently read against rendered p7. Left B2 continuation at right top and complete B3-B6 flow retained. Original overprinting/letter-spacing defects remain explicitly acknowledged.",
+      "effect": "Source family/UIN and grant identity retained; current crop references are usable for bounded reading, not clean full-PDF extraction approval."
+    },
+    {
+      "id": "r12-review-02",
+      "severity": "low",
+      "status": "corrected_and_independently_verified",
+      "artifact": "research/registers/digit-niva-family-reconciliation-r11.json",
+      "issue": "All seven per-listing records repeated a mixed Digit/Niva supporting-role sentence, potentially suggesting other-family evidence.",
+      "resolution": "Root replaced with per-family roles: Digit proposal; ReAssure unreviewed prospectus qualification; ReAssure2.0 variant prospectus. Verified each current row."
+    }
+  ],
+  "open_material_findings": [],
+  "assessment_checks": [
+    {
+      "topic": "Digit plans and product configuration",
+      "result": "Supported",
+      "evidence": [
+        {
+          "source_sha256": "64a38b7c7837db2f77bc65bb8e49d1953620390230fabd5a1abb371115b80d77",
+          "physical_pages": [
+            1,
+            2
+          ]
+        },
+        {
+          "source_sha256": "1ef8c3627ee30f32c683fdc788c34c85d7536474e8612ebcae36d1b8ce385c4a",
+          "physical_pages": [
+            1,
+            2,
+            12,
+            23,
+            34
+          ]
+        }
+      ],
+      "detail": "Three target legacy names appear among multiple plan options in same-UIN blank proposal. BharatX-only base-cover selector does not configure other plans. Wording scope follows accepted schedule; consumables worldwide and NRI worldwide restrictions retained. No accepted customer selection inferred."
+    },
+    {
+      "topic": "ReAssure2.0 variant suffixes",
+      "result": "Supported with stated alias gaps",
+      "evidence": [
+        {
+          "source_sha256": "a4c141d299fc7a0d700e0e35d2a8e32190e490bb6e54190ce38bd362bfba893a",
+          "physical_pages": [
+            31,
+            32
+          ]
+        }
+      ],
+      "detail": "Visually confirmed distinct Bronze and Bronze+ columns; Platinum+/Titanium+ do not prove bare legacy labels equivalent. Variant table selectors remain separate. No generic unlimited-per-claim inference introduced."
+    },
+    {
+      "topic": "ReAssure versus ReAssure2.0 duration",
+      "result": "Supported",
+      "evidence": [
+        {
+          "source_sha256": "bd00c98a432db2c343736278f2c9c787608a036f6ff4eff406ca920286999e0f",
+          "physical_pages": [
+            6
+          ]
+        },
+        {
+          "source_sha256": "366e08afe7e9b71238d74db9e9988767c901b8e3eabca7ffc30c4892c6b210c5",
+          "physical_pages": [
+            8
+          ]
+        }
+      ],
+      "detail": "Original visual confirms ReAssure2.0 two hours or more and minimum24hours AYUSH; ReAssure day-care wording more than2hours with its own named treatment/linked conditions. No transfer between families."
+    },
+    {
+      "topic": "Tata identity/UIN provenance",
+      "result": "Supported with explicit missing native identifiers",
+      "detail": "All declared observed UINs found in associated original regions, except no identifier is claimed for Supercharge/LITE wordings. Whole-PDF native scans found no TATHLIP identifier for those two; title pages visibly truncate footer content. Matching CIS assertions and two exact HTML directory anchor assertions remain separate. This does not prove a complete issued version/bundle."
+    },
+    {
+      "topic": "Tata grants and plan selection",
+      "result": "Supported for bounded family association",
+      "detail": "Elder Care, MediCare, LITE and Plus medical grants correspond to preserved family originals. Supercharge Geo/Value table and specialized Valued Provider network are explicitly separated from standard network. Generic legacy family does not select a plan."
+    }
+  ],
+  "calculation_review": {
+    "case_id": "additional-r12-10-01",
+    "status": "independently_supported_conditional_arithmetic",
+    "source_sha256": "b388674a3162a9e0b7e3055ec7c6e79588a03cf08a2f360ae5c4807ea1f8e172",
+    "physical_pages_visually_checked": [
+      42,
+      47,
+      48,
+      49,
+      50
+    ],
+    "method": "Read original table and connected exceptions; derive amounts directly from explicit inputs, without evaluating the stored expression string.",
+    "initial": {
+      "admissible_claim_inr": 200000,
+      "age_copay_inr": 40000,
+      "higher_zone_copay_inr": 40000,
+      "after_additive_copays_inr": 120000,
+      "remaining_aggregate_deductible_inr": 50000,
+      "independently_expected_inr": 70000
+    },
+    "corrected": {
+      "admissible_claim_inr": 200000,
+      "age_copay_inr": 0,
+      "higher_zone_copay_inr": 40000,
+      "after_copay_inr": 160000,
+      "remaining_aggregate_deductible_inr": 50000,
+      "independently_expected_inr": 110000
+    },
+    "selector_and_exception_checks": [
+      "Geo plan residentZoneC and illness treatmentZoneA stipulated; specialized Value network branch not used.",
+      "Age61-or-more at first product entry would ordinarily impose20%, but corrected active Tata indemnity entry59, continuous coverage and accepted migration satisfy specific exception. External insurer portability is not substituted for Tata migration.",
+      "B1 within-SI claim is among applicable benefit lists; no accident or over-SI exception applies under premises.",
+      "No ailment sublimit applies under premises; otherwise zone/network copay suppression would require a different branch.",
+      "Table step6 adds percentages on the same admissible-claim base; step8 deducts aggregate deductible from final assessed amount; final limits assumed sufficient.",
+      "Remaining deductible is explicit and no prior utilization stipulated.",
+      "Fixture retains actual governing bundle/migration evidence/zone history as unknown and claims no full customer entitlement or acceptance pass."
+    ]
+  },
+  "remaining_limits": [
+    "Only specified passages and selected visuals were reviewed; no all-page atomic rule denominator established.",
+    "Not all potential variant/historical bundles are available or reconciled.",
+    "Tata Plus source overprinting and missing/clipped native text still require original visual handling for unread regions.",
+    "Synthetic reference arithmetic remains conditional and outside the required400; no adviser attempt was executed."
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "records": [
+    {
+      "format_version": 1,
+      "component_version": "research-acquisition/2",
+      "insurer_id": "oriental",
+      "url": "https://orientalinsurance.org.in/static/js/6118.3ab2d79d.chunk.js",
+      "linking_url": "https://orientalinsurance.org.in/static/js/main.31a109d1.js",
+      "acquired_at": "2026-09-10T14:43:09.598489+00:00",
+      "status": "failed",
+      "issues": [
+        "unsupported_media_type"
+      ],
+      "sha256": "80041a4d2cf101cd05668ea45be582a523e00a5fb02586be662b752c1b5c67e9",
+      "page_count": null,
+      "document_type": "unclassified",
+      "language": "unknown",
+      "associations": [],
+      "effective_from": null,
+      "effective_to": null,
+      "review_status": "not_reviewed",
+      "http_status": 200,
+      "final_url": "https://orientalinsurance.org.in/static/js/6118.3ab2d79d.chunk.js",
+      "byte_count": 8930,
+      "content_type": "application/javascript",
+      "latency_ms": 576
+    }
+  ],
+  "method": "Static public bundle names6118 hash3ab2d79d and .chunk.js builder. No JS execution or authenticated API calls."
+}

@@ -1,0 +1,73 @@
+{
+  "acquired_at": "2026-09-10T11:59:52.076572+00:00",
+  "associations": [],
+  "byte_count": 761567,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-mediclaim-policy/Premium%20Chart%20New%20India%20Mediclaim.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 6199,
+  "linking_url": "https://www.newindia.co.in/health-insurance/health-insurance-policy",
+  "page_count": 6,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 597.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 597.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 597.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 597.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 597.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 597.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "c8a903c67dd49870d76aa78bc0a0e1ce95aec2324ecb21c422636f5fee9a6d0d",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-mediclaim-policy/Premium Chart New India Mediclaim.pdf"
+}

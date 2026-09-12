@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:37:59.088050+00:00",
+  "associations": [],
+  "byte_count": 118452,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/pages/doc/portability_form/portability-form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 534,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "d7526246c56eb32f082b427c7e4e007af0ec9f575a04cac8eb3988097719987d",
+  "status": "acquired",
+  "url": "https://transactions.nivabupa.com/pages/doc/portability_form/portability-form.pdf"
+}

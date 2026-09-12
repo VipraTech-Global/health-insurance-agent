@@ -1,0 +1,348 @@
+{
+  "format_version": 1,
+  "status": "proposal_only_unapproved",
+  "revision": "discussion-r5",
+  "resolved_findings": [
+    "DESIGN-CLAIM-EVENTS",
+    "DESIGN-INVENTORY-REVISION"
+  ],
+  "new_entities": [
+    "ClaimEvent",
+    "ClaimDocumentRequirement",
+    "ClaimDocumentReceipt",
+    "ClaimPayment",
+    "InventoryRevision",
+    "InventoryMembership",
+    "InventoryLineage",
+    "RuleInventorySupport",
+    "CoverageReportSupport"
+  ],
+  "new_fields": [
+    "ClaimEvent.id",
+    "ClaimEvent.created_at",
+    "ClaimEvent.owner_id",
+    "ClaimEvent.claim_id",
+    "ClaimEvent.episode_id",
+    "ClaimEvent.contract_revision_id",
+    "ClaimEvent.event_key",
+    "ClaimEvent.revision",
+    "ClaimEvent.kind",
+    "ClaimEvent.occurred_at",
+    "ClaimEvent.sender",
+    "ClaimEvent.recipient",
+    "ClaimEvent.certainty",
+    "ClaimEvent.source_span_id",
+    "ClaimEvent.source_message_id",
+    "ClaimEvent.related_event_id",
+    "ClaimEvent.documentation",
+    "ClaimEvent.supersedes_id",
+    "ClaimDocumentRequirement.id",
+    "ClaimDocumentRequirement.created_at",
+    "ClaimDocumentRequirement.owner_id",
+    "ClaimDocumentRequirement.claim_id",
+    "ClaimDocumentRequirement.requirement_key",
+    "ClaimDocumentRequirement.revision",
+    "ClaimDocumentRequirement.document_kind",
+    "ClaimDocumentRequirement.necessity",
+    "ClaimDocumentRequirement.condition",
+    "ClaimDocumentRequirement.accepted_form",
+    "ClaimDocumentRequirement.request_event_id",
+    "ClaimDocumentRequirement.rule_id",
+    "ClaimDocumentRequirement.authority_span_id",
+    "ClaimDocumentRequirement.reason",
+    "ClaimDocumentRequirement.supersedes_id",
+    "ClaimDocumentReceipt.id",
+    "ClaimDocumentReceipt.created_at",
+    "ClaimDocumentReceipt.owner_id",
+    "ClaimDocumentReceipt.claim_id",
+    "ClaimDocumentReceipt.receipt_event_id",
+    "ClaimDocumentReceipt.requirement_id",
+    "ClaimDocumentReceipt.document_id",
+    "ClaimDocumentReceipt.description",
+    "ClaimDocumentReceipt.delivered_form",
+    "ClaimDocumentReceipt.assessment",
+    "ClaimDocumentReceipt.assessment_span_id",
+    "ClaimDocumentReceipt.supersedes_id",
+    "ClaimPayment.id",
+    "ClaimPayment.created_at",
+    "ClaimPayment.owner_id",
+    "ClaimPayment.claim_id",
+    "ClaimPayment.payment_key",
+    "ClaimPayment.payment_event_id",
+    "ClaimPayment.kind",
+    "ClaimPayment.payee",
+    "ClaimPayment.total",
+    "ClaimPayment.indemnity",
+    "ClaimPayment.interest",
+    "ClaimPayment.other",
+    "ClaimPayment.transaction_reference",
+    "ClaimPayment.source_span_id",
+    "ClaimPayment.reverses_id",
+    "UsageEntry.claim_payment_id",
+    "InventoryRevision.id",
+    "InventoryRevision.created_at",
+    "InventoryRevision.revision_key",
+    "InventoryRevision.previous_id",
+    "InventoryRevision.scope",
+    "InventoryRevision.counting_protocol",
+    "InventoryRevision.source_manifest_sha256",
+    "InventoryRevision.reader_identity",
+    "InventoryRevision.state",
+    "InventoryRevision.sealed_at",
+    "InventoryRevision.manifest_sha256",
+    "InventoryMembership.id",
+    "InventoryMembership.created_at",
+    "InventoryMembership.inventory_revision_id",
+    "InventoryMembership.item_id",
+    "InventoryMembership.disposition",
+    "InventoryMembership.count_weight",
+    "InventoryMembership.scope",
+    "InventoryMembership.source_span_ids",
+    "InventoryMembership.reason",
+    "InventoryMembership.adjudicator_identity",
+    "InventoryMembership.previous_membership_id",
+    "InventoryMembership.content_sha256",
+    "InventoryLineage.id",
+    "InventoryLineage.created_at",
+    "InventoryLineage.inventory_revision_id",
+    "InventoryLineage.adjudication_key",
+    "InventoryLineage.from_membership_id",
+    "InventoryLineage.to_membership_id",
+    "InventoryLineage.kind",
+    "InventoryLineage.source_span_ids",
+    "InventoryLineage.reason",
+    "InventoryLineage.adjudicator_identity",
+    "RuleInventorySupport.id",
+    "RuleInventorySupport.created_at",
+    "RuleInventorySupport.membership_id",
+    "RuleInventorySupport.rule_id",
+    "RuleInventorySupport.outcome",
+    "RuleInventorySupport.support_span_ids",
+    "RuleInventorySupport.reviewer_identity",
+    "RuleInventorySupport.reviewed_at",
+    "RuleInventorySupport.reason",
+    "RuleInventorySupport.supersedes_id",
+    "RuleInventorySupport.content_sha256",
+    "CoverageReportSupport.id",
+    "CoverageReportSupport.created_at",
+    "CoverageReportSupport.coverage_report_id",
+    "CoverageReportSupport.membership_id",
+    "CoverageReportSupport.support_id",
+    "RuleInventoryItem.occurrence_kind",
+    "CoverageReport.inventory_revision_id",
+    "ClaimDocumentReceipt.revision",
+    "ClaimPayment.revision",
+    "ClaimDocumentReceipt.receipt_key",
+    "ClaimPayment.supersedes_id",
+    "ClaimDocumentRequirement.certainty",
+    "CoverageReport.finalized_at",
+    "InventoryRevision.source_manifest"
+  ],
+  "changed_fields": [
+    "Claim.submitted_at",
+    "RuleInventoryItem.review_state",
+    "RuleInventoryItem.count_weight",
+    "Rule.inventory_item_id",
+    "CoverageReport.inventory_revision",
+    "CoverageReport.supported_instances",
+    "DocumentRevision.kind",
+    "Artifact.kind",
+    "CoverageReport.report_sha256",
+    "InventoryRevision.source_manifest_sha256"
+  ],
+  "new_contracts": [
+    "ClaimPartyV1",
+    "ClaimDocumentationV1",
+    "InventoryCountingProtocolV1",
+    "InventorySourceManifestV1"
+  ],
+  "extended_contracts": [
+    "CalculationInputsV1"
+  ],
+  "new_requirements": [
+    "INS-09",
+    "OPS-07"
+  ],
+  "entity_count": 94,
+  "field_count": 964,
+  "json_contract_count": 50,
+  "dictionary_fk_count": 299,
+  "source_traces": {
+    "claims": [
+      "NIA-AS-R6-9.6-1",
+      "NIA-AS-R6-9.6-2",
+      "NIA-AS-R6-3.8-1",
+      "NIA-AS-R6-9.7-2",
+      "STAR-SSF-R6-V.2-14",
+      "STAR-SSF-R6-V.2-15",
+      "STAR-SSF-R6-V.2-16",
+      "STAR-SSF-R6-V.2-33"
+    ],
+    "inventory": [
+      "independent-original-inventory-star-ssf-r6.json counting protocol",
+      "independent-original-inventory-new-india-as-r6.json counting protocol",
+      "NIA-AS-AMBIG-C181-183",
+      "NIA-AS-DUPLICATE-CLINICAL-TERMS"
+    ]
+  },
+  "validation": {
+    "json_schema_structural_check": true,
+    "all_fields_complete_metadata": true,
+    "all_new_field_requirement_ids_resolve": true,
+    "all_fk_and_json_contract_targets_resolve": true,
+    "native_auth_entities_unchanged": true,
+    "strict_contract_probes_passed": 17
+  },
+  "files_changed": [
+    "research/design/entity-field-dictionary.json",
+    "research/design/json-contracts.schema.json",
+    "research/design/information-requirements.json"
+  ],
+  "parent_regeneration_required": [
+    "relationships.json and diagram/readable dictionary",
+    "reference/source requirement maps",
+    "value-and-rule-contracts and lifecycle/retrieval prose",
+    "worked examples and package revision/count summaries"
+  ],
+  "limitations": [
+    "No model, migration, application, database or service operation.",
+    "No benchmark/evaluation material read or inserted.",
+    "No claim deadline/interest entitlement is computed without governing rate, event and convention evidence.",
+    "No candidate inventory count is certified as a denominator.",
+    "Additional source-backed reference cases for newly discovered document/interest and segmentation boundaries remain necessary before claiming scenario-pattern coverage."
+  ],
+  "output_hashes": {
+    "dictionary": "9173ea6ad097b7baf1aff6fa58c791ae1a434f5c7d9575e11292999621189e3d",
+    "schema": "45630fc0d6c84482c15faed606c9f662fdce1c4b3b0680e8dd8ae2751f566acd",
+    "requirements": "d9d49af32ccee14d949a114604d16ccd84014d33508a9d7aecbe9ba3d46fc0b6"
+  },
+  "strict_contract_probes": [
+    {
+      "name": "exact insurer",
+      "definition": "ClaimPartyV1",
+      "expected_valid": true,
+      "observed_valid": true,
+      "passed": true
+    },
+    {
+      "name": "exact person",
+      "definition": "ClaimPartyV1",
+      "expected_valid": true,
+      "observed_valid": true,
+      "passed": true
+    },
+    {
+      "name": "exact provider",
+      "definition": "ClaimPartyV1",
+      "expected_valid": true,
+      "observed_valid": true,
+      "passed": true
+    },
+    {
+      "name": "unknown party",
+      "definition": "ClaimPartyV1",
+      "expected_valid": true,
+      "observed_valid": true,
+      "passed": true
+    },
+    {
+      "name": "TPA named, authority not implied",
+      "definition": "ClaimPartyV1",
+      "expected_valid": true,
+      "observed_valid": true,
+      "passed": true
+    },
+    {
+      "name": "no mixed party identities",
+      "definition": "ClaimPartyV1",
+      "expected_valid": false,
+      "observed_valid": false,
+      "passed": true
+    },
+    {
+      "name": "bad party ID",
+      "definition": "ClaimPartyV1",
+      "expected_valid": false,
+      "observed_valid": false,
+      "passed": true
+    },
+    {
+      "name": "document set shape",
+      "definition": "ClaimDocumentationV1",
+      "expected_valid": true,
+      "observed_valid": true,
+      "passed": true
+    },
+    {
+      "name": "complete cannot hide unresolved item",
+      "definition": "ClaimDocumentationV1",
+      "expected_valid": false,
+      "observed_valid": false,
+      "passed": true
+    },
+    {
+      "name": "complete needs authority rule",
+      "definition": "ClaimDocumentationV1",
+      "expected_valid": false,
+      "observed_valid": false,
+      "passed": true
+    },
+    {
+      "name": "duplicate receipt IDs rejected",
+      "definition": "ClaimDocumentationV1",
+      "expected_valid": false,
+      "observed_valid": false,
+      "passed": true
+    },
+    {
+      "name": "unresolved independent protocol",
+      "definition": "InventoryCountingProtocolV1",
+      "expected_valid": true,
+      "observed_valid": true,
+      "passed": true
+    },
+    {
+      "name": "parser denominator rejected",
+      "definition": "InventoryCountingProtocolV1",
+      "expected_valid": false,
+      "observed_valid": false,
+      "passed": true
+    },
+    {
+      "name": "source manifest",
+      "definition": "InventorySourceManifestV1",
+      "expected_valid": true,
+      "observed_valid": true,
+      "passed": true
+    },
+    {
+      "name": "duplicate source keys rejected",
+      "definition": "InventorySourceManifestV1",
+      "expected_valid": false,
+      "observed_valid": false,
+      "passed": true
+    },
+    {
+      "name": "empty source manifest retained unmeasured",
+      "definition": "InventorySourceManifestV1",
+      "expected_valid": true,
+      "observed_valid": true,
+      "passed": true
+    },
+    {
+      "name": "manifest rejects benchmark answer payload",
+      "definition": "InventorySourceManifestV1",
+      "expected_valid": false,
+      "observed_valid": false,
+      "passed": true
+    }
+  ],
+  "review_refinements": [
+    "ClaimDocumentReceipt uses stable receipt_key and revision, allowing multiple unknown documents in a batch and append-only classification corrections.",
+    "ClaimPayment distinguishes corrected recording from actual bank reversal; only one active version per physical payment key contributes current accounting.",
+    "Document necessity carries evidence certainty; a request alone cannot establish verified completeness.",
+    "CoverageReport has a draft/finalized boundary so support rows can be composed and atomically frozen.",
+    "InventoryRevision stores the full typed source manifest as well as its hash; missing candidates cannot be omitted to reduce a denominator.",
+    "Empty source manifests remain unmeasured; reference arithmetic and inventory completeness remain separate."
+  ]
+}

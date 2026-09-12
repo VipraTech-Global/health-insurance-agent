@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T12:00:55.695413+00:00",
+  "associations": [],
+  "byte_count": 423611,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/tertiary-care-insurance-individual/Tertiary%20Care%20Insurance%20Premium%20Chart.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 3595,
+  "linking_url": "https://www.newindia.co.in/health-insurance/tertiary-care-insurance-individual",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "20ca16822b534b5f22e1c57c7af44d909d933ecedb61a066947c8be21db97d87",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/tertiary-care-insurance-individual/Tertiary Care Insurance Premium Chart.pdf"
+}

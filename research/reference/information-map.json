@@ -1,0 +1,4461 @@
+{
+  "cases": [
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-01-01",
+      "customer_statement": "I am 35, live in Kota, have no health insurance, and need a first policy.",
+      "decision_boundary": "Age 35 belongs to buyer until insured is confirmed; Kota alone cannot select a plan.",
+      "family": 1,
+      "material_information": [
+        "buyer identity",
+        "intended insured",
+        "exact birth date",
+        "budget",
+        "disclosures",
+        "preferred hospital"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-01-02",
+      "customer_statement": "I can spend 8000 rupees a year and cannot pay a large bill upfront.",
+      "decision_boundary": "Affordable premium does not establish ability to fund co-pay or a reimbursement admission.",
+      "family": 1,
+      "material_information": [
+        "annual budget INR 8000",
+        "accessible cash",
+        "payment schedule",
+        "network approval",
+        "out of pocket limits"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-01-03",
+      "customer_statement": "I have savings for small claims and want protection against a very large hospital bill.",
+      "decision_boundary": "Compare two moderate claims with one large claim before using savings as a deductible layer.",
+      "family": 1,
+      "material_information": [
+        "savings amount",
+        "loss tolerance",
+        "base policy",
+        "aggregate versus per-claim deductible",
+        "catastrophic limit"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-01-04",
+      "customer_statement": "I have no preferred insurer but must keep my existing specialist at my chosen hospital.",
+      "decision_boundary": "Hospital membership does not establish doctor availability or claim authorisation.",
+      "family": 1,
+      "material_information": [
+        "hospital branch",
+        "treating specialist",
+        "exact network variant",
+        "observation date",
+        "planned procedure"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-01-05",
+      "customer_statement": "I am healthy and want to compare a larger sum insured with a restoration benefit.",
+      "decision_boundary": "First large claim and later claims can have different available limits.",
+      "family": 1,
+      "material_information": [
+        "base limit",
+        "restoration trigger",
+        "same admission restriction",
+        "per-claim maximum",
+        "premium"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-01-06",
+      "customer_statement": "I have variable freelance income and want instalments without unexpected gaps in cover.",
+      "decision_boundary": "Distinguish unpaid renewal from an instalment during an active policy term.",
+      "family": 1,
+      "material_information": [
+        "income timing",
+        "instalment due dates",
+        "grace mode",
+        "cancellation event",
+        "admission date"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-01-07",
+      "customer_statement": "I have been offered a cheap policy with a room limit and a costlier unrestricted option.",
+      "decision_boundary": "A cheaper premium must be compared with proportional deductions and cash needed.",
+      "family": 1,
+      "material_information": [
+        "room category",
+        "actual daily tariff",
+        "allowed tariff",
+        "affected bill items",
+        "co-pay"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-01-08",
+      "customer_statement": "I want a first policy but may move from Jaipur to Mumbai next year.",
+      "decision_boundary": "Residential and treatment zones need independent effective dates.",
+      "family": 1,
+      "material_information": [
+        "current postcode",
+        "proposed move date",
+        "treatment city",
+        "premium zone",
+        "zone co-pay"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-01-09",
+      "customer_statement": "I can pay more for fewer deductions but have not decided which optional covers matter.",
+      "decision_boundary": "An available add-on has no effect until selected and applicable.",
+      "family": 1,
+      "material_information": [
+        "priority ranking",
+        "add-on selections",
+        "deductible",
+        "co-pay",
+        "consumables",
+        "separate quotes"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-01-10",
+      "customer_statement": "I am buying online for the first time and do not understand whether the quote includes add-ons.",
+      "decision_boundary": "Do not infer selected benefits from the product marketing page.",
+      "family": 1,
+      "material_information": [
+        "quote identifier",
+        "owner",
+        "base version",
+        "selected options",
+        "premium components",
+        "expiry"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-02-01",
+      "customer_statement": "We are a couple with two young children and want individual cover versus a floater compared.",
+      "decision_boundary": "Two concurrent claims can exhaust shared cover while leaving an individual policy intact.",
+      "family": 2,
+      "material_information": [
+        "four person identities",
+        "relationships",
+        "per-person eligibility",
+        "shared versus individual SI",
+        "quotes"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-02-02",
+      "customer_statement": "I want to put my healthy spouse and my diabetic parent on one floater.",
+      "decision_boundary": "Relationship eligibility and medical acceptance are independent gates.",
+      "family": 2,
+      "material_information": [
+        "spouse and parent identities",
+        "diabetes history",
+        "allowed relationships",
+        "adult limit",
+        "accepted terms"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-02-03",
+      "customer_statement": "Two family members may need planned procedures in the same policy year.",
+      "decision_boundary": "Reserved and paid amounts must not be double counted or silently ignored.",
+      "family": 2,
+      "material_information": [
+        "two procedure dates",
+        "person ownership",
+        "claim admissibility",
+        "common policy year",
+        "sublimits"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-02-04",
+      "customer_statement": "My spouse has separate insurance and I only need cover for myself and our child.",
+      "decision_boundary": "Do not add the spouse simply because the buyer is married.",
+      "family": 2,
+      "material_information": [
+        "existing spouse policy",
+        "buyer and child ownership",
+        "duplication preferences",
+        "allowed composition"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-02-05",
+      "customer_statement": "My partner and I are not married and want to know whether one floater accepts us.",
+      "decision_boundary": "A family label must not imply acceptance of an unmarried partner.",
+      "family": 2,
+      "material_information": [
+        "legal relationship",
+        "partnership evidence",
+        "definition of family",
+        "individual alternatives"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-02-06",
+      "customer_statement": "I want to include my parents-in-law alongside my spouse and parents.",
+      "decision_boundary": "A relationship listed as allowed may still exceed the configuration member limit.",
+      "family": 2,
+      "material_information": [
+        "all six relationships",
+        "adult count",
+        "configuration constraints",
+        "per-person DOB"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-02-07",
+      "customer_statement": "One member is much older and may make the shared policy more expensive.",
+      "decision_boundary": "Do not manufacture a family premium from one person's rate.",
+      "family": 2,
+      "material_information": [
+        "all birth dates",
+        "quote premium bands",
+        "oldest-member pricing evidence",
+        "separate quotes"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-02-08",
+      "customer_statement": "A child has a chronic illness and we want to avoid exhausting everyone else's cover.",
+      "decision_boundary": "Higher overall SI may leave the child's disease sublimit unchanged.",
+      "family": 2,
+      "material_information": [
+        "child diagnosis",
+        "shared balance",
+        "disease sublimits",
+        "continuity",
+        "individual alternatives"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-02-09",
+      "customer_statement": "We live in different cities and need a family plan usable in both places.",
+      "decision_boundary": "One person's usable network is not evidence for another city.",
+      "family": 2,
+      "material_information": [
+        "person residences",
+        "branch-specific hospitals",
+        "plan network",
+        "zone restrictions"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-02-10",
+      "customer_statement": "We want to split a large family between two floaters without duplicating anyone.",
+      "decision_boundary": "Every intended person appears once and membership changes invalidate both comparisons.",
+      "family": 2,
+      "material_information": [
+        "stable member IDs",
+        "proposed allocation",
+        "shared limits",
+        "minimum composition",
+        "two quotes"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-03-01",
+      "customer_statement": "Our newborn needs cover from birth and our policy has a later entry-age threshold.",
+      "decision_boundary": "Entry eligibility and benefit waiting periods use separate clocks.",
+      "family": 3,
+      "material_information": [
+        "birth date",
+        "minimum entry duration and unit",
+        "newborn option effective date",
+        "parent policy"
+      ],
+      "original_worked_case_status": "evidence_incomplete",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-03-02",
+      "customer_statement": "My child reaches the dependent-age limit just before renewal.",
+      "decision_boundary": "Compare the birthday before versus on renewal without rounding age.",
+      "family": 3,
+      "material_information": [
+        "DOB",
+        "dependency",
+        "exact renewal date",
+        "age computation basis",
+        "separate-policy continuity"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-03-03",
+      "customer_statement": "We adopted a child midyear and want to add them without restarting existing members' waits.",
+      "decision_boundary": "A new child's waiting period must not reset another member's continuous cover.",
+      "family": 3,
+      "material_information": [
+        "adoption date and proof",
+        "addition acceptance",
+        "child DOB",
+        "per-person waits",
+        "endorsement"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-03-04",
+      "customer_statement": "My newborn required intensive care before we submitted the addition request.",
+      "decision_boundary": "Do not backdate cover from eventual addition without an explicit original clause.",
+      "family": 3,
+      "material_information": [
+        "birth and NICU dates",
+        "notification date",
+        "endorsement start",
+        "newborn sublimit"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-03-05",
+      "customer_statement": "My adult child earns a salary but still lives with me.",
+      "decision_boundary": "Living together is distinct from financial dependency.",
+      "family": 3,
+      "material_information": [
+        "age",
+        "income start",
+        "financial dependency",
+        "next renewal",
+        "dependency definition"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-03-06",
+      "customer_statement": "My student child studies outside our home city and remains financially dependent.",
+      "decision_boundary": "Residence outside the home city does not itself mean outside the policy territory.",
+      "family": 3,
+      "material_information": [
+        "study location",
+        "age",
+        "dependency",
+        "hospital network",
+        "territorial coverage"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-03-07",
+      "customer_statement": "Our second baby will exceed the maximum number of children on our floater.",
+      "decision_boundary": "Reconcile the stated second baby with the asserted limit before excluding anyone.",
+      "family": 3,
+      "material_information": [
+        "actual child count",
+        "birth events",
+        "maximum composition",
+        "change options"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-03-08",
+      "customer_statement": "My child has a congenital diagnosis and we need both eligibility and exclusions checked.",
+      "decision_boundary": "Congenital classification alone does not settle treatment eligibility.",
+      "family": 3,
+      "material_information": [
+        "internal versus external diagnosis",
+        "onset",
+        "surgery",
+        "waits",
+        "individual terms"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-03-09",
+      "customer_statement": "I want a child-only policy because both parents already have employer cover.",
+      "decision_boundary": "The paying parent need not automatically become an insured member.",
+      "family": 3,
+      "material_information": [
+        "child-only availability",
+        "proposer versus insured",
+        "minimum child age",
+        "employer expiry"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-03-10",
+      "customer_statement": "My dependent child is getting married during the policy term.",
+      "decision_boundary": "Determine whether eligibility changes immediately or at renewal from the clause.",
+      "family": 3,
+      "material_information": [
+        "marriage date",
+        "dependency",
+        "age",
+        "eligibility reassessment trigger",
+        "migration terms"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-04-01",
+      "customer_statement": "I am 35 and buying for my 70-year-old mother who has no insurance.",
+      "decision_boundary": "Never quote the mother's cover using the buyer's age.",
+      "family": 4,
+      "material_information": [
+        "buyer age 35",
+        "mother age 70",
+        "mother medical history",
+        "entry-age rule",
+        "affordability"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-04-02",
+      "customer_statement": "My father is 68 with diabetes and loses employer cover next month; he needs a private room.",
+      "decision_boundary": "Entry age, waiting credit, cash funding and room constraints must all hold.",
+      "family": 4,
+      "material_information": [
+        "father age 68",
+        "diabetes acceptance",
+        "employer exit date",
+        "room category",
+        "continuity"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-04-03",
+      "customer_statement": "My mother is exactly at a product's maximum entry age on her proposed start date.",
+      "decision_boundary": "Boundary depends on the contract's age event, not the quote-form date.",
+      "family": 4,
+      "material_information": [
+        "DOB",
+        "proposed inception",
+        "acceptance date",
+        "inclusive maximum age",
+        "age basis"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-04-04",
+      "customer_statement": "My father can afford a premium but cannot fund a compulsory 30 percent co-pay.",
+      "decision_boundary": "INR 100000 admissible implies INR 30000 co-pay under the stated assumption, before other deductions.",
+      "family": 4,
+      "material_information": [
+        "admissible claim amount",
+        "compulsory co-pay 30 percent",
+        "accessible funds",
+        "alternative terms"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-04-05",
+      "customer_statement": "My parents are different ages and one needs regular cardiac follow-up.",
+      "decision_boundary": "Follow-up expenses cannot be treated as inpatient benefits merely because the condition is cardiac.",
+      "family": 4,
+      "material_information": [
+        "separate DOBs",
+        "cardiac history owner",
+        "OPD versus admission need",
+        "two quotes"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-04-06",
+      "customer_statement": "A senior plan requires screening and we have not received the underwriting decision.",
+      "decision_boundary": "Screening completion is not underwriting acceptance.",
+      "family": 4,
+      "material_information": [
+        "medical-test status",
+        "proposal state",
+        "offer validity",
+        "underwriting terms"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-04-07",
+      "customer_statement": "My father has lifelong renewal on an old policy that no longer admits new customers.",
+      "decision_boundary": "Closed-to-new-business and unavailable-for-renewal are separate states.",
+      "family": 4,
+      "material_information": [
+        "old UIN",
+        "original inception",
+        "uninterrupted renewals",
+        "withdrawn-product notice"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-04-08",
+      "customer_statement": "My mother wants a hospital outside the senior plan's restricted network.",
+      "decision_boundary": "Outside restricted network may affect benefits differently from an excluded provider.",
+      "family": 4,
+      "material_information": [
+        "network variant",
+        "hospital branch",
+        "dated exclusion list",
+        "non-network terms"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-04-09",
+      "customer_statement": "My parent wants to buy higher cover after using most savings on a previous admission.",
+      "decision_boundary": "New cover cannot be assigned old waiting-period credit without evidence.",
+      "family": 4,
+      "material_information": [
+        "previous admission",
+        "remaining savings",
+        "proposed increase",
+        "increased-layer waits"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-04-10",
+      "customer_statement": "My father is retired and needs to compare room restrictions with a voluntary deductible.",
+      "decision_boundary": "Compare costs under the same admissible bill and quote term.",
+      "family": 4,
+      "material_information": [
+        "room tariff",
+        "deductible choice",
+        "age co-pay",
+        "deduction order",
+        "cash budget"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-05-01",
+      "customer_statement": "I have diabetes controlled with tablets and want a new policy.",
+      "decision_boundary": "Controlled disease is still a disclosure fact and does not promise acceptance.",
+      "family": 5,
+      "material_information": [
+        "diagnosis date",
+        "tablets",
+        "investigations",
+        "disclosed proposal",
+        "acceptance",
+        "PED rule"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-05-02",
+      "customer_statement": "I have hypertension and want to know whether declaring it changes eligibility or waiting periods.",
+      "decision_boundary": "Premium loading, eligibility and waiting period are separate outcomes.",
+      "family": 5,
+      "material_information": [
+        "hypertension onset",
+        "treatment",
+        "disclosure date",
+        "acceptance",
+        "applicable wait"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-05-03",
+      "customer_statement": "My asthma needs intermittent inhalers and I have never been hospitalised.",
+      "decision_boundary": "No hospitalisation does not prove no pre-existing condition.",
+      "family": 5,
+      "material_information": [
+        "asthma onset",
+        "intermittent medication",
+        "medical advice",
+        "admission history"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-05-04",
+      "customer_statement": "I take thyroid medication and was told small conditions need not be disclosed.",
+      "decision_boundary": "Do not advise omitting a condition because it appears minor.",
+      "family": 5,
+      "material_information": [
+        "thyroid medication and dates",
+        "proposal questions",
+        "disclosure correction",
+        "underwriting"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-05-05",
+      "customer_statement": "My parent has diabetes and hypertension and needs a preferred hospital.",
+      "decision_boundary": "Each condition and the required hospital can independently block a candidate.",
+      "family": 5,
+      "material_information": [
+        "parent identity",
+        "diabetes and hypertension histories",
+        "hospital branch",
+        "accepted exclusions"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-05-06",
+      "customer_statement": "I was diagnosed with diabetes after applying but before the proposed start date.",
+      "decision_boundary": "Material information received before inception requires versioned disclosure history.",
+      "family": 5,
+      "material_information": [
+        "proposal timestamp",
+        "diagnosis timestamp",
+        "acceptance and risk-start dates",
+        "update acknowledgement"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-05-07",
+      "customer_statement": "A chronic-care add-on advertises earlier cover but is not selected in my quote.",
+      "decision_boundary": "Marketing for an unselected option cannot shorten the base waiting period.",
+      "family": 5,
+      "material_information": [
+        "add-on identifier",
+        "selection",
+        "effective date",
+        "accepted conditions",
+        "shortened wait"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-05-08",
+      "customer_statement": "I want regular diabetes medicines covered as well as hospitalisation.",
+      "decision_boundary": "Separate recurring outpatient spend from covered hospital treatment.",
+      "family": 5,
+      "material_information": [
+        "medicine frequency",
+        "OPD selection",
+        "admission benefit",
+        "annual sublimit",
+        "pharmacy rules"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-05-09",
+      "customer_statement": "My insurer accepted diabetes but added a disease-specific co-pay.",
+      "decision_boundary": "A general zero co-pay claim cannot override an individual disease co-pay.",
+      "family": 5,
+      "material_information": [
+        "individual endorsement",
+        "disease scope",
+        "co-pay basis",
+        "effective date",
+        "original acceptance"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-05-10",
+      "customer_statement": "I have an abnormal blood test with no confirmed diagnosis and want to complete a proposal.",
+      "decision_boundary": "Preserve abnormal findings as findings without inventing a diagnosis.",
+      "family": 5,
+      "material_information": [
+        "test result",
+        "investigation date",
+        "symptoms",
+        "diagnosis status",
+        "proposal wording"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-06-01",
+      "customer_statement": "I had cancer treatment three years ago and want a new medical-expense policy.",
+      "decision_boundary": "Time since treatment is not a substitute for underwriting acceptance.",
+      "family": 6,
+      "material_information": [
+        "cancer diagnosis and remission dates",
+        "surveillance",
+        "treatment history",
+        "indemnity options"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-06-02",
+      "customer_statement": "My father had a coronary stent and is considering a cardiac-specific policy.",
+      "decision_boundary": "Separate existing cardiac disease cover from a benefit for first diagnosis.",
+      "family": 6,
+      "material_information": [
+        "father identity",
+        "stent date",
+        "cardiac variant",
+        "procedure sublimit",
+        "disease acceptance"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-06-03",
+      "customer_statement": "I have chronic kidney disease and need to distinguish dialysis from hospital benefits.",
+      "decision_boundary": "Overnight admission is not a universal requirement for listed daycare treatment.",
+      "family": 6,
+      "material_information": [
+        "dialysis setting",
+        "frequency",
+        "CKD history",
+        "listed daycare rule",
+        "outpatient exclusion"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-06-04",
+      "customer_statement": "I was discharged last month and have not yet received a final diagnosis.",
+      "decision_boundary": "An unknown final diagnosis must not be recorded as no disease.",
+      "family": 6,
+      "material_information": [
+        "discharge date",
+        "records",
+        "provisional diagnosis",
+        "unresolved tests",
+        "proposal answers"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-06-05",
+      "customer_statement": "My mother has cancer history and diabetes and needs higher cover.",
+      "decision_boundary": "Apply interacting exclusions and waits per condition and cover layer.",
+      "family": 6,
+      "material_information": [
+        "mother cancer and diabetes histories",
+        "old cover",
+        "increase layer",
+        "combined terms"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-06-06",
+      "customer_statement": "An insurer has offered cover excluding recurrence of my previous disease.",
+      "decision_boundary": "A restricted offer is neither complete cancer cover nor necessarily no cover at all.",
+      "family": 6,
+      "material_information": [
+        "recurrence exclusion text",
+        "disease mapping",
+        "unrelated benefits",
+        "acceptance alternatives"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-06-07",
+      "customer_statement": "I had surgery years ago and the proposal asks about lifetime medical history.",
+      "decision_boundary": "A contractual PED lookback does not narrow a lifetime disclosure question.",
+      "family": 6,
+      "material_information": [
+        "surgery date",
+        "lifetime proposal question",
+        "supporting records",
+        "disclosed answers"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-06-08",
+      "customer_statement": "I have a pending biopsy and want immediate cover before the result.",
+      "decision_boundary": "A pending result cannot be treated as a clean medical history or immediate cover.",
+      "family": 6,
+      "material_information": [
+        "pending biopsy",
+        "advised treatment",
+        "policy acceptance",
+        "risk start",
+        "waiting rules"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-06-09",
+      "customer_statement": "My existing policy covered a major claim and I am worried about renewal.",
+      "decision_boundary": "A prior claim and a justified refusal to renew require different evidence.",
+      "family": 6,
+      "material_information": [
+        "old policy version",
+        "claim history",
+        "renewal notice",
+        "fraud exceptions",
+        "premium basis"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-06-10",
+      "customer_statement": "I need transplant-related expenses assessed for recipient and donor separately.",
+      "decision_boundary": "Donor surgery, screening and later complications require separate benefit decisions.",
+      "family": 6,
+      "material_information": [
+        "donor and recipient identities",
+        "recipient claim acceptance",
+        "screening",
+        "complications"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-07-01",
+      "customer_statement": "I need inpatient mental-health treatment and want the applicable exclusions checked.",
+      "decision_boundary": "Do not infer blanket exclusion or blanket coverage from the diagnosis category.",
+      "family": 7,
+      "material_information": [
+        "mental-health treatment purpose",
+        "inpatient setting",
+        "waits",
+        "exclusions",
+        "individual acceptance"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-07-02",
+      "customer_statement": "I have a physical disability and want a policy that actually accepts my situation.",
+      "decision_boundary": "Availability of a disability product does not prove acceptance of the person.",
+      "family": 7,
+      "material_information": [
+        "disability facts",
+        "applicant eligibility",
+        "product-specific offer",
+        "assistance needs"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-07-03",
+      "customer_statement": "My child has an internal congenital condition and needs surgery.",
+      "decision_boundary": "Read disease wait and congenital definitions together.",
+      "family": 7,
+      "material_information": [
+        "internal congenital diagnosis",
+        "child age",
+        "surgery indication",
+        "named-condition wait"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-07-04",
+      "customer_statement": "I live with HIV and want medical-expense cover with clear waiting periods.",
+      "decision_boundary": "A fixed cash diagnosis benefit is not medical-expense cover.",
+      "family": 7,
+      "material_information": [
+        "HIV status disclosure",
+        "treatment type",
+        "indemnity product",
+        "wait and sublimit"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-07-05",
+      "customer_statement": "My parent has disability and diabetes and needs accessible network hospitals.",
+      "decision_boundary": "Network membership and physical accessibility are separate observations.",
+      "family": 7,
+      "material_information": [
+        "parent disability and diabetes",
+        "accessible branch",
+        "network variant",
+        "accepted terms"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-07-06",
+      "customer_statement": "A brochure says mental health is covered but I need outpatient counselling.",
+      "decision_boundary": "An inpatient mental-health benefit does not establish counselling reimbursement.",
+      "family": 7,
+      "material_information": [
+        "counselling setting",
+        "outpatient benefit",
+        "session cap",
+        "brochure and wording versions"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-07-07",
+      "customer_statement": "My condition is an external congenital anomaly and an add-on is offered.",
+      "decision_boundary": "An optional exception must be explicitly applicable to this condition.",
+      "family": 7,
+      "material_information": [
+        "external anomaly classification",
+        "selected add-on",
+        "exclusion override",
+        "endorsement date"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-07-08",
+      "customer_statement": "I want to know whether substance-related treatment is treated differently from other mental care.",
+      "decision_boundary": "Do not extend a substance-related exclusion to all psychiatric care.",
+      "family": 7,
+      "material_information": [
+        "treatment purpose",
+        "substance-related cause",
+        "mental-health diagnosis",
+        "exact exclusion"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-07-09",
+      "customer_statement": "An insurer has a specific product for HIV and disability with different limits.",
+      "decision_boundary": "Product label alone cannot be used as evidence of equivalent cover.",
+      "family": 7,
+      "material_information": [
+        "product UIN",
+        "disease-specific eligibility",
+        "expense versus fixed benefit",
+        "caps"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-07-10",
+      "customer_statement": "My schedule contains an individual exclusion that appears to conflict with a general benefit.",
+      "decision_boundary": "Retain both contradictory assertions and block unsupported priority decisions.",
+      "family": 7,
+      "material_information": [
+        "schedule exclusion",
+        "general benefit",
+        "issuance and endorsement dates",
+        "conflict status"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-08-01",
+      "customer_statement": "I am already pregnant and want to buy a policy for this delivery.",
+      "decision_boundary": "A new policy purchase is not evidence for this delivery's eligibility.",
+      "family": 8,
+      "material_information": [
+        "current pregnancy",
+        "due date",
+        "maternity selection",
+        "inception",
+        "wait trigger"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-08-02",
+      "customer_statement": "We plan pregnancy in two years and want maternity waiting periods compared.",
+      "decision_boundary": "Compare actual waiting expiry with the event named in each clause.",
+      "family": 8,
+      "material_information": [
+        "planned conception and delivery dates",
+        "waiting clock",
+        "maternity options",
+        "quotes"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-08-03",
+      "customer_statement": "My policy has separate normal-delivery and caesarean limits.",
+      "decision_boundary": "Normal-delivery and caesarean caps cannot be pooled unless explicitly allowed.",
+      "family": 8,
+      "material_information": [
+        "delivery mode",
+        "relevant cap",
+        "policy year",
+        "delivery count",
+        "admissible costs"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-08-04",
+      "customer_statement": "I want IVF expenses covered and a brochure only mentions maternity.",
+      "decision_boundary": "Maternity wording does not by itself include assisted reproduction.",
+      "family": 8,
+      "material_information": [
+        "IVF treatment",
+        "infertility exclusion",
+        "maternity benefit scope",
+        "selected exception"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-08-05",
+      "customer_statement": "We need maternity plus newborn intensive care under a shared floater.",
+      "decision_boundary": "Do not charge the same expense to both maternal and newborn limits.",
+      "family": 8,
+      "material_information": [
+        "mother and newborn identities",
+        "NICU expenses",
+        "maternity cap",
+        "newborn cap",
+        "shared SI"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-08-06",
+      "customer_statement": "My maternity waiting period ends close to the expected delivery date.",
+      "decision_boundary": "Expected delivery date cannot settle an actual-date boundary in advance.",
+      "family": 8,
+      "material_information": [
+        "inception",
+        "waiting duration",
+        "expected and actual delivery dates",
+        "day inclusion"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-08-07",
+      "customer_statement": "Our policy limits the number of covered deliveries and this is our third child.",
+      "decision_boundary": "Children born and covered deliveries are not necessarily the same count.",
+      "family": 8,
+      "material_information": [
+        "previous delivery count",
+        "previous covered claims",
+        "lifetime versus term limit"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-08-08",
+      "customer_statement": "My spouse wants to join my policy shortly before a planned pregnancy.",
+      "decision_boundary": "Existing member's waiting credit is not automatically the spouse's credit.",
+      "family": 8,
+      "material_information": [
+        "spouse addition date",
+        "option date",
+        "continuous cover",
+        "maternity waiting start"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-08-09",
+      "customer_statement": "I need treatment for pregnancy complications distinguished from routine delivery.",
+      "decision_boundary": "An exception for one pregnancy complication is not general maternity coverage.",
+      "family": 8,
+      "material_information": [
+        "complication diagnosis",
+        "ectopic status",
+        "miscarriage cause",
+        "exclusion exceptions"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-08-10",
+      "customer_statement": "A maternity add-on is available but its premium and selected status are unknown.",
+      "decision_boundary": "Unknown option price prevents a complete affordability comparison.",
+      "family": 8,
+      "material_information": [
+        "option selection",
+        "extra premium",
+        "quote expiry",
+        "effective date",
+        "applicable wait"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-09-01",
+      "customer_statement": "My cataract procedure is daycare and does not require an overnight stay.",
+      "decision_boundary": "A short admission can satisfy daycare while still facing a cataract sublimit.",
+      "family": 9,
+      "material_information": [
+        "cataract procedure",
+        "day-care listing",
+        "per-eye cap",
+        "waiting status"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-09-02",
+      "customer_statement": "My doctor proposes robotic surgery and I need modern-treatment limits checked.",
+      "decision_boundary": "Compute the modern-treatment cap using its specified base and period.",
+      "family": 9,
+      "material_information": [
+        "robotic procedure",
+        "medical indication",
+        "modern-treatment list",
+        "percentage base"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-09-03",
+      "customer_statement": "I want AYUSH treatment in a recognised inpatient hospital.",
+      "decision_boundary": "A wellness retreat is not automatically an eligible AYUSH hospital.",
+      "family": 9,
+      "material_information": [
+        "AYUSH facility registration",
+        "system",
+        "inpatient setting",
+        "practitioner",
+        "annual limit"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-09-04",
+      "customer_statement": "I am donating an organ and need donor and recipient expenses separated.",
+      "decision_boundary": "The donor's own cover and the recipient's donor benefit are distinct.",
+      "family": 9,
+      "material_information": [
+        "donor versus recipient policy",
+        "transplant admissibility",
+        "screening and complications"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-09-05",
+      "customer_statement": "A procedure takes six hours and the policy lists specific daycare conditions.",
+      "decision_boundary": "Duration below 24 hours alone does not prove daycare eligibility.",
+      "family": 9,
+      "material_information": [
+        "procedure name",
+        "anaesthesia",
+        "six-hour stay",
+        "facility",
+        "listed conditions"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-09-06",
+      "customer_statement": "I need oral chemotherapy and the policy describes modern treatments.",
+      "decision_boundary": "A listed oral treatment may need different evidence from generic OPD medicine.",
+      "family": 9,
+      "material_information": [
+        "oral chemotherapy indication",
+        "explicit modern-treatment listing",
+        "treatment setting"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-09-07",
+      "customer_statement": "I want an experimental treatment that appears in a hospital brochure.",
+      "decision_boundary": "Hospital promotion is not original insurance evidence of coverage.",
+      "family": 9,
+      "material_information": [
+        "experimental status",
+        "medical documentation",
+        "policy definition",
+        "approval evidence"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-09-08",
+      "customer_statement": "My surgery uses an implant and I need the procedure limit and device costs checked.",
+      "decision_boundary": "Avoid treating an implant as extra cover outside an inclusive procedure cap.",
+      "family": 9,
+      "material_information": [
+        "procedure and implant itemisation",
+        "inclusive cap",
+        "regulatory price ceiling"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-09-09",
+      "customer_statement": "My treatment is medically necessary but will be performed in a clinic.",
+      "decision_boundary": "Medical necessity and eligible treatment setting are independent requirements.",
+      "family": 9,
+      "material_information": [
+        "clinic registration",
+        "procedure",
+        "daycare definition",
+        "outpatient exclusions"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-09-10",
+      "customer_statement": "I need ambulance costs alongside a covered daycare procedure.",
+      "decision_boundary": "Check contradictory ambulance benefit and excluded-item rows before promising payment.",
+      "family": 9,
+      "material_information": [
+        "ambulance mode",
+        "origin and destination",
+        "related admission",
+        "cap",
+        "exclusion list"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-10-01",
+      "customer_statement": "I need regular medicines without any hospital admission.",
+      "decision_boundary": "A medical prescription does not create outpatient cover under an inpatient policy.",
+      "family": 10,
+      "material_information": [
+        "medicine purpose",
+        "OPD benefit",
+        "pharmacy rules",
+        "annual balance"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-10-02",
+      "customer_statement": "My tests occurred before admission and may fall within the pre-hospitalisation window.",
+      "decision_boundary": "A test inside the date window can still fail the related-condition requirement.",
+      "family": 10,
+      "material_information": [
+        "test date",
+        "admission date",
+        "diagnosis relationship",
+        "accepted main claim",
+        "day window"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-10-03",
+      "customer_statement": "My follow-up bill is on the last day of the post-hospitalisation period.",
+      "decision_boundary": "Compare exact last eligible day and following day with calendar arithmetic.",
+      "family": 10,
+      "material_information": [
+        "discharge date",
+        "expense date",
+        "duration",
+        "inclusive endpoint",
+        "claim acceptance"
+      ],
+      "original_worked_case_status": "evidence_incomplete",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-10-04",
+      "customer_statement": "I need treatment at home because no hospital bed was available.",
+      "decision_boundary": "The domiciliary definition is not itself a benefit grant.",
+      "family": 10,
+      "material_information": [
+        "bed unavailability evidence",
+        "prescribed home treatment",
+        "domiciliary benefit",
+        "duration"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-10-05",
+      "customer_statement": "I prefer treatment at home for convenience and want domiciliary cover checked.",
+      "decision_boundary": "Convenience is distinct from the contract's qualifying home-treatment trigger.",
+      "family": 10,
+      "material_information": [
+        "home preference",
+        "medical inability to transfer",
+        "bed availability",
+        "home-care option"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-10-06",
+      "customer_statement": "My outpatient benefit has a yearly cap and a network-only condition.",
+      "decision_boundary": "An eligible treatment at an ineligible provider can have a different outcome.",
+      "family": 10,
+      "material_information": [
+        "outpatient selection",
+        "yearly cap",
+        "remaining balance",
+        "eligible provider"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-10-07",
+      "customer_statement": "I need physiotherapy after discharge and the hospitalisation claim was accepted.",
+      "decision_boundary": "Accepted hospitalisation does not automatically cover every follow-up service.",
+      "family": 10,
+      "material_information": [
+        "physiotherapy date",
+        "relation to admission",
+        "doctor advice",
+        "rehabilitation exclusion"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-10-08",
+      "customer_statement": "I have diabetes and want diagnostic tests plus ongoing medicines covered.",
+      "decision_boundary": "Evaluate each service and its limit rather than a single chronic-care flag.",
+      "family": 10,
+      "material_information": [
+        "diabetes history",
+        "tests",
+        "recurring medicine",
+        "OPD programme conditions"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-10-09",
+      "customer_statement": "My outpatient add-on requires app booking but I used a walk-in clinic.",
+      "decision_boundary": "Availability of a service does not prove that its required access method was followed.",
+      "family": 10,
+      "material_information": [
+        "app-booking requirement",
+        "actual booking",
+        "walk-in provider",
+        "exception evidence"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-10-10",
+      "customer_statement": "I need nursing at home after surgery and separate consumable supplies.",
+      "decision_boundary": "Separate skilled treatment from custodial support and supplies.",
+      "family": 10,
+      "material_information": [
+        "nurse service",
+        "home-care option",
+        "medical need",
+        "consumables list",
+        "nursing sublimit"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-11-01",
+      "customer_statement": "My private room exceeds the room-rent limit and I need proportionate deductions calculated.",
+      "decision_boundary": "Proportionate deduction affects only the items identified by the applicable clause.",
+      "family": 11,
+      "material_information": [
+        "actual and allowed room rates",
+        "billed days",
+        "medicines",
+        "affected charges",
+        "co-pay"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-11-02",
+      "customer_statement": "My policy has a co-pay and a deductible and I need the order of calculation checked.",
+      "decision_boundary": "Deduct-then-percentage and percentage-then-deduct can produce different results.",
+      "family": 11,
+      "material_information": [
+        "deductible amount",
+        "co-pay percentage",
+        "admissible amount",
+        "explicit ordering"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-11-03",
+      "customer_statement": "My bill includes consumables and I did not buy the consumables add-on.",
+      "decision_boundary": "Excluded, subsumed and separately payable items need separate states.",
+      "family": 11,
+      "material_information": [
+        "itemised consumables",
+        "exclusion list version",
+        "selected add-on",
+        "packaged charges"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-11-04",
+      "customer_statement": "A cataract sublimit is lower than my sum insured.",
+      "decision_boundary": "Calculate cap before co-pay and track each eye in its policy year.",
+      "family": 11,
+      "material_information": [
+        "cataract eye",
+        "SI base",
+        "per-eye annual cap",
+        "prior eye claims",
+        "co-pay"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-11-05",
+      "customer_statement": "My family shares a deductible and two people have claims this year.",
+      "decision_boundary": "A shared deductible must not be charged in full again to the second member.",
+      "family": 11,
+      "material_information": [
+        "family deductible scope",
+        "two person claims",
+        "deductible period",
+        "admissibility"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-11-06",
+      "customer_statement": "My room upgrade was medically necessary and ICU wording differs from ordinary-room wording.",
+      "decision_boundary": "A medically necessary upgrade needs an explicit exception to alter a cap.",
+      "family": 11,
+      "material_information": [
+        "ordinary-room and ICU days",
+        "medical necessity",
+        "rate limits",
+        "exceptions"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-11-07",
+      "customer_statement": "I selected a voluntary co-pay in return for a lower premium.",
+      "decision_boundary": "Saving premium does not remove the selected future cost share.",
+      "family": 11,
+      "material_information": [
+        "voluntary co-pay selection",
+        "percentage",
+        "quote discount",
+        "admissible amount"
+      ],
+      "original_worked_case_status": "evidence_incomplete",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-11-08",
+      "customer_statement": "My hospital bill has non-admissible items and co-pay applies only to admissible costs.",
+      "decision_boundary": "Do not apply co-pay to excluded charges already paid wholly by the customer.",
+      "family": 11,
+      "material_information": [
+        "total bill",
+        "non-admissible items",
+        "co-pay basis",
+        "other deductions"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-11-09",
+      "customer_statement": "A percentage room limit is based on sum insured and my bonus increased the displayed cover.",
+      "decision_boundary": "Displayed total cover and the room-limit calculation base may differ.",
+      "family": 11,
+      "material_information": [
+        "base SI",
+        "bonus",
+        "room percentage basis",
+        "daily maximum"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-11-10",
+      "customer_statement": "My procedure limit includes implant costs and my estimate itemises them separately.",
+      "decision_boundary": "Do not add a separately itemised implant again above the inclusive cap.",
+      "family": 11,
+      "material_information": [
+        "inclusive procedure cap",
+        "implant bill",
+        "procedure bill",
+        "consumables"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-12-01",
+      "customer_statement": "My first claim exhausts the base sum insured and I want restoration for the same admission.",
+      "decision_boundary": "Restoration may be unavailable to the claim that triggers it.",
+      "family": 12,
+      "material_information": [
+        "first-claim amount",
+        "exhaustion event",
+        "restoration trigger",
+        "same-claim permission"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-12-02",
+      "customer_statement": "My second admission is for the same illness and restoration has a related-illness condition.",
+      "decision_boundary": "Relatedness can depend on both disease and a relapse interval.",
+      "family": 12,
+      "material_information": [
+        "last consultation",
+        "next admission",
+        "diagnosis",
+        "same-illness definition"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-12-03",
+      "customer_statement": "Two members share a floater and only one has made a claim.",
+      "decision_boundary": "Shared balance is reduced by one member even when another has no claims.",
+      "family": 12,
+      "material_information": [
+        "member claim ownership",
+        "shared base balance",
+        "restoration eligibility"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-12-04",
+      "customer_statement": "My policy restores cover only after complete exhaustion.",
+      "decision_boundary": "One rupee remaining can change an exhaustion-only trigger.",
+      "family": 12,
+      "material_information": [
+        "complete versus partial exhaustion",
+        "bonus ordering",
+        "eligible next claim"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-12-05",
+      "customer_statement": "My insurer advertises unlimited restoration but there is a per-claim limit.",
+      "decision_boundary": "Unlimited restoration frequency does not establish unlimited payment for one claim.",
+      "family": 12,
+      "material_information": [
+        "restoration count",
+        "annual pool",
+        "per-claim maximum",
+        "prior claims"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-12-06",
+      "customer_statement": "I earned a cumulative bonus and want to know how a claim affects it at renewal.",
+      "decision_boundary": "A claim reported after renewal can invalidate already awarded bonus.",
+      "family": 12,
+      "material_information": [
+        "bonus rate",
+        "cap",
+        "claim notification",
+        "renewal",
+        "discount alternative"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-12-07",
+      "customer_statement": "My restoration benefit applies to unrelated illnesses and the diagnosis is uncertain.",
+      "decision_boundary": "Do not assert unrelated illness when diagnosis is pending.",
+      "family": 12,
+      "material_information": [
+        "diagnosis uncertainty",
+        "related-illness rule",
+        "consultation dates"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-12-08",
+      "customer_statement": "A claim crosses the policy-year boundary and I need the correct year's limits.",
+      "decision_boundary": "Do not split one claim between years solely because dates cross renewal.",
+      "family": 12,
+      "material_information": [
+        "admission and discharge",
+        "expenses by date",
+        "claim allocation rule",
+        "year resets"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-12-09",
+      "customer_statement": "My bonus is capped as a percentage of base sum insured.",
+      "decision_boundary": "Bonus cap and displayed total cover have different monetary meanings.",
+      "family": 12,
+      "material_information": [
+        "base SI",
+        "earned bonus percent",
+        "maximum percent",
+        "changed SI"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-12-10",
+      "customer_statement": "My family has made several claims and an annual benefit sublimit is exhausted.",
+      "decision_boundary": "Restored base cover need not restore an exhausted sublimit.",
+      "family": 12,
+      "material_information": [
+        "benefit-specific usage",
+        "family scope",
+        "policy year",
+        "remaining sublimit"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-13-01",
+      "customer_statement": "I am leaving my job next month and will lose employer cover.",
+      "decision_boundary": "Employment end and insurance end need separate recorded dates.",
+      "family": 13,
+      "material_information": [
+        "last working day",
+        "group termination date",
+        "migration offer",
+        "personal inception"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-13-02",
+      "customer_statement": "My employer cover is small and I want a personal policy to fill the gap.",
+      "decision_boundary": "Additional nominal cover does not eliminate the new policy's waiting period.",
+      "family": 13,
+      "material_information": [
+        "group SI",
+        "uncovered needs",
+        "individual quote",
+        "waits",
+        "deductible funding"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-13-03",
+      "customer_statement": "My spouse's employer covers me but may remove dependants next year.",
+      "decision_boundary": "Possible future removal is uncertainty, not current termination.",
+      "family": 13,
+      "material_information": [
+        "spouse employer policy",
+        "dependent eligibility",
+        "future notice",
+        "personal alternatives"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-13-04",
+      "customer_statement": "I have two indemnity policies and need to coordinate a single hospital bill.",
+      "decision_boundary": "The combined indemnity must not exceed eligible incurred expenses.",
+      "family": 13,
+      "material_information": [
+        "chosen primary insurer",
+        "admissible bill",
+        "settled amounts",
+        "other policy terms"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-13-05",
+      "customer_statement": "My employer maternity benefit is useful but I need long-term individual cover.",
+      "decision_boundary": "Group-specific cover does not carry unchanged into a retail contract.",
+      "family": 13,
+      "material_information": [
+        "group maternity schedule",
+        "employment duration",
+        "retail maternity wait",
+        "budget"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-13-06",
+      "customer_statement": "I have an employer policy schedule but not the master wording.",
+      "decision_boundary": "Schedule-only evidence cannot establish complete group benefits or exclusions.",
+      "family": 13,
+      "material_information": [
+        "master policy identity",
+        "schedule",
+        "endorsements",
+        "missing clauses"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-13-07",
+      "customer_statement": "My employer offers migration on exit and acceptance is still pending.",
+      "decision_boundary": "Pending migration must not be presented as in-force replacement cover.",
+      "family": 13,
+      "material_information": [
+        "migration application",
+        "acceptance",
+        "credited history",
+        "current renewal"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-13-08",
+      "customer_statement": "I need to compare a personal base plan with a super top-up over employer cover.",
+      "decision_boundary": "The deductible can exceed available employer payment after job exit.",
+      "family": 13,
+      "material_information": [
+        "group SI",
+        "deductible amount",
+        "aggregate basis",
+        "group expiry",
+        "top-up year"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-13-09",
+      "customer_statement": "My employer policy has a room restriction that my personal policy does not.",
+      "decision_boundary": "An item disallowed by one contract needs independent assessment under the other.",
+      "family": 13,
+      "material_information": [
+        "separate room rules",
+        "primary settlement",
+        "residual items",
+        "second eligibility"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-13-10",
+      "customer_statement": "I am retiring and my parent will also lose dependent cover.",
+      "decision_boundary": "Do not assume the parent's employer continuity or retail acceptance matches the employee's.",
+      "family": 13,
+      "material_information": [
+        "employee and parent identities",
+        "retirement date",
+        "separate eligibility",
+        "offers"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-14-01",
+      "customer_statement": "I want a per-claim top-up compared with an aggregate super top-up.",
+      "decision_boundary": "Same product name can have variants with different aggregation rules.",
+      "family": 14,
+      "material_information": [
+        "per-hospitalisation versus aggregate basis",
+        "variant",
+        "deductible",
+        "two-claim history"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-14-02",
+      "customer_statement": "I had two claims below the deductible but together they exceed it.",
+      "decision_boundary": "Two sub-deductible claims may produce payment only under aggregate wording.",
+      "family": 14,
+      "material_information": [
+        "claim amounts and dates",
+        "admissible accumulator",
+        "annual deductible",
+        "limit"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-14-03",
+      "customer_statement": "My employer cover is lower than the proposed super top-up deductible.",
+      "decision_boundary": "The uncovered gap between employer limit and deductible needs explicit funding.",
+      "family": 14,
+      "material_information": [
+        "employer SI",
+        "deductible",
+        "personal cash",
+        "eligible expenses"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-14-04",
+      "customer_statement": "I have no base policy but can personally fund the deductible.",
+      "decision_boundary": "Do not invent a mandatory base policy or assume it is never required.",
+      "family": 14,
+      "material_information": [
+        "deductible funding",
+        "required base-policy condition",
+        "admissible amount"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-14-05",
+      "customer_statement": "My base policy and super top-up renew on different dates.",
+      "decision_boundary": "Do not use base renewal to reset a differently dated top-up accumulator.",
+      "family": 14,
+      "material_information": [
+        "base year",
+        "top-up year",
+        "expense allocation",
+        "accumulator reset"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-14-06",
+      "customer_statement": "My family shares an aggregate deductible and both spouses made claims.",
+      "decision_boundary": "Aggregate family and per-person deductibles require different ledgers.",
+      "family": 14,
+      "material_information": [
+        "family membership",
+        "each person's eligible claims",
+        "shared accumulator"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-14-07",
+      "customer_statement": "A non-admissible expense should not automatically count toward the deductible.",
+      "decision_boundary": "Gross billed amounts cannot automatically satisfy an admissible-expense deductible.",
+      "family": 14,
+      "material_information": [
+        "excluded items",
+        "admissible treatment",
+        "deductible definition",
+        "evidence"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-14-08",
+      "customer_statement": "I want to reduce the deductible after a major diagnosis.",
+      "decision_boundary": "A requested lower deductible is not an accepted contractual change.",
+      "family": 14,
+      "material_information": [
+        "renewal date",
+        "requested deductible change",
+        "diagnosis disclosure",
+        "underwriting"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-14-09",
+      "customer_statement": "A single claim exceeds both the base cover and top-up deductible.",
+      "decision_boundary": "Prevent double recovery while distinguishing threshold from base payout.",
+      "family": 14,
+      "material_information": [
+        "base settlement",
+        "deductible threshold",
+        "top-up admissible bill",
+        "top-up SI"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-14-10",
+      "customer_statement": "My top-up has its own waiting periods despite long-standing base cover.",
+      "decision_boundary": "A base policy's age does not automatically waive a new top-up's waits.",
+      "family": 14,
+      "material_information": [
+        "own inception",
+        "PED and named waits",
+        "continuity credit acceptance"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-15-01",
+      "customer_statement": "I want to port to a new insurer and carry forward waiting-period credit.",
+      "decision_boundary": "Carry credits by benefit and amount, not one blanket continuity flag.",
+      "family": 15,
+      "material_information": [
+        "per-person uninterrupted history",
+        "PED and specific waits",
+        "accepted credit"
+      ],
+      "original_worked_case_status": "evidence_incomplete",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-15-02",
+      "customer_statement": "I want to migrate within the same insurer to a different product.",
+      "decision_boundary": "Migration and new-policy purchase have different continuity evidence.",
+      "family": 15,
+      "material_information": [
+        "old and new same-insurer UIN",
+        "migration acceptance",
+        "effective date"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-15-03",
+      "customer_statement": "I am increasing sum insured while porting and need old and increased portions separated.",
+      "decision_boundary": "Apply new waits to the enhanced portion only where the original says so.",
+      "family": 15,
+      "material_information": [
+        "old SI",
+        "bonus",
+        "increased SI layer",
+        "inception per layer",
+        "credit"
+      ],
+      "original_worked_case_status": "evidence_incomplete",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-15-04",
+      "customer_statement": "My portability application is pending and my existing renewal is due.",
+      "decision_boundary": "Do not treat a pending application as preserving current cover.",
+      "family": 15,
+      "material_information": [
+        "old renewal due",
+        "new proposal status",
+        "acceptance date",
+        "payment proof"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-15-05",
+      "customer_statement": "My policy had a break in coverage and continuity is disputed.",
+      "decision_boundary": "Disputed continuity remains uncertain rather than silently reset or granted.",
+      "family": 15,
+      "material_information": [
+        "renewal due and paid dates",
+        "grace mode",
+        "gap evidence",
+        "insurer confirmation"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-15-06",
+      "customer_statement": "I have a bonus amount and want its portability treatment checked.",
+      "decision_boundary": "Transferred bonus credit is not automatically the new insurer's bonus formula.",
+      "family": 15,
+      "material_information": [
+        "old bonus amount",
+        "type of credit",
+        "new SI",
+        "applicable portability clause"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-15-07",
+      "customer_statement": "I am leaving a group policy and applying for individual migration.",
+      "decision_boundary": "An employer letter alone may not establish insured continuity.",
+      "family": 15,
+      "material_information": [
+        "group master policy",
+        "member history",
+        "exit date",
+        "migration offer"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-15-08",
+      "customer_statement": "The new insurer offers an exclusion that was absent from my previous contract.",
+      "decision_boundary": "A credited waiting period does not remove a new accepted exclusion.",
+      "family": 15,
+      "material_information": [
+        "old benefits",
+        "new individual exclusion",
+        "consent",
+        "effective date"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-15-09",
+      "customer_statement": "I have a pending claim while applying to port.",
+      "decision_boundary": "Keep liability and evidence for the earlier period after portability.",
+      "family": 15,
+      "material_information": [
+        "pending claim",
+        "occurrence date",
+        "old policy",
+        "new inception",
+        "settlement status"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-15-10",
+      "customer_statement": "I want to port a family floater but only move one member.",
+      "decision_boundary": "Do not infer partial portability from a clause requiring the entire family.",
+      "family": 15,
+      "material_information": [
+        "one member requested",
+        "entire-family condition",
+        "split terms",
+        "allocated bonus"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-16-01",
+      "customer_statement": "I missed renewal by a few days and need continuity and claim cover distinguished.",
+      "decision_boundary": "Continuity retention and claim cover during a gap require separate conclusions.",
+      "family": 16,
+      "material_information": [
+        "due date",
+        "paid date",
+        "renewal versus instalment",
+        "admission date"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-16-02",
+      "customer_statement": "I missed an instalment and have a hospital admission during the payment gap.",
+      "decision_boundary": "Read the instalment-specific overriding clause alongside general renewal language.",
+      "family": 16,
+      "material_information": [
+        "instalment mode",
+        "due date",
+        "grace endpoint",
+        "admission",
+        "eventual payment"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-16-03",
+      "customer_statement": "I moved to a more expensive premium zone before renewal.",
+      "decision_boundary": "Apply the zone rule to its actual event, not retrospectively by default.",
+      "family": 16,
+      "material_information": [
+        "old and new postcodes",
+        "move date",
+        "rate table date",
+        "zone co-pay"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-16-04",
+      "customer_statement": "I want to add my spouse after marriage during the term.",
+      "decision_boundary": "The spouse's cover begins from accepted terms, not merely the wedding date.",
+      "family": 16,
+      "material_information": [
+        "marriage date",
+        "requested addition",
+        "insurer acceptance",
+        "new member waiting clocks"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-16-05",
+      "customer_statement": "My birthday moves me to a new premium band at renewal.",
+      "decision_boundary": "Birthday-based pricing must not be confused with entry eligibility.",
+      "family": 16,
+      "material_information": [
+        "DOB",
+        "renewal date",
+        "premium age basis",
+        "new quote"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-16-06",
+      "customer_statement": "My product is withdrawn and the insurer offers a replacement.",
+      "decision_boundary": "A product withdrawal is not itself a lapse in an existing policy.",
+      "family": 16,
+      "material_information": [
+        "withdrawal notice",
+        "old version",
+        "renewal options",
+        "replacement terms"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-16-07",
+      "customer_statement": "I want to increase sum insured after a recent claim.",
+      "decision_boundary": "Existing cover and requested enhancement remain separate until accepted.",
+      "family": 16,
+      "material_information": [
+        "recent claim",
+        "current SI",
+        "requested increase",
+        "new underwriting",
+        "waits"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-16-08",
+      "customer_statement": "My contact details changed and I did not receive the renewal reminder.",
+      "decision_boundary": "Missing reminder does not establish payment or automatic continuation.",
+      "family": 16,
+      "material_information": [
+        "contact history",
+        "renewal notice delivery",
+        "due payment",
+        "communication evidence"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-16-09",
+      "customer_statement": "I want to remove an optional add-on while keeping base-policy continuity.",
+      "decision_boundary": "Removing an option invalidates advice depending on it but not every customer fact.",
+      "family": 16,
+      "material_information": [
+        "option removal",
+        "renewal",
+        "base continuity",
+        "linked benefits",
+        "revised quote"
+      ],
+      "original_worked_case_status": "evidence_incomplete",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-16-10",
+      "customer_statement": "My policy renews while I am still hospitalised.",
+      "decision_boundary": "A year boundary needs explicit allocation before balances can be computed.",
+      "family": 16,
+      "material_information": [
+        "admission across renewal",
+        "expense dates",
+        "allocation clause",
+        "both schedules"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-17-01",
+      "customer_statement": "I need a specific hospital confirmed under the exact policy network.",
+      "decision_boundary": "A hospital name match is insufficient to confirm the branch.",
+      "family": 17,
+      "material_information": [
+        "hospital legal ID",
+        "branch address",
+        "exact network",
+        "observation time",
+        "treatment"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-17-02",
+      "customer_statement": "My hospital appears on an old network PDF but not in a recent search.",
+      "decision_boundary": "A missing search hit is not proof of formal delisting.",
+      "family": 17,
+      "material_information": [
+        "old PDF hash and date",
+        "current search result",
+        "negative-search coverage"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-17-03",
+      "customer_statement": "My preferred hospital is explicitly excluded by the insurer.",
+      "decision_boundary": "Record exclusion and any expressly supported emergency exception together.",
+      "family": 17,
+      "material_information": [
+        "excluded-provider list",
+        "branch ID",
+        "emergency stabilization exception"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-17-04",
+      "customer_statement": "My plan uses a restricted network and I need treatment elsewhere.",
+      "decision_boundary": "Network options can change payment independently of the base product.",
+      "family": 17,
+      "material_information": [
+        "restricted-network option",
+        "outside facility",
+        "co-pay or exclusion",
+        "exceptions"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-17-05",
+      "customer_statement": "I live in Kota but may need specialist treatment in Delhi.",
+      "decision_boundary": "Home city does not settle eligibility or cost share in the treatment city.",
+      "family": 17,
+      "material_information": [
+        "Kota residence",
+        "Delhi treatment",
+        "branch",
+        "room costs",
+        "zone clause"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-17-06",
+      "customer_statement": "My policy advertises overseas benefits and I need planned overseas treatment.",
+      "decision_boundary": "An overseas benefit label does not establish planned treatment coverage.",
+      "family": 17,
+      "material_information": [
+        "planned versus emergency overseas care",
+        "territory",
+        "optional benefit",
+        "preapproval"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-17-07",
+      "customer_statement": "Two hospitals share the same name and I need the correct branch.",
+      "decision_boundary": "Never merge branches using name alone.",
+      "family": 17,
+      "material_information": [
+        "same-name hospital branches",
+        "exact address",
+        "network identifiers"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-17-08",
+      "customer_statement": "My hospital has left the network after I obtained a quote.",
+      "decision_boundary": "A quote's historical network observation cannot promise future participation.",
+      "family": 17,
+      "material_information": [
+        "quote date",
+        "hospital observation dates",
+        "departure effective date",
+        "authorisation"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-17-09",
+      "customer_statement": "I need emergency treatment at a non-network hospital.",
+      "decision_boundary": "Cashless refusal and contractual claim refusal are distinct outcomes.",
+      "family": 17,
+      "material_information": [
+        "emergency evidence",
+        "non-network status",
+        "excluded status",
+        "reimbursement conditions"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-17-10",
+      "customer_statement": "My policy applies a zone co-pay based on treatment location.",
+      "decision_boundary": "Co-pay trigger and percentage base need separate recorded evidence.",
+      "family": 17,
+      "material_information": [
+        "residential zone",
+        "treatment zone",
+        "co-pay rate",
+        "exceptions",
+        "bill basis"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-18-01",
+      "customer_statement": "I have a published premium table but need a personal family quote.",
+      "decision_boundary": "A public premium example is not a binding personal quote.",
+      "family": 18,
+      "material_information": [
+        "quote owner",
+        "all member facts",
+        "table revision",
+        "configuration",
+        "personalised offer"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-18-02",
+      "customer_statement": "My quote omits the add-on needed for my main requirement.",
+      "decision_boundary": "Omitted required option makes the offer unsuitable for that stated need.",
+      "family": 18,
+      "material_information": [
+        "priority",
+        "required option",
+        "selected set",
+        "comparable revised quote"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-18-03",
+      "customer_statement": "An underwriting offer adds a loading after medical screening.",
+      "decision_boundary": "Do not add percentage loading to the wrong premium component.",
+      "family": 18,
+      "material_information": [
+        "base quote",
+        "screening results",
+        "loading amount and basis",
+        "accepted offer"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-18-04",
+      "customer_statement": "My personal quote has expired and I want to use it for a budget comparison.",
+      "decision_boundary": "Expired prices remain historical evidence but cannot establish current affordability.",
+      "family": 18,
+      "material_information": [
+        "quote validity endpoint",
+        "observation date",
+        "customer revision",
+        "refreshed quote"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-18-05",
+      "customer_statement": "Two quotes have different sums insured and payment frequencies.",
+      "decision_boundary": "Annualise comparable costs without assuming monthly price equals annual divided by twelve.",
+      "family": 18,
+      "material_information": [
+        "SI",
+        "term",
+        "payment frequency",
+        "total payable",
+        "add-ons",
+        "fees"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-18-06",
+      "customer_statement": "My offer includes a disease exclusion absent from the standard wording.",
+      "decision_boundary": "A personal offer restricts only its owner and scope, not the public product for everyone.",
+      "family": 18,
+      "material_information": [
+        "disease exclusion text",
+        "affected person",
+        "standard wording",
+        "accepted consent"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-18-07",
+      "customer_statement": "A quote includes a deductible I did not ask for.",
+      "decision_boundary": "Do not treat an unwanted deductible as an accepted preference.",
+      "family": 18,
+      "material_information": [
+        "deductible selection",
+        "consent",
+        "cash funding",
+        "revised offer"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-18-08",
+      "customer_statement": "An insurer has requested further tests and has not accepted my proposal.",
+      "decision_boundary": "A pending proposal is neither acceptance nor definitive rejection.",
+      "family": 18,
+      "material_information": [
+        "requested tests",
+        "proposal status",
+        "offer conditions",
+        "decision date"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-18-09",
+      "customer_statement": "My quote is for the wrong residential zone.",
+      "decision_boundary": "Correcting residence invalidates the old price comparison.",
+      "family": 18,
+      "material_information": [
+        "actual residence",
+        "quoted zone",
+        "observation revision",
+        "corrected premium"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-18-10",
+      "customer_statement": "I want to know whether the displayed premium includes all applicable charges.",
+      "decision_boundary": "Unknown charges are not zero and tax rates must be tied to dated evidence.",
+      "family": 18,
+      "material_information": [
+        "premium components",
+        "tax observation date",
+        "discounts",
+        "fees",
+        "term"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-19-01",
+      "customer_statement": "My doctor advised surgery next month and I want to buy cover now.",
+      "decision_boundary": "A newly purchased policy cannot be assumed to fund known imminent surgery.",
+      "family": 19,
+      "material_information": [
+        "advised surgery date",
+        "symptom onset",
+        "application",
+        "inception",
+        "waits"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-19-02",
+      "customer_statement": "I received a new diagnosis yesterday and have no existing insurance.",
+      "decision_boundary": "Do not present unaccepted cover as funding for the present episode.",
+      "family": 19,
+      "material_information": [
+        "diagnosis date",
+        "no existing contract",
+        "proposal state",
+        "exclusions"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-19-03",
+      "customer_statement": "I want to increase cover shortly before an already planned procedure.",
+      "decision_boundary": "Old cover may have a different answer from the newly increased layer.",
+      "family": 19,
+      "material_information": [
+        "current and enhanced limits",
+        "treatment advice date",
+        "enhancement effective date"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-19-04",
+      "customer_statement": "I have a recent accident and need the initial waiting-period exception checked.",
+      "decision_boundary": "Accident exception waives only the named waiting rule, not every exclusion.",
+      "family": 19,
+      "material_information": [
+        "accident event",
+        "cover start",
+        "definition",
+        "initial wait exception",
+        "other exclusions"
+      ],
+      "original_worked_case_status": "evidence_incomplete",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-19-05",
+      "customer_statement": "My emergency symptoms began before the new policy's start date.",
+      "decision_boundary": "Admission after inception does not erase a pre-inception event.",
+      "family": 19,
+      "material_information": [
+        "symptom onset",
+        "injury date",
+        "risk commencement",
+        "admission date"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-19-06",
+      "customer_statement": "I am pregnant and delivery is expected within weeks.",
+      "decision_boundary": "Urgency does not shorten an unmet waiting period.",
+      "family": 19,
+      "material_information": [
+        "pregnancy and due dates",
+        "existing maternity cover",
+        "new-policy waiting period"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-19-07",
+      "customer_statement": "My employer cover ends before an already scheduled operation.",
+      "decision_boundary": "An operation after group termination needs evidence of another applicable contract.",
+      "family": 19,
+      "material_information": [
+        "group termination",
+        "surgery date",
+        "migrated cover",
+        "acceptance"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-19-08",
+      "customer_statement": "I have an accepted existing policy but a disease-specific waiting period may remain.",
+      "decision_boundary": "An accepted policy may still exclude a claim within a named wait.",
+      "family": 19,
+      "material_information": [
+        "existing schedule",
+        "disease-specific wait",
+        "continuity",
+        "procedure date"
+      ],
+      "original_worked_case_status": "evidence_incomplete",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-19-09",
+      "customer_statement": "My parent needs urgent cardiac treatment and we are comparing senior policies.",
+      "decision_boundary": "Separate present treatment funding from future-policy suitability.",
+      "family": 19,
+      "material_information": [
+        "parent cardiac history",
+        "urgent procedure",
+        "senior eligibility",
+        "existing contracts"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-19-10",
+      "customer_statement": "I want to know what the current policy covers while a new proposal is pending.",
+      "decision_boundary": "Assess today's rights under existing cover without substituting the pending proposal.",
+      "family": 19,
+      "material_information": [
+        "current active policy",
+        "pending proposal",
+        "event dates",
+        "version applicability"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-20-01",
+      "customer_statement": "I need insurance, I am 35, I live in Kota, and I have no health insurance.",
+      "decision_boundary": "Confirm who needs cover before assigning age or making a shortlist.",
+      "family": 20,
+      "material_information": [
+        "buyer role",
+        "intended insured",
+        "age 35",
+        "Kota",
+        "no cover",
+        "clarification order"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-20-02",
+      "customer_statement": "I said I was 35 but I need to correct my age to 36.",
+      "decision_boundary": "Retain correction history and recompute every result that used the former age.",
+      "family": 20,
+      "material_information": [
+        "old age 35",
+        "corrected age 36",
+        "fact provenance",
+        "revision",
+        "invalidated quotes"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-20-03",
+      "customer_statement": "I am 35 but the insurance is for my 70-year-old mother.",
+      "decision_boundary": "The quote and eligibility filter must use mother's facts.",
+      "family": 20,
+      "material_information": [
+        "buyer age 35",
+        "mother age 70",
+        "role relationship",
+        "per-person medical facts"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-20-04",
+      "customer_statement": "I closed this conversation yesterday and want to continue with the saved details.",
+      "decision_boundary": "Reopening preserves context but rechecks expired or changed dependencies.",
+      "family": 20,
+      "material_information": [
+        "owner",
+        "saved conversation",
+        "prior revisions",
+        "corpus and quote changes"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-20-05",
+      "customer_statement": "I started a new conversation and do not want old medical details reused without asking.",
+      "decision_boundary": "Do not silently import sensitive facts from another conversation.",
+      "family": 20,
+      "material_information": [
+        "new conversation",
+        "consented cross-session facts",
+        "separate owner scope"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-20-06",
+      "customer_statement": "Mujhe mummy ke liye insurance chahiye; unki umar sattar saal hai.",
+      "decision_boundary": "Mummy and sattar must not be assigned to the buyer or translated as age 17.",
+      "family": 20,
+      "material_information": [
+        "Hindi intent",
+        "mother as insured",
+        "age 70",
+        "uncertain translation facts"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-20-07",
+      "customer_statement": "I have no insurance; by cover I meant an emergency savings account.",
+      "decision_boundary": "Savings are not an insurance contract and cannot supply waiting-period credit.",
+      "family": 20,
+      "material_information": [
+        "no insurance assertion",
+        "savings-account correction",
+        "fact type",
+        "provenance"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-20-08",
+      "customer_statement": "My father has diabetes but I do not; please keep our histories separate.",
+      "decision_boundary": "Correction of father facts must not overwrite buyer medical history.",
+      "family": 20,
+      "material_information": [
+        "father diabetes positive",
+        "buyer diabetes negative",
+        "explicit person references"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-20-09",
+      "customer_statement": "I sent a correction while an earlier advice request was still processing.",
+      "decision_boundary": "An answer calculated with superseded facts cannot publish as current.",
+      "family": 20,
+      "material_information": [
+        "concurrent turns",
+        "starting fact revision",
+        "correction revision",
+        "publication check"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    },
+    {
+      "assessment": "requirements_assessed_answer_unfinished",
+      "case_id": "ref-20-10",
+      "customer_statement": "I want my medical disclosure deleted and earlier derived advice invalidated.",
+      "decision_boundary": "Deletion must invalidate dependent advice without re-exposing the erased medical value.",
+      "family": 20,
+      "material_information": [
+        "deleted disclosure",
+        "derived decisions",
+        "cached artifacts",
+        "backups",
+        "audit minimisation"
+      ],
+      "original_worked_case_status": "draft",
+      "publication_rule": "Unknown material facts require clarification; absent or conflicting material originals block supported completion.",
+      "required_operations": [
+        "resolve fact subjects and provenance",
+        "select applicable original bundle and terms",
+        "load linked conditions and exceptions",
+        "evaluate case-specific boundary",
+        "persist evidence and revision dependencies"
+      ]
+    }
+  ],
+  "source_sha256": "f2eafc8341289c9c8bf217f6ff0d85b5be8a39dd5f4a49344ab1a83f4f3f318f",
+  "status": "Partial: per-case requirements only; not 200 worked decisions"
+}

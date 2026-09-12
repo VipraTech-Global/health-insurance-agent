@@ -1,0 +1,124 @@
+{
+  "revision": "discussion-r16",
+  "generated_at_utc": "2026-09-12T11:39:01.577703+00:00",
+  "status": "passed",
+  "scope": "Structural verification of the user-approved Batch 9 treatment, expense, coverage-assessment and deterministic-calculation design. Real insurer claim administration and complete-design approval are not claimed.",
+  "checks": [
+    {
+      "check": "88 unique application entities",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "835 unique application fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "260 FK relationships match dictionary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all FK targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "relationship ledger exactly covers FK fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "approved five-model Batch 9 present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "retired ExpenseLine, ClaimLineAssessment and ExpenseAllocation removed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "issued and prospective assessment contexts are separate",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "four monetary roles remain separate",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Calculation precedes Decision and belongs to AdviceRequest",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "treatment and expense corrections preserve history",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "case and supplementary field targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "fixed 400 case map retained as 200 reference and 200 evaluation-safe projections",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "r16 reverse trace covers every field exactly",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "r16 trace input hashes match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all JSON field contracts resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "approved Batch 9 JSON contracts exist",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "retired allocation and calculation contracts removed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Batch 9 approval and overall design boundary recorded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no replacement Django models or migrations created",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 20,
+  "failed": 0,
+  "application_entities": 88,
+  "application_fields": 835,
+  "foreign_keys": 260,
+  "json_definitions": 56,
+  "batch1_approval": "explicit user approval on 2026-09-11",
+  "batch2_approval": "explicit user approval on 2026-09-11",
+  "batch3_approval": "explicit user approval on 2026-09-12",
+  "batch4_approval": "explicit user approval on 2026-09-12",
+  "batch5_approval": "explicit user approval on 2026-09-12",
+  "batch6_approval": "explicit user approval on 2026-09-12",
+  "batch7_approval": "explicit user approval on 2026-09-12",
+  "batch8_approval": "explicit user approval on 2026-09-12",
+  "batch9_approval": "explicit user approval on 2026-09-12",
+  "overall_design_approval": false
+}

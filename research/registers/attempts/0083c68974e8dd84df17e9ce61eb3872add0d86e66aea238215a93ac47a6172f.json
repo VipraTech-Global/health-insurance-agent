@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T12:02:09.341762+00:00",
+  "associations": [],
+  "byte_count": 229692,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://d2t12sefhwd9tk.cloudfront.net/uploads/Independent_Director_appointment_letter_a0e4cd873c.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "zurich-kotak",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 797,
+  "linking_url": "https://www.zurichkotak.com/product-documents",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "9c11833aff6367bc5571510b0c89f0f42ccbd5d4a57955e2b6e3bb1cf130a0c3",
+  "status": "acquired",
+  "url": "https://d2t12sefhwd9tk.cloudfront.net/uploads/Independent_Director_appointment_letter_a0e4cd873c.pdf"
+}

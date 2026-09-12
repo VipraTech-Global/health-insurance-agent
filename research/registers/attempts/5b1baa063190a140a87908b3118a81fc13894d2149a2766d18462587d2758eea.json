@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T17:53:27.726893+00:00",
+  "associations": [],
+  "byte_count": 441,
+  "component_version": "research-acquisition/2",
+  "content_type": "text/html",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.icicilombard.com/health-insurance/get-quote/select-chi-plans",
+  "format_version": 1,
+  "http_status": 403,
+  "insurer_id": "icici-lombard",
+  "issues": [
+    "http_403"
+  ],
+  "language": "unknown",
+  "latency_ms": 528,
+  "linking_url": "",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "eb60a04f8108f0cb05af492c1109ec53fdcfaa9bdac9aa09cc0c3a459bd71b7c",
+  "status": "failed",
+  "url": "https://www.icicilombard.com/health-insurance/get-quote/select-chi-plans"
+}

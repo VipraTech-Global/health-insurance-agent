@@ -1,0 +1,2420 @@
+{
+  "artifact_version": "new-india-family-reconciliation/r11",
+  "generated_at_utc": "2026-09-10T17:41:01.443330+00:00",
+  "reviewer": "independent_bounded_source_review_agent",
+  "scope": "Seven remaining New India legacy rows across five families without previously reviewed wording candidates. Mediclaim and Senior Citizen already had wording candidates and are outside this batch. Selected original identity/grant/configuration review only.",
+  "baseline_scope_register": "research/registers/document-scope-r10.json",
+  "baseline_legacy_register": "research/registers/legacy-assessment-r10.json",
+  "counts": {
+    "legacy_rows": 7,
+    "base_family_groups": 5,
+    "reviewed_PDFs": 10,
+    "newly_classified_PDFs": 10,
+    "reread_existing_PDFs": 0,
+    "new_medical_expense_PDFs": 5,
+    "new_supporting_PDFs": 5,
+    "new_acquisition_attempts": 0,
+    "historical_version_or_bundle_completed_rows": 0,
+    "selected_physical_pages_read": 28,
+    "visually_reviewed_physical_pages": 6
+  },
+  "newly_classified_documents": [
+    {
+      "source_sha256": "6908c83ec7d9ef8bccea1f5c4aa74689bd07b76cfea1994e1e7113c41652fb7f",
+      "insurer_id": "new-india",
+      "product_or_heading": "New India Floater Mediclaim Policy",
+      "heading_is_normalized_display_label": true,
+      "document_role": "customer_information_sheet",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Preserved official CIS title and selected indemnity/plan summary reviewed.",
+      "page_count": 5,
+      "observed_uins": [],
+      "typed_uin_assertions": [],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "CUSTOMER INFORMATION SHEET/KNOW YOUR POLICY\nSI Title Description Policy\nNo Clause\nNumber\n1 Name of the Page 1\nNew India Floater Mediclaim Policy\nInsurance\nProduct/Policy\n2 Policy Number\n3 Type of 3.1\nInsurance Indemnity\nProduct/Policy\nPolicy Plan Page 1\n(Basic / Uplift)\n4 Sum Insured Basis\n5 Policy Coverage Expense in respect of:\n(What Policy\nCovers?)\nAdmission in hospital beyond 24 hours. 2.19\nPre-hospitalisation - 30 days. 2.37 & 3.1(e)\nPost-Hospitalisation treatment within 60 days from 2.38 & 3.1(f)\ndate of discharge.\nSpecified / Listed procedures requiring less than 24 Annexure 1:\nhours of hospitalization (day care).\nProportionate deduction on the other expenses 3.1 (g)\nincurred at the Hospital.\nCoverage for AYUSH Treatment: up to 100% of\n3.4\nthe Sum Insured\nSurgeon, Anesthetist, Medical Practitioner,\n3.1(c)\nConsultants, Specialist fees, Operating theatre\ncharges, Cost of Pharmacy and Consumables etc..\nHospital cash -:0.1% per day maximum up to 3.5\n1% of SI for SI 15 L\nRs. 2500/day for SI 25L, 50L and 1 cr\nRs. 3000/day for SI 2 Cr, 3Cr and 5 cr\nHealth Check-up- 3.14\nPlan Name Sum Insured Room Rent\nLimit\nBasic Plan Upto Rs 15L Not Covered\nUPLIFT Plan 25L, 50L, 1 Cr Maximum Upto Rs\n10,000\nUPLIFT Plan 2Cr, 3Cr and 5Cr Maximum Upto Rs",
+          "meaning": "Official CIS family/plan identity and selected summary; placeholders do not establish issued selections and wording precedence must be retained.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "4d182008379c39ef4541c2a9738fa92100b6d176e617fe9bc936ac42683d602e",
+          "visually_reviewed": true
+        },
+        {
+          "physical_page": 5,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "Declaration by the Policy Holder\nI have read the above and confirm having noted the details.\nPlace:\nDate: (Signature of the Policy Holder)\nNote:\ni. Web-link where the product related documents including the Customer information\nsheet are available on https://www.newindia.co.in/health/all-products\nii. In case of any conflict, the terms and condition mentioned in the policy document\nshall prevail.\n(LEGAL DISCLAIMER) NOTE: The information must be read in conjunction with the Prospectus and\nPolicy Document. In case of any conflict between the CIS and the Policy Document the terms and\nconditions mentioned in the Policy Document shall prevail.",
+          "meaning": "Official CIS family/plan identity and selected summary; placeholders do not establish issued selections and wording precedence must be retained.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "23a3126c8d3881e1f6bf32a7d0f8a4f499d45e7e920709473c8d5725ac1954e5",
+          "visually_reviewed": false
+        }
+      ],
+      "identity_evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "exact_passage": "New India Floater Mediclaim Policy",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        },
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "exact_passage": "(Basic / Uplift)",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        }
+      ],
+      "acquisition_provenance": [
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/floater-mediclaim-policy/Customer information sheet _ New India Floater Mediclaim Policy.pdf",
+          "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/floater-mediclaim-policy/Customer%20information%20sheet%20_%20New%20India%20Floater%20Mediclaim%20Policy.pdf",
+          "linking_url": "https://www.newindia.co.in/health-insurance/new-india-assurance-floater-mediclaim-policy",
+          "acquired_at": "2026-09-10T11:59:17.072503+00:00",
+          "http_status": 200,
+          "status": "acquired",
+          "sha256": "6908c83ec7d9ef8bccea1f5c4aa74689bd07b76cfea1994e1e7113c41652fb7f",
+          "byte_count": 349714,
+          "content_type": "application/pdf",
+          "source_register": "research/registers/sources.json",
+          "source_id": "9ea5d08427f7a20e3af0d539e35c114fbe5573b9699114caa9f2a9882edad594",
+          "attempt_location": "matching source_id latest_attempt",
+          "observed_original_links": [
+            {
+              "linking_url": "https://www.newindia.co.in/health-insurance/new-india-assurance-floater-mediclaim-policy",
+              "page_sha256": "9c47106eb370a1995ed4d4d7992e1a6d9ba9854c7ac5a077ba72c42bc373dfdf",
+              "label": "Customer Information Sheet",
+              "raw_href": "assets/docs/know-more/health/floater-mediclaim-policy/Customer information sheet _ New India Floater Mediclaim Policy.pdf"
+            }
+          ]
+        }
+      ],
+      "selected_physical_pages_read_for_identity_scope": [
+        1,
+        5
+      ],
+      "visually_reviewed_physical_pages": [
+        1
+      ],
+      "review_extent": "Selected visible original identity/grant/configuration pages only; native text searched over all pages for navigation, which is not a full original or rule inventory.",
+      "already_manually_classified_r10": false,
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": {
+        "status": "unmeasured",
+        "value": null
+      },
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Fixed cash, critical-care and personal-accident benefits may coexist with medical-expense coverage; no exhaustive component inventory.",
+      "source_issue_ids": [
+        "NI-R11-FLOATER-UIN",
+        "NI-R11-FLOATER-TABLE-HEADER",
+        "NI-R11-HISTORICAL-VERSIONS"
+      ]
+    },
+    {
+      "source_sha256": "a38f41381dab04026f8e352aa1cad2ff3a82e99f46f5787109265bb04d18f3bd",
+      "insurer_id": "new-india",
+      "product_or_heading": "New India Floater Mediclaim Policy",
+      "heading_is_normalized_display_label": true,
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Preserved original title and operative hospitalization grant reviewed.",
+      "page_count": 55,
+      "observed_uins": [
+        "NIAHLIP25039V102425"
+      ],
+      "typed_uin_assertions": [
+        {
+          "value": "NIAHLIP25039V102425",
+          "kind": "printed_product_uin",
+          "physical_page": 1,
+          "historical_applicability_established": false
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0.0,
+            595.56,
+            842.04
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "NEW INDIA FLOATER MEDICLAIM POLICY\nPOLICY CLAUSE\nNOTE:\nBasic Plan: Sum Insured of (Rs.) 2 Lakhs, 3 Lakhs, 5 Lakhs, 8 Lakhs, 10 Lakhs, 12 Lakhs, 15 Lakhs\nUplift Plan: Sum Insured (Rs.) 25 Lakhs, 50 Lakhs, 1 Crores, 2 Crores, 3 Crores, 5 Crores\n1. PREAMBLE\nThis is Your NEW INDIA FLOATER MEDICLAIM Policy, which has been issued by Us, relying on\nthe information disclosed by You in Your Proposal form for this Policy or its preceding\nPolicy/Policies of which this is a renewal.\nThe terms set out in this Policy will be the basis for any claim or benefit under this Policy.\nPlease read this Policy carefully and point out discrepancy, if any in the Policy Schedule.\nOtherwise, it will be presumed that the Policy Schedule correctly represents the cover agreed\nupon. If during the Period of Insurance, You or any Insured Person incurs Hospitalisation\nExpenses and/or services which are Reasonable and Customary and Medically Necessary for\ntreatment of any Illness or Injury sustained in Accident, we will reimburse such expense\nincurred by You, in the manner stated herein.\nPlease note that the above coverage is subject to Limits, Terms and Conditions contained in\nthis Policy and no Exclusion being found applicable. In this Policy all the members as stated in\nthe Policy Schedule will be covered under Single Sum Insured. This Sum Insured will be\navailable for all claims by one or more persons covered in this policy.\n2. DEFINITIONS\nSTANDARD DEFINITIONS\n2.1 ACCIDENT means sudden, unforeseen and involuntary event caused by external, visible\nand violent means.\n2.2 ANY ONE ILLNESS means continuous period of Illness and includes relapse within forty-\nfive days from the date of last consultation with the Hospital where treatment was taken.\n2.3 AYUSH HOSPITAL is a healthcare facility wherein medical/surgical/para-surgical\ntreatment procedures and interventions are carried out by AYUSH Medical Practitioner(s)\ncomprising of any of the following:\na. Central or State Government AYUSH Hospital or\nUIN: NIAHLIP25039V102425 NEW INDIA FLOATER MEDICLAIM POLICY",
+          "meaning": "Shared family sum insured; Basic/Uplift SI bands, room and ICU tables, connected proportional-deduction exceptions and expiring-policy event allocation.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "143d19a39f41e111540b4679360e47a664403bf546d8f20f4694e414d124a9f1",
+          "visually_reviewed": false
+        },
+        {
+          "physical_page": 13,
+          "bbox": [
+            0,
+            0.0,
+            595.56,
+            842.04
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "Uplift Plan Rs. 25L, 50L and 1Cr maximum up to Rs.\n50,000 per day\nUplift Plan Rs.2Cr, 3Cr and 5Cr Actuals\n3.1(c) Associate Medical Expenses; such as Professional fees of Surgeon, Anaesthetist,\nConsultant, Specialist; Anaesthesia, Operating Theatre Charges and Procedure\nCharges such as Dialysis, Chemotherapy, Radiotherapy & similar medical\nexpenses related to the treatment.\n3.1(d) Cost of Pharmacy and Consumables, Cost of Implants, Artificial Limbs and\nMedical Devices and Cost of Diagnostics\n3.1(e) Pre-Hospitalization Medical expenses for up to 30 days\n3.1(f) Post-Hospitalization Medical expenses for up to 60 days\n3.1 (g) Proportionate Deduction is applicable on the Associate Medical Expenses, if the\nInsured Person opts for a higher Room than his eligible category. It shall be\neffected in the same proportion as the eligible rate per day bears to the actual\nrate per day of Room Rent.\nHowever, it is not applicable on\n1. Cost of Pharmacy and Consumables\n2. Cost of Implants and Medical Devices\n3. Cost of Diagnostics.\nProportionate Deduction shall also not be applied in respect of Hospitals which\ndo not follow differential billing or for those expenses in which differential billing\nis not adopted based on the room category, as evidenced by the Hospital’s\nschedule of charges / tariff.\n3.1 (h) MEDICAL EXPENSES INCURRED UNDER TWO POLICY PERIODS:\nIf the claim event falls within 2 policy periods, the claims shall be paid taking\ninto consideration the available Sum Insured of the expiring Policy only. Sum\nInsured of the Renewed Policy will not be available for the Hospitalisation\n(including Pre & Post Hospitalisation Expenses), which has commenced in the\nexpiring Policy. Claim shall be settled on per event basis.\n3.1 (i) MEDICAL EXPENSES FOR ORGAN TRANSPLANT:\nIf treatment involves Organ Transplant to Insured Person, then We will also\npay Hospitalisation Expenses (excluding cost of organ) incurred on the donor,\nprovided Our liability towards expenses incurred on the donor and the insured\nrecipient shall not exceed the aggregate of the Sum Insured, if any, of the\nInsured Person receiving the organ.\n3.1 (j) Dental Treatment (Inpatient): We will cover for medical expenses incurred\ntowards dental treatment done under anaesthesia necessitated due to an\naccident/injury/illness requiring Hospitalization as Inpatient treatment.\nUIN: NIAHLIP25039V102425 NEW INDIA FLOATER MEDICLAIM POLICY",
+          "meaning": "Shared family sum insured; Basic/Uplift SI bands, room and ICU tables, connected proportional-deduction exceptions and expiring-policy event allocation.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "9a474b3888221c8a6053f0533e0a5e351b5252587f0d206518ecaa44c4a1234c",
+          "visually_reviewed": false
+        },
+        {
+          "physical_page": 12,
+          "bbox": [
+            0,
+            0,
+            595.56,
+            315
+          ],
+          "locator": "Visible physical page region excluding occluded room-table header band y315..337",
+          "exact_passage": "2.66 YOU/YOUR means the person who has taken this Policy and is shown as Insured or the\nfirst insured (if more than one) in the Schedule\n3. BENEFITS COVERED UNDER THE POLICY\n3.1 Our liability for all claims admitted during the Period of Insurance in respect of all\nInsured Persons shall not exceed the aggregate of the Sum Insured and the Cumulative\nBonus. Subject to this, for each claim We will reimburse the following Reasonable and\nCustomary and Medically Necessary Expenses admissible as per the terms and\nconditions of the Policy:\n3.1 (a) Room rent, Boarding, DMO / RMO / CMO / RMP Charges, Nursing (Including\nInjection / Drugs and Intra venous fluid administration expenses), not exceeding\n1% of the Sum Insured per day maximum Up to the amount as mentioned in the\nbelow table:",
+          "meaning": "Shared family sum insured; Basic/Uplift SI bands, room and ICU tables, connected proportional-deduction exceptions and expiring-policy event allocation.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "18c43481598ac1f3101211d18a343173f47fe1b81529e76c5a5c5e3177aa6662",
+          "visually_reviewed": true
+        },
+        {
+          "physical_page": 12,
+          "bbox": [
+            0,
+            337,
+            595.56,
+            842.04
+          ],
+          "locator": "Visible physical page region excluding occluded room-table header band y315..337",
+          "exact_passage": "Basic Plan Up to Rs. 15L 1% of the Sum\nInsured per day\nmaximum up to Rs.\n15,000 per day\nUplift Plan Rs. 25L, 50L and 1Cr 1% of the Sum\nInsured per day\nmaximum up to Rs.\n30,000 per day\nUplift Plan Rs. 2Cr, 3Cr and 5Cr Actuals\n3.1(b) Intensive Care Unit (ICU) / Intensive Cardiac Care Unit (ICCU), Intensivist charges,\nMonitor and Pulse Oxymeter expenses not exceeding 2% of the Sum Insured per\nday maximum Up to the amount as mentioned in the below table:\nPlan Name Sum Insured(Rs) ICU Limit\nBasic Plan Up to Rs. 15L 2% of the Sum\nInsured per day\nUIN: NIAHLIP25039V102425 NEW INDIA FLOATER MEDICLAIM POLICY",
+          "meaning": "Shared family sum insured; Basic/Uplift SI bands, room and ICU tables, connected proportional-deduction exceptions and expiring-policy event allocation.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "35405f459e8e72960cabe3ef8d0fa6f538e6e748ccfdd5c528c8044fb93fe3cb",
+          "visually_reviewed": true
+        }
+      ],
+      "identity_evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0.0,
+            595.56,
+            842.04
+          ],
+          "exact_passage": "NEW INDIA FLOATER MEDICLAIM POLICY",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        },
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0.0,
+            595.56,
+            842.04
+          ],
+          "exact_passage": "This is Your NEW INDIA FLOATER MEDICLAIM Policy, which has been issued by Us, relying on",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        },
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0.0,
+            595.56,
+            842.04
+          ],
+          "exact_passage": "UIN: NIAHLIP25039V102425 NEW INDIA FLOATER MEDICLAIM POLICY",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        }
+      ],
+      "acquisition_provenance": [
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/floater-mediclaim-policy/Policy Clause New India Floater Mediclaim.pdf",
+          "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/floater-mediclaim-policy/Policy%20Clause%20New%20India%20Floater%20Mediclaim.pdf",
+          "linking_url": "https://www.newindia.co.in/health-insurance/new-india-assurance-floater-mediclaim-policy",
+          "acquired_at": "2026-09-10T11:59:23.407274+00:00",
+          "http_status": 200,
+          "status": "acquired",
+          "sha256": "a38f41381dab04026f8e352aa1cad2ff3a82e99f46f5787109265bb04d18f3bd",
+          "byte_count": 1342223,
+          "content_type": "application/pdf",
+          "source_register": "research/registers/sources.json",
+          "source_id": "c8f207050595af1dcb062ab74424478efa7379d446e637b256e500040f21ab32",
+          "attempt_location": "matching source_id latest_attempt",
+          "observed_original_links": [
+            {
+              "linking_url": "https://www.newindia.co.in/health-insurance/new-india-assurance-floater-mediclaim-policy",
+              "page_sha256": "9c47106eb370a1995ed4d4d7992e1a6d9ba9854c7ac5a077ba72c42bc373dfdf",
+              "label": "Policy Clause New India Floater Mediclaim Policy",
+              "raw_href": "assets/docs/know-more/health/floater-mediclaim-policy/Policy Clause New India Floater Mediclaim.pdf"
+            }
+          ]
+        }
+      ],
+      "selected_physical_pages_read_for_identity_scope": [
+        1,
+        12,
+        13
+      ],
+      "visually_reviewed_physical_pages": [
+        12
+      ],
+      "review_extent": "Selected visible original identity/grant/configuration pages only; native text searched over all pages for navigation, which is not a full original or rule inventory.",
+      "already_manually_classified_r10": false,
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": {
+        "status": "unmeasured",
+        "value": null
+      },
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Fixed cash, critical-care and personal-accident benefits may coexist with medical-expense coverage; no exhaustive component inventory.",
+      "source_issue_ids": [
+        "NI-R11-FLOATER-UIN",
+        "NI-R11-FLOATER-TABLE-HEADER",
+        "NI-R11-HISTORICAL-VERSIONS",
+        "NI-R11-OCCLUDED-TABLE-HEADER"
+      ]
+    },
+    {
+      "source_sha256": "edaf6b8f0057f4155662866648067ab5e937bd35fbba42a0c622508c8d2d6843",
+      "insurer_id": "new-india",
+      "product_or_heading": "New India Top-Up Mediclaim",
+      "heading_is_normalized_display_label": true,
+      "document_role": "customer_information_sheet",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Preserved official CIS title and selected indemnity/plan summary reviewed.",
+      "page_count": 3,
+      "observed_uins": [
+        "NIAHLIP25050V032425"
+      ],
+      "typed_uin_assertions": [
+        {
+          "value": "NIAHLIP25050V032425",
+          "kind": "printed_product_uin",
+          "physical_page": 1,
+          "historical_applicability_established": false
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "CUSTOMER INFORMATION SHEET/KNOW YOUR POLICY\nSI Title Description Policy\nNo Clause\nNumber\n1 Name of the\nInsurance NEW INDIA TOP-UP MEDICLAIM\nProduct/Policy\n2 Policy Number\n3 Type of Insurance 3.1\nIndemnity\nProduct/Policy\n4 Sum Insured Basis Individual/Floater Sum insured.\nIf Floater then – Print Floater sum insured\nIf Individual then member wise\nsum insured\n5 Policy Coverage Expense in respect of:\n(What Policy Admission in hospital beyond 24 hours 2.16\nCovers?) Specified / Listed procedures requiring less than 24 hours of Annexure 1\nhospitalization (day care)\nMedical Expenses for Organ Transplant: 3.3\nCoverage for AYUSH Treatment: up to 100% of the Sum 3.5\nInsured\nAmbulance charges: Maximum up to Rs. 5,000 for Rs. 3.7\n5,00,000 Threshold and Rs. 8,000 for Rs. 8,00,000 Threshold.\nSPECIFIC COVERAGES: 3.9(a) to\n3.9(g)\nCoverage for 12 Modern treatments 3.10.1 to\n3.10.12\n6 Exclusion Standard Exclusions and Specific Exclusion 4.4 to 4.35\n(What Policy (including but not limited to the following)\ndoes not cover) Investigation & Evaluation, Rest Cure, Weight Control,\nChange-Of-Gender Treatments, Cosmetic Surgery, Unproven\nTreatments, Sterility And Infertility, Treatment and/or services\ntaken outside the India, Vaccination, Cost of braces, equipment\nor external prosthetic devices, eyeglasses, Cost of spectacles\nand contact lenses, hearing aids including cochlear implants,\nDental treatment unless arising out of accident and requiring\ninpatient treatment ,Acupressure, acupuncture, magnetic\ntherapies, Any expenses incurred on Domiciliary\nHospitalization, Stem cell implantation/Surgery for other than\nthose treatments mentioned in clause 3.10.12 etc…\nUIN: NIAHLIP25050V032425 Page 1 of 3\nNEW INDIA TOP-UP MEDICLAIM",
+          "meaning": "Official CIS family/plan identity and selected summary; placeholders do not establish issued selections and wording precedence must be retained.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "5821403607a517c7a9fad7aee590c561eee1866515d653285300510aa28e5d36",
+          "visually_reviewed": false
+        }
+      ],
+      "identity_evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "exact_passage": "Insurance NEW INDIA TOP-UP MEDICLAIM",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        },
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "exact_passage": "UIN: NIAHLIP25050V032425 Page 1 of 3",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        },
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "exact_passage": "NEW INDIA TOP-UP MEDICLAIM",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        }
+      ],
+      "acquisition_provenance": [
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/top-up-mediclaim-policy/Customer Information Sheet NEW INDIA TOP UP POLICY.pdf",
+          "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/top-up-mediclaim-policy/Customer%20Information%20Sheet%20NEW%20INDIA%20TOP%20UP%20POLICY.pdf",
+          "linking_url": "https://www.newindia.co.in/health-insurance/new-india-top-up-mediclaim-insurance",
+          "acquired_at": "2026-09-10T11:59:52.419641+00:00",
+          "http_status": 200,
+          "status": "acquired",
+          "sha256": "edaf6b8f0057f4155662866648067ab5e937bd35fbba42a0c622508c8d2d6843",
+          "byte_count": 239517,
+          "content_type": "application/pdf",
+          "source_register": "research/registers/sources.json",
+          "source_id": "382cac7321951d37087ea0c34209ae5b26f326499ea0f1f7b425e25eb1a6fa02",
+          "attempt_location": "matching source_id latest_attempt",
+          "observed_original_links": [
+            {
+              "linking_url": "https://www.newindia.co.in/health-insurance/new-india-top-up-mediclaim-insurance",
+              "page_sha256": "c90660da010d52db39d0a0ecf084747f41d6edc92cf40b293fa36f1ed2521cb1",
+              "label": "Customer Information Sheet",
+              "raw_href": "assets/docs/know-more/health/top-up-mediclaim-policy/Customer Information Sheet NEW INDIA TOP UP POLICY.pdf"
+            }
+          ]
+        }
+      ],
+      "selected_physical_pages_read_for_identity_scope": [
+        1
+      ],
+      "visually_reviewed_physical_pages": [],
+      "review_extent": "Selected visible original identity/grant/configuration pages only; native text searched over all pages for navigation, which is not a full original or rule inventory.",
+      "already_manually_classified_r10": false,
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": {
+        "status": "unmeasured",
+        "value": null
+      },
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Fixed cash, critical-care and personal-accident benefits may coexist with medical-expense coverage; no exhaustive component inventory.",
+      "source_issue_ids": [
+        "NI-R11-HISTORICAL-VERSIONS"
+      ]
+    },
+    {
+      "source_sha256": "607d8f0171c9ef1e16960202654a00fee400918de3061e8369cab70fcbfe3c96",
+      "insurer_id": "new-india",
+      "product_or_heading": "New India Top-Up Mediclaim",
+      "heading_is_normalized_display_label": true,
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Preserved original title and operative hospitalization grant reviewed.",
+      "page_count": 36,
+      "observed_uins": [
+        "NIAHLIP25050V032425"
+      ],
+      "typed_uin_assertions": [
+        {
+          "value": "NIAHLIP25050V032425",
+          "kind": "printed_product_uin",
+          "physical_page": 1,
+          "historical_applicability_established": false
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "THE NEW INDIA ASSURANCE CO. LTD.\nREGISTERED & HEAD OFFICE: 87, MAHATMA GANDHI ROAD, MUMBAI - 400 001.\nNEW INDIA TOP-UP MEDICLAIM\n1. PREAMBLE\nThis is Your NEW INDIA TOP-UP MEDICLAIM Policy, which has been issued by Us, relying on the\nInformation disclosed by You in Your Proposal for this Policy or its preceding Policy / Policies of\nwhich this is a renewal.\nThe terms set out in this Policy and its Schedule will be the basis for any claim or benefit under this\nPolicy.\nIf during the Policy Period, You or any Insured Person undergo Hospitalisation for Illness or Injury\nand incur Medical Expenses, by reason of which the Cumulative Hospitalisation Expenses for the\nInsured Persons during such Policy Period exceeds the Threshold specified in the Schedule, We will\nreimburse subject to terms and conditions of this Policy, the portion of the Medical Expenses for\nsuch Hospitalisation or any Hospitalisation thereafter as exceeds the Threshold, to the extent\nspecified under How Much We Will Reimburse section of this Policy.\nProvided,\na) Claim shall be made only for the Hospitalisation during which the Cumulative Medical\nExpenses exceeds Threshold or for any subsequent Hospitalisation, but not for earlier\nHospitalisation or treatment.\nb) Claim shall be payable only if the treatment claimed is within the scope of the Policy subject\nto terms, conditions, exclusions and limitations.\nc) The Insured Person shall not be entitled to claim under this Policy any amount of such Medical\nExpenses as has been received from any other person or entity, in which event the claim\npayable by Us would be reduced by such amount as may have been received.\nd) We shall in no case be liable to pay more than the Sum Insured.\ne) The above coverage is subject to Limits, Terms and Conditions contained in this Policy.\n2. DEFINITIONS\nSTANDARD DEFINITIONS\n2.1 ACCIDENT means a sudden, unforeseen and involuntary event caused by external, visible and\nviolent means.\n2.2 ANY ONE ILLNESS means continuous Period of Illness and it includes relapse within 45 days\nfrom the date of last consultation with the Hospital where treatment may have been taken.\n2.3 AYUSH HOSPITAL is a Healthcare facility wherein medical / surgical / para-surgical treatment\nprocedures and interventions are carried out by AYUSH Medical Practitioner(s) comprising of\nany of the following:\na. Central or State Government AYUSH Hospital or\nb. Teaching hospital attached to AYUSH College recognized by the Central Government /\nCentral Council of Indian Medicine / Central Council for Homeopathy; or\nc. AYUSH Hospital, standalone or co-located with in-patient healthcare facility of any\nrecognized system of medicine, registered with the local authorities, wherever\nUIN: NIAHLIP25050V032425\nNEW INDIA TOP-UP MEDICLAIM Page 1",
+          "meaning": "Cumulative policy-period hospitalization threshold; no retrospective claim for earlier hospitalization, other recoveries and SI cap; threshold definition and connected room/proportional-deduction/event rules.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "4d853c874326fc744182f8916f379bcfd4ccc10bad3d5663fc484ad99e8f6853",
+          "visually_reviewed": false
+        },
+        {
+          "physical_page": 7,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "2.51 THRESHOLD is the amount of Cumulative Hospitalisation Expenses specified in the Schedule\nchosen by the Insured Person up to which no Medical Expenses can be claimed under this\npolicy.\n2.52 THIRD PARTY ADMINISTRATORS (TPA) means any person who is licensed under the IRDA\n(Third Party Administrators - Health Services) Regulations, 2001 by the Authority, and is\nengaged, for a fee or remuneration by an insurance company, for the purposes of providing\nhealth services.\n2.53 WAITING PERIOD means a period from the inception of this Policy during which specified\ndiseases / treatments are not covered. On completion of the period, diseases/treatments shall\nbe covered provided the Policy has been continuously renewed without any break.\n2.54 WARD who are under the care or protection of the Legal Guardian or Custodian. The definition\nof Children shall be applicable for Ward.\n2.55 WE / OUR / US / COMPANY means The New India Assurance Co. Ltd.\n2.56 YOU / YOUR means the person who has taken this Policy and is shown as Insured Person or\nthe first Insured Person (if more than one) in the Schedule.\nUIN: NIAHLIP25050V032425 NEW INDIA TOP-UP MEDICLAIM Page 7",
+          "meaning": "Cumulative policy-period hospitalization threshold; no retrospective claim for earlier hospitalization, other recoveries and SI cap; threshold definition and connected room/proportional-deduction/event rules.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "e21ff143fc242fa970045bbcd7ecfb180670461a72024cee21d14cf4f35b4878",
+          "visually_reviewed": false
+        },
+        {
+          "physical_page": 8,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "3. BENEFITS COVERED UNDER THE POLICY\n3.1 Our liability for all claims admitted during the Policy Period in respect of all Insured Persons,\nincluding all payment related to clause 3.1(e) and 3.6, will be only up to Sum Insured as\nmentioned in the Schedule. Subject to this, We will reimburse the following Reasonable and\nCustomary and Medically Necessary Expenses admissible as per the terms and conditions of\nthe Policy:\n3.1 (a) Room rent, Boarding, DMO / RMO / CMO / RMP Charges, Nursing (Including\nInjection / Drugs and Intra venous fluid administration expenses), actually\nincurred subject to a cap of Rs. 5,000 per day for Rs. 5,00,000 Threshold and Rs.\n8,000 per day for Rs. 8,00,000 Threshold.\n3.1(b) Intensive Care Unit (ICU) / Intensive Cardiac Care Unit (ICCU), Intensivist charges,\nMonitor and Pulse Oximeters expenses, actually incurred subject to a cap of Rs.\n10,000 per day for Rs. 5,00,000 Threshold and Rs. 16,000 per day for Rs. 8,00,000\nThreshold.\n3.1(c) Associate Medical Expenses; such as Professional fees of Surgeon, Anaesthetist,\nConsultant, Specialist; Anaesthesia, Blood, Oxygen, Operating Theatre Charges\nand Procedure Charges such as Dialysis, Chemotherapy, Radiotherapy & similar\nmedical expenses related to the treatment.\n3.1(d) Cost of Pharmacy and Consumables, Cost of Implants and Medical Devices and\nCost of Diagnostics.\nProportionate Deduction Clause is applicable on the Associate Medical Expenses,\nif the Insured Person opts for a higher Room than his eligible category. It shall be\neffected in the same proportion as the eligible rate per day bears to the actual\nrate per day of Room Rent. However, it is not applicable on\n1. Cost of Pharmacy and Consumables\n2. Cost of Implants and Medical Devices\n3. Cost of Diagnostics.\nProportionate Deduction Clause shall also not be applied in respect of Hospitals\nwhich do not follow differential billing or for those expenses in which differential\nbilling is not adopted based on the room category, as evidenced by the Hospital’s\nschedule of charges / tariff.\n3.1(e) Get Well Benefit of Rs. 5,000 for Rs. 5,00,000 Threshold and Rs. 8,000 for Rs.\n8,00,000 Threshold, will be paid for Any One Illness. This benefit will be payable\nonly for the first four admissible claims under the Policy. This benefit will reduce\nthe Sum Insured.\n3.2 MEDICAL EXPENSES INCURRED UNDER TWO POLICY PERIODS\nIf the claim event falls within two Policy Periods, the claims shall be paid taking into\nconsideration the available Sum Insured of the expiring Policy only, after taking the Threshold\ninto consideration. Sum Insured of the renewed Policy will not be available for the\nHospitalisation (including Pre & Post Hospitalisation Expenses), which has commenced in the\nexpiring Policy. Claim shall be settled on per event basis.\nUIN: NIAHLIP25050V032425 NEW INDIA TOP-UP MEDICLAIM Page 8",
+          "meaning": "Cumulative policy-period hospitalization threshold; no retrospective claim for earlier hospitalization, other recoveries and SI cap; threshold definition and connected room/proportional-deduction/event rules.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "ead6c75318dec56c48ed0d127109a348191ac406d4fe25d8cefc1280e24e8df9",
+          "visually_reviewed": false
+        }
+      ],
+      "identity_evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "exact_passage": "NEW INDIA TOP-UP MEDICLAIM",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        },
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "exact_passage": "This is Your NEW INDIA TOP-UP MEDICLAIM Policy, which has been issued by Us, relying on the",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        },
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "exact_passage": "UIN: NIAHLIP25050V032425",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        },
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "exact_passage": "NEW INDIA TOP-UP MEDICLAIM Page 1",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        }
+      ],
+      "acquisition_provenance": [
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/top-up-mediclaim-policy/policy clause New India top up mediclaim.pdf",
+          "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/top-up-mediclaim-policy/policy%20clause%20New%20India%20top%20up%20mediclaim.pdf",
+          "linking_url": "https://www.newindia.co.in/health-insurance/new-india-top-up-mediclaim-insurance",
+          "acquired_at": "2026-09-10T12:00:04.610095+00:00",
+          "http_status": 200,
+          "status": "acquired",
+          "sha256": "607d8f0171c9ef1e16960202654a00fee400918de3061e8369cab70fcbfe3c96",
+          "byte_count": 830971,
+          "content_type": "application/pdf",
+          "source_register": "research/registers/sources.json",
+          "source_id": "1555125f5b5fbf740c66210d046de7c6acebd017dc1f98bf8f4a39ae467d4ae3",
+          "attempt_location": "matching source_id latest_attempt",
+          "observed_original_links": [
+            {
+              "linking_url": "https://www.newindia.co.in/health-insurance/new-india-top-up-mediclaim-insurance",
+              "page_sha256": "c90660da010d52db39d0a0ecf084747f41d6edc92cf40b293fa36f1ed2521cb1",
+              "label": "Policy Clause New India TOP UP Mediclaim Policy",
+              "raw_href": "assets/docs/know-more/health/top-up-mediclaim-policy/policy clause New India top up mediclaim.pdf"
+            }
+          ]
+        }
+      ],
+      "selected_physical_pages_read_for_identity_scope": [
+        1,
+        7,
+        8
+      ],
+      "visually_reviewed_physical_pages": [],
+      "review_extent": "Selected visible original identity/grant/configuration pages only; native text searched over all pages for navigation, which is not a full original or rule inventory.",
+      "already_manually_classified_r10": false,
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": {
+        "status": "unmeasured",
+        "value": null
+      },
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Fixed cash, critical-care and personal-accident benefits may coexist with medical-expense coverage; no exhaustive component inventory.",
+      "source_issue_ids": [
+        "NI-R11-HISTORICAL-VERSIONS"
+      ]
+    },
+    {
+      "source_sha256": "1f622f2a4b79595560ccf7674abd75b2d0dffe9675cd6115c5c246d7af04b34b",
+      "insurer_id": "new-india",
+      "product_or_heading": "New India Sixty Plus Mediclaim Policy",
+      "heading_is_normalized_display_label": true,
+      "document_role": "customer_information_sheet",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Preserved official CIS title and selected indemnity/plan summary reviewed.",
+      "page_count": 3,
+      "observed_uins": [
+        "NIAHLIP25049V032425"
+      ],
+      "typed_uin_assertions": [
+        {
+          "value": "NIAHLIP25049V032425",
+          "kind": "printed_product_uin",
+          "physical_page": 1,
+          "historical_applicability_established": false
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "(LEGAL DISCLAIMER) NOTE: The information must be read in conjunction with the\nProspectus and Policy Document. In case of any conflict between the CIS and the\nPolicy Document the terms and conditions mentioned in the Policy Document shall\nprevail.\nCUSTOMER INFORMATION SHEET/KNOW YOUR POLICY\nSI Title Description Policy\nNo Clause\nNumber\n1 Name of the\nNew India Sixty Plus Mediclaim Policy\nInsurance\nProduct/Policy\n2 Policy Number\n3 Type of\nInsurance Indemnity\nProduct/Policy\n4 Sum Insured Individual Sum insured.\nBasis options available are Rs. 2, 3, and 5 lakhs.\n5 Policy Coverage Expense in respect of:\n(What Policy\nCovers?)\nAdmission in hospital beyond 24 hours 2.18\nPre-hospitalisation- 30 days 2.35 & 3.9\nPost-Hospitalisation within 60 days from the date of discharge. 2.36& 3.9\nmaximum limit of 10% of the Sum Insured\nSpecified / Listed procedures requiring less than 24 hours of Annexure 1\nhospitalization (day care)\nCoverage under AYUSH treatment: Upto 100% of the Sum 3.16\nInsured\nHospital Cash 3.6\nAmbulance service up to 1% of Sum Insured. 3.8\nMedical expense for organ transplant 3.11\nCongenital Internal Diseases 3.15\nCongenital External Diseases 3.15\nATTENDANT BENEFIT 3.3\nOPTIONAL COVER: VOLUNTARY CO-PAY 3.4\nCoverage for 12 Modern treatments 3.14.1 to\n3.14.12\n6 Exclusion Standard Exclusions and Specific Exclusion 4.4.1to 4.4.30\n(including but not limited to the following)\n(What Policy Investigation & Evaluation, Rest Cure, Weight Control, Change-\ndoes not cover) Of-Gender Treatments, Cosmetic Surgery, Unproven\nTreatments, Sterility And Infertility, Treatment and/or services\ntaken outside the India, Vaccination, Cost of braces, equipment\nUIN: NIAHLIP25049V032425 New India Sixty Plus Mediclaim Policy Page 1 of 3",
+          "meaning": "Official CIS family/plan identity and selected summary; placeholders do not establish issued selections and wording precedence must be retained.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "1031322a789053efaa13130446d74af530abc5ee13f4dd80b02f258f3edcc393",
+          "visually_reviewed": false
+        }
+      ],
+      "identity_evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "exact_passage": "New India Sixty Plus Mediclaim Policy",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        },
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "exact_passage": "UIN: NIAHLIP25049V032425 New India Sixty Plus Mediclaim Policy Page 1 of 3",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        }
+      ],
+      "acquisition_provenance": [
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-sixty-plus-mediclaim-policy/Customer Information Sheet New India Sixty Plus Mediclaim.pdf",
+          "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-sixty-plus-mediclaim-policy/Customer%20Information%20Sheet%20New%20India%20Sixty%20Plus%20Mediclaim.pdf",
+          "linking_url": "https://www.newindia.co.in/health-insurance/new-india-sixty-plus-mediclaim-policy",
+          "acquired_at": "2026-09-10T12:00:17.971154+00:00",
+          "http_status": 200,
+          "status": "acquired",
+          "sha256": "1f622f2a4b79595560ccf7674abd75b2d0dffe9675cd6115c5c246d7af04b34b",
+          "byte_count": 242265,
+          "content_type": "application/pdf",
+          "source_register": "research/registers/sources.json",
+          "source_id": "7fab5c41e7e498a3f7fb663e80f2a628b84b07738e2f74e67b88327028b0b968",
+          "attempt_location": "matching source_id latest_attempt",
+          "observed_original_links": [
+            {
+              "linking_url": "https://www.newindia.co.in/health-insurance/new-india-sixty-plus-mediclaim-policy",
+              "page_sha256": "b3b105975e7a5f515457e5968911a6beea415fa614a798ad9280259acd290c08",
+              "label": "CIS New India Sixty Plus Mediclaim Policy",
+              "raw_href": "assets/docs/know-more/health/new-india-sixty-plus-mediclaim-policy/Customer Information Sheet New India Sixty Plus Mediclaim.pdf"
+            }
+          ]
+        }
+      ],
+      "selected_physical_pages_read_for_identity_scope": [
+        1
+      ],
+      "visually_reviewed_physical_pages": [],
+      "review_extent": "Selected visible original identity/grant/configuration pages only; native text searched over all pages for navigation, which is not a full original or rule inventory.",
+      "already_manually_classified_r10": false,
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": {
+        "status": "unmeasured",
+        "value": null
+      },
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Fixed cash, critical-care and personal-accident benefits may coexist with medical-expense coverage; no exhaustive component inventory.",
+      "source_issue_ids": [
+        "NI-R11-HISTORICAL-VERSIONS"
+      ]
+    },
+    {
+      "source_sha256": "73b5e7b60faf6cdd20f59dc8893f37082014597e382e20b59181fd4019e21fa0",
+      "insurer_id": "new-india",
+      "product_or_heading": "New India Sixty Plus Mediclaim Policy",
+      "heading_is_normalized_display_label": true,
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Preserved original title and operative hospitalization grant reviewed.",
+      "page_count": 36,
+      "observed_uins": [
+        "NIAHLIP25049V032425"
+      ],
+      "typed_uin_assertions": [
+        {
+          "value": "NIAHLIP25049V032425",
+          "kind": "printed_product_uin",
+          "physical_page": 1,
+          "historical_applicability_established": false
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "THE NEW INDIA ASSURANCE CO. LTD.\nREGISTERED & HEAD OFFICE: 87, MAHATMA GANDHI ROAD, MUMBAI - 400 001.\nNEW INDIA SIXTY PLUS MEDICLAIM POLICY\n1. PREAMBLE\nThis is Your NEW INDIA SIXTY PLUS MEDICLAIM POLICY, which has been issued by us, relying on\nthe information disclosed by You in Your Proposal for this Policy or its preceding Policy/Policies of\nwhich this is a renewal.\nThe terms and conditions set out in this Policy and its Schedule will be the basis for any claim and/or\nbenefit under this Policy.\nPlease read this Policy carefully and point out discrepancy, if any, in the Schedule. Otherwise, it will\nbe presumed that the Policy and the Schedule correctly represent the cover agreed upon.\nIf during the Period of Insurance, You or any Insured Person incurs Hospitalisation Expenses which\nare Reasonable and Customary, and Medically Necessary for treatment of any Illness or Injury, we\nwill reimburse such expense incurred by You, through the Third Party Administrator, in the manner\nstated herein.\nPlease note that the above coverage is subject to Limits, Terms and Conditions contained in this\nPolicy and no Exclusion being found applicable.\n2. DEFINITIONS\nSTANDARD DEFINITIONS\n2.1 ACCIDENT means sudden, unforeseen and involuntary event caused by external, visible and\nviolent means.\n2.2 ANY ONE ILLNESS means continuous period of Illness and includes relapse within forty-five\ndays from the date of last consultation with the Hospital where treatment was taken.\n2.3 AYUSH HOSPITAL is a Healthcare facility wherein medical / surgical / para-surgical treatment\nprocedures and interventions are carried out by AYUSH Medical Practitioner(s) comprising of\nany of the following:\na. Central or State Government AYUSH Hospital or\nb. Teaching hospital attached to AYUSH College recognized by the Central Government /\nCentral Council of Indian Medicine / Central Council for Homeopathy; or\nc. AYUSH Hospital, standalone or co-located with in-patient healthcare facility of any\nrecognized system of medicine, registered with the local authorities, wherever\napplicable, and is under the supervision of a qualified registered AYUSH Medical\nPractitioner and must comply with all the following criterion:\ni. Having at least 5 in-patient beds;\nii. Having qualified AYUSH Medical Practitioner in charge round the clock;\niii. Having dedicated AYUSH therapy sections as required and/or has equipped\noperation theatre where surgical procedures are to be carried out;\niv. Maintaining daily records of the patients and making them accessible to the\ninsurance company’s authorized representative.\nUIN: NIAHLIP25049V032425\nNEW INDIA SIXTY PLUS MEDICLAIM POLICY Page 1",
+          "meaning": "Hospitalization indemnity with per-person SI and bonus buffer, section 3.1 heads; section 3.2 specified-treatment table overrides those sublimits and co-pay, including voluntary co-pay. Multiple same-site surgeries carry a connected ranking rule.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "623a6d73f49eba657a5fa3afeb0d50947c7970c53a1c3e7be4c07b6eebc4078c",
+          "visually_reviewed": false
+        },
+        {
+          "physical_page": 8,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "2.59 SUB-LIMIT means the pre-defined limit specified in the Policy Schedule. Sum Insured and\nCumulative Bonus represents the maximum, total and cumulative liability for any and all\nclaims made under the Policy, in respect of that Insured Person (on Individual basis) or all\nInsured Persons (on Floater basis) during the Policy Year.\n2.60 SUM INSURED is the maximum amount of coverage opted for each Insured Person and as\nshown in the Schedule.\nNote: Sum Insured means pre-defined limit as shown in the schedule excluding Cumulative\nBonus Buffer.\n2.61 TPA (THIRD PARTY ADMINISTRATORS) means any person who is registered under the IRDAI\n(Third Party Administrators – Health Services) Regulation, 2019 notified by the Authority, and\nis engaged, for a fee or remuneration by Us, for the purposes of providing Health Services\ndefined in those Regulations.\n2.62 WAITING PERIOD means a period from the inception of this Policy during which specified\ndiseases/treatments are not covered. On completion of the period, diseases/treatments shall\nbe covered provided the Policy has been continuously renewed without any break.\n2.63 WARD who are under the care or protection of the Legal Guardian or Custodian. The\ndefinition of Children shall be applicable for Ward.\n2.64 WE/OUR/US/COMPANY means The New India Assurance Co. Ltd.\n2.65 YOU/YOUR means the person who has taken this Policy and is shown as Insured or the first\ninsured (if more than one) in the Schedule.\n3. BENEFITS COVERED UNDER THE POLICY\n3.1 Our liability for all claims admitted during the Period of Insurance will be only up to Sum\nInsured for which the Insured Person is covered as mentioned in the Schedule. In respect of\nthose Insured Persons with Cumulative Bonus Buffer, Our liability for claims admitted under\nthis Policy shall not exceed the aggregate of the Sum Insured and the Cumulative Bonus\nBuffer.\nSubject to above, We will reimburse the following Reasonable and Customary, and Medically\nNecessary Expenses admissible under the following heads.\nSection Hospitalisation Benefit Limits\n3.1.1 Room charges subject to 1% of sum Maximum limit under Section 3.1.1\ninsured per day and Intensive care unit will be25% of the aggregate of Sum\n(ICU) charges subject to 2% of sum Insured andCumulative Bonus Buffer\ninsured per day (including nursing care, per illness / injury Please Note that\nRMO charges, IV fluids / blood basic Sum Insured will only be\ntransfusion / injection administration considered for reckoning of Per day\ncharges). roomrent eligibility.\n3.1.2 Surgeon, Anaesthetist, Medical Maximum limit under Section 3.1.2\nPractitioner,Consultants, Specialists Fees will be 25% of the aggregate of Sum\nInsured and Cumulative Bonus Buffer\nper illness / injury\n3.1.3 Anesthesia, Blood, Oxygen, OT charges, Maximum limit under Section 3.1.3\nSurgical appliances (any disposable will be50% of the aggregate of Sum\nsurgical consumables), Medicines, drugs, Insured and Cumulative Bonus Buffer\nUIN: NIAHLIP25049V032425 NEW INDIA SIXTY PLUS MEDICLAIM POLICY Page 8",
+          "meaning": "Hospitalization indemnity with per-person SI and bonus buffer, section 3.1 heads; section 3.2 specified-treatment table overrides those sublimits and co-pay, including voluntary co-pay. Multiple same-site surgeries carry a connected ranking rule.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "9b4fd998cf5499f86eedf461bc22a33951f5724d055bd524b30a844471e0aa17",
+          "visually_reviewed": false
+        },
+        {
+          "physical_page": 9,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "Diagnostic material & X-Ray, Dialysis, per illness / injury\nChemotherapy, Radiotherapy, Artificial\nlimbs and implants other than\nOrthopedic.\n3.2 Claims in respect of the following Treatments/ Surgeries including all types of implants used\nin the surgery, will be subject to the following limits (including Pre & Post Hospitalization\nexpenses). Co- Payment/voluntary co-payment and sub limits mentioned in section 3.1 are\nnot applicable if a claim is admissible under the below mentioned specified\nTreatments/Surgeries.\nTreatments/Surgeries 2 Lakhs 3 Lakhs 5 Lakhs\nAngiography (CT Angiogram excluded) 14000 20000 25000\nCataract (each eye) 15000 20000 25000\nHydrocele Surgery 20000 30000 50000\nDialysis (With a cap of 1500 per sitting) 25000 35000 50000\nFissurectomy 27000 38000 45000\nFistulectomy 27000 38000 45000\nSurgery of Hernia 30000 40000 60000\nAppendectomy 30000 40000 60000\nTransurethral resection of the prostate (TURP)/ BPH surgery 30000 40000 60000\nHysterectomy 30000 40000 60000\nCholecystectomy 30000 40000 60000\nArthroscopic Surgery 30000 40000 60000\nHaemorrhoidectomy 30000 40000 60000\nRenal stones related surgical procedures 38000 55000 70000\nAll major Surgical and Medical Treatment for Fractures and 50000 70000 100000\nDislocations\nPID-Discectomy 70000 80000 100000\nPTCA (Angioplasty) 75000 120000 150000\nJoint Replacement for Major Joints (Per Joint) 80000 100000 150000\nMajor Spinal Surgeries 100000 150000 200000\nAll Major Cancer Surgeries 140000 200000 275000\nMajor Organ Transplant (Including Donor Expenses) 150000 200000 300000\nCABG (Coronary Artery Bypass Graft) 150000 200000 275000\nNote: In case of multiple surgeries in one sitting, in same incident and on same site, highest\ngrade surgery amongst them will be approved at 100%, second surgery at 50% and third\nsurgery at 25% of the capped amount specified above in section 3.2.\n3.3 ATTENDANT BENEFIT:\nWe will pay a benefit of up to Rs. 5000/-, Rs. 7000/- and Rs, 10,000/- per hospitalization for\nthe Sum Insured of Two, Three and Five Lakhs respectively subject to the limit of Maximum\nRs. 800 per day or actuals, whichever is less, and after submitting relevant supporting\ndocuments. This amount will reduce the Sum Insured.\n3.4 OPTIONAL COVER: VOLUNTARY CO-PAY\nUIN: NIAHLIP25049V032425 NEW INDIA SIXTY PLUS MEDICLAIM POLICY Page 9",
+          "meaning": "Hospitalization indemnity with per-person SI and bonus buffer, section 3.1 heads; section 3.2 specified-treatment table overrides those sublimits and co-pay, including voluntary co-pay. Multiple same-site surgeries carry a connected ranking rule.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "a3b205ca86d14f4333d35fc084caeecdc364905481c6e80ee710915e7bf5e20b",
+          "visually_reviewed": true
+        },
+        {
+          "physical_page": 10,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "If You opt for a voluntary co-pay of an extra 10% i.e. for a total co-pay of 20%, a discounted\nPremium given in the table shall be charged.\n3.5 CO-PAYMENT:\nYou shall bear a Co-Payment of 10% of the final claim admissible amount and Our liability shall\nbe restricted to the payment of the balance amount subject to the available Sum Insured and\nCumulative Bonus Buffer i.e., In the Claims admitted, the Company’s liability will be:\na) Sum Insured and Cumulative Bonus Buffer (or)\nb) 90% of the admissible claim amount\nWhichever is less.\nIf You opt for a voluntary co-pay of extra 10% i.e. for a total co-payment of 20% then the\nClaims admitted, the Company’s liability will be:\na) Sum Insured and Cumulative Bonus Buffer (or)\nb) 80% of the admissible claim amount Whichever is less.\nCo-Payment is not applicable if a Claim is admissible under section 3.2.\n3.6 HOSPITAL CASH:\nWe will pay Hospital Cash at the rate of 0.1% of the Sum Insured, for each day of\nHospitalization admissible under the Policy. The payment under this Clause for Any One Illness\nshall not exceed 1% of the Sum Insured. The payment under this Clause is applicable only\nwhere the period of Hospitalization exceeds twenty-four consecutive hours. Payment under\nthis clause shall reduce the Sum Insured.\nHospital Cash will be payable for completion of every twenty-four hours and not part thereof.\n3.7 LIMIT ON PAYMENT FOR CATARACT:\nOur liability for payment of any claim relating to Cataract, for each eye shall not exceed the\nlimit mentioned in the section 3.2\nThe limit mentioned above shall be applicable per event for all the Policies of Our Company\nincluding Group Policies. Even if two or more Policies of New India are invoked, sublimit of\nthe Policy chosen by Insured shall prevail and our liability is restricted to stated sublimit.\n3.8 PAYMENT OF AMBULANCE CHARGES:\nWe will pay You the charges for Ambulance services not exceeding 1% of the Sum Insured per\nHospitalization, Reasonably and Medically Necessarily incurred for shifting any Insured Person\nto Hospital for admission in Emergency Ward or ICU, or from one Hospital to another Hospital\nfor better medical facilities.\n3.9 PRE & POST HOSPITALIZATION EXPENSES: We will pay You the Pre & Post Hospitalization\nexpenses of 30 days, 60 days respectively, subject to the maximum limit of 10% of the Sum\nInsured, if the Claim has been accepted under section 3.1\n3.10 PAYMENTS ONLY IF INCLUDED IN HOSPITAL BILL\nNo payment shall be made for any Hospitalisation expenses incurred, unless they form part\nof the Hospital Bill. However, the bills raised by Surgeon, Anaesthetist directly and not\nincluded in the Hospital Bill shall be paid provided a numbered Bill is produced in support\nUIN: NIAHLIP25049V032425 NEW INDIA SIXTY PLUS MEDICLAIM POLICY Page 10",
+          "meaning": "Hospitalization indemnity with per-person SI and bonus buffer, section 3.1 heads; section 3.2 specified-treatment table overrides those sublimits and co-pay, including voluntary co-pay. Multiple same-site surgeries carry a connected ranking rule.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "8541536905722250544dd69e666006a1f1479cb2943946675cc52b5f5d633236",
+          "visually_reviewed": false
+        }
+      ],
+      "identity_evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "exact_passage": "NEW INDIA SIXTY PLUS MEDICLAIM POLICY",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        },
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "exact_passage": "This is Your NEW INDIA SIXTY PLUS MEDICLAIM POLICY, which has been issued by us, relying on",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        },
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "exact_passage": "UIN: NIAHLIP25049V032425",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        },
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "exact_passage": "NEW INDIA SIXTY PLUS MEDICLAIM POLICY Page 1",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        }
+      ],
+      "acquisition_provenance": [
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-sixty-plus-mediclaim-policy/Policy Clause New India Sixty Plus Mediclaim Policy.pdf",
+          "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-sixty-plus-mediclaim-policy/Policy%20Clause%20New%20India%20Sixty%20Plus%20Mediclaim%20Policy.pdf",
+          "linking_url": "https://www.newindia.co.in/health-insurance/new-india-sixty-plus-mediclaim-policy",
+          "acquired_at": "2026-09-10T12:00:19.453061+00:00",
+          "http_status": 200,
+          "status": "acquired",
+          "sha256": "73b5e7b60faf6cdd20f59dc8893f37082014597e382e20b59181fd4019e21fa0",
+          "byte_count": 845501,
+          "content_type": "application/pdf",
+          "source_register": "research/registers/sources.json",
+          "source_id": "3f4f5d26b755e097c74b2d381999a85c7dec65161c218c8b256758f2bf90026a",
+          "attempt_location": "matching source_id latest_attempt",
+          "observed_original_links": [
+            {
+              "linking_url": "https://www.newindia.co.in/health-insurance/new-india-sixty-plus-mediclaim-policy",
+              "page_sha256": "b3b105975e7a5f515457e5968911a6beea415fa614a798ad9280259acd290c08",
+              "label": "Policy Clauses New India Sixty Plus Mediclaim Policy",
+              "raw_href": "assets/docs/know-more/health/new-india-sixty-plus-mediclaim-policy/Policy Clause New India Sixty Plus Mediclaim Policy.pdf"
+            }
+          ]
+        }
+      ],
+      "selected_physical_pages_read_for_identity_scope": [
+        1,
+        8,
+        9,
+        10
+      ],
+      "visually_reviewed_physical_pages": [
+        9
+      ],
+      "review_extent": "Selected visible original identity/grant/configuration pages only; native text searched over all pages for navigation, which is not a full original or rule inventory.",
+      "already_manually_classified_r10": false,
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": {
+        "status": "unmeasured",
+        "value": null
+      },
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Fixed cash, critical-care and personal-accident benefits may coexist with medical-expense coverage; no exhaustive component inventory.",
+      "source_issue_ids": [
+        "NI-R11-HISTORICAL-VERSIONS"
+      ]
+    },
+    {
+      "source_sha256": "f3d571e838020b6af462d6135b3d690288c2c78973a074f28733813f7d4ca68d",
+      "insurer_id": "new-india",
+      "product_or_heading": "Yuva Bharat Health Policy",
+      "heading_is_normalized_display_label": true,
+      "document_role": "customer_information_sheet",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Preserved official CIS title and selected indemnity/plan summary reviewed.",
+      "page_count": 5,
+      "observed_uins": [
+        "NIAHLIP25059V042425"
+      ],
+      "typed_uin_assertions": [
+        {
+          "value": "NIAHLIP25059V042425",
+          "kind": "printed_product_uin",
+          "physical_page": 1,
+          "historical_applicability_established": false
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "CUSTOMER INFORMATION SHEET/KNOW YOUR POLICY\nSI Title Description Policy\nNo Clause\nNumber\n1 Name of the PAGE 1\nYuva Bharat Health Policy\nInsurance\nProduct/Policy\n2 Policy Number\n3 Type of Insurance 3.1\nIndemnity\nProduct/Policy\n4 Sum Insured Basis Individual/Floater Sum insured.\nIf Floater then – Print Floater sum insured If\nIndividual then member wise sum insured\n5 Policy Coverage Expense in respect of:\n(What Policy\nCovers?) The Coverages for Base (15 covers), Gold(Base+6 covers) 3.1 to 3.30\nand Platinum Plans(Gold + 4 covers)\nPre-hospitalisation (treatment prior to admission in hospital) 3.1(e)\nof 60 days\nPost-Hospitalisation within 90 days from date of discharge 3.1(f)\nSpecified / Listed procedures requiring less than 24 hours of Annexure 1\nhospitalization (day care)\nProportionate Deduction on the Associated Medical 3.2\nExpenses\nMedical expenses incurred under two policy periods 3.3\nMedical expenses for organ transplant 3.4\n3.5\nHospital cash –Benefit paid per day for every completed 24 hours\nRoad ambulance charges. 3.6\nShared accommodation as cash benefit 3.7\nCoverage for Cataract 3.9\nCoverage for hazardous sports 3.10\nCongenital Internal and External disease Disease 3.8\nSpecific coverages 3.11(a) to\n3.11(e)\nCoverage for 12 modern treatments 3.12.1 to\n3.12.12\nMedical second opinion 3.14\nReinstatement of sum insured: 3.15\nTreatment under AYUSH –Up to 100% of the Sum Insured 3.16\nNIAHLIP25059V042425\nPage 1 of 5\nYUVA BHARAT HEALTH POLICY",
+          "meaning": "Official CIS family/plan identity and selected summary; placeholders do not establish issued selections and wording precedence must be retained.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "d6a4841d063c1ab9e42f33b31224b4556f41d52f21e1fc6386892d12394bf79b",
+          "visually_reviewed": false
+        }
+      ],
+      "identity_evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "exact_passage": "Yuva Bharat Health Policy",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        },
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "exact_passage": "NIAHLIP25059V042425",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        },
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "exact_passage": "YUVA BHARAT HEALTH POLICY",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        }
+      ],
+      "acquisition_provenance": [
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/yuva-bharat-health-policy/Customer Information Sheet YUVA BHARAT .pdf",
+          "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/yuva-bharat-health-policy/Customer%20Information%20Sheet%20YUVA%20BHARAT%20.pdf",
+          "linking_url": "https://www.newindia.co.in/health-insurance/new-india-yuva-bharat-health-policy",
+          "acquired_at": "2026-09-10T12:01:09.374240+00:00",
+          "http_status": 200,
+          "status": "acquired",
+          "sha256": "f3d571e838020b6af462d6135b3d690288c2c78973a074f28733813f7d4ca68d",
+          "byte_count": 279162,
+          "content_type": "application/pdf",
+          "source_register": "research/registers/sources.json",
+          "source_id": "a3000b58a52914ceb4bc25a499639896e31dcecb3e6780d7c763d6bb5c587a9b",
+          "attempt_location": "matching source_id latest_attempt",
+          "observed_original_links": [
+            {
+              "linking_url": "https://www.newindia.co.in/health-insurance/new-india-yuva-bharat-health-policy",
+              "page_sha256": "b0216a33bb3065e4df02cf0ce53615e65e0d5ceb27763217e4688b25ef16ccd7",
+              "label": "Customer Information Sheet",
+              "raw_href": "assets/docs/know-more/health/yuva-bharat-health-policy/Customer Information Sheet YUVA BHARAT .pdf"
+            }
+          ]
+        }
+      ],
+      "selected_physical_pages_read_for_identity_scope": [
+        1
+      ],
+      "visually_reviewed_physical_pages": [],
+      "review_extent": "Selected visible original identity/grant/configuration pages only; native text searched over all pages for navigation, which is not a full original or rule inventory.",
+      "already_manually_classified_r10": false,
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": {
+        "status": "unmeasured",
+        "value": null
+      },
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Fixed cash, critical-care and personal-accident benefits may coexist with medical-expense coverage; no exhaustive component inventory.",
+      "source_issue_ids": [
+        "NI-R11-YUVA-CLAUSE-RANGE",
+        "NI-R11-HISTORICAL-VERSIONS"
+      ]
+    },
+    {
+      "source_sha256": "2d4101bd93dfc9cae887a416cbdd2ddeaa8d1b715172c946c1e22cbcba8b0a23",
+      "insurer_id": "new-india",
+      "product_or_heading": "Yuva Bharat Health Policy",
+      "heading_is_normalized_display_label": true,
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Preserved original title and operative hospitalization grant reviewed.",
+      "page_count": 54,
+      "observed_uins": [
+        "NIAHLIP25059V042425"
+      ],
+      "typed_uin_assertions": [
+        {
+          "value": "NIAHLIP25059V042425",
+          "kind": "printed_product_uin",
+          "physical_page": 1,
+          "historical_applicability_established": false
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "THE NEW INDIA ASSURANCE CO. LTD.\nREGISTERED & HEAD OFFICE: 87, MAHATMA GANDHI ROAD, MUMBAI - 400 001.\nYUVA BHARAT HEALTH POLICY\n1. PREAMBLE\nThis is Your “YUVA BHARAT HEALTH POLICY”, which has been issued by Us, relying on the\ninformation disclosed by You in Your Proposal for this Policy or its preceding Policy/Policies of which\nthis is a renewal.\nThe terms and conditions set out in this Policy and its Schedule will be the basis for any claim and/or\nbenefit under this Policy.\nPlease read this Policy carefully and point out discrepancy, if any, in the Schedule. Otherwise, it will\nbe presumed that the Policy and the Schedule correctly represent the cover agreed upon.\nIf during the Period of Insurance, You or any Insured Person incurs Hospitalisation Expenses which\nare Reasonable and Customary, and Medically Necessary for treatment of any Illness or Injury, we\nwill reimburse such expense through the Third-Party Administrator incurred by You in the manner\nstated herein.\nThe Coverages for Base, Gold and Platinum Plans are as under.\n1. Base Plan – Clauses applicable are 3.1 to 3.17.\nHospitalisation Expenses Specific Coverages\nMedical Expenses For Organ Coverage For Modern Treatments Or Procedures\nTransplant\nHospital Cash Cost Of Health Check-Up\nRoad Ambulance Charges Medical Second Opinion\nTreatment For Congenital Diseases Reinstatement of Sum Insured\nCoverage For Cataract Treatments Under Ayurvedic / Yoga and\nNaturopathy /Homeopathic / Siddha/ Unani\nSystems\nCoverage For Hazardous Sports New Born Baby Coverage\nShared Accommodation Benefit\n2. Gold Plan covers the following in addition to the coverages mentioned in Base Plan. Clauses\napplicable are 3.1 to 3.25.\nCritical Care Benefit\nPersonal Accident Benefit Auto TOP-UP\nReinstatement of Sum Insured twice in Guaranteed Cumulative Bonus\na policy period\n3. Platinum Plan covers the following in addition to the coverages mentioned Gold Plan. Clauses\napplicable are 3.1 to 3.30\nMaternity Coverage Infertility Treatment\nWell baby Cover Birth Right Benefit\nUIN: NIAHLIP25059V042425 YUVA BHARAT HEALTH POLICY Page 1",
+          "meaning": "Hospitalization indemnity with named nested plans and mixed fixed benefits; connected proportional-deduction exceptions, individual-only restoration restrictions, maternity/infertility grants and clocks. Summary clause ranges conflict with operative section placement.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "c9c894a66ccf76529c88979467804977bd96e151c0a1842f3240487b4e7f37dd",
+          "visually_reviewed": true
+        },
+        {
+          "physical_page": 8,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "2.19 GUARANTEED CUMULATIVE BONUS: In the event of claim under the policy during any\nsubsequent policy year, the credited cumulative bonus will not be reduced. The Guaranteed\ncumulative bonus will act as follows:\n In case of reduction in sum insured and there being no claim under the expiring policy, the\napplicable Cumulative bonus percentage will be applied on the reduced renewal sum\ninsured. In this case Cumulative Bonus will increase by one slab.\n In case of reduction in sum insured and there being a claim under the expiring policy, the\napplicable Guaranteed Cumulative bonus percentage will be applied on the reduced\nrenewal sum insured. In this case, existing Cumulative bonus percentage will be applicable\non the reduced renewal Sum insured, there will no decrease of slab.\n In case of enhancement of Sum insured and there being a claim under the expiring policy,\nthe applicable Guaranteed cumulative bonus percentage will be applicable on the last year\npolicy Sum insured not on the enhanced value of Sum insured.\nNote: Guaranteed Cumulative bonus is applicable for Gold and Platinum plan.\n2.20 HOSPITAL means any institution established for Inpatient Care and Day Care Treatment of\nIllness or Injury and which has been registered as a Hospital with the local authorities under\nthe Clinical Establishment (Registration and Regulation) Act, 2010 or under the enactments\nspecified under the schedule of Section 56(1) of the said act OR complies with all minimum\ncriteria as under:\n- Has qualified nursing staff under its employment round the clock;\n- Has at least 10 Inpatient beds in towns having a population of less than 10,00,000 and at\nleast 15 In-patient beds in all other places;\n- Has qualified Medical Practitioner(s) in charge round the clock;\n- Has a fully equipped operation theatre of its own where Surgery is carried out;\n- Maintains daily records of patients and makes these accessible to the insurance\ncompany’s authorized personnel.\n2.21 HOSPITALISATION means admission as an Inpatient in a Hospital for a minimum period of 24\nconsecutive hours except for the procedures/ treatments mentioned in Annexure I, where\nsuch admission could be for a period of less than 24 consecutive hours.\n2.22 ILLNESS means a sickness or a disease or pathological condition leading to the impairment of\nnormal physiological function which manifests itself during the Policy Period and requires\nmedical treatment.\ni. Acute Condition means a disease, illness or injury that is likely to respond quickly to\ntreatment which aims to return the person to his or her state of health immediately\nbefore suffering the disease/ illness/ injury which leads to full recovery.\nii. Chronic Condition means a disease, illness, or injury that has one or more of the following\ncharacteristics\na. it needs ongoing or long-term monitoring through consultations, examinations,\ncheck- ups, and / or tests\nb. it needs ongoing or long-term control or relief of symptoms\nc. it requires rehabilitation for the patient or for the patient to be special trained to\ncope with it\nUIN: NIAHLIP25059V042425 YUVA BHARAT HEALTH POLICY Page 8",
+          "meaning": "Hospitalization indemnity with named nested plans and mixed fixed benefits; connected proportional-deduction exceptions, individual-only restoration restrictions, maternity/infertility grants and clocks. Summary clause ranges conflict with operative section placement.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "2f21bb418d4d1d5e12a50c9ef7ce3f679f043f12e3cf280010a5fb65ab91af77",
+          "visually_reviewed": false
+        },
+        {
+          "physical_page": 14,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "2.72 WE/OUR/US/COMPANY means The New India Assurance Co. Ltd.\n2.73 YOU/YOUR means the person who has taken this Policy and is shown as Insured Person or\nthe first Insured Person (if more than one) in the Schedule.\n3. HOW MUCH WE WILL REIMBURSE\nSECTION 1: BASE PLAN\n3.1 Our liability for all claims admitted during the Period of Insurance will be only up to Sum\nInsured as mentioned in the Schedule. In respect of those Insured Persons with Cumulative\nBonus, our liability for claims admitted under this Policy shall not exceed the aggregate of the\nSum Insured and the Cumulative Bonus. Subject to this, we will reimburse the following\nReasonable and Customary, and Medically Necessary Expenses admissible as per the terms\nand conditions of the Policy:\n3.1 (a) Room Rent including Boarding, DMO / RMO / CMO / RMP Charges, Nursing\n(Including Injection / Drugs and Intra venous fluid administration expenses) as\nprovided by the hospital\nSum insured of Rs. 5,00,000 /10,00,000/15,00,000 Single AC room\nSum insured of Rs. 25,00,000 /50,00,000/75,00,000 / 1Cr Deluxe AC room\n3.1 (b) Intensive Care Unit (ICU) / Intensive Cardiac Care Unit (ICCU), Intensivist charges,\nMonitor and Pulse Oxymeter expenses.\n3.1 (c) Associate Medical Expenses; such as Professional fees of Surgeon, Anaesthetist,\nConsultant, Specialist; Operating Theatre Charges and Procedure Charges such as\nDialysis, Chemotherapy, Radiotherapy and similar medical expenses related to the\ntreatment.\n3.1 (d) Cost of Pharmacy and Consumables including Anaesthesia, Blood, Oxygen,\nCost of Implants and Medical Devices and Cost of Diagnostics.\n3.1 (e) Pre-Hospitalization Medical expenses up to 60 days prior to the date of admission\nto the hospital\n3.1 (f) Post-Hospitalization Medical expenses up to 90 days from the date of discharge\nfrom the hospital.\nNote:\nDental Treatment (Inpatient): We will cover for medical expenses incurred towards dental\ntreatment done under anaesthesia necessitated due to an accident/injury/illness requiring\nHospitalization as Inpatient treatment.\n3.2 PROPORTIONATE DEDUCTION\nProportionate Deduction is applicable on the Associate Medical Expenses, if the Insured\nPerson opts for a higher Room than his eligible category. It shall be effected in the same\nproportion as the eligible rate per day bears to the actual rate per day of Room Rent.\nHowever, it is not applicable on\n1. Cost of Pharmacy and Consumables\n2. Cost of Implants and Medical Devices\n3. Cost of Diagnostics\nUIN: NIAHLIP25059V042425 YUVA BHARAT HEALTH POLICY Page 14",
+          "meaning": "Hospitalization indemnity with named nested plans and mixed fixed benefits; connected proportional-deduction exceptions, individual-only restoration restrictions, maternity/infertility grants and clocks. Summary clause ranges conflict with operative section placement.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "26fa23177e65584af4ca1947c1c4eb91f0679250909bd920b2bfbfc0620cb01b",
+          "visually_reviewed": false
+        },
+        {
+          "physical_page": 15,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "Proportionate Deduction shall also not be applied in respect of Hospitals which do not follow\ndifferential billing or for those expenses in which differential billing is not adopted based on\nthe room category, as evidenced by the Hospital’s schedule of charges / tariff.\n3.3 MEDICAL EXPENSES INCURRED UNDER TWO POLICY PERIODS:\nIf the claim event falls within two policy periods, the claims shall be paid taking into\nconsideration the available Sum Insured under expiring Policy only. Sum Insured of the\nRenewed Policy will not be considered for the claim event which has commenced in the\nexpiring Policy.\n3.4 MEDICAL EXPENSES FOR ORGAN TRANSPLANT:\nIf treatment involves Organ Transplant to Insured Person, then We will also pay\nHospitalisation Expenses (excluding cost of organ and Pre and Post Hospitalisation Expenses)\nincurred on the donor, provided Our liability towards expenses incurred on the donor and the\nInsured recipient shall not exceed the available Sum Insured.\n3.5 HOSPITAL CASH\nWe will pay Hospital Cash as per the limits mentioned below for each day of Hospitalisation\nadmissible under the Policy. The payment under this Clause shall be for maximum five days\nfor Any One Illness.\nThe payment under this Clause is applicable only where the period of Hospitalisation exceeds\ntwenty-four hours. Payment under this Clause will reduce the Sum Insured.\nHospital cash will be payable for completion of every 24 hours and not part thereof.\nSum Insured Bands in Rs. Hospital Cash Benefit\n5 lakhs, 10 lakhs & 15 lakhs Rs. 500 per day\n25 lakhs Rs. 750 per day\n50 lakhs Rs. 1,000 per day\n75 Lakhs Rs. 1,500 per day\n1 Crore Rs. 2,000 per day\n3.6 ROAD AMBULANCE CHARGES\nWe will pay You the charges incurred towards Ambulance Services Reasonably incurred for\nshifting any Insured Person to Hospital for admission, or from one Hospital to another\nHospital as per the limits mentioned below for Any One Illness.\nSum Insured Bands in Rs. Ambulance charges payable\n5 lakhs, 10 lakhs & 15 lakhs Up to a maximum of Rs. 5,000\n25 lakhs Up to a maximum of Rs. 7,500\n50 lakhs Up to a maximum of Rs. 10,000\n75 Lakhs Up to a maximum of Rs. 15,000\n1 Crore Up to a maximum Rs. 20,000\nHowever, if an Insured Person, at the time of discharge from the Hospital, has to be shifted\nto their place of residence in an Ambulance, such expenses will also be reimbursed\nadditionally as per the above limits, provided the requirement of an Ambulance is certified by\nthe Medical Practitioner.\nUIN: NIAHLIP25059V042425 YUVA BHARAT HEALTH POLICY Page 15",
+          "meaning": "Hospitalization indemnity with named nested plans and mixed fixed benefits; connected proportional-deduction exceptions, individual-only restoration restrictions, maternity/infertility grants and clocks. Summary clause ranges conflict with operative section placement.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "ab73210f8cc4bd81db9fd5eb3f36daa312efb62a3ad240ac160f13a41a5640be",
+          "visually_reviewed": false
+        },
+        {
+          "physical_page": 20,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "However, expenses incurred towards post-natal care, pre-term or pre-mature care shall not\nbe covered.\nCoverage for the New Born Baby would be available during subsequent renewals provided\nthe child is declared for insurance and premium is paid for the child and covered as an Insured\nPerson.\nNote: This coverage is available for a New Born Baby born during the Policy Period to a female\nInsured Person, who has twenty-four months of Continuous Coverage with Us.\nSECTION 2: GOLD PLAN\nFollowing Coverages are available under this Plan in addition to Base Plan.\n3.18 CRITICAL CARE BENEFIT\nIf during the Policy Period, any Insured Person is diagnosed with of any of the Critical Illness\ndefined under Clause of 2.9 of the Policy Document for the first time, Lump Sum amount as\nmentioned below will be paid subject to following conditions\nSum Insured Bands in Rs. Benefit Payable\n5 lakhs, 10 lakhs & 15 lakhs Rs. 1,00,000\n25 lakhs Rs. 1,50,000\n50 lakhs Rs. 2,50,000\n75 Lakhs Rs. 5,00,000\n1 Crore Rs. 10,00,000\nConditions\n• The benefit shall be payable after completion of continuous coverage of 12 months\nunder this Plan.\n• This will be paid once in a lifetime of the Insured regardless of the number of critical\nillness suffered.\n• The benefit shall be payable to the Insured Person, provided the Critical Illness is\ndiagnosed after the first inception of Policy or change of Base Plan to Gold Plan or\nPlatinum Plan. On Utilization, no further Sum shall be payable under this section during\nthe policy period for other members.\n• The diagnosis of presence of such Critical Illness needs to be supported by treating\ndoctor’s certificate regarding duration of the Critical Illness, clinical, radiological,\nhistological, pathological, histo-pathological and laboratory evidence.\n• Any payment under this Clause would be in addition to hospitalisation expenses, if any,\nand shall not deplete the Sum Insured.\n3.19 PERSONAL ACCIDENT BENEFIT\nIf at any time during the currency of this Policy, the Insured Person shall sustain any bodily\ninjury resulting solely and directly from accident caused by external, violent and visible\nmeans, then the Company shall pay to the Insured or his legal representative(s) or Nominee,\nas the case may be, the sum hereinafter set forth, that is to say:\nIf such Injury shall within twelve calendar months of its occurrence be the sole and direct\ncause of\nUIN: NIAHLIP25059V042425 YUVA BHARAT HEALTH POLICY Page 20",
+          "meaning": "Hospitalization indemnity with named nested plans and mixed fixed benefits; connected proportional-deduction exceptions, individual-only restoration restrictions, maternity/infertility grants and clocks. Summary clause ranges conflict with operative section placement.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "de2ea74d465077c8d1de4326db52546bc694acd31a2b4a5ca34b62c919046f05",
+          "visually_reviewed": false
+        },
+        {
+          "physical_page": 22,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "b. Cumulative Bonus (if any);\nc. Auto TOP UP\n3. Such Auto TOP UP shall only be available once in a Policy Period and only for Policies\nissued on Individual Sum Insured basis.\n4. Auto TOP UP is not available for Modern Treatments listed under section 3.12 of the\nPolicy Clause.\n5. The unutilized amount will not be carried forward.\n3.22 DOUBLE REINSTATEMENT OF SUM INSURED\nIf the Sum Insured + Reinstated Sum Insured is exhausted due to a claim(s) admissible and/or\npaid under the Policy, then the Sum Insured shall be reinstated once more in a policy period,\nsubject to the following conditions:\n1. The sequence of utilization of Sum Insured will be as below:\na. Sum Insured;\nb. Cumulative Bonus (if any);\nc. Reinstated Sum Insured\nd. Double Reinstated Sum Insured\n2. The Double Reinstatement of Sum Insured shall be available for illness or injuries other\nthan for which Claim is paid or admissible during the policy Period.\n3. This Reinstatement of sum insured is applicable for policies issued on individual sum\ninsured basis.\n4. Reinstatement of Sum Insured is not available for Modern Treatments listed under 3.12\nof the Policy Clause.\n5. The unutilized amount will not be carried forward.\n3.23 GUARANTEED CUMULATIVE BONUS:\n In the event of claim under the policy, the accrued cumulative bonus will not be reduced.\n In case of reduction in sum insured, the applicable Cumulative bonus will be applied on\nthe reduced renewal sum insured.\n In case the insured changes plan from Base to Gold or Platinum plan at the time of\nrenewal, then Cumulative bonus will not be reduced, even if there is a claim.\n However, If the insured changes Gold or Platinum plan to base plan at the time of\nrenewals and there being a claim, then the cumulative bonus shall stand reduced.\nNote: Guaranteed Cumulative bonus is applicable for Gold and Platinum plan.\nSECTION 3: PLATINUM PLAN:\nFollowing Coverages are available under this Plan in addition to Gold Plan\n3.24 MATERNITY COVERAGE\nA. Expenses shall be covered after twenty-four months of Continuous Coverage under this\nPlan. Our maximum liability for towards Maternity Expenses is as follow:\nUIN: NIAHLIP25059V042425 YUVA BHARAT HEALTH POLICY Page 22",
+          "meaning": "Hospitalization indemnity with named nested plans and mixed fixed benefits; connected proportional-deduction exceptions, individual-only restoration restrictions, maternity/infertility grants and clocks. Summary clause ranges conflict with operative section placement.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "8edbda5ee0adca999020939dcd362e75c06bfbce253d22d5133f62cd706bcd16",
+          "visually_reviewed": true
+        },
+        {
+          "physical_page": 23,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "Single\nSum Insured Twin Babies\nbaby\n5/10/15/25/50\n25000 37500\nLakhs\n75 Lakhs 37500 50000\n1Crore 50000 62500\nSPECIAL CONDITIONS APPLICABLE TO MATERNITY:\ni. These benefits are admissible only if the expenses are incurred in Hospital as in\npatient in India.\nii. Our liability under this section shall be limited to two claims paid or admissible under\nthis Policy.\niii. A Waiting Period of 24 months shall be applicable afresh for the second maternity\nclaim.\nNote: Clause 4.4.15 “Maternity Expenses (Code - Excl18)” under Permanent\nExclusions stands modified to the extent covered under this Benefit.\nB. Optional Cover: Following Enhanced Maternity Limit is available at an additional\npremium\nEnhanced Maternity Limit (Over and above the Limit\nmentioned in ‘A’)\nRs. 50,000\nRs.75,000\nRs. 1,00,000\nNote: Enhanced Maternity Limit will be available after a waiting period of 24 months\nof continuous coverage.\n3.25 INFERTILITY TREATMENT\nWe shall provide expenses necessarily incurred for treatment of Infertility (including OPD\nTreatment) as per limits mentioned below. This limit shall be the lifetime limit in respect of\nall Insured Persons.\nSum Insured Amount payable\n5 lakhs, 10 lakhs & 15 lakhs Up to a maximum of Rs. 50,000\n25 lakhs Up to a maximum of Rs. 75,000\n50 lakhs Up to a maximum of Rs. 1,00,000\n75 Lakhs Up to a maximum of Rs. 1,50,000\n1 Crore Up to maximum of Rs. 2,00,000\nAny payment under this Clause shall be paid after the Insured Person has Continuous\nCoverage of twenty-four months under this Plan.\nNote: Clause 4.4.14 “Sterility and Infertility (Code- Excl17)” under Permanent Exclusions\nstands modified to the extent covered under the clause.\n3.26 WELL BABY COVER\nA. Pre-Mature / Pre-Term Baby: We will reimburse the Medical Expenses incurred towards\nhospitalization of pre-term or pre-mature Baby born within 32 weeks of Gestation Period\nUIN: NIAHLIP25059V042425 YUVA BHARAT HEALTH POLICY Page 23",
+          "meaning": "Hospitalization indemnity with named nested plans and mixed fixed benefits; connected proportional-deduction exceptions, individual-only restoration restrictions, maternity/infertility grants and clocks. Summary clause ranges conflict with operative section placement.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "06701665ac1f5dbc325fe3be1818d8875719954e50e40c57d45f86a6712021a0",
+          "visually_reviewed": false
+        },
+        {
+          "physical_page": 24,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "requiring a minimum period of 24 Hours hospitalization in neo-natal care immediately\nafter birth.\nSum Insured Limit\n5 L, 10 L & 15 L Rs. 30,000\n25 L Rs. 40,000\n50 L Rs. 50,000\n75 Lakhs Rs. 75,000\n1 Crore Rs. 1,00,000\nConditions:\n1. Pre-Mature/Pre-Term baby, under this policy is a Baby born within 32 weeks of\nGestation period.\n2. Minimum period of 24-hour hospitalisation is required in neo-natal care\nimmediately after birth.\nB. Vaccination Expenses: We will also cover Immunization or Vaccination expenses incurred\nfor the New Born Baby up to the age of 2 years and shall be covered up to 0.1% of Sum\nInsured per policy period.\nNote 1: This coverage is available for a New Born Baby born during the Policy Period to a\nfemale Insured Person, who has twenty-four months of Continuous Coverage with Us.\nNote 2: Clause 4.4.28 “Vaccination and/or inoculation” under Permanent Exclusions\nstands modified to the extent covered under this Benefit.\n3.27 BIRTH RIGHT BENEFIT\nIf during the Policy Period, Child or New Born Baby covered under the policy is diagnosed to\nsuffer from any of the Disorders mentioned below, a lump sum amount as mentioned below\nshall be payable subject to the following conditions.\nSum Insured Bands in Rs. Benefit Payable\n5 lakhs, 10 lakhs & 15 lakhs Rs. 30,000\n25 lakhs Rs.40,000\n50 lakhs Rs.50,000\n75 Lakhs Rs. 75,000\n1 Crore Rs. 1,00,000\nCONDITIONS:\nDisorder Detection\nAutism Spectrum Disorders Detected between the age of 0-6 Y.\nCerebral Palsy Detected between the age of 0-4 Y.\nDowns Syndrome Detected between the age of 0-4 Y.\n• This Benefit shall be payable on continuous coverage of 24 months under this Plan.\nHowever, this is not applicable for New Born Baby born during the Policy Period to a\nfemale Insured Person, who has twenty-four months of Continuous Coverage with Us.\n• Birth Right Benefit is payable only once in the Lifetime of the Child.\n• Any payment under this Clause would be in addition to the Sum Insured and shall not\ndeplete the Sum Insured.\nUIN: NIAHLIP25059V042425 YUVA BHARAT HEALTH POLICY Page 24",
+          "meaning": "Hospitalization indemnity with named nested plans and mixed fixed benefits; connected proportional-deduction exceptions, individual-only restoration restrictions, maternity/infertility grants and clocks. Summary clause ranges conflict with operative section placement.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "ed24c19c06fdca21e3a70c1da1322b837a224407614473d0e6071ce81128b872",
+          "visually_reviewed": false
+        },
+        {
+          "physical_page": 25,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "• The Disorder must be supported by Certifying Authorities, as specified in the Rights of\nthe Persons with Disabilities Act, 2016 (49 of 2016), and/or treating doctor’s certificate\nregarding duration Disorder, clinical radiological histological, pathological, histo-\npathological and laboratory evidence acceptable to the Company.\n• The benefit shall be payable to the Insured provided the Disorder is diagnosed after the\nfirst inception of Policy or change of Base Plan to Gold Plan or Platinum Plan.\n4. EXCLUSIONS\nNo claim will be payable under this Policy for the following:\nSTANDARD EXCLUSIONS\n4.1 PRE-EXISTING DISEASES (Code- Excl01)\na. Expenses related to the treatment of a pre-existing Disease (PED) and its direct\ncomplications shall be excluded until the expiry of 24 months of continuous coverage\nafter the date of inception of the first policy with us.\nb. In case of enhancement of Sum Insured the exclusion shall apply afresh to the extent\nof Sum Insured increase.\nc. If the Insured Person is continuously covered without any break as defined under the\nportability norms of the extant IRDAI (Health Insurance) Regulations then waiting\nperiod for the same would be reduced to the extent of prior coverage.\nd. Coverage under the policy after the expiry of 24 months for any pre-existing disease is\nsubject to the same being declared at the time of application and accepted by us.\n4.2 SPECIFIC WAITING PERIOD (Code- Excl02)\na. Expenses related to the treatment of the following listed conditions, surgeries /\ntreatments shall be excluded until the expiry of Ninety Days / 12 / 24 months of\ncontinuous coverage, as may be the case after the date of inception of the first policy\nwith the insurer. This exclusion shall not be applicable for claims arising due to an\naccident.\nb. In case of enhancement of sum insured the exclusion shall apply afresh to the extent\nof sum insured increase.\nc. If any of the specified disease/procedure falls under the waiting period specified for\npre- existing diseases, then the longer of the two waiting periods shall apply.\nd. The waiting period for listed conditions shall apply even if contracted after the policy\nor declared and accepted without a specific exclusion.\ne. If the Insured Person is continuously covered without any break as defined under the\napplicable norms on portability stipulated by IRDAI, then waiting period for the same\nwould be reduced to the extent of prior coverage.\n(i) 90 Days Waiting Period\n1. Diabetes Mellitus\n2. Hypertension\n3. Cardiac Conditions\n(ii) 12 Months waiting period\n1. All internal and external benign tumours, cysts, polyps of any kind, including\nUIN: NIAHLIP25059V042425 YUVA BHARAT HEALTH POLICY Page 25",
+          "meaning": "Hospitalization indemnity with named nested plans and mixed fixed benefits; connected proportional-deduction exceptions, individual-only restoration restrictions, maternity/infertility grants and clocks. Summary clause ranges conflict with operative section placement.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "c0d7ab472faccc551858f4ab70eed8ebb6340f3aa8b47f9e9020418a64fdbae1",
+          "visually_reviewed": false
+        }
+      ],
+      "identity_evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "exact_passage": "YUVA BHARAT HEALTH POLICY",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        },
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "exact_passage": "This is Your “YUVA BHARAT HEALTH POLICY”, which has been issued by Us, relying on the",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        },
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "exact_passage": "UIN: NIAHLIP25059V042425 YUVA BHARAT HEALTH POLICY Page 1",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        }
+      ],
+      "acquisition_provenance": [
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/yuva-bharat-health-policy/Policy Clause Yuva Bharat Health Policy2.pdf",
+          "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/yuva-bharat-health-policy/Policy%20Clause%20Yuva%20Bharat%20Health%20Policy2.pdf",
+          "linking_url": "https://www.newindia.co.in/health-insurance/new-india-yuva-bharat-health-policy",
+          "acquired_at": "2026-09-10T12:01:10.873081+00:00",
+          "http_status": 200,
+          "status": "acquired",
+          "sha256": "2d4101bd93dfc9cae887a416cbdd2ddeaa8d1b715172c946c1e22cbcba8b0a23",
+          "byte_count": 1123978,
+          "content_type": "application/pdf",
+          "source_register": "research/registers/sources.json",
+          "source_id": "1512147f52aef0a977aa8f8502e0d25a80e56d74a57527ca68700ef155e896e1",
+          "attempt_location": "matching source_id latest_attempt",
+          "observed_original_links": [
+            {
+              "linking_url": "https://www.newindia.co.in/health-insurance/new-india-yuva-bharat-health-policy",
+              "page_sha256": "b0216a33bb3065e4df02cf0ce53615e65e0d5ceb27763217e4688b25ef16ccd7",
+              "label": "Policy Clause Yuva Bharat Health Policy",
+              "raw_href": "assets/docs/know-more/health/yuva-bharat-health-policy/Policy Clause Yuva Bharat Health Policy2.pdf"
+            }
+          ]
+        }
+      ],
+      "selected_physical_pages_read_for_identity_scope": [
+        1,
+        8,
+        14,
+        15,
+        20,
+        22,
+        23,
+        24,
+        25
+      ],
+      "visually_reviewed_physical_pages": [
+        1,
+        22
+      ],
+      "review_extent": "Selected visible original identity/grant/configuration pages only; native text searched over all pages for navigation, which is not a full original or rule inventory.",
+      "already_manually_classified_r10": false,
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": {
+        "status": "unmeasured",
+        "value": null
+      },
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Fixed cash, critical-care and personal-accident benefits may coexist with medical-expense coverage; no exhaustive component inventory.",
+      "source_issue_ids": [
+        "NI-R11-YUVA-CLAUSE-RANGE",
+        "NI-R11-HISTORICAL-VERSIONS"
+      ]
+    },
+    {
+      "source_sha256": "2a20858d44a8fb9fcd80f6866bed8b53df6d68a78c4b24da1df3a108bd40a18b",
+      "insurer_id": "new-india",
+      "product_or_heading": "New India Premier Mediclaim Policy",
+      "heading_is_normalized_display_label": true,
+      "document_role": "customer_information_sheet",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Preserved official CIS title and selected indemnity/plan summary reviewed.",
+      "page_count": 3,
+      "observed_uins": [
+        "NIAHLIP25048V042425"
+      ],
+      "typed_uin_assertions": [
+        {
+          "value": "NIAHLIP25048V042425",
+          "kind": "printed_product_uin",
+          "physical_page": 1,
+          "historical_applicability_established": false
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "(LEGAL DISCLAIMER) NOTE: The information must be read in conjunction with the\nProspectus and Policy Document. In case of any conflict between the CIS and the Policy\nDocument the terms and conditions mentioned in the Policy Document shall prevail.\nCUSTOMER INFORMATION SHEET/KNOW YOUR POLICY\nSI Title Description Policy\nNo Clause\nNumber\n1 Name of the\nNew India Premier Mediclaim Policy\nInsurance\nProduct/Policy\n2 Policy Number\n3 Type of Insurance 3.1.1\nProduct/Policy Indemnity\n4 Sum Insured  Individual/Floater Sum insured.\nBasis If Floater, then – Print Floater sum insured\nIf Individual, then member wise sum insured.\n5 Policy Coverage Expense in respect of:\n(What Policy\nCovers?) Admission in hospital beyond 24 hours 2.17\nPre Hospitalisation -60 days 3.1.1 & 2.38\nPost Hospitalisation within 90 days from the date of 3.1.1 & 2.39\ndischarge.\nSpecified / Listed procedures requiring less than 24 hours Annexure 1\nof hospitalization (day care)\nCoverage under AYUSH treatment: Up to 100% of the 3.1.2\nSum Insured\nHospital cash - Rs. 2,000 per day for Plan A and Rs. 4,000 3.1.3\nper day for Plan B for each day of Hospitalisation\nOPD cover:\n3.1.10\nExpenses incurred towards Ambulance 3.1.4\nMaternity and Child Care 3.1.6\nExpenses incurred necessarily for treatment of Infertility 3.1.8\nCritical Care Benefit. 3.1.9\nSexually Transmitted Diseases, 3.1.11\nSecond opinion 3.1.13\nCoverage for Hazardous Sports 3.1.14\nObesity cover for Plan B. 3.2.2\nCongenital Internal Diseases and Congenital External 3.1.5\nDiseases\nUIN: NIAHLIP25048V042425 Page 1 of 3\nNEW INDIA PREMIER MEDICLAIM POLICY",
+          "meaning": "Official CIS family/plan identity and selected summary; placeholders do not establish issued selections and wording precedence must be retained.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "5b275487fab40eac1c92fd2739bda25bbc0c641fdf1ce460f7d6ce015e2668b7",
+          "visually_reviewed": false
+        }
+      ],
+      "identity_evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "exact_passage": "New India Premier Mediclaim Policy",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        },
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "exact_passage": "UIN: NIAHLIP25048V042425 Page 1 of 3",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        },
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "exact_passage": "NEW INDIA PREMIER MEDICLAIM POLICY",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        }
+      ],
+      "acquisition_provenance": [
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-premier-mediclaim-claim-policy/Customer Information Sheet New India Premier Mediclaim Policy.pdf",
+          "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/new-premier-mediclaim-claim-policy/Customer%20Information%20Sheet%20New%20India%20Premier%20Mediclaim%20Policy.pdf",
+          "linking_url": "https://www.newindia.co.in/health-insurance/premier-mediclaim-insurance",
+          "acquired_at": "2026-09-10T12:00:05.761524+00:00",
+          "http_status": 200,
+          "status": "acquired",
+          "sha256": "2a20858d44a8fb9fcd80f6866bed8b53df6d68a78c4b24da1df3a108bd40a18b",
+          "byte_count": 261418,
+          "content_type": "application/pdf",
+          "source_register": "research/registers/sources.json",
+          "source_id": "8a2d2a02e70d911b4c42422db229723e67c2e261ce5c610be7d53213d867c490",
+          "attempt_location": "matching source_id latest_attempt",
+          "observed_original_links": [
+            {
+              "linking_url": "https://www.newindia.co.in/health-insurance/premier-mediclaim-insurance",
+              "page_sha256": "97c6945ae348aee739b57896f6dc4463b3e63b028492da13ce3012dce10858d6",
+              "label": "Customer Information Sheet",
+              "raw_href": "assets/docs/know-more/health/new-premier-mediclaim-claim-policy/Customer Information Sheet New India Premier Mediclaim Policy.pdf"
+            }
+          ]
+        }
+      ],
+      "selected_physical_pages_read_for_identity_scope": [
+        1
+      ],
+      "visually_reviewed_physical_pages": [],
+      "review_extent": "Selected visible original identity/grant/configuration pages only; native text searched over all pages for navigation, which is not a full original or rule inventory.",
+      "already_manually_classified_r10": false,
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": {
+        "status": "unmeasured",
+        "value": null
+      },
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Fixed cash, critical-care and personal-accident benefits may coexist with medical-expense coverage; no exhaustive component inventory.",
+      "source_issue_ids": [
+        "NI-R11-PREMIER-BASIS",
+        "NI-R11-HISTORICAL-VERSIONS"
+      ]
+    },
+    {
+      "source_sha256": "d3fd7fe4bc042775c730f213486aed8c0ccb6c11a3f74ee9bb0ea9f120e55f54",
+      "insurer_id": "new-india",
+      "product_or_heading": "New India Premier Mediclaim Policy",
+      "heading_is_normalized_display_label": true,
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Preserved original title and operative hospitalization grant reviewed.",
+      "page_count": 42,
+      "observed_uins": [
+        "NIAHLIP25048V042425"
+      ],
+      "typed_uin_assertions": [
+        {
+          "value": "NIAHLIP25048V042425",
+          "kind": "printed_product_uin",
+          "physical_page": 1,
+          "historical_applicability_established": false
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "THE NEW INDIA ASSURANCE CO. LTD.\nREGISTERED & HEAD OFFICE: 87, MAHATMA GANDHI ROAD, MUMBAI - 400 001.\nNEW INDIA PREMIER MEDICLAIM POLICY\nThis is Your NEW INDIA PREMIER MEDICLAIM Policy (Policy), which has been issued by Us, relying on\nthe information disclosed by You in Your Proposal for this Policy or its preceding Policy/Policies of\nwhich this is a renewal.\nThe terms set out in this Policy and its Schedule will be the basis for any claim or benefit under this\nPolicy. This Policy states: -\nWhat We Cover\nDefinitions\nHow much we will reimburse\nWhat is excluded under this Policy?\nConditions\nPlease read this Policy carefully and point out discrepancy, if any in the Schedule. Otherwise, it will be\npresumed that the Policy and the Schedule correctly represent the cover agreed upon.\nSECTION I - WHAT WE COVER\nIf during the Period of Insurance, You or any Insured Person incurs Hospitalisation Expenses which are\nReasonable and Customary and Medically Necessary for treatment of any Illness or Injury, We will\nreimburse such expense incurred by You, in the manner stated herein.\nPlease note that the above coverage is subject to limits, terms and conditions contained in this Policy\nand no exclusion being found applicable.\nIn this Policy all the Insured Members as stated in the Schedule will be covered under single Sum\nInsured. Our aggregate liability in respect of all the Insured Persons, for all amounts paid or payable\nunder all Clauses of Part I and Part II of Section III except Clause 3.1.9, shall be limited to the Sum\nInsured.\nThe nature, scope and extent of coverage will depend on the Plan opted as mentioned in the Schedule.\nSECTION II – DEFINITIONS\n2.1 ACCIDENT means a sudden, unforeseen and involuntary event caused by external, visible and\nviolent means.\n2.2 ANY ONE ILLNESS means continuous Period of Illness and it includes relapse within 45 days from\nthe date of last consultation with the Hospital where treatment may have been taken.\n2.3 AYUSHMAN BHARAT HEALTH ACCOUNT (ABHA) number is a hassle-free method of accessing and\nsharing health records digitally. It enables interaction with participating healthcare providers, and\nallows to receive digital lab reports, prescription and diagnosis seamlessly from a verified\nhealthcare professionals and health service providers.\n2.4 BANK RATE means Bank rate fixed by the Reserve Bank of India (RBI) which is prevalent as on 1st\nday of the financial year in which the claim has fallen due.\n2.5 CANCELLATION defines the terms on which the Policy contract can be terminated either by Us or\nUIN: NIAHLIP25048V042425 NEW INDIA PREMIER MEDICLAIM POLICY Page 1",
+          "meaning": "Hospitalization indemnity shared across scheduled insured members with a critical-care exception; common Plan A/B grants and Plan B-only cover. Issued plan and CIS Individual/Floater discrepancy remain unresolved.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "a3b7e08e9f6c27425e0ead471e7cad29684369363ad78eb3be7fc6d9486521da",
+          "visually_reviewed": true
+        },
+        {
+          "physical_page": 12,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "SECTION III - HOW MUCH WE WILL REIMBURSE\nPART I : (COVER APPLICABLE FOR PLAN A AND PLAN B)\n3.1.1 HOSPITALISATION EXPENSES Our liability for all claims admitted during the Period of Insurance\nin respect of all Insured Persons will not exceed the Sum Insured, as mentioned in the Schedule.\nSubject to this, for each claim We will reimburse the following Reasonable and Customary\nCharges Medically Necessary and admissible as per the terms and conditions of the Policy:\n1. Room Rent, including boarding and nursing expenses.\n2. Intensive Care Unit (ICU) / Intensive Cardiac Care Unit (ICCU) expense.\n3. Surgeon, Anesthetist, Medical Practitioner, Consultants’ Specialist fees.\n4. Anesthesia, Blood, Oxygen, Operation Theatre Charges, Surgical Appliances, Medicines\n& Drugs, Dialysis, Chemotherapy, Radiotherapy, Artificial Limbs, Cost of Prosthetic\ndevices implanted during surgical procedure like pacemaker, Relevant\nLaboratory/Diagnostic test, X-Ray and other\nmedical expenses related to the treatment.\n5. Pre-Hospitalisation Medical Expenses, upto sixty days\n6. Post-Hospitalisation Medical Expenses, upto ninty days\nMEDICAL EXPENSES INCURRED UNDER TWO POLICY PERIODS:\nIf the claim event falls within two policy periods, the claims shall be paid taking into\nconsideration the available Sum Insured of the expiring Policy only. Sum Insured of the\nRenewed Policy will not be available for the Hospitalisation (including Pre & Post\nHospitalisation Expenses), which has commenced in the expiring Policy. Claim shall be settled\non per event basis.\nMEDICAL EXPENSES FOR ORGAN TRANSPLANT:\nIf treatment involves Organ Transplant to Insured Person, then We will also pay Hospitalisation\nExpenses (excluding cost of organ) incurred on the donor, provided Our liability towards\nexpenses incurred on the donor and the Insured recipient shall not exceed the available Sum\nInsured.\n3.1.2 AYUSH TREATMENTS\nWe will provide coverage for Expenses incurred for Ayurveda, Yoga and Naturopathy, Unani,\nSiddha and Homeopathy system of medicines is covered up to 100% of the Sum Insured during\neach policy year as specified in the policy schedule.\n3.1.3 HOSPITAL CASH\nWe will pay Hospital Cash at the rate of Rs. 2,000 per day for Plan A and Rs. 4,000 per day for\nPlan B for each day of Hospitalisation admissible under the Policy. The payment under this\nClause for Any One Illness shall be made for maximum 10 days of Hospitalisation. The payment\nunder this Clause is applicable only where the period of Hospitalisation exceeds twenty-four\nhours. Payment under this Clause will reduce the Sum Insured.\nHospital cash will be payable for completion of every 24 hours and not part thereof.\nUIN: NIAHLIP25048V042425 NEW INDIA PREMIER MEDICLAIM POLICY Page 12",
+          "meaning": "Hospitalization indemnity shared across scheduled insured members with a critical-care exception; common Plan A/B grants and Plan B-only cover. Issued plan and CIS Individual/Floater discrepancy remain unresolved.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "ee94727f9320c31fcac3aa1a708baf7ed15b11fc9a82b42dafa7526d9d6ceeba",
+          "visually_reviewed": false
+        },
+        {
+          "physical_page": 17,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "locator": "Full visible physical page; selected identity, grant, configuration or connected restriction context",
+          "exact_passage": "PART II: (COVER AVAILABLE ONLY FOR PLAN B)\n3.2.1 COVER FOR PSYCHIATRIC AND PSYCHOSOMATIC DISORDERS\nAll the Psychiatric and Psychosomatic disorders diagnosed for the first time during the\nContinuous Coverage under the New India Premier Mediclaim Policy will be covered up to 5%\nof Sum Insured. The Insured needs to be admitted as in-patient. This treatment will not be\ncovered under a Day-care procedure.\n3.2.2 TREATMENT FOR OBESITY\nHospitalisation for treatment related to or for obesity is covered up to Rs. 5,00,000 where Body\nMass Index of the Insured Person is greater than 35 and the Insured Person is diagnosed with\nco-morbidities mentioned below.\n1. Respiratory: Obstructive sleep apnea, Pickwickian syndrome (obesity hypoventilation\nsyndrome)\n2. Cardiovascular: Coronary artery disease, left ventricular hypertrophy, coronary pulmonale,\nobesity-associated cardiomyopathy, accelerated atherosclerosis, and pulmonary\nhypertension of obesity\nAny payment under this Clause shall be paid after the Insured has:\na) Continuous Coverage of thirty-six months in New India Premier Mediclaim Policy\nb) Such a treatment is payable only after prior clearance of Medical Practitioner\nauthorized by the Company or the TPA mentioned in the Schedule.\n3.2.3 DIETICIAN COUNSELING\nExpenses incurred towards Dietician counseling for all Insured Person in a policy shall be\nrestricted to a maximum of Rs. 5,000 subjects to actuals for all the admissible claims under the\npolicy.\nSECTION IV - WHAT IS EXCLUDED UNDER THIS POLICY\nNO CLAIM WILL BE PAYABLE UNDER THIS POLICY FOR THE FOLLOWING:\n4.1 PRE-EXISTING DISEASES (Code- Excl01)\na. Expenses related to the treatment of a pre-existing Disease (PED) and its direct\ncomplications shall be excluded until the expiry of 36 months of continuous coverage after\nthe date of inception of the first policy with us.\nb. In case of enhancement of Sum Insured the exclusion shall apply afresh to the extent of\nSum Insured increase.\nc. If the Insured Person is continuously covered without any break as defined under the\nportability norms of the extant IRDAI (Health Insurance) Regulations then waiting period\nfor the same would be reduced to the extent of prior coverage.\nd. Coverage under the policy after the expiry of 36 months for any pre-existing disease is\nsubject to the same being declared at the time of application and accepted by u\nUIN: NIAHLIP25048V042425 NEW INDIA PREMIER MEDICLAIM POLICY Page 17",
+          "meaning": "Hospitalization indemnity shared across scheduled insured members with a critical-care exception; common Plan A/B grants and Plan B-only cover. Issued plan and CIS Individual/Floater discrepancy remain unresolved.",
+          "transcription_method": "native_text_within_visible_page_bbox",
+          "passage_sha256": "555b04cff572ff9623f8d20d8ae058a83f0f5d63027a90b925e592e2a597e6ba",
+          "visually_reviewed": false
+        }
+      ],
+      "identity_evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "exact_passage": "NEW INDIA PREMIER MEDICLAIM POLICY",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        },
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "exact_passage": "This is Your NEW INDIA PREMIER MEDICLAIM Policy (Policy), which has been issued by Us, relying on",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        },
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            597,
+            843
+          ],
+          "exact_passage": "UIN: NIAHLIP25048V042425 NEW INDIA PREMIER MEDICLAIM POLICY Page 1",
+          "meaning": "Exact visible native title/identifier/plan label; not proof of issue-date applicability."
+        }
+      ],
+      "acquisition_provenance": [
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-premier-mediclaim-claim-policy/Policy Clause New India Premier Mediclaim.pdf",
+          "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/new-premier-mediclaim-claim-policy/Policy%20Clause%20New%20India%20Premier%20Mediclaim.pdf",
+          "linking_url": "https://www.newindia.co.in/health-insurance/premier-mediclaim-insurance",
+          "acquired_at": "2026-09-10T12:00:17.857880+00:00",
+          "http_status": 200,
+          "status": "acquired",
+          "sha256": "d3fd7fe4bc042775c730f213486aed8c0ccb6c11a3f74ee9bb0ea9f120e55f54",
+          "byte_count": 934415,
+          "content_type": "application/pdf",
+          "source_register": "research/registers/sources.json",
+          "source_id": "8ed1738e9f8527f29f6359c350beedcd90abbce2444b7fa9335f373055d3c057",
+          "attempt_location": "matching source_id latest_attempt",
+          "observed_original_links": [
+            {
+              "linking_url": "https://www.newindia.co.in/health-insurance/premier-mediclaim-insurance",
+              "page_sha256": "97c6945ae348aee739b57896f6dc4463b3e63b028492da13ce3012dce10858d6",
+              "label": "Policy Clause for New India Premier Mediclaim",
+              "raw_href": "assets/docs/know-more/health/new-premier-mediclaim-claim-policy/Policy Clause New India Premier Mediclaim.pdf"
+            }
+          ]
+        }
+      ],
+      "selected_physical_pages_read_for_identity_scope": [
+        1,
+        12,
+        17
+      ],
+      "visually_reviewed_physical_pages": [
+        1
+      ],
+      "review_extent": "Selected visible original identity/grant/configuration pages only; native text searched over all pages for navigation, which is not a full original or rule inventory.",
+      "already_manually_classified_r10": false,
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": {
+        "status": "unmeasured",
+        "value": null
+      },
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Fixed cash, critical-care and personal-accident benefits may coexist with medical-expense coverage; no exhaustive component inventory.",
+      "source_issue_ids": [
+        "NI-R11-PREMIER-BASIS",
+        "NI-R11-HISTORICAL-VERSIONS"
+      ]
+    }
+  ],
+  "reread_existing_documents": [],
+  "per_listing_results": [
+    {
+      "legacy_identity": "/health-insurance/new-india-assurance/floater-mediclaim/",
+      "legacy_name": "Floater Mediclaim",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "insurer_id": "new-india",
+      "family": "New India Floater Mediclaim Policy",
+      "family_identity_supported": true,
+      "family_identity_status": "source_backed_original_wording",
+      "wording_sha256s": [
+        "a38f41381dab04026f8e352aa1cad2ff3a82e99f46f5787109265bb04d18f3bd"
+      ],
+      "companion_cis_sha256s": [
+        "6908c83ec7d9ef8bccea1f5c4aa74689bd07b76cfea1994e1e7113c41652fb7f"
+      ],
+      "observed_wording_uins": [
+        "NIAHLIP25039V102425"
+      ],
+      "variant_or_form_result": {
+        "matched_legacy_label_variant": null,
+        "status": "generic_family_selection_unresolved",
+        "candidates": [
+          "Basic",
+          "Uplift"
+        ],
+        "qualification": "Generic family name does not select a named plan, insured basis, threshold, sum insured or voluntary option. In particular generic Yuva Bharat is not assumed to mean Base.",
+        "issued_customer_selection_verified": false
+      },
+      "source_document_versions": {
+        "status": "observed_original_identifiers_retained_exact_legacy_applicability_unresolved",
+        "historical_version_reconciled": false,
+        "previous_observed_uins": [
+          "NIAHLIP25039V102425",
+          "NIAHLIP25039V082425",
+          "NIAHLIP25039V092425"
+        ],
+        "wording_uins": [
+          "NIAHLIP25039V102425"
+        ],
+        "cis_uins": []
+      },
+      "original_bundle_roles": {
+        "wording": "Preserved and bounded identity/grant/configuration review; full rule inventory not performed.",
+        "CIS": "Official family companion candidate; identifiers retained only where observed, placeholders and source inconsistencies unresolved.",
+        "prospectus_and_brochure": "Official linked/preserved candidates listed; not exhaustively compared in this batch.",
+        "endorsements_addons": "Applicable set not established.",
+        "issued_schedule_underwriting": "Not supplied."
+      },
+      "official_bundle_link_candidates": [
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/floater-mediclaim-policy/New India Folater Mediclaim - 3 fold New Matter wi_260722_153623.pdf",
+          "source_sha256": "0ebd0c9cc8bb548fde29e2ca3a7cd0cbdeaa9e25e9e175bd162717ab07d83e4b",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "New India Floater Mediclaim - Uplift Plan Brochure"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/floater-mediclaim-policy/1 Floter Mediclaim Pamphlet.pdf",
+          "source_sha256": "8bf0a712d34bdd0d5ed69bbb4bd3d82d8105e9c0a8cd8c7782a539ea7a0adea5",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Policy Brochure"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/floater-mediclaim-policy/Prospectus New India Floater Mediclaim final.pdf",
+          "source_sha256": "b0fefdb2fbe7803d4140c56b38c21c32c1f1e4153f296e74187dcf6995c63f16",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Prospectus"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/floater-mediclaim-policy/Dos_and_Donts_for_Health_Insurance.pdf",
+          "source_sha256": "5690a1abe08ad58088845beedc465db47bddcf4ed7bf44299a9d5ac5030e223b",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Do's and Dont's"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/floater-mediclaim-policy/Premium_chartNew_India_Floater_mediclaim_policy.pdf",
+          "source_sha256": "a442218ddf13541cea2f0923804b1949c2f18520f3567812ac7ae46a2a18e623",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Premium Chart"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/floater-mediclaim-policy/Proposal_Form New India Floater Mediclaim Policy.pdf",
+          "source_sha256": "5184183e96cad93e7ebbceb8f317fb474a2ea4a6de1523ae8a63f280983c2383",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Proposal Form"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/floater-mediclaim-policy/Claim_Form.pdf",
+          "source_sha256": "45fff8eb7d20dc02b6501e5d27be2f6e011a95771a1907f2409c36b7ce86d976",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Claim Form"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        }
+      ],
+      "source_issue_ids": [
+        "NI-R11-FLOATER-UIN",
+        "NI-R11-FLOATER-TABLE-HEADER",
+        "NI-R11-HISTORICAL-VERSIONS",
+        "NI-R11-OCCLUDED-TABLE-HEADER"
+      ],
+      "remaining_evidence": [
+        "Exact legacy observation/issue date and historical source association.",
+        "Issued schedule, insured people, SI/basis, chosen plan/options and underwriting terms.",
+        "Complete CIS/prospectus/endorsement/add-on bundle and original conflict resolution.",
+        "Complete original page/table/figure/footnote inventory and independently adjudicated rule denominator.",
+        "CIS is an official linked family/plan companion candidate; its exact version is unconfirmed. Do not copy wording UIN onto CIS.",
+        "Do not ingest this CIS column as a room-rent entitlement or fabricate the clipped continuation. Use exact visible page evidence and reconcile connected pages before the health-check table is modeled.",
+        "Preserve original bytes and rendering discrepancy. Native text inside page bounds is still insufficient to certify visibility; validate tables against page images and do not publish occluded glyphs as visible evidence."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false,
+      "reconciliation_complete": false
+    },
+    {
+      "legacy_identity": "/health-insurance/new-india-assurance/new-india-top-up-mediclaim/",
+      "legacy_name": "New India Top Up Mediclaim",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "insurer_id": "new-india",
+      "family": "New India Top-Up Mediclaim",
+      "family_identity_supported": true,
+      "family_identity_status": "source_backed_original_wording",
+      "wording_sha256s": [
+        "607d8f0171c9ef1e16960202654a00fee400918de3061e8369cab70fcbfe3c96"
+      ],
+      "companion_cis_sha256s": [
+        "edaf6b8f0057f4155662866648067ab5e937bd35fbba42a0c622508c8d2d6843"
+      ],
+      "observed_wording_uins": [
+        "NIAHLIP25050V032425"
+      ],
+      "variant_or_form_result": {
+        "matched_legacy_label_variant": null,
+        "status": "generic_family_selection_unresolved",
+        "candidates": [],
+        "qualification": "Generic family name does not select a named plan, insured basis, threshold, sum insured or voluntary option. In particular generic Yuva Bharat is not assumed to mean Base.",
+        "issued_customer_selection_verified": false
+      },
+      "source_document_versions": {
+        "status": "observed_original_identifiers_retained_exact_legacy_applicability_unresolved",
+        "historical_version_reconciled": false,
+        "previous_observed_uins": [
+          "NIAHLIP25050V032425"
+        ],
+        "wording_uins": [
+          "NIAHLIP25050V032425"
+        ],
+        "cis_uins": [
+          "NIAHLIP25050V032425"
+        ]
+      },
+      "original_bundle_roles": {
+        "wording": "Preserved and bounded identity/grant/configuration review; full rule inventory not performed.",
+        "CIS": "Official family companion candidate; identifiers retained only where observed, placeholders and source inconsistencies unresolved.",
+        "prospectus_and_brochure": "Official linked/preserved candidates listed; not exhaustively compared in this batch.",
+        "endorsements_addons": "Applicable set not established.",
+        "issued_schedule_underwriting": "Not supplied."
+      },
+      "official_bundle_link_candidates": [
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/top-up-mediclaim-policy/1 Topup Mediclaim Pamphlets.pdf",
+          "source_sha256": "c8cb00f7b4d9f8e209b7e99594fa93e58e19da647f2d846acfae6c6f5617841d",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Policy Brochure"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/top-up-mediclaim-policy/Claim_Form.pdf",
+          "source_sha256": "45fff8eb7d20dc02b6501e5d27be2f6e011a95771a1907f2409c36b7ce86d976",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Claim Form (159.94 KB)"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/top-up-mediclaim-policy/Dos_and_Donts_for_Health_Insurance.pdf",
+          "source_sha256": "5690a1abe08ad58088845beedc465db47bddcf4ed7bf44299a9d5ac5030e223b",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Do's and Dont's"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/top-up-mediclaim-policy/Prospectus New India Top-Up Mediclaim1504.pdf",
+          "source_sha256": "cbadb5098e8b5f618bc605500d5de982309df6ab5cf6557ab2128d70dd4988a4",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Prospectus"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/top-up-mediclaim-policy/New India Top Up Mediclaim - Proposal Form.pdf",
+          "source_sha256": "3bf98bf11e6e339f3fa43275b48b29f82acec5198f49b21e6dca1030e4a83a81",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Proposal Form"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/top-up-mediclaim-policy/Premium Chart New India TOP UP Mediclaim Policy.pdf",
+          "source_sha256": "a12a16db038c075891b2347b0780201d7fe40247b116c9c10dc96341665604a9",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Premium Chart New India TOP UP Mediclaim Policy"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/top-up-mediclaim-policy/New India Top Up Mediclaim Premium Illustration.pdf",
+          "source_sha256": "a851521432937e830ad441b181c1a19a8a68f531892345d42c1ffcc77f88f075",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Premium illustration"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/top-up-mediclaim-policy/List of excluded items.pdf",
+          "source_sha256": "41589141cc07700598f77428b40458cbc951e089aee35e6020225f207efcf832",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "List of excluded items"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        }
+      ],
+      "source_issue_ids": [
+        "NI-R11-HISTORICAL-VERSIONS"
+      ],
+      "remaining_evidence": [
+        "Exact legacy observation/issue date and historical source association.",
+        "Issued schedule, insured people, SI/basis, chosen plan/options and underwriting terms.",
+        "Complete CIS/prospectus/endorsement/add-on bundle and original conflict resolution.",
+        "Complete original page/table/figure/footnote inventory and independently adjudicated rule denominator."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false,
+      "reconciliation_complete": false
+    },
+    {
+      "legacy_identity": "/health-insurance/new-india-assurance/sixty-plus-mediclaim/",
+      "legacy_name": "Sixty Plus Mediclaim",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "insurer_id": "new-india",
+      "family": "New India Sixty Plus Mediclaim Policy",
+      "family_identity_supported": true,
+      "family_identity_status": "source_backed_original_wording",
+      "wording_sha256s": [
+        "73b5e7b60faf6cdd20f59dc8893f37082014597e382e20b59181fd4019e21fa0"
+      ],
+      "companion_cis_sha256s": [
+        "1f622f2a4b79595560ccf7674abd75b2d0dffe9675cd6115c5c246d7af04b34b"
+      ],
+      "observed_wording_uins": [
+        "NIAHLIP25049V032425"
+      ],
+      "variant_or_form_result": {
+        "matched_legacy_label_variant": null,
+        "status": "generic_family_selection_unresolved",
+        "candidates": [],
+        "qualification": "Generic family name does not select a named plan, insured basis, threshold, sum insured or voluntary option. In particular generic Yuva Bharat is not assumed to mean Base.",
+        "issued_customer_selection_verified": false
+      },
+      "source_document_versions": {
+        "status": "observed_original_identifiers_retained_exact_legacy_applicability_unresolved",
+        "historical_version_reconciled": false,
+        "previous_observed_uins": [
+          "NIAHLIP25049V032425"
+        ],
+        "wording_uins": [
+          "NIAHLIP25049V032425"
+        ],
+        "cis_uins": [
+          "NIAHLIP25049V032425"
+        ]
+      },
+      "original_bundle_roles": {
+        "wording": "Preserved and bounded identity/grant/configuration review; full rule inventory not performed.",
+        "CIS": "Official family companion candidate; identifiers retained only where observed, placeholders and source inconsistencies unresolved.",
+        "prospectus_and_brochure": "Official linked/preserved candidates listed; not exhaustively compared in this batch.",
+        "endorsements_addons": "Applicable set not established.",
+        "issued_schedule_underwriting": "Not supplied."
+      },
+      "official_bundle_link_candidates": [
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-sixty-plus-mediclaim-policy/1 Sixty Plus Pamphlet.pdf",
+          "source_sha256": "038fc9d8bd2e9e91012835617b52dd6352060527d4e4ddec9ab09d158429baaa",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Policy Brochure"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-sixty-plus-mediclaim-policy/List of excluded items.pdf",
+          "source_sha256": "41589141cc07700598f77428b40458cbc951e089aee35e6020225f207efcf832",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "List of excluded items (427.07 KB)"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-sixty-plus-mediclaim-policy/Proposal Form New India Sixty Plus Mediclaim Policy.pdf",
+          "source_sha256": "d22dfc888f31d7fcde6ccadc9e334e44ab7a58e4676ac3e4e5c07a6c376134ea",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Proposal Form New India Sixty Plus Mediclaim Policy"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-sixty-plus-mediclaim-policy/New India Sixty plus Premium chart.pdf",
+          "source_sha256": "f14a2e6b8fe4a6bab4b31ba9e6192f6b548a44bb5a2fcc33f2915b1961e25c95",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Premium Chart New India Sixty Plus Mediclaim Policy (WEF 01 Nov 2024)"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-sixty-plus-mediclaim-policy/Prospectus New India Sixty Plus Mediclaim Policy updated.pdf",
+          "source_sha256": "d72252bf8e99f6bed1a275c9f701a0e3021a7ef1b8c7231aef28a867ed92804b",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Prospectus New India Sixty Plus Mediclaim Policy"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        }
+      ],
+      "source_issue_ids": [
+        "NI-R11-HISTORICAL-VERSIONS"
+      ],
+      "remaining_evidence": [
+        "Exact legacy observation/issue date and historical source association.",
+        "Issued schedule, insured people, SI/basis, chosen plan/options and underwriting terms.",
+        "Complete CIS/prospectus/endorsement/add-on bundle and original conflict resolution.",
+        "Complete original page/table/figure/footnote inventory and independently adjudicated rule denominator."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false,
+      "reconciliation_complete": false
+    },
+    {
+      "legacy_identity": "/health-insurance/new-india-assurance/yuva-bharat-health/",
+      "legacy_name": "Yuva Bharat Health",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "insurer_id": "new-india",
+      "family": "Yuva Bharat Health Policy",
+      "family_identity_supported": true,
+      "family_identity_status": "source_backed_original_wording",
+      "wording_sha256s": [
+        "2d4101bd93dfc9cae887a416cbdd2ddeaa8d1b715172c946c1e22cbcba8b0a23"
+      ],
+      "companion_cis_sha256s": [
+        "f3d571e838020b6af462d6135b3d690288c2c78973a074f28733813f7d4ca68d"
+      ],
+      "observed_wording_uins": [
+        "NIAHLIP25059V042425"
+      ],
+      "variant_or_form_result": {
+        "matched_legacy_label_variant": null,
+        "status": "generic_family_selection_unresolved",
+        "candidates": [
+          "Base",
+          "Gold",
+          "Platinum"
+        ],
+        "qualification": "Generic family name does not select a named plan, insured basis, threshold, sum insured or voluntary option. In particular generic Yuva Bharat is not assumed to mean Base.",
+        "issued_customer_selection_verified": false
+      },
+      "source_document_versions": {
+        "status": "observed_original_identifiers_retained_exact_legacy_applicability_unresolved",
+        "historical_version_reconciled": false,
+        "previous_observed_uins": [
+          "NIAHLIP25059V042425"
+        ],
+        "wording_uins": [
+          "NIAHLIP25059V042425"
+        ],
+        "cis_uins": [
+          "NIAHLIP25059V042425"
+        ]
+      },
+      "original_bundle_roles": {
+        "wording": "Preserved and bounded identity/grant/configuration review; full rule inventory not performed.",
+        "CIS": "Official family companion candidate; identifiers retained only where observed, placeholders and source inconsistencies unresolved.",
+        "prospectus_and_brochure": "Official linked/preserved candidates listed; not exhaustively compared in this batch.",
+        "endorsements_addons": "Applicable set not established.",
+        "issued_schedule_underwriting": "Not supplied."
+      },
+      "official_bundle_link_candidates": [
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/yuva-bharat-health-policy/1 Yuva Bharat Pamphlet.pdf",
+          "source_sha256": "c2e2a5c79ad1ce5440bc8ed3c5420c7e00648f6fa7a1485afd782c9687abc74c",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Policy Brochure"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/yuva-bharat-health-policy/Proposal FormYuva Bharat Health Policy.pdf",
+          "source_sha256": "0184c3e79e160f4340dc683dac660c4169e9d5e770026a8cf783fafd1bbcab7b",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Proposal Form Yuva Bharat Health Policy"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/yuva-bharat-health-policy/Prospectus Yuva Bharat Health Policy.pdf",
+          "source_sha256": "1083c5eaed9e65ff5ff24b97f425bc804af33bb1010d5df6cfa3fbaec9a17d20",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Prospectus Yuva Bharat Health Policy"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/yuva-bharat-health-policy/Claim_Form.pdf",
+          "source_sha256": "45fff8eb7d20dc02b6501e5d27be2f6e011a95771a1907f2409c36b7ce86d976",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Claim Form"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/yuva-bharat-health-policy/Premium Chart Yuva Bharat Health Policy.pdf",
+          "source_sha256": "af71c0022d830f2ca35b0313ea508d2ab1ee2a666a93eef46b9e42e3a74d2b42",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Premium Chart"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        }
+      ],
+      "source_issue_ids": [
+        "NI-R11-YUVA-CLAUSE-RANGE",
+        "NI-R11-HISTORICAL-VERSIONS"
+      ],
+      "remaining_evidence": [
+        "Exact legacy observation/issue date and historical source association.",
+        "Issued schedule, insured people, SI/basis, chosen plan/options and underwriting terms.",
+        "Complete CIS/prospectus/endorsement/add-on bundle and original conflict resolution.",
+        "Complete original page/table/figure/footnote inventory and independently adjudicated rule denominator.",
+        "Recognize names and nested section structure; do not derive Gold maternity/infertility eligibility by numeric range alone or silently repair original numbering. Require corroborating insurer original/clarification before affected rule publication."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false,
+      "reconciliation_complete": false
+    },
+    {
+      "legacy_identity": "/health-insurance/new-india-assurance/yuva-bharat-health-gold/",
+      "legacy_name": "Yuva Bharat Health Gold",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "insurer_id": "new-india",
+      "family": "Yuva Bharat Health Policy",
+      "family_identity_supported": true,
+      "family_identity_status": "source_backed_original_wording",
+      "wording_sha256s": [
+        "2d4101bd93dfc9cae887a416cbdd2ddeaa8d1b715172c946c1e22cbcba8b0a23"
+      ],
+      "companion_cis_sha256s": [
+        "f3d571e838020b6af462d6135b3d690288c2c78973a074f28733813f7d4ca68d"
+      ],
+      "observed_wording_uins": [
+        "NIAHLIP25059V042425"
+      ],
+      "variant_or_form_result": {
+        "matched_legacy_label_variant": "Gold",
+        "status": "named_variant_supported_historical_selection_unresolved",
+        "candidates": [
+          "Gold"
+        ],
+        "qualification": "Exact named plan is visible in original, but no issued selection or historical version follows from the legacy label.",
+        "issued_customer_selection_verified": false
+      },
+      "source_document_versions": {
+        "status": "observed_original_identifiers_retained_exact_legacy_applicability_unresolved",
+        "historical_version_reconciled": false,
+        "previous_observed_uins": [
+          "NIAHLIP25059V042425"
+        ],
+        "wording_uins": [
+          "NIAHLIP25059V042425"
+        ],
+        "cis_uins": [
+          "NIAHLIP25059V042425"
+        ]
+      },
+      "original_bundle_roles": {
+        "wording": "Preserved and bounded identity/grant/configuration review; full rule inventory not performed.",
+        "CIS": "Official family companion candidate; identifiers retained only where observed, placeholders and source inconsistencies unresolved.",
+        "prospectus_and_brochure": "Official linked/preserved candidates listed; not exhaustively compared in this batch.",
+        "endorsements_addons": "Applicable set not established.",
+        "issued_schedule_underwriting": "Not supplied."
+      },
+      "official_bundle_link_candidates": [
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/yuva-bharat-health-policy/1 Yuva Bharat Pamphlet.pdf",
+          "source_sha256": "c2e2a5c79ad1ce5440bc8ed3c5420c7e00648f6fa7a1485afd782c9687abc74c",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Policy Brochure"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/yuva-bharat-health-policy/Proposal FormYuva Bharat Health Policy.pdf",
+          "source_sha256": "0184c3e79e160f4340dc683dac660c4169e9d5e770026a8cf783fafd1bbcab7b",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Proposal Form Yuva Bharat Health Policy"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/yuva-bharat-health-policy/Prospectus Yuva Bharat Health Policy.pdf",
+          "source_sha256": "1083c5eaed9e65ff5ff24b97f425bc804af33bb1010d5df6cfa3fbaec9a17d20",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Prospectus Yuva Bharat Health Policy"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/yuva-bharat-health-policy/Claim_Form.pdf",
+          "source_sha256": "45fff8eb7d20dc02b6501e5d27be2f6e011a95771a1907f2409c36b7ce86d976",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Claim Form"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/yuva-bharat-health-policy/Premium Chart Yuva Bharat Health Policy.pdf",
+          "source_sha256": "af71c0022d830f2ca35b0313ea508d2ab1ee2a666a93eef46b9e42e3a74d2b42",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Premium Chart"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        }
+      ],
+      "source_issue_ids": [
+        "NI-R11-YUVA-CLAUSE-RANGE",
+        "NI-R11-HISTORICAL-VERSIONS"
+      ],
+      "remaining_evidence": [
+        "Exact legacy observation/issue date and historical source association.",
+        "Issued schedule, insured people, SI/basis, chosen plan/options and underwriting terms.",
+        "Complete CIS/prospectus/endorsement/add-on bundle and original conflict resolution.",
+        "Complete original page/table/figure/footnote inventory and independently adjudicated rule denominator.",
+        "Recognize names and nested section structure; do not derive Gold maternity/infertility eligibility by numeric range alone or silently repair original numbering. Require corroborating insurer original/clarification before affected rule publication."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false,
+      "reconciliation_complete": false
+    },
+    {
+      "legacy_identity": "/health-insurance/new-india-assurance/yuva-bharat-health-platinum/",
+      "legacy_name": "Yuva Bharat Health Platinum",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "insurer_id": "new-india",
+      "family": "Yuva Bharat Health Policy",
+      "family_identity_supported": true,
+      "family_identity_status": "source_backed_original_wording",
+      "wording_sha256s": [
+        "2d4101bd93dfc9cae887a416cbdd2ddeaa8d1b715172c946c1e22cbcba8b0a23"
+      ],
+      "companion_cis_sha256s": [
+        "f3d571e838020b6af462d6135b3d690288c2c78973a074f28733813f7d4ca68d"
+      ],
+      "observed_wording_uins": [
+        "NIAHLIP25059V042425"
+      ],
+      "variant_or_form_result": {
+        "matched_legacy_label_variant": "Platinum",
+        "status": "named_variant_supported_historical_selection_unresolved",
+        "candidates": [
+          "Platinum"
+        ],
+        "qualification": "Exact named plan is visible in original, but no issued selection or historical version follows from the legacy label.",
+        "issued_customer_selection_verified": false
+      },
+      "source_document_versions": {
+        "status": "observed_original_identifiers_retained_exact_legacy_applicability_unresolved",
+        "historical_version_reconciled": false,
+        "previous_observed_uins": [
+          "NIAHLIP25059V042425"
+        ],
+        "wording_uins": [
+          "NIAHLIP25059V042425"
+        ],
+        "cis_uins": [
+          "NIAHLIP25059V042425"
+        ]
+      },
+      "original_bundle_roles": {
+        "wording": "Preserved and bounded identity/grant/configuration review; full rule inventory not performed.",
+        "CIS": "Official family companion candidate; identifiers retained only where observed, placeholders and source inconsistencies unresolved.",
+        "prospectus_and_brochure": "Official linked/preserved candidates listed; not exhaustively compared in this batch.",
+        "endorsements_addons": "Applicable set not established.",
+        "issued_schedule_underwriting": "Not supplied."
+      },
+      "official_bundle_link_candidates": [
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/yuva-bharat-health-policy/1 Yuva Bharat Pamphlet.pdf",
+          "source_sha256": "c2e2a5c79ad1ce5440bc8ed3c5420c7e00648f6fa7a1485afd782c9687abc74c",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Policy Brochure"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/yuva-bharat-health-policy/Proposal FormYuva Bharat Health Policy.pdf",
+          "source_sha256": "0184c3e79e160f4340dc683dac660c4169e9d5e770026a8cf783fafd1bbcab7b",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Proposal Form Yuva Bharat Health Policy"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/yuva-bharat-health-policy/Prospectus Yuva Bharat Health Policy.pdf",
+          "source_sha256": "1083c5eaed9e65ff5ff24b97f425bc804af33bb1010d5df6cfa3fbaec9a17d20",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Prospectus Yuva Bharat Health Policy"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/yuva-bharat-health-policy/Claim_Form.pdf",
+          "source_sha256": "45fff8eb7d20dc02b6501e5d27be2f6e011a95771a1907f2409c36b7ce86d976",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Claim Form"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/yuva-bharat-health-policy/Premium Chart Yuva Bharat Health Policy.pdf",
+          "source_sha256": "af71c0022d830f2ca35b0313ea508d2ab1ee2a666a93eef46b9e42e3a74d2b42",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Premium Chart"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        }
+      ],
+      "source_issue_ids": [
+        "NI-R11-YUVA-CLAUSE-RANGE",
+        "NI-R11-HISTORICAL-VERSIONS"
+      ],
+      "remaining_evidence": [
+        "Exact legacy observation/issue date and historical source association.",
+        "Issued schedule, insured people, SI/basis, chosen plan/options and underwriting terms.",
+        "Complete CIS/prospectus/endorsement/add-on bundle and original conflict resolution.",
+        "Complete original page/table/figure/footnote inventory and independently adjudicated rule denominator.",
+        "Recognize names and nested section structure; do not derive Gold maternity/infertility eligibility by numeric range alone or silently repair original numbering. Require corroborating insurer original/clarification before affected rule publication."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false,
+      "reconciliation_complete": false
+    },
+    {
+      "legacy_identity": "/health-insurance/new-india-assurance/premier-mediclaim/",
+      "legacy_name": "Premier Mediclaim",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "insurer_id": "new-india",
+      "family": "New India Premier Mediclaim Policy",
+      "family_identity_supported": true,
+      "family_identity_status": "source_backed_original_wording",
+      "wording_sha256s": [
+        "d3fd7fe4bc042775c730f213486aed8c0ccb6c11a3f74ee9bb0ea9f120e55f54"
+      ],
+      "companion_cis_sha256s": [
+        "2a20858d44a8fb9fcd80f6866bed8b53df6d68a78c4b24da1df3a108bd40a18b"
+      ],
+      "observed_wording_uins": [
+        "NIAHLIP25048V042425"
+      ],
+      "variant_or_form_result": {
+        "matched_legacy_label_variant": null,
+        "status": "generic_family_selection_unresolved",
+        "candidates": [
+          "Plan A",
+          "Plan B"
+        ],
+        "qualification": "Generic family name does not select a named plan, insured basis, threshold, sum insured or voluntary option. In particular generic Yuva Bharat is not assumed to mean Base.",
+        "issued_customer_selection_verified": false
+      },
+      "source_document_versions": {
+        "status": "observed_original_identifiers_retained_exact_legacy_applicability_unresolved",
+        "historical_version_reconciled": false,
+        "previous_observed_uins": [
+          "NIAHLIP25048V042425"
+        ],
+        "wording_uins": [
+          "NIAHLIP25048V042425"
+        ],
+        "cis_uins": [
+          "NIAHLIP25048V042425"
+        ]
+      },
+      "original_bundle_roles": {
+        "wording": "Preserved and bounded identity/grant/configuration review; full rule inventory not performed.",
+        "CIS": "Official family companion candidate; identifiers retained only where observed, placeholders and source inconsistencies unresolved.",
+        "prospectus_and_brochure": "Official linked/preserved candidates listed; not exhaustively compared in this batch.",
+        "endorsements_addons": "Applicable set not established.",
+        "issued_schedule_underwriting": "Not supplied."
+      },
+      "official_bundle_link_candidates": [
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-premier-mediclaim-claim-policy/1 Primier Mediclaim Pamphlet.pdf",
+          "source_sha256": "049b0dbc58b4882c366798b9ab1603728f384d9431f46a11fb92a2482cc11a9b",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Policy Brochure"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-premier-mediclaim-claim-policy/new-mediclaim-claim-form.pdf",
+          "source_sha256": "45fff8eb7d20dc02b6501e5d27be2f6e011a95771a1907f2409c36b7ce86d976",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Claim Form"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-premier-mediclaim-claim-policy/Prospectus New India Premier Mediclaim UPDATED.pdf",
+          "source_sha256": "fcdbed1519c1f582f484d05d65170948cf55248373739320eb08d4af85b27b35",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Prospectus"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-premier-mediclaim-claim-policy/New India Premier Mediclaim Premium Illustration.pdf",
+          "source_sha256": "784f7965e105d5e6b8f370690ffe136701f62d532d0269f3bf0a699f518f10e3",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Premium illustration"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-premier-mediclaim-claim-policy/New India Premier Mediclaim Proposal Form.pdf",
+          "source_sha256": "c9bb9eb71477b23fc332ff0e2e75c762d2cde281484058b4bd4c91f12d4adb0d",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Proposal Form"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-premier-mediclaim-claim-policy/New India Premier mediclaim premium chart.pdf",
+          "source_sha256": "04b54a0572a6b7a1c457a2abfdc5b190da1f5340089f51a0fe63271f2ccaad83",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "Premium for New India Premier Mediclaim"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        },
+        {
+          "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-premier-mediclaim-claim-policy/List of excluded items.pdf",
+          "source_sha256": "41589141cc07700598f77428b40458cbc951e089aee35e6020225f207efcf832",
+          "status": "acquired",
+          "role_candidate_from_original_link_context": [
+            "List of Excluded items"
+          ],
+          "qualification": "Official linked acquisition candidate; not content-reviewed in this batch and not proof of version alignment."
+        }
+      ],
+      "source_issue_ids": [
+        "NI-R11-PREMIER-BASIS",
+        "NI-R11-HISTORICAL-VERSIONS"
+      ],
+      "remaining_evidence": [
+        "Exact legacy observation/issue date and historical source association.",
+        "Issued schedule, insured people, SI/basis, chosen plan/options and underwriting terms.",
+        "Complete CIS/prospectus/endorsement/add-on bundle and original conflict resolution.",
+        "Complete original page/table/figure/footnote inventory and independently adjudicated rule denominator.",
+        "Do not turn CIS placeholders into established available individual configurations. Retain wording shared-SI scope and request the applicable issued form/schedule."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false,
+      "reconciliation_complete": false
+    }
+  ],
+  "acquisition_audit": {
+    "new_attempts": [],
+    "reused_preserved_originals": 10,
+    "source_register": "research/registers/sources.json",
+    "reason_no_downloads": "All selected wording and CIS originals were already acquired from preserved official links; original SHA256 values rechecked. Existing attempts and access failures remain preserved without modification."
+  },
+  "findings": [
+    {
+      "id": "NI-R11-YUVA-CLAUSE-RANGE",
+      "severity": "material_source_ambiguity",
+      "family": "yuva-bharat-health-policy",
+      "source_sha256": "2d4101bd93dfc9cae887a416cbdd2ddeaa8d1b715172c946c1e22cbcba8b0a23",
+      "physical_pages": [
+        1,
+        22,
+        23,
+        24,
+        25
+      ],
+      "observation": "Page 1 assigns Gold clauses 3.1 to 3.25 and Platinum 3.1 to 3.30. Page 22 starts SECTION 3: PLATINUM PLAN at clause 3.24 maternity; page 23 has 3.25 infertility; page 24 ends the displayed benefit clauses at 3.27 and page 25 starts exclusions. The named benefit lists place maternity and infertility under Platinum, but the stated Gold numeric range includes them.",
+      "effect": "Recognize names and nested section structure; do not derive Gold maternity/infertility eligibility by numeric range alone or silently repair original numbering. Require corroborating insurer original/clarification before affected rule publication."
+    },
+    {
+      "id": "NI-R11-PREMIER-BASIS",
+      "severity": "material_source_ambiguity",
+      "family": "new-premier-mediclaim-claim-policy",
+      "source_sha256s": [
+        "d3fd7fe4bc042775c730f213486aed8c0ccb6c11a3f74ee9bb0ea9f120e55f54",
+        "2a20858d44a8fb9fcd80f6866bed8b53df6d68a78c4b24da1df3a108bd40a18b"
+      ],
+      "physical_pages": [
+        1
+      ],
+      "observation": "Wording describes all scheduled members under a single SI. Matching-UIN CIS has an unfilled Individual/Floater template. CIS expressly gives wording precedence, but an issued basis or alternate form is not supplied.",
+      "effect": "Do not turn CIS placeholders into established available individual configurations. Retain wording shared-SI scope and request the applicable issued form/schedule."
+    },
+    {
+      "id": "NI-R11-FLOATER-UIN",
+      "severity": "identity_gap",
+      "family": "floater-mediclaim-policy",
+      "source_sha256": "6908c83ec7d9ef8bccea1f5c4aa74689bd07b76cfea1994e1e7113c41652fb7f",
+      "physical_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "observation": "No NIA-format UIN found in visible-bounds native text across all five CIS pages. Page 1 visually confirms family and Basic/Uplift labels only.",
+      "effect": "CIS is an official linked family/plan companion candidate; its exact version is unconfirmed. Do not copy wording UIN onto CIS."
+    },
+    {
+      "id": "NI-R11-FLOATER-TABLE-HEADER",
+      "severity": "source_ambiguity",
+      "family": "floater-mediclaim-policy",
+      "source_sha256": "6908c83ec7d9ef8bccea1f5c4aa74689bd07b76cfea1994e1e7113c41652fb7f",
+      "physical_pages": [
+        1
+      ],
+      "observation": "Under Health Check-up, the CIS table column says Room Rent Limit, and its final row continues after the visible page boundary. Wording page 12 has the operative room-rent table with different amounts.",
+      "effect": "Do not ingest this CIS column as a room-rent entitlement or fabricate the clipped continuation. Use exact visible page evidence and reconcile connected pages before the health-check table is modeled."
+    },
+    {
+      "id": "NI-R11-HISTORICAL-VERSIONS",
+      "severity": "historical_mapping_gap",
+      "family": "all",
+      "observation": "Legacy rows lack exact issue/observation dates. Prior Floater proposal/wording UIN V10 coexists with brochure V08 and premium-table V09; these bytes and identifiers remain distinct.",
+      "effect": "No current document or same family name establishes the legacy historical bundle, issued variant, options or underwriting terms."
+    },
+    {
+      "id": "NI-R11-OCCLUDED-TABLE-HEADER",
+      "severity": "source_rendering_issue",
+      "family": "floater-mediclaim-policy",
+      "source_sha256": "a38f41381dab04026f8e352aa1cad2ff3a82e99f46f5787109265bb04d18f3bd",
+      "physical_pages": [
+        12
+      ],
+      "observation": "Visible room-table header cells render blank under a filled rectangle, although native text extraction returns Plan Name / Sum Insured(Rs) / Room Rent Limit at y323..335. Original image and enlarged region inspected. The supported evidence uses two disjoint crops excluding y315..337; the occluded text is not an authentic visible quote.",
+      "effect": "Preserve original bytes and rendering discrepancy. Native text inside page bounds is still insufficient to certify visibility; validate tables against page images and do not publish occluded glyphs as visible evidence."
+    }
+  ],
+  "generalized_information_requirements": [
+    "Named plan inheritance needs explicit clause dependencies plus unresolved contradictory summary ranges.",
+    "Document identity observations must not copy UINs between linked companions when absent.",
+    "Conditional table limits must retain exceptions, continuation pages and same-event surgery ranking.",
+    "Cumulative threshold accounting must retain earlier claims, paid recoveries, event date and expiring-policy scope.",
+    "Fixed benefits may reduce SI or sit outside SI; medical expense scope does not make every component indemnity."
+  ],
+  "verification": {
+    "original_hash_checks": 10,
+    "exact_visible_passages": 29,
+    "method": "Stored passages extracted from explicit visible-page regions with pdfplumber crop(...).extract_text(x_tolerance=2,y_tolerance=3). Floater wording page 12 uses disjoint regions excluding a visually occluded header; selected tables and conflicting headings viewed as rendered original images. Native-only pages remain bounded relevance review, not universal rendering certification.",
+    "all_case_success_claims": false,
+    "independent_rule_coverage": "unmeasured",
+    "evaluation_read": false,
+    "application_or_database_changed": false,
+    "cumulative_registers_modified": false,
+    "independent_reextraction_checks": {
+      "original_hashes_passed": 10,
+      "passage_regions_passed": 29,
+      "legacy_row_uniqueness_passed": true,
+      "no_historical_completion_claims": true
+    }
+  }
+}

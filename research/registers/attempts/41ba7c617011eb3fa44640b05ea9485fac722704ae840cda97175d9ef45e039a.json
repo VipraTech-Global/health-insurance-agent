@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T12:00:20.330611+00:00",
+  "associations": [],
+  "byte_count": 443564,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-sixty-plus-mediclaim-policy/New%20India%20Sixty%20plus%20Premium%20chart.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 5570,
+  "linking_url": "https://www.newindia.co.in/health-insurance/new-india-sixty-plus-mediclaim-policy",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "f14a2e6b8fe4a6bab4b31ba9e6192f6b548a44bb5a2fcc33f2915b1961e25c95",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-sixty-plus-mediclaim-policy/New India Sixty plus Premium chart.pdf"
+}

@@ -1,0 +1,21 @@
+{
+  "acquired_at": "2026-09-10T11:59:20.182056+00:00",
+  "associations": [],
+  "component_version": "research-acquisition/1",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "format_version": 1,
+  "insurer_id": "acko",
+  "issues": [
+    "host_not_approved"
+  ],
+  "language": "unknown",
+  "latency_ms": 10,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": null,
+  "status": "failed",
+  "url": "https://assets.ctfassets.net/uwf0n1j71a7j/McJJ4apwar9r3UD8X7xQs/1db12e8f256134408abd5cb8850a7fc9/arogya-sanjeevani-policy-wording-for-policies-issued-after-30th-September-2020.pdf"
+}

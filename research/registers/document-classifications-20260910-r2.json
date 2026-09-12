@@ -1,0 +1,126 @@
+{
+  "classified_count": 9,
+  "corpus_classification_complete": false,
+  "documents": [
+    {
+      "classification_evidence": "Page 1 operative clause indemnifies medically necessary hospitalisation; page 21 names Indemnity and Individual/Floater.",
+      "conflicts": [
+        "PED 36 months versus four years",
+        "Quarterly/half-yearly grace 30 versus 15 days",
+        "Road ambulance grant versus Annexure A List I AMBULANCE",
+        "Printed totals 31 and 33; physical count 33"
+      ],
+      "identity_pages": [
+        1,
+        21
+      ],
+      "insurer": "new-india",
+      "product": "Arogya Sanjeevani Policy, The New India Assurance Co. Ltd.",
+      "rule_review": "33 physical pages text read; page 21 visually checked; 45 clause-level inventory records; full denominator unfinished",
+      "scope": "medical_expense",
+      "sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+      "type": "policy_wording",
+      "uin": "NIAHLIP25044V022425"
+    },
+    {
+      "classification_evidence": "Page 2 preamble agrees to indemnify expenses subject to respective benefit and policy-year limits.",
+      "identity_pages": [
+        1,
+        2
+      ],
+      "insurer": "care",
+      "product": "Care Supreme",
+      "provenance_issue": "Legacy import; original acquisition timestamp unknown; retained import provenance",
+      "rule_review": "Partial original reading; earlier 19-instance inventory retained",
+      "scope": "medical_expense",
+      "sha256": "1b1eea97989a76090767482093e663af04f8cadbd122b5f845b0b7144c6083d2",
+      "type": "policy_wording",
+      "uin": "CHIHLIP27061V032627"
+    },
+    {
+      "classification_evidence": "Silver operative clause uses deductible per hospitalisation; Gold clause and note use aggregate admissible hospitalisation expenses beyond defined limit.",
+      "identity_pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "insurer": "star",
+      "product": "Star Super Surplus (Floater) Insurance Policy",
+      "rule_review": "Partial; rotated modern-treatment table requires visual review",
+      "scope": "medical_expense_topup",
+      "sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+      "type": "policy_wording",
+      "uin": "SHAHLIP22034V062122",
+      "version_issue": "URL says V17; original footer says POL/SSF/V.18/2025; filename is not a version identifier"
+    },
+    {
+      "classification_evidence": "Title and coverage refer to aviation hull war and allied perils; classified for research routing, not a health-rule denominator.",
+      "identity_pages": [
+        1,
+        2
+      ],
+      "insurer": "tata-aig",
+      "product": "Aviation Hull War & Allied Perils",
+      "rule_review": "Not applicable to medical-expense inventory; preserve original",
+      "scope": "unrelated_aviation_hull",
+      "sha256": "db197dd9282c06804b0cf89cc7b91c6daa46fb5ec7428332cab7b1caa3bc58b6",
+      "type": "policy_wording",
+      "uin": "IRDAN108CP0007V01201819"
+    },
+    {
+      "classification_evidence": "Insuring clause is loss or damage to property; material-damage endorsement.",
+      "identity_pages": [
+        1,
+        2
+      ],
+      "insurer": "sbi-general",
+      "product": "Sabotage and Terrorism Damage Cover",
+      "rule_review": "Not applicable to medical-expense inventory; preserve original",
+      "scope": "unrelated_property_damage",
+      "sha256": "e38e0ead7ba362907ef0fe15691f99a6133e8816d5d2b7c2c62d6536cb809f52",
+      "type": "addon_wording",
+      "uin": null
+    },
+    {
+      "classification_evidence": "Titlephysicalp2 and healthbusinessChapterIphysical19-24; mandatory service, portability, migration and product-version requirements.",
+      "insurer": null,
+      "issuer": "IRDAI",
+      "original_ref": "IRDAI/HLT/CIR/PRO/84/5/2024",
+      "rule_review": "Selected39observations; Englishbodyread, bilingualequivalents/annexures notfullyreconciled; lateramendments incomplete.",
+      "scope": "health_insurance_supporting_regulation",
+      "sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+      "type": "regulatory_master_circular"
+    },
+    {
+      "classification_evidence": "Physical36-38ScheduleIIIhealthinsurance; other schedules include life/generalinsurance and are not silently counted as relevant medical rules.",
+      "insurer": null,
+      "issuer": "IRDAI",
+      "original_ref": "IRDAI/Reg/8/202/2024",
+      "rule_review": "Selected17observations; current amendment completeness notestablished.",
+      "scope": "mixed_regulatory_document_with_relevant_health_schedule",
+      "sha256": "7127b069a5468ef8333f6ecaae6b77149026a7322feb2b1bdbc5c7ebce69ecbb",
+      "type": "gazette_regulations"
+    },
+    {
+      "classification_evidence": "All4pagesread; imagep2names23products/UINs including medical, fixedbenefit and travel, so document supports relevant products but does not bring all23 into medical-expense scope.",
+      "insurer": "hdfc-ergo",
+      "rule_review": "12selectedobservations plus23visuallytranscribed productrows; linked regulatory instruments and product wordings remain required.",
+      "scope": "mixed_product_supporting_instrument",
+      "sha256": "9bdf3e5379a494ffe61af7a07496bb0e7333124da45ec72fcf21583435d0352e",
+      "type": "regulatory_change_notice"
+    },
+    {
+      "classification_evidence": "All3pagesread andp2visuallychecked; medical cover summary paired with originalwording sameUIN, with literal defective crossreferences retained.",
+      "insurer": "new-india",
+      "product": "Arogya Sanjeevani",
+      "rule_review": "6selectedobservations; CIS doesnotsettle internalwordingconflicts.",
+      "scope": "medical_expense",
+      "sha256": "ff4c3d125c311611f999a72023ba21ee53d2c31d1674e2c5d6cc4630276afe39",
+      "type": "customer_information_sheet",
+      "uin": "NIAHLIP25044V022425"
+    }
+  ],
+  "method": "Manual scope review of original title and operative content; no keyword auto-promotion",
+  "previous_revision": "registers/document-classifications-20260910.json"
+}

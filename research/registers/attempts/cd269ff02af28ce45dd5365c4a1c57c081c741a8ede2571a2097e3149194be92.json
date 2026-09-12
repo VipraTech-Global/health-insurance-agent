@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:38:30.722048+00:00",
+  "associations": [],
+  "byte_count": 3535,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/captcha?url=//pages/doc/brochure/Niva_GEMI_4W_v3.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1337,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "ed6bfee4a23accedbe913ced2440517d0d88563d5acd8f0d3119e2e6eb732bcc",
+  "status": "failed",
+  "url": "https://transactions.nivabupa.com/pages/doc/brochure/Niva_GEMI_4W_v3.pdf"
+}

@@ -1,0 +1,39 @@
+{
+  "conflicts": [
+    {
+      "id": "nia-ped-wording-internal",
+      "observation": "CIS p2 says36 months and defers to wording; wording6.1 says36, wordingtable12 says4years. CIS corroboration does not settle internal wording conflict. Regulatory application evidence still required.",
+      "sources": [
+        "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+        "ff4c3d125c311611f999a72023ba21ee53d2c31d1674e2c5d6cc4630276afe39"
+      ],
+      "state": "unresolved"
+    },
+    {
+      "id": "hdfc-moratorium-exact-cutoff",
+      "observation": "Notice3A uses before/after1Apr2024; exact1Apr is not expressly allocated. Preserve strict operators and seek controlling source; do not invent inclusive endpoint.",
+      "sources": [
+        "9bdf3e5379a494ffe61af7a07496bb0e7333124da45ec72fcf21583435d0352e"
+      ],
+      "state": "unresolved_exact_date"
+    },
+    {
+      "id": "hdfc-image-applicability",
+      "observation": "All23 product/UIN rows transcribed with image geometry. Extraction omits entire scope table; PEDnote1/2 require it.",
+      "sources": [
+        "9bdf3e5379a494ffe61af7a07496bb0e7333124da45ec72fcf21583435d0352e"
+      ],
+      "state": "image_transcribed_pending_independent_review"
+    },
+    {
+      "id": "nia-cis-defective-cross-references",
+      "observation": "Cataract literal4.1(b) versus wording4.3; co-pay literal12 versus wording9.5. Preserve printed cross-reference separately from reviewed destination.",
+      "sources": [
+        "ff4c3d125c311611f999a72023ba21ee53d2c31d1674e2c5d6cc4630276afe39",
+        "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce"
+      ],
+      "state": "literal_and_proposed_resolution_retained"
+    }
+  ],
+  "format_version": 1
+}

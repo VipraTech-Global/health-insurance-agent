@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:38:45.234028+00:00",
+  "associations": [],
+  "byte_count": 3548,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/captcha?url=//pages/doc/Customer-Information/CIS_ReAssure-2-0.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1138,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "3bd054884bf8ec6024f2c2238b6e8e792c6f2e1f2d6fa0f556f1304239ccc5aa",
+  "status": "failed",
+  "url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_ReAssure-2-0.pdf"
+}

@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:39:58.952793+00:00",
+  "associations": [],
+  "byte_count": 226256,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://customer-portal-assets.hdfcergo.com//documents/PolicyWordings_UnlimitedRestore(Addon)-220558092606.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "hdfc-ergo",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 336,
+  "linking_url": "https://www.hdfcergo.com/download/policy-wordings/health",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "39539e8a3fb00ed2665e6b655266ce9f2d41830cc18be0911ec221e49992e318",
+  "status": "acquired",
+  "url": "https://customer-portal-assets.hdfcergo.com//documents/PolicyWordings_UnlimitedRestore(Addon)-220558092606.pdf"
+}

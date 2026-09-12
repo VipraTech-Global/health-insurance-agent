@@ -1,0 +1,305 @@
+{
+  "acquired_at": "2026-09-10T14:44:54.565519+00:00",
+  "associations": [],
+  "byte_count": 533855,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://oicl-cms-media.s3.ap-south-1.amazonaws.com/Mediclaim_Insurance_Policy_Individual_Policy_Wordings_1_9533ad3b04.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "oriental",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 639,
+  "linking_url": "https://cms.orientalinsurance.org.in/cms/api/download-policy-terms-conditions?populate=*&locale=en",
+  "page_count": 35,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 843.12,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.4
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.12,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.4
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.12,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.4
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.12,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.4
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.12,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.4
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.12,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.4
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.12,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.4
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.12,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.4
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.12,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.4
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.12,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.4
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.12,
+      "page": 11,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.4
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.12,
+      "page": 12,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.4
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.12,
+      "page": 13,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.4
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.12,
+      "page": 14,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.4
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.12,
+      "page": 15,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.4
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.12,
+      "page": 16,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.4
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.4,
+      "page": 17,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.4,
+      "page": 18,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.4,
+      "page": 19,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.4,
+      "page": 20,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.4,
+      "page": 21,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.4,
+      "page": 22,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.4,
+      "page": 23,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.4,
+      "page": 24,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.4,
+      "page": 25,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.4,
+      "page": 26,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.4,
+      "page": 27,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.4,
+      "page": 28,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.4,
+      "page": 29,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.4,
+      "page": 30,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.4,
+      "page": 31,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.4,
+      "page": 32,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.4,
+      "page": 33,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.4,
+      "page": 34,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.92
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.4,
+      "page": 35,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.92
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "7c56abf26f4c4daf88f80924c2dc8700a185a0a90392dbf29ea221153f3e2e2d",
+  "status": "acquired",
+  "url": "https://oicl-cms-media.s3.ap-south-1.amazonaws.com/Mediclaim_Insurance_Policy_Individual_Policy_Wordings_1_9533ad3b04.pdf"
+}

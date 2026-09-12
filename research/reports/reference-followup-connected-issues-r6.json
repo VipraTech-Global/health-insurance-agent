@@ -1,0 +1,106 @@
+{
+  "format_version": 1,
+  "scope": "Connected original issues found or revisited in the reference source follow-ups; none silently resolved or published as an executable rule.",
+  "issues": [
+    {
+      "id": "FOLLOWUP-EMPOWER-HIV-WAIT",
+      "source_sha256": "7b9b44c85021c3aaaa948a95683915ec18f1eda9ac51b55db7ff0cbed33a4cd6",
+      "passages": [
+        {
+          "evidence_alias": "empower9",
+          "physical_page": 9,
+          "assertion": "Body IV.1.A.2: HIV/AIDS and direct complications excluded until expiry of 90 days continuous coverage."
+        },
+        {
+          "evidence_alias": "empower25",
+          "physical_page": 25,
+          "assertion": "Summary PED row: initial 30 days for indemnity and 90 days for benefit basis under HIV/AIDS."
+        }
+      ],
+      "status": "material_conflict_unresolved",
+      "effect": "Block unconditional HIV expense waiting-end conclusion; distinguish lump-sum waiting/termination/SI consequences.",
+      "case_ids": [
+        "ref-07-04",
+        "ref-07-09"
+      ],
+      "required_information": "Benefit form, condition, clock and source assertions must stay distinct."
+    },
+    {
+      "id": "FOLLOWUP-PROMISE-NEWBORN-ROUTES",
+      "source_sha256": "7b65b65428dcda1a1a776793d3f3dc54a0805ddf3df37659aa08120b6406e45c",
+      "passages": [
+        {
+          "evidence_alias": "promise12",
+          "physical_page": 12,
+          "assertion": "Newborn benefit day-1 branches have maternal/scan, underwriting, intimation, endorsement and plan-specific conditions."
+        },
+        {
+          "evidence_alias": "promise30",
+          "physical_page": 30,
+          "assertion": "Midterm inclusion newborn starts day16 with proportionate premium, inclusion-date waits and underwriter approval."
+        }
+      ],
+      "status": "route_selection_dependency_unresolved_for_customer",
+      "effect": "Do not conflate ordinary paid member inclusion with the conditional newborn benefit or infer retrospective cover. This is not automatically classified as an irreconcilable contradiction.",
+      "case_ids": [
+        "ref-03-01",
+        "ref-03-03",
+        "ref-03-04"
+      ],
+      "required_information": "Separate benefit-specific newborn route from member-addition transaction."
+    },
+    {
+      "id": "FOLLOWUP-VITAL-FAMILY-SCOPE",
+      "source_sha256": "aec1eb652e8cedd225f9d427e93ef98013a1b0e40c35032b49ec7f7e53a19c01",
+      "passages": [
+        {
+          "evidence_alias": "vital5",
+          "physical_page": 5,
+          "assertion": "Individual/Non-Floater heading contains Family Floater text listing parents and parents-in-law."
+        },
+        {
+          "evidence_alias": "vital6",
+          "physical_page": 6,
+          "assertion": "Family Floater definition lists self, spouse/live-in and up to three dependent children."
+        }
+      ],
+      "status": "scope_conflict_unresolved",
+      "effect": "Child-count alternative does not establish parents in a floater; preserve conflicting heading/body scope.",
+      "case_ids": [
+        "ref-03-07"
+      ],
+      "required_information": "Attach assertions to their actual section headings and conflicting scope."
+    },
+    {
+      "id": "FOLLOWUP-GALAXY-PHARMACY-MODE",
+      "source_sha256": "380b6eba9d669970c9d611a4b06175b40e606adb71dfe38973bf2939e93b388d",
+      "passages": [
+        {
+          "evidence_alias": "opd3",
+          "physical_page": 3,
+          "assertion": "Section C pharmacy says cashless only; section VI mentions pharmacy reimbursement co-pay."
+        },
+        {
+          "evidence_alias": "opd4",
+          "physical_page": 4,
+          "assertion": "Utilisation modes include pharmacy reimbursement under stated absent-network/emergency conditions."
+        }
+      ],
+      "status": "material_conflict_unresolved",
+      "effect": "Do not promise pharmacy reimbursement or silently select a preferred mode. Wallet adjustment wording also needs clarification before calculating a balance.",
+      "case_ids": [
+        "ref-04-05",
+        "ref-10-01",
+        "ref-10-06",
+        "ref-10-08",
+        "ref-10-09",
+        "ref-18-02"
+      ],
+      "required_information": "Separate benefit grant, mode, provider exception, co-pay and wallet event."
+    }
+  ],
+  "evidence_catalog": "reference/reference-source-evidence-families03-10-r6.json",
+  "source_inventory_complete": false,
+  "independent_review": false,
+  "database_implementation": false
+}

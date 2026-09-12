@@ -1,0 +1,1105 @@
+{
+  "artifact_version": "r12",
+  "generated_at_utc": "2026-09-10T17:51:54.696258+00:00",
+  "newly_classified_documents": [
+    {
+      "source_sha256": "6b8702f79c652e50a1b4a2ba7894fae7f1edbb02d40bd2399164670772e94419",
+      "insurer_id": "tata-aig",
+      "product_or_heading": "TATA AIG Elder Care",
+      "family": "Elder Care",
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Original title and inpatient grant read; supporting documents retain actual role. Selected configuration dependencies read where present.",
+      "page_count": 39,
+      "observed_uins": [
+        "TATHLIP23179V012223"
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            595.32001,
+            841.91998
+          ],
+          "exact_passage": "Tata AIG Elder Care\nPol\nPolicy Wordings\nTata AIG Elder Care Policy Wordings\nTata AIG General Insurance Company Limited (We, Our or Us) will provide the insurance cover, described in\nthis Policy and any endorsements thereto, for the Insured Period, as defined in the Policy schedule. The\ninsurance cover provided under this Policy is only with respect to such and so many of the benefits upto the\nSum Insured as mentioned in the Policy Schedule. Commencement of risk cover under the policy is subject\nto receipt of premium by us.\nThe statements provided in the Proposal by the Policyholder (You) shall be the basis of this Policy and are\ndeemed to be incorporated herein. The insurance cover is governed by and subject to, the terms, conditions\nand exclusions of this Policy.\nFor Tata AIG General Insurance Company Limited\nAuthorized Signatory\nRegistered Office:\nTATAA IG General Insurance Company Limited,\nPeninsula Business Park, Tower A, 15th Floor, G. K. Marg,\nLower Parel, Mumbai- 400013, Maharashtra, India\nCustomer Support No. 022 6489 8282 or 1800 267 1955 (Senior Citizen)\nVisit us at www.tataaig.com\nIRDA of India Registration No.:108\nCIN: U85110MH2000PLC128425\n\u201cInsurance is the subject matter of solicitation\u201d. For more details on risk factors, terms and conditions, please\nread policy document carefully before concluding a sale.\nTATA AIG GENERAL INSUR ANCE COMPANY LIMITED\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai - 400013, Maharashtra, India\n24*7 Customer Support No. 022 6489 8282/1800 267 1955 (For Senior Citizens) \u2022 Email: customersupport@tataaig.com \u2022 Website: www.tataaig.com\nIRDA of India Registration No.: 108 \u2022 CIN: U85110MH2000PLC128425 \u2022 UIN: TATHLIP23179V012223\nPage 1 of 1",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+        },
+        {
+          "physical_page": 9,
+          "bbox": [
+            0,
+            0,
+            595.32001,
+            841.91998
+          ],
+          "exact_passage": "Tata AIG Elder Care\nPol\n5. Policy Year\nPolicy Year means a period of twelve months beginning from the date of commencement of the Policy period\nand ending on the last day of such twelve-month period. For the purpose of subsequent years, policy year\nshall mean a period of twelve months commencing from the end of the previous policy year and lapsing on\nthe last day of such twelve-month period, till the Policy Expiry date.\n6. Single Private Room\nSingle Private Room means an air-conditioned room in a hospital where a single patient is accommodated\nand which has an attached toilet (lavatory and bath). Such room type shall be the most basic and the most\neconomical of all accommodations available as a single occupancy room in that Hospital. This does not include\na deluxe room or a suite or a VIP room.\nSection 2 \u2013 Benefits\nThe following benefits are payable subject to Terms and Conditions of the policy:\nB1. In-Patient Treatment\nWe will cover for expenses for hospitalization due to disease/illness/Injury during the policy period that\nrequires an Insured Person\u2019s admission in a hospital as an inpatient.\nMedical expenses directly related to the hospitalization would be payable.\nIf the Insured Person is admitted in a room which is of higher category than Single Private, then the Insured\nPerson shall bear a rateable proportion of the total Associated Medical Expenses (including surcharge or\ntaxes thereon), except pharmacy charges, diagnostic costs, costs of implants & medical devices and\nconsumables expenses, in the same proportion as the difference between the Incurred Room Rent and the\nSingle Private Room Rent in that Hospital bears to the Incurred Room Rent.\nExpenses to be borne by Insured Person ={(Associated Medical Expenses) X (Incurred Room Rent\u2013 Eligible\nRoom Rent of the Eligible Room Category)} /Incurred Room Rent\nAssociated Medical Expenses:\nBelow listed medical expenses, which vary in accordance with the Room Rent or Room Category applicable\nin a Hospital:\ni. Room, boarding, nursing and operation theatre expenses as charged by the Hospital where the\ninsured person availed medical treatment;\nii. Fees charged by surgeon, anaesthetist, specialist, medical practitioner\nNote: Associated Medical Expenses shall be applicable for Hospitals which follow differential billing based\non the room category.\nTATA AIG GENERAL INSUR ANCE COMPANY LIMITED\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai - 400013, Maharashtra, India\n24*7 Customer Support No. 022 6489 8282/1800 267 1955 (For Senior Citizens) \u2022 Email: customersupport@tataaig.com \u2022 Website: www.tataaig.com\nIRDA of India Registration No.: 108 \u2022 CIN: U85110MH2000PLC128425 \u2022 UIN: TATHLIP23179V012223\nPage 1 of 1",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+        }
+      ],
+      "visually_reviewed_physical_pages": [],
+      "acquisition_provenance": [
+        {
+          "attempt_register": "research/registers/attempts/5f4775236667e1c2beec266b60acf243cefc37abff2b8962c393b72bb128236b.json",
+          "url": "https://www.tataaig.com/s3/Elder_Care_Policy_Wordings_9d18315430.pdf",
+          "final_url": "https://www.tataaig.com/s3/Elder_Care_Policy_Wordings_9d18315430.pdf",
+          "linking_url": "https://www.tataaig.com/downloads",
+          "acquired_at": "2026-09-10T11:54:31.508558+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "6b8702f79c652e50a1b4a2ba7894fae7f1edbb02d40bd2399164670772e94419"
+        }
+      ],
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "source_issues": []
+    },
+    {
+      "source_sha256": "e55f93cb36eb8262918325b0caf4432e331e75b15b3d4c5a3eb7ded809c77269",
+      "insurer_id": "tata-aig",
+      "product_or_heading": "TATA AIG MediCare",
+      "family": "MediCare",
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Original title and inpatient grant read; supporting documents retain actual role. Selected configuration dependencies read where present.",
+      "page_count": 49,
+      "observed_uins": [
+        "TATHLIP26053V042526"
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612.0,
+            792.0
+          ],
+          "exact_passage": "TATA AIG \ufffd\nMedicare \u25a0\nWITH YOU ALWAYS\nTATA AIG Medicare\nPolicy Wordings\nTATA AIG General Insurance Company Limited (We, Our or Us) will provide the insurance cover,\ndescribed in this Policy and any endorsements thereto, for the Insured Period, as defined in the Policy\nschedule. The insurance cover provided under this Policy is only with respect to such and so many of the\nbenefits upto the Sum Insured as mentioned in the Policy Schedule. Commencement of risk cover under\nthe policy is subject to receipt of premium by us.\nThe statements contained in the Proposal signed by the Policyholder (You) shall be the basis of this Policy\nand are deemed to be incorporated herein. The insurance cover is governed by and subject to, the terms,\nconditions and exclusions of this Policy.\n\"Insurance is a subject matter of solicitation\". For more details on risk factors, terms and conditions,\nplease read policy document carefully before concluding a sale.\nPreamble\nWhile the policy is in force, if the Insured Person contracts any disease or suffers from any illness or\nsustains bodily injury through accident and if such event requires the insured Person to incur expenses\nfor Medically Necessary Treatment (including Modern Treatment Methods and Advancement in\nTechnologies), We will indemnify You for the amount of such Reasonable and Customary Charges or\ncompensate to the extent agreed, upto the limits mentioned, subject to terms and conditions of the\nPolicy. Each Benefit is subject to its Sum Insured, but Our liability in aggregate to make payment in\nrespect of any and all Benefits shall be limited to the Sum Insured unless expressly stated to the contrary.\nIn case of family floater policy, the sum insured for all or any of the benefits shall be on a per policy per\nyear basis unless explicitly stated to the contrary. In case of individual policy, the sum insured for all or\nany of the benefits shall be on per insured per year basis unless explicitly stated to the contrary.\nThe said Medically Necessary Treatment must be on the advice of a qualified Medical Practitioner.\nTATA AIG General Insurance Company Limited\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai - 400013, Maharashtra, India 24*7 Customer\nSupport No. 022 6489 8282/1800 267 1955 (For Senior Citizens) \u2022 Email: customersupport@tataaig.com \u2022 Website: www.tataaig.com !RDA of India\nRegistration No.: 108 \u2022 CIN: U85110MH2000PLC128425 \u2022 TATA AIG Medicare UIN: TATHLIP26053V042526\nPage 1 of 49",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+        },
+        {
+          "physical_page": 12,
+          "bbox": [
+            0,
+            0,
+            612.0,
+            792.0
+          ],
+          "exact_passage": "TATA AIG \ufffd\nMedicare \u25a0\nWITH YOU ALWAYS\nBl. In-Patient Treatment\nWe will cover for expenses for hospitalization due to disease/illness/Injury during the policy period that\nrequires an Insured Person's admission in a hospital as an inpatient.\nMedical expenses directly related to the hospitalization would be payable.\nB2. Pre-Hospitalization expenses\nWe will cover for expenses for Pre-Hospitalization consultations, investigations and medicines incurred\nupto 60 days before the date of admission to the hospital.\nThe benefit is payable if We have admitted a claim under Bl or B4 or BG.\nB3. Post-Hospitalization expenses\nWe will cover for expenses for Post-Hospitalization consultations, investigations and medicines incurred\nupto 90 days after discharge from the hospital.\nThe benefit is payable if We have admitted a claim under Bl or B4 or BG.\nB4. Day Care Procedures\nWe will cover expenses for listed Day Care Treatment due to disease/illness/Injury during the policy\nperiod taken at a hospital or a Day Care Centre. The list of such day care procedures covered is available\non our website (www.tataaig.com).\nTreatment normally taken on out-patient basis is not included in the scope of this cover.\nBS. Organ Donor\nWe will cover for Medical and surgical Expenses of the organ donor for harvesting the organ where an\nInsured Person is the recipient provided that:\nTATA AIG General Insurance Company Limited\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai - 400013, Maharashtra, India 24*7 Customer\nSupport No. 022 6489 8282/1800 267 1955 (For Senior Citizens) \u2022 Email: customersupport@tataaig.com \u2022 Website: www.tataaig.com !RDA of India\nRegistration No.: 108 \u2022 CIN: U85110MH2000PLC128425 \u2022 TATA AIG Medicare UIN: TATHLIP26053V042526\nPage 12 of49",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+        }
+      ],
+      "visually_reviewed_physical_pages": [],
+      "acquisition_provenance": [
+        {
+          "attempt_register": "research/registers/attempts/f81ab7491e7c896c62de7500e6ab08a6a3e7686a6763bed9260b4c7cfb5572c6.json",
+          "url": "https://www.tataaig.com/s3/tata_aig_medicare_policy_wordings_a9aaf64d8b.pdf",
+          "final_url": "https://www.tataaig.com/s3/tata_aig_medicare_policy_wordings_a9aaf64d8b.pdf",
+          "linking_url": "https://www.tataaig.com/downloads",
+          "acquired_at": "2026-09-10T11:54:25.196751+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "e55f93cb36eb8262918325b0caf4432e331e75b15b3d4c5a3eb7ded809c77269"
+        }
+      ],
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "source_issues": []
+    },
+    {
+      "source_sha256": "b388674a3162a9e0b7e3055ec7c6e79588a03cf08a2f360ae5c4807ea1f8e172",
+      "insurer_id": "tata-aig",
+      "product_or_heading": "TATA AIG Health Supercharge",
+      "family": "Health Supercharge",
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Original title and inpatient grant read; supporting documents retain actual role. Selected configuration dependencies read where present.",
+      "page_count": 60,
+      "observed_uins": [],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612.0,
+            792.0
+          ],
+          "exact_passage": "Policy Wordings\nTata AIG Health Supercharge Policy Wordings\nTata AIG General Insurance Company Limited (We, Our or Us) will provide the insurance, described\nin this Policy and any endorsements thereto, for the Policy Period, as defined in the Policy to the\nInsured Person(s) named in the Policy Schedule based on the Disclosure to Information Norm,\nincluding in reliance upon the statements contained in the Proposal Form or any other mode of\ncommunication which shall be the basis of this Policy and are deemed to be incorporated herein in\nreturn for the receipt of the required premium in full and compliance with all the applicable terms,\nconditions and exclusions of this Policy and opted Plan. The insurance provided under this Policy\nis only in force for the Insured Person with respect to such and so many of the benefits as indicated\nby the Sum Insured set opposite such benefit in the Policy Schedule.\nSection 1 - Definitions\nThe terms defined below and at other junctures in the Policy Wording have the meanings ascribed\nto them wherever they appear in this Policy and where appropriate, references to the singular\ninclude references to the plural; references to the male includes other genders and references to\nany statutory enactment includes subsequent changes to the same.\nI. Standard Definitions\n1. Accident\nAn accident means sudden, unforeseen and involuntary event caused by external, visible and violent\nmeans.\n2. Any one illness\nAny one Illness means continuous period of Illness and includes relapse within 45 days from the\ndate of last consultation with the Hospital/Nursing Home where treatment was taken.\n3. AYUSH Day Care Centre\nAYUSH Day Care Centre means and includes Community Health Centre (CHC), Primary Health\nCentre (PHC), Dispensary, Clinic, Polyclinic or any such health centre which is registered with the\nlocal authorities, wherever applicable and having facilities for carrying out treatment procedures and\nmedical or surgical/para-surgical interventions or both under the supervision of registered AYUSH\nMedical Practitioner (s) on day care basis without in-patient services and must comply with all the\nfollowing criterion:\ni. Having qualified registered AYUSH Medical Practitioner(s) in charge;\nii. Having dedicated AYUSH therapy sections as required and/or has equipped operation\ntheatre where surgical procedures are to be carried out;\nTATA AIG General Insurance Company Ltd.\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai - 400013,\nMaharashtra, India 24*7 Customer Support No. 022 6489 8282/1800 267 1955 (For Senior Citizens)\n\u2022 Email: customersupport@tataaig.com \u2022 Website: www.tataaig.com IRDA of India Registration No.:",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+        },
+        {
+          "physical_page": 10,
+          "bbox": [
+            0,
+            0,
+            612.0,
+            792.0
+          ],
+          "exact_passage": "13. You, Your, Insured Person\nmeans the person whose name specifically appears in the Policy Schedule as an Insured Person/\nPolicyholder.\n14. Valued Provider-Pan India\n'Valued Provider - Pan India' is a specific network of Hospitals, designated as such and mentioned\nin the Policy Schedule. It consists of a defined list of Hospitals or health care providers enlisted by\nUs, and/or TPA to provide medical services to an Insured Person by a Cashless Facility. Where\nthe Policyholder has selected Value Plan, You shall be eligible only for 'Valued Provider -Pan India'\nand reference made to 'Network Provider' in the Policy wordings shall be substituted with 'Valued\nProvider - Pan India', except for Section 4 Sub-section (ii)21 Zone & Applicability of Plan under 'Value\nPlan'. The updated list of Valued Provider-Pan India is available on Our website (www.tataaig.com).\n15. Zone(s)\nFor the purposes of application of Higher Zone Co-Payment and Premium calculation and payment,\nIndia has been categorized in 3 different zones:\n\u2022 Zone A: Mumbai (including Mumbai Metropolitan Region), Delhi (including National\nCapital Region, Faridabad, Ghaziabad), Ahmedabad, Surat & Baroda\n\u2022 Zone B: Hyderabad (including Secunderabad), Bengaluru, Kolkata, Indore, Chennai,\nChandigarh (including, Mohali, Punchkula, Zirakpur), Pune (including Pimpri Chinchwad)\nand Rajkot\n\u2022 Zone C: Rest of India\nIt is hereby clarified that wherever the term 'Pan India' is mentioned, it includes all the three zones\ni.e. Zone A, Zone B & Zone C.\nPlease note that the above-mentioned categorization of zones is subject to change at Our sole\ndiscretion. Any such change made which shall impact an existing policyholder, shall be intimated\nunder 3 months' notice and shall be applicable from the immediate next Renewal.\nSection 2 - Benefits\nIf during the Policy Period one or more Insured Person(s) is required to be hospitalized for\ntreatment of an Illness or Injury at a Hospital/ Day Care Centre, following Medical Advice of a duly\nqualified Medical Practitioner, the Company shall indemnify Medically Necessary expenses towards\nthe Coverage mentioned in the Policy Schedule for the amount of such Reasonable and Customary\nCharges or compensate to the extent agreed, upto the limits mentioned, subject to terms and\nconditions of the Policy . Provided further that, any amount payable under the Policy shall be subject\nto the terms of coverage (including any Co-Payment, sub limits, Aggregate\nTATA AIG General Insurance Company Ltd.\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai - 400013,\nMaharashtra, India 24*7 Customer Support No. 022 6489 8282/1800 267 1955 (For Senior Citizens)\n\u2022 Email: customersupport@tataaig.com \u2022 Website: www.tataaig.com IRDA of India Registration No.:",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+        },
+        {
+          "physical_page": 11,
+          "bbox": [
+            0,
+            0,
+            612.0,
+            792.0
+          ],
+          "exact_passage": "Deductible), exclusions, conditions and definition contained herein. Maximum\nliability of the Company under all such Claims during each Policy Year shall be the Floater Sum\nInsured opted and 5X Supercharge Bonus (if accrued) specified in the Policy Schedule. The\ncoverages available to a specific Insured Person/ Policy shall be as per the Plan mentioned in the\nPolicy Schedule.\nIn case of family floater Policy, the Sum Insured & Aggregate Deductible, if applicable, shall be\nfor all Insured Persons on an aggregate basis, on a per Policy Year basis.\nOur maximum liability under the Policy for payment of all claims arising out of Any One Illness in\naggregate under B1, B2, B3, B4, B5, B6, B7, BB, B9, C1 (if opted) and C3 (if opted) shall not exceed\nthe opted Sum Insured and accrued Bonus under 5X Supercharge Bonus, subject to the balance\nSum Insured/ sub limits (as applicable).\nB1. In-Patient Treatment\nWe will cover Medical Expenses for Medically Necessary Treatment in a Hospital, due to\ndisease/Illness/Injury, that requires an Insured Person's admission in a Hospital for an Inpatient\nCare, during the Policy Period.\nThe Company shall indemnify Medical Expenses as listed below:\ni. Room Rent, Boarding, Nursing Expenses as provided by the Hospital / Nursing Home upto\nthe limit per day/room category as specified in the Policy Schedule\nii. Intensive Care Unit (ICU) / Intensive Cardiac Care Unit (ICCU) expenses\niii. Surgeon, Anesthetist, Medical Practitioner, Consultants, Specialist Fees whether paid\ndirectly to the treating doctor / surgeon or to the Hospital\niv. Anesthesia, blood, oxygen, operation theatre charges, surgical appliances, medicines and\ndrugs, costs towards diagnostics, diagnostic imaging modalities and such similar other\nexpenses.\nIf the Insured Person is admitted in a room whose category/Room Rent is higher than the one\nthat is specified in the Policy Schedule, then the Insured Person shall bear a rate able\nproportion of the Room Rent and the total Associated Medical Expenses, including surcharge\nor taxes thereon in the proportion of the 'difference between the Room Rent actually incurred\n& the Room Rent of the entitled room category/Room Rent limit' to 'the Room Rent actually\nincurred'.\n\u2022 For the purpose of this Benefit \"Associated Medical Expenses\" shall include the applicable\nnursing charges, operation theatre charges, fees of Medical Practitioner including surgeon/\nanesthetisU specialist within the same Hospital where the Insured Person has been\nTATA AIG General Insurance Company Ltd.\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai - 400013,\nMaharashtra, India 24*7 Customer Support No. 022 6489 8282/1800 267 1955 (For Senior Citizens)\n\u2022 Email: customersupport@tataaig.com \u2022 Website: www.tataaig.com IRDA of India Registration No.:",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+        },
+        {
+          "physical_page": 42,
+          "bbox": [
+            0,
+            0,
+            612.0,
+            792.0
+          ],
+          "exact_passage": "direction or instruction on Our behalf unless We have expressly stated to the\ncontrary in writing.\n21. Zone & Applicability of Plan\nPremium payable under the 'Geo Plan' will be computed based on the residential\nlocation/address as provided by the proposer/Insured Person in the proposal form.\nPremium to be received by Company before Policy Commencement date.\nThe payment of premium and applicability of Plan shall be as per the grid given below:\nAvailable for\nPremium\nPlan insured Network Specific Co-Payment\nApplicable as\nSelected person(s) Applicable applicable#\nper:\nresiding in*\nValue Anywhere within Premium as per Valued Provider 30% Co-Payment if\nPlan India Value Plan - Pan India/\\ Hospitalization\nhappens outside Our\nnetwork of Valued\nProvider - Pan India.\nGeo Plan Zone B or Zone Premium as per Network 20% Co-Payment if\nC Geo Plan for Provider Hospitalization\nZone B or Zone happens in Zone A. This\nC Co-Payment shall be\napplied on both, cashless\nas well as\nreimbursement claims.\n*Premium payable under the Policy will be computed based on the residential\nlocation/address as provided by the proposer/Insured Person in the proposal form and the\nplan opted.\n# This is over and above any other Co-Payment applicable under the Policy.\nChange from Value Plan to Geo Plan shall not be permitted. Any change from Geo Plan to\nValue Plan shall only be allowed at the time of Renewal and shall be subject to underwriting.\nAFor clarity: The \"Valued Provider - Pan India\" network list is different from Our standard\nlist of \"Network Provider\". The standard list of Network Provider shall not be applicable to\nthe Insured Person, if covered under Value Plan. List of Valued Provider - Pan India will\nbe updated from time to time and will be available on Our website www.tataaig.com\nTATA AIG General Insurance Company Ltd.\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai -400013,\nMaharashtra, India 24*7 Customer Support No. 022 6489 8282/1800 267 1955 (For Senior Citizens)\n\u2022 Email: customersupport@tataaig.com \u2022 Website: www.tataaig.com IRDA of India Registration No.:",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+        },
+        {
+          "physical_page": 47,
+          "bbox": [
+            0,
+            0,
+            612.0,
+            792.0
+          ],
+          "exact_passage": "Where an ailment/ Illness/ disease is excluded under both exclusions with waiting\nPeriods (as specified under Section 3 (i) Sub section (1) and under any other Policy exclusion, then\nfor assessment of liability, any expense related to that ailment/ Illness/ disease shall not be covered\nunder this Policy.\nii. Sequence of applicability & Utilization\na. The sequence of assessment of claim shall be as per table given below:\nWhere Age specific\nWhere Age specific Co-\nAssessment Co-Payment is not\nPayment is applicable\nSteps applicable\n1 Amount of Claim Intimated \u2713 \u2713\n2 Less Non-Payable expenses# \u2713 \u2713\n3 =Admissible Expenses \u2713 \u2713\nLess Associated Medical\nExpenses as defined under the\n4 Policy (if applicable) \u2713 \u2713\n5 =Admissible Claim \u2713 \u2713\nIf Geo Plan is opted:\nLess\n(Higher Zone Co-Payment*+ Age\nLinked Co-Payment)\n(20%*+20%) 20%*\nOR\nOR OR\nAge linked Co-Payment;\n20% 0%\n6\"\nIf Value Plan is opted:\n(30%*+20%) 30%*\nLess\n(Out of Our network of Valued\nProvider - Pan India Co-Payment*\nTATA AIG General Insurance Company Ltd.\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai - 400013,\nMaharashtra, India 24*7 Customer Support No. 022 6489 8282/1800 267 1955 (For Senior Citizens)\n\u2022 Email: customersupport@tataaig.com \u2022 Website: www.tataaig.com IRDA of India Registration No.:",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+        },
+        {
+          "physical_page": 48,
+          "bbox": [
+            0,
+            0,
+            612.0,
+            792.0
+          ],
+          "exact_passage": "as defined in Policy + Age Linked\nCo-Payment)\nOR OR\nOR\n20% 0%\nAge linked Co-Payment\n7 =Final Assessed Amount \u2713 \u2713\nLess Aggregate Deductible (if\n8 Opted)** If applicable If applicable\n9 =Final Assessed Liability \u2713 \u2713\nSublimit/ Voluntary Sublimit */ Balance Sum Insured\n(including accrued 5X Supercharge Bonus)/ Benefit\n10 Claim Payable subject to applicable Limit\n# Deduction would vary depending upon whether optional cover 'Consumables Benefit' is opted.\n,.. Depending upon the opted Plan - Value Plan or Geo Plan\n* If applicable\n** Aggregate Deductible, if opted, shall be applicable on aggregate of all claims as assessed under\nthe final assessed amount for a given Policy Year.\nThe payment of any claim under this Policy shall be subject to Aggregate Deductible (if applicable),\nsublimits/benefit limits, balance Sum Insured and accrued 5X supercharge bonus, if available.\nFor claims related to specific ailment/ Surgical Procedure where either mandatory sublimit or\nvoluntary sublimit (if opted) are applied during claim assessment, there neither Higher zone Co\u00ad\nPayment nor outside Our network of Valued Provider- Pan India Co-Payment shall be applicable.\nHowever, the Age linked Co-Payment shall be applicable.\nb. The sequence of utilization of benefit for a claim shall be in the following order:\n1. Sub-Limit subject to balance Sum Insured/Sum Insured (as applicable),\nTATA AIG General Insurance Company Ltd.\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai - 400013,\nMaharashtra, India 24*7 Customer Support No. 022 6489 8282/1800 267 1955 (For Senior Citizens)\n\u2022 Email: customersupport@tataaig.com \u2022 Website: www.tataaig.com IRDA of India Registration No.:",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+        },
+        {
+          "physical_page": 49,
+          "bbox": [
+            0,
+            0,
+            612.0,
+            792.0
+          ],
+          "exact_passage": "2. Any accrued 5X Supercharge Bonus, if applicable (B1 7)\n3. Restore benefit amount, if applicable (B9)\n4. Restore infinity amount, if applicable (C1)\nAccidental Death Benefit (C6) shall be assessed as per the Sum Insured of the Optional\nCover.\niii. Cost Sharing\nA The following four cost sharing methods are mandatory and inbuilt in the Policy\nCost Sharing Mechanism Applicability on\n1 Age linked Co-Payment Geo Plan & Value Plan\n2 Higher Zone Co-Payment Geo Plan\nOut of Our network of Valued Provider - Pan\n3 Value Plan\nIndia Co-Payment\n4 Mandatory Sub-Limits Geo Plan (Table I) & Value Plan (Table II)\nThe following three cost sharing methods, are optional and applicable if opted by the policyholder\nin lieu of which premium discount has been provided. The Optional cost sharing method, if opted\nB shall be mentioned in the Policy Schedule. Once opted, they shall mandatorily continue for all\nthe subsequent Renewals of the Policy, provided the Policy is renewed with Us without any\nbreak.\nCan be availed by the\nCost Sharing Mechanism Available under\npolicyholder/Insured\nAt Inception of first\n5 Voluntary Sub-Limits Geo Plan & Value Plan\nPolicy/coverage OR Renewal\nAt Inception of first\n6 Aggregate Deductible Geo Plan & Value Plan\nPolicy/coverage OR Renewal\nAt Inception of first\n7 Shared Accommodation Geo Plan\nPolicy/coverage OR Renewal\na. Age linked Co-Payment\nIf the entry Age of the Insured Person is 61 years or above at the time of first coverage under\nthis Policy, then such Insured Person shall bear 20% of each admissible claim (over and above\nTATA AIG General Insurance Company Ltd.\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai - 400013,\nMaharashtra, India 24*7 Customer Support No. 022 6489 8282/1800 267 1955 (For Senior Citizens)\n\u2022 Email: customersupport@tataaig.com \u2022 Website: www.tataaig.com IRDA of India Registration No.:",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+        },
+        {
+          "physical_page": 50,
+          "bbox": [
+            0,
+            0,
+            612.0,
+            792.0
+          ],
+          "exact_passage": "any other Co-Payment, if applicable). This shall be applicable even in Portability\ncases, irrespective of previous coverage.\nThis Co-Payment shall be applicable for all claims admitted under:\n\u2022 B1, B2, B3, B4, B5, B6, B7, B8 and C3 (if opted); and\n\u2022 if B9, B17 and C1 (if opted) utilized for payment of claim under aforementioned sections.\nThis Co-Payment shall not be applicable for benefits which are over and above the Sum\nInsured.\nException to this clause:\nThis Co-Payment shall not be applicable in case of Migration from any active Tata AIG\nindemnity health Policy to this product provided, entry Age of the Insured Person was less\nthan 61 years at the time of first coverage under the first indemnity health Policy with Us, subject\nto continuous coverage without any break in the Policy.\nb. Higher Zone Co-Payment\nWherever, Geo Plan has been opted and the Insured Person(s) undergoes medical\ntreatment at a Hospital/ Day Care Centre/ AYUSH Hospital/ AYUSH Day Care Centre in\nZone A, then an additional Co-Payment of 20% will be applicable on each such claim.\nHigher Zone Co-Payment shall be applicable for all claims except for claims for emergency\nHospitalization due to Injury arising from an Accident. Higher Zone Co-Payment shall not\nbe applicable for benefits which are over and above the Sum Insured.\nFor Clarity: This Co-Payment shall be applicable on claims admitted under:\n\u2022 B1, B4, B6, B7 and C3 (if opted); and\n\u2022 if B9, B17 and C1 (if opted) utilized for payment of claim under aforementioned sections.\nc. Co-Payment for treatment availed out of Our Network of Valued Provider - Pan India\nWherever, Value Plan has been opted and the Insured Person avails treatment outside Our\nnetwork of \"Valued Provider-Pan India\", then a Co-Payment of 30% will be applicable for each\nsuch claim resulting from admission of the Insured Person in a Hospital/ Day Care Centre/\nAYUSH Hospital/ AYUSH Day Care Centre. However, no Co-Payment under this sub section shall\nbe applicable if Hospitalization is for an Injury arising from an Accident.\nFor Clarity: This Co-Payment shall be applicable on claims admitted under:\n\u2022 B1, B4, B6, B7 and C3 (if opted); and\n\u2022 B9, B17 and C1 (if opted) if utilized for payment of claim under aforementioned sections.\nTATA AIG General Insurance Company Ltd.\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai -400013,\nMaharashtra, India 24*7 Customer Support No. 022 6489 8282/1800 267 1955 (For Senior Citizens)\n\u2022 Email: customersupport@tataaig.com \u2022 Website: www.tataaig.com IRDA of India Registration No.:",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+        }
+      ],
+      "visually_reviewed_physical_pages": [
+        1,
+        42,
+        47,
+        48
+      ],
+      "acquisition_provenance": [
+        {
+          "attempt_register": "research/registers/attempts/49cd6aca074081c850de655057a3dc69e199bdd084446e4e6c26f45595d2bacc.json",
+          "url": "https://www.tataaig.com/s3/Health_Super_Charge_Policy_Wordings_eed27d4280.pdf",
+          "final_url": "https://www.tataaig.com/s3/Health_Super_Charge_Policy_Wordings_eed27d4280.pdf",
+          "linking_url": "https://www.tataaig.com/downloads",
+          "acquired_at": "2026-09-10T11:54:29.075852+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "b388674a3162a9e0b7e3055ec7c6e79588a03cf08a2f360ae5c4807ea1f8e172"
+        }
+      ],
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "source_issues": [
+        "No UIN found in native complete-PDF text or visible selected title-page footer. Official directory label and matching family CIS carry UIN separately; do not invent a PDF-observed UIN. Title-page footer visibly truncated in source.",
+        "Value Plan uses its own Valued Provider-Pan India network; standard network membership does not satisfy it. Geo and Value plan changes have directional/renewal restrictions.",
+        "Physical pages47-48 specify additive co-payments before aggregate deductible, with ailment-sub-limit exception suppressing zone/network co-pay but retaining age co-pay. Pages49-50 add age-entry/migration and accident/benefit exceptions. No universal deduction rule or customer payment inferred."
+      ]
+    },
+    {
+      "source_sha256": "218fc797925e0fb158bd87606e4d0edb00da2d7dbafab7cd4269cebc6cab96e1",
+      "insurer_id": "tata-aig",
+      "product_or_heading": "TATA AIG MediCare LITE",
+      "family": "MediCare LITE",
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Original title and inpatient grant read; supporting documents retain actual role. Selected configuration dependencies read where present.",
+      "page_count": 43,
+      "observed_uins": [],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612.0,
+            792.0
+          ],
+          "exact_passage": "Policy Wordings\nTata AIG MediCare LITE Policy Wordings\nTata AIG General Insurance Company Limited (We, Our or Us) will provide the insurance, described\nin this Policy and any endorsements thereto, for the Policy Period, as defined in the Policy to the\nInsured Person(s) named in the Policy Schedule based on the Disclosure to Information Norm,\nincluding in reliance upon the statements contained in the Proposal Form or any other mode of\ncommunication which shall be the basis of this Policy and are deemed to be incorporated herein in\nreturn for the receipt of the required premium in full and compliance with all the applicable terms,\nconditions and exclusions of this Policy. The insurance provided under this Policy is only in force for\nthe Insured Person with respect to such and so many of the benefits as indicated by the Sum Insured\nset opposite such benefit in the Policy Schedule.\nTATA AIG General Insurance Company Limited\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai - 400013, Maharashtra, India\n.. . -- . -",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+        },
+        {
+          "physical_page": 12,
+          "bbox": [
+            0,
+            0,
+            612.0,
+            792.0
+          ],
+          "exact_passage": "all or any of the benefits shall be on per Insured Person per Policy Year basis\nunless explicitly stated to the contrary.\nOur maximum liability under the Policy for payment of all claims arising out of Any one illness in\naggregate under Sections B 1, B2, B3, B4, BS, B6, B7, B8, B9, B 12, B 13 shall not exceed the opted\nsum insured and accrued Cumulative Bonus, subject to the balance sum insured.\nB1. In-Patient Treatment\nWe will cover Medical Expenses for Medically Necessary Treatment in a Hospital, due to\ndisease/Illness/Injury, that requires an Insured Person's admission in a Hospital for an Inpatient\nCare, during the Policy Period.\nThe Company shall indemnify Medical Expenses as listed below:\ni. Room Rent, Boarding, Nursing Expenses as provided by the Hospital / Nursing Home upto\nthe Single Private Room category\nii. Intensive Care Unit (ICU) / Intensive Cardiac Care Unit (ICCU) expenses\niii. Surgeon, Anesthetist, Medical Practitioner, Consultants, Specialist Fees whether paid\ndirectly to the treating doctor I surgeon or to the Hospital\niv. Anesthesia, blood, oxygen, operation theatre charges, surgical appliances, medicines and\ndrugs, costs towards diagnostics, diagnostic imaging modalities and such similar other\nexpenses.\nIf the Insured Person is admitted in a room category that is higher than the Single Private\nRoom, then the Insured Person shall bear a rateable proportion of the Room Rent and the\ntotal Associated Medical Expenses, including surcharge or taxes thereon in the proportion of the\n'difference between the Room Rent actually incurred & the Room Rent of the Single Private\nRoom category' to 'the Room Rent actually incurred'.\n\u2022 For the purpose of this Benefit \"Associated Medical Expenses\" shall include the applicable\nnursing charges, operation theatre charges, fees of Medical Practitioner including surgeon/\nanesthetist/ specialist within the same Hospital where the Insured Person has been\nadmitted. \"Associated Medical Expenses\" does not include cost of pharmacy &\nconsumables, cost of implants & medical devices and cost of diagnostics.\n\u2022 Proportionate deductions are not applicable for ICU Charges.\n\u2022 Such proportionate deductions, if any, will not be applied in respect of the Hospital(s) which\ndo not follow differential billing or for those Associated Medical Expenses in respect of which\ndifferential billing is not adopted based on the room category\nTATA AIG General Insurance Company Limited\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai - 400013, Maharashtra, India\n.. . - - . - -",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+        }
+      ],
+      "visually_reviewed_physical_pages": [
+        1,
+        12
+      ],
+      "acquisition_provenance": [
+        {
+          "attempt_register": "research/registers/attempts/6bbc7aa466d7a297eb0d8c7bab65f1e56d01239161811081fbcc8a250bdaa51f.json",
+          "url": "https://www.tataaig.com/s3/Medicare_LITE_Policy_Wordings_4fdf058f02.pdf",
+          "final_url": "https://www.tataaig.com/s3/Medicare_LITE_Policy_Wordings_4fdf058f02.pdf",
+          "linking_url": "https://www.tataaig.com/downloads",
+          "acquired_at": "2026-09-10T17:40:59.655413+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "218fc797925e0fb158bd87606e4d0edb00da2d7dbafab7cd4269cebc6cab96e1"
+        }
+      ],
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "source_issues": [
+        "No UIN found in native complete-PDF text or visible selected title-page footer. Official directory label and matching family CIS carry UIN separately; do not invent a PDF-observed UIN. Title-page footer visibly truncated in source."
+      ]
+    },
+    {
+      "source_sha256": "2e27c2193486e94ae2b51302ac83c834e95141713124ac5335077c2c3d957858",
+      "insurer_id": "tata-aig",
+      "product_or_heading": "TATA AIG MediCare Plus",
+      "family": "MediCare Plus",
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Original title and inpatient grant read; supporting documents retain actual role. Selected configuration dependencies read where present.",
+      "page_count": 26,
+      "observed_uins": [
+        "TATHLIP21253V022021"
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612.0,
+            792.0
+          ],
+          "exact_passage": "TATA AIG MediCare Plus\nPoli c, Woyd\\_ng\nJ\nWordings WITH YOU ALWAYS\nTATA AIG General Insurance Company Limited\n(We, Our or Us) will provide the insurance cover,\ndescribed in this Policy and any endorsements\nthereto, for the Insured Period, as defined in the\nPolicy schedule. The insurance cover provided\nunder this Policy is only with respect to such and so\nmany of the benefits upto the Sum Insured in excess\nof Aggregate Deductible as mentioned in the Policy\nSchedule. Commencement of risk cover under the\npolicy is subject to receipt of premium by us.\nThe statements contained in the Proposal signed\nby the Policyholder (You) shall be the basis of this\nPolicy and are deemed to be incorporated herein.\nThe insurance cover is governed by and subject to,\nthe/\ufffd\ufffdyg;\ufffdditions and exclusions of this Policy.\nF\ufffdeneral Insurance Company Limited\nTATA AIG GENERAL INSURANCE COMPANY LIMITED\nAuthorized Signatory\nRegistered Office:\nPeninsula Business Park, Tower A,\n15th Floor, G. K. Marg,\nLower Parel, Mumbai- 400013, Maharashtra, India\n24x7 Customer Support No. 022 6489 8282 or 1800 267\n1955 {Senior Citizen)\nVisit us at www.tataaig.com\nIRDA of India Registration No.:108\nCIN: U85110MH2000PLC128425\nUIN: TATHLIP21253V022021\n\"Insurance is the subject matter of solicitation\". For more details\non risk factors, terms and conditions, please read policy document\ncarefully before concluding a sale.\nRegistered Office: Peninsula Business Park, Tower A, 15th Floor, G. K. Marg, Lower Parel,\nMumbai- 400013, Maharashtra, India\u2022 24x7 Customer Support No. 022 6489 8282 or 1800 267 1955( Senior Citizen)\nVisit us at www.tataaig.com I IRDA of India Registration No.:108 I CIN: U85110MH2000PLC128425\nUIN: TATHLIP21253V022021 I REG-IMP-V1-300924",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+        },
+        {
+          "physical_page": 7,
+          "bbox": [
+            25,
+            0,
+            212,
+            520
+          ],
+          "exact_passage": "Person on his / her most recent birthday\nas per the English calendar, regardless of\nthe actual time of birth.\n2. Policy\nPolicy means the contract of insurance\nincluding but not limited to Policy Schedule,\nEndorsements, PolicyWordingsand Riders.\n3. Policy period\nPolicy Period means the time during\nwhich this Policy is in effect. Such period\ncommences from Commencement Date\nand ends on the Expiry Date and specifically\nappears in the Policy Schedule.\n4. Policy Schedule\nPolicy Schedule means the Policy Schedule\nattached to and forming part of Policy.\n5. Policy year\nPolicy Year means a period of twelve\nmonths beginning from the date of\ncommencement of the Policy period\nand ending on the last day of such\ntwelve-month period. For the purpose of\nsubsequent years, policy year shall mean\na period of twelve months commencing\nfrom the end of the previous policy year\nand lapsing on the last day of such twelve\u00ad\nmonth period, till the Policy Expiry date.\nSection 2 - Benefits\nThe following benefits are payable subject to\nTerms and Conditions of the policy:\nB1. In-Patient Treatment\nWe w ill c o v e r fo r e xp e ns es fo r\nhospitalization due to disease/illness/Injury\nduring the policy period that requires an\nInsured Person's admission in a hospital\nas an inpatient.\nMedical expenses directly related to the\nhospitalization would be payable.\nB2. Pre-Hospitalization expenses\nWe will cover for expenses for Pre\u00ad\nHo sp ita Ii z a ti o n co ns ulta tio ns ,\ninvestigations and medicines incurred\nupto 60 days before the date of admission",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Manually verified actual left body column; original page is612points wide but content spans only roughlyx25\u2013440. Column boundary isx212, not page midpoint. Connected clauses continuing across pages remain dependencies."
+        },
+        {
+          "physical_page": 7,
+          "bbox": [
+            212,
+            0,
+            410,
+            520
+          ],
+          "exact_passage": "to the hospital.\nThe benefit is payable if We have admitted\na claim under B1 or B4 or B6.\nB3. Post-Hospitalization expenses\nWe will cover for expenses for Post\u00ad\nHo spi ta Ii z ati o n co ns ulta tio ns ,\ninvestigations and medicines incurred upto\n90 days after discharge from the hospital.\nThe benefit is payable if We have admitted\na claim under B1 or B4 or B6.\nB4. Day Care Procedures\nWe will cover expenses for listed Day Care\nTreatment due to disease/illness/Injury\nduring the policy period taken at a hospital\nor a Day Care Centre. The list of such day\ncare procedures covered is available on\nour website (www.tataaig.com).\nTreatment normally taken on out-patient\nbasis is not included in the scope of this\ncover.\nBS. Organ Donor\nWe will cover for Medical and surgical\nExpenses of the organ donor for harvesting\nthe organ where an Insured Person is the\nrecipient provided that:\ni. The organ donor is any person whose\norgan has been made available\nin accordance and in compliance\nwith The Transplantation of Human\nOrgans (Amendment) Bill, 2011 and\nthe organ donated is for the use of\nthe Insured Person, and\nii. We have accepted an inpatient\nHospitalization claim for the\ninsured member under In Patient\nHospitalization Treatment (section\nB1).\nB6. Domiciliary Treatment\nWe will cover for expenses related to\nDomiciliary Hospitalization of the insured\nperson if the treatment exceeds beyond\nthree days. The treatment must be for\nmanagement of an illness and not for\nenteral feedings or end of life care.\nAt the time of claiming under this benefit,\nwe shall require certification from the\ntreating doctor fulfilling the conditions as\nmentioned under the general definitions",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Manually verified actual right body column; original page is612points wide but content spans only roughlyx25\u2013440. Column boundary isx212, not page midpoint. Connected clauses continuing across pages remain dependencies."
+        },
+        {
+          "physical_page": 7,
+          "bbox": [
+            25,
+            535,
+            440,
+            610
+          ],
+          "exact_passage": "7\nTATA AIG GENERAL INSURANCE COMPANY LIMITED\nRegistered Office: Peninsula Business Park, Tower A, 15th Floor, G. K. Marg, Lower Parel,\nMumbai- 400013, Maharashtra, India\u2022 24x7Customer Support No. 022 6489 8282/1800 267 1955 (Senior Citizen)\nVisit us at www.tataaig.com I IRDAof India Registration No.:108 I CIN: U85110MH2000PLC128425\nUIN: TATHLIP21253V022021 I REG-IMP-V1-300924",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Manually verified actual separate footer; original page is612points wide but content spans only roughlyx25\u2013440. Column boundary isx212, not page midpoint. Connected clauses continuing across pages remain dependencies."
+        }
+      ],
+      "visually_reviewed_physical_pages": [
+        1,
+        7
+      ],
+      "acquisition_provenance": [
+        {
+          "attempt_register": "research/registers/attempts/dd54162eabc6e5c64b41dc4b8114504e7a6f6916b423b5f0a0dcc895b4cf8cf1.json",
+          "url": "https://www.tataaig.com/s3/Tata_AIG_Medi_Care_Plus_e8a0cf5358.pdf",
+          "final_url": "https://www.tataaig.com/s3/Tata_AIG_Medi_Care_Plus_e8a0cf5358.pdf",
+          "linking_url": "https://www.tataaig.com/downloads",
+          "acquired_at": "2026-09-10T11:54:33.382982+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "2e27c2193486e94ae2b51302ac83c834e95141713124ac5335077c2c3d957858"
+        }
+      ],
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "source_issues": [
+        "Source has visually irregular overprinted text and native garbling on some pages. Selected title/grant visually verified; page7 columns stored separately; unread pages require visual/OCR review."
+      ]
+    },
+    {
+      "source_sha256": "9400822e7dee6dbe3e10825a6e6802290122fcd9ad737d82680b8dcab176c74d",
+      "insurer_id": "tata-aig",
+      "product_or_heading": "TATA AIG Health Supercharge",
+      "family": "Health Supercharge",
+      "document_role": "customer_information_sheet",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Original title and inpatient grant read; supporting documents retain actual role. Selected configuration dependencies read where present.",
+      "page_count": 7,
+      "observed_uins": [
+        "TATHLIP24113V012324"
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            842.04,
+            595.56
+          ],
+          "exact_passage": "TATA AIG Health Supercharge - Geo Plan\nCustomer Information Sheet/Know Your Policy\nThis document provides key information about your Policy. You are also advised to go through your Policy document.\nSr. No. Title Description Policy Clause No.\n1. Name of the Insurance TATA AIG Health Supercharge - Geo Plan\nProduct/Policy\n2. Policy Number <<Policy Number>>\n3. Type of Insurance Both indemnity & benefit.\nPolicy\n4. Sum Insured (Basis) <<Sum Insured Amount>> - As per Sum Insured mentioned in Policy Schedule.\n(Along with amount)\n5. Policy Coverage B1. In-Patient Treatment - Hospitalisation for B15. Wellness Services Section (2)\nmore than 24 hrs. B16. Wellness Program\nB2. Pre-Hospitalisation Expenses - 90 days\nB17. 5X Supercharge Bonus\nB3. Post-Hospitalisation Expenses - 90 days\nOptional Cover (For covers applicable to you,\nB4. Day Care Treatment\nplease refer your Policy Schedule):\nB5. Domiciliary Treatment\nC1. Restore Infinity - Reinstatement of Sum\nB6. Organ Donor Insured unlimited number of times during a\nPolicy Year post exhaustion of the Restore\nB7. AYUSH Benefit - In-Patient or Day Care\nBenefit.\nTreatment\nC2. Emergency Air Ambulance Cover\nB8. Road Ambulance Cover\nC3. Consumables Benefit\nB9. Restore Benefit - Once during the Policy Year\nC4. Preventive Annual Health Check-Up\nB10. Compassionate Travel\nC5. Advanced Cover - \u2018Pre-Existing Diseases\nB11. Prolonged Hospitalisation Benefit\nWaiting Period (Code - Excl 01)\u2019 only for the\nB12. Medical Devices Cover\nnamed Pre-Existing Diseases will be\nB13. Vaccination Cover changed to 30 days instead of 36 months.\nB14. Second Opinion C6. Accidental Death Benefit\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai - 400013, Maharashtra, India \u2022 24*7 Toll free No.: 1800 266 7780/1800 229 966 (For Senior Citizens) \u2022 Email: customersupport@tataaig.com\nWebsite: www.tataaig.com \u2022 IRDA of India Registration No.: 108 \u2022 CIN: U85110MH2000PLC128425 \u2022 REG-IMP-V1-300924 \u2022 TATA AIG Health Supercharge - Geo Plan UIN: TATHLIP24113V012324\nPage 1 of 7",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+        }
+      ],
+      "visually_reviewed_physical_pages": [],
+      "acquisition_provenance": [
+        {
+          "attempt_register": "research/registers/attempts/b948e64c0f69d3bc983e9bbd091af1f3d2991058b530505f05f16e11775e674f.json",
+          "url": "https://www.tataaig.com/s3/health_supercharge_geo_plan_cis_c853045b33.pdf",
+          "final_url": "https://www.tataaig.com/s3/health_supercharge_geo_plan_cis_c853045b33.pdf",
+          "linking_url": "https://www.tataaig.com/downloads",
+          "acquired_at": "2026-09-10T11:55:56.387679+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "9400822e7dee6dbe3e10825a6e6802290122fcd9ad737d82680b8dcab176c74d"
+        }
+      ],
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "source_issues": []
+    },
+    {
+      "source_sha256": "b92001027268bb13b705227477f72200473aa09ed433b183cfd87e3f91eca82d",
+      "insurer_id": "tata-aig",
+      "product_or_heading": "TATA AIG Health Supercharge",
+      "family": "Health Supercharge",
+      "document_role": "customer_information_sheet",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Original title and inpatient grant read; supporting documents retain actual role. Selected configuration dependencies read where present.",
+      "page_count": 7,
+      "observed_uins": [
+        "TATHLIP24113V012324"
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            842.04,
+            595.56
+          ],
+          "exact_passage": "TATA AIG Health Supercharge - Value Plan\nCustomer Information Sheet/Know Your Policy\nThis document provides key information about your Policy. You are also advised to go through your Policy document.\nSr. No. Title Description Policy Clause No.\n1. Name of the Insurance TATA AIG Health Supercharge - Value Plan\nProduct/Policy\n2. Policy Number <<Policy Number>>\n3. Type of Insurance Both indemnity & benefit.\nPolicy\n4. Sum Insured (Basis) <<Sum Insured Amount>> - As per Sum Insured mentioned in Policy Schedule.\n(Along with amount)\n5. Policy Coverage B1. In-Patient Treatment - Hospitalisation for B15. Wellness Services Section (2)\nmore than 24 hrs. B16. Wellness Program\nB2. Pre-Hospitalisation Expenses - 90 days\nB17. 5X Supercharge Bonus\nB3. Post-Hospitalisation Expenses - 90 days\nOptional Cover (For covers applicable to you,\nB4. Day Care Treatment\nplease refer your Policy Schedule):\nB5. Domiciliary Treatment\nC1. Restore Infinity - Reinstatement of Sum\nB6. Organ Donor Insured unlimited number of times during a\nPolicy Year post exhaustion of the Restore\nB7. AYUSH Benefit - In-Patient or Day Care\nBenefit.\nTreatment\nC2. Emergency Air Ambulance Cover\nB8. Road Ambulance Cover\nC3. Consumables Benefit\nB9. Restore Benefit - Once during the Policy Year\nC4. Preventive Annual Health Check-Up\nB10. Compassionate Travel\nC5. Advanced Cover - \u2018Pre-Existing Diseases\nB11. Prolonged Hospitalisation Benefit\nWaiting Period (Code - Excl 01)\u2019 only for the\nB12. Medical Devices Cover\nnamed Pre-Existing Diseases will be\nB13. Vaccination Cover changed to 30 days instead of 36 months.\nB14. Second Opinion C6. Accidental Death Benefit\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai - 400013, Maharashtra, India \u2022 24*7 Toll free No.: 1800 266 7780/1800 229 966 (For Senior Citizens) \u2022 Email: customersupport@tataaig.com\nWebsite: www.tataaig.com \u2022 IRDA of India Registration No.: 108 \u2022 CIN: U85110MH2000PLC128425 \u2022 REG-IMP-V1-300924 \u2022 TATA AIG Health Supercharge - Value Plan UIN: TATHLIP24113V012324\nPage 1 of 7",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+        }
+      ],
+      "visually_reviewed_physical_pages": [],
+      "acquisition_provenance": [
+        {
+          "attempt_register": "research/registers/attempts/b222451a42fdd46c9695c32b6f5ad581db98e40008c5ec779b500984979de2a0.json",
+          "url": "https://www.tataaig.com/s3/health_supercharge_value_plan_cis_ec515c4464.pdf",
+          "final_url": "https://www.tataaig.com/s3/health_supercharge_value_plan_cis_ec515c4464.pdf",
+          "linking_url": "https://www.tataaig.com/downloads",
+          "acquired_at": "2026-09-10T11:55:56.070317+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "b92001027268bb13b705227477f72200473aa09ed433b183cfd87e3f91eca82d"
+        }
+      ],
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "source_issues": []
+    },
+    {
+      "source_sha256": "44e946483d893ad8bc63db5b5b9b41b3ed40846f4240d118206fe7fe463105fe",
+      "insurer_id": "tata-aig",
+      "product_or_heading": "TATA AIG MediCare LITE",
+      "family": "MediCare LITE",
+      "document_role": "customer_information_sheet",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Original title and inpatient grant read; supporting documents retain actual role. Selected configuration dependencies read where present.",
+      "page_count": 7,
+      "observed_uins": [
+        "TATHLIP24132V012324"
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            842.04,
+            595.56
+          ],
+          "exact_passage": "TATA AIG MediCare LITE\nCustomer Information Sheet/Know Your Policy\nThis document provides key information about your Policy. You are also advised to go through your Policy document\nSr. No. Title Description Policy Clause No.\n1. Name of the Insurance TATA AIG MediCare LITE\nProduct/Policy\n2. Policy Number <<Policy Number>>\n3. Type of Insurance Both indemnity & benefit\n4. Sum Insured (Basis) <<Sum Insured Amount>> As per Sum Insured mentioned in Policy Schedule .\n(Along with amount)\n5. Policy Coverage B1. In-Patient Treatment - Hospitalisation for B14. Vaccination Cover Section (2)\nmore than 24 hrs.\nB15. Hearing Aid\nB2. Pre-Hospitalisation Expenses - 60 days\nB16. Daily Cash for choosing Shared\nB3. Post-Hospitalisation Expenses - 180 days Accommodation\nB4. Day Care Treatment\nB17. Daily Cash for Accompanying an Insured Child\nB5. Organ Donor\nB18. Second Opinion\nB6. Domiciliary Treatment\nB20. Cumulative Bonus/No Claim Discount - 50%\nB7. Restore Benefit - Once during the Policy\nincrease in Cumulative Bonus for every claim\nYear free year. Maximum up to 100% of the Sum\nB8. AYUSH Benefit - In-Patient or Day Care Insured. Alternatively a no claim discount of 1%\ncan be opted.\nTreatment\nB9. Ambulance Cover B21. Wellness Services\nB10. Health Checkup\nOptional Cover (For applicability of this optional\nB11. Compassionate Travel cover, please refer your Policy Schedule):\nB12. Bariatric Surgery Cover\nB19. Accidental Death Benefit\nB13. In-Patient Treatment - Dental\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai - 400013, Maharashtra, India \u2022 24*7 Toll free No.: 1800 266 7780/1800 229 966 (For Senior Citizens) \u2022 Email: customersupport@tataaig.com\nWebsite: www.tataaig.com \u2022 IRDA of India Registration No.: 108 \u2022 CIN: U85110MH2000PLC128425 \u2022 REG-IMP-V1-300924 \u2022 TATA AIG MediCare LITE UIN: TATHLIP24132V012324\nPage 1 of 7",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+        }
+      ],
+      "visually_reviewed_physical_pages": [],
+      "acquisition_provenance": [
+        {
+          "attempt_register": "research/registers/attempts/183212f724bcee87ffe8709831ced529adf54a3f91696f73a547cfaa5fc3e7f6.json",
+          "url": "https://www.tataaig.com/s3/Medicare_LITE_CIS_aa38ff0767.pdf",
+          "final_url": "https://www.tataaig.com/s3/Medicare_LITE_CIS_aa38ff0767.pdf",
+          "linking_url": "https://www.tataaig.com/downloads",
+          "acquired_at": "2026-09-10T11:55:56.046294+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "44e946483d893ad8bc63db5b5b9b41b3ed40846f4240d118206fe7fe463105fe"
+        }
+      ],
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "source_issues": []
+    },
+    {
+      "source_sha256": "5f4734006885168be0d5afe171bf7e54097e9de9b5fc40ba5f3f2fee15ad5b5a",
+      "insurer_id": "tata-aig",
+      "product_or_heading": "TATA AIG MediCare Plus",
+      "family": "MediCare Plus",
+      "document_role": "rate_chart",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Original title and inpatient grant read; supporting documents retain actual role. Selected configuration dependencies read where present.",
+      "page_count": 4,
+      "observed_uins": [
+        "TATHLIP21253V022021"
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612.0,
+            792.0
+          ],
+          "exact_passage": "TATA AIG General Insurance Company\nTata AIG Medicare Plus:Rate Chart\nDiscounts on premium:\na. 10% long term discount on premium in case insured opts policy term of 3 years\nb. 5% long term discount on premium in case insured opts policy term of 2 years\nc. Family floater discount on premium:\n\u2022 2 members -20%\n\u2022 3 members -28%\n\u2022 > 3 members-32%\nd. Employee/Group/Affinity partner discount \u2013 10%\nLoadings on premium:\n\u2022 We may apply a risk loading on the premium payable (based upon the declarations made in\nthe proposal form and the health status of the persons proposed for insurance). The\nmaximum risk loading applicable for an individual shall not exceed above 100% per\ndiagnosis / medical condition and an overall risk loading of over 150% per person.\n\u2022 In case the insured person opts for Global Cover, additional 10% premium loading shall be\napplicable for each insured person.\n(Annual)Per Person Rates (Rs.) Deductible Amount (Rs.): 2 Lac\nAge Band/Sum Insured (Rs.) 3 Lac 5 Lac 10 Lac 15 Lac 20 Lac 25 Lac 50 Lac 1 Crore\n91days-18yrs 1,427 2,237 2,860 3,210 4,020 4,359 5,249 6,937\n19-35yrs 2,163 3,238 4,914 6,087 6,579 7,285 7,793 9,722\n36-45yrs 2,493 3,578 5,811 6,675 7,516 8,132 8,452 10,613\n46-50yrs 4,044 6,009 9,135 10,110 12,292 13,182 14,134 17,585\n51-55yrs 5,401 7,952 11,301 13,079 14,460 16,230 17,238 21,427\n56-60yrs 5,800 8,583 12,679 14,810 16,754 18,159 19,902 25,121\n61-65yrs 7,280 12,707 22,035 25,765 28,556 32,063 34,242 42,576\n66-70yrs 9,202 13,767 24,343 29,308 32,933 35,127 37,343 46,263\n71+yrs 11,658 17,645 28,624 36,339 40,553 45,302 47,813 59,023\nDeductible Amount (Rs.): 3 Lac\nAge Band/Sum Insured (Rs.) 3 Lac 5 Lac 10 Lac 15 Lac 20 Lac 25 Lac 50 Lac 1 Crore\n91days-18yrs 1,201 1,784 2,293 3,124 3,902 4,311 5,245 6,754\nTata AIG Medicare Plus UIN No.: TATHLIP21253V022021 Page 1 of 4",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+        }
+      ],
+      "visually_reviewed_physical_pages": [],
+      "acquisition_provenance": [
+        {
+          "attempt_register": "research/registers/attempts/f694cb9c5ea560614291ec9cc5ea706870ebd801ef8e0c52049de52140aa3f96.json",
+          "url": "https://www.tataaig.com/s3/Tata_AIG_Medi_Care_Plus_242ed0851a.pdf",
+          "final_url": "https://www.tataaig.com/s3/Tata_AIG_Medi_Care_Plus_242ed0851a.pdf",
+          "linking_url": "https://www.tataaig.com/downloads",
+          "acquired_at": "2026-09-10T11:56:15.919560+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "5f4734006885168be0d5afe171bf7e54097e9de9b5fc40ba5f3f2fee15ad5b5a"
+        }
+      ],
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "source_issues": []
+    },
+    {
+      "source_sha256": "aee5108033c576edd0eecb3267971f5c57fa5eee105883db37200fae0079da1b",
+      "insurer_id": "tata-aig",
+      "product_or_heading": "TATA AIG downloads directory",
+      "document_role": "official_product_page_or_register",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Two exact policy-wording anchors manually verified; mixed insurer directory is not blanket medical-expense evidence.",
+      "evidence": [
+        {
+          "byte_start": 102403,
+          "byte_end_exclusive": 102576,
+          "exact_passage": "<a href=\"https://www.tataaig.com/s3/Health_Super_Charge_Policy_Wordings_eed27d4280.pdf\" target=\"_blank\" rel=\"noreferrer\">Tata AIG Health Supercharge(TATHLIP24113V012324)</a>",
+          "interpretation": "Official directory anchor label is a separately attributed UIN assertion, not proof the target PDF visibly prints that UIN."
+        },
+        {
+          "byte_start": 102232,
+          "byte_end_exclusive": 102394,
+          "exact_passage": "<a href=\"https://www.tataaig.com/s3/Medicare_LITE_Policy_Wordings_4fdf058f02.pdf\" target=\"_blank\" rel=\"noreferrer\">Tata AIG MediCare LITE(TATHLIP24132V012324)</a>",
+          "interpretation": "Official directory anchor label is a separately attributed UIN assertion, not proof the target PDF visibly prints that UIN."
+        }
+      ],
+      "acquisition_provenance": [
+        {
+          "attempt_register": "research/registers/attempts/39d727fa1ff220c366e2207c7a841ec6865ac8b5ebbc7c8162d7f40fb0c98c1b.json",
+          "url": "https://www.tataaig.com/downloads",
+          "final_url": "https://www.tataaig.com/downloads",
+          "linking_url": "",
+          "acquired_at": "2026-09-10T11:37:02.641059+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "aee5108033c576edd0eecb3267971f5c57fa5eee105883db37200fae0079da1b"
+        }
+      ],
+      "observed_uins": [],
+      "rule_inventory_complete": false,
+      "original_sha256_verified": true
+    }
+  ],
+  "reread_existing_documents": [
+    {
+      "source_sha256": "4c2dbb071f07607200453f5ddb769a996aa02d9c3d9f03df8a03a5bc1dbf51b6",
+      "insurer_id": "tata-aig",
+      "product_or_heading": "TATA AIG Elder Care",
+      "family": "Elder Care",
+      "document_role": "customer_information_sheet",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Original title and inpatient grant read; supporting documents retain actual role. Selected configuration dependencies read where present.",
+      "page_count": 6,
+      "observed_uins": [
+        "TATHLIP23179V012223"
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            842.04,
+            595.56
+          ],
+          "exact_passage": "TATA AIG Elder Care\nCustomer Information Sheet/Know Your Policy\nThis document provides key information about your Policy. You are also advised to go through your Policy document.\nSr. No. Title Description Policy Clause No.\n1. Name of the Insurance TATA AIG Elder Care\nProduct/Policy\n2. Policy Number <<Policy Number>>\n3. Type of Insurance Both indemnity & benefit.\nPolicy\n4. Sum Insured (Basis) <<Sum Insured Amount>> As per Sum Insured mentioned in Policy Schedule.\n(Along with amount)\n5. Policy Coverage B1. In-Patient Treatment - Hospitalisation for B13. Cumulative Bonus/No Claim Discount - 10% Section (2)\nmore than 24 hrs. increase in Cumulative Bonus for every claim\nfree year. Maximum up to 100% of the Sum\nB2. Pre-Hospitalisation Expenses - 30 days.\nInsured. Alternatively, a no claim discount of\nB3. Post-Hospitalisation Expenses - 60 days.\n1% can be opted.\nB4. Home Physiotherapy - 10 sessions at home.\nB14. Medical Second Opinion\nB5. Post Operative Care\nB15. High End Diagnostics\na. Home Nursing Services\nB16. Home Care Treatment Cover\nb. Personalized Health Manager\nB17. Wellness Services\nB6. Compassionate Care B18. Home Assessment and Modification for\nB7. Day Care Procedures Elderly Care/Disability\nB8. AYUSH Benefit - In-Patient or Day Care B19. Cost Sharing\nTreatment. a. Mandatory Co-Payment - Mandatory\nB9. Road Ambulance Cover co-payment of 20% on each and every\nadmissible claim.\nB10. Preventive Health Checkup\nb. Sub-Limits on Specified Surgical\nB11. Annual Preventive Health Consultation\nProcedure - For Cataract (per eye) and\nB12. Consumables Benefit Joint Replacement Surgery.\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai - 400013, Maharashtra, India \u2022 24*7 Toll free No.: 1800 266 7780/1800 229 966 (For Senior Citizens) \u2022 Email: customersupport@tataaig.com\nWebsite: www.tataaig.com \u2022 IRDA of India Registration No.: 108 \u2022 CIN: U85110MH2000PLC128425 \u2022 REG-IMP-V1-300924 \u2022 TATA AIG Elder Care UIN: TATHLIP23179V012223\nPage 1 of 6",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+        }
+      ],
+      "visually_reviewed_physical_pages": [],
+      "acquisition_provenance": [
+        {
+          "attempt_register": "research/registers/attempts/ee4c43353dd33f54ad1f4fc30416c1cd397feb7814e8e022645d5c6a7c76a2c3.json",
+          "url": "https://www.tataaig.com/s3/Tata_AIG_Elder_Care_CIS_a1c17bf958.pdf",
+          "final_url": "https://www.tataaig.com/s3/Tata_AIG_Elder_Care_CIS_a1c17bf958.pdf",
+          "linking_url": "https://www.tataaig.com/downloads",
+          "acquired_at": "2026-09-10T11:55:56.520276+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "4c2dbb071f07607200453f5ddb769a996aa02d9c3d9f03df8a03a5bc1dbf51b6"
+        }
+      ],
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "source_issues": []
+    },
+    {
+      "source_sha256": "09f509207758d576908da0a988ce4e814bfc70614ea43821f18ffec50040dc45",
+      "insurer_id": "tata-aig",
+      "product_or_heading": "TATA AIG MediCare",
+      "family": "MediCare",
+      "document_role": "customer_information_sheet",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Original title and inpatient grant read; supporting documents retain actual role. Selected configuration dependencies read where present.",
+      "page_count": 7,
+      "observed_uins": [
+        "TATHLIP26053V042526"
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            842.04,
+            595.56
+          ],
+          "exact_passage": "TATA AIG MediCare\nCustomer Information Sheet/Know Your Policy\nThis document provides key information about your Policy. You are also advised to go through your Policy document.\nSr. No. Title Description Policy Clause No.\n1. Name of the Insurance TATA AIG MediCare\nProduct/Policy\n2. Policy Number <<Policy Number>>\n3. Type of Insurance Both indemnity & benefit.\nPolicy\n4. Sum Insured (Basis) <<Sum Insured Amount>> As per Sum Insured mentioned in Policy Schedule.\n(Along with amount)\n5. Policy Coverage B1. In-Patient Treatment - Hospitalisation for B16. Vaccination Cover Section (2)\nmore than 24 hrs. B17. Hearing Aid\nB2. Pre-Hospitalisation Expenses - 60 days B18. Daily Cash for Choosing Shared\nB3. Post-Hospitalisation Expenses - 90 days Accommodation\nB4. Day Care Procedures B19. Daily Cash for Accompanying an Insured Child\nB5. Organ Donor B20. Second Opinion\nB6. Domiciliary Treatment B22. No Claim Bonus - For every claim free year:\nB7. Restore Benefit - Once during the Policy\ni. Cumulative Bonus: 50% of the base Sum\nyear\nInsured of the expiring Policy, maximum\nB8. AYUSH Benefit - In-Patient or Day Care up to 100% (50% decrease in subsequent\nTreatment Policy Year, in case of claim). Or\nB9. Ambulance Cover ii. 1% Discount in Renewal Premium\nB10. Health Checkup\nB23. Wellness Services\nB11. Compassionate Travel\nB12. Consumables Benefit Optional Cover (For applicability of this optional\ncover, please refer your Policy Schedule):\nB13. Global Cover\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai - 400013, Maharashtra, India \u2022 24*7 Customer Support No.: 022 6489 8282/1800 22 9966 (For Senior Citizens) \u2022 Email: customersupport@tataaig.com\nWebsite: www.tataaig.com \u2022 IRDA of India Registration No.: 108 \u2022 CIN: U85110MH2000PLC128425 \u2022 REG-IMP-V1-300924 \u2022 TATA AIG MediCare UIN: TATHLIP26053V042526\nPage 1 of 7",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+        }
+      ],
+      "visually_reviewed_physical_pages": [],
+      "acquisition_provenance": [
+        {
+          "attempt_register": "research/registers/attempts/c35af1dd628673d1490e041071001f759027d109cb50fa9a473f4f7c6109c4ee.json",
+          "url": "https://www.tataaig.com/s3/Tata_AIG_Medi_Care_CIS_08824d8e97.pdf",
+          "final_url": "https://www.tataaig.com/s3/Tata_AIG_Medi_Care_CIS_08824d8e97.pdf",
+          "linking_url": "https://www.tataaig.com/downloads",
+          "acquired_at": "2026-09-10T11:55:55.745619+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "09f509207758d576908da0a988ce4e814bfc70614ea43821f18ffec50040dc45"
+        }
+      ],
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "source_issues": []
+    },
+    {
+      "source_sha256": "26ecda9b408960b8ea0a787e4e42d05de58eac8553010d091412bff2e49972f1",
+      "insurer_id": "tata-aig",
+      "product_or_heading": "TATA AIG MediCare Plus",
+      "family": "MediCare Plus",
+      "document_role": "customer_information_sheet",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Original title and inpatient grant read; supporting documents retain actual role. Selected configuration dependencies read where present.",
+      "page_count": 7,
+      "observed_uins": [
+        "TATHLIP21253V022021"
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            842.04,
+            595.56
+          ],
+          "exact_passage": "TATA AIG MediCare Plus\nCustomer Information Sheet/Know Your Policy\nThis document provides key information about your Policy. You are also advised to go through your Policy document\nSr. No. Title Description Policy Clause No.\n1. Name of the Insurance TATA AIG MediCare Plus\nProduct/Policy\n2. Policy Number <<Policy Number>>\n3. Type of Insurance Indemnity \u2013 Where Insured losses are covered up to the Sum Insured under the Policy.\n4. Sum Insured (Basis) <<Sum Insured Amount>> As per Sum Insured mentioned in Policy Schedule.\n(Along with amount)\n5. Policy Coverage B1. In-Patient Treatment - Hospitalisation for B10. Consumables Benefit Section (2)\nmore than 24 hrs.\nB11. In-Patient Treatment - Dental\nB2. Pre-Hospitalisation Expenses - 60 days B12. Second Opinion\nB3. Post-Hospitalisation Expenses - 90 days B13. Cumulative Bonus/No Claim Discount -\n50% increase in Cumulative Bonus for every\nB4. Day Care Procedures\nclaim free year. Maximum up to 100% of the\nB5. Organ Donor Sum Insured. Alternatively a no claim\ndiscount of 1% can be opted.\nB6. Domiciliary Treatment\nB7. AYUSH Benefit: In-Patient or Day Care Optional Cover (For applicability of this optional\nTreatment cover, please refer your Policy Schedule):\nB8. Ambulance Cover\nB14. Global Cover\nB9. Health Check-Up\nRegistered office: Peninsula Business Park, Tower A, 15th Floor, G.K Marg, Lower Parel, Mumbai - 400013, Maharashtra, India \u2022 24*7 Toll free No.: 1800 266 7780/1800 229 966 (For Senior Citizens) \u2022 Email: customersupport@tataaig.com\nWebsite: www.tataaig.com \u2022 IRDA of India Registration No.: 108 \u2022 CIN: U85110MH2000PLC128425 \u2022 REG-IMP-V1-300924 \u2022 TATA AIG MediCare Plus UIN: TATHLIP21253V022021\nPage 1 of 7",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Bounded visible original identity/grant/connected configuration review; not full rule inventory."
+        }
+      ],
+      "visually_reviewed_physical_pages": [],
+      "acquisition_provenance": [
+        {
+          "attempt_register": "research/registers/attempts/e995f8dbe4daed0637a7472706f43cab0985047ad5c49cbf4e4b24646d6d8b11.json",
+          "url": "https://www.tataaig.com/s3/Medi_Care_Plus_eef8916f2b.pdf",
+          "final_url": "https://www.tataaig.com/s3/Medi_Care_Plus_eef8916f2b.pdf",
+          "linking_url": "https://www.tataaig.com/downloads",
+          "acquired_at": "2026-09-10T11:55:56.761719+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "26ecda9b408960b8ea0a787e4e42d05de58eac8553010d091412bff2e49972f1"
+        }
+      ],
+      "original_sha256_verified": true,
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "source_issues": []
+    }
+  ],
+  "per_listing_results": [
+    {
+      "legacy_identity": "/health-insurance/tata-aig/elder-care/",
+      "legacy_name": "Elder Care",
+      "insurer_id": "tata-aig",
+      "family": "TATA AIG Elder Care",
+      "family_identity_supported": true,
+      "wording_sha256s": [
+        "6b8702f79c652e50a1b4a2ba7894fae7f1edbb02d40bd2399164670772e94419"
+      ],
+      "companion_cis_sha256s": [
+        "4c2dbb071f07607200453f5ddb769a996aa02d9c3d9f03df8a03a5bc1dbf51b6"
+      ],
+      "supporting_original_sha256s": [],
+      "observed_wording_uins": [
+        "TATHLIP23179V012223"
+      ],
+      "external_uin_assertions": [
+        {
+          "source_sha256": "4c2dbb071f07607200453f5ddb769a996aa02d9c3d9f03df8a03a5bc1dbf51b6",
+          "role": "CIS_original",
+          "uins": [
+            "TATHLIP23179V012223"
+          ]
+        }
+      ],
+      "variant_or_form_result": {
+        "status": "base_family_original_candidate",
+        "qualification": "Accepted customer configuration and exact historical legacy edition remain unresolved."
+      },
+      "source_document_versions": {
+        "status": "wording_identifiers_and_separate_directory_CIS_assertions",
+        "historical_version_reconciled": false
+      },
+      "original_bundle_roles": {
+        "wording": "Selected visible title and medical expense grant reviewed; full rules not inventoried",
+        "CIS": "Family-matched template reviewed, blanks not customer-selected facts",
+        "other_originals": "Exact applicable prospectus, annexures, endorsements/add-ons and issued underwriting schedule not reconciled as complete bundle"
+      },
+      "remaining_evidence": [
+        "Exact historical observation date and issued contract version remain unknown.",
+        "Full original pages/tables/footnotes, connected exceptions, endorsements and accepted customer configuration remain unreviewed.",
+        "Accepted customer configuration and exact historical legacy edition remain unresolved."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false
+    },
+    {
+      "legacy_identity": "/health-insurance/tata-aig/health-supercharge/",
+      "legacy_name": "Health Supercharge",
+      "insurer_id": "tata-aig",
+      "family": "TATA AIG Health Supercharge",
+      "family_identity_supported": true,
+      "wording_sha256s": [
+        "b388674a3162a9e0b7e3055ec7c6e79588a03cf08a2f360ae5c4807ea1f8e172"
+      ],
+      "companion_cis_sha256s": [
+        "9400822e7dee6dbe3e10825a6e6802290122fcd9ad737d82680b8dcab176c74d",
+        "b92001027268bb13b705227477f72200473aa09ed433b183cfd87e3f91eca82d"
+      ],
+      "supporting_original_sha256s": [],
+      "observed_wording_uins": [],
+      "external_uin_assertions": [
+        {
+          "source_sha256": "9400822e7dee6dbe3e10825a6e6802290122fcd9ad737d82680b8dcab176c74d",
+          "role": "CIS_original",
+          "uins": [
+            "TATHLIP24113V012324"
+          ]
+        },
+        {
+          "source_sha256": "b92001027268bb13b705227477f72200473aa09ed433b183cfd87e3f91eca82d",
+          "role": "CIS_original",
+          "uins": [
+            "TATHLIP24113V012324"
+          ]
+        }
+      ],
+      "variant_or_form_result": {
+        "status": "two_named_plans_generic_legacy_selection_unresolved",
+        "candidates": [
+          "Geo Plan",
+          "Value Plan"
+        ],
+        "qualification": "Wordings p42 and separate CIS name Geo/Value; generic legacy name selects neither. Keep special Valued Provider network, zone and interacting deductions scoped."
+      },
+      "source_document_versions": {
+        "status": "wording_identifiers_and_separate_directory_CIS_assertions",
+        "historical_version_reconciled": false
+      },
+      "original_bundle_roles": {
+        "wording": "Selected visible title and medical expense grant reviewed; full rules not inventoried",
+        "CIS": "Family-matched template reviewed, blanks not customer-selected facts",
+        "other_originals": "Exact applicable prospectus, annexures, endorsements/add-ons and issued underwriting schedule not reconciled as complete bundle"
+      },
+      "remaining_evidence": [
+        "Exact historical observation date and issued contract version remain unknown.",
+        "Full original pages/tables/footnotes, connected exceptions, endorsements and accepted customer configuration remain unreviewed.",
+        "Wordings p42 and separate CIS name Geo/Value; generic legacy name selects neither. Keep special Valued Provider network, zone and interacting deductions scoped.",
+        "No UIN found in native complete-PDF text or visible selected title-page footer. Official directory label and matching family CIS carry UIN separately; do not invent a PDF-observed UIN. Title-page footer visibly truncated in source.",
+        "Value Plan uses its own Valued Provider-Pan India network; standard network membership does not satisfy it. Geo and Value plan changes have directional/renewal restrictions.",
+        "Physical pages47-48 specify additive co-payments before aggregate deductible, with ailment-sub-limit exception suppressing zone/network co-pay but retaining age co-pay. Pages49-50 add age-entry/migration and accident/benefit exceptions. No universal deduction rule or customer payment inferred."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false
+    },
+    {
+      "legacy_identity": "/health-insurance/tata-aig/medicare/",
+      "legacy_name": "Medicare",
+      "insurer_id": "tata-aig",
+      "family": "TATA AIG MediCare",
+      "family_identity_supported": true,
+      "wording_sha256s": [
+        "e55f93cb36eb8262918325b0caf4432e331e75b15b3d4c5a3eb7ded809c77269"
+      ],
+      "companion_cis_sha256s": [
+        "09f509207758d576908da0a988ce4e814bfc70614ea43821f18ffec50040dc45"
+      ],
+      "supporting_original_sha256s": [],
+      "observed_wording_uins": [
+        "TATHLIP26053V042526"
+      ],
+      "external_uin_assertions": [
+        {
+          "source_sha256": "09f509207758d576908da0a988ce4e814bfc70614ea43821f18ffec50040dc45",
+          "role": "CIS_original",
+          "uins": [
+            "TATHLIP26053V042526"
+          ]
+        }
+      ],
+      "variant_or_form_result": {
+        "status": "base_family_original_candidate",
+        "qualification": "Accepted customer configuration and exact historical legacy edition remain unresolved."
+      },
+      "source_document_versions": {
+        "status": "wording_identifiers_and_separate_directory_CIS_assertions",
+        "historical_version_reconciled": false
+      },
+      "original_bundle_roles": {
+        "wording": "Selected visible title and medical expense grant reviewed; full rules not inventoried",
+        "CIS": "Family-matched template reviewed, blanks not customer-selected facts",
+        "other_originals": "Exact applicable prospectus, annexures, endorsements/add-ons and issued underwriting schedule not reconciled as complete bundle"
+      },
+      "remaining_evidence": [
+        "Exact historical observation date and issued contract version remain unknown.",
+        "Full original pages/tables/footnotes, connected exceptions, endorsements and accepted customer configuration remain unreviewed.",
+        "Accepted customer configuration and exact historical legacy edition remain unresolved."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false
+    },
+    {
+      "legacy_identity": "/health-insurance/tata-aig/medicare-lite/",
+      "legacy_name": "Medicare Lite",
+      "insurer_id": "tata-aig",
+      "family": "TATA AIG MediCare LITE",
+      "family_identity_supported": true,
+      "wording_sha256s": [
+        "218fc797925e0fb158bd87606e4d0edb00da2d7dbafab7cd4269cebc6cab96e1"
+      ],
+      "companion_cis_sha256s": [
+        "44e946483d893ad8bc63db5b5b9b41b3ed40846f4240d118206fe7fe463105fe"
+      ],
+      "supporting_original_sha256s": [],
+      "observed_wording_uins": [],
+      "external_uin_assertions": [
+        {
+          "source_sha256": "44e946483d893ad8bc63db5b5b9b41b3ed40846f4240d118206fe7fe463105fe",
+          "role": "CIS_original",
+          "uins": [
+            "TATHLIP24132V012324"
+          ]
+        }
+      ],
+      "variant_or_form_result": {
+        "status": "base_family_original_candidate",
+        "qualification": "Accepted customer configuration and exact historical legacy edition remain unresolved."
+      },
+      "source_document_versions": {
+        "status": "wording_identifiers_and_separate_directory_CIS_assertions",
+        "historical_version_reconciled": false
+      },
+      "original_bundle_roles": {
+        "wording": "Selected visible title and medical expense grant reviewed; full rules not inventoried",
+        "CIS": "Family-matched template reviewed, blanks not customer-selected facts",
+        "other_originals": "Exact applicable prospectus, annexures, endorsements/add-ons and issued underwriting schedule not reconciled as complete bundle"
+      },
+      "remaining_evidence": [
+        "Exact historical observation date and issued contract version remain unknown.",
+        "Full original pages/tables/footnotes, connected exceptions, endorsements and accepted customer configuration remain unreviewed.",
+        "Accepted customer configuration and exact historical legacy edition remain unresolved.",
+        "No UIN found in native complete-PDF text or visible selected title-page footer. Official directory label and matching family CIS carry UIN separately; do not invent a PDF-observed UIN. Title-page footer visibly truncated in source."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false
+    },
+    {
+      "legacy_identity": "/health-insurance/tata-aig/medicare-plus-super-top-up/",
+      "legacy_name": "Medicare Plus Super Top Up",
+      "insurer_id": "tata-aig",
+      "family": "TATA AIG MediCare Plus",
+      "family_identity_supported": true,
+      "wording_sha256s": [
+        "2e27c2193486e94ae2b51302ac83c834e95141713124ac5335077c2c3d957858"
+      ],
+      "companion_cis_sha256s": [
+        "26ecda9b408960b8ea0a787e4e42d05de58eac8553010d091412bff2e49972f1"
+      ],
+      "supporting_original_sha256s": [
+        "5f4734006885168be0d5afe171bf7e54097e9de9b5fc40ba5f3f2fee15ad5b5a"
+      ],
+      "observed_wording_uins": [
+        "TATHLIP21253V022021"
+      ],
+      "external_uin_assertions": [
+        {
+          "source_sha256": "26ecda9b408960b8ea0a787e4e42d05de58eac8553010d091412bff2e49972f1",
+          "role": "CIS_original",
+          "uins": [
+            "TATHLIP21253V022021"
+          ]
+        }
+      ],
+      "variant_or_form_result": {
+        "status": "base_family_original_candidate",
+        "qualification": "Accepted customer configuration and exact historical legacy edition remain unresolved."
+      },
+      "source_document_versions": {
+        "status": "wording_identifiers_and_separate_directory_CIS_assertions",
+        "historical_version_reconciled": false
+      },
+      "original_bundle_roles": {
+        "wording": "Selected visible title and medical expense grant reviewed; full rules not inventoried",
+        "CIS": "Family-matched template reviewed, blanks not customer-selected facts",
+        "other_originals": "Exact applicable prospectus, annexures, endorsements/add-ons and issued underwriting schedule not reconciled as complete bundle"
+      },
+      "remaining_evidence": [
+        "Exact historical observation date and issued contract version remain unknown.",
+        "Full original pages/tables/footnotes, connected exceptions, endorsements and accepted customer configuration remain unreviewed.",
+        "Accepted customer configuration and exact historical legacy edition remain unresolved.",
+        "Source has visually irregular overprinted text and native garbling on some pages. Selected title/grant visually verified; page7 columns stored separately; unread pages require visual/OCR review."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false
+    }
+  ],
+  "verification": {
+    "original_hashes_verified": 13,
+    "visible_original_regions": 27,
+    "visually_reviewed_pages": 8
+  },
+  "acquisition_delta": "One 67548023-byte Medicare LITE wording acquired with isolated100MiB limit; prior size-limit failure preserved. Remaining originals already held.",
+  "historical_bundles_complete": 0,
+  "full_rule_inventory_complete": false,
+  "review_correction": "Plus physicalpage7 midpoint crops replaced by true body columns and separate footer; reviewer found region semantics error despite lexical match."
+}

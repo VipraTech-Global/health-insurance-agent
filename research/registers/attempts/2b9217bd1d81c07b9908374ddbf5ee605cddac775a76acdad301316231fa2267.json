@@ -1,0 +1,65 @@
+{
+  "acquired_at": "2026-09-10T11:39:46.308487+00:00",
+  "associations": [],
+  "byte_count": 376688,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://customer-portal-assets.hdfcergo.com//documents/RevisedProductList_25_08_2026-94109879598.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "hdfc-ergo",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 146,
+  "linking_url": "https://www.hdfcergo.com/download/policy-wordings/health",
+  "page_count": 5,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "c31ffdc2c209bf49d750da76394a2194ebb2c4064550d6136ce267d7b0cbe671",
+  "status": "acquired",
+  "url": "https://customer-portal-assets.hdfcergo.com//documents/RevisedProductList_25_08_2026-94109879598.pdf"
+}

@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:56:29.249120+00:00",
+  "associations": [],
+  "byte_count": 107730,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/indv_acc_and_sickness_hospital_cash_tariff_chart_7c4fef2f36.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 690,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "6040071b0ae8e781e352f80d10bd575b86a0d418a8ab24487d3b0c1f01cf980c",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/indv_acc_and_sickness_hospital_cash_tariff_chart_7c4fef2f36.pdf"
+}

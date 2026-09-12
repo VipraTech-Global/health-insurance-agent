@@ -1,0 +1,137 @@
+{
+  "acquired_at": "2026-09-10T11:57:57.526110+00:00",
+  "associations": [],
+  "byte_count": 877465,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/Hospicash_Flexi_Insurance_Policy_Wording_cdr15_rev_KEN_62ad313e82.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 735,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 14,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 11,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 12,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 13,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 14,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "ca78c14030214bb7d36b0dc7d14a3575b1a9780a909d0464790cd873fae8b7ff",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/Hospicash_Flexi_Insurance_Policy_Wording_cdr15_rev_KEN_62ad313e82.pdf"
+}

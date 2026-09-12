@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:52:45.318112+00:00",
+  "associations": [],
+  "byte_count": 203002,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://stgaccinwbsprdlrs01.blob.core.windows.net/nhilprd/Insurance_Ombudsman_5ef59259f0_336e339743.pdf?sv=2025-05-05&spr=https&st=2025-07-14T17%3A07%3A41Z&se=2035-07-12T17%3A07%3A41Z&sr=b&sp=r&sig=VkZHC6vQ68CYpzJwcjfUaGFJ69x6TMt443KUFKx90HI%3D",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "narayana",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 344,
+  "linking_url": "https://www.narayanahealth.insurance/customer-support",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.2499787,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.5
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.2499787,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.5
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.2499787,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.5
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "e93e8af4771857b896ab4e088221fce4acc78f99ad9319f68a9634e697f902d9",
+  "status": "acquired",
+  "url": "https://stgaccinwbsprdlrs01.blob.core.windows.net/nhilprd/Insurance_Ombudsman_5ef59259f0_336e339743.pdf?sv=2025-05-05&spr=https&st=2025-07-14T17%3A07%3A41Z&se=2035-07-12T17%3A07%3A41Z&sr=b&sp=r&sig=VkZHC6vQ68CYpzJwcjfUaGFJ69x6TMt443KUFKx90HI%3D"
+}

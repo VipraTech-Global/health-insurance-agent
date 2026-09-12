@@ -1,0 +1,137 @@
+{
+  "acquired_at": "2026-09-10T11:55:12.375169+00:00",
+  "associations": [],
+  "byte_count": 762061,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/Livestock_Micro_Insurance_Scheme_Retail_6b8854b753.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1412,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 14,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 11,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 12,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 13,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 14,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "cb9c809f7ae9047fed0ee657cc37d3d32a0d64ea7a510b73b15259bd40157bd7",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/Livestock_Micro_Insurance_Scheme_Retail_6b8854b753.pdf"
+}

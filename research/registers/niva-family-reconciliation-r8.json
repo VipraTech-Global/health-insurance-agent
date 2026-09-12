@@ -1,0 +1,1715 @@
+{
+  "artifact_version": "niva-family-reconciliation/r8",
+  "generated_at_utc": "2026-09-10T17:11:19.659699+00:00",
+  "reviewer": "/root/research_code_review",
+  "boundary": "Five families / eight existing legacy rows; bounded original identity and scope classification, not full source closure, rule inventory, customer advice or evaluation. Cumulative registers and earlier evidence preserved.",
+  "source_register": "research/registers/sources.json",
+  "baseline_scope_register": "research/registers/document-scope-r7.json",
+  "counts": {
+    "families": 5,
+    "legacy_rows": 8,
+    "reviewed_wordings": 6,
+    "reviewed_matching_CIS": 6,
+    "reviewed_misnamed_other_product_CIS": 1,
+    "reviewed_older_prospectus": 1,
+    "reviewed_unique_PDFs": 14,
+    "new_manual_PDF_classifications": 11,
+    "previously_manual_PDFs_rechecked": 3,
+    "new_medical_expense_wordings": 6,
+    "new_supporting_PDFs": 5,
+    "new_acquisitions": 0,
+    "new_access_failures": 0,
+    "historical_version_or_bundle_completed_rows": 0
+  },
+  "documents": [
+    {
+      "source_sha256": "5aaff91835ef2dbfeedce2d63c5bbdffc3ab62e3fea474cc9dfa34a9bcd80823",
+      "insurer_id": "niva-bupa",
+      "product_or_heading": "GoActive",
+      "heading_normalization": "Display heading normalized from original; exact native-text title context retained below.",
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Operative inpatient medical-expense indemnity grant read in original.",
+      "observed_uins": [
+        "NBHHLIP26046V032526"
+      ],
+      "observed_uin_meaning": "Identifier printed in this artifact; neither effective-date nor historical-issued-policy applicability inferred.",
+      "page_count": 69,
+      "selected_physical_pages_read_for_identity_scope": [
+        1,
+        9,
+        10
+      ],
+      "visually_reviewed_physical_pages": [],
+      "review_extent": "Bounded identity, operative grant and selected configuration passages; not an exhaustive page/rule review.",
+      "original_hash_verified": true,
+      "already_in_manual_scope_r7": false,
+      "identity_evidence": {
+        "physical_page": 1,
+        "exact_passage": "Product Name: GoActive, Product UIN: NBHHLIP26046V032526\nGoActive\nPolicy Wordings\n"
+      },
+      "acquisition_provenance": [
+        {
+          "source_id": "ed773d6a667ec21f890c880efe685d2d43ac8f120d73e5dc8b58bf7ae6107012",
+          "url": "https://transactions.nivabupa.com/pages/doc/policy_wording/goactive-policy-document.pdf?v=1.1",
+          "acquisition": {
+            "sha256": "5aaff91835ef2dbfeedce2d63c5bbdffc3ab62e3fea474cc9dfa34a9bcd80823",
+            "acquired_at": "2026-09-10T11:37:53.006905+00:00",
+            "status": "acquired",
+            "http_status": 200,
+            "final_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/goactive-policy-document.pdf?v=1.1",
+            "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+            "byte_count": 302110,
+            "content_type": "application/pdf"
+          },
+          "official_discovery_observations": [
+            {
+              "label": "GoActive TM Policy Wording",
+              "raw_href": "/pages/doc/policy_wording/goactive-policy-document.pdf?v=1.1",
+              "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+              "page_sha256": "6f6eb6c7c060942dd5d84cbf7fb1025d10ab5367f5798e27d9f0aac677a1710b"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 9,
+          "locator": "We will indemnify",
+          "exact_passage": "We will indemnify the Medical Expenses incurred on the Insured Person’s Hospitalization during the Policy Period following an Illness \nor Injury that occurs during the Policy Period, provided that:\na.\t\nThe Hospitalization is Medically Necessary and advised by Medical Practitioner and the treatment follows Evidence Based Clinical \nPractices and Standard Treatment Guidelines.\nb.\nThe Medical Expenses incurred are Reasonable and Customary Charges for one or more of the following:\ni.\nRoom Rent;\nii.\nNursing charges for nursing services under Hospital",
+          "interpretation": "Supports medical-expense scope only; all connected conditions, exclusions and schedule choices remain applicable.",
+          "passage_is_verbatim_native_text": true
+        }
+      ],
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Not exhaustively inventoried; optional benefit components must not be conflated with medical-expense grants."
+    },
+    {
+      "source_sha256": "f0d9e3ddc037784a10e11d6684484be34ea3a0c8f720aed5a8ea6b820d7fd62d",
+      "insurer_id": "niva-bupa",
+      "product_or_heading": "Health Companion",
+      "heading_normalization": "Display heading normalized from original; exact native-text title context retained below.",
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Operative inpatient medical-expense indemnity grant read in original.",
+      "observed_uins": [
+        "NBHHLIP26051V092526"
+      ],
+      "observed_uin_meaning": "Identifier printed in this artifact; neither effective-date nor historical-issued-policy applicability inferred.",
+      "page_count": 27,
+      "selected_physical_pages_read_for_identity_scope": [
+        1,
+        5
+      ],
+      "visually_reviewed_physical_pages": [
+        5
+      ],
+      "review_extent": "Bounded identity, operative grant and selected configuration passages; not an exhaustive page/rule review.",
+      "original_hash_verified": true,
+      "already_in_manual_scope_r7": false,
+      "identity_evidence": {
+        "physical_page": 1,
+        "exact_passage": "Product Name: Health Companion, Product UIN: NBHHLIP26051V092526\nHealth Companion \nPolicy Document Variant \n2022 and Variant 2023\n"
+      },
+      "acquisition_provenance": [
+        {
+          "source_id": "bd54731aa9e249c946325bdc9dfde944264d796ed7e7064b05d46185e206e403",
+          "url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Health-Companion-Variant2022-PolicyWording.pdf?v=1.4",
+          "acquisition": {
+            "sha256": "f0d9e3ddc037784a10e11d6684484be34ea3a0c8f720aed5a8ea6b820d7fd62d",
+            "acquired_at": "2026-09-10T11:37:53.521613+00:00",
+            "status": "acquired",
+            "http_status": 200,
+            "final_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Health-Companion-Variant2022-PolicyWording.pdf?v=1.4",
+            "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+            "byte_count": 163585,
+            "content_type": "application/pdf"
+          },
+          "official_discovery_observations": [
+            {
+              "label": "Health Companion Policy Wording - Variant 2022",
+              "raw_href": "/pages/doc/policy_wording/Health-Companion-Variant2022-PolicyWording.pdf?v=1.4",
+              "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+              "page_sha256": "6f6eb6c7c060942dd5d84cbf7fb1025d10ab5367f5798e27d9f0aac677a1710b"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 5,
+          "locator": "We will pay the expenses incurred",
+          "exact_passage": "We will pay the expenses incurred by you on treatment (Naturally this excludes expenses not linked to treatment like food, \nbeverage, toiletries and cosmetics) if you were:\n•\t Admitted for 2 hours or more  \nNOTE: minimum 24 hours admission in AYUSH Hospital MUST for AYUSH treatment \n•\t You had Dialysis (Hemo / Peritoneal), Radiotherapy or Chemotherapy for cancer\n\t\nNOTE: \n-\t\nAdmission in a hospital happens in what is called wards or rooms of various categories, ICUs, CCUs, NICU etc or in Day \ncare.\n-\t\nFor Variant 2023 there is a room type cappin",
+          "interpretation": "Supports medical-expense scope only; all connected conditions, exclusions and schedule choices remain applicable.",
+          "passage_is_verbatim_native_text": true
+        },
+        {
+          "physical_page": 5,
+          "locator": "For Variant 2023",
+          "exact_passage": "For Variant 2023 there is a room type capping up to Shared Room. 20% co-payment will apply in case of higher room \ncategory\n\t\nIMPORTANT: \ni.\t We will NOT pay, even if you were admitted, if there was no treatmen",
+          "interpretation": "A variant-specific restriction within the 2022/2023 wording. Preserve the variant dimension even when UIN matches the 1/2/3/Family First wording.",
+          "passage_is_verbatim_native_text": true
+        }
+      ],
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Not exhaustively inventoried; optional benefit components must not be conflated with medical-expense grants."
+    },
+    {
+      "source_sha256": "209a0e88f19e44f5b414955b014856d68235a3fbbcd3aa158a2183e2a4622303",
+      "insurer_id": "niva-bupa",
+      "product_or_heading": "Health Companion",
+      "heading_normalization": "Display heading normalized from original; exact native-text title context retained below.",
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Operative inpatient medical-expense indemnity grant read in original.",
+      "observed_uins": [
+        "NBHHLIP26051V092526"
+      ],
+      "observed_uin_meaning": "Identifier printed in this artifact; neither effective-date nor historical-issued-policy applicability inferred.",
+      "page_count": 37,
+      "selected_physical_pages_read_for_identity_scope": [
+        1,
+        8
+      ],
+      "visually_reviewed_physical_pages": [],
+      "review_extent": "Bounded identity, operative grant and selected configuration passages; not an exhaustive page/rule review.",
+      "original_hash_verified": true,
+      "already_in_manual_scope_r7": false,
+      "identity_evidence": {
+        "physical_page": 1,
+        "exact_passage": "Product Name: Health Companion, Product UIN: NBHHLIP26051V092526\nHealth Companion \nPolicy Document  \nVariant 1, 2, 3, Family First\n"
+      },
+      "acquisition_provenance": [
+        {
+          "source_id": "ad02db1e6a8bf70937f7888a166bb8d336f57af50f1e68f45e2ef5ffae6bba08",
+          "url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Health-Companion_Variant-1-2-3-EFF_Policy-Wording.pdf?v=1.4",
+          "acquisition": {
+            "sha256": "209a0e88f19e44f5b414955b014856d68235a3fbbcd3aa158a2183e2a4622303",
+            "acquired_at": "2026-09-10T11:37:53.783491+00:00",
+            "status": "acquired",
+            "http_status": 200,
+            "final_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Health-Companion_Variant-1-2-3-EFF_Policy-Wording.pdf?v=1.4",
+            "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+            "byte_count": 211127,
+            "content_type": "application/pdf"
+          },
+          "official_discovery_observations": [
+            {
+              "label": "Health Companion variant 1,2,3, Family First",
+              "raw_href": "/pages/doc/policy_wording/Health-Companion_Variant-1-2-3-EFF_Policy-Wording.pdf?v=1.4",
+              "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+              "page_sha256": "6f6eb6c7c060942dd5d84cbf7fb1025d10ab5367f5798e27d9f0aac677a1710b"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 8,
+          "locator": "We will indemnify",
+          "exact_passage": "We will indemnify the Medical Expenses incurred on the Insured Person’s Hospitalization during the Policy Period following an \nIllness or Injury that occurs during the Policy Period, provided that:\na.\t The Hospitalization is Medically Necessary and advised and follows Evidence Based Clinical Practices and Standard Treatment \nGuidelines.\nb.\t The Medical Expenses incurred are Reasonable and Customary Charges for one or more of the following:\ni.\t\nRoom Rent;\nii.\t Nursing charges for Hospitalization as an Inpatient excluding private nursing charges;",
+          "interpretation": "Supports medical-expense scope only; all connected conditions, exclusions and schedule choices remain applicable.",
+          "passage_is_verbatim_native_text": true
+        }
+      ],
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Not exhaustively inventoried; optional benefit components must not be conflated with medical-expense grants."
+    },
+    {
+      "source_sha256": "4cac748cb130ac53576b79853d6979c34a62eb67a1b8d22b811f56ed088be69f",
+      "insurer_id": "niva-bupa",
+      "product_or_heading": "Health Premia",
+      "heading_normalization": "Display heading normalized from original; exact native-text title context retained below.",
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Operative inpatient medical-expense indemnity grant read in original.",
+      "observed_uins": [
+        "MAXHLIP21176V022021"
+      ],
+      "observed_uin_meaning": "Identifier printed in this artifact; neither effective-date nor historical-issued-policy applicability inferred.",
+      "page_count": 109,
+      "selected_physical_pages_read_for_identity_scope": [
+        1,
+        10,
+        16,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77
+      ],
+      "visually_reviewed_physical_pages": [
+        70,
+        74
+      ],
+      "review_extent": "Bounded identity, operative grant and selected configuration passages; not an exhaustive page/rule review.",
+      "original_hash_verified": true,
+      "already_in_manual_scope_r7": false,
+      "identity_evidence": {
+        "physical_page": 1,
+        "exact_passage": "Product Name: Health Premia, Product UIN: MAXHLIP21176V022021\nHealth Premia \nPolicy Wordings\n"
+      },
+      "acquisition_provenance": [
+        {
+          "source_id": "7d7ac7205b45015cc3bfdacde95080ca32bbe387981d1498fc752b1090113dd9",
+          "url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Health-Premia-Policy-Wording.pdf?v=1.0",
+          "acquisition": {
+            "sha256": "4cac748cb130ac53576b79853d6979c34a62eb67a1b8d22b811f56ed088be69f",
+            "acquired_at": "2026-09-10T11:37:54.021382+00:00",
+            "status": "acquired",
+            "http_status": 200,
+            "final_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Health-Premia-Policy-Wording.pdf?v=1.0",
+            "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+            "byte_count": 381842,
+            "content_type": "application/pdf"
+          },
+          "official_discovery_observations": [
+            {
+              "label": "Health Premia Policy Wording",
+              "raw_href": "/pages/doc/policy_wording/Health-Premia-Policy-Wording.pdf?v=1.0",
+              "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+              "page_sha256": "6f6eb6c7c060942dd5d84cbf7fb1025d10ab5367f5798e27d9f0aac677a1710b"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 10,
+          "locator": "We will indemnify",
+          "exact_passage": "We will indemnify the Medical Expenses incurred for one or more of the following due to the Insured Person’s Hospitalization during \nthe Policy Period following an Illness or Injury:\na.\t\nRoom Rent: Room boarding and nursing charges during Hospitalization as charged by the Hospital where the Insured Person \navailed medical treatment;\n",
+          "interpretation": "Supports medical-expense scope only; all connected conditions, exclusions and schedule choices remain applicable.",
+          "passage_is_verbatim_native_text": true
+        },
+        {
+          "physical_page": 70,
+          "locator": "Individual & Family Floater variant",
+          "exact_passage": "Individual & Family Floater variant\nPlans\nSilver\nGold\nPlatinum\nBase Sum Insured  \n(in Rs)\n5 lacs\n7.5 lacs\n10 lacs\n15 lacs\n20  \nlacs\n30 lacs 50 lacs\n1 cr\n2 cr\n3 cr\nBenefits\nInpatient care\nCovered up to Sum Insured\nRo",
+          "interpretation": "Silver, Gold and Platinum occur under Individual & Family Floater; visually checked column grouping: Silver 5/7.5 lakh, Gold 10/15/20/30/50 lakh, Platinum 1/2/3 crore.",
+          "passage_is_verbatim_native_text": true
+        },
+        {
+          "physical_page": 74,
+          "locator": "Family First variant",
+          "exact_passage": "Family First variant\nPlans\nSilver\nGold\nPlatinum\nBase Individual \nSum Insured  \n(in Rs & per Insured \nPerson)\n1 Lacs, 2 Lacs, 3 Lacs, 4 Lacs & \n5 Lacs\n5 Lacs, 6 Lacs, 7 Lacs, 8 Lacs, 9 \nLacs & 10Lacs\n10 Lacs, 11 Lacs, 12 Lacs, 13 Lacs, 14 Lacs \n& 15 Lacs\nFloater Sum Insured \n(in Rs) – (available \non a floating \nbasis over Base \nIndividual Sum \nInsured)\nNumber of Insured Persons (value to be considered as 10 for more than 6 members) * Base Individual Sum \nInsured * Multiplier factor (1.5 for 2 member policy & 1 for others)\nBenefits\nInpatient care\nCovered up to Sum Insured\nRoom rent\nOption 1: Rs 3,000 per day or \nShared Room; whichever is lower \nOption 2: Rs 5,000 per day or \nSingle Private Room; whichever \nis lower\nCovered up to Sum Insured (except \nfor Suite or",
+          "interpretation": "Same three tiers occur under Family First. Tier identity does not select cover form, individual base pool or floater pool. No calculation or full applicability claim.",
+          "passage_is_verbatim_native_text": true
+        }
+      ],
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Not exhaustively inventoried; optional benefit components must not be conflated with medical-expense grants."
+    },
+    {
+      "source_sha256": "768826d18ad9af0f5a5dd7440c5c5f1d3c1a1cf320450ef76c8c7081dff533bf",
+      "insurer_id": "niva-bupa",
+      "product_or_heading": "Health Pulse",
+      "heading_normalization": "Display heading normalized from original; exact native-text title context retained below.",
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Operative inpatient medical-expense indemnity grant read in original.",
+      "observed_uins": [
+        "NBHHLIP27055V052627"
+      ],
+      "observed_uin_meaning": "Identifier printed in this artifact; neither effective-date nor historical-issued-policy applicability inferred.",
+      "page_count": 63,
+      "selected_physical_pages_read_for_identity_scope": [
+        1,
+        7,
+        8,
+        49,
+        50
+      ],
+      "visually_reviewed_physical_pages": [
+        49,
+        50
+      ],
+      "review_extent": "Bounded identity, operative grant and selected configuration passages; not an exhaustive page/rule review.",
+      "original_hash_verified": true,
+      "already_in_manual_scope_r7": false,
+      "identity_evidence": {
+        "physical_page": 1,
+        "exact_passage": "Product Name: Health Pulse, Product UIN: NBHHLIP27055V052627\nHealth Pulse\nPolicy Document\n"
+      },
+      "acquisition_provenance": [
+        {
+          "source_id": "44798cbf5e96036470ed764e596d37191dd832e31e346afe5188dd869a311c58",
+          "url": "https://transactions.nivabupa.com/pages/doc/policy_wording/health-pulse-t-and-c.pdf?v=1.2",
+          "acquisition": {
+            "sha256": "768826d18ad9af0f5a5dd7440c5c5f1d3c1a1cf320450ef76c8c7081dff533bf",
+            "acquired_at": "2026-09-10T11:37:54.300957+00:00",
+            "status": "acquired",
+            "http_status": 200,
+            "final_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/health-pulse-t-and-c.pdf?v=1.2",
+            "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+            "byte_count": 542407,
+            "content_type": "application/pdf"
+          },
+          "official_discovery_observations": [
+            {
+              "label": "Health Pulse Policy Wording",
+              "raw_href": "/pages/doc/policy_wording/health-pulse-t-and-c.pdf?v=1.2",
+              "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+              "page_sha256": "6f6eb6c7c060942dd5d84cbf7fb1025d10ab5367f5798e27d9f0aac677a1710b"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 7,
+          "locator": "We will indemnify",
+          "exact_passage": "We will indemnify the Medical Expenses incurred for one or more of the following due to the Insured Person’s Hospitalization \nduring the Policy Period following an Illness or Injury:\ni.\nRoom Rent: Room boarding and nursing charges during Hospitalization as charged by the Hospital where the Insured Person\navailed medical treatment;\nii.\nMedical Practitioners’ fees, excluding any charges or fees for Standby Services;\niii.\nInvestigative tests or diagnostic procedures directly related to the Insured Event which led to the current Hospitalization;\niv",
+          "interpretation": "Supports medical-expense scope only; all connected conditions, exclusions and schedule choices remain applicable.",
+          "passage_is_verbatim_native_text": true
+        },
+        {
+          "physical_page": 49,
+          "locator": "Classic Plan",
+          "exact_passage": "Classic Plan\nEnhanced Plan\nBase Sum Insured (SI) per Policy \nYear (in Lacs)\n3L/4L\n5L/7.5L/10L/ \n15L/20L/25L\n3L/4L\n5L/7.5L/10L/ \n15L/20L/25L\nBase Cover Benefits\nIn-Patient Treatment",
+          "interpretation": "Classic and Enhanced are explicit plan names with sum-insured subcolumns; visual grid verified.",
+          "passage_is_verbatim_native_text": true
+        },
+        {
+          "physical_page": 50,
+          "locator": "Co-Payment",
+          "exact_passage": "Co-Payment\n20% co-payment applicable for treatment in Delhi \nNCR, Mumbai (including Navi Mumbai and Thane), \nKolkata and Gujarat.\nNo co-payment\nOptional Benefits (which may be added at customer level at an addi",
+          "interpretation": "Table associates geographic co-payment with Classic and no co-payment in that row with Enhanced; not a universal exemption from every deduction.",
+          "passage_is_verbatim_native_text": true
+        }
+      ],
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Not exhaustively inventoried; optional benefit components must not be conflated with medical-expense grants."
+    },
+    {
+      "source_sha256": "2e4c4347525b5b1f87d54c6c38a8e034e46c3c833e1f829f0e1b0041685b7c6a",
+      "insurer_id": "niva-bupa",
+      "product_or_heading": "Health Recharge",
+      "heading_normalization": "Display heading normalized from original; exact native-text title context retained below.",
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Operative inpatient medical-expense indemnity grant read in original.",
+      "observed_uins": [
+        "NBHHLIP22156V032122"
+      ],
+      "observed_uin_meaning": "Identifier printed in this artifact; neither effective-date nor historical-issued-policy applicability inferred.",
+      "page_count": 50,
+      "selected_physical_pages_read_for_identity_scope": [
+        1,
+        2,
+        7,
+        8,
+        24,
+        40,
+        41
+      ],
+      "visually_reviewed_physical_pages": [
+        40
+      ],
+      "review_extent": "Bounded identity, operative grant and selected configuration passages; not an exhaustive page/rule review.",
+      "original_hash_verified": true,
+      "already_in_manual_scope_r7": false,
+      "identity_evidence": {
+        "physical_page": 1,
+        "exact_passage": "Product Name: Health Recharge, Product UIN: NBHHLIP22156V032122\nHealth Recharge\nPolicy Wordings\n"
+      },
+      "acquisition_provenance": [
+        {
+          "source_id": "720668ea22a8225f3fcd185ee882bb927d9acd021f27163847ed2508d5120857",
+          "url": "https://transactions.nivabupa.com/pages/doc/policy_wording/health-recharge-t-and-c.pdf?v=1.0",
+          "acquisition": {
+            "sha256": "2e4c4347525b5b1f87d54c6c38a8e034e46c3c833e1f829f0e1b0041685b7c6a",
+            "acquired_at": "2026-09-10T11:37:54.528990+00:00",
+            "status": "acquired",
+            "http_status": 200,
+            "final_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/health-recharge-t-and-c.pdf?v=1.0",
+            "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+            "byte_count": 195105,
+            "content_type": "application/pdf"
+          },
+          "official_discovery_observations": [
+            {
+              "label": "Health Recharge Policy Wording",
+              "raw_href": "/pages/doc/policy_wording/health-recharge-t-and-c.pdf?v=1.0",
+              "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+              "page_sha256": "6f6eb6c7c060942dd5d84cbf7fb1025d10ab5367f5798e27d9f0aac677a1710b"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 7,
+          "locator": "We will indemnify",
+          "exact_passage": "We will indemnify the Medical Expenses incurred for one or more of the following due to the Insured Person’s Hospitalization during \nthe Policy Period following an Illness or Injury:\ni.\t\nRoom Rent;\nii.\t\nRoom boarding and nursing charges during Hospitalization as charged by the Hospital where the Insured Person availed medical \ntreatment;\niii.\t Medical Practitioners’ fees, excluding any charges or fees for Standby Services;\n",
+          "interpretation": "Supports medical-expense scope only; all connected conditions, exclusions and schedule choices remain applicable.",
+          "passage_is_verbatim_native_text": true
+        },
+        {
+          "physical_page": 40,
+          "locator": "Annual aggregate Deductible",
+          "exact_passage": "Annual aggregate Deductible\nE-saver: 10k, 25k, 50k \nSuper Top-up: 1L to 10L in multiples of 1L\nBaseline cover benefits\nI",
+          "interpretation": "Super Top-up is expressly a named deductible option group, alongside E-saver; not merely a URL-derived label.",
+          "passage_is_verbatim_native_text": true
+        },
+        {
+          "physical_page": 24,
+          "locator": "5.1",
+          "exact_passage": "5.1. \n5.1\t\nAnnual Aggregate Deductible\nThe Insured Person shall bear on his/her own account an amount equal to the Deductible specified in the Policy Schedule for all \nadmissible claim amounts We assess to be payable by Us in respect of all claims made by that Insured Person in a Policy Year. It is \nagreed that Our liability to make payment under the Policy in respect of any claim made in that Policy Year will only commence once \nthe Deductible has been exhausted. \nIt is further agreed that:\na.\t\nDeductible will not apply to any claim under Section 3.9 (e-Consultation), Section 4.1 (Personal Accident Cover) and Section 4.2 \n(Critical Illness Cover).\nb.\t\nDeductible option can be altered without any medical underwriting or pre policy medical check-up, subject to the following \nconditions:\ni.\t This option can be availed only once in a lifetime and at the time of Renewal, post completion of 5 Policy Years; and\nii.\t The eldest membe",
+          "interpretation": "Deductible concerns admissible claims in a policy year and names that Insured Person. Do not silently infer family-pooled aggregation from family-floater sum insured.",
+          "passage_is_verbatim_native_text": true
+        }
+      ],
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Not exhaustively inventoried; optional benefit components must not be conflated with medical-expense grants."
+    },
+    {
+      "source_sha256": "0c6c3e610c62c036985b578f5ef27971bd835b23693f7f75c38e4bf05896a1cb",
+      "insurer_id": "niva-bupa",
+      "product_or_heading": "GoActive",
+      "heading_normalization": "Display heading normalized from original; exact native-text title context retained below.",
+      "document_role": "customer_information_sheet",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Product-linked medical-expense summary or prospectus; supporting evidence, not a standalone complete contract.",
+      "observed_uins": [
+        "NBHHLIP26046V032526"
+      ],
+      "observed_uin_meaning": "Identifier printed in this artifact; neither effective-date nor historical-issued-policy applicability inferred.",
+      "page_count": 13,
+      "selected_physical_pages_read_for_identity_scope": [
+        1
+      ],
+      "visually_reviewed_physical_pages": [],
+      "review_extent": "Bounded identity, operative grant and selected configuration passages; not an exhaustive page/rule review.",
+      "original_hash_verified": true,
+      "already_in_manual_scope_r7": false,
+      "identity_evidence": {
+        "physical_page": 1,
+        "exact_passage": " \nProduct Name: GoActive Product UIN: NBHHLIP26046V032526 \nCustomer Information Sheet/ Know Your Policy \nThis document provides key information about your policy. You are advised to go through your policy \ndocument \nSl. \nN\no \nTitle \nDescription \nPolicy \nClause \nNumbe\nr \n1 \nName of Insurance \nProduct/ Policy \nGoActive \n  \n2 \nPolicy Number \n<> \n  \n3 "
+      },
+      "acquisition_provenance": [
+        {
+          "source_id": "b55931153a866546b6bb5a5c6a6585a8d8603f6ecc415c8c2c28e7a6f6b7e109",
+          "url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_GoActive.pdf",
+          "acquisition": {
+            "sha256": "0c6c3e610c62c036985b578f5ef27971bd835b23693f7f75c38e4bf05896a1cb",
+            "acquired_at": "2026-09-10T11:52:20.054528+00:00",
+            "status": "acquired",
+            "http_status": 200,
+            "final_url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_GoActive.pdf",
+            "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+            "byte_count": 270651,
+            "content_type": "application/pdf"
+          },
+          "official_discovery_observations": [
+            {
+              "label": "GoActive",
+              "raw_href": "/pages/doc/Customer-Information/CIS_GoActive.pdf",
+              "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+              "page_sha256": "6f6eb6c7c060942dd5d84cbf7fb1025d10ab5367f5798e27d9f0aac677a1710b"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "locator": "Hospital admission longer",
+          "exact_passage": "Hospital admission longer than 24 hrs \n3.1 \n·       Related medical expenses up to Sum Insured \nincurred 90 days prior to hospitalization  \n3.2 \n·       Related medical expenses incurred up to Sum \nInsured within 180 days from date of discharge \n3.3 \n·       Procedures requiring less than 24 hours \n",
+          "interpretation": "Original CIS summarizes a medical-expense grant; matching UIN alone does not establish clause-by-clause agreement or customer-specific selection.",
+          "passage_is_verbatim_native_text": true
+        }
+      ],
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Not exhaustively inventoried; optional benefit components must not be conflated with medical-expense grants."
+    },
+    {
+      "source_sha256": "288e68ac0a40b2cd5e58f95f9909480e6f0fc9e6f99ce60753bae08b4c251e64",
+      "insurer_id": "niva-bupa",
+      "product_or_heading": "Health Companion",
+      "heading_normalization": "Display heading normalized from original; exact native-text title context retained below.",
+      "document_role": "customer_information_sheet",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Product-linked medical-expense summary or prospectus; supporting evidence, not a standalone complete contract.",
+      "observed_uins": [
+        "NBHHLIP26051V092526"
+      ],
+      "observed_uin_meaning": "Identifier printed in this artifact; neither effective-date nor historical-issued-policy applicability inferred.",
+      "page_count": 11,
+      "selected_physical_pages_read_for_identity_scope": [
+        1
+      ],
+      "visually_reviewed_physical_pages": [],
+      "review_extent": "Bounded identity, operative grant and selected configuration passages; not an exhaustive page/rule review.",
+      "original_hash_verified": true,
+      "already_in_manual_scope_r7": false,
+      "identity_evidence": {
+        "physical_page": 1,
+        "exact_passage": "Health Companion Variant 2022 and variant 2023  \nCustomer Information Sheet \nPage 1 of 11 \n \nProduct Name: Health Companion | Product UIN: NBHHLIP26051V092526 \nCustomer Information Sheet/ Know Your Policy \nThis document provides key information about your policy. You are advised to go \nthrough your policy document \n \nSl. \nNo \nTitle \nDescription \nPo"
+      },
+      "acquisition_provenance": [
+        {
+          "source_id": "034a9a8249b48575bacfec944b37f6c61a65b0e52b3b7153b43c58a058dc0fdf",
+          "url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_Health-Companion-Variant-2022-2023.pdf",
+          "acquisition": {
+            "sha256": "288e68ac0a40b2cd5e58f95f9909480e6f0fc9e6f99ce60753bae08b4c251e64",
+            "acquired_at": "2026-09-10T11:52:21.423284+00:00",
+            "status": "acquired",
+            "http_status": 200,
+            "final_url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_Health-Companion-Variant-2022-2023.pdf",
+            "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+            "byte_count": 328808,
+            "content_type": "application/pdf"
+          },
+          "official_discovery_observations": [
+            {
+              "label": "Health Companion",
+              "raw_href": "/pages/doc/Customer-Information/CIS_Health-Companion-Variant-2022-2023.pdf",
+              "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+              "page_sha256": "6f6eb6c7c060942dd5d84cbf7fb1025d10ab5367f5798e27d9f0aac677a1710b"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "locator": "Hospital admission for 2 hours",
+          "exact_passage": "Hospital admission for 2 hours or more. Also \ncover treatment taken for Dialysis (Hemo / \nPeritoneal), Radiotherapy or Chemotherapy for \ncancer. \n• AYUSH Treatments are also covered if admitted \nfor 24 hours or more in AYUSH Hospital \n• Modern treatments like Robotic surgeries, oral \nchemotherapy et",
+          "interpretation": "Original CIS summarizes a medical-expense grant; matching UIN alone does not establish clause-by-clause agreement or customer-specific selection.",
+          "passage_is_verbatim_native_text": true
+        }
+      ],
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Not exhaustively inventoried; optional benefit components must not be conflated with medical-expense grants."
+    },
+    {
+      "source_sha256": "06b73eee5d646e85e4888e1e13b121e756499fa8f71b879b8e63bf2ca7a3078b",
+      "insurer_id": "niva-bupa",
+      "product_or_heading": "Health Companion",
+      "heading_normalization": "Display heading normalized from original; exact native-text title context retained below.",
+      "document_role": "customer_information_sheet",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Product-linked medical-expense summary or prospectus; supporting evidence, not a standalone complete contract.",
+      "observed_uins": [
+        "NBHHLIP26051V092526"
+      ],
+      "observed_uin_meaning": "Identifier printed in this artifact; neither effective-date nor historical-issued-policy applicability inferred.",
+      "page_count": 13,
+      "selected_physical_pages_read_for_identity_scope": [
+        1
+      ],
+      "visually_reviewed_physical_pages": [],
+      "review_extent": "Bounded identity, operative grant and selected configuration passages; not an exhaustive page/rule review.",
+      "original_hash_verified": true,
+      "already_in_manual_scope_r7": true,
+      "identity_evidence": {
+        "physical_page": 1,
+        "exact_passage": "Health Companion Variant 1,2,3 Family First  \nCustomer Information Sheet \nPage 1 of 13 \n \nProduct Name: Health Companion | Product UIN: NBHHLIP26051V092526 \nCustomer Information Sheet/ Know Your Policy \nThis document provides key information about your policy. You are advised to go \nthrough your policy document \n \nSl. \nNo \nTitle \nDescription \nPolic"
+      },
+      "acquisition_provenance": [
+        {
+          "source_id": "a736bdd010d8ca0a8c2c6e32f027adee8b9ceac616e2b217c6297f0f2fb79631",
+          "url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_Health-Companion-1-2-3-Family-First.pdf",
+          "acquisition": {
+            "sha256": "06b73eee5d646e85e4888e1e13b121e756499fa8f71b879b8e63bf2ca7a3078b",
+            "acquired_at": "2026-09-10T11:52:21.549887+00:00",
+            "status": "acquired",
+            "http_status": 200,
+            "final_url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_Health-Companion-1-2-3-Family-First.pdf",
+            "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+            "byte_count": 386944,
+            "content_type": "application/pdf"
+          },
+          "official_discovery_observations": [
+            {
+              "label": "Health Companion Variant 1,2,3 Family First",
+              "raw_href": "/pages/doc/Customer-Information/CIS_Health-Companion-1-2-3-Family-First.pdf",
+              "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+              "page_sha256": "6f6eb6c7c060942dd5d84cbf7fb1025d10ab5367f5798e27d9f0aac677a1710b"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "locator": "Inpatient Care:",
+          "exact_passage": "Inpatient Care: Medical Expenses for room rent; \nnursing charges for Hospitalization as an \ninpatient excluding Private Nursing charges; \nMedical Practitioners’ fees, excluding any \ncharges or fees for Standby Services; \nPhysiotherapy, investigation and diagnostics \nprocedures directly related to th",
+          "interpretation": "Original CIS summarizes a medical-expense grant; matching UIN alone does not establish clause-by-clause agreement or customer-specific selection.",
+          "passage_is_verbatim_native_text": true
+        }
+      ],
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Not exhaustively inventoried; optional benefit components must not be conflated with medical-expense grants."
+    },
+    {
+      "source_sha256": "3c1bdaccfe643bab0a5efbe279fbd411b98f3cd435c6540dcef8c04a4b708640",
+      "insurer_id": "niva-bupa",
+      "product_or_heading": "Health Premia",
+      "heading_normalization": "Display heading normalized from original; exact native-text title context retained below.",
+      "document_role": "customer_information_sheet",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Product-linked medical-expense summary or prospectus; supporting evidence, not a standalone complete contract.",
+      "observed_uins": [
+        "MAXHLIP21176V022021"
+      ],
+      "observed_uin_meaning": "Identifier printed in this artifact; neither effective-date nor historical-issued-policy applicability inferred.",
+      "page_count": 7,
+      "selected_physical_pages_read_for_identity_scope": [
+        1
+      ],
+      "visually_reviewed_physical_pages": [],
+      "review_extent": "Bounded identity, operative grant and selected configuration passages; not an exhaustive page/rule review.",
+      "original_hash_verified": true,
+      "already_in_manual_scope_r7": true,
+      "identity_evidence": {
+        "physical_page": 1,
+        "exact_passage": "Customer Information Sheet \n \nProduct Name : Health Premia, Product UIN: MAXHLIP21176V022021 \n \nInternal \nSl. \nNo. \nTitle \nDescription \nPolicy \nClause \nNumber \n1 \nProduct Name \nHealth Premia \n \n2 \nWhat am I covered \nfor \nBase Coverage: \n• \nHospital admission longer than 24 hrs \n• \nRelated medical expenses up to Sum Insured incurred up to \n90 days p"
+      },
+      "acquisition_provenance": [
+        {
+          "source_id": "97057a911d4486152fca98f7556a6114c1c9233f174504686a66239f7741d103",
+          "url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_HealthPremia.pdf",
+          "acquisition": {
+            "sha256": "3c1bdaccfe643bab0a5efbe279fbd411b98f3cd435c6540dcef8c04a4b708640",
+            "acquired_at": "2026-09-10T11:52:21.564246+00:00",
+            "status": "acquired",
+            "http_status": 200,
+            "final_url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_HealthPremia.pdf",
+            "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+            "byte_count": 261569,
+            "content_type": "application/pdf"
+          },
+          "official_discovery_observations": [
+            {
+              "label": "Health Premia",
+              "raw_href": "/pages/doc/Customer-Information/CIS_HealthPremia.pdf",
+              "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+              "page_sha256": "6f6eb6c7c060942dd5d84cbf7fb1025d10ab5367f5798e27d9f0aac677a1710b"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "locator": "Hospital admission longer",
+          "exact_passage": "Hospital admission longer than 24 hrs \n• \nRelated medical expenses up to Sum Insured incurred up to \n90 days prior to hospitalization  \n• \nRelated medical expenses incurred up to Sum Insured within \n180 days from date of discharge \n• \nAll procedures requiring less than 24 hours hospitalization, \nlis",
+          "interpretation": "Original CIS summarizes a medical-expense grant; matching UIN alone does not establish clause-by-clause agreement or customer-specific selection.",
+          "passage_is_verbatim_native_text": true
+        }
+      ],
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Not exhaustively inventoried; optional benefit components must not be conflated with medical-expense grants."
+    },
+    {
+      "source_sha256": "9b8d64f33258dd66352d0419a0d135ccdc82ebf8d725ace899057ded3cb50833",
+      "insurer_id": "niva-bupa",
+      "product_or_heading": "Health Pulse",
+      "heading_normalization": "Display heading normalized from original; exact native-text title context retained below.",
+      "document_role": "customer_information_sheet",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Product-linked medical-expense summary or prospectus; supporting evidence, not a standalone complete contract.",
+      "observed_uins": [
+        "NBHHLIP27055V052627"
+      ],
+      "observed_uin_meaning": "Identifier printed in this artifact; neither effective-date nor historical-issued-policy applicability inferred.",
+      "page_count": 13,
+      "selected_physical_pages_read_for_identity_scope": [
+        1
+      ],
+      "visually_reviewed_physical_pages": [],
+      "review_extent": "Bounded identity, operative grant and selected configuration passages; not an exhaustive page/rule review.",
+      "original_hash_verified": true,
+      "already_in_manual_scope_r7": false,
+      "identity_evidence": {
+        "physical_page": 1,
+        "exact_passage": "Product: Health Pulse    UIN: NBHHLIP27055V052627 \nCustomer Information Sheet/ Know Your Policy \nThis document provides key information about your policy. You are advised to go through your policy \ndocument \nS. \nNo. \nTitle \nDescription \nPolicy \nClause \nNumber \n1 \nName of Insurance \nProduct/ Policy \nHealth Pulse - <> \n  \n2 \nPolicy Number \n<> \n  \n3 \n"
+      },
+      "acquisition_provenance": [
+        {
+          "source_id": "d33b76dc5fa952476656c243eccfe3062e36f856b1ca6832b47f58f46c0b5bbe",
+          "url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_Health-Pulse.pdf?v=1.2",
+          "acquisition": {
+            "sha256": "9b8d64f33258dd66352d0419a0d135ccdc82ebf8d725ace899057ded3cb50833",
+            "acquired_at": "2026-09-10T11:52:22.411481+00:00",
+            "status": "acquired",
+            "http_status": 200,
+            "final_url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_Health-Pulse.pdf?v=1.2",
+            "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+            "byte_count": 552703,
+            "content_type": "application/pdf"
+          },
+          "official_discovery_observations": [
+            {
+              "label": "Health Pulse",
+              "raw_href": "/pages/doc/Customer-Information/CIS_Health-Pulse.pdf?v=1.2",
+              "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+              "page_sha256": "6f6eb6c7c060942dd5d84cbf7fb1025d10ab5367f5798e27d9f0aac677a1710b"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "locator": "Hospital admission longer",
+          "exact_passage": "Hospital admission longer than 24 hrs\n3.1 \n       Related medical expenses up to Sum Insured \nincurred 30 days prior to hospitalization \n3.2 \n       Related medical expenses incurred up to Sum \nInsured within 60 days from date of discharge\n3.3 \n       All procedures requiring less than 24 hour",
+          "interpretation": "Original CIS summarizes a medical-expense grant; matching UIN alone does not establish clause-by-clause agreement or customer-specific selection.",
+          "passage_is_verbatim_native_text": true
+        }
+      ],
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Not exhaustively inventoried; optional benefit components must not be conflated with medical-expense grants."
+    },
+    {
+      "source_sha256": "ac95aa54a6fa9b774f5639a7e867e31f65916baed40e0337c8b27fcf9064e138",
+      "insurer_id": "niva-bupa",
+      "product_or_heading": "Health Recharge",
+      "heading_normalization": "Display heading normalized from original; exact native-text title context retained below.",
+      "document_role": "customer_information_sheet",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Product-linked medical-expense summary or prospectus; supporting evidence, not a standalone complete contract.",
+      "observed_uins": [
+        "NBHHLIP22156V032122"
+      ],
+      "observed_uin_meaning": "Identifier printed in this artifact; neither effective-date nor historical-issued-policy applicability inferred.",
+      "page_count": 5,
+      "selected_physical_pages_read_for_identity_scope": [
+        1
+      ],
+      "visually_reviewed_physical_pages": [],
+      "review_extent": "Bounded identity, operative grant and selected configuration passages; not an exhaustive page/rule review.",
+      "original_hash_verified": true,
+      "already_in_manual_scope_r7": false,
+      "identity_evidence": {
+        "physical_page": 1,
+        "exact_passage": "Customer Information Sheet \nProduct Name: Health Recharge | Product UIN: NBHHLIP22156V032122 \n \nInternal \nSl. \nNo \nTitle \nDescription \nPolicy \nClause \nNumber \n1 \nProducts Name \nHealth Recharge \n \n2 \nWhat am I covered \nfor \nYou have to mandatorily choose any one of the annual \naggregate claim deductible amount from Rs. 10,000, 25,000, \n50,000, 1Lac "
+      },
+      "acquisition_provenance": [
+        {
+          "source_id": "c4a438fcc07cc3c649ad9fc08dd1d6d8fce66f1c1784b681e9b6be2347d77245",
+          "url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_HealthRecharge.pdf",
+          "acquisition": {
+            "sha256": "ac95aa54a6fa9b774f5639a7e867e31f65916baed40e0337c8b27fcf9064e138",
+            "acquired_at": "2026-09-10T11:52:23.011844+00:00",
+            "status": "acquired",
+            "http_status": 200,
+            "final_url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_HealthRecharge.pdf",
+            "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+            "byte_count": 299652,
+            "content_type": "application/pdf"
+          },
+          "official_discovery_observations": [
+            {
+              "label": "Health Recharge",
+              "raw_href": "/pages/doc/Customer-Information/CIS_HealthRecharge.pdf",
+              "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+              "page_sha256": "6f6eb6c7c060942dd5d84cbf7fb1025d10ab5367f5798e27d9f0aac677a1710b"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "locator": "Hospital admission longer",
+          "exact_passage": "Hospital admission longer than 24 hrs \n• \nRelated medical expenses up to Sum Insured incurred 60 \ndays prior to hospitalization  \n• \nRelated medical expenses incurred up to Sum Insured \nwithin 90 days from date of discharge \n• \nAll procedures requiring less than 24 hours hospitalization \n(day care) ",
+          "interpretation": "Original CIS summarizes a medical-expense grant; matching UIN alone does not establish clause-by-clause agreement or customer-specific selection.",
+          "passage_is_verbatim_native_text": true
+        }
+      ],
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Not exhaustively inventoried; optional benefit components must not be conflated with medical-expense grants."
+    },
+    {
+      "source_sha256": "5afa32b3c6ec470c24c3039d42c544d515b8777075b2bcaf9ca0c8cc455a126d",
+      "insurer_id": "niva-bupa",
+      "product_or_heading": "Health+",
+      "heading_normalization": "Display heading normalized from original; exact native-text title context retained below.",
+      "document_role": "customer_information_sheet",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Product-linked medical-expense summary or prospectus; supporting evidence, not a standalone complete contract.",
+      "observed_uins": [
+        "NBHHLIP24135V012324"
+      ],
+      "observed_uin_meaning": "Identifier printed in this artifact; neither effective-date nor historical-issued-policy applicability inferred.",
+      "page_count": 11,
+      "selected_physical_pages_read_for_identity_scope": [
+        1
+      ],
+      "visually_reviewed_physical_pages": [],
+      "review_extent": "Bounded identity, operative grant and selected configuration passages; not an exhaustive page/rule review.",
+      "original_hash_verified": true,
+      "already_in_manual_scope_r7": false,
+      "identity_evidence": {
+        "physical_page": 1,
+        "exact_passage": "Health+ \n \nCustomer Information Sheet \nPage 1 of 11 \n \nProduct Name: Health+ | Product UIN: NBHHLIP24135V012324 \n \nCustomer Information Sheet/ Know Your Policy \nSl. \nNo Title \nDescription \nPolicy \nClause \nNumber \n1 \nName of \nInsurance \nProduct/ Policy \nHealth+ \n \n2 \nPolicy Number \n<Policy Number> \n \n3 \nType of \nInsurance \nProduct/ Policy  \nIndemnit"
+      },
+      "acquisition_provenance": [
+        {
+          "source_id": "0cd2546d0fee26fbc0f77642e8f2c1153a61dc405a219860522c43a2ba985393",
+          "url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_HealthPulsePulse.pdf?v=1.2",
+          "acquisition": {
+            "sha256": "5afa32b3c6ec470c24c3039d42c544d515b8777075b2bcaf9ca0c8cc455a126d",
+            "acquired_at": "2026-09-10T11:52:23.241685+00:00",
+            "status": "acquired",
+            "http_status": 200,
+            "final_url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_HealthPulsePulse.pdf?v=1.2",
+            "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+            "byte_count": 637972,
+            "content_type": "application/pdf"
+          },
+          "official_discovery_observations": [
+            {
+              "label": "Health+",
+              "raw_href": "/pages/doc/Customer-Information/CIS_HealthPulsePulse.pdf?v=1.2",
+              "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+              "page_sha256": "6f6eb6c7c060942dd5d84cbf7fb1025d10ab5367f5798e27d9f0aac677a1710b"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "locator": "In-Patient:",
+          "exact_passage": "In-Patient: Expenses incurred on \nhospitalization for a minimum period of 24 \nhours.  \nb. Pre-Post Hospitalization Expenses: pre-\nhospitalization expenses for a period of 30 \ndays and post hospitalization expenses for a \nperiod of 60 days. \nc. Day Ca",
+          "interpretation": "Indemnity medical-expense CIS for Health+, excluded from Health Pulse association despite URL filename.",
+          "passage_is_verbatim_native_text": true
+        }
+      ],
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Not exhaustively inventoried; optional benefit components must not be conflated with medical-expense grants.",
+      "excluded_target_family_associations": [
+        "Health Pulse"
+      ],
+      "filename_content_conflict": "CIS_HealthPulsePulse.pdf contains Health+ and a different UIN."
+    },
+    {
+      "source_sha256": "a19b990bf1450148536a8c89cf6388d4711208dc54f0f07216374600ea22d2ab",
+      "insurer_id": "niva-bupa",
+      "product_or_heading": "Health Companion",
+      "heading_normalization": "Display heading normalized from original; exact native-text title context retained below.",
+      "document_role": "prospectus",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Product-linked medical-expense summary or prospectus; supporting evidence, not a standalone complete contract.",
+      "observed_uins": [
+        "NBHHLIP25040V082425"
+      ],
+      "observed_uin_meaning": "Identifier printed in this artifact; neither effective-date nor historical-issued-policy applicability inferred.",
+      "page_count": 23,
+      "selected_physical_pages_read_for_identity_scope": [
+        1
+      ],
+      "visually_reviewed_physical_pages": [],
+      "review_extent": "Bounded identity, operative grant and selected configuration passages; not an exhaustive page/rule review.",
+      "original_hash_verified": true,
+      "already_in_manual_scope_r7": true,
+      "identity_evidence": {
+        "physical_page": 1,
+        "exact_passage": "Product Name: Health Companion, Product UIN: NBHHLIP25040V082425\nHealth Companion\nProspectus and Sales Literature (for Health \nCompanion Variant 2022 and Variant 2023\nHealth Companion - Start a healthy relationship \nHeath Companion from Niva Bupa is a comprehensive health insurance cover for you and your family. It gives you the flexibility to choo"
+      },
+      "acquisition_provenance": [
+        {
+          "source_id": "1d78077ba91100869c17f257835b7978940937f1324a9f00da9473b850b64c81",
+          "url": "https://transactions.nivabupa.com/pages/doc/prospectus/Health-Companion-Variant-2022-Prospectus-revised_v1.pdf?v=1.6",
+          "acquisition": {
+            "sha256": "a19b990bf1450148536a8c89cf6388d4711208dc54f0f07216374600ea22d2ab",
+            "acquired_at": "2026-09-10T11:38:10.446140+00:00",
+            "status": "acquired",
+            "http_status": 200,
+            "final_url": "https://transactions.nivabupa.com/pages/doc/prospectus/Health-Companion-Variant-2022-Prospectus-revised_v1.pdf?v=1.6",
+            "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+            "byte_count": 177609,
+            "content_type": "application/pdf"
+          },
+          "official_discovery_observations": [
+            {
+              "label": "Health Companion Variant 2022 Prospectus",
+              "raw_href": "/pages/doc/prospectus/Health-Companion-Variant-2022-Prospectus-revised_v1.pdf?v=1.6",
+              "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+              "page_sha256": "6f6eb6c7c060942dd5d84cbf7fb1025d10ab5367f5798e27d9f0aac677a1710b"
+            }
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "locator": "Policy Design",
+          "exact_passage": "Policy Design\t\n•\t Niva Bupa’s ‘Health Companion’ variant 2022 can be issued to individual customer(s) or to a family with up to 4 children (refer to as family \nfloater). \n•\t This policy covers persons in the age group 91 days and above. The minimum entry age for adult is 18 years and for dependent child is 91 \ndays. There is no maximum entry age limit for adults in this product. The maximum entry ",
+          "interpretation": "Older UIN assertion and Variant 2022 design; cannot silently join to wording/CIS NBHHLIP26051V092526 as a version-matched bundle.",
+          "passage_is_verbatim_native_text": true
+        }
+      ],
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "nonmedical_components": "Not exhaustively inventoried; optional benefit components must not be conflated with medical-expense grants."
+    }
+  ],
+  "legacy_associations": [
+    {
+      "legacy_identity": "/health-insurance/niva-bupa/goactive/",
+      "legacy_name": "Goactive",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "insurer_id": "niva-bupa",
+      "product_family": "GoActive",
+      "family_identity_status": "source_backed_original_wording",
+      "wording_sha256s": [
+        "5aaff91835ef2dbfeedce2d63c5bbdffc3ab62e3fea474cc9dfa34a9bcd80823"
+      ],
+      "matching_uin_cis_sha256s": [
+        "0c6c3e610c62c036985b578f5ef27971bd835b23693f7f75c38e4bf05896a1cb"
+      ],
+      "observed_wording_uins": [
+        "NBHHLIP26046V032526"
+      ],
+      "variant_or_option_identity": {
+        "matched_legacy_label": null,
+        "kind": "generic_family_label",
+        "status": "selection_unresolved",
+        "assessment": "GoActive title and operative medical grant support family identity. Generic legacy name does not establish selected SI, cover form or optional benefits; no exhaustive absence-of-variants claim.",
+        "issued_customer_selection_verified": false
+      },
+      "supporting_role_candidates": [
+        {
+          "role_candidate": "prospectus",
+          "source_sha256": "927d43d490e609af044adfcb1412cc113256754be16a2ecc489d7047b3c2bde8",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/prospectus/GoActive-Prospectus.pdf?v=1.1"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        },
+        {
+          "role_candidate": "brochure",
+          "source_sha256": "a6cdd17a8bcc43eb7d434eba7f47959b7d874db46be0ab8d3b653dad62b583d0",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/brochure/Goactive_SS.pdf?v=1.0"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        },
+        {
+          "role_candidate": "rate_card",
+          "source_sha256": "bc0bec1c4a562b261e936184026029c7a707aea9e3808c9c604e83186fe3e3fe",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/premium_chart/GoActive Plan_All pages Rate card.pdf"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        }
+      ],
+      "original_bundle_roles": {
+        "policy_wording": "preserved_and_identity_scope_read; exhaustive rule review outstanding",
+        "CIS": "preserved_matching_UIN_and_configuration_family; full agreement and template placeholders not resolved",
+        "prospectus": "preserved_candidate; version and content comparison not performed",
+        "brochure": "preserved_candidates; optional supporting role, not substituted for wording",
+        "endorsements_and_addons": "Applicable set not enumerated; absence in this bounded search does not prove unavailable",
+        "issued_schedule_proposal_underwriting_terms": "Not supplied for any historical/customer policy in this batch; needed to determine selection and applicability"
+      },
+      "historical_version_status": "exact_legacy_effective_version_not_established",
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "rule_inventory_complete": false,
+      "reconciliation_complete": false,
+      "remaining_dependencies": [
+        "GoActive title and operative medical grant support family identity. Generic legacy name does not establish selected SI, cover form or optional benefits; no exhaustive absence-of-variants claim.",
+        "Read complete wording and linked annexures/conditions independently before establishing per-original rule denominator.",
+        "Compare preserved prospectus/CIS/brochure versions and enumerate applicable endorsements/add-ons; distinguish content mismatch from work not performed.",
+        "Obtain applicable issued schedule, endorsement and underwriting terms where a customer/historical decision requires them.",
+        "No original access failure is established for these selected roles; new network requests were unnecessary."
+      ]
+    },
+    {
+      "legacy_identity": "/health-insurance/niva-bupa/health-companion/",
+      "legacy_name": "Health Companion",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "insurer_id": "niva-bupa",
+      "product_family": "Health Companion",
+      "family_identity_status": "source_backed_original_wording",
+      "wording_sha256s": [
+        "f0d9e3ddc037784a10e11d6684484be34ea3a0c8f720aed5a8ea6b820d7fd62d",
+        "209a0e88f19e44f5b414955b014856d68235a3fbbcd3aa158a2183e2a4622303"
+      ],
+      "matching_uin_cis_sha256s": [
+        "288e68ac0a40b2cd5e58f95f9909480e6f0fc9e6f99ce60753bae08b4c251e64",
+        "06b73eee5d646e85e4888e1e13b121e756499fa8f71b879b8e63bf2ca7a3078b"
+      ],
+      "observed_wording_uins": [
+        "NBHHLIP26051V092526"
+      ],
+      "variant_or_option_identity": {
+        "matched_legacy_label": null,
+        "kind": "generic_family_label",
+        "status": "selection_unresolved",
+        "assessment": "Generic legacy label does not select Variant 2022, Variant 2023, Variant 1, Variant 2, Variant 3 or Family First. Two separate wordings share UIN; preserve artifact and configuration selection.",
+        "issued_customer_selection_verified": false
+      },
+      "supporting_role_candidates": [
+        {
+          "role_candidate": "prospectus",
+          "source_sha256": "70c189e332b7a47f2505f65607541b75957dd15d262fbc63f9aea575fa4cb691",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/prospectus/Health-Companion-Prospectus.pdf?v=1.4"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        },
+        {
+          "role_candidate": "prospectus",
+          "source_sha256": "a19b990bf1450148536a8c89cf6388d4711208dc54f0f07216374600ea22d2ab",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/prospectus/Health-Companion-Variant-2022-Prospectus-revised_v1.pdf?v=1.6"
+          ],
+          "status": "identity_read_known_different_uin_not_version_matched",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        },
+        {
+          "role_candidate": "brochure",
+          "source_sha256": "92e3162e613e185fff79392c26852ffa0d46bf9630447a0fda2004ca294914d1",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/brochure/Health_Companion_V2022_Br.pdf?v=1.2"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        },
+        {
+          "role_candidate": "brochure",
+          "source_sha256": "39b88b5686d907b72f42c5dc7db6c657723da7ffddf373f9a2876e3104f2a6c7",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/brochure/Niva_Health_Companion_SS_V2022_with_PA.pdf?v=1.2"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        }
+      ],
+      "original_bundle_roles": {
+        "policy_wording": "preserved_and_identity_scope_read; exhaustive rule review outstanding",
+        "CIS": "preserved_matching_UIN_and_configuration_family; full agreement and template placeholders not resolved",
+        "prospectus": "preserved_candidates; comparison outstanding; known Health Companion older-UIN exception recorded",
+        "brochure": "preserved_candidates; optional supporting role, not substituted for wording",
+        "endorsements_and_addons": "Applicable set not enumerated; absence in this bounded search does not prove unavailable",
+        "issued_schedule_proposal_underwriting_terms": "Not supplied for any historical/customer policy in this batch; needed to determine selection and applicability"
+      },
+      "historical_version_status": "exact_legacy_effective_version_not_established",
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "rule_inventory_complete": false,
+      "reconciliation_complete": false,
+      "remaining_dependencies": [
+        "Generic legacy label does not select Variant 2022, Variant 2023, Variant 1, Variant 2, Variant 3 or Family First. Two separate wordings share UIN; preserve artifact and configuration selection.",
+        "Read complete wording and linked annexures/conditions independently before establishing per-original rule denominator.",
+        "Compare preserved prospectus/CIS/brochure versions and enumerate applicable endorsements/add-ons; distinguish content mismatch from work not performed.",
+        "Obtain applicable issued schedule, endorsement and underwriting terms where a customer/historical decision requires them.",
+        "No original access failure is established for these selected roles; new network requests were unnecessary."
+      ]
+    },
+    {
+      "legacy_identity": "/health-insurance/niva-bupa/health-premia-gold/",
+      "legacy_name": "Health Premia Gold",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "insurer_id": "niva-bupa",
+      "product_family": "Health Premia",
+      "family_identity_status": "source_backed_original_wording",
+      "wording_sha256s": [
+        "4cac748cb130ac53576b79853d6979c34a62eb67a1b8d22b811f56ed088be69f"
+      ],
+      "matching_uin_cis_sha256s": [
+        "3c1bdaccfe643bab0a5efbe279fbd411b98f3cd435c6540dcef8c04a4b708640"
+      ],
+      "observed_wording_uins": [
+        "MAXHLIP21176V022021"
+      ],
+      "variant_or_option_identity": {
+        "matched_legacy_label": "Gold",
+        "kind": "named_plan_tier",
+        "status": "explicitly_named_in_observed_wording",
+        "assessment": "Gold is explicitly named on both p70 Individual & Family Floater and p74 Family First tables. Cover form, SI, Family First base/floater choices, optional benefits and issued terms remain unselected.",
+        "issued_customer_selection_verified": false
+      },
+      "supporting_role_candidates": [
+        {
+          "role_candidate": "prospectus",
+          "source_sha256": "bfe30896a59f6469087273c448fc314c44093b5ea9f93f656b9e5d62c70815e5",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/prospectus/Health-Premia-Prospectus.pdf?v=1.4"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        },
+        {
+          "role_candidate": "brochure",
+          "source_sha256": "e39657a46a625ecf89452629c9e16a7ea90aabc508fe378ae6e8be7fde06a08e",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/brochure/Health_Premia_Br.pdf?v=1.6"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        },
+        {
+          "role_candidate": "brochure",
+          "source_sha256": "7674e52941205ef6db54409a26e945876decef8852ceebda41fcff38c6cf172b",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/brochure/Health_Premia_Gold_Br.pdf?v=2.5"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        },
+        {
+          "role_candidate": "brochure",
+          "source_sha256": "be5ae3532e6b3a3462d475b8a1485acd23868811b0da49de532890ecbde15edd",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/brochure/Health_Premia_PLATINUM_Br.pdf?v=2.5"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        },
+        {
+          "role_candidate": "rate_card",
+          "source_sha256": "e198203515d67c8b25ce09e81453616698666fe6113ed3f07e3f92e744bc9f50",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/premium_chart/Health Premia - Rate Card.pdf"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        }
+      ],
+      "original_bundle_roles": {
+        "policy_wording": "preserved_and_identity_scope_read; exhaustive rule review outstanding",
+        "CIS": "preserved_matching_UIN_and_configuration_family; full agreement and template placeholders not resolved",
+        "prospectus": "preserved_candidate; version and content comparison not performed",
+        "brochure": "preserved_candidates; optional supporting role, not substituted for wording",
+        "endorsements_and_addons": "Applicable set not enumerated; absence in this bounded search does not prove unavailable",
+        "issued_schedule_proposal_underwriting_terms": "Not supplied for any historical/customer policy in this batch; needed to determine selection and applicability"
+      },
+      "historical_version_status": "exact_legacy_effective_version_not_established",
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "rule_inventory_complete": false,
+      "reconciliation_complete": false,
+      "remaining_dependencies": [
+        "Gold is explicitly named on both p70 Individual & Family Floater and p74 Family First tables. Cover form, SI, Family First base/floater choices, optional benefits and issued terms remain unselected.",
+        "Read complete wording and linked annexures/conditions independently before establishing per-original rule denominator.",
+        "Compare preserved prospectus/CIS/brochure versions and enumerate applicable endorsements/add-ons; distinguish content mismatch from work not performed.",
+        "Obtain applicable issued schedule, endorsement and underwriting terms where a customer/historical decision requires them.",
+        "No original access failure is established for these selected roles; new network requests were unnecessary."
+      ]
+    },
+    {
+      "legacy_identity": "/health-insurance/niva-bupa/health-premia-platinum/",
+      "legacy_name": "Health Premia Platinum",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "insurer_id": "niva-bupa",
+      "product_family": "Health Premia",
+      "family_identity_status": "source_backed_original_wording",
+      "wording_sha256s": [
+        "4cac748cb130ac53576b79853d6979c34a62eb67a1b8d22b811f56ed088be69f"
+      ],
+      "matching_uin_cis_sha256s": [
+        "3c1bdaccfe643bab0a5efbe279fbd411b98f3cd435c6540dcef8c04a4b708640"
+      ],
+      "observed_wording_uins": [
+        "MAXHLIP21176V022021"
+      ],
+      "variant_or_option_identity": {
+        "matched_legacy_label": "Platinum",
+        "kind": "named_plan_tier",
+        "status": "explicitly_named_in_observed_wording",
+        "assessment": "Platinum is explicitly named on both p70 Individual & Family Floater and p74 Family First tables. Cover form, SI, Family First base/floater choices, optional benefits and issued terms remain unselected.",
+        "issued_customer_selection_verified": false
+      },
+      "supporting_role_candidates": [
+        {
+          "role_candidate": "prospectus",
+          "source_sha256": "bfe30896a59f6469087273c448fc314c44093b5ea9f93f656b9e5d62c70815e5",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/prospectus/Health-Premia-Prospectus.pdf?v=1.4"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        },
+        {
+          "role_candidate": "brochure",
+          "source_sha256": "e39657a46a625ecf89452629c9e16a7ea90aabc508fe378ae6e8be7fde06a08e",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/brochure/Health_Premia_Br.pdf?v=1.6"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        },
+        {
+          "role_candidate": "brochure",
+          "source_sha256": "7674e52941205ef6db54409a26e945876decef8852ceebda41fcff38c6cf172b",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/brochure/Health_Premia_Gold_Br.pdf?v=2.5"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        },
+        {
+          "role_candidate": "brochure",
+          "source_sha256": "be5ae3532e6b3a3462d475b8a1485acd23868811b0da49de532890ecbde15edd",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/brochure/Health_Premia_PLATINUM_Br.pdf?v=2.5"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        },
+        {
+          "role_candidate": "rate_card",
+          "source_sha256": "e198203515d67c8b25ce09e81453616698666fe6113ed3f07e3f92e744bc9f50",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/premium_chart/Health Premia - Rate Card.pdf"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        }
+      ],
+      "original_bundle_roles": {
+        "policy_wording": "preserved_and_identity_scope_read; exhaustive rule review outstanding",
+        "CIS": "preserved_matching_UIN_and_configuration_family; full agreement and template placeholders not resolved",
+        "prospectus": "preserved_candidate; version and content comparison not performed",
+        "brochure": "preserved_candidates; optional supporting role, not substituted for wording",
+        "endorsements_and_addons": "Applicable set not enumerated; absence in this bounded search does not prove unavailable",
+        "issued_schedule_proposal_underwriting_terms": "Not supplied for any historical/customer policy in this batch; needed to determine selection and applicability"
+      },
+      "historical_version_status": "exact_legacy_effective_version_not_established",
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "rule_inventory_complete": false,
+      "reconciliation_complete": false,
+      "remaining_dependencies": [
+        "Platinum is explicitly named on both p70 Individual & Family Floater and p74 Family First tables. Cover form, SI, Family First base/floater choices, optional benefits and issued terms remain unselected.",
+        "Read complete wording and linked annexures/conditions independently before establishing per-original rule denominator.",
+        "Compare preserved prospectus/CIS/brochure versions and enumerate applicable endorsements/add-ons; distinguish content mismatch from work not performed.",
+        "Obtain applicable issued schedule, endorsement and underwriting terms where a customer/historical decision requires them.",
+        "No original access failure is established for these selected roles; new network requests were unnecessary."
+      ]
+    },
+    {
+      "legacy_identity": "/health-insurance/niva-bupa/health-premia-silver/",
+      "legacy_name": "Health Premia Silver",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "insurer_id": "niva-bupa",
+      "product_family": "Health Premia",
+      "family_identity_status": "source_backed_original_wording",
+      "wording_sha256s": [
+        "4cac748cb130ac53576b79853d6979c34a62eb67a1b8d22b811f56ed088be69f"
+      ],
+      "matching_uin_cis_sha256s": [
+        "3c1bdaccfe643bab0a5efbe279fbd411b98f3cd435c6540dcef8c04a4b708640"
+      ],
+      "observed_wording_uins": [
+        "MAXHLIP21176V022021"
+      ],
+      "variant_or_option_identity": {
+        "matched_legacy_label": "Silver",
+        "kind": "named_plan_tier",
+        "status": "explicitly_named_in_observed_wording",
+        "assessment": "Silver is explicitly named on both p70 Individual & Family Floater and p74 Family First tables. Cover form, SI, Family First base/floater choices, optional benefits and issued terms remain unselected.",
+        "issued_customer_selection_verified": false
+      },
+      "supporting_role_candidates": [
+        {
+          "role_candidate": "prospectus",
+          "source_sha256": "bfe30896a59f6469087273c448fc314c44093b5ea9f93f656b9e5d62c70815e5",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/prospectus/Health-Premia-Prospectus.pdf?v=1.4"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        },
+        {
+          "role_candidate": "brochure",
+          "source_sha256": "e39657a46a625ecf89452629c9e16a7ea90aabc508fe378ae6e8be7fde06a08e",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/brochure/Health_Premia_Br.pdf?v=1.6"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        },
+        {
+          "role_candidate": "brochure",
+          "source_sha256": "7674e52941205ef6db54409a26e945876decef8852ceebda41fcff38c6cf172b",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/brochure/Health_Premia_Gold_Br.pdf?v=2.5"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        },
+        {
+          "role_candidate": "brochure",
+          "source_sha256": "be5ae3532e6b3a3462d475b8a1485acd23868811b0da49de532890ecbde15edd",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/brochure/Health_Premia_PLATINUM_Br.pdf?v=2.5"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        },
+        {
+          "role_candidate": "rate_card",
+          "source_sha256": "e198203515d67c8b25ce09e81453616698666fe6113ed3f07e3f92e744bc9f50",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/premium_chart/Health Premia - Rate Card.pdf"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        }
+      ],
+      "original_bundle_roles": {
+        "policy_wording": "preserved_and_identity_scope_read; exhaustive rule review outstanding",
+        "CIS": "preserved_matching_UIN_and_configuration_family; full agreement and template placeholders not resolved",
+        "prospectus": "preserved_candidate; version and content comparison not performed",
+        "brochure": "preserved_candidates; optional supporting role, not substituted for wording",
+        "endorsements_and_addons": "Applicable set not enumerated; absence in this bounded search does not prove unavailable",
+        "issued_schedule_proposal_underwriting_terms": "Not supplied for any historical/customer policy in this batch; needed to determine selection and applicability"
+      },
+      "historical_version_status": "exact_legacy_effective_version_not_established",
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "rule_inventory_complete": false,
+      "reconciliation_complete": false,
+      "remaining_dependencies": [
+        "Silver is explicitly named on both p70 Individual & Family Floater and p74 Family First tables. Cover form, SI, Family First base/floater choices, optional benefits and issued terms remain unselected.",
+        "Read complete wording and linked annexures/conditions independently before establishing per-original rule denominator.",
+        "Compare preserved prospectus/CIS/brochure versions and enumerate applicable endorsements/add-ons; distinguish content mismatch from work not performed.",
+        "Obtain applicable issued schedule, endorsement and underwriting terms where a customer/historical decision requires them.",
+        "No original access failure is established for these selected roles; new network requests were unnecessary."
+      ]
+    },
+    {
+      "legacy_identity": "/health-insurance/niva-bupa/health-pulse-classic/",
+      "legacy_name": "Health Pulse Classic",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "insurer_id": "niva-bupa",
+      "product_family": "Health Pulse",
+      "family_identity_status": "source_backed_original_wording",
+      "wording_sha256s": [
+        "768826d18ad9af0f5a5dd7440c5c5f1d3c1a1cf320450ef76c8c7081dff533bf"
+      ],
+      "matching_uin_cis_sha256s": [
+        "9b8d64f33258dd66352d0419a0d135ccdc82ebf8d725ace899057ded3cb50833"
+      ],
+      "observed_wording_uins": [
+        "NBHHLIP27055V052627"
+      ],
+      "variant_or_option_identity": {
+        "matched_legacy_label": "Classic",
+        "kind": "named_plan_tier",
+        "status": "explicitly_named_in_observed_wording",
+        "assessment": "Classic Plan is explicitly named on p49; p50 continues its table. SI, insured structure, optional benefits and issued terms remain unselected.",
+        "issued_customer_selection_verified": false
+      },
+      "supporting_role_candidates": [
+        {
+          "role_candidate": "prospectus",
+          "source_sha256": "9545a5babb5a3a61f96c26246b32ace6f2bb0c10ea0e440919a9c22368b19d54",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/prospectus/Health-Pulse-Prospectus.pdf?v=1.2"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        },
+        {
+          "role_candidate": "brochure",
+          "source_sha256": "3c63a56a1dee59e3c21373fdfb45ba602f091e272174acafad45ba342be771be",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/brochure/Health_Pulse_SS.pdf?v=1.2"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        },
+        {
+          "role_candidate": "rate_card",
+          "source_sha256": "61a3378bb08146fc0e101252549c8712d52b70bcff0bae232bc218a38b9a46d5",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/premium_chart/Health Pulse.pdf?v=1.0"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        }
+      ],
+      "original_bundle_roles": {
+        "policy_wording": "preserved_and_identity_scope_read; exhaustive rule review outstanding",
+        "CIS": "preserved_matching_UIN_and_configuration_family; full agreement and template placeholders not resolved",
+        "prospectus": "preserved_candidate; version and content comparison not performed",
+        "brochure": "preserved_candidates; optional supporting role, not substituted for wording",
+        "endorsements_and_addons": "Applicable set not enumerated; absence in this bounded search does not prove unavailable",
+        "issued_schedule_proposal_underwriting_terms": "Not supplied for any historical/customer policy in this batch; needed to determine selection and applicability"
+      },
+      "historical_version_status": "exact_legacy_effective_version_not_established",
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "rule_inventory_complete": false,
+      "reconciliation_complete": false,
+      "remaining_dependencies": [
+        "Classic Plan is explicitly named on p49; p50 continues its table. SI, insured structure, optional benefits and issued terms remain unselected.",
+        "Read complete wording and linked annexures/conditions independently before establishing per-original rule denominator.",
+        "Compare preserved prospectus/CIS/brochure versions and enumerate applicable endorsements/add-ons; distinguish content mismatch from work not performed.",
+        "Obtain applicable issued schedule, endorsement and underwriting terms where a customer/historical decision requires them.",
+        "No original access failure is established for these selected roles; new network requests were unnecessary."
+      ]
+    },
+    {
+      "legacy_identity": "/health-insurance/niva-bupa/health-pulse-enhanced/",
+      "legacy_name": "Health Pulse Enhanced",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "insurer_id": "niva-bupa",
+      "product_family": "Health Pulse",
+      "family_identity_status": "source_backed_original_wording",
+      "wording_sha256s": [
+        "768826d18ad9af0f5a5dd7440c5c5f1d3c1a1cf320450ef76c8c7081dff533bf"
+      ],
+      "matching_uin_cis_sha256s": [
+        "9b8d64f33258dd66352d0419a0d135ccdc82ebf8d725ace899057ded3cb50833"
+      ],
+      "observed_wording_uins": [
+        "NBHHLIP27055V052627"
+      ],
+      "variant_or_option_identity": {
+        "matched_legacy_label": "Enhanced",
+        "kind": "named_plan_tier",
+        "status": "explicitly_named_in_observed_wording",
+        "assessment": "Enhanced Plan is explicitly named on p49; p50 continues its table. SI, insured structure, optional benefits and issued terms remain unselected.",
+        "issued_customer_selection_verified": false
+      },
+      "supporting_role_candidates": [
+        {
+          "role_candidate": "prospectus",
+          "source_sha256": "9545a5babb5a3a61f96c26246b32ace6f2bb0c10ea0e440919a9c22368b19d54",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/prospectus/Health-Pulse-Prospectus.pdf?v=1.2"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        },
+        {
+          "role_candidate": "brochure",
+          "source_sha256": "3c63a56a1dee59e3c21373fdfb45ba602f091e272174acafad45ba342be771be",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/brochure/Health_Pulse_SS.pdf?v=1.2"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        },
+        {
+          "role_candidate": "rate_card",
+          "source_sha256": "61a3378bb08146fc0e101252549c8712d52b70bcff0bae232bc218a38b9a46d5",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/premium_chart/Health Pulse.pdf?v=1.0"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        }
+      ],
+      "original_bundle_roles": {
+        "policy_wording": "preserved_and_identity_scope_read; exhaustive rule review outstanding",
+        "CIS": "preserved_matching_UIN_and_configuration_family; full agreement and template placeholders not resolved",
+        "prospectus": "preserved_candidate; version and content comparison not performed",
+        "brochure": "preserved_candidates; optional supporting role, not substituted for wording",
+        "endorsements_and_addons": "Applicable set not enumerated; absence in this bounded search does not prove unavailable",
+        "issued_schedule_proposal_underwriting_terms": "Not supplied for any historical/customer policy in this batch; needed to determine selection and applicability"
+      },
+      "historical_version_status": "exact_legacy_effective_version_not_established",
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "rule_inventory_complete": false,
+      "reconciliation_complete": false,
+      "remaining_dependencies": [
+        "Enhanced Plan is explicitly named on p49; p50 continues its table. SI, insured structure, optional benefits and issued terms remain unselected.",
+        "Read complete wording and linked annexures/conditions independently before establishing per-original rule denominator.",
+        "Compare preserved prospectus/CIS/brochure versions and enumerate applicable endorsements/add-ons; distinguish content mismatch from work not performed.",
+        "Obtain applicable issued schedule, endorsement and underwriting terms where a customer/historical decision requires them.",
+        "No original access failure is established for these selected roles; new network requests were unnecessary."
+      ]
+    },
+    {
+      "legacy_identity": "/health-insurance/niva-bupa/health-recharge-super-top-up/",
+      "legacy_name": "Health Recharge Super Top Up",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "insurer_id": "niva-bupa",
+      "product_family": "Health Recharge",
+      "family_identity_status": "source_backed_original_wording",
+      "wording_sha256s": [
+        "2e4c4347525b5b1f87d54c6c38a8e034e46c3c833e1f829f0e1b0041685b7c6a"
+      ],
+      "matching_uin_cis_sha256s": [
+        "ac95aa54a6fa9b774f5639a7e867e31f65916baed40e0337c8b27fcf9064e138"
+      ],
+      "observed_wording_uins": [
+        "NBHHLIP22156V032122"
+      ],
+      "variant_or_option_identity": {
+        "matched_legacy_label": "Super Top-up",
+        "kind": "named_deductible_option_group",
+        "status": "explicitly_named_in_observed_wording",
+        "assessment": "Super Top-up is explicitly printed under Annual aggregate Deductible on p40 (1L to 10L in multiples of 1L), alongside E-saver. Selected deductible, SI, member aggregation and issued terms remain unverified.",
+        "issued_customer_selection_verified": false
+      },
+      "supporting_role_candidates": [
+        {
+          "role_candidate": "prospectus",
+          "source_sha256": "49ac87e2681c2f7f165a0c4e43805260b15031a44d44d53b9428f73717a02fa1",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/prospectus/Health-Recharge-Prospectus.pdf?v=1.0"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        },
+        {
+          "role_candidate": "brochure",
+          "source_sha256": "9651ae8b45b2691b336b095c080a1d52bfd2e1bc4f3592b02eda947df2f9c529",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/brochure/Health_Recharge_SS.pdf"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        },
+        {
+          "role_candidate": "rate_card",
+          "source_sha256": "f559933dc1149b64ed48abd92d6a35da591db8d02ad4402f42b4e978854975c5",
+          "urls": [
+            "https://transactions.nivabupa.com/pages/doc/premium_chart/Health Recharge.pdf"
+          ],
+          "status": "preserved_candidate_original_content_not_reviewed_in_this_batch",
+          "missing_evidence_or_work": "Cross-document content, UIN, variant and effective-period comparison remains to be performed; availability is not the blocker."
+        }
+      ],
+      "original_bundle_roles": {
+        "policy_wording": "preserved_and_identity_scope_read; exhaustive rule review outstanding",
+        "CIS": "preserved_matching_UIN_and_configuration_family; full agreement and template placeholders not resolved",
+        "prospectus": "preserved_candidate; version and content comparison not performed",
+        "brochure": "preserved_candidates; optional supporting role, not substituted for wording",
+        "endorsements_and_addons": "Applicable set not enumerated; absence in this bounded search does not prove unavailable",
+        "issued_schedule_proposal_underwriting_terms": "Not supplied for any historical/customer policy in this batch; needed to determine selection and applicability"
+      },
+      "historical_version_status": "exact_legacy_effective_version_not_established",
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "rule_inventory_complete": false,
+      "reconciliation_complete": false,
+      "remaining_dependencies": [
+        "Super Top-up is explicitly printed under Annual aggregate Deductible on p40 (1L to 10L in multiples of 1L), alongside E-saver. Selected deductible, SI, member aggregation and issued terms remain unverified.",
+        "Read complete wording and linked annexures/conditions independently before establishing per-original rule denominator.",
+        "Compare preserved prospectus/CIS/brochure versions and enumerate applicable endorsements/add-ons; distinguish content mismatch from work not performed.",
+        "Obtain applicable issued schedule, endorsement and underwriting terms where a customer/historical decision requires them.",
+        "No original access failure is established for these selected roles; new network requests were unnecessary."
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "NIVA-R8-SAME-UIN",
+      "severity": "high",
+      "finding": "Two Health Companion wording/CIS pairs share NBHHLIP26051V092526 but identify different variant groups. UIN alone is not document identity, deduplication key or rule selector.",
+      "evidence_sha256s": [
+        "f0d9e3ddc037784a10e11d6684484be34ea3a0c8f720aed5a8ea6b820d7fd62d",
+        "209a0e88f19e44f5b414955b014856d68235a3fbbcd3aa158a2183e2a4622303",
+        "288e68ac0a40b2cd5e58f95f9909480e6f0fc9e6f99ce60753bae08b4c251e64",
+        "06b73eee5d646e85e4888e1e13b121e756499fa8f71b879b8e63bf2ca7a3078b"
+      ],
+      "resolution": "Preserved separately; generic legacy row retains variant selection uncertainty."
+    },
+    {
+      "id": "NIVA-R8-FILENAME",
+      "severity": "high",
+      "finding": "CIS_HealthPulsePulse.pdf original identifies Health+ / NBHHLIP24135V012324, not Health Pulse.",
+      "evidence_sha256s": [
+        "5afa32b3c6ec470c24c3039d42c544d515b8777075b2bcaf9ca0c8cc455a126d"
+      ],
+      "resolution": "Classified supporting medical CIS for Health+; excluded from target Pulse association."
+    },
+    {
+      "id": "NIVA-R8-PREMIA-AXES",
+      "severity": "medium",
+      "finding": "Silver/Gold/Platinum tier names recur across Individual & Family Floater and Family First tables.",
+      "evidence_sha256s": [
+        "4cac748cb130ac53576b79853d6979c34a62eb67a1b8d22b811f56ed088be69f"
+      ],
+      "resolution": "Tier matched; cover form and selected SI/pools remain separate unknowns."
+    },
+    {
+      "id": "NIVA-R8-RECHARGE",
+      "severity": "medium",
+      "finding": "Super Top-up is printed as an annual aggregate deductible option group. Section5.1 refers to that Insured Person; no inferred shared-family deductible.",
+      "evidence_sha256s": [
+        "2e4c4347525b5b1f87d54c6c38a8e034e46c3c833e1f829f0e1b0041685b7c6a"
+      ],
+      "resolution": "Named option identity supported; chosen amount/member scope need applicable terms and full connected review."
+    },
+    {
+      "id": "NIVA-R8-OLD-PROSPECTUS",
+      "severity": "medium",
+      "finding": "Preserved Health Companion2022/2023 prospectus prints NBHHLIP25040V082425 while reviewed wording/CIS print NBHHLIP26051V092526.",
+      "evidence_sha256s": [
+        "a19b990bf1450148536a8c89cf6388d4711208dc54f0f07216374600ea22d2ab",
+        "f0d9e3ddc037784a10e11d6684484be34ea3a0c8f720aed5a8ea6b820d7fd62d",
+        "288e68ac0a40b2cd5e58f95f9909480e6f0fc9e6f99ce60753bae08b4c251e64"
+      ],
+      "resolution": "Different original UIN assertions retained; matching current prospectus not established and historical wording availability not inferred."
+    }
+  ],
+  "generalized_information_requirements": [
+    "Keep source-byte identity, observed UIN and variant/cover-form applicability separate.",
+    "Store tier, cover form, SI, deductible option group/amount, member/year scope and selected optional benefits as distinct configuration facts.",
+    "Associate each supporting document by role and version/variant evidence; record same-UIN association separately from clause agreement.",
+    "Retain filename/link label versus original title conflicts and rejected associations.",
+    "Keep template placeholders distinct from known customer policy values.",
+    "Represent preservation, bounded scope reading, complete original inventory, historical matching and complete bundle reconciliation as separate completion states."
+  ],
+  "verification": {
+    "all_14_hashes_verified": true,
+    "all_stored_passages_match_physical_page_native_text": true,
+    "visual_table_pages_checked": 6,
+    "evaluation_accessed": false,
+    "cumulative_registers_modified": false,
+    "network_requests_performed": false,
+    "per_insurer_rule_denominator": null
+  }
+}

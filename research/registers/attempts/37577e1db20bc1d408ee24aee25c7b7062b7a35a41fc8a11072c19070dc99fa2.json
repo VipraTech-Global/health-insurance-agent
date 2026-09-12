@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:56:16.043159+00:00",
+  "associations": [],
+  "byte_count": 453747,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/arogya_sanjeevani_premium_chart_aa483b3899.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 309,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "f69d921c6b8ef075530fd05d317cc187acd983b94bcd94e615c60ac91e5fe33f",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/arogya_sanjeevani_premium_chart_aa483b3899.pdf"
+}

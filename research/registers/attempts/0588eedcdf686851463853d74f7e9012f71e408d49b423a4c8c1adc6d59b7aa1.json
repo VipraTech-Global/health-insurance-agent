@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:58:05.996639+00:00",
+  "associations": [],
+  "byte_count": 1136011,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/bhavishya-arogya-policy/Bhavishya%20Arogya%20Policy%20Clause%20(1).pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1729,
+  "linking_url": "https://www.newindia.co.in/health-insurance/new-india-bhavishya-arogya-policy",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "31687d60bed88910226d663ec9968f3618dfc6eaf66507346bd507a9a7f5302e",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/bhavishya-arogya-policy/Bhavishya Arogya Policy Clause (1).pdf"
+}

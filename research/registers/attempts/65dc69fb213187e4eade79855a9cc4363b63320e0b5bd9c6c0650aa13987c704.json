@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T12:01:59.704046+00:00",
+  "associations": [],
+  "byte_count": 301321,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://acko-cms.ackoassets.com/Proposal_Form_Loan_Shield_Rider_with_UIN_01598586c2.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "acko",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 452,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "1375457cd5f1130d60a4ab77c712610e9185f0cfd5ed6bfa7fdfd47c687ee04d",
+  "status": "acquired",
+  "url": "https://acko-cms.ackoassets.com/Proposal_Form_Loan_Shield_Rider_with_UIN_01598586c2.pdf"
+}

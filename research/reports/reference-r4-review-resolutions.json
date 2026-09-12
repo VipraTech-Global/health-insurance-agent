@@ -1,0 +1,38 @@
+{
+  "resolved_expression_bindings": [
+    [
+      "ref-01-07",
+      "Eligible-room customer balance"
+    ],
+    [
+      "ref-04-04",
+      "Hypothetical co-pay exceeds cash"
+    ],
+    [
+      "ref-10-03",
+      "Post-discharge date60elapsed days"
+    ],
+    [
+      "ref-14-02",
+      "Gold-admitted base-refused expense accumulation"
+    ],
+    [
+      "ref-15-07",
+      "Remaining wait on credited base"
+    ],
+    [
+      "ref-15-07",
+      "Remaining wait on uncredited enhancement"
+    ],
+    [
+      "ref-16-10",
+      "Notice wait after accrued continuity"
+    ]
+  ],
+  "source_attachments_added": {
+    "ref-01-02": "E16",
+    "ref-11-06": "E14"
+  },
+  "E19_review": "Original M.1 restriction verified; full wellness applicability not claimed",
+  "successful_advice_claimed": false
+}

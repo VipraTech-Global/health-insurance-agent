@@ -1,0 +1,73 @@
+{
+  "acquired_at": "2026-09-10T12:35:11.327190+00:00",
+  "associations": [],
+  "byte_count": 1945843,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Special_Care_V_12_1dceede2eb.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "star",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1035,
+  "linking_url": "https://www.starhealth.in/downloads/",
+  "page_count": 6,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 905.2441,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 658.6299
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "c5a8a553c2c2a61d5e8fb3025dabdf5821a19e03e26371cf8b0a29f5420ae554",
+  "status": "acquired",
+  "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Special_Care_V_12_1dceede2eb.pdf"
+}

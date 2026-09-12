@@ -1,0 +1,185 @@
+{
+  "revised_decision_tests": [
+    {
+      "case_id": "ref-01-01",
+      "prior_title": "I am 35, live in Kota, have no health insurance, and need a first policy.",
+      "prior_calculations": [],
+      "revision_reason": "Receipt-triggered free-look timing and conditional refund deductions, distinct from the original Kota insured/budget intake preserved in ref-20-01."
+    },
+    {
+      "case_id": "ref-05-08",
+      "prior_title": "I want regular diabetes medicines covered as well as hospitalisation.",
+      "prior_calculations": [
+        {
+          "format_version": 2,
+          "label": "Annual recurring expenditure",
+          "inputs": {
+            "monthly": "2000",
+            "annual_extra": "6000"
+          },
+          "result_unit": "INR",
+          "reference_expression": "monthly*12+annual_extra",
+          "expected": "30000",
+          "assumptions": [
+            "Annual budget arithmetic only; no OPD entitlement inferred."
+          ],
+          "method": "Reference author stated expected result; offline check recomputed with Decimal/calendar arithmetic independently of any adviser calculator. This is not an independent adviser attempt.",
+          "evidence": [
+            {
+              "bbox": null,
+              "format_version": 1,
+              "page": 13,
+              "passage": "Any expenses incurred on Domiciliary Hospitalization and OPD treatment",
+              "section": "7.18",
+              "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+              "table_context": []
+            },
+            {
+              "bbox": null,
+              "format_version": 1,
+              "page": 6,
+              "passage": "period of 30 days preceding the hospitalisation",
+              "section": "3.42",
+              "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+              "table_context": []
+            },
+            {
+              "bbox": null,
+              "format_version": 1,
+              "page": 6,
+              "passage": "period of 60 days immediately after",
+              "section": "3.43",
+              "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+              "table_context": []
+            }
+          ],
+          "verification": "offline_recomputed",
+          "scope": "conditional illustration, not actual insurer settlement",
+          "expression_kind": "human_readable_reference_formula; production evaluator will use typed AST after approval"
+        }
+      ],
+      "revision_reason": "Evaluate inclusive BMI35 and the uncontrolled-diabetes/failed-treatment conjunction; routine OPD medicine spending is not this test."
+    },
+    {
+      "case_id": "ref-02-07",
+      "prior_title": "One member is much older and may make the shared policy more expensive.",
+      "prior_calculations": [],
+      "revision_reason": "Compute marginal and total quote costs while preserving different risk pools; do not infer causal age loading or equivalent cover."
+    },
+    {
+      "case_id": "ref-16-03",
+      "prior_title": "I moved to a more expensive premium zone before renewal.",
+      "prior_calculations": [],
+      "revision_reason": "Historical event applicability survives a later address correction; this is not merely invalidating a wrongly addressed current quote."
+    },
+    {
+      "case_id": "ref-17-07",
+      "prior_title": "Two hospitals share the same name and I need the correct branch.",
+      "prior_calculations": [],
+      "revision_reason": "A satisfied numerical cap and licensed provider cannot cure a failed clinical-destination/route predicate."
+    },
+    {
+      "case_id": "ref-19-06",
+      "prior_title": "I am pregnant and delivery is expected within weeks.",
+      "prior_calculations": [],
+      "revision_reason": "Separate survivor continuation from a benefit-specific both-spouse condition after death; the12monthwait is already satisfied."
+    },
+    {
+      "case_id": "ref-04-04",
+      "prior_title": "My father can afford a premium but cannot fund a compulsory 30 percent co-pay.",
+      "prior_calculations": [
+        {
+          "format_version": 2,
+          "label": "Hypothetical co-pay exceeds cash",
+          "inputs": {
+            "assumed_ratio": "0.30",
+            "admissible": "100000",
+            "cash": "20000"
+          },
+          "result_unit": "INR",
+          "reference_expression": "admissible*assumed_ratio-cash",
+          "expected": "10000",
+          "assumptions": [
+            "30% is a hypothetical offer condition; not an original-backed general senior co-pay."
+          ],
+          "method": "Reference author stated expected result; offline check recomputed with Decimal/calendar arithmetic independently of any adviser calculator. This is not an independent adviser attempt.",
+          "evidence": [
+            {
+              "bbox": null,
+              "format_version": 1,
+              "page": 15,
+              "passage": "Co-Payment of 5%",
+              "section": "9.5",
+              "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+              "table_context": []
+            },
+            {
+              "bbox": null,
+              "format_version": 1,
+              "page": 6,
+              "passage": "any applicable endorsements or extensions",
+              "section": "3.44",
+              "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+              "table_context": []
+            }
+          ],
+          "verification": "offline_recomputed",
+          "scope": "conditional illustration, not actual insurer settlement",
+          "expression_kind": "human_readable_reference_formula; production evaluator will use typed AST after approval"
+        }
+      ],
+      "revision_reason": "Cap scope and unverified authority alter cost-share calculation; rate-times-bill alone is insufficient."
+    },
+    {
+      "case_id": "ref-16-04",
+      "prior_title": "I want to add my spouse after marriage during the term.",
+      "prior_calculations": [],
+      "revision_reason": "Accepted membership and a separate wellness activation clock have different outcomes."
+    },
+    {
+      "case_id": "ref-06-04",
+      "prior_title": "I was discharged last month and have not yet received a final diagnosis.",
+      "prior_calculations": [],
+      "revision_reason": "A later source correction changes a named prior conclusion without erasing historically true hospitalization or exceeding the report scope."
+    },
+    {
+      "case_id": "ref-09-04",
+      "prior_title": "I am donating an organ and need donor and recipient expenses separated.",
+      "prior_calculations": [],
+      "revision_reason": "Resolve precise procedure identity against an explicit exclusion and a differently scoped positive table entry."
+    },
+    {
+      "case_id": "ref-19-07",
+      "prior_title": "My employer cover ends before an already scheduled operation.",
+      "prior_calculations": [],
+      "revision_reason": "An explicit accepted continuation changes historical contract selection while a separate proposal remains pending."
+    }
+  ],
+  "explicit_scoring_only": {
+    "ref-04-08": [
+      "Score purchase suitability against the fixed non-negotiable hospital requirement; a lower premium cannot relax that requirement. An unverified network remains uncertain,not a supported contractual exclusion."
+    ],
+    "ref-17-04": [
+      "Score an existing accepted option/contract scope against a conflicting broad-base network observation; do not offer removing the customers preference as resolution of an issued-contract entitlement question."
+    ],
+    "ref-06-06": [
+      "Score the recurrence restriction as an offer not yet accepted: identify the specific otherwise-needed recurrence protection gap without turning offer terms into an in-force policy."
+    ],
+    "ref-18-06": [
+      "Score private offer ownership explicitly: an offer belonging to personA must not be retrieved for personB or published as a global insurer rule,even if both share the disease label."
+    ],
+    "ref-07-10": [
+      "Score the restriction as reported on an already issued personal schedule,distinct from an unaccepted offer; require the original schedule and governing precedence before endorsing its enforceability."
+    ],
+    "ref-13-07": [
+      "Score pending group migration as an unaccepted application requiring receiving-insurer decision; it does not supply the expressly accepted group extension used in ref-19-07."
+    ],
+    "ref-15-01": [
+      "Score receiving-insurer acceptance of exact accrued retail credits separately from old-contract continuity; an application is not acceptance of those credits."
+    ]
+  },
+  "prior_revision_preserved": true,
+  "canonical_reference_count": 200,
+  "new_independent_recheck_pending": true,
+  "full_decisions_or_success_added": 0
+}

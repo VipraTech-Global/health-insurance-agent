@@ -1,0 +1,105 @@
+{
+  "acquired_at": "2026-09-10T11:58:21.981072+00:00",
+  "associations": [],
+  "byte_count": 734620,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/ERRORS_AND_OMISSION_LIABILITY_INSURANCE_Wording_7613e5495e.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 539,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 10,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "33073715d56e5daf7ebac21b522483828814f18e34e591872627f3f2f976ba11",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/ERRORS_AND_OMISSION_LIABILITY_INSURANCE_Wording_7613e5495e.pdf"
+}

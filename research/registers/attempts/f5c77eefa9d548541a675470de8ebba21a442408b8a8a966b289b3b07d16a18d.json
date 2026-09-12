@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:59:19.987825+00:00",
+  "associations": [],
+  "byte_count": 263,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/xml",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.acko.com/wp-content/uploads/2020/11/acko-group-health-insurance-policy.pdf",
+  "format_version": 1,
+  "http_status": 403,
+  "insurer_id": "acko",
+  "issues": [
+    "http_403"
+  ],
+  "language": "unknown",
+  "latency_ms": 137,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "847cde47d37fed55667dd74dcc97ee59bad4411b8d903de14520eb82af28a32e",
+  "status": "failed",
+  "url": "https://www.acko.com/wp-content/uploads/2020/11/acko-group-health-insurance-policy.pdf"
+}

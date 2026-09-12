@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:56:33.598316+00:00",
+  "associations": [],
+  "byte_count": 127179,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/critical_illness_tariff_chart_43bac3a29f.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 468,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "4ea69485a03e4d85cc399bf1d5d4c8673f0ba9d7067505b28bcb4ac63b061cfd",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/critical_illness_tariff_chart_43bac3a29f.pdf"
+}

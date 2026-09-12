@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:53:41.081487+00:00",
+  "associations": [],
+  "byte_count": 57212,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/gadget_care_claims_manual_b99a04e853.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 216,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "ebc9965df212e61a2571a96622c0f8b3aa3c76310d761dcca45fd9eaf6bb0b03",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/gadget_care_claims_manual_b99a04e853.pdf"
+}

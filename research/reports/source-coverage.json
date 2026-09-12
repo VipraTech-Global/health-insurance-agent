@@ -1,0 +1,386 @@
+{
+  "attempt_count": 3227,
+  "document_url_count": 4451,
+  "format_version": 1,
+  "insurer_count": 20,
+  "insurer_document_associations": 4451,
+  "insurers": [
+    {
+      "acquisition_results": {
+        "acquired": 20,
+        "not_acquired": 302
+      },
+      "discovered_document_urls": 322,
+      "expected_bundle_inventory": "incomplete",
+      "independent_rule_denominator": null,
+      "insurer_id": "star",
+      "name": "Star",
+      "original_rule_instances_in_sample": 0,
+      "preserved_pdf_pages": 514,
+      "products_and_versions": null,
+      "recommendable_configurations": 0,
+      "reviewed_rules": 0,
+      "rule_coverage_percent": null,
+      "unique_acquired_pdfs": 20,
+      "variants_and_addons": null
+    },
+    {
+      "acquisition_results": {},
+      "discovered_document_urls": 0,
+      "expected_bundle_inventory": "incomplete",
+      "independent_rule_denominator": null,
+      "insurer_id": "care",
+      "name": "Care",
+      "original_rule_instances_in_sample": 19,
+      "preserved_pdf_pages": 0,
+      "products_and_versions": null,
+      "recommendable_configurations": 0,
+      "reviewed_rules": 0,
+      "rule_coverage_percent": null,
+      "unique_acquired_pdfs": 0,
+      "variants_and_addons": null
+    },
+    {
+      "acquisition_results": {
+        "acquired": 205
+      },
+      "discovered_document_urls": 205,
+      "expected_bundle_inventory": "incomplete",
+      "independent_rule_denominator": null,
+      "insurer_id": "niva-bupa",
+      "name": "Niva Bupa",
+      "original_rule_instances_in_sample": 0,
+      "preserved_pdf_pages": 5059,
+      "products_and_versions": null,
+      "recommendable_configurations": 0,
+      "reviewed_rules": 0,
+      "rule_coverage_percent": null,
+      "unique_acquired_pdfs": 205,
+      "variants_and_addons": null
+    },
+    {
+      "acquisition_results": {
+        "acquired": 24,
+        "failed": 2
+      },
+      "discovered_document_urls": 26,
+      "expected_bundle_inventory": "incomplete",
+      "independent_rule_denominator": null,
+      "insurer_id": "aditya-birla",
+      "name": "Aditya Birla Health",
+      "original_rule_instances_in_sample": 0,
+      "preserved_pdf_pages": 556,
+      "products_and_versions": null,
+      "recommendable_configurations": 0,
+      "reviewed_rules": 0,
+      "rule_coverage_percent": null,
+      "unique_acquired_pdfs": 24,
+      "variants_and_addons": null
+    },
+    {
+      "acquisition_results": {
+        "acquired": 14,
+        "failed": 4
+      },
+      "discovered_document_urls": 18,
+      "expected_bundle_inventory": "incomplete",
+      "independent_rule_denominator": null,
+      "insurer_id": "manipalcigna",
+      "name": "ManipalCigna",
+      "original_rule_instances_in_sample": 0,
+      "preserved_pdf_pages": 171,
+      "products_and_versions": null,
+      "recommendable_configurations": 0,
+      "reviewed_rules": 0,
+      "rule_coverage_percent": null,
+      "unique_acquired_pdfs": 13,
+      "variants_and_addons": null
+    },
+    {
+      "acquisition_results": {
+        "acquired": 11
+      },
+      "discovered_document_urls": 11,
+      "expected_bundle_inventory": "incomplete",
+      "independent_rule_denominator": null,
+      "insurer_id": "galaxy",
+      "name": "Galaxy",
+      "original_rule_instances_in_sample": 0,
+      "preserved_pdf_pages": 49,
+      "products_and_versions": null,
+      "recommendable_configurations": 0,
+      "reviewed_rules": 0,
+      "rule_coverage_percent": null,
+      "unique_acquired_pdfs": 11,
+      "variants_and_addons": null
+    },
+    {
+      "acquisition_results": {
+        "acquired": 26
+      },
+      "discovered_document_urls": 26,
+      "expected_bundle_inventory": "incomplete",
+      "independent_rule_denominator": null,
+      "insurer_id": "narayana",
+      "name": "Narayana",
+      "original_rule_instances_in_sample": 0,
+      "preserved_pdf_pages": 268,
+      "products_and_versions": null,
+      "recommendable_configurations": 0,
+      "reviewed_rules": 0,
+      "rule_coverage_percent": null,
+      "unique_acquired_pdfs": 25,
+      "variants_and_addons": null
+    },
+    {
+      "acquisition_results": {
+        "acquired": 195,
+        "failed": 2
+      },
+      "discovered_document_urls": 197,
+      "expected_bundle_inventory": "incomplete",
+      "independent_rule_denominator": null,
+      "insurer_id": "new-india",
+      "name": "New India",
+      "original_rule_instances_in_sample": 0,
+      "preserved_pdf_pages": 1839,
+      "products_and_versions": null,
+      "recommendable_configurations": 0,
+      "reviewed_rules": 0,
+      "rule_coverage_percent": null,
+      "unique_acquired_pdfs": 168,
+      "variants_and_addons": null
+    },
+    {
+      "acquisition_results": {
+        "acquired": 132,
+        "not_acquired": 7
+      },
+      "discovered_document_urls": 139,
+      "expected_bundle_inventory": "incomplete",
+      "independent_rule_denominator": null,
+      "insurer_id": "national",
+      "name": "National",
+      "original_rule_instances_in_sample": 0,
+      "preserved_pdf_pages": 1276,
+      "products_and_versions": null,
+      "recommendable_configurations": 0,
+      "reviewed_rules": 0,
+      "rule_coverage_percent": null,
+      "unique_acquired_pdfs": 132,
+      "variants_and_addons": null
+    },
+    {
+      "acquisition_results": {},
+      "discovered_document_urls": 0,
+      "expected_bundle_inventory": "incomplete",
+      "independent_rule_denominator": null,
+      "insurer_id": "oriental",
+      "name": "Oriental",
+      "original_rule_instances_in_sample": 0,
+      "preserved_pdf_pages": 0,
+      "products_and_versions": null,
+      "recommendable_configurations": 0,
+      "reviewed_rules": 0,
+      "rule_coverage_percent": null,
+      "unique_acquired_pdfs": 0,
+      "variants_and_addons": null
+    },
+    {
+      "acquisition_results": {},
+      "discovered_document_urls": 0,
+      "expected_bundle_inventory": "incomplete",
+      "independent_rule_denominator": null,
+      "insurer_id": "united-india",
+      "name": "United India",
+      "original_rule_instances_in_sample": 0,
+      "preserved_pdf_pages": 0,
+      "products_and_versions": null,
+      "recommendable_configurations": 0,
+      "reviewed_rules": 0,
+      "rule_coverage_percent": null,
+      "unique_acquired_pdfs": 0,
+      "variants_and_addons": null
+    },
+    {
+      "acquisition_results": {
+        "acquired": 104
+      },
+      "discovered_document_urls": 104,
+      "expected_bundle_inventory": "incomplete",
+      "independent_rule_denominator": null,
+      "insurer_id": "hdfc-ergo",
+      "name": "HDFC ERGO",
+      "original_rule_instances_in_sample": 0,
+      "preserved_pdf_pages": 2414,
+      "products_and_versions": null,
+      "recommendable_configurations": 0,
+      "reviewed_rules": 0,
+      "rule_coverage_percent": null,
+      "unique_acquired_pdfs": 80,
+      "variants_and_addons": null
+    },
+    {
+      "acquisition_results": {},
+      "discovered_document_urls": 0,
+      "expected_bundle_inventory": "incomplete",
+      "independent_rule_denominator": null,
+      "insurer_id": "icici-lombard",
+      "name": "ICICI Lombard",
+      "original_rule_instances_in_sample": 0,
+      "preserved_pdf_pages": 0,
+      "products_and_versions": null,
+      "recommendable_configurations": 0,
+      "reviewed_rules": 0,
+      "rule_coverage_percent": null,
+      "unique_acquired_pdfs": 0,
+      "variants_and_addons": null
+    },
+    {
+      "acquisition_results": {
+        "acquired": 9
+      },
+      "discovered_document_urls": 9,
+      "expected_bundle_inventory": "incomplete",
+      "independent_rule_denominator": null,
+      "insurer_id": "bajaj-general",
+      "name": "Bajaj General",
+      "original_rule_instances_in_sample": 0,
+      "preserved_pdf_pages": 3076,
+      "products_and_versions": null,
+      "recommendable_configurations": 0,
+      "reviewed_rules": 0,
+      "rule_coverage_percent": null,
+      "unique_acquired_pdfs": 9,
+      "variants_and_addons": null
+    },
+    {
+      "acquisition_results": {
+        "acquired": 554,
+        "failed": 3,
+        "not_acquired": 251
+      },
+      "discovered_document_urls": 808,
+      "expected_bundle_inventory": "incomplete",
+      "independent_rule_denominator": null,
+      "insurer_id": "tata-aig",
+      "name": "Tata AIG",
+      "original_rule_instances_in_sample": 0,
+      "preserved_pdf_pages": 10981,
+      "products_and_versions": null,
+      "recommendable_configurations": 0,
+      "reviewed_rules": 0,
+      "rule_coverage_percent": null,
+      "unique_acquired_pdfs": 550,
+      "variants_and_addons": null
+    },
+    {
+      "acquisition_results": {
+        "acquired": 428,
+        "failed": 4,
+        "not_acquired": 403
+      },
+      "discovered_document_urls": 835,
+      "expected_bundle_inventory": "incomplete",
+      "independent_rule_denominator": null,
+      "insurer_id": "sbi-general",
+      "name": "SBI General",
+      "original_rule_instances_in_sample": 0,
+      "preserved_pdf_pages": 3818,
+      "products_and_versions": null,
+      "recommendable_configurations": 0,
+      "reviewed_rules": 0,
+      "rule_coverage_percent": null,
+      "unique_acquired_pdfs": 394,
+      "variants_and_addons": null
+    },
+    {
+      "acquisition_results": {
+        "acquired": 210,
+        "not_acquired": 261
+      },
+      "discovered_document_urls": 471,
+      "expected_bundle_inventory": "incomplete",
+      "independent_rule_denominator": null,
+      "insurer_id": "go-digit",
+      "name": "Go Digit",
+      "original_rule_instances_in_sample": 0,
+      "preserved_pdf_pages": 5102,
+      "products_and_versions": null,
+      "recommendable_configurations": 0,
+      "reviewed_rules": 0,
+      "rule_coverage_percent": null,
+      "unique_acquired_pdfs": 210,
+      "variants_and_addons": null
+    },
+    {
+      "acquisition_results": {
+        "acquired": 116,
+        "failed": 115,
+        "not_acquired": 153
+      },
+      "discovered_document_urls": 384,
+      "expected_bundle_inventory": "incomplete",
+      "independent_rule_denominator": null,
+      "insurer_id": "acko",
+      "name": "ACKO",
+      "original_rule_instances_in_sample": 0,
+      "preserved_pdf_pages": 2332,
+      "products_and_versions": null,
+      "recommendable_configurations": 0,
+      "reviewed_rules": 0,
+      "rule_coverage_percent": null,
+      "unique_acquired_pdfs": 115,
+      "variants_and_addons": null
+    },
+    {
+      "acquisition_results": {
+        "acquired": 42,
+        "failed": 4,
+        "not_acquired": 45
+      },
+      "discovered_document_urls": 91,
+      "expected_bundle_inventory": "incomplete",
+      "independent_rule_denominator": null,
+      "insurer_id": "zurich-kotak",
+      "name": "Zurich Kotak",
+      "original_rule_instances_in_sample": 0,
+      "preserved_pdf_pages": 1004,
+      "products_and_versions": null,
+      "recommendable_configurations": 0,
+      "reviewed_rules": 0,
+      "rule_coverage_percent": null,
+      "unique_acquired_pdfs": 42,
+      "variants_and_addons": null
+    },
+    {
+      "acquisition_results": {
+        "acquired": 342,
+        "failed": 14,
+        "not_acquired": 348
+      },
+      "discovered_document_urls": 704,
+      "expected_bundle_inventory": "incomplete",
+      "independent_rule_denominator": null,
+      "insurer_id": "generali-central",
+      "name": "Generali Central",
+      "original_rule_instances_in_sample": 0,
+      "preserved_pdf_pages": 5058,
+      "products_and_versions": null,
+      "recommendable_configurations": 0,
+      "reviewed_rules": 0,
+      "rule_coverage_percent": null,
+      "unique_acquired_pdfs": 322,
+      "variants_and_addons": null
+    }
+  ],
+  "limitations": [
+    "Explicit seed-page snapshot only; complete product and bundle inventory is not established",
+    "An acquired file is not reviewed knowledge; page/table/figure reading remains pending",
+    "Unknown rule denominators prohibit coverage percentages",
+    "No replacement database, adviser or cutover is published by this workspace"
+  ],
+  "release_ready": false,
+  "rule_coverage_percent": null,
+  "unique_acquired_pdfs": 2322
+}

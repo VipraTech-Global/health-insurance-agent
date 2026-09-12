@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:56:07.533055+00:00",
+  "associations": [],
+  "byte_count": 522069,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/tata_aig_travel_insurance_asia_tariff_sheet_f5ca1d0afe.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 314,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.528
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.528
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "016351faf8f64f0ca569fed39fd286fc0919ec3419280883c6edcf37e2a9f71d",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/tata_aig_travel_insurance_asia_tariff_sheet_f5ca1d0afe.pdf"
+}

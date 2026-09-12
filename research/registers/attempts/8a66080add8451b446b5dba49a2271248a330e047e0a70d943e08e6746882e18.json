@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:01:20.434617+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/janata-mediclaim-policy/Policy%20Clause%20Janata%20Mediclaim%20Policy.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1674,
+  "linking_url": "https://www.newindia.co.in/health-insurance/janata-mediclaim-policy",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "a3dc2644e4601c9b98c822b0a155a02e76db330a5d4cabbfb625200d3d5c0f47",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/janata-mediclaim-policy/Policy Clause Janata Mediclaim Policy.pdf"
+}

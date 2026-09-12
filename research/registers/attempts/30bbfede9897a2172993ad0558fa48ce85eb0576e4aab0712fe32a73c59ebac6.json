@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T17:17:11.759990+00:00",
+  "associations": [],
+  "byte_count": 1067,
+  "component_version": "research-acquisition/2",
+  "content_type": "text/html; charset=UTF-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.hdfcergo.com/documents/downloads/HEHI/PW_Dengue_EH_ICan_website/Easy-Health-CIS_Premium.pdf",
+  "format_version": 1,
+  "http_status": 406,
+  "insurer_id": "hdfc-ergo",
+  "issues": [
+    "http_406"
+  ],
+  "language": "unknown",
+  "latency_ms": 234,
+  "linking_url": "",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "00b6649b8b8f4a564e10bd69bb245c9a2f0a1be36463976d37437708bd6cc7b3",
+  "status": "failed",
+  "url": "https://www.hdfcergo.com/documents/downloads/HEHI/PW_Dengue_EH_ICan_website/Easy-Health-CIS_Premium.pdf"
+}

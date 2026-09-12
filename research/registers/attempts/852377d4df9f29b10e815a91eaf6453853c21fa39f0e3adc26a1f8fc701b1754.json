@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:56:18.001253+00:00",
+  "associations": [],
+  "byte_count": 265888,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/bharat_laghu_udyam_suraksha_faqs_8a1a4fc260.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 395,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "82fbb62cbee49086b8166693a8fd115350a819aa0eb2c4397555836c74cfd7c3",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/bharat_laghu_udyam_suraksha_faqs_8a1a4fc260.pdf"
+}

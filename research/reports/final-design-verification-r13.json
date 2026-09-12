@@ -1,0 +1,125 @@
+{
+  "revision": "discussion-r13",
+  "generated_at_utc": "2026-09-12T09:56:04.452066+00:00",
+  "status": "passed",
+  "scope": "Structural verification of the user-approved Batch 6 CustomerPolicyFact and PolicyEvent design. No Django models, migrations, PostgreSQL runtime constraints or complete-design approval claimed.",
+  "checks": [
+    {
+      "check": "99 unique application entities",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "973 unique application fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "298 FK relationships match dictionary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all FK targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "relationship ledger exactly covers FK fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "approved Batch 6 models present with exact fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "superseded issued-policy detail models removed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "CustomerPolicyFact uses closed typed value contract",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "PolicyEvent package target and party payload removed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "UsageEntry supports base revision and optional additional-cover fact",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "case and supplementary field targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "fixed 400 case map retained as 200 reference and 200 evaluation-safe projections",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "r13 reverse trace covers every field exactly",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "r13 trace input hashes match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "case-map dictionary hash matches",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "additional-case dictionary hash matches",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all JSON field contracts resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all migration target entities resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "legacy catalogue migrates only to archived mapping",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Batch 6 approval and overall design boundary recorded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "review documents use the verified field count",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 21,
+  "failed": 0,
+  "application_entities": 99,
+  "application_fields": 973,
+  "foreign_keys": 298,
+  "batch1_approval": "explicit user approval on 2026-09-11",
+  "batch2_approval": "explicit user approval on 2026-09-11",
+  "batch3_approval": "explicit user approval on 2026-09-12",
+  "batch4_approval": "explicit user approval on 2026-09-12",
+  "batch5_approval": "explicit user approval on 2026-09-12",
+  "batch6_approval": "explicit user approval on 2026-09-12",
+  "overall_design_approval": false
+}

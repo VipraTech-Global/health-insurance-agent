@@ -1,0 +1,81 @@
+{
+  "acquired_at": "2026-09-10T11:59:59.461134+00:00",
+  "associations": [],
+  "byte_count": 593286,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/top-up-mediclaim-policy/New%20India%20Top%20Up%20Mediclaim%20-%20Proposal%20Form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 6299,
+  "linking_url": "https://www.newindia.co.in/health-insurance/new-india-top-up-mediclaim-insurance",
+  "page_count": 7,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 597.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "3bf98bf11e6e339f3fa43275b48b29f82acec5198f49b21e6dca1030e4a83a81",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/top-up-mediclaim-policy/New India Top Up Mediclaim - Proposal Form.pdf"
+}

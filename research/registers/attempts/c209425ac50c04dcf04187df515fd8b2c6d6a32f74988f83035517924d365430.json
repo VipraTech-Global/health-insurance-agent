@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:01:53.645755+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/floater-mediclaim-policy/New%20India%20Folater%20Mediclaim%20-%203%20fold%20New%20Matter%20wi_260722_153623.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 2764,
+  "linking_url": "https://www.newindia.co.in/health-insurance/new-india-assurance-floater-mediclaim-policy",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "5739afc494ac22154ffd525830b152a243431cdf9034e50276ec1d81afd53fc1",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/floater-mediclaim-policy/New India Folater Mediclaim - 3 fold New Matter wi_260722_153623.pdf"
+}

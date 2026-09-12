@@ -1,0 +1,169 @@
+{
+  "format_version": 1,
+  "case_id": "additional-r10-19-01",
+  "family": 19,
+  "split": "additional_reference_outside_required_400",
+  "synthetic_customer": true,
+  "title": "Do a reimbursement deadline and delayed-payment interest start on the same event?",
+  "customer": {
+    "buyer_and_insured": "Naveen, 47",
+    "configuration": "Synthetic accepted New India Arogya Sanjeevani using the cited preserved wording",
+    "claim": "Otherwise admitted reimbursement claim, actual payment INR 100000 on 2026-08-26 stipulated",
+    "submission": "Claim submitted to insurer on 2026-08-01",
+    "document_upload": "Customer uploaded requested last necessary document to adviser storage on 2026-08-05",
+    "recipient_receipt": "Insurer acknowledgement confirms receipt on 2026-08-07; in this fixture the insurer confirms it was the last necessary document, with all other necessary documents already accepted",
+    "source_form": "All documents concern the insured; accepted form and applicable original/certified-copy rules are stipulated satisfied",
+    "rate_evidence": "Applicable RBI bank rate on the first day of the relevant financial year is not supplied; no rate guessed"
+  },
+  "conversation": [
+    {
+      "role": "customer",
+      "text": "They paid my reimbursement claim on 26 August. I submitted it on 1 August and uploaded the last document on 5 August. Does interest start after 15 days from upload?"
+    },
+    {
+      "role": "adviser",
+      "text": "When did the insurer receive the last necessary document, and did it confirm that no other necessary document remained? Uploading to the adviser does not establish insurer receipt."
+    },
+    {
+      "role": "customer",
+      "text": "Its acknowledgement says 7 August, and it confirms that this was the last necessary document. Payment of 100000 arrived on 26 August."
+    },
+    {
+      "role": "adviser",
+      "text": "The cited wording gives two anchors: noncashless settlement within 15 days from claim submission, and delayed-payment interest from receipt of the last necessary document to actual payment. Preserve 1 August submission, 5 August upload, 7 August insurer receipt and 26 August payment separately. The elapsed submission interval is 25 days and the stated receipt-to-payment interval is 19 days. Those intervals are not an interest amount: the dated bank rate, day-count and rounding authority remain missing."
+    }
+  ],
+  "known": [
+    "Reimbursement rather than cashless claim",
+    "Distinct submission, adviser upload, insurer receipt and actual payment events",
+    "Necessity, completeness and document-form acceptance expressly stipulated"
+  ],
+  "unknown": [
+    "Actual governing policy applicability and verified external rate source",
+    "Authoritative day-count and rounding convention for an exact interest amount",
+    "Actual insurer receipt/completeness/payment proof outside this synthetic fixture"
+  ],
+  "corrections": [
+    {
+      "predicate": "last_necessary_document_recipient_receipt",
+      "initial_unsupported_inference": "2026-08-05 adviser upload treated as insurer receipt",
+      "confirmed_synthetic_value": "2026-08-07",
+      "effect": "Withdraw upload-as-receipt conclusion and invalidate its elapsed interval; retain the upload event."
+    }
+  ],
+  "candidate_dispositions": [
+    {
+      "configuration": "Stipulated accepted reimbursement claim under cited wording",
+      "status": "Two trigger events identified; exact interest amount unestablished"
+    }
+  ],
+  "expected_answer": "Apply the two clauses separately. The stated payment is more than 15 days after submission. Under the cited delayed-payment clause, the last necessary-document insurer receipt is the interest anchor, not adviser upload and not automatically the end of the settlement deadline. Bank Rate is the RBI rate prevalent on the first day of the financial year in which the claim fell due: for the August 2026 fixture, obtain the relevant 1 April 2026 rate. Add two percentage points, not two percent of that rate. Do not invent the monetary interest result or equate a file-count/upload marker with documentary completeness.",
+  "acceptable_alternatives": [
+    "Equivalent conditional date and trigger explanation with precise missing inputs."
+  ],
+  "evidence": [
+    {
+      "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+      "physical_page": 2,
+      "section": "3.8",
+      "passage": "3.8. Bank Rate Means Bank rate fixed by the Reserve Bank of India (RBI) which is prevalent as on 1st\n          day of the financial year in which the claim has fallen due.",
+      "reading_method": "Complete clause selected and read from preserved original, including document-form exceptions; exact native text verified."
+    },
+    {
+      "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+      "physical_page": 14,
+      "section": "9.4",
+      "passage": "9.4        Documents to be submitted:\n\n                 The reimbursement claim is to be supported with the following documents and submitted within\n                 the prescribed time limit.\n                 a. Duly Completed claim form\n                 b. Photo Identity proof of the patient\n                 c. Medical practitioner’s prescription advising admission\n                 d. Original bills with itemized break-up\n                 e. Payment receipts\n                 f. Discharge summary including complete medical history of the patient along with other\n                     details.\n                 g. Investigation/ Diagnostic test reports etc. supported by the prescription from attending\n                     medical practitioner\n                 h. OT notes or Surgeon’s certificate giving details of the operation performed (for surgical\n                     cases).\n                 i. Sticker/Invoice of the Implants, wherever applicable.\n                 j. MLR (Medico Legal Report copy if carried out and FIR (First information report) if registered,\n                     where ever applicable.\n                 k. NEFTDetails (to enable direct credit of claim amount in bank account) and cancelled cheque\n                 l. KYC (Identity proof with Address) of the proposer, where claim liability is above Rs 1 Lakh\n                     as per AML Guidelines\n                 m. Legal heir/succession certificate, wherever applicable\n                 n. Any other relevant document required by Company/TPA for assessment of the claim.\n\n\n                 [Note: Insurer may specify the documents required in original and waive off any of above\n                 required as per their claim procedure]\n\n                 Note:\n                 a. The company shall only accept bills/invoices/medical treatment related documents only in\n                    the Insured Person’s name for whom the claim is submitted\n                 b. In the event of a claim lodged under the Policy and the original documents having been\n                    submitted to any other insurer, the Company shall accept the copy of the documents and\n                    claim settlement advice, duly certified by the other insurer subject to satisfaction of the\n                    Company\n                 c. Any delay in notification or submission may be condoned on merit where delay is proved to\n                    be for reasons beyond the control of the Insured Person.",
+      "reading_method": "Complete clause selected and read from preserved original, including document-form exceptions; exact native text verified."
+    },
+    {
+      "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+      "physical_page": 15,
+      "section": "9.6",
+      "passage": "9.6   Claim Settlement (provision for Penal Interest)\n\n            a. Settlement of claims (other than cashless) shall be settled within fifteen days from\n               submission of claim.\n            b. In the case of delay in the payment of a claim, the Company shall be liable to pay interest\n               from the date of receipt of last necessary document to the date of payment of claim at a rate\n               2% above the bank rate.",
+      "reading_method": "Complete clause selected and read from preserved original, including document-form exceptions; exact native text verified."
+    }
+  ],
+  "calculations": [
+    {
+      "inputs": {
+        "submission": "2026-08-01",
+        "payment": "2026-08-26"
+      },
+      "unit": "elapsed_day",
+      "expression": "payment - submission",
+      "expected": 25,
+      "assumptions": [
+        "Elapsed-date subtraction only; no claim about exact inclusion of a terminal statutory day."
+      ]
+    },
+    {
+      "inputs": {
+        "insurer_receipt": "2026-08-07",
+        "payment": "2026-08-26"
+      },
+      "unit": "elapsed_day",
+      "expression": "payment - insurer_receipt",
+      "expected": 19,
+      "assumptions": [
+        "Illustrated elapsed interval, not automatically the authoritative interest day count."
+      ]
+    }
+  ],
+  "information_requirements": {
+    "customer_information": [
+      "Insured identity and claim ownership",
+      "Sender/recipient and corrected event interpretation"
+    ],
+    "product_applicability": [
+      "Exact accepted contract and reimbursement claim class"
+    ],
+    "policy_knowledge": [
+      "9.6 settlement/interest clauses",
+      "3.8 dated Bank Rate definition",
+      "9.4 necessary documents, waiver and certified-copy exceptions"
+    ],
+    "calculations": [
+      "Submission and last-necessary-receipt intervals separately",
+      "Dated external rate plus two percentage points",
+      "Unknown day-count/rounding semantics"
+    ],
+    "changing_observations": [
+      "Upload, recipient acknowledgement, necessity/completeness determination and actual payment are distinct events"
+    ],
+    "retrieval": [
+      "Load claim-specific current documentary requirements and matched receipts",
+      "Retrieve exact date-effective rate and source"
+    ],
+    "saved_decisions": [
+      "Pin requirement/receipt/payment/rate revisions and unresolved interest inputs"
+    ],
+    "lifecycle": [
+      "Corrections append events and invalidate dependent calculations; deletion removes copied private document data"
+    ]
+  },
+  "general_requirement_ids": [
+    "CUS-01",
+    "CUS-02",
+    "INS-04",
+    "INS-08",
+    "INS-09",
+    "CAL-01",
+    "CAL-04",
+    "RET-01",
+    "DEC-01"
+  ],
+  "pass_criteria": [
+    "Differentiate submission deadline from interest anchor",
+    "Do not use adviser upload as insurer receipt",
+    "Recompute elapsed intervals 25 and 19 while retaining interest day-count uncertainty",
+    "Use the exact financial-year bank-rate reference and two-percentage-point increment",
+    "Withhold precise interest payment amount until all authoritative inputs are known"
+  ],
+  "assessment_status": "individually_assessed_bounded_source_pattern_with_visible_material_gaps",
+  "complete_customer_insurance_decision": false,
+  "counts_as_advice_acceptance_success": false,
+  "adviser_attempts": 0,
+  "source_completeness": "Three connected original clauses assessed; complete governing legal/policy bundle and actual customer evidence remain unestablished.",
+  "schema_implementation_approved": false
+}

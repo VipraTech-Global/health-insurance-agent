@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T12:04:25.510989+00:00",
+  "associations": [],
+  "byte_count": 468747,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/Home%20Care%20Treatment%20Add-on%20-%20Prospectus%20%281%29.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "national",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 566,
+  "linking_url": "https://nationalinsurance.nic.co.in/products/all-products/health/national-home-care-treatment-add",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "3688bae68516329c92f6a1119de4bbb0b753d4088b78d17a478a04d471d1a12f",
+  "status": "acquired",
+  "url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/Home%20Care%20Treatment%20Add-on%20-%20Prospectus%20%281%29.pdf"
+}

@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:56:18.339847+00:00",
+  "associations": [],
+  "byte_count": 263537,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/standalone_bharat_laghu_udyam_suraksha_faq_68e705a1bd.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 503,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "4839e73db12564072c8448e871f3f487bbfca6da2c771df097507fbd4cce6f66",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/standalone_bharat_laghu_udyam_suraksha_faq_68e705a1bd.pdf"
+}

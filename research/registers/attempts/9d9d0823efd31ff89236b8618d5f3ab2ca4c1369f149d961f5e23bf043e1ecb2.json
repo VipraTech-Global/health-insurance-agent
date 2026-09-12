@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:01:53.631572+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/ProspectusandFAQsDay1ProtectionRider.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 2809,
+  "linking_url": "https://www.newindia.co.in/health-insurance/dayone-protection-rider",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "1a49efc5ea404cb903b6c39c16cffe9505efe3cc22a12dd1c02c6ad7b9408fd6",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/ProspectusandFAQsDay1ProtectionRider.pdf"
+}

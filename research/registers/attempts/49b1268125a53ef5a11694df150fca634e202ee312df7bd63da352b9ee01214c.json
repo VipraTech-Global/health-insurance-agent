@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T12:01:50.691100+00:00",
+  "associations": [],
+  "byte_count": 173836,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://acko-cms.ackoassets.com/CIS_Acko_Car_Package_Policy_Add_on_Covers_1_ee48e17dfe.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "acko",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 410,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.52,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.04
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "ccbd6416c9c13b357a08595e806fbba3439abd9810bfb4eb607a6ef1b3a93150",
+  "status": "acquired",
+  "url": "https://acko-cms.ackoassets.com/CIS_Acko_Car_Package_Policy_Add_on_Covers_1_ee48e17dfe.pdf"
+}

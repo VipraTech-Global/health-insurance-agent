@@ -1,0 +1,177 @@
+{
+  "acquired_at": "2026-09-10T11:54:11.624950+00:00",
+  "associations": [],
+  "byte_count": 426793,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/ACCIDENT_GUARD_PLUS_Policy_Wording_c32e225fb1.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 330,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 19,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 907.56,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 680.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 907.56,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 680.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 907.56,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 680.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 907.56,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 680.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 907.56,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 680.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 907.56,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 680.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 907.56,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 680.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 907.56,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 680.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 907.56,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 680.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 907.56,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 680.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 907.56,
+      "page": 11,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 680.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 907.56,
+      "page": 12,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 680.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 907.56,
+      "page": 13,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 680.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 907.56,
+      "page": 14,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 680.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 907.56,
+      "page": 15,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 680.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 907.56,
+      "page": 16,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 680.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 907.56,
+      "page": 17,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 680.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 907.56,
+      "page": 18,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 680.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 907.56,
+      "page": 19,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 680.52
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "550c8962bd609f666aec8f22d80c5a6843428a4ace6294256553d7f998d7c421",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/ACCIDENT_GUARD_PLUS_Policy_Wording_c32e225fb1.pdf"
+}

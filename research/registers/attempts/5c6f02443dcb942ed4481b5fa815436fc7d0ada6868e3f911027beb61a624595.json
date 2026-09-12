@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:56:21.308707+00:00",
+  "associations": [],
+  "byte_count": 145380,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/rationale_letter_medicare_premier_e4d6925e17.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 208,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "6a74d108eccdd1a4960f9790107c7e7934be6576265fe2dcf77b1cc9a5090916",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/rationale_letter_medicare_premier_e4d6925e17.pdf"
+}

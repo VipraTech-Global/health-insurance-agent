@@ -1,0 +1,142 @@
+{
+  "revision": "discussion-r25-final-review",
+  "generated_at_utc": "2026-09-12T15:31:55.025304+00:00",
+  "status": "Ready for explicit human review; no implementation authorized",
+  "artifacts": [
+    {
+      "path": "design/FINAL_DATABASE_DESIGN.md",
+      "sha256": "4d1c0f78f28c8061e28f50827c746aad0b13445dc2f0a647714426c294d2c9ee",
+      "bytes": 6441
+    },
+    {
+      "path": "design/README.md",
+      "sha256": "d6626a7454cbf5a7e39755dfe3f3edaa53bdea00a8769092d03e1c0947e608fe",
+      "bytes": 1429
+    },
+    {
+      "path": "design/SIMPLE_DATABASE_REVIEW_GUIDE.md",
+      "sha256": "d889ca057bf76e18bd8c47a40d5a2e424a0d1ee0badb7d82ad3f21e6848f88d4",
+      "bytes": 11596
+    },
+    {
+      "path": "design/design-review-decisions.md",
+      "sha256": "40960a11dfd9260ad7323d350967d1da6f76baed2be85d584d00178b8166add6",
+      "bytes": 27322
+    },
+    {
+      "path": "design/final-critical-audit-r25.md",
+      "sha256": "7cb7dc3a0346144992cddff051c3cc88f09999aa742bd35ea1bcf8a4905bd765",
+      "bytes": 9798
+    },
+    {
+      "path": "design/entity-field-dictionary.json",
+      "sha256": "0bebaf1d98f78c068bab5b12ff8c99cabedb025919288315ef72c5134dcec470",
+      "bytes": 369647
+    },
+    {
+      "path": "design/field-dictionary.md",
+      "sha256": "fc320810fba6fe3142133021f6ef110c1f098e899d7f8e753a814d982474f5d1",
+      "bytes": 190225
+    },
+    {
+      "path": "design/entity-catalogue.md",
+      "sha256": "f40cca830cab26169ec51f524ef95862e2cc5ff66a5d61d5f3e9a8afe6c5e213",
+      "bytes": 14294
+    },
+    {
+      "path": "design/relationships.json",
+      "sha256": "a216e23ed20ed6ac73572d334c7d5ce695d43d9cc5a3089f15ff57ab08d25b4f",
+      "bytes": 94547
+    },
+    {
+      "path": "design/complete-entity-relationships.mmd",
+      "sha256": "5cf281576fb1f81b29467f2573839c4516ef6334f17a314ed1316b546a4d5a67",
+      "bytes": 30288
+    },
+    {
+      "path": "design/relationships-and-lifecycle.md",
+      "sha256": "2cad0344c49cb936963c24cb3523a595bfb180980c50e63712e214987151c024",
+      "bytes": 3273
+    },
+    {
+      "path": "design/storage-and-constraints.md",
+      "sha256": "962beeed7a612f09d9d0757e3c25b01f3b485f2a9ca6d41c66f89259437aee4b",
+      "bytes": 2300
+    },
+    {
+      "path": "design/retrieval-operations.md",
+      "sha256": "f072e98c1e9d06435d02f596da2c9ac3371243d80467cfe68fe58a5594b290d4",
+      "bytes": 2522
+    },
+    {
+      "path": "design/information-requirements.json",
+      "sha256": "9cc10684ab7d88aed0971b2439b6278a9dca46ebfb12ecc2737f4769d5222388",
+      "bytes": 30805
+    },
+    {
+      "path": "design/migration-field-map.json",
+      "sha256": "6bbaa11faf41c2b8fb029d93515d562ebccd371679e8b569bb7881c15e0beaeb",
+      "bytes": 110906
+    },
+    {
+      "path": "design/migration-and-cutover.md",
+      "sha256": "31ec3a2a69d92e3bd53ad45e35177f4c6d85851d2d25f4ae3ecf9117d70867cd",
+      "bytes": 6068
+    },
+    {
+      "path": "design/case-requirement-field-map.json",
+      "sha256": "70502bd497af0c60045805031685bcbb4fc36f6db9f7f0d0a1b96b3e19609664",
+      "bytes": 649160
+    },
+    {
+      "path": "design/additional-case-field-map.json",
+      "sha256": "fbf8bc95b6b418157175953c9ae6f072add36d39e70c15a89c208155d9e7097a",
+      "bytes": 12619
+    },
+    {
+      "path": "design/json-contracts.schema.json",
+      "sha256": "ab282a4a76333da06b5dde05047886be86757875d74a0816fc3185fedb72a36e",
+      "bytes": 79437
+    },
+    {
+      "path": "design/field-traceability-r25.json",
+      "sha256": "0dc2d9ceb76d05af739ecc6480326c1c42100399808d96423149e22f0c800464",
+      "bytes": 4802075
+    },
+    {
+      "path": "design/value-and-rule-contracts.md",
+      "sha256": "8095104a679fb9af5f4828b1425ee516bd9562b906ac95012ac1c22a528ca5ef",
+      "bytes": 11523
+    },
+    {
+      "path": "design/worked-examples.md",
+      "sha256": "08b9a345f503a40ec77c7c3a47f02137b462b3bc4050ee0041f0abf757bf89bb",
+      "bytes": 12203
+    },
+    {
+      "path": "design/django-managed-tables.md",
+      "sha256": "3167c32113ce741f901cbef2e2a68297af01da898bb72741d7939af42eec6a79",
+      "bytes": 593
+    },
+    {
+      "path": "design/benchmark-storage-proposal.md",
+      "sha256": "166561910a858752ad4706c8c2a41b9e7145456765e4e87abe8299836f5f63d7",
+      "bytes": 8010
+    },
+    {
+      "path": "design/benchmark-storage-fields.json",
+      "sha256": "25f8b1d7dfc5efd1a8a324978383be514f9ecf684787904e789ed96dd4183e89",
+      "bytes": 216176
+    },
+    {
+      "path": "reports/benchmark-design-verification-r24.json",
+      "sha256": "951c459809322de50c45ac6b31e0909f09e60fee1feb46f9e14c27ebfeddbfbb",
+      "bytes": 1750
+    },
+    {
+      "path": "reports/final-design-verification-r25.json",
+      "sha256": "76ac50954b912a7fa19b80ace62e392a2da822de7abe9ebd18f5dd36b137a8b9",
+      "bytes": 2896
+    }
+  ]
+}

@@ -1,0 +1,856 @@
+{
+  "revision": "discussion-r5",
+  "status": "derived from available-evidence adjudications; outstanding source dependencies retained",
+  "requirements": [
+    {
+      "requirement_id": "CUS-01",
+      "title": "Customer identity and roles",
+      "requirement": "Keep account owner, buyer, proposer, payer, nominee and intended insured distinct; relationships are directional and dated. Never derive birth date from age alone.",
+      "families": [
+        1,
+        2,
+        3,
+        4,
+        13,
+        20
+      ],
+      "reference_examples": [
+        "ref-20-01",
+        "ref-20-02",
+        "ref-03-09"
+      ],
+      "basis": [
+        "E1",
+        "N5",
+        "N6",
+        "I13"
+      ],
+      "operational": false,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "CUS-02",
+      "title": "Facts and corrections",
+      "requirement": "Retain assertions by subject, predicate, units, source, valid time, recorded time, uncertainty and supersession. A proposal or model interpretation is not an accepted fact.",
+      "families": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "reference_examples": [
+        "ref-20-05",
+        "ref-20-08",
+        "ref-05-10"
+      ],
+      "basis": [
+        "user plan sections2-3"
+      ],
+      "operational": false,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "CUS-03",
+      "title": "Priorities and resources",
+      "requirement": "Keep hard constraints, preferences, available cash, premium budget and ongoing expenditure separately; compare like-for-like periods and configurations.",
+      "families": [
+        1,
+        2,
+        4,
+        8,
+        10,
+        13,
+        18
+      ],
+      "reference_examples": [
+        "ref-01-02",
+        "ref-18-07"
+      ],
+      "basis": [
+        "user plan section2"
+      ],
+      "operational": false,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "INS-01",
+      "title": "Product identities and configurations",
+      "requirement": "Identify insurer, family, variant and selectable options separately from marketing labels and accepted configurations; record scope exclusions without guessing identity.",
+      "families": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "reference_examples": [
+        "ref-14-01",
+        "ref-01-09",
+        "ref-07-09"
+      ],
+      "basis": [
+        "S3",
+        "S13",
+        "I7",
+        "registers/legacy-assessment-r5.json",
+        "registers/document-scope-r5.json",
+        "reports/source-reconciliation-r5.md",
+        "registers/legacy-assessment-r7.json",
+        "reports/bajaj-reconciliation-r7.json",
+        "registers/icici-document-scope-r8.json",
+        "registers/aditya-family-reconciliation-r9.json",
+        "registers/niva-family-reconciliation-r8.json",
+        "registers/sbi-family-reconciliation-r10.json"
+      ],
+      "operational": false,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "INS-02",
+      "title": "Terms applicability over time",
+      "requirement": "Retain UIN separately from terms revision, source hash, issue/renewal/treatment trigger, supersession and regulatory modification; same UIN can contain changed terms.",
+      "families": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "reference_examples": [
+        "ref-16-11",
+        "ref-15-09",
+        "ref-16-03"
+      ],
+      "basis": [
+        "I2",
+        "I3",
+        "I5",
+        "H2",
+        "H3",
+        "registers/legacy-assessment-r5.json",
+        "registers/document-scope-r5.json",
+        "reports/source-reconciliation-r5.md",
+        "registers/legacy-assessment-r7.json",
+        "reports/bajaj-reconciliation-r7.json",
+        "registers/icici-document-scope-r8.json",
+        "registers/aditya-family-reconciliation-r9.json",
+        "registers/niva-family-reconciliation-r8.json",
+        "registers/sbi-family-reconciliation-r10.json"
+      ],
+      "operational": false,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "INS-03",
+      "title": "Individual acceptance and membership",
+      "requirement": "Proposed, offered, accepted and in-force configurations differ. Bind each person, option, personal exclusion, loading and co-pay to its issued evidence and interval.",
+      "families": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        13,
+        15,
+        16,
+        18,
+        19
+      ],
+      "reference_examples": [
+        "ref-05-09",
+        "ref-18-08",
+        "ref-03-10"
+      ],
+      "basis": [
+        "N9",
+        "N28",
+        "S1",
+        "S17",
+        "I9"
+      ],
+      "operational": false,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "INS-04",
+      "title": "Evidence and connected context",
+      "requirement": "Preserve original bytes, URL provenance, acquisition failures, physical pages, printed labels, paragraph/table/figure coordinates, footnotes and linked clauses. Document presence does not prove full rule coverage.",
+      "families": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "reference_examples": [
+        "ref-09-11",
+        "ref-05-11",
+        "ref-09-10"
+      ],
+      "basis": [
+        "Star table original reading",
+        "HDFC image table",
+        "registers/legacy-assessment-r5.json",
+        "registers/document-scope-r5.json",
+        "reports/source-reconciliation-r5.md",
+        "registers/legacy-assessment-r7.json",
+        "reports/bajaj-reconciliation-r7.json",
+        "registers/icici-document-scope-r8.json",
+        "registers/aditya-family-reconciliation-r9.json",
+        "registers/niva-family-reconciliation-r8.json",
+        "registers/sbi-family-reconciliation-r10.json"
+      ],
+      "operational": false,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "INS-05",
+      "title": "Rules, exceptions and conflicts",
+      "requirement": "Represent grants, definitions, restrictions, exclusions, exceptions and mandatory dependencies with explicit scope. Conflicting originals block affected claims until evidenced resolution; legal portfolio duties are not product promises.",
+      "families": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "reference_examples": [
+        "ref-07-10",
+        "ref-09-10",
+        "ref-05-01"
+      ],
+      "basis": [
+        "N45",
+        "S31",
+        "I6",
+        "E11"
+      ],
+      "operational": false,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "INS-06",
+      "title": "Medical disclosures and clocks",
+      "requirement": "Separate diagnoses, advice, symptoms, medicines and findings, their dates and subjects; preserve proposal question scope independently of PED lookback and prospective waits.",
+      "families": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        15,
+        19
+      ],
+      "reference_examples": [
+        "ref-06-07",
+        "ref-05-10",
+        "ref-14-10"
+      ],
+      "basis": [
+        "P5",
+        "P9",
+        "N22"
+      ],
+      "operational": false,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "INS-07",
+      "title": "Periods, layers and continuity",
+      "requirement": "Track policy term, coverage period, enhancement layer, annual ledger, uninterrupted membership, accepted prior credits and moratorium independently by person, amount and benefit.",
+      "families": [
+        2,
+        3,
+        4,
+        5,
+        8,
+        12,
+        13,
+        14,
+        15,
+        16,
+        19
+      ],
+      "reference_examples": [
+        "ref-15-03",
+        "ref-15-06",
+        "ref-14-02"
+      ],
+      "basis": [
+        "P10",
+        "P11",
+        "I18",
+        "E10"
+      ],
+      "operational": false,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "INS-08",
+      "title": "Payment, renewal and rights events",
+      "requirement": "Differentiate annual renewal and within-term instalment grace; capture receipt events, deadlines, cancellation, free-look, withdrawal and debt acceleration with source-dependent boundaries.",
+      "families": [
+        1,
+        4,
+        13,
+        15,
+        16,
+        18,
+        19
+      ],
+      "reference_examples": [
+        "ref-16-01",
+        "ref-16-02",
+        "ref-15-04"
+      ],
+      "basis": [
+        "I11",
+        "I14",
+        "I15",
+        "I19",
+        "I20",
+        "S26",
+        "S28",
+        "S29"
+      ],
+      "operational": false,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "CAL-01",
+      "title": "Typed quantities and comparisons",
+      "requirement": "Distinguish zero, unlimited, unknown and not-applicable. Carry currency, percentage denominator, quantity dimensions, calendar units, comparison operator and rounding evidence.",
+      "families": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "reference_examples": [
+        "ref-11-09",
+        "ref-18-10",
+        "ref-03-02"
+      ],
+      "basis": [
+        "E2",
+        "E5",
+        "H6",
+        "New India CIS3"
+      ],
+      "operational": false,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "CAL-02",
+      "title": "Expense admissibility and cost shares",
+      "requirement": "Evaluate each expense, event, provider and treatment setting, room ratio, sublimit, inclusive components, deductible and co-pay in the evidenced order. Record alternative orders when unresolved.",
+      "families": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        13,
+        14,
+        17,
+        19
+      ],
+      "reference_examples": [
+        "ref-11-01",
+        "ref-11-02",
+        "ref-11-08"
+      ],
+      "basis": [
+        "N10",
+        "N11",
+        "N13",
+        "N31",
+        "S4"
+      ],
+      "operational": false,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "CAL-03",
+      "title": "Scope, accumulation and limits",
+      "requirement": "Scope balances by member/family/illness/claim/admission/body part/year; separate payable amounts, threshold accumulation, sum-insured consumption, reserves and already paid amounts.",
+      "families": [
+        1,
+        2,
+        8,
+        9,
+        11,
+        12,
+        13,
+        14,
+        16,
+        19
+      ],
+      "reference_examples": [
+        "ref-14-05",
+        "ref-14-09",
+        "ref-12-04"
+      ],
+      "basis": [
+        "S2",
+        "S13",
+        "S14",
+        "S15",
+        "S16",
+        "E2",
+        "registers/legacy-assessment-r7.json",
+        "reports/bajaj-reconciliation-r7.json",
+        "registers/icici-document-scope-r8.json",
+        "registers/aditya-family-reconciliation-r9.json",
+        "registers/niva-family-reconciliation-r8.json",
+        "registers/sbi-family-reconciliation-r10.json"
+      ],
+      "operational": false,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "CAL-04",
+      "title": "Dependent tables and restoration",
+      "requirement": "Store selector semantics and complete row/column/footnote evidence; apply bonus, recharge and restored sublimit constraints separately from headline cover.",
+      "families": [
+        2,
+        8,
+        9,
+        11,
+        12,
+        14,
+        16
+      ],
+      "reference_examples": [
+        "ref-09-11",
+        "ref-12-09",
+        "ref-12-10"
+      ],
+      "basis": [
+        "Star tables",
+        "S12",
+        "E10",
+        "H4",
+        "registers/legacy-assessment-r7.json",
+        "reports/bajaj-reconciliation-r7.json",
+        "registers/icici-document-scope-r8.json",
+        "registers/aditya-family-reconciliation-r9.json",
+        "registers/niva-family-reconciliation-r8.json",
+        "registers/sbi-family-reconciliation-r10.json"
+      ],
+      "operational": false,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "OBS-01",
+      "title": "Owned dated quotes",
+      "requirement": "Bind private quotes, premium components, tax evidence, payment schedules, offer validity and acceptance to owner, people, facts and exact options. Corrected facts invalidate comparisons.",
+      "families": [
+        1,
+        2,
+        4,
+        8,
+        13,
+        18
+      ],
+      "reference_examples": [
+        "ref-18-03",
+        "ref-18-09",
+        "ref-18-10"
+      ],
+      "basis": [
+        "P8",
+        "P14",
+        "user plan section3"
+      ],
+      "operational": false,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "OBS-02",
+      "title": "Provider observations",
+      "requirement": "Identify legal provider and branch independently of names; date and scope network, restricted network and exclusions by insurer/product/service; authorization decisions are separate.",
+      "families": [
+        1,
+        2,
+        4,
+        9,
+        10,
+        17,
+        19
+      ],
+      "reference_examples": [
+        "ref-17-07",
+        "ref-17-08",
+        "ref-17-09"
+      ],
+      "basis": [
+        "S20",
+        "S23",
+        "I23",
+        "I24",
+        "I31"
+      ],
+      "operational": false,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "RET-01",
+      "title": "Deterministic mandatory retrieval",
+      "requirement": "Filter owner and accepted fact/configuration/time snapshots before loading all mandatory rules, linked definitions, exceptions and unresolved dependencies; semantic ranking cannot omit mandatory rules.",
+      "families": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "reference_examples": [
+        "ref-07-10",
+        "ref-20-09",
+        "ref-09-11"
+      ],
+      "basis": [
+        "user plan sections3-4"
+      ],
+      "operational": false,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "DEC-01",
+      "title": "Saved claims and replay",
+      "requirement": "Persist supported answer claims, their exact evidence and assumptions, calculation trace, source/customer/observation revisions, scope, outcome and unresolved dependencies; preserve historical answers while invalidating current ones.",
+      "families": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "reference_examples": [
+        "ref-20-09",
+        "ref-15-09",
+        "ref-11-02"
+      ],
+      "basis": [
+        "user plan sections2-4"
+      ],
+      "operational": false,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "OPS-01",
+      "title": "Ownership, privacy and deletion",
+      "requirement": "Enforce account isolation for every private row and original; preserve password/session continuity during migration. Delete content and dependent indexes/caches with explicit retention holds, without retaining erased values in audit logs.",
+      "families": [
+        18,
+        20
+      ],
+      "reference_examples": [
+        "ref-20-03",
+        "ref-20-10"
+      ],
+      "basis": [
+        "user plan sections3-5",
+        "pilot-preservation-requirements"
+      ],
+      "operational": true,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "OPS-02",
+      "title": "Concurrent durable turns",
+      "requirement": "Persist idempotent submissions and outbox before dispatch; optimistic fact revisions, worker leases, cancellation, durable event cursors and explicit retry attempts prevent duplicate inference and stale publication.",
+      "families": [
+        20
+      ],
+      "reference_examples": [
+        "ref-20-06",
+        "ref-20-09"
+      ],
+      "basis": [
+        "user plan section4",
+        "pilot-preservation-requirements"
+      ],
+      "operational": true,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "OPS-03",
+      "title": "Processing and publication",
+      "requirement": "Track reader/extractor/reviewer versions, failures, attempts, dependency closure, coverage denominators and atomic corpus publication; initial plus two targeted retries do not turn unresolved omissions into published knowledge.",
+      "families": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "reference_examples": [
+        "ref-09-10",
+        "ref-07-10"
+      ],
+      "basis": [
+        "user plan sections2,4-5",
+        "registers/legacy-assessment-r5.json",
+        "registers/document-scope-r5.json",
+        "reports/source-reconciliation-r5.md"
+      ],
+      "operational": true,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "OPS-04",
+      "title": "Model qualification and telemetry",
+      "requirement": "Persist exact relay/model/schema identity, qualification evidence, provider attempts, usage, latency and operational failures; no silent model fallback. Separate inference from durable user-visible state.",
+      "families": [
+        20
+      ],
+      "reference_examples": [
+        "ref-20-06",
+        "ref-20-09"
+      ],
+      "basis": [
+        "user plan sections4-5",
+        "pilot-preservation-requirements"
+      ],
+      "operational": true,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "OPS-05",
+      "title": "Independent acceptance",
+      "requirement": "Keep benchmark questions/solutions in a separate access-controlled store and expose only generalized requirements and aggregate results; track exposure, replacement lineage, freeze and three attempts without changing denominators.",
+      "families": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "reference_examples": [],
+      "basis": [
+        "user plan sections2,5",
+        "safe evaluation exports"
+      ],
+      "operational": true,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "OPS-06",
+      "title": "Reversible migration and engineering",
+      "requirement": "Preserve pilot UUIDs, auth hashes, ownership, messages and original bytes; quarantine unsafe semantic mappings, rehearse rollback and verify performance and robustness before cutover.",
+      "families": [
+        20
+      ],
+      "reference_examples": [
+        "ref-20-04"
+      ],
+      "basis": [
+        "user plan section5",
+        "pilot-preservation-requirements"
+      ],
+      "operational": true,
+      "evaluation_basis": "generalized safe export only"
+    },
+    {
+      "requirement_id": "INS-09",
+      "title": "Claim events, necessary documents and actual payments",
+      "requirement": "Keep submission, recipient receipt, document requests, accepted original/copy form, completeness, the last necessary-document receipt and actual payment separate by claim. Preserve event corrections, disputed necessity, sender/recipient authority and exact source evidence. Deadline, delayed-interest and payment results must retain their actual anchors, dated external rate and unresolved day-count/rounding authority. Mandatory hospitalization notices can exist before a claim.",
+      "families": [
+        11,
+        17,
+        19
+      ],
+      "reference_examples": [
+        "ref-11-05",
+        "ref-17-09",
+        "additional-r10-19-01"
+      ],
+      "basis": [
+        "NIA-AS-R6-9.6-1",
+        "NIA-AS-R6-9.6-2",
+        "NIA-AS-R6-3.8-1",
+        "NIA-AS-R6-9.7-2",
+        "STAR-SSF-R6-V.2-14",
+        "STAR-SSF-R6-V.2-15",
+        "STAR-SSF-R6-V.2-16",
+        "STAR-SSF-R6-V.2-33",
+        "STAR-SSF-R6-V.17-1"
+      ],
+      "operational": false,
+      "evaluation_basis": "No benchmark material read; source-derived requirement. Existing reference examples touch payments/access but do not certify coverage of the new last-document interest pattern."
+    },
+    {
+      "requirement_id": "OPS-07",
+      "title": "Immutable independent inventory and coverage accounting",
+      "requirement": "Retain candidate original occurrences separately from adjudicated atomic denominator membership. Seal exact counting protocols, source scope, per-revision members and split/merge/qualifier lineage. Link each historical coverage report to its exact sealed revision and immutable supported-member reviews, counting each included instance once. Unknown segmentation or governing-original closure keeps the denominator unmeasured; parser output cannot establish its own denominator.",
+      "families": [],
+      "reference_examples": [],
+      "basis": [
+        "independent-original-inventory-star-ssf-r6 counting_protocol and source issues",
+        "independent-original-inventory-new-india-as-r6 counting_protocol and NIA-AS-AMBIG-C181-183",
+        "user plan independent original inventory and historical acceptance accounting"
+      ],
+      "operational": true,
+      "evaluation_basis": "No benchmark solutions or cases are stored in this operational inventory; evaluation remains a separate controlled workflow."
+    }
+  ],
+  "current_source_assessment": "Latest scope/legacy reconciliation is source-dependent and incomplete; r7 Bajaj, r8 ICICI/Niva, r9 Aditya and r10 SBI add original-backed family/configuration evidence. R6 full-page Star/New India inventories remain provisional for atomic segmentation and connected closure."
+}

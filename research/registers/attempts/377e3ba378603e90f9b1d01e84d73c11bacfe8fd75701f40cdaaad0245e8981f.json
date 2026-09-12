@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:00:57.656627+00:00",
+  "associations": [],
+  "byte_count": 275593,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html;charset=UTF-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.manipalcigna.com/documents/d/guest/prohealth-prime_p-a-plan_tnc",
+  "format_version": 1,
+  "http_status": 404,
+  "insurer_id": "manipalcigna",
+  "issues": [
+    "http_404"
+  ],
+  "language": "unknown",
+  "latency_ms": 701,
+  "linking_url": "https://www.manipalcigna.com/hospitalization-cover/prohealth-insurance",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "c26052af9699976e2297b55dd112b0972281551a2f510cefe929c2469fc3bd61",
+  "status": "failed",
+  "url": "https://www.manipalcigna.com/documents/d/guest/prohealth-prime_p-a-plan_tnc"
+}

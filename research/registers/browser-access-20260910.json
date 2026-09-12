@@ -1,0 +1,7 @@
+{
+  "attempted_surface": "Care official other-downloads page via Chrome skill runtime",
+  "effect": "Browser-only retry unavailable. Official HTTP acquisition and web discovery continued; no plugin/service repair or alternative browser bypass performed.",
+  "error": "Cannot find module '/home/akhilesh/.codex/plugins/cache/openai-bundled/browser/26.825.51511/scripts/browser-service.mjs' imported from /tmp/.tmpVIEBNx/trusted-worker.js",
+  "originals_acquired_by_browser": 0,
+  "status": "technical_failure_before_browser_connection"
+}

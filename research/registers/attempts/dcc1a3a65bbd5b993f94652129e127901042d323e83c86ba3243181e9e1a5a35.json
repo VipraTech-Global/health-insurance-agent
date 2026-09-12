@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:56:34.949492+00:00",
+  "associations": [],
+  "byte_count": 1860353,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/tata_aig_home_protect_policy_bank_clause_4ae6d54bcd.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 971,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "fddea6e11df47cc65198f948b65a8e21a95a087184e6b50f1e8d35e7e09e08f8",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/tata_aig_home_protect_policy_bank_clause_4ae6d54bcd.pdf"
+}

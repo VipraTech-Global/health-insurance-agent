@@ -1,0 +1,145 @@
+{
+  "acquired_at": "2026-09-10T11:52:15.766603+00:00",
+  "associations": [],
+  "byte_count": 242056,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/pages/doc/premium_chart/Rate%20Card%20of%20ReAssure_v4%20UIN%20copy.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1708,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": 15,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 935.6,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1323.33
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 935.6,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1323.33
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 935.6,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1323.33
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 935.6,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1323.33
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 935.6,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1323.33
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 935.6,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1323.33
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 935.6,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1323.33
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 935.6,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1323.33
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 935.6,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1323.33
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 935.6,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1323.33
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 935.6,
+      "page": 11,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1323.33
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 935.6,
+      "page": 12,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1323.33
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 935.6,
+      "page": 13,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1323.33
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 935.6,
+      "page": 14,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1323.33
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 935.6,
+      "page": 15,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1323.33
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "48b6073a899bbc24a43e89858d0c5e4a4f8ff008807edc4573048070cb8b2851",
+  "status": "acquired",
+  "url": "https://transactions.nivabupa.com/pages/doc/premium_chart/Rate Card of ReAssure_v4 UIN copy.pdf"
+}

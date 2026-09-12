@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:01:37.246238+00:00",
+  "associations": [],
+  "byte_count": 109,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/json",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://assets.ctfassets.net/uwf0n1j71a7j/6vzmzX2sH9vkBZEatXXCmb/dfc5c910f7c73ef1eb35ffb2bb88512d/Portability_Form_and_Annexure_-_Acko_Specially_Abled_Health_Cover.pdf",
+  "format_version": 1,
+  "http_status": 404,
+  "insurer_id": "acko",
+  "issues": [
+    "http_404"
+  ],
+  "language": "unknown",
+  "latency_ms": 11406,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "0d4497b2300359082b51ebf66d75065f930566011bc3744d6d66b2611e087a94",
+  "status": "failed",
+  "url": "https://assets.ctfassets.net/uwf0n1j71a7j/6vzmzX2sH9vkBZEatXXCmb/dfc5c910f7c73ef1eb35ffb2bb88512d/Portability_Form_and_Annexure_-_Acko_Specially_Abled_Health_Cover.pdf"
+}

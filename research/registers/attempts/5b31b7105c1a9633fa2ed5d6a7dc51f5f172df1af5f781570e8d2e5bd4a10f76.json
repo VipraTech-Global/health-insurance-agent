@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:59:16.994296+00:00",
+  "associations": [],
+  "byte_count": 507973,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/Day%201%20Protection%20Rider%20CLAUSE.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1283,
+  "linking_url": "https://www.newindia.co.in/health-insurance/dayone-protection-rider",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "faa493261ff4d6c8a8e0d7a95e847b3913eefeb43d631a15356206bdaa290e35",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/Day 1 Protection Rider CLAUSE.pdf"
+}

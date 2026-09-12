@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T11:59:21.709270+00:00",
+  "associations": [],
+  "byte_count": 509119,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://cms.zurichkotak.com/uploads/Property_Shield_Prospectus_Commercial_Website_90e416c9c2.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "zurich-kotak",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 428,
+  "linking_url": "https://www.zurichkotak.com/product-documents",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "149227f6eef8b10abe53ddb03db3fd95c08d5b8387a467f21c2f2d5e8d56bca3",
+  "status": "acquired",
+  "url": "https://cms.zurichkotak.com/uploads/Property_Shield_Prospectus_Commercial_Website_90e416c9c2.pdf"
+}

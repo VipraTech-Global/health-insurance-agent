@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:59:40.877814+00:00",
+  "associations": [],
+  "byte_count": 2192961,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-mediclaim-policy/New%20India%20Mediclaim%20-%203%20fold%20New%20Matter%20New%20with%20I_260722_153651.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 7444,
+  "linking_url": "https://www.newindia.co.in/health-insurance/health-insurance-policy",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.27557,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1260.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.27557,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1260.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "d1676082e41fff4cda966085c226738bace5138b9e51169fd63c533120f9ec5a",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-mediclaim-policy/New India Mediclaim - 3 fold New Matter New with I_260722_153651.pdf"
+}

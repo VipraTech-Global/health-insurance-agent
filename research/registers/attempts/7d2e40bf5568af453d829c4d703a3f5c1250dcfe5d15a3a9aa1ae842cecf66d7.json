@@ -1,0 +1,121 @@
+{
+  "acquired_at": "2026-09-10T11:52:40.665549+00:00",
+  "associations": [],
+  "byte_count": 4967957,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://stgaccinwbsprdlrs01.blob.core.windows.net/nhilprd/Claim_form_c7bff50b75.pdf?sv=2025-05-05&spr=https&st=2025-07-14T17%3A04%3A25Z&se=2035-07-12T17%3A04%3A25Z&sr=b&sp=r&sig=Pt8hcGyjDrMgmu7ooMhc%2ByPZEvvewgPseOFXrxRpZi4%3D",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "narayana",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 2090,
+  "linking_url": "https://www.narayanahealth.insurance/customer-support",
+  "page_count": 12,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 816.749979,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.75
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 816.749979,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.75
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 816.749979,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.75
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 816.749979,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.75
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 816.749979,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.75
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 816.749979,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.75
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 816.749979,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.75
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 816.749979,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.75
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 816.749979,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.75
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 816.749979,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.75
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 816.749979,
+      "page": 11,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.75
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 816.749979,
+      "page": 12,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.75
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "af33de6adf8be2fdda0d0dd82fbcb9ac743820f0baf7e4fcd497b59df8c2e33f",
+  "status": "acquired",
+  "url": "https://stgaccinwbsprdlrs01.blob.core.windows.net/nhilprd/Claim_form_c7bff50b75.pdf?sv=2025-05-05&spr=https&st=2025-07-14T17%3A04%3A25Z&se=2035-07-12T17%3A04%3A25Z&sr=b&sp=r&sig=Pt8hcGyjDrMgmu7ooMhc%2ByPZEvvewgPseOFXrxRpZi4%3D"
+}

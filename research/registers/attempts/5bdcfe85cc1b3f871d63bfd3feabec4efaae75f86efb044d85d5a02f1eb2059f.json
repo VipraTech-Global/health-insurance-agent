@@ -1,0 +1,21 @@
+{
+  "acquired_at": "2026-09-10T11:59:18.995618+00:00",
+  "associations": [],
+  "component_version": "research-acquisition/1",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "format_version": 1,
+  "insurer_id": "acko",
+  "issues": [
+    "host_not_approved"
+  ],
+  "language": "unknown",
+  "latency_ms": 2,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": null,
+  "status": "failed",
+  "url": "https://acko-cms.ackoassets.com/GCV_Liability_Only_Policy_Prospectus_714d1610d9.pdf"
+}

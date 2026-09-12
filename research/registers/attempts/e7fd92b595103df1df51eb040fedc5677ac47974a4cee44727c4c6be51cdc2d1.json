@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:59:00.521939+00:00",
+  "associations": [],
+  "byte_count": 476822,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-modern-treatment-rider/CIS_NIA_Modern_Treatment_Rider_01092023.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 5899,
+  "linking_url": "https://www.newindia.co.in/health-insurance/new-india-modern-treatment-rider",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "7b68c7c0da5a53af05e6dd83fb3ed7cc2851a0a6dd5c1e286f4ce287d0e7f9e1",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-india-modern-treatment-rider/CIS_NIA_Modern_Treatment_Rider_01092023.pdf"
+}

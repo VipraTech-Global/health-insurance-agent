@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T11:59:24.822728+00:00",
+  "associations": [],
+  "byte_count": 467165,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://cms.zurichkotak.com/uploads/34_Maxima_Professional_Liability_Tech_Prospectus_99913eeb8c.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "zurich-kotak",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 597,
+  "linking_url": "https://www.zurichkotak.com/product-documents",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "0a6f4f3e4a49b24660867b5e9dfafef094eaade8ae63f67a833dbf91cc9d078e",
+  "status": "acquired",
+  "url": "https://cms.zurichkotak.com/uploads/34_Maxima_Professional_Liability_Tech_Prospectus_99913eeb8c.pdf"
+}

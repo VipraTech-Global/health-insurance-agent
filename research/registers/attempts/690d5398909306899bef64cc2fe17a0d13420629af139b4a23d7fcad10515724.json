@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:38:34.299162+00:00",
+  "associations": [],
+  "byte_count": 3566,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/captcha?url=//pages/doc/premium_chart/Health%20Premia%20-%20Rate%20Card.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1335,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "23849bd49523272fe57bacb865484331442d6841f5fa0c45d1bd05b544e9fc85",
+  "status": "failed",
+  "url": "https://transactions.nivabupa.com/pages/doc/premium_chart/Health Premia - Rate Card.pdf"
+}

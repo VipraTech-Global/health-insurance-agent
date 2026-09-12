@@ -1,0 +1,92 @@
+{
+  "scope_register": "registers/document-scope-r22.json",
+  "scope_sha256": "d07999d9d520db5c2b13e208b63e55eda5d59e6fab9c8276730a66f9a4ac026b",
+  "batches": [
+    {
+      "path": "research/registers/cigna-hdfc-family-reconciliation-r10.json",
+      "integrated_sha256": "059273d3edc8fdd53c3a1cea0496091adf723751acf00846f1b58d418afa6f38",
+      "current_sha256": "059273d3edc8fdd53c3a1cea0496091adf723751acf00846f1b58d418afa6f38",
+      "unchanged_since_integration": true,
+      "interpretation": "Any changed report hash is an assertion revision; preserved original hashes are separately checked."
+    },
+    {
+      "path": "research/registers/digit-niva-family-reconciliation-r11.json",
+      "integrated_sha256": "2904d7edd1d5cb7eab1804b74a5cea8e96d279539d52b14ba7da22477472773f",
+      "current_sha256": "579e42a67b749ee767092118d5c1f50aaa6b8cb0d8c307a038cb98d4574fa07c",
+      "unchanged_since_integration": false,
+      "interpretation": "Any changed report hash is an assertion revision; preserved original hashes are separately checked."
+    },
+    {
+      "path": "research/registers/national-family-reconciliation-r11.json",
+      "integrated_sha256": "25ee8925d79146b9993707347d897e02346ca454c9749b4fdbed83257e2842bd",
+      "current_sha256": "e701056b93646e74c0a867176667b9a69e8f23c4f41c8a9f6b580f17259009ca",
+      "unchanged_since_integration": false,
+      "interpretation": "Any changed report hash is an assertion revision; preserved original hashes are separately checked."
+    },
+    {
+      "path": "research/registers/new-india-family-reconciliation-r11.json",
+      "integrated_sha256": "01121e71748454092eb8ecef7c7371704e962451f1d231f71f79be61a46f2b7a",
+      "current_sha256": "01121e71748454092eb8ecef7c7371704e962451f1d231f71f79be61a46f2b7a",
+      "unchanged_since_integration": true,
+      "interpretation": "Any changed report hash is an assertion revision; preserved original hashes are separately checked."
+    },
+    {
+      "path": "research/registers/tata-family-reconciliation-r12.json",
+      "integrated_sha256": "5fe3e686f48e08b05b8e73249bb4b368686ab6332ec5181b04ccd8086226e423",
+      "current_sha256": "b29b8dcb4f9a6e8603f896b5ebb29f263043ddd018cfdd489f4de597f8572f90",
+      "unchanged_since_integration": false,
+      "interpretation": "Any changed report hash is an assertion revision; preserved original hashes are separately checked."
+    },
+    {
+      "path": "research/registers/united-india-family-reconciliation-r12.json",
+      "integrated_sha256": "9e80c6ba06e0a8b699df669b2adf9a35eafb075666540302dd5761093501e750",
+      "current_sha256": "9e80c6ba06e0a8b699df669b2adf9a35eafb075666540302dd5761093501e750",
+      "unchanged_since_integration": true,
+      "interpretation": "Any changed report hash is an assertion revision; preserved original hashes are separately checked."
+    },
+    {
+      "path": "research/registers/national-super-topup-reconciliation-r12.json",
+      "integrated_sha256": "b350bb6b745e9ec84e0e4a38cfc860b5dcdb57075c5d2fef43e63e9c5077764c",
+      "current_sha256": "b350bb6b745e9ec84e0e4a38cfc860b5dcdb57075c5d2fef43e63e9c5077764c",
+      "unchanged_since_integration": true,
+      "interpretation": "Any changed report hash is an assertion revision; preserved original hashes are separately checked."
+    },
+    {
+      "path": "research/registers/remaining-five-family-reconciliation-r12.json",
+      "integrated_sha256": "82f4f3a2f08a9eb3a76896a2c05692a198c3961dae9cee73458fe5f23324ae71",
+      "current_sha256": "82f4f3a2f08a9eb3a76896a2c05692a198c3961dae9cee73458fe5f23324ae71",
+      "unchanged_since_integration": true,
+      "interpretation": "Any changed report hash is an assertion revision; preserved original hashes are separately checked."
+    },
+    {
+      "path": "research/registers/narayana-original-inventory-r13.json",
+      "integrated_sha256": "cbc90560273758b22afa4544c2e3195d870d13d1df84b65c7ddde16b9446cafe",
+      "current_sha256": "cbc90560273758b22afa4544c2e3195d870d13d1df84b65c7ddde16b9446cafe",
+      "unchanged_since_integration": true,
+      "interpretation": "Any changed report hash is an assertion revision; preserved original hashes are separately checked."
+    },
+    {
+      "path": "research/registers/zurich-generali-original-inventory-r13.json",
+      "integrated_sha256": "840ce1c36a4dcc64a92a5085f3ced9857be958cbbd8446521ef409f0bccaf2fb",
+      "current_sha256": "840ce1c36a4dcc64a92a5085f3ced9857be958cbbd8446521ef409f0bccaf2fb",
+      "unchanged_since_integration": true,
+      "interpretation": "Any changed report hash is an assertion revision; preserved original hashes are separately checked."
+    },
+    {
+      "path": "research/registers/ihealth-family-reconciliation-r13.json",
+      "integrated_sha256": "da527a323c611ef3b28943cdff44ade1d3e493143e12833455f1d8afc4e8ff09",
+      "current_sha256": "da527a323c611ef3b28943cdff44ade1d3e493143e12833455f1d8afc4e8ff09",
+      "unchanged_since_integration": true,
+      "interpretation": "Any changed report hash is an assertion revision; preserved original hashes are separately checked."
+    },
+    {
+      "path": "research/registers/galaxy-original-inventory-r13.json",
+      "integrated_sha256": "bf65886a46dc2720b7773164cafd5d5fb8c3677a6e62e8d44786f718ef3b788e",
+      "current_sha256": "bf65886a46dc2720b7773164cafd5d5fb8c3677a6e62e8d44786f718ef3b788e",
+      "unchanged_since_integration": true,
+      "interpretation": "Any changed report hash is an assertion revision; preserved original hashes are separately checked."
+    }
+  ],
+  "source_corrections": "reports/source-review-corrections-r12.json",
+  "limitation": "Latest cumulative scope retains explicit corrected assertions. Historical integrated batch hashes are never relabelled as hashes of a later report revision."
+}

@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T12:00:37.497335+00:00",
+  "associations": [],
+  "byte_count": 155902,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.generalicentralinsurance.com/downloads/commercial-insurance/boiler-and-pressure-plant-insurance-add-on-covers-one/policy-wording/boiler-and-pressure-plant-insurance-commercial-add-on-wordings.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "generali-central",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 307,
+  "linking_url": "https://www.generalicentralinsurance.com/customer-service/downloads",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "3736469c5090516294133a2af97103b5af8c85409436e70bdb5906ddc7eb3f7c",
+  "status": "acquired",
+  "url": "https://www.generalicentralinsurance.com/downloads/commercial-insurance/boiler-and-pressure-plant-insurance-add-on-covers-one/policy-wording/boiler-and-pressure-plant-insurance-commercial-add-on-wordings.pdf"
+}

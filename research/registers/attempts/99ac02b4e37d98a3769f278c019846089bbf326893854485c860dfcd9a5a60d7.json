@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T12:00:05.761524+00:00",
+  "associations": [],
+  "byte_count": 261418,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/new-premier-mediclaim-claim-policy/Customer%20Information%20Sheet%20New%20India%20Premier%20Mediclaim%20Policy.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 5809,
+  "linking_url": "https://www.newindia.co.in/health-insurance/premier-mediclaim-insurance",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "2a20858d44a8fb9fcd80f6866bed8b53df6d68a78c4b24da1df3a108bd40a18b",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/new-premier-mediclaim-claim-policy/Customer Information Sheet New India Premier Mediclaim Policy.pdf"
+}

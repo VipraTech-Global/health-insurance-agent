@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T12:02:06.410853+00:00",
+  "associations": [],
+  "byte_count": 161745,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://d2t12sefhwd9tk.cloudfront.net/uploads/Health_Installements_03_102024_04bff863cc.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "zurich-kotak",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 528,
+  "linking_url": "https://www.zurichkotak.com/product-documents",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "ff5d2c7337cfc252b12deb9edec930aaa853a715a32ec0f2579cc3d592eba8ea",
+  "status": "acquired",
+  "url": "https://d2t12sefhwd9tk.cloudfront.net/uploads/Health_Installements_03_102024_04bff863cc.pdf"
+}

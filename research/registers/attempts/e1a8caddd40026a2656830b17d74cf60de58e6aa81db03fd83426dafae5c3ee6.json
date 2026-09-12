@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:59:20.088292+00:00",
+  "associations": [],
+  "byte_count": 263,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/xml",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.acko.com/wp-content/uploads/2018/09/group-domestic-travel-insurance-policy-wordings.pdf",
+  "format_version": 1,
+  "http_status": 403,
+  "insurer_id": "acko",
+  "issues": [
+    "http_403"
+  ],
+  "language": "unknown",
+  "latency_ms": 135,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "59c5ab976eee0f812d5b7ee2e150b706175773057f4c94289893ada7db24c32d",
+  "status": "failed",
+  "url": "https://www.acko.com/wp-content/uploads/2018/09/group-domestic-travel-insurance-policy-wordings.pdf"
+}

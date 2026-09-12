@@ -1,0 +1,141 @@
+{
+  "review_revision": "source-design-review-r3",
+  "reviewed_at": "2026-09-10T15:18:07.412902+00:00",
+  "status": "changes_requested",
+  "scope": "Source and insurance-design fit review of six authorized design files and r5 source registers only. No evaluation, private customer data, implementation code or other design artifacts were read; no design files edited.",
+  "reviewed_file_hashes": {
+    "design/entity-field-dictionary.json": "634a1edbf4563fcd1d04965eca427cae2629be38ff318f0b073ae779215d6432",
+    "design/value-and-rule-contracts.md": "947e65eb296c4154ec4b8215688df09cafc8849b107aa0e5c900b386873d3ece",
+    "design/worked-examples.md": "d5d20c60dcb20eaadb1b47766e50611b77f4233bc8c625618bb10eb1a575ca47",
+    "design/relationships-and-lifecycle.md": "16f82f60917d93cadd9ab4afa7d7067b9f21e2c527d9d1b01341b32be73679a2",
+    "design/retrieval-operations.md": "7d4d46b239ac28984cda8d1fbc3f4df5cb08376e36ad4e64a01095a8cdb4beea",
+    "design/information-requirements.json": "a02451fa1e0963eed9a06e7887abf8f8868dcd3a429e865b8f1077c9da7775cc"
+  },
+  "findings": [
+    {
+      "id": "SDR3-01",
+      "severity": "high",
+      "title": "Original HTML and JSON evidence has no representable locator",
+      "status": "open_at_review_snapshot",
+      "locations": [
+        "design/entity-field-dictionary.json:3451",
+        "design/entity-field-dictionary.json:3278",
+        "design/entity-field-dictionary.json:3306",
+        "design/entity-field-dictionary.json:4071"
+      ],
+      "issue": "EvidenceSpan requires a DocumentPage. DocumentPage requires one-based PDF page identity and positive original PDF geometry. No alternative HTML/JSON original locator appears in the six reviewed files. Product identity requires an EvidenceSpan, so the r5 ACKO Standard alias and Oriental CMS attachment evidence cannot be represented faithfully without inventing a PDF page or treating a generated rendering as the original.",
+      "source_examples": [
+        {
+          "source_sha256": "f3ebfe3c3cd613be0e4bbd894e312168421ef3d1eeeec7f177e1495ccef7490d",
+          "kind": "original_html",
+          "locator": "The ACKO Platinum Lite Health Plan (also known as the ACKO Standard Plan)"
+        },
+        {
+          "source_sha256": "c99a5f06375b45fa18dcc80eecf7c5ca4f4b4cb6f6b86927bd91f0000776452d",
+          "kind": "original_json",
+          "locator": "CMS data rows82,83,85,89 and exact selected attachment records"
+        }
+      ],
+      "requested_change": "Provide a typed original-evidence location union for PDF geometry, HTML anchored text/element identity, JSON pointer/value and other explicitly supported original formats. Bind every location directly to the exact DocumentRevision/blob, make page identity applicable only to paginated originals, retain extraction/verification methods and immutable locator evidence. Update related ownership/containment validation without promoting navigation or marketing content to contractual authority."
+    },
+    {
+      "id": "SDR3-02",
+      "severity": "medium",
+      "title": "Single linking observation cannot preserve multiple discovery origins for a URL",
+      "status": "open_at_review_snapshot",
+      "locations": [
+        "design/entity-field-dictionary.json:2370",
+        "design/entity-field-dictionary.json:2517"
+      ],
+      "issue": "SourceLocator is unique by owner and URL but has a single linking_observation_id. Acquisition has no independent per-attempt discovery origin. Multiple original pages or CMS rows can point to the same URL; replacing the pointer loses prior discovery provenance, while keeping the first pointer loses later observed labels and conflicts. Preserved parent bytes alone do not explicitly associate each observed link occurrence with the child URL.",
+      "source_examples": [
+        {
+          "register": "registers/oriental-original-links-r5.json",
+          "observation": "CMS row titles and attached document names sometimes disagree; duplicate product rows may attach different actual PDFs."
+        },
+        {
+          "source_sha256": "0277b1549573873d00c31ba364e24d2c13457da6e766225dab4f92e566914583",
+          "observation": "Same preserved brochure has multiple recorded official URL/provenance observations."
+        }
+      ],
+      "requested_change": "Represent append-only link-discovery observations separately from the unique locator: parent acquisition/blob, exact source location, observed href and label, target locator, observation time and review/conflict status. An acquisition may reference its discovery event without overwriting other origins."
+    },
+    {
+      "id": "SDR3-03",
+      "severity": "medium",
+      "title": "Authentic source examples and r5 traceability are missing where data is available",
+      "status": "open_at_review_snapshot",
+      "locations": [
+        "design/entity-field-dictionary.json:2340",
+        "design/entity-field-dictionary.json:3033",
+        "design/entity-field-dictionary.json:4043",
+        "design/entity-field-dictionary.json:4573",
+        "design/information-requirements.json:INS-01/INS-02/INS-04"
+      ],
+      "issue": "These fields state that no authentic field value has been established, although r5 contains exact official URLs, document titles, family names, plan names and classifications. No dictionary field basis references r5, and INS-01 still cites legacy-assessment-r3. This does not invalidate the generic fields, but the package does not yet demonstrate the source-derived field traceability and authentic examples the user requested.",
+      "source_examples": [
+        {
+          "register": "registers/legacy-assessment-r5.json",
+          "listing": "/health-insurance/hdfc-ergo/optima-lite/",
+          "established_fact": "Original leaflet says Optima Lite is a plan under my: Optima Secure."
+        },
+        {
+          "register": "registers/legacy-assessment-r5.json",
+          "listing": "/health-insurance/united-india/individual-gold-plan/",
+          "established_fact": "Individual Health Insurance has Gold, Platinum and Senior Citizen plans; age-at-entry matters."
+        }
+      ],
+      "requested_change": "Add representative authentic source field examples with hash/location and explicit status, and connect the identity/version/provenance requirements to r5 findings. Keep real customer, auth and internal generated-ID examples synthetic. Include the three unresolved aliases as examples of unresolved association rather than silently canonicalizing them."
+    }
+  ],
+  "source_accounting_verified_against_registers": {
+    "legacy_count": 203,
+    "family_status_counts": {
+      "identified_in_preserved_original": 178,
+      "unresolved": 1,
+      "family_candidate_alias_requires_corroboration": 2,
+      "not_assessed_outside_selected_insurer_scope": 21,
+      "candidate_alias_unconfirmed": 1
+    },
+    "fully_reconciled_historical_listings": 0,
+    "stored_objects": 2814,
+    "pdf_count": 2357,
+    "non_pdf_count": 457,
+    "manual_pdf_scope_count": 128,
+    "manual_nonpdf_scope_count": 4,
+    "automated_preview_only_pdfs": 2222,
+    "additional_r2_manual_assertions": 7,
+    "other_nonpdf_unreviewed": 453,
+    "unknown_independent_rule_denominator": true,
+    "assessment": "No inflated coverage or historical-completion claim found in the reviewed six design files. Their proposed publication controls keep unknown denominators unmeasured."
+  },
+  "positive_findings": [
+    "Product family, exact terms revision, UIN, configuration and personal acceptance are separate; nullable UIN and unresolved applicability accommodate r5 historical uncertainty.",
+    "ListingCandidate separates verified dimensions from full reconciliation; this supports178 source-backed families without promoting the three aliases or Test listing.",
+    "TermsDocument has role, conditional scope and precedence evidence; this can retain older SBI wording versus newer CIS/prospectus and same-URL revision changes without a latest-download rule.",
+    "Configuration availability and typed rules can express United India age-at-entry plan selection and HDFC Optima Lite under Optima Secure; public withdrawal observations must remain source-backed and revision-specific.",
+    "CoverageReport rejects percentages from unknown denominators; RuleInventoryItem is independent of parser output; unread originals do not become covered through publication.",
+    "Worked examples label customer data synthetic, distinguish intermediate calculation from entitlement, retain unknown order/conflicts, and do not claim an implemented adviser or release acceptance."
+  ],
+  "worked_example_arithmetic": {
+    "status": "recomputed_from_explicit_hypothetical_inputs",
+    "results": {
+      "eligible_room_payment": "100700.00",
+      "upgrade_room_payment": "62700.00",
+      "eligible_room_customer_balance": "5300.00",
+      "upgrade_customer_balance": "49300.00",
+      "customer_exposure_difference": "44000.00",
+      "gold_threshold_excess": "150000",
+      "residual_indemnity_loss": "400000",
+      "premium_debt_remittance": "70000",
+      "deductible_then_copay": "72000.0",
+      "copay_then_deductible": "70000.0",
+      "half_SI_nominal_ceiling": "250000.0"
+    },
+    "limitation": "This bounded review did not reread the underlying reference originals or private benchmark. Arithmetic and caveats were assessed; contractual source support of every policy-specific example was not independently re-certified from the permitted six files."
+  },
+  "required_completion_boundary": "The complete evidence-and-scenario deliverable cannot be declared finished on this design review: 2,222 PDFs remain preview-only, full independent rule denominators are unknown, three aliases remain unresolved and zero exact historical listing/version/bundle reconciliations are complete. A discussion proposal is reviewable; database implementation still requires explicit approval of the resulting design revision.",
+  "schema_validation_limit": "Referenced JSON Schema, relationship ledger and worked-record JSON were outside this task reading scope. Their local shape/semantic closure was not validated here.",
+  "implementation_approval": false,
+  "design_approved": false
+}

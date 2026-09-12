@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:38:25.247412+00:00",
+  "associations": [],
+  "byte_count": 3588,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/captcha?url=//pages/doc/brochure/ReAssure_2.0_Titanium_plus_&_Platinumplus_SS_with_Deductible.pdf?v=1.2",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1313,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "f7023f1a513b894e874b04a4a9a001ea577de238e7faca09216fb6f32642763a",
+  "status": "failed",
+  "url": "https://transactions.nivabupa.com/pages/doc/brochure/ReAssure_2.0_Titanium_plus_&_Platinumplus_SS_with_Deductible.pdf?v=1.2"
+}

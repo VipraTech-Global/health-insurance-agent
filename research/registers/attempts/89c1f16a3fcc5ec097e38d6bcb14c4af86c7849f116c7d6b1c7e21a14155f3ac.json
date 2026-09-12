@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:01:25.833451+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/cancer-guard-policy/Proposal%20Form%20New%20India%20Cancer%20Guard%20WEF%2001%20OCT%202024.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1954,
+  "linking_url": "https://www.newindia.co.in/health-insurance/new-india-cancer-guard-policy",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "eed9cf8459e66afcb09f59ed667c5e2b5522f5baa06f577755f328e0956c9431",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/cancer-guard-policy/Proposal Form New India Cancer Guard WEF 01 OCT 2024.pdf"
+}

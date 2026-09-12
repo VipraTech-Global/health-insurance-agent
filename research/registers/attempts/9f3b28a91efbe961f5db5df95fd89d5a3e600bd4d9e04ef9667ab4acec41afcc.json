@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:38:26.343896+00:00",
+  "associations": [],
+  "byte_count": 3545,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/captcha?url=//pages/doc/brochure/Saral_Suraksha_Bima_SS_v3.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1409,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "4f335a2a6f8865a91beaa9dd6e49a4ef3bca0be9c4d894a3538970dd4bbd6b59",
+  "status": "failed",
+  "url": "https://transactions.nivabupa.com/pages/doc/brochure/Saral_Suraksha_Bima_SS_v3.pdf"
+}

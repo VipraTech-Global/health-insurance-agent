@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:58:00.520743+00:00",
+  "associations": [],
+  "byte_count": 640111,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/arogya-pragati-plus-policy/Customer%20Information%20Sheet-%20Arogaya%20pragati%20plus%20-%20Top%20up%20Reinvented.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 5365,
+  "linking_url": "https://www.newindia.co.in/health-insurance/arogya-pragati-plus",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "dfd07d3e437a28218b4493796b1d55e65ac3c268a22911d767247c66fdd3e37d",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/arogya-pragati-plus-policy/Customer Information Sheet- Arogaya pragati plus - Top up Reinvented.pdf"
+}

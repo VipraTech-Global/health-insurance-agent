@@ -1,0 +1,33 @@
+{
+  "format_version": 2,
+  "generated_at_utc": "2026-09-10T19:14:34.219164+00:00",
+  "assigned_cases": 100,
+  "assessed_cases": 100,
+  "batch_status": "bounded_source_followup_complete",
+  "canonical_artifact_sha256": "531a6c3a99f2dd8e9dba99db95aff4de70409d085fd12be3d3b07fbbdbf6bff1",
+  "canonical_modified": false,
+  "followup_artifact_sha256": "2d11973bbdae2fd723b354981b7302c6002d7d835e35fe082061ca17f7d5b5c2",
+  "disposition_counts": {
+    "unchanged": 67,
+    "partially_resolved": 33
+  },
+  "new_completion": {
+    "case_count": 80,
+    "dispositions": {
+      "partially_resolved": 24,
+      "unchanged": 56
+    },
+    "source_originals": 7,
+    "exact_regions": 18,
+    "visual_pages": 4,
+    "authored_assessment_sha256": "157a789f620c55cfa91351e31154915dcb74eaf63b4b24151d450aa19ba0de61"
+  },
+  "prior_twenty_records_retained_as_json_values": true,
+  "new_adviser_acceptance_successes": 0,
+  "complete_customer_decisions": 0,
+  "evaluation_read": false,
+  "insurer_rule_denominators_measured": false,
+  "source_publication_performed": false,
+  "independent_review_of_new_eighty": false,
+  "method": "Individually authored source follow-ups. Canonical questions, facts and calculations preserved. Added public alternatives do not identify or create customer contracts; unresolved public and customer evidence remain explicit. NPPA search discovery is not original-backed acquisition."
+}

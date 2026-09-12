@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T12:04:22.316958+00:00",
+  "associations": [],
+  "byte_count": 594268,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/National%20Critical%20Illness%20Policy%20-%20Rate%20Chart.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "national",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1031,
+  "linking_url": "https://nationalinsurance.nic.co.in/products/all-products/health/national-critical-illness-policy",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "7c9e359743f3e0d802884153e995fb43af52c4d357626e52e9a6d6f0968eaf0c",
+  "status": "acquired",
+  "url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/National%20Critical%20Illness%20Policy%20-%20Rate%20Chart.pdf"
+}

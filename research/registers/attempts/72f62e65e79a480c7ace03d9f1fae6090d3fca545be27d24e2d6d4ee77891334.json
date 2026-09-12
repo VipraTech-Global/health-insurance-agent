@@ -1,0 +1,21 @@
+{
+  "acquired_at": "2026-09-10T11:59:20.402638+00:00",
+  "associations": [],
+  "component_version": "research-acquisition/1",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "format_version": 1,
+  "insurer_id": "acko",
+  "issues": [
+    "host_not_approved"
+  ],
+  "language": "unknown",
+  "latency_ms": 8,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": null,
+  "status": "failed",
+  "url": "https://assets.ctfassets.net/uwf0n1j71a7j/KpWzq8z93kC6N4uesYOOk/ff8ccd01b0b05151c321845f44e7548c/acko-health-insurance-add-on-initial-30-days-waiting-period-waiver.pdf"
+}

@@ -1,0 +1,97 @@
+{
+  "acquired_at": "2026-09-10T11:55:56.513729+00:00",
+  "associations": [],
+  "byte_count": 360784,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/Tata_AIG_Criti_Medicare_CIS_ac9735ff08.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 343,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 9,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.56,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.56,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.56,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.56,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.56,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.56,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.56,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.56,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.56,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 842.04
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "729c32fb421a94bb637c559ef176f86b658c7dcfdfb607e63dc77d23d4cca7f2",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/Tata_AIG_Criti_Medicare_CIS_ac9735ff08.pdf"
+}

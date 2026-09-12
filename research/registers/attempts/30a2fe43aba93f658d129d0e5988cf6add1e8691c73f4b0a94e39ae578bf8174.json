@@ -1,0 +1,21 @@
+{
+  "acquired_at": "2026-09-10T11:38:54.375004+00:00",
+  "associations": [],
+  "component_version": "research-acquisition/1",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "format_version": 1,
+  "insurer_id": "narayana",
+  "issues": [
+    "host_not_approved"
+  ],
+  "language": "unknown",
+  "latency_ms": 0,
+  "linking_url": "https://www.narayanahealth.insurance/customer-support",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": null,
+  "status": "failed",
+  "url": "https://stgaccinwbsprdlrs01.blob.core.windows.net/nhilprd/List_of_Products_Updated_And_Withdrawn_95e78f200a.pdf?sv=2025-05-05&spr=https&st=2026-05-19T14%3A23%3A03Z&se=2036-05-16T14%3A23%3A03Z&sr=b&sp=r&sig=ELLokT6IQyPWRhTPxh69zUfJ3xMVBdn%2FnhwlMnDm2ag%3D"
+}

@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:56:09.257008+00:00",
+  "associations": [],
+  "byte_count": 46300,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/JANATA_PERSONAL_ACCIDENT_POLICY_INDIVIDUAL_43e00f9837.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 211,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.528
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "85c52925f0ba1fd4d77d01957955e5b16c7873366d39a6952860e9693ccc55a3",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/JANATA_PERSONAL_ACCIDENT_POLICY_INDIVIDUAL_43e00f9837.pdf"
+}

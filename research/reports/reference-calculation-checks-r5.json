@@ -1,0 +1,79 @@
+{
+  "input_sha256": "0d9d158b5c3cfdd939d804db8b961cc230716426c0fbb1e9b703252b7178ecf5",
+  "output_sha256": "531a6c3a99f2dd8e9dba99db95aff4de70409d085fd12be3d3b07fbbdbf6bff1",
+  "checks": [
+    {
+      "case_id": "ref-01-01",
+      "label": "Elapsed days from first receipt",
+      "expected": "28",
+      "observed": "28",
+      "unit": "elapsed_day",
+      "passed": true
+    },
+    {
+      "case_id": "ref-01-01",
+      "label": "Elapsed days from inception for comparison",
+      "expected": "37",
+      "observed": "37",
+      "unit": "elapsed_day",
+      "passed": true
+    },
+    {
+      "case_id": "ref-02-07",
+      "label": "Marginal joint quote cost",
+      "expected": "8000",
+      "observed": "8000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-02-07",
+      "label": "Split policy quote total",
+      "expected": "29000",
+      "observed": "29000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-02-07",
+      "label": "Additional cost of split quotes",
+      "expected": "3000",
+      "observed": "3000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-04-04",
+      "label": "Conditional capped customer share",
+      "expected": "10000",
+      "observed": "10000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-04-04",
+      "label": "Uncapped customer funding shortfall",
+      "expected": "15000",
+      "observed": "15000.00",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "ref-17-07",
+      "label": "Air ambulance numerical ceiling",
+      "expected": "100000",
+      "observed": "100000.00",
+      "unit": "INR",
+      "passed": true
+    }
+  ],
+  "passed": 8,
+  "failed": 0,
+  "retained_prior_records": 48,
+  "new_records": 8,
+  "total_records": 56,
+  "adviser_engine_used": false,
+  "evaluation_material_used": false,
+  "independent_review": "Pending bounded review of the eight canonical records; displayed results previously reviewed in reference-distinctness-review-r6.json.",
+  "review_correction": "Expressions now use exact input field names and explicitly declare human-readable semantics."
+}

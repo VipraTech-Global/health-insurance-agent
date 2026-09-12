@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:59:22.970690+00:00",
+  "associations": [],
+  "byte_count": 349342,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.zurichkotak.com/docs/default-source/default-document-library/kotak_maxima_cyber_secure_liability_prospectus2c13c7d8ab7a60adacbfff0000d284de.pdf?sfvrsn=7269a7ab_0",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "zurich-kotak",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 728,
+  "linking_url": "https://www.zurichkotak.com/product-documents",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "c3acec59e9621bafe4a4974d93bd50d52b6ef4166fe8677c91e2ffbcf46e179f",
+  "status": "acquired",
+  "url": "https://www.zurichkotak.com/docs/default-source/default-document-library/kotak_maxima_cyber_secure_liability_prospectus2c13c7d8ab7a60adacbfff0000d284de.pdf?sfvrsn=7269a7ab_0"
+}

@@ -1,0 +1,89 @@
+{
+  "acquired_at": "2026-09-10T11:55:29.044064+00:00",
+  "associations": [],
+  "byte_count": 2180557,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/Tata_AIG_Criti_Medicare_Brochure_0a0ed36a23.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 2230,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 8,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 432.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 432.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 432.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 432.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 432.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 432.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 432.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 432.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "bc006289805cf1837eb3a3cf2b5c9a4e8783cd779bf3dcd6d3b1fa6de549f327",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/Tata_AIG_Criti_Medicare_Brochure_0a0ed36a23.pdf"
+}

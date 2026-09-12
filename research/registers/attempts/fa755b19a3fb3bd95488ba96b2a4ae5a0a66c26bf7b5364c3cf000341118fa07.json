@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T11:53:45.877676+00:00",
+  "associations": [],
+  "byte_count": 913051,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/Claims_Forms_domestic_travel.pdf_bf14575d71.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1563,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 909.4961,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 678.6057
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 909.4961,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 678.6057
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 909.4961,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 678.6057
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 909.4961,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 678.6057
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "e9f513eed8f614b0c55d8e7d0c409154ae9da76af5f817aac924b7ccd966d6b2",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/Claims_Forms_domestic_travel.pdf_bf14575d71.pdf"
+}

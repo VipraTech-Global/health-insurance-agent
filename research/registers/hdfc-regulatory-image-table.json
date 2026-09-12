@@ -1,0 +1,194 @@
+{
+  "column_headers": [
+    "Sr.No",
+    "Product name",
+    "Product Type",
+    "Product UIN"
+  ],
+  "complete_table_rows": 23,
+  "connected_notes": [
+    "original-hdfc-regulatory-notice-002",
+    "original-hdfc-regulatory-notice-003"
+  ],
+  "derivative_path": "assessment/visual-review/hdfc-regulatory-p2.png",
+  "derivative_sha256": "a43965a4d613cb2ff60b4f604db69b1ed54eaad38b5596dd4b369a33d9ddf292",
+  "format_version": 1,
+  "lexical_verification": "not possible for embedded image text; geometry and manual visual reading retained",
+  "meaning": "Scope list for this notice PED change only; not a current product catalogue, not proof of current sale availability, and not scope of its separate bonus clause.",
+  "page_size_points": [
+    612,
+    792
+  ],
+  "physical_page": 2,
+  "rows": [
+    {
+      "product_name_literal": "HDFC ERGO Hospital Cash Insurance",
+      "product_type_literal": "Individual",
+      "row": 1,
+      "scope_classification": "not inferred from name alone",
+      "uin_literal": "HDFHLIP21494V022021"
+    },
+    {
+      "product_name_literal": "my:credit Comprehensive Suraksha",
+      "product_type_literal": "Group",
+      "row": 2,
+      "scope_classification": "not inferred from name alone",
+      "uin_literal": "HDFHLGP22143V032122"
+    },
+    {
+      "product_name_literal": "Health Suraksha Top -Up",
+      "product_type_literal": "Individual",
+      "row": 3,
+      "scope_classification": "not inferred from name alone",
+      "uin_literal": "HDFHLIP21467V022021"
+    },
+    {
+      "product_name_literal": "Home Credit Assure Package Insurance",
+      "product_type_literal": "Group",
+      "row": 4,
+      "scope_classification": "not inferred from name alone",
+      "uin_literal": "HDFHLGP21001V032122"
+    },
+    {
+      "product_name_literal": "my: health Critical Illness",
+      "product_type_literal": "Individual",
+      "row": 5,
+      "scope_classification": "not inferred from name alone",
+      "uin_literal": "HDFHLIA22141V032122"
+    },
+    {
+      "product_name_literal": "my: health Women Suraksha",
+      "product_type_literal": "Individual",
+      "row": 6,
+      "scope_classification": "not inferred from name alone",
+      "uin_literal": "HDFHLIP22142V032122"
+    },
+    {
+      "product_name_literal": "TravelX",
+      "product_type_literal": "Group",
+      "row": 7,
+      "scope_classification": "not inferred from name alone",
+      "uin_literal": "HDFTGBP21269V022021"
+    },
+    {
+      "product_name_literal": "HDFC Group Health Insurance",
+      "product_type_literal": "Group",
+      "row": 8,
+      "scope_classification": "not inferred from name alone",
+      "uin_literal": "HDFHLGP21116V012021"
+    },
+    {
+      "product_name_literal": "Group Mediclaim Insurance",
+      "product_type_literal": "Group",
+      "row": 9,
+      "scope_classification": "not inferred from name alone",
+      "uin_literal": "HDFHLGP21461V012021"
+    },
+    {
+      "product_name_literal": "my:Sampoorna Suraksha",
+      "product_type_literal": "Individual",
+      "row": 10,
+      "scope_classification": "not inferred from name alone",
+      "uin_literal": "HDFHLIP21005V022122"
+    },
+    {
+      "product_name_literal": "Arogya Sanjeevani Policy, HDFC ERGO (Group)",
+      "product_type_literal": "Group",
+      "row": 11,
+      "scope_classification": "not inferred from name alone",
+      "uin_literal": "HDFHLGP21552V012021"
+    },
+    {
+      "product_name_literal": "Arogya Sanjeevani Policy, HDFC ERGO",
+      "product_type_literal": "Individual",
+      "row": 12,
+      "scope_classification": "not inferred from name alone",
+      "uin_literal": "HDFHLIP20175V011920"
+    },
+    {
+      "product_name_literal": "Critical Advantage Rider",
+      "product_type_literal": "Individual",
+      "row": 13,
+      "scope_classification": "not inferred from name alone",
+      "uin_literal": "HDHHLIP21342V022021"
+    },
+    {
+      "product_name_literal": "HDFC ERGO Group Health Insurance",
+      "product_type_literal": "Group",
+      "row": 14,
+      "scope_classification": "not inferred from name alone",
+      "uin_literal": "HDFHLGP24095V022324"
+    },
+    {
+      "product_name_literal": "iCan",
+      "product_type_literal": "Individual",
+      "row": 15,
+      "scope_classification": "not inferred from name alone",
+      "uin_literal": "HDHHLIP21321V022021"
+    },
+    {
+      "product_name_literal": "Optima Cash",
+      "product_type_literal": "Individual",
+      "row": 16,
+      "scope_classification": "not inferred from name alone",
+      "uin_literal": "HDHHLIP21339V022021"
+    },
+    {
+      "product_name_literal": "Optima Plus",
+      "product_type_literal": "Individual",
+      "row": 17,
+      "scope_classification": "not inferred from name alone",
+      "uin_literal": "HDHHLIP21336V022021"
+    },
+    {
+      "product_name_literal": "Optima Super",
+      "product_type_literal": "Individual",
+      "row": 18,
+      "scope_classification": "not inferred from name alone",
+      "uin_literal": "HDHHLIP21340V022021"
+    },
+    {
+      "product_name_literal": "Optima Vital",
+      "product_type_literal": "Individual",
+      "row": 19,
+      "scope_classification": "not inferred from name alone",
+      "uin_literal": "HDHHLIP21341V022021"
+    },
+    {
+      "product_name_literal": "HDFC ERGO Group Protect",
+      "product_type_literal": "Group",
+      "row": 20,
+      "scope_classification": "not inferred from name alone",
+      "uin_literal": "HDFHLGP22214V012122"
+    },
+    {
+      "product_name_literal": "Sarv Suraksha Plus (Group)",
+      "product_type_literal": "Group",
+      "row": 21,
+      "scope_classification": "not inferred from name alone",
+      "uin_literal": "HDFHLGP24020V032324"
+    },
+    {
+      "product_name_literal": "my:health Koti Suraksha",
+      "product_type_literal": "Individual",
+      "row": 22,
+      "scope_classification": "not inferred from name alone",
+      "uin_literal": "HDFHLIP21131V012021"
+    },
+    {
+      "product_name_literal": "HDFC ERGO Secure 4in1",
+      "product_type_literal": "Individual",
+      "row": 23,
+      "scope_classification": "not inferred from name alone",
+      "uin_literal": "HDFHLIP25035V022425"
+    }
+  ],
+  "source_sha256": "9bdf3e5379a494ffe61af7a07496bb0e7333124da45ec72fcf21583435d0352e",
+  "table_bbox_points": [
+    72,
+    165.82,
+    553.84,
+    486.02
+  ],
+  "transcription": "Manually transcribed and checked against rendered original image. Text extraction does not contain these rows. Not independently double-reviewed."
+}

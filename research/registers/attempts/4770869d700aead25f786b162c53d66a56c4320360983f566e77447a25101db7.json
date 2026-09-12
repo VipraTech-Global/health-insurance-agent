@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:56:09.229257+00:00",
+  "associations": [],
+  "byte_count": 163166,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/MAHARAKSHA_PERSONAL_INJURY_PLAN_POLICY_2497252ff3.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 452,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52802
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "395d229d410c8fd456390d876210e4cf4c338ee273751a3135896199eb5747a3",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/MAHARAKSHA_PERSONAL_INJURY_PLAN_POLICY_2497252ff3.pdf"
+}

@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:58:44.272654+00:00",
+  "associations": [],
+  "byte_count": 1313105,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/health/Benefit_Illustration_Digit_Corona_Kavach_Policy.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "go-digit",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 815,
+  "linking_url": "https://www.godigit.com/downloads",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 740.64,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 740.64,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "9b63a02478242d5524b8e46c00bb6cc7441bcca2de0d753372bbc0d7a4bf5f8d",
+  "status": "acquired",
+  "url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/health/Benefit_Illustration_Digit_Corona_Kavach_Policy.pdf"
+}

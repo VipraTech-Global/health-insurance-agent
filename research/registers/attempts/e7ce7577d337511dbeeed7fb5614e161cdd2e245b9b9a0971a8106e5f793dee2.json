@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:57:43.087156+00:00",
+  "associations": [],
+  "byte_count": 407832,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/jan-arogya-bima-insurance/Premium%20Chart%20Jan%20Arogya%20Bima%20Policy.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 6304,
+  "linking_url": "https://www.newindia.co.in/health-insurance/jan-arogya-bima-policy",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "53e4d9599eaa226c72deb2c93248754dde54e41c5b2cfbc84644d048c6ebe2d1",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/jan-arogya-bima-insurance/Premium Chart Jan Arogya Bima Policy.pdf"
+}

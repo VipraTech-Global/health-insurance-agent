@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:01:19.931354+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/janata-mediclaim-policy/Premium%20Chart%20Janata%20Mediclaim.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1557,
+  "linking_url": "https://www.newindia.co.in/health-insurance/janata-mediclaim-policy",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "42e19a95479ef72658d1e8212915623d7682acd0c12fe5bbd68c1ff9a130cb09",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/janata-mediclaim-policy/Premium Chart Janata Mediclaim.pdf"
+}

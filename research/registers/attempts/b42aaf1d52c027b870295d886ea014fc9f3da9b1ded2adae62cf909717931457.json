@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:38:54.396670+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/surveyor_management_policy/Final%20List%20of%20Surveyors%20qualified%20under%20SMP%20Exercise%202026-27.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 12618,
+  "linking_url": "https://www.newindia.co.in/health-insurance/atmanirbhar-health-policy",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "8fa058bf31dbc086252d012f6cc85dd951835a4eddb3005c5c8759aede2c43ba",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/surveyor_management_policy/Final List of Surveyors qualified under SMP Exercise 2026-27.pdf"
+}

@@ -1,0 +1,666 @@
+{
+  "artifact_version": "national-super-topup-reconciliation-r12/1",
+  "generated_at_utc": "2026-09-10T17:55:48.843860+00:00",
+  "reviewer": "independent source reconciliation agent",
+  "scope": "Sixth National legacy row, separate follow-on correcting prior mistaken wording-association status. No evaluation/reference/app data used.",
+  "baseline_scope_register": "research/registers/document-scope-r14.json",
+  "counts": {
+    "legacy_rows": 1,
+    "wording_backed_rows": 1,
+    "unique_pdfs_read": 3,
+    "newly_manually_classified_pdfs": 2,
+    "new_medical_expense_pdfs": 1,
+    "new_supporting_mixed_pdfs": 1,
+    "previously_classified_pdfs_reread": 1,
+    "new_acquisitions": 0,
+    "new_access_failures": 0,
+    "visually_reviewed_physical_pages": 2,
+    "permitted_threshold_sum_insured_pairs": 23,
+    "historical_versions_fully_reconciled": 0,
+    "original_bundles_complete": 0,
+    "independent_rule_denominators_established": 0
+  },
+  "newly_classified_documents": [
+    {
+      "source_sha256": "fe1ae55307cbb29996a377e4edecb25052fc58e4440a22139783cb22d881c949",
+      "insurer_id": "national",
+      "product_or_heading": "National Super Top Up Mediclaim Policy",
+      "heading_is_normalized_display_label": false,
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Original medical-expense indemnity and threshold/form clauses read.",
+      "page_count": 21,
+      "observed_uins": [
+        "NICHLIP24154V042324"
+      ],
+      "typed_uin_assertions": [
+        {
+          "uin": "NICHLIP24154V042324",
+          "role": "base_product",
+          "physical_page": 1
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "locator": "National Super Top Up Mediclaim Policy",
+          "exact_passage": "National Insurance Co. Ltd. \nRegd. & Head Office: Premises No. 18-0374, Plot no. \nCBD-81, New Town, Kolkata - 700156 \nPage | 1 \nNational Super Top Up Mediclaim Policy \nUIN: NICHLIP24154V042324  \n \nNational Insurance Company Limited \n  \n \n \n \n \nCIN - U10200WB1906GOI001713 \nIRDAI Regn. No. - 58 \n \n \n \nNational Super Top Up Mediclaim Policy   \nIssuing Office: \n \n \nPREAMBLE \nWhereas the insured designated in the schedule hereto has by a proposal together with declaration and reports (if any), which shall \nbe the basis of this Contract and is deemed to be incorporated herein, has applied to National Insurance Company Ltd. (hereinafter \ncalled the Company) for the insurance hereinafter set forth on individual or floater basis in respect of person(s)/ family members \nnamed in the schedule hereto (hereinafter called the Insured Persons) and has paid the premium as consideration for such insurance. \n \n1. OPERATIVE CLAUSE \nThe Company undertakes that if during the Policy Period stated in the schedule, any Insured Person(s) shall suffer any Illness or \nDisease (hereinafter called Illness) or sustain any Injury requiring Hospitalisation of such Insured Person(s), for In-Patient Care \nat any Hospital or Day Care Centre, following the Medical Advice of a duly qualified Medical Practitioner, the Company shall \nindemnify the Hospital, Day Care Centre or Insured the Reasonable and Customary Charges incurred for Medically Necessary \nTreatment exceeding the Threshold (cumulatively) in such Hospitalisation and any subsequent Hospitalisation(s) towards the \nCoverage mentioned in Section 3.1 and Section 3.2 of the Policy. \n \nProvided further that, the amount payable during each Policy Year of the Policy Period as stated in the schedule shall be subject \nto the terms, exclusions, conditions, definitions contained herein and limits as shown in the Table of Benefits, and shall not exceed: \n(a) the Sum Insured of that Insured Person covered in an individual plan or \n(b) the floater Sum Insured in respect of one or more Insured Persons covered under a floater plan. \n \nImportant: \n \n1. Claim shall be admissible for the Hospitalisation during which the Cumulative Medical Expenses in respect of \nHospitalisation(s) of any Insured Person (individual plan) or one or more Insured Persons (floater plan) in a Policy Year of \nthe Policy Period exceeds the Threshold and for all subsequent Hospitalisation(s) during the Policy Year. \n2. Maximum liability of the Company under the policy for all admissible claims during each Policy Year of the Policy Period \nshall be the individual / floater Sum Insured opted. \n3. The Insured shall preserve and submit all original documents and / or certified copies of documents related to all \nHospitalisation(s) during the Policy Period to enable the Company to calculate the Cumulative Medical Expenses and \nThreshold, for determining admissibility and payment of claims. \n \n \n2. DEFINITIONS \n2.1 Accident means a sudden, unforeseen and involuntary event caused by external, violent and visible means. \n \n2.2 Age / Aged means completed years on last birthday as on Commencement Date. \n \n2.3 AIDS means Acquired Immune Deficiency Syndrome, a condition characterised by a combination of signs and symptoms, \ncaused by Human Immunodeficiency Virus (HIV), which attacks and weakens the body’s immune system making the HIV-\npositive person susceptible to life threatening conditions or other conditions, as may be specified from time to time. \n  \n2.4 Any One Illness means continuous period of illness and it includes relapse within forty five days from the date of last \nconsultation with the Hospital where treatment has been taken. \n \n2.5 AYUSH Day Care Centre means and includes Community Health Centre (CHC), Primary Health Centre (PHC), Dispensary, \nClinic, Polyclinic or any such health centre which is registered with the local authorities, wherever applicable and having facilities \nfor carrying out treatment procedures and medical or surgical / para-surgical interventions or both under the supervision of \nregistered AYUSH Medical Practitioner(s)  on day care  basis without in-patient services and must comply with all the following \ncriterion: \ni. Having qualified registered AYUSH Medical Practitioner in charge round the clock; \nii. Having dedicated AYUSH therapy sections as required and/or has equipped operation theatre where surgical procedures \nare to be carried out; \niii. Maintaining daily records of the patients and making them accessible to the insurance company’s authorized \nrepresentative. \n \n2.6 AYUSH Hospital means any health care institution wherein medical/surgical/para-surgical treatment procedures and \ninterventions are carried out by AYUSH Medical Practitioner(s) comprising of any of the following: \na. Central or State Government AYUSH Hospital or \nb. Teaching hospital attached to AYUSH College recognised by the Central Government/ Central Council of Indian Medicine/ \nCentral Council for Homeopathy; or \nc. AYUSH Hospital, standalone or co-located with in-patient healthcare facility of any recognised system of medicine, \nregistered with the local authorities, wherever applicable, and is under the supervision of a qualified registered AYUSH \nMedical Practitioner and must comply with all the following criteria: \n \n",
+          "meaning": "Exact title, UIN, medical indemnity, cumulative threshold and person/family/policy-year scope.",
+          "transcription_method": "native_text_exact",
+          "anchor_bboxes": [
+            [
+              414.07000732421875,
+              810.2763671875,
+              548.064453125,
+              819.1766357421875
+            ],
+            [
+              171.6199951171875,
+              58.290348052978516,
+              418.66796875,
+              73.83262634277344
+            ]
+          ],
+          "bbox_qualification": "Anchor only, PDF points; not full excerpt crop.",
+          "visually_reviewed_page": false
+        },
+        {
+          "physical_page": 2,
+          "locator": "2.14 Cumulative Bonus",
+          "exact_passage": "2.14 Cumulative Bonus means any increase or addition in the Sum Insured granted by the Company without an associated increase \nin premium. \n \n2.15 Cumulative Medical Expenses means the aggregate of Medical Expenses incurred during the Policy Year of the Policy \nPeriod of this Policy towards one or more out of the Coverage mentioned in Section 3.1 of the Policy (i.e. under the heads \nof 3.1.1. In-patient Treatment, 3.1.2. Pre-Hospitalisation, 3.1.3. Post-Hospitalisation, 3.1.4. Day Care Procedure, 3.1.5. \nAYUSH Treatment, 3.1.6. Organ Donor’s Medical Expenses, 3.1.7. HIV Treatment, 3.1.8. Morbid Obesity Treatment, 3.1.9. \nMaternity, 3.1.10 Modern Treatment, 3.1.11 Mental Illness Cover & 3.1.12 Correction of Refractive Error) in respect of: \na) Individual Plan \nThe Insured Person for one or more Hospitalisation during the Policy Year of the Policy Period. \nb) Floater Plan \n \nOne or more Insured Persons for one or more Hospitalisation during the Policy Year of the Policy Period. \n \n2.16 Day Care Centre means any institution established for day care treatment of disease/ injuries or a medical setup within a \nHospital and which has been registered with the local authorities, wherever applicable, and is under the supervision of a \nregistered and qualified medical practitioner AND must comply with all minimum criteria as under: \ni. has Qualified Nurses under its employment; \nii. has Medical Practitioner(s) in charge; \niii. has a fully equipped operation theatre of its own where surgical procedures are carried out; and \niv. maintains daily records of patients and shall make these accessible to the Company’s authorised personnel. \n \n2.17 Day Care Treatment means medical treatment, and/or surgical procedure (as listed in Annexure I) which is: \ni. undertaken under general or local anesthesia in a Hospital/ Day Care Centre in less than twenty four hours because of \ntechnological advancement, and \nii. which would have otherwise required a Hospitalisation of more than twenty four  hours.  \nTreatment normally taken on an out-patient basis is not included in the scope of this definition. \n \n2.18 Dental Treatment means a treatment carried out by a dental practitioner including examinations, fillings (where \nappropriate), crowns, extractions and surgery. \n \n2.19 Diagnosis means diagnosis by a Medical Practitioner, supported by clinical, radiological, histological and laboratory \nevidence, acceptable to the Company. \n \n2.20 Family Members means spouse, children and parents/ in-laws of the Insured, covered under the Policy. \n \n2.21 Floater means the Threshold/ Sum Insured, as mentioned in the Schedule, applicable to all the Insured Persons, for any and \nall claims made in aggregate during the Policy Period. \n",
+          "meaning": "Cumulative expenses explicitly enumerate3.1 heads, individual/floater membership; floater definition uses Policy Period.",
+          "transcription_method": "native_text_exact",
+          "anchor_bboxes": [
+            [
+              36.0,
+              378.15618896484375,
+              132.45492553710938,
+              389.32135009765625
+            ]
+          ],
+          "bbox_qualification": "Anchor only, PDF points; not full excerpt crop.",
+          "visually_reviewed_page": false
+        },
+        {
+          "physical_page": 3,
+          "locator": "2.24 Hospitalisation",
+          "exact_passage": "2.24 Hospitalisation means admission in a Hospital for a minimum period of twenty four (24) consecutive ‘Inpatient care’ hours \nexcept for procedures/ treatments, where such admission could be for a period of less than twenty four (24) consecutive \nhours. \n \n2.25 ID Card means the card issued to the Insured Person by the TPA for availing cashless facility. \n \n2.26 Illness means a sickness or a disease or pathological condition leading to the impairment of normal physiological function \nwhich manifests itself during the policy period and requires medical treatment. \ni. Acute Condition means an Illness or Injury that is likely to response quickly to treatment which aims to return the person \nto his or her state of health immediately before suffering the Illness/ Injury which leads to full recovery. \nii. Chronic Condition means an Illness, or Injury that has one or more of the following characteristics: \na) it needs ongoing or long-term monitoring through consultations, examinations, check-ups, and / or tests, \nb) it needs ongoing or long-term control or relief of symptoms, \nc) it requires rehabilitation for the patient or for the patient to be specially trained to cope with it, \nd) it continues indefinitely, or \ne) it recurs or is likely recur. \n \n2.27 Injury means accidental physical bodily harm excluding Illness solely and directly caused by external, violent and visible \nand evident means which is verified and certified by a Medical Practitioner. \n \n2.28 In-Patient Care means treatment for which the Insured Person has to stay in a Hospital for more than 24 hours for a covered \nevent. \n \n",
+          "meaning": "Minimum24hour hospitalisation versus more-than24hour inpatient definition; boundary disagreement retained.",
+          "transcription_method": "native_text_exact",
+          "anchor_bboxes": [
+            [
+              36.0,
+              217.22561645507812,
+              121.76138305664062,
+              228.2513427734375
+            ]
+          ],
+          "bbox_qualification": "Anchor only, PDF points; not full excerpt crop.",
+          "visually_reviewed_page": false
+        },
+        {
+          "physical_page": 4,
+          "locator": "2.42 Policy Period",
+          "exact_passage": "2.42 Policy Period means period of one year, two years or three years as mentioned in the Schedule for which the Policy is issued. \n \n2.43 Policy Year means a period of twelve months beginning from the date of commencement of the Policy Period and ending \non the last day of such twelve month period. For the purpose of subsequent years, Policy Year shall mean a period of twelve \nmonths commencing from the end of the previous Policy Year and lapsing on the last day of such twelve-month period, till \nthe Policy Period, as mentioned in the Schedule. \n \n",
+          "meaning": "One/two/three-year policy period versus12-month policy years.",
+          "transcription_method": "native_text_exact",
+          "anchor_bboxes": [
+            [
+              36.0,
+              297.7756042480469,
+              113.95272827148438,
+              308.80133056640625
+            ]
+          ],
+          "bbox_qualification": "Anchor only, PDF points; not full excerpt crop.",
+          "visually_reviewed_page": false
+        },
+        {
+          "physical_page": 5,
+          "locator": "National Super Top Up Mediclaim Policy",
+          "exact_passage": "National Insurance Co. Ltd. \nRegd. & Head Office: Premises No. 18-0374, Plot no. \nCBD-81, New Town, Kolkata - 700156 \nPage | 5 \nNational Super Top Up Mediclaim Policy \nUIN: NICHLIP24154V042324  \n \n2.52 Renewal means the terms on which the contract of insurance can be renewed on mutual consent with a provision of grace \nperiod for treating the renewal continuous for the purpose of gaining credit for Pre-existing diseases, time-bound exclusions \nand for all waiting periods. \n \n2.53 Schedule means a document forming part of the Policy, containing details including name of the Insured Person, age, relation \nof the Insured Person, Sum Insured, premium paid and the policy period. \n \n2.54 Sum Insured means the Basic Sum Insured and the Cumulative Bonus (CB) accrued in respect of the Insured Person (for \npolicies issued on individual basis)/ one or more Insured Persons (for policies issued on floater basis) as mentioned in the \nschedule. The Sum Insured represents maximum liability of the Company for any and all claims during each Policy Year of \nthe Policy Period. \n \n2.55 Surgery or Surgical Procedure means manual and / or operative procedure(s) required for treatment of an Illness or Injury, \ncorrection of deformities and defects, diagnosis and cure of diseases, relief of suffering and prolongation of life, performed \nin a Hospital or Day Care Centre by a Medical Practitioner. \n \n2.56 Third Party Administrator (TPA) means a company registered with the Authority, and engaged by an Insurer, for a fee or \nremuneration, by whatever name called and as may be mentioned in the agreement, for providing health services. \n \n2.57 Threshold means the amount of Cumulative Medical Expenses (as per Definition 2.15 of the Policy), as chosen by the \nInsured and mentioned in the Schedule, up to which no amount can be claimed under this Policy. \n \n2.58 Unproven/ Experimental Treatment means treatment, including drug experimental therapy, which is not based on \nestablished medical practice in India, and is experimental or unproven. \n \n2.59 Waiting Period means a period from the inception of this Policy during which specified diseases/treatment is not covered. \nOn completion of the period, diseases/treatment shall be covered provided the Policy has been continuously renewed without \nany break. \n \n3. BENEFITS COVERED UNDER THE POLICY \nThreshold shall be determined taking into account the Cumulative Medical Expenses incurred in one or more Hospitalisation(s) \nduring each Policy Year of the Policy Period as stated in the Policy Schedule for Coverage mentioned in Section 3.1 only, \nirrespective of existence of any Base Policy covering the said Hospitalisation(s). \nFor claims admissible under the Policy after Cumulative Medical Expenses exceeds the Threshold, Coverage mentioned in both \nSection 3.1 and Section 3.2 shall be payable. \n \n3.1 Coverage \n3.1.1 In-patient Treatment \nThe Company shall indemnify the Medical Expenses incurred for all Hospitalisation(s): \ni. \nRoom Rent and Intensive Care Unit Charges (including diet charges, nursing care by qualified nurse, RMO charges, \nadministration charges for IV fluids/ blood transfusion/ injection) \nii. Medical Practitioner(s) fees \niii. Anesthesia, blood, oxygen, operation theatre charges, surgical appliances \niv. Medicines and drugs  \nv. Diagnostic procedures \nvi. Prosthetics and other devices or equipment if implanted internally during a surgical procedure. \nvii. Dental treatment, necessitated due to an Injury \nviii. Plastic surgery, necessitated due to Illness or Injury \nix. Hormone replacement therapy, if Medically Necessary \nx. Vitamins and tonics, forming part of treatment for Illness/ Injury as certified by the attending Medical Practitioner \nxi. Circumcision, necessitated for treatment of an Illness or Injury \n \n3.1.1.1 Treatment related to participation as a non-professional in hazardous or adventure sports \nExpenses related to treatment necessitated due to participation as a non-professional in hazardous or adventure sports, subject to \nmaximum amount admissible for Any One Illness shall be lower of 25% of Sum Insured. \n \n3.1.2 Pre-Hospitalisation \nThe Company shall indemnify the Medical Expenses incurred up to thirty days immediately before the Insured Person is \nhospitalised, provided that: \ni. such Medical Expenses are incurred for the same condition for which the Insured Person’s Hospitalisation was required, \nand  \nii. the In-patient Hospitalisation claim for such Hospitalisation is admissible by the Company. \nPre-hospitalisation shall be considered as part of the Hospitalisation claim. \n \n \n3.1.3 Post-Hospitalisation \nThe Company shall indemnify the Medical Expenses incurred up to sixty days immediately after the Insured Person is discharged \nfrom Hospital, provided that: \n",
+          "meaning": "Threshold definition, benefit membership, base-policy independence and grant; no order-of-deductions calculation derived.",
+          "transcription_method": "native_text_exact",
+          "anchor_bboxes": [
+            [
+              414.07000732421875,
+              810.2763671875,
+              548.064453125,
+              819.1766357421875
+            ]
+          ],
+          "bbox_qualification": "Anchor only, PDF points; not full excerpt crop.",
+          "visually_reviewed_page": false
+        },
+        {
+          "physical_page": 7,
+          "locator": "National Super Top Up Mediclaim Policy",
+          "exact_passage": "National Insurance Co. Ltd. \nRegd. & Head Office: Premises No. 18-0374, Plot no. \nCBD-81, New Town, Kolkata - 700156 \nPage | 7 \nNational Super Top Up Mediclaim Policy \nUIN: NICHLIP24154V042324  \n \n \n \nMaternity Expenses means;  \na) Medical treatment expenses traceable to childbirth (including complicated deliveries and caesarean sections incurred during \nHospitalisation);  \nb) Expenses towards lawful medical termination of pregnancy during the Policy Period.  \nNote: Ectopic pregnancy is covered under “In-patient Treatment”, provided such pregnancy is established by medical reports. \n \nExclusions \nThe Company shall not be liable to make any payment under the cover in respect of any expenses incurred in connection with or \nin respect of: \n1. Covered female Insured Person below eighteen (18) years and above forty-five (45) years of age. \n2. Delivery or termination within a Waiting Period of thirty six (36) months. However, the Waiting Period may be waived \nonly in the case of delivery, miscarriage or abortion induced by accident.  \n3. Delivery or lawful medical termination of pregnancy limited to two deliveries or terminations or either has been paid \nunder the Policy and its Renewals. \n4. More than one delivery or lawful medical termination of pregnancy during a single Policy Period. \n5. Ectopic pregnancy. \n6. Pre and post hospitalisation expenses, other than pre and post natal treatment. \n \n3.1.10 Modern Treatment \nThe Company shall indemnify the Medical Expenses for In-Patient Treatment or Day Care Procedure along with Pre-Hospitalisation \nexpenses and Post-Hospitalisation expenses incurred for following Modern Treatments (wherever medically indicated), subject to \nthe limit of 25% of the Sum Insured for the related modern procedure/ component/ medicine of each Modern Treatment during the \nPolicy Period: \nModern Treatment \nCoverage \nUAE & HIFU \nLimit is for Procedure cost only \nBalloon Sinuplasty \nLimit is for Balloon cost only \nDeep Brain Stimulation \nLimit is for implants including batteries only \nOral Chemotherapy \nOnly cost of medicines payable under this limit, other incidental \ncharges like investigations and consultation charges not payable. \nImmunotherapy \nLimit is for cost of injections only. \nIntravitreal injections \nLimit is for complete treatment, including Pre & Post \nHospitalization \nRobotic Surgery \nLimit is for robotic component only. \nStereotactic Radio \nsurgeries \nLimit is for radiation procedure. \nBronchial Thermoplasty \nLimit is for complete treatment, including Pre & Post \nHospitalization \nVaporization of the \nprostrate \nLimit is for LASER component only. \nIONM \nLimit is for IONM procedure only. \nStem cell therapy \nLimit is for complete treatment, including Pre & Post \nHospitalization \n \n3.1.11 Mental Illness Cover \nThe Company shall indemnify the Medical Expenses (including pre-hospitalisation and post-hospitalisation expenses) related to \nmental Illnesses, provided that the treatment shall be undertaken at a Hospital with a specific department for mental Illness, under \na Medical Practitioner qualified as Psychiatrist or a professional having a post-graduate degree (Ayurveda) in Mano Vigyan Avum \nManas Roga or a post-graduate degree (Homoeopathy) in psychiatry or a post-graduate degree (Unani) in Moalijat (Nafasiyatt) or \na post-graduate degree (Siddha) in Sirappu Maruthuvam. \n \nExclusions \n1. Any kind of psychological counselling, cognitive/ family/ group/ behaviour/ palliative therapy or other kinds of psychotherapy \nfor which Hospitalisation is not necessary shall not be covered.  \n2. Any treatment of the following mental Illnesses shall be covered after a Waiting Period of two (2) years:  \ni. Depression (ICD - F32; F33). \nii. Schizophrenia (ICD - F20; F21; F25). \n \n3.1.12 Correction of Refractive Error \nThe Company shall indemnify the Medical Expenses for In-patient Treatment, including pre-hospitalisation expenses and post-\nhospitalisation expenses, incurred for expenses related to the treatment for correction of eyesight due to refractive error equal to or \nmore than 7.5 dioptres, subject to Waiting Period of two (2) years as per Section 4.2.f.iii. \n \nNote: The expenses that are not covered in this policy are placed under List-l of Appendix-II of the Policy. The list of expenses that \nare to be subsumed into room charges, or procedure charges or costs of treatment are placed under List-II, List-III and List-IV of \nAppendix-II of the Policy respectively. \n \n3.2 Additional Benefits \nThe following benefits shall be payable only for claims admissible under the policy, after crossing of the Threshold. \n",
+          "meaning": "Modern-treatment component scopes, maternity routing, connected additional-benefit grant.",
+          "transcription_method": "native_text_exact",
+          "anchor_bboxes": [
+            [
+              414.07000732421875,
+              810.2763671875,
+              548.064453125,
+              819.1766357421875
+            ]
+          ],
+          "bbox_qualification": "Anchor only, PDF points; not full excerpt crop.",
+          "visually_reviewed_page": true
+        },
+        {
+          "physical_page": 8,
+          "locator": "National Super Top Up Mediclaim Policy",
+          "exact_passage": "National Insurance Co. Ltd. \nRegd. & Head Office: Premises No. 18-0374, Plot no. \nCBD-81, New Town, Kolkata - 700156 \nPage | 8 \nNational Super Top Up Mediclaim Policy \nUIN: NICHLIP24154V042324  \n \n \n3.2.1 Hospital Cash \nThe Company shall pay the Insured a daily Hospital cash allowance up to the limit as shown in the Table of Benefits for a maximum \nof five days, provided that:- \ni. \nThe Hospitalisation exceeds three days, and \nii. A claim has been admitted under Section 3.1.1. \n \n \n3.2.2 Doctor’s Home Visit/ Aya/ Nurse/ Attendant Charges during Post-Hospitalisation \nThe Company shall reimburse the Insured, for Medically Necessary expenses incurred for doctor’s home visit, nursing care by \nqualified nurse, aya, attendant charges during post-hospitalisation up to the limit as shown in the Table of Benefits., provided that \nthe related Hospitalisation claim has been admitted under Section 3.1.1 and the physical mobility of the Insured Person outside \nresidence is severely restricted due to the Illness/ Injury requiring Hospitalisation. \n \n3.2.3 Ambulance Charges \nThe Company shall reimburse the Insured the expenses incurred for actual emergency ambulance charges (by road only) for \ntransportation to the Hospital, or from one Hospital to another Hospital, provided that a claim has been admitted under Section 3.1.1. \nAmbulance charges will be paid once for Any One Illness for each Insured Person. \n \n \n3.3 Migration to Policy without Threshold \nThe Company shall allow the Insured Persons to migrate to any existing indemnity health insurance product of the Company (for \nsame or lower Sum Insured without any Threshold) of the Company with continuity coverage in terms of waiver of Waiting Periods \nto the extent of benefits covered under this Policy, provided that the Insured Person has been covered under National Super Top Up \nMediclaim Policy before attaining the age of 45 years and has continuously renewed the Policy for 5 years without interruption. \n \nConditions: \n1. Migration to any other indemnity health insurance product shall be subject to the underwriting guidelines of the said product, \nincluding Pre-Policy Health Checkup (if applicable); \n2. This option can be exercised by the Insured Person at the time of renewal only; and \n3. On migration, the terms and rates of the migrated policy, i.e. later Policy shall apply. \n \n3.4 Good Health Incentive  \n \n3.4.1 Cumulative Bonus (CB)  \nFor each claim-free Policy Year (i.e. no claims are reported and admitted by the Company), Cumulative Bonus allowed shall be an \namount equal to 5% of the Basic Sum Insured (excluding CB) of the expiring Policy Year. \nIf a claim is made in any particular Policy Year, the Cumulative Bonus accrued shall be reduced at the same rate at which it has \naccrued. However, Basic Sum Insured will be maintained and will not be reduced. \n \nCumulative Bonus shall be accumulated and available on renewal. Maximum Cumulative Bonus shall not exceed 50% of the Basic \nSum Insured of the renewed Policy. Wherever, due to reduction in Basic Sum Insured on renewal, if the accumulated Cumulative \nBonus exceeds 50% of the reduced Basic Sum Insured, then Cumulative Bonus shall be restricted to 50% of the reduced Basic Sum \nInsured. \nIn case there is no claim in a particular Policy Year, Cumulative Bonus shall be accumulated and available on renewal to the \nsubsequent Policy Year, even in case of long term Policies for two/ three years, as opted by the Insured. \n \n \nNotes: \ni. \nIn case where the Policy is on Individual Basis, the Cumulative Bonus shall be added and available individually to the Insured \nPerson if no claim has been reported. Cumulative Bonus shall reduce only in case of claim from the same Insured Person. \nii. \nIn case where the Policy is on floater Basis, the Cumulative Bonus shall be added and available to the family on floater basis, \nprovided no claim has been reported from any Insured Person. Cumulative Bonus shall reduce in case of claim from any of \nthe Insured Persons. \niii. Any Cumulative Bonus that has accrued for a Policy Year will be credited at the end of the Policy Period if the policy is \nrenewed with the Company within Grace Period and will be available for any claims made in the subsequent Policy Period. \niv. \nIf the Insured Persons in the expiring policy are covered on an Individual Basis as specified in the Policy Schedule and there \nis an accumulated Cumulative Bonus for each Insured Person under the expiring policy, and such expiring policy has been \nrenewed on Floater Basis as specified in the Policy Schedule then the Cumulative Bonus to be carried forward for credit in \nsuch renewed Policy shall be the one that is applicable to the lowest among all the Insured Persons. \nv. \nIn case of floater policies where Insured Persons renew their expiring policy by splitting the Sum Insured in to two or more \nfloater Policies/ individual Policies, or in cases where the Policy is split due to the child attaining the age of 25 years, the \nCumulative Bonus of the expiring Policy shall be apportioned to such renewed Policies in the proportion of the Sum Insured \nof each renewed Policy. \nvi. \nIf a claim is made in the expiring Policy Year, and is notified to the Company after the acceptance of Renewal premium any \nawarded Cumulative Bonus shall be withdrawn. \nvii. Revision in Sum Insured: If the Basic Sum Insured under the Policy has been increased/decreased at the time of Renewal, \nthe Cumulative Bonus shall be calculated on the Sum Insured of the last completed Policy Period. \nviii. The Cumulative Bonus will not be accumulated in excess of 50% of the Basic Sum Insured under the current Policy with the \nCompany under any circumstances. \n",
+          "meaning": "Additional benefits require admitted hospitalization; migration conditions and bonus/family change dependencies.",
+          "transcription_method": "native_text_exact",
+          "anchor_bboxes": [
+            [
+              414.07000732421875,
+              810.2763671875,
+              548.064453125,
+              819.1766357421875
+            ],
+            [
+              466.2582702636719,
+              274.7356262207031,
+              561.6849365234375,
+              285.7613525390625
+            ],
+            [
+              36.0,
+              286.2556457519531,
+              107.28372955322266,
+              297.2813720703125
+            ]
+          ],
+          "bbox_qualification": "Anchor only, PDF points; not full excerpt crop.",
+          "visually_reviewed_page": false
+        },
+        {
+          "physical_page": 18,
+          "locator": "National Super Top Up Mediclaim Policy",
+          "exact_passage": "National Insurance Co. Ltd. \nRegd. & Head Office: Premises No. 18-0374, Plot no. \nCBD-81, New Town, Kolkata - 700156 \nPage | 18 \nNational Super Top Up Mediclaim Policy \nUIN: NICHLIP24154V042324  \n \nTable of Benefits: \nName \nNational Super Top Up Mediclaim Policy \nPlan \nIndividual \nFloater \nThreshold – Sum Insured (in ₹) \nThreshold \nSum Insured  \n2 Lakhs \n3,5,7 Lakhs \n3 Lakhs \n3,5,7,10 Lakhs \n5 Lakhs \n5,7,10,15 Lakhs \n8 Lakhs \n8,10,15,20 Lakhs \n10 Lakhs \n10,15,20,30 Lakhs \n20 Lakhs \n20,30,50,80 Lakhs \nCoverage*                                                                                                                                                                                         . \nIn patient Treatment \nUp to Sum Insured, No sub limits \nSystem of Medicine \nAllopathy and AYUSH \nPre-hospitalisation \n30 days immediately before hospitalisation \nPost-hospitalisation \n60 days immediately after discharge \nDay Care Procedures \n140+ day care procedures \nAYUSH Treatment \nUp to Sum Insured \nOrgan Donor’s Medical \nExpenses \nMedical expenses, Pre-hospitalisation & Post-hospitalisation expenses up to Sum Insured \nAIDS Treatment \nMedical Expenses for treatment of AIDS (any stage)  \nMaternity Expenses \nCovered up to Sum Insured after waiting period of 3 years, No Sub Limit \nModern Treatment (12 nos) \nUp to 25% of SI for each Modern Treatment \nTreatment due to participation \nin hazardous or adventure \nsports (non-professionals) \nUp to 25% of SI \nMorbid Obesity \nCovered after waiting period of 3 years \nRefractive Error (min 7.5D) \nCovered after waiting period of 2 years \nAdditional Benefits** \nHospital Cash (in excess of \ninitial 3 days) \n• Up to Sum Insured 10 Lakh, ₹ 1,000 per day for 5 days per individual \n• Above Sum Insured 10 Lakh, ₹ 2,000 per day for 5 days per individual \nDoctor's Home Visit/ Aya/ \nNurse/ Attendant Charges post \nhospitalisation \n• Up to Sum Insured Limit 10 Lakh, ₹ 1,000 per day for 10 days per individual \n• Above Sum Insured Limit 10 Lakh, ₹ 2,000 per day for 10 days per individual \nAmbulance Charges (by road \nonly) \nActual charges \nOthers \nMigration to Policy without \nThreshold \nOption available \nPre-existing Disease (PED) \nwaiting period (Only PEDs \ndeclared in the Proposal Form \nand accepted for coverage by the \nCompany shall be covered) \n12 months – PED claim not payable \n13-24 months - 50% of PED claim \n25-36 months - 75% of PED claim \nAfter 36 months - 100% of PED claim \nRenewal Benefit \nCumulative Bonus (CB) \n• CB at 5% of Sum Insured Limit for each claim free year \nIn case of claim, CB to be reduced at 5% per year \nDiscounts \nEarly Entry Discount \n5% on individual premium (in case where an insured person has entered the policy before \nthe age 42 (completed years) and renewed the policy for a continuous period of 3 years). \nFamily Discount \n5 % (in individual policy only)  \nNot Applicable for Floater Policies \nOnline/ Direct Discount \n10% (for new and renewal, where no intermediary is involved) \nLong Term Discount \n3% for a 2- year policy and 5% for a 3-year policy \n* Aggregate of all the benefits under ‘Coverage’ in a policy period are subject to the Threshold. \n** Aggregate of all the benefits under ‘Coverage’ and ‘Additional Benefits’ for admissible claims in a policy period are subject to the Sum Insured opted. \n \n \n \n \n \n \n \n \n \n \n \n \n",
+          "meaning": "Both forms, six threshold rows and23 permitted SI pairs, benefit rows and both footnotes visually checked.",
+          "transcription_method": "native_text_exact",
+          "anchor_bboxes": [
+            [
+              399.9100036621094,
+              818.3163452148438,
+              533.9044799804688,
+              827.2166137695312
+            ],
+            [
+              282.6499938964844,
+              39.725616455078125,
+              458.9620361328125,
+              50.75133514404297
+            ]
+          ],
+          "bbox_qualification": "Anchor only, PDF points; not full excerpt crop.",
+          "visually_reviewed_page": true
+        }
+      ],
+      "identity_evidence": [],
+      "acquisition_provenance": [
+        {
+          "source_register": "research/registers/sources.json",
+          "url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/NSTUMP%20Wordings.pdf",
+          "final_url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/NSTUMP%20Wordings.pdf",
+          "linking_url": "https://nationalinsurance.nic.co.in/products/all-products/health/national-super-top-mediclaim-policy",
+          "acquired_at": "2026-09-10T12:04:02.860575+00:00",
+          "http_status": 200,
+          "status": "acquired",
+          "sha256": "fe1ae55307cbb29996a377e4edecb25052fc58e4440a22139783cb22d881c949",
+          "original_link_observations": [
+            {
+              "label": "NSTUMP Policy Wordings (455.49 KB)",
+              "linking_url": "https://nationalinsurance.nic.co.in/products/all-products/health/national-super-top-mediclaim-policy",
+              "page_sha256": "021eda88b171d605124500198d1b08601a5e7ad49c712a1459463313b2794ddd"
+            },
+            {
+              "label": "NSTUMP Policy Wordings (455.49 KB)",
+              "linking_url": "https://nationalinsurance.nic.co.in/products/all-products/health/national-super-top-mediclaim-policy-revised",
+              "page_sha256": "021eda88b171d605124500198d1b08601a5e7ad49c712a1459463313b2794ddd"
+            }
+          ]
+        }
+      ],
+      "reading_boundary": {
+        "reviewed_passages_on_physical_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          8,
+          18
+        ],
+        "visually_reviewed_physical_pages": [
+          7,
+          18
+        ],
+        "all_pages_or_all_rules_reviewed": false,
+        "method": "Independent manual reading of selected originals using native text aid; modern component and benefit tables visually checked."
+      },
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "Not established; bounded source/identity/configuration review only",
+      "original_integrity_verified": true
+    },
+    {
+      "source_sha256": "3e4d3f02dd2caaafb7317bd353951c0f12dece916dfca1901070283acc7d5a0f",
+      "insurer_id": "national",
+      "product_or_heading": "National Super Top Up Mediclaim Policy",
+      "heading_is_normalized_display_label": false,
+      "document_role": "customer_information_sheet",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Matching product/UIN supporting document first-page identity and coverage summary read.",
+      "page_count": 8,
+      "observed_uins": [
+        "NICHLIP24154V042324"
+      ],
+      "typed_uin_assertions": [
+        {
+          "uin": "NICHLIP24154V042324",
+          "role": "base_product",
+          "physical_page": 1
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "locator": "National Super Top Up Mediclaim Policy",
+          "exact_passage": "National Insurance Co. Ltd. \nRegd. Office Premises No. 18-0374, Plot no. \nCBD-81, New Town, Kolkata - 700156 \nPage 1 of 8 \n National Super Top Up Mediclaim Policy \nUIN: NICHLIP24154V042324 \n \nNational Insurance Company Limited \n \n \n \n \n \nCIN - U10200WB1906GOI001713 \nIRDAI Regn. No. - 58  \n \nNational Super Top Up Mediclaim Policy \nCustomer Information Sheet \nThis documents provides key information about your policy. You are also advised to go \nthrough your policy document. \nS \nNo. \nTITLE \nDESCRIPTION \n(Please refer to applicable Policy Clause Number in next \ncolumn) \nPolicy \nClause \nNo. \n1. \nName of \nInsurance \nProduct \nNational Super Top Up Mediclaim Policy \n \n2. \nPolicy No. \n \n \n3. \nType of \nInsurance \nProduct \nBoth Indemnity and Benefit \n \n4. \nSum Insured \nIndividual Sum Insured (SI): Rs \n \nFloater Sum Insured (SI): Rs \n \n5. \nPolicy \nCoverage \n(what the \npolicy \ncovers?) \nExpenses in respect of: \na. Admission in Hospital beyond 24 hrs \nb. Pre-hospitalisation (treatment prior to admission in hospital) of \n30 days \nc. Post-hospitalisation (treatment after discharge from hospital) \nwithin 60 days from date of discharge \nd. Procedures requiring less than 24 hours of hospitalization (day \ncare). \ne. AYUSH Treatment \nf. Organ donor’s medical expenses \ng. HIV/ AIDS  \nh. Morbid Obesity Treatment \ni. Maternity \nj. Modern Treatment (12 in Number) \nk. Mental Illness  \nl. Correction of Refractive Error (equal to or more than 7.5 \ndioptres) \nm. Treatment related to participation as a non-professional in \nhazardous or adventure sports \n \nAdditional Benefits: \na. Hospital Cash for maximum of 5 days  \nb. Doctor’s Home visit / Aya / Nurse / Attendant Charges during \npost hospitalisation \nc. Ambulance Charges (by road only) \n \nGood Health Incentives: \na. Cumulative Bonus (CB) \n \n3.1.1 \n3.1.2 \n \n3.1.3 \n \n3.1.4 \n \n3.1.5 \n3.1.6 \n3.1.7 \n3.1.8 \n3.1.9 \n3.1.10 \n3.1.11 \n3.1.12 \n \n3.1.1.1 \n \n \n3.2 \n3.2.1 \n3.2.2 \n \n3.2.3 \n \n3.4 \n3.4.1 \n6 \nExclusions \na. Pre-Existing Diseases (Excl 01) \n4.1 \n",
+          "meaning": "Same title/UIN; both indemnity/benefit, blank individual/floater schedule fields and coverage summary.",
+          "transcription_method": "native_text_exact",
+          "anchor_bboxes": [
+            [
+              414.19000244140625,
+              789.0363159179688,
+              548.0719604492188,
+              797.9365844726562
+            ],
+            [
+              163.82000732421875,
+              79.71378326416016,
+              431.59991455078125,
+              95.3683853149414
+            ],
+            [
+              154.22000122070312,
+              205.0399627685547,
+              383.74395751953125,
+              218.4199676513672
+            ]
+          ],
+          "bbox_qualification": "Anchor only, PDF points; not full excerpt crop.",
+          "visually_reviewed_page": false
+        }
+      ],
+      "identity_evidence": [],
+      "acquisition_provenance": [
+        {
+          "source_register": "research/registers/sources.json",
+          "url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/NSTUMP%20CIS.pdf",
+          "final_url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/NSTUMP%20CIS.pdf",
+          "linking_url": "https://nationalinsurance.nic.co.in/products/all-products/health/national-super-top-mediclaim-policy",
+          "acquired_at": "2026-09-10T12:04:03.347134+00:00",
+          "http_status": 200,
+          "status": "acquired",
+          "sha256": "3e4d3f02dd2caaafb7317bd353951c0f12dece916dfca1901070283acc7d5a0f",
+          "original_link_observations": [
+            {
+              "label": "NSTUMP Customer Information Sheet (619.33 KB)",
+              "linking_url": "https://nationalinsurance.nic.co.in/products/all-products/health/national-super-top-mediclaim-policy",
+              "page_sha256": "021eda88b171d605124500198d1b08601a5e7ad49c712a1459463313b2794ddd"
+            },
+            {
+              "label": "NSTUMP Customer Information Sheet (619.33 KB)",
+              "linking_url": "https://nationalinsurance.nic.co.in/products/all-products/health/national-super-top-mediclaim-policy-revised",
+              "page_sha256": "021eda88b171d605124500198d1b08601a5e7ad49c712a1459463313b2794ddd"
+            }
+          ]
+        }
+      ],
+      "reading_boundary": {
+        "reviewed_passages_on_physical_pages": [
+          1
+        ],
+        "visually_reviewed_physical_pages": [],
+        "all_pages_or_all_rules_reviewed": false,
+        "method": "Independent manual reading of selected originals using native text aid; modern component and benefit tables visually checked."
+      },
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "Not established; bounded source/identity/configuration review only",
+      "original_integrity_verified": true
+    }
+  ],
+  "reread_existing_documents": [
+    {
+      "source_sha256": "0d5ad0729dca1f5efd6436e02cd033976d96053294fe5aa03a4ce57aafa4dd02",
+      "insurer_id": "national",
+      "product_or_heading": "National Super Top Up Mediclaim Policy",
+      "heading_is_normalized_display_label": false,
+      "document_role": "prospectus",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Matching product/UIN supporting document first-page identity and coverage summary read.",
+      "page_count": 22,
+      "observed_uins": [
+        "NICHLIP24154V042324"
+      ],
+      "typed_uin_assertions": [
+        {
+          "uin": "NICHLIP24154V042324",
+          "role": "base_product",
+          "physical_page": 1
+        }
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "locator": "National Super Top Up Mediclaim Policy",
+          "exact_passage": "National Insurance Co. Ltd. \nRegd. & Head Office: Premises No. 18-0374, Plot no. \nCBD-81, New Town, Kolkata - 700156 \nPage | 1 \n  National Super Top Up Mediclaim Policy \n                                                          UIN: NICHLIP24154V042324 \n \n  National Insurance Company Limited \n \nCIN - U10200WB1906GOI001713 \nIRDAI Regn. No. - 58 \n \nNational Super Top Up Mediclaim Policy \n \nPROSPECTUS \n1.1  Product \nNational Super Top Up Mediclaim Policy is a high threshold indemnity health insurance product, covering the members of a \nfamily under a single sum insured on floater basis or each member on individual sum insured basis. Claim under the Policy is \npayable provided the cumulative medical expenses for the insured (individual basis) or the family (floater basis) in a policy period \nexceeds the threshold. The Policy covers expenses in respect of inpatient treatment (allopathy and AYUSH) reasonably and \ncustomarily incurred for treatment of a disease or an injury contracted/sustained during the policy period. The Policy also covers \npre hospitalisation and post hospitalisation expenses, 140+ day care procedures/surgeries, organ donor’s medical expenses, \nhospital cash, doctor’s home visit, nursing, aya and attendant charges, ambulance charges, HIV/ AIDS treatment, bariatric surgery \nand maternity. \n \nImportant: \ni. \nClaim shall be admissible for the Hospitalisation during which the Cumulative Medical Expenses in respect of \nHospitalisation(s) of any Insured Person (individual plan) or one or more Insured Persons (floater plan) in a Policy Year of \nthe Policy Period exceeds the Threshold and for all subsequent Hospitalisation(s) during the Policy Year. \nii. \nThreshold shall be determined taking into account the Cumulative Medical Expenses incurred in one or more \nhospitalisation(s) during the each Policy Year of the Policy Period of this Policy for Coverage mentioned in Section 1.2 \nonly, irrespective of existence of any Base Policy covering the said hospitalisation(s). \niii. \nFor claims admissible under the Policy after Cumulative Medical Expenses exceeds the Threshold, Coverage mentioned in \nboth Section 1.2 and Section 1.3 shall be payable. \niv. \nMaximum liability of the Company under the policy for all admissible claims during each Policy Year of the Policy Period \nshall be the individual/ floater Sum Insured opted. \nv. \nThe insured shall preserve and submit all original documents and/ or certified copies of documents related to all \nhospitalisation(s) during the policy period to enable the Company to calculate the cumulative medical expenses and \nthreshold, for determining admissibility and payment of claims. \n \n1.2 Coverage \n \n1.2.1 In-patient Treatment \nThe Company shall indemnify the Medical Expenses incurred for all Hospitalisation(s): \ni. \nRoom Rent and Intensive Care Unit Charges (including diet charges, nursing care by qualified nurse, RMO charges, \nadministration charges for IV fluids/blood transfusion/injection) \nii. Medical Practitioner(s) fees \niii. Anaesthesia, blood, oxygen, operation theatre charges, surgical appliances \niv. Medicines and drugs  \nv. Diagnostic procedures \nvi. Prosthetics and other devices or equipment if implanted internally during a surgical procedure. \nvii. Dental treatment, necessitated due to an injury \nviii. Plastic surgery, necessitated due to illness or injury \nix. Hormone replacement therapy, if medically necessary \nx. Vitamins and tonics, forming part of treatment for illness/injury as certified by the attending medical practitioner \nxi. Circumcision, necessitated for treatment of an illness or injury \n \n1.2.1.1 Treatment related to participation as a non-professional in hazardous or adventure sports \nExpenses related to treatment necessitated due to participation as a non-professional in hazardous or adventure sports, subject to \nMaximum amount admissible for Any One Illness shall be lower of 25% of Sum Insured. \n \n1.2.2 Pre Hospitalisation \nThe Company shall indemnify the Medical Expenses incurred up to thirty days immediately before the insured Person is \nHospitalised, provided that: \ni. such medical expenses are incurred for the same condition for which the insured person’s hospitalisation was required, \nand  \nii. the in-patient hospitalisation claim for such hospitalisation is admissible by the Company \nPre hospitalisation shall be considered as part of the hospitalisation claim. \n \n \n1.2.3 Post Hospitalisation \nThe Company shall indemnify the Medical Expenses incurred up to sixty days immediately after the insured person is discharged \nfrom hospital, provided that: \ni. such medical expenses are incurred for the same condition for which the insured person’s hospitalisation was required, \nand \nii. the in-patient hospitalisation claim for such hospitalisation is admissible by the Company \nPost hospitalisation shall be considered as part of the hospitalisation claim. \n \n \n",
+          "meaning": "Same title/UIN; summary corroborates forms, threshold membership and base-policy independence. Not full prospectus comparison.",
+          "transcription_method": "native_text_exact",
+          "anchor_bboxes": [
+            [
+              432.54998779296875,
+              809.6763305664062,
+              566.40771484375,
+              818.5765991210938
+            ],
+            [
+              192.2899932861328,
+              51.10798645019531,
+              404.1099853515625,
+              64.3919906616211
+            ],
+            [
+              36.0,
+              93.50564575195312,
+              216.6088104248047,
+              104.53136444091797
+            ]
+          ],
+          "bbox_qualification": "Anchor only, PDF points; not full excerpt crop.",
+          "visually_reviewed_page": false
+        }
+      ],
+      "identity_evidence": [],
+      "acquisition_provenance": [
+        {
+          "source_register": "research/registers/sources.json",
+          "url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/NSTUMP%20Prospectus.pdf",
+          "final_url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/NSTUMP%20Prospectus.pdf",
+          "linking_url": "https://nationalinsurance.nic.co.in/products/all-products/health/national-super-top-mediclaim-policy",
+          "acquired_at": "2026-09-10T12:04:03.483760+00:00",
+          "http_status": 200,
+          "status": "acquired",
+          "sha256": "0d5ad0729dca1f5efd6436e02cd033976d96053294fe5aa03a4ce57aafa4dd02",
+          "original_link_observations": [
+            {
+              "label": "NSTUMP Prospectus (513.3 KB)",
+              "linking_url": "https://nationalinsurance.nic.co.in/products/all-products/health/national-super-top-mediclaim-policy",
+              "page_sha256": "021eda88b171d605124500198d1b08601a5e7ad49c712a1459463313b2794ddd"
+            },
+            {
+              "label": "NSTUMP Prospectus (513.3 KB)",
+              "linking_url": "https://nationalinsurance.nic.co.in/products/all-products/health/national-super-top-mediclaim-policy-revised",
+              "page_sha256": "021eda88b171d605124500198d1b08601a5e7ad49c712a1459463313b2794ddd"
+            }
+          ]
+        }
+      ],
+      "reading_boundary": {
+        "reviewed_passages_on_physical_pages": [
+          1
+        ],
+        "visually_reviewed_physical_pages": [],
+        "all_pages_or_all_rules_reviewed": false,
+        "method": "Independent manual reading of selected originals using native text aid; modern component and benefit tables visually checked."
+      },
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "Not established; bounded source/identity/configuration review only",
+      "original_integrity_verified": true
+    }
+  ],
+  "per_listing_results": [
+    {
+      "legacy_identity": "/health-insurance/national-insurance/super-top-up-mediclaim/",
+      "legacy_name": "Super Top Up Mediclaim",
+      "legacy_source_sha256": "9fc37c4aa01d17752f6fc2971fc116715be68c2a5dfba1dca25ec70e5dd6fe93",
+      "insurer_id": "national",
+      "family": "National Super Top Up Mediclaim Policy",
+      "family_identity_supported": true,
+      "family_identity_status": "source_backed_original_wording",
+      "wording_sha256s": [
+        "fe1ae55307cbb29996a377e4edecb25052fc58e4440a22139783cb22d881c949"
+      ],
+      "companion_cis_sha256s": [
+        "3e4d3f02dd2caaafb7317bd353951c0f12dece916dfca1901070283acc7d5a0f"
+      ],
+      "companion_prospectus_sha256s": [
+        "0d5ad0729dca1f5efd6436e02cd033976d96053294fe5aa03a4ce57aafa4dd02"
+      ],
+      "observed_wording_uins": [
+        "NICHLIP24154V042324"
+      ],
+      "variant_or_form_result": {
+        "status": "individual_and_floater_and_allowed_pairs_supported_issued_selection_unknown",
+        "candidates": [
+          "Individual",
+          "Floater"
+        ],
+        "matched_legacy_label_variant": null,
+        "issued_customer_selection_verified": false,
+        "threshold_to_sum_insured_options_inr": [
+          {
+            "threshold_inr": 200000,
+            "sum_insured_options_inr": [
+              300000,
+              500000,
+              700000
+            ]
+          },
+          {
+            "threshold_inr": 300000,
+            "sum_insured_options_inr": [
+              300000,
+              500000,
+              700000,
+              1000000
+            ]
+          },
+          {
+            "threshold_inr": 500000,
+            "sum_insured_options_inr": [
+              500000,
+              700000,
+              1000000,
+              1500000
+            ]
+          },
+          {
+            "threshold_inr": 800000,
+            "sum_insured_options_inr": [
+              800000,
+              1000000,
+              1500000,
+              2000000
+            ]
+          },
+          {
+            "threshold_inr": 1000000,
+            "sum_insured_options_inr": [
+              1000000,
+              1500000,
+              2000000,
+              3000000
+            ]
+          },
+          {
+            "threshold_inr": 2000000,
+            "sum_insured_options_inr": [
+              2000000,
+              3000000,
+              5000000,
+              8000000
+            ]
+          }
+        ],
+        "physical_page": 18,
+        "qualification": "Both forms named. Threshold and SI form permitted pairs, not independent arbitrary choices. Issued schedule and options not established."
+      },
+      "source_document_versions": {
+        "status": "observed_matching_wording_cis_prospectus_uin_legacy_applicability_unresolved",
+        "observed_uins": [
+          "NICHLIP24154V042324"
+        ],
+        "historical_version_reconciled": false,
+        "qualification": "No issue/effective date inferred from URL folder or UIN. Exact legacy observation/issuance version remains unresolved."
+      },
+      "original_bundle_roles": {
+        "wording": "Preserved and selected clauses/table read; no complete atomic inventory.",
+        "CIS": "First-page family/UIN/summary read; full comparison unperformed.",
+        "prospectus": "Previously classified original reread; threshold/form corroboration, full comparison unperformed.",
+        "claim_proposal_rate": "Preserved candidates listed; content/version reconciliation unperformed.",
+        "endorsements_addons": "Complete applicable set unassessed.",
+        "issued_schedule_underwriting": "Not supplied; needed for dates, form, people, threshold/SI pair, individual restrictions and continuity."
+      },
+      "official_bundle_link_candidates": [
+        {
+          "url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/NSTUMP%20Rate%20Chart.pdf",
+          "source_sha256": "2d2a88dfb2f9418415e846cff3f9a3aaba41057e1bd990e4125fe98474ca58fd",
+          "role_candidate_from_original_link_context": "rate_chart",
+          "status": "preserved_not_content_reviewed_in_r12",
+          "qualification": "Metadata presence only; full role/version agreement not established."
+        },
+        {
+          "url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/NSTUMP%20Proposal.pdf",
+          "source_sha256": "12bc2d1329035f9da87daef604a73488c95cdd3e323d769f32ba0f197ef04573",
+          "role_candidate_from_original_link_context": "proposal_form",
+          "status": "preserved_not_content_reviewed_in_r12",
+          "qualification": "Metadata presence only; full role/version agreement not established."
+        },
+        {
+          "url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/NSTUMP%20-%20Claim%20Form.pdf",
+          "source_sha256": "1b4ed82870443ba5e52e1ecb50c918e81064c3c4781828b05c174f251c62f02d",
+          "role_candidate_from_original_link_context": "claim_form",
+          "status": "preserved_not_content_reviewed_in_r12",
+          "qualification": "Metadata presence only; full role/version agreement not established."
+        }
+      ],
+      "complete_rule_inventory": false,
+      "full_original_bundle_complete": false,
+      "historical_version_reconciled": false,
+      "later_policy_applicability_verified": false,
+      "completion_dependencies": [
+        {
+          "status": "work_not_performed",
+          "requirement": "Full original-page/annexure atomic inventory and complete CIS/prospectus agreement, including cumulative expense admissibility and deduction order."
+        },
+        {
+          "status": "not_supplied",
+          "requirement": "Exact legacy issued version/date, schedule, member facts, prior expenses and endorsements/underwriting."
+        },
+        {
+          "status": "unresolved_original_scope",
+          "requirement": "Resolve policy-year versus policy-period wording and24-hour boundary differences before affected decisions."
+        },
+        {
+          "status": "unassessed_not_established_unavailable",
+          "requirement": "Complete historical/endorsement/add-on bundle universe and remaining claim/proposal/rate versions."
+        }
+      ]
+    }
+  ],
+  "acquisition_audit": {
+    "new_attempts": [],
+    "reason": "Wording/CIS/prospectus and ancillary candidates already preserved; per-document provenance retained. No new access failure or exhaustive availability claim."
+  },
+  "findings": [
+    {
+      "id": "national-stu-r12-01",
+      "finding": "Cumulative threshold explicitly uses Section3.1 expense heads only. After crossing,3.1 and3.2 benefits can be payable, subject to their conditions. Additional hospital cash/home visit/ambulance benefits do not themselves establish threshold crossing. A base policy need not exist.",
+      "evidence_pages": [
+        1,
+        2,
+        5,
+        7,
+        8,
+        18
+      ],
+      "status": "supported_dependency"
+    },
+    {
+      "id": "national-stu-r12-02",
+      "finding": "Operative clause, cumulative-expense definition and benefit clause use each Policy Year. Floater definition and table footnotes use Policy Period, which can be1/2/3years. Preserve this scope tension; do not silently convert the denominator into one whole multi-year pool.",
+      "evidence_pages": [
+        1,
+        2,
+        4,
+        5,
+        18
+      ],
+      "status": "original_scope_ambiguity_retained"
+    },
+    {
+      "id": "national-stu-r12-03",
+      "finding": "Hospitalisation definition says minimum24consecutive inpatient hours; In-Patient Care says more than24hours, and CIS says beyond24hrs. Exactly24-hour boundaries require connected adjudication; no resolved answer asserted.",
+      "evidence_pages": [
+        3
+      ],
+      "companion_cis_page": 1,
+      "status": "original_boundary_ambiguity_retained"
+    },
+    {
+      "id": "national-stu-r12-04",
+      "finding": "Migration without threshold is conditional on entry before45, five years continuous renewal, same/lower SI, renewal-only exercise and target underwriting; the table Option available is not unconditional eligibility.",
+      "evidence_pages": [
+        8,
+        18
+      ],
+      "status": "supported_dependency"
+    },
+    {
+      "id": "national-stu-r12-05",
+      "finding": "No sub limits in inpatient/maternity table cells does not make the whole policy unlimited. Modern treatment has component-specific25%SI cap and other benefits have per-person/duration scopes. Final admitted threshold membership and deduction order require complete rules, dates and expenses.",
+      "evidence_pages": [
+        7,
+        8,
+        18
+      ],
+      "status": "supported_scope_with_unworked_calculations"
+    },
+    {
+      "id": "national-stu-r12-06",
+      "finding": "This corrects the earlier mistaken assignment summary: before this batch only the prospectus was associated. R11 covered the other five National rows, not this sixth row. Wording fe1ae553... and CIS3e4d3f02... are now independently read candidates.",
+      "evidence_pages": [
+        1
+      ],
+      "status": "prior_status_correction"
+    }
+  ],
+  "generalized_information_requirements": [
+    "Threshold expense membership differs from post-threshold payable benefit membership.",
+    "Store permitted threshold/SI pairs and per-person/family aggregation with exact version and period basis.",
+    "Retain year/period and inclusive24-hour disagreements rather than flattening them into a default.",
+    "Migration and bonus history depend on entry age, continuous renewal, prior form and target underwriting.",
+    "No-sublimit cells retain their row scope; treatment-component limits and linked conditions remain mandatory."
+  ],
+  "verification": {
+    "original_hashes_checked": 3,
+    "exact_pdf_passages_checked": 10,
+    "matching_uin_first_pages_checked": 3,
+    "exact_legacy_identity_preserved": true,
+    "full_rule_inventory_or_acceptance_claimed": false
+  }
+}

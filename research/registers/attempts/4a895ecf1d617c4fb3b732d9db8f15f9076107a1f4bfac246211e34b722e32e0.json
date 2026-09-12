@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T12:01:49.675186+00:00",
+  "associations": [],
+  "byte_count": 197453,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://acko-cms.ackoassets.com/CIS_Acko_Surrgacy_and_Oocyte_Cover_d35ccd4280.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "acko",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 474,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "ad81f1801b2da72b10dbee6eec02f945b0d13712894d0a9148b4b046e4e51ec9",
+  "status": "acquired",
+  "url": "https://acko-cms.ackoassets.com/CIS_Acko_Surrgacy_and_Oocyte_Cover_d35ccd4280.pdf"
+}

@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:56:16.418520+00:00",
+  "associations": [],
+  "byte_count": 1122060,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/Saral_Suraksha_Bima_Rate_Chart_Micro_d1d80f35a1.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 715,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "0dee53e1e907658509df1e1a6db06a5af63e6e9f6a3106c720088ef1f069896d",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/Saral_Suraksha_Bima_Rate_Chart_Micro_d1d80f35a1.pdf"
+}

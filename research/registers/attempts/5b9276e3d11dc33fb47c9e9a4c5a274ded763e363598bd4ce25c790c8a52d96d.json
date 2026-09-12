@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:51:57.922255+00:00",
+  "associations": [],
+  "byte_count": 5483081,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/pages/doc/brochure/Reassure30_SS_Unlimited.pdf?v=1.2",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 8662,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 870.236,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 623.622
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 870.236,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 623.622
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "b885027f157c375d9374f9c89d7fdc0ac6e6c2fee8794dae276bf052da187c9c",
+  "status": "acquired",
+  "url": "https://transactions.nivabupa.com/pages/doc/brochure/Reassure30_SS_Unlimited.pdf?v=1.2"
+}

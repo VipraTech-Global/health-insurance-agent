@@ -1,0 +1,97 @@
+{
+  "acquired_at": "2026-09-10T12:01:30.395660+00:00",
+  "associations": [],
+  "byte_count": 20998960,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://acko-cms.ackoassets.com/Supertopup_brochure_5ec9d68fba.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "acko",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 13194,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": 9,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 657.12,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1157.04
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1731.76,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1152.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1594.32,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1152.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1751.02,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1152.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 810.193,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1152.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1448.37,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1152.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 1055.39,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1152.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 2444.46,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1152.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 3520.17,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 1152.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "f85ee96e990d409704c43850bffb136b54e2f1f27fea0e7d497e88e456dc16a5",
+  "status": "acquired",
+  "url": "https://acko-cms.ackoassets.com/Supertopup_brochure_5ec9d68fba.pdf"
+}

@@ -1,0 +1,169 @@
+{
+  "format_version": 1,
+  "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+  "complete_rule_inventory": false,
+  "rules": [
+    {
+      "alias": "E25",
+      "rule_id": "original-supplement-e25",
+      "status": "manually_read_original_clause",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "page": 5,
+          "section": "IV.6 obesity exception and all four requirements",
+          "passage": "6. Obesity / Weight Control - Code Excl 06: Expenses related to the surgical treatment\nof obesity that does not fulfill all the below conditions;\nA. Surgery to be conducted is upon the advice of the Doctor\nB. The surgery/Procedure conducted should be supported by clinical protocols\nC. The member has to be 18 years of age or older and\nD. Body Mass Index (BMI);\n1. greater than or equal to 40 or\n2. greater than or equal to 35 in conjunction with any of the following severe\nco-morbidities following failure of less invasive methods of weight loss:\na. Obesity-related cardiomyopathy\nb. Coronary heart disease\nc. Severe Sleep Apnea\nd. Uncontrolled Type2 Diabetes",
+          "bbox": [
+            40,
+            30,
+            321,
+            867.2441
+          ],
+          "table_context": []
+        }
+      ]
+    },
+    {
+      "alias": "E26",
+      "rule_id": "original-supplement-e26",
+      "status": "manually_read_original_clause",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "page": 3,
+          "section": "III.H maternity grant and all special conditions",
+          "passage": "H. Delivery Expenses: Expenses for a Delivery including Delivery by Caesarean\nsection (including pre-natal, post-natal expenses and Lawful medical termination of\nPregnancy) up-to Rs.50,000/- per policy period, subject to a maximum of 2 deliveries\nin the entire life time of the insured person are payable while the policy is in force.\nSpecial Conditions\n1. This Benefit is subject to a waiting period of 12 months from the date of first\ncommencement of Star Super Surplus (Floater) Insurance policy and\ncontinuous renewal thereof with the company.\n2. This cover is available only when both Self and Spouse are covered under this\npolicy\n3. The policy covering the self and spouse are in force when this benefit becomes\npayable.\n4. Claims under this section will not reduce the Sum Insured",
+          "bbox": [
+            321,
+            30,
+            640.6299,
+            867.2441
+          ],
+          "table_context": []
+        }
+      ]
+    },
+    {
+      "alias": "E27",
+      "rule_id": "original-supplement-e27",
+      "status": "manually_read_original_clause",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "page": 7,
+          "section": "V.23 death/exhaustion and surviving family cover",
+          "passage": "23. Automatic Expiry: The insurance under this policy with respect to each relevant\nInsured Person shall expire immediately on the earlier of the following events:\n\u00fc Upon the death of the Insured Person. This also means that, the cover for the\nsurviving members of the family will continue, subject to other terms of the policy.\n\u00fc Upon exhaustion of the sum insured under the policy\n.: SHAHLIP22034V062122 POL / SSF / V.18 / 2025 7 of 10",
+          "bbox": [
+            321,
+            30,
+            640.6299,
+            867.2441
+          ],
+          "table_context": []
+        }
+      ]
+    },
+    {
+      "alias": "E28",
+      "rule_id": "original-supplement-e28",
+      "status": "manually_read_original_clause",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "page": 3,
+          "section": "III.D air ambulance route,license,SI and percentage",
+          "passage": "D. Air Ambulance expenses Subject to an admissible hospitalization claim, the insured\nperson is eligible for reimbursement, expenses incurred towards cost of air\nambulance up-to 10% of the sum insured, provided the same is availed on the advices\nof the treating medical practitioner / Hospital. Air ambulance is payable for only from\nthe place of first occurrence of illness / accident to the nearest appropriate hospital.\nSuch air ambulance should have been duly licensed to operate as such by competent\nauthorities of the Government/s. This is applicable for sum insured of Rs.10 lacs and\nabove.",
+          "bbox": [
+            321,
+            30,
+            640.6299,
+            867.2441
+          ],
+          "table_context": []
+        }
+      ]
+    },
+    {
+      "alias": "E29",
+      "rule_id": "original-supplement-e29",
+      "status": "manually_read_original_clause",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "page": 7,
+          "section": "V.14 new-policy scope,continued right column",
+          "passage": "14. Free Look Period: The Free Look Period shall be applicable on new individual health",
+          "bbox": [
+            40,
+            30,
+            321,
+            867.2441
+          ],
+          "table_context": []
+        },
+        {
+          "format_version": 1,
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "page": 7,
+          "section": "V.14 receipt clock and refund conditions",
+          "passage": "insurance policies and not on renewals or at the time of porting/migrating the policy.\nThe insured person shall be allowed free look period of thirty days from date of receipt\nof the policy document whether electronically or otherwise to review the terms and\nconditions of the policy, and to return the same if not acceptable.\nlf the insured has not incurred any claim during the Free Look Period, the insured shall\nbe entitled to\ni. a refund of the premium paid less any expenses incurred by the Company on\nmedical examination of the insured person\nii. where the risk has already commenced and the option of return of the policy is\nexercised by the insured person, a deduction towards the proportionate risk\npremium for period of cover or\niii. where only a part of the insurance coverage has commenced, such\nproportionate premium commensurate with the insurance coverage during such\nperiod",
+          "bbox": [
+            321,
+            30,
+            640.6299,
+            867.2441
+          ],
+          "table_context": []
+        }
+      ]
+    },
+    {
+      "alias": "E30",
+      "rule_id": "original-supplement-e30",
+      "status": "manually_read_original_clause",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "page": 4,
+          "section": "III.M wellness conditions including midterm member1year",
+          "passage": "Terms and conditions under wellness activity\n\u00b7 Any information provided by the Insured in this regard shall be kept confidential.\n\u00b7 Insured should notify and submit relevant documents, reports, receipts etc for\nvarious wellness activities within 1 month of undertaking such activity/test.\n\u00b7 No activity, report, document, receipt can be submitted in the last month of each\npolicy year.\n\u00b7 For services that are provided through empaneled service provider, Star Health\nis only acting as a facilitator; hence would not be liable for any incremental costs\nor the services.\n\u00b7 All medical services are being provided by empaneled health care service\nprovider. We ensure full due diligence before empanelment. However Insured\nshould consult his/her doctor before availing/taking the medical\nadvices/services. The decision to utilize these advices/services is solely at\nInsured person's discretion.\n\u00b7 Star Health, its group entities, or affiliates, their respective directors, officers,\nemployees, agents, vendors, are not responsible or liable for, any actions,\nclaims, demands, losses, damages, costs, charges and expenses which a\nMember claims to have suffered, sustained or incurred, by way of and / or on\naccount of the Wellness Program.\n\u00b7 Services offered are subject to guidelines issued by IRDAI from time to time.\n\u00b7 In case of newly wedded / married spouse or new born baby included in midterm,\nthe wellness benefit will be available only after completion of 1 year of insurance\ncover.",
+          "bbox": [
+            321,
+            30,
+            640.6299,
+            867.2441
+          ],
+          "table_context": []
+        }
+      ]
+    },
+    {
+      "alias": "E31",
+      "rule_id": "original-supplement-e31",
+      "status": "manually_read_original_clause",
+      "evidence": [
+        {
+          "format_version": 1,
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "page": 5,
+          "section": "IV.27 Excl28 stromal vascular fraction,chondrocytes,PRP and intraarticular therapies",
+          "passage": "27. Autologous derived Stromal vascular Fraction, Chondrocyte Implantation, Procedures\nusing Platelet Rich plasma and Intra articular injection therapy - Code Excl 28",
+          "bbox": [
+            321,
+            30,
+            640.6299,
+            867.2441
+          ],
+          "table_context": []
+        }
+      ]
+    }
+  ],
+  "scope": "Selected full original clauses manually read for distinct reference cases; not a complete original denominator."
+}

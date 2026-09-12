@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:58:36.953358+00:00",
+  "associations": [],
+  "byte_count": 512049,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/asha-kiran-policy/New%20India%20Asha%20Kiran%20Policy%20Premium%20Chart.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 4175,
+  "linking_url": "https://www.newindia.co.in/health-insurance/asha-kiran-insurance",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "170b1d97e821d99396785c38acf1cf550921ec37e5091ce613f673831b26c036",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/asha-kiran-policy/New India Asha Kiran Policy Premium Chart.pdf"
+}

@@ -1,0 +1,38 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16@sha256:ccc6e83d6e35e931dc7c5def2022729d5a6c370318d099181995567ff1fb4d6b
+    environment:
+      POSTGRES_DB: health_adviser
+      POSTGRES_USER: health_adviser
+      POSTGRES_PASSWORD: health_adviser_local
+    ports:
+      - "127.0.0.1:55448:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U health_adviser -d health_adviser"]
+      interval: 2s
+      timeout: 2s
+      retries: 20
+    volumes:
+      - health_adviser_pg:/var/lib/postgresql/data
+  redis:
+    image: redis:7.2-alpine@sha256:ccd6aa8d45ff3f033d6fa15b8cc1a50579f65c89f38cf9bb607a954c4f2128ed
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "127.0.0.1:6398:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      timeout: 2s
+      retries: 20
+    volumes:
+      - health_adviser_redis:/data
+  nginx:
+    image: nginx:1.28-alpine@sha256:a8b39bd9cf0f83869a2162827a0caf6137ddf759d50a171451b335cecc87d236
+    network_mode: host
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./data:/srv/data:ro
+
+volumes:
+  health_adviser_pg:
+  health_adviser_redis:

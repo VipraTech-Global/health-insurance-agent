@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:39:32.638444+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/surveyor_management_policy/SURVEYORS%20MANAGEMENT%20POLICY-1.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 6233,
+  "linking_url": "https://www.newindia.co.in/health-insurance/atmanirbhar-health-policy",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "c2237ada1f366f70765303b161a0912027dc1176d148a1a8b5fac46864df596a",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/surveyor_management_policy/SURVEYORS MANAGEMENT POLICY-1.pdf"
+}

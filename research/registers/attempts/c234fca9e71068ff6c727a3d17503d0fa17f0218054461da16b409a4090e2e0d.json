@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:52:46.089485+00:00",
+  "associations": [],
+  "byte_count": 286501,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://stgaccinwbsprdlrs01.blob.core.windows.net/nhilprd/List_of_Products_Updated_And_Withdrawn_95e78f200a.pdf?sv=2025-05-05&spr=https&st=2026-05-19T14%3A23%3A03Z&se=2036-05-16T14%3A23%3A03Z&sr=b&sp=r&sig=ELLokT6IQyPWRhTPxh69zUfJ3xMVBdn%2FnhwlMnDm2ag%3D",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "narayana",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 734,
+  "linking_url": "https://www.narayanahealth.insurance/customer-support",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "8b6277e89f2260b41fc23e2eb13b362e394dc25d4684a4b6e4bc4ae01b25c665",
+  "status": "acquired",
+  "url": "https://stgaccinwbsprdlrs01.blob.core.windows.net/nhilprd/List_of_Products_Updated_And_Withdrawn_95e78f200a.pdf?sv=2025-05-05&spr=https&st=2026-05-19T14%3A23%3A03Z&se=2036-05-16T14%3A23%3A03Z&sr=b&sp=r&sig=ELLokT6IQyPWRhTPxh69zUfJ3xMVBdn%2FnhwlMnDm2ag%3D"
+}

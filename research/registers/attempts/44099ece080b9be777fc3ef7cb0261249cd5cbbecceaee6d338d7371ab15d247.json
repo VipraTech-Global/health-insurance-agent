@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T18:02:25.369731+00:00",
+  "associations": [],
+  "byte_count": 287791,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.galaxyhealth.com/assets/preloaded/Consumables%2520-%2520Rider%2520Policy%2520Wording_0.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "galaxy",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 953,
+  "linking_url": "https://www.galaxyhealth.com/health-insurance/consumables-rider-insurance-policy",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "6971e29ea00b59c6a04a3935cf19bc4cb972f048ca159afde7b9ae5d2bba24bd",
+  "status": "acquired",
+  "url": "https://www.galaxyhealth.com/assets/preloaded/Consumables%2520-%2520Rider%2520Policy%2520Wording_0.pdf"
+}

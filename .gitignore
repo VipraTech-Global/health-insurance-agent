@@ -1,0 +1,27 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.env
+frontend/node_modules/
+frontend/.next/
+*.tsbuildinfo
+data/source-blobs/*
+data/extractions/*
+!data/source-blobs/.gitkeep
+!data/extractions/.gitkeep
+staticfiles/
+.playwright-mcp/
+frontend/test-results/
+frontend/playwright-report/
+backend/celerybeat-schedule*
+
+# Preserve research originals locally; private benchmark questions must not enter code review.
+/research/objects/
+/research/evaluation/
+/research/assessment/document-previews/
+/research/assessment/visual-review/

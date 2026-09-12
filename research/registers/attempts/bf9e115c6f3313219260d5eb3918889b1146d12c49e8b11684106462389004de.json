@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T12:00:59.471976+00:00",
+  "associations": [],
+  "byte_count": 417096,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/universal-health-insurance/Customer%20Information%20Sheet%20UNIVERSAL%20HEALTH%20INSURANCE%20POLICY(APL).pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 5526,
+  "linking_url": "https://www.newindia.co.in/health-insurance/universal-health-insurance",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "f95a02b74e38e822c6d1b6a00a0cc2223e0414d832d587024f918c7a85f2e5fb",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/universal-health-insurance/Customer Information Sheet UNIVERSAL HEALTH INSURANCE POLICY(APL).pdf"
+}

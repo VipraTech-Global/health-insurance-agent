@@ -1,0 +1,87 @@
+{
+  "revision": "discussion-r20",
+  "generated_at_utc": "2026-09-12T13:49:23.775097+00:00",
+  "status": "passed",
+  "scope": "Structural verification of approved Batch 13. Four review batches and final audit remain.",
+  "checks": [
+    {
+      "check": "77 unique application entries",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "686 unique application fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "206 FK relationships match dictionary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all FK targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "approved Batch 13 models present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "generic outbox target and payload removed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "processing inputs and outputs are explicitly typed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all mapped fields resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "400 mappings retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "trace covers fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "trace hashes match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "JSON roots resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all JSON definitions reachable",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Batch 13 boundary recorded",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 14,
+  "failed": 0,
+  "application_entities": 77,
+  "application_fields": 686,
+  "foreign_keys": 206,
+  "json_definitions": 32,
+  "approved_batches": "1 through 13",
+  "remaining_review_batches": 4,
+  "overall_design_approval": false
+}

@@ -1,0 +1,24 @@
+{
+  "all_acquired_pdf_page_identities_accounted": true,
+  "attempt_outcomes": {
+    "acquired": 2531,
+    "failed": 662
+  },
+  "case_assessments": {
+    "draft": 392,
+    "evidence_incomplete": 8
+  },
+  "case_records": 400,
+  "checked_at": "2026-09-10T12:05:38.663359+00:00",
+  "complete_original_rule_denominator": false,
+  "format_version": 1,
+  "legacy_entries": 203,
+  "legacy_exact_identity_set_matches": true,
+  "preserved_pages_in_unique_acquired_pdfs": 43003,
+  "release_ready": false,
+  "rule_coverage_percent": null,
+  "running_attempts": 0,
+  "source_attempts": 3193,
+  "unique_acquired_pdfs": 2300,
+  "unique_response_objects_hash_verified": 2724
+}

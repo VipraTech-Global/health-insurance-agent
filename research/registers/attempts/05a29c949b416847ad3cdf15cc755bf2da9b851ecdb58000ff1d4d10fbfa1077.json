@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T12:02:07.024983+00:00",
+  "associations": [],
+  "byte_count": 107125,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://d2t12sefhwd9tk.cloudfront.net/uploads/CA_List_FIG_June_014fe8ba3e.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "zurich-kotak",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 424,
+  "linking_url": "https://www.zurichkotak.com/product-documents",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "1d9565314ad596e1654e5881a94b2ef163ec214141f08bbdb590af9ade41abec",
+  "status": "acquired",
+  "url": "https://d2t12sefhwd9tk.cloudfront.net/uploads/CA_List_FIG_June_014fe8ba3e.pdf"
+}

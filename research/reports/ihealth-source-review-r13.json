@@ -1,0 +1,56 @@
+{
+  "artifact_version": "ihealth-source-review-r13",
+  "reviewed_at_utc": "2026-09-10T18:21:15.354836+00:00",
+  "reviewed_artifact": "research/registers/ihealth-family-reconciliation-r13.json",
+  "reviewed_artifact_sha256": "da527a323c611ef3b28943cdff44ade1d3e493143e12833455f1d8afc4e8ff09",
+  "reviewer": "django_boundary_review independent source reviewer",
+  "result": "bounded_family_candidate_supported",
+  "material_defects": [],
+  "checks": [
+    {
+      "check": "Immutable official-hosted PDF hash and 17 physical pages",
+      "result": "pass"
+    },
+    {
+      "check": "All four declared pdfplumber regions re-extracted byte-for-byte with stated parameters",
+      "result": "pass"
+    },
+    {
+      "check": "Rendered physical pages 1 and 5 independently inspected",
+      "result": "pass"
+    },
+    {
+      "check": "KIS explicitly identifies iHealth (ICICI Lombard Complete Health Insurance); page 3 begins wording; page 5 grants conditional inpatient medical-expense indemnity and prints ICIHLIP22096V062122",
+      "result": "pass"
+    },
+    {
+      "check": "KIS has benefit selectors and a visible AYUSH/ambulance cross-reference mismatch; no issued customer selection inferred",
+      "result": "pass"
+    },
+    {
+      "check": "Recorded successful attempt SHA, official URL and HTTP200 match original; related-page context is explicitly not represented as a verified anchor",
+      "result": "pass"
+    },
+    {
+      "check": "Historical applicability, same-UIN named plan selection, full companions/rule inventory remain unresolved; prior URL failures are not overwritten by this artifact",
+      "result": "pass"
+    }
+  ],
+  "residual_limits": [
+    "This verifies only the bounded identity/grant association, not present sale eligibility, exact legacy edition or a customer decision.",
+    "Search discovery was not rerun by this reviewer. Qualification in source artifact accurately limits the claimed linking-page provenance.",
+    "No life/product comparison, full rule inventory, database/schema/application or evaluation activity."
+  ],
+  "source_sha256": "127930061732716c1ccdd73c376ed0e06dbd2e70e308defe7a35dcd39cf73d86",
+  "physical_pages_visually_reviewed": [
+    1,
+    5
+  ],
+  "exact_regions_verified": 4,
+  "original_hashes_verified": 1,
+  "full_original_read": false,
+  "independent_rule_denominator": {
+    "status": "unmeasured",
+    "value": null
+  }
+}

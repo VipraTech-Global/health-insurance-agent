@@ -1,0 +1,65 @@
+{
+  "acquired_at": "2026-09-10T11:39:47.768692+00:00",
+  "associations": [],
+  "byte_count": 114611,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://customer-portal-assets.hdfcergo.com/documents/optima-wellbeing-(add-on)-pw(1)-222339499319.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "hdfc-ergo",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 106,
+  "linking_url": "https://www.hdfcergo.com/download/policy-wordings/health",
+  "page_count": 5,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "7d9f75233611c51a2fa38693737619665cacbc93e9a2ac79ef23f95c72a26cfe",
+  "status": "acquired",
+  "url": "https://customer-portal-assets.hdfcergo.com/documents/optima-wellbeing-(add-on)-pw(1)-222339499319.pdf"
+}

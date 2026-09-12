@@ -1,0 +1,113 @@
+{
+  "acquired_at": "2026-09-10T11:59:28.221443+00:00",
+  "associations": [],
+  "byte_count": 26288434,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.generalicentralinsurance.com/downloads/health-insurance/future-aarogya-bima/product-brochures/aarogya-bima-brochure.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "generali-central",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 10263,
+  "linking_url": "https://www.generalicentralinsurance.com/customer-service/downloads",
+  "page_count": 11,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 576.0,
+      "page": 11,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 576.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "1435b1995f4c8b1b56bf1d6a28025891ea79a28300f3f492ee55d246c8a1cb85",
+  "status": "acquired",
+  "url": "https://www.generalicentralinsurance.com/downloads/health-insurance/future-aarogya-bima/product-brochures/aarogya-bima-brochure.pdf"
+}

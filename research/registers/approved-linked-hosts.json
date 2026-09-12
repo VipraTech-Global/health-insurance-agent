@@ -1,0 +1,66 @@
+[
+  {
+    "basis": "Document URLs directly linked by preserved official insurer page",
+    "example_url": "https://assets.ctfassets.net/uwf0n1j71a7j/3xn1Ge4B0lbGVh8hcxWxr5/68df83c4b37ef1c28c47e57a782cd789/acko-personal-health-policy-portability-form-and-annexure.pdf",
+    "host": "assets.ctfassets.net",
+    "insurer_id": "acko",
+    "linked_urls": 17,
+    "linking_observation": {
+      "label": "Acko Personal Health Policy - Portability Form and Annexure",
+      "linking_url": "https://www.acko.com/download/",
+      "page_sha256": "8f39db536cb29426c10b7d0ddee9613fb0f213b23bcaab04b4f755e9338f6fcb",
+      "preceding_text": " Form and Annexure Acko Health III - Proposal Form Acko Health III - Prospectus ACKO Health III - (Platinum) - Policy Wordings ACKO Health III - (Platinum Lite) - Policy Wordings ACKO Health III - (Platinum Super Top-up) - Policy Wordings Acko Health II Acko Health II - Policy Wordings Acko Health II - Prospectus Acko Health II - Proposal Form Acko Health II - Portability Form and Annexure Acko Health II - CIS ACKO Platinum - Brochure ACKO Platinum Lite - Brochure ACKO Platinum Super Top-up - Brochure Acko Health II Zone Classification Acko Personal Health Policy Acko Personal Health Policy - Policy Wordings Acko Personal Health Policy - Prospectus Acko Personal Health Policy - Proposal Form",
+      "raw_href": "https://assets.ctfassets.net/uwf0n1j71a7j/3xn1Ge4B0lbGVh8hcxWxr5/68df83c4b37ef1c28c47e57a782cd789/acko-personal-health-policy-portability-form-and-annexure.pdf",
+      "reader_version": "research-acquisition/2",
+      "url": "https://assets.ctfassets.net/uwf0n1j71a7j/3xn1Ge4B0lbGVh8hcxWxr5/68df83c4b37ef1c28c47e57a782cd789/acko-personal-health-policy-portability-form-and-annexure.pdf"
+    }
+  },
+  {
+    "basis": "Document URLs directly linked by preserved official insurer page",
+    "example_url": "https://acko-cms.ackoassets.com/CIS_Acko_Health_III_dafdde7dc6.pdf",
+    "host": "acko-cms.ackoassets.com",
+    "insurer_id": "acko",
+    "linked_urls": 359,
+    "linking_observation": {
+      "label": "Acko Health III - CIS",
+      "linking_url": "https://www.acko.com/download/",
+      "page_sha256": "8f39db536cb29426c10b7d0ddee9613fb0f213b23bcaab04b4f755e9338f6fcb",
+      "preceding_text": "urance for Parents Senior Citizen Health Insurance Section 80D Arogya Sanjeevani Health Insurance Life insurance Term insurance Term Insurance Calculator 1 Crore Term Insurance Travel insurance International travel insurance Travel insurance for Schengen visa Travel Insurance for Dubai Travel Insurance for USA Travel Insurance for Thailand ACKO Airpass ACKO drive The only pass that pays you back for flight troubles Know more About Us Careers Customer stories Stories that speak for ACKO Know more Home / Downloads Retail Health Insurance Motor Insurance Group Health Insurance Travel Insurance Other Products Other Important Documents Archives Resources on Retail Health Insurance Acko Health III",
+      "raw_href": "https://acko-cms.ackoassets.com/CIS_Acko_Health_III_dafdde7dc6.pdf",
+      "reader_version": "research-acquisition/2",
+      "url": "https://acko-cms.ackoassets.com/CIS_Acko_Health_III_dafdde7dc6.pdf"
+    }
+  },
+  {
+    "basis": "Document URLs directly linked by preserved official insurer page",
+    "example_url": "https://acko-wordpress.s3.ap-south-1.amazonaws.com/wp-content/uploads/2021/09/01.10.2021+-Arogya+Sanjeevani+Policy_Acko+General+Insurance_Policy+Schedule+(1.10.2021).pdf",
+    "host": "acko-wordpress.s3.ap-south-1.amazonaws.com",
+    "insurer_id": "acko",
+    "linked_urls": 1,
+    "linking_observation": {
+      "label": "Arogya Sanjeevani Policy, ACKO - Policy Wording (For policies issued after 30th September 2021)",
+      "linking_url": "https://www.acko.com/download/",
+      "page_sha256": "8f39db536cb29426c10b7d0ddee9613fb0f213b23bcaab04b4f755e9338f6fcb",
+      "preceding_text": "ist List of Non Payable Medical Expenses Annexure – Zone Classification Archives Private Car Package Private Car Policy – Bundled ACKO Group Health Insurance ACKO Group Health Insurance Policy (For policies issued after 30th September 2020) ACKO Group Health Insurance Policy – Policy Wordings Group Health & Accident Care - Policy Wordings Group Personal Accident - Policy Wordings Group Travel Insurance Policy - Policy Wordings Group Domestic Travel Insurance Group Domestic Travel Insurance Policy (For policies issued after 30th September 2020) Arogya Sanjeevani Policy – ACKO General Insurance Ltd. Arogya Sanjeevani Policy, ACKO - Policy Wording (For policies issued after 30th September 2020)",
+      "raw_href": "https://acko-wordpress.s3.ap-south-1.amazonaws.com/wp-content/uploads/2021/09/01.10.2021+-Arogya+Sanjeevani+Policy_Acko+General+Insurance_Policy+Schedule+(1.10.2021).pdf",
+      "reader_version": "research-acquisition/2",
+      "url": "https://acko-wordpress.s3.ap-south-1.amazonaws.com/wp-content/uploads/2021/09/01.10.2021+-Arogya+Sanjeevani+Policy_Acko+General+Insurance_Policy+Schedule+(1.10.2021).pdf"
+    }
+  },
+  {
+    "basis": "Document URLs directly linked by preserved official insurer page",
+    "example_url": "https://d2t12sefhwd9tk.cloudfront.net/uploads/Health_Installements_03_102024_04bff863cc.pdf",
+    "host": "d2t12sefhwd9tk.cloudfront.net",
+    "insurer_id": "zurich-kotak",
+    "linked_urls": 14,
+    "linking_observation": {
+      "label": "Health insurance with Instalment Facility",
+      "linking_url": "https://www.zurichkotak.com/product-documents",
+      "page_sha256": "46b2622e338e42ea63061965f751b5a9f87214ef0e59b5e4323dffd866d925e8",
+      "preceding_text": "rance by Brand Hero Bike Insurance Mahindra Bike Insurance Honda Bike insurance TVS Bike Insurance Bajaj Bike Insurance Royal Enfield Bike Insurance Vespa Scooter Insurance Kawasaki Bike Insurance Ducati Bike Insurance Bike Insurance by City Bike Insurance in Mumbai Bike Insurance in Delhi NCR Bike Insurance in Pune Bike Insurance in Hyderabad Bike Insurance in Kolkata Bike Insurance in Chennai Bike Insurance in Chandigarh Bike Insurance in Ahmedabad Bike Insurance in Bengaluru Health Insurance Health Insurance Benefit Illustration – Health Health Premier Secure Shield Health Care Accident Care Health Super Top-up MediShield Arogya Sanjeevani Policy Saral Suraksha Bima Group Health Insurance",
+      "raw_href": "https://d2t12sefhwd9tk.cloudfront.net/uploads/Health_Installements_03_102024_04bff863cc.pdf",
+      "reader_version": "research-acquisition/2",
+      "url": "https://d2t12sefhwd9tk.cloudfront.net/uploads/Health_Installements_03_102024_04bff863cc.pdf"
+    }
+  }
+]

@@ -1,0 +1,431 @@
+{
+  "format_version": 1,
+  "status": "Corrected SBI evidence and supplementary claim-clock case verified; no unresolved material finding in bounded scope",
+  "input_sha256": {
+    "research/registers/sbi-family-reconciliation-r10.json": "f20de872fde157977faaf3d408365a7a9080a3381db66797e059aff75fe2c7b6",
+    "research/reference/additional-claim-clock-case-r10.json": "193d4b7d3b6ec349985e4b80dd75049eaace604c4b33bd2c5e411f8f67c95197",
+    "research/reports/sbi-cis-crop-correction-r10.json": "58d4d4441ae1fcf9ffef55931905998b94479bc2cd8e948e5f68a8d8acea31ed",
+    "research/registers/document-scope-r10.json": "c403d542084b41dd86c90008e718464551a683d79a3fd4ace5f66ebd805b15c0"
+  },
+  "sbi_originals": [
+    {
+      "source_sha256": "78dea28e930c87dd594f6665ff5491bb68669741a32103fbc75ab5e741826ccb",
+      "product": "Super Health Insurance",
+      "role": "policy_wording",
+      "original_hash_verified": true,
+      "scope_only": true
+    },
+    {
+      "source_sha256": "666ee54c6dc9f2e4bd92f3c036927ceba89e1a09c705e16462704c32dae411a9",
+      "product": "Arogya Supreme",
+      "role": "policy_wording",
+      "original_hash_verified": true,
+      "scope_only": true
+    },
+    {
+      "source_sha256": "564a77d69c2c85da6f2bf21e8ded1b501cfc2e79d7852b489ead6d8d9e06d0f2",
+      "product": "Arogya Supreme",
+      "role": "policy_wording",
+      "original_hash_verified": true,
+      "scope_only": true
+    },
+    {
+      "source_sha256": "8985211ee8716162d9203832bee5d986cd6f99dc24566876dfaf3b917cf6440e",
+      "product": "Arogya Top-Up Policy",
+      "role": "policy_wording",
+      "original_hash_verified": true,
+      "scope_only": true
+    },
+    {
+      "source_sha256": "652b1369b571ea57b8a92be3e97f0b98bb747611199a98c9b1d497a809d36ba2",
+      "product": "Arogya Top-Up Policy",
+      "role": "customer_information_sheet",
+      "original_hash_verified": true,
+      "scope_only": true
+    },
+    {
+      "source_sha256": "28480fca07332cbe1088210dea9174d818b4bc29bf2de7d96ff219f1fef05073",
+      "product": "Arogya Supreme",
+      "role": "customer_information_sheet",
+      "original_hash_verified": true,
+      "scope_only": true
+    },
+    {
+      "source_sha256": "8cc62058b8d3476b0fd343f61279452072975006ea685e6dc76d59ab7ac76fb8",
+      "product": "Super Health Insurance",
+      "role": "customer_information_sheet",
+      "original_hash_verified": true,
+      "scope_only": true
+    },
+    {
+      "source_sha256": "8afc6b819dc0471376362afd6601158aa83ae06069527bbac02dbfb486e8c1e2",
+      "product": "Arogya Supreme",
+      "role": "customer_information_sheet",
+      "original_hash_verified": true,
+      "scope_only": true
+    }
+  ],
+  "sbi_original_count": 8,
+  "wordings": 4,
+  "supporting_cis": 4,
+  "original_uin_locators": [
+    {
+      "source_sha256": "78dea28e930c87dd594f6665ff5491bb68669741a32103fbc75ab5e741826ccb",
+      "uin": "SBIHLIP24141V022324",
+      "visible_physical_page": 1
+    },
+    {
+      "source_sha256": "666ee54c6dc9f2e4bd92f3c036927ceba89e1a09c705e16462704c32dae411a9",
+      "uin": "SBIHLIP21043V012122",
+      "visible_physical_page": 1
+    },
+    {
+      "source_sha256": "564a77d69c2c85da6f2bf21e8ded1b501cfc2e79d7852b489ead6d8d9e06d0f2",
+      "uin": "SBIHLIP27036V022627",
+      "visible_physical_page": 1
+    },
+    {
+      "source_sha256": "8985211ee8716162d9203832bee5d986cd6f99dc24566876dfaf3b917cf6440e",
+      "uin": "SBIHLIP22137V032122",
+      "visible_physical_page": 1
+    },
+    {
+      "source_sha256": "652b1369b571ea57b8a92be3e97f0b98bb747611199a98c9b1d497a809d36ba2",
+      "uin": "SBIHLIP22137V032122",
+      "visible_physical_page": 1
+    },
+    {
+      "source_sha256": "28480fca07332cbe1088210dea9174d818b4bc29bf2de7d96ff219f1fef05073",
+      "uin": "SBIHLIP21043V012122",
+      "visible_physical_page": 1
+    },
+    {
+      "source_sha256": "8cc62058b8d3476b0fd343f61279452072975006ea685e6dc76d59ab7ac76fb8",
+      "uin": "SBIHLIP24141V022324",
+      "visible_physical_page": 1
+    },
+    {
+      "source_sha256": "8afc6b819dc0471376362afd6601158aa83ae06069527bbac02dbfb486e8c1e2",
+      "uin": "SBIHLIP27036V022627",
+      "visible_physical_page": 1
+    }
+  ],
+  "passage_checks": [
+    {
+      "source_sha256": "78dea28e930c87dd594f6665ff5491bb68669741a32103fbc75ab5e741826ccb",
+      "physical_page": 1,
+      "verified": "exact declared crop after whitespace normalization"
+    },
+    {
+      "source_sha256": "78dea28e930c87dd594f6665ff5491bb68669741a32103fbc75ab5e741826ccb",
+      "physical_page": 6,
+      "verified": "exact declared crop after whitespace normalization"
+    },
+    {
+      "source_sha256": "78dea28e930c87dd594f6665ff5491bb68669741a32103fbc75ab5e741826ccb",
+      "physical_page": 30,
+      "verified": "exact declared crop after whitespace normalization"
+    },
+    {
+      "source_sha256": "666ee54c6dc9f2e4bd92f3c036927ceba89e1a09c705e16462704c32dae411a9",
+      "physical_page": 1,
+      "verified": "exact declared crop after whitespace normalization"
+    },
+    {
+      "source_sha256": "666ee54c6dc9f2e4bd92f3c036927ceba89e1a09c705e16462704c32dae411a9",
+      "physical_page": 9,
+      "verified": "exact declared crop after whitespace normalization"
+    },
+    {
+      "source_sha256": "564a77d69c2c85da6f2bf21e8ded1b501cfc2e79d7852b489ead6d8d9e06d0f2",
+      "physical_page": 1,
+      "verified": "exact declared crop after whitespace normalization"
+    },
+    {
+      "source_sha256": "564a77d69c2c85da6f2bf21e8ded1b501cfc2e79d7852b489ead6d8d9e06d0f2",
+      "physical_page": 8,
+      "verified": "exact declared crop after whitespace normalization"
+    },
+    {
+      "source_sha256": "564a77d69c2c85da6f2bf21e8ded1b501cfc2e79d7852b489ead6d8d9e06d0f2",
+      "physical_page": 9,
+      "verified": "exact declared crop after whitespace normalization"
+    },
+    {
+      "source_sha256": "8985211ee8716162d9203832bee5d986cd6f99dc24566876dfaf3b917cf6440e",
+      "physical_page": 1,
+      "verified": "exact declared crop after whitespace normalization"
+    },
+    {
+      "source_sha256": "8985211ee8716162d9203832bee5d986cd6f99dc24566876dfaf3b917cf6440e",
+      "physical_page": 4,
+      "verified": "exact declared crop after whitespace normalization"
+    },
+    {
+      "source_sha256": "652b1369b571ea57b8a92be3e97f0b98bb747611199a98c9b1d497a809d36ba2",
+      "physical_page": 1,
+      "verified": "exact declared crop after whitespace normalization"
+    },
+    {
+      "source_sha256": "28480fca07332cbe1088210dea9174d818b4bc29bf2de7d96ff219f1fef05073",
+      "physical_page": 1,
+      "verified": "exact declared crop after whitespace normalization"
+    },
+    {
+      "source_sha256": "8cc62058b8d3476b0fd343f61279452072975006ea685e6dc76d59ab7ac76fb8",
+      "physical_page": 1,
+      "verified": "exact declared crop after whitespace normalization"
+    },
+    {
+      "source_sha256": "8afc6b819dc0471376362afd6601158aa83ae06069527bbac02dbfb486e8c1e2",
+      "physical_page": 1,
+      "verified": "exact declared crop after whitespace normalization"
+    },
+    {
+      "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+      "physical_page": 2,
+      "section": "3.8",
+      "verified": "verbatim original clause excerpt after whitespace normalization"
+    },
+    {
+      "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+      "physical_page": 14,
+      "section": "9.4",
+      "verified": "verbatim original clause excerpt after whitespace normalization"
+    },
+    {
+      "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+      "physical_page": 15,
+      "section": "9.6",
+      "verified": "verbatim original clause excerpt after whitespace normalization"
+    }
+  ],
+  "passed_passage_checks": 17,
+  "legacy_row_checks": [
+    {
+      "legacy_identity": "/health-insurance/sbi/arogya-supreme-plus/",
+      "family": "Arogya Supreme",
+      "wording_sha256s": [
+        "666ee54c6dc9f2e4bd92f3c036927ceba89e1a09c705e16462704c32dae411a9",
+        "564a77d69c2c85da6f2bf21e8ded1b501cfc2e79d7852b489ead6d8d9e06d0f2"
+      ],
+      "cis_sha256s": [
+        "28480fca07332cbe1088210dea9174d818b4bc29bf2de7d96ff219f1fef05073",
+        "8afc6b819dc0471376362afd6601158aa83ae06069527bbac02dbfb486e8c1e2"
+      ],
+      "judgment": "Supported family/wording candidates with historical bundle unresolved",
+      "tier_basis": "Arogya Supreme wordings establish generic family and separate observed editions, not the specific Pro/Plus/Premium selection from these pages."
+    },
+    {
+      "legacy_identity": "/health-insurance/sbi/arogya-supreme-premium/",
+      "family": "Arogya Supreme",
+      "wording_sha256s": [
+        "666ee54c6dc9f2e4bd92f3c036927ceba89e1a09c705e16462704c32dae411a9",
+        "564a77d69c2c85da6f2bf21e8ded1b501cfc2e79d7852b489ead6d8d9e06d0f2"
+      ],
+      "cis_sha256s": [
+        "28480fca07332cbe1088210dea9174d818b4bc29bf2de7d96ff219f1fef05073",
+        "8afc6b819dc0471376362afd6601158aa83ae06069527bbac02dbfb486e8c1e2"
+      ],
+      "judgment": "Supported family/wording candidates with historical bundle unresolved",
+      "tier_basis": "Arogya Supreme wordings establish generic family and separate observed editions, not the specific Pro/Plus/Premium selection from these pages."
+    },
+    {
+      "legacy_identity": "/health-insurance/sbi/arogya-supreme-pro/",
+      "family": "Arogya Supreme",
+      "wording_sha256s": [
+        "666ee54c6dc9f2e4bd92f3c036927ceba89e1a09c705e16462704c32dae411a9",
+        "564a77d69c2c85da6f2bf21e8ded1b501cfc2e79d7852b489ead6d8d9e06d0f2"
+      ],
+      "cis_sha256s": [
+        "28480fca07332cbe1088210dea9174d818b4bc29bf2de7d96ff219f1fef05073",
+        "8afc6b819dc0471376362afd6601158aa83ae06069527bbac02dbfb486e8c1e2"
+      ],
+      "judgment": "Supported family/wording candidates with historical bundle unresolved",
+      "tier_basis": "Arogya Supreme wordings establish generic family and separate observed editions, not the specific Pro/Plus/Premium selection from these pages."
+    },
+    {
+      "legacy_identity": "/health-insurance/sbi/arogya-top-up/",
+      "family": "Arogya Top-Up Policy",
+      "wording_sha256s": [
+        "8985211ee8716162d9203832bee5d986cd6f99dc24566876dfaf3b917cf6440e"
+      ],
+      "cis_sha256s": [
+        "652b1369b571ea57b8a92be3e97f0b98bb747611199a98c9b1d497a809d36ba2"
+      ],
+      "judgment": "Supported family/wording candidates with historical bundle unresolved",
+      "tier_basis": "Original Arogya Top-Up title and medical-expense scope directly read; no per-claim/annual aggregation inferred from title alone."
+    },
+    {
+      "legacy_identity": "/health-insurance/sbi/super-health-elite/",
+      "family": "Super Health Insurance",
+      "wording_sha256s": [
+        "78dea28e930c87dd594f6665ff5491bb68669741a32103fbc75ab5e741826ccb"
+      ],
+      "cis_sha256s": [
+        "8cc62058b8d3476b0fd343f61279452072975006ea685e6dc76d59ab7ac76fb8"
+      ],
+      "judgment": "Supported family/wording candidates with historical bundle unresolved",
+      "tier_basis": "Five named Super Health headers visually verified on physical page 30; exact schedule and connected terms still required."
+    },
+    {
+      "legacy_identity": "/health-insurance/sbi/super-health-platinum/",
+      "family": "Super Health Insurance",
+      "wording_sha256s": [
+        "78dea28e930c87dd594f6665ff5491bb68669741a32103fbc75ab5e741826ccb"
+      ],
+      "cis_sha256s": [
+        "8cc62058b8d3476b0fd343f61279452072975006ea685e6dc76d59ab7ac76fb8"
+      ],
+      "judgment": "Supported family/wording candidates with historical bundle unresolved",
+      "tier_basis": "Five named Super Health headers visually verified on physical page 30; exact schedule and connected terms still required."
+    },
+    {
+      "legacy_identity": "/health-insurance/sbi/super-health-platinum-infinite/",
+      "family": "Super Health Insurance",
+      "wording_sha256s": [
+        "78dea28e930c87dd594f6665ff5491bb68669741a32103fbc75ab5e741826ccb"
+      ],
+      "cis_sha256s": [
+        "8cc62058b8d3476b0fd343f61279452072975006ea685e6dc76d59ab7ac76fb8"
+      ],
+      "judgment": "Supported family/wording candidates with historical bundle unresolved",
+      "tier_basis": "Five named Super Health headers visually verified on physical page 30; exact schedule and connected terms still required."
+    },
+    {
+      "legacy_identity": "/health-insurance/sbi/super-health-premier/",
+      "family": "Super Health Insurance",
+      "wording_sha256s": [
+        "78dea28e930c87dd594f6665ff5491bb68669741a32103fbc75ab5e741826ccb"
+      ],
+      "cis_sha256s": [
+        "8cc62058b8d3476b0fd343f61279452072975006ea685e6dc76d59ab7ac76fb8"
+      ],
+      "judgment": "Supported family/wording candidates with historical bundle unresolved",
+      "tier_basis": "Five named Super Health headers visually verified on physical page 30; exact schedule and connected terms still required."
+    },
+    {
+      "legacy_identity": "/health-insurance/sbi/super-health-prime/",
+      "family": "Super Health Insurance",
+      "wording_sha256s": [
+        "78dea28e930c87dd594f6665ff5491bb68669741a32103fbc75ab5e741826ccb"
+      ],
+      "cis_sha256s": [
+        "8cc62058b8d3476b0fd343f61279452072975006ea685e6dc76d59ab7ac76fb8"
+      ],
+      "judgment": "Supported family/wording candidates with historical bundle unresolved",
+      "tier_basis": "Five named Super Health headers visually verified on physical page 30; exact schedule and connected terms still required."
+    }
+  ],
+  "resolved_findings": [
+    {
+      "id": "SBI-CIS-OFF-PAGE-TEXT",
+      "severity": "medium",
+      "original_issue": "Four CIS passages used unbounded native text containing off-page text objects, so substantial benefit text did not resolve inside declared visible page bounds.",
+      "resolution": "Parent regenerated all four passages from exact declared crops, preserved old/new derivative hashes and character counts, added source issues, and applied the same correction to cumulative scope. Original bytes remain unchanged.",
+      "verification": [
+        {
+          "source_sha256": "652b1369b571ea57b8a92be3e97f0b98bb747611199a98c9b1d497a809d36ba2",
+          "physical_page": 1,
+          "visible_characters": 1234,
+          "bounded_hash_verified": true,
+          "batch_matches_cumulative_scope": true,
+          "off_page_issue_retained": true
+        },
+        {
+          "source_sha256": "28480fca07332cbe1088210dea9174d818b4bc29bf2de7d96ff219f1fef05073",
+          "physical_page": 1,
+          "visible_characters": 1339,
+          "bounded_hash_verified": true,
+          "batch_matches_cumulative_scope": true,
+          "off_page_issue_retained": true
+        },
+        {
+          "source_sha256": "8cc62058b8d3476b0fd343f61279452072975006ea685e6dc76d59ab7ac76fb8",
+          "physical_page": 1,
+          "visible_characters": 1496,
+          "bounded_hash_verified": true,
+          "batch_matches_cumulative_scope": true,
+          "off_page_issue_retained": true
+        },
+        {
+          "source_sha256": "8afc6b819dc0471376362afd6601158aa83ae06069527bbac02dbfb486e8c1e2",
+          "physical_page": 1,
+          "visible_characters": 1387,
+          "bounded_hash_verified": true,
+          "batch_matches_cumulative_scope": true,
+          "off_page_issue_retained": true
+        }
+      ]
+    }
+  ],
+  "visual_original_checks": [
+    {
+      "source_sha256": "78dea28e930c87dd594f6665ff5491bb68669741a32103fbc75ab5e741826ccb",
+      "physical_page": 30,
+      "checked": "Prime, Elite, Premier, Platinum and Platinum Infinite table headers and benefit/SI columns are visible; this does not independently settle every connected benefit rule."
+    },
+    {
+      "source_sha256": "564a77d69c2c85da6f2bf21e8ded1b501cfc2e79d7852b489ead6d8d9e06d0f2",
+      "physical_page": 8,
+      "checked": "Scope and inpatient grant use minimum 24 hours, with stated conditions; not a resolved exact-24-hour answer against differing CIS summaries."
+    },
+    {
+      "source_sha256": "8985211ee8716162d9203832bee5d986cd6f99dc24566876dfaf3b917cf6440e",
+      "physical_page": 4,
+      "checked": "Manually restored scope sentence is visibly present; eligible hospitalization expenses are listed. Native-text omissions do not establish absent coverage."
+    }
+  ],
+  "claim_clock_case": {
+    "case_id": "additional-r10-19-01",
+    "judgment": "Supported conditional distinction between settlement-deadline and interest anchors",
+    "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+    "source_clauses": [
+      "3.8 Bank Rate on financial-year first day",
+      "9.4 necessary documents, waiver and certified-copy conditions",
+      "9.6 noncashless settlement deadline and delayed-payment interest"
+    ],
+    "numeric_checks": [
+      {
+        "anchor": "submission",
+        "payment": "2026-08-26",
+        "expected": 25,
+        "independently_recomputed": 25,
+        "unit": "elapsed_day",
+        "passed": true
+      },
+      {
+        "anchor": "insurer_receipt",
+        "payment": "2026-08-26",
+        "expected": 19,
+        "independently_recomputed": 19,
+        "unit": "elapsed_day",
+        "passed": true
+      }
+    ],
+    "assumption_review": [
+      "Claim submission 1 August, adviser upload 5 August, insurer acknowledgement 7 August and actual payment 26 August are expressly distinct synthetic events.",
+      "Last-document necessity, completeness and accepted documentary form are stipulated; neither an upload nor file count is treated as receipt or completeness.",
+      "25 and 19 are elapsed-date intervals, not asserted exact legal interest day counts.",
+      "For this August 2026 fixture the defined financial-year rate date is 1 April 2026; no numeric RBI rate is invented. The increment is two percentage points.",
+      "Interest principal/rate conventions and rounding are not completed merely from the stated INR100000 payment; monetary interest remains unknown."
+    ],
+    "requirement_trace": "Exercises new INS-09 claim-specific event, document and payment distinctions; complements rather than replaces the required 400 cases."
+  },
+  "preserved_boundaries": [
+    "Arogya Plus remains distinct and unassigned in this batch.",
+    "Old and newer Arogya Supreme UINs remain separate observed editions; Pro/Plus/Premium selection and controlling historical bundle remain unresolved.",
+    "Wordings minimum-24-hour versus CIS beyond-24-hour statements remain a connected source issue; no exact-boundary answer fabricated.",
+    "Source relevance and named tier headers do not establish a complete original-rule inventory."
+  ],
+  "remaining_material_findings": [],
+  "limits": {
+    "evaluation_material_read": false,
+    "canonical_files_changed_by_reviewer": false,
+    "full_original_inventory_certified": false,
+    "historical_governing_bundles_certified": 0,
+    "advice_successes": 0,
+    "adviser_attempts": 0,
+    "database_implementation_approved": false
+  }
+}

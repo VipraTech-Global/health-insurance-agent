@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:57:42.190293+00:00",
+  "associations": [],
+  "byte_count": 106241,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/Money_Insurance_Policy_Prospectus_fc4f8add04.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 210,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.273
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "5929e907d9c385c8b115eb7fd0f7e0ddd36d599e6391af89136d8d80ac4e330d",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/Money_Insurance_Policy_Prospectus_fc4f8add04.pdf"
+}

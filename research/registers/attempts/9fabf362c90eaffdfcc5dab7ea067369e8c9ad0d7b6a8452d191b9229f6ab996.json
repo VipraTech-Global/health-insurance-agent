@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:01:17.954313+00:00",
+  "associations": [],
+  "byte_count": 4089344,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/group-mediclaim-policy-for-workers/Policy%20Clause%20Group%20Mediclaim%20Policy%20for%20Workers%20(wef%201st%20October%202021).pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1574,
+  "linking_url": "https://www.newindia.co.in/health-insurance/group-mediclaim-policy-for-workers",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "ba50a8e85b19114bd4a045eed49c0a23e4e605d8d9cdd455869f730f2c353347",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/group-mediclaim-policy-for-workers/Policy Clause Group Mediclaim Policy for Workers (wef 1st October 2021).pdf"
+}

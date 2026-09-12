@@ -1,0 +1,1314 @@
+erDiagram
+    Account {
+        uuid id PK
+        varchar_254 email
+        varchar_128 password
+        instant last_login
+        boolean is_superuser
+        boolean is_staff
+        boolean is_active
+        varchar_150 first_name
+        varchar_150 last_name
+        instant date_joined
+        instant deleted_at
+        bigint erasure_generation
+    }
+    AIPreference {
+        uuid user_id FK
+        uuid route_id FK
+        instant updated_at
+    }
+    Person {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        varchar_200 display_name
+    }
+    PersonRelationship {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid from_person_id FK
+        uuid to_person_id FK
+        enum relationship_type
+        uuid source_statement_id FK
+        date valid_from
+        date valid_to
+    }
+    Conversation {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        varchar_200 title
+        uuid current_profile_revision_id FK
+        enum status
+        instant updated_at
+        varchar_35 preferred_language
+    }
+    Message {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid conversation_id FK
+        bigint sequence
+        enum role
+        text content
+        enum origin
+        uuid client_request_id
+        char_64 payload_sha256
+        instant submitted_at
+        uuid turn_id FK
+        uuid answer_id FK
+        instant redacted_at
+    }
+    ConversationMessageChunk {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid conversation_id FK
+        uuid message_id FK
+        integer chunk_index
+        integer start_offset
+        integer end_offset
+        tsvector lexical_vector
+        vector_1024 embedding
+        varchar_160 index_revision
+        char_64 content_sha256
+        instant invalidated_at
+    }
+    CustomerStatement {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid source_message_id FK
+        integer start_offset
+        integer end_offset
+        uuid subject_person_id FK
+        enum kind
+        enum status
+        text resolution_note
+    }
+    CustomerProfileRevision {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid conversation_id FK
+        bigint revision
+    }
+    CustomerFact {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid introduced_in_revision_id FK
+        uuid source_statement_id FK
+        uuid logical_key
+        varchar_100 fact_type
+        positive_integer schema_version
+        jsonb value
+        enum status
+    }
+    CustomerRequirement {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid introduced_in_revision_id FK
+        uuid source_statement_id FK
+        uuid logical_key
+        varchar_120 criterion
+        enum operator
+        jsonb target_value
+        enum priority
+        enum scope
+        uuid subject_person_id FK
+        enum status
+    }
+    AdviceRequest {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid conversation_id FK
+        uuid source_statement_id FK
+        enum request_type
+        enum status
+    }
+    Insurer {
+        uuid id PK
+        timestamptz created_at
+        varchar_250 name
+    }
+    DiscoveryRun {
+        uuid id PK
+        timestamptz created_at
+        instant updated_at
+        uuid insurer_id FK
+        text instructions
+        varchar_250 session_id
+        varchar_160 model_name
+        instant completed_at
+        enum status
+        text error_summary
+    }
+    SourceURL {
+        uuid id PK
+        timestamptz created_at
+        instant updated_at
+        text url
+        enum source_type
+    }
+    SourceObservation {
+        uuid id PK
+        timestamptz created_at
+        uuid discovery_run_id FK
+        uuid source_url_id FK
+        uuid found_in_capture_id FK
+        enum observation_type
+        text label_or_context
+        enum disposition
+        text disposition_reason
+    }
+    SourceCapture {
+        uuid id PK
+        timestamptz created_at
+        instant updated_at
+        uuid discovery_run_id FK
+        uuid source_url_id FK
+        instant completed_at
+        enum status
+        smallint http_status
+        uuid original_file_id FK
+        uuid document_version_id FK
+        text error_summary
+    }
+    OriginalFile {
+        uuid id PK
+        timestamptz created_at
+        instant updated_at
+        uuid owner_id FK
+        char_64 sha256
+        varchar_500 storage_key
+        bigint byte_size
+        varchar_150 media_type
+        enum availability
+        instant last_verified_at
+    }
+    CustomerUploadedDocument {
+        uuid id PK
+        timestamptz created_at
+        instant updated_at
+        uuid owner_id FK
+        uuid original_file_id FK
+        uuid source_message_id FK
+        varchar_300 display_name
+        enum kind
+        enum review_status
+    }
+    DocumentSeries {
+        uuid id PK
+        timestamptz created_at
+        instant updated_at
+        uuid issuer_id FK
+        text name
+        enum kind
+        enum authority
+        enum relevance
+    }
+    DocumentVersion {
+        uuid id PK
+        timestamptz created_at
+        instant updated_at
+        uuid document_series_id FK
+        varchar_200 version_label
+        jsonb identifiers
+        varchar_35 language
+        date published_on
+        date effective_from
+        date effective_to
+        uuid supersedes_id FK
+        enum review_status
+    }
+    DocumentPage {
+        uuid id PK
+        timestamptz created_at
+        instant updated_at
+        uuid original_file_id FK
+        integer page_number
+        varchar_80 printed_label
+        enum review_state
+    }
+    EvidenceSpan {
+        uuid id PK
+        timestamptz created_at
+        uuid source_capture_id FK
+        uuid customer_uploaded_document_id FK
+        uuid page_id FK
+        varchar_200 section_label
+        text quote
+        jsonb context
+        enum method
+        enum verification
+        jsonb locator
+    }
+    Product {
+        uuid id PK
+        timestamptz created_at
+        instant updated_at
+        uuid insurer_id FK
+        varchar_250 name
+        enum benefit_type
+        enum lifecycle_status
+        enum recommendation_role
+        uuid identity_evidence_id FK
+    }
+    PolicyVersion {
+        uuid id PK
+        timestamptz created_at
+        instant updated_at
+        uuid product_id FK
+        varchar_100 uin
+        varchar_200 version_label
+        enum publication_status
+        uuid supersedes_id FK
+        jsonb applicability
+    }
+    PolicyVersionDocument {
+        uuid id PK
+        timestamptz created_at
+        uuid policy_version_id FK
+        uuid document_version_id FK
+        enum role
+        boolean required_for_policy
+        jsonb applicability
+        uuid precedence_evidence_id FK
+    }
+    ProductVariant {
+        uuid id PK
+        timestamptz created_at
+        instant updated_at
+        uuid policy_version_id FK
+        varchar_200 name
+        jsonb choices
+        jsonb availability
+        uuid identity_evidence_id FK
+    }
+    ProductOption {
+        uuid id PK
+        timestamptz created_at
+        instant updated_at
+        uuid product_variant_id FK
+        uuid option_policy_version_id FK
+        varchar_200 name
+        enum selection_kind
+        jsonb conditions
+        uuid identity_evidence_id FK
+    }
+    CustomerPolicy {
+        uuid id PK
+        timestamptz created_at
+        instant updated_at
+        uuid owner_id FK
+        encrypted_varchar_200 policy_number
+        uuid insurer_id FK
+        uuid proposer_id FK
+        uuid payer_id FK
+        enum coverage_type
+        enum lifecycle_status
+        encrypted_varchar_250 group_master_reference
+    }
+    CustomerPolicyRevision {
+        uuid id PK
+        timestamptz created_at
+        instant updated_at
+        uuid owner_id FK
+        uuid customer_policy_id FK
+        positive_integer revision_number
+        uuid product_variant_id FK
+        daterange policy_term
+        daterange effective_during
+        jsonb selected_choices
+        uuid selection_evidence_id FK
+        enum verification_status
+    }
+    PolicyMember {
+        uuid id PK
+        timestamptz created_at
+        instant updated_at
+        uuid owner_id FK
+        uuid customer_policy_revision_id FK
+        uuid person_id FK
+        daterange covered_during
+        encrypted_varchar_160 member_identifier
+        uuid evidence_span_id FK
+        enum verification_status
+    }
+    CustomerPolicyOption {
+        uuid id PK
+        timestamptz created_at
+        instant updated_at
+        uuid owner_id FK
+        uuid customer_policy_revision_id FK
+        uuid product_option_id FK
+        enum selection_status
+        uuid evidence_span_id FK
+        enum verification_status
+    }
+    CustomerPolicyFact {
+        uuid id PK
+        timestamptz created_at
+        instant updated_at
+        uuid owner_id FK
+        uuid customer_policy_revision_id FK
+        uuid person_id FK
+        varchar_100 fact_type
+        jsonb value
+        uuid related_customer_policy_id FK
+        uuid evidence_span_id FK
+        enum verification_status
+        uuid supersedes_id FK
+    }
+    PolicyEvent {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid customer_policy_id FK
+        varchar_100 event_type
+        jsonb occurred_at
+        jsonb amount
+        uuid source_evidence_id FK
+        uuid source_message_id FK
+        enum verification_status
+        uuid related_event_id FK
+        uuid supersedes_event_id FK
+        uuid authority_evidence_id FK
+    }
+    PolicyRule {
+        uuid id PK
+        timestamptz created_at
+        uuid policy_version_id FK
+        varchar_160 rule_key
+        enum rule_type
+        jsonb body
+        enum review_status
+        uuid supersedes_id FK
+    }
+    PolicyRuleEvidence {
+        uuid id PK
+        timestamptz created_at
+        uuid policy_rule_id FK
+        uuid evidence_span_id FK
+        enum role
+        boolean is_required
+    }
+    PolicyRuleLink {
+        uuid id PK
+        timestamptz created_at
+        uuid from_policy_rule_id FK
+        uuid to_policy_rule_id FK
+        enum link_type
+    }
+    PolicyRuleTableCell {
+        uuid id PK
+        timestamptz created_at
+        uuid policy_rule_id FK
+        jsonb selectors
+        jsonb value
+        uuid evidence_span_id FK
+    }
+    Provider {
+        uuid id PK
+        timestamptz created_at
+        varchar_300 legal_name
+        varchar_250 branch_name
+        text address
+        varchar_150 city
+        varchar_20 postal_code
+        char_2 country_code
+        jsonb external_identifiers
+        enum identity_status
+    }
+    ProviderObservation {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid provider_id FK
+        uuid insurer_id FK
+        uuid configuration_id FK
+        jsonb service_scope
+        enum status
+        instant observed_at
+        jsonb valid_during
+        uuid span_id FK
+        uuid supersedes_id FK
+        enum kind
+        jsonb value
+        uuid clinician_id FK
+        jsonb search_coverage
+    }
+    Quote {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid conversation_id FK
+        uuid profile_revision_id FK
+        uuid configuration_id FK
+        jsonb quoted_selection
+        varchar_200 insurer_quote_id
+        instant issued_at
+        instant valid_until
+        enum status
+        uuid source_document_id FK
+        jsonb total
+        jsonb coverage_term
+    }
+    QuoteComponent {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid quote_id FK
+        integer sequence
+        enum kind
+        jsonb amount
+        jsonb basis
+        uuid span_id FK
+        jsonb applies_to
+    }
+    PaymentScheduleItem {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid quote_id FK
+        uuid customer_policy_id FK
+        integer sequence
+        jsonb amount
+        date due_on
+        uuid paid_event_id FK
+        uuid span_id FK
+    }
+    TreatmentEpisode {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid person_id FK
+        uuid provider_id FK
+        jsonb started_at
+        jsonb ended_at
+        enum setting
+        jsonb clinical_facts
+        date last_related_consultation
+        enum provenance
+        uuid source_document_id FK
+    }
+    ExpenseLine {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid episode_id FK
+        integer line_number
+        text label
+        enum category
+        date service_on
+        jsonb amount
+        jsonb quantity
+        uuid relatedness_fact_id FK
+        uuid span_id FK
+        jsonb service_extent
+    }
+    Claim {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid episode_id FK
+        uuid customer_policy_revision_id FK
+        varchar_200 insurer_claim_id
+        enum kind
+        enum status
+        instant submitted_at
+        uuid settlement_document_id FK
+        uuid primary_claim_id FK
+    }
+    ClaimLineAssessment {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid claim_id FK
+        uuid expense_id FK
+        enum status
+        jsonb admissible_amount
+        jsonb threshold_amount
+        jsonb cover_consumption
+        jsonb paid_amount
+        text reason
+        uuid policy_rule_id FK
+        uuid span_id FK
+        integer revision
+        uuid supersedes_id FK
+    }
+    UsageEntry {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid customer_policy_revision_id FK
+        uuid customer_policy_fact_id FK
+        uuid claim_line_id FK
+        enum kind
+        jsonb amount
+        jsonb scope
+        instant posted_at
+        date occurred_on
+        uuid reverses_id FK
+        uuid source_span_id FK
+        uuid posting_key
+        uuid policy_event_id FK
+        uuid claim_payment_id FK
+    }
+    CorpusRevision {
+        uuid id PK
+        timestamptz created_at
+        bigint sequence
+        char_64 manifest_sha256
+        enum state
+        instant validated_at
+        instant published_at
+        uuid previous_id FK
+    }
+    CorpusMember {
+        uuid id PK
+        timestamptz created_at
+        uuid corpus_id FK
+        uuid policy_rule_id FK
+        uuid terms_id FK
+        jsonb capabilities
+    }
+    CorpusPointer {
+        uuid id PK
+        timestamptz created_at
+        varchar_80 channel
+        uuid corpus_id FK
+        bigint generation
+        instant changed_at
+    }
+    SearchChunk {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid document_id FK
+        jsonb span_ids
+        text text
+        tsvector lexical_vector
+        vector_1024 embedding
+        varchar_160 index_revision
+        uuid corpus_id FK
+        char_64 chunk_sha256
+    }
+    Artifact {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        enum kind
+        uuid object_id
+        char_64 content_sha256
+        enum validity
+        instant invalidated_at
+    }
+    Dependency {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid dependent_id FK
+        uuid input_id FK
+        enum purpose
+        boolean material
+        text reason
+    }
+    Decision {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid conversation_id FK
+        uuid turn_id FK
+        uuid advice_request_id FK
+        uuid profile_revision_id FK
+        uuid corpus_id FK
+        enum outcome
+        text answer_text
+        jsonb scope
+        jsonb validation
+        instant published_at
+        enum validity
+        uuid supersedes_id FK
+    }
+    DecisionClaim {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid decision_id FK
+        integer ordinal
+        text text
+        enum kind
+        boolean critical
+        enum support
+        uuid candidate_configuration_id FK
+        text missing_dependency
+    }
+    ClaimCitation {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid claim_id FK
+        uuid span_id FK
+        enum role
+        uuid policy_rule_id FK
+        integer ordinal
+    }
+    Calculation {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid decision_id FK
+        varchar_200 label
+        varchar_120 engine_version
+        jsonb expression
+        jsonb inputs
+        jsonb result
+        jsonb trace
+        jsonb assumptions
+        enum scope
+        varchar_160 verified_by
+    }
+    Turn {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid conversation_id FK
+        uuid request_id
+        char_64 payload_sha256
+        uuid input_message_id FK
+        bigint expected_revision
+        uuid profile_revision_id FK
+        enum state
+        uuid lease_token
+        instant lease_until
+        instant deadline
+        instant cancelled_at
+        varchar_100 error_code
+    }
+    TurnEvent {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid turn_id FK
+        bigint sequence
+        enum kind
+        jsonb payload
+        instant recorded_at
+    }
+    Outbox {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        enum topic
+        uuid aggregate_id
+        varchar_200 idempotency_key
+        jsonb payload
+        enum state
+        integer attempt_count
+        instant available_at
+        instant lease_until
+        varchar_100 last_error_code
+    }
+    ModelRoute {
+        uuid id PK
+        timestamptz created_at
+        varchar_120 route_key
+        varchar_120 endpoint_profile
+        varchar_160 requested_model
+        varchar_120 adapter_version
+        char_64 configuration_sha256
+        enum status
+    }
+    ModelQualification {
+        uuid id PK
+        timestamptz created_at
+        uuid route_id FK
+        enum schema_name
+        char_64 schema_sha256
+        varchar_160 observed_model
+        jsonb capabilities
+        instant qualified_at
+        enum result
+        char_64 artifact_sha256
+    }
+    ModelAttempt {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid turn_id FK
+        uuid processing_job_id FK
+        uuid qualification_id FK
+        integer attempt_number
+        instant started_at
+        instant completed_at
+        varchar_160 observed_model
+        enum status
+        jsonb usage
+        varchar_100 error_code
+        char_64 request_sha256
+        varchar_500 response_artifact_key
+    }
+    ProcessingJob {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid document_id FK
+        enum stage
+        varchar_160 adapter_version
+        char_64 input_sha256
+        integer attempt_number
+        uuid parent_job_id FK
+        enum state
+        instant lease_until
+        uuid lease_token
+        uuid result_blob_id FK
+        jsonb issues
+        varchar_100 error_code
+    }
+    ReviewRecord {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid artifact_id FK
+        uuid reviewer_account_id FK
+        varchar_160 reviewer_identity
+        text scope
+        enum outcome
+        jsonb findings
+        instant reviewed_at
+    }
+    ConsentRecord {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid person_id FK
+        enum purpose
+        varchar_250 recipient
+        uuid instance_key
+        enum status
+        uuid source_message_id FK
+        uuid source_span_id FK
+        instant valid_until
+        instant revoked_at
+    }
+    DeletionRequest {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        jsonb scope
+        instant requested_at
+        enum state
+        instant completed_at
+        jsonb verification
+        varchar_100 error_code
+    }
+    RetentionHold {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid deletion_request_id FK
+        jsonb scope
+        text basis
+        uuid approved_by_id FK
+        instant expires_at
+        instant released_at
+    }
+    AuditEvent {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid actor_id FK
+        varchar_100 operation
+        varchar_100 object_kind
+        uuid object_id
+        instant occurred_at
+        enum outcome
+        jsonb metadata
+    }
+    LegacyMapping {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        varchar_150 source_table
+        varchar_250 source_key
+        char_64 source_sha256
+        varchar_150 target_kind
+        jsonb target_id
+        enum status
+        text reason
+        varchar_160 migration_run_key
+        uuid archive_blob_id FK
+    }
+    AuthGroup {
+        integer id PK
+        varchar_150 name
+    }
+    AuthPermission {
+        integer id PK
+        varchar_100 codename
+        varchar_255 name
+        uuid content_type_id FK
+    }
+    AccountGroup {
+        bigint id PK
+        uuid user_id FK
+        uuid group_id FK
+    }
+    AccountPermission {
+        bigint id PK
+        uuid user_id FK
+        uuid permission_id FK
+    }
+    GroupPermission {
+        integer id PK
+        uuid group_id FK
+        uuid permission_id FK
+    }
+    AuthSession {
+        varchar_40 session_key
+        text session_data
+        instant expire_date
+    }
+    ContentType {
+        integer id PK
+        varchar_100 app_label
+        varchar_100 model
+    }
+    AdminLogEntry {
+        integer id PK
+        instant action_time
+        uuid user_id FK
+        uuid content_type_id FK
+        text object_id
+        varchar_200 object_repr
+        smallint action_flag
+        text change_message
+    }
+    ContentCopy {
+        uuid id PK
+        instant created_at
+        uuid owner_id FK
+        uuid source_artifact_id FK
+        uuid destination_artifact_id FK
+        enum storage_kind
+        varchar_500 locator
+        enum state
+        bigint generation
+    }
+    ExpenseAllocation {
+        uuid id PK
+        instant created_at
+        uuid owner_id FK
+        uuid expense_id FK
+        uuid package_parent_id FK
+        enum kind
+        jsonb amount
+        jsonb service_extent
+        uuid boundary_fact_id FK
+        jsonb effects
+        uuid source_span_id FK
+        enum status
+    }
+    Clinician {
+        uuid id PK
+        instant created_at
+        varchar_250 name
+        jsonb registration_identifiers
+        varchar_200 speciality
+    }
+    ClaimEvent {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid claim_id FK
+        uuid episode_id FK
+        uuid customer_policy_revision_id FK
+        uuid event_key
+        integer revision
+        enum kind
+        jsonb occurred_at
+        jsonb sender
+        jsonb recipient
+        enum certainty
+        uuid source_span_id FK
+        uuid source_message_id FK
+        uuid related_event_id FK
+        jsonb documentation
+        uuid supersedes_id FK
+    }
+    ClaimDocumentRequirement {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid claim_id FK
+        varchar_160 requirement_key
+        integer revision
+        varchar_160 document_kind
+        enum necessity
+        jsonb condition
+        enum accepted_form
+        uuid request_event_id FK
+        uuid policy_rule_id FK
+        uuid authority_span_id FK
+        text reason
+        uuid supersedes_id FK
+        enum certainty
+    }
+    ClaimDocumentReceipt {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid claim_id FK
+        uuid receipt_event_id FK
+        uuid requirement_id FK
+        uuid document_id FK
+        text description
+        enum delivered_form
+        enum assessment
+        uuid assessment_span_id FK
+        uuid supersedes_id FK
+        integer revision
+        uuid receipt_key
+    }
+    ClaimPayment {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid claim_id FK
+        varchar_200 payment_key
+        uuid payment_event_id FK
+        enum kind
+        jsonb payee
+        jsonb total
+        jsonb indemnity
+        jsonb interest
+        jsonb other
+        text transaction_reference
+        uuid source_span_id FK
+        uuid reverses_id FK
+        integer revision
+        uuid supersedes_id FK
+    }
+    TermsComponent {
+        uuid id PK
+        timestamptz created_at
+        uuid wrapper_terms_id FK
+        varchar_80 slot_code
+        uuid component_product_id FK
+        uuid component_terms_id FK
+        varchar_100 asserted_component_uin
+        enum role
+        enum selection_kind
+        uuid selection_policy_rule_id FK
+        uuid source_span_id FK
+        enum status
+        uuid supersedes_id FK
+    }
+    ContractBundle {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        varchar_250 label
+        varchar_200 external_reference
+        uuid current_revision_id FK
+    }
+    ContractBundleRevision {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid bundle_id FK
+        bigint revision
+        uuid wrapper_configuration_id FK
+        uuid previous_id FK
+        enum membership_state
+        enum status
+        uuid source_span_id FK
+        timestamptz sealed_at
+        char_64 membership_sha256
+        smallint seal_format_version
+    }
+    ContractBundleMember {
+        uuid id PK
+        timestamptz created_at
+        uuid owner_id FK
+        uuid bundle_revision_id FK
+        uuid terms_component_id FK
+        uuid customer_policy_revision_id FK
+        enum selection_status
+        uuid source_span_id FK
+        uuid source_fact_id FK
+    }
+    ModelRoute ||--o{ AIPreference : "route_id"
+    Account ||--o{ AIPreference : "user_id"
+    AuthGroup ||--o{ AccountGroup : "group_id"
+    Account ||--o{ AccountGroup : "user_id"
+    AuthPermission ||--o{ AccountPermission : "permission_id"
+    Account ||--o{ AccountPermission : "user_id"
+    ContentType ||--o{ AdminLogEntry : "content_type_id"
+    Account ||--o{ AdminLogEntry : "user_id"
+    Conversation ||--o{ AdviceRequest : "conversation_id"
+    Account ||--o{ AdviceRequest : "owner_id"
+    CustomerStatement ||--o{ AdviceRequest : "source_statement_id"
+    Account ||--o{ Artifact : "owner_id"
+    Account ||--o{ AuditEvent : "actor_id"
+    Account ||--o{ AuditEvent : "owner_id"
+    ContentType ||--o{ AuthPermission : "content_type_id"
+    Decision ||--o{ Calculation : "decision_id"
+    Account ||--o{ Calculation : "owner_id"
+    CustomerPolicyRevision ||--o{ Claim : "customer_policy_revision_id"
+    TreatmentEpisode ||--o{ Claim : "episode_id"
+    Account ||--o{ Claim : "owner_id"
+    Claim ||--o{ Claim : "primary_claim_id"
+    DocumentVersion ||--o{ Claim : "settlement_document_id"
+    DecisionClaim ||--o{ ClaimCitation : "claim_id"
+    Account ||--o{ ClaimCitation : "owner_id"
+    PolicyRule ||--o{ ClaimCitation : "policy_rule_id"
+    EvidenceSpan ||--o{ ClaimCitation : "span_id"
+    EvidenceSpan ||--o{ ClaimDocumentReceipt : "assessment_span_id"
+    Claim ||--o{ ClaimDocumentReceipt : "claim_id"
+    DocumentVersion ||--o{ ClaimDocumentReceipt : "document_id"
+    Account ||--o{ ClaimDocumentReceipt : "owner_id"
+    ClaimEvent ||--o{ ClaimDocumentReceipt : "receipt_event_id"
+    ClaimDocumentRequirement ||--o{ ClaimDocumentReceipt : "requirement_id"
+    ClaimDocumentReceipt ||--o{ ClaimDocumentReceipt : "supersedes_id"
+    EvidenceSpan ||--o{ ClaimDocumentRequirement : "authority_span_id"
+    Claim ||--o{ ClaimDocumentRequirement : "claim_id"
+    Account ||--o{ ClaimDocumentRequirement : "owner_id"
+    PolicyRule ||--o{ ClaimDocumentRequirement : "policy_rule_id"
+    ClaimEvent ||--o{ ClaimDocumentRequirement : "request_event_id"
+    ClaimDocumentRequirement ||--o{ ClaimDocumentRequirement : "supersedes_id"
+    Claim ||--o{ ClaimEvent : "claim_id"
+    CustomerPolicyRevision ||--o{ ClaimEvent : "customer_policy_revision_id"
+    TreatmentEpisode ||--o{ ClaimEvent : "episode_id"
+    Account ||--o{ ClaimEvent : "owner_id"
+    ClaimEvent ||--o{ ClaimEvent : "related_event_id"
+    Message ||--o{ ClaimEvent : "source_message_id"
+    EvidenceSpan ||--o{ ClaimEvent : "source_span_id"
+    ClaimEvent ||--o{ ClaimEvent : "supersedes_id"
+    Claim ||--o{ ClaimLineAssessment : "claim_id"
+    ExpenseLine ||--o{ ClaimLineAssessment : "expense_id"
+    Account ||--o{ ClaimLineAssessment : "owner_id"
+    PolicyRule ||--o{ ClaimLineAssessment : "policy_rule_id"
+    EvidenceSpan ||--o{ ClaimLineAssessment : "span_id"
+    ClaimLineAssessment ||--o{ ClaimLineAssessment : "supersedes_id"
+    Claim ||--o{ ClaimPayment : "claim_id"
+    Account ||--o{ ClaimPayment : "owner_id"
+    ClaimEvent ||--o{ ClaimPayment : "payment_event_id"
+    ClaimPayment ||--o{ ClaimPayment : "reverses_id"
+    EvidenceSpan ||--o{ ClaimPayment : "source_span_id"
+    ClaimPayment ||--o{ ClaimPayment : "supersedes_id"
+    Account ||--o{ ConsentRecord : "owner_id"
+    Person ||--o{ ConsentRecord : "person_id"
+    Message ||--o{ ConsentRecord : "source_message_id"
+    EvidenceSpan ||--o{ ConsentRecord : "source_span_id"
+    Artifact ||--o{ ContentCopy : "destination_artifact_id"
+    Account ||--o{ ContentCopy : "owner_id"
+    Artifact ||--o{ ContentCopy : "source_artifact_id"
+    ContractBundleRevision ||--o{ ContractBundle : "current_revision_id"
+    Account ||--o{ ContractBundle : "owner_id"
+    ContractBundleRevision ||--o{ ContractBundleMember : "bundle_revision_id"
+    CustomerPolicyRevision ||--o{ ContractBundleMember : "customer_policy_revision_id"
+    Account ||--o{ ContractBundleMember : "owner_id"
+    CustomerFact ||--o{ ContractBundleMember : "source_fact_id"
+    EvidenceSpan ||--o{ ContractBundleMember : "source_span_id"
+    TermsComponent ||--o{ ContractBundleMember : "terms_component_id"
+    ContractBundle ||--o{ ContractBundleRevision : "bundle_id"
+    Account ||--o{ ContractBundleRevision : "owner_id"
+    ContractBundleRevision ||--o{ ContractBundleRevision : "previous_id"
+    EvidenceSpan ||--o{ ContractBundleRevision : "source_span_id"
+    ProductVariant ||--o{ ContractBundleRevision : "wrapper_configuration_id"
+    CustomerProfileRevision ||--o{ Conversation : "current_profile_revision_id"
+    Account ||--o{ Conversation : "owner_id"
+    Conversation ||--o{ ConversationMessageChunk : "conversation_id"
+    Message ||--o{ ConversationMessageChunk : "message_id"
+    Account ||--o{ ConversationMessageChunk : "owner_id"
+    CorpusRevision ||--o{ CorpusMember : "corpus_id"
+    PolicyRule ||--o{ CorpusMember : "policy_rule_id"
+    PolicyVersion ||--o{ CorpusMember : "terms_id"
+    CorpusRevision ||--o{ CorpusPointer : "corpus_id"
+    CorpusRevision ||--o{ CorpusRevision : "previous_id"
+    CustomerProfileRevision ||--o{ CustomerFact : "introduced_in_revision_id"
+    Account ||--o{ CustomerFact : "owner_id"
+    CustomerStatement ||--o{ CustomerFact : "source_statement_id"
+    Insurer ||--o{ CustomerPolicy : "insurer_id"
+    Account ||--o{ CustomerPolicy : "owner_id"
+    Person ||--o{ CustomerPolicy : "payer_id"
+    Person ||--o{ CustomerPolicy : "proposer_id"
+    CustomerPolicyRevision ||--o{ CustomerPolicyFact : "customer_policy_revision_id"
+    EvidenceSpan ||--o{ CustomerPolicyFact : "evidence_span_id"
+    Account ||--o{ CustomerPolicyFact : "owner_id"
+    Person ||--o{ CustomerPolicyFact : "person_id"
+    CustomerPolicy ||--o{ CustomerPolicyFact : "related_customer_policy_id"
+    CustomerPolicyFact ||--o{ CustomerPolicyFact : "supersedes_id"
+    CustomerPolicyRevision ||--o{ CustomerPolicyOption : "customer_policy_revision_id"
+    EvidenceSpan ||--o{ CustomerPolicyOption : "evidence_span_id"
+    Account ||--o{ CustomerPolicyOption : "owner_id"
+    ProductOption ||--o{ CustomerPolicyOption : "product_option_id"
+    CustomerPolicy ||--o{ CustomerPolicyRevision : "customer_policy_id"
+    Account ||--o{ CustomerPolicyRevision : "owner_id"
+    ProductVariant ||--o{ CustomerPolicyRevision : "product_variant_id"
+    EvidenceSpan ||--o{ CustomerPolicyRevision : "selection_evidence_id"
+    Conversation ||--o{ CustomerProfileRevision : "conversation_id"
+    Account ||--o{ CustomerProfileRevision : "owner_id"
+    CustomerProfileRevision ||--o{ CustomerRequirement : "introduced_in_revision_id"
+    Account ||--o{ CustomerRequirement : "owner_id"
+    CustomerStatement ||--o{ CustomerRequirement : "source_statement_id"
+    Person ||--o{ CustomerRequirement : "subject_person_id"
+    Account ||--o{ CustomerStatement : "owner_id"
+    Message ||--o{ CustomerStatement : "source_message_id"
+    Person ||--o{ CustomerStatement : "subject_person_id"
+    OriginalFile ||--o{ CustomerUploadedDocument : "original_file_id"
+    Account ||--o{ CustomerUploadedDocument : "owner_id"
+    Message ||--o{ CustomerUploadedDocument : "source_message_id"
+    AdviceRequest ||--o{ Decision : "advice_request_id"
+    Conversation ||--o{ Decision : "conversation_id"
+    CorpusRevision ||--o{ Decision : "corpus_id"
+    Account ||--o{ Decision : "owner_id"
+    CustomerProfileRevision ||--o{ Decision : "profile_revision_id"
+    Decision ||--o{ Decision : "supersedes_id"
+    Turn ||--o{ Decision : "turn_id"
+    ProductVariant ||--o{ DecisionClaim : "candidate_configuration_id"
+    Decision ||--o{ DecisionClaim : "decision_id"
+    Account ||--o{ DecisionClaim : "owner_id"
+    Account ||--o{ DeletionRequest : "owner_id"
+    Artifact ||--o{ Dependency : "dependent_id"
+    Artifact ||--o{ Dependency : "input_id"
+    Account ||--o{ Dependency : "owner_id"
+    Insurer ||--o{ DiscoveryRun : "insurer_id"
+    OriginalFile ||--o{ DocumentPage : "original_file_id"
+    Insurer ||--o{ DocumentSeries : "issuer_id"
+    DocumentSeries ||--o{ DocumentVersion : "document_series_id"
+    DocumentVersion ||--o{ DocumentVersion : "supersedes_id"
+    CustomerUploadedDocument ||--o{ EvidenceSpan : "customer_uploaded_document_id"
+    DocumentPage ||--o{ EvidenceSpan : "page_id"
+    SourceCapture ||--o{ EvidenceSpan : "source_capture_id"
+    CustomerFact ||--o{ ExpenseAllocation : "boundary_fact_id"
+    ExpenseLine ||--o{ ExpenseAllocation : "expense_id"
+    Account ||--o{ ExpenseAllocation : "owner_id"
+    ExpenseLine ||--o{ ExpenseAllocation : "package_parent_id"
+    EvidenceSpan ||--o{ ExpenseAllocation : "source_span_id"
+    TreatmentEpisode ||--o{ ExpenseLine : "episode_id"
+    Account ||--o{ ExpenseLine : "owner_id"
+    CustomerFact ||--o{ ExpenseLine : "relatedness_fact_id"
+    EvidenceSpan ||--o{ ExpenseLine : "span_id"
+    AuthGroup ||--o{ GroupPermission : "group_id"
+    AuthPermission ||--o{ GroupPermission : "permission_id"
+    OriginalFile ||--o{ LegacyMapping : "archive_blob_id"
+    Account ||--o{ LegacyMapping : "owner_id"
+    Decision ||--o{ Message : "answer_id"
+    Conversation ||--o{ Message : "conversation_id"
+    Account ||--o{ Message : "owner_id"
+    Turn ||--o{ Message : "turn_id"
+    Account ||--o{ ModelAttempt : "owner_id"
+    ProcessingJob ||--o{ ModelAttempt : "processing_job_id"
+    ModelQualification ||--o{ ModelAttempt : "qualification_id"
+    Turn ||--o{ ModelAttempt : "turn_id"
+    ModelRoute ||--o{ ModelQualification : "route_id"
+    Account ||--o{ OriginalFile : "owner_id"
+    Account ||--o{ Outbox : "owner_id"
+    CustomerPolicy ||--o{ PaymentScheduleItem : "customer_policy_id"
+    Account ||--o{ PaymentScheduleItem : "owner_id"
+    PolicyEvent ||--o{ PaymentScheduleItem : "paid_event_id"
+    Quote ||--o{ PaymentScheduleItem : "quote_id"
+    EvidenceSpan ||--o{ PaymentScheduleItem : "span_id"
+    Account ||--o{ Person : "owner_id"
+    Person ||--o{ PersonRelationship : "from_person_id"
+    Account ||--o{ PersonRelationship : "owner_id"
+    CustomerStatement ||--o{ PersonRelationship : "source_statement_id"
+    Person ||--o{ PersonRelationship : "to_person_id"
+    EvidenceSpan ||--o{ PolicyEvent : "authority_evidence_id"
+    CustomerPolicy ||--o{ PolicyEvent : "customer_policy_id"
+    Account ||--o{ PolicyEvent : "owner_id"
+    PolicyEvent ||--o{ PolicyEvent : "related_event_id"
+    EvidenceSpan ||--o{ PolicyEvent : "source_evidence_id"
+    Message ||--o{ PolicyEvent : "source_message_id"
+    PolicyEvent ||--o{ PolicyEvent : "supersedes_event_id"
+    CustomerPolicyRevision ||--o{ PolicyMember : "customer_policy_revision_id"
+    EvidenceSpan ||--o{ PolicyMember : "evidence_span_id"
+    Account ||--o{ PolicyMember : "owner_id"
+    Person ||--o{ PolicyMember : "person_id"
+    PolicyVersion ||--o{ PolicyRule : "policy_version_id"
+    PolicyRule ||--o{ PolicyRule : "supersedes_id"
+    EvidenceSpan ||--o{ PolicyRuleEvidence : "evidence_span_id"
+    PolicyRule ||--o{ PolicyRuleEvidence : "policy_rule_id"
+    PolicyRule ||--o{ PolicyRuleLink : "from_policy_rule_id"
+    PolicyRule ||--o{ PolicyRuleLink : "to_policy_rule_id"
+    EvidenceSpan ||--o{ PolicyRuleTableCell : "evidence_span_id"
+    PolicyRule ||--o{ PolicyRuleTableCell : "policy_rule_id"
+    Product ||--o{ PolicyVersion : "product_id"
+    PolicyVersion ||--o{ PolicyVersion : "supersedes_id"
+    DocumentVersion ||--o{ PolicyVersionDocument : "document_version_id"
+    PolicyVersion ||--o{ PolicyVersionDocument : "policy_version_id"
+    EvidenceSpan ||--o{ PolicyVersionDocument : "precedence_evidence_id"
+    DocumentVersion ||--o{ ProcessingJob : "document_id"
+    Account ||--o{ ProcessingJob : "owner_id"
+    ProcessingJob ||--o{ ProcessingJob : "parent_job_id"
+    OriginalFile ||--o{ ProcessingJob : "result_blob_id"
+    EvidenceSpan ||--o{ Product : "identity_evidence_id"
+    Insurer ||--o{ Product : "insurer_id"
+    EvidenceSpan ||--o{ ProductOption : "identity_evidence_id"
+    PolicyVersion ||--o{ ProductOption : "option_policy_version_id"
+    ProductVariant ||--o{ ProductOption : "product_variant_id"
+    EvidenceSpan ||--o{ ProductVariant : "identity_evidence_id"
+    PolicyVersion ||--o{ ProductVariant : "policy_version_id"
+    Clinician ||--o{ ProviderObservation : "clinician_id"
+    ProductVariant ||--o{ ProviderObservation : "configuration_id"
+    Insurer ||--o{ ProviderObservation : "insurer_id"
+    Account ||--o{ ProviderObservation : "owner_id"
+    Provider ||--o{ ProviderObservation : "provider_id"
+    EvidenceSpan ||--o{ ProviderObservation : "span_id"
+    ProviderObservation ||--o{ ProviderObservation : "supersedes_id"
+    ProductVariant ||--o{ Quote : "configuration_id"
+    Conversation ||--o{ Quote : "conversation_id"
+    Account ||--o{ Quote : "owner_id"
+    CustomerProfileRevision ||--o{ Quote : "profile_revision_id"
+    DocumentVersion ||--o{ Quote : "source_document_id"
+    Account ||--o{ QuoteComponent : "owner_id"
+    Quote ||--o{ QuoteComponent : "quote_id"
+    EvidenceSpan ||--o{ QuoteComponent : "span_id"
+    Account ||--o{ RetentionHold : "approved_by_id"
+    DeletionRequest ||--o{ RetentionHold : "deletion_request_id"
+    Account ||--o{ RetentionHold : "owner_id"
+    Artifact ||--o{ ReviewRecord : "artifact_id"
+    Account ||--o{ ReviewRecord : "owner_id"
+    Account ||--o{ ReviewRecord : "reviewer_account_id"
+    CorpusRevision ||--o{ SearchChunk : "corpus_id"
+    DocumentVersion ||--o{ SearchChunk : "document_id"
+    Account ||--o{ SearchChunk : "owner_id"
+    DiscoveryRun ||--o{ SourceCapture : "discovery_run_id"
+    DocumentVersion ||--o{ SourceCapture : "document_version_id"
+    OriginalFile ||--o{ SourceCapture : "original_file_id"
+    SourceURL ||--o{ SourceCapture : "source_url_id"
+    DiscoveryRun ||--o{ SourceObservation : "discovery_run_id"
+    SourceCapture ||--o{ SourceObservation : "found_in_capture_id"
+    SourceURL ||--o{ SourceObservation : "source_url_id"
+    Product ||--o{ TermsComponent : "component_product_id"
+    PolicyVersion ||--o{ TermsComponent : "component_terms_id"
+    PolicyRule ||--o{ TermsComponent : "selection_policy_rule_id"
+    EvidenceSpan ||--o{ TermsComponent : "source_span_id"
+    TermsComponent ||--o{ TermsComponent : "supersedes_id"
+    PolicyVersion ||--o{ TermsComponent : "wrapper_terms_id"
+    Account ||--o{ TreatmentEpisode : "owner_id"
+    Person ||--o{ TreatmentEpisode : "person_id"
+    Provider ||--o{ TreatmentEpisode : "provider_id"
+    DocumentVersion ||--o{ TreatmentEpisode : "source_document_id"
+    Conversation ||--o{ Turn : "conversation_id"
+    Message ||--o{ Turn : "input_message_id"
+    Account ||--o{ Turn : "owner_id"
+    CustomerProfileRevision ||--o{ Turn : "profile_revision_id"
+    Account ||--o{ TurnEvent : "owner_id"
+    Turn ||--o{ TurnEvent : "turn_id"
+    ClaimLineAssessment ||--o{ UsageEntry : "claim_line_id"
+    ClaimPayment ||--o{ UsageEntry : "claim_payment_id"
+    CustomerPolicyFact ||--o{ UsageEntry : "customer_policy_fact_id"
+    CustomerPolicyRevision ||--o{ UsageEntry : "customer_policy_revision_id"
+    Account ||--o{ UsageEntry : "owner_id"
+    PolicyEvent ||--o{ UsageEntry : "policy_event_id"
+    UsageEntry ||--o{ UsageEntry : "reverses_id"
+    EvidenceSpan ||--o{ UsageEntry : "source_span_id"

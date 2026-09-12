@@ -1,0 +1,96 @@
+{
+  "revision": "discussion-r9",
+  "generated_at_utc": "2026-09-11T11:46:57.451347+00:00",
+  "status": "passed",
+  "scope": "Structural verification of the user-approved Batch 2 design simplification. No Django models, migrations, PostgreSQL runtime constraints or complete-design approval claimed.",
+  "checks": [
+    {
+      "check": "99 unique application entities",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "1002 unique application fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "311 FK relationships match dictionary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all FK targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "approved five-model Batch 2 present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "superseded Batch 2 tables removed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Conversation has one current profile pointer",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "relationship provenance points to CustomerStatement",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "facts and requirements use logical-key revision history",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no profile membership duplication tables",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "FactValueV1 contract present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "case and supplementary field targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "r9 reverse trace covers every field exactly",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "approval boundary recorded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "customer-state narrative uses approved revision model",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "artifact vocabulary contains approved customer entities and no reuse grant",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 16,
+  "failed": 0,
+  "application_entities": 99,
+  "application_fields": 1002,
+  "foreign_keys": 311,
+  "batch1_approval": "explicit user approval on 2026-09-11",
+  "batch2_approval": "explicit user approval on 2026-09-11",
+  "overall_design_approval": false
+}

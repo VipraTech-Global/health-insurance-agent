@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T14:43:09.598489+00:00",
+  "associations": [],
+  "byte_count": 8930,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/javascript",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://orientalinsurance.org.in/static/js/6118.3ab2d79d.chunk.js",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "oriental",
+  "issues": [
+    "unsupported_media_type"
+  ],
+  "language": "unknown",
+  "latency_ms": 576,
+  "linking_url": "https://orientalinsurance.org.in/static/js/main.31a109d1.js",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "80041a4d2cf101cd05668ea45be582a523e00a5fb02586be662b752c1b5c67e9",
+  "status": "failed",
+  "url": "https://orientalinsurance.org.in/static/js/6118.3ab2d79d.chunk.js"
+}

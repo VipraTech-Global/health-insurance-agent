@@ -1,0 +1,97 @@
+{
+  "revision": "discussion-r9",
+  "generated_at_utc": "2026-09-11T11:46:57.451816+00:00",
+  "status": "Batches 1 and 2 approved; complete design remains under staged review",
+  "artifacts": [
+    {
+      "path": "design/FINAL_DATABASE_DESIGN.md",
+      "sha256": "ed6bef59f8248b389460484338a5eb78346738e9a018af821dc96f52182ed84d",
+      "bytes": 19075
+    },
+    {
+      "path": "design/README.md",
+      "sha256": "501727f3c1040b01030b218ba6e486f413a6a37935bc162fd02a16bd42803317",
+      "bytes": 17947
+    },
+    {
+      "path": "design/SIMPLE_DATABASE_REVIEW_GUIDE.md",
+      "sha256": "30cce87e07480bed5c3ece402042ea11a083496684d561a95c742955586f3673",
+      "bytes": 42233
+    },
+    {
+      "path": "design/design-review-decisions.md",
+      "sha256": "769ebae2e17e5cd0dc5bd5e0ef09d970bbe0bf248863913d95edc9d73a63b852",
+      "bytes": 3281
+    },
+    {
+      "path": "design/entity-field-dictionary.json",
+      "sha256": "e3ddc27971326fc558868a347c6491f387ad1cfeaaf435fb6d41887f18fc28d0",
+      "bytes": 860488
+    },
+    {
+      "path": "design/field-dictionary.md",
+      "sha256": "81d74cec8691b7001e150c9da2059b0c3075b7646f72623540b1189a20e3e54e",
+      "bytes": 361931
+    },
+    {
+      "path": "design/entity-catalogue.md",
+      "sha256": "da0e300f96c8942cbb9f357fb48f8c26194b7ccb0b31b133d729e87f3a560383",
+      "bytes": 25165
+    },
+    {
+      "path": "design/relationships.json",
+      "sha256": "1a40913172737a23482f058f0c33a0d8134452feab602909c2f0900347b581fa",
+      "bytes": 192069
+    },
+    {
+      "path": "design/complete-entity-relationships.mmd",
+      "sha256": "1bcad6de631e821a5aefe5fe9fd031f995e25d7762c5ead8aeb8a92d483912dc",
+      "bytes": 21181
+    },
+    {
+      "path": "design/relationships-and-lifecycle.md",
+      "sha256": "f9575ab6349a35ae1aa916cc94b8ee4d0d0ee88b066e1e19977effb2af39c7ef",
+      "bytes": 24877
+    },
+    {
+      "path": "design/storage-and-constraints.md",
+      "sha256": "03651608f8b65471c9934e0cb24a1f4116b4dc8eecbafe537f6a765cf6b167ef",
+      "bytes": 13892
+    },
+    {
+      "path": "design/retrieval-operations.md",
+      "sha256": "cfb0385566d740ed9da9639cbc4c0f7732abe5ec35887ccc4c36e035e838a004",
+      "bytes": 13785
+    },
+    {
+      "path": "design/migration-field-map.json",
+      "sha256": "afcdc48a672b765d24efdfbe192bce079ab996fee39f9428d4279978b1cd2279",
+      "bytes": 115881
+    },
+    {
+      "path": "design/case-requirement-field-map.json",
+      "sha256": "564dd0c8ac99ad7fe3a12a0a1013441396d0e676aad73577424bd8c18427ebed",
+      "bytes": 662958
+    },
+    {
+      "path": "design/additional-case-field-map.json",
+      "sha256": "75c0b7c768976409f50c09f64e54ff5c6e0587509c54727b1da97e608baa17a8",
+      "bytes": 14249
+    },
+    {
+      "path": "design/json-contracts.schema.json",
+      "sha256": "87e8e299d032b4af5b7215097b9ba81168c107fd5d5dc70d3e94287bfd0aa5d3",
+      "bytes": 115432
+    },
+    {
+      "path": "design/field-traceability-r9.json",
+      "sha256": "68d2fd97ef4117ba154bb10e20d28c3c4fa0a810cea7cffae33fb986c8f7a176",
+      "bytes": 288313
+    },
+    {
+      "path": "reports/final-design-verification-r9.json",
+      "sha256": "4591632c05c963d713ccddaf19ee8aca1dadca1669f8632972f87b79998f7ce5",
+      "bytes": 2437
+    }
+  ]
+}

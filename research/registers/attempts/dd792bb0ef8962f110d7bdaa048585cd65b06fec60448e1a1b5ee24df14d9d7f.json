@@ -1,0 +1,105 @@
+{
+  "acquired_at": "2026-09-10T12:35:11.638437+00:00",
+  "associations": [],
+  "byte_count": 3150519,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Diabetes_Safe_Insurance_Policy_V_19_6347629ec3.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "star",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1739,
+  "linking_url": "https://www.starhealth.in/downloads/",
+  "page_count": 10,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 887.2441,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 640.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 887.2441,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 640.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 887.2441,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 640.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 887.2441,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 640.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 887.2441,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 640.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 887.2441,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 640.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 887.2441,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 640.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 887.2441,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 640.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 887.2441,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 640.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 887.2441,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 640.6299
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "42919be2abea044626a58b39f884f92da2364e0b505da04dc69a3168dece06a5",
+  "status": "acquired",
+  "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Diabetes_Safe_Insurance_Policy_V_19_6347629ec3.pdf"
+}

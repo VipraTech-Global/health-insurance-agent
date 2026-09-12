@@ -1,0 +1,105 @@
+{
+  "acquired_at": "2026-09-10T17:15:54.782813+00:00",
+  "associations": [],
+  "byte_count": 206323,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.manipalcigna.com/documents/20124/0/SuperTopUp-Select-CIS-NT/abadd0d1-c1e1-12ee-192d-1f29f57575eb?t=28",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "manipalcigna",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1753,
+  "linking_url": "https://www.manipalcigna.com/downloads/products/-/categories/37837?_com_liferay_asset_categories_navigation_web_portlet_AssetCategoriesNavigationPortlet_INSTANCE_ibpFWBmnsYQg_vocabularyId=37736",
+  "page_count": 10,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "b87db6bec98c84004894716790a16916019bd29d699b2c58e8f77d6c431acda7",
+  "status": "acquired",
+  "url": "https://www.manipalcigna.com/documents/20124/0/SuperTopUp-Select-CIS-NT/abadd0d1-c1e1-12ee-192d-1f29f57575eb?t=28"
+}

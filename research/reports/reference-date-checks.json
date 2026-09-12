@@ -1,0 +1,72 @@
+{
+  "checked_at": "2026-09-10T13:33:44.587327+00:00",
+  "checks": [
+    {
+      "actual": 35,
+      "case_id": "ref-15-02",
+      "expected": 35,
+      "pass": true,
+      "quantity": "months at proposed migration",
+      "units_and_assumptions": "calendar months; both day1"
+    },
+    {
+      "actual": 60,
+      "case_id": "ref-15-03",
+      "expected": 60,
+      "pass": true,
+      "quantity": "initial layer months",
+      "units_and_assumptions": "calendar anniversary; both1July"
+    },
+    {
+      "actual": 24,
+      "case_id": "ref-15-03",
+      "expected": 24,
+      "pass": true,
+      "quantity": "enhanced layer months",
+      "units_and_assumptions": "calendar anniversary; both1July"
+    },
+    {
+      "actual": 19,
+      "case_id": "ref-15-05",
+      "expected": 19,
+      "pass": true,
+      "quantity": "original late-payment days",
+      "units_and_assumptions": "elapsed calendar days"
+    },
+    {
+      "actual": 35,
+      "case_id": "ref-15-05",
+      "expected": 35,
+      "pass": true,
+      "quantity": "corrected late-payment days",
+      "units_and_assumptions": "elapsed calendar days"
+    },
+    {
+      "actual": 19,
+      "case_id": "ref-16-01",
+      "expected": 19,
+      "pass": true,
+      "quantity": "annual renewal payment delay",
+      "units_and_assumptions": "elapsed calendar days"
+    },
+    {
+      "actual": 61,
+      "case_id": "ref-16-06",
+      "expected": 61,
+      "pass": true,
+      "quantity": "renewal after withdrawal",
+      "units_and_assumptions": "elapsed calendar days"
+    },
+    {
+      "actual": "2026-09-11T10:00:00+05:30",
+      "case_id": "ref-15-04",
+      "expected": "2026-09-11T10:00:00+05:30",
+      "pass": true,
+      "quantity": "72hour receipt deadline",
+      "units_and_assumptions": "fixed hours with explicit UTCoffset"
+    }
+  ],
+  "format_version": 1,
+  "legal_limit": "Only date arithmetic is verified. Grace inclusivity, evidence applicability and actual insurer acceptance remain separate. Endpoints selected away from ambiguous expiry-day boundaries.",
+  "method": "Independent standard-library date arithmetic on authored inputs; no adviser implementation invoked"
+}

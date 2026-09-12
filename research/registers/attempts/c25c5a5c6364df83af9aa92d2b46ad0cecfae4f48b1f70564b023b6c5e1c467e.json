@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:52:32.099396+00:00",
+  "associations": [],
+  "byte_count": 246293,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.manipalcigna.com/documents/d/rewamp/ca_final-list-as-on-31-aug-2026",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "manipalcigna",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 271,
+  "linking_url": "https://www.manipalcigna.com/downloads/products",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "1dffacf28234aa5c1f13ed1899e99cc93e2a4faf5a231efe70fe9f6ff665ac12",
+  "status": "acquired",
+  "url": "https://www.manipalcigna.com/documents/d/rewamp/ca_final-list-as-on-31-aug-2026"
+}

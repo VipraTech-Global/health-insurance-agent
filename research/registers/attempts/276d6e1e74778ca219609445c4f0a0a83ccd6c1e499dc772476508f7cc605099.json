@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:02:11.013288+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/top-up-mediclaim-policy/Claim_Form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 7676,
+  "linking_url": "https://www.newindia.co.in/health-insurance/new-india-top-up-mediclaim-insurance",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "4402f1cdaa4690f9d1b930ee5aa119e7688b530c4204e9d63b6d076aa5e67370",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/top-up-mediclaim-policy/Claim_Form.pdf"
+}

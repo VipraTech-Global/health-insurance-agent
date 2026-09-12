@@ -1,0 +1,120 @@
+{
+  "revision": "discussion-r25-final-review",
+  "generated_at_utc": "2026-09-12T15:31:55.025304+00:00",
+  "status": "passed",
+  "scope": "Structural verification of the complete application and independent benchmark proposals. No implementation or evidence/acceptance result is claimed.",
+  "checks": [
+    {
+      "check": "62 unique custom application models",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "587 unique application fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "167 typed relationships match fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all application FK targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "out-of-scope and duplicate models absent",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Django framework tables excluded from custom models",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "duplicate Message.turn_id absent",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "starting and final profile semantics present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "private commitment fields present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "claim and receipt customer-facing enums removed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all mapped fields resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "400 scenario mappings retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "automatic migration destinations resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "migration target entities resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "trace covers every final field",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "trace input hashes match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "JSON roots resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all application JSON definitions reachable",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Batch 17 benchmark verifier passed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "complete design remains unapproved",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 20,
+  "failed": 0,
+  "application_entities": 62,
+  "application_fields": 587,
+  "application_foreign_keys": 167,
+  "application_json_definitions": 31,
+  "benchmark_entities": 24,
+  "benchmark_fields": 296,
+  "benchmark_foreign_keys": 39,
+  "benchmark_payload_contracts": 12,
+  "approved_batches": "1 through 17 plus final critical audit",
+  "overall_database_design_approval": false
+}

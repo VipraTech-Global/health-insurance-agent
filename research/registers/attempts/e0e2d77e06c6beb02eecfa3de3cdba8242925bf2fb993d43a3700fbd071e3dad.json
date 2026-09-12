@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:03:32.333455+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/tertiary-care-insurance-individual/Policy%20Clause%20Tertiary%20Care%20Policy%20-%20Individual.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 6507,
+  "linking_url": "https://www.newindia.co.in/health-insurance/tertiary-care-insurance-individual",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "aca9d72b745cec31bed73efdd21ea69ed33b97e550f7d0b0af3b99fe91709795",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/tertiary-care-insurance-individual/Policy Clause Tertiary Care Policy - Individual.pdf"
+}

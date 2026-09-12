@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T12:01:33.266158+00:00",
+  "associations": [],
+  "byte_count": 189060,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://assets.ctfassets.net/uwf0n1j71a7j/3xn1Ge4B0lbGVh8hcxWxr5/68df83c4b37ef1c28c47e57a782cd789/acko-personal-health-policy-portability-form-and-annexure.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "acko",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1080,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "b6d15d8b48c212a38fa3c024dd36399ea7c524f09f3a099b44f0e3bdba1cd71d",
+  "status": "acquired",
+  "url": "https://assets.ctfassets.net/uwf0n1j71a7j/3xn1Ge4B0lbGVh8hcxWxr5/68df83c4b37ef1c28c47e57a782cd789/acko-personal-health-policy-portability-form-and-annexure.pdf"
+}

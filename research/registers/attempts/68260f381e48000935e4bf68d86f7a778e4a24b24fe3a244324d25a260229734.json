@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T11:59:31.701658+00:00",
+  "associations": [],
+  "byte_count": 894265,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.generalicentralinsurance.com/downloads/health-insurance/personal-accident/claim-forms/accident-suraksha-claim-form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "generali-central",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1737,
+  "linking_url": "https://www.generalicentralinsurance.com/customer-service/downloads",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "9580b706f30a72e604a8cf00e5275a48f8584fe7e1020a325db488c94b920c8c",
+  "status": "acquired",
+  "url": "https://www.generalicentralinsurance.com/downloads/health-insurance/personal-accident/claim-forms/accident-suraksha-claim-form.pdf"
+}

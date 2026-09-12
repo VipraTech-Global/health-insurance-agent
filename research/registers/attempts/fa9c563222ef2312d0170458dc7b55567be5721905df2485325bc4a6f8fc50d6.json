@@ -1,0 +1,23 @@
+{
+  "acquired_at": "2026-09-10T12:00:47.437502+00:00",
+  "associations": [],
+  "component_version": "research-acquisition/1",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.generalicentralinsurance.com/content/dam/futuregeneraliindiainsurancecoltd/footer-pdf/non-health-product-list-use-and-file.pdf",
+  "format_version": 1,
+  "http_status": 301,
+  "insurer_id": "generali-central",
+  "issues": [
+    "host_not_approved"
+  ],
+  "language": "unknown",
+  "latency_ms": 167,
+  "linking_url": "https://www.generalicentralinsurance.com/customer-service/downloads",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": null,
+  "status": "failed",
+  "url": "https://www.generalicentralinsurance.com/content/dam/futuregeneraliindiainsurancecoltd/footer-pdf/non-health-product-list-use-and-file.pdf"
+}

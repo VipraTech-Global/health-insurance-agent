@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:59:12.985308+00:00",
+  "associations": [],
+  "byte_count": 462448,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/pre-post-hospitalisation-rider/Prospectus%20Pre%20and%20Post%20Hospitisaltion%20Rider.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1118,
+  "linking_url": "https://www.newindia.co.in/health-insurance/pre-post-hospitalisation-rider",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "3daf9bb3478437c25ce42d6d0899fc1c01021f43c60741d8721192b1775dfedb",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/pre-post-hospitalisation-rider/Prospectus Pre and Post Hospitisaltion Rider.pdf"
+}

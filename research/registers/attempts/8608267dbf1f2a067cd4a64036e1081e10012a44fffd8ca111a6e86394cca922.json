@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:33:02.311052+00:00",
+  "associations": [],
+  "byte_count": 403,
+  "component_version": "research-acquisition/2",
+  "content_type": "text/html",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.careinsurance.com/product/care-supreme",
+  "format_version": 1,
+  "http_status": 403,
+  "insurer_id": "care",
+  "issues": [
+    "http_403"
+  ],
+  "language": "unknown",
+  "latency_ms": 123,
+  "linking_url": "",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "f13181971ee58142170d7ecf78d72fa7b222b28bed58e1ece8eacf1522ce2277",
+  "status": "failed",
+  "url": "https://www.careinsurance.com/product/care-supreme"
+}

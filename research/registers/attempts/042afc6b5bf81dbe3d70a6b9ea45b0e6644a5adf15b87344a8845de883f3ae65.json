@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:59:14.115098+00:00",
+  "associations": [],
+  "byte_count": 440016,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/Deductible%20Rider%20CLAUSE%20(1).pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1374,
+  "linking_url": "https://www.newindia.co.in/health-insurance/deductible-rider",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "339ce4f3aea9474e08fce7efb8f3c85a6d4e8b2d3365f39501ff8cc9b8b366fe",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/Deductible Rider CLAUSE (1).pdf"
+}

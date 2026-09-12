@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:02:04.226544+00:00",
+  "associations": [],
+  "byte_count": 263,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/xml",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://acko-wordpress.s3.ap-south-1.amazonaws.com/wp-content/uploads/2021/09/01.10.2021+-Arogya+Sanjeevani+Policy_Acko+General+Insurance_Policy+Schedule+(1.10.2021).pdf",
+  "format_version": 1,
+  "http_status": 403,
+  "insurer_id": "acko",
+  "issues": [
+    "http_403"
+  ],
+  "language": "unknown",
+  "latency_ms": 189,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "96b0f27d7a13d31f7bba5caf409bc19f847ff72bb1542b881faf35a50c7f9e1c",
+  "status": "failed",
+  "url": "https://acko-wordpress.s3.ap-south-1.amazonaws.com/wp-content/uploads/2021/09/01.10.2021+-Arogya+Sanjeevani+Policy_Acko+General+Insurance_Policy+Schedule+(1.10.2021).pdf"
+}

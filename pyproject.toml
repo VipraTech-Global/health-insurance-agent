@@ -1,0 +1,64 @@
+[project]
+name = "health-insurance-adviser"
+version = "0.1.0"
+description = "Evidence-first health insurance advisory pilot"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "django==5.2.17",
+  "djangorestframework==3.18.1",
+  "drf-spectacular==0.29.0",
+  "psycopg[binary,pool]==3.2.10",
+  "pydantic==2.11.9",
+  "httpx==0.28.1",
+  "uvicorn==0.35.0",
+  "whitenoise==6.11.0",
+  "pdfplumber==0.11.10",
+  "celery==5.6.3",
+  "redis==8.1.0",
+  "defusedxml==0.7.1",
+]
+
+[dependency-groups]
+dev = [
+  "pytest==8.4.2",
+  "pytest-django==4.11.1",
+  "pytest-cov==7.0.0",
+  "ruff==0.13.1",
+  "mypy==1.18.2",
+  "django-stubs==5.2.5",
+  "djangorestframework-stubs==3.16.4",
+  "openapi-spec-validator==0.7.2",
+  "pytest-asyncio==1.2.0",
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings"
+pythonpath = ["backend"]
+testpaths = ["backend/apps"]
+addopts = "-ra --strict-markers"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "DJ", "UP"]
+ignore = ["DJ001", "DJ008", "E501"]
+
+[tool.mypy]
+python_version = "3.12"
+plugins = ["mypy_django_plugin.main"]
+strict = true
+mypy_path = "backend"
+exclude = ["migrations", "tests"]
+
+[[tool.mypy.overrides]]
+module = "celery.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "defusedxml.*"
+ignore_missing_imports = true
+
+[tool.django-stubs]
+django_settings_module = "config.settings"

@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T12:00:48.360287+00:00",
+  "associations": [],
+  "byte_count": 427072,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/standard-group-janata-mediclaim-policy/List%20of%20excluded%20items.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 6318,
+  "linking_url": "https://www.newindia.co.in/health-insurance/standard-group-janata-mediclaim",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "41589141cc07700598f77428b40458cbc951e089aee35e6020225f207efcf832",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/standard-group-janata-mediclaim-policy/List of excluded items.pdf"
+}

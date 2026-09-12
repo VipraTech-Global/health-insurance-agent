@@ -1,0 +1,15 @@
+{
+  "observed_at": "2026-09-10T11:49:44.272363+00:00",
+  "mode": "read-only qualification probe; no route/account/database mutation",
+  "requested_model": "gpt-6-astra",
+  "new_extraction_review_schema_qualified": false,
+  "model_discovered": true,
+  "route_id": "ed3b437f-2093-4d48-aa0c-1356d0ffa649",
+  "outcome": "passed_existing_interview_schema",
+  "reported_model": "gpt-6-astra",
+  "usage": {
+    "input_tokens": 438,
+    "output_tokens": 59,
+    "total_tokens": 497
+  }
+}

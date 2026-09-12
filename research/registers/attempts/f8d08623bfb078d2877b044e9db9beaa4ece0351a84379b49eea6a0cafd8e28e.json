@@ -1,0 +1,73 @@
+{
+  "acquired_at": "2026-09-10T11:55:34.130185+00:00",
+  "associations": [],
+  "byte_count": 282376,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/SECURED_FUTURE_PLAN_716730dc0f.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 229,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 6,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 419.52
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "b3e230aaf1a87f0472ea2325b490a6f3b36496aae147b2ccd97b993d0cec9134",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/SECURED_FUTURE_PLAN_716730dc0f.pdf"
+}

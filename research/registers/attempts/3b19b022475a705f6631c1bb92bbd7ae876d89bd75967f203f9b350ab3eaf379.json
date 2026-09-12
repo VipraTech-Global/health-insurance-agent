@@ -1,0 +1,21 @@
+{
+  "acquired_at": "2026-09-10T11:38:54.354249+00:00",
+  "associations": [],
+  "component_version": "research-acquisition/1",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "format_version": 1,
+  "insurer_id": "narayana",
+  "issues": [
+    "host_not_approved"
+  ],
+  "language": "unknown",
+  "latency_ms": 0,
+  "linking_url": "https://www.narayanahealth.insurance/customer-support",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": null,
+  "status": "failed",
+  "url": "https://stgaccinwbsprdlrs01.blob.core.windows.net/nhilprd/Privacy_Notice_NHIL_Website_changes_33d11dd255.pdf?sv=2025-05-05&spr=https&st=2026-09-04T09%3A12%3A29Z&se=2036-09-01T09%3A12%3A29Z&sr=b&sp=r&sig=3oW9kwUiAuC4sLLPWK4GeslWPNpkwgmMUuuubRpgc%2Fc%3D"
+}

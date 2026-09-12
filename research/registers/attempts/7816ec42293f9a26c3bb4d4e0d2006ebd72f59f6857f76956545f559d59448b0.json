@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T11:58:40.015392+00:00",
+  "associations": [],
+  "byte_count": 255655,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/cancer-guard-policy/CIS%20New%20india%20cancer%20guard.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 5504,
+  "linking_url": "https://www.newindia.co.in/health-insurance/new-india-cancer-guard-policy",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "5edcec93ce6665be3bd338f98a2ffa5a70300785e624f9757a79da371cbb2d33",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/cancer-guard-policy/CIS New india cancer guard.pdf"
+}

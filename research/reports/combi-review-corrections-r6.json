@@ -1,0 +1,15 @@
+{
+  "revision": "discussion-r6",
+  "review": "reports/database-proposal-review-r6.json",
+  "before_dictionary_sha256": "21ff6633ae59c3ee2fc68f5450e78221da3cc2aee7679d221023e07ce0a85bbd",
+  "after_dictionary_sha256": "64aeb37c889c3d4b204ae62b72ef0b7c48adbcc9f985bb80d74be41e8f58a18e",
+  "fixes": [
+    "Distinct policy cancellation/refund event kinds and typed sender/recipient/delegation evidence.",
+    "Explicit seal timestamp/digest/version and parent-lock/commit guards reject late insertion and all sealed mutations.",
+    "Duplicate component membership checks underlying PolicyContract identity, not only its revision."
+  ],
+  "runtime_implemented": false,
+  "review_status": "author_recheck_passed_independent_recheck_pending",
+  "author_recheck": "reports/combi-author-recheck-r6.json",
+  "current_dictionary_sha256": "cd69328329ca30d961d10b08a01a1c3d482813106f96fc76097a91f4d87e1660"
+}

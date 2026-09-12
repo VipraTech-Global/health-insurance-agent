@@ -1,0 +1,1006 @@
+{
+  "purpose": "Titles only for independent benchmark overlap review; contains no expected answers, decision distinctions or case solutions.",
+  "reference_artifact_sha256": "531a6c3a99f2dd8e9dba99db95aff4de70409d085fd12be3d3b07fbbdbf6bff1",
+  "cases": [
+    {
+      "case_id": "ref-01-01",
+      "family": 1,
+      "title": "Does the free-look clock start when my first policy begins or when I receive it?"
+    },
+    {
+      "case_id": "ref-01-02",
+      "family": 1,
+      "title": "I can spend 8000 rupees a year and cannot pay a large bill upfront."
+    },
+    {
+      "case_id": "ref-01-03",
+      "family": 1,
+      "title": "Can my savings fund two admissions while a top-up reimbursement is pending?"
+    },
+    {
+      "case_id": "ref-01-04",
+      "family": 1,
+      "title": "I have no preferred insurer but must keep my existing specialist at my chosen hospital."
+    },
+    {
+      "case_id": "ref-01-05",
+      "family": 1,
+      "title": "I am healthy and want to compare a larger sum insured with a restoration benefit."
+    },
+    {
+      "case_id": "ref-01-06",
+      "family": 1,
+      "title": "I have variable freelance income and want instalments without unexpected gaps in cover."
+    },
+    {
+      "case_id": "ref-01-07",
+      "family": 1,
+      "title": "Would choosing an eligible room keep my admission within my emergency cash?"
+    },
+    {
+      "case_id": "ref-01-08",
+      "family": 1,
+      "title": "I want a first policy but may move from Jaipur to Mumbai next year."
+    },
+    {
+      "case_id": "ref-01-09",
+      "family": 1,
+      "title": "I can pay more for fewer deductions but have not decided which optional covers matter."
+    },
+    {
+      "case_id": "ref-01-10",
+      "family": 1,
+      "title": "I am buying online for the first time and do not understand whether the quote includes add-ons."
+    },
+    {
+      "case_id": "ref-02-01",
+      "family": 2,
+      "title": "We are a couple with two young children and want individual cover versus a floater compared."
+    },
+    {
+      "case_id": "ref-02-02",
+      "family": 2,
+      "title": "I want to put my healthy spouse and my diabetic parent on one floater."
+    },
+    {
+      "case_id": "ref-02-03",
+      "family": 2,
+      "title": "Two family members may need planned procedures in the same policy year."
+    },
+    {
+      "case_id": "ref-02-04",
+      "family": 2,
+      "title": "My spouse has separate insurance and I only need cover for myself and our child."
+    },
+    {
+      "case_id": "ref-02-05",
+      "family": 2,
+      "title": "My partner and I are not married and want to know whether one floater accepts us."
+    },
+    {
+      "case_id": "ref-02-06",
+      "family": 2,
+      "title": "I want to include my parents-in-law alongside my spouse and parents."
+    },
+    {
+      "case_id": "ref-02-07",
+      "family": 2,
+      "title": "How much does adding my older mother change these joint-versus-split quote costs?"
+    },
+    {
+      "case_id": "ref-02-08",
+      "family": 2,
+      "title": "A child has a chronic illness and we want to avoid exhausting everyone else's cover."
+    },
+    {
+      "case_id": "ref-02-09",
+      "family": 2,
+      "title": "We live in different cities and need a family plan usable in both places."
+    },
+    {
+      "case_id": "ref-02-10",
+      "family": 2,
+      "title": "We want to split a large family between two floaters without duplicating anyone."
+    },
+    {
+      "case_id": "ref-03-01",
+      "family": 3,
+      "title": "Our newborn needs cover from birth and our policy has a later entry-age threshold."
+    },
+    {
+      "case_id": "ref-03-02",
+      "family": 3,
+      "title": "My child reaches the dependent-age limit just before renewal."
+    },
+    {
+      "case_id": "ref-03-03",
+      "family": 3,
+      "title": "We adopted a child midyear and want to add them without restarting existing members' waits."
+    },
+    {
+      "case_id": "ref-03-04",
+      "family": 3,
+      "title": "My newborn required intensive care before we submitted the addition request."
+    },
+    {
+      "case_id": "ref-03-05",
+      "family": 3,
+      "title": "My adult child earns a salary but still lives with me."
+    },
+    {
+      "case_id": "ref-03-06",
+      "family": 3,
+      "title": "My student child studies outside our home city and remains financially dependent."
+    },
+    {
+      "case_id": "ref-03-07",
+      "family": 3,
+      "title": "Our second baby will exceed the maximum number of children on our floater."
+    },
+    {
+      "case_id": "ref-03-08",
+      "family": 3,
+      "title": "Can a newly added child inherit the parents' completed waiting periods?"
+    },
+    {
+      "case_id": "ref-03-09",
+      "family": 3,
+      "title": "I want a child-only policy because both parents already have employer cover."
+    },
+    {
+      "case_id": "ref-03-10",
+      "family": 3,
+      "title": "My dependent child is getting married during the policy term."
+    },
+    {
+      "case_id": "ref-04-01",
+      "family": 4,
+      "title": "I am 35 and buying for my 70-year-old mother who has no insurance."
+    },
+    {
+      "case_id": "ref-04-02",
+      "family": 4,
+      "title": "My father is 68 with diabetes and loses employer cover next month; he needs a private room."
+    },
+    {
+      "case_id": "ref-04-03",
+      "family": 4,
+      "title": "My mother is exactly at a product's maximum entry age on her proposed start date."
+    },
+    {
+      "case_id": "ref-04-04",
+      "family": 4,
+      "title": "Would a reported cap change my father\u2019s otherwise unaffordable co-pay?"
+    },
+    {
+      "case_id": "ref-04-05",
+      "family": 4,
+      "title": "My parents are different ages and one needs regular cardiac follow-up."
+    },
+    {
+      "case_id": "ref-04-06",
+      "family": 4,
+      "title": "A senior plan requires screening and we have not received the underwriting decision."
+    },
+    {
+      "case_id": "ref-04-07",
+      "family": 4,
+      "title": "My father has lifelong renewal on an old policy that no longer admits new customers."
+    },
+    {
+      "case_id": "ref-04-08",
+      "family": 4,
+      "title": "My mother wants a hospital outside the senior plan's restricted network."
+    },
+    {
+      "case_id": "ref-04-09",
+      "family": 4,
+      "title": "My parent wants to buy higher cover after using most savings on a previous admission."
+    },
+    {
+      "case_id": "ref-04-10",
+      "family": 4,
+      "title": "My father is retired and needs to compare room restrictions with a voluntary deductible."
+    },
+    {
+      "case_id": "ref-05-01",
+      "family": 5,
+      "title": "I have diabetes controlled with tablets and want a new policy."
+    },
+    {
+      "case_id": "ref-05-02",
+      "family": 5,
+      "title": "I have hypertension and want to know whether declaring it changes eligibility or waiting periods."
+    },
+    {
+      "case_id": "ref-05-03",
+      "family": 5,
+      "title": "My asthma needs intermittent inhalers and I have never been hospitalised."
+    },
+    {
+      "case_id": "ref-05-04",
+      "family": 5,
+      "title": "I take thyroid medication and was told small conditions need not be disclosed."
+    },
+    {
+      "case_id": "ref-05-05",
+      "family": 5,
+      "title": "My parent has diabetes and hypertension and needs a preferred hospital."
+    },
+    {
+      "case_id": "ref-05-06",
+      "family": 5,
+      "title": "I was diagnosed with diabetes after applying but before the proposed start date."
+    },
+    {
+      "case_id": "ref-05-07",
+      "family": 5,
+      "title": "A chronic-care add-on advertises earlier cover but is not selected in my quote."
+    },
+    {
+      "case_id": "ref-05-08",
+      "family": 5,
+      "title": "Does uncontrolled diabetes change the obesity-surgery exclusion at BMI exactly 35?"
+    },
+    {
+      "case_id": "ref-05-09",
+      "family": 5,
+      "title": "My insurer accepted diabetes but added a disease-specific co-pay."
+    },
+    {
+      "case_id": "ref-05-10",
+      "family": 5,
+      "title": "I have an abnormal blood test with no confirmed diagnosis and want to complete a proposal."
+    },
+    {
+      "case_id": "ref-06-01",
+      "family": 6,
+      "title": "I had cancer treatment three years ago and want a new medical-expense policy."
+    },
+    {
+      "case_id": "ref-06-02",
+      "family": 6,
+      "title": "My father had a coronary stent and is considering a cardiac-specific policy."
+    },
+    {
+      "case_id": "ref-06-03",
+      "family": 6,
+      "title": "I have chronic kidney disease and need to distinguish dialysis from hospital benefits."
+    },
+    {
+      "case_id": "ref-06-04",
+      "family": 6,
+      "title": "How should a later final report change an assessment based on a provisional diagnosis?"
+    },
+    {
+      "case_id": "ref-06-05",
+      "family": 6,
+      "title": "My mother has cancer history and diabetes and needs higher cover."
+    },
+    {
+      "case_id": "ref-06-06",
+      "family": 6,
+      "title": "An insurer has offered cover excluding recurrence of my previous disease."
+    },
+    {
+      "case_id": "ref-06-07",
+      "family": 6,
+      "title": "I had surgery years ago and the proposal asks about lifetime medical history."
+    },
+    {
+      "case_id": "ref-06-08",
+      "family": 6,
+      "title": "I have a pending biopsy and want immediate cover before the result."
+    },
+    {
+      "case_id": "ref-06-09",
+      "family": 6,
+      "title": "My existing policy covered a major claim and I am worried about renewal."
+    },
+    {
+      "case_id": "ref-06-10",
+      "family": 6,
+      "title": "I need transplant-related expenses assessed for recipient and donor separately."
+    },
+    {
+      "case_id": "ref-07-01",
+      "family": 7,
+      "title": "I need inpatient mental-health treatment and want the applicable exclusions checked."
+    },
+    {
+      "case_id": "ref-07-02",
+      "family": 7,
+      "title": "I have a physical disability and want a policy that actually accepts my situation."
+    },
+    {
+      "case_id": "ref-07-03",
+      "family": 7,
+      "title": "My child has an internal congenital condition and needs surgery."
+    },
+    {
+      "case_id": "ref-07-04",
+      "family": 7,
+      "title": "I live with HIV and want medical-expense cover with clear waiting periods."
+    },
+    {
+      "case_id": "ref-07-05",
+      "family": 7,
+      "title": "My parent has disability and diabetes and needs accessible network hospitals."
+    },
+    {
+      "case_id": "ref-07-06",
+      "family": 7,
+      "title": "A brochure says mental health is covered but I need outpatient counselling."
+    },
+    {
+      "case_id": "ref-07-07",
+      "family": 7,
+      "title": "My condition is an external congenital anomaly and an add-on is offered."
+    },
+    {
+      "case_id": "ref-07-08",
+      "family": 7,
+      "title": "I want to know whether substance-related treatment is treated differently from other mental care."
+    },
+    {
+      "case_id": "ref-07-09",
+      "family": 7,
+      "title": "An insurer has a specific product for HIV and disability with different limits."
+    },
+    {
+      "case_id": "ref-07-10",
+      "family": 7,
+      "title": "My schedule contains an individual exclusion that appears to conflict with a general benefit."
+    },
+    {
+      "case_id": "ref-08-01",
+      "family": 8,
+      "title": "I am already pregnant and want to buy a policy for this delivery."
+    },
+    {
+      "case_id": "ref-08-02",
+      "family": 8,
+      "title": "We plan pregnancy in two years and want maternity waiting periods compared."
+    },
+    {
+      "case_id": "ref-08-03",
+      "family": 8,
+      "title": "My policy has separate normal-delivery and caesarean limits."
+    },
+    {
+      "case_id": "ref-08-04",
+      "family": 8,
+      "title": "I want IVF expenses covered and a brochure only mentions maternity."
+    },
+    {
+      "case_id": "ref-08-05",
+      "family": 8,
+      "title": "We need maternity plus newborn intensive care under a shared floater."
+    },
+    {
+      "case_id": "ref-08-06",
+      "family": 8,
+      "title": "My maternity waiting period ends close to the expected delivery date."
+    },
+    {
+      "case_id": "ref-08-07",
+      "family": 8,
+      "title": "Our policy limits the number of covered deliveries and this is our third child."
+    },
+    {
+      "case_id": "ref-08-08",
+      "family": 8,
+      "title": "My spouse wants to join my policy shortly before a planned pregnancy."
+    },
+    {
+      "case_id": "ref-08-09",
+      "family": 8,
+      "title": "I need treatment for pregnancy complications distinguished from routine delivery."
+    },
+    {
+      "case_id": "ref-08-10",
+      "family": 8,
+      "title": "A maternity add-on is available but its premium and selected status are unknown."
+    },
+    {
+      "case_id": "ref-09-01",
+      "family": 9,
+      "title": "Does a four-hour cataract procedure qualify if the clinic lacks its own operation theatre?"
+    },
+    {
+      "case_id": "ref-09-02",
+      "family": 9,
+      "title": "My doctor proposes robotic surgery and I need modern-treatment limits checked."
+    },
+    {
+      "case_id": "ref-09-03",
+      "family": 9,
+      "title": "I want AYUSH treatment in a recognised inpatient hospital."
+    },
+    {
+      "case_id": "ref-09-04",
+      "family": 9,
+      "title": "Does a stem-cell label make platelet-rich-plasma joint injections a covered modern treatment?"
+    },
+    {
+      "case_id": "ref-09-05",
+      "family": 9,
+      "title": "A procedure takes six hours and the policy lists specific daycare conditions."
+    },
+    {
+      "case_id": "ref-09-06",
+      "family": 9,
+      "title": "I need oral chemotherapy and the policy describes modern treatments."
+    },
+    {
+      "case_id": "ref-09-07",
+      "family": 9,
+      "title": "I want an experimental treatment that appears in a hospital brochure."
+    },
+    {
+      "case_id": "ref-09-08",
+      "family": 9,
+      "title": "Can the hospital's coronary stent price establish the insurer's payable device amount?"
+    },
+    {
+      "case_id": "ref-09-09",
+      "family": 9,
+      "title": "My treatment is medically necessary but will be performed in a clinic."
+    },
+    {
+      "case_id": "ref-09-10",
+      "family": 9,
+      "title": "I need ambulance costs alongside a covered daycare procedure."
+    },
+    {
+      "case_id": "ref-10-01",
+      "family": 10,
+      "title": "I need regular medicines without any hospital admission."
+    },
+    {
+      "case_id": "ref-10-02",
+      "family": 10,
+      "title": "My tests occurred before admission and may fall within the pre-hospitalisation window."
+    },
+    {
+      "case_id": "ref-10-03",
+      "family": 10,
+      "title": "My follow-up bill is on the last day of the post-hospitalisation period."
+    },
+    {
+      "case_id": "ref-10-04",
+      "family": 10,
+      "title": "I need treatment at home because no hospital bed was available."
+    },
+    {
+      "case_id": "ref-10-05",
+      "family": 10,
+      "title": "I prefer treatment at home for convenience and want domiciliary cover checked."
+    },
+    {
+      "case_id": "ref-10-06",
+      "family": 10,
+      "title": "My outpatient benefit has a yearly cap and a network-only condition."
+    },
+    {
+      "case_id": "ref-10-07",
+      "family": 10,
+      "title": "I need physiotherapy after discharge and the hospitalisation claim was accepted."
+    },
+    {
+      "case_id": "ref-10-08",
+      "family": 10,
+      "title": "Does the included doctor chat reimburse my diabetes medicines or provide a repeat prescription?"
+    },
+    {
+      "case_id": "ref-10-09",
+      "family": 10,
+      "title": "My outpatient add-on requires app booking but I used a walk-in clinic."
+    },
+    {
+      "case_id": "ref-10-10",
+      "family": 10,
+      "title": "I need nursing at home after surgery and separate consumable supplies."
+    },
+    {
+      "case_id": "ref-11-01",
+      "family": 11,
+      "title": "My private room exceeds the room-rent limit and I need proportionate deductions calculated."
+    },
+    {
+      "case_id": "ref-11-02",
+      "family": 11,
+      "title": "My policy has a co-pay and a deductible and I need the order of calculation checked."
+    },
+    {
+      "case_id": "ref-11-03",
+      "family": 11,
+      "title": "My bill includes consumables and I did not buy the consumables add-on."
+    },
+    {
+      "case_id": "ref-11-04",
+      "family": 11,
+      "title": "A cataract sublimit is lower than my sum insured."
+    },
+    {
+      "case_id": "ref-11-05",
+      "family": 11,
+      "title": "Why can the remitted amount be below an otherwise calculated top-up benefit?"
+    },
+    {
+      "case_id": "ref-11-06",
+      "family": 11,
+      "title": "My room upgrade was medically necessary and ICU wording differs from ordinary-room wording."
+    },
+    {
+      "case_id": "ref-11-07",
+      "family": 11,
+      "title": "I selected a voluntary co-pay in return for a lower premium."
+    },
+    {
+      "case_id": "ref-11-08",
+      "family": 11,
+      "title": "My hospital bill has non-admissible items and co-pay applies only to admissible costs."
+    },
+    {
+      "case_id": "ref-11-09",
+      "family": 11,
+      "title": "A percentage room limit is based on sum insured and my bonus increased the displayed cover."
+    },
+    {
+      "case_id": "ref-11-10",
+      "family": 11,
+      "title": "My procedure limit includes implant costs and my estimate itemises them separately."
+    },
+    {
+      "case_id": "ref-12-01",
+      "family": 12,
+      "title": "My first claim exhausts the base sum insured and I want restoration for the same admission."
+    },
+    {
+      "case_id": "ref-12-02",
+      "family": 12,
+      "title": "My second admission is for the same illness and restoration has a related-illness condition."
+    },
+    {
+      "case_id": "ref-12-03",
+      "family": 12,
+      "title": "Two members share a floater and only one has made a claim."
+    },
+    {
+      "case_id": "ref-12-04",
+      "family": 12,
+      "title": "My policy restores cover only after complete exhaustion."
+    },
+    {
+      "case_id": "ref-12-05",
+      "family": 12,
+      "title": "My insurer advertises unlimited restoration but there is a per-claim limit."
+    },
+    {
+      "case_id": "ref-12-06",
+      "family": 12,
+      "title": "I earned a cumulative bonus and want to know how a claim affects it at renewal."
+    },
+    {
+      "case_id": "ref-12-07",
+      "family": 12,
+      "title": "My restoration benefit applies to unrelated illnesses and the diagnosis is uncertain."
+    },
+    {
+      "case_id": "ref-12-08",
+      "family": 12,
+      "title": "A claim crosses the policy-year boundary and I need the correct year's limits."
+    },
+    {
+      "case_id": "ref-12-09",
+      "family": 12,
+      "title": "My bonus is capped as a percentage of base sum insured."
+    },
+    {
+      "case_id": "ref-12-10",
+      "family": 12,
+      "title": "My family has made several claims and an annual benefit sublimit is exhausted."
+    },
+    {
+      "case_id": "ref-13-01",
+      "family": 13,
+      "title": "Which group-cover end date applies when HR and the member certificate disagree?"
+    },
+    {
+      "case_id": "ref-13-02",
+      "family": 13,
+      "title": "My employer cover is small and I want a personal policy to fill the gap."
+    },
+    {
+      "case_id": "ref-13-03",
+      "family": 13,
+      "title": "My spouse's employer covers me but may remove dependants next year."
+    },
+    {
+      "case_id": "ref-13-04",
+      "family": 13,
+      "title": "I have two indemnity policies and need to coordinate a single hospital bill."
+    },
+    {
+      "case_id": "ref-13-05",
+      "family": 13,
+      "title": "My employer maternity benefit is useful but I need long-term individual cover."
+    },
+    {
+      "case_id": "ref-13-06",
+      "family": 13,
+      "title": "I have an employer policy schedule but not the master wording."
+    },
+    {
+      "case_id": "ref-13-07",
+      "family": 13,
+      "title": "My employer offers migration on exit and acceptance is still pending."
+    },
+    {
+      "case_id": "ref-13-08",
+      "family": 13,
+      "title": "I need to compare a personal base plan with a super top-up over employer cover."
+    },
+    {
+      "case_id": "ref-13-09",
+      "family": 13,
+      "title": "My employer policy has a room restriction that my personal policy does not."
+    },
+    {
+      "case_id": "ref-13-10",
+      "family": 13,
+      "title": "I am retiring and my parent will also lose dependent cover."
+    },
+    {
+      "case_id": "ref-14-01",
+      "family": 14,
+      "title": "I want a per-claim top-up compared with an aggregate super top-up."
+    },
+    {
+      "case_id": "ref-14-02",
+      "family": 14,
+      "title": "Can a rejected base-insurer bill still count toward Gold's threshold when Gold accepts the expense?"
+    },
+    {
+      "case_id": "ref-14-03",
+      "family": 14,
+      "title": "My employer cover is lower than the proposed super top-up deductible."
+    },
+    {
+      "case_id": "ref-14-04",
+      "family": 14,
+      "title": "I have no base policy but can personally fund the deductible."
+    },
+    {
+      "case_id": "ref-14-05",
+      "family": 14,
+      "title": "My base policy and super top-up renew on different dates."
+    },
+    {
+      "case_id": "ref-14-06",
+      "family": 14,
+      "title": "My family shares an aggregate deductible and both spouses made claims."
+    },
+    {
+      "case_id": "ref-14-07",
+      "family": 14,
+      "title": "A non-admissible expense should not automatically count toward the deductible."
+    },
+    {
+      "case_id": "ref-14-08",
+      "family": 14,
+      "title": "I want to reduce the deductible after a major diagnosis."
+    },
+    {
+      "case_id": "ref-14-09",
+      "family": 14,
+      "title": "A single claim exceeds both the base cover and top-up deductible."
+    },
+    {
+      "case_id": "ref-14-10",
+      "family": 14,
+      "title": "My top-up has its own waiting periods despite long-standing base cover."
+    },
+    {
+      "case_id": "ref-15-01",
+      "family": 15,
+      "title": "I want to port to a new insurer and carry forward waiting-period credit."
+    },
+    {
+      "case_id": "ref-15-02",
+      "family": 15,
+      "title": "I want to migrate within the same insurer to a different product."
+    },
+    {
+      "case_id": "ref-15-03",
+      "family": 15,
+      "title": "I am increasing sum insured while porting and need old and increased portions separated."
+    },
+    {
+      "case_id": "ref-15-04",
+      "family": 15,
+      "title": "My portability application is pending and my existing renewal is due."
+    },
+    {
+      "case_id": "ref-15-05",
+      "family": 15,
+      "title": "My policy had a break in coverage and continuity is disputed."
+    },
+    {
+      "case_id": "ref-15-06",
+      "family": 15,
+      "title": "I have a bonus amount and want its portability treatment checked."
+    },
+    {
+      "case_id": "ref-15-07",
+      "family": 15,
+      "title": "How should accepted migration credit be allocated across retained and increased amounts?"
+    },
+    {
+      "case_id": "ref-15-08",
+      "family": 15,
+      "title": "The new insurer offers an exclusion that was absent from my previous contract."
+    },
+    {
+      "case_id": "ref-15-09",
+      "family": 15,
+      "title": "I have a pending claim while applying to port."
+    },
+    {
+      "case_id": "ref-15-10",
+      "family": 15,
+      "title": "I want to port a family floater but only move one member."
+    },
+    {
+      "case_id": "ref-16-01",
+      "family": 16,
+      "title": "I missed renewal by a few days and need continuity and claim cover distinguished."
+    },
+    {
+      "case_id": "ref-16-02",
+      "family": 16,
+      "title": "I missed an instalment and have a hospital admission during the payment gap."
+    },
+    {
+      "case_id": "ref-16-03",
+      "family": 16,
+      "title": "Does moving city before renewal change the location used for an earlier claim?"
+    },
+    {
+      "case_id": "ref-16-04",
+      "family": 16,
+      "title": "Does an accepted midterm spouse addition immediately activate the wellness benefit?"
+    },
+    {
+      "case_id": "ref-16-05",
+      "family": 16,
+      "title": "My birthday moves me to a new premium band at renewal."
+    },
+    {
+      "case_id": "ref-16-06",
+      "family": 16,
+      "title": "My product is withdrawn and the insurer offers a replacement."
+    },
+    {
+      "case_id": "ref-16-07",
+      "family": 16,
+      "title": "I want to increase sum insured after a recent claim."
+    },
+    {
+      "case_id": "ref-16-08",
+      "family": 16,
+      "title": "My contact details changed and I did not receive the renewal reminder."
+    },
+    {
+      "case_id": "ref-16-09",
+      "family": 16,
+      "title": "I want to remove an optional add-on while keeping base-policy continuity."
+    },
+    {
+      "case_id": "ref-16-10",
+      "family": 16,
+      "title": "Does a later same-UIN renewal notice reset my already accrued waiting credit?"
+    },
+    {
+      "case_id": "ref-17-01",
+      "family": 17,
+      "title": "I need a specific hospital confirmed under the exact policy network."
+    },
+    {
+      "case_id": "ref-17-02",
+      "family": 17,
+      "title": "My hospital appears on an old network PDF but not in a recent search."
+    },
+    {
+      "case_id": "ref-17-03",
+      "family": 17,
+      "title": "My preferred hospital is explicitly excluded by the insurer."
+    },
+    {
+      "case_id": "ref-17-04",
+      "family": 17,
+      "title": "My plan uses a restricted network and I need treatment elsewhere."
+    },
+    {
+      "case_id": "ref-17-05",
+      "family": 17,
+      "title": "I live in Kota but may need specialist treatment in Delhi."
+    },
+    {
+      "case_id": "ref-17-06",
+      "family": 17,
+      "title": "My policy advertises overseas benefits and I need planned overseas treatment."
+    },
+    {
+      "case_id": "ref-17-07",
+      "family": 17,
+      "title": "Will air ambulance to my preferred distant hospital qualify when a nearer suitable hospital exists?"
+    },
+    {
+      "case_id": "ref-17-08",
+      "family": 17,
+      "title": "My hospital has left the network after I obtained a quote."
+    },
+    {
+      "case_id": "ref-17-09",
+      "family": 17,
+      "title": "I need emergency treatment at a non-network hospital."
+    },
+    {
+      "case_id": "ref-17-10",
+      "family": 17,
+      "title": "My policy applies a zone co-pay based on treatment location."
+    },
+    {
+      "case_id": "ref-18-01",
+      "family": 18,
+      "title": "I have a published premium table but need a personal family quote."
+    },
+    {
+      "case_id": "ref-18-02",
+      "family": 18,
+      "title": "My quote omits the add-on needed for my main requirement."
+    },
+    {
+      "case_id": "ref-18-03",
+      "family": 18,
+      "title": "An underwriting offer adds a loading after medical screening."
+    },
+    {
+      "case_id": "ref-18-04",
+      "family": 18,
+      "title": "My personal quote has expired and I want to use it for a budget comparison."
+    },
+    {
+      "case_id": "ref-18-05",
+      "family": 18,
+      "title": "Two quotes have different sums insured and payment frequencies."
+    },
+    {
+      "case_id": "ref-18-06",
+      "family": 18,
+      "title": "My offer includes a disease exclusion absent from the standard wording."
+    },
+    {
+      "case_id": "ref-18-07",
+      "family": 18,
+      "title": "A quote includes a deductible I did not ask for."
+    },
+    {
+      "case_id": "ref-18-08",
+      "family": 18,
+      "title": "An insurer has requested further tests and has not accepted my proposal."
+    },
+    {
+      "case_id": "ref-18-09",
+      "family": 18,
+      "title": "My quote is for the wrong residential zone."
+    },
+    {
+      "case_id": "ref-18-10",
+      "family": 18,
+      "title": "I want to know whether the displayed premium includes all applicable charges."
+    },
+    {
+      "case_id": "ref-19-01",
+      "family": 19,
+      "title": "My doctor advised surgery next month and I want to buy cover now."
+    },
+    {
+      "case_id": "ref-19-02",
+      "family": 19,
+      "title": "How does correcting the date of first medical advice change a near-inception claim assessment?"
+    },
+    {
+      "case_id": "ref-19-03",
+      "family": 19,
+      "title": "I want to increase cover shortly before an already planned procedure."
+    },
+    {
+      "case_id": "ref-19-04",
+      "family": 19,
+      "title": "I have a recent accident and need the initial waiting-period exception checked."
+    },
+    {
+      "case_id": "ref-19-05",
+      "family": 19,
+      "title": "My emergency symptoms began before the new policy's start date."
+    },
+    {
+      "case_id": "ref-19-06",
+      "family": 19,
+      "title": "Can maternity cover continue unchanged after my insured spouse dies before delivery?"
+    },
+    {
+      "case_id": "ref-19-07",
+      "family": 19,
+      "title": "Can a confirmed group-cover extension change which contract is assessed for next week\u2019s surgery?"
+    },
+    {
+      "case_id": "ref-19-08",
+      "family": 19,
+      "title": "I have an accepted existing policy but a disease-specific waiting period may remain."
+    },
+    {
+      "case_id": "ref-19-09",
+      "family": 19,
+      "title": "My parent needs urgent cardiac treatment and we are comparing senior policies."
+    },
+    {
+      "case_id": "ref-19-10",
+      "family": 19,
+      "title": "I want to know what the current policy covers while a new proposal is pending."
+    },
+    {
+      "case_id": "ref-20-01",
+      "family": 20,
+      "title": "I need insurance, I am 35, I live in Kota, and I have no health insurance."
+    },
+    {
+      "case_id": "ref-20-02",
+      "family": 20,
+      "title": "I said I was 35 but I need to correct my age to 36."
+    },
+    {
+      "case_id": "ref-20-03",
+      "family": 20,
+      "title": "I am 35 but the insurance is for my 70-year-old mother."
+    },
+    {
+      "case_id": "ref-20-04",
+      "family": 20,
+      "title": "I closed this conversation yesterday and want to continue with the saved details."
+    },
+    {
+      "case_id": "ref-20-05",
+      "family": 20,
+      "title": "I started a new conversation and do not want old medical details reused without asking."
+    },
+    {
+      "case_id": "ref-20-06",
+      "family": 20,
+      "title": "Mujhe mummy ke liye insurance chahiye; unki umar sattar saal hai."
+    },
+    {
+      "case_id": "ref-20-07",
+      "family": 20,
+      "title": "I have no insurance; by cover I meant an emergency savings account."
+    },
+    {
+      "case_id": "ref-20-08",
+      "family": 20,
+      "title": "My father has diabetes but I do not; please keep our histories separate."
+    },
+    {
+      "case_id": "ref-20-09",
+      "family": 20,
+      "title": "I sent a correction while an earlier advice request was still processing."
+    },
+    {
+      "case_id": "ref-20-10",
+      "family": 20,
+      "title": "I want my medical disclosure deleted and earlier derived advice invalidated."
+    }
+  ]
+}

@@ -1,0 +1,1220 @@
+{
+  "revision": "discussion-r6",
+  "verification_scope": "Offline data/proposal structural verification only; no database or application execution, no full semantic completeness/acceptance claim. Evaluation inputs restricted to the two safe exports.",
+  "application_entities": 98,
+  "application_fields": 1011,
+  "relationships": 321,
+  "json_contracts": 52,
+  "benchmark_entities": 36,
+  "benchmark_fields": 398,
+  "benchmark_payload_contracts": 28,
+  "case_maps": 400,
+  "checks": [
+    {
+      "check": "unique entity/field names",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all field metadata and requirement IDs",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all JSON field contracts exist",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all typed foreign keys exactly represented",
+      "passed": true,
+      "detail": 321
+    },
+    {
+      "check": "owner predicates have real owner fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all entity constraints and indexes present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "room rule example",
+      "passed": true,
+      "detail": {
+        "expected_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "quantity state 0",
+      "passed": true,
+      "detail": {
+        "expected_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "quantity state 1",
+      "passed": true,
+      "detail": {
+        "expected_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "quantity state 2",
+      "passed": true,
+      "detail": {
+        "expected_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "quantity state 3",
+      "passed": true,
+      "detail": {
+        "expected_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "Gold table selectors",
+      "passed": true,
+      "detail": {
+        "expected_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "Gold cell expression",
+      "passed": true,
+      "detail": {
+        "expected_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "unknown Gold final payment",
+      "passed": true,
+      "detail": {
+        "expected_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "original locator example 0",
+      "passed": true,
+      "detail": {
+        "expected_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "original locator example 1",
+      "passed": true,
+      "detail": {
+        "expected_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "HTML original attribute",
+      "passed": true,
+      "detail": {
+        "expected_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "HTML missing attribute rejected",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "rejected_as_expected"
+        ]
+      }
+    },
+    {
+      "check": "plain-text original range",
+      "passed": true,
+      "detail": {
+        "expected_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "non-PDF fabricated page rejected",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "rejected_as_expected"
+        ]
+      }
+    },
+    {
+      "check": "unknown quantity cannot carry zero",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "rejected_as_expected"
+        ]
+      }
+    },
+    {
+      "check": "unknown duration with reason",
+      "passed": true,
+      "detail": {
+        "expected_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "wrong operation arity rejected",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "rejected_as_expected"
+        ]
+      }
+    },
+    {
+      "check": "six reconciliation dimensions",
+      "passed": true,
+      "detail": {
+        "expected_valid": true,
+        "errors": []
+      }
+    },
+    {
+      "check": "missing observed-source dimension rejected",
+      "passed": true,
+      "detail": {
+        "expected_valid": false,
+        "errors": [
+          "rejected_as_expected"
+        ]
+      }
+    },
+    {
+      "check": "all200reference IDs and20families preserved",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no unsupported full decision or adviser pass claimed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "safe evaluation fixed roster retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all400 safe case field mappings",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "field trace targets exist",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all fields mapped to requirement",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all188explicitpilotfields mapped",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "migration User.id",
+      "passed": true,
+      "detail": "Account.id"
+    },
+    {
+      "check": "migration User.email",
+      "passed": true,
+      "detail": "Account.email"
+    },
+    {
+      "check": "migration User.deleted_at",
+      "passed": true,
+      "detail": "Account.deleted_at"
+    },
+    {
+      "check": "migration Insurer.name",
+      "passed": true,
+      "detail": "Insurer.legal_name"
+    },
+    {
+      "check": "migration Insurer.aliases",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration Insurer.official_domains",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration CatalogueListing.ditto_path",
+      "passed": true,
+      "detail": "LegacyListing.original_key"
+    },
+    {
+      "check": "migration CatalogueListing.displayed_name",
+      "passed": true,
+      "detail": "LegacyListing.original_label"
+    },
+    {
+      "check": "migration CatalogueListing.insurer",
+      "passed": true,
+      "detail": "LegacyListing.insurer_id"
+    },
+    {
+      "check": "migration CatalogueListing.status",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration CatalogueListing.status_reason",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration CatalogueListing.last_observed_at",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration PlanVersion.insurer",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration PlanVersion.uin",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration PlanVersion.name",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration PlanVersion.variant",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration PlanVersion.effective_from",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration PlanVersion.effective_to",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration PlanVersion.available_for_new_purchase",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration PlanVersion.review_state",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration SourceLocator.url",
+      "passed": true,
+      "detail": "SourceLocator.url"
+    },
+    {
+      "check": "migration SourceLocator.source_organisation",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration SourceLocator.expected_document_type",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration SourceObservation.locator",
+      "passed": true,
+      "detail": "Acquisition.locator_id"
+    },
+    {
+      "check": "migration SourceObservation.fetched_at",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration SourceObservation.status_code",
+      "passed": true,
+      "detail": "Acquisition.http_status"
+    },
+    {
+      "check": "migration SourceObservation.final_url",
+      "passed": true,
+      "detail": "Acquisition.final_url"
+    },
+    {
+      "check": "migration SourceObservation.content_sha256",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration SourceObservation.available",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration SourceObservation.error_code",
+      "passed": true,
+      "detail": "Acquisition.error_code"
+    },
+    {
+      "check": "migration SourceBlob.sha256",
+      "passed": true,
+      "detail": "OriginalBlob.sha256"
+    },
+    {
+      "check": "migration SourceBlob.stored_path",
+      "passed": true,
+      "detail": "OriginalBlob.storage_key"
+    },
+    {
+      "check": "migration SourceBlob.byte_size",
+      "passed": true,
+      "detail": "OriginalBlob.byte_size"
+    },
+    {
+      "check": "migration SourceBlob.media_type",
+      "passed": true,
+      "detail": "OriginalBlob.media_type"
+    },
+    {
+      "check": "migration DocumentVersion.blob",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration DocumentVersion.document_type",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration DocumentVersion.language",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration DocumentVersion.identity",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration DocumentVersion.effective_from",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration PlanDocumentAssociation.plan_version",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration PlanDocumentAssociation.document_version",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration PlanDocumentAssociation.role",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration PlanDocumentAssociation.applicability",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration PlanDocumentAssociation.reviewed",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ExtractionRevision.document_version",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ExtractionRevision.revision",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ExtractionRevision.parser_manifest",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ExtractionRevision.artifact_sha256",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ExtractionRevision.source_map_path",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ExtractionRevision.published",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration DocumentPage.extraction_revision",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration DocumentPage.physical_index",
+      "passed": true,
+      "detail": "DocumentPage.physical_page"
+    },
+    {
+      "check": "migration DocumentPage.printed_label",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration DocumentPage.width",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration DocumentPage.height",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration DocumentPage.rotation",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration DocumentPage.geometry",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration EvidenceSpan.page",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration EvidenceSpan.region_id",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration EvidenceSpan.start_line",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration EvidenceSpan.end_line",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration EvidenceSpan.source_word_ids",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration EvidenceSpan.quote",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration EvidenceSpan.geometry",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration EvidenceBundle.label",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration EvidenceBundle.review_state",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration EvidenceBundle.spans",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration EvidenceBundleSpan.bundle",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration EvidenceBundleSpan.span",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration EvidenceBundleSpan.role",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration EvidenceBundleSpan.order",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration VerifiedFact.plan_version",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration VerifiedFact.category",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration VerifiedFact.value_type",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration VerifiedFact.value",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration VerifiedFact.applicability",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration VerifiedFact.evidence_bundle",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration VerifiedFact.verification_state",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration VerifiedFact.conflict",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration Clause.document_version",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration Clause.section_path",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration Clause.heading",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration Clause.evidence_bundles",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RatingObservation.plan_version",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RatingObservation.rating",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RatingObservation.scale",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RatingObservation.observed_at",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RatingObservation.evidence_bundle",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration PremiumObservation.plan_version",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration PremiumObservation.amount",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration PremiumObservation.currency",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration PremiumObservation.assumptions",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration PremiumObservation.tax_basis",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration PremiumObservation.observed_at",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration PremiumObservation.evidence_bundle",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ReviewEvent.object_type",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ReviewEvent.object_id",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ReviewEvent.expected_revision",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ReviewEvent.decision",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ReviewEvent.reason",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ReviewEvent.reviewer",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration IngestionRun.stage",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration IngestionRun.state",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration IngestionRun.inputs",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration IngestionRun.outputs",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration IngestionRun.errors",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration IngestionRun.retry_count",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration IngestionRun.updated_at",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration CorpusRelease.name",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration CorpusRelease.manifest",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration CorpusRelease.activated_at",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration CorpusRelease.is_current",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration Conversation.owner",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration Conversation.title",
+      "passed": true,
+      "detail": "Conversation.title"
+    },
+    {
+      "check": "migration Conversation.updated_at",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration Conversation.current_profile",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration Conversation.active_attempt",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ProfileRevision.conversation",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ProfileRevision.revision",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ProfileRevision.data",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ProfileRevision.field_provenance",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ProfileRevision.confirmed_at",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration Message.conversation",
+      "passed": true,
+      "detail": "Message.conversation_id"
+    },
+    {
+      "check": "migration Message.role",
+      "passed": true,
+      "detail": "Message.role"
+    },
+    {
+      "check": "migration Message.content",
+      "passed": true,
+      "detail": "Message.content"
+    },
+    {
+      "check": "migration Message.origin",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration Message.answer",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration Turn.conversation",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration Turn.request_id",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration Turn.payload_hash",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration Turn.route",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration Turn.input_text",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration Turn.operation",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration Turn.expected_profile_revision",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration TurnAttempt.turn",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration TurnAttempt.conversation",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration TurnAttempt.status",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration TurnAttempt.profile_revision",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration TurnAttempt.corpus_release",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration TurnAttempt.route",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration TurnAttempt.deadline_at",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration TurnAttempt.terminal_code",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration TurnAttempt.updated_at",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RouteConfiguration.relay_type",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RouteConfiguration.base_url",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RouteConfiguration.configured_model",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RouteConfiguration.api_dialect",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RouteConfiguration.capabilities",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RouteConfiguration.context_limit",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RouteConfiguration.timeout_policy",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RouteConfiguration.configuration_hash",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RouteConfiguration.qualification_state",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RouteQualification.route",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RouteQualification.tested_configuration_hash",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RouteQualification.evaluation_results",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RouteQualification.state",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ModelCallAttempt.turn_attempt",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ModelCallAttempt.task",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ModelCallAttempt.route",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ModelCallAttempt.requested_model",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ModelCallAttempt.upstream_reported_model",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ModelCallAttempt.status",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ModelCallAttempt.duration_ms",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ModelCallAttempt.reported_usage",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration ModelCallAttempt.safe_error_code",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration AnswerArtifact.attempt",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration AnswerArtifact.outcome",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration AnswerArtifact.blocks",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration AnswerArtifact.verification_status",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration AnswerArtifact.profile_revision",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration AnswerArtifact.corpus_release",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration AnswerClaim.answer",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration AnswerClaim.claim_type",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration AnswerClaim.display_text",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration AnswerClaim.fact_ids",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration AnswerClaim.evidence_bundles",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration AnswerClaim.verification_result",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RecommendationSnapshot.answer",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RecommendationSnapshot.owner",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RecommendationSnapshot.profile_revision",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RecommendationSnapshot.corpus_release",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RecommendationSnapshot.candidate_results",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RecommendationSnapshot.rankings",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RecommendationSnapshot.calculations",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration RecommendationSnapshot.rule_version",
+      "passed": true,
+      "detail": "LegacyMapping.archive_blob_id"
+    },
+    {
+      "check": "migration AIPreference.user",
+      "passed": true,
+      "detail": "Account.id"
+    },
+    {
+      "check": "migration AIPreference.route",
+      "passed": true,
+      "detail": "Account.preferred_route_id"
+    },
+    {
+      "check": "migration AIPreference.updated_at",
+      "passed": true,
+      "detail": "Account.preferred_route_updated_at"
+    },
+    {
+      "check": "legacy fetched_at not fabricated attempt start",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "separate benchmark metadata counts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "benchmark field metadata complete",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "all_checks_passed": true,
+  "checks_count": 223,
+  "source_fingerprints": {
+    "research/design/entity-field-dictionary.json": "64aeb37c889c3d4b204ae62b72ef0b7c48adbcc9f985bb80d74be41e8f58a18e",
+    "research/design/relationships.json": "0b9fd0792b7460721d613f783164bfb6db573995f1d0807a63a889ced7250e7a",
+    "research/design/json-contracts.schema.json": "360665343f1ddd8a37112fde062c0fff450b5bd2c4550cd1b9de797f70b89bf1",
+    "research/design/migration-field-map.json": "d198ef456232971c17529c5e15d8160582b0e3168dc7ff72d4ff618c2fcadea3",
+    "research/design/worked-record-examples.json": "77db6d5308d1dc812ed9b79468e40987df8db4a29866a1c59ba515bfb9235cee",
+    "research/design/case-requirement-field-map.json": "e262ec7b17baa2b9430b868c5efa6d6bcf5e91a2091556a7afad6044e37e16c2",
+    "research/design/benchmark-storage-fields.json": "e59ebe1b9f7cdf8a187a667440791ce07b9132b4ffed0945a283718eb8434d54",
+    "research/reference/assessments-200-r5.jsonl": "531a6c3a99f2dd8e9dba99db95aff4de70409d085fd12be3d3b07fbbdbf6bff1",
+    "research/reports/evaluation-safe-summary.json": "c18db43dc32daeb473b76137c6439227ec2de8f06824179597e589ddd2eeae82",
+    "research/reports/evaluation-information-requirements.json": "58f404816c084f3619c6fb02027a16d6ae4f8aa6e63181d44350693804949199"
+  },
+  "semantic_or_runtime_checks_not_claimed": [
+    "Full original rule inventory",
+    "All customer decisions complete",
+    "Full global case semantic uniqueness",
+    "Foreign-key/constraint trigger execution",
+    "Semantic JSON cross-field validation",
+    "RLS or isolated benchmark deployment",
+    "Adviser/knowledge/robustness/performance acceptance",
+    "Migration execution or rollback"
+  ]
+}

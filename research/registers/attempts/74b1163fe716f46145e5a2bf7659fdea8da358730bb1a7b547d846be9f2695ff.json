@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:54:24.806470+00:00",
+  "associations": [],
+  "byte_count": 1129753,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/Health_Multiplier_Rider_Policy_Wordings_1c4887eeb8.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 691,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "77808cc3bd892cacd2828fc827e6d925b3b82b63f2049dde3ef47b617edae73e",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/Health_Multiplier_Rider_Policy_Wordings_1c4887eeb8.pdf"
+}

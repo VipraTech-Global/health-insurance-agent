@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T12:00:44.358874+00:00",
+  "associations": [],
+  "byte_count": 145776,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.generalicentralinsurance.com/downloads/commercial-insurance/public-liability-policy---non-industrial-risks/prospectus-forms/public-liability-policy-non-industrial%20risk-prospectus-commercial.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "generali-central",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 454,
+  "linking_url": "https://www.generalicentralinsurance.com/customer-service/downloads",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "d6c75c9a251f503c7f020ea8ef0a0e603358942ec537b2b6f1d57fd1a67c799b",
+  "status": "acquired",
+  "url": "https://www.generalicentralinsurance.com/downloads/commercial-insurance/public-liability-policy---non-industrial-risks/prospectus-forms/public-liability-policy-non-industrial%20risk-prospectus-commercial.pdf"
+}

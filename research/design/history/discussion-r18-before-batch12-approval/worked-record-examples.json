@@ -1,0 +1,213 @@
+{
+  "proposal_only": true,
+  "database_ids_are_synthetic": true,
+  "original_mapping": [
+    {
+      "fixture_span_id": "41f4b9b0-602a-50ef-be58-3c7abac5a99a",
+      "source_sha256": "890ab4794c98a56eda8ef2749124e2114589cc00a5e596bed0392ea13667efce",
+      "physical_page": 7,
+      "section": "4.1a",
+      "full_passage_register": "../registers/original-reading-case-supplement-r3.json E14"
+    }
+  ],
+  "room_limit_rule": {
+    "schema_version": 1,
+    "applies_when": {
+      "node": "compare",
+      "operator": "eq",
+      "left": {
+        "node": "input",
+        "key": "selected_policy_version"
+      },
+      "right": {
+        "node": "literal",
+        "value": {
+          "kind": "reference",
+          "entity": "PolicyVersion",
+          "id": "8035ec07-9042-57de-8167-b864d2539f98"
+        }
+      }
+    },
+    "inputs": [
+      {
+        "key": "selected_policy_version",
+        "value_kind": "reference",
+        "unit": "identity",
+        "required": true,
+        "provenance_required": true
+      },
+      {
+        "key": "base_si",
+        "value_kind": "quantity",
+        "unit": "money",
+        "required": true,
+        "provenance_required": true
+      }
+    ],
+    "effects": [
+      {
+        "kind": "limit",
+        "target_key": "room_amount_per_scope",
+        "scope": {
+          "subject": "person",
+          "subject_ids": [
+            "0ee36ec3-46a3-5bec-a26f-96b4c68bcea1"
+          ],
+          "period": "day",
+          "benefit_keys": [
+            "room"
+          ],
+          "reset": "new_event"
+        },
+        "amount": {
+          "node": "operation",
+          "operator": "min",
+          "arguments": [
+            {
+              "node": "operation",
+              "operator": "multiply",
+              "arguments": [
+                {
+                  "node": "input",
+                  "key": "base_si"
+                },
+                {
+                  "node": "literal",
+                  "value": {
+                    "state": "finite",
+                    "value": "0.02",
+                    "unit": "ratio"
+                  }
+                }
+              ]
+            },
+            {
+              "node": "literal",
+              "value": {
+                "state": "finite",
+                "value": "5000",
+                "unit": "money",
+                "currency": "INR"
+              }
+            }
+          ]
+        },
+        "inclusive_categories": [
+          "room",
+          "boarding",
+          "nursing"
+        ],
+        "percentage_base_key": "base_si"
+      }
+    ],
+    "mandatory_rule_keys": [
+      "nia-4.1-note-proportion",
+      "nia-9.5-copay",
+      "selected-individual-terms"
+    ],
+    "source_span_ids": [
+      "41f4b9b0-602a-50ef-be58-3c7abac5a99a"
+    ],
+    "unresolved": [],
+    "rounding": {
+      "mode": "unresolved",
+      "scale": 2,
+      "authority_span_ids": []
+    }
+  },
+  "value_states": [
+    {
+      "state": "finite",
+      "value": "0",
+      "unit": "money",
+      "currency": "INR"
+    },
+    {
+      "state": "unknown",
+      "expected_unit": "money",
+      "reason": "Quote component absent"
+    },
+    {
+      "state": "unlimited",
+      "unit": "money",
+      "basis_span_ids": [
+        "56ce15d8-7398-5936-88c7-8a0c89949bec"
+      ]
+    },
+    {
+      "state": "not_applicable",
+      "reason": "New India CIS deductible row says not applicable",
+      "basis_span_ids": [
+        "e605c0b6-f47e-57e9-b3bf-05479ad822d2"
+      ]
+    }
+  ],
+  "gold_robot_table_cell": {
+    "selectors": [
+      {
+        "axis": "sum_insured_inr",
+        "operator": "eq",
+        "value": {
+          "state": "finite",
+          "value": "1000000",
+          "unit": "money",
+          "currency": "INR"
+        }
+      },
+      {
+        "axis": "procedure",
+        "operator": "eq",
+        "value": {
+          "kind": "code",
+          "namespace": "original-star-III.J",
+          "value": "robotic_surgeries"
+        }
+      }
+    ],
+    "value": {
+      "node": "literal",
+      "value": {
+        "state": "finite",
+        "value": "300000",
+        "unit": "money",
+        "currency": "INR"
+      }
+    },
+    "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+    "physical_page": 3,
+    "section": "III.J Gold, not Silver deductible table",
+    "support": "E12 plus table context register",
+    "final_payment": {
+      "state": "unknown",
+      "expected_unit": "money",
+      "reason": "Threshold order, personal applicability and usage unresolved"
+    }
+  },
+  "original_locator_examples": [
+    {
+      "schema_version": 1,
+      "blob_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+      "resolver_version": "proposal-fixture-pdf-points-v1",
+      "kind": "pdf_region",
+      "physical_page": 3,
+      "bbox": [
+        325,
+        497,
+        595,
+        832
+      ],
+      "coordinate_space": "unrotated_pdf_points",
+      "rotation": 0
+    },
+    {
+      "schema_version": 1,
+      "blob_sha256": "c99a5f06375b45fa18dcc80eecf7c5ca4f4b4cb6f6b86927bd91f0000776452d",
+      "resolver_version": "proposal-fixture-json-rfc6901-v1",
+      "kind": "json_pointer",
+      "encoding": "utf-8",
+      "pointer": "/synthetic/example/0",
+      "value_interpretation": "decoded_scalar"
+    }
+  ],
+  "original_locator_examples_status": "PDF region is an observed original location. JSON pointer is a synthetic shape fixture only, not an actual CMS pointer or verified citation; resolve actual path before using any source link."
+}

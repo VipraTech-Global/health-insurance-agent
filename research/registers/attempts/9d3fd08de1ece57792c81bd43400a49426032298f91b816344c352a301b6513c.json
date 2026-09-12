@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:38:25.697270+00:00",
+  "associations": [],
+  "byte_count": 3553,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/captcha?url=//pages/doc/brochure/ReAssure_2.0_Bronze_Gold_SS.pdf?v=1.2",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1294,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "2a0bcc58b01f31f0ce880f6b5708502d4183722c2e24f36585bb8d719d6b86e6",
+  "status": "failed",
+  "url": "https://transactions.nivabupa.com/pages/doc/brochure/ReAssure_2.0_Bronze_Gold_SS.pdf?v=1.2"
+}

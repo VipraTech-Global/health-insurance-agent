@@ -1,0 +1,373 @@
+{
+  "reason": "Prior acquisition stopped at default reader size limit; official linked PDF advertises 67548023 bytes. Per-process cap raised to100MiB for this original only. Previous failed attempt preserved.",
+  "source_register_sha256": "aee5108033c576edd0eecb3267971f5c57fa5eee105883db37200fae0079da1b",
+  "attempt": {
+    "format_version": 1,
+    "component_version": "research-acquisition/2",
+    "insurer_id": "tata-aig",
+    "url": "https://www.tataaig.com/s3/Medicare_LITE_Policy_Wordings_4fdf058f02.pdf",
+    "linking_url": "https://www.tataaig.com/downloads",
+    "acquired_at": "2026-09-10T17:40:59.655413+00:00",
+    "status": "acquired",
+    "issues": [],
+    "sha256": "218fc797925e0fb158bd87606e4d0edb00da2d7dbafab7cd4269cebc6cab96e1",
+    "page_count": 43,
+    "document_type": "pdf_unclassified",
+    "language": "unknown",
+    "associations": [],
+    "effective_from": null,
+    "effective_to": null,
+    "review_status": "not_reviewed",
+    "http_status": 200,
+    "final_url": "https://www.tataaig.com/s3/Medicare_LITE_Policy_Wordings_4fdf058f02.pdf",
+    "byte_count": 67548023,
+    "content_type": "application/pdf",
+    "pages": [
+      {
+        "page": 1,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 2,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 3,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 4,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 5,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 6,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 7,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 8,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 9,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 10,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 11,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 12,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 13,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 14,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 15,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 16,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 17,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 18,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 19,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 20,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 21,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 22,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 23,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 24,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 25,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 26,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 27,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 28,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 29,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 30,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 31,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 32,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 33,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 34,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 35,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 36,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 37,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 38,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 39,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 40,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 41,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 42,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 43,
+        "status": "preserved_not_read",
+        "width": 612.0,
+        "height": 792.0,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      }
+    ],
+    "latency_ms": 166162
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T11:53:46.818275+00:00",
+  "associations": [],
+  "byte_count": 202174,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/Overseas_Travel_Claim_Form_f24bbd244a.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 690,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 900.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 684.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 900.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 684.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 900.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 684.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 900.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 684.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "b6e5bf5940a27cd06798ee1c244ca5451ea7622735fe7bee507f35be67e31d8d",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/Overseas_Travel_Claim_Form_f24bbd244a.pdf"
+}

@@ -1,0 +1,36 @@
+{
+  "checks": [
+    {
+      "actual": "66000",
+      "expected": "66000",
+      "label": "ref-11-01",
+      "pass": true
+    },
+    {
+      "actual": "62700",
+      "expected": "62700",
+      "label": "ref-11-01-pay",
+      "pass": true
+    },
+    {
+      "actual": "23750",
+      "expected": "23750",
+      "label": "ref-11-04",
+      "pass": true
+    },
+    {
+      "actual": "85500",
+      "expected": "85500",
+      "label": "ref-11-08",
+      "pass": true
+    },
+    {
+      "actual": "2000",
+      "expected": "2000",
+      "label": "ref-11-09",
+      "pass": true
+    }
+  ],
+  "limitation": "Verifies arithmetic of stated assumptions only; no claim adjudication or full adviser acceptance",
+  "method": "Decimal arithmetic using separately rearranged expressions and payment conservation; no application calculator invoked"
+}

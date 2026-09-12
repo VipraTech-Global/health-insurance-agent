@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:52:34.225391+00:00",
+  "associations": [],
+  "byte_count": 3640669,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.galaxyhealth.com/assets/preloaded/galaxy-top-up-brochure.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "galaxy",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1288,
+  "linking_url": "https://www.galaxyhealth.com/",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.89001
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "82d7a36f35b2084157e9db6acceb8ac716420d8209fbfa23b00c20389abf3c08",
+  "status": "acquired",
+  "url": "https://www.galaxyhealth.com/assets/preloaded/galaxy-top-up-brochure.pdf"
+}

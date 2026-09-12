@@ -1,0 +1,909 @@
+{
+  "complete_rule_inventory": false,
+  "coverage_limit": "Selected observations only. IRDAI English pages2-3,19-30 read; Hindi equivalents and annexures not fully reconciled. HDFC all4 pages read including page2 image. CIS all3 pages read and page2 visually checked.",
+  "format_version": 1,
+  "generated_at": "2026-09-10T13:11:47.828807+00:00",
+  "independent_rule_denominator": null,
+  "method": "Manual original reading independent of later extraction system",
+  "rules": [
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 2,
+          "passage": "shall be reviewed every year",
+          "section": "B",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Annual review requirement makes later amendment/repeal discovery necessary; this 2024 original alone does not prove the current law.",
+      "rule_id": "original-irdai-health-master-001",
+      "section": "B",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 19,
+          "passage": "except for provisions where specific effective date is mentioned",
+          "section": "Effective date 1",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Represent immediate commencement and rule-specific deferred commencement separately.",
+      "rule_id": "original-irdai-health-master-002",
+      "section": "Effective date 1",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 19,
+          "passage": "shall be carried out under the extant UIN",
+          "section": "Effective date 2",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "A regulatory-only product revision may retain its UIN; UIN cannot be the sole terms-version identity.",
+      "rule_id": "original-irdai-health-master-003",
+      "section": "Effective date 2",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 19,
+          "passage": "protected and carried forward",
+          "section": "Effective date 2",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Required modifications protect accrued waiting and moratorium credits; store credited periods rather than resetting on a document revision.",
+      "rule_id": "original-irdai-health-master-004",
+      "section": "Effective date 2",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 19,
+          "passage": "may extend the benefits",
+          "section": "Effective date 3",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Existing-policy benefit extension is not established solely by discovery of a revised wording; retain the insurer application instrument.",
+      "rule_id": "original-irdai-health-master-005",
+      "section": "Effective date 3",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 19,
+          "passage": "does not imply that the Insurer shall have one product",
+          "section": "I.1 note",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Insurer-wide offer obligations do not establish eligibility or universal cover under a selected product.",
+      "rule_id": "original-irdai-health-master-006",
+      "section": "I.1 note",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 20,
+          "passage": "flexibility to choose",
+          "section": "I.1b",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Product applicability needs selected add-ons and riders plus their specific medical purpose.",
+      "rule_id": "original-irdai-health-master-007",
+      "section": "I.1b",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 20,
+          "passage": "as per the product design",
+          "section": "I.2m",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Modern-treatment inclusion still depends on product design and linked limits, rather than a generic technology keyword.",
+      "rule_id": "original-irdai-health-master-008",
+      "section": "I.2m",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 20,
+          "passage": "a Member of Group Insurance Policy",
+          "section": "I.4a",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Group members need their CIS; a master policy identity alone is insufficient evidence of member terms.",
+      "rule_id": "original-irdai-health-master-009",
+      "section": "I.4a",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 21,
+          "passage": "On request, CIS will be made available in local language.",
+          "section": "I.4",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Store language, delivered revision and acknowledgment separately from insurer document publication.",
+      "rule_id": "original-irdai-health-master-010",
+      "section": "I.4",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 21,
+          "passage": "from the date of receipt of the policy document",
+          "section": "I.5",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Free look is triggered by receipt, lasts 30 days, and requires a term of at least one year; purchase date is not interchangeable.",
+      "rule_id": "original-irdai-health-master-011",
+      "section": "I.5",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 21,
+          "passage": "7 days",
+          "section": "I.6",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Cancellation notice, expiry, claims made and whether future policy-year risk commenced determine the applicable refund method.",
+      "rule_id": "original-irdai-health-master-012",
+      "section": "I.6",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 21,
+          "passage": "Nomination can be changed any time",
+          "section": "I.7b",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Nominee identity and nomination revisions differ from account owner, insured and premium payer.",
+      "rule_id": "original-irdai-health-master-013",
+      "section": "I.7b",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 21,
+          "passage": "quarterly/half-yearly/annual instalments",
+          "section": "I.8a",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Grace uses payment mode: 15 days monthly, 30 quarterly/half-yearly/annual; retain due-date anchor.",
+      "rule_id": "original-irdai-health-master-014",
+      "section": "I.8a",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 22,
+          "passage": "during the policy period",
+          "section": "I.9",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Cover during instalment grace and protection of credits on renewal in grace are distinct consequences.",
+      "rule_id": "original-irdai-health-master-015",
+      "section": "I.9",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 22,
+          "passage": "shall not deny the renewal",
+          "section": "I.10b",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Prior claims alone cannot justify denial of renewal; connected fraud, disclosure and withdrawal provisions remain required.",
+      "rule_id": "original-irdai-health-master-016",
+      "section": "I.10b",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 22,
+          "passage": "only to the extent of increased sum insured",
+          "section": "I.10c",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Renewal underwriting is bounded to increased cover; split original and increased amounts.",
+      "rule_id": "original-irdai-health-master-017",
+      "section": "I.10c",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 22,
+          "passage": "including all members under family cover and group insurance policies",
+          "section": "I.11",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Migration credits have member, sum-insured, bonus and waiting-period scope.",
+      "rule_id": "original-irdai-health-master-018",
+      "section": "I.11",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 22,
+          "passage": "72 hours",
+          "section": "I.12b",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Portability existing-insurer response clock starts at request receipt through IIB; missing receipt timestamp prevents a reliable deadline.",
+      "rule_id": "original-irdai-health-master-019",
+      "section": "I.12b",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 22,
+          "passage": "5 days",
+          "section": "I.12c",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Acquiring-insurer decision clock starts at receipt of existing-insurer information, not customer application time.",
+      "rule_id": "original-irdai-health-master-020",
+      "section": "I.12c",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 23,
+          "passage": "60 months of continuous coverage",
+          "section": "I.13",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Moratorium concerns contestability for non-disclosure/misrepresentation, preserves fraud exception and port/migration credits; it does not make excluded treatment payable.",
+      "rule_id": "original-irdai-health-master-021",
+      "section": "I.13",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 23,
+          "passage": "choice/ express consent",
+          "section": "I.14",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "NCB forms and customer consent matter; this regulatory permission is not a guarantee of a fixed bonus in every product.",
+      "rule_id": "original-irdai-health-master-022",
+      "section": "I.14",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 23,
+          "passage": "one hour of receipt of request",
+          "section": "I.15b",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Cashless decision deadline depends on request receipt and is not guaranteed approval or guaranteed claim payment.",
+      "rule_id": "original-irdai-health-master-023",
+      "section": "I.15b",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 23,
+          "passage": "three hours of the receipt",
+          "section": "I.16a",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Discharge authorization has a separate event and deadline from admission preauthorization.",
+      "rule_id": "original-irdai-health-master-024",
+      "section": "I.16a",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 23,
+          "passage": "shareholder’s fund",
+          "section": "I.16b",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Delay-generated hospital charges paid by insurer need a separate basis from policy sum-insured consumption.",
+      "rule_id": "original-irdai-health-master-025",
+      "section": "I.16b",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 24,
+          "passage": "reference to the specific terms and",
+          "section": "I.17b",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Partial disallowance and repudiation must identify contract terms; preserve item-level reasons and cited clauses.",
+      "rule_id": "original-irdai-health-master-026",
+      "section": "I.17b",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 24,
+          "passage": "primary Insurer",
+          "section": "I.18a",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "The insured chooses a primary indemnity insurer; balance coordination remains subject to each policy condition.",
+      "rule_id": "original-irdai-health-master-027",
+      "section": "I.18a",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 24,
+          "passage": "claim from all Insurers",
+          "section": "I.18b",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Fixed-benefit policies have different multiple-policy treatment from indemnity; keep payout type explicit.",
+      "rule_id": "original-irdai-health-master-028",
+      "section": "I.18b",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 24,
+          "passage": "30 days of receipt of award",
+          "section": "I.20",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Ombudsman compliance clock and per-day penalty require award receipt, compliance and applicable companion rules.",
+      "rule_id": "original-irdai-health-master-029",
+      "section": "I.20",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 24,
+          "passage": "The detailed provisions",
+          "section": "I concluding dependency",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Companion policyholder-protection master circular is an explicit dependency for listed topics; do not call this document the complete legal bundle.",
+      "rule_id": "original-irdai-health-master-030",
+      "section": "I concluding dependency",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 26,
+          "passage": "common network of hospitals",
+          "section": "II.A.I.5a",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Preserve insurer-specific and common-network affiliations, precise provider identity, evidence date and reimbursement route.",
+      "rule_id": "original-irdai-health-master-031",
+      "section": "II.A.I.5a",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 26,
+          "passage": "No claim shall be denied for non-availability",
+          "section": "II.A.II",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Missing group-member information at the insurer is not by itself a denial basis; still establish actual group membership and contract applicability.",
+      "rule_id": "original-irdai-health-master-032",
+      "section": "II.A.II",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 29,
+          "passage": "shall not be offered to new customers",
+          "section": "II.D.II.4",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Withdrawal affects new-sale eligibility separately from existing-policy rights.",
+      "rule_id": "original-irdai-health-master-033",
+      "section": "II.D.II.4",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 29,
+          "passage": "90 days from the date of withdrawal",
+          "section": "II.D.II.5a",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Withdrawn individual product has a one-time renewal option if renewal falls within 90 days, or migration by choice; withdrawal and renewal dates both matter.",
+      "rule_id": "original-irdai-health-master-034",
+      "section": "II.D.II.5a",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 29,
+          "passage": "for the entire policy term",
+          "section": "II.D.II.6",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Products with terms over one year continue agreed terms for existing holders; group withdrawal additionally depends on PMC guidelines.",
+      "rule_id": "original-irdai-health-master-035",
+      "section": "II.D.II.6",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 29,
+          "passage": "specific consent of the policyholder",
+          "section": "II.D.II.8",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Refund deposits where no withdrawn-product policy issued; do not repurpose funds without recorded consent.",
+      "rule_id": "original-irdai-health-master-036",
+      "section": "II.D.II.8",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 30,
+          "passage": "in no case the scope of the product can be narrowed down",
+          "section": "III.I.2",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Disability/HIV/mental-illness model-product minimum scope depends on circular 58/2/2023; not all insurers products have identical terms.",
+      "rule_id": "original-irdai-health-master-037",
+      "section": "III.I.2",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 30,
+          "passage": "in every instance",
+          "section": "III.II.3",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Medical-record sharing consent is per instance; ABHA creation consent is a separate permission.",
+      "rule_id": "original-irdai-health-master-038",
+      "section": "III.II.3",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    },
+    {
+      "dependencies": [
+        "Applicable policy dates, configuration, individual acceptance and connected clauses",
+        "Later amendments and explicit application instruments must be checked before current advice"
+      ],
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 30,
+          "passage": "listed in Annexure-6",
+          "section": "III.IV",
+          "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "requirement": "Supersession is limited to listed instruments; the separately linked annexures remain required.",
+      "rule_id": "original-irdai-health-master-039",
+      "section": "III.IV",
+      "status": "inventoried_not_independently_reviewed",
+      "verification_error": null
+    }
+  ],
+  "source_sha256": "ce59f6f9785af314739a4b9a1b7bce63880793e5923d8d39ed20c91053312b48",
+  "verification_errors": []
+}

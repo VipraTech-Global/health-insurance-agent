@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T12:00:36.164311+00:00",
+  "associations": [],
+  "byte_count": 241457,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/senior-citizen-mediclaim-policy/Customer%20Information%20Sheet%20SENIOR%20CITIZEN%20MEDICLAIM%20POLICY.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 6730,
+  "linking_url": "https://www.newindia.co.in/health-insurance/senior-citizen-mediclaim-policy",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "3fd4f488467ac4ace93a1154cce5fa76555796d9ec9dcfb9856f2dedce4faf88",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/senior-citizen-mediclaim-policy/Customer Information Sheet SENIOR CITIZEN MEDICLAIM POLICY.pdf"
+}

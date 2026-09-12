@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:59:14.054778+00:00",
+  "associations": [],
+  "byte_count": 528204,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/Restoration_of_Sum_Insured_Rider%20-%20CLAUSE.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1452,
+  "linking_url": "https://www.newindia.co.in/health-insurance/restoration-of-sum-insured-rider",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.44
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.44
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.44
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "da3ecf8174950c712a39b1881ef708703c527ad8c308e99facc43d744db67319",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/Restoration_of_Sum_Insured_Rider - CLAUSE.pdf"
+}

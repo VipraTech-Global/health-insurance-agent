@@ -1,0 +1,922 @@
+{
+  "artifact_version": "r11",
+  "generated_at_utc": "2026-09-10T17:35:42.455317+00:00",
+  "newly_classified_documents": [
+    {
+      "source_sha256": "1ef8c3627ee30f32c683fdc788c34c85d7536474e8612ebcae36d1b8ce385c4a",
+      "insurer_id": "go-digit",
+      "product_or_heading": "Digit Health Insurance Policy",
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Selected original title and grant or linked plan table identify medical-expense policy; CIS/proposal/prospectus retain supporting role.",
+      "page_count": 67,
+      "observed_uins": [
+        "GODHLIP25039V022425"
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            595.32,
+            841.92
+          ],
+          "exact_passage": "Go Digit General Insurance Ltd.\nWelcome to the \u2018I Feel Good\u2019 policy\nAka\nDigit Health Insurance Policy\nUIN: GODHLIP25039V022425\nPolicy Wordings\nCONTENTS\nA. PREAMBLE ............................................................................................................................................ 2\nB. DEFINITIONS ......................................................................................................................................... 3\nC. BENEFITS COVERED UNDER THE POLICY ........................................................................................... 12\nI. COVERAGE .......................................................................................................................................... 12\nSECTION 1. HOSPITALIZATION COVER ............................................................................................... 12\nSECTION 2: ORGAN DONOR EXPENSES ............................................................................................. 17\nSECTION 3. EMERGENCY AIR AMBULANCE ....................................................................................... 18\nSECTION 4. MATERNITY BENEFIT WALLET & NEWBORN COVER ...................................................... 18\nSECTION 5: WORLDWIDE COVERAGE ................................................................................................ 20\nSECTION 6. SUM INSURED BACK UP .................................................................................................. 21\nSECTION 7. IN-BUILT PERSONAL ACCIDENT ...................................................................................... 21\nII. OPTIONAL COVERS ............................................................................................................................. 22\nD. EXCLUSIONS ........................................................................................................................................ 42\nE. GENERAL TERMS AND CLAUSES ......................................................................................................... 49\nANNEXURE A ................................................................................................................................................... 57\nANNEXURE B ................................................................................................................................................... 59\nANNEXURE C ................................................................................................................................................... 63\nDigit Health Insurance Policy \u2013 Policy Wording (GODHLIP25039V022425) Page 1 of 67",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Selected visible page title/grant/configuration review; full original not inventoried."
+        },
+        {
+          "physical_page": 2,
+          "bbox": [
+            0,
+            0,
+            595.32,
+            841.92
+          ],
+          "exact_passage": "Go Digit General Insurance Ltd.\nInside:\nLet\u2019s get started!\nYou\u2019re already awesome because you decided to protect your most important asset, your health. Think of Digit as\nyour running or gym buddy, keeping pace with you all the way. While you\u2019re reading this policy, you get confused\nor have a query, or you are referring to this policy because you have a claim to make, please call us at 1800-258-\n4242 or mail us at healthclaims@godigit.com.\nA. PREAMBLE\nBased on the declaration provided by You to us, Go Digit General Insurance Limited (hereinafter called \u2018the\nCompany/DIGIT\u2019) which forms the basis of this health policy contract, and having received your premium, we take\npleasure in issuing this policy to you.\nGo Digit General Insurance Limited will cover You under this Policy up to the Sum Insured, during the policy period\nmentioned in your Policy Schedule. Of course, like any insurance cover, it is governed by, and subject to certain\nterms, conditions and exclusions mentioned in this Policy.\nNote: This Policy Wording provides detailed terms, conditions and exclusions for all Sections and optional covers\navailable under this Product. Kindly refer to the Policy Schedule to know exact details of Sections and optional\ncovers as opted by You. Only Wordings related to Sections and optional covers mentioned in your Policy Schedule\nare applicable.\nDisclaimer: The Description mentioned under \u201cDigit Simplification\u201d/ \u201cExamples\u201d /\u201d This space needs your special\nattention\u201d throughout the Insurance Policy is only to aid Your understanding of the Coverage / Benefit Offered.\nIn case of dispute, the Terms and Conditions detailed in the Policy Document and Policy Schedule shall prevail.\nDigit Health Insurance Policy \u2013 Policy Wording (GODHLIP25039V022425) Page 2 of 67",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Selected visible page title/grant/configuration review; full original not inventoried."
+        },
+        {
+          "physical_page": 12,
+          "bbox": [
+            0,
+            0,
+            595.32,
+            841.92
+          ],
+          "exact_passage": "Go Digit General Insurance Ltd.\nC. BENEFITS COVERED UNDER THE POLICY\nI. COVERAGE\nSECTION 1. HOSPITALIZATION COVER\n1.1. In-Patient Hospitalization\nDigit Simplification: Hospital days can be exhausting. We understand this. That\u2019s why, we strive to make\nyour days comfortable. After all, you are at the hospital to recover. Our Hospitalisation Cover is one such ray\nof hope that makes your stay comfortable, so that you only focus on getting healthy!\nIf You suffer an Accidental Injury or Illness during the Policy Period that requires Hospitalization as an inpatient,\nWe will pay You all Reasonable and Customary Charges that are Medically Necessary and Incurred by You in\nrespect of an admissible claim upto the Sum Insured as mentioned in Your Policy Schedule and as per plan\nopted by You. The claim can be made under the following benefits as mentioned below:\nA ccommodation/Room Rent Hospital accommodation in a ward, shared or private room\nICU Intensive Care Unit when you require continuous monitoring or life support\nProfessional Fees Fees for treatment by specialists, physicians, nurses, surgeons and anaesthetists.\nDrugs, medicines prescribed by a specialist or medical practitioner. This also\nincludes Anaesthesia, Blood, Oxygen, Patient\u2019s Diet, Surgical appliances & cost of\nMedication\nprosthetic and other devices or equipment if implanted during the Surgical\nProcedure.\nNecessary Procedures such as x-rays, pathology, brain and body scans (MRI, CT\nDiagnostic\nscans) Etc. used to make a diagnosis for treatment.\nTheatre Fees Operation Theatre Fees\nThis space needs your special attention!\n\u2716: Cost of consumables such as bandages, needles, cotton, etc. are not covered.\n\ud83d\ude0a: Stay comfortable in the hospital room of your choice. Because there are no room rent limit or category\nrestrictions!\n1.2. Day Care Procedures\nDigit Simplification: Technology has speed up healthcare. Get covered for treatments such as, shoulder\ndislocation, dialysis, etc. that are completed in a day. Say bye to hospital staff as soon as you get your\ntreatment done! No more staying in the hospital overnight.\nIf You suffer an Accidental Injury or Illness during the Policy Period, due to which You need to undergo medical\ntreatment and/or surgical procedure as an inpatient under General or Local Anaesthesia in a hospital/day care\ncentre for stay less than 24 hrs because of technological advancement, We will pay the Medial Expenses\nIncurred for such Day Care Procedures\nNote - This is NOT OPD: Treatment normally taken on an out-patient basis is NOT included in the scope of\nthis Cover.\nThis space needs your special attention!\n\u2716: Day to day doctors\u2019 consultations and minor treatments such as stiches and plaster for fractures, etc. are not\ncovered.\n\ud83d\ude0a: Pre and post expenses related to day care procedures will be covered under this section.\nDigit Health Insurance Policy \u2013 Policy Wording (GODHLIP25039V022425) Page 12 of 67",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Selected visible page title/grant/configuration review; full original not inventoried."
+        },
+        {
+          "physical_page": 23,
+          "bbox": [
+            0,
+            0,
+            595.32,
+            841.92
+          ],
+          "exact_passage": "Go Digit General Insurance Ltd.\n22 NRI Benefit\n23 Policy Tenure Multiplier\n24 Premium Refund\n25 Medical Equipment Cover Section 1 - Hospitalization Cover\nPlease note, the below cover is subject to terms, conditions, warranties, deductible, co-payment, limitations and\nexclusions mentioned in the Policy.\n1) Optional Cover 1: Consumables Cover\n(Applicable under Section 1 Hospitalization Cover)\nDigit Simplification: Before, during & after hospitalization, there are many other medical aids & expenditures\nsuch as walking aids, crepe bandages, belts, etc., which needs your pocket\u2019s attention... This cover takes care\nof these expenses that are otherwise excluded from the policy.\nIf you have opted for this optional cover and on payment of additional premium and if Your claim is approved\nunder Section 1- Hospitalization Cover, we will compensate for non-medical expenses incurred by You (You\ncan check them under Annexure B below) during the Policy period directly related to the Your medical or\nsurgical treatment of illness/disease/injury. The compensation will be maximum upto the % of Sum Insured as\nmentioned in Policy Schedule against Section 1 \u2013 Hospitalization Cover.\nPlease note:\ni. Coverage will be limited to the actual expenses incurred during the Hospitalisation but not paid under\nSection 1 \u2013 Hospitalisation Cover as Non-Medical expenses.\nii. In the General Exclusions section, \u2018Non-medical Expenses\u2019 as exclusion no. 25 will not be applicable if you\nhave opted for this optional cover.\niii. Consumable cover should not be applicable for worldwide treatment.\nThis Optional Cover is subject to terms, conditions, limitations and exclusions mentioned in the Policy.\n2) Optional Cover 2: Network Hospital Discount\n(Applicable under Section 1 Hospitalization Cover)\nDigit Simplification: Well, if you choose to be treated at our Network hospital, we have something for you.\nA discount! Add this cover for a discount on your policy!\nPlease note: After opting this optional cover, if you get treatment in a hospital that does not fall under our\nnetwork hospitals, you\u2019ll be liable to pay a percentage of amount [Co-pay] as mentioned in your policy\nschedule.\nIf you have opted for this optional cover, You will be eligible for percentage of premium discount if You agree\nfor hospitalization (under Section 1 \u2013 Hospitalisation Cover) in Our Preferred Provider Network (PPN) Hospitals\nonly. In case, You are hospitalized in any of the Non- Preferred Provider Network hospital, then :\n\u2022 you shall bear a co-payment on each and every admissible claim under Section 1 \u2013 applicable if\nSilver and Standard PPN is opted\n\u2022 hospitalisation expenses will not be indemnified \u2013 applicable if Gold PPN is opted\nHere are three separate lists of Preferred Provider Network (PPN) hospitals, with different discount and\ncopayment structure.\nType of PPN Hospitals Discount Co-Payment / Remarks (applicable only\nin case of hospitalization in any of Non-\nPreferred Provider Network Hospital)\na. Gold Preferred Provider Network 7.5% Company will not indemnify the insured\nfor such expenses\nb. Silver Preferred Provider Network 10% 20% Copayment\nc. Standard Preferred Provider Network 12.5% 15% Copayment\nDigit Health Insurance Policy \u2013 Policy Wording (GODHLIP25039V022425) Page 23 of 67",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Selected visible page title/grant/configuration review; full original not inventoried."
+        },
+        {
+          "physical_page": 34,
+          "bbox": [
+            0,
+            0,
+            595.32,
+            841.92
+          ],
+          "exact_passage": "Go Digit General Insurance Ltd.\nIf You have opted for this Optional cover, the Company will provide following benefits for Non-Resident Indians\n(NRIs), those who lived in abroad for a few years and plan to return to India and /or those who visits India for\nmedical treatments.\nFollowing 2 options are available under NRI Benefit:\na. Avail a discount on the premium,\nor\nb. Take 4X of base sum insured of section 1 for named illnesses\nNamed Illness which are covered are as follows:\n\u2022 Cancer of Specified Severity\n\u2022 Myocardial Infarction\n\u2022 Open Heart Replacement or Repair of Heart Valves\n\u2022 Surgery to Aorta\n\u2022 Open Chest CABG\n\u2022 End Stage Lung Failure\n\u2022 End Stage Liver Failure\n\u2022 Kidney Failure Requiring Regular Dialysis\n\u2022 Major Organ/ Bone Marrow Transplant\n\u2022 Benign Brain Tumour\n\u2022 Coma of Specified Severity\n\u2022 Major Head Trauma\n\u2022 Permanent Paralysis of Limbs\n\u2022 Multiple Sclerosis with Persisting Symptoms\nProvided;\ni. declaration upon Policy Issuance and subsequent renewals that You will be based abroad in entirety for the\nPolicy Period.\nii. proof of overseas residence for the upcoming year upon each renewal to continue availing the discount/\nbenefit under this cover.\niii. Possesses and provides other relevant identity proof documents as mandated for Citizenship of India.\niv. You have an Indian bank account for premium/claims payment.\nConditions for NRI Benefit:\n\u2022 If You opts for premium discount option - We will provide 30% discount on the policy premium for NRIs while\nthe insured is residing abroad.\n\u2022 If You opts for 4X of base Sum Insured option - We will not provide extra 4X of the base sum insured if NRI\ncomes back to India. No discount in premium will be provided if this option is opted.\n\u2022 This benefit is not available if the insured person opts for Worldwide Treatment Plan or any plan that allows\nworldwide coverage.\n\u2022 If the NRI (Non-Resident Indian) decides to stay / come back to India, their subsequent policy renewal will be\nwithout NRI Benefit.\n\u2022 All continuity benefits will be provided under the policy.\nThis Optional Cover is subject to terms, conditions, deductible, co-payment, limitations and exclusions\nmentioned in the Policy.\n23) Optional Cover 23: Policy Tenure Multiplier\nDigit Simplification: If You have taken a multiyear policy, this cover will combine the annual Sum Insured of\nentire policy tenure. You can utilize this combined sum insured for a single claim.\nIf You have opted for this Optional cover, then this cover allows You to combine the annual sum insured of the\nentire policy tenure of a multi -year policy for a single claim. It can be utilized once during the entire Policy period\nfor a single claim. This combined sum insured will keep reducing as and when a claim is made under the policy.\nDigit Health Insurance Policy \u2013 Policy Wording (GODHLIP25039V022425) Page 34 of 67",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Selected visible page title/grant/configuration review; full original not inventoried."
+        }
+      ],
+      "visually_reviewed_physical_pages": [],
+      "acquisition_provenance": [
+        {
+          "attempt_register": "research/registers/attempts/885681cd709d91ff50ada1a604cea88631dea5de9fa1c09908c4824cac328c2c.json",
+          "url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/health/policy-wordings-digit-health-insurance-policy.pdf",
+          "final_url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/health/policy-wordings-digit-health-insurance-policy.pdf",
+          "linking_url": "https://www.godigit.com/downloads",
+          "acquired_at": "2026-09-10T11:58:44.263759+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "1ef8c3627ee30f32c683fdc788c34c85d7536474e8612ebcae36d1b8ce385c4a"
+        }
+      ],
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "review_extent": "Bounded identity, medical-expense grant and selected variant/option constraints; not full contract assessment.",
+      "original_sha256_verified": true
+    },
+    {
+      "source_sha256": "b8b4224260d9f7c71c149f50f8ce36e5ea0847aa01f61fece4b49ac0cf6c1ba8",
+      "insurer_id": "go-digit",
+      "product_or_heading": "Digit Health Insurance Policy",
+      "document_role": "customer_information_sheet",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Selected original title and grant or linked plan table identify medical-expense policy; CIS/proposal/prospectus retain supporting role.",
+      "page_count": 5,
+      "observed_uins": [
+        "GODHLIP25039V022425"
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            595.32,
+            841.92
+          ],
+          "exact_passage": "CUSTOMER INFORMATION SHEET\nNOTE: This is a quick snapshot/summary of your policy details. Please go through the policy terms & conditions\ndocument (detailed Sections are explained there) and policy schedule for full understanding. In case of any conflict,\ndetails and terms & conditions mentioned in policy schedule and policy document shall prevail. For your ease of\nreference, corresponding section/clause numbers of Policy wordings are indicated in brackets.\n1. NAME OF INSURANCE PRODUCT - Digit Health Insurance Policy (UIN: GODHLIP25039V022425)\nPlan Name: <<>>\n2. POLICY NUMBER - <<>>\n3. TYPE OF INSURANCE PRODUCT << Indemnity/ Benefit / Both Indemnity and Benefit>>\nDETAILS OF YOUR COVERAGE\n4. SUM INSURED BASIS\nIndividual Sum Insured / Floater Sum Insured\n<<Sum insured amount details for proposer and other lives covered with name, age, gender details>>\n5. POLICY COVERAGE (Refer \u201cC. Benefit Covered under the Policy\u201d of Policy Wordings)\nSECTION 1. HOSPITALIZATION COVER (Indemnity Cover):\n(Please note - Admission in Hospital need to be beyond 24 hrs in case of Hospitalization Cover)\n1.1. In-Patient Hospitalization\n1.2. Day Care Procedures Covers treatments that don't require an overnight stay, like dialysis or shoulder\ndislocation\n1.3. Pre-Hospitalization: <<30/60/90/120>> days before hospitalization, as per the plan opted\n1.4. Post-Hospitalization: <<30/60/90/120/180>> days post hospitalization, as per the plan opted\n1.5. Road Ambulance: Covers emergency ambulance transportation to the hospital up to << >>\n1.6. Bariatric Surgery: Covers medically necessary bariatric surgery for obesity with underlying health\nconditions, subject to conditions and waiting periods.\n1.7. Psychiatric Illness: Covers hospitalization expenses for psychiatric disorders.\n1.8. Health Check Up: Covers health check-up expenses up to the << >> on every renewal\n1.9. Home (Domiciliary) Hospitalization: Covers medical expenses for treatment at home if hospitalization is\nnot possible\n1.10. Ayush hospitalization: Your policy covers in-patient treatment under Ayurveda, Unani, Siddha, or\nHomeopathy at certified AYUSH hospitals.\n1.11. Daily Cash for Choosing Shared Accommodation: If You choose a shared accommodation during any\nhospitalization, You will be eligible for a Daily Cash for every completion of 24 hours at the hospital. <<>>\nSECTION 2. ORGAN DONOR EXPENSES (Indemnity Cover): Policy covers organ donor expenses, including pre\nand post-hospitalization costs, up to 5% of the approved claim amount for harvesting expenses. The donor\nmust comply with the Transplantation of Human Organs Act 1994. A waiting period applies, as stated in your\npolicy schedule.\n<<SECTION 3. EMERGENCY AIR AMBULANCE (Indemnity Cover): Policy covers emergency air ambulance\ntransportation within India for life-threatening conditions, provided it's medically necessary and prescribed by\na doctor. >>\n<<SECTION 4. MATERNITY BENEFIT WALLET & NEWBORN COVER (Indemnity Cover):\nA. Maternity Benefit Wallet: Your policy offers a maternity benefit with a reduced waiting period of 9\nmonths. The sum insured starts at \u20b915,000 and increases by \u20b910,000 each year, up to \u20b91,00,000, if no\nclaims are made. This benefit covers delivery, pregnancy complications, and lawful terminations for up to\ntwo living children\nB. New-born Cover: Your policy covers your newborn for up to 90 days from the date of delivery, including\nmedical expenses and vaccinations as per the National Immunization Schedule.>>\nDigit Health Insurance Policy (CIS) UIN:(GODHLIP25039V022425) Page 1 of 5",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Selected visible page title/grant/configuration review; full original not inventoried."
+        }
+      ],
+      "visually_reviewed_physical_pages": [],
+      "acquisition_provenance": [
+        {
+          "attempt_register": "research/registers/attempts/c99cbf33133ad64a235b62540fc912b08020eb687793f542c9fd60482bc59633.json",
+          "url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/health/cis-digit-health-insurance-policy.pdf",
+          "final_url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/health/cis-digit-health-insurance-policy.pdf",
+          "linking_url": "https://www.godigit.com/downloads",
+          "acquired_at": "2026-09-10T11:58:52.054574+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "b8b4224260d9f7c71c149f50f8ce36e5ea0847aa01f61fece4b49ac0cf6c1ba8"
+        }
+      ],
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "review_extent": "Bounded identity, medical-expense grant and selected variant/option constraints; not full contract assessment.",
+      "original_sha256_verified": true
+    },
+    {
+      "source_sha256": "bd00c98a432db2c343736278f2c9c787608a036f6ff4eff406ca920286999e0f",
+      "insurer_id": "niva-bupa",
+      "product_or_heading": "ReAssure 2.0",
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Selected original title and grant or linked plan table identify medical-expense policy; CIS/proposal/prospectus retain supporting role.",
+      "page_count": 34,
+      "observed_uins": [
+        "NBHHLIP27054V032627"
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            595.276,
+            841.89
+          ],
+          "exact_passage": "ReAssure 2.0\nPolicy Wordings\n1. Preamble\nThis Policy covers Allopathic and AYUSH treatments taken in India ONLY.\n2. Definitions\nIt is IMPORTANT You should go through the definition of some words used in the policy. Definition of these may vary from the common\nunderstanding and colloquial meaning. If a word is not specifically defined in the following section, it\u2019s common meaning will apply.\n2.1. Standard Definitions:\n2.1.1. Accident or Accidental means a sudden, unforeseen and involuntary event caused by external, visible and violent means.\n2.1.2. AYUSH Hospital is a healthcare facility wherein medical / surgical / para-surgical treatment procedures and interventions are\ncarried out by AYUSH Medical Practitioner(s) comprising of any of the following:\na. Central or state government AYUSH Hospital; or\nb. Teaching Hospital attached to AYUSH college recognized by the Central Government / Central Council of Indian Medicine\n/ Central Council of Homeopathy; or\nc. AYUSH Hospital, standalone or co-located with in-patient healthcare facility of any recognized system of medicine,\nregistered with the local authorities, wherever applicable and is under the supervision of a qualified registered AYUSH\nMedical Practitioner and must comply with all the following criterion:\ni. Having at least five in-patient beds;\nii. Having qualified AYUSH Medical Practitioner in charge round the clock;\niii. Having dedicated AYUSH therapy sections as required and/or has equipped operation theatre where surgical\nprocedures are to be carried out;\niv. Maintaining daily records of the patients and making them accessible to the insurance company\u2019s authorized\nrepresentative.\nAYUSH Hospitals referred above shall also obtain either pre-entry level certificate (or higher level of certificate) issued by National\nAccreditation Board for Hospitals and Healthcare Providers (NABH) or State Level Certificate (or higher level of certificate) under\nNational Quality Assurance Standards (NQAS), issued by National Health Systems Resources Centre (NHSRC).\n2.1.3. AYUSH Treatment refers to the medical and / or hospitalization treatments given under Ayurveda, Yoga and Naturopathy,\nUnani, Sidha and Homeopathy systems.\n2.1.4. Break in Policy means the period of gap that occurs at the end of the existing policy term/instalment premium due date,\nwhen the premium due for renewal on a given policy or instalment premium due is not paid on or before the premium\nrenewal date or grace period.\n2.1.5. Cashless Facility means a facility extended by the insurer to the insured where the payments, of the costs of treatment\nundergone by the insured in accordance with the policy terms and conditions, are directly made to the network provider by\nthe insurer to the extent pre-authorization is approved.\n2.1.6. Congenital Anomaly means a condition which is present since birth, and which is abnormal with reference to form, structure\nor position.\na. Internal Congenital Anomaly: Congenital Anomaly which is not in the visible and accessible parts of the body.\nb. External Congenital Anomaly: Congenital Anomaly which is in the visible and accessible parts of the body.\nProduct Name: ReAssure 2.0 | Product UIN: NBHHLIP27054V032627",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Selected visible page title/grant/configuration review; full original not inventoried."
+        },
+        {
+          "physical_page": 5,
+          "bbox": [
+            0,
+            0,
+            595.276,
+            841.89
+          ],
+          "exact_passage": "2.1.39. Renewal means the terms on which the contract of insurance can be renewed on mutual consent with a provision of Grace\nPeriod for treating the renewal continuous for the purpose of gaining credit for pre-existing diseases, time bound exclusions\nand for all Waiting Periods.\n2.1.40. Room Rent means the amount charged by a Hospital towards Room and Boarding expenses and shall include the associated\nmedical expenses.\n2.1.41. Surgery or Surgical Procedure means manual and / or operative procedure (s) required for treatment of an Illness or Injury,\ncorrection of deformities and defects, diagnosis and cure of diseases, relief from suffering or prolongation of life, performed\nin a Hospital or Day Care Centre by a Medical Practitioner.\n2.1.42. Specific Waiting period means a period up to 36 months from the commencement of a health insurance policy during which\nperiod specified diseases/treatments (except due to an accident) are not covered. On completion of the period, diseases/\ntreatments shall be covered provided the policy has been continuously renewed without any break\n2.1.43. Unproven/Experimental treatment means the treatment including drug experimental therapy which is not based on\nestablished medical practice in India, is treatment experimental or unproven\n2.2. Specific Definitions\n2.2.1. Base Sum Insured means the coverage amount for which the premium is computed and charged for this policy.\n2.2.2. Insured Person is the one for whom the company has received full premium (including additional premium if any), completed\nthe risk assessment and issued the policy. The names of the Insured persons covered in the policy are specified in the policy\ndocument, who are also referred as You/Your/Policyholder in this policy.\n2.2.3. Partner Network means Hospital, Diagnostic Centers, Clinics, Doctors, Health Care Workers, empanelled by the Insurer and/\nor by a consolidated organization to provide health related medical services.\n2.2.4. Policy Year means the period of one year from the date of commencement of the policy.\n3. Sum Insured(s)\nThe product offers you so much more! More benefits, More options and More Sum Insured. Sum Insured will be utilized as per following\nsequence in event of any claim:\n1. Base Sum Insured\n2. Booster+ Sum Insured\n3. Safeguard/Safeguard+ Sum Insured\n4. ReAssure+/ReAssureX\n4. Benefits available under the policy.\nDifferent benefits have different limits or Sum Insured. A limit or Sum Insured is our maximum liability (basically this is the maximum\nclaim we will pay) under the benefit. These limits & Sum Insured will be mentioned in your Policy Schedule.\n4.1. Expenses in reaching a Hospital\n4.1.1. Road Ambulance: We will pay you up to Sum Insured.\n4.1.2. Air Ambulance: Only in case of Emergency. Maximum INR 2,50,000 per hospitalization.\nNote: This will be paid only if claim for hospitalization is paid by us. You must always use a registered ambulance / air ambulance\nprovider.\nProduct Name: ReAssure 2.0 | Product UIN: NBHHLIP27054V032627",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Selected visible page title/grant/configuration review; full original not inventoried."
+        },
+        {
+          "physical_page": 6,
+          "bbox": [
+            0,
+            0,
+            595.276,
+            841.89
+          ],
+          "exact_passage": "4.2. Expenses during Hospitalization\n4.2.1. We will pay the expenses incurred by you on treatment (Naturally this excludes expenses not linked to treatment like food,\nbeverage, toiletries and cosmetics). We don\u2019t limit your choice. Choose the room you like, but choose judiciously to protect\nyour Sum Insured.\n\u2022 Medical Expenses for in-patient Hospitalization incurred on treatment under Ayurveda, Yoga, and Naturopathy, Unani,\nSiddha and Homeopathy systems of medicines in an AYUSH Hospital is payable up to the sum assured as specified in\nthe policy schedule.\nClaims under Yoga and Naturopathy system of treatment will be payable subject to prior approval from the Company.\n\u2022 Admitted for 2 hours or more (minimum 24 hours for AYUSH treatment in a AYUSH Hospital)\nNote:\n\u2022 We will NOT pay, even if you were hospitalized, if there was no treatment and only investigations were done.\nExamples: MRI, CT Scan, Endoscopy, Colonoscopy etc.\n\u2022 We will NOT pay for Automation machine for peritoneal dialysis\n\u2022 We will pay for Invasive Angiography even though it is an investigation. But we will not pay for non-invasive\nangiography like CT angiogram\n\u2022 Cataract: We will pay only for Mono-focal Lens for Sum Insured up to 10 lacs.\n4.2.2. We pay for Modern treatments as specified below:\n1. Uterine Artery 2. Immunotherapy- 3. Vaporisation of the 4. Stem cell therapy:\nEmbolization Monoclonal Antibody to prostrate (Green laser Hematopoietic stem cells\nand HIFU (High be given as injection treatment or holmium for bone marrow transplant\nintensity focused laser treatment) for haematological\nultrasound) conditions\n5. Balloon Sinuplasty 6. Oral Chemotherapy 7. Robotic surgeries 8. Stereotactic radio Surgeries\n9. Deep Brain 10. Intra vitreal injections 11. Bronchical 12. IONM - (Intra Operative\nstimulation Thermoplasty Neuro Monitoring)\n4.3. Expenses before and after hospitalization (Pre & Post hospitalization)\nWe will pay expenses incurred on consultations, medicines, physiotherapy, diagnostic tests for 60 days before the date of admission\nand 180 days after date of discharge IF these are related to the condition for which hospitalization claim is paid.\n4.4. Home Care / Domiciliary Treatment\nHome Care Treatment means treatment availed by the insured person at home which in normal course would require care and\ntreatment at a hospital but is actually taken at home provided that:\n4.4.1. The medical practitioner advices the insured person to undergo treatment at home\n4.4.2. There is continuous active line of treatment with monitoring of health status by a medical practitioner for each day through\nthe duration of the home care treatment\n4.4.3. Daily monitoring chart including records of treatment administered duly signed by the treating doctor is maintained\nNote:\n\u2022 We will pay for Pre & Post hospitalization benefit as per section 4.3 for Home Care / Domiciliary Treatment.\n\u2022 We pay for peritoneal dialysis, Chemotherapy taken at home.\n\u2022 We do NOT pay for any Medical & ambulatory devices used at home (like Pulse Oxymeter, BP monitors, Sugar monitors,\nautomation device for peritoneal dialysis, CPAP, BiPAP, Crutches, wheel chair etc.)\nProduct Name: ReAssure 2.0 | Product UIN: NBHHLIP27054V032627",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Selected visible page title/grant/configuration review; full original not inventoried."
+        },
+        {
+          "physical_page": 7,
+          "bbox": [
+            0,
+            0,
+            595.276,
+            841.89
+          ],
+          "exact_passage": "4.5. Organ donor\nIf you ever undergo an organ transplant, we will pay the hospitalization expenses of the donor for harvesting the organ, ONLY when\nyour Hospitalisation claim is paid.\nIf you donate any of your organs, we will pay for the expenses for harvesting the organ from you. We respect this noble\ndeed. Remember, organ donation saves many lives.\n4.6. Annual Health Checkup\nAvailable once every Policy Year, from day 1 of the policy. You can choose any test(s) from the list specified below up to your eligibility\nlimit. The tests MUST be booked through our digital assets (e.g. Mobile App). This benefit is available ONLY on cashless and no re-\nimbursement is allowed.\nList of tests covered:\nComplete Physical Examination by\nComplete blood count (CBC) Serum Electrolytes\nPhysician\nPost prandial/lunch blood sugar (PPBS\nUrine Routine & Microscopic HbA1C\n/ PLBS)\nErythrocyte Sedimentation Rate (ESR) Uric Acid Thyroid function test\nFasting Blood sugar (FBS) Lipid Profile Liver Function Test (LFT)\nElectrocardiogram (ECG) Kidney function test Treadmill test (TMT) OR 2 D ECHO\nX Ray chest Serum Vitamin D Ultrasound test (USG)\nMammogram Colonoscopy (for >50 year olds) Serum calcium\nPAP smear\nNote: If you undergo multiple tests, make sure that all these are done within 7 days. Unutilized amount will not be carried forward\nto next policy year.\n4.7. ReAssure+\n4.7.1. ReAssure \u201cForever\u201d: Enjoy unlimited Sum Insured. The first paid claim in the life of the policy triggers ReAssure \u201cForever\u201d.\nOnce Triggered it stays for life, provided that the policy is renewed without break.\nNote:\n\u2022 Maximum amount ReAssure+ pays for any single claim is up to Base Sum Insured.\n\u2022 We will consider a claim, if it is paid under the following: Expenses in reaching a Hospital, Expenses during Hospitalization,\nExpenses before and after hospitalization, Home Care / Domiciliary Treatment, Organ Donor.\n\u2022 Expenses in reaching a Hospital and Expenses before and after hospitalization for the 1st ever hospitalization will be treated as the\n1st claim itself.\nIllustration:\nYear 1: Once the Policy is bought.\nBase Sum 1st paid ReAssure+ is Balance 2nd Claim amount Balance 3rd Pay- Claim amount\nInsured Claim triggered (Equal Base Sum payable paid Base Sum able claim paid\nto Base Sum Insured claim Insured\n10 Lakh 7 Lakh Insured) 3 Lakh 12 Lakh 12 Lakh Nil 11 Lakh 10 Lakh from\nReAssure+\n(3 Lakh from\nBase Sum In-\nsured and 9 Lakh\nfrom ReAssure+\nProduct Name: ReAssure 2.0 | Product UIN: NBHHLIP27054V032627",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Selected visible page title/grant/configuration review; full original not inventoried."
+        },
+        {
+          "physical_page": 9,
+          "bbox": [
+            0,
+            0,
+            595.276,
+            841.89
+          ],
+          "exact_passage": "Illustration:\nYear 1: Once the Policy is bought.\nBase Sum 1st paid Balance 2nd Claim amount Balance 3rd Pay- Claim amount\nInsured Claim Base Sum payable paid Base Sum able claim paid\nInsured claim Insured\n10 Lakh 7 Lakh 3 Lakh 12 Lakh 12 Lakh Nil 11 Lakh 10 Lakh from\nReAssureX is\nReAssureX\ntriggered (Equal\nto Base Sum\n(3 Lakh from\nInsured)\nBase Sum\nInsured and\n9 Lakh from\nReAssureX\nYear 2: Once the policy is renewed:\nBalance Balance\nBase ReAssureX 2nd\nBase Claim amount Base 3rd Payable Claim amount\nSum Sum 1st Claim Paid payable\nSum paid Sum claim paid\nInsured Insured claim\nInsured Insured\n10 Lakh from\n10 Lakh 10 Lakh 15 Lakh Nil 12 Lakh 10 Lakh Nil 10 Lakh\nReAssureX\n10 Lakhs from\nBase Sum (this 10 Lakh\nInsured and ReAssureX ReAssureX will trigger\n5 Lakhs from unlimited\nReAssureX times)\n4.9. Booster+\nDon\u2019t lose what you don\u2019t use.\nUnutilized Base Sum Insured carries forward. Maximum it will accumulate up to 3/5/10 times (based on the plan you have chosen) of\nthe Base Sum Insured.\nExample: If you have chosen Base Sum Insured of INR 10 lakh and Titanium+ Variant, then at the end of 10 years (if you have made\nno claims in these years) you will have\n1.10 Crore Sum Insured (that is 10 Lakh base + 1 Crore Booster+). Don\u2019t forget that you would have the Safeguard / Safeguard+\n(this is a great benefit. You must choose it) and ReAssure \u201cForever\u201d (in case of claim) over and above the 1.10 Crore.\nThat\u2019s 11 times of Sum Insured than what you paid for.\nNote:\n\u2022 If you convert an Individual Sum Insured policy in any manner, into a floater plan, then the least of the Booster+ Sum Insured of\nindividual insured members will be carried forward to the floater plan.\n\u2022 If a floater plan, splits into multiple policies, then the Booster+ Sum Insured of floater plan will be carried forward to the split\npolicies, provided the Base Sum Insured is not reduced.\n\u2022 If you reduce the Base Sum Insured, Booster+ Sum Insured will be proportionately reduced. Let\u2019s say if you reduce the current INR\n10 lakh Sum Insured to INR 5 lakh, your Booster+ Sum Insured will be halved.\n\u2022 You can and should regularly increase Sum Insured of your Health insurance policy. Medical inflation is a reality and current Sum\nProduct Name: ReAssure 2.0 | Product UIN: NBHHLIP27054V032627",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Selected visible page title/grant/configuration review; full original not inventoried."
+        }
+      ],
+      "visually_reviewed_physical_pages": [
+        6
+      ],
+      "acquisition_provenance": [
+        {
+          "attempt_register": "research/registers/attempts/584470e51a20e11b4782cea638a9f1d83155e69a9b2d0a0d16e3df3c5cded9d8.json",
+          "url": "https://transactions.nivabupa.com/pages/doc/policy_wording/ReAssure-2.0-Policy-Wording.pdf?v=1.8",
+          "final_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/ReAssure-2.0-Policy-Wording.pdf?v=1.8",
+          "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+          "acquired_at": "2026-09-10T11:37:55.707623+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "bd00c98a432db2c343736278f2c9c787608a036f6ff4eff406ca920286999e0f"
+        }
+      ],
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "review_extent": "Bounded identity, medical-expense grant and selected variant/option constraints; not full contract assessment.",
+      "original_sha256_verified": true
+    },
+    {
+      "source_sha256": "a4c141d299fc7a0d700e0e35d2a8e32190e490bb6e54190ce38bd362bfba893a",
+      "insurer_id": "niva-bupa",
+      "product_or_heading": "ReAssure 2.0",
+      "document_role": "prospectus",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Selected original title and grant or linked plan table identify medical-expense policy; CIS/proposal/prospectus retain supporting role.",
+      "page_count": 34,
+      "observed_uins": [
+        "NBHHLIP27054V032627"
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            595.276,
+            841.89
+          ],
+          "exact_passage": "ReAssure 2.0\nProspectus cum Sales Literature\n1. Policy Design\n1.1. ReAssure 2.0 can be issued to individual customer(s) or to a family with up to 5 children (refer to as family floater).\n1.2. This policy covers persons in the age group 91 days and above. The minimum entry age for adult is 18 years and for dependent child is\n91 days. The maximum entry age limit for adults in this product is 99 years. The maximum entry age allowed for dependent child is 30\nyears.\n1.3. There is no maximum cover ceasing age on renewals.\n1.4. Relationships allowed can be self, spouse, mother, father, mother-in-law, father-in-law, son, daughter, employer, employee.\n1.5. In an Individual policy and a family floater, maximum up to 6 members can be included in a single policy.\n1.6. Family Discount: 10% discount on premium if 2 or more members are covered under an individual policy.\n1.7. Term discount: The default policy term for all plans is one year. Two year and three year policy term options are also available under\nthe product. The level of discount is as below:\n1.7.1. 2 year term: 10% on the premium for second policy year\n1.7.2. 3 year term: 15% on the premium for third policy year + 7.5% on the premium for second policy year\n1.7.3. Term Discount is not applicable if premium is paid via Monthly, Half Yearly or Quarterly Instalments.\n1.8. Staff Discount: A discount of 10% on the policy premium (inception & renewals) to Niva Bupa employees\n1.9. Standing Instruction Discount: 2.5% discount on premium if standing instruction for renewal is provided and the policy is renewed\nusing the same.\n1.10. Doctor Discount: 5% discount on premium if an Insured Person is a certified Medical Practitioner. The discount is applied on Individual\npremium in individual plans and on the floater policy premium in floater plans.\n1.11. Digital Discount: 5% digital discount at the time of buying the policy and subsequent renewals, through our website.\n1.12. Live Healthy: up to 30% Discount at renewals.\n1.13. First Step towards Health Insurance Discount: A discount will be applied at new business only, for those policies that are new to\nhealth insurance (excludes policies that come as port, migration and renewals).\n1.13.1. 1 year term: 7% discount\n1.13.2. 2 year term: 3.5% discount\n1.13.3. 3 year term: 2.5% discount\n1.14. Early Renewal Discount: 2.5% discount on premium if you renew with us early. Either of Standing Instruction or Early Renewal\ndiscount will be given.\n1.15. The premium rates for the plans offered are annexed hereto with the prospectus.\nProduct Name: ReAssure 2.0: Product UIN: NBHHLIP27054V032627",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Selected visible page title/grant/configuration review; full original not inventoried."
+        },
+        {
+          "physical_page": 31,
+          "bbox": [
+            0,
+            0,
+            595.276,
+            841.89
+          ],
+          "exact_passage": "Product Benefit Table\nVariant Diamond+ Platinum+ Titanium+ Bronze+ Silver+ Gold+\nBase Sum Insured 5 Lacs, 10 Lacs, 15 Lacs, 20 Lacs, 25 Lacs, 50 Lacs, 100 Lacs\n(INR)\nBenefits\nRoad Ambulance: Up to Sum Insured\nExpenses in\nReaching a Hospital Air Ambulance : up to INR 2,50,000 per hospitalization\nExpenses During\nUp to Base Sum Insured.\nHospitalization\nModern Treatments: Covered up to Sum Insured\n(Covers AYUSH)\nExpenses Before\nand After a 60 Days and 180 Days Respectively. Covered Up to Sum Insured\nHospitalization\nHome Care/\nCovered up to Sum Insured\nDomiciliary\nOrgan Donor Covered up to Sum Insured\nFor defined list of tests; up to INR 500 for every INR 1 Lac Base Sum Insured.\nAnnual Health\nCheck-Up\n(Individual: Maximum INR 5,000 per Insured; Family Floater: Maximum INR 10,000 per policy).\n\u2022 ReAssure \u201cForever\u201d: First claim paid triggers\nReAssure \u201cForever\u201d. It is unlimited. Each Claim\nunder ReAssure \u201cForever\u201d will be up to Sum\nReAssure+ NA\nInsured.\n\u2022 Lock the Clock: Pay premiums as per your entry\nage, till a claim is paid.\nFirst claim paid triggers ReAssure \u201cForever\u201d. It is unlimited.\nReAssureX NA Each Claim under ReAssure \u201cForever\u201d will be up to Sum\nInsured.\n3X: Unutilized 5X: Unutilized 10X: Unutilized 3X: Unutilized 5X: Unutilized 10X: Unutilized\nBase Sum Base Sum Base Sum Insured Base Sum Insured Base Sum Insured Base Sum Insured\nInsured carries Insured carries carries forward carries forward carries forward carries forward\nBooster+ forward to the forward to the to the next policy to the next policy to the next policy to the next policy\nnext policy year, next policy year, year, maximum year, maximum year, maximum year, maximum\nmaximum up to maximum up to up to 10 times. up to 3 times. up to 5 times. up to 10 times.\n3 times. 5 times.\nLive Healthy Up to 30% discount on premium at the time of Renewal.\nShared\n\u2022 Up to INR 15 Lakh Base Sum Insured: INR 800 per day; Maximum INR 4,800\nAccommodation\n\u2022 Above INR 15 Lakh Base Sum Insured: INR 1,000 per day; Maximum INR. 6,000\nBenefit\nSecond Medical\nOnce for any condition in a Policy Year.\nOpinion\ne-consultation Unlimited e-consultation within our network\nProduct Name: ReAssure 2.0: Product UIN: NBHHLIP27054V032627",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Selected visible page title/grant/configuration review; full original not inventoried."
+        },
+        {
+          "physical_page": 32,
+          "bbox": [
+            0,
+            0,
+            595.276,
+            841.89
+          ],
+          "exact_passage": "Optional Benefits\n\u2022 Up to INR 5 Lakh Base Sum Insured: INR 1,000/day\nHospital Cash \u2022 Between INR 7.5 Lakh to INR 15 Lakh Base Sum Insured: INR 2,000/day\n\u2022 Above 15 Lakh Base Sum Insured: INR 4,000/day\nPersonal Accident Up to 5 times of Base Sum Insured. Maximum up to INR 1 Crore\n\u2022 Claim Safeguard: Non-payable items will be covered (as per list I of Annexure I)\nSafeguard \u2022 Booster+ Safeguard: No impact on Booster+ if claim in a policy year is up to INR 50,000\n\u2022 Sum Insured Safeguard: CPI linked increase in Base Sum Insured\n\u2022 Claim Safeguard+: Non-payable items will be covered (as per list I, II, III, IV of Annexure I)\nSafeguard+ \u2022 Booster+ Safeguard+: No impact on Booster+ if claim in a policy year is up to INR 1,00,000\n\u2022 Sum Insured Safeguard+: CPI linked increase in Base Sum Insured\nCo-payment \u2022 Co-payment Options of 20% / 30% / 40% / 50%\nPre-Existing Dis-\nease Waiting Time \u2022 Options to modify PED waiting periods- 1 year or 2 year\nModification\nRoom Type Modifi-\n\u2022 Choose between Single Private room or a sharing room.\ncation\nAnnual Aggregate\n\u2022 NR 10,000 / INR 20,000 / INR 30,000 / INR 50,000 / INR 1,00,000\nDeductible\nAll limits are specified in INR unless specified\nVariant Bronze Silver Gold\nBase Sum Insured (INR) 5 Lacs, 10 Lacs, 15 Lacs, 20 Lacs, 25 Lacs, 50 Lacs, 75 Lacs, 100 Lacs\nBenefits\nRoad Ambulance: Up to Sum Insured\nExpenses in Reaching a\nHospital\nAir Ambulance : up to INR 2,50,000 per hospitalization\nExpenses During Up to Base Sum Insured.\nHospitalization\n(Covers AYUSH) Modern Treatments: Covered up to Sum Insured\nExpenses Before and\n60 Days and 180 Days Respectively. Covered Up to Sum Insured\nAfter a Hospitalization\nHome Care/Domiciliary Covered up to Sum Insured\nOrgan Donor Covered up to Sum Insured\nFor defined list of tests; up to INR 500 for every INR 1 Lac Base Sum Insured.\nAnnual Health Check-Up\n(Individual: Maximum INR 5,000 per Insured; Family Floater: Maximum INR 10,000 per policy).\nReAssureX First claim paid triggers ReAssure \u201cForever\u201d. It is unlimited. Each Claim under ReAssure \u201cForever\u201d will be up to Sum Insured.\n3X: Unutilized Base Sum Insured carries 5X: Unutilized Base Sum Insured 10X: Unutilized Base Sum Insured\nBooster+ forward to the next policy year, maximum carries forward to the next policy carries forward to the next policy year,\nup to 3 times. year, maximum up to 5 times. maximum up to 10 times.\nProduct Name: ReAssure 2.0: Product UIN: NBHHLIP27054V032627",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Selected visible page title/grant/configuration review; full original not inventoried."
+        }
+      ],
+      "visually_reviewed_physical_pages": [
+        31,
+        32
+      ],
+      "acquisition_provenance": [
+        {
+          "attempt_register": "research/registers/attempts/d52fcff37900ac68e60d983a4c9cb15d3d8d5519db10a767b48b48b5cf7da7c8.json",
+          "url": "https://transactions.nivabupa.com/pages/doc/prospectus/ReAssure-2.0-Prospectus-cum-Sales-Literature.pdf?v=1.10",
+          "final_url": "https://transactions.nivabupa.com/pages/doc/prospectus/ReAssure-2.0-Prospectus-cum-Sales-Literature.pdf?v=1.10",
+          "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+          "acquired_at": "2026-09-10T11:38:12.089194+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "a4c141d299fc7a0d700e0e35d2a8e32190e490bb6e54190ce38bd362bfba893a"
+        }
+      ],
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "review_extent": "Bounded identity, medical-expense grant and selected variant/option constraints; not full contract assessment.",
+      "original_sha256_verified": true
+    },
+    {
+      "source_sha256": "366e08afe7e9b71238d74db9e9988767c901b8e3eabca7ffc30c4892c6b210c5",
+      "insurer_id": "niva-bupa",
+      "product_or_heading": "ReAssure",
+      "document_role": "policy_wording",
+      "scope": "medical_expense",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Selected original title and grant or linked plan table identify medical-expense policy; CIS/proposal/prospectus retain supporting role.",
+      "page_count": 45,
+      "observed_uins": [
+        "NBHHLIP26050V042526"
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            595.276,
+            841.89
+          ],
+          "exact_passage": "ReAssure\nPolicy Document\n1. Preamble\nThis \u2018ReAssure\u2019 policy is a contract of insurance between You and Us which is subject to payment of full premium in advance and the terms,\nconditions and exclusions of this Policy. This Policy has been issued on the basis of the Disclosure of Information, including the information\nprovided by You in the Proposal Form and / or the Information Summary Sheet.\nIn addition, please note the list of exclusions is set out in Section 6 of this Policy.\n2. Definitions & Interpretation\nFor the purposes of interpretation and understanding of this Policy, We have defined, in Section 3, some of the important words used in\nthe Policy which will have the special meaning accorded to these terms for the purposes of this Policy. For the remaining language and\nwords used, the usual meaning as described in standard English language dictionaries shall apply. The words and expressions defined in the\nInsurance Act 1938, IRDA Act 1999, regulations notified by the IRDAI and circulars and guidelines issued by the IRDAI, together with their\namendment shall carry the meanings given therein.\n3. Defined Terms\n3.1. Standard Definitions\n3.1.1 Accident or Accidental means a sudden, unforeseen and involuntary event caused by external, visible and violent means.\n3.1.2 AYUSH Hospital is a healthcare facility wherein medical / surgical / para-surgical treatment procedures and interventions are\ncarried out by AYUSH Medical Practitioner(s) comprising of any of the following:\na. Central or state government AYUSH Hospital; or\nb. Teaching Hospital attached to AYUSH college recognized by the Central Government / Central Council of Indian Medicine\n/ Central Council of Homeopathy; or\nc. AYUSH Hospital, standalone or co-located with in-patient healthcare facility of any recognized system of medicine,\nregistered with the local authorities, wherever applicable and is under the supervision of a qualified registered AYUSH\nMedical Practitioner and must comply with all the following criterion:\ni. Having at least five in-patient beds;\nii. Having qualified AYUSH Medical Practitioner in charge round the clock;\niii. Having dedicated AYUSH therapy sections as required and/or has equipped operation theatre where surgical\nprocedures are to be carried out;\niv. Maintaining daily records of the patients and making them accessible to the insurance company\u2019s authorized\nrepresentative.\nProduct Name: ReAssure, Product UIN: NBHHLIP26050V042526",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Selected visible page title/grant/configuration review; full original not inventoried."
+        },
+        {
+          "physical_page": 7,
+          "bbox": [
+            0,
+            0,
+            595.276,
+            841.89
+          ],
+          "exact_passage": "3.2.21 Standby Services are services of another Medical Practitioner requested by treating Medical Practitioner and involving\nprolonged attendance without direct (face-to-face) patient contact or involvement.\n3.2.22 Sum Insured:\nIn case of Individual Policy, Sum Insured means the total of the Base Sum Insured, Loyalty Additions, and Sum Insured\nSafeguard/Safeguard+ (if applicable) for that Insured Person. Our maximum, total and cumulative liability for all claims\nduring the Policy Year in respect of the Insured Person will be Sum Insured and amount provided under ReAssure benefit.\nIn case of Family Floater Policy, Sum Insured means the total of the Base Sum Insured, Loyalty Additions and Sum Insured\nSafeguard/Safeguard+ (if applicable). Our maximum, total and cumulative liability for all claims during the Policy Year in\nrespect of all Insured Persons taken together will be Sum Insured and amount provided under ReAssure benefit.\nIf the Policy Period is 2 years or 3 years, then the Sum Insured shall be applied separately for each Policy Year in\nthe Policy Period.\n3.2.23 Waiting Period means a time-bound exclusion period related to condition(s) specified in the Policy Schedule or the Policy\nwhich shall be served before a claim related to such condition(s) becomes admissible.\n3.2.24 We/Our/Us means Niva Bupa Health Insurance Company Limited.\n3.2.25 You/Your/Policyholder means the person named in the Policy Schedule who has concluded this Policy with Us.\n4. Benefits available under the Policy\nThe benefits available under this Policy are described below.\na. The Policy covers Reasonable and Customary Charges incurred towards Medically Necessary Treatment taken by the Insured Person\nduring the Policy Period for an Illness, Injury or condition as described in the sections below and contracted or sustained during the\nPolicy Period. The benefits listed in the sections below will be payable subject to the terms, conditions and exclusions of this Policy and\nthe availability of the Sum Insured and any sub-limits for the benefit as maybe specified in the Policy Schedule.\nb. The expenses that are not covered or subsumed into room charges / procedure charges / costs of treatment are placed as Annexure II\nc. All the benefits (including optional benefits) which are available under the Policy along with the respective limits / amounts applicable\nbased on the Sum Insured have been summarized in the Product Benefit Table in Annexure I.\nd. All claims under the Policy must be made in accordance with the process defined under Section 8 (Claim Process & Requirements).\ne. All claims paid under any benefit except for those admitted under Section 4.14 (Shared accommodation Cash Benefit), Section 4.15\n(Health Checkup), Section 4.16 (Second Medical Opinion), Section 4.17 (Live Healthy benefit), Section 5.1 (Personal Accident Cover) and\nSection 5.2 (Hospital Cash) shall reduce the Sum Insured for the Policy Year in which the Insured Event in relation to which the claim is\nmade has been occurred, unless otherwise specified in the respective section. Thereafter only the balance Sum Insured after payment\nof claim amounts admitted shall be available for future claims arising in that Policy Year.\n4.1. Inpatient Care\nWe will indemnify the Medical Expenses incurred for one or more of the following due to the Insured Person\u2019s Hospitalization during\nthe Policy Period following an Illness or Injury:\na. Room Rent;\nb. Room boarding and nursing charges during Hospitalization as charged by the Hospital where the Insured Person availed medical\ntreatment;\nc. Medical Practitioners\u2019 fees, excluding any charges or fees for Standby Services;\nd. Investigative tests or diagnostic procedures directly related to the Insured Event which lead to the current Hospitalization;\nProduct Name: ReAssure, Product UIN: NBHHLIP26050V042526",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Selected visible page title/grant/configuration review; full original not inventoried."
+        },
+        {
+          "physical_page": 8,
+          "bbox": [
+            0,
+            0,
+            595.276,
+            841.89
+          ],
+          "exact_passage": "e. Medicines, drugs as prescribed by the treating Medical Practitioner related to the Insured Event that led to the current Hospitalization;\nf. Intravenous fluids, blood transfusion, injection administration charges, allowable consumables and /or enteral feedings;\ng. Operation theatre charges;\nh. The cost of prosthetics and other devices or equipment, if implanted internally during Surgery;\ni. Intensive Care Unit Charges.\na. The Hospitalization is for Medically Necessary Treatment and advised in writing by a Medical Practitioner.\nb. We will pay the consultation charges for any Medical Practitioner visiting the Insured Person only if:\ni. The Medical Practitioner\u2019s treatment or advice has been specifically sought by the Hospital; and\nii. The consultation charges are included in the Hospital\u2019s bill\n4.2. Day Care Treatment\nWe will indemnify the Medical Expenses incurred on the Insured Person\u2019s under any Day Care Treatment during the Policy Period\nfollowing an Illness or Injury.\na. The Day Care Treatment is advised in writing by a Medical Practitioner as Medically Necessary Treatment.\nb. The Day Care Treatment would be covered if the Insured Person is admitted for more than 2 hours and would also cover treatment\ntaken for Angiography, Dialysis, Radiotherapy or Chemotherapy for cancer.\nc. If We have accepted a claim under this benefit, We will also indemnify the Insured Person\u2019s Pre-hospitalization Medical Expenses\nand Post-hospitalization Medical Expenses in accordance with Sections 4.6 and 4.7.\na. OPD Treatment and Diagnostic Services costs are not covered under this benefit.\n4.3. Alternative Treatments\nWe will indemnify the Medical Expenses incurred on the Insured Person\u2019s Hospitalization for Inpatient Care during the Policy Period\non treatment taken under Ayurveda, Unani, Siddha and Homeopathy.\na. The treatment should be taken in AYUSH Hospital.\nb. If We have accepted a claim under this benefit, We will also indemnify the Insured Person\u2019s Pre-hospitalization Medical Expenses\nand Post-hospitalization Medical Expenses in accordance with Sections 4.6 and 4.7, provided that these Medical Expenses relate\nonly to Alternative Treatments and not Allopathy.\nc. Any non-allopathic treatment taken by the Insured Person shall only be covered under Section 4.3 (Alternative Treatments) as per\nthe applicable terms and conditions.\na. Medical Expenses incurred on treatment taken under Yoga shall not be covered.\nProduct Name: ReAssure, Product UIN: NBHHLIP26050V042526",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Selected visible page title/grant/configuration review; full original not inventoried."
+        }
+      ],
+      "visually_reviewed_physical_pages": [],
+      "acquisition_provenance": [
+        {
+          "attempt_register": "research/registers/attempts/8c09bdb7d7b130a5a29d16ae08183a0b0ab34b75cd6518984d986ce8c497eb2d.json",
+          "url": "https://transactions.nivabupa.com/pages/doc/policy_wording/ReAssure-Policy-Wording.pdf?v=1.5",
+          "final_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/ReAssure-Policy-Wording.pdf?v=1.5",
+          "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+          "acquired_at": "2026-09-10T11:37:55.629147+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "366e08afe7e9b71238d74db9e9988767c901b8e3eabca7ffc30c4892c6b210c5"
+        }
+      ],
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "review_extent": "Bounded identity, medical-expense grant and selected variant/option constraints; not full contract assessment.",
+      "original_sha256_verified": true
+    },
+    {
+      "source_sha256": "79233487afd32fcf54ed260e862f47ee4d2c5354f6ae9fa878810710e8c1e66c",
+      "insurer_id": "niva-bupa",
+      "product_or_heading": "ReAssure",
+      "document_role": "customer_information_sheet",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Selected original title and grant or linked plan table identify medical-expense policy; CIS/proposal/prospectus retain supporting role.",
+      "page_count": 13,
+      "observed_uins": [
+        "NBHHLIP26050V042526"
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "exact_passage": "ReAssure Customer Information Sheet\nCustomer Information Sheet/ Know Your Policy\nThis document provides key information about your policy. You are advised to go\nthrough your policy document\nPolicy\nSl.\nTitle Description Clause\nNo\nNumber\n1 Name of ReAssure\nInsurance\nProduct/ Policy\n2 Policy Number\n3 Type of Both Indemnity and Benefit\nInsurance\nProduct/ Policy\n4 Sum Insured Sum Insured Options are: 3 Lacs, 4 Lacs, 5 Lacs,\n7.5 Lacs, 10 Lacs, 12.5 Lacs, 15 Lacs, 20 Lacs, 25\nLacs, 50 Lacs, 75 Lacs, 100 Lacs\nThe Sum Insured opted by you is mentioned in the\nPolicy Schedule.\n5 Policy Coverage Expenses in respect of:\nBase Coverage:\n\uf0b7 Hospital admission longer than 24 hours 4.1\n\uf0b7 Day Care Treatment would be covered if 4.2\nadmitted for more than 2 hours and would also\ncover treatment taken for Angiography, Dialysis,\nRadiotherapy or Chemotherapy for cancer.\n\uf0b7 Alternative treatment covered up to Sum Insured 4.3\n4.4\n\uf0b7 Domiciliary hospitalization covered up to Sum\nInsured\n4.5\n\uf0b7 Modern treatments like Robotic surgeries, oral\nchemotherapy etc. are covered\n\uf0b7 Related medical expenses up to Sum Insured\n4.6\nincurred 60 days prior to hospitalization\n\uf0b7 Related medical expenses incurred up to Sum\n4.7\nInsured within 180 days from date of discharge\n\uf0b7 Living organ donor transplant covered up to Sum\n4.8\nInsured\n\uf0b7 Emergency Ambulance covered up to Rs. 2,000\n4.9\nper Hospitalization\n4.10\nPage 1 of 13\nProduct Name: ReAssure| Product UIN: NBHHLIP26050V042526",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Selected visible page title/grant/configuration review; full original not inventoried."
+        }
+      ],
+      "visually_reviewed_physical_pages": [],
+      "acquisition_provenance": [
+        {
+          "attempt_register": "research/registers/attempts/41340038a0dc0ebc9a871101cbb5ebfd0fdaa7095d272542c48d2457c74c4dca.json",
+          "url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_ReAssure.pdf?v=1.0",
+          "final_url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_ReAssure.pdf?v=1.0",
+          "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+          "acquired_at": "2026-09-10T11:52:25.003394+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "79233487afd32fcf54ed260e862f47ee4d2c5354f6ae9fa878810710e8c1e66c"
+        }
+      ],
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "review_extent": "Bounded identity, medical-expense grant and selected variant/option constraints; not full contract assessment.",
+      "original_sha256_verified": true
+    }
+  ],
+  "reread_existing_documents": [
+    {
+      "source_sha256": "64a38b7c7837db2f77bc65bb8e49d1953620390230fabd5a1abb371115b80d77",
+      "insurer_id": "go-digit",
+      "product_or_heading": "Digit Health Insurance Policy",
+      "document_role": "proposal_form",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Selected original title and grant or linked plan table identify medical-expense policy; CIS/proposal/prospectus retain supporting role.",
+      "page_count": 7,
+      "observed_uins": [
+        "GODHLIP25039V022425"
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            595.32,
+            841.92
+          ],
+          "exact_passage": "Go Digit General Insurance Ltd.\nDigit Health Insurance Policy\nProposal Form\nURN: (GODT/IND/HL/2223/02)\nUIN: GODHLIP25039V022425\na. This proposal will be the basis of the insurance policy that we issue. You must disclose all facts relevant to all person(s)/asset(s) proposed to be\ninsured that may affect the Company\u2019s decision to issue a policy or its terms. Non-compliance may result in avoidance of the policy.\nb. If there is insufficient space for you to provide information, whether as requested or otherwise, please attach a separate sheet duly signed or\naffixed with thumb impression.\nc. In case You require the hard copy of the Policy and related documents, please provide Your Consent: Yes/No\nIf You opt not to receive the hard copy of the Policy and related documents, we shall share these with You in Electronic Form I.e. Via E-mail or\nDirect Download from Our Website.\nd. Please submit KYC document\ne. If you are in doubt, you can get in touch with your agent/intermediary or call us at 1800 258 4242 or e-mail at hello along with the Proposal Form,\nif applicable. @godigit.com\nPROPOSER DETAILS\nName of the Proposer Date of Birth (DD/MM/YY)\nAddress of the Proposer Marital Status Single / Married\nMobile No Occupation Salaried / Self Employed / Professional / Others\nPAN Number /AADHAR / DD/MM/YYYY\nFirst Policy Inception Date\nGovernment ID Proof\nFrom DDMMYYYY 00:00\nEmail ID Midnight\n*Period of Insurance\nTo DDMMYYYY 23:59\nPartner Code and Name\nMidnight\nPartner Contact and Email Policy Type Fresh/Renewal/Roll-Over /Migration/Portability\nID\nFamily Composition\nABHA ID\nAre You existing Digit\nHave you ever taken any ___Yes/ ___ No\nEmployee / Shareholder\nPolicy from Us?\n___ Yes / ___ No\n(If Yes, please provide\n(If yes, please provide details)\ndetails)\n*Period of Insurance: 1 Year 2 Years 3 Years 4 Years 5 Years\nDETAILS OF PERSONS TO BE INSURED\nDate of\nMem\nRelationship Birth Gender\nber. Full Name Age Height Weight Occupation ABHA ID\nwith Proposer (DD/MM (M/F/TG)\nNo.\n/YY)\n1\n2\n3\n4\n5\nPLAN DETAILS\nMember\nS.No. Sum Insured Floater Deductible Plan opted\nName\n1 2L/3L/4L/5L/7.5L/9L/ <Double Wallet Plan/Infinity Wallet Plan/Carry Forward Sum\n2500/5000/\n10L/12.5L/15L/20L/25L/ Insured Plan/Worldwide Treatment Plan/Early Start Plan/Senior\n30L/40L/50L/60L/75L/ 2L/3L/4L/5L/ 7500/10,000/ Priority Plan/ Even Protect Plan/ BharatX*>\n1Cr/2Cr/3Cr 7.5L/9L/ 15000/20000/\n10L/12.5L/15\n2 2L/3L/4L/5L/7.5L/9L/ 25000/30,000/ <Double Wallet Plan/Infinity Wallet Plan/Carry Forward Sum\nL/20L/25L/\n10L/12.5L/15L/20L/25L/ 40,000/50,000 Insured Plan/Worldwide Treatment Plan/Early Start Plan/Senior\n30L/40L/50L/\n30L/40L/50L/60L/75L/\n60L/75L/1Cr/\nPriority Plan/ Even Protect Plan/ BharatX*>\n1Cr/2Cr/3Cr\n2Cr/3Cr\n3 2L/3L/4L/5L/7.5L/9L/ <Double Wallet Plan/Infinity Wallet Plan/Carry Forward Sum\n10L/12.5L/15L/20L/25L/ Insured Plan/Worldwide Treatment Plan/Early Start Plan/Senior\nDigit Health Insurance Policy - Proposal Form (GODHLIP25039V022425) Page 1 of 7",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Selected visible page title/grant/configuration review; full original not inventoried."
+        },
+        {
+          "physical_page": 2,
+          "bbox": [
+            0,
+            0,
+            595.32,
+            841.92
+          ],
+          "exact_passage": "Go Digit General Insurance Ltd.\n30L/40L/50L/60L/75L/ Priority Plan/ Even Protect Plan/ BharatX*>\n1Cr/2Cr/3Cr\n4 2L/3L/4L/5L/7.5L/9L/ <Double Wallet Plan/Infinity Wallet Plan/Carry Forward Sum\n10L/12.5L/15L/20L/25L/ Insured Plan/Worldwide Treatment Plan/Early Start Plan/Senior\n30L/40L/50L/60L/75L/ Priority Plan/ Even Protect Plan/ BharatX*>\n1Cr/2Cr/3Cr\n5 2L/3L/4L/5L/7.5L/9L/ <Double Wallet Plan/Infinity Wallet Plan/Carry Forward Sum\n10L/12.5L/15L/20L/25L/ Insured Plan/Worldwide Treatment Plan/Early Start Plan/Senior\n30L/40L/50L/60L/75L/ Priority Plan/ Even Protect Plan/ BharatX*>\n1Cr/2Cr/3Cr\n*BharatX can be customized as per Customer\u2019s requirements\nBASE COVERS (Applicable in case of BharatX)\nS. No Coverages Opted (Yes/No) Limits Specific Terms and\nConditions\n1 Hospitalization Cover Yes/No -\n1.1 In -Patient Hospitalization - < As per Section 1 Sum Insured >\n1.2 Day care Procedures NA\n1.3 Pre-Hospitalization - 30/60/90/120 days *\n1.4 Post Hospitalization - 60/90/120/180 days*\n1.5 Road Ambulance - 1% of Sum Insured max upto INR 10,000\n1.6 Bariatric Surgery NA\n1.7 Psychiatric Illness NA\n0.25% of Sum Insured max upto INR 2,000 after\n1.8 Health Check Up\nevery year\nHome (domiciliary) NA\n1.9\nHospitalization\n1.10 Ayush Hospitalization NA\ni. Per Day Cash Benefit \u2013 INR _______ Specific Condition: Per day\nDaily Cash for Choosing Shared\n1.11 ii. Maximum No. of days ____________ room rent should not be\nAccommodation\nmore than INR 3000/\n2 Organ Donor Expenses Yes/No NA\n3 Emergency Air Ambulance Yes/No NA\n4 Maternity Benefit Wallet & Yes/No Limit on Maternity Expenses of Your Second Child:\nNewborn Cover _____% of the Sum Insured under this Section\n5 Worldwide Coverage Yes/No NA\n6 Sum Insured Back Up Yes/No Upto Sum Insured Unlimited Reinstatement / once\nin a policy period - related and unrelated illness\n7 In-Built Personal Accident Yes/No INR 50,000/ INR 1,00,000\n* Pre-hospitalization days will be always lesser than post hospitalization days\nOPTIONAL COVERS (Applicable for all the Plans)\nOptional Coverage Name Opted Limits Terms and Conditions\ncover (Yes/No)\nnumber.\n1 Consumables Cover Yes/No <___% of Section 1 Sum Insured>\n2 Network Hospital Discount Yes/No < __Gold/__Silver/__Standard>\nPre-existing Disease/Specific Disease/Initial\na. Initial Waiting Period: _____ Days\nWaiting Period Modification\n3 Yes/No b. Pre-existing Disease: _____Months\nc. Specific Waiting Period: ___Months\n4 Sum Insured Multiplier Yes/No <2/3/4 times of Sum Insured>\nHealth Check-up cover from Day One Health Check up Package\n5 Yes/No INR: ________\nOpted: ______\n6 Advance Care Yes/No\nSupport Plus Per day amount payable\n<0.75% of Base SI or max up to INR\n______\n7 Yes/No 3,000 per day for ICU\nMaximum Number of days\nhospitalization>\n____\nAdvance Heart Ambulance <2% of Section 1 Base Sum insured\n8 Yes/No or Max of INR 20,000 whichever is\nlesser>\nMaternity & Newborn Baby Cover Limit on Maternity Expenses of Your\nPre and post-natal up to\n9 Yes/No Second Child: _____% of the Sum\n100% of optional cover 9 SI\nInsured under this Section\n10 Infertility Treatment Cover Yes/No INR ______________\n11 Daily Hospital Cash Cover Yes/No INR____ Per Day and Up to ___ Days Time Excess: _____ Days\nDigit Health Insurance Policy - Proposal Form (GODHLIP25039V022425) Page 2 of 7",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Selected visible page title/grant/configuration review; full original not inventoried."
+        }
+      ],
+      "visually_reviewed_physical_pages": [
+        1
+      ],
+      "acquisition_provenance": [
+        {
+          "attempt_register": "research/registers/attempts/a3dfe58c1ae8eedd368cabfbb394acdfdb282f298e982ce0eea739fa63327591.json",
+          "url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/health/proposal-form-digit-health-insurance-policy.pdf",
+          "final_url": "https://www.godigit.com/content/dam/godigit/directportal/en/downloads/health/proposal-form-digit-health-insurance-policy.pdf",
+          "linking_url": "https://www.godigit.com/downloads",
+          "acquired_at": "2026-09-10T11:58:45.171524+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "64a38b7c7837db2f77bc65bb8e49d1953620390230fabd5a1abb371115b80d77"
+        }
+      ],
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "review_extent": "Bounded identity, medical-expense grant and selected variant/option constraints; not full contract assessment.",
+      "original_sha256_verified": true
+    },
+    {
+      "source_sha256": "0a1cda2c03f23e0c99d8de8228a07f705283e92069231d990f444d224a89fbcd",
+      "insurer_id": "niva-bupa",
+      "product_or_heading": "ReAssure 2.0",
+      "document_role": "customer_information_sheet",
+      "scope": "supporting_mixed",
+      "scope_status": "reviewed_document_relevance",
+      "classification_reason": "Selected original title and grant or linked plan table identify medical-expense policy; CIS/proposal/prospectus retain supporting role.",
+      "page_count": 11,
+      "observed_uins": [
+        "NBHHLIP27054V032627"
+      ],
+      "evidence": [
+        {
+          "physical_page": 1,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "exact_passage": "ReAssure 2.0 Customer Information Sheet\nCustomer Information Sheet/ Know Your Policy\nThis document provides key information about your policy. You are advised to go\nthrough your policy document\nPolicy\nS.\nTitle Description Clause\nNo.\nNumber\n1 Name of Insurance ReAssure 2.0\nProduct/ Policy Variant Name: <>\n2 Policy Number <>\n3 Type of Insurance Both Indemnity and Benefit\nProduct/ Policy\n4 Sum Insured INR <>\n5 Policy Coverage Expenses in Respect of:\nBase Coverage:\nExpenses in reaching the hospital: Road ambulance 4.1\ncovered up to Sum Insured and Air ambulance up to INR\n2,50,000 per hospitalization\nExpenses during Hospitalization: 2 hours and more 4.2.1\ncovered (AYUSH covered for 24 hours and more).\nModern treatments like Robotic surgeries, oral 4.2.2\nchemotherapy etc. are covered\nExpenses before and after hospitalization: 60 and 4.3\n180 days respectively. Up to Sum Insured.\nHome Care/Domiciliary treatment covered up to Sum 4.4\nInsured.\nOrgan donor expenses covered up to Sum Insured 4.5\nAnnual Health Check-up can be availed from day 1 of 4.6\nthe policy as per plan chosen by You up to INR <>\nReAssure+ \u2013 4.7\nReAssure \u201cForever\u201d: The first paid claim triggers\nReAssure \u201cForever\u201d. Maximum amount this benefit pays\nfor any single claim is up to Base Sum Insured.\nLock the Clock: Entry age is locked at the time of\nbuying the policy, till a claim is paid\nReAssureX - The first paid claim triggers ReAssure 4.8\n\u201cForever\u201d. Maximum amount this benefit pays for any for\nany single claim is up to Base Sum Insured.\nPage 1 of 11\nProduct Name: ReAssure 2.0 Product UIN: NBHHLIP27054V032627",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Selected visible page title/grant/configuration review; full original not inventoried."
+        },
+        {
+          "physical_page": 11,
+          "bbox": [
+            0,
+            0,
+            612,
+            792
+          ],
+          "exact_passage": "ReAssure 2.0 Customer Information Sheet\navailable for each each family member is\nindividual is Rs.500,000.\nRs.500,000.\nNote: Premium rates specified in the above illustration are standard premium\nrates without considering any loading. Also, the premium rates are exclusive of\ntaxes applicable.\nPremium is considered for Platinum+ Variant and Zone 1\nPage 11 of 11\nProduct Name: ReAssure 2.0 Product UIN: NBHHLIP27054V032627",
+          "reader_parameters": {
+            "x_tolerance": 2,
+            "y_tolerance": 3
+          },
+          "reading_method": "Selected visible page title/grant/configuration review; full original not inventoried."
+        }
+      ],
+      "visually_reviewed_physical_pages": [],
+      "acquisition_provenance": [
+        {
+          "attempt_register": "research/registers/attempts/9100a8fab702662250f57ea2655385461255a0995e1aff3c6e11b5b6e5ce8ed5.json",
+          "url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_ReAssure-2-0.pdf",
+          "final_url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_ReAssure-2-0.pdf",
+          "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+          "acquired_at": "2026-09-10T11:52:25.037804+00:00",
+          "status": "acquired",
+          "http_status": 200,
+          "sha256": "0a1cda2c03f23e0c99d8de8228a07f705283e92069231d990f444d224a89fbcd"
+        }
+      ],
+      "rule_inventory_complete": false,
+      "independent_rule_denominator": null,
+      "bundle_completeness": "not_established",
+      "review_extent": "Bounded identity, medical-expense grant and selected variant/option constraints; not full contract assessment.",
+      "original_sha256_verified": true
+    }
+  ],
+  "per_listing_results": [
+    {
+      "legacy_identity": "/health-insurance/digit/double-wallet/",
+      "legacy_name": "Double Wallet",
+      "insurer_id": "go-digit",
+      "family": "Digit Health Insurance Policy",
+      "family_identity_supported": true,
+      "wording_sha256s": [
+        "1ef8c3627ee30f32c683fdc788c34c85d7536474e8612ebcae36d1b8ce385c4a"
+      ],
+      "companion_cis_sha256s": [
+        "b8b4224260d9f7c71c149f50f8ce36e5ea0847aa01f61fece4b49ac0cf6c1ba8"
+      ],
+      "supporting_original_sha256s": [
+        "64a38b7c7837db2f77bc65bb8e49d1953620390230fabd5a1abb371115b80d77"
+      ],
+      "observed_wording_uins": [
+        "GODHLIP25039V022425"
+      ],
+      "variant_or_form_result": {
+        "status": "named_plan_in_same_uin_proposal",
+        "matched_legacy_label_variant": "Double Wallet Plan",
+        "qualification": "Three named plan choices are explicit in blank proposal, not chosen by a customer. General wording includes all sections/options, only schedule-selected cover applies. BharatX base-cover table does not define the other named plans."
+      },
+      "source_document_versions": {
+        "status": "printed_wording_uin_with_matching_supporting_candidates",
+        "historical_version_reconciled": false
+      },
+      "original_bundle_roles": {
+        "wording": "Preserved selected-page review only",
+        "CIS": "Matching-UIN supporting summary, blank customer values not accepted selections",
+        "prospectus_or_proposal": "Same-UIN blank Digit proposal reviewed for named plan choices; not customer acceptance.",
+        "endorsements_annexures_and_issued_terms": "Unreconciled"
+      },
+      "remaining_evidence": [
+        "Exact legacy observation date and historical issued version remain unresolved.",
+        "Three named plan choices are explicit in blank proposal, not chosen by a customer. General wording includes all sections/options, only schedule-selected cover applies. BharatX base-cover table does not define the other named plans.",
+        "Complete conditions, definitions, exclusions, annexures, endorsement set and issued schedule/underwriting must be reconciled before customer advice."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false,
+      "reconciliation_complete": false
+    },
+    {
+      "legacy_identity": "/health-insurance/digit/infinity-wallet/",
+      "legacy_name": "Infinity Wallet",
+      "insurer_id": "go-digit",
+      "family": "Digit Health Insurance Policy",
+      "family_identity_supported": true,
+      "wording_sha256s": [
+        "1ef8c3627ee30f32c683fdc788c34c85d7536474e8612ebcae36d1b8ce385c4a"
+      ],
+      "companion_cis_sha256s": [
+        "b8b4224260d9f7c71c149f50f8ce36e5ea0847aa01f61fece4b49ac0cf6c1ba8"
+      ],
+      "supporting_original_sha256s": [
+        "64a38b7c7837db2f77bc65bb8e49d1953620390230fabd5a1abb371115b80d77"
+      ],
+      "observed_wording_uins": [
+        "GODHLIP25039V022425"
+      ],
+      "variant_or_form_result": {
+        "status": "named_plan_in_same_uin_proposal",
+        "matched_legacy_label_variant": "Infinity Wallet Plan",
+        "qualification": "Three named plan choices are explicit in blank proposal, not chosen by a customer. General wording includes all sections/options, only schedule-selected cover applies. BharatX base-cover table does not define the other named plans."
+      },
+      "source_document_versions": {
+        "status": "printed_wording_uin_with_matching_supporting_candidates",
+        "historical_version_reconciled": false
+      },
+      "original_bundle_roles": {
+        "wording": "Preserved selected-page review only",
+        "CIS": "Matching-UIN supporting summary, blank customer values not accepted selections",
+        "prospectus_or_proposal": "Same-UIN blank Digit proposal reviewed for named plan choices; not customer acceptance.",
+        "endorsements_annexures_and_issued_terms": "Unreconciled"
+      },
+      "remaining_evidence": [
+        "Exact legacy observation date and historical issued version remain unresolved.",
+        "Three named plan choices are explicit in blank proposal, not chosen by a customer. General wording includes all sections/options, only schedule-selected cover applies. BharatX base-cover table does not define the other named plans.",
+        "Complete conditions, definitions, exclusions, annexures, endorsement set and issued schedule/underwriting must be reconciled before customer advice."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false,
+      "reconciliation_complete": false
+    },
+    {
+      "legacy_identity": "/health-insurance/digit/worldwide-treatment/",
+      "legacy_name": "Worldwide Treatment",
+      "insurer_id": "go-digit",
+      "family": "Digit Health Insurance Policy",
+      "family_identity_supported": true,
+      "wording_sha256s": [
+        "1ef8c3627ee30f32c683fdc788c34c85d7536474e8612ebcae36d1b8ce385c4a"
+      ],
+      "companion_cis_sha256s": [
+        "b8b4224260d9f7c71c149f50f8ce36e5ea0847aa01f61fece4b49ac0cf6c1ba8"
+      ],
+      "supporting_original_sha256s": [
+        "64a38b7c7837db2f77bc65bb8e49d1953620390230fabd5a1abb371115b80d77"
+      ],
+      "observed_wording_uins": [
+        "GODHLIP25039V022425"
+      ],
+      "variant_or_form_result": {
+        "status": "named_plan_in_same_uin_proposal",
+        "matched_legacy_label_variant": "Worldwide Treatment Plan",
+        "qualification": "Three named plan choices are explicit in blank proposal, not chosen by a customer. General wording includes all sections/options, only schedule-selected cover applies. BharatX base-cover table does not define the other named plans."
+      },
+      "source_document_versions": {
+        "status": "printed_wording_uin_with_matching_supporting_candidates",
+        "historical_version_reconciled": false
+      },
+      "original_bundle_roles": {
+        "wording": "Preserved selected-page review only",
+        "CIS": "Matching-UIN supporting summary, blank customer values not accepted selections",
+        "prospectus_or_proposal": "Same-UIN blank Digit proposal reviewed for named plan choices; not customer acceptance.",
+        "endorsements_annexures_and_issued_terms": "Unreconciled"
+      },
+      "remaining_evidence": [
+        "Exact legacy observation date and historical issued version remain unresolved.",
+        "Three named plan choices are explicit in blank proposal, not chosen by a customer. General wording includes all sections/options, only schedule-selected cover applies. BharatX base-cover table does not define the other named plans.",
+        "Complete conditions, definitions, exclusions, annexures, endorsement set and issued schedule/underwriting must be reconciled before customer advice."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false,
+      "reconciliation_complete": false
+    },
+    {
+      "legacy_identity": "/health-insurance/niva-bupa/reassure/",
+      "legacy_name": "Reassure",
+      "insurer_id": "niva-bupa",
+      "family": "ReAssure",
+      "family_identity_supported": true,
+      "wording_sha256s": [
+        "366e08afe7e9b71238d74db9e9988767c901b8e3eabca7ffc30c4892c6b210c5"
+      ],
+      "companion_cis_sha256s": [
+        "79233487afd32fcf54ed260e862f47ee4d2c5354f6ae9fa878810710e8c1e66c"
+      ],
+      "supporting_original_sha256s": [],
+      "observed_wording_uins": [
+        "NBHHLIP26050V042526"
+      ],
+      "variant_or_form_result": {
+        "status": "base_family_candidate",
+        "qualification": "Distinct from ReAssure 2.0 and 3.0; same insurer or similar name is not shared wording applicability."
+      },
+      "source_document_versions": {
+        "status": "printed_wording_uin_with_matching_supporting_candidates",
+        "historical_version_reconciled": false
+      },
+      "original_bundle_roles": {
+        "wording": "Preserved selected-page review only",
+        "CIS": "Matching-UIN supporting summary, blank customer values not accepted selections",
+        "prospectus_or_proposal": "ReAssure prospectus preserved but not reviewed in this batch; no other-family supporting document assigned.",
+        "endorsements_annexures_and_issued_terms": "Unreconciled"
+      },
+      "remaining_evidence": [
+        "Exact legacy observation date and historical issued version remain unresolved.",
+        "Distinct from ReAssure 2.0 and 3.0; same insurer or similar name is not shared wording applicability.",
+        "Complete conditions, definitions, exclusions, annexures, endorsement set and issued schedule/underwriting must be reconciled before customer advice."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false,
+      "reconciliation_complete": false
+    },
+    {
+      "legacy_identity": "/health-insurance/niva-bupa/reassure-2-bronze/",
+      "legacy_name": "Reassure 2 Bronze",
+      "insurer_id": "niva-bupa",
+      "family": "ReAssure 2.0",
+      "family_identity_supported": true,
+      "wording_sha256s": [
+        "bd00c98a432db2c343736278f2c9c787608a036f6ff4eff406ca920286999e0f"
+      ],
+      "companion_cis_sha256s": [
+        "0a1cda2c03f23e0c99d8de8228a07f705283e92069231d990f444d224a89fbcd"
+      ],
+      "supporting_original_sha256s": [
+        "a4c141d299fc7a0d700e0e35d2a8e32190e490bb6e54190ce38bd362bfba893a"
+      ],
+      "observed_wording_uins": [
+        "NBHHLIP27054V032627"
+      ],
+      "variant_or_form_result": {
+        "status": "legacy_named_variant_in_original_table",
+        "matched_legacy_label_variant": "Bronze",
+        "qualification": "Prospectus physical page 32 explicitly names Bronze; page 31 separately names Bronze+. Do not merge their selections or assume they are equivalent."
+      },
+      "source_document_versions": {
+        "status": "printed_wording_uin_with_matching_supporting_candidates",
+        "historical_version_reconciled": false
+      },
+      "original_bundle_roles": {
+        "wording": "Preserved selected-page review only",
+        "CIS": "Matching-UIN supporting summary, blank customer values not accepted selections",
+        "prospectus_or_proposal": "Same-UIN ReAssure2.0 prospectus reviewed for separate variant tables.",
+        "endorsements_annexures_and_issued_terms": "Unreconciled"
+      },
+      "remaining_evidence": [
+        "Exact legacy observation date and historical issued version remain unresolved.",
+        "Prospectus physical page 32 explicitly names Bronze; page 31 separately names Bronze+. Do not merge their selections or assume they are equivalent.",
+        "Complete conditions, definitions, exclusions, annexures, endorsement set and issued schedule/underwriting must be reconciled before customer advice."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false,
+      "reconciliation_complete": false
+    },
+    {
+      "legacy_identity": "/health-insurance/niva-bupa/reassure-2-platinum/",
+      "legacy_name": "Reassure 2 Platinum",
+      "insurer_id": "niva-bupa",
+      "family": "ReAssure 2.0",
+      "family_identity_supported": true,
+      "wording_sha256s": [
+        "bd00c98a432db2c343736278f2c9c787608a036f6ff4eff406ca920286999e0f"
+      ],
+      "companion_cis_sha256s": [
+        "0a1cda2c03f23e0c99d8de8228a07f705283e92069231d990f444d224a89fbcd"
+      ],
+      "supporting_original_sha256s": [
+        "a4c141d299fc7a0d700e0e35d2a8e32190e490bb6e54190ce38bd362bfba893a"
+      ],
+      "observed_wording_uins": [
+        "NBHHLIP27054V032627"
+      ],
+      "variant_or_form_result": {
+        "status": "suffix_difference_unresolved",
+        "candidate": "Platinum+",
+        "qualification": "Current prospectus page 31 has a plus suffix. Legacy bare-tier wording is not proven equivalent; require historical original or accepted schedule."
+      },
+      "source_document_versions": {
+        "status": "printed_wording_uin_with_matching_supporting_candidates",
+        "historical_version_reconciled": false
+      },
+      "original_bundle_roles": {
+        "wording": "Preserved selected-page review only",
+        "CIS": "Matching-UIN supporting summary, blank customer values not accepted selections",
+        "prospectus_or_proposal": "Same-UIN ReAssure2.0 prospectus reviewed for separate variant tables.",
+        "endorsements_annexures_and_issued_terms": "Unreconciled"
+      },
+      "remaining_evidence": [
+        "Exact legacy observation date and historical issued version remain unresolved.",
+        "Current prospectus page 31 has a plus suffix. Legacy bare-tier wording is not proven equivalent; require historical original or accepted schedule.",
+        "Complete conditions, definitions, exclusions, annexures, endorsement set and issued schedule/underwriting must be reconciled before customer advice."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false,
+      "reconciliation_complete": false
+    },
+    {
+      "legacy_identity": "/health-insurance/niva-bupa/reassure-2-titanium/",
+      "legacy_name": "Reassure 2 Titanium",
+      "insurer_id": "niva-bupa",
+      "family": "ReAssure 2.0",
+      "family_identity_supported": true,
+      "wording_sha256s": [
+        "bd00c98a432db2c343736278f2c9c787608a036f6ff4eff406ca920286999e0f"
+      ],
+      "companion_cis_sha256s": [
+        "0a1cda2c03f23e0c99d8de8228a07f705283e92069231d990f444d224a89fbcd"
+      ],
+      "supporting_original_sha256s": [
+        "a4c141d299fc7a0d700e0e35d2a8e32190e490bb6e54190ce38bd362bfba893a"
+      ],
+      "observed_wording_uins": [
+        "NBHHLIP27054V032627"
+      ],
+      "variant_or_form_result": {
+        "status": "suffix_difference_unresolved",
+        "candidate": "Titanium+",
+        "qualification": "Current prospectus page 31 has a plus suffix. Legacy bare-tier wording is not proven equivalent; require historical original or accepted schedule."
+      },
+      "source_document_versions": {
+        "status": "printed_wording_uin_with_matching_supporting_candidates",
+        "historical_version_reconciled": false
+      },
+      "original_bundle_roles": {
+        "wording": "Preserved selected-page review only",
+        "CIS": "Matching-UIN supporting summary, blank customer values not accepted selections",
+        "prospectus_or_proposal": "Same-UIN ReAssure2.0 prospectus reviewed for separate variant tables.",
+        "endorsements_annexures_and_issued_terms": "Unreconciled"
+      },
+      "remaining_evidence": [
+        "Exact legacy observation date and historical issued version remain unresolved.",
+        "Current prospectus page 31 has a plus suffix. Legacy bare-tier wording is not proven equivalent; require historical original or accepted schedule.",
+        "Complete conditions, definitions, exclusions, annexures, endorsement set and issued schedule/underwriting must be reconciled before customer advice."
+      ],
+      "historical_version_reconciled": false,
+      "complete_original_bundle": false,
+      "full_rule_inventory_complete": false,
+      "reconciliation_complete": false
+    }
+  ],
+  "findings": [
+    "Digit section-selection disclaimer controls generic wording; optional consumables exclude worldwide treatment; NRI option excludes worldwide plan. These selected clauses do not establish full configured cover.",
+    "ReAssure 2.0 same-UIN prospectus distinguishes Bronze and Bronze+, but bare legacy Platinum/Titanium do not match printed plus labels without qualification.",
+    "ReAssure 2.0 hospitalization minimum two hours and AYUSH minimum 24 hours are not transferred to ReAssure, whose day care wording states more than two hours and subject to its own conditions.",
+    "Original reader emitted invalid font-weight warnings; four configuration/threshold pages visually checked. No complete page/rule inventory claimed."
+  ],
+  "verification": {
+    "original_hashes_verified": 8,
+    "visible_page_passages": 22,
+    "visually_reviewed_pages": 4,
+    "full_customer_decisions": 0,
+    "historical_bundles_complete": 0
+  }
+}

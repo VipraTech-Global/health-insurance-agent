@@ -1,0 +1,96 @@
+{
+  "revision": "discussion-r18",
+  "generated_at_utc": "2026-09-12T13:31:19.307789+00:00",
+  "status": "passed",
+  "scope": "Structural verification of approved buyer-focused Batch 11. Later batches, complete design and implementation remain unapproved.",
+  "checks": [
+    {
+      "check": "74 unique buyer-adviser entities",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "658 unique application fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "188 FK relationships exactly match dictionary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all FK targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "approved knowledge models present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "superseded generic models absent",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "policy search chunks are public and reusable across releases",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "saved answer pins exact knowledge release",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all case and supplementary field targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "fixed assessment archive retained as 200 reference and 200 evaluation-safe projections",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "r18 reverse trace covers every live field exactly",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "r18 trace hashes match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all JSON fields resolve to reachable contracts",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all retained JSON contracts are reachable",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Batch 11 approval and implementation boundary recorded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no Batch 11 Django models or migrations created",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 16,
+  "failed": 0,
+  "application_entities": 74,
+  "application_fields": 658,
+  "foreign_keys": 188,
+  "json_definitions": 35,
+  "approved_batches": "1 through 11",
+  "overall_design_approval": false
+}

@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:57:40.883715+00:00",
+  "associations": [],
+  "byte_count": 102914,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/SBI_General_Surety_Bond_Bima_Un_Conditional_Prospectus_e36396d0b3.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 230,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.275
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.889,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.273
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "d18f4f54e56dcaeb4fa9eaca9a245d33ab3abe3f4b74e1e8b7177ceef7bfe8e7",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/SBI_General_Surety_Bond_Bima_Un_Conditional_Prospectus_e36396d0b3.pdf"
+}

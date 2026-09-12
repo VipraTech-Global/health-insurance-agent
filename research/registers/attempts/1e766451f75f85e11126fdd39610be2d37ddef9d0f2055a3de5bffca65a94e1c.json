@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:39:58.550695+00:00",
+  "associations": [],
+  "byte_count": 85154,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://customer-portal-assets.hdfcergo.com/assets/v2/docs/default-source/downloads/policy-wordings/health/cumulative-bonus-plus-(group)/cumulative-bonus-plus-(group)(1)-855251331096.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "hdfc-ergo",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 264,
+  "linking_url": "https://www.hdfcergo.com/download/policy-wordings/health",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "4db276fd69fc2f7c45e98f51e6351adb3dcdcc059497d7b8b6f1a58364709967",
+  "status": "acquired",
+  "url": "https://customer-portal-assets.hdfcergo.com/assets/v2/docs/default-source/downloads/policy-wordings/health/cumulative-bonus-plus-(group)/cumulative-bonus-plus-(group)(1)-855251331096.pdf"
+}

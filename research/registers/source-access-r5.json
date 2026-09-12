@@ -1,0 +1,84 @@
+{
+  "records": [
+    {
+      "insurer_id": "aditya-birla",
+      "url": "https://www.adityabirlacapital.com/healthinsurance/assets/pdf/policy-wording-form.pdf",
+      "linking_url": "https://www.adityabirlacapital.com/abcd/health-insurance/health-and-wellness-plans/activ-health-platinum-enhanced",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "c9baf8e38cb5b530a81d80aba98db757a3e7c1bb9164e2983096e941ed4d3013",
+      "acquired_at": "2026-09-10T14:35:48.354087+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 77,
+      "discovery_method": "Official domain search returned the policy wording and official product page; exact original URL retained."
+    },
+    {
+      "insurer_id": "aditya-birla",
+      "url": "https://www.adityabirlacapital.com/healthinsurance/assets/pdf/activ-health-platinum-essential.pdf",
+      "linking_url": "https://www.adityabirlacapital.com/abcd/health-insurance/health-and-wellness-plans/activ-health-platinum-essential",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "0fce1d0716a6e2d0dd2e4b9ad4bfbf080e6fc4bf3060bc18da1f3dd13eacd20e",
+      "acquired_at": "2026-09-10T14:35:48.359186+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 4,
+      "discovery_method": "Official domain indexed original leaflet, product page corroborates exact variants."
+    },
+    {
+      "insurer_id": "hdfc-ergo",
+      "url": "https://customer-portal-assets.hdfcergo.com/assets/v2/docs/default-source/downloads/brochures/optima-lite-plan---leaflet-391756672580.pdf",
+      "linking_url": "https://www.hdfcergo.com/download/brochure/health",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "5c06ca8a405846f46d2fd61b1bf80521c7401b2ca052881f64056b9a8628e5b2",
+      "acquired_at": "2026-09-10T14:35:48.325921+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 4,
+      "discovery_method": "Official domain indexed original leaflet; official brochure page explicitly lists Optima Lite Brochure."
+    },
+    {
+      "insurer_id": "manipalcigna",
+      "url": "https://www.manipalcigna.com/documents/d/guest/prohealth-prime_active-plan_tnc",
+      "linking_url": "https://www.manipalcigna.com/hospitalization-cover/prohealth-insurance",
+      "status": "failed",
+      "issues": [
+        "http_404"
+      ],
+      "sha256": "bf6260f4583ccb476b13ac1a6f66ffa1228fb2c06fdf049a018dc66b2f9c8fa3",
+      "acquired_at": "2026-09-10T14:35:48.336196+00:00",
+      "http_status": 404,
+      "document_type": "unclassified",
+      "page_count": null,
+      "discovery_method": "Exact original policy-wording URL preserved in sources register from official page; targeted retry."
+    },
+    {
+      "insurer_id": "manipalcigna",
+      "url": "https://www.manipalcigna.com/documents/20124/0/PrimeSenior-Prospectus/c6756113-ba83-02a7-4ca4-2093d370b35f",
+      "linking_url": "https://www.manipalcigna.com/downloads/services/-/categories/4117995",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "d24d8fbc51de45a9d0a2798fdf5694ca030025e2624b3015805896eeb94d90f9",
+      "acquired_at": "2026-09-10T14:35:48.717709+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 37,
+      "discovery_method": "Official-domain indexed original prospectus and official downloads listing."
+    },
+    {
+      "insurer_id": "sbi-general",
+      "url": "https://content.sbigeneral.in/uploads/a370272f732749999e7c19e82e38ad7c.pdf",
+      "linking_url": "https://www.sbigeneral.in/downloads",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "65b86fe7f0f01b1478f5516d1f90c6a66e465158bf0d997d9132a80f2c6d5439",
+      "acquired_at": "2026-09-10T14:35:49.001706+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 27,
+      "discovery_method": "Official-domain indexed wording; official downloads names withdrawn Health Insurance Policy Retail."
+    }
+  ]
+}

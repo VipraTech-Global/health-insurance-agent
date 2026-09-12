@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:01:41.085231+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/new-india-modern-treatment-rider/Prospectus_Modern_Treatment_Rider_01092023.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 2576,
+  "linking_url": "https://www.newindia.co.in/health-insurance/new-india-modern-treatment-rider",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "91b2de598991596dd7d7d8abf5b2a1cf278f12b727bda0d7d16a2be3ef0fb66c",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/new-india-modern-treatment-rider/Prospectus_Modern_Treatment_Rider_01092023.pdf"
+}

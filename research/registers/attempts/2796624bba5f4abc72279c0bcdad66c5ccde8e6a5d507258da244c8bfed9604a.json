@@ -1,0 +1,65 @@
+{
+  "acquired_at": "2026-09-10T12:01:44.435786+00:00",
+  "associations": [],
+  "byte_count": 257469,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://acko-cms.ackoassets.com/Prospectus_Saral_Suraksha_Bima_Acko_12d739c1c5.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "acko",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 391,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": 5,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.52
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.0,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.52
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "1577af731f42ccdf5b9329199731a4cf907d07995be20869380780800e123e54",
+  "status": "acquired",
+  "url": "https://acko-cms.ackoassets.com/Prospectus_Saral_Suraksha_Bima_Acko_12d739c1c5.pdf"
+}

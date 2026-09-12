@@ -1,0 +1,118 @@
+{
+  "verified_at": "2026-09-09T18:53:05.030368+00:00",
+  "qualified_models": [
+    {
+      "model": "gpt-6-astra",
+      "state": "qualified",
+      "qualification_id": "348fae1b-6b11-4169-b98a-aaad377bd0bb",
+      "tests": {
+        "qualification_answer": {
+          "code": "",
+          "status": "succeeded",
+          "call_id": "ebc98ae1-468c-4d0f-9434-52727a3a7583"
+        },
+        "qualification_interview": {
+          "code": "",
+          "status": "succeeded",
+          "call_id": "7d83319c-d687-402d-9a1e-946fa6d1c2e1"
+        }
+      }
+    },
+    {
+      "model": "gpt-5.6-sol",
+      "state": "qualified",
+      "qualification_id": "d3cfddbc-d998-495b-869c-0972f94f17f7",
+      "tests": {
+        "qualification_answer": {
+          "code": "",
+          "status": "succeeded",
+          "call_id": "4622cecd-4c31-441e-8ebb-b67ab45b1c56"
+        },
+        "qualification_interview": {
+          "code": "",
+          "status": "succeeded",
+          "call_id": "b55d1830-0a64-411a-ba47-6f57cc0106df"
+        }
+      }
+    },
+    {
+      "model": "gpt-5.6-terra",
+      "state": "qualified",
+      "qualification_id": "4eb38d09-0d14-42ed-a860-fc7f9b7b465b",
+      "tests": {
+        "qualification_answer": {
+          "code": "",
+          "status": "succeeded",
+          "call_id": "312d12f3-63a6-4d87-b0c0-da2778352c33"
+        },
+        "qualification_interview": {
+          "code": "",
+          "status": "succeeded",
+          "call_id": "3f529a7b-efd0-4a57-ac86-528d9ba2e56a"
+        }
+      }
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "state": "qualified",
+      "qualification_id": "ec2a437a-4113-409e-8dd3-6f6d65aace90",
+      "tests": {
+        "qualification_answer": {
+          "code": "",
+          "status": "succeeded",
+          "call_id": "00a56993-c986-4503-b871-702ed722a860"
+        },
+        "qualification_interview": {
+          "code": "",
+          "status": "succeeded",
+          "call_id": "a223991f-f0bc-4b43-af0a-9495edb41019"
+        }
+      }
+    }
+  ],
+  "default_model": "gpt-6-astra",
+  "shared_relay": {
+    "model_count": 9,
+    "original_account_preserved": true,
+    "jobin_ready": true,
+    "jobin_eligible_model_count": 7
+  },
+  "live_calls": [
+    {
+      "id": "6e16606b-3bef-4428-abde-f6aa56da3f77",
+      "task": "policy_answer",
+      "requested_model": "gpt-6-astra",
+      "reported_model": "gpt-6-astra",
+      "status": "succeeded",
+      "duration_ms": 7854
+    },
+    {
+      "id": "ed3a34f9-96cf-4fab-92f8-0c8c3da83800",
+      "task": "interview",
+      "requested_model": "gpt-6-astra",
+      "reported_model": "gpt-6-astra",
+      "status": "succeeded",
+      "duration_ms": 4301
+    }
+  ],
+  "verified_answer_ids": [
+    "ea491bc5-02b6-425b-a43b-ab396c19c3da"
+  ],
+  "recommendable_plans": 0,
+  "pilot_admin": {
+    "user_id": "d578e768-7d1f-4fb8-b91c-dc909c75d7a1",
+    "is_staff": true,
+    "is_superuser": false,
+    "existing_test_account": true
+  },
+  "checks": {
+    "backend_tests": 81,
+    "playwright_tests": 3,
+    "ruff": true,
+    "mypy": true,
+    "openapi": true,
+    "typescript": true,
+    "frontend_lint": true,
+    "frontend_build": true
+  }
+}

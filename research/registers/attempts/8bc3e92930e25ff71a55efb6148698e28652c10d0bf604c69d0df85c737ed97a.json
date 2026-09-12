@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:02:04.461034+00:00",
+  "associations": [],
+  "byte_count": 243,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/xml",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.acko.com/wp-content/uploads/2020/10/Policy-Wording-Acko-Retail-Health-Policy.pdf",
+  "format_version": 1,
+  "http_status": 403,
+  "insurer_id": "acko",
+  "issues": [
+    "http_403"
+  ],
+  "language": "unknown",
+  "latency_ms": 217,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "11f21e40588325bd85fdeef3204dbbc929866243105eb6a27dcfdcaee2c70308",
+  "status": "failed",
+  "url": "https://www.acko.com/wp-content/uploads/2020/10/Policy-Wording-Acko-Retail-Health-Policy.pdf"
+}

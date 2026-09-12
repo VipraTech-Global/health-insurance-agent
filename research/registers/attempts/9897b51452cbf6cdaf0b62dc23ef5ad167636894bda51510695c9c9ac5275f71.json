@@ -1,0 +1,21 @@
+{
+  "acquired_at": "2026-09-10T12:44:48.703131+00:00",
+  "associations": [],
+  "component_version": "research-acquisition/2",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "format_version": 1,
+  "insurer_id": "united-india",
+  "issues": [
+    "ReadTimeout"
+  ],
+  "language": "unknown",
+  "latency_ms": 30188,
+  "linking_url": "",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": null,
+  "status": "failed",
+  "url": "https://www.uiic.co.in/web/sites/default/files/Policy-Document/20241001%20-%20CIS-%20IHP.pdf"
+}

@@ -1,0 +1,86 @@
+{
+  "revision": "discussion-r23",
+  "generated_at_utc": "2026-09-12T15:08:01.012202+00:00",
+  "status": "passed",
+  "scope": "Structural verification through approved Batch 16. Batch 17 and final audit remain.",
+  "checks": [
+    {
+      "check": "64 unique custom application entities",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "604 unique application fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "177 typed FK relationships match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all FK targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "privacy models simplified and RetentionHold absent",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "LegacyMapping and Django tables absent from custom schema",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "one public package component retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all mapped fields resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "400 mappings retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "trace covers fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "trace hashes match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "JSON roots resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all JSON definitions reachable",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Batches 14-16 recorded",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 14,
+  "failed": 0,
+  "application_entities": 64,
+  "application_fields": 604,
+  "foreign_keys": 177,
+  "json_definitions": 31,
+  "approved_batches": "1 through 16",
+  "overall_design_approval": false
+}

@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:38:41.621694+00:00",
+  "associations": [],
+  "byte_count": 3555,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/captcha?url=//pages/doc/Customer-Information/CIS_Empower-Health-Plan.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1167,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "739dd29c6737f579e6340f4b78bd426f90df9cd9f2c9388b0cfc6c957ee7a242",
+  "status": "failed",
+  "url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_Empower-Health-Plan.pdf"
+}

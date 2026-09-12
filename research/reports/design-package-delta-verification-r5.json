@@ -1,0 +1,87 @@
+{
+  "revision": "discussion-r5",
+  "boundary": "Focused offline current-artifact/trace/lineage verification. No application execution, no semantic completeness, acceptance, true benchmark isolation or final schema approval claimed. Historical distinctness review explicitly predates only the separately reviewed calculation additions.",
+  "checks": [
+    {
+      "check": "r5 eight-category map binds exact canonical artifact",
+      "passed": true
+    },
+    {
+      "check": "all200maps match current records and required categories",
+      "passed": true
+    },
+    {
+      "check": "distinctness review links through subsequent calculation-only amendment",
+      "passed": true
+    },
+    {
+      "check": "all200 distinctness ledgerIDs retained",
+      "passed": true
+    },
+    {
+      "check": "atleastfour reviewed compound candidates in all20families",
+      "passed": true
+    },
+    {
+      "check": "56reference calculations retained with independent8new+48prior review",
+      "passed": true
+    },
+    {
+      "check": "reference evidence139passages5originals40pages no lexical errors",
+      "passed": true
+    },
+    {
+      "check": "all17 new strict JSON probes passed",
+      "passed": true
+    },
+    {
+      "check": "eight supplemental maps bind current dictionary",
+      "passed": true
+    },
+    {
+      "check": "supplemental source hashes and field targets resolve",
+      "passed": true
+    },
+    {
+      "check": "all trace input hashes current",
+      "passed": true
+    },
+    {
+      "check": "27nonempty requirementfield groups",
+      "passed": true
+    },
+    {
+      "check": "all13 inventoried pilot source files unchanged",
+      "passed": true
+    },
+    {
+      "check": "20readable family casebooks present",
+      "passed": true
+    },
+    {
+      "check": "400map fixedsplit and supplement not inserted",
+      "passed": true
+    }
+  ],
+  "passed": 15,
+  "failed": 0,
+  "independent_new_contract_probes": 17,
+  "reference_calculation_count": 56,
+  "supplemental_case_count": 8,
+  "pilot_source_files_unchanged": 13,
+  "evaluation_inputs_read": [
+    "reports/evaluation-safe-summary.json",
+    "reports/evaluation-information-requirements.json"
+  ],
+  "input_hashes": {
+    "research/reference/assessments-200-r5.jsonl": "531a6c3a99f2dd8e9dba99db95aff4de70409d085fd12be3d3b07fbbdbf6bff1",
+    "research/reference/information-map-r5.json": "081b9f6aef420963662a9a7d7e50230eb3524fdcdc8ef40fca18b72e841ffb87",
+    "research/design/additional-case-field-map.json": "2a9d50fb0b2aa5daccaaec8d629ed968d45e7573c27188ea7c7f73849fb13a35",
+    "research/design/case-requirement-field-map.json": "5f6dc2c7abb7f9227a03b02ab1252e852eddc0c26fe484bb3094271520442515",
+    "research/reports/reference-distinctness-review-r6.json": "43fd07e69e610bc4f30d0d529995c0ea548ae99633edb1b16f3a2170d196162b",
+    "research/reports/reference-calculation-checks-r5.json": "b58918b9481e3f3ab5cb64e0530db6fb8cfcc96fc4c8bd5c6f86861ca86026af",
+    "research/reports/reference-calculation-review-r5.json": "358fa0c658682441fb58b4904259ac974f92a8d06bc7fd3bd1efdf14e99f09a2",
+    "research/reports/database-proposal-review-r5.json": "b5c12cdd49ed1d3c70722f17f8f1481be375b5e9a0ea9d395f84dad42fa779aa",
+    "research/reports/pilot-preservation-requirements.json": "942e85806e7ecaee6c951af31ab314bfb1a479afac3416260aa28e696feef582"
+  }
+}

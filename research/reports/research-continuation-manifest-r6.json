@@ -1,0 +1,376 @@
+{
+  "format_version": 1,
+  "generated_at_utc": "2026-09-10T19:26:06.018233+00:00",
+  "scope": "Current research/design continuation snapshot; private evaluation bodies excluded. Artifact hashes establish identity, not complete assessment or acceptance.",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "sha256": "ef8654e1c6710cf9476c09c6cd0953efdfbe72a9cfe4fb73b1760884856ae4ea",
+      "bytes": 9873
+    },
+    {
+      "path": "design/README.md",
+      "sha256": "63534d12926fb0228f07e8e41b4c75781eb93fd4864ceafa2e314f2eac0e114a",
+      "bytes": 16308
+    },
+    {
+      "path": "design/additional-case-field-map.json",
+      "sha256": "4b948da6e067e7377baef87158cfad6038263ddd7f1d6a7f51a24fb144e8cb8b",
+      "bytes": 14269
+    },
+    {
+      "path": "design/benchmark-storage-fields.json",
+      "sha256": "e59ebe1b9f7cdf8a187a667440791ce07b9132b4ffed0945a283718eb8434d54",
+      "bytes": 352481
+    },
+    {
+      "path": "design/benchmark-storage-proposal.md",
+      "sha256": "99b7a98d8a2e8d302decd7a8e9d74d862430ea3976c8d522d934e9d018476dc0",
+      "bytes": 25747
+    },
+    {
+      "path": "design/case-requirement-field-map.json",
+      "sha256": "ed8a22ee4ef3fe20b32daed3983956855949a950cf03025e00cfb769dcde4aa3",
+      "bytes": 663515
+    },
+    {
+      "path": "design/combi-design-change-r6.json",
+      "sha256": "6658f3841a711ff92b29b59017ebc7a3e1a5869c6e6d820f005cdccd0a0bd008",
+      "bytes": 2856
+    },
+    {
+      "path": "design/combi-worked-records-r6.json",
+      "sha256": "140d4655a6574d6ae83c33ed1aa7a5b5508edc1b38c7020f297b7ef8e0154cc9",
+      "bytes": 7144
+    },
+    {
+      "path": "design/compatibility-and-verification.md",
+      "sha256": "bb0ed16a0b6abfe8e9e55a68b219da590a70f7024b3c8dae32d3b6d618c093c2",
+      "bytes": 9061
+    },
+    {
+      "path": "design/complete-entity-relationships.mmd",
+      "sha256": "bd00c4673e9cb6a4a41ed30481538cbb9aec6d5959913583354fc4df982bc333",
+      "bytes": 22144
+    },
+    {
+      "path": "design/dependency-metadata-check.json",
+      "sha256": "dbc53e026a31cb21f504b73280f383fe8146b6eae2342f23539493e28e7ff095",
+      "bytes": 5895
+    },
+    {
+      "path": "design/entity-field-dictionary.json",
+      "sha256": "cd69328329ca30d961d10b08a01a1c3d482813106f96fc76097a91f4d87e1660",
+      "bytes": 867084
+    },
+    {
+      "path": "design/field-dictionary.md",
+      "sha256": "7e3ef66457250ecad1635300f7c400a9f2e6d6a9bb11faef2f7d0007ca0e9e76",
+      "bytes": 362974
+    },
+    {
+      "path": "design/information-requirements.json",
+      "sha256": "40964054c878516cd71aaa0c840526e3e5c0849f6cb913186056217d2b5dd099",
+      "bytes": 30725
+    },
+    {
+      "path": "design/json-contracts.schema.json",
+      "sha256": "360665343f1ddd8a37112fde062c0fff450b5bd2c4550cd1b9de797f70b89bf1",
+      "bytes": 110011
+    },
+    {
+      "path": "design/migration-and-cutover.md",
+      "sha256": "ed8c02d9d4f4143af8731fd5e5be5fed206e493eb0ff1fbc47be25b3f67c71fe",
+      "bytes": 6061
+    },
+    {
+      "path": "design/migration-field-map.json",
+      "sha256": "d198ef456232971c17529c5e15d8160582b0e3168dc7ff72d4ff618c2fcadea3",
+      "bytes": 115780
+    },
+    {
+      "path": "design/relationships-and-lifecycle.md",
+      "sha256": "d7f712cbfd71a511f32da4e5d38db7ac357d01f596b2311cf47073adbf946a93",
+      "bytes": 23155
+    },
+    {
+      "path": "design/relationships.json",
+      "sha256": "0b9fd0792b7460721d613f783164bfb6db573995f1d0807a63a889ced7250e7a",
+      "bytes": 197828
+    },
+    {
+      "path": "design/retrieval-operations.md",
+      "sha256": "8f4f1753dea1a572c1f15b2183937832ce5fdd3fc79f25773a87cc7e228fb451",
+      "bytes": 13678
+    },
+    {
+      "path": "design/value-and-rule-contracts.md",
+      "sha256": "c3adc8c21d781604c90b978f530288b89aa86aa6147d1018d08e3ddb6993347f",
+      "bytes": 13374
+    },
+    {
+      "path": "design/worked-examples.md",
+      "sha256": "8826f14bd61909aad62b374ede48633f84d99c6b90b376ab8c5ec7323f414980",
+      "bytes": 13630
+    },
+    {
+      "path": "design/worked-record-examples.json",
+      "sha256": "77db6d5308d1dc812ed9b79468e40987df8db4a29866a1c59ba515bfb9235cee",
+      "bytes": 5539
+    },
+    {
+      "path": "reference/assessments-200-r5.jsonl",
+      "sha256": "531a6c3a99f2dd8e9dba99db95aff4de70409d085fd12be3d3b07fbbdbf6bff1",
+      "bytes": 1915424
+    },
+    {
+      "path": "reference/source-followup-200-r6.jsonl",
+      "sha256": "c1e71bdd2c157c8e981942d9bf235e7c47dde827493de3a3fe9fb55c9ad8e1ce",
+      "bytes": 1276833
+    },
+    {
+      "path": "reference/information-map-r6.json",
+      "sha256": "efb3c5a18ebcc038845a2003ccd753aabe8778eb182c3ef2909a246a52c15e87",
+      "bytes": 3165733
+    },
+    {
+      "path": "reference/reference-source-evidence-families03-10-r6.json",
+      "sha256": "b17068c36def66a050ce26b1c9cbe19c6089d25634582c67d23c866ad23d08d4",
+      "bytes": 131271
+    },
+    {
+      "path": "reference/assessment-authoring/families03-10-sourcefollowup-r6.tsv",
+      "sha256": "157a789f620c55cfa91351e31154915dcb74eaf63b4b24151d450aa19ba0de61",
+      "bytes": 46856
+    },
+    {
+      "path": "reference/casebook-r6/README.md",
+      "sha256": "7aa497bd08a2678ecff77464e1ea17e89a511f03f8cded8cb5b3a3faffa4d7a3",
+      "bytes": 1220
+    },
+    {
+      "path": "reference/casebook-r6/family-01.md",
+      "sha256": "c144f441b58173a4375a026f06389cf292c15018980d069e9bc75cf08c64c0df",
+      "bytes": 12811
+    },
+    {
+      "path": "reference/casebook-r6/family-02.md",
+      "sha256": "b4eacb6f51f30a335701085d5c832123c9e3fa10fddade0dbdd4dfc887fc25d7",
+      "bytes": 12735
+    },
+    {
+      "path": "reference/casebook-r6/family-03.md",
+      "sha256": "2537adc57ed2d008d1d1f75608fad1d1580f6459c07edd2dc502ed3b8090da9c",
+      "bytes": 13847
+    },
+    {
+      "path": "reference/casebook-r6/family-04.md",
+      "sha256": "86e86fa26c9031067ca84b6857a5a2f3bb7b066f7a339a114cc18dd9ebe4a7c8",
+      "bytes": 12119
+    },
+    {
+      "path": "reference/casebook-r6/family-05.md",
+      "sha256": "fd617d1815b3238b3cab44823d8107e49069d598fde48d7ea83d1b7793603fe7",
+      "bytes": 12253
+    },
+    {
+      "path": "reference/casebook-r6/family-06.md",
+      "sha256": "e8d2bdb17309b7b59e1e46c51625a53ae62c0e5f20306a43519da1500e3739f6",
+      "bytes": 11158
+    },
+    {
+      "path": "reference/casebook-r6/family-07.md",
+      "sha256": "1f1072394876175e113605dde5ac105853d88ac4230c62763bab214ee97dcb83",
+      "bytes": 15575
+    },
+    {
+      "path": "reference/casebook-r6/family-08.md",
+      "sha256": "54ebccf0b39e5433a6b3f45b611223f3821c7bd0fae448b841f0cd5b2ff5973a",
+      "bytes": 14877
+    },
+    {
+      "path": "reference/casebook-r6/family-09.md",
+      "sha256": "c42bea2d7c38358fec5d58685d78b75fb1893782e59152f98c95f61b613b8c26",
+      "bytes": 11308
+    },
+    {
+      "path": "reference/casebook-r6/family-10.md",
+      "sha256": "ad506b2a39530f209180f772d9aea21fa8d7cd8a705fe373e2345fd0c5a3da97",
+      "bytes": 13063
+    },
+    {
+      "path": "reference/casebook-r6/family-11.md",
+      "sha256": "ae8d163dc7d6f886e804f2614825b31b6f9133ea9e019ae6d02159e54e0eb983",
+      "bytes": 17061
+    },
+    {
+      "path": "reference/casebook-r6/family-12.md",
+      "sha256": "190b3d0ac7f696c2df838544801526a3f6623fe6f132c942b8a6f00e17d85e4b",
+      "bytes": 17625
+    },
+    {
+      "path": "reference/casebook-r6/family-13.md",
+      "sha256": "4344253c6faf363447ff5b7aa938b3188582ef70cdc46461c495a8b1735c66b8",
+      "bytes": 16852
+    },
+    {
+      "path": "reference/casebook-r6/family-14.md",
+      "sha256": "fbc474e4b19feb302a4177555d2138810e97b558819b2ae88ec69d224976da69",
+      "bytes": 16679
+    },
+    {
+      "path": "reference/casebook-r6/family-15.md",
+      "sha256": "643e10636c957e5113561fbedf6641cc567aafc700835545902f053ff12fd448",
+      "bytes": 15451
+    },
+    {
+      "path": "reference/casebook-r6/family-16.md",
+      "sha256": "a3e00c246e3f676efba6f585394b6a954a8029e102f26115f60ad0e985d3e7e0",
+      "bytes": 15598
+    },
+    {
+      "path": "reference/casebook-r6/family-17.md",
+      "sha256": "a708c1d8dda0d8e3d9d3504296d7f4ae076ce111a988792307df801a565f82d3",
+      "bytes": 17224
+    },
+    {
+      "path": "reference/casebook-r6/family-18.md",
+      "sha256": "59162aa92f7d4817f850240bbc5fd83fca2e572c8390951a743dc4a1e4365f1d",
+      "bytes": 15893
+    },
+    {
+      "path": "reference/casebook-r6/family-19.md",
+      "sha256": "96c83349cc3b3897b5323737e55ee1dff566a50a9317a33df75d6d7ea6d0113e",
+      "bytes": 17315
+    },
+    {
+      "path": "reference/casebook-r6/family-20.md",
+      "sha256": "eae312de5755e9969e35b0ba1d237295284347f097e45283f54bc9258235dab6",
+      "bytes": 12314
+    },
+    {
+      "path": "reports/evaluation-safe-summary.json",
+      "sha256": "c18db43dc32daeb473b76137c6439227ec2de8f06824179597e589ddd2eeae82",
+      "bytes": 13675
+    },
+    {
+      "path": "reports/evaluation-information-requirements.json",
+      "sha256": "58f404816c084f3619c6fb02027a16d6ae4f8aa6e63181d44350693804949199",
+      "bytes": 175488
+    },
+    {
+      "path": "reports/reference-source-followup-integration-r6.json",
+      "sha256": "5e7fb4bfc17386bc2397dbced3cd9dbfe503acef66683fe44ca24100eeacaeab",
+      "bytes": 2540
+    },
+    {
+      "path": "reports/reference-followup-evidence-verification-r6.json",
+      "sha256": "1115698dd996cf26230e07ecc748d45d52c01e706237ec7be2697be6356b0f14",
+      "bytes": 43538
+    },
+    {
+      "path": "reports/reference-followup-connected-issues-r6.json",
+      "sha256": "21c6c66c008c51413b4cc2372d822f19b6bf7232dd4e18d0a310bf16edbd886f",
+      "bytes": 4453
+    },
+    {
+      "path": "reports/design-package-delta-verification-r6.json",
+      "sha256": "91b2a4dd5b1a34d9c79e520a30426bf01369492713b421a12ec77d1fa6dbf636",
+      "bytes": 8242
+    },
+    {
+      "path": "reports/database-proposal-review-r6.json",
+      "sha256": "a2481fd9259bb7f66b4448ea777798e008fc41e5c81a591ace955348dd9d5be5",
+      "bytes": 7962
+    },
+    {
+      "path": "reports/combi-review-corrections-r6.json",
+      "sha256": "319b7edb7a3ddfcfea44b60abafea091f353bd74137330dde40915534b437d81",
+      "bytes": 896
+    },
+    {
+      "path": "reports/combi-author-recheck-r6.json",
+      "sha256": "bd660439efa1c7b10690a293aa096dcf5dc50c65c92676148ea3880365f97b92",
+      "bytes": 1982
+    },
+    {
+      "path": "reports/research-followup-links-r6.json",
+      "sha256": "e0e809660f065dfc5a7ab9deb9733416d90171bad269ab332924d8701a455fdb",
+      "bytes": 286
+    },
+    {
+      "path": "registers/source-corpus-delta-r23.json",
+      "sha256": "36f676f3af242798f48e0cc2da5471fffa09aabf849e2ef66e9073ae92a82ccd",
+      "bytes": 1701
+    },
+    {
+      "path": "registers/nppa-discovery-acquisition-r23.json",
+      "sha256": "5520104b711d812f02543b87e76ac27e7e8f1cb0a00d2e97c8aa063b50f0a605",
+      "bytes": 513
+    },
+    {
+      "path": "registers/nppa-stent-acquisition-r23.json",
+      "sha256": "a68945dc1925970085abe4cd0590c7bc7112039cb3aab9914cc15e087a345ffe",
+      "bytes": 720
+    },
+    {
+      "path": "registers/source-corpus-accounting-r22.json",
+      "sha256": "b129b1318039aea06b6d81d62829fb054a47785776aa1f454839d72fba108202",
+      "bytes": 3211010
+    },
+    {
+      "path": "registers/document-scope-r22.json",
+      "sha256": "d07999d9d520db5c2b13e208b63e55eda5d59e6fab9c8276730a66f9a4ac026b",
+      "bytes": 3595291
+    },
+    {
+      "path": "registers/legacy-assessment-r22.json",
+      "sha256": "6afeb1de45d18c4b67cb989f7819317e462423af9b9d827d3f2d61e654fa8249",
+      "bytes": 2502840
+    },
+    {
+      "path": "reference/reference-source-followup-families01-10-r6.jsonl",
+      "sha256": "2d11973bbdae2fd723b354981b7302c6002d7d835e35fe082061ca17f7d5b5c2",
+      "bytes": 993637
+    },
+    {
+      "path": "reference/reference-source-followup-families11-19-r6.jsonl",
+      "sha256": "5d6172ec17466584722e67cb531ca65e7ba8c7016d6121b7f99cc6e3ee5b92fb",
+      "bytes": 757165
+    },
+    {
+      "path": "reference/reference-source-followup-family20-r6.jsonl",
+      "sha256": "c545d610364605f799b3dd8b351ef5f4fcc7a3b2edaebe15c51d3f250c67581c",
+      "bytes": 26878
+    }
+  ],
+  "completion": {
+    "reference_source_followups": 200,
+    "partially_resolved_public_source": 62,
+    "unchanged_public_source": 138,
+    "canonical_reference_calculations_preserved": 56,
+    "safe_evaluation_cases": 200,
+    "evaluation_frozen": 0,
+    "full_customer_decisions_claimed": 0,
+    "source_rule_denominators_known": false,
+    "exact_legacy_bundles_complete": 0,
+    "database_design_approved": false,
+    "replacement_implementation_started": false
+  },
+  "review_limits": [
+    "Independent re-review of the newly authored80 reference follow-ups remains outstanding.",
+    "Three prior combi findings pass author recheck; independent recheck remains pending.",
+    "Full governing original bundles, atomic rule inventories and broader case decisions remain incomplete."
+  ],
+  "verification": {
+    "current_package_checks_passed": 44,
+    "current_package_checks_failed": 0,
+    "followup_evidence_regions": 80,
+    "native_verified": 79,
+    "visually_verified": 1,
+    "original_objects_hash_verified": 2942,
+    "local_links_checked": 287,
+    "missing_link_targets": 0,
+    "pilot_source_files_unchanged": 13
+  }
+}

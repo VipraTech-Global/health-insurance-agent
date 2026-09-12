@@ -1,0 +1,1280 @@
+{
+  "format_version": 1,
+  "review_kind": "independent_reference_delta_and_arithmetic_recheck",
+  "source": "research/reference/assessments-200-r4.jsonl",
+  "source_sha256": "0c68cb5a2c75600ac3e5da3b07223201f355765c4b63317a9422c6eb7e0f5362",
+  "status": "All 12 target revisions resolve the identified decision collisions; all 39 new numerical checks independently recomputed. Medium expression-binding and exact-support attachment gaps remain; no whole-set uniqueness or insurance-completion certification.",
+  "canonical_cases": 200,
+  "revision_targets_reviewed": [
+    "ref-01-03",
+    "ref-01-07",
+    "ref-09-01",
+    "ref-11-05",
+    "ref-16-10",
+    "ref-10-08",
+    "ref-03-08",
+    "ref-09-08",
+    "ref-13-01",
+    "ref-15-07",
+    "ref-19-02",
+    "ref-14-02"
+  ],
+  "collision_rechecks": [
+    {
+      "case_ids": [
+        "ref-01-03",
+        "ref-14-01",
+        "ref-14-02"
+      ],
+      "result": "prior_collision_resolved_at_decision_level",
+      "decision_distinction": "Immediate liquidity versus Silver/Gold aggregation comparison versus independently Gold-admitted expense rejected by a base insurer."
+    },
+    {
+      "case_ids": [
+        "ref-01-07",
+        "ref-11-01"
+      ],
+      "result": "prior_collision_resolved_at_decision_level",
+      "decision_distinction": "Available eligible-room choice changes feasibility within emergency cash; family 11 calculates deductions for a given upgraded room."
+    },
+    {
+      "case_ids": [
+        "ref-09-01",
+        "ref-11-04"
+      ],
+      "result": "prior_collision_resolved_at_decision_level",
+      "decision_distinction": "A failed standalone day-care facility criterion precedes amount calculation; family 11 applies the per-eye cap and co-pay to an otherwise admissible procedure."
+    },
+    {
+      "case_ids": [
+        "ref-11-05",
+        "ref-14-06"
+      ],
+      "result": "prior_collision_resolved_at_decision_level",
+      "decision_distinction": "Accelerated premium debt changes remittance but not admissible expense; family 14 aggregates spouses toward one threshold."
+    },
+    {
+      "case_ids": [
+        "ref-12-08",
+        "ref-16-10"
+      ],
+      "result": "prior_collision_resolved_at_decision_level",
+      "decision_distinction": "Cross-year episode allocation remains unresolved; family 16 selects a same-UIN notice at renewal while preserving accrued waiting time."
+    },
+    {
+      "case_ids": [
+        "ref-05-08",
+        "ref-10-08"
+      ],
+      "result": "prior_collision_resolved_at_decision_level",
+      "decision_distinction": "Annual chronic OPD expenditure and excluded expense cover differ from an app consultation service whose text expressly excludes prescriptions and diagnosis."
+    },
+    {
+      "case_ids": [
+        "ref-03-08",
+        "ref-07-03"
+      ],
+      "result": "prior_collision_resolved_at_decision_level",
+      "decision_distinction": "New child membership cannot inherit parents’ time; family 7 evaluates the internal-congenital wait for an already specified fresh insured."
+    },
+    {
+      "case_ids": [
+        "ref-09-08",
+        "ref-11-10"
+      ],
+      "result": "prior_collision_resolved_at_decision_level",
+      "decision_distinction": "A coronary-stent price references a dated external DPCO/NPPA instrument; family 11 tests a hypothetical inclusive procedure cap and package total."
+    },
+    {
+      "case_ids": [
+        "ref-13-01",
+        "ref-13-07",
+        "ref-15-07"
+      ],
+      "result": "prior_collision_resolved_at_decision_level",
+      "decision_distinction": "Existing group termination conflict, pending migration applicability and accepted amount-specific waiting-credit allocation now produce different actions."
+    },
+    {
+      "case_ids": [
+        "ref-19-01",
+        "ref-19-02"
+      ],
+      "result": "prior_collision_resolved_at_decision_level",
+      "decision_distinction": "Future purchase with known imminent surgery differs from correction of first medical advice across an already stipulated policy inception, which invalidates chronology-based classification."
+    }
+  ],
+  "additional_near_neighbours": [
+    {
+      "case_ids": [
+        "ref-01-06",
+        "ref-11-05"
+      ],
+      "distinction": "Instalment lateness/grace and continued cover versus remittance after accelerated debt on a stipulated valid claim."
+    },
+    {
+      "case_ids": [
+        "ref-15-06",
+        "ref-15-07"
+      ],
+      "distinction": "Requested bonus portability allocation remains uncertain versus accepted base/enhancement-specific waiting-credit arithmetic."
+    },
+    {
+      "case_ids": [
+        "ref-19-02",
+        "ref-19-05"
+      ],
+      "distinction": "Explicit correction changes which side of inception the advice falls on; 19-05 preserves the initially supplied symptom/advice chronology."
+    }
+  ],
+  "family_reviews": [
+    {
+      "family": 1,
+      "available_cases": 10,
+      "substantive_compound_candidates_identified": 4,
+      "candidate_interactions": [
+        {
+          "case_id": "ref-01-02",
+          "interaction": "Premium affordability interacts with compulsory co-pay and accessible cash: an affordable premium still leaves the illustrated admission unfunded.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-01-03",
+          "interaction": "Already-paid admission reduces current cash; second upfront demand occurs before reimbursement. Potential aggregate entitlement cannot fill the immediate liquidity gap.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-01-04",
+          "interaction": "A mandatory doctor/branch requirement interacts with cashless need and selected network scope; an insurer-name match cannot establish the required access.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-01-05",
+          "interaction": "Same-admission recharge interacts with modern-treatment exclusion and exhaustion wording; the advertised extra cover cannot be added to first-claim SI.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        }
+      ],
+      "minimum_four_interacting_candidates_identified": true,
+      "globally_distinct_minimum_certified": false,
+      "r4_review_scope": "Reread the r4 answer/interaction for each named candidate; 81 substantive interacting candidates remain identified. This is not 200-case global uniqueness certification."
+    },
+    {
+      "family": 2,
+      "available_cases": 10,
+      "substantive_compound_candidates_identified": 4,
+      "candidate_interactions": [
+        {
+          "case_id": "ref-02-02",
+          "interaction": "Parent relationship restrictions interact with older-age medical acceptance: inability to include a parent on this floater changes grouping without establishing rejection by every insurer.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-02-03",
+          "interaction": "Paid usage interacts with a distinct pending reservation and another procedure; claim identity is necessary to avoid double subtraction and distinguish settled from uncommitted balance.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-02-08",
+          "interaction": "Higher family SI interacts with a possible fixed child-treatment cap and replenishment rule; increasing SI may not fund the estimated dialysis requirement.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-02-09",
+          "interaction": "Different family residences interact with exact-branch network and treatment-zone conditions; a Kota observation cannot satisfy the Delhi access requirement.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        }
+      ],
+      "minimum_four_interacting_candidates_identified": true,
+      "globally_distinct_minimum_certified": false,
+      "r4_review_scope": "Reread the r4 answer/interaction for each named candidate; 81 substantive interacting candidates remain identified. This is not 200-case global uniqueness certification."
+    },
+    {
+      "family": 3,
+      "available_cases": 10,
+      "substantive_compound_candidates_identified": 4,
+      "candidate_interactions": [
+        {
+          "case_id": "ref-03-02",
+          "interaction": "Renewal age interacts with continued child membership and the connected age-25 split/bonus allocation clause; age computation alone cannot select the renewal configuration.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-03-03",
+          "interaction": "Adoption relationship interacts with midterm acceptance, effective date and member-specific waiting credit; an eligible relationship does not backdate cover or reset old members.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-03-04",
+          "interaction": "Birth/NICU dates interact with maternal delivery versus newborn benefits and later addition; the later membership request cannot move the earlier child bill into the mother grant.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-03-08",
+          "interaction": "Parents have completed continuous time, but the child is newly admitted with a pre-existing congenital condition. Membership confirmation cannot transfer parent-level waiting credit to the child.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        }
+      ],
+      "minimum_four_interacting_candidates_identified": true,
+      "globally_distinct_minimum_certified": false,
+      "r4_review_scope": "Reread the r4 answer/interaction for each named candidate; 81 substantive interacting candidates remain identified. This is not 200-case global uniqueness certification."
+    },
+    {
+      "family": 4,
+      "available_cases": 10,
+      "substantive_compound_candidates_identified": 4,
+      "candidate_interactions": [
+        {
+          "case_id": "ref-04-02",
+          "interaction": "Employer exit/continuity interacts with parent medical acceptance, private-room restrictions and low cash; aligned requested dates alone do not supply a funded replacement.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-04-05",
+          "interaction": "Parent cardiac follow-up setting interacts with family grouping and inpatient/OPD benefits; annual routine spend must be separated before comparing shared hospital protection.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-04-07",
+          "interaction": "Closed new sales interact with existing-holder renewal/migration and senior entry concerns; product withdrawal cannot be translated directly into loss of an old policy.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-04-08",
+          "interaction": "A selected restricted network interacts with a non-negotiable hospital and uncertain excluded-provider status; outside-option status and absolute exclusion lead to different suitability branches.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        }
+      ],
+      "minimum_four_interacting_candidates_identified": true,
+      "globally_distinct_minimum_certified": false,
+      "r4_review_scope": "Reread the r4 answer/interaction for each named candidate; 81 substantive interacting candidates remain identified. This is not 200-case global uniqueness certification."
+    },
+    {
+      "family": 5,
+      "available_cases": 10,
+      "substantive_compound_candidates_identified": 4,
+      "candidate_interactions": [
+        {
+          "case_id": "ref-05-05",
+          "interaction": "Two person-specific medical conditions interact with a mandatory branch constraint; satisfying one acceptance dimension cannot make the whole candidate suitable. The result remains evidence-limited.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-05-06",
+          "interaction": "A later diagnosis before inception interacts with the earlier negative proposal and pending acceptance; dated correction changes current disclosure without rewriting historical knowledge.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-05-07",
+          "interaction": "Base PED waiting interacts with an advertised shorter-wait rider and unselected option; availability cannot alter the actual quoted contract.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-05-09",
+          "interaction": "Personal disease co-pay interacts with generic zero-co-pay marketing and unaccepted offer state; neither the public claim nor the hypothetical arithmetic establishes personal payment.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        }
+      ],
+      "minimum_four_interacting_candidates_identified": true,
+      "globally_distinct_minimum_certified": false,
+      "r4_review_scope": "Reread the r4 answer/interaction for each named candidate; 81 substantive interacting candidates remain identified. This is not 200-case global uniqueness certification."
+    },
+    {
+      "family": 6,
+      "available_cases": 10,
+      "substantive_compound_candidates_identified": 4,
+      "candidate_interactions": [
+        {
+          "case_id": "ref-06-02",
+          "interaction": "Past cardiac treatment interacts with indemnity versus fixed-event product type; a diagnosis benefit does not necessarily fund treatment of an already treated condition.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-06-05",
+          "interaction": "Two conditions and recent treatment interact with old versus enhanced SI layers; accepted old cover does not establish every condition or the increased layer clock.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-06-09",
+          "interaction": "A prior claim interacts with renewal protection, portfolio pricing and separately requested increases; the concern cannot be treated as refusal or personal loading.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-06-10",
+          "interaction": "Donor expense categories interact with recipient transplantation admissibility and remaining SI; combining bills cannot make screening or later donor complications payable.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        }
+      ],
+      "minimum_four_interacting_candidates_identified": true,
+      "globally_distinct_minimum_certified": false,
+      "r4_review_scope": "Reread the r4 answer/interaction for each named candidate; 81 substantive interacting candidates remain identified. This is not 200-case global uniqueness certification."
+    },
+    {
+      "family": 7,
+      "available_cases": 10,
+      "substantive_compound_candidates_identified": 4,
+      "candidate_interactions": [
+        {
+          "case_id": "ref-07-05",
+          "interaction": "Disability and diabetes acceptance interact with wheelchair accessibility at the exact branch; network membership alone cannot meet the medical and physical-access requirements.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-07-07",
+          "interaction": "Condition classification and a reported exclusion interact with an unselected rider and individual underwriting; neither an exclusion nor its removal is established by marketing.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-07-08",
+          "interaction": "Psychiatric versus substance-related treatment purpose interacts with causation and benefit setting; one exclusion cannot be applied to all mental-health episodes.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-07-10",
+          "interaction": "Generic benefit and personal exclusion interact with person scope, version/effective dates and lawful precedence; neither assertion can simply replace the other.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        }
+      ],
+      "minimum_four_interacting_candidates_identified": true,
+      "globally_distinct_minimum_certified": false,
+      "r4_review_scope": "Reread the r4 answer/interaction for each named candidate; 81 substantive interacting candidates remain identified. This is not 200-case global uniqueness certification."
+    },
+    {
+      "family": 8,
+      "available_cases": 10,
+      "substantive_compound_candidates_identified": 4,
+      "candidate_interactions": [
+        {
+          "case_id": "ref-08-05",
+          "interaction": "Mother versus newborn attribution interacts with maternity caps, waits and newborn exclusion; one combined invoice must not be paid under a single maternal grant.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-08-06",
+          "interaction": "Expected versus actual delivery date interacts with the exact waiting anniversary and spouse continuity; an estimate near the boundary cannot establish entitlement.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-08-07",
+          "interaction": "Lifetime deliveries interact with number of children, uninsured births and paid claims; substituting any of those counts changes the restriction application.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-08-08",
+          "interaction": "Existing spouse continuity interacts with a newly proposed member and both-spouse waiting conditions; the older member clock cannot automatically supply the new member credit.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        }
+      ],
+      "minimum_four_interacting_candidates_identified": true,
+      "globally_distinct_minimum_certified": false,
+      "r4_review_scope": "Reread the r4 answer/interaction for each named candidate; 81 substantive interacting candidates remain identified. This is not 200-case global uniqueness certification."
+    },
+    {
+      "family": 9,
+      "available_cases": 10,
+      "substantive_compound_candidates_identified": 4,
+      "candidate_interactions": [
+        {
+          "case_id": "ref-09-01",
+          "interaction": "Listed short-duration cataract treatment interacts with the mandatory own-theatre facility definition; procedure eligibility cannot cure the failed standalone-centre condition.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-09-02",
+          "interaction": "Procedure identity and variant/SI table selectors interact with threshold order and prior usage; nominal total SI cannot substitute for the procedure ceiling.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-09-04",
+          "interaction": "Recipient admissibility interacts with donor identity, excluded categories and available SI; the donor surgery estimate cannot be paid independently of the recipient claim.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-09-06",
+          "interaction": "Oral-chemotherapy setting and starred footnote interact with a hospitalisation-only threshold accumulator; eligibility of a nonhospital expense does not prove threshold contribution.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        }
+      ],
+      "minimum_four_interacting_candidates_identified": true,
+      "globally_distinct_minimum_certified": false,
+      "r4_review_scope": "Reread the r4 answer/interaction for each named candidate; 81 substantive interacting candidates remain identified. This is not 200-case global uniqueness certification."
+    },
+    {
+      "family": 10,
+      "available_cases": 10,
+      "substantive_compound_candidates_identified": 4,
+      "candidate_interactions": [
+        {
+          "case_id": "ref-10-02",
+          "interaction": "A temporal pre-hospitalisation window interacts with condition linkage and main admission admissibility; an unrelated test remains outside the grant despite falling in the window.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-10-06",
+          "interaction": "Remaining OPD cap interacts with provider-network eligibility and exception scope; arithmetic availability alone cannot make a non-network visit payable.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-10-07",
+          "interaction": "Main-claim acceptance interacts with related physiotherapy, time window, service setting and custodial exclusion; none establishes blanket post-care payment.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-10-10",
+          "interaction": "Skilled care, daily-living assistance and package supplies interact with home/OPD exclusions and linked post-care grants; a combined nursing invoice requires separate dispositions.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        }
+      ],
+      "minimum_four_interacting_candidates_identified": true,
+      "globally_distinct_minimum_certified": false,
+      "r4_review_scope": "Reread the r4 answer/interaction for each named candidate; 81 substantive interacting candidates remain identified. This is not 200-case global uniqueness certification."
+    },
+    {
+      "family": 11,
+      "available_cases": 10,
+      "substantive_compound_candidates_identified": 4,
+      "candidate_interactions": [
+        {
+          "case_id": "ref-11-01",
+          "interaction": "Room proportional reduction interacts with the medicine exception and subsequent co-pay; applying one rate to the whole bill produces a different answer.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-11-02",
+          "interaction": "Deductible and co-pay interact through operation order and percentage base; the two plausible sequences produce different numerical results and require original precedence.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-11-08",
+          "interaction": "Excluded-item classification interacts with the co-pay base; excluded costs are customer costs but must not also enlarge the co-pay base.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-11-09",
+          "interaction": "Earned bonus and displayed total interact with the stated SI basis of a percentage room cap; bonus inclusion cannot be assumed from the display.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        }
+      ],
+      "minimum_four_interacting_candidates_identified": true,
+      "globally_distinct_minimum_certified": false,
+      "r4_review_scope": "Reread the r4 answer/interaction for each named candidate; 81 substantive interacting candidates remain identified. This is not 200-case global uniqueness certification."
+    },
+    {
+      "family": 12,
+      "available_cases": 10,
+      "substantive_compound_candidates_identified": 4,
+      "candidate_interactions": [
+        {
+          "case_id": "ref-12-01",
+          "interaction": "Recharge trigger and same-admission permission interact with modern-treatment exclusion and exhaustion/expiry language; a headline restoration amount is insufficient.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-12-06",
+          "interaction": "Late notification of an expiring-year claim interacts with an already awarded bonus and insurer-specific notices; importing another insurer amendment produces a false current balance.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-12-08",
+          "interaction": "One admission crossing renewal interacts with two period balances and expense allocation; adding both annual balances cannot establish the applicable limit.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-12-10",
+          "interaction": "Base restoration interacts with exhausted procedure sublimits; resetting one ledger does not establish replenishment of another.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        }
+      ],
+      "minimum_four_interacting_candidates_identified": true,
+      "globally_distinct_minimum_certified": false,
+      "r4_review_scope": "Reread the r4 answer/interaction for each named candidate; 81 substantive interacting candidates remain identified. This is not 200-case global uniqueness certification."
+    },
+    {
+      "family": 13,
+      "available_cases": 10,
+      "substantive_compound_candidates_identified": 4,
+      "candidate_interactions": [
+        {
+          "case_id": "ref-13-04",
+          "interaction": "Multiple indemnity contracts interact with primary-insurer selection, item admissibility and prior settlements; total nominal SI cannot prove payment of the gross bill.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-13-05",
+          "interaction": "Existing group maternity/newborn rights interact with future retail migration/continuity and changed benefit scope; credited waiting does not copy the group benefit package.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-13-08",
+          "interaction": "Employment termination interacts with the gap between base cover and aggregate threshold plus remaining cash; a before-exit arrangement can leave a much larger unfunded threshold afterward.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-13-10",
+          "interaction": "Employee and parent membership histories interact with termination, senior eligibility and separate underwriting; one member continuity cannot be copied to the other.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        }
+      ],
+      "minimum_four_interacting_candidates_identified": true,
+      "globally_distinct_minimum_certified": false,
+      "r4_review_scope": "Reread the r4 answer/interaction for each named candidate; 81 substantive interacting candidates remain identified. This is not 200-case global uniqueness certification."
+    },
+    {
+      "family": 14,
+      "available_cases": 10,
+      "substantive_compound_candidates_identified": 5,
+      "candidate_interactions": [
+        {
+          "case_id": "ref-14-05",
+          "interaction": "Different policy years interact with aggregation; two otherwise eligible admissions cannot be combined using the employer calendar when the top-up resets between them.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-14-07",
+          "interaction": "Admissible inpatient amounts interact with excluded items and pre/post expenses in threshold membership; gross invoice size cannot exhaust the deductible.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-14-08",
+          "interaction": "Requested threshold reduction after diagnosis interacts with entry age, completed years, all-member/no-claim conditions and a different conversion pathway; the pathway does not grant the requested midterm change.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-14-09",
+          "interaction": "Standalone threshold excess interacts with actual base payment and the no-double-indemnity ceiling; full nominal payments cannot both be added.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-14-10",
+          "interaction": "Fresh top-up PED waiting interacts with old base continuity, variant and the deductible; crossing the deductible cannot remove the new contract wait.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        }
+      ],
+      "minimum_four_interacting_candidates_identified": true,
+      "globally_distinct_minimum_certified": false,
+      "r4_review_scope": "Reread the r4 answer/interaction for each named candidate; 81 substantive interacting candidates remain identified. This is not 200-case global uniqueness certification."
+    },
+    {
+      "family": 15,
+      "available_cases": 10,
+      "substantive_compound_candidates_identified": 4,
+      "candidate_interactions": [
+        {
+          "case_id": "ref-15-03",
+          "interaction": "Portability interacts with separately enhanced SI and moratorium clocks; transferred continuity does not make a later enhancement as old as the initial layer.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-15-05",
+          "interaction": "A corrected premium date interacts with grace, actual break and credited continuity; the corrected event invalidates the previously favourable result.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-15-06",
+          "interaction": "Base SI and bonus credits interact with a larger receiving limit; only the documented credited amount can receive the old-history treatment.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-15-10",
+          "interaction": "A one-member request interacts with an entire-family port clause and split/credit allocation; a general portability facility does not establish the requested partial move.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        }
+      ],
+      "minimum_four_interacting_candidates_identified": true,
+      "globally_distinct_minimum_certified": false,
+      "r4_review_scope": "Reread the r4 answer/interaction for each named candidate; 81 substantive interacting candidates remain identified. This is not 200-case global uniqueness certification."
+    },
+    {
+      "family": 16,
+      "available_cases": 10,
+      "substantive_compound_candidates_identified": 4,
+      "candidate_interactions": [
+        {
+          "case_id": "ref-16-01",
+          "interaction": "Annual-renewal grace interacts with claim dates and continuity: continuity retention and payment during the gap have different answers.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-16-02",
+          "interaction": "Within-term instalment cover interacts with conflicting wording/table provisions and explicit precedence; a general annual-renewal gap rule is not interchangeable.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-16-06",
+          "interaction": "Withdrawal date and renewal timing interact with old-holder options, new-sales closure and replacement restrictions; the 90-day route must be applied to the correct event.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-16-07",
+          "interaction": "Prior claim and requested increase interact with unchanged-cover renewal and underwriting scope; refusal of an increase cannot be treated as refusal of base renewal.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        }
+      ],
+      "minimum_four_interacting_candidates_identified": true,
+      "globally_distinct_minimum_certified": false,
+      "r4_review_scope": "Reread the r4 answer/interaction for each named candidate; 81 substantive interacting candidates remain identified. This is not 200-case global uniqueness certification."
+    },
+    {
+      "family": 17,
+      "available_cases": 10,
+      "substantive_compound_candidates_identified": 4,
+      "candidate_interactions": [
+        {
+          "case_id": "ref-17-03",
+          "interaction": "Excluded-provider status interacts with emergency cause and stabilisation time; any exception is limited to eligible pre-stabilisation expenses.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-17-04",
+          "interaction": "Broad base network interacts with a selected narrower option and possible emergency exception; neither list alone establishes payment.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-17-09",
+          "interaction": "Non-network status interacts with cashless refusal, unknown exclusion state and limited upfront cash; reimbursement possibility does not establish a usable cashless route.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-17-10",
+          "interaction": "Residence/treatment zones interact with a percentage trigger, base and other cost shares; neither the reported rate nor location alone determines the deduction.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        }
+      ],
+      "minimum_four_interacting_candidates_identified": true,
+      "globally_distinct_minimum_certified": false,
+      "r4_review_scope": "Reread the r4 answer/interaction for each named candidate; 81 substantive interacting candidates remain identified. This is not 200-case global uniqueness certification."
+    },
+    {
+      "family": 18,
+      "available_cases": 10,
+      "substantive_compound_candidates_identified": 4,
+      "candidate_interactions": [
+        {
+          "case_id": "ref-18-03",
+          "interaction": "Base premium and add-on interact with a loading percentage basis and later charges; applying the loading to a different component changes the total.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-18-05",
+          "interaction": "Payment frequency interacts with different SI/benefits and premium/grace conditions; annualised cash flow is not an equivalent annual-pay quote.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-18-06",
+          "interaction": "A personal unaccepted exclusion interacts with owner/person scope and public product knowledge; another customer offer cannot fill missing individual evidence.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-18-09",
+          "interaction": "Residence correction interacts with quote input revision and budget assessment; the old price must remain historical rather than support current affordability.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        }
+      ],
+      "minimum_four_interacting_candidates_identified": true,
+      "globally_distinct_minimum_certified": false,
+      "r4_review_scope": "Reread the r4 answer/interaction for each named candidate; 81 substantive interacting candidates remain identified. This is not 200-case global uniqueness certification."
+    },
+    {
+      "family": 19,
+      "available_cases": 10,
+      "substantive_compound_candidates_identified": 4,
+      "candidate_interactions": [
+        {
+          "case_id": "ref-19-03",
+          "interaction": "An imminent planned procedure interacts with active versus requested SI layers and their different waits; pending enhancement cannot expand current funding.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-19-04",
+          "interaction": "An early accident interacts with initial-wait exception, provider status and threshold; removal of one waiting obstacle is not full claim approval.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-19-05",
+          "interaction": "Pre-inception symptoms/advice interact with post-inception admission and unknown diagnosis; admission date alone cannot classify the event as newly arising.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-19-07",
+          "interaction": "Group termination interacts with a planned operation and pending migration; the request cannot move liability into an unaccepted replacement contract.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        }
+      ],
+      "minimum_four_interacting_candidates_identified": true,
+      "globally_distinct_minimum_certified": false,
+      "r4_review_scope": "Reread the r4 answer/interaction for each named candidate; 81 substantive interacting candidates remain identified. This is not 200-case global uniqueness certification."
+    },
+    {
+      "family": 20,
+      "available_cases": 10,
+      "substantive_compound_candidates_identified": 4,
+      "candidate_interactions": [
+        {
+          "case_id": "ref-20-03",
+          "interaction": "Buyer and mother roles interact with separate age, residence, payment and intended membership; copying buyer facts changes the wrong person eligibility.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-20-04",
+          "interaction": "Reopening owned history interacts with a new incomplete medicine disclosure and changed corpus; loading stored facts cannot validate an old answer automatically.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-20-09",
+          "interaction": "A running result interacts with a newer correction, idempotent dispatch and durable reconnect; worker finish order cannot overwrite customer revision order.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        },
+        {
+          "case_id": "ref-20-10",
+          "interaction": "Deletion scope interacts with derived decisions/search/summaries/in-flight payloads and minimized audit; deleting the primary row alone permits resurrection.",
+          "classification": "substantive_compound_candidate",
+          "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success."
+        }
+      ],
+      "minimum_four_interacting_candidates_identified": true,
+      "globally_distinct_minimum_certified": false,
+      "r4_review_scope": "Reread the r4 answer/interaction for each named candidate; 81 substantive interacting candidates remain identified. This is not 200-case global uniqueness certification."
+    }
+  ],
+  "compound_candidates": 81,
+  "arithmetic_review": {
+    "method": "Reviewer-authored Decimal and calendar operations applied to declared inputs; did not reuse the author evaluator or observed results. Also read case facts, clarifications and assumptions for all 39 calculations.",
+    "checks": [
+      {
+        "case_id": "ref-01-02",
+        "label": "Co-pay funding gap",
+        "reviewer_result": "5000.00",
+        "expected": "5000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-01-03",
+        "label": "Immediate second-admission cash shortfall",
+        "reviewer_result": "150000",
+        "expected": "150000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-01-07",
+        "label": "Eligible-room customer balance",
+        "reviewer_result": "5300.00",
+        "expected": "5300",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-01-07",
+        "label": "Upgrade incremental customer balance",
+        "reviewer_result": "44000",
+        "expected": "44000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-02-01",
+        "label": "Shared cover shortfall on second member claim",
+        "reviewer_result": "300000",
+        "expected": "300000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-02-03",
+        "label": "Uncommitted cover after paid amount and reserve",
+        "reviewer_result": "150000",
+        "expected": "150000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-02-08",
+        "label": "Hypothetical unchanged child sublimit gap",
+        "reviewer_result": "50000",
+        "expected": "50000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-03-01",
+        "label": "Baby elapsed age",
+        "reviewer_result": "40",
+        "expected": "40",
+        "unit": "elapsed_day",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-04-03",
+        "label": "Age on maximum-entry birthday",
+        "reviewer_result": "70",
+        "expected": "70",
+        "unit": "completed_year",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-04-04",
+        "label": "Hypothetical co-pay exceeds cash",
+        "reviewer_result": "10000.00",
+        "expected": "10000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-04-05",
+        "label": "Annual recurring expenditure",
+        "reviewer_result": "60000",
+        "expected": "60000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-05-08",
+        "label": "Annual recurring expenditure",
+        "reviewer_result": "30000",
+        "expected": "30000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-10-01",
+        "label": "Annual recurring expenditure",
+        "reviewer_result": "18000",
+        "expected": "18000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-05-09",
+        "label": "Proposed personal cost share illustration",
+        "reviewer_result": "20000.00",
+        "expected": "20000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-08-02",
+        "label": "Calendar wait duration",
+        "reviewer_result": "25",
+        "expected": "25",
+        "unit": "calendar_month",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-08-06",
+        "label": "Delivery before anniversary",
+        "reviewer_result": "True",
+        "expected": "True",
+        "unit": "boolean",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-08-10",
+        "label": "Budget remaining for unpriced option",
+        "reviewer_result": "3000",
+        "expected": "3000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-09-02",
+        "label": "New India nominal modern-treatment cap",
+        "reviewer_result": "250000.00",
+        "expected": "250000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-10-03",
+        "label": "Post-discharge date60elapsed days",
+        "reviewer_result": "2026-08-30",
+        "expected": "2026-08-30",
+        "unit": "date",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-10-06",
+        "label": "Hypothetical OPD cap remaining",
+        "reviewer_result": "2000",
+        "expected": "2000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-11-02",
+        "label": "Deductible before co-pay counterfactual",
+        "reviewer_result": "72000.00",
+        "expected": "72000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-11-02",
+        "label": "Co-pay before deductible counterfactual",
+        "reviewer_result": "70000.00",
+        "expected": "70000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-11-05",
+        "label": "Remittance after premium recovery",
+        "reviewer_result": "70000",
+        "expected": "70000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-11-06",
+        "label": "ICU daily cap",
+        "reviewer_result": "5000.00",
+        "expected": "5000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-11-10",
+        "label": "Hypothetical inclusive cap excess",
+        "reviewer_result": "30000",
+        "expected": "30000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-12-02",
+        "label": "Relapse elapsed interval",
+        "reviewer_result": "40",
+        "expected": "40",
+        "unit": "elapsed_day",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-12-03",
+        "label": "Shared remaining base pool",
+        "reviewer_result": "200000",
+        "expected": "200000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-12-04",
+        "label": "Exhaustion equality boundary",
+        "reviewer_result": "False",
+        "expected": "False",
+        "unit": "boolean",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-12-09",
+        "label": "Bonus ceiling and displayed total",
+        "reviewer_result": "750000.00",
+        "expected": "750000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-12-10",
+        "label": "Exhausted independent sublimit",
+        "reviewer_result": "0",
+        "expected": "0",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-13-08",
+        "label": "Funding shortfall after employer exit",
+        "reviewer_result": "250000",
+        "expected": "250000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-14-02",
+        "label": "Gold-admitted base-refused expense accumulation",
+        "reviewer_result": "150000",
+        "expected": "150000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-15-07",
+        "label": "Remaining wait on credited base",
+        "reviewer_result": "0",
+        "expected": "0",
+        "unit": "calendar_month",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-15-07",
+        "label": "Remaining wait on uncredited enhancement",
+        "reviewer_result": "12",
+        "expected": "12",
+        "unit": "calendar_month",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-16-05",
+        "label": "Renewal birthday age",
+        "reviewer_result": "42",
+        "expected": "42",
+        "unit": "completed_year",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-16-10",
+        "label": "Notice wait after accrued continuity",
+        "reviewer_result": "12",
+        "expected": "12",
+        "unit": "calendar_month",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-17-10",
+        "label": "Hypothetical zone share",
+        "reviewer_result": "20000.00",
+        "expected": "20000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-18-03",
+        "label": "Loading applied only to base component",
+        "reviewer_result": "14000.00",
+        "expected": "14000",
+        "unit": "INR",
+        "arithmetic_passed": true
+      },
+      {
+        "case_id": "ref-18-05",
+        "label": "Twelve actual instalment amounts",
+        "reviewer_result": "13200",
+        "expected": "13200",
+        "unit": "INR",
+        "arithmetic_passed": true
+      }
+    ],
+    "passed": 39,
+    "failed": 0,
+    "scope": "Numeric reference illustrations only, not actual insurance settlements or adviser attempts. Calendar elapsed time is not a contractual inclusivity ruling."
+  },
+  "input_and_support_notes": [
+    "01-07 explicitly has INR 10000 earned available bonus in addition to INR 100000 base. Eligible-room bill is 106000, co-pay 5300, payment 100700 below available 110000. Upgrade bill112000, allowed66000, payment62700, balance49300; incremental balance44000. Room cap still uses the stipulated base100000.",
+    "01-02 introduces INR300000 admissibility in the answer as a stipulated illustration; 05-09 introduces INR100000 as hypothetical. Neither may be promoted into a known customer claim amount.",
+    "E14-E16 now provide full room/ICU, proportional reduction with medicine exception, cataract and 5% co-pay clauses for the corrected narrow examples.",
+    "09-01 facility failure is supported by E17 own-operation-theatre criterion on explicitly standalone centre facts; no market-wide exclusion is inferred.",
+    "09-08 correctly leaves the numeric stent cap unknown pending the referenced original pricing instrument and exact device identity.",
+    "17-03 current customer reply explicitly states care continued another three days; therefore the continuation is now supplied by a conversation turn even though absent from the initial flat facts. The shortened expected answer avoids specifying a duration; the remaining conversation answer is consistent with that supplied turn.",
+    "16-10 identifies exact product/UIN and renewal chronology as stipulations; actual source row17 and historical legal applicability remain documented gaps, so its arithmetic must not be interpreted as validated historical entitlement."
+  ],
+  "findings": [
+    {
+      "id": "REF-R4-01",
+      "severity": "medium",
+      "status": "open",
+      "issue": "Saved reference expressions contain unbound input names. Numerical values are correct, but a reader or future consumer cannot mechanically bind several expressions to their declared inputs without guessing.",
+      "instances": [
+        {
+          "case_id": "ref-01-07",
+          "label": "Eligible-room customer balance",
+          "unbound_names": [
+            "room_rate"
+          ],
+          "declared_inputs": [
+            "room_rate_per_day",
+            "days",
+            "surgeon",
+            "medicines",
+            "copay_ratio"
+          ]
+        },
+        {
+          "case_id": "ref-04-04",
+          "label": "Hypothetical co-pay exceeds cash",
+          "unbound_names": [
+            "ratio"
+          ],
+          "declared_inputs": [
+            "assumed_ratio",
+            "admissible",
+            "cash"
+          ]
+        },
+        {
+          "case_id": "ref-10-03",
+          "label": "Post-discharge date60elapsed days",
+          "unbound_names": [
+            "elapsed_days"
+          ],
+          "declared_inputs": [
+            "discharge",
+            "days"
+          ]
+        },
+        {
+          "case_id": "ref-14-02",
+          "label": "Gold-admitted base-refused expense accumulation",
+          "unbound_names": [
+            "first",
+            "second"
+          ],
+          "declared_inputs": [
+            "first_gold_admitted",
+            "second_gold_admitted",
+            "threshold"
+          ]
+        },
+        {
+          "case_id": "ref-15-07",
+          "label": "Remaining wait on credited base",
+          "unbound_names": [
+            "credit",
+            "required"
+          ],
+          "declared_inputs": [
+            "required_months",
+            "accepted_credit_months"
+          ]
+        },
+        {
+          "case_id": "ref-15-07",
+          "label": "Remaining wait on uncredited enhancement",
+          "unbound_names": [
+            "credit",
+            "required"
+          ],
+          "declared_inputs": [
+            "required_months",
+            "accepted_credit_months"
+          ]
+        },
+        {
+          "case_id": "ref-16-10",
+          "label": "Notice wait after accrued continuity",
+          "unbound_names": [
+            "continuous",
+            "maximum"
+          ],
+          "declared_inputs": [
+            "maximum_months",
+            "continuous_months"
+          ]
+        }
+      ],
+      "fix": "Use exactly the input keys in each expression, or declare an explicit binding map; keep human-only calendar descriptions explicitly marked as such."
+    },
+    {
+      "id": "REF-R4-02",
+      "severity": "medium",
+      "status": "open",
+      "case_ids": [
+        "ref-01-02",
+        "ref-11-06"
+      ],
+      "issue": "These new rate calculations attach lexical snippets rather than the complete rate grant: 01-02 N31 and 11-06 N11 do not contain the claimed 5% numeric rate. Full E16 and E14 respectively now exist in the source supplement.",
+      "fix": "Attach E16 to the co-pay case/calculation and E14 to the ICU case/calculation; no new source acquisition is necessary."
+    },
+    {
+      "id": "REF-R4-03",
+      "severity": "low",
+      "status": "source_review_limit",
+      "case_ids": [
+        "ref-10-08"
+      ],
+      "issue": "The E19 passage matches the no-prescription/no-diagnosis answer, but its register status remains original_region_read_pending_precise_scope_check.",
+      "fix": "Preserve that pending source-review limit or explicitly finish the precise scope review before promoting the evidence to completed original reading."
+    }
+  ],
+  "missing_evidence_accounting": {
+    "all_200_complete_customer_insurance_decision_false": true,
+    "all_200_advice_acceptance_success_false": true,
+    "all_200_adviser_attempts_zero": true,
+    "missing_evidence_does_not_count_as_success": true
+  },
+  "evaluation_material_read": false,
+  "canonical_files_edited": false,
+  "database_files_read_this_recheck": false,
+  "database_implementation_approved": false,
+  "limitations": [
+    "This is a reference delta review and numeric oracle check, not independent evaluation-set adjudication.",
+    "The 81 named interactions meet the authored minimum of four candidates per family; comprehensive global distinctness of all200 remains uncertified.",
+    "Reviewed the supplied exact original passages; did not re-open the PDF page images or verify legal currency in this bounded offline pass."
+  ]
+}

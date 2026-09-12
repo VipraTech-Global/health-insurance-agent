@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:58:31.947940+00:00",
+  "associations": [],
+  "byte_count": 869503,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/SBIG_GSTIN_with_POB_Principal_POB_1_8c1a35a4d3.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1436,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 612.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 792.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "65fcaa123924c49cc266d55d77a40fa58084d626fd2e79a08f2ba624ea3b0204",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/SBIG_GSTIN_with_POB_Principal_POB_1_8c1a35a4d3.pdf"
+}

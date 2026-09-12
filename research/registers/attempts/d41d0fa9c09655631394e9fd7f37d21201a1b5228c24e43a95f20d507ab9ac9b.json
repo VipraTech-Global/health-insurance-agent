@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:02:55.409779+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/new-india-sixty-plus-mediclaim-policy/Prospectus%20New%20India%20Sixty%20Plus%20Mediclaim%20Policy%20updated.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 7259,
+  "linking_url": "https://www.newindia.co.in/health-insurance/new-india-sixty-plus-mediclaim-policy",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "c36d6917c07d72d44b21026a49958b6a2f3dd27636bcf341cb93ef8cf5d4f684",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/new-india-sixty-plus-mediclaim-policy/Prospectus New India Sixty Plus Mediclaim Policy updated.pdf"
+}

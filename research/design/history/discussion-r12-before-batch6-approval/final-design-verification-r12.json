@@ -1,0 +1,114 @@
+{
+  "revision": "discussion-r12",
+  "generated_at_utc": "2026-09-12T09:36:31.529655+00:00",
+  "status": "passed",
+  "scope": "Structural verification of the user-approved Batch 5 private-upload, customer-policy, issued-revision, member and selected-option design. No Django models, migrations, PostgreSQL runtime constraints or complete-design approval claimed.",
+  "checks": [
+    {
+      "check": "101 unique application entities",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "994 unique application fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "304 FK relationships match dictionary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all FK targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "relationship ledger exactly covers FK fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "approved five-model Batch 5 present with exact fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "superseded contract model names removed",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "EvidenceSpan supports exactly one public or private source",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "issued selection does not duplicate members or ProductOption rows",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "PolicyMember does not duplicate family role",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "case and supplementary field targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "fixed 400 case map retained as 200 reference and 200 evaluation-safe projections",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "r12 reverse trace covers every field exactly",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "r12 trace input hashes match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "additional-case dictionary hash matches",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all JSON field contracts resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all migration target entities resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "legacy catalogue migrates only to archived mapping",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Batch 5 approval and overall design boundary recorded",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 19,
+  "failed": 0,
+  "application_entities": 101,
+  "application_fields": 994,
+  "foreign_keys": 304,
+  "batch1_approval": "explicit user approval on 2026-09-11",
+  "batch2_approval": "explicit user approval on 2026-09-11",
+  "batch3_approval": "explicit user approval on 2026-09-12",
+  "batch4_approval": "explicit user approval on 2026-09-12",
+  "batch5_approval": "explicit user approval on 2026-09-12",
+  "overall_design_approval": false
+}

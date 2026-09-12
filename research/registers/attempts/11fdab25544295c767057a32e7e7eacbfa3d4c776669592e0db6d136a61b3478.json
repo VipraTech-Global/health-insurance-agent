@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:51:54.699721+00:00",
+  "associations": [],
+  "byte_count": 1126967,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/pages/doc/brochure/Elixir_SS.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1780,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 859.8898,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 613.2756
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "36d8c7aa1b7fd52c2c4903cc5c6639172014451fe5a7a8fbd52b66756264de10",
+  "status": "acquired",
+  "url": "https://transactions.nivabupa.com/pages/doc/brochure/Elixir_SS.pdf"
+}

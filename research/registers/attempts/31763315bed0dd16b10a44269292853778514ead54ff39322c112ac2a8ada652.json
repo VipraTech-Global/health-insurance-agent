@@ -1,0 +1,105 @@
+{
+  "acquired_at": "2026-09-10T11:52:44.701017+00:00",
+  "associations": [],
+  "byte_count": 735363,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://stgaccinwbsprdlrs01.blob.core.windows.net/nhilprd/irdas_health_handbook_in_english_4d769a73ce.pdf?sv=2025-05-05&spr=https&st=2025-07-14T17%3A06%3A07Z&se=2035-07-12T17%3A06%3A07Z&sr=b&sp=r&sig=kmPm5zHRD7vWrlJTmm3B%2Fm1OB0xZOhtf2j2LFIU5jFY%3D",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "narayana",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 572,
+  "linking_url": "https://www.narayanahealth.insurance/customer-support",
+  "page_count": 10,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.2756,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.8898
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.2756,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.8898
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.2756,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.8898
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.2756,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.8898
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.2756,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.8898
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.2756,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.8898
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.2756,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.8898
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.2756,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.8898
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.2756,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.8898
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.2756,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.8898
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "e7a3b6d8214e818291d3eb6153fb496f93b5a060649aa93eeba0c3654131472e",
+  "status": "acquired",
+  "url": "https://stgaccinwbsprdlrs01.blob.core.windows.net/nhilprd/irdas_health_handbook_in_english_4d769a73ce.pdf?sv=2025-05-05&spr=https&st=2025-07-14T17%3A06%3A07Z&se=2035-07-12T17%3A06%3A07Z&sr=b&sp=r&sig=kmPm5zHRD7vWrlJTmm3B%2Fm1OB0xZOhtf2j2LFIU5jFY%3D"
+}

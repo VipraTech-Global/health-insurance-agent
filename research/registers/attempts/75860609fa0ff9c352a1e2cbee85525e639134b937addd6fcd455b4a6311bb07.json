@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:57:57.117542+00:00",
+  "associations": [],
+  "byte_count": 265142,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/Group_Mediclaim_Copy_69f40b7b2e.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 398,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.04,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.56
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "3eb2d3c2dfa4b0678ef9d753c7b4829779b761e07d599ac059ec7dca8ceb6861",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/Group_Mediclaim_Copy_69f40b7b2e.pdf"
+}

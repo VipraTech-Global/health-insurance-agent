@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:52:44.880798+00:00",
+  "associations": [],
+  "byte_count": 103597,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://stgaccinwbsprdlrs01.blob.core.windows.net/nhilprd/Medical_tests_and_exam_center_06de5d771c.pdf?sv=2025-05-05&spr=https&st=2025-07-14T17%3A06%3A07Z&se=2035-07-12T17%3A06%3A07Z&sr=b&sp=r&sig=SejaNFswqipBYg%2FC8qGLl%2B%2BzqftIHgdxGUh6VSJGtVg%3D",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "narayana",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 360,
+  "linking_url": "https://www.narayanahealth.insurance/customer-support",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.2499787,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.5
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.2499787,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.5
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "4f1e1aadc1b940095a3e648aef0379a8daabf90fa1ab0da9e092c7b31de49611",
+  "status": "acquired",
+  "url": "https://stgaccinwbsprdlrs01.blob.core.windows.net/nhilprd/Medical_tests_and_exam_center_06de5d771c.pdf?sv=2025-05-05&spr=https&st=2025-07-14T17%3A06%3A07Z&se=2035-07-12T17%3A06%3A07Z&sr=b&sp=r&sig=SejaNFswqipBYg%2FC8qGLl%2B%2BzqftIHgdxGUh6VSJGtVg%3D"
+}

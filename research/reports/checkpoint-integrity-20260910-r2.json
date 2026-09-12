@@ -1,0 +1,23 @@
+{
+  "assessment_ids_unique": 45,
+  "benchmark_private_inputs_read": false,
+  "checked_at": "2026-09-10T13:41:33.770881+00:00",
+  "checkpoint_hashes_match": true,
+  "checkpoint_local_links_resolve": true,
+  "limit": "No adviser acceptance or full customer-decision completion established.",
+  "operational_records": 10,
+  "original_reference_information_maps": 200,
+  "policy_record_contracts_validated": 35,
+  "review_followups": [
+    {
+      "case": "ref-14-09",
+      "resolution": "Added and lexically verified direct StarV.4iv physical6citation for indemnification limited to treatment costs."
+    },
+    {
+      "case": "ref-20-04",
+      "resolution": "Newmedicine reported as an additive disclosure rather than a correction; assertion history unchanged."
+    }
+  ],
+  "schema_or_application_changes": false,
+  "substantive_links": 42
+}

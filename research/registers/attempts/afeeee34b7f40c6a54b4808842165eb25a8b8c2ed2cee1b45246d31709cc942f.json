@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T12:02:06.509878+00:00",
+  "associations": [],
+  "byte_count": 404159,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://d2t12sefhwd9tk.cloudfront.net/uploads/COVID_FA_Qs_03_102024_docx_595c6caf76.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "zurich-kotak",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 496,
+  "linking_url": "https://www.zurichkotak.com/product-documents",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "eae871f9d46bc0e5f56586d9d45dd02d361e3e39efe5de46446a1137e382c6f0",
+  "status": "acquired",
+  "url": "https://d2t12sefhwd9tk.cloudfront.net/uploads/COVID_FA_Qs_03_102024_docx_595c6caf76.pdf"
+}

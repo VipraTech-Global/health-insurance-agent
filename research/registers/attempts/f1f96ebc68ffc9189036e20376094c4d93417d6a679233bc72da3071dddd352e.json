@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:59:15.533906+00:00",
+  "associations": [],
+  "byte_count": 501005,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/Enhanced%20Cataract%20Limit%20Rider%20CLAUSE%20(1).pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 1515,
+  "linking_url": "https://www.newindia.co.in/health-insurance/enhance-cataract-benefit-rider",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.2
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "1de0dfd3d04969baac615631498047974872c101eb48b2ae2725e9f4763af1c2",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/Enhanced Cataract Limit Rider CLAUSE (1).pdf"
+}

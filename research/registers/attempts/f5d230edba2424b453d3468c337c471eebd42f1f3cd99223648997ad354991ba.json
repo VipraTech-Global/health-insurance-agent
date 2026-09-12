@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:59:44.950184+00:00",
+  "associations": [],
+  "byte_count": 938116,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.generalicentralinsurance.com/downloads/health-insurance/hiv-disability-suraksha-generali-central-insurance-company-limited/claim-forms/hiv-and-disability-suraksha-generali-central-insurance-company-limited-claim-form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "generali-central",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 569,
+  "linking_url": "https://www.generalicentralinsurance.com/customer-service/downloads",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "90b48c8a75e25513bdc16e09863cbacb75f01ef1e9a23a0ec963139cbeb0b52f",
+  "status": "acquired",
+  "url": "https://www.generalicentralinsurance.com/downloads/health-insurance/hiv-disability-suraksha-generali-central-insurance-company-limited/claim-forms/hiv-and-disability-suraksha-generali-central-insurance-company-limited-claim-form.pdf"
+}

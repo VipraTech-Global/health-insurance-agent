@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T11:38:44.120734+00:00",
+  "associations": [],
+  "byte_count": 3545,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/captcha?url=//pages/doc/Customer-Information/CIS_HeartBeat.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 1106,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "3931b4e4e7afaf5817850f30c55da21a36b23912698c8a53938697f5f689a02f",
+  "status": "failed",
+  "url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_HeartBeat.pdf"
+}

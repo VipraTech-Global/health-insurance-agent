@@ -1,0 +1,21 @@
+{
+  "acquired_at": "2026-09-10T11:59:16.828345+00:00",
+  "associations": [],
+  "component_version": "research-acquisition/1",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "format_version": 1,
+  "insurer_id": "acko",
+  "issues": [
+    "host_not_approved"
+  ],
+  "language": "unknown",
+  "latency_ms": 9,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": null,
+  "status": "failed",
+  "url": "https://acko-cms.ackoassets.com/Policy_Wordings_ACKO_Health_III_Platinum_Super_Top_up_93a2e79848.pdf"
+}

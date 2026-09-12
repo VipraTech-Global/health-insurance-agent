@@ -1,0 +1,73 @@
+{
+  "acquired_at": "2026-09-10T12:00:59.172380+00:00",
+  "associations": [],
+  "byte_count": 545812,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.manipalcigna.com/pdfs/super-topup.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "manipalcigna",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 493,
+  "linking_url": "https://www.manipalcigna.com/hospitalization-cover/super-topup",
+  "page_count": 6,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.275,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 289.134
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.275,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 289.134
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.275,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 289.134
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 289.134
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 289.134
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 289.134
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "3badab6a93ce4c1231c3795ab09b59c5e90ae34abd1c180d3f17eb1ffe357cfc",
+  "status": "acquired",
+  "url": "https://www.manipalcigna.com/pdfs/super-topup.pdf"
+}

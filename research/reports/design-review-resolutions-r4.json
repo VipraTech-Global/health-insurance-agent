@@ -1,0 +1,27 @@
+{
+  "reviewed_revision": "discussion-r4",
+  "resolutions": [
+    {
+      "finding": "DB4-MIG-01",
+      "status": "corrected_and_checked",
+      "change": "SourceObservation.fetched_at retained in archived exact source payload; legacy promotion requires independently established attempt timing.",
+      "verification": "LegacyMapping.archive_blob_id -> exact source payload field fetched_at"
+    },
+    {
+      "finding": "source-r4-authentic-examples",
+      "status": "corrected_and_reviewer_confirmed",
+      "change": "Exact ACKO document title and CMS label preserved; Product.canonical_name explicitly normalized and derived,not verbatim."
+    },
+    {
+      "finding": "requirement-basis-N7",
+      "status": "corrected",
+      "change": "INS-03 now cites N9 complete contract,N28 accepted private exclusion,S1 family,S17 declaration/acceptance,I9 member CIS; N7 prehospital expense removed."
+    }
+  ],
+  "database_implementation": false,
+  "source_files": {
+    "research/design/entity-field-dictionary.json": "c6bd0c362ccf5deed241d27ce5482cca86d6e2089ea5293ed6c75b26db8f020e",
+    "research/design/migration-field-map.json": "d198ef456232971c17529c5e15d8160582b0e3168dc7ff72d4ff618c2fcadea3",
+    "research/design/information-requirements.json": "bb1e26e70f9a2f5a636fbc434fba5bc9702b13c05e2ab9cd90ca41bae6e3f336"
+  }
+}

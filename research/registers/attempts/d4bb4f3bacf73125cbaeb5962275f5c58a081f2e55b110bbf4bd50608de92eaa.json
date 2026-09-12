@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T12:02:01.031058+00:00",
+  "associations": [],
+  "byte_count": 115669,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://acko-cms.ackoassets.com/List_of_Non_Payable_Medical_Expenses_bf94e7b012.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "acko",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 861,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 840.96,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 594.96
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "a10c5eb1cba21673533e4231546e0c86d8743d4efa1e280b4e1359761000feb5",
+  "status": "acquired",
+  "url": "https://acko-cms.ackoassets.com/List_of_Non_Payable_Medical_Expenses_bf94e7b012.pdf"
+}

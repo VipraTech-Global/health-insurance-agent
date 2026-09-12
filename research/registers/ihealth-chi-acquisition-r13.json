@@ -1,0 +1,190 @@
+{
+  "discovery_method": "Exact official PDF URL returned by public web search for iHealth policy wording; original bytes must establish identity, not search title.",
+  "attempt": {
+    "format_version": 1,
+    "component_version": "research-acquisition/2",
+    "insurer_id": "icici-lombard",
+    "url": "https://www.icicilombard.com/docs/default-source/policy-wordings-product-brochure/chi_policy_wordings.pdf?sfvrsn=12",
+    "linking_url": "https://www.icicilombard.com/health-insurance/get-quote/select-chi-plans",
+    "acquired_at": "2026-09-10T18:16:52.635523+00:00",
+    "status": "acquired",
+    "issues": [],
+    "sha256": "127930061732716c1ccdd73c376ed0e06dbd2e70e308defe7a35dcd39cf73d86",
+    "page_count": 17,
+    "document_type": "pdf_unclassified",
+    "language": "unknown",
+    "associations": [],
+    "effective_from": null,
+    "effective_to": null,
+    "review_status": "not_reviewed",
+    "http_status": 200,
+    "final_url": "https://www.icicilombard.com/docs/default-source/policy-wordings-product-brochure/chi_policy_wordings.pdf?sfvrsn=12",
+    "byte_count": 263878,
+    "content_type": "application/pdf",
+    "pages": [
+      {
+        "page": 1,
+        "status": "preserved_not_read",
+        "width": 595.2756,
+        "height": 841.8898,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 2,
+        "status": "preserved_not_read",
+        "width": 595.2756,
+        "height": 841.8898,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 3,
+        "status": "preserved_not_read",
+        "width": 595.2756,
+        "height": 841.8898,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 4,
+        "status": "preserved_not_read",
+        "width": 595.2756,
+        "height": 841.8898,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 5,
+        "status": "preserved_not_read",
+        "width": 595.2756,
+        "height": 841.8898,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 6,
+        "status": "preserved_not_read",
+        "width": 595.2756,
+        "height": 841.8898,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 7,
+        "status": "preserved_not_read",
+        "width": 595.2756,
+        "height": 841.8898,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 8,
+        "status": "preserved_not_read",
+        "width": 595.2756,
+        "height": 841.8898,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 9,
+        "status": "preserved_not_read",
+        "width": 595.2756,
+        "height": 841.8898,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 10,
+        "status": "preserved_not_read",
+        "width": 595.2756,
+        "height": 841.8898,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 11,
+        "status": "preserved_not_read",
+        "width": 595.2756,
+        "height": 841.8898,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 12,
+        "status": "preserved_not_read",
+        "width": 595.2756,
+        "height": 841.8898,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 13,
+        "status": "preserved_not_read",
+        "width": 595.2756,
+        "height": 841.8898,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 14,
+        "status": "preserved_not_read",
+        "width": 595.2756,
+        "height": 841.8898,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 15,
+        "status": "preserved_not_read",
+        "width": 595.2756,
+        "height": 841.8898,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 16,
+        "status": "preserved_not_read",
+        "width": 595.2756,
+        "height": 841.8898,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      },
+      {
+        "page": 17,
+        "status": "preserved_not_read",
+        "width": 595.2756,
+        "height": 841.8898,
+        "tables": "not_inventoried",
+        "figures": "not_inventoried"
+      }
+    ],
+    "latency_ms": 570
+  },
+  "context_page_attempt": {
+    "format_version": 1,
+    "component_version": "research-acquisition/2",
+    "insurer_id": "icici-lombard",
+    "url": "https://www.icicilombard.com/health-insurance/get-quote/select-chi-plans",
+    "linking_url": "",
+    "acquired_at": "2026-09-10T18:17:32.855784+00:00",
+    "status": "failed",
+    "issues": [
+      "http_403"
+    ],
+    "sha256": "63c44feae8defc6439ed544910cf04139a78c61d726502125488d4fc750a9cab",
+    "page_count": null,
+    "document_type": "unclassified",
+    "language": "unknown",
+    "associations": [],
+    "effective_from": null,
+    "effective_to": null,
+    "review_status": "not_reviewed",
+    "http_status": 403,
+    "final_url": "https://www.icicilombard.com/health-insurance/get-quote/select-chi-plans",
+    "byte_count": 441,
+    "content_type": "text/html",
+    "latency_ms": 625
+  },
+  "link_provenance_qualification": "PDF URL was discovered by web search. The attempt linking_url records a related official page, not a verified source anchor; do not treat it as anchor discovery without the separate exact-page evidence."
+}

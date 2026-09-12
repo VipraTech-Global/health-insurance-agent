@@ -1,0 +1,2075 @@
+{
+  "revision": "discussion-r8",
+  "source_inventory": "../reports/pilot-preservation-requirements.json",
+  "database_rows_inspected": false,
+  "migration_executed": false,
+  "source_models": [
+    {
+      "source_model": "User",
+      "target_entities": [
+        "Account"
+      ],
+      "policy": "exact_except_approved_erasure",
+      "preservation_and_limit": "Preserve native authentication identity, encoded password, account state and ownership.",
+      "source_file": "backend/apps/accounts/models.py"
+    },
+    {
+      "source_model": "Insurer",
+      "target_entities": [
+        "Insurer"
+      ],
+      "policy": "review_identity",
+      "preservation_and_limit": "Resolve roster/legal identity; preserve aliases/domains in archive and original source provenance.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "CatalogueListing",
+      "target_entities": [
+        "LegacyListing"
+      ],
+      "policy": "preserve_identity",
+      "preservation_and_limit": "Preserve each original key and label; do not force product/version matches.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "PlanVersion",
+      "target_entities": [
+        "Product",
+        "TermsRevision",
+        "Configuration"
+      ],
+      "policy": "quarantine_semantics",
+      "preservation_and_limit": "Split family, edition and variant only after original-backed reconciliation; old effective dates/availability remain assertions.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "SourceLocator",
+      "target_entities": [
+        "SourceLocator"
+      ],
+      "policy": "preserve_provenance",
+      "preservation_and_limit": "Preserve original URL and declared role; verify official host and issuer.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "SourceObservation",
+      "target_entities": [
+        "Acquisition"
+      ],
+      "policy": "resolve_hash_fk",
+      "preservation_and_limit": "Preserve every original observation payload, timestamp, status and source hash. Create an Acquisition only when required per-attempt start/provenance can be established independently. fetched_at is not reliably an attempt start; otherwise retain an explicitly archived legacy observation without invented timing.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "SourceBlob",
+      "target_entities": [
+        "OriginalBlob"
+      ],
+      "policy": "verified_bytes",
+      "preservation_and_limit": "Verify exact bytes, digest, size and private ownership; original filesystem storage must be backed up separately.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "DocumentVersion",
+      "target_entities": [
+        "DocumentRevision"
+      ],
+      "policy": "quarantine_semantics",
+      "preservation_and_limit": "Preserve edition assertions without treating a legacy published label as complete original review.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "PlanDocumentAssociation",
+      "target_entities": [
+        "TermsDocument"
+      ],
+      "policy": "quarantine_semantics",
+      "preservation_and_limit": "Reconcile roles, edition compatibility and applicability from originals; preserve old association as historical.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "ExtractionRevision",
+      "target_entities": [
+        "ProcessingJob",
+        "OriginalBlob"
+      ],
+      "policy": "preserve_derivatives",
+      "preservation_and_limit": "Retain extraction manifest/derivatives and versions as processing evidence; not independent originals.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "DocumentPage",
+      "target_entities": [
+        "DocumentPage"
+      ],
+      "policy": "explicit_index_conversion",
+      "preservation_and_limit": "Convert zero-based physical_index to explicit one-based page; preserve printed label, geometry and rotation exactly.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "EvidenceSpan",
+      "target_entities": [
+        "EvidenceSpan"
+      ],
+      "policy": "verify_locator",
+      "preservation_and_limit": "Retain quote, source offsets and exact old-to-new geometry map; verify original before reuse.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "EvidenceBundle",
+      "target_entities": [
+        "Artifact",
+        "RuleEvidence"
+      ],
+      "policy": "quarantine_semantics",
+      "preservation_and_limit": "Preserve bundle identity/order; infer rule support only after independent review.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "EvidenceBundleSpan",
+      "target_entities": [
+        "RuleEvidence"
+      ],
+      "policy": "quarantine_semantics",
+      "preservation_and_limit": "Retain all ordered span-role associations in archive; new roles require supported translation.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "VerifiedFact",
+      "target_entities": [
+        "Rule",
+        "RuleEvidence"
+      ],
+      "policy": "quarantine_semantics",
+      "preservation_and_limit": "Old verification flag does not prove new independent rule coverage. Translate typed values/scope only when lossless.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "Clause",
+      "target_entities": [
+        "Rule",
+        "EvidenceSpan"
+      ],
+      "policy": "quarantine_semantics",
+      "preservation_and_limit": "Preserve exact statement and original support; curate explicit conditions/dependencies before publication.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "RatingObservation",
+      "target_entities": [
+        "LegacyMapping"
+      ],
+      "policy": "preserved_unmapped",
+      "preservation_and_limit": "Keep historical metric/value/date/source in archive. No new recommendation score from unsupported ratings.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "PremiumObservation",
+      "target_entities": [
+        "Quote",
+        "QuoteComponent"
+      ],
+      "policy": "quarantine_semantics",
+      "preservation_and_limit": "Public premium observation is not an owner-bound quote; preserve as original observation until identity/inputs/validity established.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "ReviewEvent",
+      "target_entities": [
+        "ReviewRecord"
+      ],
+      "policy": "preserve_historical_review",
+      "preservation_and_limit": "Preserve original review scope/reviewer/time; do not promote to new source or design approval.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "IngestionRun",
+      "target_entities": [
+        "ProcessingJob"
+      ],
+      "policy": "preserve_operational_history",
+      "preservation_and_limit": "Preserve source-stage attempts, counts and errors; legacy success is not corpus completeness.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "CorpusRelease",
+      "target_entities": [
+        "CorpusRevision"
+      ],
+      "policy": "legacy_channel_only",
+      "preservation_and_limit": "Retain old manifest and selection as pilot channel; never auto-publish replacement corpus.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "Conversation",
+      "target_entities": [
+        "Conversation"
+      ],
+      "policy": "preserve_context",
+      "preservation_and_limit": "Preserve owner, UUID, title, timestamps and revision; interpret profile only after attributed fact reconciliation.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "ProfileRevision",
+      "target_entities": [
+        "FactSnapshot",
+        "FactAssertion"
+      ],
+      "policy": "quarantine_unattributed_facts",
+      "preservation_and_limit": "Archive full original JSON and provenance. Missing person identity/DOB/units remain unknown; model suggestions unconfirmed.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "Message",
+      "target_entities": [
+        "Message"
+      ],
+      "policy": "preserve_content",
+      "preservation_and_limit": "Preserve UUID, owner-through-conversation, role, exact content, origin and time; preserve answer linkage.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "Turn",
+      "target_entities": [
+        "Turn"
+      ],
+      "policy": "preserve_idempotency",
+      "preservation_and_limit": "Preserve request identity and input/revision. Drain or explicitly cancel/recover active work before any cutover.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "TurnAttempt",
+      "target_entities": [
+        "Turn",
+        "ModelAttempt"
+      ],
+      "policy": "preserve_attempts",
+      "preservation_and_limit": "Preserve each attempt state/deadline/error; do not replay old inference or invent terminal results.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "RouteConfiguration",
+      "target_entities": [
+        "ModelRoute"
+      ],
+      "policy": "requalify_changed_route",
+      "preservation_and_limit": "Preserve exact immutable route/model/settings lineage; keep secrets outside artifacts.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "RouteQualification",
+      "target_entities": [
+        "ModelQualification"
+      ],
+      "policy": "historical_not_current_approval",
+      "preservation_and_limit": "Preserve historical qualification result; each new actual schema/capability needs fresh qualification.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "ModelCallAttempt",
+      "target_entities": [
+        "ModelAttempt"
+      ],
+      "policy": "preserve_attempts",
+      "preservation_and_limit": "Preserve exact model identity, usage, timestamps, safe errors and request/response fingerprints.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "AnswerArtifact",
+      "target_entities": [
+        "Decision"
+      ],
+      "policy": "legacy_answer_scope",
+      "preservation_and_limit": "Preserve answer blocks/text and validation scope at original revision; no new acceptance success.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "AnswerClaim",
+      "target_entities": [
+        "DecisionClaim",
+        "ClaimCitation"
+      ],
+      "policy": "verify_citation_mapping",
+      "preservation_and_limit": "Preserve claim text, support references and criticality; resolve original span identity explicitly.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "RecommendationSnapshot",
+      "target_entities": [
+        "Decision",
+        "Calculation"
+      ],
+      "policy": "quarantine_semantics",
+      "preservation_and_limit": "Preserve all stored profile/rule/corpus/plan/calculation inputs; ambiguous conversation association remains unresolved.",
+      "source_file": "backend/apps/adviser/models.py"
+    },
+    {
+      "source_model": "AIPreference",
+      "target_entities": [
+        "AIPreference"
+      ],
+      "policy": "preserve_owned_preference",
+      "preservation_and_limit": "Preserve owned route preference and update time; route must remain exactly qualified before availability.",
+      "source_file": "backend/apps/adviser/models.py"
+    }
+  ],
+  "explicit_field_mappings": [
+    {
+      "source_model": "User",
+      "source_field": "id",
+      "source_declaration": "models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)",
+      "destination": "Account.id",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve native authentication identity, encoded password, account state and ownership.",
+      "unmapped_reason": null
+    },
+    {
+      "source_model": "User",
+      "source_field": "email",
+      "source_declaration": "models.EmailField(unique=True)",
+      "destination": "Account.email",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve native authentication identity, encoded password, account state and ownership.",
+      "unmapped_reason": null
+    },
+    {
+      "source_model": "User",
+      "source_field": "deleted_at",
+      "source_declaration": "models.DateTimeField(null=True, blank=True)",
+      "destination": "Account.deleted_at",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve native authentication identity, encoded password, account state and ownership.",
+      "unmapped_reason": null
+    },
+    {
+      "source_model": "Insurer",
+      "source_field": "name",
+      "source_declaration": "models.CharField(max_length=200, unique=True)",
+      "destination": "Insurer.legal_name",
+      "automatic_translation_permitted": false,
+      "required_handling": "Resolve roster/legal identity; preserve aliases/domains in archive and original source provenance.",
+      "unmapped_reason": null
+    },
+    {
+      "source_model": "Insurer",
+      "source_field": "aliases",
+      "source_declaration": "models.JSONField(default=list)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field aliases",
+      "automatic_translation_permitted": false,
+      "required_handling": "Resolve roster/legal identity; preserve aliases/domains in archive and original source provenance.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "Insurer",
+      "source_field": "official_domains",
+      "source_declaration": "models.JSONField(default=list)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field official_domains",
+      "automatic_translation_permitted": false,
+      "required_handling": "Resolve roster/legal identity; preserve aliases/domains in archive and original source provenance.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "CatalogueListing",
+      "source_field": "ditto_path",
+      "source_declaration": "models.CharField(max_length=500, unique=True)",
+      "destination": "LegacyListing.original_key",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve each original key and label; do not force product/version matches.",
+      "unmapped_reason": null
+    },
+    {
+      "source_model": "CatalogueListing",
+      "source_field": "displayed_name",
+      "source_declaration": "models.CharField(max_length=250)",
+      "destination": "LegacyListing.original_label",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve each original key and label; do not force product/version matches.",
+      "unmapped_reason": null
+    },
+    {
+      "source_model": "CatalogueListing",
+      "source_field": "insurer",
+      "source_declaration": "models.ForeignKey(Insurer, null=True, on_delete=models.PROTECT)",
+      "destination": "LegacyListing.insurer_id",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve each original key and label; do not force product/version matches.",
+      "unmapped_reason": null
+    },
+    {
+      "source_model": "CatalogueListing",
+      "source_field": "status",
+      "source_declaration": "models.CharField(max_length=30, choices=Status, default=Status.DISCOVERED)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field status",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve each original key and label; do not force product/version matches.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "CatalogueListing",
+      "source_field": "status_reason",
+      "source_declaration": "models.TextField(blank=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field status_reason",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve each original key and label; do not force product/version matches.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "CatalogueListing",
+      "source_field": "last_observed_at",
+      "source_declaration": "models.DateTimeField()",
+      "destination": "LegacyMapping.archive_blob_id -> original record field last_observed_at",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve each original key and label; do not force product/version matches.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "PlanVersion",
+      "source_field": "insurer",
+      "source_declaration": "models.ForeignKey(Insurer, on_delete=models.PROTECT)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field insurer",
+      "automatic_translation_permitted": false,
+      "required_handling": "Split family, edition and variant only after original-backed reconciliation; old effective dates/availability remain assertions.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "PlanVersion",
+      "source_field": "uin",
+      "source_declaration": "models.CharField(max_length=100, blank=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field uin",
+      "automatic_translation_permitted": false,
+      "required_handling": "Split family, edition and variant only after original-backed reconciliation; old effective dates/availability remain assertions.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "PlanVersion",
+      "source_field": "name",
+      "source_declaration": "models.CharField(max_length=250)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field name",
+      "automatic_translation_permitted": false,
+      "required_handling": "Split family, edition and variant only after original-backed reconciliation; old effective dates/availability remain assertions.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "PlanVersion",
+      "source_field": "variant",
+      "source_declaration": "models.CharField(max_length=200, blank=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field variant",
+      "automatic_translation_permitted": false,
+      "required_handling": "Split family, edition and variant only after original-backed reconciliation; old effective dates/availability remain assertions.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "PlanVersion",
+      "source_field": "effective_from",
+      "source_declaration": "models.DateField(null=True, blank=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field effective_from",
+      "automatic_translation_permitted": false,
+      "required_handling": "Split family, edition and variant only after original-backed reconciliation; old effective dates/availability remain assertions.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "PlanVersion",
+      "source_field": "effective_to",
+      "source_declaration": "models.DateField(null=True, blank=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field effective_to",
+      "automatic_translation_permitted": false,
+      "required_handling": "Split family, edition and variant only after original-backed reconciliation; old effective dates/availability remain assertions.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "PlanVersion",
+      "source_field": "available_for_new_purchase",
+      "source_declaration": "models.BooleanField(null=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field available_for_new_purchase",
+      "automatic_translation_permitted": false,
+      "required_handling": "Split family, edition and variant only after original-backed reconciliation; old effective dates/availability remain assertions.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "PlanVersion",
+      "source_field": "review_state",
+      "source_declaration": "models.CharField(max_length=30, default='pending')",
+      "destination": "LegacyMapping.archive_blob_id -> original record field review_state",
+      "automatic_translation_permitted": false,
+      "required_handling": "Split family, edition and variant only after original-backed reconciliation; old effective dates/availability remain assertions.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "SourceLocator",
+      "source_field": "url",
+      "source_declaration": "models.URLField(max_length=1000)",
+      "destination": "SourceLocator.url",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve original URL and declared role; verify official host and issuer.",
+      "unmapped_reason": null
+    },
+    {
+      "source_model": "SourceLocator",
+      "source_field": "source_organisation",
+      "source_declaration": "models.CharField(max_length=250)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field source_organisation",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve original URL and declared role; verify official host and issuer.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "SourceLocator",
+      "source_field": "expected_document_type",
+      "source_declaration": "models.CharField(max_length=100)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field expected_document_type",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve original URL and declared role; verify official host and issuer.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "SourceObservation",
+      "source_field": "locator",
+      "source_declaration": "models.ForeignKey(SourceLocator, on_delete=models.PROTECT)",
+      "destination": "Acquisition.locator_id",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve every success/failure, requested/final URL and timestamp. Resolve content hash to blob explicitly.",
+      "unmapped_reason": null
+    },
+    {
+      "source_model": "SourceObservation",
+      "source_field": "fetched_at",
+      "source_declaration": "models.DateTimeField()",
+      "destination": "LegacyMapping.archive_blob_id -> exact source payload field fetched_at",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve exact timestamp with legacy observation semantics. ingest_document stamps after download/storage; discover_ditto uses a batch timestamp. Neither proves per-attempt start. Do not set Acquisition.started_at from this value.",
+      "unmapped_reason": "Exact per-attempt start is not established by this legacy field."
+    },
+    {
+      "source_model": "SourceObservation",
+      "source_field": "status_code",
+      "source_declaration": "models.PositiveSmallIntegerField(null=True)",
+      "destination": "Acquisition.http_status",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve every success/failure, requested/final URL and timestamp. Resolve content hash to blob explicitly.",
+      "unmapped_reason": null
+    },
+    {
+      "source_model": "SourceObservation",
+      "source_field": "final_url",
+      "source_declaration": "models.URLField(max_length=1000, blank=True)",
+      "destination": "Acquisition.final_url",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve every success/failure, requested/final URL and timestamp. Resolve content hash to blob explicitly.",
+      "unmapped_reason": null
+    },
+    {
+      "source_model": "SourceObservation",
+      "source_field": "content_sha256",
+      "source_declaration": "models.CharField(max_length=64, blank=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field content_sha256",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve every success/failure, requested/final URL and timestamp. Resolve content hash to blob explicitly.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "SourceObservation",
+      "source_field": "available",
+      "source_declaration": "models.BooleanField(default=False)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field available",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve every success/failure, requested/final URL and timestamp. Resolve content hash to blob explicitly.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "SourceObservation",
+      "source_field": "error_code",
+      "source_declaration": "models.CharField(max_length=100, blank=True)",
+      "destination": "Acquisition.error_code",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve every success/failure, requested/final URL and timestamp. Resolve content hash to blob explicitly.",
+      "unmapped_reason": null
+    },
+    {
+      "source_model": "SourceBlob",
+      "source_field": "sha256",
+      "source_declaration": "models.CharField(max_length=64, unique=True)",
+      "destination": "OriginalBlob.sha256",
+      "automatic_translation_permitted": false,
+      "required_handling": "Verify exact bytes, digest, size and private ownership; original filesystem storage must be backed up separately.",
+      "unmapped_reason": null
+    },
+    {
+      "source_model": "SourceBlob",
+      "source_field": "stored_path",
+      "source_declaration": "models.CharField(max_length=500, unique=True)",
+      "destination": "OriginalBlob.storage_key",
+      "automatic_translation_permitted": false,
+      "required_handling": "Verify exact bytes, digest, size and private ownership; original filesystem storage must be backed up separately.",
+      "unmapped_reason": null
+    },
+    {
+      "source_model": "SourceBlob",
+      "source_field": "byte_size",
+      "source_declaration": "models.PositiveBigIntegerField()",
+      "destination": "OriginalBlob.byte_size",
+      "automatic_translation_permitted": false,
+      "required_handling": "Verify exact bytes, digest, size and private ownership; original filesystem storage must be backed up separately.",
+      "unmapped_reason": null
+    },
+    {
+      "source_model": "SourceBlob",
+      "source_field": "media_type",
+      "source_declaration": "models.CharField(max_length=100)",
+      "destination": "OriginalBlob.media_type",
+      "automatic_translation_permitted": false,
+      "required_handling": "Verify exact bytes, digest, size and private ownership; original filesystem storage must be backed up separately.",
+      "unmapped_reason": null
+    },
+    {
+      "source_model": "DocumentVersion",
+      "source_field": "blob",
+      "source_declaration": "models.ForeignKey(SourceBlob, on_delete=models.PROTECT)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field blob",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve edition assertions without treating a legacy published label as complete original review.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "DocumentVersion",
+      "source_field": "document_type",
+      "source_declaration": "models.CharField(max_length=100)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field document_type",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve edition assertions without treating a legacy published label as complete original review.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "DocumentVersion",
+      "source_field": "language",
+      "source_declaration": "models.CharField(max_length=20, default='en')",
+      "destination": "LegacyMapping.archive_blob_id -> original record field language",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve edition assertions without treating a legacy published label as complete original review.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "DocumentVersion",
+      "source_field": "identity",
+      "source_declaration": "models.CharField(max_length=300)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field identity",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve edition assertions without treating a legacy published label as complete original review.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "DocumentVersion",
+      "source_field": "effective_from",
+      "source_declaration": "models.DateField(null=True, blank=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field effective_from",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve edition assertions without treating a legacy published label as complete original review.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "PlanDocumentAssociation",
+      "source_field": "plan_version",
+      "source_declaration": "models.ForeignKey(PlanVersion, on_delete=models.PROTECT)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field plan_version",
+      "automatic_translation_permitted": false,
+      "required_handling": "Reconcile roles, edition compatibility and applicability from originals; preserve old association as historical.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "PlanDocumentAssociation",
+      "source_field": "document_version",
+      "source_declaration": "models.ForeignKey(DocumentVersion, on_delete=models.PROTECT)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field document_version",
+      "automatic_translation_permitted": false,
+      "required_handling": "Reconcile roles, edition compatibility and applicability from originals; preserve old association as historical.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "PlanDocumentAssociation",
+      "source_field": "role",
+      "source_declaration": "models.CharField(max_length=100)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field role",
+      "automatic_translation_permitted": false,
+      "required_handling": "Reconcile roles, edition compatibility and applicability from originals; preserve old association as historical.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "PlanDocumentAssociation",
+      "source_field": "applicability",
+      "source_declaration": "models.JSONField(default=dict)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field applicability",
+      "automatic_translation_permitted": false,
+      "required_handling": "Reconcile roles, edition compatibility and applicability from originals; preserve old association as historical.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "PlanDocumentAssociation",
+      "source_field": "reviewed",
+      "source_declaration": "models.BooleanField(default=False)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field reviewed",
+      "automatic_translation_permitted": false,
+      "required_handling": "Reconcile roles, edition compatibility and applicability from originals; preserve old association as historical.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ExtractionRevision",
+      "source_field": "document_version",
+      "source_declaration": "models.ForeignKey(DocumentVersion, on_delete=models.PROTECT)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field document_version",
+      "automatic_translation_permitted": false,
+      "required_handling": "Retain extraction manifest/derivatives and versions as processing evidence; not independent originals.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ExtractionRevision",
+      "source_field": "revision",
+      "source_declaration": "models.PositiveIntegerField()",
+      "destination": "LegacyMapping.archive_blob_id -> original record field revision",
+      "automatic_translation_permitted": false,
+      "required_handling": "Retain extraction manifest/derivatives and versions as processing evidence; not independent originals.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ExtractionRevision",
+      "source_field": "parser_manifest",
+      "source_declaration": "models.JSONField(default=dict)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field parser_manifest",
+      "automatic_translation_permitted": false,
+      "required_handling": "Retain extraction manifest/derivatives and versions as processing evidence; not independent originals.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ExtractionRevision",
+      "source_field": "artifact_sha256",
+      "source_declaration": "models.CharField(max_length=64)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field artifact_sha256",
+      "automatic_translation_permitted": false,
+      "required_handling": "Retain extraction manifest/derivatives and versions as processing evidence; not independent originals.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ExtractionRevision",
+      "source_field": "source_map_path",
+      "source_declaration": "models.CharField(max_length=500)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field source_map_path",
+      "automatic_translation_permitted": false,
+      "required_handling": "Retain extraction manifest/derivatives and versions as processing evidence; not independent originals.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ExtractionRevision",
+      "source_field": "published",
+      "source_declaration": "models.BooleanField(default=False)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field published",
+      "automatic_translation_permitted": false,
+      "required_handling": "Retain extraction manifest/derivatives and versions as processing evidence; not independent originals.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "DocumentPage",
+      "source_field": "extraction_revision",
+      "source_declaration": "models.ForeignKey(ExtractionRevision, on_delete=models.PROTECT)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field extraction_revision",
+      "automatic_translation_permitted": false,
+      "required_handling": "Convert zero-based physical_index to explicit one-based page; preserve printed label, geometry and rotation exactly.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "DocumentPage",
+      "source_field": "physical_index",
+      "source_declaration": "models.PositiveIntegerField()",
+      "destination": "DocumentPage.physical_page",
+      "automatic_translation_permitted": false,
+      "required_handling": "Convert zero-based physical_index to explicit one-based page; preserve printed label, geometry and rotation exactly. Convert physical_index+1 once; retain original value in archive.",
+      "unmapped_reason": null
+    },
+    {
+      "source_model": "DocumentPage",
+      "source_field": "printed_label",
+      "source_declaration": "models.CharField(max_length=30, blank=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field printed_label",
+      "automatic_translation_permitted": false,
+      "required_handling": "Convert zero-based physical_index to explicit one-based page; preserve printed label, geometry and rotation exactly.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "DocumentPage",
+      "source_field": "width",
+      "source_declaration": "models.DecimalField(max_digits=12, decimal_places=4)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field width",
+      "automatic_translation_permitted": false,
+      "required_handling": "Convert zero-based physical_index to explicit one-based page; preserve printed label, geometry and rotation exactly.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "DocumentPage",
+      "source_field": "height",
+      "source_declaration": "models.DecimalField(max_digits=12, decimal_places=4)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field height",
+      "automatic_translation_permitted": false,
+      "required_handling": "Convert zero-based physical_index to explicit one-based page; preserve printed label, geometry and rotation exactly.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "DocumentPage",
+      "source_field": "rotation",
+      "source_declaration": "models.SmallIntegerField(default=0)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field rotation",
+      "automatic_translation_permitted": false,
+      "required_handling": "Convert zero-based physical_index to explicit one-based page; preserve printed label, geometry and rotation exactly.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "DocumentPage",
+      "source_field": "geometry",
+      "source_declaration": "models.JSONField(default=dict)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field geometry",
+      "automatic_translation_permitted": false,
+      "required_handling": "Convert zero-based physical_index to explicit one-based page; preserve printed label, geometry and rotation exactly.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "EvidenceSpan",
+      "source_field": "page",
+      "source_declaration": "models.ForeignKey(DocumentPage, on_delete=models.PROTECT)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field page",
+      "automatic_translation_permitted": false,
+      "required_handling": "Retain quote, source offsets and exact old-to-new geometry map; verify original before reuse.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "EvidenceSpan",
+      "source_field": "region_id",
+      "source_declaration": "models.CharField(max_length=100)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field region_id",
+      "automatic_translation_permitted": false,
+      "required_handling": "Retain quote, source offsets and exact old-to-new geometry map; verify original before reuse.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "EvidenceSpan",
+      "source_field": "start_line",
+      "source_declaration": "models.PositiveIntegerField()",
+      "destination": "LegacyMapping.archive_blob_id -> original record field start_line",
+      "automatic_translation_permitted": false,
+      "required_handling": "Retain quote, source offsets and exact old-to-new geometry map; verify original before reuse.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "EvidenceSpan",
+      "source_field": "end_line",
+      "source_declaration": "models.PositiveIntegerField()",
+      "destination": "LegacyMapping.archive_blob_id -> original record field end_line",
+      "automatic_translation_permitted": false,
+      "required_handling": "Retain quote, source offsets and exact old-to-new geometry map; verify original before reuse.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "EvidenceSpan",
+      "source_field": "source_word_ids",
+      "source_declaration": "models.JSONField(default=list)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field source_word_ids",
+      "automatic_translation_permitted": false,
+      "required_handling": "Retain quote, source offsets and exact old-to-new geometry map; verify original before reuse.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "EvidenceSpan",
+      "source_field": "quote",
+      "source_declaration": "models.TextField()",
+      "destination": "LegacyMapping.archive_blob_id -> original record field quote",
+      "automatic_translation_permitted": false,
+      "required_handling": "Retain quote, source offsets and exact old-to-new geometry map; verify original before reuse.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "EvidenceSpan",
+      "source_field": "geometry",
+      "source_declaration": "models.JSONField(default=list)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field geometry",
+      "automatic_translation_permitted": false,
+      "required_handling": "Retain quote, source offsets and exact old-to-new geometry map; verify original before reuse.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "EvidenceBundle",
+      "source_field": "label",
+      "source_declaration": "models.CharField(max_length=250)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field label",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve bundle identity/order; infer rule support only after independent review.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "EvidenceBundle",
+      "source_field": "review_state",
+      "source_declaration": "models.CharField(max_length=30, default='pending')",
+      "destination": "LegacyMapping.archive_blob_id -> original record field review_state",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve bundle identity/order; infer rule support only after independent review.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "EvidenceBundle",
+      "source_field": "spans",
+      "source_declaration": "models.ManyToManyField(EvidenceSpan, through='EvidenceBundleSpan')",
+      "destination": "LegacyMapping.archive_blob_id -> original record field spans",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve bundle identity/order; infer rule support only after independent review.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "EvidenceBundleSpan",
+      "source_field": "bundle",
+      "source_declaration": "models.ForeignKey(EvidenceBundle, on_delete=models.CASCADE)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field bundle",
+      "automatic_translation_permitted": false,
+      "required_handling": "Retain all ordered span-role associations in archive; new roles require supported translation.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "EvidenceBundleSpan",
+      "source_field": "span",
+      "source_declaration": "models.ForeignKey(EvidenceSpan, on_delete=models.PROTECT)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field span",
+      "automatic_translation_permitted": false,
+      "required_handling": "Retain all ordered span-role associations in archive; new roles require supported translation.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "EvidenceBundleSpan",
+      "source_field": "role",
+      "source_declaration": "models.CharField(max_length=30, default='primary')",
+      "destination": "LegacyMapping.archive_blob_id -> original record field role",
+      "automatic_translation_permitted": false,
+      "required_handling": "Retain all ordered span-role associations in archive; new roles require supported translation.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "EvidenceBundleSpan",
+      "source_field": "order",
+      "source_declaration": "models.PositiveSmallIntegerField(default=0)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field order",
+      "automatic_translation_permitted": false,
+      "required_handling": "Retain all ordered span-role associations in archive; new roles require supported translation.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "VerifiedFact",
+      "source_field": "plan_version",
+      "source_declaration": "models.ForeignKey(PlanVersion, on_delete=models.PROTECT)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field plan_version",
+      "automatic_translation_permitted": false,
+      "required_handling": "Old verification flag does not prove new independent rule coverage. Translate typed values/scope only when lossless.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "VerifiedFact",
+      "source_field": "category",
+      "source_declaration": "models.CharField(max_length=100)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field category",
+      "automatic_translation_permitted": false,
+      "required_handling": "Old verification flag does not prove new independent rule coverage. Translate typed values/scope only when lossless.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "VerifiedFact",
+      "source_field": "value_type",
+      "source_declaration": "models.CharField(max_length=30)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field value_type",
+      "automatic_translation_permitted": false,
+      "required_handling": "Old verification flag does not prove new independent rule coverage. Translate typed values/scope only when lossless.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "VerifiedFact",
+      "source_field": "value",
+      "source_declaration": "models.JSONField()",
+      "destination": "LegacyMapping.archive_blob_id -> original record field value",
+      "automatic_translation_permitted": false,
+      "required_handling": "Old verification flag does not prove new independent rule coverage. Translate typed values/scope only when lossless.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "VerifiedFact",
+      "source_field": "applicability",
+      "source_declaration": "models.JSONField(default=dict)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field applicability",
+      "automatic_translation_permitted": false,
+      "required_handling": "Old verification flag does not prove new independent rule coverage. Translate typed values/scope only when lossless.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "VerifiedFact",
+      "source_field": "evidence_bundle",
+      "source_declaration": "models.ForeignKey(EvidenceBundle, on_delete=models.PROTECT)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field evidence_bundle",
+      "automatic_translation_permitted": false,
+      "required_handling": "Old verification flag does not prove new independent rule coverage. Translate typed values/scope only when lossless.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "VerifiedFact",
+      "source_field": "verification_state",
+      "source_declaration": "models.CharField(max_length=30, default='pending')",
+      "destination": "LegacyMapping.archive_blob_id -> original record field verification_state",
+      "automatic_translation_permitted": false,
+      "required_handling": "Old verification flag does not prove new independent rule coverage. Translate typed values/scope only when lossless.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "VerifiedFact",
+      "source_field": "conflict",
+      "source_declaration": "models.BooleanField(default=False)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field conflict",
+      "automatic_translation_permitted": false,
+      "required_handling": "Old verification flag does not prove new independent rule coverage. Translate typed values/scope only when lossless.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "Clause",
+      "source_field": "document_version",
+      "source_declaration": "models.ForeignKey(DocumentVersion, on_delete=models.PROTECT)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field document_version",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve exact statement and original support; curate explicit conditions/dependencies before publication.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "Clause",
+      "source_field": "section_path",
+      "source_declaration": "models.JSONField(default=list)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field section_path",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve exact statement and original support; curate explicit conditions/dependencies before publication.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "Clause",
+      "source_field": "heading",
+      "source_declaration": "models.CharField(max_length=500, blank=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field heading",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve exact statement and original support; curate explicit conditions/dependencies before publication.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "Clause",
+      "source_field": "evidence_bundles",
+      "source_declaration": "models.ManyToManyField(EvidenceBundle)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field evidence_bundles",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve exact statement and original support; curate explicit conditions/dependencies before publication.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RatingObservation",
+      "source_field": "plan_version",
+      "source_declaration": "models.ForeignKey(PlanVersion, on_delete=models.PROTECT)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field plan_version",
+      "automatic_translation_permitted": false,
+      "required_handling": "Keep historical metric/value/date/source in archive. No new recommendation score from unsupported ratings.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RatingObservation",
+      "source_field": "rating",
+      "source_declaration": "models.DecimalField(max_digits=6, decimal_places=3)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field rating",
+      "automatic_translation_permitted": false,
+      "required_handling": "Keep historical metric/value/date/source in archive. No new recommendation score from unsupported ratings.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RatingObservation",
+      "source_field": "scale",
+      "source_declaration": "models.DecimalField(max_digits=6, decimal_places=3)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field scale",
+      "automatic_translation_permitted": false,
+      "required_handling": "Keep historical metric/value/date/source in archive. No new recommendation score from unsupported ratings.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RatingObservation",
+      "source_field": "observed_at",
+      "source_declaration": "models.DateTimeField()",
+      "destination": "LegacyMapping.archive_blob_id -> original record field observed_at",
+      "automatic_translation_permitted": false,
+      "required_handling": "Keep historical metric/value/date/source in archive. No new recommendation score from unsupported ratings.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RatingObservation",
+      "source_field": "evidence_bundle",
+      "source_declaration": "models.ForeignKey(EvidenceBundle, on_delete=models.PROTECT)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field evidence_bundle",
+      "automatic_translation_permitted": false,
+      "required_handling": "Keep historical metric/value/date/source in archive. No new recommendation score from unsupported ratings.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "PremiumObservation",
+      "source_field": "plan_version",
+      "source_declaration": "models.ForeignKey(PlanVersion, on_delete=models.PROTECT)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field plan_version",
+      "automatic_translation_permitted": false,
+      "required_handling": "Public premium observation is not an owner-bound quote; preserve as original observation until identity/inputs/validity established.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "PremiumObservation",
+      "source_field": "amount",
+      "source_declaration": "models.DecimalField(max_digits=14, decimal_places=2)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field amount",
+      "automatic_translation_permitted": false,
+      "required_handling": "Public premium observation is not an owner-bound quote; preserve as original observation until identity/inputs/validity established.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "PremiumObservation",
+      "source_field": "currency",
+      "source_declaration": "models.CharField(max_length=3, default='INR')",
+      "destination": "LegacyMapping.archive_blob_id -> original record field currency",
+      "automatic_translation_permitted": false,
+      "required_handling": "Public premium observation is not an owner-bound quote; preserve as original observation until identity/inputs/validity established.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "PremiumObservation",
+      "source_field": "assumptions",
+      "source_declaration": "models.JSONField(default=dict)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field assumptions",
+      "automatic_translation_permitted": false,
+      "required_handling": "Public premium observation is not an owner-bound quote; preserve as original observation until identity/inputs/validity established.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "PremiumObservation",
+      "source_field": "tax_basis",
+      "source_declaration": "models.CharField(max_length=100, blank=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field tax_basis",
+      "automatic_translation_permitted": false,
+      "required_handling": "Public premium observation is not an owner-bound quote; preserve as original observation until identity/inputs/validity established.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "PremiumObservation",
+      "source_field": "observed_at",
+      "source_declaration": "models.DateTimeField()",
+      "destination": "LegacyMapping.archive_blob_id -> original record field observed_at",
+      "automatic_translation_permitted": false,
+      "required_handling": "Public premium observation is not an owner-bound quote; preserve as original observation until identity/inputs/validity established.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "PremiumObservation",
+      "source_field": "evidence_bundle",
+      "source_declaration": "models.ForeignKey(EvidenceBundle, on_delete=models.PROTECT)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field evidence_bundle",
+      "automatic_translation_permitted": false,
+      "required_handling": "Public premium observation is not an owner-bound quote; preserve as original observation until identity/inputs/validity established.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ReviewEvent",
+      "source_field": "object_type",
+      "source_declaration": "models.CharField(max_length=100)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field object_type",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve original review scope/reviewer/time; do not promote to new source or design approval.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ReviewEvent",
+      "source_field": "object_id",
+      "source_declaration": "models.UUIDField()",
+      "destination": "LegacyMapping.archive_blob_id -> original record field object_id",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve original review scope/reviewer/time; do not promote to new source or design approval.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ReviewEvent",
+      "source_field": "expected_revision",
+      "source_declaration": "models.CharField(max_length=100)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field expected_revision",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve original review scope/reviewer/time; do not promote to new source or design approval.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ReviewEvent",
+      "source_field": "decision",
+      "source_declaration": "models.CharField(max_length=30)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field decision",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve original review scope/reviewer/time; do not promote to new source or design approval.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ReviewEvent",
+      "source_field": "reason",
+      "source_declaration": "models.TextField()",
+      "destination": "LegacyMapping.archive_blob_id -> original record field reason",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve original review scope/reviewer/time; do not promote to new source or design approval.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ReviewEvent",
+      "source_field": "reviewer",
+      "source_declaration": "models.ForeignKey(settings.AUTH_USER_MODEL, null=True, on_delete=models.SET_NULL)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field reviewer",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve original review scope/reviewer/time; do not promote to new source or design approval.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "IngestionRun",
+      "source_field": "stage",
+      "source_declaration": "models.CharField(max_length=50)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field stage",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve source-stage attempts, counts and errors; legacy success is not corpus completeness.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "IngestionRun",
+      "source_field": "state",
+      "source_declaration": "models.CharField(max_length=30)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field state",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve source-stage attempts, counts and errors; legacy success is not corpus completeness.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "IngestionRun",
+      "source_field": "inputs",
+      "source_declaration": "models.JSONField(default=dict)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field inputs",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve source-stage attempts, counts and errors; legacy success is not corpus completeness.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "IngestionRun",
+      "source_field": "outputs",
+      "source_declaration": "models.JSONField(default=dict)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field outputs",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve source-stage attempts, counts and errors; legacy success is not corpus completeness.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "IngestionRun",
+      "source_field": "errors",
+      "source_declaration": "models.JSONField(default=list)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field errors",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve source-stage attempts, counts and errors; legacy success is not corpus completeness.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "IngestionRun",
+      "source_field": "retry_count",
+      "source_declaration": "models.PositiveSmallIntegerField(default=0)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field retry_count",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve source-stage attempts, counts and errors; legacy success is not corpus completeness.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "IngestionRun",
+      "source_field": "updated_at",
+      "source_declaration": "models.DateTimeField(auto_now=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field updated_at",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve source-stage attempts, counts and errors; legacy success is not corpus completeness.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "CorpusRelease",
+      "source_field": "name",
+      "source_declaration": "models.CharField(max_length=200, unique=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field name",
+      "automatic_translation_permitted": false,
+      "required_handling": "Retain old manifest and selection as pilot channel; never auto-publish replacement corpus.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "CorpusRelease",
+      "source_field": "manifest",
+      "source_declaration": "models.JSONField(default=dict)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field manifest",
+      "automatic_translation_permitted": false,
+      "required_handling": "Retain old manifest and selection as pilot channel; never auto-publish replacement corpus.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "CorpusRelease",
+      "source_field": "activated_at",
+      "source_declaration": "models.DateTimeField(null=True, blank=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field activated_at",
+      "automatic_translation_permitted": false,
+      "required_handling": "Retain old manifest and selection as pilot channel; never auto-publish replacement corpus.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "CorpusRelease",
+      "source_field": "is_current",
+      "source_declaration": "models.BooleanField(default=False)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field is_current",
+      "automatic_translation_permitted": false,
+      "required_handling": "Retain old manifest and selection as pilot channel; never auto-publish replacement corpus.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "Conversation",
+      "source_field": "owner",
+      "source_declaration": "models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field owner",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve owner, UUID, title, timestamps and revision; interpret profile only after attributed fact reconciliation.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "Conversation",
+      "source_field": "title",
+      "source_declaration": "models.CharField(max_length=200, default='New conversation')",
+      "destination": "Conversation.title",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve owner, UUID, title, timestamps and revision; interpret profile only after attributed fact reconciliation.",
+      "unmapped_reason": null
+    },
+    {
+      "source_model": "Conversation",
+      "source_field": "updated_at",
+      "source_declaration": "models.DateTimeField(auto_now=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field updated_at",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve owner, UUID, title, timestamps and revision; interpret profile only after attributed fact reconciliation.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "Conversation",
+      "source_field": "current_profile",
+      "source_declaration": "models.ForeignKey('ProfileRevision', null=True, blank=True, on_delete=models.SET_NULL, related_name='current_for')",
+      "destination": "LegacyMapping.archive_blob_id -> original record field current_profile",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve owner, UUID, title, timestamps and revision; interpret profile only after attributed fact reconciliation.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "Conversation",
+      "source_field": "active_attempt",
+      "source_declaration": "models.OneToOneField('TurnAttempt', null=True, blank=True, on_delete=models.SET_NULL, related_name='active_for_conversation')",
+      "destination": "LegacyMapping.archive_blob_id -> original record field active_attempt",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve owner, UUID, title, timestamps and revision; interpret profile only after attributed fact reconciliation.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ProfileRevision",
+      "source_field": "conversation",
+      "source_declaration": "models.ForeignKey(Conversation, on_delete=models.CASCADE, related_name='profiles')",
+      "destination": "LegacyMapping.archive_blob_id -> original record field conversation",
+      "automatic_translation_permitted": false,
+      "required_handling": "Archive full original JSON and provenance. Missing person identity/DOB/units remain unknown; model suggestions unconfirmed.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ProfileRevision",
+      "source_field": "revision",
+      "source_declaration": "models.PositiveIntegerField()",
+      "destination": "LegacyMapping.archive_blob_id -> original record field revision",
+      "automatic_translation_permitted": false,
+      "required_handling": "Archive full original JSON and provenance. Missing person identity/DOB/units remain unknown; model suggestions unconfirmed.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ProfileRevision",
+      "source_field": "data",
+      "source_declaration": "models.JSONField(default=dict)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field data",
+      "automatic_translation_permitted": false,
+      "required_handling": "Archive full original JSON and provenance. Missing person identity/DOB/units remain unknown; model suggestions unconfirmed.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ProfileRevision",
+      "source_field": "field_provenance",
+      "source_declaration": "models.JSONField(default=dict)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field field_provenance",
+      "automatic_translation_permitted": false,
+      "required_handling": "Archive full original JSON and provenance. Missing person identity/DOB/units remain unknown; model suggestions unconfirmed.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ProfileRevision",
+      "source_field": "confirmed_at",
+      "source_declaration": "models.DateTimeField(null=True, blank=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field confirmed_at",
+      "automatic_translation_permitted": false,
+      "required_handling": "Archive full original JSON and provenance. Missing person identity/DOB/units remain unknown; model suggestions unconfirmed.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "Message",
+      "source_field": "conversation",
+      "source_declaration": "models.ForeignKey(Conversation, on_delete=models.CASCADE, related_name='messages')",
+      "destination": "Message.conversation_id",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve UUID, owner-through-conversation, role, exact content, origin and time; preserve answer linkage.",
+      "unmapped_reason": null
+    },
+    {
+      "source_model": "Message",
+      "source_field": "role",
+      "source_declaration": "models.CharField(max_length=20, choices=[('user', 'User'), ('assistant', 'Assistant')])",
+      "destination": "Message.role",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve UUID, owner-through-conversation, role, exact content, origin and time; preserve answer linkage.",
+      "unmapped_reason": null
+    },
+    {
+      "source_model": "Message",
+      "source_field": "content",
+      "source_declaration": "models.TextField()",
+      "destination": "Message.content",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve UUID, owner-through-conversation, role, exact content, origin and time; preserve answer linkage.",
+      "unmapped_reason": null
+    },
+    {
+      "source_model": "Message",
+      "source_field": "origin",
+      "source_declaration": "models.CharField(max_length=30, default='text')",
+      "destination": "LegacyMapping.archive_blob_id -> original record field origin",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve UUID, owner-through-conversation, role, exact content, origin and time; preserve answer linkage.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "Message",
+      "source_field": "answer",
+      "source_declaration": "models.OneToOneField('AnswerArtifact', null=True, blank=True, on_delete=models.SET_NULL, related_name='message')",
+      "destination": "LegacyMapping.archive_blob_id -> original record field answer",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve UUID, owner-through-conversation, role, exact content, origin and time; preserve answer linkage.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "Turn",
+      "source_field": "conversation",
+      "source_declaration": "models.ForeignKey(Conversation, on_delete=models.CASCADE, related_name='turns')",
+      "destination": "LegacyMapping.archive_blob_id -> original record field conversation",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve request identity and input/revision. Drain or explicitly cancel/recover active work before any cutover.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "Turn",
+      "source_field": "request_id",
+      "source_declaration": "models.UUIDField()",
+      "destination": "LegacyMapping.archive_blob_id -> original record field request_id",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve request identity and input/revision. Drain or explicitly cancel/recover active work before any cutover.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "Turn",
+      "source_field": "payload_hash",
+      "source_declaration": "models.CharField(max_length=64)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field payload_hash",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve request identity and input/revision. Drain or explicitly cancel/recover active work before any cutover.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "Turn",
+      "source_field": "route",
+      "source_declaration": "models.ForeignKey('RouteConfiguration', null=True, on_delete=models.PROTECT)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field route",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve request identity and input/revision. Drain or explicitly cancel/recover active work before any cutover.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "Turn",
+      "source_field": "input_text",
+      "source_declaration": "models.TextField()",
+      "destination": "LegacyMapping.archive_blob_id -> original record field input_text",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve request identity and input/revision. Drain or explicitly cancel/recover active work before any cutover.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "Turn",
+      "source_field": "operation",
+      "source_declaration": "models.CharField(max_length=50, default='chat')",
+      "destination": "LegacyMapping.archive_blob_id -> original record field operation",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve request identity and input/revision. Drain or explicitly cancel/recover active work before any cutover.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "Turn",
+      "source_field": "expected_profile_revision",
+      "source_declaration": "models.PositiveIntegerField(null=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field expected_profile_revision",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve request identity and input/revision. Drain or explicitly cancel/recover active work before any cutover.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "TurnAttempt",
+      "source_field": "turn",
+      "source_declaration": "models.ForeignKey(Turn, on_delete=models.CASCADE, related_name='attempts')",
+      "destination": "LegacyMapping.archive_blob_id -> original record field turn",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve each attempt state/deadline/error; do not replay old inference or invent terminal results.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "TurnAttempt",
+      "source_field": "conversation",
+      "source_declaration": "models.ForeignKey(Conversation, on_delete=models.CASCADE, related_name='attempts', editable=False)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field conversation",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve each attempt state/deadline/error; do not replay old inference or invent terminal results.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "TurnAttempt",
+      "source_field": "status",
+      "source_declaration": "models.CharField(max_length=30, choices=Status, default=Status.ACCEPTED)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field status",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve each attempt state/deadline/error; do not replay old inference or invent terminal results.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "TurnAttempt",
+      "source_field": "profile_revision",
+      "source_declaration": "models.PositiveIntegerField(null=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field profile_revision",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve each attempt state/deadline/error; do not replay old inference or invent terminal results.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "TurnAttempt",
+      "source_field": "corpus_release",
+      "source_declaration": "models.ForeignKey(CorpusRelease, null=True, on_delete=models.PROTECT)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field corpus_release",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve each attempt state/deadline/error; do not replay old inference or invent terminal results.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "TurnAttempt",
+      "source_field": "route",
+      "source_declaration": "models.ForeignKey('RouteConfiguration', null=True, on_delete=models.PROTECT)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field route",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve each attempt state/deadline/error; do not replay old inference or invent terminal results.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "TurnAttempt",
+      "source_field": "deadline_at",
+      "source_declaration": "models.DateTimeField()",
+      "destination": "LegacyMapping.archive_blob_id -> original record field deadline_at",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve each attempt state/deadline/error; do not replay old inference or invent terminal results.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "TurnAttempt",
+      "source_field": "terminal_code",
+      "source_declaration": "models.CharField(max_length=100, blank=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field terminal_code",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve each attempt state/deadline/error; do not replay old inference or invent terminal results.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "TurnAttempt",
+      "source_field": "updated_at",
+      "source_declaration": "models.DateTimeField(auto_now=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field updated_at",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve each attempt state/deadline/error; do not replay old inference or invent terminal results.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RouteConfiguration",
+      "source_field": "relay_type",
+      "source_declaration": "models.CharField(max_length=40)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field relay_type",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve exact immutable route/model/settings lineage; keep secrets outside artifacts.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RouteConfiguration",
+      "source_field": "base_url",
+      "source_declaration": "models.URLField(max_length=1000)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field base_url",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve exact immutable route/model/settings lineage; keep secrets outside artifacts.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RouteConfiguration",
+      "source_field": "configured_model",
+      "source_declaration": "models.CharField(max_length=200)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field configured_model",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve exact immutable route/model/settings lineage; keep secrets outside artifacts.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RouteConfiguration",
+      "source_field": "api_dialect",
+      "source_declaration": "models.CharField(max_length=50)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field api_dialect",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve exact immutable route/model/settings lineage; keep secrets outside artifacts.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RouteConfiguration",
+      "source_field": "capabilities",
+      "source_declaration": "models.JSONField(default=dict)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field capabilities",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve exact immutable route/model/settings lineage; keep secrets outside artifacts.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RouteConfiguration",
+      "source_field": "context_limit",
+      "source_declaration": "models.PositiveIntegerField()",
+      "destination": "LegacyMapping.archive_blob_id -> original record field context_limit",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve exact immutable route/model/settings lineage; keep secrets outside artifacts.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RouteConfiguration",
+      "source_field": "timeout_policy",
+      "source_declaration": "models.JSONField(default=dict)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field timeout_policy",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve exact immutable route/model/settings lineage; keep secrets outside artifacts.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RouteConfiguration",
+      "source_field": "configuration_hash",
+      "source_declaration": "models.CharField(max_length=64, unique=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field configuration_hash",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve exact immutable route/model/settings lineage; keep secrets outside artifacts.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RouteConfiguration",
+      "source_field": "qualification_state",
+      "source_declaration": "models.CharField(max_length=30, default='unqualified')",
+      "destination": "LegacyMapping.archive_blob_id -> original record field qualification_state",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve exact immutable route/model/settings lineage; keep secrets outside artifacts.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RouteQualification",
+      "source_field": "route",
+      "source_declaration": "models.ForeignKey(RouteConfiguration, on_delete=models.PROTECT)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field route",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve historical qualification result; each new actual schema/capability needs fresh qualification.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RouteQualification",
+      "source_field": "tested_configuration_hash",
+      "source_declaration": "models.CharField(max_length=64)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field tested_configuration_hash",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve historical qualification result; each new actual schema/capability needs fresh qualification.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RouteQualification",
+      "source_field": "evaluation_results",
+      "source_declaration": "models.JSONField(default=dict)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field evaluation_results",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve historical qualification result; each new actual schema/capability needs fresh qualification.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RouteQualification",
+      "source_field": "state",
+      "source_declaration": "models.CharField(max_length=30)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field state",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve historical qualification result; each new actual schema/capability needs fresh qualification.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ModelCallAttempt",
+      "source_field": "turn_attempt",
+      "source_declaration": "models.ForeignKey(TurnAttempt, null=True, on_delete=models.CASCADE)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field turn_attempt",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve exact model identity, usage, timestamps, safe errors and request/response fingerprints.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ModelCallAttempt",
+      "source_field": "task",
+      "source_declaration": "models.CharField(max_length=50)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field task",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve exact model identity, usage, timestamps, safe errors and request/response fingerprints.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ModelCallAttempt",
+      "source_field": "route",
+      "source_declaration": "models.ForeignKey(RouteConfiguration, on_delete=models.PROTECT)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field route",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve exact model identity, usage, timestamps, safe errors and request/response fingerprints.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ModelCallAttempt",
+      "source_field": "requested_model",
+      "source_declaration": "models.CharField(max_length=200)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field requested_model",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve exact model identity, usage, timestamps, safe errors and request/response fingerprints.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ModelCallAttempt",
+      "source_field": "upstream_reported_model",
+      "source_declaration": "models.CharField(max_length=200, blank=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field upstream_reported_model",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve exact model identity, usage, timestamps, safe errors and request/response fingerprints.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ModelCallAttempt",
+      "source_field": "status",
+      "source_declaration": "models.CharField(max_length=30)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field status",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve exact model identity, usage, timestamps, safe errors and request/response fingerprints.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ModelCallAttempt",
+      "source_field": "duration_ms",
+      "source_declaration": "models.PositiveIntegerField(null=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field duration_ms",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve exact model identity, usage, timestamps, safe errors and request/response fingerprints.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ModelCallAttempt",
+      "source_field": "reported_usage",
+      "source_declaration": "models.JSONField(default=dict)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field reported_usage",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve exact model identity, usage, timestamps, safe errors and request/response fingerprints.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "ModelCallAttempt",
+      "source_field": "safe_error_code",
+      "source_declaration": "models.CharField(max_length=100, blank=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field safe_error_code",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve exact model identity, usage, timestamps, safe errors and request/response fingerprints.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "AnswerArtifact",
+      "source_field": "attempt",
+      "source_declaration": "models.OneToOneField(TurnAttempt, on_delete=models.CASCADE, related_name='answer')",
+      "destination": "LegacyMapping.archive_blob_id -> original record field attempt",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve answer blocks/text and validation scope at original revision; no new acceptance success.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "AnswerArtifact",
+      "source_field": "outcome",
+      "source_declaration": "models.CharField(max_length=40)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field outcome",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve answer blocks/text and validation scope at original revision; no new acceptance success.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "AnswerArtifact",
+      "source_field": "blocks",
+      "source_declaration": "models.JSONField(default=list)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field blocks",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve answer blocks/text and validation scope at original revision; no new acceptance success.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "AnswerArtifact",
+      "source_field": "verification_status",
+      "source_declaration": "models.CharField(max_length=30)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field verification_status",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve answer blocks/text and validation scope at original revision; no new acceptance success.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "AnswerArtifact",
+      "source_field": "profile_revision",
+      "source_declaration": "models.PositiveIntegerField(null=True)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field profile_revision",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve answer blocks/text and validation scope at original revision; no new acceptance success.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "AnswerArtifact",
+      "source_field": "corpus_release",
+      "source_declaration": "models.ForeignKey(CorpusRelease, null=True, on_delete=models.PROTECT)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field corpus_release",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve answer blocks/text and validation scope at original revision; no new acceptance success.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "AnswerClaim",
+      "source_field": "answer",
+      "source_declaration": "models.ForeignKey(AnswerArtifact, on_delete=models.CASCADE, related_name='claims')",
+      "destination": "LegacyMapping.archive_blob_id -> original record field answer",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve claim text, support references and criticality; resolve original span identity explicitly.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "AnswerClaim",
+      "source_field": "claim_type",
+      "source_declaration": "models.CharField(max_length=40)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field claim_type",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve claim text, support references and criticality; resolve original span identity explicitly.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "AnswerClaim",
+      "source_field": "display_text",
+      "source_declaration": "models.TextField()",
+      "destination": "LegacyMapping.archive_blob_id -> original record field display_text",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve claim text, support references and criticality; resolve original span identity explicitly.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "AnswerClaim",
+      "source_field": "fact_ids",
+      "source_declaration": "models.JSONField(default=list)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field fact_ids",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve claim text, support references and criticality; resolve original span identity explicitly.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "AnswerClaim",
+      "source_field": "evidence_bundles",
+      "source_declaration": "models.ManyToManyField(EvidenceBundle)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field evidence_bundles",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve claim text, support references and criticality; resolve original span identity explicitly.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "AnswerClaim",
+      "source_field": "verification_result",
+      "source_declaration": "models.CharField(max_length=30)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field verification_result",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve claim text, support references and criticality; resolve original span identity explicitly.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RecommendationSnapshot",
+      "source_field": "answer",
+      "source_declaration": "models.OneToOneField(AnswerArtifact, null=True, on_delete=models.CASCADE)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field answer",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve all stored profile/rule/corpus/plan/calculation inputs; ambiguous conversation association remains unresolved.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RecommendationSnapshot",
+      "source_field": "owner",
+      "source_declaration": "models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field owner",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve all stored profile/rule/corpus/plan/calculation inputs; ambiguous conversation association remains unresolved.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RecommendationSnapshot",
+      "source_field": "profile_revision",
+      "source_declaration": "models.PositiveIntegerField()",
+      "destination": "LegacyMapping.archive_blob_id -> original record field profile_revision",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve all stored profile/rule/corpus/plan/calculation inputs; ambiguous conversation association remains unresolved.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RecommendationSnapshot",
+      "source_field": "corpus_release",
+      "source_declaration": "models.ForeignKey(CorpusRelease, on_delete=models.PROTECT)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field corpus_release",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve all stored profile/rule/corpus/plan/calculation inputs; ambiguous conversation association remains unresolved.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RecommendationSnapshot",
+      "source_field": "candidate_results",
+      "source_declaration": "models.JSONField(default=list)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field candidate_results",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve all stored profile/rule/corpus/plan/calculation inputs; ambiguous conversation association remains unresolved.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RecommendationSnapshot",
+      "source_field": "rankings",
+      "source_declaration": "models.JSONField(default=list)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field rankings",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve all stored profile/rule/corpus/plan/calculation inputs; ambiguous conversation association remains unresolved.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RecommendationSnapshot",
+      "source_field": "calculations",
+      "source_declaration": "models.JSONField(default=list)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field calculations",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve all stored profile/rule/corpus/plan/calculation inputs; ambiguous conversation association remains unresolved.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "RecommendationSnapshot",
+      "source_field": "rule_version",
+      "source_declaration": "models.CharField(max_length=50)",
+      "destination": "LegacyMapping.archive_blob_id -> original record field rule_version",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve all stored profile/rule/corpus/plan/calculation inputs; ambiguous conversation association remains unresolved.",
+      "unmapped_reason": "Exact new field semantics are not proven; preserve losslessly before curated mapping."
+    },
+    {
+      "source_model": "AIPreference",
+      "source_field": "user",
+      "source_declaration": "models.OneToOneField(settings.AUTH_USER_MODEL, primary_key=True, on_delete=models.CASCADE)",
+      "destination": "AIPreference.user_id",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve owned route preference and update time; route must remain exactly qualified before availability.",
+      "unmapped_reason": null
+    },
+    {
+      "source_model": "AIPreference",
+      "source_field": "route",
+      "source_declaration": "models.ForeignKey(RouteConfiguration, null=True, on_delete=models.PROTECT)",
+      "destination": "AIPreference.route_id",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve owned route preference and update time; route must remain exactly qualified before availability.",
+      "unmapped_reason": null
+    },
+    {
+      "source_model": "AIPreference",
+      "source_field": "updated_at",
+      "source_declaration": "models.DateTimeField(auto_now=True)",
+      "destination": "AIPreference.updated_at",
+      "automatic_translation_permitted": false,
+      "required_handling": "Preserve owned route preference and update time; route must remain exactly qualified before availability.",
+      "unmapped_reason": null
+    }
+  ],
+  "inherited_account_fields": [
+    {
+      "source": "User.password",
+      "destination": "Account.password",
+      "handling": "Preserve exact value and native semantics; password is already encoded and must not be passed through set_password/create_user."
+    },
+    {
+      "source": "User.last_login",
+      "destination": "Account.last_login",
+      "handling": "Preserve exact value and native semantics; password is already encoded and must not be passed through set_password/create_user."
+    },
+    {
+      "source": "User.is_superuser",
+      "destination": "Account.is_superuser",
+      "handling": "Preserve exact value and native semantics; password is already encoded and must not be passed through set_password/create_user."
+    },
+    {
+      "source": "User.first_name",
+      "destination": "Account.first_name",
+      "handling": "Preserve exact value and native semantics; password is already encoded and must not be passed through set_password/create_user."
+    },
+    {
+      "source": "User.last_name",
+      "destination": "Account.last_name",
+      "handling": "Preserve exact value and native semantics; password is already encoded and must not be passed through set_password/create_user."
+    },
+    {
+      "source": "User.is_staff",
+      "destination": "Account.is_staff",
+      "handling": "Preserve exact value and native semantics; password is already encoded and must not be passed through set_password/create_user."
+    },
+    {
+      "source": "User.is_active",
+      "destination": "Account.is_active",
+      "handling": "Preserve exact value and native semantics; password is already encoded and must not be passed through set_password/create_user."
+    },
+    {
+      "source": "User.date_joined",
+      "destination": "Account.date_joined",
+      "handling": "Preserve exact value and native semantics; password is already encoded and must not be passed through set_password/create_user."
+    },
+    {
+      "source": "User.groups",
+      "destination": "Native AccountGroup/AccountPermission through-table rows",
+      "handling": "Preserve user_id, group/permission identity, native PK and membership without inferred privilege changes."
+    },
+    {
+      "source": "User.user_permissions",
+      "destination": "Native AccountGroup/AccountPermission through-table rows",
+      "handling": "Preserve user_id, group/permission identity, native PK and membership without inferred privilege changes."
+    }
+  ],
+  "common_inherited_uuid_fields": "For every UUIDModel subclass retain exact id and created_at in archive and identity map; never regenerate historical IDs.",
+  "framework_tables": [
+    "ContentType",
+    "AuthGroup",
+    "AuthPermission",
+    "AccountGroup",
+    "AccountPermission",
+    "GroupPermission",
+    "AuthSession",
+    "AdminLogEntry",
+    "django_migrations preserved in isolated pilot backup; new schema gets its own migration history"
+  ],
+  "unsafe_translation_policy": "Preserve payload, owner and original identifiers in content-role legacy_record_archive. Mark unresolved mapping. Never lose data or invent eligibility while waiting for approved mapping."
+}

@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T17:16:19.359282+00:00",
+  "associations": [],
+  "byte_count": 1067,
+  "component_version": "research-acquisition/2",
+  "content_type": "text/html; charset=UTF-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.hdfcergo.com/docs/default-source/downloads/policy-wordings/health/easy-health-cis_premium.pdf",
+  "format_version": 1,
+  "http_status": 406,
+  "insurer_id": "hdfc-ergo",
+  "issues": [
+    "http_406"
+  ],
+  "language": "unknown",
+  "latency_ms": 24807,
+  "linking_url": "",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "b61283d9fda4ed4349bd0d580bda53f9f1cc68f0504ab21c0307851cf259dee2",
+  "status": "failed",
+  "url": "https://www.hdfcergo.com/docs/default-source/downloads/policy-wordings/health/easy-health-cis_premium.pdf"
+}

@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T12:00:36.871940+00:00",
+  "associations": [],
+  "byte_count": 132739,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.generalicentralinsurance.com/downloads/other-insurance/weather-index-based-insurance/claim-forms/weather-index-based-insurance-claim-form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "generali-central",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 304,
+  "linking_url": "https://www.generalicentralinsurance.com/customer-service/downloads",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "ff65f5b8d55ce9f1bdee37e2f7d8a9245a2d8c4e0d07df3083cd274510487cc4",
+  "status": "acquired",
+  "url": "https://www.generalicentralinsurance.com/downloads/other-insurance/weather-index-based-insurance/claim-forms/weather-index-based-insurance-claim-form.pdf"
+}

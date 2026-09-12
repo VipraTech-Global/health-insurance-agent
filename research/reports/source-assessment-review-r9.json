@@ -1,0 +1,844 @@
+{
+  "format_version": 1,
+  "status": "No material correction required in reviewed scope",
+  "input_sha256": {
+    "research/registers/icici-document-scope-r8.json": "77b0cf0e2223330671eb3019ac846095f452cfa4a79afbb4a65f9bcc043d5166",
+    "research/reports/icici-reconciliation-r8.json": "e6ef6233f0ea9e744f83a62d4db373d085df01f05f88bbc70234b5d63a9e4527",
+    "research/registers/aditya-family-reconciliation-r9.json": "0555f8258449764cfbd2577ff39c7fe78a5481245ae073d8afa1844b7ab25e68",
+    "research/reference/additional-original-derived-cases-r8.jsonl": "76de9166b8df013fe5e0d8197e7e68cac899d907d035c7ed011fe1c41dea1d4e"
+  },
+  "originals": [
+    {
+      "sha256": "46d61cbee18e10a56dca3ff4924290a5f48565d71eb91cce7e079d48015a61d8",
+      "label": "Elevate",
+      "document_role": "policy_wording",
+      "hash_verified": true,
+      "uin_original_pages": {
+        "ICIHLIP25048V042425": [
+          1,
+          6
+        ]
+      },
+      "selected_pages": [
+        1,
+        6
+      ]
+    },
+    {
+      "sha256": "5a53a3a7c460df4f64de980d76d11a0c76cfbee5d84f7b2104d4de1082f75348",
+      "label": "MaxProtect",
+      "document_role": "policy_wording",
+      "hash_verified": true,
+      "uin_original_pages": {
+        "ICIHLIP24084V012324": [
+          1,
+          3,
+          14,
+          27
+        ]
+      },
+      "selected_pages": [
+        1,
+        3,
+        14,
+        27
+      ]
+    },
+    {
+      "sha256": "f27174a30be8ab9ee04d6e68d09953916bdb2ce997ae1add19070f0f8372d6c1",
+      "label": "Golden Shield",
+      "document_role": "policy_wording",
+      "hash_verified": true,
+      "uin_original_pages": {
+        "ICIHLIP25042V022425": [
+          1,
+          9,
+          10,
+          11,
+          12
+        ]
+      },
+      "selected_pages": [
+        1,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "sha256": "deb0b11e2e33a2251ab4e60af70f2f719cc585eec1a287f1c30bd6dec8c60a23",
+      "label": "Health Booster - Super Top Up",
+      "document_role": "policy_wording",
+      "hash_verified": true,
+      "uin_original_pages": {
+        "ICIHLIP16001V011516": [
+          19
+        ]
+      },
+      "selected_pages": [
+        1,
+        5
+      ]
+    },
+    {
+      "sha256": "ca59dc74948afa30b33a43596378735430bc1b286670af16063fc959101abad0",
+      "label": "Health Shield 360 Retail",
+      "document_role": "policy_wording",
+      "hash_verified": true,
+      "uin_original_pages": {
+        "ICIHLIP23165V012223": [
+          1,
+          5
+        ]
+      },
+      "selected_pages": [
+        1,
+        5
+      ]
+    },
+    {
+      "sha256": "0afccb43eb8b2089ae1dcc8a16cb484a8ec6fd50b6d2906a9386fb20adb54c30",
+      "label": "Health Shield 360 Retail",
+      "document_role": "customer_information_sheet",
+      "hash_verified": true,
+      "uin_original_pages": {
+        "ICIHLIP23165V012223": [
+          1
+        ]
+      },
+      "selected_pages": [
+        1
+      ]
+    },
+    {
+      "sha256": "73ff738922e11968a2776f1c827edc159beb7456a58e720fbdb7657b45568066",
+      "label": "Activ One MAX",
+      "document_role": "policy_wording",
+      "hash_verified": true,
+      "uin_original_pages": {
+        "ADIHLIP27048V022627": [
+          1,
+          29
+        ]
+      },
+      "selected_pages": [
+        1,
+        29
+      ]
+    },
+    {
+      "sha256": "a06bbefaf4943e3aadd4b851d415aec89e3088785f89e35e67366611c29c620a",
+      "label": "Activ One MAX+",
+      "document_role": "policy_wording",
+      "hash_verified": true,
+      "uin_original_pages": {
+        "ADIHLIP27048V022627": [
+          1,
+          29
+        ]
+      },
+      "selected_pages": [
+        1,
+        29
+      ]
+    },
+    {
+      "sha256": "83bc85d8b8c0b0951da5207fcd12e5762905fc5cf1828f2ba63468c2ea9b38a0",
+      "label": "Activ One NXT",
+      "document_role": "policy_wording",
+      "hash_verified": true,
+      "uin_original_pages": {
+        "ADIHLIP27048V022627": [
+          1,
+          29
+        ]
+      },
+      "selected_pages": [
+        1,
+        29
+      ]
+    },
+    {
+      "sha256": "351b69e0dcafbdce5235138f49db26188401a6d184329e9d7166dfa2aaa98932",
+      "label": "Activ One VYTL",
+      "document_role": "policy_wording",
+      "hash_verified": true,
+      "uin_original_pages": {
+        "ADIHLIP27048V022627": [
+          1,
+          29
+        ]
+      },
+      "selected_pages": [
+        1,
+        29
+      ]
+    },
+    {
+      "sha256": "0d5808eb960a557b0b5ff53818be0e1eacdedc543cac14d93ee716c6d1f9a255",
+      "label": "Activ One VIP",
+      "document_role": "policy_wording",
+      "hash_verified": true,
+      "uin_original_pages": {
+        "ADIHLIP27048V022627": [
+          1,
+          29
+        ]
+      },
+      "selected_pages": [
+        1,
+        29
+      ]
+    },
+    {
+      "sha256": "a13d49e70264885c00977a3541abd4a85c1f3551518e6c96ed4abc0db541a002",
+      "label": "Activ One VIP",
+      "document_role": "customer_information_sheet",
+      "hash_verified": true,
+      "uin_original_pages": {
+        "ADIHLIP27048V022627": [
+          1
+        ]
+      },
+      "selected_pages": [
+        1
+      ]
+    },
+    {
+      "sha256": "233881d6a436117475854368393c24cb6698f174371b80a7162de3b5e3d9d86c",
+      "label": "Activ One VIP+",
+      "document_role": "policy_wording",
+      "hash_verified": true,
+      "uin_original_pages": {
+        "ADIHLIP27048V022627": [
+          1,
+          29
+        ]
+      },
+      "selected_pages": [
+        1,
+        29
+      ]
+    },
+    {
+      "sha256": "f23aa10cd9079244af8aea7d30e71d323421a87da4b4bcefd720f35d903b6dd3",
+      "label": "Activ One VIP+",
+      "document_role": "customer_information_sheet",
+      "hash_verified": true,
+      "uin_original_pages": {
+        "ADIHLIP27048V022627": [
+          1
+        ]
+      },
+      "selected_pages": [
+        1
+      ]
+    },
+    {
+      "sha256": "cd54d6c84ac2bc13c7cc1882ae6a7a98b67ccba1b55ad1451ce919f7b590c74b",
+      "label": "Activ One SAVR",
+      "document_role": "policy_wording",
+      "hash_verified": true,
+      "uin_original_pages": {
+        "ADIHLIP27048V022627": [
+          1,
+          29
+        ]
+      },
+      "selected_pages": [
+        1,
+        29
+      ]
+    },
+    {
+      "sha256": "e46c8684988fa8c6e38046beeaa26c158524d757d8ae6e5af5ae741827af2de6",
+      "label": "Activ One SAVR",
+      "document_role": "customer_information_sheet",
+      "hash_verified": true,
+      "uin_original_pages": {
+        "ADIHLIP27048V022627": [
+          1
+        ]
+      },
+      "selected_pages": [
+        1
+      ]
+    },
+    {
+      "sha256": "3dff683492eaefbbf3e700a4ad1a67af18b4bfe1e4174c46463833e8f5c82dce",
+      "label": "Activ Assure",
+      "document_role": "policy_wording",
+      "hash_verified": true,
+      "uin_original_pages": {
+        "ADIHLIP24175V052324": [
+          1,
+          5
+        ]
+      },
+      "selected_pages": [
+        1,
+        5
+      ]
+    },
+    {
+      "sha256": "8d70eebcd690123003dad335810617598f7c2b31135e0ecc09155bb400f4d1bc",
+      "label": "Activ One MAX",
+      "document_role": "customer_information_sheet",
+      "hash_verified": true,
+      "uin_original_pages": {
+        "ADIHLIP27048V022627": [
+          1
+        ]
+      },
+      "selected_pages": [
+        1
+      ]
+    },
+    {
+      "sha256": "23024f5422ff780e8f2b9a692b003d31824acfd9d7f7e96f85c38ad1317752a8",
+      "label": "Activ One MAX+",
+      "document_role": "customer_information_sheet",
+      "hash_verified": true,
+      "uin_original_pages": {
+        "ADIHLIP27048V022627": [
+          1
+        ]
+      },
+      "selected_pages": [
+        1
+      ]
+    },
+    {
+      "sha256": "b734cc6d9ce065169c85d5101c7581177da54c2a1856745b2e1bab39cc23e30d",
+      "label": "Activ One NXT",
+      "document_role": "customer_information_sheet",
+      "hash_verified": true,
+      "uin_original_pages": {
+        "ADIHLIP27048V022627": [
+          1
+        ]
+      },
+      "selected_pages": [
+        1
+      ]
+    },
+    {
+      "sha256": "e42b2df15861efea9ef62a39d6f3504b4d69ed44986eee050813936229791a45",
+      "label": "Activ One VYTL",
+      "document_role": "customer_information_sheet",
+      "hash_verified": true,
+      "uin_original_pages": {
+        "ADIHLIP27048V022627": [
+          1
+        ]
+      },
+      "selected_pages": [
+        1
+      ]
+    },
+    {
+      "sha256": "08633c7190545874483102f6fa16e9963aad2173e18c7269ea5ae8b2f62aae0c",
+      "label": "Additional-case original",
+      "hash_verified": true,
+      "selected_pages": [
+        7
+      ]
+    },
+    {
+      "sha256": "3c07c19ae314fb287047c0419a33ee03e962502fe4ac67d87eb3c5de7c6040be",
+      "label": "Additional-case original",
+      "hash_verified": true,
+      "selected_pages": [
+        26
+      ]
+    }
+  ],
+  "original_count": 23,
+  "passage_checks": [
+    {
+      "source_sha256": "46d61cbee18e10a56dca3ff4924290a5f48565d71eb91cce7e079d48015a61d8",
+      "page": 1,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "46d61cbee18e10a56dca3ff4924290a5f48565d71eb91cce7e079d48015a61d8",
+      "page": 6,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "46d61cbee18e10a56dca3ff4924290a5f48565d71eb91cce7e079d48015a61d8",
+      "page": 6,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "5a53a3a7c460df4f64de980d76d11a0c76cfbee5d84f7b2104d4de1082f75348",
+      "page": 1,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "5a53a3a7c460df4f64de980d76d11a0c76cfbee5d84f7b2104d4de1082f75348",
+      "page": 3,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "5a53a3a7c460df4f64de980d76d11a0c76cfbee5d84f7b2104d4de1082f75348",
+      "page": 14,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "5a53a3a7c460df4f64de980d76d11a0c76cfbee5d84f7b2104d4de1082f75348",
+      "page": 27,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "f27174a30be8ab9ee04d6e68d09953916bdb2ce997ae1add19070f0f8372d6c1",
+      "page": 1,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "f27174a30be8ab9ee04d6e68d09953916bdb2ce997ae1add19070f0f8372d6c1",
+      "page": 9,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "f27174a30be8ab9ee04d6e68d09953916bdb2ce997ae1add19070f0f8372d6c1",
+      "page": 10,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "f27174a30be8ab9ee04d6e68d09953916bdb2ce997ae1add19070f0f8372d6c1",
+      "page": 11,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "f27174a30be8ab9ee04d6e68d09953916bdb2ce997ae1add19070f0f8372d6c1",
+      "page": 12,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "deb0b11e2e33a2251ab4e60af70f2f719cc585eec1a287f1c30bd6dec8c60a23",
+      "page": 1,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "deb0b11e2e33a2251ab4e60af70f2f719cc585eec1a287f1c30bd6dec8c60a23",
+      "page": 5,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "ca59dc74948afa30b33a43596378735430bc1b286670af16063fc959101abad0",
+      "page": 1,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "ca59dc74948afa30b33a43596378735430bc1b286670af16063fc959101abad0",
+      "page": 5,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "ca59dc74948afa30b33a43596378735430bc1b286670af16063fc959101abad0",
+      "page": 5,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "0afccb43eb8b2089ae1dcc8a16cb484a8ec6fd50b6d2906a9386fb20adb54c30",
+      "page": 1,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "73ff738922e11968a2776f1c827edc159beb7456a58e720fbdb7657b45568066",
+      "page": 1,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "73ff738922e11968a2776f1c827edc159beb7456a58e720fbdb7657b45568066",
+      "page": 29,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "a06bbefaf4943e3aadd4b851d415aec89e3088785f89e35e67366611c29c620a",
+      "page": 1,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "a06bbefaf4943e3aadd4b851d415aec89e3088785f89e35e67366611c29c620a",
+      "page": 29,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "83bc85d8b8c0b0951da5207fcd12e5762905fc5cf1828f2ba63468c2ea9b38a0",
+      "page": 1,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "83bc85d8b8c0b0951da5207fcd12e5762905fc5cf1828f2ba63468c2ea9b38a0",
+      "page": 29,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "351b69e0dcafbdce5235138f49db26188401a6d184329e9d7166dfa2aaa98932",
+      "page": 1,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "351b69e0dcafbdce5235138f49db26188401a6d184329e9d7166dfa2aaa98932",
+      "page": 29,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "0d5808eb960a557b0b5ff53818be0e1eacdedc543cac14d93ee716c6d1f9a255",
+      "page": 1,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "0d5808eb960a557b0b5ff53818be0e1eacdedc543cac14d93ee716c6d1f9a255",
+      "page": 29,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "a13d49e70264885c00977a3541abd4a85c1f3551518e6c96ed4abc0db541a002",
+      "page": 1,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "233881d6a436117475854368393c24cb6698f174371b80a7162de3b5e3d9d86c",
+      "page": 1,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "233881d6a436117475854368393c24cb6698f174371b80a7162de3b5e3d9d86c",
+      "page": 29,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "f23aa10cd9079244af8aea7d30e71d323421a87da4b4bcefd720f35d903b6dd3",
+      "page": 1,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "cd54d6c84ac2bc13c7cc1882ae6a7a98b67ccba1b55ad1451ce919f7b590c74b",
+      "page": 1,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "cd54d6c84ac2bc13c7cc1882ae6a7a98b67ccba1b55ad1451ce919f7b590c74b",
+      "page": 29,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "e46c8684988fa8c6e38046beeaa26c158524d757d8ae6e5af5ae741827af2de6",
+      "page": 1,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "3dff683492eaefbbf3e700a4ad1a67af18b4bfe1e4174c46463833e8f5c82dce",
+      "page": 1,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "3dff683492eaefbbf3e700a4ad1a67af18b4bfe1e4174c46463833e8f5c82dce",
+      "page": 5,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "8d70eebcd690123003dad335810617598f7c2b31135e0ecc09155bb400f4d1bc",
+      "page": 1,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "23024f5422ff780e8f2b9a692b003d31824acfd9d7f7e96f85c38ad1317752a8",
+      "page": 1,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "b734cc6d9ce065169c85d5101c7581177da54c2a1856745b2e1bab39cc23e30d",
+      "page": 1,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "e42b2df15861efea9ef62a39d6f3504b4d69ed44986eee050813936229791a45",
+      "page": 1,
+      "kind": "exact_full_region"
+    },
+    {
+      "source_sha256": "08633c7190545874483102f6fa16e9963aad2173e18c7269ea5ae8b2f62aae0c",
+      "page": 7,
+      "case_id": "additional-r8-12-01",
+      "kind": "verbatim_excerpt_within_declared_region"
+    },
+    {
+      "source_sha256": "3c07c19ae314fb287047c0419a33ee03e962502fe4ac67d87eb3c5de7c6040be",
+      "page": 26,
+      "case_id": "additional-r8-11-01",
+      "kind": "verbatim_excerpt_within_declared_region"
+    },
+    {
+      "source_sha256": "f27174a30be8ab9ee04d6e68d09953916bdb2ce997ae1add19070f0f8372d6c1",
+      "page": 10,
+      "case_id": "additional-r8-11-02",
+      "kind": "verbatim_excerpt_within_declared_region"
+    },
+    {
+      "source_sha256": "f27174a30be8ab9ee04d6e68d09953916bdb2ce997ae1add19070f0f8372d6c1",
+      "page": 11,
+      "case_id": "additional-r8-11-02",
+      "kind": "verbatim_excerpt_within_declared_region"
+    },
+    {
+      "source_sha256": "f27174a30be8ab9ee04d6e68d09953916bdb2ce997ae1add19070f0f8372d6c1",
+      "page": 12,
+      "case_id": "additional-r8-11-02",
+      "kind": "exact_full_region"
+    }
+  ],
+  "passage_checks_passed": 46,
+  "additional_identity_locators": [
+    {
+      "source_sha256": "deb0b11e2e33a2251ab4e60af70f2f719cc585eec1a287f1c30bd6dec8c60a23",
+      "uin": "ICIHLIP16001V011516",
+      "physical_pages": [
+        19
+      ],
+      "detail": "UIN verified directly in original outside selected scope evidence pages; additional identity locator, not a different edition."
+    }
+  ],
+  "legacy_row_checks": [
+    {
+      "legacy_identity": "/health-insurance/icici-lombard/elevate/",
+      "family": "Elevate",
+      "variant": null,
+      "wording_sha256": "46d61cbee18e10a56dca3ff4924290a5f48565d71eb91cce7e079d48015a61d8",
+      "judgment": "Supported exact-original candidate; not a complete historical bundle",
+      "basis": "Selected original title and operative medical-expense grant support this family candidate."
+    },
+    {
+      "legacy_identity": "/health-insurance/icici-lombard/golden-shield/",
+      "family": "Golden Shield",
+      "variant": null,
+      "wording_sha256": "f27174a30be8ab9ee04d6e68d09953916bdb2ce997ae1add19070f0f8372d6c1",
+      "judgment": "Supported exact-original candidate; not a complete historical bundle",
+      "basis": "Selected original title and operative medical-expense grant support this family candidate."
+    },
+    {
+      "legacy_identity": "/health-insurance/icici-lombard/health-booster-super-top-up/",
+      "family": "Health Booster - Super Top Up",
+      "variant": null,
+      "wording_sha256": "deb0b11e2e33a2251ab4e60af70f2f719cc585eec1a287f1c30bd6dec8c60a23",
+      "judgment": "Supported exact-original candidate; not a complete historical bundle",
+      "basis": "Selected original title and operative medical-expense grant support this family candidate."
+    },
+    {
+      "legacy_identity": "/health-insurance/icici-lombard/health-shield-360-retail/",
+      "family": "Health Shield 360 Retail",
+      "variant": null,
+      "wording_sha256": "ca59dc74948afa30b33a43596378735430bc1b286670af16063fc959101abad0",
+      "judgment": "Supported exact-original candidate; not a complete historical bundle",
+      "basis": "Selected original title and operative medical-expense grant support this family candidate."
+    },
+    {
+      "legacy_identity": "/health-insurance/icici-lombard/max-protect-classic/",
+      "family": "MaxProtect",
+      "variant": "Classic",
+      "wording_sha256": "5a53a3a7c460df4f64de980d76d11a0c76cfbee5d84f7b2104d4de1082f75348",
+      "judgment": "Supported exact-original candidate; not a complete historical bundle",
+      "basis": "Classic explicitly named on MaxProtect page 27; Premium named in pages 1/3; older observed UIN remains separate from later register edition."
+    },
+    {
+      "legacy_identity": "/health-insurance/icici-lombard/max-protect-premium/",
+      "family": "MaxProtect",
+      "variant": "Premium",
+      "wording_sha256": "5a53a3a7c460df4f64de980d76d11a0c76cfbee5d84f7b2104d4de1082f75348",
+      "judgment": "Supported exact-original candidate; not a complete historical bundle",
+      "basis": "Classic explicitly named on MaxProtect page 27; Premium named in pages 1/3; older observed UIN remains separate from later register edition."
+    },
+    {
+      "legacy_identity": "/health-insurance/aditya-birla/Activ-assured-diamond/",
+      "family": "Activ Assure",
+      "variant": null,
+      "wording_sha256": "3dff683492eaefbbf3e700a4ad1a67af18b4bfe1e4174c46463833e8f5c82dce",
+      "cis_sha256": null,
+      "judgment": "Supported candidate; historical bundle explicitly incomplete",
+      "basis": "Activ Assure family and inpatient grant supported; no Diamond equivalence asserted, variant remains unresolved."
+    },
+    {
+      "legacy_identity": "/health-insurance/aditya-birla/activ-one-max/",
+      "family": "Activ One MAX",
+      "variant": "MAX",
+      "wording_sha256": "73ff738922e11968a2776f1c827edc159beb7456a58e720fbdb7657b45568066",
+      "cis_sha256": "8d70eebcd690123003dad335810617598f7c2b31135e0ecc09155bb400f4d1bc",
+      "judgment": "Supported candidate; historical bundle explicitly incomplete",
+      "basis": "Named page-29 Activ One appendix and matching named CIS support variant identity; shared UIN does not erase appendix-specific terms."
+    },
+    {
+      "legacy_identity": "/health-insurance/aditya-birla/activ-one-max-plus/",
+      "family": "Activ One MAX+",
+      "variant": "MAX+",
+      "wording_sha256": "a06bbefaf4943e3aadd4b851d415aec89e3088785f89e35e67366611c29c620a",
+      "cis_sha256": "23024f5422ff780e8f2b9a692b003d31824acfd9d7f7e96f85c38ad1317752a8",
+      "judgment": "Supported candidate; historical bundle explicitly incomplete",
+      "basis": "Named page-29 Activ One appendix and matching named CIS support variant identity; shared UIN does not erase appendix-specific terms."
+    },
+    {
+      "legacy_identity": "/health-insurance/aditya-birla/activ-one-nxt/",
+      "family": "Activ One NXT",
+      "variant": "NXT",
+      "wording_sha256": "83bc85d8b8c0b0951da5207fcd12e5762905fc5cf1828f2ba63468c2ea9b38a0",
+      "cis_sha256": "b734cc6d9ce065169c85d5101c7581177da54c2a1856745b2e1bab39cc23e30d",
+      "judgment": "Supported candidate; historical bundle explicitly incomplete",
+      "basis": "Named page-29 Activ One appendix and matching named CIS support variant identity; shared UIN does not erase appendix-specific terms."
+    },
+    {
+      "legacy_identity": "/health-insurance/aditya-birla/activ-one-savr/",
+      "family": "Activ One SAVR",
+      "variant": "SAVR",
+      "wording_sha256": "cd54d6c84ac2bc13c7cc1882ae6a7a98b67ccba1b55ad1451ce919f7b590c74b",
+      "cis_sha256": "e46c8684988fa8c6e38046beeaa26c158524d757d8ae6e5af5ae741827af2de6",
+      "judgment": "Supported candidate; historical bundle explicitly incomplete",
+      "basis": "Named page-29 Activ One appendix and matching named CIS support variant identity; shared UIN does not erase appendix-specific terms."
+    },
+    {
+      "legacy_identity": "/health-insurance/aditya-birla/activ-one-vip/",
+      "family": "Activ One VIP",
+      "variant": "VIP",
+      "wording_sha256": "0d5808eb960a557b0b5ff53818be0e1eacdedc543cac14d93ee716c6d1f9a255",
+      "cis_sha256": "a13d49e70264885c00977a3541abd4a85c1f3551518e6c96ed4abc0db541a002",
+      "judgment": "Supported candidate; historical bundle explicitly incomplete",
+      "basis": "Named page-29 Activ One appendix and matching named CIS support variant identity; shared UIN does not erase appendix-specific terms."
+    },
+    {
+      "legacy_identity": "/health-insurance/aditya-birla/activ-one-vip-plus/",
+      "family": "Activ One VIP+",
+      "variant": "VIP+",
+      "wording_sha256": "233881d6a436117475854368393c24cb6698f174371b80a7162de3b5e3d9d86c",
+      "cis_sha256": "f23aa10cd9079244af8aea7d30e71d323421a87da4b4bcefd720f35d903b6dd3",
+      "judgment": "Supported candidate; historical bundle explicitly incomplete",
+      "basis": "Named page-29 Activ One appendix and matching named CIS support variant identity; shared UIN does not erase appendix-specific terms."
+    },
+    {
+      "legacy_identity": "/health-insurance/aditya-birla/activ-one-vytl/",
+      "family": "Activ One VYTL",
+      "variant": "VYTL",
+      "wording_sha256": "351b69e0dcafbdce5235138f49db26188401a6d184329e9d7166dfa2aaa98932",
+      "cis_sha256": "e42b2df15861efea9ef62a39d6f3504b4d69ed44986eee050813936229791a45",
+      "judgment": "Supported candidate; historical bundle explicitly incomplete",
+      "basis": "Named page-29 Activ One appendix and matching named CIS support variant identity; shared UIN does not erase appendix-specific terms."
+    }
+  ],
+  "scope_review": {
+    "icici_documents": 6,
+    "icici_wordings": 5,
+    "icici_supporting_cis": 1,
+    "icici_legacy_rows": 6,
+    "aditya_newly_classified_documents": 11,
+    "aditya_reread_cis": 4,
+    "aditya_legacy_rows": 8,
+    "retained_uncertainty": [
+      "MaxProtect observed older UIN is not replaced with the later register assertion.",
+      "Golden Shield A and B inpatient structures remain unresolved until controlling schedule/selection evidence arrives.",
+      "Health Booster older wording and reader warning remain visible; no current aggregation promise from its name.",
+      "Health Shield Retail does not stand in for group; iHealth is not replaced by iHealth Plus.",
+      "Activ One variant-specific appendices and named CIS share a UIN without becoming a single configuration. Optional fixed benefits remain separate from core indemnity.",
+      "Activ Assure family candidate does not prove the legacy Diamond variant.",
+      "All historical bundle completeness remains unestablished; selected document relevance is not complete rule coverage."
+    ]
+  },
+  "visual_original_checks": [
+    {
+      "source_sha256": "5a53a3a7c460df4f64de980d76d11a0c76cfbee5d84f7b2104d4de1082f75348",
+      "physical_page": 3,
+      "checked": "Base versus Premium additional benefits and optional-cover table headers/scope."
+    },
+    {
+      "source_sha256": "f27174a30be8ab9ee04d6e68d09953916bdb2ce997ae1add19070f0f8372d6c1",
+      "physical_page": 11,
+      "checked": "B inpatient SI10L row aligns with 6000 INR/day room cap; ICU grid separate."
+    },
+    {
+      "source_sha256": "3c07c19ae314fb287047c0419a33ee03e962502fe4ac67d87eb3c5de7c6040be",
+      "physical_page": 26,
+      "printed_page": 31,
+      "checked": "Plan A seven columns 500000/2500/5000/25000/50000/50000/10000 total 642500. Hospitalization header lists its included categories; parent-tier association remains unresolved."
+    }
+  ],
+  "case_assessments": [
+    {
+      "case_id": "additional-r8-12-01",
+      "judgment": "Supported bounded condition-frequency and corrected-date assessment",
+      "original_support": "Health Ensure physical page 7 full reinstatement clause: SI >=5 lakh, paid option, base/bonus exhausted by registered/paid claims, subsequent claim, same-member 15-day gap, other-member exception and separate annual versus cancer/defined-kidney lifetime scope.",
+      "assumption_limit": "All relevant customer/selection facts are synthetic. Calendar subtraction does not decide a time-of-day boundary or establish actual claim payment or sublimit restoration."
+    },
+    {
+      "case_id": "additional-r8-11-01",
+      "judgment": "Supported component-pool distinction and conditional gross difference",
+      "original_support": "Exact Plan A row and full headers support the seven displayed values and 500000 hospitalization column.",
+      "assumption_limit": "The displayed total is not fungible hospitalization cover. 100000 is a gross comparison, not final shortfall after every rule; 500000 payment and parent-tier identity are not promised."
+    },
+    {
+      "case_id": "additional-r8-11-02",
+      "judgment": "Supported unresolved A/B selection with B-only daily counterfactual",
+      "original_support": "A category rule and B monetary grid both occur in the preserved wording; B10L cap6000 directly supports the conditional difference.",
+      "assumption_limit": "No B applicability or universal Golden Shield cap inferred. Preserve associated-expense, ICU and differential-billing exceptions before actual deductions."
+    }
+  ],
+  "independent_numeric_checks": [
+    {
+      "case_id": "additional-r8-12-01",
+      "quantity": "Initial same-member interval",
+      "expected": "14",
+      "recomputed": "14",
+      "unit": "elapsed_day",
+      "passed": true
+    },
+    {
+      "case_id": "additional-r8-12-01",
+      "quantity": "Corrected same-member interval",
+      "expected": "15",
+      "recomputed": "15",
+      "unit": "elapsed_day",
+      "passed": true
+    },
+    {
+      "case_id": "additional-r8-11-01",
+      "quantity": "Seven-component displayed total",
+      "expected": "642500",
+      "recomputed": "642500",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "additional-r8-11-01",
+      "quantity": "Hospitalization gross difference",
+      "expected": "100000",
+      "recomputed": "100000",
+      "unit": "INR",
+      "passed": true
+    },
+    {
+      "case_id": "additional-r8-11-02",
+      "quantity": "B-only daily room excess",
+      "expected": "1500",
+      "recomputed": "1500",
+      "unit": "INR/day",
+      "passed": true
+    }
+  ],
+  "material_findings": [],
+  "method": [
+    "Verified preserved bytes against their source hashes and located all recorded UINs in original text.",
+    "Re-extracted all selected regions with recorded native-reader settings; all 46 source passages are exact region text or verbatim excerpts within their declared page regions after whitespace normalization.",
+    "Visually inspected three original table pages independently; no full-original rule-inventory claim.",
+    "Independently recomputed five numeric outputs with calendar and Decimal arithmetic."
+  ],
+  "limits": {
+    "evaluation_material_read": false,
+    "canonical_files_changed": false,
+    "three_cases_outside_required_400": true,
+    "advice_successes": 0,
+    "adviser_attempts": 0,
+    "historical_bundles_certified": 0,
+    "full_original_inventory_certified": false,
+    "insurer_wide_reconciliation_complete": false,
+    "database_implementation_approved": false
+  }
+}

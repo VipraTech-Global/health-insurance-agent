@@ -1,0 +1,84 @@
+# Entity catalogue — proposed revision 17
+
+Batches 1 through 8 are approved. Batch 9 retains only `Calculation`; actual customer claims are outside application scope.
+
+| Entity | Purpose | Access | Fields | Outgoing relationships |
+|---|---|---|---:|---|
+| Account | Logical authentication principal implemented by the retained accounts.User(AbstractUser) model. | framework_private | 12 | None |
+| AIPreference | One-to-one user AI route preference kept outside authentication columns. | private | 3 | route_id → ModelRoute; user_id → Account |
+| Person | A minimal owner-scoped human label; medical, role and identity assertions live in sourced fact records. | private | 4 | owner_id → Account |
+| PersonRelationship | Directional relationship between two owner-scoped people, separate from proposed or issued policy membership. | private | 9 | from_person_id → Person; owner_id → Account; source_statement_id → CustomerStatement; to_person_id → Person |
+| Conversation | Persistent conversation and its current accepted state. | private | 8 | current_profile_revision_id → CustomerProfileRevision; owner_id → Account |
+| Message | Immutable submitted or published conversational content. | private | 14 | answer_id → Decision; conversation_id → Conversation; owner_id → Account; turn_id → Turn |
+| ConversationMessageChunk | Replaceable private lexical/semantic index for an exact section of one immutable conversation message. | private | 13 | conversation_id → Conversation; message_id → Message; owner_id → Account |
+| CustomerStatement | A meaningful source span inside one customer message, retained so unusual or unresolved information cannot be silently dropped. | private | 10 | owner_id → Account; source_message_id → Message; subject_person_id → Person |
+| CustomerProfileRevision | Small immutable checkpoint created only when customer facts or requirements change. | private | 5 | conversation_id → Conversation; owner_id → Account |
+| CustomerFact | One validated version of a customer fact; active historical state is reconstructed by logical key and profile revision. | private | 10 | introduced_in_revision_id → CustomerProfileRevision; owner_id → Account; source_statement_id → CustomerStatement |
+| CustomerRequirement | One atomic mandatory, preferred or informational condition used to filter, rank or explain policy configurations. | private | 13 | introduced_in_revision_id → CustomerProfileRevision; owner_id → Account; source_statement_id → CustomerStatement; subject_person_id → Person |
+| AdviceRequest | One customer advice goal spanning any number of clarification messages; execution attempts later pin exact profile revisions. | private | 7 | conversation_id → Conversation; owner_id → Account; source_statement_id → CustomerStatement |
+| Insurer | One insurer in the approved research roster and the issuer identity used by products and official documents. | public | 3 | None |
+| DiscoveryRun | One autonomous Codex session tasked with discovering public documents for one insurer. | public | 10 | insurer_id → Insurer |
+| SourceURL | One unique public web address discovered by Codex, independent of how often or where it was observed. | public | 5 | None |
+| SourceObservation | One retained occasion on which a Codex discovery run encountered a source URL. | public | 9 | discovery_run_id → DiscoveryRun; found_in_capture_id → SourceCapture; source_url_id → SourceURL |
+| SourceCapture | One attempt by a Codex discovery run to preserve the content currently returned by a source URL. | public | 11 | discovery_run_id → DiscoveryRun; document_version_id → DocumentVersion; original_file_id → OriginalFile; source_url_id → SourceURL |
+| OriginalFile | Content-addressed exact bytes preserved from a public source or private customer upload. | mixed | 10 | owner_id → Account |
+| CustomerUploadedDocument | One private document supplied by a customer, separate from its content-addressed bytes. | private | 9 | original_file_id → OriginalFile; owner_id → Account; source_message_id → Message |
+| DocumentSeries | Stable identity of one continuing publication across editions, such as a product policy wording. | public | 8 | issuer_id → Insurer |
+| DocumentVersion | One identified edition within a DocumentSeries, with evidence-backed dates and explicit supersession. | public | 12 | document_series_id → DocumentSeries; supersedes_id → DocumentVersion |
+| DocumentPage | One physical PDF page and its explicit review state, including pages on which extraction failed. | mixed | 7 | original_file_id → OriginalFile |
+| EvidenceSpan | One exact passage, table cell, footnote or region from either a public capture or private customer upload. | mixed | 11 | customer_uploaded_document_id → CustomerUploadedDocument; page_id → DocumentPage; source_capture_id → SourceCapture |
+| Product | Stable insurer product family, independent of policy editions, named variants and optional additions. | public | 9 | identity_evidence_id → EvidenceSpan; insurer_id → Insurer |
+| PolicyVersion | One complete legal terms package for a Product, assembled from every applicable governing document. | public | 9 | product_id → Product; supersedes_id → PolicyVersion |
+| PolicyVersionDocument | Membership, role, conditional applicability and proven precedence of one DocumentVersion in a PolicyVersion. | public | 8 | document_version_id → DocumentVersion; policy_version_id → PolicyVersion; precedence_evidence_id → EvidenceSpan |
+| ProductVariant | One insurer-defined base variant and its allowed sums insured, deductibles, room categories and family choices. | public | 8 | identity_evidence_id → EvidenceSpan; policy_version_id → PolicyVersion |
+| ProductOption | One optional or mandatory add-on, rider or election available with a ProductVariant. | public | 9 | identity_evidence_id → EvidenceSpan; option_policy_version_id → PolicyVersion; product_variant_id → ProductVariant |
+| CustomerPolicy | Stable identity of one insurer-issued customer policy or customer-specific offer. | private | 11 | insurer_id → Insurer; owner_id → Account; payer_id → Person; proposer_id → Person |
+| CustomerPolicyRevision | One exact set of insurer-issued customer selections applying during a defined interval. | private | 12 | customer_policy_id → CustomerPolicy; owner_id → Account; product_variant_id → ProductVariant; selection_evidence_id → EvidenceSpan |
+| PolicyMember | One person actually covered under one customer policy revision. | private | 10 | customer_policy_revision_id → CustomerPolicyRevision; evidence_span_id → EvidenceSpan; owner_id → Account; person_id → Person |
+| CustomerPolicyOption | One customer-specific selected, declined or unresolved ProductOption decision. | private | 9 | customer_policy_revision_id → CustomerPolicyRevision; evidence_span_id → EvidenceSpan; owner_id → Account; product_option_id → ProductOption |
+| CustomerPolicyFact | One document-backed structured fact about a particular customer's issued policy revision. | private | 12 | customer_policy_revision_id → CustomerPolicyRevision; evidence_span_id → EvidenceSpan; owner_id → Account; person_id → Person; related_customer_policy_id → CustomerPolicy; supersedes_id → CustomerPolicyFact |
+| PolicyEvent | One sourced real-world event in the timeline of a customer policy. | private | 13 | authority_evidence_id → EvidenceSpan; customer_policy_id → CustomerPolicy; owner_id → Account; related_event_id → PolicyEvent; source_evidence_id → EvidenceSpan; source_message_id → Message; supersedes_event_id → PolicyEvent |
+| PolicyRule | One immutable, reviewed condition, benefit, restriction or calculation instruction from a public policy version. | public | 8 | policy_version_id → PolicyVersion; supersedes_id → PolicyRule |
+| PolicyRuleEvidence | One exact public source passage supporting, defining, restricting or contradicting a policy rule. | public | 6 | evidence_span_id → EvidenceSpan; policy_rule_id → PolicyRule |
+| PolicyRuleLink | A reviewed connection requiring two policy rules to be interpreted together. | public | 5 | from_policy_rule_id → PolicyRule; to_policy_rule_id → PolicyRule |
+| PolicyRuleTableCell | One original-backed result selected by the complete axes declared in a policy rule body. | public | 6 | evidence_span_id → EvidenceSpan; policy_rule_id → PolicyRule |
+| ProviderLocation | One exact public hospital or healthcare-facility branch identity used for network matching. | public | 11 | supersedes_id → ProviderLocation |
+| ProviderNetworkSnapshot | One dated, scoped insurer network source or directory query, including a zero-result or failed check. | public | 9 | insurer_id → Insurer; product_variant_id → ProductVariant; scope_evidence_id → EvidenceSpan; source_capture_id → SourceCapture |
+| ProviderNetworkEntry | One exact facility branch status printed in one immutable provider-network snapshot. | public | 9 | evidence_span_id → EvidenceSpan; provider_location_id → ProviderLocation; provider_network_snapshot_id → ProviderNetworkSnapshot |
+| Quote | One immutable, evidence-backed personal insurer quote for an exact customer profile and product selection. | private | 14 | owner_id → Account; product_variant_id → ProductVariant; profile_revision_id → CustomerProfileRevision; source_evidence_id → EvidenceSpan |
+| CorpusRevision | Immutable published knowledge manifest. | public | 8 | previous_id → CorpusRevision |
+| CorpusMember | Exact terms and rule revisions included in a corpus. | public | 6 | corpus_id → CorpusRevision; policy_rule_id → PolicyRule; terms_id → PolicyVersion |
+| CorpusPointer | Atomic current corpus selection for one publication channel. | public | 6 | corpus_id → CorpusRevision |
+| SearchChunk | Replaceable searchable derivative with exact original coverage. | mixed | 11 | corpus_id → CorpusRevision; document_id → DocumentVersion; owner_id → Account |
+| Artifact | Stable dependency identity for immutable inputs and outputs. | mixed | 8 | owner_id → Account |
+| Dependency | Input dependency used for replay and selective invalidation. | mixed | 8 | dependent_id → Artifact; input_id → Artifact; owner_id → Account |
+| Decision | Validated adviser outcome for exact inputs and evidence. | private | 15 | advice_request_id → AdviceRequest; conversation_id → Conversation; corpus_id → CorpusRevision; owner_id → Account; profile_revision_id → CustomerProfileRevision; supersedes_id → Decision; turn_id → Turn |
+| DecisionClaim | One independently supported statement or candidate disposition. | private | 11 | candidate_configuration_id → ProductVariant; decision_id → Decision; owner_id → Account |
+| ClaimCitation | Original support attached to one answer claim. | private | 8 | claim_id → DecisionClaim; owner_id → Account; policy_rule_id → PolicyRule; span_id → EvidenceSpan |
+| Calculation | One immutable deterministic calculation with exact inputs, operation order, assumptions and result. | private | 11 | advice_request_id → AdviceRequest; owner_id → Account |
+| Turn | Durable unit of customer work owned by a worker. | private | 15 | conversation_id → Conversation; input_message_id → Message; owner_id → Account; profile_revision_id → CustomerProfileRevision |
+| TurnEvent | Durable ordered stream event reused by reconnecting clients. | private | 8 | owner_id → Account; turn_id → Turn |
+| Outbox | Transactional dispatch/event publication awaiting delivery. | mixed | 12 | owner_id → Account |
+| ModelRoute | Exact immutable shared relay/model route configuration. | public | 8 | None |
+| ModelQualification | Evidence of actual schema and capability qualification. | public | 10 | route_id → ModelRoute |
+| ModelAttempt | Every provider call, failure and usage record. | mixed | 15 | owner_id → Account; processing_job_id → ProcessingJob; qualification_id → ModelQualification; turn_id → Turn |
+| ProcessingJob | Resumable original reading/extraction/review task. | mixed | 15 | document_id → DocumentVersion; owner_id → Account; parent_job_id → ProcessingJob; result_blob_id → OriginalFile |
+| ReviewRecord | Independent review and its bounded approval scope. | mixed | 10 | artifact_id → Artifact; owner_id → Account; reviewer_account_id → Account |
+| ConsentRecord | Specific customer authorization and revocation history. | private | 12 | owner_id → Account; person_id → Person; source_message_id → Message; source_span_id → EvidenceSpan |
+| DeletionRequest | Durable erasure workflow and approved scope. | private | 9 | owner_id → Account |
+| RetentionHold | Explicit approved exception to deletion; no invented retention period. | private | 9 | approved_by_id → Account; deletion_request_id → DeletionRequest; owner_id → Account |
+| AuditEvent | Minimal authorization and lifecycle audit without copied medical values. | mixed | 10 | actor_id → Account; owner_id → Account |
+| LegacyMapping | Lossless migration identity and unresolved semantic translations. | mixed | 12 | archive_blob_id → OriginalFile; owner_id → Account |
+| AuthGroup | Existing Django privilege group identity. | public | 2 | None |
+| AuthPermission | Django model permission identity preserved semantically. | public | 4 | content_type_id → ContentType |
+| AccountGroup | Explicit account group membership. | private | 3 | group_id → AuthGroup; user_id → Account |
+| AccountPermission | Explicit account permission grant. | private | 3 | permission_id → AuthPermission; user_id → Account |
+| GroupPermission | Permission granted to a group. | public | 3 | group_id → AuthGroup; permission_id → AuthPermission |
+| AuthSession | Existing signed Django session retained with compatible settings. | framework_private | 3 | None |
+| ContentType | Native Django model content-type identity. | framework_private | 3 | None |
+| AdminLogEntry | Preserved Django administration audit, with privacy review of free text. | framework_private | 8 | content_type_id → ContentType; user_id → Account |
+| ContentCopy | Inventory of where a private assertion payload was copied or transformed. | private | 9 | destination_artifact_id → Artifact; owner_id → Account; source_artifact_id → Artifact |
+| TermsComponent | An original-backed component slot in a specific public combi edition; component legal identity and benefits remain separate. | public | 13 | component_product_id → Product; component_terms_id → PolicyVersion; selection_policy_rule_id → PolicyRule; source_span_id → EvidenceSpan; supersedes_id → TermsComponent; wrapper_terms_id → PolicyVersion |
+| ContractBundle | Stable owned identity for a package of component policies, without inventing a third policy contract or sole issuer. | private | 6 | current_revision_id → ContractBundleRevision; owner_id → Account |
+| ContractBundleRevision | Immutable owner-scoped interpretation of a package version, component membership and status, retained when customer facts or sources change. | private | 13 | bundle_id → ContractBundle; owner_id → Account; previous_id → ContractBundleRevision; source_span_id → EvidenceSpan; wrapper_configuration_id → ProductVariant |
+| ContractBundleMember | Maps one public package slot to one actual same-owner policy revision, preserving component-specific insured membership and explicit missing or unselected slots. | private | 9 | bundle_revision_id → ContractBundleRevision; customer_policy_revision_id → CustomerPolicyRevision; owner_id → Account; source_fact_id → CustomerFact; source_span_id → EvidenceSpan; terms_component_id → TermsComponent |

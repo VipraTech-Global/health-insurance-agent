@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T12:04:14.832547+00:00",
+  "associations": [],
+  "byte_count": 689065,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/ASP-N%20Rate%20Chart.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "national",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 689,
+  "linking_url": "https://nationalinsurance.nic.co.in/products/all-products/health/arogya-sanjeevani-policy-national",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92004,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32001,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.92004
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.32001,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.92004
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "ab07b07c30b417fc03ea2de36de1919cfa4f5a17b483db4dab5df06ba45f3d67",
+  "status": "acquired",
+  "url": "https://nationalinsurance.nic.co.in/sites/default/files/2026-04/ASP-N%20Rate%20Chart.pdf"
+}

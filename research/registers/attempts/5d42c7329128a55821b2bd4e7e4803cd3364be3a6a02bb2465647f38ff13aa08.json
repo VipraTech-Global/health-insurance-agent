@@ -1,0 +1,81 @@
+{
+  "acquired_at": "2026-09-10T12:00:50.309177+00:00",
+  "associations": [],
+  "byte_count": 167674,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.adityabirlacapital.com/healthinsurance/assets/pdf/active-one/VYTL/product-information/customer-information-sheet.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "aditya-birla",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 487,
+  "linking_url": "https://www.adityabirlacapital.com/healthinsurance/activ-one?ActivOneVytl=activ-one-vytl&utm_source=website&utm_medium=masthead&utm_campaign=website_masthead",
+  "page_count": 7,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "e42b2df15861efea9ef62a39d6f3504b4d69ed44986eee050813936229791a45",
+  "status": "acquired",
+  "url": "https://www.adityabirlacapital.com/healthinsurance/assets/pdf/active-one/VYTL/product-information/customer-information-sheet.pdf"
+}

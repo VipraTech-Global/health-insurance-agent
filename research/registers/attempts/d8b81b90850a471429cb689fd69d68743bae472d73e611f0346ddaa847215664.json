@@ -1,0 +1,89 @@
+{
+  "acquired_at": "2026-09-10T11:52:35.538853+00:00",
+  "associations": [],
+  "byte_count": 5476686,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520-%2520Marvel%2520-%2520Brochure_1.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "galaxy",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 4524,
+  "linking_url": "https://www.galaxyhealth.com/",
+  "page_count": 8,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.94501
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.94501
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.94501
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.94501
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.94501
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.94501
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.94501
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.276,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 420.94501
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "c1fd1cce55ef0a7f2a061fea0522ce2d0d5a3094704a06c0f9fb4f0b351ce88f",
+  "status": "acquired",
+  "url": "https://www.galaxyhealth.com/assets/preloaded/Galaxy%2520-%2520Marvel%2520-%2520Brochure_1.pdf"
+}

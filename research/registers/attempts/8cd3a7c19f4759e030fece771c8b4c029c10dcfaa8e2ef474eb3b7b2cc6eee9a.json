@@ -1,0 +1,21 @@
+{
+  "acquired_at": "2026-09-10T11:58:32.693411+00:00",
+  "associations": [],
+  "component_version": "research-acquisition/1",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "format_version": 1,
+  "insurer_id": "sbi-general",
+  "issues": [
+    "host_not_approved"
+  ],
+  "language": "unknown",
+  "latency_ms": 1,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": null,
+  "status": "failed",
+  "url": "http://content.sbigeneral.in/uploads/15_B_Annexure_B_Stewardship_Policy_4_0_03e5ae63f2_0398af9696.pdf"
+}

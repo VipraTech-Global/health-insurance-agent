@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T12:00:42.249546+00:00",
+  "associations": [],
+  "byte_count": 409544,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/senior-citizen-mediclaim-policy/Senior%20Citizen%20Mediclaim%20Policy%20Premium%20Chart.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 5526,
+  "linking_url": "https://www.newindia.co.in/health-insurance/senior-citizen-mediclaim-policy",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "785b97ef841ad495675f4cd06bb9ce703505f415c5becdc105f33a7a4b18d28f",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/senior-citizen-mediclaim-policy/Senior Citizen Mediclaim Policy Premium Chart.pdf"
+}

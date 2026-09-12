@@ -1,0 +1,33 @@
+{
+  "acquired_at": "2026-09-10T11:39:46.463070+00:00",
+  "associations": [],
+  "byte_count": 106428,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://customer-portal-assets.hdfcergo.com/assets/docs/default-source/public-disclosure/ayushtreatments-914243884484.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "hdfc-ergo",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 118,
+  "linking_url": "https://www.hdfcergo.com/download/policy-wordings/health",
+  "page_count": 1,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "e926757052ea2f6fb71989f10eca64bcbc510050e356ea5f5b41903bc7992f39",
+  "status": "acquired",
+  "url": "https://customer-portal-assets.hdfcergo.com/assets/docs/default-source/public-disclosure/ayushtreatments-914243884484.pdf"
+}

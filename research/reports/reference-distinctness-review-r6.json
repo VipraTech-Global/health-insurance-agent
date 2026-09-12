@@ -1,0 +1,2543 @@
+{
+  "format_version": 1,
+  "review_kind": "Complete-reference semantic distinctness recheck and authorized r5 copyedit",
+  "source": "research/reference/assessments-200-r5.jsonl",
+  "source_sha256": "0d9d158b5c3cfdd939d804db8b961cc230716426c0fbb1e9b703252b7178ecf5",
+  "status": "Known repeated groups and near-neighbour scoring gaps resolved at authored reference level; canonical arithmetic records await the parent pass",
+  "review_method": {
+    "previous_all_200_review": "research/reports/reference-distinctness-final-r5.json",
+    "previous_review_sha256": "aa8e1f6ffed025341b5dc93419bb1815db3468c07efce48e20735d38cf2be4d9",
+    "reference_cases": 200,
+    "changed_cases_rechecked": 18,
+    "unchanged_cases_matching_prior_semantic_hash": 182,
+    "unchanged_lines_matching_r4_bytes": 182,
+    "hash_encoding": "SHA256 of json.dumps(case, sort_keys=True, ensure_ascii=False)",
+    "global_comparison": "All 200 decision focuses and prior compound/collision findings compared with the current 18 revisions; semantic decision comparison, not string uniqueness."
+  },
+  "copyedit": {
+    "cases_edited": [
+      "ref-01-01",
+      "ref-02-07",
+      "ref-04-04",
+      "ref-04-08",
+      "ref-05-08",
+      "ref-06-04",
+      "ref-06-06",
+      "ref-07-10",
+      "ref-09-04",
+      "ref-13-07",
+      "ref-15-01",
+      "ref-16-03",
+      "ref-16-04",
+      "ref-17-04",
+      "ref-17-07",
+      "ref-18-06",
+      "ref-19-06",
+      "ref-19-07"
+    ],
+    "eleven_replaced_information_maps": [
+      "ref-01-01",
+      "ref-05-08",
+      "ref-02-07",
+      "ref-16-03",
+      "ref-17-07",
+      "ref-19-06",
+      "ref-04-04",
+      "ref-16-04",
+      "ref-06-04",
+      "ref-09-04",
+      "ref-19-07"
+    ],
+    "seven_scoring_only_cases": [
+      "ref-04-08",
+      "ref-17-04",
+      "ref-06-06",
+      "ref-18-06",
+      "ref-07-10",
+      "ref-13-07",
+      "ref-15-01"
+    ],
+    "changes": "Clean English in facts, conversation, answers, criteria, operations, gaps and repeated wrappers. Current information maps and calculation explanations replace stale versions in all 11 new decision tests. Evidence passages, evidence/history hashes and calculations were protected during editing; other 182 case lines were preserved.",
+    "authorized_fixture_refinement": "ref-17-04 now explicitly stipulates an accepted existing contract and restricted-network selection. Parent authorized this clarification. Only the stale missing-acceptance gap was removed; exact rider terms and exceptions remain missing.",
+    "air_cost_wording": "ref-17-07 preserves quoted cost 120000 and ceiling 100000. A calculable ceiling does not mean the cost fits it or that the preferred route qualifies."
+  },
+  "resolved_groups": [
+    {
+      "group_id": "D01",
+      "case_ids": [
+        "ref-05-08",
+        "ref-10-01"
+      ],
+      "status": "resolved_at_authored_decision_test_level",
+      "current_distinction": "05-08 now evaluates the inclusive BMI 35 obesity exception conjunction. 10-01 retains recurring OPD medicine exclusion and expenditure. Annualizing medicine spend cannot pass the obesity case."
+    },
+    {
+      "group_id": "D02",
+      "case_ids": [
+        "ref-08-01",
+        "ref-19-06"
+      ],
+      "status": "resolved_at_authored_decision_test_level",
+      "current_distinction": "19-06 now stipulates the maternity wait is met and tests spouse death against survivor continuation and the both-spouse condition. 08-01 retains a plainly unmet fresh-purchase maternity wait."
+    },
+    {
+      "group_id": "D03",
+      "case_ids": [
+        "ref-02-07",
+        "ref-18-01"
+      ],
+      "status": "resolved_at_authored_decision_test_level",
+      "current_distinction": "02-07 now compares three complete hypothetical quotes, marginal premium and total split cost while preserving different cover pools. 18-01 still cannot derive family pricing from a solo public example."
+    },
+    {
+      "group_id": "D04",
+      "case_ids": [
+        "ref-16-03",
+        "ref-18-09"
+      ],
+      "status": "resolved_at_authored_decision_test_level",
+      "current_distinction": "16-03 preserves a historical pre-move treatment event and its contract. 18-09 corrects current residence and invalidates current quote pricing. A blanket latest-address replacement fails the historical case."
+    },
+    {
+      "group_id": "D05",
+      "case_ids": [
+        "ref-17-01",
+        "ref-17-07"
+      ],
+      "status": "resolved_at_authored_decision_test_level",
+      "current_distinction": "17-07 now tests licensed air transport, medical origin/destination and benefit ceiling. 17-01 retains unresolved hospital branch identity and network scope."
+    },
+    {
+      "group_id": "D06",
+      "case_ids": [
+        "ref-01-01",
+        "ref-20-01"
+      ],
+      "status": "resolved_at_authored_decision_test_level",
+      "current_distinction": "01-01 now tests new-issue free-look timing from receipt and unknown refund deductions. 20-01 preserves the original Kota first-policy conversation and insured/budget clarification."
+    },
+    {
+      "group_id": "N01",
+      "case_ids": [
+        "ref-01-02",
+        "ref-04-04"
+      ],
+      "status": "resolved_at_authored_decision_test_level",
+      "current_distinction": "04-04 adds a reported per-claim cap on the co-pay itself, changing the conditional share from 30000 to 10000 and reversing cash feasibility. 01-02 retains an uncapped premium-versus-cash scenario. Original cap authority remains unresolved."
+    },
+    {
+      "group_id": "N02",
+      "case_ids": [
+        "ref-03-03",
+        "ref-16-04"
+      ],
+      "status": "resolved_at_authored_decision_test_level",
+      "current_distinction": "16-04 stipulates accepted spouse addition but tests a separate one-year wellness clock. 03-03 retains unaccepted midterm adoption and member-specific credit. Acceptance alone cannot pass the wellness case."
+    },
+    {
+      "group_id": "N03",
+      "case_ids": [
+        "ref-05-10",
+        "ref-06-04"
+      ],
+      "status": "resolved_at_authored_decision_test_level",
+      "current_distinction": "06-04 supplies a later bounded pathology finding and named prior unsupported cancer conclusion to retract while retaining admission history. 05-10 retains an abnormal test with pending diagnosis."
+    },
+    {
+      "group_id": "N04",
+      "case_ids": [
+        "ref-06-10",
+        "ref-09-04"
+      ],
+      "status": "resolved_at_authored_decision_test_level",
+      "current_distinction": "09-04 now compares actual PRP injection with explicit exclusion and a differently scoped hematopoietic table entry. 06-10 retains recipient-linked donor surgery and excluded cost categories."
+    },
+    {
+      "group_id": "N05",
+      "case_ids": [
+        "ref-04-08",
+        "ref-17-04"
+      ],
+      "status": "resolved_at_authored_decision_test_level",
+      "current_distinction": "04-08 scores purchase suitability against a fixed hospital requirement. 17-04 explicitly stipulates an existing accepted restricted option and scores entitlement against a conflicting broad network. Changing a purchase preference cannot settle the issued contract scope."
+    },
+    {
+      "group_id": "N06",
+      "case_ids": [
+        "ref-13-07",
+        "ref-15-01",
+        "ref-19-07"
+      ],
+      "status": "resolved_at_authored_decision_test_level",
+      "current_distinction": "13-07 scores pending group migration; 15-01 scores receiving-insurer acceptance of exact retail credits; 19-07 supplies an accepted person-specific group extension that covers the surgery date. A generic pending-means-no-cover answer fails the extension case."
+    },
+    {
+      "group_id": "N07",
+      "case_ids": [
+        "ref-06-06",
+        "ref-18-06",
+        "ref-07-10"
+      ],
+      "status": "resolved_at_authored_decision_test_level",
+      "current_distinction": "06-06 scores an unaccepted recurrence restriction and specific protection gap. 07-10 scores a reported issued schedule conflict and lawful precedence. 18-06 explicitly scores owner isolation and forbids cross-owner retrieval or global publication of the private offer."
+    }
+  ],
+  "additional_new_neighbours_checked": [
+    {
+      "case_ids": [
+        "ref-17-07",
+        "ref-09-10"
+      ],
+      "distinction": "Air destination condition versus road-ambulance grant/excluded-items and daycare linkage conflict."
+    },
+    {
+      "case_ids": [
+        "ref-16-04",
+        "ref-08-08"
+      ],
+      "distinction": "Accepted midterm wellness activation versus maternity waiting-credit history."
+    },
+    {
+      "case_ids": [
+        "ref-19-06",
+        "ref-08-08"
+      ],
+      "distinction": "Spouse death with survivor continuation versus new spouse membership."
+    },
+    {
+      "case_ids": [
+        "ref-06-04",
+        "ref-05-06"
+      ],
+      "distinction": "Later bounded correction retracts past unsupported advice versus a new post-proposal diagnosis disclosure."
+    },
+    {
+      "case_ids": [
+        "ref-09-04",
+        "ref-09-07"
+      ],
+      "distinction": "Known PRP identity and explicit exclusion versus uncertain unproven-treatment evidence."
+    },
+    {
+      "case_ids": [
+        "ref-19-07",
+        "ref-13-01"
+      ],
+      "distinction": "Accepted dated endorsement versus unresolved HR/certificate termination conflict."
+    },
+    {
+      "case_ids": [
+        "ref-02-07",
+        "ref-02-01"
+      ],
+      "distinction": "Marginal and total quote costs with different pools versus claim calculation across shared/individual SI."
+    },
+    {
+      "case_ids": [
+        "ref-04-04",
+        "ref-11-07"
+      ],
+      "distinction": "Cap on the co-pay itself versus voluntary co-pay with a premium discount."
+    }
+  ],
+  "case_review_ledger": [
+    {
+      "case_id": "ref-01-01",
+      "reviewed_decision_test": "Receipt-triggered free-look timing and conditional refund deductions, distinct from the original Kota insured/budget intake preserved in ref-20-01.",
+      "review_basis": "Current r5 changed facts, conversation, source scope and scoring rechecked",
+      "current_case_sha256": "81a5acff53ad271c2971d8d584822dc31d49ad02ef11918de4717176188756a9",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-01-02",
+      "reviewed_decision_test": "Premium budget versus compulsory co-pay and available cash",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "ba7544d27f2aff604e593305deb6b16271f1033710e8491f95ba46c7908695aa",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-01-03",
+      "reviewed_decision_test": "Immediate liquidity after first admission versus later reimbursement",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "96cfd176aa9816267e0154f29e2b99955f4e3c2748f0be83a79bc7378a07052a",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-01-04",
+      "reviewed_decision_test": "Mandatory doctor and branch plus cashless access",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "8c27a4a98b264dc9fa89d7720be2b51365d5e7ca92f8357196151818591f274f",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-01-05",
+      "reviewed_decision_test": "Same-admission recharge versus modern-treatment exclusion and higher SI",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "7ec0ba9558b89e4569ed73b9f59437629a0e085ea7097dada191a95c63a778d3",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-01-06",
+      "reviewed_decision_test": "Quarterly grace cover versus accelerated future premium debt",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "f6222e2911e3cd5dda0a240013d47019e6258412bf9dc8fa800fae85cdfe3133",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-01-07",
+      "reviewed_decision_test": "Room choice changes proportional deductions and cash feasibility",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "61cbbb774fe1987b1fbd4dbf8c182c1d72b440bbd6a6429943f5b48c489f29f8",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-01-08",
+      "reviewed_decision_test": "Future uncertain move cannot rewrite current residence pricing",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "b72eb03603a75b754dc4b362bb33c2a9228ed1195c99e895a529ad06611a4d8b",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-01-09",
+      "reviewed_decision_test": "Consumable option availability versus selected exclusion exception",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "b02dec01b2ca274aa3dea83f0c636c43dd1e4a008ccf077026ea66a3fca53a4c",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-01-10",
+      "reviewed_decision_test": "Unknown selected add-ons cannot establish required benefits",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "a827c33d4507050006798306d536317bf6cf819a11488949d28d10fed18cafc2",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-02-01",
+      "reviewed_decision_test": "Per-person versus family SI across two different members claims",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "7b0ff6a778aca41362a9e21f456f8bbf5fea81bac0a119f2ee9f58be1951e05a",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-02-02",
+      "reviewed_decision_test": "Parent relationship exclusion versus spouse/child floater and individual acceptance",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "f8e304bfe7bb4d353be6a1531bac9d6436ecc95f8c3e207d450e4a33680f8c0d",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-02-03",
+      "reviewed_decision_test": "Paid usage and distinct authorization reserve versus final settlement",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "5aa2f859857038dc2d2bfcad86912e7391399bf1a58bb7ecc52fe0254bdee605",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-02-04",
+      "reviewed_decision_test": "Spouse relationship does not imply requested insured membership",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "309fe20dd0209f04c1d36617f3d578dfc40773ed350417384fcaf331ac563174",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-02-05",
+      "reviewed_decision_test": "Unmarried partner versus legally wedded spouse eligibility",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "dc1fddf512f58acf45105a67961860bc0d35ddb22fb1ed48f6ca68af948d5f6f",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-02-06",
+      "reviewed_decision_test": "Recognized relationships versus maximum family configuration",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "90e1727eae4192f412ee786ea08b47f7641ff8cebbc203c4f06b1b1c8b5a78a3",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-02-07",
+      "reviewed_decision_test": "Compute marginal and total quote costs while preserving different risk pools; do not infer causal age loading or equivalent cover.",
+      "review_basis": "Current r5 changed facts, conversation, source scope and scoring rechecked",
+      "current_case_sha256": "202386aadb105e6a2ae64ca3b2393b7955f098506ff3c043d1140cff0cb5f9b6",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-02-08",
+      "reviewed_decision_test": "Fixed child disease cap versus larger shared family SI",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "8706390cfd33154b8f2d7c9b98860d7a77408b83dc9e9facfb71c45406ceb05b",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-02-09",
+      "reviewed_decision_test": "Separate member residence and two required branch observations",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "62e64c5146771eabd7af115e77bd0ede77c46f33ff7801bd5978a1a54fa5ddba",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-02-10",
+      "reviewed_decision_test": "Correct duplicate member across two proposed floaters",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "97807fd52d40d629603d8b3cab436b120114082c3ab6eabc4f555f2ac648c195",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-03-01",
+      "reviewed_decision_test": "Newborn age below three calendar months versus birth cover",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "262861602026061144be72b45248891f53fad276f8b53c455deedff2816a9866",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-03-02",
+      "reviewed_decision_test": "Age25 renewal split and bonus allocation versus simple age range",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "a134b15c9d91bf597841f3dd7ee61b40ee2aa1d6e420643dbe5906428d2ecc59",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-03-03",
+      "reviewed_decision_test": "Legal adoption event versus accepted midterm addition",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "7e22fcd9861c5285d7a7a3ab9d70b23c17f7bb5080858e04b91b65039c71ce75",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-03-04",
+      "reviewed_decision_test": "Earlier NICU dates versus later addition and maternal grant",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "4a6d2ed001204bc415a6d4ffc4c83848cb06c57d25e7c5cc9cc0b57f662f1c98",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-03-05",
+      "reviewed_decision_test": "Financial independence versus same-home dependency at renewal",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "4cf8ccd01e03a398fea427f505467691cbba3a4fdd9112ac2bf1e10ac2a46e03",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-03-06",
+      "reviewed_decision_test": "Student residence elsewhere versus financial dependency and network",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "19bd8c93f25f84c3ef7231ac8be1dc3bb52f48864cace9c79ac07efe719f2fdc",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-03-07",
+      "reviewed_decision_test": "Correct contradictory child count before applying unverified member cap",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "b5ea789ebb86a9a80e289482e73a0f7628389d600ad47f7db943a1bc9fffb53a",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-03-08",
+      "reviewed_decision_test": "New child membership versus parents completed waiting time",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "3982059ae5a8b2f0dedc6c7f175cb4d120f481553958f175e4e76c11b3091a0c",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-03-09",
+      "reviewed_decision_test": "Adult proposer versus child-only insured configuration availability",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "94b1b0316d7a760aad3e82b28713437117365f5e9178bfd6c55163d457837df6",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-03-10",
+      "reviewed_decision_test": "Marriage event versus actual dependency/termination provision",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "73bf668eecc0cadf26365711bbfe1b5b997402cbb16d4c80c345b453088eeae6",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-04-01",
+      "reviewed_decision_test": "Buyer age versus mother age and proposer versus insured age limits",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "445ec53f58101150c1af6b39868ce47ebd1932dd8c238f9850c1bcb83b818ec0",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-04-02",
+      "reviewed_decision_test": "Employer exit and diabetic parent acceptance plus room/cash requirement",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "7656e7059b0cdc21d3a49fa82f7e98f78f48b763ef95cffbf788385af770caee",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-04-03",
+      "reviewed_decision_test": "Completed-age birthday versus policy age reference event",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "d9915255a5861db3ebef14c69ea8d1f04a77105bc00ca024fe1131b628c96b8a",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-04-04",
+      "reviewed_decision_test": "Cap scope and unverified authority alter cost-share calculation; rate-times-bill alone is insufficient.",
+      "review_basis": "Current r5 changed facts, conversation, source scope and scoring rechecked",
+      "current_case_sha256": "22b15ba37860b8b832b23020e9cd061639b2f0a65060ac097845942499a5d94b",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-04-05",
+      "reviewed_decision_test": "Cardiac outpatient expenditure versus parent grouping and inpatient cover",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "f1abba8d8b7f514e6a424515edbb2701748b2472a61d34a5516c867fab0bc056",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-04-06",
+      "reviewed_decision_test": "Completed screening versus underwriting acceptance",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "78734914f061bf4e8f8583effa98f9bb6005265070f12f651fd5ece5bb0f8af0",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-04-07",
+      "reviewed_decision_test": "Closed new sales versus existing-holder renewal/withdrawal rights",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "4266ebbdc7bc8abafbd30e969c983c62223fa42e8ce3b84a1889749514f47bd1",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-04-08",
+      "reviewed_decision_test": "Outside restricted network may affect benefits differently from an excluded provider.",
+      "review_basis": "Current r5 changed facts, conversation, source scope and scoring rechecked",
+      "current_case_sha256": "9019b4b5a7805d233c5b88b70cb9fea8c9f9dd309412050280796fdfc301deb2",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-04-09",
+      "reviewed_decision_test": "Past self-funded treatment versus fresh/enhanced future protection",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "66e487412d0c7f3106c6e0595f6dd798cc8a8a9e28d5e07b39f5dcf8951aa8da",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-04-10",
+      "reviewed_decision_test": "Room proportional deductions versus voluntary deductible tradeoff",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "a7dadabe79618987a19539680f87cb1ba450e347e7598c0632030701f9f93c68",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-05-01",
+      "reviewed_decision_test": "Disclosed diabetes and unresolved original waiting-period conflict",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "2ff4619e94fe2240ba236ad386988e2bffff34c0c4d10436c31897f6385732dd",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-05-02",
+      "reviewed_decision_test": "Declaration versus eligibility waiting and loading outcomes",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "82f1725d1b8a4d1b1e1aab6b11109dc5e9c67d9a536a142251a7e5e4dd71dc9b",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-05-03",
+      "reviewed_decision_test": "Physician treatment without hospitalization can remain PED-relevant",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "60276b74dc267fb1d1114d1f8759d45c7839420ebf0e03c42fcc8041efe98c2b",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-05-04",
+      "reviewed_decision_test": "Minor-condition advice cannot override actual disclosure questions",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "fba6aabd5a68d14fb800899f861f9f1a15cc2dfefda1ac9e0d04cc9fcadaebd4",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-05-05",
+      "reviewed_decision_test": "Two conditions and mandatory branch must all satisfy candidate",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "518d5943fdb7b7728731f69dba68dbfc50eb5cf0657f842a733ba93a56d0506e",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-05-06",
+      "reviewed_decision_test": "Diagnosis after proposal before inception changes disclosure history",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "5b3d0395a51a6bd354a2a8105a0e7bdef19aca054860e02643c6f45c030e645a",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-05-07",
+      "reviewed_decision_test": "Unselected chronic option cannot shorten base waiting rule",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "4324bc45439feaa2d8cd86ac917fcdafde5537bfe910433ab902354e905759ed",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-05-08",
+      "reviewed_decision_test": "Evaluate inclusive BMI 35 and the uncontrolled-diabetes/failed-treatment conjunction; routine OPD medicine spending is not this test.",
+      "review_basis": "Current r5 changed facts, conversation, source scope and scoring rechecked",
+      "current_case_sha256": "fb6a1bd839c1d202826a2adcf77ff9f74f26ce695ccae0be3c44da6e6c787e52",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-05-09",
+      "reviewed_decision_test": "Personal disease co-pay proposal versus public zero-co-pay marketing",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "4b37432682bdb697992e939aad0331383838f3eef078ae0c9169ee52a53c08f5",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-05-10",
+      "reviewed_decision_test": "Abnormal test with pending diagnosis versus negative medical history",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "18299153bc73e5f6af75303dab3871af5a9f35b97eb0f73df4c9d9d74773785a",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-06-01",
+      "reviewed_decision_test": "Old cancer therapy and recent follow-up versus lookback and indemnity need",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "a873f3ad9f4f9690630c7ff50c493d2a2d547177ae8ee21aab3a85993912751a",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-06-02",
+      "reviewed_decision_test": "Cardiac-labeled fixed benefit versus prior-stent medical-expense need",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "b6d17c0854adcbed46eeb9c5ade6f95d37833c285b317fec04cc95784970b640",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-06-03",
+      "reviewed_decision_test": "Listed haemodialysis versus facility setting and established kidney disease",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "2cccfdfa9142b13650c7227827a5570e58dc8ce77d1b0f7d39970559f2ca963a",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-06-04",
+      "reviewed_decision_test": "A later source correction changes a named prior conclusion without erasing historically true hospitalization or exceeding the report scope.",
+      "review_basis": "Current r5 changed facts, conversation, source scope and scoring rechecked",
+      "current_case_sha256": "da8679b82c665fafd722a9363bfd1336f1e558f835ed053a422e7b1f46360330",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-06-05",
+      "reviewed_decision_test": "Two conditions and existing cover versus enhanced layer acceptance",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "e0c09dd3039bc1de0054a023d3e8b38dbfb19c7e017c26dc6be0903844ee2823",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-06-06",
+      "reviewed_decision_test": "A restricted offer is neither complete cancer cover nor necessarily no cover at all.",
+      "review_basis": "Current r5 changed facts, conversation, source scope and scoring rechecked",
+      "current_case_sha256": "c6d7ccbb661fc55a5c574e910833e55d848a08daff9e2cc7bca35e85fd16c813",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-06-07",
+      "reviewed_decision_test": "Lifetime proposal question differs from PED lookback window",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "462a32cb0ee2b1235d07c9f52caa51f77fc934a8dbd69c85b758f7a134f947be",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-06-08",
+      "reviewed_decision_test": "Pending biopsy timing cannot justify concealment or rush-to-cover promise",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "9f15af88d47e74909a52ad5381548fc3c64b2cddff3840aab69850796ab6c64f",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-06-09",
+      "reviewed_decision_test": "Paid prior claim alone versus renewal refusal or personal loading",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "93edf0ea208d2a01986c45fcc7e3fd8fee4614384085c9e13ff3283c55bff2b1",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-06-10",
+      "reviewed_decision_test": "Recipient-linked donor surgery versus screening/complication exclusion",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "e9e186e187b143a823bfe9b78bf4b50403aaf3cc50f34eca9db6f512253a90fd",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-07-01",
+      "reviewed_decision_test": "Mental-health offering duty versus actual inpatient terms and substance scope",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "311492fbe417181d9fad43b188ea0e8b542d1176d1c4616d1cd4f5726951f876",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-07-02",
+      "reviewed_decision_test": "Disability offering duty versus individual acceptance access and affordability",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "8f17f55ec0f468542be13799346bbf980951eb59c2fac14f7290abe56a40c06b",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-07-03",
+      "reviewed_decision_test": "Internal congenital condition-specific wait versus PED and permanent exclusion",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "f0d0046b7093b4f3ea4c43900308d8269d4a068434fee634151b2b31c280b558",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-07-04",
+      "reviewed_decision_test": "HIV medical-expense requirement versus fixed diagnosis-benefit label",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "55892b57314e342cd7030f70a5edc8935ed30dd2f531a198d1d0da04fa4118e8",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-07-05",
+      "reviewed_decision_test": "Disability/diabetes acceptance plus actual wheelchair and network access",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "88f9b03b1329b79a33e41bded4001708d794723505bb7fdaddc87d395ef035d4",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-07-06",
+      "reviewed_decision_test": "Outpatient counselling versus generic inpatient mental-health statement",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "3c2bfa0c44d3a2a7effed4f93353d7968845e56cbc2504258169e1442e29c963",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-07-07",
+      "reviewed_decision_test": "Reported external-congenital exclusion versus unverified optional exception",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "5e517db1061e900c9d1a3ca994101faa3a261e6e8883e92cbc7535acf4d8bb81",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-07-08",
+      "reviewed_decision_test": "Two mental-care episodes differ by substance cause",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "7e96ff5e548f741814ed60861b1f5f96f031fd90589de823e1b1e93f9ec5643f",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-07-09",
+      "reviewed_decision_test": "Special-category label and larger SI versus actual conditional limits",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "4c1a394b96cba70cd03da40f94273feb8c80a31edb6aec872046cc4a8467ba99",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-07-10",
+      "reviewed_decision_test": "Retain both contradictory assertions and block unsupported priority decisions.",
+      "review_basis": "Current r5 changed facts, conversation, source scope and scoring rechecked",
+      "current_case_sha256": "c49d5f14eed14bef70007b30a14432c3d65e168d884393065578166dcc7a3bd8",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-08-01",
+      "reviewed_decision_test": "Fresh maternity policy cannot meet12month wait for near delivery",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "43c1ef1bf8e957e0a35788d4d5d5403200d59d80f7d1e2510c2d168ef200119b",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-08-02",
+      "reviewed_decision_test": "Future delivery duration versus both-spouse/lifetime conditions and alternative product exclusion",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "611602b6ffd7955c59c7446ba72becba0fe95662cae250510a9b568e794b21fd",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-08-03",
+      "reviewed_decision_test": "Separate normal and caesarean limits cannot be added",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "65399f688d8e97cb605a0a60e5bc946f00585343ebe80e44dd13dcb50b5d94fa",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-08-04",
+      "reviewed_decision_test": "Maternity label versus explicit IVF/infertility exclusion",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "e46bf8b23b88836c9520142041d111852f99146ff2f4b7c7e3b4e91a6076668c",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-08-05",
+      "reviewed_decision_test": "Mother delivery and newborn NICU are distinct people and grants",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "dd1d56fb9b779c518f1b8481cc37d0fa82fd81108ec801f0b2ec10595deb2979",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-08-06",
+      "reviewed_decision_test": "Estimated delivery either side of anniversary versus actual event",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "f9c0c5ecf1c9abf7d33106fe5727d804a72fc2c7910a5a36296a41c1d6044a01",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-08-07",
+      "reviewed_decision_test": "Lifetime deliveries differ from paid claims or number of children",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "2f7690322895d5e4a0f49f171bb9a2242d996d201ec838e8a14b77b590ff4846",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-08-08",
+      "reviewed_decision_test": "New spouse addition and waiting credit versus old spouse history",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "3ff316dcf197305634c86dac3b7db9e421bb2324cfe3265f2bd26bbda9fbde2a",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-08-09",
+      "reviewed_decision_test": "Ectopic exception removes one maternity exclusion only",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "e95db736ed531e3c1727edbc377a6734a4925f7e58dab9ec58c9e88eb0ed4f4e",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-08-10",
+      "reviewed_decision_test": "Unpriced/unselected maternity option versus finite budget headroom",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "4e0ae2f8f1333afbb7c446718e129838dd4407457419521f17e1546d720a6303",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-09-01",
+      "reviewed_decision_test": "Known failed own-theatre condition despite listed four-hour cataract",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "e8f737fea7883a046322fc53175e6d723c61abffa740eadd2d4b31b7593fedcb",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-09-02",
+      "reviewed_decision_test": "Modern procedure cap differs by insurer and correct table selector",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "cc17c68f88bb8c4200ae92a7662524af3fd6bd20af62eab63c1cdd5a7430dd82",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-09-03",
+      "reviewed_decision_test": "AYUSH inpatient grant versus recognized eligible facility",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "772cca4fcd01d07d908fa101d4e8f48ab89939e8c3d8f63a4b6809d712824f1d",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-09-04",
+      "reviewed_decision_test": "Resolve precise procedure identity against an explicit exclusion and a differently scoped positive table entry.",
+      "review_basis": "Current r5 changed facts, conversation, source scope and scoring rechecked",
+      "current_case_sha256": "33f0914e31046f2307775d07117fa5e431aa2537f55a7e3a8139512bfe7a4b4c",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-09-05",
+      "reviewed_decision_test": "Six-hour duration versus full daycare definition and procedure membership",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "81e7d5ad38fefb214754e5da0e78ff00ddb092322e0bf2ed757eb6f3f4eb7809",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-09-06",
+      "reviewed_decision_test": "Oral chemotherapy setting versus starred grant and hospitalization threshold",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "f6d17e76cbb0a46de3d0cb766be3ffeba690bbf0f4f1e7b177d78f6a5a023578",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-09-07",
+      "reviewed_decision_test": "Hospital marketing versus evidence of unproven treatment",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "f850395e66ffa4e036868d6755b503a985a5c19af4d9a8013e74630588458fef",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-09-08",
+      "reviewed_decision_test": "Stent cost depends on dated external DPCO/NPPA original",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "8ee7ec2489c12f3abde06663722161492c53d469a45a56aa6f2e333ef7c4c632",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-09-09",
+      "reviewed_decision_test": "Medical necessity does not establish eligible clinic setting",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "ada3a9ed323c17fa787ced8427c738049b213a40d0417b465308630c3526ae6b",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-09-10",
+      "reviewed_decision_test": "Road-ambulance grant versus excluded-items annex and daycare linkage",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "241eb41f5f82b294bdf86d4e4cd73f1c37b40c3e95feda9f9466bef6dff1dbbb",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-10-01",
+      "reviewed_decision_test": "Standalone recurring prescription expenditure versus OPD exclusion",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "05da1e208c42e5fdad112b50abf421b7266afbf1dba41bbabcc7a337165bab31",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-10-02",
+      "reviewed_decision_test": "Related pre-admission X-ray versus unrelated thyroid test in same window",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "4569bd41b49be41cc7df1a31dd3917e9befcc61c2927ecde2ed7aca283fea41d",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-10-03",
+      "reviewed_decision_test": "Elapsed60day boundary versus unresolved inclusive convention",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "ef35f44cf841b6955b9218253b04b722290dbf09b1c66f7134f735f64667bdb4",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-10-04",
+      "reviewed_decision_test": "No available bed does not override explicit domiciliary exclusion",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "776bce3c9ab05006c1b5065cc5a5a7f067264429ff3956158eed4d2749b45fb6",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-10-05",
+      "reviewed_decision_test": "Convenience is not a supported domiciliary trigger",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "cf81e4a8d23bc7755a9fd750bfccbebf1520d76f55b4e7e6a29008ef1e5b8dfe",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-10-06",
+      "reviewed_decision_test": "OPD cap balance versus network condition",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "b3e69bd9e6b77f8f4fe00c8e1da212c71e8b21deb005b7e0410bcbd7fd68137e",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-10-07",
+      "reviewed_decision_test": "Accepted main admission versus related physiotherapy setting/conditions",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "a3636568f9cbf07934e2e666d2df2dbb630a93862d50f860de9a47795fd2909f",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-10-08",
+      "reviewed_decision_test": "Doctor-chat service does not prescribe or reimburse medicines",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "e43f458018b03b9dcf83e5b40c6271811337c2a29b890bc0b029047b8b8dd18e",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-10-09",
+      "reviewed_decision_test": "Walk-in service versus required app booking and exceptions",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "f1ff786352caedf4fa0d6d3054d52e9e4f6e819a42bb2f13f2b402af123f9d7e",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-10-10",
+      "reviewed_decision_test": "Nursing wound care versus custodial attendance and package supplies",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "04f428687ed1c1348ae7933fff603627c34ef9dffcb275a41289601640d97219",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-11-01",
+      "reviewed_decision_test": "Room cap and proportional surgeon deduction with medicine exception then co-pay",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "ed27edf7b644995aeee3c165ec101af624e8689a8d00ea7d419ff3384f77d525",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-11-02",
+      "reviewed_decision_test": "Unknown deductible/co-pay operation order changes payment",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "92664d81ac8fa8c9dbbba826d397616f739d5a10e13b148cca2c2e231918f9e0",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-11-03",
+      "reviewed_decision_test": "Excluded versus package-subsumed consumable rows and unselected option",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "d05bed68311dab07fe2bf6eac1811755801110c33b88fef1fa4d5a9367d01b73",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-11-04",
+      "reviewed_decision_test": "Per-eye cataract cap then co-pay with waits retained",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "d641828997bca81c38fdba9e4533597ceaa8939ce4b549161149ce6fb6162176",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-11-05",
+      "reviewed_decision_test": "Accelerated premium recovery changes remittance not claim admissibility",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "a5489b15e4e5f112f4816315d965bcd5db5b4efcb2ebea34e2ec6389d8656992",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-11-06",
+      "reviewed_decision_test": "ICU daily cap differs from room cap despite medical necessity",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "f6b81265eb81760703e1b813f80864ff72e3dd1ac5650e3b46be1e5d0e94c3ee",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-11-07",
+      "reviewed_decision_test": "Voluntary co-pay cost share versus stated premium discount",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "aaa18f3c45b9b8078adb2513c1652cccca53e57738c50f8854708b2d1db306b1",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-11-08",
+      "reviewed_decision_test": "Excluded amount removed before admissible-base co-pay",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "c18fbc624cf679ca2719d8937c393bef7beb327f52906871b95f30e8e5f827a3",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-11-09",
+      "reviewed_decision_test": "Room percentage uses base SI rather than bonus-enhanced display",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "1cf1481d439aa8f7e50320345b60df69f305211438d334bf167e78f91afef3e6",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-11-10",
+      "reviewed_decision_test": "Inclusive procedure cap subsumes separately itemized implant",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "6e0ddf6a9aca496e584f496d9a7dde765ca893004fbe6a451be776469e0d1c14",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-12-01",
+      "reviewed_decision_test": "Ordinary same-admission recharge versus exhaustion expiry conflict",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "537ac5e69c0939b5cbe51019f74b665e94a9db590ff92e4a5b940b29c27336e9",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-12-02",
+      "reviewed_decision_test": "Relapse elapsed time does not establish chosen restoration definition",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "38201a028af96043a5bb1026d3c7230f6c83d1842ee4ec4a88bba76062456c5b",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-12-03",
+      "reviewed_decision_test": "Unclaimed spouse shares depleted family balance",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "5d7e0a70bab61043adfbef608a8c195a1059bb8d6e39716c8d8f8657fd5d6445",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-12-04",
+      "reviewed_decision_test": "Nearly exhausted is not exhausted at one-rupee boundary",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "654bab5b451b6bd02e343221b57128c6f5c62eff4d7fa5f2bbc09279b54be480",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-12-05",
+      "reviewed_decision_test": "Unlimited restoration frequency is not unlimited per-claim amount",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "56dc8d3adcb25df816d94d3385a1b4559c63fd04e1c822d685001453042d856e",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-12-06",
+      "reviewed_decision_test": "Late expiring-year claim withdraws bonus and insurer-specific notice cannot transfer",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "0e5657126cebf078892f340c08b1d268477b022106b7bb35f880a8c7e67ad153",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-12-07",
+      "reviewed_decision_test": "Unknown relatedness cannot be assumed unrelated for restoration",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "f2fce9e6453f672648b3984d1fe9480bf0efd83f72fa29b9f6399a7e4b354fab",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-12-08",
+      "reviewed_decision_test": "Cross-year ongoing admission cannot simply combine both pools",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "d0abb7c5b6e4a92c1846ce150b51221c07c5c2ea47b9ddd73b7ffd53b47ad32f",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-12-09",
+      "reviewed_decision_test": "Bonus ceiling remains percentage of base rather than displayed total",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "a4a0e16d841fc1101653df07fd2e88e8e3aa734a1718511c8593fd542b564d22",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-12-10",
+      "reviewed_decision_test": "Base restoration does not replenish separate exhausted annual cap",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "544ae126434fad3270d3203c034ea47ba15e15da3d45326529c6aa296f9a46b5",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-13-01",
+      "reviewed_decision_test": "HR termination date versus displayed member certificate expiry",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "fc168892b0a2964c2a847e0a5d85784a6a09f6f78fcffd046aee7473873ffe29",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-13-02",
+      "reviewed_decision_test": "New retail cover cannot immediately fill employer SI gap without its own conditions",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "e0d7960485d93f0649742e7668dcc16aeb4156961a4da9a29cf6096d556c75d6",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-13-03",
+      "reviewed_decision_test": "Speculative future removal cannot erase current dependant rights",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "8e84b665e733193975137ea8f6a35f5c6b2b713843b0c94f74dfc83e8f8742a3",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-13-04",
+      "reviewed_decision_test": "Choose primary insurer then independently coordinate remaining indemnity loss",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "c9bf34b46ed01c96998e350d0b9c7164f7baa68c836980dbcfe549551edb2cf0",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-13-05",
+      "reviewed_decision_test": "Keep existing employer maternity versus uncertain future retail benefits",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "7e2407576def7ed236da16ff998738abdb5edd728a41eea68b5877eea088a21f",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-13-06",
+      "reviewed_decision_test": "Member SI certificate cannot replace group master wording",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "b45334272acaa77dbed2392d6c36b63509e903fd981af2e796fb86eb5276c3b7",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-13-07",
+      "reviewed_decision_test": "Pending migration must not be presented as in-force replacement cover.",
+      "review_basis": "Current r5 changed facts, conversation, source scope and scoring rechecked",
+      "current_case_sha256": "1a87db4c27353195f5dacfcf8b69dec93e9f37db821d61fefe5bb6a669ed848f",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-13-08",
+      "reviewed_decision_test": "Employer SI below top-up threshold and post-exit cash funding",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "2eb66b1685babc8abe18d98f10163d22eae39d75fd0c898eb19cf9138b488f1f",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-13-09",
+      "reviewed_decision_test": "One insurers room deduction does not determine the second insurer liability",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "2ae7a356870a2dcdb5b50c0f88d472703fe374350f4a19b0ecbd66233d0ccebe",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-13-10",
+      "reviewed_decision_test": "Employee and retiring dependant have different histories and acceptance",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "421e18d9e68c65139f86e6c8d3bc898d6c58d7a6b38ce6a722b8823ad4250bc3",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-14-01",
+      "reviewed_decision_test": "Silver per-admission versus Gold annual aggregation",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "6bc78540396f1e4de186164c1c10761230ec9b522455012f6589dfe2cff17ef5",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-14-02",
+      "reviewed_decision_test": "Base-refused but independently Gold-admitted expense may count",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "0b4a3a1488e0102069972c5328cd8869ad772212861568c2cf2e51b6ee7d8e0d",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-14-03",
+      "reviewed_decision_test": "Employer SI below defined limit leaves gap on actual claim",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "0a7e3871a7a8d8f3f235e44e24e4aa1426af0e913d2d22ee7ce9f1a5de1dfb05",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-14-04",
+      "reviewed_decision_test": "Savings can fund threshold without proving acceptance or cashless",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "3bd1f4959eb15d662933ffdeb7a8c42fbc73695071d919c0fd8128eb7d49f911",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-14-05",
+      "reviewed_decision_test": "Top-up year differs from employer year",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "96ecdda03f6fabb86e3d2519a414cb484599a3f85ee60ebcd85d2142d86169a3",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-14-06",
+      "reviewed_decision_test": "Both spouses aggregate toward one family threshold",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "a371a4cfb8afefeda5f3354b36450992271efe4b53d7672e3d412a7eb97956c8",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-14-07",
+      "reviewed_decision_test": "Excluded and pre/post expense categories do not count toward hospitalization threshold",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "c11abaeddd89bd337fbf0dce717a1dd9e2bc22c19d68b91ad50f97c799695355",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-14-08",
+      "reviewed_decision_test": "Midterm deductible reduction differs from multi-year conversion pathway",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "ad52ff3062a45acf718992e5937279904cbb981df586f9d11c02b7e7e8025030",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-14-09",
+      "reviewed_decision_test": "Standalone excess cannot cause duplicate indemnity above loss",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "7b7c391dd5016d99a35658ebcf9cf890d104a98cd2cf5102c14e103d4f4c89a0",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-14-10",
+      "reviewed_decision_test": "Fresh top-up PED wait remains despite old base policy and crossed threshold",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "3a59ac911692ca3d7654bd664efd758c3c55633afe21a4dd20e8e4e009c3d9e5",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-15-01",
+      "reviewed_decision_test": "Carry credits by benefit and amount, not one blanket continuity flag.",
+      "review_basis": "Current r5 changed facts, conversation, source scope and scoring rechecked",
+      "current_case_sha256": "556a34229b43b142c0900c38ad62291c2f896991c2bcf58484d987af3f7d8640",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-15-02",
+      "reviewed_decision_test": "Same-insurer migration and35month versus36month underwriting boundary",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "530ed56a6877fe2dd9ee170778f4e22d8325e23443b2c8d38e405f022eac37d9",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-15-03",
+      "reviewed_decision_test": "Original/enhanced amounts carry separate moratorium clocks",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "377667b927b616ce2f73ca28e8e374f019d2693aece4c4f60cc5bfade0da5aa0",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-15-04",
+      "reviewed_decision_test": "Two portability response deadlines use different receipt anchors",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "e91eececb13a6c91d7f8315e5699684d00c296fc48eb4d8da0fd90ff013258e3",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-15-05",
+      "reviewed_decision_test": "Correction moves late premium outside annual grace boundary",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "597558df9b61121bdc3894ac66804d00fd657830e764691c4a88e03f7707f7f5",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-15-06",
+      "reviewed_decision_test": "Portable bonus credit versus additional uncredited new SI",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "b243a43cc3240a28d3e1fbabf9c75ca681abeb1bac96efef55c2cdb5dfc79fd2",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-15-07",
+      "reviewed_decision_test": "Accepted credited and uncredited layers have separate remaining waits",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "8c2da76df96bd4279d3e8be981112acfde946a90935f022667747d30baf898d2",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-15-08",
+      "reviewed_decision_test": "Ported continuity does not guarantee identical old/new exclusions",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "6c594f379a976be1097ddad0c3151311d7d59913e7d5789fbddcf2386101b960",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-15-09",
+      "reviewed_decision_test": "Pending old claim versus new underwriting period",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "b8c3eed86b2372ff9e3a7796124213d9f918db9bc22f2d69c96538d4d3f35c06",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-15-10",
+      "reviewed_decision_test": "Requested single-member port versus whole-policy original requirement",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "ea99508b51771fda34c6c3e7be3cbb7f9cfb0b088f962ada97d7d258a5aea146",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-16-01",
+      "reviewed_decision_test": "Annual renewal grace protects continuity without proving gap-period cover",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "ac67a35fa61d1c1427d69b0d409ca76af95389eee2c68b6319a89fb8a8d75558",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-16-02",
+      "reviewed_decision_test": "Quarterly grace with coverage versus conflicting table and precedence clause",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "36732a14d86614f582200f579b8a3e1dd8a7e56ef1b3f9e2ac3e16d2a02ff794",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-16-03",
+      "reviewed_decision_test": "Historical event applicability survives a later address correction; this is not merely invalidating a wrongly addressed current quote.",
+      "review_basis": "Current r5 changed facts, conversation, source scope and scoring rechecked",
+      "current_case_sha256": "032044e83ab6cea48c1722b0ea5b5e1e0d4ee64cd56c04b43faa940fc11b3025",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-16-04",
+      "reviewed_decision_test": "Accepted membership and a separate wellness activation clock have different outcomes.",
+      "review_basis": "Current r5 changed facts, conversation, source scope and scoring rechecked",
+      "current_case_sha256": "c1df07e01c1da856d150a46c2830e8b93fb7b398ddeac6d45e84190ec4a57c05",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-16-05",
+      "reviewed_decision_test": "Renewal birthday age versus quote-date premium band",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "aac6f772c4f71b375587b34dbaea8f81b9747b827c80f7302ee831be13169ba6",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-16-06",
+      "reviewed_decision_test": "Known withdrawal date and61day renewal versus replacement offer",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "e29648a0bbd593a479a8a13d9328540ec94cd0c8317cff00f8b10e9699869efe",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-16-07",
+      "reviewed_decision_test": "Requested increase underwriting differs from unchanged renewal right",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "deeb0641ecaf136cd9494e2cc95377542fbf767679f92c1560817b56183166d0",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-16-08",
+      "reviewed_decision_test": "Missing reminder/contact update is not payment or automatic cover",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "444ad14e1e72a2bc0f7c1f0c73c29fdaebad165b8205066e423520056df63f6a",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-16-09",
+      "reviewed_decision_test": "Optional cover removal invalidates its benefits without cancelling base",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "80f8926c5392ab75432dccff9215c6fabeae1e497e24918540b201bacd48b35a",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-16-10",
+      "reviewed_decision_test": "Same-UIN notice changes wait ceiling without resetting accrued continuity",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "6494e4292ce07494d33494e0fbe1963262316153ca8090f1f11dcb982142ebc5",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-17-01",
+      "reviewed_decision_test": "Hospital-name hit cannot verify exact policy/branch network",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "ab82b6ef58976ccb22730a050f67b42567fab0bc52799aa2103bdbc12d529eb0",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-17-02",
+      "reviewed_decision_test": "Old positive listing versus incomplete recent negative search",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "e979365cfc756e4982c7c2398342c788074b427d06fea647d450adcf26d1791d",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-17-03",
+      "reviewed_decision_test": "Excluded provider exception ends at stabilization boundary",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "3ec456e57679fca74eeef00193bbbbcaaf00122eeeaa60c6c5fd7b741036df23",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-17-04",
+      "reviewed_decision_test": "Network options can change payment independently of the base product.",
+      "review_basis": "Current r5 changed facts, conversation, source scope and scoring rechecked",
+      "current_case_sha256": "2cbd223d51bb2d391931e63dd39b38bb078e810abcf0049f385f844bd66bbacd",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-17-05",
+      "reviewed_decision_test": "Within-India territory does not prove Delhi provider/zone suitability",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "aac6e6c3b6385fb26698d1fa72d440d2d9b2a51b93a0cc39375ada75a3c1454b",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-17-06",
+      "reviewed_decision_test": "India treatment territory versus advertised overseas opinion",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "4ad5c82959cf56f09afd1bfb5f14385d12f8ba1eb58e9d749e6b8ef64d34288b",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-17-07",
+      "reviewed_decision_test": "A calculable benefit ceiling and a licensed provider cannot cure a failed clinical-destination or route condition.",
+      "review_basis": "Current r5 changed facts, conversation, source scope and scoring rechecked",
+      "current_case_sha256": "7489ec3ee7655425ddd65dd59f524eb830af1c07e9582985f0fcc699dfe61c14",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-17-08",
+      "reviewed_decision_test": "Later network change invalidates quote-time access assumption",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "0b5a5c5a2f1d40571e2729d418dc9d5d13d5d6b5d4ea538c9912e5885de33cc1",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-17-09",
+      "reviewed_decision_test": "Emergency nonnetwork care versus cashless denial and reimbursement/cash",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "f8310c7b23fd7129b5c26170ff7ab50da158d6c5443cbaee8fa631f21bedc79b",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-17-10",
+      "reviewed_decision_test": "Location-dependent cost share requires original trigger/base/stacking",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "a59a5815323a0f2f6f6c13b420c17303f01130b471452c2eff3266ad0cd81854",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-18-01",
+      "reviewed_decision_test": "Public solo table cannot establish personal family quote",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "989aa99a461d7f928782ab68d5e376bf26cc1b3290b880c3dbfb355536abb317",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-18-02",
+      "reviewed_decision_test": "Missing mandatory OPD option makes base quote insufficient",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "690c1f1a8bd7a0abf499e3f96e85444b4b5be4831501f89df62bef2120d0322c",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-18-03",
+      "reviewed_decision_test": "Loading on base alone differs from loading on add-on too",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "f4897a653cc04d6aa337406f111827bf65dfbb57be38ef807dd230e13cee0471",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-18-04",
+      "reviewed_decision_test": "Expired quote is historical rather than current budget evidence",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "73f4ab418ff32cff76ce2d9e14d605879213599456cb8f43f7378b78ef9f7587",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-18-05",
+      "reviewed_decision_test": "Actual installments annualized across different SI are not comparable annual prices",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "b30a517ea5223d00d97459a9eb9a7f9bc1c68e3cca57873051c1e50d908ceec2",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-18-06",
+      "reviewed_decision_test": "A personal offer restricts only its owner and scope, not the public product for everyone.",
+      "review_basis": "Current r5 changed facts, conversation, source scope and scoring rechecked",
+      "current_case_sha256": "fe1fb89cbdd36a3c050373ce295ecc1f04b5717f24c8fdae20af8304f2f45d88",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-18-07",
+      "reviewed_decision_test": "Unrequested deductible preselection cannot silently change preference or price",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "e78c07403c409bcb004c0c00454155356169cf491e2072c422275b8e50d7b65e",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-18-08",
+      "reviewed_decision_test": "Pending tests and blocked payment do not establish issued cover",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "b845d0b7146d658d4ef5f58a7c22e3b54d6f66ef395808c8c6fbb652f5bae6f3",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-18-09",
+      "reviewed_decision_test": "Correct wrong residence then invalidate owned quote and budget comparison",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "fd168482c32b53578819dd39b679d603e604b3c780325b32140cf52b0365a5ee",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-18-10",
+      "reviewed_decision_test": "Unknown included tax/fee components are not zero",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "887dca6385da38a4f0ca29f492ba12a27d5ef181271c152179e2aa4d414797a7",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-19-01",
+      "reviewed_decision_test": "Known imminent surgery cannot be assumed funded by new purchase",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "cc23b01d4c9a66770888c16c1cde75166f58a5e32924802b72b558b54472af3f",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-19-02",
+      "reviewed_decision_test": "Correct first-advice date across inception before claim classification",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "f1c52f6a8aef8b0d8ad673e2e18b5ba397d428b8861ebfc03fa250683adc02c2",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-19-03",
+      "reviewed_decision_test": "Pending enhanced layer cannot replace current rights for planned surgery",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "8195235b140b18bf284078080e718e8cf90547b448fe2e8fd495a1ecd64e6845",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-19-04",
+      "reviewed_decision_test": "Accident exception removes initial illness wait only",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "da07321d70aa6de2fbab69045ec1990a1480e6ea92ded206e4f31b35fa291734",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-19-05",
+      "reviewed_decision_test": "Earlier symptoms/advice do not vanish when admission follows inception",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "2d898e66d5535c62cf1d939747589090114e3657d69ee67869a03d3d2a987885",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-19-06",
+      "reviewed_decision_test": "Separate surviving-family continuation from a maternity-specific both-spouse condition after death; the 12-month wait is already satisfied.",
+      "review_basis": "Current r5 changed facts, conversation, source scope and scoring rechecked",
+      "current_case_sha256": "139cc5dc0927100ec357e8629c0818c0a3442c733d2a60070440a1f098c03f3b",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-19-07",
+      "reviewed_decision_test": "An explicit accepted continuation changes historical contract selection while a separate proposal remains pending.",
+      "review_basis": "Current r5 changed facts, conversation, source scope and scoring rechecked",
+      "current_case_sha256": "d986742241e877be1312eaf18d6c54e3cc397369ed86f45403fa92cbc6704eda",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-19-08",
+      "reviewed_decision_test": "Active12month policy still fails24month cataract wait",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "58514ddbab44e2ca632bcc564fd7568969ecbf9d1d16ce305581b666c23abffe",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-19-09",
+      "reviewed_decision_test": "Urgent cardiac treatment funding differs from future senior purchase",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "1b591b54f87f4bef3c436169152047a2f556a9fc423b1350c39384cc19219e7d",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-19-10",
+      "reviewed_decision_test": "Pending proposal does not replace accepted old contract rights",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "469da52ff481a89d92bc2d672b64be7412e4b17d96099a12cff0107174468ad7",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-20-01",
+      "reviewed_decision_test": "Clarify intended insured and annual budget without repeating known facts",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "4a9769d497a7a269f3dfb76e30af328342b00fc1f7ef98be13aca304f09ccfa6",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-20-02",
+      "reviewed_decision_test": "Correct age with historical assertion and dependent invalidation",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "a5f0ac2ecec3887b7644fcaf6fe688b7d18e14f96353a37fea46afd8e4910fec",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-20-03",
+      "reviewed_decision_test": "Buyer35 versus insured mother70 and separate residence/disclosures",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "89ac0eaa5de197c315beb6af295a986676a764812650268e45de6c57417474b0",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-20-04",
+      "reviewed_decision_test": "Reopen owned history and append new medical disclosure before rechecking",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "d6718e9872e1988560f6f18d09fd8b2bd3c8d711eab2a160db520ee5cec77b87",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-20-05",
+      "reviewed_decision_test": "New spouse conversation forbids unauthorized prior medical reuse",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "7fe20642d84dfb4e39d23701122b769d9ecd2dd025d038b9fbde52ce8c1dac88",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-20-06",
+      "reviewed_decision_test": "Roman-Hindi kinship and number interpretation with focused clarification",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "232009077698661520ac15060854a066f9d70cf5637ac0e62f93009c5135cc75",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-20-07",
+      "reviewed_decision_test": "Ambiguous cover amount is savings rather than insurance continuity",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "d0c62939abf0dbd37dca0c9de5ddf8756e9c7cfd03b8ad8507ceb9817599137b",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-20-08",
+      "reviewed_decision_test": "Father positive diabetes and buyer negative remain separate subjects",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "c56b495c1f786c089ebd45deb8a5573e9201c66a19d0333fed1b0bb0e8e220d1",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-20-09",
+      "reviewed_decision_test": "Concurrent age correction fences older running turn and reconnect",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "fbefbe166d6f4053eba928d51b76139468e54a6460e952c56ad0a6de308f8af1",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    },
+    {
+      "case_id": "ref-20-10",
+      "reviewed_decision_test": "Selective disclosure deletion includes copies and derived decisions before completion",
+      "review_basis": "Exact content hash matches prior all-200 semantic review; decision focus and cross-family neighbours included in this recheck",
+      "current_case_sha256": "f1ed1b503a1929b39653b4a165350aa2bdb8ac2550f93643d56b69e3e3be1dfe",
+      "distinctness_judgment": "No unresolved repeated decision test identified in the reviewed reference set"
+    }
+  ],
+  "compound_coverage": {
+    "minimum_four_within_each_family_identified": true,
+    "named_compound_cases": 81,
+    "family_reviews": [
+      {
+        "family": 1,
+        "available_cases": 10,
+        "substantive_compound_candidates_identified": 4,
+        "candidate_interactions": [
+          {
+            "case_id": "ref-01-02",
+            "interaction": "Premium affordability interacts with compulsory co-pay and accessible cash: an affordable premium still leaves the illustrated admission unfunded.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "ba7544d27f2aff604e593305deb6b16271f1033710e8491f95ba46c7908695aa"
+          },
+          {
+            "case_id": "ref-01-03",
+            "interaction": "Already-paid admission reduces current cash; second upfront demand occurs before reimbursement. Potential aggregate entitlement cannot fill the immediate liquidity gap.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "96cfd176aa9816267e0154f29e2b99955f4e3c2748f0be83a79bc7378a07052a"
+          },
+          {
+            "case_id": "ref-01-04",
+            "interaction": "A mandatory doctor/branch requirement interacts with cashless need and selected network scope; an insurer-name match cannot establish the required access.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "8c27a4a98b264dc9fa89d7720be2b51365d5e7ca92f8357196151818591f274f"
+          },
+          {
+            "case_id": "ref-01-05",
+            "interaction": "Same-admission recharge interacts with modern-treatment exclusion and exhaustion wording; the advertised extra cover cannot be added to first-claim SI.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "7ec0ba9558b89e4569ed73b9f59437629a0e085ea7097dada191a95c63a778d3"
+          }
+        ],
+        "minimum_four_interacting_candidates_identified": true,
+        "globally_distinct_minimum_certified": true,
+        "review_scope": "At least four substantively interacting authored cases in this family, with all current revisions considered against the complete reference set. This is reference-design coverage, not completed insurance advice or executed acceptance."
+      },
+      {
+        "family": 2,
+        "available_cases": 10,
+        "substantive_compound_candidates_identified": 4,
+        "candidate_interactions": [
+          {
+            "case_id": "ref-02-02",
+            "interaction": "Parent relationship restrictions interact with older-age medical acceptance: inability to include a parent on this floater changes grouping without establishing rejection by every insurer.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "f8e304bfe7bb4d353be6a1531bac9d6436ecc95f8c3e207d450e4a33680f8c0d"
+          },
+          {
+            "case_id": "ref-02-03",
+            "interaction": "Paid usage interacts with a distinct pending reservation and another procedure; claim identity is necessary to avoid double subtraction and distinguish settled from uncommitted balance.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "5aa2f859857038dc2d2bfcad86912e7391399bf1a58bb7ecc52fe0254bdee605"
+          },
+          {
+            "case_id": "ref-02-08",
+            "interaction": "Higher family SI interacts with a possible fixed child-treatment cap and replenishment rule; increasing SI may not fund the estimated dialysis requirement.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "8706390cfd33154b8f2d7c9b98860d7a77408b83dc9e9facfb71c45406ceb05b"
+          },
+          {
+            "case_id": "ref-02-09",
+            "interaction": "Different family residences interact with exact-branch network and treatment-zone conditions; a Kota observation cannot satisfy the Delhi access requirement.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "62e64c5146771eabd7af115e77bd0ede77c46f33ff7801bd5978a1a54fa5ddba"
+          }
+        ],
+        "minimum_four_interacting_candidates_identified": true,
+        "globally_distinct_minimum_certified": true,
+        "review_scope": "At least four substantively interacting authored cases in this family, with all current revisions considered against the complete reference set. This is reference-design coverage, not completed insurance advice or executed acceptance."
+      },
+      {
+        "family": 3,
+        "available_cases": 10,
+        "substantive_compound_candidates_identified": 4,
+        "candidate_interactions": [
+          {
+            "case_id": "ref-03-02",
+            "interaction": "Renewal age interacts with continued child membership and the connected age-25 split/bonus allocation clause; age computation alone cannot select the renewal configuration.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "a134b15c9d91bf597841f3dd7ee61b40ee2aa1d6e420643dbe5906428d2ecc59"
+          },
+          {
+            "case_id": "ref-03-03",
+            "interaction": "Adoption relationship interacts with midterm acceptance, effective date and member-specific waiting credit; an eligible relationship does not backdate cover or reset old members.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "7e22fcd9861c5285d7a7a3ab9d70b23c17f7bb5080858e04b91b65039c71ce75"
+          },
+          {
+            "case_id": "ref-03-04",
+            "interaction": "Birth/NICU dates interact with maternal delivery versus newborn benefits and later addition; the later membership request cannot move the earlier child bill into the mother grant.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "4a6d2ed001204bc415a6d4ffc4c83848cb06c57d25e7c5cc9cc0b57f662f1c98"
+          },
+          {
+            "case_id": "ref-03-08",
+            "interaction": "Parents have completed continuous time, but the child is newly admitted with a pre-existing congenital condition. Membership confirmation cannot transfer parent-level waiting credit to the child.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "3982059ae5a8b2f0dedc6c7f175cb4d120f481553958f175e4e76c11b3091a0c"
+          }
+        ],
+        "minimum_four_interacting_candidates_identified": true,
+        "globally_distinct_minimum_certified": true,
+        "review_scope": "At least four substantively interacting authored cases in this family, with all current revisions considered against the complete reference set. This is reference-design coverage, not completed insurance advice or executed acceptance."
+      },
+      {
+        "family": 4,
+        "available_cases": 10,
+        "substantive_compound_candidates_identified": 4,
+        "candidate_interactions": [
+          {
+            "case_id": "ref-04-02",
+            "interaction": "Employer exit/continuity interacts with parent medical acceptance, private-room restrictions and low cash; aligned requested dates alone do not supply a funded replacement.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "7656e7059b0cdc21d3a49fa82f7e98f78f48b763ef95cffbf788385af770caee"
+          },
+          {
+            "case_id": "ref-04-05",
+            "interaction": "Parent cardiac follow-up setting interacts with family grouping and inpatient/OPD benefits; annual routine spend must be separated before comparing shared hospital protection.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "f1abba8d8b7f514e6a424515edbb2701748b2472a61d34a5516c867fab0bc056"
+          },
+          {
+            "case_id": "ref-04-07",
+            "interaction": "Closed new sales interact with existing-holder renewal/migration and senior entry concerns; product withdrawal cannot be translated directly into loss of an old policy.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "4266ebbdc7bc8abafbd30e969c983c62223fa42e8ce3b84a1889749514f47bd1"
+          },
+          {
+            "case_id": "ref-04-08",
+            "interaction": "A proposed restricted network interacts with a non-negotiable hospital and uncertain excluded-provider status. Outside-option status differs from absolute exclusion, and a lower premium cannot relax the fixed purchase requirement.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "9019b4b5a7805d233c5b88b70cb9fea8c9f9dd309412050280796fdfc301deb2"
+          }
+        ],
+        "minimum_four_interacting_candidates_identified": true,
+        "globally_distinct_minimum_certified": true,
+        "review_scope": "At least four substantively interacting authored cases in this family, with all current revisions considered against the complete reference set. This is reference-design coverage, not completed insurance advice or executed acceptance."
+      },
+      {
+        "family": 5,
+        "available_cases": 10,
+        "substantive_compound_candidates_identified": 4,
+        "candidate_interactions": [
+          {
+            "case_id": "ref-05-05",
+            "interaction": "Two person-specific medical conditions interact with a mandatory branch constraint; satisfying one acceptance dimension cannot make the whole candidate suitable. The result remains evidence-limited.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "518d5943fdb7b7728731f69dba68dbfc50eb5cf0657f842a733ba93a56d0506e"
+          },
+          {
+            "case_id": "ref-05-06",
+            "interaction": "A later diagnosis before inception interacts with the earlier negative proposal and pending acceptance; dated correction changes current disclosure without rewriting historical knowledge.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "5b3d0395a51a6bd354a2a8105a0e7bdef19aca054860e02643c6f45c030e645a"
+          },
+          {
+            "case_id": "ref-05-07",
+            "interaction": "Base PED waiting interacts with an advertised shorter-wait rider and unselected option; availability cannot alter the actual quoted contract.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "4324bc45439feaa2d8cd86ac917fcdafde5537bfe910433ab902354e905759ed"
+          },
+          {
+            "case_id": "ref-05-09",
+            "interaction": "Personal disease co-pay interacts with generic zero-co-pay marketing and unaccepted offer state; neither the public claim nor the hypothetical arithmetic establishes personal payment.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "4b37432682bdb697992e939aad0331383838f3eef078ae0c9169ee52a53c08f5"
+          }
+        ],
+        "minimum_four_interacting_candidates_identified": true,
+        "globally_distinct_minimum_certified": true,
+        "review_scope": "At least four substantively interacting authored cases in this family, with all current revisions considered against the complete reference set. This is reference-design coverage, not completed insurance advice or executed acceptance."
+      },
+      {
+        "family": 6,
+        "available_cases": 10,
+        "substantive_compound_candidates_identified": 4,
+        "candidate_interactions": [
+          {
+            "case_id": "ref-06-02",
+            "interaction": "Past cardiac treatment interacts with indemnity versus fixed-event product type; a diagnosis benefit does not necessarily fund treatment of an already treated condition.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "b6d17c0854adcbed46eeb9c5ade6f95d37833c285b317fec04cc95784970b640"
+          },
+          {
+            "case_id": "ref-06-05",
+            "interaction": "Two conditions and recent treatment interact with old versus enhanced SI layers; accepted old cover does not establish every condition or the increased layer clock.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "e0c09dd3039bc1de0054a023d3e8b38dbfb19c7e017c26dc6be0903844ee2823"
+          },
+          {
+            "case_id": "ref-06-03",
+            "interaction": "Repeated under24hour haemodialysis is listed daycare, but the clinic must satisfy the facility definition and established kidney disease still requires person-specific acceptance/waits. A listed procedure alone does not make these recurring visits payable.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "2cccfdfa9142b13650c7227827a5570e58dc8ce77d1b0f7d39970559f2ca963a"
+          },
+          {
+            "case_id": "ref-06-10",
+            "interaction": "Donor expense categories interact with recipient transplantation admissibility and remaining SI; combining bills cannot make screening or later donor complications payable.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "e9e186e187b143a823bfe9b78bf4b50403aaf3cc50f34eca9db6f512253a90fd"
+          }
+        ],
+        "minimum_four_interacting_candidates_identified": true,
+        "globally_distinct_minimum_certified": true,
+        "review_scope": "At least four substantively interacting authored cases in this family, with all current revisions considered against the complete reference set. This is reference-design coverage, not completed insurance advice or executed acceptance."
+      },
+      {
+        "family": 7,
+        "available_cases": 10,
+        "substantive_compound_candidates_identified": 4,
+        "candidate_interactions": [
+          {
+            "case_id": "ref-07-05",
+            "interaction": "Disability and diabetes acceptance interact with wheelchair accessibility at the exact branch; network membership alone cannot meet the medical and physical-access requirements.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "88f9b03b1329b79a33e41bded4001708d794723505bb7fdaddc87d395ef035d4"
+          },
+          {
+            "case_id": "ref-07-07",
+            "interaction": "Condition classification and a reported exclusion interact with an unselected rider and individual underwriting; neither an exclusion nor its removal is established by marketing.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "5e517db1061e900c9d1a3ca994101faa3a261e6e8883e92cbc7535acf4d8bb81"
+          },
+          {
+            "case_id": "ref-07-08",
+            "interaction": "Psychiatric versus substance-related treatment purpose interacts with causation and benefit setting; one exclusion cannot be applied to all mental-health episodes.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "7e96ff5e548f741814ed60861b1f5f96f031fd90589de823e1b1e93f9ec5643f"
+          },
+          {
+            "case_id": "ref-07-10",
+            "interaction": "Generic benefit and personal exclusion interact with person scope, version/effective dates and lawful precedence; neither assertion can simply replace the other.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "c49d5f14eed14bef70007b30a14432c3d65e168d884393065578166dcc7a3bd8"
+          }
+        ],
+        "minimum_four_interacting_candidates_identified": true,
+        "globally_distinct_minimum_certified": true,
+        "review_scope": "At least four substantively interacting authored cases in this family, with all current revisions considered against the complete reference set. This is reference-design coverage, not completed insurance advice or executed acceptance."
+      },
+      {
+        "family": 8,
+        "available_cases": 10,
+        "substantive_compound_candidates_identified": 4,
+        "candidate_interactions": [
+          {
+            "case_id": "ref-08-05",
+            "interaction": "Mother versus newborn attribution interacts with maternity caps, waits and newborn exclusion; one combined invoice must not be paid under a single maternal grant.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "dd1d56fb9b779c518f1b8481cc37d0fa82fd81108ec801f0b2ec10595deb2979"
+          },
+          {
+            "case_id": "ref-08-06",
+            "interaction": "Expected versus actual delivery date interacts with the exact waiting anniversary and spouse continuity; an estimate near the boundary cannot establish entitlement.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "f9c0c5ecf1c9abf7d33106fe5727d804a72fc2c7910a5a36296a41c1d6044a01"
+          },
+          {
+            "case_id": "ref-08-07",
+            "interaction": "Lifetime deliveries interact with number of children, uninsured births and paid claims; substituting any of those counts changes the restriction application.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "2f7690322895d5e4a0f49f171bb9a2242d996d201ec838e8a14b77b590ff4846"
+          },
+          {
+            "case_id": "ref-08-08",
+            "interaction": "Existing spouse continuity interacts with a newly proposed member and both-spouse waiting conditions; the older member clock cannot automatically supply the new member credit.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "3ff316dcf197305634c86dac3b7db9e421bb2324cfe3265f2bd26bbda9fbde2a"
+          }
+        ],
+        "minimum_four_interacting_candidates_identified": true,
+        "globally_distinct_minimum_certified": true,
+        "review_scope": "At least four substantively interacting authored cases in this family, with all current revisions considered against the complete reference set. This is reference-design coverage, not completed insurance advice or executed acceptance."
+      },
+      {
+        "family": 9,
+        "available_cases": 10,
+        "substantive_compound_candidates_identified": 4,
+        "candidate_interactions": [
+          {
+            "case_id": "ref-09-01",
+            "interaction": "Listed short-duration cataract treatment interacts with the mandatory own-theatre facility definition; procedure eligibility cannot cure the failed standalone-centre condition.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "e8f737fea7883a046322fc53175e6d723c61abffa740eadd2d4b31b7593fedcb"
+          },
+          {
+            "case_id": "ref-09-02",
+            "interaction": "Procedure identity and variant/SI table selectors interact with threshold order and prior usage; nominal total SI cannot substitute for the procedure ceiling.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "cc17c68f88bb8c4200ae92a7662524af3fd6bd20af62eab63c1cdd5a7430dd82"
+          },
+          {
+            "case_id": "ref-09-10",
+            "interaction": "An eligible daycare procedure and ambulance charge meet a positive per-hospitalisation grant, yet the excluded-items annex also lists ambulance. The grant/exclusion scope conflict and its linked-event condition prevent either automatic full denial or a2000 payment promise.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "241eb41f5f82b294bdf86d4e4cd73f1c37b40c3e95feda9f9466bef6dff1dbbb"
+          },
+          {
+            "case_id": "ref-09-06",
+            "interaction": "Oral-chemotherapy setting and starred footnote interact with a hospitalisation-only threshold accumulator; eligibility of a nonhospital expense does not prove threshold contribution.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "f6d17e76cbb0a46de3d0cb766be3ffeba690bbf0f4f1e7b177d78f6a5a023578"
+          }
+        ],
+        "minimum_four_interacting_candidates_identified": true,
+        "globally_distinct_minimum_certified": true,
+        "review_scope": "At least four substantively interacting authored cases in this family, with all current revisions considered against the complete reference set. This is reference-design coverage, not completed insurance advice or executed acceptance."
+      },
+      {
+        "family": 10,
+        "available_cases": 10,
+        "substantive_compound_candidates_identified": 4,
+        "candidate_interactions": [
+          {
+            "case_id": "ref-10-02",
+            "interaction": "A temporal pre-hospitalisation window interacts with condition linkage and main admission admissibility; an unrelated test remains outside the grant despite falling in the window.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "4569bd41b49be41cc7df1a31dd3917e9befcc61c2927ecde2ed7aca283fea41d"
+          },
+          {
+            "case_id": "ref-10-06",
+            "interaction": "Remaining OPD cap interacts with provider-network eligibility and exception scope; arithmetic availability alone cannot make a non-network visit payable.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "b3e69bd9e6b77f8f4fe00c8e1da212c71e8b21deb005b7e0410bcbd7fd68137e"
+          },
+          {
+            "case_id": "ref-10-07",
+            "interaction": "Main-claim acceptance interacts with related physiotherapy, time window, service setting and custodial exclusion; none establishes blanket post-care payment.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "a3636568f9cbf07934e2e666d2df2dbb630a93862d50f860de9a47795fd2909f"
+          },
+          {
+            "case_id": "ref-10-10",
+            "interaction": "Skilled care, daily-living assistance and package supplies interact with home/OPD exclusions and linked post-care grants; a combined nursing invoice requires separate dispositions.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "04f428687ed1c1348ae7933fff603627c34ef9dffcb275a41289601640d97219"
+          }
+        ],
+        "minimum_four_interacting_candidates_identified": true,
+        "globally_distinct_minimum_certified": true,
+        "review_scope": "At least four substantively interacting authored cases in this family, with all current revisions considered against the complete reference set. This is reference-design coverage, not completed insurance advice or executed acceptance."
+      },
+      {
+        "family": 11,
+        "available_cases": 10,
+        "substantive_compound_candidates_identified": 4,
+        "candidate_interactions": [
+          {
+            "case_id": "ref-11-01",
+            "interaction": "Room proportional reduction interacts with the medicine exception and subsequent co-pay; applying one rate to the whole bill produces a different answer.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "ed27edf7b644995aeee3c165ec101af624e8689a8d00ea7d419ff3384f77d525"
+          },
+          {
+            "case_id": "ref-11-02",
+            "interaction": "Deductible and co-pay interact through operation order and percentage base; the two plausible sequences produce different numerical results and require original precedence.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "92664d81ac8fa8c9dbbba826d397616f739d5a10e13b148cca2c2e231918f9e0"
+          },
+          {
+            "case_id": "ref-11-08",
+            "interaction": "Excluded-item classification interacts with the co-pay base; excluded costs are customer costs but must not also enlarge the co-pay base.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "c18fbc624cf679ca2719d8937c393bef7beb327f52906871b95f30e8e5f827a3"
+          },
+          {
+            "case_id": "ref-11-09",
+            "interaction": "Earned bonus and displayed total interact with the stated SI basis of a percentage room cap; bonus inclusion cannot be assumed from the display.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "1cf1481d439aa8f7e50320345b60df69f305211438d334bf167e78f91afef3e6"
+          }
+        ],
+        "minimum_four_interacting_candidates_identified": true,
+        "globally_distinct_minimum_certified": true,
+        "review_scope": "At least four substantively interacting authored cases in this family, with all current revisions considered against the complete reference set. This is reference-design coverage, not completed insurance advice or executed acceptance."
+      },
+      {
+        "family": 12,
+        "available_cases": 10,
+        "substantive_compound_candidates_identified": 4,
+        "candidate_interactions": [
+          {
+            "case_id": "ref-12-01",
+            "interaction": "Recharge trigger and same-admission permission interact with modern-treatment exclusion and exhaustion/expiry language; a headline restoration amount is insufficient.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "537ac5e69c0939b5cbe51019f74b665e94a9db590ff92e4a5b940b29c27336e9"
+          },
+          {
+            "case_id": "ref-12-06",
+            "interaction": "Late notification of an expiring-year claim interacts with an already awarded bonus and insurer-specific notices; importing another insurer amendment produces a false current balance.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "0e5657126cebf078892f340c08b1d268477b022106b7bb35f880a8c7e67ad153"
+          },
+          {
+            "case_id": "ref-12-08",
+            "interaction": "One admission crossing renewal interacts with two period balances and expense allocation; adding both annual balances cannot establish the applicable limit.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "d0abb7c5b6e4a92c1846ce150b51221c07c5c2ea47b9ddd73b7ffd53b47ad32f"
+          },
+          {
+            "case_id": "ref-12-10",
+            "interaction": "Base restoration interacts with exhausted procedure sublimits; resetting one ledger does not establish replenishment of another.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "544ae126434fad3270d3203c034ea47ba15e15da3d45326529c6aa296f9a46b5"
+          }
+        ],
+        "minimum_four_interacting_candidates_identified": true,
+        "globally_distinct_minimum_certified": true,
+        "review_scope": "At least four substantively interacting authored cases in this family, with all current revisions considered against the complete reference set. This is reference-design coverage, not completed insurance advice or executed acceptance."
+      },
+      {
+        "family": 13,
+        "available_cases": 10,
+        "substantive_compound_candidates_identified": 4,
+        "candidate_interactions": [
+          {
+            "case_id": "ref-13-04",
+            "interaction": "Multiple indemnity contracts interact with primary-insurer selection, item admissibility and prior settlements; total nominal SI cannot prove payment of the gross bill.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "c9bf34b46ed01c96998e350d0b9c7164f7baa68c836980dbcfe549551edb2cf0"
+          },
+          {
+            "case_id": "ref-13-05",
+            "interaction": "Existing group maternity/newborn rights interact with future retail migration/continuity and changed benefit scope; credited waiting does not copy the group benefit package.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "7e2407576def7ed236da16ff998738abdb5edd728a41eea68b5877eea088a21f"
+          },
+          {
+            "case_id": "ref-13-08",
+            "interaction": "Employment termination interacts with the gap between base cover and aggregate threshold plus remaining cash; a before-exit arrangement can leave a much larger unfunded threshold afterward.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "2eb66b1685babc8abe18d98f10163d22eae39d75fd0c898eb19cf9138b488f1f"
+          },
+          {
+            "case_id": "ref-13-10",
+            "interaction": "Employee and parent membership histories interact with termination, senior eligibility and separate underwriting; one member continuity cannot be copied to the other.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "421e18d9e68c65139f86e6c8d3bc898d6c58d7a6b38ce6a722b8823ad4250bc3"
+          }
+        ],
+        "minimum_four_interacting_candidates_identified": true,
+        "globally_distinct_minimum_certified": true,
+        "review_scope": "At least four substantively interacting authored cases in this family, with all current revisions considered against the complete reference set. This is reference-design coverage, not completed insurance advice or executed acceptance."
+      },
+      {
+        "family": 14,
+        "available_cases": 10,
+        "substantive_compound_candidates_identified": 5,
+        "candidate_interactions": [
+          {
+            "case_id": "ref-14-05",
+            "interaction": "Different policy years interact with aggregation; two otherwise eligible admissions cannot be combined using the employer calendar when the top-up resets between them.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "96ecdda03f6fabb86e3d2519a414cb484599a3f85ee60ebcd85d2142d86169a3"
+          },
+          {
+            "case_id": "ref-14-07",
+            "interaction": "Admissible inpatient amounts interact with excluded items and pre/post expenses in threshold membership; gross invoice size cannot exhaust the deductible.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "c11abaeddd89bd337fbf0dce717a1dd9e2bc22c19d68b91ad50f97c799695355"
+          },
+          {
+            "case_id": "ref-14-08",
+            "interaction": "Requested threshold reduction after diagnosis interacts with entry age, completed years, all-member/no-claim conditions and a different conversion pathway; the pathway does not grant the requested midterm change.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "ad52ff3062a45acf718992e5937279904cbb981df586f9d11c02b7e7e8025030"
+          },
+          {
+            "case_id": "ref-14-09",
+            "interaction": "Standalone threshold excess interacts with actual base payment and the no-double-indemnity ceiling; full nominal payments cannot both be added.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "7b7c391dd5016d99a35658ebcf9cf890d104a98cd2cf5102c14e103d4f4c89a0"
+          },
+          {
+            "case_id": "ref-14-10",
+            "interaction": "Fresh top-up PED waiting interacts with old base continuity, variant and the deductible; crossing the deductible cannot remove the new contract wait.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "3a59ac911692ca3d7654bd664efd758c3c55633afe21a4dd20e8e4e009c3d9e5"
+          }
+        ],
+        "minimum_four_interacting_candidates_identified": true,
+        "globally_distinct_minimum_certified": true,
+        "review_scope": "At least four substantively interacting authored cases in this family, with all current revisions considered against the complete reference set. This is reference-design coverage, not completed insurance advice or executed acceptance."
+      },
+      {
+        "family": 15,
+        "available_cases": 10,
+        "substantive_compound_candidates_identified": 4,
+        "candidate_interactions": [
+          {
+            "case_id": "ref-15-03",
+            "interaction": "Portability interacts with separately enhanced SI and moratorium clocks; transferred continuity does not make a later enhancement as old as the initial layer.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "377667b927b616ce2f73ca28e8e374f019d2693aece4c4f60cc5bfade0da5aa0"
+          },
+          {
+            "case_id": "ref-15-05",
+            "interaction": "A corrected premium date interacts with grace, actual break and credited continuity; the corrected event invalidates the previously favourable result.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "597558df9b61121bdc3894ac66804d00fd657830e764691c4a88e03f7707f7f5"
+          },
+          {
+            "case_id": "ref-15-06",
+            "interaction": "Base SI and bonus credits interact with a larger receiving limit; only the documented credited amount can receive the old-history treatment.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "b243a43cc3240a28d3e1fbabf9c75ca681abeb1bac96efef55c2cdb5dfc79fd2"
+          },
+          {
+            "case_id": "ref-15-10",
+            "interaction": "A one-member request interacts with an entire-family port clause and split/credit allocation; a general portability facility does not establish the requested partial move.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "ea99508b51771fda34c6c3e7be3cbb7f9cfb0b088f962ada97d7d258a5aea146"
+          }
+        ],
+        "minimum_four_interacting_candidates_identified": true,
+        "globally_distinct_minimum_certified": true,
+        "review_scope": "At least four substantively interacting authored cases in this family, with all current revisions considered against the complete reference set. This is reference-design coverage, not completed insurance advice or executed acceptance."
+      },
+      {
+        "family": 16,
+        "available_cases": 10,
+        "substantive_compound_candidates_identified": 4,
+        "candidate_interactions": [
+          {
+            "case_id": "ref-16-01",
+            "interaction": "Annual-renewal grace interacts with claim dates and continuity: continuity retention and payment during the gap have different answers.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "ac67a35fa61d1c1427d69b0d409ca76af95389eee2c68b6319a89fb8a8d75558"
+          },
+          {
+            "case_id": "ref-16-02",
+            "interaction": "Within-term instalment cover interacts with conflicting wording/table provisions and explicit precedence; a general annual-renewal gap rule is not interchangeable.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "36732a14d86614f582200f579b8a3e1dd8a7e56ef1b3f9e2ac3e16d2a02ff794"
+          },
+          {
+            "case_id": "ref-16-06",
+            "interaction": "Withdrawal date and renewal timing interact with old-holder options, new-sales closure and replacement restrictions; the 90-day route must be applied to the correct event.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "e29648a0bbd593a479a8a13d9328540ec94cd0c8317cff00f8b10e9699869efe"
+          },
+          {
+            "case_id": "ref-16-07",
+            "interaction": "Prior claim and requested increase interact with unchanged-cover renewal and underwriting scope; refusal of an increase cannot be treated as refusal of base renewal.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "deeb0641ecaf136cd9494e2cc95377542fbf767679f92c1560817b56183166d0"
+          }
+        ],
+        "minimum_four_interacting_candidates_identified": true,
+        "globally_distinct_minimum_certified": true,
+        "review_scope": "At least four substantively interacting authored cases in this family, with all current revisions considered against the complete reference set. This is reference-design coverage, not completed insurance advice or executed acceptance."
+      },
+      {
+        "family": 17,
+        "available_cases": 10,
+        "substantive_compound_candidates_identified": 4,
+        "candidate_interactions": [
+          {
+            "case_id": "ref-17-03",
+            "interaction": "Excluded-provider status interacts with emergency cause and stabilisation time; any exception is limited to eligible pre-stabilisation expenses.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "3ec456e57679fca74eeef00193bbbbcaaf00122eeeaa60c6c5fd7b741036df23"
+          },
+          {
+            "case_id": "ref-17-04",
+            "interaction": "An explicitly accepted restricted-network option interacts with a broad-base positive branch observation and missing exception terms. The broad list cannot establish payment under the accepted narrower option, and changing a purchase preference cannot resolve this contract question.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "2cbd223d51bb2d391931e63dd39b38bb078e810abcf0049f385f844bd66bbacd"
+          },
+          {
+            "case_id": "ref-17-09",
+            "interaction": "Non-network status interacts with cashless refusal, unknown exclusion state and limited upfront cash; reimbursement possibility does not establish a usable cashless route.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "f8310c7b23fd7129b5c26170ff7ab50da158d6c5443cbaee8fa631f21bedc79b"
+          },
+          {
+            "case_id": "ref-17-10",
+            "interaction": "Residence/treatment zones interact with a percentage trigger, base and other cost shares; neither the reported rate nor location alone determines the deduction.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "a59a5815323a0f2f6f6c13b420c17303f01130b471452c2eff3266ad0cd81854"
+          }
+        ],
+        "minimum_four_interacting_candidates_identified": true,
+        "globally_distinct_minimum_certified": true,
+        "review_scope": "At least four substantively interacting authored cases in this family, with all current revisions considered against the complete reference set. This is reference-design coverage, not completed insurance advice or executed acceptance."
+      },
+      {
+        "family": 18,
+        "available_cases": 10,
+        "substantive_compound_candidates_identified": 4,
+        "candidate_interactions": [
+          {
+            "case_id": "ref-18-03",
+            "interaction": "Base premium and add-on interact with a loading percentage basis and later charges; applying the loading to a different component changes the total.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "f4897a653cc04d6aa337406f111827bf65dfbb57be38ef807dd230e13cee0471"
+          },
+          {
+            "case_id": "ref-18-05",
+            "interaction": "Payment frequency interacts with different SI/benefits and premium/grace conditions; annualised cash flow is not an equivalent annual-pay quote.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "b30a517ea5223d00d97459a9eb9a7f9bc1c68e3cca57873051c1e50d908ceec2"
+          },
+          {
+            "case_id": "ref-18-06",
+            "interaction": "A personal unaccepted exclusion interacts with owner/person scope and public product knowledge; another customer offer cannot fill missing individual evidence.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "fe1fb89cbdd36a3c050373ce295ecc1f04b5717f24c8fdae20af8304f2f45d88"
+          },
+          {
+            "case_id": "ref-18-09",
+            "interaction": "Residence correction interacts with quote input revision and budget assessment; the old price must remain historical rather than support current affordability.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "fd168482c32b53578819dd39b679d603e604b3c780325b32140cf52b0365a5ee"
+          }
+        ],
+        "minimum_four_interacting_candidates_identified": true,
+        "globally_distinct_minimum_certified": true,
+        "review_scope": "At least four substantively interacting authored cases in this family, with all current revisions considered against the complete reference set. This is reference-design coverage, not completed insurance advice or executed acceptance."
+      },
+      {
+        "family": 19,
+        "available_cases": 10,
+        "substantive_compound_candidates_identified": 4,
+        "candidate_interactions": [
+          {
+            "case_id": "ref-19-03",
+            "interaction": "An imminent planned procedure interacts with active versus requested SI layers and their different waits; pending enhancement cannot expand current funding.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "8195235b140b18bf284078080e718e8cf90547b448fe2e8fd495a1ecd64e6845"
+          },
+          {
+            "case_id": "ref-19-04",
+            "interaction": "An early accident interacts with initial-wait exception, provider status and threshold; removal of one waiting obstacle is not full claim approval.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "da07321d70aa6de2fbab69045ec1990a1480e6ea92ded206e4f31b35fa291734"
+          },
+          {
+            "case_id": "ref-19-08",
+            "interaction": "Active12month coverage plus a listed cataract daycare procedure and limit cannot bypass the separate24month specific wait; lack of credit/exception changes the payable branch despite active membership.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "58514ddbab44e2ca632bcc564fd7568969ecbf9d1d16ce305581b666c23abffe"
+          },
+          {
+            "case_id": "ref-19-07",
+            "interaction": "A later accepted person-specific group extension changes the contract selected for surgery despite the old certificate expiry. The separate pending retail proposal remains unavailable, and selecting the extended group contract still requires its missing surgical benefit terms.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "d986742241e877be1312eaf18d6c54e3cc397369ed86f45403fa92cbc6704eda"
+          }
+        ],
+        "minimum_four_interacting_candidates_identified": true,
+        "globally_distinct_minimum_certified": true,
+        "review_scope": "At least four substantively interacting authored cases in this family, with all current revisions considered against the complete reference set. This is reference-design coverage, not completed insurance advice or executed acceptance."
+      },
+      {
+        "family": 20,
+        "available_cases": 10,
+        "substantive_compound_candidates_identified": 4,
+        "candidate_interactions": [
+          {
+            "case_id": "ref-20-03",
+            "interaction": "Buyer and mother roles interact with separate age, residence, payment and intended membership; copying buyer facts changes the wrong person eligibility.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "89ac0eaa5de197c315beb6af295a986676a764812650268e45de6c57417474b0"
+          },
+          {
+            "case_id": "ref-20-04",
+            "interaction": "Reopening owned history interacts with a new incomplete medicine disclosure and changed corpus; loading stored facts cannot validate an old answer automatically.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "d6718e9872e1988560f6f18d09fd8b2bd3c8d711eab2a160db520ee5cec77b87"
+          },
+          {
+            "case_id": "ref-20-09",
+            "interaction": "A running result interacts with a newer correction, idempotent dispatch and durable reconnect; worker finish order cannot overwrite customer revision order.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "fbefbe166d6f4053eba928d51b76139468e54a6460e952c56ad0a6de308f8af1"
+          },
+          {
+            "case_id": "ref-20-10",
+            "interaction": "Deletion scope interacts with derived decisions/search/summaries/in-flight payloads and minimized audit; deleting the primary row alone permits resurrection.",
+            "classification": "substantive_compound_candidate",
+            "completion": "Authored interaction only; no claim of complete insurance decision or executed adviser success.",
+            "current_case_sha256": "f1ed1b503a1929b39653b4a165350aa2bdb8ac2550f93643d56b69e3e3be1dfe"
+          }
+        ],
+        "minimum_four_interacting_candidates_identified": true,
+        "globally_distinct_minimum_certified": true,
+        "review_scope": "At least four substantively interacting authored cases in this family, with all current revisions considered against the complete reference set. This is reference-design coverage, not completed insurance advice or executed acceptance."
+      }
+    ],
+    "selection_changes": [
+      "Replaced the relatively simple prior-claim renewal concern06-09 with haemodialysis/facility/PED interaction06-03.",
+      "Replaced overlapping donor09-04 with explicit ambulance grant/annex conflict09-10 in the named family9 subset.",
+      "Replaced19-05 with the active-policy/daycare/specific-wait interaction19-08 to strengthen family19’s demonstrated compound subset."
+    ],
+    "limit": "The81 named cases are compound requirements, not81 completed decisions. Within-family compound coverage does not establish200 globally distinct cases, nor cure unresolved source evidence.",
+    "status": "81 substantive authored compound cases across 20 families, at least four per family; no executed adviser acceptance claim"
+  },
+  "original_support_review": {
+    "clauses": [
+      "E25",
+      "E26",
+      "E27",
+      "E28",
+      "E29",
+      "E30",
+      "E31"
+    ],
+    "supplement": "research/registers/original-reading-case-supplement-r5.json",
+    "table_context": "E12 in the r3 supplement contains the full modern-treatment table including the hematopoietic transplant entry; no PRP benefit cap is inferred.",
+    "method": "Read preserved full passage records and connected table context; no claim of a new independent visual reading of all PDF pages.",
+    "retained_limits": [
+      "Free-look applicability is stipulated; timing does not establish completed cancellation or full refund.",
+      "The BMI exception requires the complete conjunction and does not establish overall payability or medical treatment advice.",
+      "V.23 survivor continuation remains distinct from unresolved III.H both-spouse maternity applicability after death.",
+      "PRP exclusion is procedure-specific, not a blanket stem-cell exclusion.",
+      "Air route eligibility remains independent of the numerical ceiling.",
+      "Synthetic accepted endorsements are not acquired original customer records."
+    ]
+  },
+  "arithmetic_review": {
+    "method": "Independent offline Decimal/calendar recomputation of eight displayed results; no adviser calculator.",
+    "results": [
+      {
+        "case_id": "ref-01-01",
+        "quantity": "elapsed days from receipt",
+        "expected": "28",
+        "recomputed": "28",
+        "unit": "calendar days",
+        "agrees": true
+      },
+      {
+        "case_id": "ref-01-01",
+        "quantity": "elapsed days from inception",
+        "expected": "37",
+        "recomputed": "37",
+        "unit": "calendar days",
+        "agrees": true
+      },
+      {
+        "case_id": "ref-02-07",
+        "quantity": "marginal joint quote",
+        "expected": "8000",
+        "recomputed": "8000",
+        "unit": "INR",
+        "agrees": true
+      },
+      {
+        "case_id": "ref-02-07",
+        "quantity": "split total",
+        "expected": "29000",
+        "recomputed": "29000",
+        "unit": "INR",
+        "agrees": true
+      },
+      {
+        "case_id": "ref-02-07",
+        "quantity": "split minus joint",
+        "expected": "3000",
+        "recomputed": "3000",
+        "unit": "INR",
+        "agrees": true
+      },
+      {
+        "case_id": "ref-04-04",
+        "quantity": "capped hypothetical co-pay",
+        "expected": "10000",
+        "recomputed": "10000",
+        "unit": "INR",
+        "agrees": true
+      },
+      {
+        "case_id": "ref-04-04",
+        "quantity": "uncapped cash shortfall",
+        "expected": "15000",
+        "recomputed": "15000.00",
+        "unit": "INR",
+        "agrees": true
+      },
+      {
+        "case_id": "ref-17-07",
+        "quantity": "air-ambulance numerical ceiling",
+        "expected": "100000",
+        "recomputed": "100000.00",
+        "unit": "INR",
+        "agrees": true
+      }
+    ],
+    "canonical_arithmetic_records_added": false,
+    "pending_canonical_case_ids": [
+      "ref-01-01",
+      "ref-02-07",
+      "ref-04-04",
+      "ref-17-07"
+    ],
+    "remaining_work": "Parent will add the eight canonical calculation records and verify the calculation report. The four cases remain marked pending_new_reference_arithmetic.",
+    "not_claimed": "No actual settlement, route payability or real offer validity."
+  },
+  "information_requirements": {
+    "case_maps": "Current actual subjects, event anchors, scoped rules, uncertainty, calculations and saved dependencies replace the stale maps.",
+    "trace": "INS-04, RET-01 and DEC-01 present for revised cases requiring original context, mandatory dependencies and retained claim assumptions.",
+    "OPS-05": "Independent benchmark acceptance is recorded separately as a technical process requirement. Reference distinctness does not establish evaluation independence or acceptance."
+  },
+  "remaining_material_distinctness_findings": [],
+  "completion_limits": {
+    "full_insurance_decisions_complete": 0,
+    "advice_acceptance_successes": 0,
+    "adviser_attempts": 0,
+    "evaluation_material_read": false,
+    "evaluation_independence_certified": false,
+    "all_400_substantive_completion_certified": false,
+    "complete_original_rule_inventory_certified": false,
+    "database_implementation_approved": false,
+    "application_or_database_changes": false,
+    "scope": "No unresolved semantic duplicate identified among the 200 authored reference decision tests after revisions. This does not replace complete original-backed customer solutions, independent evaluation or executed acceptance."
+  }
+}

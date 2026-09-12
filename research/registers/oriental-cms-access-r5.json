@@ -1,0 +1,25 @@
+{
+  "format_version": 1,
+  "component_version": "research-acquisition/2",
+  "insurer_id": "oriental",
+  "url": "https://cms.orientalinsurance.org.in/cms/api/download-policy-terms-conditions?populate=*&locale=en",
+  "linking_url": "https://orientalinsurance.org.in/static/js/6118.3ab2d79d.chunk.js",
+  "acquired_at": "2026-09-10T14:43:35.543325+00:00",
+  "status": "failed",
+  "issues": [
+    "unsupported_media_type"
+  ],
+  "sha256": "c99a5f06375b45fa18dcc80eecf7c5ca4f4b4cb6f6b86927bd91f0000776452d",
+  "page_count": null,
+  "document_type": "unclassified",
+  "language": "unknown",
+  "associations": [],
+  "effective_from": null,
+  "effective_to": null,
+  "review_status": "not_reviewed",
+  "http_status": 200,
+  "final_url": "https://cms.orientalinsurance.org.in/cms/api/download-policy-terms-conditions?populate=*&locale=en",
+  "byte_count": 132381,
+  "content_type": "application/json; charset=utf-8",
+  "latency_ms": 328
+}

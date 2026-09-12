@@ -1,0 +1,70 @@
+# Final application entity catalogue
+
+Revision: `discussion-r25-final-review`
+
+All 17 batches and the final critical audit are approved for presentation. Explicit approval of the complete design is still pending.
+
+| Entity | Purpose | Access | Fields | Outgoing relationships |
+|---|---|---|---:|---|
+| Account | Logical authentication principal implemented by the retained accounts.User(AbstractUser) model. | framework_private | 12 | None |
+| Person | A minimal owner-scoped human label; medical, role and identity assertions live in sourced fact records. | private | 4 | owner_id → Account |
+| PersonRelationship | Directional relationship between two owner-scoped people, separate from proposed or issued policy membership. | private | 9 | from_person_id → Person; owner_id → Account; source_statement_id → CustomerStatement; to_person_id → Person |
+| Conversation | Persistent conversation and its current accepted state. | private | 8 | current_profile_revision_id → CustomerProfileRevision; owner_id → Account |
+| Message | Immutable submitted or published conversational content. | private | 13 | conversation_id → Conversation; owner_id → Account; recommendation_id → Recommendation |
+| ConversationMessageChunk | Replaceable private lexical/semantic index for an exact section of one immutable conversation message. | private | 13 | conversation_id → Conversation; message_id → Message; owner_id → Account |
+| CustomerStatement | A meaningful source span inside one customer message, retained so unusual or unresolved information cannot be silently dropped. | private | 10 | owner_id → Account; source_message_id → Message; subject_person_id → Person |
+| CustomerProfileRevision | Small immutable checkpoint created only when customer facts or requirements change. | private | 5 | conversation_id → Conversation; owner_id → Account |
+| CustomerFact | One validated version of a customer fact; active historical state is reconstructed by logical key and profile revision. | private | 10 | introduced_in_revision_id → CustomerProfileRevision; owner_id → Account; source_statement_id → CustomerStatement |
+| CustomerRequirement | One atomic mandatory, preferred or informational condition used to filter, rank or explain policy configurations. | private | 13 | introduced_in_revision_id → CustomerProfileRevision; owner_id → Account; source_statement_id → CustomerStatement; subject_person_id → Person |
+| AdviceRequest | One customer advice goal spanning any number of clarification messages; execution attempts later pin exact profile revisions. | private | 7 | conversation_id → Conversation; owner_id → Account; source_statement_id → CustomerStatement |
+| Insurer | One insurer in the approved research roster and the issuer identity used by products and official documents. | public | 3 | None |
+| DiscoveryRun | One autonomous Codex session tasked with discovering public documents for one insurer. | public | 10 | insurer_id → Insurer |
+| SourceURL | One unique public web address discovered by Codex, independent of how often or where it was observed. | public | 5 | None |
+| SourceObservation | One retained occasion on which a Codex discovery run encountered a source URL. | public | 9 | discovery_run_id → DiscoveryRun; found_in_capture_id → SourceCapture; source_url_id → SourceURL |
+| SourceCapture | One attempt by a Codex discovery run to preserve the content currently returned by a source URL. | public | 11 | discovery_run_id → DiscoveryRun; document_version_id → DocumentVersion; original_file_id → OriginalFile; source_url_id → SourceURL |
+| OriginalFile | Content-addressed exact bytes preserved from a public source or private customer upload. | mixed | 10 | owner_id → Account |
+| CustomerUploadedDocument | One private document supplied by a customer, separate from its content-addressed bytes. | private | 9 | original_file_id → OriginalFile; owner_id → Account; source_message_id → Message |
+| DocumentSeries | Stable identity of one continuing publication across editions, such as a product policy wording. | public | 8 | issuer_id → Insurer |
+| DocumentVersion | One identified edition within a DocumentSeries, with evidence-backed dates and explicit supersession. | public | 12 | document_series_id → DocumentSeries; supersedes_id → DocumentVersion |
+| DocumentPage | One physical PDF page and its explicit review state, including pages on which extraction failed. | mixed | 7 | original_file_id → OriginalFile |
+| EvidenceSpan | One exact passage, table cell, footnote or region from either a public capture or private customer upload. | mixed | 11 | customer_uploaded_document_id → CustomerUploadedDocument; page_id → DocumentPage; source_capture_id → SourceCapture |
+| Product | Stable insurer product family, independent of policy editions, named variants and optional additions. | public | 9 | identity_evidence_id → EvidenceSpan; insurer_id → Insurer |
+| PolicyVersion | One complete legal terms package for a Product, assembled from every applicable governing document. | public | 9 | product_id → Product; supersedes_id → PolicyVersion |
+| PolicyVersionDocument | Membership, role, conditional applicability and proven precedence of one DocumentVersion in a PolicyVersion. | public | 8 | document_version_id → DocumentVersion; policy_version_id → PolicyVersion; precedence_evidence_id → EvidenceSpan |
+| ProductVariant | One insurer-defined base variant and its allowed sums insured, deductibles, room categories and family choices. | public | 8 | identity_evidence_id → EvidenceSpan; policy_version_id → PolicyVersion |
+| ProductOption | One optional or mandatory add-on, rider or election available with a ProductVariant. | public | 9 | identity_evidence_id → EvidenceSpan; option_policy_version_id → PolicyVersion; product_variant_id → ProductVariant |
+| CustomerPolicy | Stable identity of one insurer-issued customer policy or customer-specific offer. | private | 11 | insurer_id → Insurer; owner_id → Account; payer_id → Person; proposer_id → Person |
+| CustomerPolicyRevision | One exact set of insurer-issued customer selections applying during a defined interval. | private | 12 | customer_policy_id → CustomerPolicy; owner_id → Account; product_variant_id → ProductVariant; selection_evidence_id → EvidenceSpan |
+| PolicyMember | One person actually covered under one customer policy revision. | private | 10 | customer_policy_revision_id → CustomerPolicyRevision; evidence_span_id → EvidenceSpan; owner_id → Account; person_id → Person |
+| CustomerPolicyOption | One customer-specific selected, declined or unresolved ProductOption decision. | private | 9 | customer_policy_revision_id → CustomerPolicyRevision; evidence_span_id → EvidenceSpan; owner_id → Account; product_option_id → ProductOption |
+| CustomerPolicyFact | One document-backed structured fact about a particular customer's issued policy revision. | private | 12 | customer_policy_revision_id → CustomerPolicyRevision; evidence_span_id → EvidenceSpan; owner_id → Account; person_id → Person; related_customer_policy_id → CustomerPolicy; supersedes_id → CustomerPolicyFact |
+| PolicyRule | One immutable, reviewed condition, benefit, restriction or calculation instruction from a public policy version. | public | 8 | policy_version_id → PolicyVersion; supersedes_id → PolicyRule |
+| PolicyRuleEvidence | One exact public source passage supporting, defining, restricting or contradicting a policy rule. | public | 6 | evidence_span_id → EvidenceSpan; policy_rule_id → PolicyRule |
+| PolicyRuleLink | A reviewed connection requiring two policy rules to be interpreted together. | public | 5 | from_policy_rule_id → PolicyRule; to_policy_rule_id → PolicyRule |
+| PolicyRuleTableCell | One original-backed result selected by the complete axes declared in a policy rule body. | public | 6 | evidence_span_id → EvidenceSpan; policy_rule_id → PolicyRule |
+| ProviderLocation | One exact public hospital or healthcare-facility branch identity used for network matching. | public | 11 | supersedes_id → ProviderLocation |
+| ProviderNetworkSnapshot | One dated, scoped insurer network source or directory query, including a zero-result or failed check. | public | 9 | insurer_id → Insurer; product_variant_id → ProductVariant; scope_evidence_id → EvidenceSpan; source_capture_id → SourceCapture |
+| ProviderNetworkEntry | One exact facility branch status printed in one immutable provider-network snapshot. | public | 9 | evidence_span_id → EvidenceSpan; provider_location_id → ProviderLocation; provider_network_snapshot_id → ProviderNetworkSnapshot |
+| Quote | One immutable, evidence-backed personal insurer quote for an exact customer profile and product selection. | private | 14 | owner_id → Account; product_variant_id → ProductVariant; profile_revision_id → CustomerProfileRevision; source_evidence_id → EvidenceSpan |
+| KnowledgeRelease | Immutable set of reviewed policy rules that the buying adviser may use together. | public | 8 | previous_release_id → KnowledgeRelease |
+| KnowledgeReleaseRule | Includes one exact reviewed policy rule in one knowledge release. | public | 4 | knowledge_release_id → KnowledgeRelease; policy_rule_id → PolicyRule |
+| KnowledgeChannel | Selects the current published knowledge release for one application environment. | public | 6 | current_release_id → KnowledgeRelease |
+| PolicySearchChunk | Replaceable public search index text for one exact section of a policy document. | public | 9 | document_version_id → DocumentVersion |
+| Recommendation | One saved buying/comparison result for an exact customer profile and published policy-knowledge release. | private | 9 | advice_request_id → AdviceRequest; knowledge_release_id → KnowledgeRelease; owner_id → Account; profile_revision_id → CustomerProfileRevision; supersedes_id → Recommendation; turn_id → Turn |
+| PolicyCandidateAssessment | One exact public policy configuration evaluated for the customer, including exclusions and uncertain candidates. | private | 10 | owner_id → Account; product_variant_id → ProductVariant; quote_id → Quote; recommendation_id → Recommendation |
+| PolicyRequirementMatch | How one policy candidate performs against one exact customer requirement. | private | 8 | candidate_assessment_id → PolicyCandidateAssessment; customer_requirement_id → CustomerRequirement; owner_id → Account; provider_network_entry_id → ProviderNetworkEntry |
+| InformationNeed | One missing customer fact, requirement or document confirmation that should be asked before stronger advice. | private | 12 | asked_in_message_id → Message; owner_id → Account; recommendation_id → Recommendation; resolved_in_profile_revision_id → CustomerProfileRevision; subject_person_id → Person |
+| RecommendationStatement | One independently checkable customer-facing statement in a buying recommendation. | private | 13 | calculation_id → Calculation; candidate_assessment_id → PolicyCandidateAssessment; information_need_id → InformationNeed; owner_id → Account; recommendation_id → Recommendation; requirement_match_id → PolicyRequirementMatch |
+| RecommendationCitation | Exact original policy passage supporting, restricting or conflicting with one recommendation statement. | private | 8 | evidence_span_id → EvidenceSpan; owner_id → Account; policy_rule_id → PolicyRule; recommendation_statement_id → RecommendationStatement |
+| Calculation | One immutable deterministic calculation with exact inputs, operation order, assumptions and result. | private | 11 | advice_request_id → AdviceRequest; owner_id → Account |
+| Turn | One durable, idempotent and cancellable customer-message processing request. | private | 14 | conversation_id → Conversation; input_message_id → Message; owner_id → Account; starting_profile_revision_id → CustomerProfileRevision |
+| TurnEvent | One immutable ordered UI event that reconnecting clients can replay without repeating inference. | private | 7 | owner_id → Account; turn_id → Turn |
+| Outbox | Reliable typed dispatch record committed with the work that Celery or publication must deliver. | mixed | 14 | knowledge_release_id → KnowledgeRelease; owner_id → Account; processing_job_id → ProcessingJob; turn_id → Turn |
+| ModelRoute | One exact secret-free CLIProxyAPI/Codex route configuration. | public | 8 | None |
+| ModelQualification | One completed test of an exact route against one application schema and capability set. | public | 8 | route_id → ModelRoute |
+| ModelAttempt | One actual CLIProxyAPI/Codex call with explicit identity, timing, usage and failure. | mixed | 16 | owner_id → Account; processing_job_id → ProcessingJob; qualification_id → ModelQualification; turn_id → Turn |
+| ProcessingJob | One resumable public-policy or private-upload classification, reading, extraction, validation or independent-review task. | mixed | 18 | customer_uploaded_document_id → CustomerUploadedDocument; owner_id → Account; parent_job_id → ProcessingJob; source_capture_id → SourceCapture |
+| ConsentRecord | One customer grant for CoverGuide to process account, health or uploaded-document data for buying advice, with optional later revocation. | private | 10 | owner_id → Account; person_id → Person; source_message_id → Message |
+| DeletionRequest | One durable customer request to erase an account, conversation, upload or selected disclosure and its derived private copies. | private | 9 | owner_id → Account |
+| AuditEvent | Minimal append-only record of sensitive-data access, publication, deletion and administration without copied customer medical text. | mixed | 9 | actor_id → Account; owner_id → Account |
+| PolicyPackageComponent | One original-backed component slot in a public packaged policy, used to compare which separately issued product supplies medical or supplementary cover. | public | 12 | component_policy_version_id → PolicyVersion; component_product_id → Product; evidence_span_id → EvidenceSpan; package_policy_version_id → PolicyVersion; selection_policy_rule_id → PolicyRule |

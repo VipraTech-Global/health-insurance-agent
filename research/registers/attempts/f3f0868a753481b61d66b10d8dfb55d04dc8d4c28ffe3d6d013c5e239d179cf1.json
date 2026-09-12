@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T12:00:26.956253+00:00",
+  "associations": [],
+  "byte_count": 224105,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.generalicentralinsurance.com/downloads/lifestyle-insurance/pet-health-pawlicy/claim-forms/pet-health-pawlicy-claim-form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "generali-central",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 303,
+  "linking_url": "https://www.generalicentralinsurance.com/customer-service/downloads",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.92,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.32
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "f9719084137745c9e2b2a4460ae144b9a1ded87bca5dcc5fc0cfc449068657a9",
+  "status": "acquired",
+  "url": "https://www.generalicentralinsurance.com/downloads/lifestyle-insurance/pet-health-pawlicy/claim-forms/pet-health-pawlicy-claim-form.pdf"
+}

@@ -1,0 +1,21 @@
+{
+  "acquired_at": "2026-09-10T11:57:11.810792+00:00",
+  "associations": [],
+  "component_version": "research-acquisition/2",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "format_version": 1,
+  "insurer_id": "star",
+  "issues": [
+    "ReadTimeout"
+  ],
+  "language": "unknown",
+  "latency_ms": 60173,
+  "linking_url": "",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": null,
+  "status": "failed",
+  "url": "https://www.starhealth.in/downloads/"
+}

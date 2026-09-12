@@ -1,0 +1,21 @@
+{
+  "acquired_at": "2026-09-10T12:01:32.135753+00:00",
+  "associations": [],
+  "component_version": "research-acquisition/2",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "format_version": 1,
+  "insurer_id": "acko",
+  "issues": [
+    "ConnectError"
+  ],
+  "language": "unknown",
+  "latency_ms": 1085,
+  "linking_url": "https://www.acko.com/download/",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": null,
+  "status": "failed",
+  "url": "https://acko-cms.ackoassets.com/Policy_Wordings_Acko_Peronal_Health_Policy_03b2e386d7.pdf"
+}

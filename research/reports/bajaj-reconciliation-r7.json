@@ -1,0 +1,228 @@
+{
+  "official_directory_sha256": "f0de1a42243f153588b7fa02ce5c1fe2589bbf0332dfa32e3fb4bdc995f6047d",
+  "observed_document_links": 416,
+  "new_original_pdfs": 11,
+  "new_wordings": 5,
+  "new_cis": 5,
+  "new_brochures": 1,
+  "updated_legacy_rows": [
+    {
+      "legacy_identity": "/health-insurance/bajaj-general/extra-care-plus-super-top-up/",
+      "family": "Extra Care Plus",
+      "wording_sha256": "66d1837c3c0df51f0f3835761df2a37d26da71986f46497d835fdd0b0e8c4d50",
+      "observed_uin": "BAJHLIP23069V032223",
+      "companion_cis": [
+        {
+          "sha256": "aea9a62b8e57ac1e835909a5fb09a0026ad37fb1e86b56437487e30b3a83aa05",
+          "role": "customer_information_sheet",
+          "observed_uins": [
+            "BAJHLIP23069V032223"
+          ],
+          "wording_uin_matches": true
+        }
+      ]
+    },
+    {
+      "legacy_identity": "/health-insurance/bajaj-general/health-care-supreme-smart/",
+      "family": "Health Care Supreme",
+      "wording_sha256": "3c07c19ae314fb287047c0419a33ee03e962502fe4ac67d87eb3c5de7c6040be",
+      "observed_uin": "BAJHLIP23210V042223",
+      "companion_cis": [
+        {
+          "sha256": "ff1a2874866116c3ea63964712f9f71fe9e13de0007f537118b987d361756e97",
+          "role": "customer_information_sheet",
+          "observed_uins": [
+            "BAJHLIP23210V042223"
+          ],
+          "wording_uin_matches": true
+        }
+      ]
+    },
+    {
+      "legacy_identity": "/health-insurance/bajaj-general/health-care-supreme-ultimo/",
+      "family": "Health Care Supreme",
+      "wording_sha256": "3c07c19ae314fb287047c0419a33ee03e962502fe4ac67d87eb3c5de7c6040be",
+      "observed_uin": "BAJHLIP23210V042223",
+      "companion_cis": [
+        {
+          "sha256": "ff1a2874866116c3ea63964712f9f71fe9e13de0007f537118b987d361756e97",
+          "role": "customer_information_sheet",
+          "observed_uins": [
+            "BAJHLIP23210V042223"
+          ],
+          "wording_uin_matches": true
+        }
+      ]
+    },
+    {
+      "legacy_identity": "/health-insurance/bajaj-general/health-care-supreme-vital/",
+      "family": "Health Care Supreme",
+      "wording_sha256": "3c07c19ae314fb287047c0419a33ee03e962502fe4ac67d87eb3c5de7c6040be",
+      "observed_uin": "BAJHLIP23210V042223",
+      "companion_cis": [
+        {
+          "sha256": "ff1a2874866116c3ea63964712f9f71fe9e13de0007f537118b987d361756e97",
+          "role": "customer_information_sheet",
+          "observed_uins": [
+            "BAJHLIP23210V042223"
+          ],
+          "wording_uin_matches": true
+        }
+      ]
+    },
+    {
+      "legacy_identity": "/health-insurance/bajaj-general/health-ensure-family-plan/",
+      "family": "Health Ensure",
+      "wording_sha256": "08633c7190545874483102f6fa16e9963aad2173e18c7269ea5ae8b2f62aae0c",
+      "observed_uin": "BAJHLIP24149V062324",
+      "companion_cis": [
+        {
+          "sha256": "e375501ef4ecb863341fff7b17134ba8f29754313ccc72f095358df3249c018c",
+          "role": "customer_information_sheet",
+          "observed_uins": [
+            "BAJHLIP24149V062324"
+          ],
+          "wording_uin_matches": true
+        }
+      ]
+    },
+    {
+      "legacy_identity": "/health-insurance/bajaj-general/health-guard-gold/",
+      "family": "Health Guard",
+      "wording_sha256": "193417d10fda72111f8e7c45929075020330af619f9bbdcc292f3965a1b1e95a",
+      "observed_uin": "BAJHLIP26073V082526",
+      "companion_cis": [
+        {
+          "sha256": "b1b03949cf9198b4ad6c1016df51267a00f3346e27c1fd2ef4c67ba43f13e53a",
+          "role": "customer_information_sheet",
+          "observed_uins": [
+            "BAJHLIP26073V082526"
+          ],
+          "wording_uin_matches": true
+        },
+        {
+          "sha256": "a413bc85b4412efacdef631f6671709cc6525058b9fb106316349f29efa9f25f",
+          "role": "brochure",
+          "observed_uins": [
+            "BAJHLAP21577V012021",
+            "BAJHLIP26073V082526"
+          ],
+          "wording_uin_matches": true,
+          "base_product_uin": "BAJHLIP26073V082526",
+          "separate_rider_uin": "BAJHLAP21577V012021",
+          "wording_uin_matches_meaning": "Base product UIN present; brochure also contains a separately identified rider UIN."
+        }
+      ]
+    },
+    {
+      "legacy_identity": "/health-insurance/bajaj-general/health-guard-platinum/",
+      "family": "Health Guard",
+      "wording_sha256": "193417d10fda72111f8e7c45929075020330af619f9bbdcc292f3965a1b1e95a",
+      "observed_uin": "BAJHLIP26073V082526",
+      "companion_cis": [
+        {
+          "sha256": "b1b03949cf9198b4ad6c1016df51267a00f3346e27c1fd2ef4c67ba43f13e53a",
+          "role": "customer_information_sheet",
+          "observed_uins": [
+            "BAJHLIP26073V082526"
+          ],
+          "wording_uin_matches": true
+        },
+        {
+          "sha256": "a413bc85b4412efacdef631f6671709cc6525058b9fb106316349f29efa9f25f",
+          "role": "brochure",
+          "observed_uins": [
+            "BAJHLAP21577V012021",
+            "BAJHLIP26073V082526"
+          ],
+          "wording_uin_matches": true,
+          "base_product_uin": "BAJHLIP26073V082526",
+          "separate_rider_uin": "BAJHLAP21577V012021",
+          "wording_uin_matches_meaning": "Base product UIN present; brochure also contains a separately identified rider UIN."
+        }
+      ]
+    },
+    {
+      "legacy_identity": "/health-insurance/bajaj-general/health-guard-silver/",
+      "family": "Health Guard",
+      "wording_sha256": "193417d10fda72111f8e7c45929075020330af619f9bbdcc292f3965a1b1e95a",
+      "observed_uin": "BAJHLIP26073V082526",
+      "companion_cis": [
+        {
+          "sha256": "b1b03949cf9198b4ad6c1016df51267a00f3346e27c1fd2ef4c67ba43f13e53a",
+          "role": "customer_information_sheet",
+          "observed_uins": [
+            "BAJHLIP26073V082526"
+          ],
+          "wording_uin_matches": true
+        },
+        {
+          "sha256": "a413bc85b4412efacdef631f6671709cc6525058b9fb106316349f29efa9f25f",
+          "role": "brochure",
+          "observed_uins": [
+            "BAJHLAP21577V012021",
+            "BAJHLIP26073V082526"
+          ],
+          "wording_uin_matches": true,
+          "base_product_uin": "BAJHLIP26073V082526",
+          "separate_rider_uin": "BAJHLAP21577V012021",
+          "wording_uin_matches_meaning": "Base product UIN present; brochure also contains a separately identified rider UIN."
+        }
+      ]
+    },
+    {
+      "legacy_identity": "/health-insurance/bajaj-general/silver-health/",
+      "family": "Silver Health",
+      "wording_sha256": "65ba0c2e260c498a7a28acc97d8396e059390b72466342dfa37f4ba00fd41983",
+      "observed_uin": "BAJHLIP23213V052223",
+      "companion_cis": [
+        {
+          "sha256": "76a3c48a23d34c0c170a1ea08d591feeab41328992836c74a056acfa6c8d65fc",
+          "role": "customer_information_sheet",
+          "observed_uins": [
+            "BAJHLIP23213V052223"
+          ],
+          "wording_uin_matches": true
+        }
+      ]
+    }
+  ],
+  "selected_rows_with_wording_candidate_previous": 99,
+  "selected_rows_with_wording_candidate_now": 108,
+  "selected_rows_without_wording_candidate_now": 73,
+  "extra_care_topup_distinct_from_plus": true,
+  "historical_bundles_complete": 0,
+  "full_original_rule_inventory_complete": false,
+  "new_information_requirements": [
+    "Separate product-register UIN from a later observed wording/CIS UIN.",
+    "Health Care Supreme medical SI components must retain individual pools; totalSI is not hospitalizationSI.",
+    "Health Ensure reinstatement has15day same-member gap,other-member exception and disease-specific lifetime-frequency rule; optionalselection and priorusage required.",
+    "Silver Health PlanA andPlanB have different family/cover-form/prepost-benefit rules; generic CIS summary cannot erase plan conditions.",
+    "A register UIN assertion is not proof that a complete historical wording revision was preserved.",
+    "Document UIN assertions need base-product versus rider ownership, not an untyped set.",
+    "Named tier identity, cover form, mechanism and exact historical applicability remain separate.",
+    "Directory anchor occurrences, unique URLs, selected acquisitions and contractual rule coverage have distinct counts."
+  ],
+  "verification": "Original hashes and manually located title/operative/variant evidence; not full original inventory.",
+  "document_link_count_kind": "Original PDF anchor occurrences; not unique URLs or all page hyperlinks",
+  "unique_observed_document_urls": 414,
+  "all_directory_href_anchors": 794,
+  "new_manually_classified_nonpdf_sources": 1,
+  "manual_pdf_classification_count": 139,
+  "manual_nonpdf_classification_count": 5,
+  "preserved_historical_wording_versions_established_by_register": false,
+  "historical_wording_version_note": "Earlier register UINs are preserved assertions; older complete wording revisions/effective dates are not established. HealthEnsure has one shared UIN across the register and observed wording/CIS.",
+  "independent_review_report": "reports/bajaj-reconciliation-review-r7.json",
+  "base_and_rider_uin_separation": {
+    "base_product": "Health Guard",
+    "base_uin": "BAJHLIP26073V082526",
+    "rider": "Waiver of Room Capping",
+    "rider_uin": "BAJHLAP21577V012021",
+    "evidence_sha256": "a413bc85b4412efacdef631f6671709cc6525058b9fb106316349f29efa9f25f",
+    "physical_pages": [
+      10,
+      12
+    ]
+  },
+  "hcs_plan_a_grouping_limit": "PlanA numerical row is preserved on physical page26, but its tier cell is blank/separately bordered above the merged Vital label; do not assert tier membership solely from adjacency."
+}

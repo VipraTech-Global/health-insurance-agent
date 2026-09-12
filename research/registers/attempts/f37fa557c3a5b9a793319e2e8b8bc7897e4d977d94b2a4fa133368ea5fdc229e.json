@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:59:52.419641+00:00",
+  "associations": [],
+  "byte_count": 239517,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/top-up-mediclaim-policy/Customer%20Information%20Sheet%20NEW%20INDIA%20TOP%20UP%20POLICY.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 6166,
+  "linking_url": "https://www.newindia.co.in/health-insurance/new-india-top-up-mediclaim-insurance",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "edaf6b8f0057f4155662866648067ab5e937bd35fbba42a0c622508c8d2d6843",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/top-up-mediclaim-policy/Customer Information Sheet NEW INDIA TOP UP POLICY.pdf"
+}

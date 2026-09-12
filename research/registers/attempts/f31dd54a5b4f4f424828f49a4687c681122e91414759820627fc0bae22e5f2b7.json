@@ -1,0 +1,89 @@
+{
+  "acquired_at": "2026-09-10T11:54:05.359619+00:00",
+  "associations": [],
+  "byte_count": 7895219,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.tataaig.com/s3/Policy_Wordings_e-guard_insurance_policy_IRDAN108P0001V01201516.pdf_c13a9e46f9.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "tata-aig",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 2698,
+  "linking_url": "https://www.tataaig.com/downloads",
+  "page_count": 8,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.0001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.0001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.0001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.0001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.0,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.0001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.0,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.0001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.0,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.0001
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.0,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.0001
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "0488bed80e73b84a40d2ac48ddb820dc67c54876ece2105a31fe4e42d3b2b4ad",
+  "status": "acquired",
+  "url": "https://www.tataaig.com/s3/Policy_Wordings_e-guard_insurance_policy_IRDAN108P0001V01201516.pdf_c13a9e46f9.pdf"
+}

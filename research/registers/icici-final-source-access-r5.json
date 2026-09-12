@@ -1,0 +1,17 @@
+{
+  "records": [
+    {
+      "insurer_id": "icici-lombard",
+      "url": "https://www.icicilombard.com/docs/default-source/policy-wordings-product-brochure/ihealth_plus_policy_wording.pdf",
+      "linking_url": "https://www.icicilombard.com/health-insurance/get-quote/select-chi-plans",
+      "status": "acquired",
+      "issues": [],
+      "sha256": "c76616d0ee70a0d77cabf819540c996b239f9d53ff94f4ff4b465d3fd3fde68b",
+      "acquired_at": "2026-09-10T14:50:10.236883+00:00",
+      "http_status": 200,
+      "document_type": "pdf_unclassified",
+      "page_count": 20,
+      "discovery_method": "Official-domain search yielded original iHealth Plus policy wording, corroborating the named plan on insurer CHI page."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "acquired_at": "2026-09-10T12:02:18.744385+00:00",
+  "associations": [],
+  "byte_count": 4171236,
+  "component_version": "research-acquisition/1",
+  "content_type": "text/html; charset=utf-8",
+  "document_type": "unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/top-up-mediclaim-policy/Premium%20Chart%20New%20India%20TOP%20UP%20Mediclaim%20Policy.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [
+    "expected_pdf_received_other_content"
+  ],
+  "language": "unknown",
+  "latency_ms": 8799,
+  "linking_url": "https://www.newindia.co.in/health-insurance/new-india-top-up-mediclaim-insurance",
+  "page_count": null,
+  "review_status": "not_reviewed",
+  "sha256": "0eaadb8ce9d80e1e9ee8bbdb018a9b0919a72bc77ced4a39d2a55e806428efef",
+  "status": "failed",
+  "url": "https://www.newindia.co.in/health-insurance/assets/docs/know-more/health/top-up-mediclaim-policy/Premium Chart New India TOP UP Mediclaim Policy.pdf"
+}

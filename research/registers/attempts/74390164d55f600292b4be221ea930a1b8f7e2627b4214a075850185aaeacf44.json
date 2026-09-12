@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:58:30.138632+00:00",
+  "associations": [],
+  "byte_count": 641370,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/asha-kiran-policy/Customer%20Information%20Sheet%20NEW%20INDIA%20ASHA%20KIRAN%20POLICY.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 6293,
+  "linking_url": "https://www.newindia.co.in/health-insurance/asha-kiran-insurance",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "2c50375d2f02508ee6367e84cadf4bcc08e5502a40d7ca4123bf25b53e2f4a86",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/asha-kiran-policy/Customer Information Sheet NEW INDIA ASHA KIRAN POLICY.pdf"
+}

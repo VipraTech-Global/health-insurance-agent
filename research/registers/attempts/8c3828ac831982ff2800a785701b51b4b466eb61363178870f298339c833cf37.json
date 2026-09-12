@@ -1,0 +1,73 @@
+{
+  "acquired_at": "2026-09-10T11:52:02.197833+00:00",
+  "associations": [],
+  "byte_count": 3951315,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://transactions.nivabupa.com/pages/doc/brochure/Everyday-Health-Brochure-2026.pdf?v=1.1",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 3092,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": 6,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 843.024,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.409
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.024,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.409
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.024,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.409
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.024,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.409
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.024,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.409
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 843.024,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 596.409
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "28d06ef29a5c9282c3b2c2814b7d11f543c060f8ebc39cc32b846f3daecd9ba2",
+  "status": "acquired",
+  "url": "https://transactions.nivabupa.com/pages/doc/brochure/Everyday-Health-Brochure-2026.pdf?v=1.1"
+}

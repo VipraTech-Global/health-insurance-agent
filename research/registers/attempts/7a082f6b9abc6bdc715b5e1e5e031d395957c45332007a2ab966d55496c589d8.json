@@ -1,0 +1,41 @@
+{
+  "acquired_at": "2026-09-10T11:57:51.730370+00:00",
+  "associations": [],
+  "byte_count": 106894,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://content.sbigeneral.in/uploads/SBI_General_Arogya_Gold_Group_Rate_Chart_26070301_f019c33eae.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "sbi-general",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 235,
+  "linking_url": "https://www.sbigeneral.in/downloads",
+  "page_count": 2,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 841.89,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.276
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "5ed3b679a5fa4ed310f76e90d59a9af52aba3ec77aeb9a622b56f3f3c1e503be",
+  "status": "acquired",
+  "url": "https://content.sbigeneral.in/uploads/SBI_General_Arogya_Gold_Group_Rate_Chart_26070301_f019c33eae.pdf"
+}

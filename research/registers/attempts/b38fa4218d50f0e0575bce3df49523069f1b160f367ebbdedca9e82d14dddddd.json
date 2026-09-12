@@ -1,0 +1,49 @@
+{
+  "acquired_at": "2026-09-10T11:38:50.095451+00:00",
+  "associations": [],
+  "byte_count": 733026,
+  "component_version": "research-acquisition/1",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.nivabupa.com/content/dam/nivabupa/PDF/SupplierCodeOfConduct_05062023.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "niva-bupa",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 4225,
+  "linking_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "page_count": 3,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 792.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 612.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "4381ffc8d2c82b4e9bac2cc3b38e562a9cdd884f5d36fc841dcef30a070d54c5",
+  "status": "acquired",
+  "url": "https://www.nivabupa.com/content/dam/nivabupa/PDF/SupplierCodeOfConduct_05062023.pdf"
+}

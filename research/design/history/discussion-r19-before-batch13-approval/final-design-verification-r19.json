@@ -1,0 +1,91 @@
+{
+  "revision": "discussion-r19",
+  "generated_at_utc": "2026-09-12T13:39:38.433819+00:00",
+  "status": "passed",
+  "scope": "Structural verification of approved buyer-focused Batch 12. Remaining models and complete design remain under review.",
+  "checks": [
+    {
+      "check": "77 unique buyer-adviser entities",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "684 unique application fields",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "203 FK relationships exactly match dictionary",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all FK targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "approved Batch 12 models present",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "superseded decision models absent",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "displayed answer is not duplicated",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all case and supplementary targets resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all 400 fixed mappings retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "trace covers every live field",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "trace hashes match",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all JSON roots resolve",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "all retained JSON definitions reachable",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "Batch 12 approval boundary recorded",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "no Batch 12 Django models created",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 15,
+  "failed": 0,
+  "application_entities": 77,
+  "application_fields": 684,
+  "foreign_keys": 203,
+  "json_definitions": 33,
+  "approved_batches": "1 through 12",
+  "overall_design_approval": false
+}

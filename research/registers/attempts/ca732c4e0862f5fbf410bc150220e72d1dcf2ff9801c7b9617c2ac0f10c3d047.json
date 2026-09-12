@@ -1,0 +1,105 @@
+{
+  "acquired_at": "2026-09-10T12:35:10.042338+00:00",
+  "associations": [],
+  "byte_count": 1024871,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Super_Surplus_Floater_Insurance_Policy_V_17_dc33d0e48b.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "star",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 430,
+  "linking_url": "https://www.starhealth.in/downloads/",
+  "page_count": 10,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 887.2441,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 640.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 887.2441,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 640.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 887.2441,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 640.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 887.2441,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 640.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 887.2441,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 640.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 887.2441,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 640.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 887.2441,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 640.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 887.2441,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 640.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 887.2441,
+      "page": 9,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 640.6299
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 887.2441,
+      "page": 10,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 640.6299
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+  "status": "acquired",
+  "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Super_Surplus_Floater_Insurance_Policy_V_17_dc33d0e48b.pdf"
+}

@@ -1,0 +1,2059 @@
+{
+  "boundary": "Selected medical-expense product wording/CIS candidates from official-domain search. Original bytes determine identity/scope; no guessed URL, no version or bundle completion inferred.",
+  "sources": [
+    {
+      "discovered_title": "Elevate wording",
+      "discovery_method": "Public web search result pointing directly to official insurer PDF; exact returned URL retained. Search text is not used as contractual evidence.",
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "icici-lombard",
+        "url": "https://www.icicilombard.com/docs/default-source/apps/elevateapp/assets/pdf/elevate-policy-wordings.pdf?trk=public_post_comment-text",
+        "linking_url": "",
+        "acquired_at": "2026-09-10T16:53:52.510146+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "46d61cbee18e10a56dca3ff4924290a5f48565d71eb91cce7e079d48015a61d8",
+        "page_count": 45,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.icicilombard.com/docs/default-source/apps/elevateapp/assets/pdf/elevate-policy-wordings.pdf?trk=public_post_comment-text",
+        "byte_count": 891156,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 17,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 18,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 19,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 20,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 21,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 22,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 23,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 24,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 25,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 26,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 27,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 28,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 29,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 30,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 31,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 32,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 33,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 34,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 35,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 36,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 37,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 38,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 39,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 40,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 41,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 42,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 43,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 44,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 45,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 1822
+      }
+    },
+    {
+      "discovered_title": "MaxProtect wording",
+      "discovery_method": "Public web search result pointing directly to official insurer PDF; exact returned URL retained. Search text is not used as contractual evidence.",
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "icici-lombard",
+        "url": "https://www.icicilombard.com/docs/default-source/default-document-library/maxprotect-policy-wordings.pdf",
+        "linking_url": "",
+        "acquired_at": "2026-09-10T16:53:52.525935+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "5a53a3a7c460df4f64de980d76d11a0c76cfbee5d84f7b2104d4de1082f75348",
+        "page_count": 50,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.icicilombard.com/docs/default-source/default-document-library/maxprotect-policy-wordings.pdf",
+        "byte_count": 1129582,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 17,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 18,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 19,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 20,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 21,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 22,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 23,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 24,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 25,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 26,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 27,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 28,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 29,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 30,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 31,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 32,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 33,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 34,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 35,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 36,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 37,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 38,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 39,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 40,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 41,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 42,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 43,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 44,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 45,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 46,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 47,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 48,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 49,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 50,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 2557
+      }
+    },
+    {
+      "discovered_title": "Golden Shield wording",
+      "discovery_method": "Public web search result pointing directly to official insurer PDF; exact returned URL retained. Search text is not used as contractual evidence.",
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "icici-lombard",
+        "url": "https://www.icicilombard.com/docs/default-source/default-document-library/golden-shield8c0007ff45fd68ff8a0df0055fa76206.pdf",
+        "linking_url": "",
+        "acquired_at": "2026-09-10T16:53:52.530500+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "f27174a30be8ab9ee04d6e68d09953916bdb2ce997ae1add19070f0f8372d6c1",
+        "page_count": 78,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.icicilombard.com/docs/default-source/default-document-library/golden-shield8c0007ff45fd68ff8a0df0055fa76206.pdf",
+        "byte_count": 996889,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 17,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 18,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 19,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 20,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 21,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 22,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 23,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 24,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 25,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 26,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 27,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 28,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 29,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 30,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 31,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 32,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 33,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 34,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 35,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 36,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 37,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 38,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 39,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 40,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 41,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 42,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 43,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 44,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 45,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 46,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 47,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 48,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 49,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 50,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 51,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 52,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 53,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 54,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 55,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 56,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 57,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 58,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 59,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 60,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 61,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 62,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 63,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 64,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 65,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 66,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 67,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 68,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 69,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 70,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 71,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 72,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 73,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 74,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 75,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 76,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 77,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 78,
+            "status": "preserved_not_read",
+            "width": 595.32,
+            "height": 841.92,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 1791
+      }
+    },
+    {
+      "discovered_title": "Health Booster wording",
+      "discovery_method": "Public web search result pointing directly to official insurer PDF; exact returned URL retained. Search text is not used as contractual evidence.",
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "icici-lombard",
+        "url": "https://www.icicilombard.com/docs/default-source/Policy-Wordings-product-Brochure/health_booster_policy_wordings.pdf?sfvrsn=2",
+        "linking_url": "",
+        "acquired_at": "2026-09-10T16:53:54.364387+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "deb0b11e2e33a2251ab4e60af70f2f719cc585eec1a287f1c30bd6dec8c60a23",
+        "page_count": 19,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.icicilombard.com/docs/default-source/Policy-Wordings-product-Brochure/health_booster_policy_wordings.pdf?sfvrsn=2",
+        "byte_count": 277561,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 17,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 18,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 19,
+            "status": "preserved_not_read",
+            "width": 595.276,
+            "height": 841.89,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 1218
+      }
+    },
+    {
+      "discovered_title": "Health Shield 360 Retail wording",
+      "discovery_method": "Public web search result pointing directly to official insurer PDF; exact returned URL retained. Search text is not used as contractual evidence.",
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "icici-lombard",
+        "url": "https://www.icicilombard.com/docs/default-source/default-document-library/health-shield-360-retail---policy-wording.pdf?sfvrsn=39fd6be4_0",
+        "linking_url": "",
+        "acquired_at": "2026-09-10T16:53:54.365598+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "ca59dc74948afa30b33a43596378735430bc1b286670af16063fc959101abad0",
+        "page_count": 30,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.icicilombard.com/docs/default-source/default-document-library/health-shield-360-retail---policy-wording.pdf?sfvrsn=39fd6be4_0",
+        "byte_count": 859657,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 14,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 15,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 16,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 17,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 18,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 19,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 20,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 21,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 22,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 23,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 24,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 25,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 26,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 27,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 28,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 29,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 30,
+            "status": "preserved_not_read",
+            "width": 595.2756,
+            "height": 841.8898,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 1512
+      }
+    },
+    {
+      "discovered_title": "Health Shield 360 Retail CIS",
+      "discovery_method": "Public web search result pointing directly to official insurer PDF; exact returned URL retained. Search text is not used as contractual evidence.",
+      "attempt": {
+        "format_version": 1,
+        "component_version": "research-acquisition/2",
+        "insurer_id": "icici-lombard",
+        "url": "https://www.icicilombard.com/docs/default-source/policy-wordings-product-brochure/health-shield-360-retail---cis.pdf",
+        "linking_url": "",
+        "acquired_at": "2026-09-10T16:53:55.102193+00:00",
+        "status": "acquired",
+        "issues": [],
+        "sha256": "0afccb43eb8b2089ae1dcc8a16cb484a8ec6fd50b6d2906a9386fb20adb54c30",
+        "page_count": 13,
+        "document_type": "pdf_unclassified",
+        "language": "unknown",
+        "associations": [],
+        "effective_from": null,
+        "effective_to": null,
+        "review_status": "not_reviewed",
+        "http_status": 200,
+        "final_url": "https://www.icicilombard.com/docs/default-source/policy-wordings-product-brochure/health-shield-360-retail---cis.pdf",
+        "byte_count": 642326,
+        "content_type": "application/pdf",
+        "pages": [
+          {
+            "page": 1,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 2,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 3,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 4,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 5,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 6,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 7,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 8,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 9,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 10,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 11,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 12,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          },
+          {
+            "page": 13,
+            "status": "preserved_not_read",
+            "width": 612.0,
+            "height": 792.0,
+            "tables": "not_inventoried",
+            "figures": "not_inventoried"
+          }
+        ],
+        "latency_ms": 821
+      }
+    }
+  ]
+}

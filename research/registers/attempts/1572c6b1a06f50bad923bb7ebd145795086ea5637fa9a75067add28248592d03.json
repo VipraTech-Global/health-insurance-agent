@@ -1,0 +1,57 @@
+{
+  "acquired_at": "2026-09-10T11:57:20.086361+00:00",
+  "associations": [],
+  "byte_count": 159944,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/know-more/health/Claim_Form.pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 5776,
+  "linking_url": "https://www.newindia.co.in/health-insurance/atmanirbhar-health-policy",
+  "page_count": 4,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 842.0,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.0,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.0,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.0
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 842.0,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 595.0
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "45fff8eb7d20dc02b6501e5d27be2f6e011a95771a1907f2409c36b7ce86d976",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/know-more/health/Claim_Form.pdf"
+}

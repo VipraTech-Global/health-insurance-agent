@@ -1,0 +1,637 @@
+{
+  "complete_rule_inventory": false,
+  "format_version": 1,
+  "independent_rule_denominator": null,
+  "reading_coverage": "Parent read all10physicalpages as text with separate columns, including re-reading truncatedp7. Visually checkedp3andp4tables and transcribed their rows/headers/footnotes separately. Text reading is not exhaustive visual review; website-other-excluded-expenses,latestnetwork andendorsementdependencies remain unresolved.",
+  "rules": [
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 2,
+          "passage": "Family means Self, Spouse and dependent children",
+          "section": "Specific definitions: Family",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Family eligibility is not all relatives; named insured and relationship evidence are required.",
+      "rule_id": "original-star-ssf-001",
+      "section": "Specific definitions: Family",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 2,
+          "passage": "limit of admissible hospitalization expenses",
+          "section": "Specific definitions: Defined Limit",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "The Gold defined limit counts admissible hospitalisation expenses, not gross invoices, and is schedule-selected.",
+      "rule_id": "original-star-ssf-002",
+      "section": "Specific definitions: Defined Limit",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 2,
+          "passage": "excess of the Deductible per hospitalization",
+          "section": "II operative grant",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Silver deductible applies to each hospitalisation, subject to aggregate policy-period sum insured.",
+      "rule_id": "original-star-ssf-003",
+      "section": "II operative grant",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 2,
+          "passage": "maximum of Rs.4,000/- per day.",
+          "section": "II.A",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Silver daily room cap and differential-billing exclusions must be evaluated before threshold accumulation.",
+      "rule_id": "original-star-ssf-004",
+      "section": "II.A",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 3,
+          "passage": "expenses and post hospitalization expenses will not be taken into account",
+          "section": "II note1",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Silver threshold excludes pre/post hospital expenses even though separately granted benefits exist.",
+      "rule_id": "original-star-ssf-005",
+      "section": "II note1",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 3,
+          "passage": "benefits / covers available for the 2nd year cannot be utilized in the 1st year itself.",
+          "section": "II note4",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Silver SI and deductible reset each year of a multiyear policy, with no carryover.",
+      "rule_id": "original-star-ssf-006",
+      "section": "II note4",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 3,
+          "passage": "Room (Single Private A/C room)",
+          "section": "III.A",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Gold room eligibility is a category defined on p2; it is not the Silver monetary cap.",
+      "rule_id": "original-star-ssf-007",
+      "section": "III.A",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 3,
+          "passage": "Medical expenses incurred up to 60 days immediately",
+          "section": "III.F-G",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Gold pre/post windows are60/90days; Silver windows30/60 require variant selection.",
+      "rule_id": "original-star-ssf-008",
+      "section": "III.F-G",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 3,
+          "passage": "maximum of 2 deliveries",
+          "section": "III.H",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Gold delivery benefit has INR50000 per policy period, two lifetime deliveries,12monthwait,bothself/spousecoveredandpolicyinforce.",
+      "rule_id": "original-star-ssf-009",
+      "section": "III.H",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 3,
+          "passage": "Claims under this section will not reduce the Sum Insured",
+          "section": "III.H special4",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Delivery benefit accounting differs from reduction of baseSI; lifetime and policy-period scopes interact.",
+      "rule_id": "original-star-ssf-010",
+      "section": "III.H special4",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 3,
+          "passage": "Donor screening expenses and post-donation",
+          "section": "III.I",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Donor benefit depends on admissible recipient transplantation and excludes screening/post-donationcomplications.",
+      "rule_id": "original-star-ssf-011",
+      "section": "III.I",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 4,
+          "passage": "This benefit is not available for Modern Treatments",
+          "section": "III.L",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Gold recharge is once per period and can serve same admission/illness, but excludes modern treatments; exhaustion wordingV.23 must be reconciled.",
+      "rule_id": "original-star-ssf-012",
+      "section": "III.L",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 4,
+          "passage": "aggregate of the hospitalization",
+          "section": "III note3",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Gold threshold uses accumulated admissible hospitalisation expenses during its own policy period.",
+      "rule_id": "original-star-ssf-013",
+      "section": "III note3",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 4,
+          "passage": "hospitalization expenses will not be taken into account",
+          "section": "III note4",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Gold pre/post expenses do not contribute to defined limit.",
+      "rule_id": "original-star-ssf-014",
+      "section": "III note4",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 4,
+          "passage": "Defined limit is for each of the year",
+          "section": "III note5",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Gold annual accumulation resets even for multiyear policy terms.",
+      "rule_id": "original-star-ssf-015",
+      "section": "III note5",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 4,
+          "passage": "The Sum Insured floats amongst the insured members.",
+          "section": "III note7",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Member claims share floater SI; aggregate threshold belongs to selected policy and period.",
+      "rule_id": "original-star-ssf-016",
+      "section": "III note7",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 4,
+          "passage": "Applicable for Gold Plan: Expenses related to the treatment",
+          "section": "IV.1A",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "PED waits differ: Silver36months and Gold12months; declaration, acceptance, continuity and increase-layer conditions remain required.",
+      "rule_id": "original-star-ssf-017",
+      "section": "IV.1A",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 5,
+          "passage": "then the longer of the two waiting periods shall apply",
+          "section": "IV.2C",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Overlapping specific/PED waits combine by maximum, not addition; Silver specific24months, Gold12months.",
+      "rule_id": "original-star-ssf-018",
+      "section": "IV.2C",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 5,
+          "passage": "except claims arising due to an",
+          "section": "IV.3A",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Initial30day illness wait has accident exception only where otherwise covered; enhanced amounts have own application.",
+      "rule_id": "original-star-ssf-019",
+      "section": "IV.3A",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 5,
+          "passage": "expenses up to the stage of stabilization are payable but not the complete claim.",
+          "section": "IV.11",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Excluded-provider emergency/accident exception stops at stabilization and is not a network-membership rule.",
+      "rule_id": "original-star-ssf-020",
+      "section": "IV.11",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 5,
+          "passage": "except to the extent covered under",
+          "section": "IV.18",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "General maternity exclusion has linked Golddelivery grant and ectopic exception; do not suppress the exception.",
+      "rule_id": "original-star-ssf-021",
+      "section": "IV.18",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 6,
+          "passage": "Any medical expenses incurred towards treatment of New Born Baby",
+          "section": "IV.38",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Newborn treatment exclusion differs from maternal delivery payment; connectedGoldgrant does not prove newborncover.",
+      "rule_id": "original-star-ssf-022",
+      "section": "IV.38",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 6,
+          "passage": "Denial of a Pre-authorization request is in no way to be construed as denial of",
+          "section": "V.2B note",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Cashless authorization refusal is distinct from treatment denial or coverage denial; reimbursement remains conditional.",
+      "rule_id": "original-star-ssf-023",
+      "section": "V.2B note",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 6,
+          "passage": "Intimation of all hospitalizations during the policy period",
+          "section": "V.2G",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Gold demands hospitalisation intimation even without a claim; thresholdledger depends on unclaimed as well as submitted episodes.",
+      "rule_id": "original-star-ssf-024",
+      "section": "V.2G",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 6,
+          "passage": "amounts disallowed under any other policy",
+          "section": "V.4ii",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Other-policy disallowance does not automatically establish Star payment; Star independently applies its terms.",
+      "rule_id": "original-star-ssf-025",
+      "section": "V.4ii",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 7,
+          "passage": "Coverage is not available during the grace period.",
+          "section": "V.9.3-4",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Annual renewal grace protects continuity but not claim cover under this clause; instalmentoverrideV.12separate.",
+      "rule_id": "original-star-ssf-026",
+      "section": "V.9.3-4",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 7,
+          "passage": "notwithstanding any terms contrary elsewhere in the policy",
+          "section": "V.12 opening",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Instalment terms expressly override contrary wording within their scope.",
+      "rule_id": "original-star-ssf-027",
+      "section": "V.12 opening",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 7,
+          "passage": "during the grace period also",
+          "section": "V.12viii",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "During-term instalment grace provides cover; distinguish mode and active policy term.",
+      "rule_id": "original-star-ssf-028",
+      "section": "V.12viii",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 7,
+          "passage": "all subsequent premium instalments shall immediately",
+          "section": "V.12vi-vii",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Claim accelerates unpaid instalments and permits their recovery from claim; premium debit differs from contractualclaimdeduction.",
+      "rule_id": "original-star-ssf-029",
+      "section": "V.12vi-vii",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 7,
+          "passage": "taken in India.",
+          "section": "V.22",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Territory restricts medical/surgical treatment to India; overseasconsultationmarketingisnotplannedoverseascover.",
+      "rule_id": "original-star-ssf-030",
+      "section": "V.22",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 7,
+          "passage": "Upon exhaustion of the sum insured under the policy",
+          "section": "V.23",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Automatic expiry onSIexhaustion conflicts on its face with specificGoldrecharge; preserveconditionalprecedencereview.",
+      "rule_id": "original-star-ssf-031",
+      "section": "V.23",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 8,
+          "passage": "only at the time of renewal.",
+          "section": "V.26",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "SI change limited to renewal; insurerdiscretion,noclaimcondition,additionalwaitsandpersonscopeapply.",
+      "rule_id": "original-star-ssf-032",
+      "section": "V.26",
+      "status": "inventoried_not_independently_reviewed"
+    },
+    {
+      "evidence": [
+        {
+          "bbox": null,
+          "format_version": 1,
+          "page": 8,
+          "passage": "at the beginning of 6th year before renewal",
+          "section": "V.29",
+          "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+          "table_context": []
+        }
+      ],
+      "lexical_location_verified": true,
+      "product_version": "SHAHLIP22034V062122 / POL SSF V18/2025",
+      "requirement": "Gold pathway to a policy withoutdefinedlimit has5yearhistory,before50entry,noclaims,allmembers,underwriting and averageSIconditions; notageneral righttoreducedeductible.",
+      "rule_id": "original-star-ssf-033",
+      "section": "V.29",
+      "status": "inventoried_not_independently_reviewed"
+    }
+  ],
+  "source_sha256": "c0b41932d7d57e1165dd5524cbe526e8bec9b38258404f62281198264ea52a31",
+  "verification_errors": []
+}

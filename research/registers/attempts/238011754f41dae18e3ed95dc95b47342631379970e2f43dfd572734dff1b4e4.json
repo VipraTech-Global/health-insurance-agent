@@ -1,0 +1,89 @@
+{
+  "acquired_at": "2026-09-10T11:57:27.800631+00:00",
+  "associations": [],
+  "byte_count": 390227,
+  "component_version": "research-acquisition/2",
+  "content_type": "application/pdf",
+  "document_type": "pdf_unclassified",
+  "effective_from": null,
+  "effective_to": null,
+  "final_url": "https://www.newindia.co.in/assets/docs/nodal_officers_hit_&_run%20scheme_western_region/New%20India%20Assurance%20Hit%20&%20Run%20Nodal%20Officer%20(28-07-2026).pdf",
+  "format_version": 1,
+  "http_status": 200,
+  "insurer_id": "new-india",
+  "issues": [],
+  "language": "unknown",
+  "latency_ms": 5576,
+  "linking_url": "https://www.newindia.co.in/health-insurance/atmanirbhar-health-policy",
+  "page_count": 8,
+  "pages": [
+    {
+      "figures": "not_inventoried",
+      "height": 595.2,
+      "page": 1,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.68
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.2,
+      "page": 2,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.68
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.2,
+      "page": 3,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.68
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.2,
+      "page": 4,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.68
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.2,
+      "page": 5,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.68
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.2,
+      "page": 6,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.68
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.2,
+      "page": 7,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.68
+    },
+    {
+      "figures": "not_inventoried",
+      "height": 595.2,
+      "page": 8,
+      "status": "preserved_not_read",
+      "tables": "not_inventoried",
+      "width": 841.68
+    }
+  ],
+  "review_status": "not_reviewed",
+  "sha256": "3eb120b2ce8b74a942dfb673de7e3ba59f8f93071a1d87875e5de271ea00786c",
+  "status": "acquired",
+  "url": "https://www.newindia.co.in/assets/docs/nodal_officers_hit_&_run scheme_western_region/New India Assurance Hit & Run Nodal Officer (28-07-2026).pdf"
+}
