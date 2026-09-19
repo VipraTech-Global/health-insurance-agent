@@ -17,6 +17,7 @@ from apps.adviser.providers import provider_config
 from apps.adviser_v2.contracts import validate_contract
 from apps.adviser_v2.model_gateway import schema_sha256
 from apps.adviser_v2.models import ModelQualification, ModelRoute
+from apps.adviser_v2.role_routes import OMNIROUTE_CONTEXT_LIMIT_BYTES, RoleRoute, configured_route
 from apps.adviser_v2.rule_validation import rule_semantic_problems
 from apps.adviser_v2.schemas import (
     CustomerInterpretationV1,
@@ -166,19 +167,21 @@ def _semantic_check(schema_name: str, result: StrictOutput) -> None:
 
 
 async def _call(
-    model: str, output_type: type[StrictOutput], messages: list[dict[str, str]]
+    role_route: RoleRoute, output_type: type[StrictOutput], messages: list[dict[str, str]]
 ) -> tuple[StrictOutput, StrictRelayAdapter]:
+    provider = provider_config(role_route.relay_type)
     route = RelayRoute(
-        relay_type="cliproxyapi",
-        base_url=provider_config("cliproxyapi").base_url,
-        model=model,
+        relay_type=role_route.relay_type,  # type: ignore[arg-type]
+        base_url=provider.base_url,
+        model=role_route.requested_model,
         api_dialect="openai_responses",
-        context_limit=1_000_000,
+        context_limit=OMNIROUTE_CONTEXT_LIMIT_BYTES if role_route.is_omniroute else 1_000_000,
         timeout_seconds=120,
         qualified=True,
+        expected_model=role_route.expected_model if role_route.is_omniroute else None,
     )
     async with httpx.AsyncClient(trust_env=False) as client:
-        adapter = StrictRelayAdapter(route, client, provider_config(route.relay_type).api_key)
+        adapter = StrictRelayAdapter(route, client, provider.api_key)
         result = await adapter.generate(messages, 120, output_type)
         return result, adapter
 
@@ -188,32 +191,37 @@ class Command(BaseCommand):
 
     def handle(self, *args: Any, **options: Any) -> None:
         failures: list[str] = []
-        for model, schema_name, output_type, messages in _requests():
-            configuration = {
-                "endpoint_profile": "shared-job-in-loopback-relay",
-                "base_url": settings.AI_RELAY_BASE_URL,
-                "requested_model": model,
-                "adapter_version": "strict-relay-v2/1",
-            }
-            configuration_hash = hashlib.sha256(
-                json.dumps(configuration, sort_keys=True, separators=(",", ":")).encode()
-            ).hexdigest()
+        for _, schema_name, output_type, messages in _requests():
+            try:
+                role_route = configured_route(schema_name)
+                configuration_hash = role_route.configuration_sha256
+                route_key = role_route.route_key
+            except RelayFailure as exc:
+                raise CommandError(f"{schema_name} route is not usable: {exc.code}") from exc
+            model = role_route.requested_model
             route, _ = ModelRoute.objects.get_or_create(
-                route_key=f"{model}:{configuration_hash[:16]}",
+                route_key=route_key,
                 defaults={
-                    "endpoint_profile": configuration["endpoint_profile"],
+                    "endpoint_profile": role_route.endpoint_profile,
                     "requested_model": model,
-                    "adapter_version": configuration["adapter_version"],
+                    "adapter_version": role_route.configuration["adapter_version"],
                     "configuration_sha256": configuration_hash,
                 },
             )
+            # Routes are immutable, so an existing row must already be this exact configuration.
+            if (
+                route.configuration_sha256 != configuration_hash
+                or route.endpoint_profile != role_route.endpoint_profile
+                or route.requested_model != model
+            ):
+                raise CommandError(f"Existing route {route_key} does not match its configuration.")
             started = time.monotonic()
             result_name = "failed"
             observed_model = ""
             artifact_hashes: list[str] = []
             limitations: list[str] = []
             try:
-                result, adapter = asyncio.run(_call(model, output_type, messages))
+                result, adapter = asyncio.run(_call(role_route, output_type, messages))
                 _semantic_check(schema_name, result)
                 observed_model = adapter.reported_model
                 artifact_hashes = [
@@ -243,7 +251,7 @@ class Command(BaseCommand):
                     "image_input_tested": False,
                     "image_formats": [],
                     "schema_test_artifact_hashes": artifact_hashes,
-                    "identity_exact": observed_model == model,
+                    "identity_exact": observed_model == role_route.expected_model,
                     "latency_ms": round((time.monotonic() - started) * 1000),
                     "limitations": limitations,
                 },

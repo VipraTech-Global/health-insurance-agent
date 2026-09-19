@@ -23,6 +23,11 @@ from apps.adviser.providers import provider_config
 from .crypto import commitment
 from .errors import AccountErased
 from .models import ModelAttempt, ModelQualification, ProcessingJob, Turn
+from .role_routes import (
+    OMNIROUTE_CONTEXT_LIMIT_BYTES,
+    OMNIROUTE_ENDPOINT_PROFILE,
+    RoleRoute,
+)
 from .storage import read_private, store_model_result
 
 
@@ -42,22 +47,29 @@ def route_timeout_seconds(*, processing: bool, remaining_seconds: float) -> floa
 
 
 def qualified_route(
-    model: str, schema_name: str, output_type: type[BaseModel]
+    route: RoleRoute | str, schema_name: str, output_type: type[BaseModel]
 ) -> ModelQualification:
+    if isinstance(route, str):
+        route = RoleRoute.relay(route)
     expected_hash = schema_sha256(output_type)
-    candidates = (
-        ModelQualification.objects.select_related("route")
-        .filter(
-            route__requested_model=model,
-            route__disabled_at__isnull=True,
-            schema_name=schema_name,
-            schema_sha256=expected_hash,
-            observed_model=model,
-            result="passed",
-        )
-        .order_by("-created_at")
+    candidates = ModelQualification.objects.select_related("route").filter(
+        route__requested_model=route.requested_model,
+        route__disabled_at__isnull=True,
+        schema_name=schema_name,
+        schema_sha256=expected_hash,
+        observed_model=route.expected_model,
+        result="passed",
     )
-    for candidate in candidates:
+    if route.is_omniroute:
+        # The immutable route row pins endpoint, base URL, requested and expected identity.
+        candidates = candidates.filter(
+            route__endpoint_profile=OMNIROUTE_ENDPOINT_PROFILE,
+            route__route_key=route.route_key,
+            route__configuration_sha256=route.configuration_sha256,
+        )
+    else:
+        candidates = candidates.exclude(route__endpoint_profile=OMNIROUTE_ENDPOINT_PROFILE)
+    for candidate in candidates.order_by("-created_at"):
         capabilities = candidate.capabilities
         if (
             isinstance(capabilities, dict)
@@ -67,13 +79,14 @@ def qualified_route(
             return candidate
     raise RelayFailure(
         "route_unqualified",
-        f"The exact {model} route has not passed the current {schema_name} schema.",
+        f"The exact {route.requested_model} route has not passed the current {schema_name} schema.",
     )
 
 
 def call_model[OutputT: BaseModel](
     *,
-    model: str,
+    model: str | None = None,
+    route: RoleRoute | None = None,
     schema_name: str,
     output_type: type[OutputT],
     messages: Sequence[dict[str, str]],
@@ -84,7 +97,16 @@ def call_model[OutputT: BaseModel](
 ) -> OutputT:
     if (turn is None) == (processing_job is None):
         raise ValueError("Exactly one turn or processing job is required.")
-    qualification = qualified_route(model, schema_name, output_type)
+    if (model is None) == (route is None):
+        raise ValueError("Exactly one model or route is required.")
+    role_route = route if route is not None else RoleRoute.relay(str(model))
+    if role_route.is_omniroute and processing_job is not None:
+        # Processing jobs can carry private uploads, so they never reach a third-party gateway.
+        raise RelayFailure(
+            "provider_not_allowed", "Offline processing may only use the relay route."
+        )
+    model = role_route.requested_model
+    qualification = qualified_route(role_route, schema_name, output_type)
     owner_id: uuid.UUID | None
     if turn is not None:
         parent_attempts = ModelAttempt.objects.filter(turn=turn)
@@ -159,23 +181,25 @@ def call_model[OutputT: BaseModel](
         usage=unavailable_usage,
         request_commitment=request_commitment,
     )
-    route = RelayRoute(
-        relay_type="cliproxyapi",
-        base_url=provider_config("cliproxyapi").base_url,
+    provider = provider_config(role_route.relay_type)
+    relay_route = RelayRoute(
+        relay_type=role_route.relay_type,  # type: ignore[arg-type]
+        base_url=provider.base_url,
         model=model,
         api_dialect="openai_responses",
-        context_limit=1_000_000,
+        context_limit=(OMNIROUTE_CONTEXT_LIMIT_BYTES if role_route.is_omniroute else 1_000_000),
         timeout_seconds=route_timeout_seconds(
             processing=processing_job is not None,
             remaining_seconds=remaining_seconds,
         ),
         qualified=True,
+        expected_model=role_route.expected_model if role_route.is_omniroute else None,
     )
     began = time.monotonic()
 
     async def invoke() -> tuple[OutputT, StrictRelayAdapter]:
         async with httpx.AsyncClient(trust_env=False) as client:
-            adapter = StrictRelayAdapter(route, client, provider_config(route.relay_type).api_key)
+            adapter = StrictRelayAdapter(relay_route, client, provider.api_key)
             result = await adapter.generate(list(messages), remaining_seconds, output_type)
             return result, adapter
 

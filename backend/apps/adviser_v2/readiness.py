@@ -42,6 +42,7 @@ from .processing.stages import (
     RULE_VALIDATOR_VERSION,
     _table_rule_problems,
 )
+from .role_routes import ROLE_SETTINGS, configured_route
 from .rule_validation import (
     rule_graph_problems,
     rule_link_references,
@@ -284,29 +285,21 @@ def _document_identity_blockers(
 
 def _model_gate() -> list[str]:
     requirements = (
-        (
-            settings.COVERGUIDE_CUSTOMER_INTERPRETATION_MODEL,
-            "fact_interpretation",
-            CustomerInterpretationV1,
-        ),
-        (
-            settings.COVERGUIDE_POLICY_EXTRACTION_MODEL,
-            "policy_extraction",
-            PolicyRuleExtractionV1,
-        ),
-        (settings.COVERGUIDE_POLICY_REVIEW_MODEL, "policy_review", PolicyRuleReviewV1),
-        (
-            settings.COVERGUIDE_FINAL_EXPLANATION_MODEL,
-            "recommendation_answer",
-            RecommendationDraftV1,
-        ),
+        ("fact_interpretation", CustomerInterpretationV1),
+        ("policy_extraction", PolicyRuleExtractionV1),
+        ("policy_review", PolicyRuleReviewV1),
+        ("recommendation_answer", RecommendationDraftV1),
     )
     blockers: list[str] = []
-    for model, schema_name, output_type in requirements:
+    for schema_name, output_type in requirements:
+        # Each role is checked against the route the operator configured; no fallback route.
+        label = getattr(settings, ROLE_SETTINGS[schema_name][0])
         try:
-            qualified_route(model, schema_name, output_type)
+            route = configured_route(schema_name)
+            label = route.requested_model
+            qualified_route(route, schema_name, output_type)
         except RelayFailure as exc:
-            blockers.append(f"model:{model}:{schema_name}:{exc.code}")
+            blockers.append(f"model:{label}:{schema_name}:{exc.code}")
     return blockers
 
 

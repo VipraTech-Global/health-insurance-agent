@@ -26,6 +26,7 @@ from .model_gateway import call_model
 from .models import Conversation, KnowledgeChannel, Outbox, Turn
 from .registries import FACT_TYPES, REQUIREMENT_TYPES
 from .retrieval import conversation_context, index_message, retrieve_policy_context
+from .role_routes import configured_route
 from .schemas import CustomerInterpretationV1, RecommendationDraftV1
 from .selectors.customer import current_profile_payload
 from .services.customer import append_turn_event
@@ -490,7 +491,7 @@ def process_turn(turn_id: uuid.UUID) -> None:
                 },
             )
         interpretation = call_model(
-            model=settings.COVERGUIDE_CUSTOMER_INTERPRETATION_MODEL,
+            route=configured_route("fact_interpretation"),
             schema_name="fact_interpretation",
             output_type=CustomerInterpretationV1,
             messages=_interpretation_messages(turn),
@@ -582,7 +583,7 @@ def process_turn(turn_id: uuid.UUID) -> None:
                     },
                 )
             draft = call_model(
-                model=settings.COVERGUIDE_FINAL_EXPLANATION_MODEL,
+                route=configured_route("recommendation_answer"),
                 schema_name="recommendation_answer",
                 output_type=RecommendationDraftV1,
                 messages=_recommendation_messages(decision_context),
