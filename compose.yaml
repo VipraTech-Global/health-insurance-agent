@@ -14,6 +14,21 @@ services:
       retries: 20
     volumes:
       - health_adviser_pg:/var/lib/postgresql/data
+  postgres18:
+    image: pgvector/pgvector:0.8.6-pg18-bookworm@sha256:2ba9ca5f2e7daa0f0e7723cba1ee9167bab54efd3640516a44ac1a928dd67e7a
+    environment:
+      POSTGRES_DB: health_adviser
+      POSTGRES_USER: health_adviser
+      POSTGRES_PASSWORD: health_adviser_local
+    ports:
+      - "127.0.0.1:55449:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U health_adviser -d health_adviser"]
+      interval: 2s
+      timeout: 2s
+      retries: 30
+    volumes:
+      - health_adviser_pg18:/var/lib/postgresql
   redis:
     image: redis:7.2-alpine@sha256:ccd6aa8d45ff3f033d6fa15b8cc1a50579f65c89f38cf9bb607a954c4f2128ed
     command: ["redis-server", "--appendonly", "yes"]
@@ -35,4 +50,5 @@ services:
 
 volumes:
   health_adviser_pg:
+  health_adviser_pg18:
   health_adviser_redis:

@@ -16,6 +16,9 @@ dependencies = [
   "celery==5.6.3",
   "redis==8.1.0",
   "defusedxml==0.7.1",
+  "cryptography==50.0.1",
+  "jsonschema==4.26.0",
+  "pgvector==0.5.0",
 ]
 
 [dependency-groups]
@@ -29,6 +32,14 @@ dev = [
   "djangorestframework-stubs==3.16.4",
   "openapi-spec-validator==0.7.2",
   "pytest-asyncio==1.2.0",
+  "types-jsonschema>=4.26.0.20260518",
+]
+documents = [
+  "docling==2.126.0",
+  "numpy==2.5.3",
+  "onnx==1.22.0",
+  "onnxruntime==1.30.0",
+  "tokenizers==0.23.2",
 ]
 
 [tool.pytest.ini_options]
@@ -58,6 +69,20 @@ ignore_missing_imports = true
 
 [[tool.mypy.overrides]]
 module = "defusedxml.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = [
+  "docling.*",
+  "numpy",
+  "numpy.*",
+  "onnxruntime",
+  "onnxruntime.*",
+  "pypdfium2",
+  "pypdfium2.*",
+  "tokenizers",
+  "tokenizers.*",
+]
 ignore_missing_imports = true
 
 [tool.django-stubs]

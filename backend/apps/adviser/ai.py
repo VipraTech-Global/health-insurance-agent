@@ -185,6 +185,10 @@ class StrictRelayAdapter:
                     timeout=min(self.route.timeout_seconds, remaining_deadline),
                 ) as response:
                     codes = {
+                        408: (
+                            "provider_timeout",
+                            "The selected model did not respond in time.",
+                        ),
                         429: ("provider_quota", "The selected model reported quota exhaustion."),
                         404: ("model_missing", "The selected model is unavailable."),
                     }
@@ -194,7 +198,7 @@ class StrictRelayAdapter:
                         )
                     if response.status_code in codes:
                         code, message = codes[response.status_code]
-                        raise RelayFailure(code, message, response.status_code == 429)
+                        raise RelayFailure(code, message, response.status_code in {408, 429})
                     if response.status_code >= 400:
                         raise RelayFailure(
                             "provider_unavailable"

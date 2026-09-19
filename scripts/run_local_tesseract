@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+
+project_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
+tool_root="$project_root/data/v2/tools/tesseract/usr"
+export LD_LIBRARY_PATH="$tool_root/lib/x86_64-linux-gnu${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+export TESSDATA_PREFIX="$tool_root/share/tesseract-ocr/4.00/tessdata"
+exec "$tool_root/bin/tesseract" "$@"

@@ -2,6 +2,7 @@ import hashlib
 import ipaddress
 import json
 
+from django.conf import settings
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
 from django.contrib.auth.password_validation import validate_password
 from django.core.cache import cache
@@ -135,6 +136,13 @@ def delete_account(request: HttpRequest) -> JsonResponse:
     from apps.adviser.models import AnswerArtifact, Conversation, RecommendationSnapshot
 
     user = request.user
+    if settings.COVERGUIDE_V2_ENABLED:
+        from apps.adviser_v2.services.erasure import erase_account, has_v2_private_data
+
+        if has_v2_private_data(user.id):
+            erase_account(user.id)
+            logout(request)
+            return JsonResponse({}, status=204)
     logout(request)
     with transaction.atomic():
         RecommendationSnapshot.objects.filter(owner=user).delete()

@@ -88,6 +88,7 @@ async def test_relay_preserves_full_messages_responses_and_schema():
         (404, "model_missing"),
         (503, "provider_unavailable"),
         (401, "provider_rejected"),
+        (408, "provider_timeout"),
         (302, "provider_redirect"),
     ],
 )
@@ -107,6 +108,7 @@ async def test_provider_errors_are_safe_and_never_retried(status, code):
         with pytest.raises(RelayFailure) as failure:
             await StrictRelayAdapter(route(), client, "secret").generate_structured_answer([], 5)
     assert failure.value.code == code and len(calls) == 1
+    assert failure.value.retryable is (status in {408, 429, 503})
     assert "private" not in str(failure.value)
 
 
