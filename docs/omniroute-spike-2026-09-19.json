@@ -1,0 +1,35 @@
+{
+  "recorded": "2026-09-19",
+  "gateway": "OmniRoute 3.8.50, self-hosted, loopback",
+  "method": "One synthetic (no customer data) strict json_schema request to POST /v1/responses per model, store=false, stream=false.",
+  "note": "No keys, connection ids or health data are recorded here. Free-tier quotas and catalogues change; re-run check_omniroute and qualify_v2_models before relying on this.",
+  "reported_identity_rule": "OmniRoute echoes the requested id without its leading provider segment. CoverGuide does not strip by pattern; each allowlisted model declares its exact reported id.",
+  "passed_strict_json_schema": [
+    {"requested": "gemini/gemini-3.1-flash-lite", "reported": "gemini-3.1-flash-lite", "seconds": 5.5, "allowlisted": true},
+    {"requested": "gemini/gemini-3.5-flash-lite", "reported": "gemini-3.5-flash-lite", "seconds": 4.5, "allowlisted": true},
+    {"requested": "cohere/command-a-plus-05-2026", "reported": "command-a-plus-05-2026", "seconds": 3.5, "allowlisted": true},
+    {"requested": "huggingface/deepseek-ai/DeepSeek-V3", "reported": "deepseek-ai/DeepSeek-V3", "seconds": 11, "allowlisted": true},
+    {"requested": "openrouter/deepseek/deepseek-v4-flash-0731:free", "reported": "deepseek/deepseek-v4-flash-0731:free", "seconds": 9, "allowlisted": true},
+    {"requested": "gemini/gemini-3.7-flash", "seconds": 19, "allowlisted": false},
+    {"requested": "gemini/gemini-3-flash-preview", "allowlisted": false, "reason": "preview model"},
+    {"requested": "gemini/gemini-2.5-*", "allowlisted": false},
+    {"requested": "cohere/command-a-03-2025", "allowlisted": false}
+  ],
+  "unusable": [
+    {"provider": "groq", "result": "Cloudflare 1010 block from the test machine"},
+    {"provider": "cerebras", "result": "Cloudflare 1010 block from the test machine"},
+    {"provider": "mistral", "result": "HTTP 429"},
+    {"provider": "deepseek (direct)", "result": "HTTP 402, payment required"},
+    {"provider": "sambanova", "result": "not usable on the free tier"},
+    {"provider": "nvidia", "result": "requested ids absent from the live catalogue"},
+    {"provider": "openrouter qwen :free", "result": "HTTP 504"},
+    {"provider": "gemini/gemini-3.1-pro-preview", "result": "HTTP 429"}
+  ],
+  "never_allowlisted": ["OAuth and coding-tool connections (agy, antigravity, cline, grok-cli, kilocode, github)", "keyless consumer-chat providers, including the opencode free tier"],
+  "gateway_facts": {
+    "bind": "Set OMNIROUTE_SERVER_HOST=127.0.0.1; HOSTNAME and HOST are ignored and the default is 0.0.0.0.",
+    "auth": "/v1/* requires an OmniRoute API key.",
+    "logging": "New keys default to noLog=false and compression on; both must be changed for CoverGuide.",
+    "routing": "round-robin with sticky limit 3 across several keys per provider was confirmed with a 12-call test."
+  }
+}

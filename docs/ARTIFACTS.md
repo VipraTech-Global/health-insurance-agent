@@ -25,4 +25,5 @@ uv.lock and frontend/package-lock.json.
 
 No embedding or reranker model has been selected or downloaded. Docling, Tesseract, Haystack,
 Crawl4AI and Ragas are planned integrations and are not part of this runtime lock yet. CLIProxyAPI now has four qualified Responses routes in the local database; see
-`cliproxyapi-activation-2026-09-10.json` for the recorded probes. OmniRoute remains inactive.
+`cliproxyapi-activation-2026-09-10.json` for the recorded probes. OmniRoute is an optional second provider for the two interactive v2 roles, off by default; see
+`omniroute-spike-2026-09-19.json` for the recorded probes and the README runbook.

@@ -9,7 +9,7 @@ Status date: 2026-09-10
 | API contract | Implemented | OpenAPI schema generation and TypeScript generation are part of verification |
 | Exact citation storage | Partial | One 83-page native source map, four verified fact bundles, and browser overlays work; OCR and mixed-page fixtures remain |
 | Recommendation rules | Partial | One Care Supreme test option returns four cited facts and an honest needs-evidence candidate outcome; full profile suitability and multi-plan ranking remain |
-| CLIProxyAPI | Implemented and live verified | Four independently qualified models; strict Responses transport, exact identity, per-user preferences, captured turn routes, masked admin OAuth controls, and audited calls. OmniRoute stays inactive |
+| CLIProxyAPI | Implemented and live verified | Four independently qualified models; strict Responses transport, exact identity, per-user preferences, captured turn routes, masked admin OAuth controls, and audited calls. OmniRoute is an optional, off-by-default second provider for the two interactive v2 roles only (operator-selected, qualified per route, no fallback); live turns on it are not yet verified |
 | Retrieval benchmarks | Not measured | The reviewed question corpus and retrieval evaluation remain outstanding |
 | Full catalogue inventory | Implemented | Live sitemap discovery recorded 203 listings on 2026-09-09; Care Supreme is active for evidence testing but remains awaiting recommendation review, and 202 remain discovered |
 | Quality targets | Not measured | The 1,000-question and 200-profile independently reviewed evaluation sets do not exist |

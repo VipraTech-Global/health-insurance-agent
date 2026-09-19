@@ -82,7 +82,8 @@ changes use authenticated, CSRF-protected POST requests.
 
 Server credentials belong only in the ignored `.env` (mode `0600`), loaded by the backend
 process. Never put them in frontend environment variables, route records, or source control.
-The live backend runs with debug error pages disabled. OmniRoute is inactive.
+The live backend runs with debug error pages disabled. OmniRoute is optional and off by default;
+see [Optional OmniRoute gateway](#optional-omniroute-gateway).
 
 The shared relay explicitly sets `request-retry: 0`, `max-retry-credentials: 1`,
 `max-retry-interval: 0`, and all three `quota-exceeded` fallbacks to false, with loopback
@@ -107,6 +108,56 @@ cancel, disconnect, restore, forget), and `POST /api/v1/admin/ai-relay/qualifica
 Each qualification tests both answer and interview schemas and records safe call metadata.
 The one-time `promote_pilot_admin` command requires an inspected user ID and exact last-login
 timestamp and refuses ambiguous accounts, changed logins, or repeat promotion.
+
+## Optional OmniRoute gateway
+
+[OmniRoute](https://github.com/diegosouzapw/OmniRoute) is a self-hosted, OpenAI-compatible gateway
+that can serve the two **interactive** v2 roles (customer interpretation and final explanation)
+from free provider tiers. The CLIProxyAPI relay stays the default. Policy extraction and review
+handle private uploads, so they are relay-only and refuse OmniRoute in code. There is no fallback
+between providers: if OmniRoute is disabled, misconfigured, unqualified or failing, the role fails
+closed and the turn reports the error. Customers do not choose a route; the operator does.
+
+**Data flow.** Loopback is not data residency. With OmniRoute selected, the customer's message and
+the decision context are sent through the gateway to whichever upstream provider it routes to
+(Gemini, Cohere, Hugging Face, OpenRouter, ...), under that provider's free-tier terms, which may
+allow retention and training. There is no per-customer consent prompt; this page and
+`docs/SECURITY.md` are the disclosure. Do not enable it for data you would not send to those
+providers.
+
+Set it up on the operator machine, outside this repository:
+
+1. Install OmniRoute and start it bound to loopback, with its data directory outside the repo:
+   `OMNIROUTE_SERVER_HOST=127.0.0.1 DATA_DIR=/path/outside/repo PORT=20128 omniroute serve --no-open`.
+   `HOSTNAME` and `HOST` are ignored and the default bind is `0.0.0.0`.
+2. Add provider API keys in OmniRoute only; they never enter this repository or `.env`. Keep
+   routing on `round-robin` if several keys share a provider. Never connect OAuth or coding-tool
+   accounts (Antigravity, Cline, Kilo, Grok CLI, GitHub, ...) as providers.
+3. Create an OmniRoute API key for CoverGuide and turn **request logging off (`noLog`) and prompt
+   compression off** on that key. New keys default to logging on and compression on, and logged
+   bodies would retain customer text. Verify this in the dashboard before continuing.
+4. Set in `.env` (placeholders are in `.env.example`):
+   - `OMNIROUTE_ENABLED=1`, `OMNIROUTE_BASE_URL=http://127.0.0.1:20128`, `OMNIROUTE_API_KEY=...`
+   - `OMNIROUTE_LOGGING_DISABLED_CONFIRMED=1` once step 3 is true. This is your attestation; the
+     backend refuses to start OmniRoute without it.
+   - `OMNIROUTE_MODELS`: comma-separated `requested-id=reported-id` pairs. OmniRoute reports the
+     model without its leading provider segment, and CoverGuide compares the reported id exactly,
+     so each pair states it explicitly, for example
+     `gemini/gemini-3.1-flash-lite=gemini-3.1-flash-lite,huggingface/deepseek-ai/DeepSeek-V3=deepseek-ai/DeepSeek-V3`.
+   - `COVERGUIDE_CUSTOMER_INTERPRETATION_ROUTE` and/or `COVERGUIDE_FINAL_EXPLANATION_ROUTE` as
+     `omniroute:<requested id>`. Leave a role empty to keep it on the relay.
+5. Run `python backend/manage.py check_omniroute` (settings, reachability and that every
+   allowlisted id is in the live catalogue; sends no customer data), then
+   `python backend/manage.py qualify_v2_models` to qualify each role's configured route on its
+   schema. Readiness blocks any role whose configured route is not qualified. Restart the backend
+   and Celery workers after changing routes.
+
+Changing a route creates a new immutable route record, so it must be re-qualified. Each model call
+records its exact qualification and the raw reported model in `ModelAttempt`. A turn queued before
+a route change runs on the route configured when a worker executes it. The 2026-09-19 probe results
+(models that passed strict `json_schema` and ones that did not) are in
+`docs/omniroute-spike-2026-09-19.json`. Free-tier quotas and catalogues change, so re-run the
+check before relying on a model.
 
 ## Local-only inputs
 
