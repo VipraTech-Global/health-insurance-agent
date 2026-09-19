@@ -13,5 +13,5 @@ export default function Home() {
   useEffect(() => { void refresh(); }, []);
   if (!session) return <div className="splash"><span className="mark">CG</span></div>;
   if (!session.authenticated || !session.user) return <AuthPanel onSuccess={refresh} />;
-  return <AdviserApp isAdmin={!!session.user.is_staff} email={session.user.email} onLogout={async () => { await api("/api/v1/auth/logout/", { method: "POST" }); setSession({ authenticated: false }); }} />;
+  return <AdviserApp email={session.user.email} onLogout={async () => { await api("/api/v1/auth/logout/", { method: "POST" }); setSession({ authenticated: false }); }} />;
 }

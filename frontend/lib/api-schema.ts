@@ -324,6 +324,246 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v2/catalogue/": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["v2_catalogue_readiness"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/conversations/": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["v2_conversation_list"];
+        put?: never;
+        post: operations["v2_conversation_create"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/conversations/{conversation_id}/uploads/": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["v2_customer_upload"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/conversations/{id}/": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["v2_conversation_retrieve"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/conversations/{id}/messages/": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["v2_message_list"];
+        put?: never;
+        post: operations["v2_message_submit"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/conversations/{id}/profile/": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["v2_profile_retrieve"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch: operations["v2_profile_correct"];
+        trace?: never;
+    };
+    "/api/v2/documents/{id}/file/": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["v2_document_file_retrieve"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/evidence/{id}/": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["v2_evidence_retrieve"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/knowledge/readiness/": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["v2_knowledge_readiness"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/recommendations/{id}/": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["v2_recommendation_retrieve"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/turns/{id}/": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["v2_turn_retrieve"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/turns/{id}/cancel/": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["v2_turn_cancel"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/turns/{id}/events/": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["v2_turn_events"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/turns/{id}/retry/": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["v2_turn_retry"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/uploads/{id}/file/": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["v2_customer_upload_file_retrieve"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/auth/csrf/": {
         parameters: {
             query?: never;
@@ -501,6 +741,51 @@ export interface components {
                 [key: string]: unknown;
             }[];
         };
+        CandidateDetail: {
+            /** Format: uuid */
+            id: string;
+            /** Format: uuid */
+            product_variant_id: string;
+            product: string;
+            insurer: string;
+            uin: string;
+            variant: string;
+            disposition: string;
+            rank: number;
+            evaluated_selection: unknown;
+            /** Format: uuid */
+            quote_id: string | null;
+            requirement_matches: components["schemas"]["RequirementMatch"][];
+        };
+        CatalogueProduct: {
+            /** Format: uuid */
+            id: string;
+            name: string;
+            insurer: string;
+            uin: string | null;
+            /** Format: uuid */
+            version_id: string | null;
+            publication_status: string;
+            document_count: number;
+            required_documents: number;
+            rule_count: number;
+            covered_inventory_categories: string[];
+            missing_inventory_categories: string[];
+            unresolved_material_jobs: number;
+            included_in_current_release: boolean;
+        };
+        CatalogueReadiness: {
+            catalogue_limit: number;
+            comparison_label: string;
+            warning: string;
+            channel: string;
+            generation: number;
+            release: components["schemas"]["KnowledgeRelease"] | null;
+            ready: boolean;
+            incomplete_comparison: boolean;
+            products: components["schemas"]["CatalogueProduct"][];
+            blocking_reason: string | null;
+        };
         Conversation: {
             /** Format: uuid */
             readonly id: string;
@@ -511,10 +796,70 @@ export interface components {
             readonly updated_at: string;
             readonly profile_revision: number | null;
         };
+        ConversationPage: {
+            /** Format: uri */
+            next: string | null;
+            /** Format: uri */
+            previous: string | null;
+            results: components["schemas"]["V2Conversation"][];
+        };
+        CurrentProfile: {
+            /** Format: uuid */
+            id: string;
+            revision: number;
+            /** Format: date-time */
+            created_at: string;
+            people: components["schemas"]["ProfilePerson"][];
+            facts: components["schemas"]["ProfileFact"][];
+            requirements: components["schemas"]["ProfileRequirement"][];
+        };
+        EvidenceDetail: {
+            /** Format: uuid */
+            id: string;
+            /** Format: uuid */
+            document_version_id: string | null;
+            /** Format: uuid */
+            customer_upload_id: string | null;
+            page: number | null;
+            section_label: string | null;
+            quote: string;
+            context: unknown;
+            verification: string;
+            locator: unknown;
+        };
+        InformationNeed: {
+            /** Format: uuid */
+            id: string;
+            need_kind: string;
+            information_key: string;
+            reason: string;
+            priority: string;
+            status: string;
+        };
+        /**
+         * @description * `offer` - offer
+         *     * `quote` - quote
+         *     * `policy_schedule` - policy_schedule
+         *     * `endorsement` - endorsement
+         *     * `member_certificate` - member_certificate
+         *     * `other` - other
+         * @enum {string}
+         */
+        KindEnum: "offer" | "quote" | "policy_schedule" | "endorsement" | "member_certificate" | "other";
+        KnowledgeRelease: {
+            /** Format: uuid */
+            id: string;
+            number: number;
+            state: string;
+            label: string;
+            /** Format: date-time */
+            published_at: string | null;
+            manifest_sha256: string;
+        };
         Message: {
             /** Format: uuid */
             readonly id: string;
-            role: components["schemas"]["RoleEnum"];
+            role: components["schemas"]["MessageRoleEnum"];
             content: string;
             origin?: string;
             /** Format: date-time */
@@ -522,6 +867,25 @@ export interface components {
             readonly answer: {
                 [key: string]: unknown;
             } | null;
+        };
+        MessagePage: {
+            /** Format: uri */
+            next: string | null;
+            /** Format: uri */
+            previous: string | null;
+            results: components["schemas"]["V2Message"][];
+        };
+        /**
+         * @description * `user` - User
+         *     * `assistant` - Assistant
+         * @enum {string}
+         */
+        MessageRoleEnum: "user" | "assistant";
+        MessageSubmission: {
+            /** Format: uuid */
+            request_id: string;
+            text: string;
+            expected_profile_revision?: number;
         };
         ModelChoice: {
             /** Format: uuid */
@@ -535,6 +899,15 @@ export interface components {
             selected_model: string | null;
             selected_available: boolean;
         };
+        /**
+         * @description * `text` - text
+         *     * `voice_transcription` - voice_transcription
+         *     * `document_import` - document_import
+         *     * `system` - system
+         *     * `migration` - migration
+         * @enum {string}
+         */
+        OriginEnum: "text" | "voice_transcription" | "document_import" | "system" | "migration";
         PatchedPreferenceInput: {
             /** Format: uuid */
             route_id?: string;
@@ -550,6 +923,16 @@ export interface components {
             /** Format: date-time */
             readonly created_at?: string;
         };
+        PatchedProfileCorrection: {
+            expected_revision?: number;
+            correction_text?: string;
+            facts?: {
+                [key: string]: unknown;
+            }[];
+            requirements?: {
+                [key: string]: unknown;
+            }[];
+        };
         Profile: {
             /** Format: uuid */
             readonly id: string;
@@ -560,6 +943,36 @@ export interface components {
             confirmed_at?: string | null;
             /** Format: date-time */
             readonly created_at: string;
+        };
+        ProfileFact: {
+            /** Format: uuid */
+            id: string;
+            /** Format: uuid */
+            logical_key: string;
+            fact_type: string;
+            value: unknown;
+            status: string;
+            /** Format: uuid */
+            subject_person_id: string | null;
+        };
+        ProfilePerson: {
+            /** Format: uuid */
+            id: string;
+            display_name: string;
+        };
+        ProfileRequirement: {
+            /** Format: uuid */
+            id: string;
+            /** Format: uuid */
+            logical_key: string;
+            criterion: string;
+            operator: string;
+            target_value: unknown;
+            priority: string;
+            scope: string;
+            status: string;
+            /** Format: uuid */
+            subject_person_id: string | null;
         };
         Qualification: {
             /** Format: uuid */
@@ -575,18 +988,85 @@ export interface components {
         QualificationInput: {
             model: string;
         };
+        RecommendationCitation: {
+            /** Format: uuid */
+            id: string;
+            /** Format: uuid */
+            evidence_span_id: string;
+            /** Format: uuid */
+            policy_rule_id: string | null;
+            role: string;
+            quote: string;
+            section_label: string | null;
+            page: number | null;
+            /** Format: uuid */
+            document_version_id: string | null;
+            locator: unknown;
+        };
+        RecommendationDetail: {
+            /** Format: uuid */
+            id: string;
+            /** Format: uuid */
+            turn_id: string;
+            outcome: string;
+            profile_revision: number;
+            /** Format: uuid */
+            knowledge_release_id: string;
+            catalogue_limit: number;
+            comparison_label: string;
+            /** Format: date-time */
+            created_at: string;
+            candidates: components["schemas"]["CandidateDetail"][];
+            information_needs: components["schemas"]["InformationNeed"][];
+            statements: components["schemas"]["RecommendationStatement"][];
+        };
+        RecommendationStatement: {
+            /** Format: uuid */
+            id: string;
+            ordinal: number;
+            text: string;
+            statement_type: string;
+            critical: boolean;
+            support_status: string;
+            /** Format: uuid */
+            candidate_assessment_id: string | null;
+            citations: components["schemas"]["RecommendationCitation"][];
+        };
         RelayStatus: {
             account: components["schemas"]["Account"];
             discovered_models: string[];
             catalogue_error: string | null;
             laptop_wide: boolean;
         };
+        RequirementMatch: {
+            /** Format: uuid */
+            id: string;
+            /** Format: uuid */
+            requirement_id: string;
+            criterion: string;
+            priority: string;
+            outcome: string;
+            comparison_value: unknown;
+        };
         /**
-         * @description * `user` - User
-         *     * `assistant` - Assistant
+         * @description * `queued` - queued
+         *     * `running` - running
+         *     * `cancel_requested` - cancel_requested
+         *     * `cancelled` - cancelled
+         *     * `completed` - completed
+         *     * `failed` - failed
+         *     * `stale` - stale
          * @enum {string}
          */
-        RoleEnum: "user" | "assistant";
+        StateEnum: "queued" | "running" | "cancel_requested" | "cancelled" | "completed" | "failed" | "stale";
+        /**
+         * @description * `open` - open
+         *     * `archived` - archived
+         *     * `deleting` - deleting
+         *     * `deleted` - deleted
+         * @enum {string}
+         */
+        StatusEnum: "open" | "archived" | "deleting" | "deleted";
         Turn: {
             /** Format: uuid */
             readonly id: string;
@@ -600,6 +1080,84 @@ export interface components {
             readonly attempts: {
                 [key: string]: unknown;
             }[];
+        };
+        TurnAccepted: {
+            /** Format: uuid */
+            message_id: string;
+            /** Format: uuid */
+            turn_id: string;
+            event_url: string;
+            created?: boolean;
+        };
+        Upload: {
+            /** Format: uri */
+            file: string;
+            kind: components["schemas"]["KindEnum"];
+            /** Format: uuid */
+            source_message_id?: string;
+        };
+        UploadAccepted: {
+            /** Format: uuid */
+            id: string;
+            /** Format: uuid */
+            job_id: string;
+            kind: string;
+            review_status: string;
+        };
+        V2Conversation: {
+            /** Format: uuid */
+            readonly id: string;
+            title?: string;
+            readonly status: components["schemas"]["StatusEnum"];
+            preferred_language?: string | null;
+            readonly profile_revision: number | null;
+            /** Format: date-time */
+            readonly created_at: string;
+            /** Format: date-time */
+            readonly updated_at: string;
+        };
+        V2Message: {
+            /** Format: uuid */
+            readonly id: string;
+            /** Format: int64 */
+            sequence: number;
+            role: components["schemas"]["V2MessageRoleEnum"];
+            content: string;
+            origin: components["schemas"]["OriginEnum"];
+            /** Format: date-time */
+            submitted_at: string;
+            /** Format: date-time */
+            readonly created_at: string;
+            /** Format: uuid */
+            readonly recommendation_id: string | null;
+        };
+        /**
+         * @description * `customer` - customer
+         *     * `adviser` - adviser
+         *     * `system` - system
+         * @enum {string}
+         */
+        V2MessageRoleEnum: "customer" | "adviser" | "system";
+        V2Turn: {
+            /** Format: uuid */
+            readonly id: string;
+            /** Format: uuid */
+            request_id: string;
+            /** Format: uuid */
+            readonly conversation_id: string;
+            /** Format: uuid */
+            readonly input_message_id: string;
+            readonly starting_profile_revision: number | null;
+            state?: components["schemas"]["StateEnum"];
+            /** Format: date-time */
+            deadline: string;
+            /** Format: date-time */
+            cancelled_at?: string | null;
+            error_code?: string | null;
+            /** Format: date-time */
+            readonly created_at: string;
+            /** Format: date-time */
+            readonly updated_at: string;
         };
     };
     responses: never;
@@ -1118,6 +1676,399 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["Turn"];
+                };
+            };
+        };
+    };
+    v2_catalogue_readiness: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["CatalogueReadiness"];
+                };
+            };
+        };
+    };
+    v2_conversation_list: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ConversationPage"];
+                };
+            };
+        };
+    };
+    v2_conversation_create: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: {
+            content: {
+                "application/json": components["schemas"]["V2Conversation"];
+                "application/x-www-form-urlencoded": components["schemas"]["V2Conversation"];
+                "multipart/form-data": components["schemas"]["V2Conversation"];
+            };
+        };
+        responses: {
+            201: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["V2Conversation"];
+                };
+            };
+        };
+    };
+    v2_customer_upload: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                conversation_id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["Upload"];
+                "application/x-www-form-urlencoded": components["schemas"]["Upload"];
+                "multipart/form-data": components["schemas"]["Upload"];
+            };
+        };
+        responses: {
+            202: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["UploadAccepted"];
+                };
+            };
+        };
+    };
+    v2_conversation_retrieve: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["V2Conversation"];
+                };
+            };
+        };
+    };
+    v2_message_list: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["MessagePage"];
+                };
+            };
+        };
+    };
+    v2_message_submit: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["MessageSubmission"];
+                "application/x-www-form-urlencoded": components["schemas"]["MessageSubmission"];
+                "multipart/form-data": components["schemas"]["MessageSubmission"];
+            };
+        };
+        responses: {
+            202: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["TurnAccepted"];
+                };
+            };
+        };
+    };
+    v2_profile_retrieve: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["CurrentProfile"];
+                };
+            };
+        };
+    };
+    v2_profile_correct: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: {
+            content: {
+                "application/json": components["schemas"]["PatchedProfileCorrection"];
+                "application/x-www-form-urlencoded": components["schemas"]["PatchedProfileCorrection"];
+                "multipart/form-data": components["schemas"]["PatchedProfileCorrection"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["CurrentProfile"];
+                };
+            };
+        };
+    };
+    v2_document_file_retrieve: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/pdf": string;
+                };
+            };
+        };
+    };
+    v2_evidence_retrieve: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["EvidenceDetail"];
+                };
+            };
+        };
+    };
+    v2_knowledge_readiness: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["CatalogueReadiness"];
+                };
+            };
+        };
+    };
+    v2_recommendation_retrieve: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["RecommendationDetail"];
+                };
+            };
+        };
+    };
+    v2_turn_retrieve: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["V2Turn"];
+                };
+            };
+        };
+    };
+    v2_turn_cancel: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["V2Turn"];
+                };
+            };
+        };
+    };
+    v2_turn_events: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Durable SSE events */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+        };
+    };
+    v2_turn_retry: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            202: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["TurnAccepted"];
+                };
+            };
+        };
+    };
+    v2_customer_upload_file_retrieve: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/pdf": string;
                 };
             };
         };

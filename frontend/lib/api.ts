@@ -10,7 +10,7 @@ export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
   const method = init.method?.toUpperCase() ?? "GET";
   const headers = new Headers(init.headers);
   if (!["GET", "HEAD", "OPTIONS"].includes(method)) headers.set("X-CSRFToken", await ensureCsrf());
-  if (init.body) headers.set("Content-Type", "application/json");
+  if (init.body && !(init.body instanceof FormData)) headers.set("Content-Type", "application/json");
   const response = await fetch(path, { ...init, headers, credentials: "include", cache: "no-store" });
   if (!response.ok) {
     const data: ApiError = await response.json().catch(() => ({}));

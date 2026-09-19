@@ -1,1573 +1,2168 @@
-{
-    "openapi": "3.0.3",
-    "info": {
-        "title": "Health Insurance Adviser API",
-        "version": "1.0.0"
-    },
-    "paths": {
-        "/api/v1/admin/ai-relay/": {
-            "get": {
-                "operationId": "v1_admin_ai_relay_retrieve",
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "cookieAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/RelayStatus"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/admin/ai-relay/accounts/": {
-            "post": {
-                "operationId": "v1_admin_ai_relay_accounts_create",
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/AccountAction"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/AccountAction"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/AccountAction"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "security": [
-                    {
-                        "cookieAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/AccountActionResult"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/admin/ai-relay/qualifications/": {
-            "post": {
-                "operationId": "v1_admin_ai_relay_qualifications_create",
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/QualificationInput"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/QualificationInput"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/QualificationInput"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "security": [
-                    {
-                        "cookieAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Qualification"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/ai/models/": {
-            "get": {
-                "operationId": "v1_ai_models_retrieve",
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "cookieAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ModelList"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/ai/preferences/": {
-            "patch": {
-                "operationId": "v1_ai_preferences_partial_update",
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedPreferenceInput"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedPreferenceInput"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedPreferenceInput"
-                            }
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "cookieAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/ModelList"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/answers/{id}/": {
-            "get": {
-                "operationId": "v1_answers_retrieve",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "cookieAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Answer"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/catalogue/coverage/": {
-            "get": {
-                "operationId": "v1_catalogue_coverage_retrieve",
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "cookieAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Answer"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/conversations/": {
-            "get": {
-                "operationId": "conversation_list",
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "cookieAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Conversation"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "post": {
-                "operationId": "conversation_create",
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/Conversation"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/Conversation"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/Conversation"
-                            }
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "cookieAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Conversation"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/conversations/{id}/": {
-            "get": {
-                "operationId": "v1_conversations_retrieve",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "cookieAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Conversation"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "delete": {
-                "operationId": "v1_conversations_destroy",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "cookieAuth": []
-                    }
-                ],
-                "responses": {
-                    "204": {
-                        "description": "No response body"
-                    }
-                }
-            }
-        },
-        "/api/v1/conversations/{id}/messages/": {
-            "get": {
-                "operationId": "v1_conversations_messages_retrieve",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "cookieAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Message"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/conversations/{id}/profile/": {
-            "get": {
-                "operationId": "v1_conversations_profile_retrieve",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "cookieAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Profile"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            },
-            "patch": {
-                "operationId": "v1_conversations_profile_partial_update",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedProfile"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedProfile"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/PatchedProfile"
-                            }
-                        }
-                    }
-                },
-                "security": [
-                    {
-                        "cookieAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Profile"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/conversations/{id}/profile/confirm/": {
-            "post": {
-                "operationId": "v1_conversations_profile_confirm_create",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/Profile"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/Profile"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/Profile"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "security": [
-                    {
-                        "cookieAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Profile"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/documents/{id}/": {
-            "get": {
-                "operationId": "v1_documents_retrieve",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "cookieAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Answer"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/documents/{id}/file/": {
-            "get": {
-                "operationId": "v1_documents_file_retrieve",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "cookieAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Answer"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/evidence/{id}/": {
-            "get": {
-                "operationId": "v1_evidence_retrieve",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "cookieAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Answer"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/readiness/": {
-            "get": {
-                "operationId": "v1_readiness_retrieve",
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "cookieAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Answer"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/recommendations/{id}/": {
-            "get": {
-                "operationId": "v1_recommendations_retrieve",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "cookieAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Answer"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/turns/{id}/": {
-            "get": {
-                "operationId": "v1_turns_retrieve",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "security": [
-                    {
-                        "cookieAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Turn"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/turns/{id}/cancel/": {
-            "post": {
-                "operationId": "v1_turns_cancel_create",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/Turn"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/Turn"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/Turn"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "security": [
-                    {
-                        "cookieAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Turn"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/turns/{id}/retry/": {
-            "post": {
-                "operationId": "v1_turns_retry_create",
-                "parameters": [
-                    {
-                        "in": "path",
-                        "name": "id",
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        },
-                        "required": true
-                    }
-                ],
-                "tags": [
-                    "v1"
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "$ref": "#/components/schemas/Turn"
-                            }
-                        },
-                        "application/x-www-form-urlencoded": {
-                            "schema": {
-                                "$ref": "#/components/schemas/Turn"
-                            }
-                        },
-                        "multipart/form-data": {
-                            "schema": {
-                                "$ref": "#/components/schemas/Turn"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "security": [
-                    {
-                        "cookieAuth": []
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "$ref": "#/components/schemas/Turn"
-                                }
-                            }
-                        },
-                        "description": ""
-                    }
-                }
-            }
-        },
-        "/api/v1/auth/csrf/": {
-            "get": {
-                "operationId": "csrf_state",
-                "tags": [
-                    "auth"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/api/v1/auth/register/": {
-            "post": {
-                "operationId": "auth_register",
-                "tags": [
-                    "auth"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "object"
-                            }
-                        }
-                    },
-                    "required": true
-                }
-            }
-        },
-        "/api/v1/auth/login/": {
-            "post": {
-                "operationId": "auth_login",
-                "tags": [
-                    "auth"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "object"
-                            }
-                        }
-                    },
-                    "required": true
-                }
-            }
-        },
-        "/api/v1/auth/logout/": {
-            "post": {
-                "operationId": "auth_logout",
-                "tags": [
-                    "auth"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/api/v1/auth/session/": {
-            "get": {
-                "operationId": "auth_session",
-                "tags": [
-                    "auth"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/api/v1/auth/password/": {
-            "post": {
-                "operationId": "auth_password_change",
-                "tags": [
-                    "auth"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    }
-                },
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "object"
-                            }
-                        }
-                    },
-                    "required": true
-                }
-            }
-        },
-        "/api/v1/account/": {
-            "delete": {
-                "operationId": "account_delete",
-                "tags": [
-                    "auth"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/api/v1/conversations/{conversation_id}/turns/": {
-            "get": {
-                "operationId": "conversation_turn_list",
-                "tags": [
-                    "turns"
-                ],
-                "parameters": [
-                    {
-                        "name": "conversation_id",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Successful response",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "post": {
-                "operationId": "conversation_turn_stream",
-                "tags": [
-                    "turns"
-                ],
-                "parameters": [
-                    {
-                        "name": "conversation_id",
-                        "in": "path",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "format": "uuid"
-                        }
-                    }
-                ],
-                "requestBody": {
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "object"
-                            }
-                        }
-                    },
-                    "required": true
-                },
-                "responses": {
-                    "200": {
-                        "description": "SSE stream of accepted, progress, and one terminal event",
-                        "content": {
-                            "text/event-stream": {
-                                "schema": {
-                                    "type": "string"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    },
-    "components": {
-        "schemas": {
-            "Account": {
-                "type": "object",
-                "properties": {
-                    "provider": {
-                        "type": "string"
-                    },
-                    "label": {
-                        "type": "string"
-                    },
-                    "state": {
-                        "type": "string"
-                    },
-                    "masked_identifier": {
-                        "type": "string"
-                    },
-                    "has_active_account": {
-                        "type": "boolean"
-                    },
-                    "can_restore": {
-                        "type": "boolean"
-                    },
-                    "login_in_progress": {
-                        "type": "boolean"
-                    },
-                    "action_required": {
-                        "type": "boolean"
-                    }
-                },
-                "required": [
-                    "action_required",
-                    "can_restore",
-                    "has_active_account",
-                    "label",
-                    "login_in_progress",
-                    "masked_identifier",
-                    "provider",
-                    "state"
-                ]
-            },
-            "AccountAction": {
-                "type": "object",
-                "properties": {
-                    "action": {
-                        "$ref": "#/components/schemas/ActionEnum"
-                    }
-                },
-                "required": [
-                    "action"
-                ]
-            },
-            "AccountActionResult": {
-                "type": "object",
-                "properties": {
-                    "account": {
-                        "$ref": "#/components/schemas/Account"
-                    },
-                    "provider": {
-                        "type": "string"
-                    },
-                    "authorization_url": {
-                        "type": "string",
-                        "format": "uri"
-                    },
-                    "expires_at": {
-                        "type": "integer"
-                    }
-                }
-            },
-            "ActionEnum": {
-                "enum": [
-                    "connect",
-                    "status",
-                    "cancel",
-                    "disconnect",
-                    "restore",
-                    "forget"
-                ],
-                "type": "string",
-                "description": "* `connect` - connect\n* `status` - status\n* `cancel` - cancel\n* `disconnect` - disconnect\n* `restore` - restore\n* `forget` - forget"
-            },
-            "Answer": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid",
-                        "readOnly": true
-                    },
-                    "outcome": {
-                        "type": "string",
-                        "maxLength": 40
-                    },
-                    "blocks": {},
-                    "verification_status": {
-                        "type": "string",
-                        "maxLength": 30
-                    },
-                    "profile_revision": {
-                        "type": "integer",
-                        "maximum": 2147483647,
-                        "minimum": 0,
-                        "nullable": true
-                    },
-                    "corpus_release": {
-                        "type": "string",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "created_at": {
-                        "type": "string",
-                        "format": "date-time",
-                        "readOnly": true
-                    },
-                    "claims": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "additionalProperties": {}
-                        },
-                        "readOnly": true
-                    }
-                },
-                "required": [
-                    "claims",
-                    "created_at",
-                    "id",
-                    "outcome",
-                    "verification_status"
-                ]
-            },
-            "Conversation": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid",
-                        "readOnly": true
-                    },
-                    "title": {
-                        "type": "string",
-                        "maxLength": 200
-                    },
-                    "created_at": {
-                        "type": "string",
-                        "format": "date-time",
-                        "readOnly": true
-                    },
-                    "updated_at": {
-                        "type": "string",
-                        "format": "date-time",
-                        "readOnly": true
-                    },
-                    "profile_revision": {
-                        "type": "integer",
-                        "nullable": true,
-                        "readOnly": true
-                    }
-                },
-                "required": [
-                    "created_at",
-                    "id",
-                    "profile_revision",
-                    "updated_at"
-                ]
-            },
-            "Message": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid",
-                        "readOnly": true
-                    },
-                    "role": {
-                        "$ref": "#/components/schemas/RoleEnum"
-                    },
-                    "content": {
-                        "type": "string"
-                    },
-                    "origin": {
-                        "type": "string",
-                        "maxLength": 30
-                    },
-                    "created_at": {
-                        "type": "string",
-                        "format": "date-time",
-                        "readOnly": true
-                    },
-                    "answer": {
-                        "type": "object",
-                        "additionalProperties": {},
-                        "nullable": true,
-                        "readOnly": true
-                    }
-                },
-                "required": [
-                    "answer",
-                    "content",
-                    "created_at",
-                    "id",
-                    "role"
-                ]
-            },
-            "ModelChoice": {
-                "type": "object",
-                "properties": {
-                    "route_id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "model": {
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "model",
-                    "route_id"
-                ]
-            },
-            "ModelList": {
-                "type": "object",
-                "properties": {
-                    "models": {
-                        "type": "array",
-                        "items": {
-                            "$ref": "#/components/schemas/ModelChoice"
-                        }
-                    },
-                    "selected_route_id": {
-                        "type": "string",
-                        "format": "uuid",
-                        "nullable": true
-                    },
-                    "selected_model": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "selected_available": {
-                        "type": "boolean"
-                    }
-                },
-                "required": [
-                    "models",
-                    "selected_available",
-                    "selected_model",
-                    "selected_route_id"
-                ]
-            },
-            "PatchedPreferenceInput": {
-                "type": "object",
-                "properties": {
-                    "route_id": {
-                        "type": "string",
-                        "format": "uuid"
-                    }
-                }
-            },
-            "PatchedProfile": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid",
-                        "readOnly": true
-                    },
-                    "revision": {
-                        "type": "integer",
-                        "maximum": 2147483647,
-                        "minimum": 0
-                    },
-                    "data": {},
-                    "field_provenance": {},
-                    "confirmed_at": {
-                        "type": "string",
-                        "format": "date-time",
-                        "nullable": true
-                    },
-                    "created_at": {
-                        "type": "string",
-                        "format": "date-time",
-                        "readOnly": true
-                    }
-                }
-            },
-            "Profile": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid",
-                        "readOnly": true
-                    },
-                    "revision": {
-                        "type": "integer",
-                        "maximum": 2147483647,
-                        "minimum": 0
-                    },
-                    "data": {},
-                    "field_provenance": {},
-                    "confirmed_at": {
-                        "type": "string",
-                        "format": "date-time",
-                        "nullable": true
-                    },
-                    "created_at": {
-                        "type": "string",
-                        "format": "date-time",
-                        "readOnly": true
-                    }
-                },
-                "required": [
-                    "created_at",
-                    "id",
-                    "revision"
-                ]
-            },
-            "Qualification": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "route_id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "model": {
-                        "type": "string"
-                    },
-                    "state": {
-                        "type": "string"
-                    },
-                    "results": {
-                        "type": "object",
-                        "additionalProperties": {}
-                    }
-                },
-                "required": [
-                    "id",
-                    "model",
-                    "results",
-                    "route_id",
-                    "state"
-                ]
-            },
-            "QualificationInput": {
-                "type": "object",
-                "properties": {
-                    "model": {
-                        "type": "string",
-                        "pattern": "^gpt-[a-zA-Z0-9._-]{1,190}$"
-                    }
-                },
-                "required": [
-                    "model"
-                ]
-            },
-            "RelayStatus": {
-                "type": "object",
-                "properties": {
-                    "account": {
-                        "$ref": "#/components/schemas/Account"
-                    },
-                    "discovered_models": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        }
-                    },
-                    "catalogue_error": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "laptop_wide": {
-                        "type": "boolean"
-                    }
-                },
-                "required": [
-                    "account",
-                    "catalogue_error",
-                    "discovered_models",
-                    "laptop_wide"
-                ]
-            },
-            "RoleEnum": {
-                "enum": [
-                    "user",
-                    "assistant"
-                ],
-                "type": "string",
-                "description": "* `user` - User\n* `assistant` - Assistant"
-            },
-            "Turn": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "string",
-                        "format": "uuid",
-                        "readOnly": true
-                    },
-                    "request_id": {
-                        "type": "string",
-                        "format": "uuid"
-                    },
-                    "input_text": {
-                        "type": "string"
-                    },
-                    "operation": {
-                        "type": "string",
-                        "maxLength": 50
-                    },
-                    "expected_profile_revision": {
-                        "type": "integer",
-                        "maximum": 2147483647,
-                        "minimum": 0,
-                        "nullable": true
-                    },
-                    "created_at": {
-                        "type": "string",
-                        "format": "date-time",
-                        "readOnly": true
-                    },
-                    "attempts": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "additionalProperties": {}
-                        },
-                        "readOnly": true
-                    }
-                },
-                "required": [
-                    "attempts",
-                    "created_at",
-                    "id",
-                    "input_text",
-                    "request_id"
-                ]
-            }
-        },
-        "securitySchemes": {
-            "cookieAuth": {
-                "type": "apiKey",
-                "in": "cookie",
-                "name": "sessionid"
-            }
-        }
-    }
-}
+openapi: 3.0.3
+info:
+  title: Health Insurance Adviser API
+  version: 1.0.0
+paths:
+  /api/v1/admin/ai-relay/:
+    get:
+      operationId: v1_admin_ai_relay_retrieve
+      tags:
+      - v1
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RelayStatus'
+          description: ''
+  /api/v1/admin/ai-relay/accounts/:
+    post:
+      operationId: v1_admin_ai_relay_accounts_create
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountAction'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/AccountAction'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/AccountAction'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccountActionResult'
+          description: ''
+  /api/v1/admin/ai-relay/qualifications/:
+    post:
+      operationId: v1_admin_ai_relay_qualifications_create
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QualificationInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/QualificationInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/QualificationInput'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Qualification'
+          description: ''
+  /api/v1/ai/models/:
+    get:
+      operationId: v1_ai_models_retrieve
+      tags:
+      - v1
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelList'
+          description: ''
+  /api/v1/ai/preferences/:
+    patch:
+      operationId: v1_ai_preferences_partial_update
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedPreferenceInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedPreferenceInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedPreferenceInput'
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelList'
+          description: ''
+  /api/v1/answers/{id}/:
+    get:
+      operationId: v1_answers_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v1
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Answer'
+          description: ''
+  /api/v1/catalogue/coverage/:
+    get:
+      operationId: v1_catalogue_coverage_retrieve
+      tags:
+      - v1
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Answer'
+          description: ''
+  /api/v1/conversations/:
+    get:
+      operationId: conversation_list
+      tags:
+      - v1
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Conversation'
+          description: ''
+    post:
+      operationId: conversation_create
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Conversation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Conversation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Conversation'
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Conversation'
+          description: ''
+  /api/v1/conversations/{id}/:
+    get:
+      operationId: v1_conversations_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v1
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Conversation'
+          description: ''
+    delete:
+      operationId: v1_conversations_destroy
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v1
+      security:
+      - cookieAuth: []
+      responses:
+        '204':
+          description: No response body
+  /api/v1/conversations/{id}/messages/:
+    get:
+      operationId: v1_conversations_messages_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v1
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Message'
+          description: ''
+  /api/v1/conversations/{id}/profile/:
+    get:
+      operationId: v1_conversations_profile_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v1
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+          description: ''
+    patch:
+      operationId: v1_conversations_profile_partial_update
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedProfile'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedProfile'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedProfile'
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+          description: ''
+  /api/v1/conversations/{id}/profile/confirm/:
+    post:
+      operationId: v1_conversations_profile_confirm_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Profile'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Profile'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Profile'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Profile'
+          description: ''
+  /api/v1/documents/{id}/:
+    get:
+      operationId: v1_documents_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v1
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Answer'
+          description: ''
+  /api/v1/documents/{id}/file/:
+    get:
+      operationId: v1_documents_file_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v1
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Answer'
+          description: ''
+  /api/v1/evidence/{id}/:
+    get:
+      operationId: v1_evidence_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v1
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Answer'
+          description: ''
+  /api/v1/readiness/:
+    get:
+      operationId: v1_readiness_retrieve
+      tags:
+      - v1
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Answer'
+          description: ''
+  /api/v1/recommendations/{id}/:
+    get:
+      operationId: v1_recommendations_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v1
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Answer'
+          description: ''
+  /api/v1/turns/{id}/:
+    get:
+      operationId: v1_turns_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v1
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Turn'
+          description: ''
+  /api/v1/turns/{id}/cancel/:
+    post:
+      operationId: v1_turns_cancel_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Turn'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Turn'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Turn'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Turn'
+          description: ''
+  /api/v1/turns/{id}/retry/:
+    post:
+      operationId: v1_turns_retry_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Turn'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Turn'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Turn'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Turn'
+          description: ''
+  /api/v2/catalogue/:
+    get:
+      operationId: v2_catalogue_readiness
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CatalogueReadiness'
+          description: ''
+  /api/v2/conversations/:
+    get:
+      operationId: v2_conversation_list
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConversationPage'
+          description: ''
+    post:
+      operationId: v2_conversation_create
+      tags:
+      - v2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/V2Conversation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/V2Conversation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/V2Conversation'
+      security:
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V2Conversation'
+          description: ''
+  /api/v2/conversations/{conversation_id}/uploads/:
+    post:
+      operationId: v2_customer_upload
+      parameters:
+      - in: path
+        name: conversation_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Upload'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Upload'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Upload'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '202':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UploadAccepted'
+          description: ''
+  /api/v2/conversations/{id}/:
+    get:
+      operationId: v2_conversation_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V2Conversation'
+          description: ''
+  /api/v2/conversations/{id}/messages/:
+    get:
+      operationId: v2_message_list
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessagePage'
+          description: ''
+    post:
+      operationId: v2_message_submit
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MessageSubmission'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MessageSubmission'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MessageSubmission'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '202':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TurnAccepted'
+          description: ''
+  /api/v2/conversations/{id}/profile/:
+    get:
+      operationId: v2_profile_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CurrentProfile'
+          description: ''
+    patch:
+      operationId: v2_profile_correct
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedProfileCorrection'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedProfileCorrection'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedProfileCorrection'
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CurrentProfile'
+          description: ''
+  /api/v2/documents/{id}/file/:
+    get:
+      operationId: v2_document_file_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+          description: ''
+  /api/v2/evidence/{id}/:
+    get:
+      operationId: v2_evidence_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EvidenceDetail'
+          description: ''
+  /api/v2/knowledge/readiness/:
+    get:
+      operationId: v2_knowledge_readiness
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CatalogueReadiness'
+          description: ''
+  /api/v2/recommendations/{id}/:
+    get:
+      operationId: v2_recommendation_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecommendationDetail'
+          description: ''
+  /api/v2/turns/{id}/:
+    get:
+      operationId: v2_turn_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V2Turn'
+          description: ''
+  /api/v2/turns/{id}/cancel/:
+    post:
+      operationId: v2_turn_cancel
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V2Turn'
+          description: ''
+  /api/v2/turns/{id}/events/:
+    get:
+      operationId: v2_turn_events
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          description: Durable SSE events
+  /api/v2/turns/{id}/retry/:
+    post:
+      operationId: v2_turn_retry
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '202':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TurnAccepted'
+          description: ''
+  /api/v2/uploads/{id}/file/:
+    get:
+      operationId: v2_customer_upload_file_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+          description: ''
+  /api/v1/auth/csrf/:
+    get:
+      operationId: csrf_state
+      tags:
+      - auth
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v1/auth/register/:
+    post:
+      operationId: auth_register
+      tags:
+      - auth
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: true
+  /api/v1/auth/login/:
+    post:
+      operationId: auth_login
+      tags:
+      - auth
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: true
+  /api/v1/auth/logout/:
+    post:
+      operationId: auth_logout
+      tags:
+      - auth
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v1/auth/session/:
+    get:
+      operationId: auth_session
+      tags:
+      - auth
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v1/auth/password/:
+    post:
+      operationId: auth_password_change
+      tags:
+      - auth
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: true
+  /api/v1/account/:
+    delete:
+      operationId: account_delete
+      tags:
+      - auth
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v1/conversations/{conversation_id}/turns/:
+    get:
+      operationId: conversation_turn_list
+      tags:
+      - turns
+      parameters:
+      - name: conversation_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+    post:
+      operationId: conversation_turn_stream
+      tags:
+      - turns
+      parameters:
+      - name: conversation_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          description: SSE stream of accepted, progress, and one terminal event
+          content:
+            text/event-stream:
+              schema:
+                type: string
+components:
+  schemas:
+    Account:
+      type: object
+      properties:
+        provider:
+          type: string
+        label:
+          type: string
+        state:
+          type: string
+        masked_identifier:
+          type: string
+        has_active_account:
+          type: boolean
+        can_restore:
+          type: boolean
+        login_in_progress:
+          type: boolean
+        action_required:
+          type: boolean
+      required:
+      - action_required
+      - can_restore
+      - has_active_account
+      - label
+      - login_in_progress
+      - masked_identifier
+      - provider
+      - state
+    AccountAction:
+      type: object
+      properties:
+        action:
+          $ref: '#/components/schemas/ActionEnum'
+      required:
+      - action
+    AccountActionResult:
+      type: object
+      properties:
+        account:
+          $ref: '#/components/schemas/Account'
+        provider:
+          type: string
+        authorization_url:
+          type: string
+          format: uri
+        expires_at:
+          type: integer
+    ActionEnum:
+      enum:
+      - connect
+      - status
+      - cancel
+      - disconnect
+      - restore
+      - forget
+      type: string
+      description: |-
+        * `connect` - connect
+        * `status` - status
+        * `cancel` - cancel
+        * `disconnect` - disconnect
+        * `restore` - restore
+        * `forget` - forget
+    Answer:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        outcome:
+          type: string
+          maxLength: 40
+        blocks: {}
+        verification_status:
+          type: string
+          maxLength: 30
+        profile_revision:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+        corpus_release:
+          type: string
+          format: uuid
+          nullable: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        claims:
+          type: array
+          items:
+            type: object
+            additionalProperties: {}
+          readOnly: true
+      required:
+      - claims
+      - created_at
+      - id
+      - outcome
+      - verification_status
+    CandidateDetail:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        product_variant_id:
+          type: string
+          format: uuid
+        product:
+          type: string
+        insurer:
+          type: string
+        uin:
+          type: string
+        variant:
+          type: string
+        disposition:
+          type: string
+        rank:
+          type: integer
+        evaluated_selection: {}
+        quote_id:
+          type: string
+          format: uuid
+          nullable: true
+        requirement_matches:
+          type: array
+          items:
+            $ref: '#/components/schemas/RequirementMatch'
+      required:
+      - disposition
+      - evaluated_selection
+      - id
+      - insurer
+      - product
+      - product_variant_id
+      - quote_id
+      - rank
+      - requirement_matches
+      - uin
+      - variant
+    CatalogueProduct:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        insurer:
+          type: string
+        uin:
+          type: string
+          nullable: true
+        version_id:
+          type: string
+          format: uuid
+          nullable: true
+        publication_status:
+          type: string
+        document_count:
+          type: integer
+        required_documents:
+          type: integer
+        rule_count:
+          type: integer
+        covered_inventory_categories:
+          type: array
+          items:
+            type: string
+        missing_inventory_categories:
+          type: array
+          items:
+            type: string
+        unresolved_material_jobs:
+          type: integer
+        included_in_current_release:
+          type: boolean
+      required:
+      - covered_inventory_categories
+      - document_count
+      - id
+      - included_in_current_release
+      - insurer
+      - missing_inventory_categories
+      - name
+      - publication_status
+      - required_documents
+      - rule_count
+      - uin
+      - unresolved_material_jobs
+      - version_id
+    CatalogueReadiness:
+      type: object
+      properties:
+        catalogue_limit:
+          type: integer
+        comparison_label:
+          type: string
+        warning:
+          type: string
+        channel:
+          type: string
+        generation:
+          type: integer
+        release:
+          allOf:
+          - $ref: '#/components/schemas/KnowledgeRelease'
+          nullable: true
+        ready:
+          type: boolean
+        incomplete_comparison:
+          type: boolean
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/CatalogueProduct'
+        blocking_reason:
+          type: string
+          nullable: true
+      required:
+      - blocking_reason
+      - catalogue_limit
+      - channel
+      - comparison_label
+      - generation
+      - incomplete_comparison
+      - products
+      - ready
+      - release
+      - warning
+    Conversation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        title:
+          type: string
+          maxLength: 200
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+        profile_revision:
+          type: integer
+          nullable: true
+          readOnly: true
+      required:
+      - created_at
+      - id
+      - profile_revision
+      - updated_at
+    ConversationPage:
+      type: object
+      properties:
+        next:
+          type: string
+          format: uri
+          nullable: true
+        previous:
+          type: string
+          format: uri
+          nullable: true
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/V2Conversation'
+      required:
+      - next
+      - previous
+      - results
+    CurrentProfile:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        revision:
+          type: integer
+        created_at:
+          type: string
+          format: date-time
+        people:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProfilePerson'
+        facts:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProfileFact'
+        requirements:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProfileRequirement'
+      required:
+      - created_at
+      - facts
+      - id
+      - people
+      - requirements
+      - revision
+    EvidenceDetail:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        document_version_id:
+          type: string
+          format: uuid
+          nullable: true
+        customer_upload_id:
+          type: string
+          format: uuid
+          nullable: true
+        page:
+          type: integer
+          nullable: true
+        section_label:
+          type: string
+          nullable: true
+        quote:
+          type: string
+        context: {}
+        verification:
+          type: string
+        locator: {}
+      required:
+      - context
+      - customer_upload_id
+      - document_version_id
+      - id
+      - locator
+      - page
+      - quote
+      - section_label
+      - verification
+    InformationNeed:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        need_kind:
+          type: string
+        information_key:
+          type: string
+        reason:
+          type: string
+        priority:
+          type: string
+        status:
+          type: string
+      required:
+      - id
+      - information_key
+      - need_kind
+      - priority
+      - reason
+      - status
+    KindEnum:
+      enum:
+      - offer
+      - quote
+      - policy_schedule
+      - endorsement
+      - member_certificate
+      - other
+      type: string
+      description: |-
+        * `offer` - offer
+        * `quote` - quote
+        * `policy_schedule` - policy_schedule
+        * `endorsement` - endorsement
+        * `member_certificate` - member_certificate
+        * `other` - other
+    KnowledgeRelease:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        number:
+          type: integer
+        state:
+          type: string
+        label:
+          type: string
+        published_at:
+          type: string
+          format: date-time
+          nullable: true
+        manifest_sha256:
+          type: string
+      required:
+      - id
+      - label
+      - manifest_sha256
+      - number
+      - published_at
+      - state
+    Message:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        role:
+          $ref: '#/components/schemas/MessageRoleEnum'
+        content:
+          type: string
+        origin:
+          type: string
+          maxLength: 30
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        answer:
+          type: object
+          additionalProperties: {}
+          nullable: true
+          readOnly: true
+      required:
+      - answer
+      - content
+      - created_at
+      - id
+      - role
+    MessagePage:
+      type: object
+      properties:
+        next:
+          type: string
+          format: uri
+          nullable: true
+        previous:
+          type: string
+          format: uri
+          nullable: true
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/V2Message'
+      required:
+      - next
+      - previous
+      - results
+    MessageRoleEnum:
+      enum:
+      - user
+      - assistant
+      type: string
+      description: |-
+        * `user` - User
+        * `assistant` - Assistant
+    MessageSubmission:
+      type: object
+      properties:
+        request_id:
+          type: string
+          format: uuid
+        text:
+          type: string
+          maxLength: 20000
+          minLength: 1
+        expected_profile_revision:
+          type: integer
+          minimum: 1
+      required:
+      - request_id
+      - text
+    ModelChoice:
+      type: object
+      properties:
+        route_id:
+          type: string
+          format: uuid
+        model:
+          type: string
+      required:
+      - model
+      - route_id
+    ModelList:
+      type: object
+      properties:
+        models:
+          type: array
+          items:
+            $ref: '#/components/schemas/ModelChoice'
+        selected_route_id:
+          type: string
+          format: uuid
+          nullable: true
+        selected_model:
+          type: string
+          nullable: true
+        selected_available:
+          type: boolean
+      required:
+      - models
+      - selected_available
+      - selected_model
+      - selected_route_id
+    OriginEnum:
+      enum:
+      - text
+      - voice_transcription
+      - document_import
+      - system
+      - migration
+      type: string
+      description: |-
+        * `text` - text
+        * `voice_transcription` - voice_transcription
+        * `document_import` - document_import
+        * `system` - system
+        * `migration` - migration
+    PatchedPreferenceInput:
+      type: object
+      properties:
+        route_id:
+          type: string
+          format: uuid
+    PatchedProfile:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        revision:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        data: {}
+        field_provenance: {}
+        confirmed_at:
+          type: string
+          format: date-time
+          nullable: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+    PatchedProfileCorrection:
+      type: object
+      properties:
+        expected_revision:
+          type: integer
+          minimum: 1
+        correction_text:
+          type: string
+          maxLength: 20000
+          minLength: 1
+        facts:
+          type: array
+          items:
+            type: object
+            additionalProperties: {}
+        requirements:
+          type: array
+          items:
+            type: object
+            additionalProperties: {}
+    Profile:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        revision:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+        data: {}
+        field_provenance: {}
+        confirmed_at:
+          type: string
+          format: date-time
+          nullable: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - created_at
+      - id
+      - revision
+    ProfileFact:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        logical_key:
+          type: string
+          format: uuid
+        fact_type:
+          type: string
+        value: {}
+        status:
+          type: string
+        subject_person_id:
+          type: string
+          format: uuid
+          nullable: true
+      required:
+      - fact_type
+      - id
+      - logical_key
+      - status
+      - subject_person_id
+      - value
+    ProfilePerson:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        display_name:
+          type: string
+      required:
+      - display_name
+      - id
+    ProfileRequirement:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        logical_key:
+          type: string
+          format: uuid
+        criterion:
+          type: string
+        operator:
+          type: string
+        target_value:
+          nullable: true
+        priority:
+          type: string
+        scope:
+          type: string
+        status:
+          type: string
+        subject_person_id:
+          type: string
+          format: uuid
+          nullable: true
+      required:
+      - criterion
+      - id
+      - logical_key
+      - operator
+      - priority
+      - scope
+      - status
+      - subject_person_id
+      - target_value
+    Qualification:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        route_id:
+          type: string
+          format: uuid
+        model:
+          type: string
+        state:
+          type: string
+        results:
+          type: object
+          additionalProperties: {}
+      required:
+      - id
+      - model
+      - results
+      - route_id
+      - state
+    QualificationInput:
+      type: object
+      properties:
+        model:
+          type: string
+          pattern: ^gpt-[a-zA-Z0-9._-]{1,190}$
+      required:
+      - model
+    RecommendationCitation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        evidence_span_id:
+          type: string
+          format: uuid
+        policy_rule_id:
+          type: string
+          format: uuid
+          nullable: true
+        role:
+          type: string
+        quote:
+          type: string
+        section_label:
+          type: string
+          nullable: true
+        page:
+          type: integer
+          nullable: true
+        document_version_id:
+          type: string
+          format: uuid
+          nullable: true
+        locator: {}
+      required:
+      - document_version_id
+      - evidence_span_id
+      - id
+      - locator
+      - page
+      - policy_rule_id
+      - quote
+      - role
+      - section_label
+    RecommendationDetail:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        turn_id:
+          type: string
+          format: uuid
+        outcome:
+          type: string
+        profile_revision:
+          type: integer
+        knowledge_release_id:
+          type: string
+          format: uuid
+        catalogue_limit:
+          type: integer
+        comparison_label:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        candidates:
+          type: array
+          items:
+            $ref: '#/components/schemas/CandidateDetail'
+        information_needs:
+          type: array
+          items:
+            $ref: '#/components/schemas/InformationNeed'
+        statements:
+          type: array
+          items:
+            $ref: '#/components/schemas/RecommendationStatement'
+      required:
+      - candidates
+      - catalogue_limit
+      - comparison_label
+      - created_at
+      - id
+      - information_needs
+      - knowledge_release_id
+      - outcome
+      - profile_revision
+      - statements
+      - turn_id
+    RecommendationStatement:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        ordinal:
+          type: integer
+        text:
+          type: string
+        statement_type:
+          type: string
+        critical:
+          type: boolean
+        support_status:
+          type: string
+        candidate_assessment_id:
+          type: string
+          format: uuid
+          nullable: true
+        citations:
+          type: array
+          items:
+            $ref: '#/components/schemas/RecommendationCitation'
+      required:
+      - candidate_assessment_id
+      - citations
+      - critical
+      - id
+      - ordinal
+      - statement_type
+      - support_status
+      - text
+    RelayStatus:
+      type: object
+      properties:
+        account:
+          $ref: '#/components/schemas/Account'
+        discovered_models:
+          type: array
+          items:
+            type: string
+        catalogue_error:
+          type: string
+          nullable: true
+        laptop_wide:
+          type: boolean
+      required:
+      - account
+      - catalogue_error
+      - discovered_models
+      - laptop_wide
+    RequirementMatch:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        requirement_id:
+          type: string
+          format: uuid
+        criterion:
+          type: string
+        priority:
+          type: string
+        outcome:
+          type: string
+        comparison_value:
+          nullable: true
+      required:
+      - comparison_value
+      - criterion
+      - id
+      - outcome
+      - priority
+      - requirement_id
+    StateEnum:
+      enum:
+      - queued
+      - running
+      - cancel_requested
+      - cancelled
+      - completed
+      - failed
+      - stale
+      type: string
+      description: |-
+        * `queued` - queued
+        * `running` - running
+        * `cancel_requested` - cancel_requested
+        * `cancelled` - cancelled
+        * `completed` - completed
+        * `failed` - failed
+        * `stale` - stale
+    StatusEnum:
+      enum:
+      - open
+      - archived
+      - deleting
+      - deleted
+      type: string
+      description: |-
+        * `open` - open
+        * `archived` - archived
+        * `deleting` - deleting
+        * `deleted` - deleted
+    Turn:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        request_id:
+          type: string
+          format: uuid
+        input_text:
+          type: string
+        operation:
+          type: string
+          maxLength: 50
+        expected_profile_revision:
+          type: integer
+          maximum: 2147483647
+          minimum: 0
+          nullable: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        attempts:
+          type: array
+          items:
+            type: object
+            additionalProperties: {}
+          readOnly: true
+      required:
+      - attempts
+      - created_at
+      - id
+      - input_text
+      - request_id
+    TurnAccepted:
+      type: object
+      properties:
+        message_id:
+          type: string
+          format: uuid
+        turn_id:
+          type: string
+          format: uuid
+        event_url:
+          type: string
+        created:
+          type: boolean
+      required:
+      - event_url
+      - message_id
+      - turn_id
+    Upload:
+      type: object
+      properties:
+        file:
+          type: string
+          format: uri
+        kind:
+          $ref: '#/components/schemas/KindEnum'
+        source_message_id:
+          type: string
+          format: uuid
+      required:
+      - file
+      - kind
+    UploadAccepted:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        job_id:
+          type: string
+          format: uuid
+        kind:
+          type: string
+        review_status:
+          type: string
+      required:
+      - id
+      - job_id
+      - kind
+      - review_status
+    V2Conversation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        title:
+          type: string
+          maxLength: 200
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          readOnly: true
+        preferred_language:
+          type: string
+          nullable: true
+          maxLength: 35
+        profile_revision:
+          type: integer
+          readOnly: true
+          nullable: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - created_at
+      - id
+      - profile_revision
+      - status
+      - updated_at
+    V2Message:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        sequence:
+          type: integer
+          maximum: 9223372036854775807
+          minimum: -9223372036854775808
+          format: int64
+        role:
+          $ref: '#/components/schemas/V2MessageRoleEnum'
+        content:
+          type: string
+        origin:
+          $ref: '#/components/schemas/OriginEnum'
+        submitted_at:
+          type: string
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        recommendation_id:
+          type: string
+          format: uuid
+          readOnly: true
+          nullable: true
+      required:
+      - content
+      - created_at
+      - id
+      - origin
+      - recommendation_id
+      - role
+      - sequence
+      - submitted_at
+    V2MessageRoleEnum:
+      enum:
+      - customer
+      - adviser
+      - system
+      type: string
+      description: |-
+        * `customer` - customer
+        * `adviser` - adviser
+        * `system` - system
+    V2Turn:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        request_id:
+          type: string
+          format: uuid
+        conversation_id:
+          type: string
+          format: uuid
+          readOnly: true
+        input_message_id:
+          type: string
+          format: uuid
+          readOnly: true
+        starting_profile_revision:
+          type: integer
+          readOnly: true
+          nullable: true
+        state:
+          $ref: '#/components/schemas/StateEnum'
+        deadline:
+          type: string
+          format: date-time
+        cancelled_at:
+          type: string
+          format: date-time
+          nullable: true
+        error_code:
+          type: string
+          nullable: true
+          maxLength: 100
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - conversation_id
+      - created_at
+      - deadline
+      - id
+      - input_message_id
+      - request_id
+      - starting_profile_revision
+      - updated_at
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
