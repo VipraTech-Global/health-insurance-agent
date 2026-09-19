@@ -183,3 +183,86 @@ async def test_size_context_and_absolute_deadline():
         with pytest.raises(RelayFailure) as failure:
             await StrictRelayAdapter(route(), client, "secret").generate_structured_answer([], 0.01)
         assert failure.value.code == "provider_timeout"
+
+
+def omni_route(**changes):
+    values = {
+        "relay_type": "omniroute",
+        "base_url": "http://127.0.0.1:20128",
+        "model": "gemini/gemini-test",
+        "expected_model": "gemini-test",
+    }
+    return route(**{**values, **changes})
+
+
+@pytest.mark.asyncio
+async def test_omniroute_accepts_only_the_declared_reported_identity():
+    seen = []
+
+    def handler(request):
+        seen.append(json.loads(request.content)["model"])
+        return httpx.Response(200, json=envelope(model="gemini-test"))
+
+    async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as client:
+        adapter = StrictRelayAdapter(omni_route(), client, "secret")
+        await adapter.generate_structured_answer([{"role": "user", "content": "hi"}], 5)
+    assert seen == ["gemini/gemini-test"] and adapter.reported_model == "gemini-test"
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize("reported", ["gemini/gemini-test", "gemini-other", None])
+async def test_omniroute_rejects_any_other_reported_identity(reported):
+    body = (
+        envelope(model=reported)
+        if reported
+        else {k: v for k, v in envelope().items() if k != "model"}
+    )
+    async with httpx.AsyncClient(
+        transport=httpx.MockTransport(lambda request: httpx.Response(200, json=body))
+    ) as client:
+        with pytest.raises(RelayFailure) as caught:
+            await StrictRelayAdapter(omni_route(), client, "secret").generate_structured_answer(
+                [{"role": "user", "content": "hi"}], 5
+            )
+    assert caught.value.code == "model_identity_mismatch"
+
+
+@pytest.mark.asyncio
+async def test_omniroute_without_expected_model_requires_the_requested_id():
+    async with httpx.AsyncClient(
+        transport=httpx.MockTransport(lambda request: httpx.Response(200, json=envelope(model="x")))
+    ) as client:
+        adapter = StrictRelayAdapter(omni_route(expected_model=None), client, "secret")
+        with pytest.raises(RelayFailure) as caught:
+            await adapter.generate_structured_answer([{"role": "user", "content": "hi"}], 5)
+    assert caught.value.code == "model_identity_mismatch"
+
+
+@pytest.mark.asyncio
+@pytest.mark.parametrize(
+    ("response", "code"),
+    [
+        (httpx.Response(302, headers={"location": "http://127.0.0.1:9/"}), "provider_redirect"),
+        (httpx.Response(429, text="upstream secret detail"), "provider_quota"),
+        (httpx.Response(502, text="upstream secret detail"), "provider_unavailable"),
+        (httpx.Response(200, content=b"x" * (MAX_RESPONSE_BYTES + 1)), "response_too_large"),
+    ],
+)
+async def test_omniroute_failures_are_sanitized(response, code):
+    async with httpx.AsyncClient(transport=httpx.MockTransport(lambda request: response)) as client:
+        with pytest.raises(RelayFailure) as caught:
+            await StrictRelayAdapter(omni_route(), client, "secret").generate_structured_answer(
+                [{"role": "user", "content": "hi"}], 5
+            )
+    assert caught.value.code == code and "secret" not in str(caught.value)
+
+
+def test_omniroute_adapter_keeps_loopback_and_qualification_rules():
+    client = httpx.AsyncClient()
+    for url in ("http://10.0.0.5:20128", "https://127.0.0.1:20128", "http://localhost:20128"):
+        with pytest.raises(RelayFailure):
+            StrictRelayAdapter(omni_route(base_url=url), client, "secret")
+    with pytest.raises(RelayFailure):
+        StrictRelayAdapter(omni_route(qualified=False), client, "secret")
+    with pytest.raises(RelayFailure):
+        StrictRelayAdapter(route(relay_type="other"), client, "secret")

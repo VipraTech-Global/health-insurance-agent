@@ -22,20 +22,22 @@ from .ai import (
     loopback_url,
 )
 from .models import AIPreference, ModelCallAttempt, RouteConfiguration, RouteQualification
+from .providers import provider_config
 
 INITIAL_MODELS = ("gpt-6-astra", "gpt-5.6-sol", "gpt-5.6-terra", "gpt-5.6-luna")
 
 
 def discover_models() -> list[str]:
-    base = loopback_url(settings.AI_RELAY_BASE_URL)
-    if not settings.AI_RELAY_API_KEY:
+    config = provider_config("cliproxyapi")
+    base = loopback_url(config.base_url)
+    if not config.api_key:
         raise RelayFailure("relay_unconfigured", "The relay is not configured.")
     try:
         with httpx.Client(timeout=5, follow_redirects=False, trust_env=False) as client:
             with client.stream(
                 "GET",
                 f"{base}/v1/models",
-                headers={"Authorization": f"Bearer {settings.AI_RELAY_API_KEY}"},
+                headers={"Authorization": f"Bearer {config.api_key}"},
             ) as response:
                 if response.status_code != 200:
                     raise RelayFailure(
@@ -162,7 +164,7 @@ async def probe(
     route: RelayRoute, output_type: type[BaseModel], instruction: str
 ) -> tuple[str, dict[str, int]]:
     async with httpx.AsyncClient(trust_env=False, follow_redirects=False) as client:
-        adapter = StrictRelayAdapter(route, client, settings.AI_RELAY_API_KEY)
+        adapter = StrictRelayAdapter(route, client, provider_config(route.relay_type).api_key)
         result = await adapter.generate([{"role": "user", "content": instruction}], 90, output_type)
         if isinstance(result, StructuredAnswerDraft) and (
             result.outcome != "needs_input" or result.claims

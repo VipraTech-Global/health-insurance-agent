@@ -68,6 +68,9 @@ class RelayRoute:
     context_limit: int
     timeout_seconds: float
     qualified: bool
+    # Exact model id the gateway must report when it differs from ``model`` (OmniRoute drops
+    # the provider prefix). Declared per route, never derived by pattern.
+    expected_model: str | None = None
 
 
 class RelayFailure(RuntimeError):
@@ -131,7 +134,10 @@ class StrictRelayAdapter:
             raise RelayFailure(
                 "route_unqualified", "The selected model is not currently qualified."
             )
-        if route.relay_type != "cliproxyapi" or route.api_dialect != "openai_responses":
+        if (
+            route.relay_type not in ("cliproxyapi", "omniroute")
+            or route.api_dialect != "openai_responses"
+        ):
             raise RelayFailure("unsupported_route", "This route is not enabled.")
         self.base_url = loopback_url(route.base_url)
         if not credential:
@@ -228,11 +234,12 @@ class StrictRelayAdapter:
         except (ValueError, UnicodeDecodeError) as exc:
             raise RelayFailure("malformed_response", "The relay returned invalid JSON.") from exc
         # Missing model identity is also a failure. Do not persist untrusted model strings.
-        if envelope.get("model") != self.route.model:
+        expected_model = self.route.expected_model or self.route.model
+        if envelope.get("model") != expected_model:
             raise RelayFailure(
                 "model_identity_mismatch", "The relay did not confirm the exact selected model."
             )
-        self.reported_model = self.route.model
+        self.reported_model = expected_model
         if envelope.get("status") != "completed" or envelope.get("error"):
             raise RelayFailure(
                 "incomplete_response", "The selected model did not finish its answer."

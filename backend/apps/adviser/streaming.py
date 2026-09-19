@@ -8,7 +8,6 @@ from typing import Any, cast
 
 from asgiref.sync import sync_to_async
 from config.lifecycle import runtime
-from django.conf import settings
 from django.core import signing
 from django.core.serializers.json import DjangoJSONEncoder
 from django.db import connection
@@ -21,6 +20,7 @@ from django.views.decorators.http import require_http_methods
 from .ai import InterviewDraft, RelayFailure, StrictRelayAdapter, StructuredAnswerDraft
 from .ai_turns import attempt_active, fail_turn, finish_call, prepare_turn, publish_ai_answer
 from .models import Turn, TurnAttempt
+from .providers import provider_config
 from .relay_accounts import active_account_identity
 from .serializers import TurnSerializer
 from .services import (
@@ -204,7 +204,9 @@ async def stream_turn(
                         raise RelayFailure("relay_unconfigured", "The AI runtime is not ready.")
                     account_identity = await _database_call(active_account_identity)
                     adapter = StrictRelayAdapter(
-                        prepared.route, runtime.http_client, settings.AI_RELAY_API_KEY
+                        prepared.route,
+                        runtime.http_client,
+                        provider_config(prepared.route.relay_type).api_key,
                     )
                     started = time.monotonic()
                     call_status, call_code = "failed", "interrupted"

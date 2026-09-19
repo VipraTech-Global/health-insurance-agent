@@ -13,6 +13,7 @@ from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
 
 from apps.adviser.ai import RelayFailure, RelayRoute, StrictRelayAdapter
+from apps.adviser.providers import provider_config
 from apps.adviser_v2.contracts import validate_contract
 from apps.adviser_v2.model_gateway import schema_sha256
 from apps.adviser_v2.models import ModelQualification, ModelRoute
@@ -169,15 +170,15 @@ async def _call(
 ) -> tuple[StrictOutput, StrictRelayAdapter]:
     route = RelayRoute(
         relay_type="cliproxyapi",
-        base_url=settings.AI_RELAY_BASE_URL,
+        base_url=provider_config("cliproxyapi").base_url,
         model=model,
         api_dialect="openai_responses",
         context_limit=1_000_000,
         timeout_seconds=120,
         qualified=True,
     )
-    async with httpx.AsyncClient() as client:
-        adapter = StrictRelayAdapter(route, client, settings.AI_RELAY_API_KEY)
+    async with httpx.AsyncClient(trust_env=False) as client:
+        adapter = StrictRelayAdapter(route, client, provider_config(route.relay_type).api_key)
         result = await adapter.generate(messages, 120, output_type)
         return result, adapter
 

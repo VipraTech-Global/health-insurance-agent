@@ -18,6 +18,7 @@ from pydantic import BaseModel
 
 from apps.accounts.models import User
 from apps.adviser.ai import RelayFailure, RelayRoute, StrictRelayAdapter
+from apps.adviser.providers import provider_config
 
 from .crypto import commitment
 from .errors import AccountErased
@@ -160,7 +161,7 @@ def call_model[OutputT: BaseModel](
     )
     route = RelayRoute(
         relay_type="cliproxyapi",
-        base_url=settings.AI_RELAY_BASE_URL,
+        base_url=provider_config("cliproxyapi").base_url,
         model=model,
         api_dialect="openai_responses",
         context_limit=1_000_000,
@@ -173,8 +174,8 @@ def call_model[OutputT: BaseModel](
     began = time.monotonic()
 
     async def invoke() -> tuple[OutputT, StrictRelayAdapter]:
-        async with httpx.AsyncClient() as client:
-            adapter = StrictRelayAdapter(route, client, settings.AI_RELAY_API_KEY)
+        async with httpx.AsyncClient(trust_env=False) as client:
+            adapter = StrictRelayAdapter(route, client, provider_config(route.relay_type).api_key)
             result = await adapter.generate(list(messages), remaining_seconds, output_type)
             return result, adapter
 

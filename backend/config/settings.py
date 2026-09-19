@@ -162,6 +162,16 @@ AI_RELAY_MANAGEMENT_KEY = os.environ.get("AI_RELAY_MANAGEMENT_KEY", "")
 AI_RELAY_STATE_DIR = Path(
     os.environ.get("AI_RELAY_STATE_DIR", "~/.local/state/job-in/relay-accounts")
 ).expanduser()
+# Optional OmniRoute gateway (self-hosted, loopback only). Off unless explicitly enabled and the
+# operator confirms request logging is disabled on the gateway key. ``OMNIROUTE_MODELS`` is a comma
+# list of ``requested-id=expected-reported-id`` pairs, e.g. ``gemini/x=x``.
+OMNIROUTE_ENABLED = os.environ.get("OMNIROUTE_ENABLED", "0") == "1"
+OMNIROUTE_BASE_URL = os.environ.get("OMNIROUTE_BASE_URL", "http://127.0.0.1:20128")
+OMNIROUTE_API_KEY = os.environ.get("OMNIROUTE_API_KEY", "")
+OMNIROUTE_LOGGING_DISABLED_CONFIRMED = (
+    os.environ.get("OMNIROUTE_LOGGING_DISABLED_CONFIRMED", "0") == "1"
+)
+OMNIROUTE_MODELS = os.environ.get("OMNIROUTE_MODELS", "")
 AI_TURN_TIMEOUT_SECONDS = int(os.environ.get("AI_TURN_TIMEOUT_SECONDS", "240"))
 
 # CoverGuide v2 server-only privacy and frozen-corpus settings. Key-ring entries use
