@@ -12,6 +12,10 @@ frontend/.next/
 *.tsbuildinfo
 data/source-blobs/*
 data/extractions/*
+data/v2/
+data/reports/*
+!data/reports/corpus-coverage.json
+data/manifests/
 !data/source-blobs/.gitkeep
 !data/extractions/.gitkeep
 staticfiles/
@@ -25,3 +29,10 @@ backend/celerybeat-schedule*
 /research/evaluation/
 /research/assessment/document-previews/
 /research/assessment/visual-review/
+
+# Logs (backend/error.log contains provider account identifiers) and local agent state.
+*.log
+.claude/
+
+# Private combined scenario set; supply locally, never publish (see research/README.md).
+/research/seeds/scenarios.txt

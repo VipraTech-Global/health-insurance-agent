@@ -9,6 +9,10 @@ other plans and unsupported questions still return an evidence-limited outcome.
 
 Requirements: Python 3.12 through uv, Node.js 24, and Docker.
 
+0. Run `cp .env.example .env`, then `chmod 600 .env`. Replace every `/absolute/path/to/...`
+   placeholder with a real path on your machine and generate fresh values for
+   `DJANGO_SECRET_KEY`, `COVERGUIDE_ENCRYPTION_KEYS`, and `COVERGUIDE_COMMITMENT_KEYS`. `.env` is
+   gitignored; never commit it.
 1. Run `docker compose up -d` to start PostgreSQL, Redis, and Nginx.
 2. Run `uv sync --all-groups`.
 3. Run `uv run python backend/manage.py migrate`.
@@ -60,6 +64,10 @@ See docs/STATUS.md for milestone status and acceptance evidence.
 
 ## AI settings and the shared relay
 
+> The relay, systemd unit, and admin-promotion details below describe the maintainer's development
+> machine. The relay is an OpenAI-compatible endpoint configured through the `AI_RELAY_*`
+> variables in `.env`; other environments must provide their own equivalent and deployment.
+
 CLIProxyAPI is activated locally at `http://127.0.0.1:8317`. Open **AI settings** in
 CoverGuide to choose a qualified model. `gpt-6-astra` is the initial choice; `gpt-5.6-sol`,
 `gpt-5.6-terra`, and `gpt-5.6-luna` are also qualified. Preferences apply to future turns,
@@ -99,3 +107,29 @@ cancel, disconnect, restore, forget), and `POST /api/v1/admin/ai-relay/qualifica
 Each qualification tests both answer and interview schemas and records safe call metadata.
 The one-time `promote_pilot_admin` command requires an inspected user ID and exact last-login
 timestamp and refuses ambiguous accounts, changed logins, or repeat promotion.
+
+## Local-only inputs
+
+These are deliberately not in the repository and must be supplied locally:
+
+- `research/seeds/scenarios.txt`: the private combined scenario set read by
+  `backend/research_workspace/cases.py` and `build_bge_m3_reference`. It is gitignored because it
+  overlaps the private evaluation benchmark. See `research/README.md` for the evaluation boundary.
+- `research/objects/`, `research/evaluation/`, and `data/source-blobs/`: original insurer
+  documents and private benchmark material.
+- `data/v2/`, `data/reports/`, and `data/manifests/`: encrypted runtime storage and generated
+  run artifacts (only `data/reports/corpus-coverage.json` is tracked).
+
+## Contributing
+
+Work on a branch and open a pull request against `main`. Before opening one, run
+`uv run ruff check backend`, `uv run pytest`, and, in `frontend`, `npm run lint` and
+`npm run build`. Regenerate `openapi.json` and `frontend/lib/api-schema.ts` when the API changes.
+Report security issues privately to the maintainers rather than in a public issue; see
+`docs/SECURITY.md` for the current security posture.
+
+## License
+
+Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE). Insurer policy documents
+referenced by the research registers remain the property of their respective insurers and are not
+redistributed here.
