@@ -891,6 +891,7 @@ export interface components {
             /** Format: uuid */
             route_id: string;
             model: string;
+            provider: components["schemas"]["ProviderEnum"];
         };
         ModelList: {
             models: components["schemas"]["ModelChoice"][];
@@ -974,6 +975,12 @@ export interface components {
             /** Format: uuid */
             subject_person_id: string | null;
         };
+        /**
+         * @description * `cliproxyapi` - cliproxyapi
+         *     * `omniroute` - omniroute
+         * @enum {string}
+         */
+        ProviderEnum: "cliproxyapi" | "omniroute";
         Qualification: {
             /** Format: uuid */
             id: string;
@@ -987,6 +994,8 @@ export interface components {
         };
         QualificationInput: {
             model: string;
+            /** @default cliproxyapi */
+            provider: components["schemas"]["ProviderEnum"];
         };
         RecommendationCitation: {
             /** Format: uuid */
@@ -1035,6 +1044,7 @@ export interface components {
         RelayStatus: {
             account: components["schemas"]["Account"];
             discovered_models: string[];
+            omniroute_models: string[];
             catalogue_error: string | null;
             laptop_wide: boolean;
         };

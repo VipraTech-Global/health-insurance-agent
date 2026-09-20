@@ -202,7 +202,13 @@ async def stream_turn(
                     )
                     if runtime.http_client is None:
                         raise RelayFailure("relay_unconfigured", "The AI runtime is not ready.")
-                    account_identity = await _database_call(active_account_identity)
+                    # The Codex account guard only applies to relay routes; OmniRoute has none.
+                    uses_relay_account = prepared.route.relay_type == "cliproxyapi"
+                    account_identity = (
+                        await _database_call(active_account_identity)
+                        if uses_relay_account
+                        else None
+                    )
                     adapter = StrictRelayAdapter(
                         prepared.route,
                         runtime.http_client,
@@ -249,7 +255,10 @@ async def stream_turn(
                                 int((time.monotonic() - started) * 1000),
                             )
                         )
-                    if await _database_call(active_account_identity) != account_identity:
+                    if (
+                        uses_relay_account
+                        and await _database_call(active_account_identity) != account_identity
+                    ):
                         raise RelayFailure(
                             "account_changed",
                             "The laptop-wide Codex account changed while preparing this answer.",

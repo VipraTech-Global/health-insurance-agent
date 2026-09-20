@@ -1,3 +1,4 @@
+import re
 from dataclasses import asdict
 from typing import Any
 
@@ -10,6 +11,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .ai import RelayFailure
+from .providers import OMNIROUTE_MODEL_ID
 from .relay_accounts import (
     RelayAccountError,
     cancel_account_login,
@@ -21,12 +23,19 @@ from .relay_accounts import (
     start_account_login,
 )
 from .relay_management import RelayManagementError
-from .relay_routes import choose_model, discover_models, model_choices, qualify_model
+from .relay_routes import (
+    choose_model,
+    discover_models,
+    discover_omniroute_models,
+    model_choices,
+    qualify_model,
+)
 
 
 class ModelChoiceSerializer(serializers.Serializer[dict[str, Any]]):
     route_id = serializers.UUIDField()
     model = serializers.CharField()
+    provider = serializers.ChoiceField(choices=["cliproxyapi", "omniroute"])
 
 
 class ModelListSerializer(serializers.Serializer[dict[str, Any]]):
@@ -41,7 +50,18 @@ class PreferenceInputSerializer(serializers.Serializer[dict[str, Any]]):
 
 
 class QualificationInputSerializer(serializers.Serializer[dict[str, Any]]):
-    model = serializers.RegexField(r"^gpt-[a-zA-Z0-9._-]{1,190}$")
+    model = serializers.CharField(max_length=160)
+    provider = serializers.ChoiceField(choices=["cliproxyapi", "omniroute"], default="cliproxyapi")
+
+    def validate(self, attrs: dict[str, Any]) -> dict[str, Any]:
+        pattern = (
+            OMNIROUTE_MODEL_ID
+            if attrs["provider"] == "omniroute"
+            else re.compile(r"gpt-[a-zA-Z0-9._-]{1,190}")
+        )
+        if not pattern.fullmatch(attrs["model"]):
+            raise serializers.ValidationError({"model": "This model id is not valid."})
+        return attrs
 
 
 class QualificationSerializer(serializers.Serializer[dict[str, Any]]):
@@ -66,6 +86,7 @@ class AccountSerializer(serializers.Serializer[dict[str, Any]]):
 class RelayStatusSerializer(serializers.Serializer[dict[str, Any]]):
     account = AccountSerializer()
     discovered_models = serializers.ListField(child=serializers.CharField())
+    omniroute_models = serializers.ListField(child=serializers.CharField())
     catalogue_error = serializers.CharField(allow_null=True)
     laptop_wide = serializers.BooleanField()
 
@@ -137,6 +158,7 @@ class AdminRelay(SafeRelayView):
             {
                 "account": asdict(provider_account_summary("codex")),
                 "discovered_models": models,
+                "omniroute_models": discover_omniroute_models(),
                 "catalogue_error": error,
                 "laptop_wide": True,
             }
@@ -170,7 +192,9 @@ class AdminQualification(SafeRelayView):
     def post(self, request: Request) -> Response:
         serializer = QualificationInputSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        qualification = qualify_model(serializer.validated_data["model"])
+        qualification = qualify_model(
+            serializer.validated_data["model"], serializer.validated_data["provider"]
+        )
         return Response(
             {
                 "id": str(qualification.id),

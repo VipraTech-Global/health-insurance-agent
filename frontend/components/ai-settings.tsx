@@ -15,6 +15,7 @@ export function AISettings({ isAdmin }: { isAdmin: boolean }) {
   const [notice, setNotice] = useState("");
   const [busy, setBusy] = useState(false);
   const [candidate, setCandidate] = useState("");
+  const [candidateProvider, setCandidateProvider] = useState<"cliproxyapi" | "omniroute">("cliproxyapi");
   const reload = useCallback(async () => {
     setModels(await api<Models>("/api/v1/ai/models/"));
     if (isAdmin) setRelay(await api<Relay>("/api/v1/admin/ai-relay/"));
@@ -64,7 +65,7 @@ export function AISettings({ isAdmin }: { isAdmin: boolean }) {
     if (!candidate) return;
     setBusy(true); setError(""); setNotice("Testing the model's answer and interview responses…");
     try {
-      const result = await api<components["schemas"]["Qualification"]>("/api/v1/admin/ai-relay/qualifications/", { method: "POST", body: JSON.stringify({ model: candidate }) });
+      const result = await api<components["schemas"]["Qualification"]>("/api/v1/admin/ai-relay/qualifications/", { method: "POST", body: JSON.stringify({ model: candidate, provider: candidateProvider }) });
       setNotice(result.state === "qualified" ? `${candidate} passed and is available to users.` : `${candidate} did not pass and remains unavailable.`);
       await reload();
     } catch (e) { setError(e instanceof Error ? e.message : "Qualification failed."); setNotice(""); }
@@ -76,7 +77,7 @@ export function AISettings({ isAdmin }: { isAdmin: boolean }) {
     {notice && <p role="status">{notice}</p>}
     <label>Your AI model<select aria-label="Your AI model" value={models?.selected_route_id ?? ""} disabled={busy || !models?.models.length} onChange={(e) => void selectModel(e.target.value)}>
       {!models?.selected_available && <option value={models?.selected_route_id ?? ""}>{models?.selected_model ? `${models.selected_model} — unavailable` : "No qualified model available"}</option>}
-      {models?.models.map((model) => <option key={model.route_id} value={model.route_id}>{model.model}</option>)}
+      {models?.models.map((model) => <option key={model.route_id} value={model.route_id}>{model.provider === "omniroute" ? `${model.model} — OmniRoute (free tier)` : model.model}</option>)}
     </select></label>
     <p>Only tested models appear here. Your selected model is used as chosen; an unavailable model produces a clear error.</p>
     <button className="secondary" disabled={busy} onClick={() => void reload().catch((e: Error) => setError(e.message))}>Refresh models and status</button>
@@ -91,7 +92,7 @@ export function AISettings({ isAdmin }: { isAdmin: boolean }) {
         {(relay?.account.has_active_account || relay?.account.can_restore) && <button className="secondary" disabled={busy || relay.account.login_in_progress} onClick={() => void accountAction("forget")}>Forget account</button>}
       </div>
       <h2>Qualify another model</h2><p>Newly discovered models must pass both tests before users can choose them.</p>
-      <label>Discovered model<select aria-label="Discovered model" value={candidate} onChange={(e) => setCandidate(e.target.value)} disabled={busy}><option value="">Choose a model</option>{relay?.discovered_models.map((model) => <option key={model} value={model}>{model}</option>)}</select></label>
+      <label>Discovered model<select aria-label="Discovered model" value={candidate ? `${candidateProvider}|${candidate}` : ""} onChange={(e) => { const [provider, ...rest] = e.target.value.split("|"); setCandidateProvider(provider === "omniroute" ? "omniroute" : "cliproxyapi"); setCandidate(rest.join("|")); }} disabled={busy}><option value="">Choose a model</option>{relay?.discovered_models.map((model) => <option key={`cliproxyapi|${model}`} value={`cliproxyapi|${model}`}>{model}</option>)}{relay?.omniroute_models.map((model) => <option key={`omniroute|${model}`} value={`omniroute|${model}`}>{model} — OmniRoute</option>)}</select></label>
       <button className="secondary" disabled={busy || !candidate} onClick={() => void qualify()}>Test and qualify</button>
     </div>}
   </section>;

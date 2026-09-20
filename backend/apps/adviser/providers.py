@@ -81,7 +81,7 @@ def provider_config(relay_type: str) -> ProviderConfig:
 
 
 @register()
-def check_omniroute_settings(app_configs, **kwargs):
+def check_omniroute_settings(app_configs: object, **kwargs: object) -> list[Error]:
     if not settings.OMNIROUTE_ENABLED:
         return []
     return [

@@ -22,7 +22,7 @@ from .ai import (
     loopback_url,
 )
 from .models import AIPreference, ModelCallAttempt, RouteConfiguration, RouteQualification
-from .providers import provider_config
+from .providers import omniroute_models, provider_config
 
 INITIAL_MODELS = ("gpt-6-astra", "gpt-5.6-sol", "gpt-5.6-terra", "gpt-5.6-luna")
 
@@ -68,17 +68,38 @@ def discover_models() -> list[str]:
         ) from exc
 
 
-def route_values(model: str) -> dict[str, Any]:
+def discover_omniroute_models() -> list[str]:
+    """Allowlisted OmniRoute ids the admin may qualify; empty while the provider is off."""
+
+    if not settings.OMNIROUTE_ENABLED:
+        return []
+    try:
+        return sorted(omniroute_models())
+    except RelayFailure:
+        return []
+
+
+def route_values(model: str, relay_type: str = "cliproxyapi") -> dict[str, Any]:
+    capabilities: dict[str, Any] = {
+        "answer_schema": StructuredAnswerDraft.model_json_schema(),
+        "interview_schema": InterviewDraft.model_json_schema(),
+        "protocol_version": 1,
+    }
+    if relay_type == "omniroute":
+        expected = omniroute_models().get(model)
+        if expected is None:
+            raise RelayFailure("model_missing", "Choose a model on the OmniRoute allowlist.")
+        # Declared per route and part of the hash; relay rows keep their historical hash.
+        capabilities["expected_identity"] = expected
+        base_url = provider_config("omniroute").base_url
+    else:
+        base_url = loopback_url(settings.AI_RELAY_BASE_URL)
     return {
-        "relay_type": "cliproxyapi",
-        "base_url": loopback_url(settings.AI_RELAY_BASE_URL),
+        "relay_type": relay_type,
+        "base_url": base_url,
         "configured_model": model,
         "api_dialect": "openai_responses",
-        "capabilities": {
-            "answer_schema": StructuredAnswerDraft.model_json_schema(),
-            "interview_schema": InterviewDraft.model_json_schema(),
-            "protocol_version": 1,
-        },
+        "capabilities": capabilities,
         "context_limit": 100_000,
         "timeout_policy": {"seconds": 90},
     }
@@ -91,7 +112,11 @@ def configuration_hash(values: dict[str, Any]) -> str:
 
 
 def usable_route(route: RouteConfiguration) -> bool:
-    values = route_values(route.configured_model)
+    try:
+        values = route_values(route.configured_model, route.relay_type)
+    except RelayFailure:
+        # A disabled or reconfigured provider makes its routes unusable; never fall back.
+        return False
     stored = {field: getattr(route, field) for field in values}
     return (
         stored == values
@@ -124,7 +149,7 @@ def selected_route(user_id: uuid.UUID) -> RouteConfiguration | None:
 
 def model_choices(user_id: uuid.UUID) -> dict[str, Any]:
     models = [
-        {"route_id": str(route.id), "model": route.configured_model}
+        {"route_id": str(route.id), "model": route.configured_model, "provider": route.relay_type}
         for route in RouteConfiguration.objects.filter(qualification_state="qualified").order_by(
             "configured_model", "-created_at"
         )
@@ -150,13 +175,14 @@ def choose_model(user_id: uuid.UUID, route_id: uuid.UUID) -> dict[str, Any]:
 
 def route_snapshot(route: RouteConfiguration) -> RelayRoute:
     return RelayRoute(
-        "cliproxyapi",
+        "omniroute" if route.relay_type == "omniroute" else "cliproxyapi",
         route.base_url,
         route.configured_model,
         "openai_responses",
         route.context_limit,
         float(route.timeout_policy["seconds"]),
         True,
+        route.capabilities.get("expected_identity") if route.relay_type == "omniroute" else None,
     )
 
 
@@ -181,17 +207,25 @@ async def probe(
         return adapter.reported_model, adapter.usage
 
 
-def qualify_model(model: str) -> RouteQualification:
-    if model not in discover_models():
-        raise RelayFailure("model_missing", "Choose a model in the current relay catalogue.")
-    from .relay_management import RelayManagementClient
+def qualify_model(model: str, relay_type: str = "cliproxyapi") -> RouteQualification:
+    if relay_type == "omniroute":
+        # The allowlist, not discovery, decides; provider_config fails closed when disabled.
+        provider_config("omniroute")
+    else:
+        if model not in discover_models():
+            raise RelayFailure("model_missing", "Choose a model in the current relay catalogue.")
+        from .relay_management import RelayManagementClient
 
-    accounts = [
-        account for account in RelayManagementClient().credentials("codex") if not account.disabled
-    ]
-    if len(accounts) != 1 or accounts[0].unavailable:
-        raise RelayFailure("account_unavailable", "Exactly one healthy Codex account is required.")
-    values = route_values(model)
+        accounts = [
+            account
+            for account in RelayManagementClient().credentials("codex")
+            if not account.disabled
+        ]
+        if len(accounts) != 1 or accounts[0].unavailable:
+            raise RelayFailure(
+                "account_unavailable", "Exactly one healthy Codex account is required."
+            )
+    values = route_values(model, relay_type)
     route, _ = RouteConfiguration.objects.get_or_create(
         configuration_hash=configuration_hash(values), defaults=values
     )

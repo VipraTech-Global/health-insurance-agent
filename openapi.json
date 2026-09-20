@@ -1537,8 +1537,11 @@ components:
           format: uuid
         model:
           type: string
+        provider:
+          $ref: '#/components/schemas/ProviderEnum'
       required:
       - model
+      - provider
       - route_id
     ModelList:
       type: object
@@ -1718,6 +1721,14 @@ components:
       - status
       - subject_person_id
       - target_value
+    ProviderEnum:
+      enum:
+      - cliproxyapi
+      - omniroute
+      type: string
+      description: |-
+        * `cliproxyapi` - cliproxyapi
+        * `omniroute` - omniroute
     Qualification:
       type: object
       properties:
@@ -1745,7 +1756,11 @@ components:
       properties:
         model:
           type: string
-          pattern: ^gpt-[a-zA-Z0-9._-]{1,190}$
+          maxLength: 160
+        provider:
+          allOf:
+          - $ref: '#/components/schemas/ProviderEnum'
+          default: cliproxyapi
       required:
       - model
     RecommendationCitation:
@@ -1875,6 +1890,10 @@ components:
           type: array
           items:
             type: string
+        omniroute_models:
+          type: array
+          items:
+            type: string
         catalogue_error:
           type: string
           nullable: true
@@ -1885,6 +1904,7 @@ components:
       - catalogue_error
       - discovered_models
       - laptop_wide
+      - omniroute_models
     RequirementMatch:
       type: object
       properties:
