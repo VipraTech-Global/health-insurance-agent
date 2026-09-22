@@ -696,7 +696,13 @@ class ConsentRecord(ApprovedModel):
         ],
     )
     status = models.CharField(
-        max_length=16, choices=[("granted", "granted"), ("revoked", "revoked")], default="requested"
+        max_length=16,
+        choices=[
+            ("requested", "requested"),
+            ("granted", "granted"),
+            ("revoked", "revoked"),
+        ],
+        default="requested",
     )
     source_message = models.ForeignKey(
         "Message", on_delete=models.PROTECT, related_name="+", null=True, blank=True

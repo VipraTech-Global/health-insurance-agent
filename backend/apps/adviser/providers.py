@@ -58,6 +58,12 @@ def omniroute_problems() -> list[str]:
             "OMNIROUTE_LOGGING_DISABLED_CONFIRMED=1 is required once request logging and "
             "prompt compression are disabled on the gateway key."
         )
+    if not settings.COVERGUIDE_LOCAL_OMNIROUTE_PILOT_ACK:
+        problems.append(
+            "COVERGUIDE_LOCAL_OMNIROUTE_PILOT_ACK=1 is required for local pilot data."
+        )
+    if not settings.DEBUG:
+        problems.append("OmniRoute pilot routing is restricted to DEBUG/local mode.")
     try:
         if not omniroute_models():
             problems.append("OMNIROUTE_MODELS must list at least one model.")

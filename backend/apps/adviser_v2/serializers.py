@@ -6,7 +6,7 @@ from typing import Any
 
 from rest_framework import serializers
 
-from .models import Conversation, Message, Turn
+from .models import Conversation, Message, Turn, TurnRouteBinding
 
 
 class V2ConversationSerializer(serializers.ModelSerializer[Conversation]):
@@ -63,11 +63,33 @@ class MessageSubmissionSerializer(serializers.Serializer[dict[str, Any]]):
     expected_profile_revision = serializers.IntegerField(min_value=1, required=False)
 
 
+class TurnRouteBindingSerializer(serializers.ModelSerializer[TurnRouteBinding]):
+    route_id = serializers.UUIDField(read_only=True)
+    qualification_id = serializers.UUIDField(read_only=True)
+
+    class Meta:
+        model = TurnRouteBinding
+        fields = [
+            "role",
+            "route_id",
+            "qualification_id",
+            "requested_model",
+            "expected_model",
+            "observed_model",
+            "endpoint_profile",
+            "adapter_version",
+            "route_configuration_sha256",
+            "schema_sha256",
+            "created_at",
+        ]
+
+
 class V2TurnSerializer(serializers.ModelSerializer[Turn]):
     input_message_id = serializers.UUIDField(read_only=True)
     starting_profile_revision = serializers.IntegerField(
         source="starting_profile_revision.revision", read_only=True, allow_null=True
     )
+    route_bindings = TurnRouteBindingSerializer(many=True, read_only=True)
 
     class Meta:
         model = Turn
@@ -81,6 +103,8 @@ class V2TurnSerializer(serializers.ModelSerializer[Turn]):
             "deadline",
             "cancelled_at",
             "error_code",
+            "route_commitment",
+            "route_bindings",
             "created_at",
             "updated_at",
         ]
@@ -253,9 +277,23 @@ class KnowledgeReleaseSerializer(serializers.Serializer[dict[str, Any]]):
     id = serializers.UUIDField()
     number = serializers.IntegerField()
     state = serializers.CharField()
-    label = serializers.CharField()
+    label = serializers.CharField()  # type: ignore[assignment]
     published_at = serializers.DateTimeField(allow_null=True)
     manifest_sha256 = serializers.CharField()
+
+
+class InteractiveRouteStatusSerializer(serializers.Serializer[dict[str, Any]]):
+    role = serializers.CharField()
+    qualified = serializers.BooleanField()
+    error_code = serializers.CharField(allow_null=True)
+    requested_model = serializers.CharField()
+    expected_model = serializers.CharField(allow_null=True)
+    endpoint_profile = serializers.CharField(allow_null=True)
+    adapter_version = serializers.CharField(allow_null=True)
+    route_key = serializers.CharField(allow_null=True)
+    configuration_sha256 = serializers.CharField(allow_null=True)
+    schema_sha256 = serializers.CharField(allow_null=True)
+    qualification_id = serializers.UUIDField(allow_null=True)
 
 
 class CatalogueReadinessSerializer(serializers.Serializer[dict[str, Any]]):
@@ -268,4 +306,5 @@ class CatalogueReadinessSerializer(serializers.Serializer[dict[str, Any]]):
     ready = serializers.BooleanField()
     incomplete_comparison = serializers.BooleanField()
     products = CatalogueProductSerializer(many=True)
+    interactive_routes = InteractiveRouteStatusSerializer(many=True)
     blocking_reason = serializers.CharField(allow_null=True)

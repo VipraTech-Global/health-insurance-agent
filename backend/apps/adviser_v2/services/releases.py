@@ -112,7 +112,7 @@ def build_release(
         review_status="verified",
     ).order_by("policy_version_id", "rule_key", "id")
     unresolved = list(report["blockers"])
-    readiness = {
+    readiness: dict[str, Any] = {
         "label": release_label,
         "incomplete_comparison": True,
         "demo_subset": comparison_product_count == THREE_PRODUCT_DEMO_COUNT,

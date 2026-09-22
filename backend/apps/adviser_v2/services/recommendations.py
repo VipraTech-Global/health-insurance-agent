@@ -84,6 +84,12 @@ def _save_room_illustration(
     inputs = _room_illustration_inputs(current_inputs(facts))
     if len(by_type) != 3 or any(key not in inputs for key in keys):
         return None
+    input_values: dict[str, str] = {}
+    for key in keys:
+        raw_input = inputs[key]
+        if not isinstance(raw_input, dict) or not isinstance(raw_input.get("value"), str):
+            return None
+        input_values[key] = raw_input["value"]
     if inputs.get("actual_room_category_higher_than_eligible") != {
         "state": "known", "kind": "boolean", "value": True
     }:
@@ -101,7 +107,12 @@ def _save_room_illustration(
                 continue
             effect = rule.rule.body["effects"][0]
             result = evaluate_expression(effect["amount"], inputs, table_rule=rule.rule)
-            if result is None or result.unit != "money" or result.currency != "INR":
+            if (
+                result is None
+                or not isinstance(result.value, Decimal)
+                or result.unit != "money"
+                or result.currency != "INR"
+            ):
                 return None
             result_value = (
                 str(result.value.quantize(Decimal("1")))
@@ -122,7 +133,7 @@ def _save_room_illustration(
                     {
                         "key": key,
                         "value": {
-                            "state": "finite", "value": inputs[key]["value"],
+                            "state": "finite", "value": input_values[key],
                             "unit": "money", "currency": "INR",
                         },
                         "assertion_ids": [str(by_type[key].id)],

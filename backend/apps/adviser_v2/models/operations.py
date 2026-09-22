@@ -44,6 +44,9 @@ class Turn(ApprovedModel):
     deadline = models.DateTimeField()
     cancelled_at = models.DateTimeField(null=True, blank=True)
     error_code = models.CharField(max_length=100, null=True, blank=True)
+    # A keyed commitment over the immutable role bindings. The empty default preserves
+    # pre-binding rows; newly submitted turns are rejected before enqueue unless this is set.
+    route_commitment = models.CharField(max_length=64, default="", editable=False)
 
     class Meta:
         db_table = "adviser_v2_turn"
@@ -56,9 +59,62 @@ class Turn(ApprovedModel):
                 name="v2_turn_ck_1",
             ),
             models.CheckConstraint(condition=Q(deadline__gt=F("created_at")), name="v2_turn_ck_2"),
+            models.CheckConstraint(
+                condition=Q(route_commitment="")
+                | Q(route_commitment__regex=r"^[0-9a-f]{64}$"),
+                name="v2_turn_route_commitment_ck",
+            ),
         ]
         indexes = [
             models.Index(fields=["state", "lease_until"], name="v2_turn_ix_1"),
+        ]
+
+
+class TurnRouteBinding(ApprovedModel):
+    """The exact qualified interactive route captured before a turn is queued."""
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    turn = models.ForeignKey("Turn", on_delete=models.PROTECT, related_name="route_bindings")
+    role = models.CharField(
+        max_length=24,
+        choices=[
+            ("fact_interpretation", "fact_interpretation"),
+            ("recommendation_answer", "recommendation_answer"),
+        ],
+    )
+    route = models.ForeignKey("ModelRoute", on_delete=models.PROTECT, related_name="turn_bindings")
+    qualification = models.ForeignKey(
+        "ModelQualification", on_delete=models.PROTECT, related_name="turn_bindings"
+    )
+    requested_model = models.CharField(max_length=160)
+    expected_model = models.CharField(max_length=160)
+    observed_model = models.CharField(max_length=160)
+    endpoint_profile = models.CharField(max_length=120)
+    adapter_version = models.CharField(max_length=120)
+    route_configuration_sha256 = models.CharField(max_length=64)
+    schema_sha256 = models.CharField(max_length=64)
+
+    class Meta:
+        db_table = "adviser_v2_turn_route_binding"
+        constraints = [
+            models.UniqueConstraint(fields=["turn", "role"], name="v2_turn_route_binding_uq_1"),
+            models.CheckConstraint(
+                condition=Q(role__in=["fact_interpretation", "recommendation_answer"]),
+                name="v2_turn_route_binding_role_ck",
+            ),
+            models.CheckConstraint(
+                condition=Q(route_configuration_sha256__regex=r"^[0-9a-f]{64}$"),
+                name="v2_turn_route_binding_config_ck",
+            ),
+            models.CheckConstraint(
+                condition=Q(schema_sha256__regex=r"^[0-9a-f]{64}$"),
+                name="v2_turn_route_binding_schema_ck",
+            ),
+            models.CheckConstraint(
+                condition=Q(expected_model=F("observed_model")),
+                name="v2_turn_route_binding_identity_ck",
+            ),
         ]
 
 

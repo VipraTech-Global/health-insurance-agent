@@ -172,6 +172,11 @@ OMNIROUTE_LOGGING_DISABLED_CONFIRMED = (
     os.environ.get("OMNIROUTE_LOGGING_DISABLED_CONFIRMED", "0") == "1"
 )
 OMNIROUTE_MODELS = os.environ.get("OMNIROUTE_MODELS", "")
+# Explicit local-only acceptance for sending real pilot conversation data through an upstream
+# provider. It is rejected outside DEBUG even when every gateway transport check passes.
+COVERGUIDE_LOCAL_OMNIROUTE_PILOT_ACK = (
+    os.environ.get("COVERGUIDE_LOCAL_OMNIROUTE_PILOT_ACK", "0") == "1"
+)
 AI_TURN_TIMEOUT_SECONDS = int(os.environ.get("AI_TURN_TIMEOUT_SECONDS", "240"))
 
 # CoverGuide v2 server-only privacy and frozen-corpus settings. Key-ring entries use

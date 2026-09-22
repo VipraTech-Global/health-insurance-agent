@@ -43,7 +43,7 @@ export function AISettings({ isAdmin }: { isAdmin: boolean }) {
     setBusy(true); setError(""); setNotice("");
     try {
       setModels(await api<Models>("/api/v1/ai/preferences/", { method: "PATCH", body: JSON.stringify({ route_id: routeId }) }));
-      setNotice("Your model choice is saved for future turns.");
+      setNotice("Your legacy v1 model choice is saved. CoverGuide v2 routes remain operator-controlled.");
     } catch (e) { setError(e instanceof Error ? e.message : "Could not save your choice."); }
     finally { setBusy(false); }
   }
@@ -71,11 +71,11 @@ export function AISettings({ isAdmin }: { isAdmin: boolean }) {
     } catch (e) { setError(e instanceof Error ? e.message : "Qualification failed."); setNotice(""); }
     finally { setBusy(false); }
   }
-  return <section className="coverage ai-settings"><p className="eyebrow">YOUR PREFERENCES</p><h1>AI settings</h1>
-    <p className="lede">Choose the model for your conversations. Every policy answer still needs verified evidence.</p>
+  return <section className="coverage ai-settings"><p className="eyebrow">LEGACY V1</p><h1>Legacy AI settings</h1>
+    <p className="lede">This picker applies only to the legacy v1 adviser. CoverGuide v2 routes are selected and qualified by an operator, never by customers.</p>
     {error && <div className="error-banner" role="alert">{error}</div>}
     {notice && <p role="status">{notice}</p>}
-    <label>Your AI model<select aria-label="Your AI model" value={models?.selected_route_id ?? ""} disabled={busy || !models?.models.length} onChange={(e) => void selectModel(e.target.value)}>
+    <label>Your legacy v1 AI model<select aria-label="Your legacy v1 AI model" value={models?.selected_route_id ?? ""} disabled={busy || !models?.models.length} onChange={(e) => void selectModel(e.target.value)}>
       {!models?.selected_available && <option value={models?.selected_route_id ?? ""}>{models?.selected_model ? `${models.selected_model} — unavailable` : "No qualified model available"}</option>}
       {models?.models.map((model) => <option key={model.route_id} value={model.route_id}>{model.provider === "omniroute" ? `${model.model} — OmniRoute (free tier)` : model.model}</option>)}
     </select></label>

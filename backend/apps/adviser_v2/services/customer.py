@@ -12,7 +12,10 @@ from django.db import IntegrityError, transaction
 from django.db.models import Max
 from django.utils import timezone
 
+from apps.adviser.ai import RelayFailure
+
 from ..crypto import commitment, commitment_matches
+from ..model_gateway import copy_turn_routes, pin_turn_routes
 from ..models import (
     Conversation,
     CustomerProfileRevision,
@@ -106,6 +109,7 @@ def submit_message(
         starting_profile_revision=current,
         deadline=now + timedelta(seconds=settings.AI_TURN_TIMEOUT_SECONDS),
     )
+    pin_turn_routes(turn)
     append_turn_event(turn, "queued", {"schema_version": 1, "kind": "queued"})
     Outbox.objects.create(
         owner_id=owner_id,
@@ -160,6 +164,10 @@ def retry_turn(owner_id: uuid.UUID, turn_id: uuid.UUID) -> SubmittedTurn:
         starting_profile_revision=prior.conversation.current_profile_revision,
         deadline=now + timedelta(seconds=settings.AI_TURN_TIMEOUT_SECONDS),
     )
+    try:
+        copy_turn_routes(prior, turn)
+    except RelayFailure as exc:
+        raise ConflictError(f"The original turn route cannot be retried ({exc.code}).") from exc
     append_turn_event(turn, "queued", {"schema_version": 1, "kind": "queued"})
     Outbox.objects.create(
         owner_id=owner_id,
@@ -177,3 +185,5 @@ def safely_submit_message(*args: Any, **kwargs: Any) -> SubmittedTurn:
         raise ConflictError(
             "A concurrent request used this identifier; retry with a fresh ID."
         ) from exc
+    except RelayFailure as exc:
+        raise ConflictError(f"The configured model route is not ready ({exc.code}).") from exc

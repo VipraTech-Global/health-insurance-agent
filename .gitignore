@@ -13,6 +13,7 @@ frontend/.next/
 data/source-blobs/*
 data/extractions/*
 data/v2/
+data/v2-closeout/
 data/reports/*
 !data/reports/corpus-coverage.json
 data/manifests/

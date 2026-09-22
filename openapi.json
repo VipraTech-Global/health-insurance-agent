@@ -1267,6 +1267,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/CatalogueProduct'
+        interactive_routes:
+          type: array
+          items:
+            $ref: '#/components/schemas/InteractiveRouteStatus'
         blocking_reason:
           type: string
           nullable: true
@@ -1277,6 +1281,7 @@ components:
       - comparison_label
       - generation
       - incomplete_comparison
+      - interactive_routes
       - products
       - ready
       - release
@@ -1416,6 +1421,52 @@ components:
       - priority
       - reason
       - status
+    InteractiveRouteStatus:
+      type: object
+      properties:
+        role:
+          type: string
+        qualified:
+          type: boolean
+        error_code:
+          type: string
+          nullable: true
+        requested_model:
+          type: string
+        expected_model:
+          type: string
+          nullable: true
+        endpoint_profile:
+          type: string
+          nullable: true
+        adapter_version:
+          type: string
+          nullable: true
+        route_key:
+          type: string
+          nullable: true
+        configuration_sha256:
+          type: string
+          nullable: true
+        schema_sha256:
+          type: string
+          nullable: true
+        qualification_id:
+          type: string
+          format: uuid
+          nullable: true
+      required:
+      - adapter_version
+      - configuration_sha256
+      - endpoint_profile
+      - error_code
+      - expected_model
+      - qualification_id
+      - qualified
+      - requested_model
+      - role
+      - route_key
+      - schema_sha256
     KindEnum:
       enum:
       - offer
@@ -2012,6 +2063,64 @@ components:
       - event_url
       - message_id
       - turn_id
+    TurnRouteBinding:
+      type: object
+      properties:
+        role:
+          $ref: '#/components/schemas/TurnRouteBindingRoleEnum'
+        route_id:
+          type: string
+          format: uuid
+          readOnly: true
+        qualification_id:
+          type: string
+          format: uuid
+          readOnly: true
+        requested_model:
+          type: string
+          maxLength: 160
+        expected_model:
+          type: string
+          maxLength: 160
+        observed_model:
+          type: string
+          maxLength: 160
+        endpoint_profile:
+          type: string
+          maxLength: 120
+        adapter_version:
+          type: string
+          maxLength: 120
+        route_configuration_sha256:
+          type: string
+          maxLength: 64
+        schema_sha256:
+          type: string
+          maxLength: 64
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - adapter_version
+      - created_at
+      - endpoint_profile
+      - expected_model
+      - observed_model
+      - qualification_id
+      - requested_model
+      - role
+      - route_configuration_sha256
+      - route_id
+      - schema_sha256
+    TurnRouteBindingRoleEnum:
+      enum:
+      - fact_interpretation
+      - recommendation_answer
+      type: string
+      description: |-
+        * `fact_interpretation` - fact_interpretation
+        * `recommendation_answer` - recommendation_answer
     Upload:
       type: object
       properties:
@@ -2164,6 +2273,14 @@ components:
           type: string
           nullable: true
           maxLength: 100
+        route_commitment:
+          type: string
+          readOnly: true
+        route_bindings:
+          type: array
+          items:
+            $ref: '#/components/schemas/TurnRouteBinding'
+          readOnly: true
         created_at:
           type: string
           format: date-time
@@ -2179,6 +2296,8 @@ components:
       - id
       - input_message_id
       - request_id
+      - route_bindings
+      - route_commitment
       - starting_profile_revision
       - updated_at
   securitySchemes:

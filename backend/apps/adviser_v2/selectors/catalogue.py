@@ -5,8 +5,12 @@ from __future__ import annotations
 from collections import defaultdict
 from typing import Any
 
+from django.conf import settings
 from django.db.models import Count
 
+from apps.adviser.ai import RelayFailure
+
+from ..model_gateway import qualified_route
 from ..models import (
     KnowledgeChannel,
     KnowledgeReleaseRule,
@@ -16,6 +20,53 @@ from ..models import (
     Product,
 )
 from ..release_scope import FIVE_PRODUCT_COUNT, comparison_product_count
+from ..role_routes import ROLE_SETTINGS, configured_route
+from ..schemas import CustomerInterpretationV1, RecommendationDraftV1
+
+
+def _interactive_route_status() -> list[dict[str, Any]]:
+    statuses: list[dict[str, Any]] = []
+    for role, output_type in (
+        ("fact_interpretation", CustomerInterpretationV1),
+        ("recommendation_answer", RecommendationDraftV1),
+    ):
+        item: dict[str, Any] = {
+            "role": role,
+            "qualified": False,
+            "error_code": None,
+            "requested_model": getattr(settings, ROLE_SETTINGS[role][0]),
+            "expected_model": None,
+            "endpoint_profile": None,
+            "adapter_version": None,
+            "route_key": None,
+            "configuration_sha256": None,
+            "schema_sha256": None,
+            "qualification_id": None,
+        }
+        try:
+            route = configured_route(role)
+            item.update(
+                {
+                    "requested_model": route.requested_model,
+                    "expected_model": route.expected_model,
+                    "endpoint_profile": route.endpoint_profile,
+                    "adapter_version": route.configuration["adapter_version"],
+                    "route_key": route.route_key,
+                    "configuration_sha256": route.configuration_sha256,
+                }
+            )
+            qualification = qualified_route(route, role, output_type)
+            item.update(
+                {
+                    "qualified": True,
+                    "schema_sha256": qualification.schema_sha256,
+                    "qualification_id": str(qualification.id),
+                }
+            )
+        except RelayFailure as exc:
+            item["error_code"] = exc.code
+        statuses.append(item)
+    return statuses
 
 
 def catalogue_readiness(channel_name: str = "live") -> dict[str, Any]:
@@ -132,5 +183,6 @@ def catalogue_readiness(channel_name: str = "live") -> dict[str, Any]:
         ),
         "incomplete_comparison": True,
         "products": items,
+        "interactive_routes": _interactive_route_status(),
         "blocking_reason": None if release else "No knowledge release is published.",
     }

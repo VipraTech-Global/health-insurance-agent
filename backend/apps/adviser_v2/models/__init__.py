@@ -1,7 +1,7 @@
-"""Public model surface for the approved 62-entity CoverGuide design.
+"""Public model surface for the approved 63-entity CoverGuide design.
 
 The retained ``accounts.User`` model implements the approved Account entity. The
-remaining 61 concrete entities are deliberately split by domain below while Django
+remaining 62 concrete entities are deliberately split by domain below while Django
 loads them as one replacement application.
 """
 

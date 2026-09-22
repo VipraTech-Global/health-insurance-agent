@@ -784,6 +784,7 @@ export interface components {
             ready: boolean;
             incomplete_comparison: boolean;
             products: components["schemas"]["CatalogueProduct"][];
+            interactive_routes: components["schemas"]["InteractiveRouteStatus"][];
             blocking_reason: string | null;
         };
         Conversation: {
@@ -835,6 +836,20 @@ export interface components {
             reason: string;
             priority: string;
             status: string;
+        };
+        InteractiveRouteStatus: {
+            role: string;
+            qualified: boolean;
+            error_code: string | null;
+            requested_model: string;
+            expected_model: string | null;
+            endpoint_profile: string | null;
+            adapter_version: string | null;
+            route_key: string | null;
+            configuration_sha256: string | null;
+            schema_sha256: string | null;
+            /** Format: uuid */
+            qualification_id: string | null;
         };
         /**
          * @description * `offer` - offer
@@ -1099,6 +1114,28 @@ export interface components {
             event_url: string;
             created?: boolean;
         };
+        TurnRouteBinding: {
+            role: components["schemas"]["TurnRouteBindingRoleEnum"];
+            /** Format: uuid */
+            readonly route_id: string;
+            /** Format: uuid */
+            readonly qualification_id: string;
+            requested_model: string;
+            expected_model: string;
+            observed_model: string;
+            endpoint_profile: string;
+            adapter_version: string;
+            route_configuration_sha256: string;
+            schema_sha256: string;
+            /** Format: date-time */
+            readonly created_at: string;
+        };
+        /**
+         * @description * `fact_interpretation` - fact_interpretation
+         *     * `recommendation_answer` - recommendation_answer
+         * @enum {string}
+         */
+        TurnRouteBindingRoleEnum: "fact_interpretation" | "recommendation_answer";
         Upload: {
             /** Format: uri */
             file: string;
@@ -1164,6 +1201,8 @@ export interface components {
             /** Format: date-time */
             cancelled_at?: string | null;
             error_code?: string | null;
+            readonly route_commitment: string;
+            readonly route_bindings: components["schemas"]["TurnRouteBinding"][];
             /** Format: date-time */
             readonly created_at: string;
             /** Format: date-time */

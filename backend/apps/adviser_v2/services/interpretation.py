@@ -58,7 +58,7 @@ _MONEY_PER_YEAR_CRITERIA = {"budget"}
 _MONEY_CRITERIA = {"sum_insured"}
 
 
-def _canonicalize_money_unit(quantity: dict, unit: str) -> None:
+def _canonicalize_money_unit(quantity: dict[str, object], unit: str) -> None:
     if quantity.get("state") == "known" and quantity.get("kind") == "quantity":
         quantity["unit"] = unit
         quantity.setdefault("currency", "INR")
@@ -348,7 +348,12 @@ def recover_explicit_room_illustration(source_text: str, value: CustomerInterpre
         match = found[0]
         rupees = int(match.group(1).replace(",", "")) * (100000 if match.group(2) else 1)
         fact = next((item for item in value.facts if item.fact_type == key), None)
-        payload = {"state": "known", "kind": "quantity", "value": str(rupees), "unit": "INR"}
+        payload: dict[str, object] = {
+            "state": "known",
+            "kind": "quantity",
+            "value": str(rupees),
+            "unit": "INR",
+        }
         if fact is None:
             value.facts.append(InterpretedFact(
                 statement_index=statement_for(match), subject_key=None,

@@ -23,10 +23,9 @@ from .errors import (
     UnsupportedRecommendationError,
 )
 from .model_gateway import call_model
-from .models import Conversation, KnowledgeChannel, Outbox, Turn
+from .models import Conversation, KnowledgeChannel, Outbox, Turn, TurnRouteBinding
 from .registries import FACT_TYPES, REQUIREMENT_TYPES
 from .retrieval import conversation_context, index_message, retrieve_policy_context
-from .role_routes import configured_route
 from .schemas import CustomerInterpretationV1, RecommendationDraftV1
 from .selectors.customer import current_profile_payload
 from .services.customer import append_turn_event
@@ -66,6 +65,13 @@ _PERSONALIZATION_INTENTS = frozenset(
         "portability_review",
     }
 )
+
+
+def _turn_binding(turn: Turn, role: str) -> TurnRouteBinding:
+    try:
+        return turn.route_bindings.select_related("route", "qualification").get(role=role)
+    except TurnRouteBinding.DoesNotExist as exc:
+        raise RelayFailure("route_binding_missing", f"The turn has no {role} route binding.") from exc
 
 
 def _set_lease_token(token: uuid.UUID) -> None:
@@ -491,7 +497,7 @@ def process_turn(turn_id: uuid.UUID) -> None:
                 },
             )
         interpretation = call_model(
-            route=configured_route("fact_interpretation"),
+            binding=_turn_binding(turn, "fact_interpretation"),
             schema_name="fact_interpretation",
             output_type=CustomerInterpretationV1,
             messages=_interpretation_messages(turn),
@@ -583,7 +589,7 @@ def process_turn(turn_id: uuid.UUID) -> None:
                     },
                 )
             draft = call_model(
-                route=configured_route("recommendation_answer"),
+                binding=_turn_binding(turn, "recommendation_answer"),
                 schema_name="recommendation_answer",
                 output_type=RecommendationDraftV1,
                 messages=_recommendation_messages(decision_context),
