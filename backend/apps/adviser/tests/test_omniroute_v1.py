@@ -21,10 +21,12 @@ REQUESTED, REPORTED = "gemini/gemini-test", "gemini-test"
 
 @pytest.fixture
 def omni(settings):
+    settings.DEBUG = True
     settings.OMNIROUTE_ENABLED = True
     settings.OMNIROUTE_BASE_URL = "http://127.0.0.1:20128"
     settings.OMNIROUTE_API_KEY = "omni-secret"
     settings.OMNIROUTE_LOGGING_DISABLED_CONFIRMED = True
+    settings.COVERGUIDE_LOCAL_OMNIROUTE_PILOT_ACK = True
     settings.OMNIROUTE_MODELS = f"{REQUESTED}={REPORTED}"
     return settings
 

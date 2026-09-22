@@ -18,6 +18,7 @@ from apps.adviser_v2.models import (
     ModelRoute,
     ProcessingJob,
 )
+from apps.adviser_v2.role_routes import RoleRoute
 from apps.adviser_v2.schemas import PolicyRuleExtractionV1
 from apps.adviser_v2.storage import store_model_result
 from apps.adviser_v2.tests.test_pipeline import public_html_capture
@@ -43,12 +44,13 @@ def test_v2_model_roles_are_exact_and_exclude_astra() -> None:
 def test_qualified_route_checks_closed_capability_object_without_json_path_lookup(
     db: None,
 ) -> None:
+    role_route = RoleRoute.relay("gpt-5.6-sol")
     route = ModelRoute.objects.create(
-        route_key="test-sol-policy-extraction",
-        endpoint_profile="test-relay",
-        requested_model="gpt-5.6-sol",
-        adapter_version="test/1",
-        configuration_sha256="a" * 64,
+        route_key=role_route.route_key,
+        endpoint_profile=role_route.endpoint_profile,
+        requested_model=role_route.requested_model,
+        adapter_version=role_route.configuration["adapter_version"],
+        configuration_sha256=role_route.configuration_sha256,
     )
     qualification = ModelQualification.objects.create(
         route=route,
@@ -89,12 +91,13 @@ def test_offline_processing_reuses_an_exact_successful_response(db: None, monkey
         adapter_version="test/1",
         input_commitment="c" * 64,
     )
+    role_route = RoleRoute.relay("gpt-5.6-sol")
     route = ModelRoute.objects.create(
-        route_key="test-reusable-sol-policy-extraction",
-        endpoint_profile="test-relay",
-        requested_model="gpt-5.6-sol",
-        adapter_version="test/1",
-        configuration_sha256="d" * 64,
+        route_key=role_route.route_key,
+        endpoint_profile=role_route.endpoint_profile,
+        requested_model=role_route.requested_model,
+        adapter_version=role_route.configuration["adapter_version"],
+        configuration_sha256=role_route.configuration_sha256,
     )
     qualification = ModelQualification.objects.create(
         route=route,
@@ -116,6 +119,11 @@ def test_offline_processing_reuses_an_exact_successful_response(db: None, monkey
     messages = [{"role": "user", "content": "Fixed public policy passages."}]
     request_data = {
         "model": "gpt-5.6-sol",
+        "expected_model": "gpt-5.6-sol",
+        "endpoint_profile": role_route.endpoint_profile,
+        "route_key": route.route_key,
+        "route_configuration_sha256": route.configuration_sha256,
+        "qualification_id": str(qualification.id),
         "schema": "policy_extraction",
         "schema_sha256": qualification.schema_sha256,
         "messages": messages,

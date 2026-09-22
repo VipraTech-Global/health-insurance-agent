@@ -15,6 +15,7 @@ from apps.adviser_v2.models import ModelAttempt, ModelQualification, ModelRoute,
 from apps.adviser_v2.readiness import _model_gate
 from apps.adviser_v2.role_routes import RoleRoute, configured_route
 from apps.adviser_v2.schemas import PolicyRuleExtractionV1, RecommendationDraftV1
+from apps.adviser_v2.selectors.catalogue import catalogue_readiness
 from apps.adviser_v2.tests.test_outbox import queued_turn
 from apps.adviser_v2.tests.test_pipeline import public_html_capture
 
@@ -24,10 +25,12 @@ SCHEMA = "recommendation_answer"
 
 @pytest.fixture
 def omni(settings: Any) -> Any:
+    settings.DEBUG = True
     settings.OMNIROUTE_ENABLED = True
     settings.OMNIROUTE_BASE_URL = "http://127.0.0.1:20128"
     settings.OMNIROUTE_API_KEY = "omni-secret"
     settings.OMNIROUTE_LOGGING_DISABLED_CONFIRMED = True
+    settings.COVERGUIDE_LOCAL_OMNIROUTE_PILOT_ACK = True
     settings.OMNIROUTE_MODELS = f"{REQUESTED}={REPORTED}"
     settings.COVERGUIDE_FINAL_EXPLANATION_ROUTE = f"omniroute:{REQUESTED}"
     return settings
@@ -179,9 +182,9 @@ def test_processing_jobs_are_refused_on_omniroute(db: None, omni: Any) -> None:
 def test_turn_call_uses_the_omniroute_qualification_and_records_raw_identity(
     v2_user: User, omni: Any, monkeypatch: Any
 ) -> None:
-    turn = queued_turn(v2_user)
     route = configured_route(SCHEMA)
     stored = qualify(route)
+    turn = queued_turn(v2_user)
     seen: list[httpx.Request] = []
 
     def handler(request: httpx.Request) -> httpx.Response:
@@ -219,9 +222,9 @@ def test_turn_call_uses_the_omniroute_qualification_and_records_raw_identity(
 def test_omniroute_failures_make_one_call_and_never_fall_back(
     v2_user: User, omni: Any, monkeypatch: Any, response: httpx.Response, status: str, code: str
 ) -> None:
-    turn = queued_turn(v2_user)
     route = configured_route(SCHEMA)
     qualify(route)
+    turn = queued_turn(v2_user)
     calls: list[str] = []
 
     def handler(request: httpx.Request) -> httpx.Response:
@@ -258,6 +261,24 @@ def test_call_requires_exactly_one_of_model_or_route(db: None) -> None:
 def test_readiness_blocks_an_unqualified_omniroute_role_only(db: None, omni: Any) -> None:
     blockers = _model_gate()
     assert f"model:{REQUESTED}:{SCHEMA}:route_unqualified" in blockers
+    status = next(
+        item
+        for item in catalogue_readiness()["interactive_routes"]
+        if item["role"] == SCHEMA
+    )
+    assert status == {
+        "role": SCHEMA,
+        "qualified": False,
+        "error_code": "route_unqualified",
+        "requested_model": REQUESTED,
+        "expected_model": REPORTED,
+        "endpoint_profile": "omniroute-loopback",
+        "adapter_version": "strict-relay-v2/1",
+        "route_key": configured_route(SCHEMA).route_key,
+        "configuration_sha256": configured_route(SCHEMA).configuration_sha256,
+        "schema_sha256": None,
+        "qualification_id": None,
+    }
     qualify(configured_route(SCHEMA))
     assert not [b for b in _model_gate() if f":{SCHEMA}:" in b]
     omni.OMNIROUTE_ENABLED = False

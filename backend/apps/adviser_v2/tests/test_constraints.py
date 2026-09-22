@@ -10,6 +10,7 @@ from django.utils import timezone
 from apps.accounts.models import User
 from apps.adviser_v2.crypto import commitment
 from apps.adviser_v2.models import (
+    ConsentRecord,
     CustomerProfileRevision,
     CustomerUploadedDocument,
     Message,
@@ -18,6 +19,18 @@ from apps.adviser_v2.models import (
     Turn,
 )
 from apps.adviser_v2.services.customer import create_conversation
+
+
+@pytest.mark.django_db
+def test_consent_default_is_an_explicit_non_grant(v2_user: User) -> None:
+    consent = ConsentRecord.objects.create(
+        owner=v2_user,
+        consent_type="health_data_processing",
+        notice_version="local-pilot-v1",
+        capture_method="web_checkbox",
+    )
+
+    assert consent.status == "requested"
 
 
 @pytest.mark.django_db(transaction=True)

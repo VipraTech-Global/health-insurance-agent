@@ -8,7 +8,7 @@ test("user selects a qualified model, asks a cited policy question, and reviews 
   await page.getByRole("textbox", { name: "Password" }).fill("E2E-Valid-Password-42");
   await page.getByRole("button", { name: "Create account", exact: true }).click();
   await page.getByRole("button", { name: "AI settings", exact: true }).click();
-  const models = page.getByRole("combobox", { name: "Your AI model", exact: true });
+  const models = page.getByRole("combobox", { name: "Your legacy v1 AI model", exact: true });
   await expect(models).toBeEnabled();
   await expect(models.locator("option")).toHaveCount(4);
   await expect(models.locator("option:checked")).toHaveText("gpt-6-astra");

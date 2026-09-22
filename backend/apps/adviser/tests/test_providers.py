@@ -7,10 +7,12 @@ from apps.adviser.providers import omniroute_models, omniroute_problems, provide
 
 @pytest.fixture
 def omni(settings):
+    settings.DEBUG = True
     settings.OMNIROUTE_ENABLED = True
     settings.OMNIROUTE_BASE_URL = "http://127.0.0.1:20128"
     settings.OMNIROUTE_API_KEY = "omni-secret"
     settings.OMNIROUTE_LOGGING_DISABLED_CONFIRMED = True
+    settings.COVERGUIDE_LOCAL_OMNIROUTE_PILOT_ACK = True
     settings.OMNIROUTE_MODELS = "gemini/a=a, huggingface/deepseek-ai/V3=deepseek-ai/V3"
     return settings
 
@@ -55,6 +57,7 @@ def test_enabled_omniroute_returns_validated_config(omni):
         ("OMNIROUTE_BASE_URL", "http://example.com:20128"),
         ("OMNIROUTE_API_KEY", ""),
         ("OMNIROUTE_LOGGING_DISABLED_CONFIRMED", False),
+        ("COVERGUIDE_LOCAL_OMNIROUTE_PILOT_ACK", False),
         ("OMNIROUTE_MODELS", ""),
     ],
 )
