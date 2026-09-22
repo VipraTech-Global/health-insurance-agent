@@ -192,6 +192,39 @@ def test_canonicalize_leaves_a_single_reference_or_no_reference_unchanged() -> N
     assert unchanged is no_references
 
 
+def test_canonicalize_treats_blank_optional_ids_as_absent() -> None:
+    match_id, candidate_id = uuid.uuid4(), uuid.uuid4()
+    context = _context_with_match(match_id, candidate_id)
+    draft = _draft_with_statement(
+        candidate_assessment_id="",
+        requirement_match_id=str(match_id),
+        information_need_id="  ",
+        calculation_id="",
+    )
+
+    statement = _canonicalize_statement_references(draft, context).statements[0]
+
+    assert statement.requirement_match_id == str(match_id)
+    assert statement.candidate_assessment_id is None
+    assert statement.information_need_id is None
+    assert statement.calculation_id is None
+
+
+def test_canonicalize_blank_ids_do_not_hide_a_real_second_reference() -> None:
+    match_id, candidate_id, need_id = uuid.uuid4(), uuid.uuid4(), uuid.uuid4()
+    context = _context_with_match(match_id, candidate_id)
+    draft = _draft_with_statement(
+        candidate_assessment_id="",
+        requirement_match_id=str(match_id),
+        information_need_id=str(need_id),
+    )
+
+    statement = _canonicalize_statement_references(draft, context).statements[0]
+
+    assert statement.requirement_match_id == str(match_id)
+    assert statement.information_need_id == str(need_id)
+
+
 @pytest.mark.django_db
 def test_unsupported_number_has_a_distinct_failure_type(v2_user: User) -> None:
     draft = RecommendationDraftV1.model_validate(
