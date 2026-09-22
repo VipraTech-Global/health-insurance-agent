@@ -567,12 +567,46 @@ def _allowed_citation_roles(evidence_roles: set[str]) -> list[str]:
     )
 
 
+_OPTIONAL_STATEMENT_IDS = (
+    "candidate_assessment_id",
+    "requirement_match_id",
+    "information_need_id",
+    "calculation_id",
+)
+
+
+def _blank_ids_to_none(draft: RecommendationDraftV1) -> RecommendationDraftV1:
+    """Some providers fill an unused optional id with "" instead of null. A blank id names
+    nothing, so treat it as absent; every non-blank id is still validated exactly."""
+    statements = []
+    for statement in draft.statements:
+        updates: dict[str, Any] = {
+            name: None
+            for name in _OPTIONAL_STATEMENT_IDS
+            if isinstance(getattr(statement, name), str) and not getattr(statement, name).strip()
+        }
+        citations = [
+            citation.model_copy(update={"policy_rule_id": None})
+            if isinstance(citation.policy_rule_id, str) and not citation.policy_rule_id.strip()
+            else citation
+            for citation in statement.citations
+        ]
+        if citations != statement.citations:
+            updates["citations"] = citations
+        statements.append(statement.model_copy(update=updates) if updates else statement)
+    if statements == draft.statements:
+        return draft
+    return draft.model_copy(update={"statements": statements})
+
+
 def _canonicalize_statement_references(
     draft: RecommendationDraftV1, context: RecommendationContext
 ) -> RecommendationDraftV1:
-    """Drop a statement's redundant candidate_assessment_id when it agrees with the
-    candidate implied by its own requirement_match_id. Leaves genuine mismatches and
-    any information_need_id combination untouched so validation still rejects them."""
+    """Treat blank optional ids as absent, then drop a statement's redundant
+    candidate_assessment_id when it agrees with the candidate implied by its own
+    requirement_match_id. Leaves genuine mismatches and any information_need_id combination
+    untouched so validation still rejects them."""
+    draft = _blank_ids_to_none(draft)
     match_candidate = {str(match.id): str(match.candidate_assessment_id) for match in context.matches}
     statements = []
     changed = False
