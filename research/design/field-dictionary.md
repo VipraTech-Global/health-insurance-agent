@@ -1047,10 +1047,35 @@ One durable, idempotent and cancellable customer-message processing request.
 | deadline | instant required | none | Bounded turn deadline | After creation | instant | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-02", "OPS-04"] |
 | cancelled_at | instant optional | NULL | Accepted cancellation event | Does not erase committed customer facts | instant | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-02", "OPS-04"] |
 | error_code | varchar(100) optional | NULL | Explicit technical failure | Safe bounded code, no raw provider secrets | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-02", "OPS-04"] |
+| route_commitment | char(64) required | empty only for pre-amendment rows | Keyed commitment over both immutable interactive-role bindings | HMAC; set before enqueue; immutable once set; new turns require exactly both roles | None | Synthetic operational example only; no real customer value inspected. | ["OPS-02", "OPS-04", "OPS-06"] |
 
-Constraints: unique(owner_id,request_id); input message and optional starting profile belong to the same owner and conversation; running requires a current lease token and lease_until; only the current lease token may publish; completed requires a Recommendation whose profile_revision_id is the final evaluated revision; technical failure creates none; a newer concurrent profile makes the result stale unless the publication transaction proves its correction lineage is compatible; unique(id,owner_id); owner_id immutable
+Constraints: unique(owner_id,request_id); input message and optional starting profile belong to the same owner and conversation; every newly accepted turn has exactly one fact_interpretation and one recommendation_answer binding before enqueue; route_commitment is immutable once set; running requires a current lease token and lease_until; only the current lease token may publish; completed requires a Recommendation whose profile_revision_id is the final evaluated revision; technical failure creates none; a newer concurrent profile makes the result stale unless the publication transaction proves its correction lineage is compatible; unique(id,owner_id); owner_id immutable
 
 Indexes: owner_id,conversation_id,created_at DESC; state,lease_until; owner_id,request_id unique
+
+## TurnRouteBinding
+
+One immutable exact route and passed qualification captured for an interactive role before a turn is queued.
+
+| Field | Type / required | Default | Purpose | Validation | Units | Example | Basis |
+|---|---|---|---|---|---|---|---|
+| id | uuid required | uuid4 | Stable row identity | Primary key; immutable; never reused | None | Synthetic operational example only; no real customer value inspected. | ["OPS-02", "OPS-04"] |
+| created_at | timestamptz required | transaction timestamp at insertion | When the route was pinned | UTC; immutable | instant | Synthetic operational example only; no real customer value inspected. | ["OPS-06"] |
+| turn_id | fk:Turn required | none | Accepted turn that owns the binding | Exactly two per new turn; immutable | None | Synthetic operational example only; no real customer value inspected. | ["OPS-02", "OPS-04"] |
+| role | enum required | none | Interactive operation | fact_interpretation,recommendation_answer | None | fact_interpretation (synthetic) | ["OPS-04"] |
+| route_id | fk:ModelRoute required | none | Exact immutable route revision | Active when called; must match all captured route fields | None | Synthetic operational example only; no real customer value inspected. | ["OPS-04"] |
+| qualification_id | fk:ModelQualification required | none | Exact passed qualification | Same route and role/schema; current schema hash; passed exact-identity capabilities | None | Synthetic operational example only; no real customer value inspected. | ["OPS-04"] |
+| requested_model | varchar(160) required | none | Exact requested provider/model ID | Must equal the bound route | None | gemini/gemini-3.5-flash-lite (operator configuration example) | ["OPS-04"] |
+| expected_model | varchar(160) required | none | Exact model ID expected in the response | Must equal observed_model for a passed binding | None | gemini-3.5-flash-lite (operator configuration example) | ["OPS-04"] |
+| observed_model | varchar(160) required | none | Model ID observed during qualification | Exact equality with expected_model | None | gemini-3.5-flash-lite (operator configuration example) | ["OPS-04"] |
+| endpoint_profile | varchar(120) required | none | Secret-free endpoint identity | Interactive relay or loopback OmniRoute profile only | None | omniroute-loopback (operator configuration example) | ["OPS-04"] |
+| adapter_version | varchar(120) required | none | Strict transport implementation identity | Must equal the bound route | None | strict-relay-v2/1 (implementation example) | ["OPS-04"] |
+| route_configuration_sha256 | char(64) required | none | Digest of endpoint/model/adapter configuration | Lowercase hex; must equal the bound route | None | Synthetic operational example only; no real customer value inspected. | ["OPS-04"] |
+| schema_sha256 | char(64) required | none | Digest of the exact output schema qualified | Lowercase hex; must equal the bound qualification and current schema | None | Synthetic operational example only; no real customer value inspected. | ["OPS-04"] |
+
+Constraints: unique(turn_id,role); insert-only; exact route and qualification FKs use PROTECT; expected_model equals observed_model; any disabled route, failed/missing qualification, schema/configuration/identity mismatch or route-commitment mismatch fails closed; retries copy the original bindings and never switch provider, model or endpoint
+
+Indexes: turn_id,role unique; route_id; qualification_id
 
 ## TurnEvent
 
@@ -1191,22 +1216,22 @@ Indexes: state,lease_until; source_capture_id,stage,attempt_number; customer_upl
 
 ## ConsentRecord
 
-One customer grant for CoverGuide to process account, health or uploaded-document data for buying advice, with optional later revocation.
+One requested, granted or revoked record for CoverGuide processing consent. A requested row is not a grant.
 
 | Field | Type / required | Default | Purpose | Validation | Units | Example | Basis |
 |---|---|---|---|---|---|---|---|
 | id | uuid required | uuid4 for new records; preserve original UUID during migration | Stable row identity | Primary key; immutable; never reused | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-01", "CUS-01"] |
-| created_at | timestamptz required | transaction timestamp at insertion | When consent was granted | UTC storage; immutable; not a source effective date | instant | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-06"] |
+| created_at | timestamptz required | transaction timestamp at insertion | When the consent request or action was recorded | UTC storage; immutable; not a source effective date | instant | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-06"] |
 | owner_id | fk:Account required | none | Account whose authorization governs this row | Composite owner foreign keys on private relationships; mixed rows require public/private scope check | None | Intentionally no real customer/authentication values inspected or included. | ["OPS-01"] |
 | person_id | fk:Person optional | NULL | Person whose data/action consent concerns | Same owner; authority separately established | None | Intentionally no real customer/authentication values inspected or included. | ["OPS-01", "CUS-01"] |
 | consent_type | enum required | none | Approved internal processing purpose | privacy_terms,health_data_processing,document_processing | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-01", "CUS-01"] |
 | notice_version | varchar(80) required | none | Exact privacy/consent notice accepted | Nonempty immutable version identifier | None | Synthetic design example only; no real customer value inspected. | ["OPS-01", "OPS-06"] |
 | capture_method | enum required | none | How the grant was captured | web_checkbox,conversation,uploaded_document,migration | None | Synthetic design example only; no real customer value inspected. | ["OPS-01", "OPS-06"] |
-| status | enum required | requested | Consent state | granted,revoked | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-01", "CUS-01"] |
+| status | enum required | requested | Consent state | requested,granted,revoked | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-01", "CUS-01"] |
 | source_message_id | fk:Message optional | NULL | Exact customer authorization | Same owner | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-01", "CUS-01"] |
 | revoked_at | instant optional | NULL | Withdrawal event | Pending dispatch must recheck | instant | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-01", "CUS-01"] |
 
-Constraints: created only after an affirmative grant; conversation capture requires source_message_id; person and message share owner; revoked requires revoked_at; granted requires revoked_at NULL; no ABHA creation, external medical sharing or representation authority is implied; unique(id,owner_id); owner_id immutable
+Constraints: requested records may be created to present a notice but confer no permission; granted requires an actual captured customer action and conversation capture requires source_message_id; migrations must not fabricate granted status; person and message share owner; revoked requires revoked_at; requested and granted require revoked_at NULL; no ABHA creation, external medical sharing or representation authority is implied; unique(id,owner_id); owner_id immutable
 
 Indexes: owner_id,consent_type,created_at DESC; owner_id,person_id,consent_type; source_message_id
 

@@ -578,6 +578,22 @@ erDiagram
         instant deadline
         instant cancelled_at
         varchar_100 error_code
+        char_64 route_commitment
+    }
+    TurnRouteBinding {
+        uuid id
+        timestamptz created_at
+        fk_Turn turn_id
+        enum role
+        fk_ModelRoute route_id
+        fk_ModelQualification qualification_id
+        varchar_160 requested_model
+        varchar_160 expected_model
+        varchar_160 observed_model
+        varchar_120 endpoint_profile
+        varchar_120 adapter_version
+        char_64 route_configuration_sha256
+        char_64 schema_sha256
     }
     TurnEvent {
         uuid id
@@ -782,8 +798,10 @@ erDiagram
     Account |o--o{ ModelAttempt : "owner_id"
     ProcessingJob |o--o{ ModelAttempt : "processing_job_id"
     ModelQualification ||--o{ ModelAttempt : "qualification_id"
+    ModelQualification ||--o{ TurnRouteBinding : "qualification_id"
     Turn |o--o{ ModelAttempt : "turn_id"
     ModelRoute ||--o{ ModelQualification : "route_id"
+    ModelRoute ||--o{ TurnRouteBinding : "route_id"
     Account |o--o{ OriginalFile : "owner_id"
     KnowledgeRelease |o--o{ Outbox : "knowledge_release_id"
     Account |o--o{ Outbox : "owner_id"
@@ -877,3 +895,4 @@ erDiagram
     CustomerProfileRevision |o--o{ Turn : "starting_profile_revision_id"
     Account ||--o{ TurnEvent : "owner_id"
     Turn ||--o{ TurnEvent : "turn_id"
+    Turn ||--o{ TurnRouteBinding : "turn_id"

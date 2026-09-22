@@ -5,6 +5,12 @@ implementation establishes the account, profile, conversation, provenance, catal
 streaming boundaries. A hash-pinned Care Supreme policy wording is active for a narrow local test;
 other plans and unsupported questions still return an evidence-limited outcome.
 
+The v2 route-pinning and PostgreSQL 18 replacement are local proof only, not production readiness.
+As of 2026-09-22, deterministic tests and the isolated service stack pass, but live Gemini
+qualification is blocked by the absent loopback OmniRoute credential/runtime and the five-product
+release is blocked by reviewed source-hash drift. No production deployment or old-runtime deletion
+is authorized by this state. See [the local v2 closeout report](docs/LOCAL_V2_CLOSEOUT_2026-09-22.md).
+
 ## Run locally
 
 Requirements: Python 3.12 through uv, Node.js 24, and Docker.
@@ -13,7 +19,9 @@ Requirements: Python 3.12 through uv, Node.js 24, and Docker.
    placeholder with a real path on your machine and generate fresh values for
    `DJANGO_SECRET_KEY`, `COVERGUIDE_ENCRYPTION_KEYS`, and `COVERGUIDE_COMMITMENT_KEYS`. `.env` is
    gitignored; never commit it.
-1. Run `docker compose up -d` to start PostgreSQL, Redis, and Nginx.
+1. Run `docker compose up -d postgres18 redis nginx` to start the PostgreSQL 18 replacement,
+   Redis, and Nginx. Use a distinct Compose project name and a distinct
+   `COVERGUIDE_V2_STORAGE_ROOT` when preserving an earlier pilot for rollback.
 2. Run `uv sync --all-groups`.
 3. Run `uv run python backend/manage.py migrate`.
 4. Acquire the pinned official pilot source with `uv run python backend/manage.py ingest_document
@@ -140,10 +148,13 @@ Set it up on the operator machine, outside this repository:
    - `OMNIROUTE_ENABLED=1`, `OMNIROUTE_BASE_URL=http://127.0.0.1:20128`, `OMNIROUTE_API_KEY=...`
    - `OMNIROUTE_LOGGING_DISABLED_CONFIRMED=1` once step 3 is true. This is your attestation; the
      backend refuses to start OmniRoute without it.
+   - `COVERGUIDE_LOCAL_OMNIROUTE_PILOT_ACK=1` only after the local operator accepts the documented
+     upstream-data disclosure. This gate is accepted only with `DJANGO_DEBUG=1` and a literal
+     loopback gateway; it is not a production privacy approval.
    - `OMNIROUTE_MODELS`: comma-separated `requested-id=reported-id` pairs. OmniRoute reports the
      model without its leading provider segment, and CoverGuide compares the reported id exactly,
-     so each pair states it explicitly, for example
-     `gemini/gemini-3.1-flash-lite=gemini-3.1-flash-lite,huggingface/deepseek-ai/DeepSeek-V3=deepseek-ai/DeepSeek-V3`.
+     so each pair states it explicitly. The approved local allowlist is
+     `gemini/gemini-3.5-flash-lite=gemini-3.5-flash-lite,gemini/gemini-3.1-flash-lite=gemini-3.1-flash-lite`.
    - `COVERGUIDE_CUSTOMER_INTERPRETATION_ROUTE` and/or `COVERGUIDE_FINAL_EXPLANATION_ROUTE` as
      `omniroute:<requested id>`. Leave a role empty to keep it on the relay.
 5. Run `python backend/manage.py check_omniroute` (settings, reachability and that every
@@ -152,9 +163,12 @@ Set it up on the operator machine, outside this repository:
    schema. Readiness blocks any role whose configured route is not qualified. Restart the backend
    and Celery workers after changing routes.
 
-Changing a route creates a new immutable route record, so it must be re-qualified. Each model call
-records its exact qualification and the raw reported model in `ModelAttempt`. A turn queued before
-a route change runs on the route configured when a worker executes it. The 2026-09-19 probe results
+Changing a route creates a new immutable route record, so it must be re-qualified. Before a new
+turn is enqueued, CoverGuide stores immutable bindings for both interactive roles and a keyed
+commitment over their exact route, qualification, identities, endpoint, configuration and schema
+hashes. Workers use only those bindings; an explicit retry copies them and never follows later
+settings changes. Each model call records its exact qualification, route/configuration identity and
+the raw reported model in `ModelAttempt`. The 2026-09-19 probe results
 (models that passed strict `json_schema` and ones that did not) are in
 `docs/omniroute-spike-2026-09-19.json`. Free-tier quotas and catalogues change, so re-run the
 check before relying on a model.

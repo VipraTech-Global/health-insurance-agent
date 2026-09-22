@@ -1982,6 +1982,42 @@
       "enforcement": "ordinary existence FK plus composite FK(target_id,owner_id) to unique(id,owner_id);source CHECK: target_id IS NULL OR owner_id IS NOT NULL"
     },
     {
+      "source_entity": "TurnRouteBinding",
+      "field": "qualification_id",
+      "target_entity": "ModelQualification",
+      "required": true,
+      "access": "system_route",
+      "on_delete": "NO ACTION",
+      "orm_on_delete": "PROTECT",
+      "on_update": "NO ACTION; route bindings are insert-only",
+      "deferrable": "INITIALLY DEFERRED",
+      "enforcement": "ordinary existence FK; runtime validation requires a passed qualification for the same route, role and schema hash"
+    },
+    {
+      "source_entity": "TurnRouteBinding",
+      "field": "route_id",
+      "target_entity": "ModelRoute",
+      "required": true,
+      "access": "system_route",
+      "on_delete": "NO ACTION",
+      "orm_on_delete": "PROTECT",
+      "on_update": "NO ACTION; route bindings are insert-only",
+      "deferrable": "INITIALLY DEFERRED",
+      "enforcement": "ordinary existence FK; captured requested model, endpoint, adapter and configuration hash must equal the immutable route"
+    },
+    {
+      "source_entity": "TurnRouteBinding",
+      "field": "turn_id",
+      "target_entity": "Turn",
+      "required": true,
+      "access": "through_turn_owner",
+      "on_delete": "NO ACTION",
+      "orm_on_delete": "PROTECT except explicit authorized erasure service",
+      "on_update": "NO ACTION; route bindings are insert-only",
+      "deferrable": "INITIALLY DEFERRED",
+      "enforcement": "ordinary existence FK; unique(turn_id,role); selectors authorize through the parent turn owner"
+    },
+    {
       "source_entity": "TurnEvent",
       "field": "owner_id",
       "target_entity": "Account",

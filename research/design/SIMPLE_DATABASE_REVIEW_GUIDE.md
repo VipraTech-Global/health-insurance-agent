@@ -2,7 +2,7 @@
 
 Revision: `discussion-r25-final-review`
 
-This guide explains the complete application proposal in small review sections. It contains 62 custom application models. Django's standard group, permission, session, content-type and admin-log tables are documented separately. The independent evaluation database has 24 models and is explained in `benchmark-storage-proposal.md`.
+This guide explains the approved and locally implemented application design in small review sections. It contains 63 custom application models. Django's standard group, permission, session, content-type and admin-log tables are documented separately. The independent evaluation database has 24 models and is explained in `benchmark-storage-proposal.md`.
 
 The application is a buying and comparison adviser. It stores what the customer said, the exact original policy evidence, structured rules, dated quotes/network observations and the recommendation it produced. It does not administer claims, treatment bills, insurer receipts, premium payments, cancellations or refunds.
 
@@ -113,7 +113,8 @@ If Asha corrects Ravi's age, the old profile and recommendation remain historica
 
 | Model | What it stores |
 |---|---|
-| `Turn` | One durable, idempotent and cancellable customer-message processing request.. |
+| `Turn` | One durable, idempotent and cancellable customer-message processing request, including a keyed commitment to its pinned interactive routes.. |
+| `TurnRouteBinding` | One immutable exact route and passed qualification selected for an interactive role before the turn is queued.. |
 | `TurnEvent` | One immutable ordered UI event that reconnecting clients can replay without repeating inference.. |
 | `Outbox` | Reliable typed dispatch record committed with the work that Celery or publication must deliver.. |
 | `ModelRoute` | One exact secret-free CLIProxyAPI/Codex route configuration.. |
@@ -125,7 +126,7 @@ If Asha corrects Ravi's age, the old profile and recommendation remain historica
 
 | Model | What it stores |
 |---|---|
-| `ConsentRecord` | One customer grant for CoverGuide to process account, health or uploaded-document data for buying advice, with optional later revocation.. |
+| `ConsentRecord` | One requested, granted or revoked processing-consent record; a grant requires an actual captured customer action.. |
 | `DeletionRequest` | One durable customer request to erase an account, conversation, upload or selected disclosure and its derived private copies.. |
 | `AuditEvent` | Minimal append-only record of sensitive-data access, publication, deletion and administration without copied customer medical text.. |
 
@@ -137,7 +138,7 @@ If Asha corrects Ravi's age, the old profile and recommendation remain historica
 - `Product`, `PolicyVersion`, `ProductVariant` and `ProductOption` are separate because a product family, legal edition, base configuration and optional add-on change independently.
 - `CustomerPolicy` models existing cover or a customer-specific offer only so it can be compared with a proposed purchase. There is no servicing workflow.
 - `PolicyRule` is mandatory structured knowledge. `PolicySearchChunk` helps find supporting text quickly but cannot override mandatory-rule selection.
-- `Recommendation` pins the final customer profile and knowledge release. `Turn` pins the starting profile before interpreting the new message.
+- `Recommendation` pins the final customer profile and knowledge release. `Turn` pins the starting profile and commits both interactive role bindings before enqueue; retries copy those bindings rather than reading changed settings.
 - Evaluation questions and answers live only in the separate benchmark service and cannot enter application retrieval or tuning data.
 
 For every field, default, validation rule, unit, constraint and index, use [field-dictionary.md](field-dictionary.md). For relationships, use [complete-entity-relationships.mmd](complete-entity-relationships.mmd).

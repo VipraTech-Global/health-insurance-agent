@@ -265,6 +265,26 @@ Scope: physically separate independent quality and evaluation database.
 
 These final decisions supersede earlier approvals to retain `AIPreference` and `PolicyEvent`.
 
-## Complete design — pending explicit human approval
+## Complete design — explicitly approved 2026-09-22
 
-All 17 batches and the final critical audit are incorporated. No Django models, migrations or schema-dependent implementation are authorized until the complete design is explicitly approved.
+The Principal explicitly approved revision `discussion-r25-final-review` for local implementation.
+All 17 batches and the final critical audit are incorporated. This approval does not approve a
+production deployment, production consent policy, provider-retention claim or cutover.
+
+## Route-pinning amendment — approved 2026-09-22
+
+1. Add `TurnRouteBinding` as an immutable record for each interactive role on every accepted turn.
+2. Bind the exact `ModelRoute`, passed `ModelQualification`, requested/expected/observed model IDs,
+   endpoint profile, adapter version, route configuration hash and schema hash before enqueue.
+3. Add a keyed `Turn.route_commitment` over the complete binding set.
+4. Workers and explicit retries use only the stored binding; they never re-resolve mutable operator
+   settings. A retry copies the original route set.
+5. Missing, disabled, unqualified, schema-mismatched, identity-mismatched or commitment-mismatched
+   bindings fail closed with no provider/model fallback.
+6. Model-attempt request commitments include route identity and configuration hashes.
+7. Customers do not select v2 routes. OmniRoute is limited to the two interactive roles; policy
+   extraction, document processing and independent review remain relay-only.
+8. `ConsentRecord.status=requested` represents a notice/request only. A row may enter `granted` only
+   after an actual customer action is captured; no migration fabricates a grant.
+9. The local replacement is greenfield: new accounts only and no import of historical pilot rows,
+   sessions, conversations, uploads or derived private indexes.

@@ -2,7 +2,7 @@
 
 Revision: `discussion-r25-final-review`
 
-All 17 batches and the final critical audit are approved for presentation. Explicit approval of the complete design is still pending.
+Revision `discussion-r25-final-review` and the route-pinning amendment were explicitly approved for local implementation on 2026-09-22. Production deployment and cutover remain unapproved.
 
 | Entity | Purpose | Access | Fields | Outgoing relationships |
 |---|---|---|---:|---|
@@ -57,14 +57,15 @@ All 17 batches and the final critical audit are approved for presentation. Expli
 | RecommendationStatement | One independently checkable customer-facing statement in a buying recommendation. | private | 13 | calculation_id → Calculation; candidate_assessment_id → PolicyCandidateAssessment; information_need_id → InformationNeed; owner_id → Account; recommendation_id → Recommendation; requirement_match_id → PolicyRequirementMatch |
 | RecommendationCitation | Exact original policy passage supporting, restricting or conflicting with one recommendation statement. | private | 8 | evidence_span_id → EvidenceSpan; owner_id → Account; policy_rule_id → PolicyRule; recommendation_statement_id → RecommendationStatement |
 | Calculation | One immutable deterministic calculation with exact inputs, operation order, assumptions and result. | private | 11 | advice_request_id → AdviceRequest; owner_id → Account |
-| Turn | One durable, idempotent and cancellable customer-message processing request. | private | 14 | conversation_id → Conversation; input_message_id → Message; owner_id → Account; starting_profile_revision_id → CustomerProfileRevision |
+| Turn | One durable, idempotent and cancellable customer-message processing request with a keyed commitment to its pinned role routes. | private | 15 | conversation_id → Conversation; input_message_id → Message; owner_id → Account; starting_profile_revision_id → CustomerProfileRevision |
+| TurnRouteBinding | One immutable exact route and passed qualification captured for an interactive role before enqueue. | private | 13 | qualification_id → ModelQualification; route_id → ModelRoute; turn_id → Turn |
 | TurnEvent | One immutable ordered UI event that reconnecting clients can replay without repeating inference. | private | 7 | owner_id → Account; turn_id → Turn |
 | Outbox | Reliable typed dispatch record committed with the work that Celery or publication must deliver. | mixed | 14 | knowledge_release_id → KnowledgeRelease; owner_id → Account; processing_job_id → ProcessingJob; turn_id → Turn |
 | ModelRoute | One exact secret-free CLIProxyAPI/Codex route configuration. | public | 8 | None |
 | ModelQualification | One completed test of an exact route against one application schema and capability set. | public | 8 | route_id → ModelRoute |
 | ModelAttempt | One actual CLIProxyAPI/Codex call with explicit identity, timing, usage and failure. | mixed | 16 | owner_id → Account; processing_job_id → ProcessingJob; qualification_id → ModelQualification; turn_id → Turn |
 | ProcessingJob | One resumable public-policy or private-upload classification, reading, extraction, validation or independent-review task. | mixed | 18 | customer_uploaded_document_id → CustomerUploadedDocument; owner_id → Account; parent_job_id → ProcessingJob; source_capture_id → SourceCapture |
-| ConsentRecord | One customer grant for CoverGuide to process account, health or uploaded-document data for buying advice, with optional later revocation. | private | 10 | owner_id → Account; person_id → Person; source_message_id → Message |
+| ConsentRecord | One requested, granted or revoked processing-consent record; a grant requires an actual captured customer action. | private | 10 | owner_id → Account; person_id → Person; source_message_id → Message |
 | DeletionRequest | One durable customer request to erase an account, conversation, upload or selected disclosure and its derived private copies. | private | 9 | owner_id → Account |
 | AuditEvent | Minimal append-only record of sensitive-data access, publication, deletion and administration without copied customer medical text. | mixed | 9 | actor_id → Account; owner_id → Account |
 | PolicyPackageComponent | One original-backed component slot in a public packaged policy, used to compare which separately issued product supplies medical or supplementary cover. | public | 12 | component_policy_version_id → PolicyVersion; component_product_id → Product; evidence_span_id → EvidenceSpan; package_policy_version_id → PolicyVersion; selection_policy_rule_id → PolicyRule |

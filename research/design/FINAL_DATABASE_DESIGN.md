@@ -1,13 +1,13 @@
 # Final CoverGuide database proposal for human review
 
 Revision: `discussion-r25-final-review`  
-Status: all batch recommendations and the final audit are incorporated; explicit approval of the complete design is pending.
+Status: revision `discussion-r25-final-review` and the route-pinning amendment were explicitly approved for local implementation on 2026-09-22. Production deployment and cutover remain unapproved.
 
 ## What is proposed
 
 CoverGuide uses two physically separate databases:
 
-1. The **application database** has **62 custom models, 587 fields, 167 typed relationships and 31 closed JSON contracts**. It supports customer conversations, facts and requirements, original policy evidence, structured policy rules, quotes/network observations and cited buying recommendations.
+1. The **application database** has **63 custom models, 601 fields, 170 typed relationships and 31 closed JSON contracts**. It supports customer conversations, facts and requirements, original policy evidence, structured policy rules, quotes/network observations, pinned interactive model routes and cited buying recommendations.
 2. The **independent benchmark database** has **24 models and 296 fields**. It protects evaluation questions, expected answers, independent rule denominators and detailed scores from the application and implementers.
 
 Django's standard authentication support tables still exist physically, but they are framework-managed and are not custom CoverGuide models. `Account` is an `AbstractUser` subclass with email as `USERNAME_FIELD`; reusable UUID and timestamp abstract bases do not create tables.
@@ -34,12 +34,14 @@ Original policy data follows a separate chain: autonomous Codex discovery sessio
 ## Scope decisions from the final audit
 
 - Removed `AIPreference`. Customers do not choose the model route; only qualified system `ModelRoute` records control Codex/CLIProxyAPI calls.
+- Added `TurnRouteBinding` and `Turn.route_commitment`. Both interactive routes are resolved before enqueue and pinned to exact passed qualifications, identities, endpoint/configuration hashes and schemas. Workers and retries never re-resolve mutable settings.
 - Removed `PolicyEvent`. Existing-policy terms, dates and continuity remain available through `CustomerPolicyRevision`, `CustomerPolicyFact` and sourced `CustomerFact` records. Customer claim/payment/cancellation/refund workflows are outside scope.
 - Removed duplicate `Message.turn_id`; `Turn.input_message_id` is authoritative.
 - Renamed the turn's profile link to optional `starting_profile_revision_id`. A first turn has no earlier profile, and the resulting `Recommendation.profile_revision_id` identifies what was actually evaluated.
 - Replaced guessable hashes of private messages, selections and requests with keyed commitments. Stored response/result checksums cover encrypted bytes.
 - Restricted customer-upload categories to offers, quotes, schedules, endorsements and member certificates needed for buying/comparison.
 - Required contractual `PolicyVersionDocument` roles to come from insurer or regulator authority; independent comparisons may assist discovery but cannot become contractual evidence.
+- Corrected `ConsentRecord.status` so its `requested` default is an explicit non-grant lifecycle state. Only an actual captured customer action may create a `granted` state.
 
 ## How a recommendation is reproduced
 
@@ -70,4 +72,4 @@ The preserved source corpus and reconciliation records remain research evidence.
 - [Case-to-field map](case-requirement-field-map.json)
 - [Migration map](migration-field-map.json)
 
-Implementation remains blocked until you explicitly approve the complete design after review. Any later material schema change returns to discussion.
+The approved local implementation may proceed. Production consent policy, provider-retention verification, deployment and cutover remain separate gates; any later material schema change returns to discussion.

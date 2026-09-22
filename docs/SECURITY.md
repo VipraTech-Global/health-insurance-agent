@@ -18,7 +18,9 @@
 
 - Off by default. It runs only when `OMNIROUTE_ENABLED=1`, the URL is a literal loopback HTTP
   address, an API key is set, the operator confirms gateway logging and compression are off, and
-  at least one model is allowlisted. Startup checks and calls refuse otherwise.
+  at least one model is allowlisted. Real pilot data additionally requires the explicit
+  `COVERGUIDE_LOCAL_OMNIROUTE_PILOT_ACK=1` operator gate and `DJANGO_DEBUG=1`; this gate is invalid
+  for production. Startup checks and calls refuse otherwise.
 - Loopback is not data residency. Customer text for the two interactive roles is forwarded by the
   gateway to upstream free-tier providers whose terms may permit retention or training. Customers
   are not prompted; this is a documented operator decision.
@@ -26,7 +28,11 @@
   relay-only; the gateway layer rejects OmniRoute for them.
 - No fallback: an OmniRoute failure fails the turn instead of switching to the relay, and each call
   is a single attempt with no retry.
-- The exact route is qualified before use and every call records its qualification and the raw
+- Both interactive routes are resolved and committed before enqueue. Workers and retries use only
+  the stored immutable route bindings, so later settings cannot switch an accepted turn's provider,
+  model or endpoint. A disabled route or qualification, schema, identity, configuration or
+  commitment mismatch fails closed.
+- Every call records its exact qualification, route identity/configuration commitment and the raw
   reported model. Reported model identity must equal the declared value exactly.
 - Provider API keys live only in the OmniRoute store. CoverGuide holds a single gateway key in
   `.env` and never writes it to route records, hashes, logs or responses. HTTP clients ignore proxy

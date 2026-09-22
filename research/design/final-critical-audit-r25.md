@@ -5,7 +5,7 @@ Result: passed for presentation; explicit human approval of the complete design 
 
 ## Changes made
 
-The audit removed two optional/out-of-scope models (`AIPreference`, `PolicyEvent`), one duplicate relationship (`Message.turn_id`), narrowed advice/upload types, corrected the starting-versus-final profile lifecycle and hardened private-payload commitments. The final application has **62 custom models, 587 fields and 167 typed foreign keys**.
+The audit removed two optional/out-of-scope models (`AIPreference`, `PolicyEvent`), one duplicate relationship (`Message.turn_id`), narrowed advice/upload types, corrected the starting-versus-final profile lifecycle and hardened private-payload commitments. At that audit boundary the application had **62 custom models, 587 fields and 167 typed foreign keys**. The approved 2026-09-22 route-pinning amendment adds `TurnRouteBinding` and `Turn.route_commitment`, bringing the current design to **63 models, 601 fields and 170 typed foreign keys** without changing the audit's scope conclusions.
 
 No customer claim, treatment bill, insurer receipt, payment ledger, cancellation workflow, refund workflow, legal-hold subsystem, live legacy-mapping table or custom reimplementation of Django auth/session tables remains.
 

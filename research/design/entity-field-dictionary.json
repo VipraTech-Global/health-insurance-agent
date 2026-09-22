@@ -1,6 +1,6 @@
 {
   "revision": "discussion-r25-final-review",
-  "status": "All 17 batches and the final critical audit are approved for presentation. The complete database design still requires explicit human approval before implementation.",
+  "status": "Revision discussion-r25-final-review and the route-pinning amendment were explicitly approved for local implementation on 2026-09-22. Production deployment and cutover remain unapproved.",
   "common_rules": [
     "Types and JSON contracts are detailed in value-and-rule-contracts.md.",
     "Required means NOT NULL; optional defaults NULL unless listed. Empty collection only means no recorded entries, never proof none exist.",
@@ -17,7 +17,8 @@
     "ConversationMessageChunk is a private replaceable derivative. Current CustomerProfileRevision facts and requirements override historical-message search results, and exact Message content is loaded after ranking.",
     "The application stores no customer claim, treatment-bill, insurer-receipt, payment-ledger, cancellation-workflow or refund-workflow model. Public policy procedures remain PolicyRule knowledge for buying comparisons.",
     "Private low-entropy text and structured payloads use keyed commitments for deduplication. SHA-256 fields on private result storage identify encrypted bytes, not guessable plaintext.",
-    "System model routing is controlled by qualified ModelRoute records; customers do not select or persist an AI provider route."
+    "System model routing is controlled by qualified ModelRoute records; customers do not select or persist an AI provider route.",
+    "Every newly accepted Turn commits exactly one immutable TurnRouteBinding for each interactive role before enqueue; workers and retries never re-resolve mutable operator settings."
   ],
   "entities": [
     {
@@ -8503,11 +8504,25 @@
             "OPS-02",
             "OPS-04"
           ]
+        },
+        {
+          "name": "route_commitment",
+          "type": "char(64)",
+          "required": true,
+          "default": "empty only for pre-amendment rows",
+          "purpose": "Keyed commitment over both immutable interactive-role bindings",
+          "validation": "Versioned HMAC; set before enqueue; immutable once set; new turns require exactly both interactive roles",
+          "units": null,
+          "allowed_values": null,
+          "example": "Synthetic operational example only; no real customer value inspected.",
+          "basis": ["OPS-02", "OPS-04", "OPS-06"]
         }
       ],
       "constraints": [
         "unique(owner_id,request_id)",
         "input message and optional starting profile belong to the same owner and conversation",
+        "every newly accepted turn has exactly one fact_interpretation and one recommendation_answer binding before enqueue",
+        "route_commitment is immutable once set",
         "running requires a current lease token and lease_until",
         "only the current lease token may publish",
         "completed requires a Recommendation whose profile_revision_id is the final evaluated revision; technical failure creates none",
@@ -8519,6 +8534,35 @@
         "state,lease_until",
         "owner_id,request_id unique"
       ]
+    },
+    {
+      "entity": "TurnRouteBinding",
+      "purpose": "One immutable exact route and passed qualification captured for an interactive role before a turn is queued.",
+      "scope": "private",
+      "requirements": ["OPS-02", "OPS-04", "OPS-06"],
+      "fields": [
+        {"name": "id", "type": "uuid", "required": true, "default": "uuid4", "purpose": "Stable row identity", "validation": "Primary key; immutable; never reused", "units": null, "allowed_values": null, "example": "Synthetic operational example only; no real customer value inspected.", "basis": ["OPS-02", "OPS-04"]},
+        {"name": "created_at", "type": "timestamptz", "required": true, "default": "transaction timestamp at insertion", "purpose": "When the route was pinned", "validation": "UTC; immutable", "units": "instant", "allowed_values": null, "example": "Synthetic operational example only; no real customer value inspected.", "basis": ["OPS-06"]},
+        {"name": "turn_id", "type": "fk:Turn", "required": true, "default": "none", "purpose": "Accepted turn that owns the binding", "validation": "Exactly two per newly accepted turn; immutable", "units": null, "allowed_values": null, "example": "Synthetic operational example only; no real customer value inspected.", "basis": ["OPS-02", "OPS-04"]},
+        {"name": "role", "type": "enum", "required": true, "default": "none", "purpose": "Interactive operation", "validation": "fact_interpretation,recommendation_answer", "units": null, "allowed_values": "fact_interpretation,recommendation_answer", "example": "fact_interpretation (synthetic)", "basis": ["OPS-04"]},
+        {"name": "route_id", "type": "fk:ModelRoute", "required": true, "default": "none", "purpose": "Exact immutable route revision", "validation": "Active when called; must match all captured route fields", "units": null, "allowed_values": null, "example": "Synthetic operational example only; no real customer value inspected.", "basis": ["OPS-04"]},
+        {"name": "qualification_id", "type": "fk:ModelQualification", "required": true, "default": "none", "purpose": "Exact passed qualification", "validation": "Same route and role/schema; current schema hash; passed exact-identity capabilities", "units": null, "allowed_values": null, "example": "Synthetic operational example only; no real customer value inspected.", "basis": ["OPS-04"]},
+        {"name": "requested_model", "type": "varchar(160)", "required": true, "default": "none", "purpose": "Exact requested provider/model ID", "validation": "Must equal the bound route", "units": null, "allowed_values": null, "example": "gemini/gemini-3.5-flash-lite (operator configuration example)", "basis": ["OPS-04"]},
+        {"name": "expected_model", "type": "varchar(160)", "required": true, "default": "none", "purpose": "Exact model ID expected in the response", "validation": "Must equal observed_model for a passed binding", "units": null, "allowed_values": null, "example": "gemini-3.5-flash-lite (operator configuration example)", "basis": ["OPS-04"]},
+        {"name": "observed_model", "type": "varchar(160)", "required": true, "default": "none", "purpose": "Model ID observed during qualification", "validation": "Exact equality with expected_model", "units": null, "allowed_values": null, "example": "gemini-3.5-flash-lite (operator configuration example)", "basis": ["OPS-04"]},
+        {"name": "endpoint_profile", "type": "varchar(120)", "required": true, "default": "none", "purpose": "Secret-free endpoint identity", "validation": "Interactive relay or loopback OmniRoute profile only", "units": null, "allowed_values": null, "example": "omniroute-loopback (operator configuration example)", "basis": ["OPS-04"]},
+        {"name": "adapter_version", "type": "varchar(120)", "required": true, "default": "none", "purpose": "Strict transport implementation identity", "validation": "Must equal the bound route", "units": null, "allowed_values": null, "example": "strict-relay-v2/1 (implementation example)", "basis": ["OPS-04"]},
+        {"name": "route_configuration_sha256", "type": "char(64)", "required": true, "default": "none", "purpose": "Digest of endpoint/model/adapter configuration", "validation": "Lowercase hex; must equal the bound route", "units": null, "allowed_values": null, "example": "Synthetic operational example only; no real customer value inspected.", "basis": ["OPS-04"]},
+        {"name": "schema_sha256", "type": "char(64)", "required": true, "default": "none", "purpose": "Digest of the exact output schema qualified", "validation": "Lowercase hex; must equal the bound qualification and current schema", "units": null, "allowed_values": null, "example": "Synthetic operational example only; no real customer value inspected.", "basis": ["OPS-04"]}
+      ],
+      "constraints": [
+        "unique(turn_id,role)",
+        "insert-only; exact route and qualification foreign keys use PROTECT",
+        "expected_model equals observed_model",
+        "disabled route, failed or missing qualification, schema, configuration, identity or commitment mismatch fails closed",
+        "retries copy the original bindings and never switch provider, model or endpoint"
+      ],
+      "indexes": ["turn_id,role unique", "route_id", "qualification_id"]
     },
     {
       "entity": "TurnEvent",
@@ -9689,7 +9733,7 @@
     },
     {
       "entity": "ConsentRecord",
-      "purpose": "One customer grant for CoverGuide to process account, health or uploaded-document data for buying advice, with optional later revocation.",
+      "purpose": "One requested, granted or revoked processing-consent record; a requested row is not a grant.",
       "scope": "private",
       "requirements": [
         "OPS-01",
@@ -9717,7 +9761,7 @@
           "type": "timestamptz",
           "required": true,
           "default": "transaction timestamp at insertion",
-          "purpose": "When consent was granted",
+          "purpose": "When the consent request or action was recorded",
           "validation": "UTC storage; immutable; not a source effective date",
           "units": "instant",
           "allowed_values": null,
@@ -9806,9 +9850,9 @@
           "required": true,
           "default": "requested",
           "purpose": "Consent state",
-          "validation": "granted,revoked",
+          "validation": "requested,granted,revoked",
           "units": null,
-          "allowed_values": "granted,revoked",
+          "allowed_values": "requested,granted,revoked",
           "example": "No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md.",
           "basis": [
             "OPS-01",
@@ -9847,10 +9891,11 @@
         }
       ],
       "constraints": [
-        "created only after an affirmative grant",
-        "conversation capture requires source_message_id",
+        "requested records may present a notice but confer no permission",
+        "granted requires an actual captured customer action; conversation capture requires source_message_id",
+        "migrations must not fabricate granted status",
         "person and message share owner",
-        "revoked requires revoked_at; granted requires revoked_at NULL",
+        "revoked requires revoked_at; requested and granted require revoked_at NULL",
         "no ABHA creation, external medical sharing or representation authority is implied",
         "unique(id,owner_id); owner_id immutable"
       ],
