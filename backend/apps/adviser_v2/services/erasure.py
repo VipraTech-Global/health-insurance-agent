@@ -22,6 +22,9 @@ from ..models import (
     AdviceRequest,
     AuditEvent,
     Calculation,
+    Comparison,
+    ComparisonCitation,
+    ComparisonStatement,
     ConsentRecord,
     Conversation,
     ConversationMessageChunk,
@@ -42,14 +45,11 @@ from ..models import (
     Outbox,
     Person,
     PersonRelationship,
-    PolicyCandidateAssessment,
+    PolicyComparisonAssessment,
     PolicyMember,
     PolicyRequirementMatch,
     ProcessingJob,
     Quote,
-    Recommendation,
-    RecommendationCitation,
-    RecommendationStatement,
     Turn,
     TurnEvent,
 )
@@ -278,16 +278,16 @@ def _erase_relational_content(owner_id: uuid.UUID) -> int:
             affected += deleted
 
     ConversationMessageChunk.objects.filter(owner_id=owner_id).delete()
-    RecommendationCitation.objects.filter(owner_id=owner_id).delete()
-    RecommendationStatement.objects.filter(owner_id=owner_id).delete()
+    ComparisonCitation.objects.filter(owner_id=owner_id).delete()
+    ComparisonStatement.objects.filter(owner_id=owner_id).delete()
     PolicyRequirementMatch.objects.filter(owner_id=owner_id).delete()
     InformationNeed.objects.filter(owner_id=owner_id).delete()
-    PolicyCandidateAssessment.objects.filter(owner_id=owner_id).delete()
-    Message.objects.filter(owner_id=owner_id).update(recommendation=None)
-    Recommendation.objects.filter(owner_id=owner_id).update(supersedes=None)
+    PolicyComparisonAssessment.objects.filter(owner_id=owner_id).delete()
+    Message.objects.filter(owner_id=owner_id).update(comparison=None)
+    Comparison.objects.filter(owner_id=owner_id).update(supersedes=None)
     remove(
         [
-            Recommendation.objects.filter(owner_id=owner_id),
+            Comparison.objects.filter(owner_id=owner_id),
             Calculation.objects.filter(owner_id=owner_id),
             Quote.objects.filter(owner_id=owner_id),
         ]

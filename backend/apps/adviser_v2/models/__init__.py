@@ -6,7 +6,7 @@ loads them as one replacement application.
 """
 
 from .catalogue import *  # noqa: F403
+from .comparisons import *  # noqa: F403
 from .corpus import *  # noqa: F403
 from .customer import *  # noqa: F403
 from .operations import *  # noqa: F403
-from .recommendations import *  # noqa: F403

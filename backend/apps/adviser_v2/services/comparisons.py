@@ -1,4 +1,4 @@
-"""Deterministically validate and atomically publish v2 recommendations."""
+"""Deterministically validate and atomically publish v2 comparisons."""
 
 from __future__ import annotations
 
@@ -16,10 +16,13 @@ from django.utils import timezone
 from apps.accounts.models import User
 
 from ..crypto import commitment
-from ..errors import AccountErased, PinnedStateChanged, UnsupportedRecommendationError
+from ..errors import AccountErased, PinnedStateChanged, UnsupportedComparisonError
 from ..models import (
     AdviceRequest,
     Calculation,
+    Comparison,
+    ComparisonCitation,
+    ComparisonStatement,
     Conversation,
     CustomerFact,
     CustomerProfileRevision,
@@ -28,18 +31,15 @@ from ..models import (
     KnowledgeChannel,
     KnowledgeRelease,
     Message,
-    PolicyCandidateAssessment,
+    PolicyComparisonAssessment,
     PolicyRequirementMatch,
     PolicyRuleEvidence,
-    Recommendation,
-    RecommendationCitation,
-    RecommendationStatement,
     Turn,
 )
 from ..release_scope import comparison_product_count
 from ..retrieval import PolicyRetrievalContext
 from ..rule_engine import (
-    CandidateResult,
+    PolicyComparisonResult,
     Truth,
     _ayush_rule_inputs,
     _room_illustration_inputs,
@@ -47,31 +47,27 @@ from ..rule_engine import (
     evaluate_expression,
     evaluate_release,
 )
-from ..schemas import RecommendationDraftV1, RecommendationStatementDraft
+from ..schemas import ComparisonDraftV1
 
 
 @dataclass(frozen=True)
-class RecommendationContext:
-    recommendation: Recommendation
-    candidates: tuple[PolicyCandidateAssessment, ...]
+class ComparisonContext:
+    comparison: Comparison
+    assessments: tuple[PolicyComparisonAssessment, ...]
     matches: tuple[PolicyRequirementMatch, ...]
     needs: tuple[InformationNeed, ...]
-    evaluations: tuple[CandidateResult, ...]
+    evaluations: tuple[PolicyComparisonResult, ...]
 
 
 def _room_ratio_percent(inputs: list[dict[str, Any]]) -> str:
-    ratio = (
-        Decimal(inputs[0]["value"]["value"])
-        / Decimal(inputs[1]["value"]["value"])
-        * 100
-    )
+    ratio = Decimal(inputs[0]["value"]["value"]) / Decimal(inputs[1]["value"]["value"]) * 100
     return format(ratio.normalize(), "f")
 
 
 def _save_room_illustration(
     advice_request: AdviceRequest,
     facts: list[CustomerFact],
-    evaluations: list[CandidateResult],
+    evaluations: list[PolicyComparisonResult],
 ) -> Calculation | None:
     """Calculate the stipulated associated-expense amount from the pinned rule."""
 
@@ -91,7 +87,9 @@ def _save_room_illustration(
             return None
         input_values[key] = raw_input["value"]
     if inputs.get("actual_room_category_higher_than_eligible") != {
-        "state": "known", "kind": "boolean", "value": True
+        "state": "known",
+        "kind": "boolean",
+        "value": True,
     }:
         return None
     for evaluation in evaluations:
@@ -120,8 +118,10 @@ def _save_room_illustration(
                 else format(result.value.normalize(), "f")
             )
             output = {
-                "state": "finite", "value": result_value,
-                "unit": "money", "currency": "INR",
+                "state": "finite",
+                "value": result_value,
+                "unit": "money",
+                "currency": "INR",
             }
             evidence_ids = [str(value) for value in rule.evidence_span_ids]
             return Calculation.objects.create(
@@ -133,8 +133,10 @@ def _save_room_illustration(
                     {
                         "key": key,
                         "value": {
-                            "state": "finite", "value": input_values[key],
-                            "unit": "money", "currency": "INR",
+                            "state": "finite",
+                            "value": input_values[key],
+                            "unit": "money",
+                            "currency": "INR",
                         },
                         "assertion_ids": [str(by_type[key].id)],
                         "span_ids": [],
@@ -142,22 +144,27 @@ def _save_room_illustration(
                     }
                     for key in keys
                 ],
-                operations=[{
-                    "ordinal": 1,
-                    "step_key": "eligible_rent_divided_by_actual_rent_times_associated_expenses",
-                    "expression": effect["amount"],
-                    "input_keys": list(keys),
-                    "result": output,
-                    "policy_rule_ids": [str(rule.rule.id)],
-                    "evidence_span_ids": evidence_ids,
-                    "rounding": "none",
-                }],
+                operations=[
+                    {
+                        "ordinal": 1,
+                        "step_key": "eligible_rent_divided_by_actual_rent_times_associated_expenses",
+                        "expression": effect["amount"],
+                        "input_keys": list(keys),
+                        "result": output,
+                        "policy_rule_ids": [str(rule.rule.id)],
+                        "evidence_span_ids": evidence_ids,
+                        "rounding": "none",
+                    }
+                ],
                 result=output,
-                assumptions=[{
-                    "statement": "This is a stipulated higher-room claim illustration; actual claim admissibility is unresolved.",
-                    "status": "stipulated", "span_ids": [],
-                    "effect_if_false": "If the selected room is not above the eligible category, this proportional rule does not apply.",
-                }],
+                assumptions=[
+                    {
+                        "statement": "This is a stipulated higher-room claim illustration; actual claim admissibility is unresolved.",
+                        "status": "stipulated",
+                        "span_ids": [],
+                        "effect_if_false": "If the selected room is not above the eligible category, this proportional rule does not apply.",
+                    }
+                ],
                 status="complete",
             )
     return None
@@ -259,14 +266,14 @@ def already_asked_information_keys(owner_id: uuid.UUID, conversation_id: uuid.UU
     return set(
         InformationNeed.objects.filter(
             owner_id=owner_id,
-            recommendation__turn__conversation_id=conversation_id,
+            comparison__turn__conversation_id=conversation_id,
             status__in=("asked", "resolved", "waived", "unavailable"),
         ).values_list("information_key", flat=True)
     )
 
 
 @transaction.atomic
-def prepare_recommendation(
+def prepare_comparison(
     turn: Turn,
     advice_request: AdviceRequest,
     profile_revision: CustomerProfileRevision,
@@ -274,7 +281,7 @@ def prepare_recommendation(
     *,
     clarification_question: str | None = None,
     information_key: str = "customer_clarification",
-) -> RecommendationContext:
+) -> ComparisonContext:
     facts, requirements = _current_assertions(
         turn.owner_id, turn.conversation_id, profile_revision.revision
     )
@@ -284,17 +291,23 @@ def prepare_recommendation(
         if clarification_question
         else _save_room_illustration(advice_request, facts, evaluations)
     )
+    incomplete_products = sum(
+        1
+        for evaluation in evaluations
+        if any(match.outcome in {"unknown", "partly_meets"} for match in evaluation.matches)
+        or any(not rule.evidence_complete for rule in evaluation.rules)
+    )
     if clarification_question:
         outcome = "clarification_required"
     elif illustration is not None:
         outcome = "conditional"
-    elif evaluations[0].disposition == "recommended":
-        outcome = "completed"
-    elif any(item.disposition == "conditional" for item in evaluations):
+    elif not evaluations or incomplete_products == len(evaluations):
+        outcome = "insufficient_evidence"
+    elif incomplete_products:
         outcome = "conditional"
     else:
-        outcome = "insufficient_evidence"
-    recommendation = Recommendation.objects.create(
+        outcome = "completed"
+    comparison = Comparison.objects.create(
         owner_id=turn.owner_id,
         turn=turn,
         advice_request=advice_request,
@@ -302,12 +315,12 @@ def prepare_recommendation(
         knowledge_release=release,
         outcome=outcome,
     )
-    candidates: list[PolicyCandidateAssessment] = []
+    assessments: list[PolicyComparisonAssessment] = []
     matches: list[PolicyRequirementMatch] = []
     for result in evaluations:
-        candidate = PolicyCandidateAssessment.objects.create(
+        assessment = PolicyComparisonAssessment.objects.create(
             owner_id=turn.owner_id,
-            recommendation=recommendation,
+            comparison=comparison,
             product_variant=result.variant,
             evaluated_selection={"members": [], "options": [], "quantities": []},
             selection_commitment=commitment(
@@ -318,18 +331,12 @@ def prepare_recommendation(
                     "quantities": [],
                 }
             ),
-            disposition=(
-                "conditional"
-                if illustration is not None and result.disposition in {"recommended", "alternative", "eligible"}
-                else result.disposition
-            ),
-            rank=result.rank,
         )
-        candidates.append(candidate)
+        assessments.append(assessment)
         for result_match in result.matches:
             match = PolicyRequirementMatch.objects.create(
                 owner_id=turn.owner_id,
-                candidate_assessment=candidate,
+                comparison_assessment=assessment,
                 customer_requirement=result_match.requirement,
                 outcome=result_match.outcome,
                 comparison_value=result_match.comparison_value,
@@ -340,7 +347,7 @@ def prepare_recommendation(
         needs.append(
             InformationNeed.objects.create(
                 owner_id=turn.owner_id,
-                recommendation=recommendation,
+                comparison=comparison,
                 need_kind="fact",
                 information_key=information_key,
                 reason=clarification_question,
@@ -348,9 +355,9 @@ def prepare_recommendation(
                 status="open",
             )
         )
-    return RecommendationContext(
-        recommendation,
-        tuple(candidates),
+    return ComparisonContext(
+        comparison,
+        tuple(assessments),
         tuple(matches),
         tuple(needs),
         tuple(evaluations),
@@ -358,14 +365,14 @@ def prepare_recommendation(
 
 
 def model_context(
-    context: RecommendationContext,
+    context: ComparisonContext,
     retrieval: PolicyRetrievalContext | None = None,
     *,
     profile: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    candidate_by_variant = {item.product_variant_id: item for item in context.candidates}
+    assessment_by_variant = {item.product_variant_id: item for item in context.assessments}
     match_by_pair = {
-        (item.candidate_assessment.product_variant_id, item.customer_requirement_id): item
+        (item.comparison_assessment.product_variant_id, item.customer_requirement_id): item
         for item in context.matches
     }
     retrieved_rule_ids = (
@@ -379,12 +386,12 @@ def model_context(
         policy_rule_id__in=release_rule_ids
     ).values_list("policy_rule_id", "evidence_span_id", "role"):
         evidence_roles.setdefault((str(rule_id), str(span_id)), set()).add(str(role))
-    product_count = comparison_product_count(context.recommendation.knowledge_release)
-    advice_request = getattr(context.recommendation, "advice_request", None)
+    product_count = comparison_product_count(context.comparison.knowledge_release)
+    advice_request = getattr(context.comparison, "advice_request", None)
     calculations = (
         list(
             Calculation.objects.filter(
-                owner_id=context.recommendation.owner_id,
+                owner_id=context.comparison.owner_id,
                 advice_request=advice_request,
             ).order_by("created_at")
         )
@@ -392,13 +399,14 @@ def model_context(
         else []
     )
     return {
-        "recommendation_id": str(context.recommendation.id),
-        "outcome": context.recommendation.outcome,
+        "comparison_id": str(context.comparison.id),
         "catalogue_limit": f"{product_count} reviewed products",
         "customer_profile": profile or {},
         "ayush_scenario_conditions": _ayush_rule_inputs(
             [match.requirement for match in context.evaluations[0].matches]
-        ) if context.evaluations else {},
+        )
+        if context.evaluations
+        else {},
         "claim_illustration": any(
             item.calculation_type == "higher_room_associated_expense_proration"
             for item in calculations
@@ -420,14 +428,13 @@ def model_context(
             }
             for item in calculations
         ],
-        "candidates": [
+        "products": [
             {
-                "candidate_assessment_id": str(candidate_by_variant[result.variant.id].id),
+                "comparison_assessment_id": str(assessment_by_variant[result.variant.id].id),
+                "product_variant_id": str(result.variant.id),
                 "product": result.variant.policy_version.product.name,
                 "insurer": result.variant.policy_version.product.insurer.name,
                 "uin": result.variant.policy_version.uin,
-                "disposition": candidate_by_variant[result.variant.id].disposition,
-                "rank": candidate_by_variant[result.variant.id].rank,
                 "requirement_matches": [
                     {
                         "requirement_match_id": str(
@@ -526,20 +533,21 @@ def _comparison_numbers_by_match(supplied_context: dict[str, Any]) -> dict[str, 
     """Map each requirement_match_id to the numbers in its own comparison_value.
 
     Kept separate from the global supplied-numbers set so a statement can only quote a
-    candidate's matched amount when it actually references that match — otherwise the
-    model could cite candidate A's comparison_value while writing about candidate B and
+    assessment's matched amount when it actually references that match — otherwise the
+    model could cite assessment A's comparison_value while writing about assessment B and
     still pass a purely "does this number appear anywhere in context" check.
     """
 
     numbers_by_match: dict[str, set[str]] = {}
-    for candidate in supplied_context.get("candidates", []) or []:
-        for match in candidate.get("requirement_matches", []) or []:
+    for product in supplied_context.get("products", []) or []:
+        for match in product.get("requirement_matches", []) or []:
             comparison_value = match.get("comparison_value")
             match_id = match.get("requirement_match_id")
             if comparison_value is None or match_id is None:
                 continue
             numbers_by_match[match_id] = _numbers_in(json.dumps(comparison_value, default=str))
     return numbers_by_match
+
 
 _RESTRICTION_TYPES = {
     "waiting_period",
@@ -568,6 +576,11 @@ _CITATION_EVIDENCE_ROLES = {
     "conflicts": {"contradicts"},
     "assumption_source": {"supports", "defines", "precedence", "footnote"},
 }
+_ENDORSEMENT_LANGUAGE = re.compile(
+    r"\b(?:best|better|winner|recommended|recommend|choose|chosen|top\s+pick|"
+    r"shortlist(?:ed)?|rank(?:ed|ing)?|buy|purchase|select|go\s+with|opt\s+for)\b",
+    re.IGNORECASE,
+)
 
 
 def _allowed_citation_roles(evidence_roles: set[str]) -> list[str]:
@@ -579,14 +592,13 @@ def _allowed_citation_roles(evidence_roles: set[str]) -> list[str]:
 
 
 _OPTIONAL_STATEMENT_IDS = (
-    "candidate_assessment_id",
+    "comparison_assessment_id",
     "requirement_match_id",
-    "information_need_id",
     "calculation_id",
 )
 
 
-def _blank_ids_to_none(draft: RecommendationDraftV1) -> RecommendationDraftV1:
+def _blank_ids_to_none(draft: ComparisonDraftV1) -> ComparisonDraftV1:
     """Some providers fill an unused optional id with "" instead of null. A blank id names
     nothing, so treat it as absent; every non-blank id is still validated exactly."""
     statements = []
@@ -611,24 +623,25 @@ def _blank_ids_to_none(draft: RecommendationDraftV1) -> RecommendationDraftV1:
 
 
 def _canonicalize_statement_references(
-    draft: RecommendationDraftV1, context: RecommendationContext
-) -> RecommendationDraftV1:
+    draft: ComparisonDraftV1, context: ComparisonContext
+) -> ComparisonDraftV1:
     """Treat blank optional ids as absent, then drop a statement's redundant
-    candidate_assessment_id when it agrees with the candidate implied by its own
-    requirement_match_id. Leaves genuine mismatches and any information_need_id combination
-    untouched so validation still rejects them."""
+    comparison_assessment_id when it agrees with the product implied by its own
+    requirement_match_id. Genuine mismatches remain for validation to reject."""
     draft = _blank_ids_to_none(draft)
-    match_candidate = {str(match.id): str(match.candidate_assessment_id) for match in context.matches}
+    match_assessment = {
+        str(match.id): str(match.comparison_assessment_id) for match in context.matches
+    }
     statements = []
     changed = False
     for statement in draft.statements:
         if (
-            statement.candidate_assessment_id is not None
+            statement.comparison_assessment_id is not None
             and statement.requirement_match_id is not None
-            and statement.information_need_id is None
-            and match_candidate.get(statement.requirement_match_id) == statement.candidate_assessment_id
+            and match_assessment.get(statement.requirement_match_id)
+            == statement.comparison_assessment_id
         ):
-            statements.append(statement.model_copy(update={"candidate_assessment_id": None}))
+            statements.append(statement.model_copy(update={"comparison_assessment_id": None}))
             changed = True
         else:
             statements.append(statement)
@@ -650,23 +663,18 @@ def _distinct_citations_for_storage(citations: list[Any]) -> list[Any]:
     return distinct
 
 
-def validate_recommendation_draft(
-    draft: RecommendationDraftV1,
-    context: RecommendationContext,
+def validate_comparison_draft(
+    draft: ComparisonDraftV1,
+    context: ComparisonContext,
     supplied_context: dict[str, Any],
 ) -> None:
-    if draft.outcome != context.recommendation.outcome:
-        raise UnsupportedRecommendationError(
-            "The model changed the deterministic recommendation outcome."
-        )
-    candidate_ids = {str(item.id) for item in context.candidates}
+    assessment_ids = {str(item.id) for item in context.assessments}
     match_ids = {str(item.id) for item in context.matches}
-    need_ids = {str(item.id) for item in context.needs}
     calculation_ids = set(
         str(value)
         for value in Calculation.objects.filter(
-            owner_id=context.recommendation.owner_id,
-            advice_request=context.recommendation.advice_request,
+            owner_id=context.comparison.owner_id,
+            advice_request=context.comparison.advice_request,
         ).values_list("id", flat=True)
     )
     release_rule_ids = {
@@ -683,44 +691,45 @@ def validate_recommendation_draft(
         for evaluation in context.evaluations
         for result in evaluation.rules
     }
-    candidate_policy_versions = {
-        str(candidate.id): candidate.product_variant.policy_version_id
-        for candidate in context.candidates
+    assessment_policy_versions = {
+        str(assessment.id): assessment.product_variant.policy_version_id
+        for assessment in context.assessments
     }
     match_policy_versions = {
-        str(match.id): match.candidate_assessment.product_variant.policy_version_id
+        str(match.id): match.comparison_assessment.product_variant.policy_version_id
         for match in context.matches
     }
     comparison_numbers_by_match = _comparison_numbers_by_match(supplied_context)
-    all_comparison_numbers: set[str] = set().union(*comparison_numbers_by_match.values()) if (
-        comparison_numbers_by_match
-    ) else set()
-    supplied_numbers = _numbers_in(json.dumps(supplied_context, default=str)) - all_comparison_numbers
+    all_comparison_numbers: set[str] = (
+        set().union(*comparison_numbers_by_match.values())
+        if (comparison_numbers_by_match)
+        else set()
+    )
+    supplied_numbers = (
+        _numbers_in(json.dumps(supplied_context, default=str)) - all_comparison_numbers
+    )
     cited_rule_ids: set[str] = set()
     for statement in draft.statements:
-        references = [
-            statement.candidate_assessment_id,
-            statement.requirement_match_id,
-            statement.information_need_id,
-        ]
-        if sum(item is not None for item in references) > 1:
-            raise UnsupportedRecommendationError(
-                "A statement may have at most one decision-object reference."
+        if _ENDORSEMENT_LANGUAGE.search(statement.text):
+            raise UnsupportedComparisonError(
+                "Generated comparison prose contains ranking, endorsement, or purchase direction."
             )
-        if statement.candidate_assessment_id not in candidate_ids | {None}:
-            raise UnsupportedRecommendationError("A statement references an unavailable candidate.")
+        references = [
+            statement.comparison_assessment_id,
+            statement.requirement_match_id,
+        ]
+        if sum(item is not None for item in references) != 1:
+            raise UnsupportedComparisonError(
+                "Every generated statement must identify exactly one compared product or criterion."
+            )
+        if statement.comparison_assessment_id not in assessment_ids | {None}:
+            raise UnsupportedComparisonError("A statement references an unavailable assessment.")
         if statement.requirement_match_id not in match_ids | {None}:
-            raise UnsupportedRecommendationError(
+            raise UnsupportedComparisonError(
                 "A statement references an unavailable requirement match."
             )
-        if statement.information_need_id not in need_ids | {None}:
-            raise UnsupportedRecommendationError(
-                "A statement references an unavailable information need."
-            )
         if statement.calculation_id not in calculation_ids | {None}:
-            raise UnsupportedRecommendationError(
-                "A statement references an unavailable calculation."
-            )
+            raise UnsupportedComparisonError("A statement references an unavailable calculation.")
         allowed_numbers = supplied_numbers
         if statement.requirement_match_id is not None:
             allowed_numbers = supplied_numbers | comparison_numbers_by_match.get(
@@ -728,100 +737,57 @@ def validate_recommendation_draft(
             )
         unsupported_numbers = _numbers_in(statement.text) - allowed_numbers
         if unsupported_numbers:
-            raise UnsupportedRecommendationError(
-                "A recommendation statement contains an unsupported number."
+            raise UnsupportedComparisonError(
+                "A comparison statement contains an unsupported number."
             )
-        if (
-            statement.critical
-            and statement.statement_type not in {"customer_context", "limitation", "next_step"}
-            and not statement.citations
-            and statement.calculation_id is None
-        ):
-            raise UnsupportedRecommendationError(
-                "A critical insurance statement lacks evidence or a calculation."
-            )
-        if (
-            statement.statement_type in _POLICY_CLAIM_STATEMENT_TYPES
-            and not statement.citations
-            and statement.calculation_id is None
-        ):
-            raise UnsupportedRecommendationError(
-                "A policy claim lacks evidence or a deterministic calculation."
+        if not statement.citations:
+            raise UnsupportedComparisonError(
+                "Every generated comparison statement requires policy evidence."
             )
         expected_policy_version = None
-        if statement.candidate_assessment_id is not None:
-            expected_policy_version = candidate_policy_versions[statement.candidate_assessment_id]
+        if statement.comparison_assessment_id is not None:
+            expected_policy_version = assessment_policy_versions[statement.comparison_assessment_id]
         elif statement.requirement_match_id is not None:
             expected_policy_version = match_policy_versions[statement.requirement_match_id]
         for citation in statement.citations:
             if citation.evidence_span_id not in evidence_ids:
-                raise UnsupportedRecommendationError(
+                raise UnsupportedComparisonError(
                     "A citation references evidence outside the pinned release."
                 )
             if citation.policy_rule_id is None or citation.policy_rule_id not in release_rule_ids:
-                raise UnsupportedRecommendationError(
+                raise UnsupportedComparisonError(
                     "A policy citation must reference a rule in the pinned release."
                 )
             pair = (citation.policy_rule_id, citation.evidence_span_id)
             if pair not in rule_evidence:
-                raise UnsupportedRecommendationError(
+                raise UnsupportedComparisonError(
                     "A citation is not evidence for its claimed policy rule."
                 )
             if not (rule_evidence[pair] & _CITATION_EVIDENCE_ROLES.get(citation.role, set())):
-                raise UnsupportedRecommendationError(
+                raise UnsupportedComparisonError(
                     "A citation role does not match the rule-evidence relationship."
                 )
             if (
                 expected_policy_version is not None
                 and rule_policy_versions[citation.policy_rule_id] != expected_policy_version
             ):
-                raise UnsupportedRecommendationError(
-                    "A statement cites evidence for a different product candidate."
+                raise UnsupportedComparisonError(
+                    "A statement cites evidence for a different product assessment."
                 )
             cited_rule_ids.add(citation.policy_rule_id)
-    if _numbers_in(draft.introduction) - supplied_numbers:
-        raise UnsupportedRecommendationError(
-            "The recommendation introduction contains an unsupported number."
-        )
-    if draft.follow_up and _numbers_in(draft.follow_up) - supplied_numbers:
-        raise UnsupportedRecommendationError(
-            "The recommendation follow-up contains an unsupported number."
-        )
-    if draft.outcome != "clarification_required":
-        recommended_variant_ids = {
-            item.product_variant_id
-            for item in context.candidates
-            if item.disposition == "recommended"
-        }
-        shortlisted_variant_ids = recommended_variant_ids
-        if not shortlisted_variant_ids:
-            non_excluded = [item for item in context.candidates if item.disposition != "excluded"]
-            if non_excluded:
-                ranks = [item.rank for item in non_excluded if item.rank is not None]
-                if len(ranks) != len(non_excluded):
-                    raise UnsupportedRecommendationError(
-                        "A non-excluded candidate is missing its deterministic rank."
-                    )
-                best_rank = min(ranks)
-                shortlisted_variant_ids = {
-                    item.product_variant_id for item in non_excluded if item.rank == best_rank
-                }
+    if context.comparison.outcome != "clarification_required":
         required_restrictions = {
             str(result.rule.id)
             for evaluation in context.evaluations
-            if evaluation.variant.id in shortlisted_variant_ids
             for result in evaluation.rules
             if result.applies == Truth.TRUE
             and result.rule.rule_type in _RESTRICTION_TYPES
             and result.evidence_complete
-            and any(
-                str(result.rule.id) in match.rule_ids
-                for match in evaluation.matches
-            )
+            and any(str(result.rule.id) in match.rule_ids for match in evaluation.matches)
         }
         if not required_restrictions.issubset(cited_rule_ids):
-            raise UnsupportedRecommendationError(
-                "The recommendation omitted an applicable decision-critical restriction."
+            raise UnsupportedComparisonError(
+                "The comparison omitted an applicable decision-critical restriction."
             )
 
 
@@ -837,29 +803,27 @@ _SOFT_FACT_LIMITATION_TEXT: dict[str, str] = {
     ),
 }
 
+COMPARISON_FRAMING = (
+    "CoverGuide compares the reviewed products against the criteria you shared. "
+    "It does not choose a policy; the decision is yours."
+)
+COMPARISON_CLOSING_NOTICE = (
+    "This comparison is limited to the reviewed policy versions and cited evidence. "
+    "Eligibility, underwriting, premium, and claim decisions remain subject to the insurer."
+)
+_OUTCOME_TEXT = {
+    "completed": "The reviewed evidence supports a completed criterion-by-criterion comparison.",
+    "conditional": "The comparison is conditional because some material conditions remain.",
+    "clarification_required": "One missing detail is needed before the policy comparison can continue.",
+    "insufficient_evidence": "The available reviewed evidence is insufficient for a complete comparison.",
+}
 
-def _append_soft_fact_limitations(
-    draft: RecommendationDraftV1, supplied_context: dict[str, Any]
-) -> RecommendationDraftV1:
-    """Deterministically flag existing-cover/medical-history as unconfirmed, if so.
 
-    These facts are asked for but never block a recommendation (product decision:
-    keep the intake to 5 hard-blocking questions), so the gap must be surfaced in
-    the output itself instead.
-    """
-
+def _soft_fact_limitations(supplied_context: dict[str, Any]) -> list[str]:
+    """Return deterministic customer-data gaps without model-authored prose."""
     profile_facts = (supplied_context.get("customer_profile") or {}).get("facts", [])
-    extra_statements = [
-        RecommendationStatementDraft(
-            text=text,
-            statement_type="limitation",
-            critical=False,
-            candidate_assessment_id=None,
-            requirement_match_id=None,
-            information_need_id=None,
-            calculation_id=None,
-            citations=[],
-        )
+    return [
+        text
         for fact_type, text in _SOFT_FACT_LIMITATION_TEXT.items()
         if not any(
             _fact_satisfies_slot(fact)
@@ -867,16 +831,13 @@ def _append_soft_fact_limitations(
             if fact.get("fact_type") == fact_type
         )
     ]
-    if not extra_statements:
-        return draft
-    return draft.model_copy(update={"statements": [*draft.statements, *extra_statements]})
 
 
 @transaction.atomic
 def publish_draft(
     turn: Turn,
-    context: RecommendationContext,
-    draft: RecommendationDraftV1,
+    context: ComparisonContext,
+    draft: ComparisonDraftV1,
     supplied_context: dict[str, Any],
     *,
     expected_release_id: uuid.UUID,
@@ -899,47 +860,45 @@ def publish_draft(
         pk=turn.conversation_id, owner_id=turn.owner_id
     )
     if (
-        conversation.current_profile_revision_id != context.recommendation.profile_revision_id
+        conversation.current_profile_revision_id != context.comparison.profile_revision_id
         or channel.current_release_id != expected_release_id
         or channel.generation != expected_channel_generation
     ):
         raise PinnedStateChanged("pinned_state_changed")
     draft = _canonicalize_statement_references(draft, context)
-    if context.recommendation.outcome != "clarification_required":
-        draft = _append_soft_fact_limitations(draft, supplied_context)
-    validate_recommendation_draft(draft, context, supplied_context)
+    validate_comparison_draft(draft, context, supplied_context)
     for ordinal, item in enumerate(draft.statements, 1):
-        statement = RecommendationStatement.objects.create(
+        statement = ComparisonStatement.objects.create(
             owner_id=turn.owner_id,
-            recommendation=context.recommendation,
+            comparison=context.comparison,
             ordinal=ordinal,
-            candidate_assessment_id=item.candidate_assessment_id,
+            comparison_assessment_id=item.comparison_assessment_id,
             requirement_match_id=item.requirement_match_id,
-            information_need_id=item.information_need_id,
+            information_need_id=None,
             calculation_id=item.calculation_id,
             text=item.text,
             statement_type=item.statement_type,
-            critical=item.critical,
-            support_status=(
-                "customer_profile_supported"
-                if item.statement_type == "customer_context"
-                else "supported"
-                if item.citations or item.calculation_id
-                else "partly_supported"
-            ),
+            critical=True,
+            support_status="supported",
         )
-        for citation_ordinal, citation in enumerate(_distinct_citations_for_storage(item.citations), 1):
-            RecommendationCitation.objects.create(
+        for citation_ordinal, citation in enumerate(
+            _distinct_citations_for_storage(item.citations), 1
+        ):
+            ComparisonCitation.objects.create(
                 owner_id=turn.owner_id,
-                recommendation_statement=statement,
+                comparison_statement=statement,
                 evidence_span_id=citation.evidence_span_id,
                 policy_rule_id=citation.policy_rule_id,
                 role=citation.role,
                 ordinal=citation_ordinal,
             )
-    content_parts = [draft.introduction, *(item.text for item in draft.statements)]
-    if draft.follow_up:
-        content_parts.append(draft.follow_up)
+    content_parts = [COMPARISON_FRAMING, _OUTCOME_TEXT[context.comparison.outcome]]
+    content_parts.extend(item.text for item in draft.statements)
+    if context.comparison.outcome == "clarification_required" and context.needs:
+        content_parts.append(context.needs[0].reason)
+    elif context.comparison.outcome != "clarification_required":
+        content_parts.extend(_soft_fact_limitations(supplied_context))
+    content_parts.append(COMPARISON_CLOSING_NOTICE)
     content = "\n\n".join(content_parts)
     sequence = (
         Message.objects.filter(conversation=conversation).aggregate(value=Max("sequence"))["value"]
@@ -953,12 +912,12 @@ def publish_draft(
         content=content,
         origin="system",
         payload_commitment=commitment(
-            {"recommendation_id": str(context.recommendation.id), "content": content}
+            {"comparison_id": str(context.comparison.id), "content": content}
         ),
         submitted_at=timezone.now(),
-        recommendation=context.recommendation,
+        comparison=context.comparison,
     )
-    asked_need_ids = {item.information_need_id for item in draft.statements if item.information_need_id}
+    asked_need_ids = {item.id for item in context.needs}
     if asked_need_ids:
         InformationNeed.objects.filter(owner_id=turn.owner_id, id__in=asked_need_ids).update(
             status="asked", asked_in_message=message
@@ -966,23 +925,5 @@ def publish_draft(
     return message
 
 
-def clarification_draft(question: str, context: RecommendationContext) -> RecommendationDraftV1:
-    need = context.needs[0]
-    return RecommendationDraftV1(
-        schema_version=1,
-        outcome="clarification_required",
-        introduction="I need one detail before I can compare the reviewed policies safely.",
-        statements=[
-            RecommendationStatementDraft(
-                text=question,
-                statement_type="next_step",
-                critical=False,
-                candidate_assessment_id=None,
-                requirement_match_id=None,
-                information_need_id=str(need.id),
-                calculation_id=None,
-                citations=[],
-            )
-        ],
-        follow_up=None,
-    )
+def clarification_draft(_question: str, _context: ComparisonContext) -> ComparisonDraftV1:
+    return ComparisonDraftV1(schema_version=1, statements=[])

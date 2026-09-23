@@ -1,4 +1,4 @@
-"""The 31 approved closed database JSON contracts.
+"""The approved closed database JSON contracts.
 
 Pydantic establishes the JSON value boundary and one named RootModel per contract;
 the approved draft-2020-12 schema performs the nested closed-world validation. This
@@ -16,7 +16,7 @@ from typing import Any, ClassVar, cast
 from jsonschema import Draft202012Validator, FormatChecker
 from pydantic import JsonValue, RootModel, model_validator
 
-SCHEMA_PATH = Path(__file__).with_name("database-json-contracts-r25.json")
+SCHEMA_PATH = Path(__file__).with_name("database-json-contracts-r26.json")
 COMPONENT_SCHEMA_PATH = (
     Path(__file__).resolve().parents[3]
     / "research"

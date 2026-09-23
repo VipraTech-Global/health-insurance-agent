@@ -190,8 +190,8 @@ def _authored_amount_instruction() -> str:
     return (
         "When a passage is a genuine rate chart, premium slab table, sum-insured schedule or "
         "fixing rule (not merely a customer-facing illustration example), author a coverage rule "
-        "with target_key \"sum_insured\" for an available sum-insured figure or target_key "
-        "\"budget\" for a stated premium/instalment figure. Use a literal amount for a single "
+        'with target_key "sum_insured" for an available sum-insured figure or target_key '
+        '"budget" for a stated premium/instalment figure. Use a literal amount for a single '
         "stated figure "
         "and a table_lookup amount with table_cells for a slab or rate table, citing the exact "
         "evidence span for every value. Never infer, interpolate or fabricate a figure the source "
@@ -2290,9 +2290,9 @@ def run_validate(job: ProcessingJob) -> dict[str, Any]:
         # or failed independent review this pass) must not linger as verified, or the
         # index stage's verified-count reconciliation against this run's rule_ids can
         # never pass again.
-        PolicyRule.objects.filter(
-            policy_version=policy_version, review_status="verified"
-        ).exclude(pk__in=[rule.pk for rule in verified]).update(review_status="superseded")
+        PolicyRule.objects.filter(policy_version=policy_version, review_status="verified").exclude(
+            pk__in=[rule.pk for rule in verified]
+        ).update(review_status="superseded")
     if graph_problems or not verified:
         transaction.savepoint_rollback(validation_savepoint)
         return {

@@ -49,11 +49,11 @@ from .rule_validation import (
     rule_semantic_problems,
 )
 from .schemas import (
+    ComparisonDraftV1,
     CustomerInterpretationV1,
     ExtractedPolicyRule,
     PolicyRuleExtractionV1,
     PolicyRuleReviewV1,
-    RecommendationDraftV1,
 )
 
 REQUIRED_STAGES = ("classify", "read", "ocr", "reconcile")
@@ -288,7 +288,7 @@ def _model_gate() -> list[str]:
         ("fact_interpretation", CustomerInterpretationV1),
         ("policy_extraction", PolicyRuleExtractionV1),
         ("policy_review", PolicyRuleReviewV1),
-        ("recommendation_answer", RecommendationDraftV1),
+        ("comparison_answer", ComparisonDraftV1),
     )
     blockers: list[str] = []
     for schema_name, output_type in requirements:

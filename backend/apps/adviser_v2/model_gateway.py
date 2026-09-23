@@ -23,13 +23,14 @@ from apps.adviser.providers import provider_config
 from .crypto import commitment, commitment_matches
 from .errors import AccountErased
 from .models import ModelAttempt, ModelQualification, ProcessingJob, Turn, TurnRouteBinding
+from .qualification_suite import expected_qualification_hashes
 from .role_routes import (
     OMNIROUTE_CONTEXT_LIMIT_BYTES,
     OMNIROUTE_ENDPOINT_PROFILE,
     RoleRoute,
     configured_route,
 )
-from .schemas import CustomerInterpretationV1, RecommendationDraftV1
+from .schemas import ComparisonDraftV1, CustomerInterpretationV1
 from .storage import read_private, store_model_result
 
 
@@ -48,6 +49,49 @@ def route_timeout_seconds(*, processing: bool, remaining_seconds: float) -> floa
     return min(float(settings.AI_TURN_TIMEOUT_SECONDS), remaining_seconds)
 
 
+_QUALIFICATION_HASH_FIELDS = (
+    "suite_sha256",
+    "corpus_sha256",
+    "prompt_sha256",
+    "validator_sha256",
+    "protocol_sha256",
+    "schema_sha256",
+)
+
+
+def qualification_is_ready(
+    qualification: ModelQualification,
+    *,
+    schema_name: str,
+    output_type: type[BaseModel],
+    expected_model: str,
+    expected_schema_sha256: str,
+) -> bool:
+    """Require complete current synthetic evidence; historical rows remain audit-only."""
+
+    capabilities = qualification.capabilities
+    if not isinstance(capabilities, dict):
+        return False
+    case_total = capabilities.get("case_total")
+    expected_hashes = expected_qualification_hashes(schema_name, output_type)
+    return (
+        qualification.result == "passed"
+        and qualification.observed_model == expected_model
+        and capabilities.get("structured_output") is True
+        and capabilities.get("identity_exact") is True
+        and all(
+            capabilities.get(name) == expected_hashes[name] for name in _QUALIFICATION_HASH_FIELDS
+        )
+        and capabilities.get("schema_sha256") == expected_schema_sha256
+        and isinstance(case_total, int)
+        and case_total > 0
+        and capabilities.get("case_passed") == case_total
+        and capabilities.get("failure_categories") == []
+        and isinstance(capabilities.get("p95_latency_ms"), int)
+        and capabilities["p95_latency_ms"] <= 75_000
+    )
+
+
 def qualified_route(
     route: RoleRoute | str, schema_name: str, output_type: type[BaseModel]
 ) -> ModelQualification:
@@ -59,8 +103,6 @@ def qualified_route(
         route__disabled_at__isnull=True,
         schema_name=schema_name,
         schema_sha256=expected_hash,
-        observed_model=route.expected_model,
-        result="passed",
     )
     # A qualification is valid only for the complete immutable route identity. This prevents a
     # qualification for one endpoint/configuration from being borrowed by another route that
@@ -70,14 +112,15 @@ def qualified_route(
         route__endpoint_profile=route.endpoint_profile,
         route__configuration_sha256=route.configuration_sha256,
     )
-    for candidate in candidates.order_by("-created_at"):
-        capabilities = candidate.capabilities
-        if (
-            isinstance(capabilities, dict)
-            and capabilities.get("structured_output") is True
-            and capabilities.get("identity_exact") is True
-        ):
-            return candidate
+    candidate = candidates.order_by("-created_at", "-id").first()
+    if candidate is not None and qualification_is_ready(
+        candidate,
+        schema_name=schema_name,
+        output_type=output_type,
+        expected_model=route.expected_model,
+        expected_schema_sha256=expected_hash,
+    ):
+        return candidate
     raise RelayFailure(
         "route_unqualified",
         f"The exact {route.requested_model} route has not passed the current {schema_name} schema.",
@@ -86,7 +129,7 @@ def qualified_route(
 
 _TURN_ROUTE_OUTPUTS: dict[str, type[BaseModel]] = {
     "fact_interpretation": CustomerInterpretationV1,
-    "recommendation_answer": RecommendationDraftV1,
+    "comparison_answer": ComparisonDraftV1,
 }
 
 
@@ -187,7 +230,9 @@ def route_for_binding(
     """Validate a stored binding without consulting the mutable operator settings."""
 
     if binding.role != schema_name:
-        raise RelayFailure("route_binding_mismatch", "The stored route role does not match the call.")
+        raise RelayFailure(
+            "route_binding_mismatch", "The stored route role does not match the call."
+        )
     route = binding.route
     qualification = binding.qualification
     expected_hash = schema_sha256(output_type)
@@ -209,12 +254,15 @@ def route_for_binding(
         or qualification.schema_name != schema_name
         or qualification.schema_sha256 != expected_hash
         or binding.schema_sha256 != expected_hash
-        or qualification.result != "passed"
         or qualification.observed_model != binding.observed_model
         or binding.observed_model != binding.expected_model
-        or not isinstance(qualification.capabilities, dict)
-        or qualification.capabilities.get("structured_output") is not True
-        or qualification.capabilities.get("identity_exact") is not True
+        or not qualification_is_ready(
+            qualification,
+            schema_name=schema_name,
+            output_type=output_type,
+            expected_model=binding.expected_model,
+            expected_schema_sha256=expected_hash,
+        )
     ):
         raise RelayFailure("route_binding_invalid", "The pinned route qualification is invalid.")
     if route.endpoint_profile == OMNIROUTE_ENDPOINT_PROFILE:
@@ -253,7 +301,9 @@ def call_model[OutputT: BaseModel](
         raise ValueError("Exactly one model, route, or binding is required.")
     if binding is not None:
         if turn is None or binding.turn_id != turn.id:
-            raise RelayFailure("route_binding_mismatch", "The route binding belongs to another turn.")
+            raise RelayFailure(
+                "route_binding_mismatch", "The route binding belongs to another turn."
+            )
         role_route, qualification = route_for_binding(binding, schema_name, output_type)
     else:
         role_route = route if route is not None else RoleRoute.relay(str(model))

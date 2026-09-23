@@ -21,14 +21,14 @@ from ..models import (
 )
 from ..release_scope import FIVE_PRODUCT_COUNT, comparison_product_count
 from ..role_routes import ROLE_SETTINGS, configured_route
-from ..schemas import CustomerInterpretationV1, RecommendationDraftV1
+from ..schemas import ComparisonDraftV1, CustomerInterpretationV1
 
 
 def _interactive_route_status() -> list[dict[str, Any]]:
     statuses: list[dict[str, Any]] = []
     for role, output_type in (
         ("fact_interpretation", CustomerInterpretationV1),
-        ("recommendation_answer", RecommendationDraftV1),
+        ("comparison_answer", ComparisonDraftV1),
     ):
         item: dict[str, Any] = {
             "role": role,

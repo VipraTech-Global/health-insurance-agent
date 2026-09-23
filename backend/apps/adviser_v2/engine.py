@@ -20,14 +20,23 @@ from .errors import (
     PinnedStateChanged,
     TurnCancellationRequested,
     TurnLeaseLost,
-    UnsupportedRecommendationError,
+    UnsupportedComparisonError,
 )
 from .model_gateway import call_model
 from .models import Conversation, KnowledgeChannel, Outbox, Turn, TurnRouteBinding
 from .registries import FACT_TYPES, REQUIREMENT_TYPES
 from .retrieval import conversation_context, index_message, retrieve_policy_context
-from .schemas import CustomerInterpretationV1, RecommendationDraftV1
+from .schemas import ComparisonDraftV1, CustomerInterpretationV1
 from .selectors.customer import current_profile_payload
+from .services.comparisons import (
+    CORE_FACT_QUESTIONS,
+    already_asked_information_keys,
+    clarification_draft,
+    model_context,
+    next_missing_core_fact,
+    prepare_comparison,
+    publish_draft,
+)
 from .services.customer import append_turn_event
 from .services.interpretation import (
     apply_interpretation,
@@ -44,21 +53,11 @@ from .services.interpretation import (
     suppress_catalogue_clarification,
     validate_interpretation,
 )
-from .services.recommendations import (
-    CORE_FACT_QUESTIONS,
-    already_asked_information_keys,
-    clarification_draft,
-    model_context,
-    next_missing_core_fact,
-    prepare_recommendation,
-    publish_draft,
-)
 
 logger = logging.getLogger(__name__)
 
 _PERSONALIZATION_INTENTS = frozenset(
     {
-        "purchase_recommendation",
         "product_comparison",
         "coverage_question",
         "renewal_review",
@@ -71,7 +70,9 @@ def _turn_binding(turn: Turn, role: str) -> TurnRouteBinding:
     try:
         return turn.route_bindings.select_related("route", "qualification").get(role=role)
     except TurnRouteBinding.DoesNotExist as exc:
-        raise RelayFailure("route_binding_missing", f"The turn has no {role} route binding.") from exc
+        raise RelayFailure(
+            "route_binding_missing", f"The turn has no {role} route binding."
+        ) from exc
 
 
 def _set_lease_token(token: uuid.UUID) -> None:
@@ -158,9 +159,7 @@ def _claim_turn(
     started_at = timezone.now()
     turn.state = "running"
     turn.lease_token = token
-    turn.deadline, turn.lease_until = _execution_times(
-        started_at, settings.AI_TURN_TIMEOUT_SECONDS
-    )
+    turn.deadline, turn.lease_until = _execution_times(started_at, settings.AI_TURN_TIMEOUT_SECONDS)
     turn.save(update_fields=["state", "lease_token", "lease_until", "deadline", "updated_at"])
     Outbox.objects.filter(turn=turn, event_type="turn_dispatch").update(
         state="delivered", lease_until=None, last_error_code=None
@@ -258,7 +257,7 @@ def _publish_terminal_event(
     release_id: uuid.UUID,
     channel_generation: int,
     profile_revision_id: uuid.UUID,
-    recommendation_id: uuid.UUID,
+    comparison_id: uuid.UUID,
     message_id: uuid.UUID,
     clarification: bool,
 ) -> None:
@@ -312,11 +311,11 @@ def _publish_terminal_event(
     else:
         append_turn_event(
             turn,
-            "recommendation",
+            "comparison",
             {
                 "schema_version": 1,
-                "kind": "recommendation",
-                "decision_id": str(recommendation_id),
+                "kind": "comparison",
+                "comparison_id": str(comparison_id),
             },
         )
 
@@ -343,6 +342,8 @@ def _interpretation_contract_guidance() -> str:
         "or instructions to show unknowns as customer requirements; keep those as context or "
         "question statements. The three published products are already available to the adviser; "
         "never ask the customer to provide their names or policy documents merely to compare them. "
+        "Treat every request to buy, select, or ask which policy to use as the "
+        "product_comparison intent. "
         "For an explicitly requested policy term, use requirement criterion "
         "policy_tenure_selection with a quantity target in years. Extract every explicitly "
         "stated insured person's age, including an infant's age in days. Use city, not location. "
@@ -352,12 +353,12 @@ def _interpretation_contract_guidance() -> str:
         f"Person-scoped requirement types: {person_requirement_types}. They require scope person "
         "and a declared non-null subject_key; every other requirement requires subject_key null. "
         "Every fact value and non-null target_value is a JSON-encoded object string. "
-        "Known quantity example: {\"state\":\"known\",\"kind\":\"quantity\","
-        "\"value\":\"32\",\"unit\":\"year\"}. Known text example: "
-        "{\"state\":\"known\",\"kind\":\"text\",\"value\":\"Bengaluru\"}. "
-        "Known boolean example: {\"state\":\"known\",\"kind\":\"boolean\","
-        "\"value\":true}. Unknown example: {\"state\":\"unknown\","
-        "\"reason\":\"not provided\"}. Use decimal strings, not JSON numbers, for quantities. "
+        'Known quantity example: {"state":"known","kind":"quantity",'
+        '"value":"32","unit":"year"}. Known text example: '
+        '{"state":"known","kind":"text","value":"Bengaluru"}. '
+        'Known boolean example: {"state":"known","kind":"boolean",'
+        '"value":true}. Unknown example: {"state":"unknown",'
+        '"reason":"not provided"}. Use decimal strings, not JSON numbers, for quantities. '
         "Whenever a person states or denies a pre-existing condition or ongoing treatment, "
         "also record a medical_history_disclosed fact for that same person as a known boolean "
         "true, regardless of whether they have any conditions — it only marks that the topic "
@@ -402,40 +403,35 @@ def _interpretation_messages(turn: Turn) -> list[dict[str, str]]:
     ]
 
 
-def _recommendation_contract_guidance() -> str:
+def _comparison_contract_guidance() -> str:
     return (
-        "Statements with statement_type eligibility requirement_match benefit restriction price "
-        "provider calculation must include at least one supplied citation, except a calculation "
-        "statement may instead reference a supplied calculation_id. Critical statements also need "
-        "a citation or calculation unless their statement_type is customer_context limitation or "
-        "next_step. Describe deterministic candidate names and ranks without policy evidence using "
-        "statement_type limitation. Describe unknown or unavailable evidence, including the absence "
-        "of a comparable premium quote, using statement_type limitation, never price or provider. "
-        "A candidate-specific citation must belong to that same candidate's policy version. For "
+        "Every statement must be a cited factual policy statement and include at least one supplied "
+        "citation. Do not write an introduction, outcome, missing-information question, closing "
+        "notice, customer-context statement, limitation, or next step; the application supplies "
+        "those. Unknown outcomes and evidence gaps already appear in the criterion matrix. "
+        "A product-specific citation must belong to that same product's policy version. For "
         "each citation, copy role only from that evidence entry's allowed_citation_roles list. "
-        "Each statement may set at most one of candidate_assessment_id, requirement_match_id, "
-        "information_need_id: requirement_match_id already identifies its candidate, so set it "
-        "alone rather than also setting candidate_assessment_id. If an explanation genuinely "
-        "concerns more than one decision object, split it into separate statements instead of "
-        "combining references on one statement."
+        "Each statement must set exactly one of comparison_assessment_id or requirement_match_id. "
+        "A requirement_match_id already identifies its product, so set it alone. Split facts about "
+        "different products or criteria into separate statements. Cite every applicable "
+        "decision-critical restriction for every compared product."
     )
 
 
-def _recommendation_messages(context: dict[str, Any]) -> list[dict[str, str]]:
+def _comparison_messages(context: dict[str, Any]) -> list[dict[str, str]]:
     catalogue_limit = str(context.get("catalogue_limit", "the published reviewed products"))
     return [
         {
             "role": "system",
             "content": (
-                "Return RecommendationDraftV1 only. The deterministic outcome, candidate order, "
-                "facts, rules, calculations, and evidence IDs are immutable. Reference only supplied "
-                "IDs. Explain restrictions that affect the customer's stated requirements; omit "
-                "unrelated policy terms. Do not quote "
-                "a premium unless a supplied comparable customer quote supports it. For a conditional "
-                "outcome, state that no product's full eligibility is verified and do not call the "
-                "first-ranked candidate a best fit or recommendation. If claim_illustration is true, "
+                "Return ComparisonDraftV1 only. Product order, facts, rules, calculations, and "
+                "evidence IDs are immutable. Reference only supplied IDs. Do not rank, endorse, "
+                "shortlist, identify a winner, or direct a purchase. Explain applicable restrictions "
+                "for every product, not only products whose criteria are met. Omit unrelated policy "
+                "terms. Do not quote a premium unless a supplied comparable customer quote supports "
+                "it. If claim_illustration is true, "
                 "explain the supplied deterministic calculation as a claim example, subject to its "
-                "assumptions; do not treat it as a purchase recommendation. "
+                "assumptions; do not treat it as purchase direction. "
                 "If ayush_scenario_conditions are present, identify each condition explicitly "
                 "stated in the customer's hypothetical scenario, and identify any remaining "
                 "unknown condition separately. Do not call a stated eligible facility, valid "
@@ -445,21 +441,21 @@ def _recommendation_messages(context: dict[str, Any]) -> list[dict[str, str]]:
                 "When a requirement_matches entry has a non-null comparison_value, you may state "
                 "that matched amount alongside its outcome, but only in a statement whose "
                 "requirement_match_id is that exact entry's requirement_match_id — never state "
-                "one match's comparison_value in a statement about a different match or candidate. "
+                "one match's comparison_value in a statement about a different match or product. "
                 "Never state a comparison_value amount when it is null; describe the outcome only. "
                 "When the customer has stated both a sum_insured requirement and a budget "
-                "requirement, explicitly name which candidate(s) meet the budget requirement at "
+                "requirement, state which product criterion outcomes meet the budget at "
                 "the customer's stated sum_insured, and which do not, using only the real "
                 "comparison_value figures already supplied for those exact requirement_matches; "
                 "never assert a budget fit that isn't backed by a supplied comparison_value. "
-                + _recommendation_contract_guidance()
+                + _comparison_contract_guidance()
             ),
         },
         {
             "role": "system",
             "content": "Validated decision context: " + json.dumps(context, default=str),
         },
-        {"role": "user", "content": "Explain this validated decision clearly and concisely."},
+        {"role": "user", "content": "State the cited factual policy differences concisely."},
     ]
 
 
@@ -508,7 +504,8 @@ def process_turn(turn_id: uuid.UUID) -> None:
             interpretation,
             starting_revision=(
                 turn.starting_profile_revision.revision
-                if turn.starting_profile_revision is not None else 1
+                if turn.starting_profile_revision is not None
+                else 1
             ),
         )
         normalize_purchase_fact_scopes(interpretation)
@@ -565,7 +562,7 @@ def process_turn(turn_id: uuid.UUID) -> None:
         )
         with transaction.atomic():
             _lock_active_turn(turn.id, token)
-            prepared = prepare_recommendation(
+            prepared = prepare_comparison(
                 turn,
                 applied.advice_request,
                 applied.profile_revision,
@@ -589,10 +586,10 @@ def process_turn(turn_id: uuid.UUID) -> None:
                     },
                 )
             draft = call_model(
-                binding=_turn_binding(turn, "recommendation_answer"),
-                schema_name="recommendation_answer",
-                output_type=RecommendationDraftV1,
-                messages=_recommendation_messages(decision_context),
+                binding=_turn_binding(turn, "comparison_answer"),
+                schema_name="comparison_answer",
+                output_type=ComparisonDraftV1,
+                messages=_comparison_messages(decision_context),
                 remaining_seconds=max(0.0, (turn.deadline - timezone.now()).total_seconds()),
                 turn=turn,
             )
@@ -614,7 +611,7 @@ def process_turn(turn_id: uuid.UUID) -> None:
                 release_id=release_id,
                 channel_generation=channel_generation,
                 profile_revision_id=applied.profile_revision.id,
-                recommendation_id=prepared.recommendation.id,
+                comparison_id=prepared.comparison.id,
                 message_id=adviser_message.id,
                 clarification=is_clarifying,
             )
@@ -625,8 +622,8 @@ def process_turn(turn_id: uuid.UUID) -> None:
         _terminal(turn.id, token, "cancelled")
     except TurnLeaseLost:
         _recover_expired_turn()
-    except UnsupportedRecommendationError as exc:
-        logger.warning("Recommendation validation rejected a draft: %s", exc)
+    except UnsupportedComparisonError as exc:
+        logger.warning("Comparison validation rejected a draft: %s", exc)
         if not _terminal(turn.id, token, "failed", "unsupported_answer"):
             _recover_expired_turn()
     except AccountErased:

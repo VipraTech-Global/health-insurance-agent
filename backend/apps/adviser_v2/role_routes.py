@@ -31,9 +31,9 @@ ROLE_SETTINGS: dict[str, tuple[str, str | None]] = {
     ),
     "policy_extraction": ("COVERGUIDE_POLICY_EXTRACTION_MODEL", None),
     "policy_review": ("COVERGUIDE_POLICY_REVIEW_MODEL", None),
-    "recommendation_answer": (
-        "COVERGUIDE_FINAL_EXPLANATION_MODEL",
-        "COVERGUIDE_FINAL_EXPLANATION_ROUTE",
+    "comparison_answer": (
+        "COVERGUIDE_COMPARISON_MODEL",
+        "COVERGUIDE_COMPARISON_ROUTE",
     ),
 }
 

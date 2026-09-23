@@ -187,7 +187,7 @@ class Command(BaseCommand):
                     name=product.name,
                     benefit_type="medical_indemnity",
                     lifecycle_status="open",
-                    recommendation_role="primary_policy",
+                    comparison_role="primary_policy",
                     identity_evidence=identity_span,
                 )
             version = PolicyVersion.objects.filter(

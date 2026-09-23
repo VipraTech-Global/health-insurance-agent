@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://coverguide.local/schemas/database-json-contracts-r25.json",
+  "$id": "https://coverguide.local/schemas/database-json-contracts-r26.json",
   "$defs": {
     "QuantityV1": {
       "oneOf": [
@@ -1846,15 +1846,11 @@
             "started",
             "clarification",
             "progress",
-            "recommendation",
+            "comparison",
             "cancelled",
             "failed",
             "stale"
           ]
-        },
-        "decision_id": {
-          "type": "string",
-          "format": "uuid"
         },
         "message_id": {
           "type": "string",
@@ -1873,6 +1869,10 @@
         "revision": {
           "type": "integer",
           "minimum": 0
+        },
+        "comparison_id": {
+          "type": "string",
+          "format": "uuid"
         }
       },
       "required": [
@@ -1885,13 +1885,13 @@
           "if": {
             "properties": {
               "kind": {
-                "const": "recommendation"
+                "const": "comparison"
               }
             }
           },
           "then": {
             "required": [
-              "decision_id"
+              "comparison_id"
             ]
           }
         },
@@ -2001,6 +2001,75 @@
           },
           "minItems": 0,
           "maxItems": 10000
+        },
+        "suite_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "corpus_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "prompt_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "validator_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "protocol_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "schema_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "case_total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "case_passed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "failure_categories": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "transport",
+              "quota",
+              "timeout",
+              "identity",
+              "schema",
+              "assertion",
+              "fact",
+              "number",
+              "person",
+              "product",
+              "outcome",
+              "reference",
+              "citation",
+              "neutrality"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "failure_paths": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 200,
+            "pattern": "^[a-z0-9-]+:[a-z_]+$"
+          },
+          "uniqueItems": true
+        },
+        "p95_latency_ms": {
+          "type": "integer",
+          "minimum": 0
         }
       },
       "required": [

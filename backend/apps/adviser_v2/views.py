@@ -35,6 +35,7 @@ from .models import (
 )
 from .pipeline import enqueue_stage
 from .selectors.catalogue import catalogue_readiness
+from .selectors.comparisons import comparison_payload
 from .selectors.customer import (
     conversations_for,
     current_profile_payload,
@@ -42,16 +43,15 @@ from .selectors.customer import (
     messages_for,
     turn_for,
 )
-from .selectors.recommendations import recommendation_payload
 from .serializers import (
     CatalogueReadinessSerializer,
+    ComparisonDetailSerializer,
     ConversationPageSerializer,
     CurrentProfileSerializer,
     EvidenceDetailSerializer,
     MessagePageSerializer,
     MessageSubmissionSerializer,
     ProfileCorrectionSerializer,
-    RecommendationDetailSerializer,
     TurnAcceptedSerializer,
     UploadAcceptedSerializer,
     UploadSerializer,
@@ -261,7 +261,7 @@ _SSE_NAMES = {
     "started": "turn.started",
     "progress": "turn.progress",
     "clarification": "clarification.required",
-    "recommendation": "recommendation.completed",
+    "comparison": "comparison.completed",
     "cancelled": "turn.cancelled",
     "failed": "turn.failed",
     "stale": "turn.stale",
@@ -315,18 +315,18 @@ class TurnEvents(PrivateNoStoreAPIView):
         return response
 
 
-class RecommendationDetail(PrivateNoStoreAPIView):
+class ComparisonDetail(PrivateNoStoreAPIView):
     @extend_schema(
-        responses=RecommendationDetailSerializer,
-        operation_id="v2_recommendation_retrieve",
+        responses=ComparisonDetailSerializer,
+        operation_id="v2_comparison_retrieve",
     )
     def get(self, request: Request, pk: uuid.UUID) -> Response:
-        from .models import Recommendation
+        from .models import Comparison
 
         try:
-            return Response(recommendation_payload(_user_id(request), pk))
-        except Recommendation.DoesNotExist:
-            return _error("not_found", "Recommendation not found.", status.HTTP_404_NOT_FOUND)
+            return Response(comparison_payload(_user_id(request), pk))
+        except Comparison.DoesNotExist:
+            return _error("not_found", "Comparison not found.", status.HTTP_404_NOT_FOUND)
 
 
 class EvidenceDetail(PrivateNoStoreAPIView):

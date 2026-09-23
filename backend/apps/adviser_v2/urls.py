@@ -24,9 +24,9 @@ urlpatterns = [
     path("turns/<uuid:pk>/cancel/", views.TurnCancel.as_view(), name="v2-turn-cancel"),
     path("turns/<uuid:pk>/retry/", views.TurnRetry.as_view(), name="v2-turn-retry"),
     path(
-        "recommendations/<uuid:pk>/",
-        views.RecommendationDetail.as_view(),
-        name="v2-recommendation-detail",
+        "comparisons/<uuid:pk>/",
+        views.ComparisonDetail.as_view(),
+        name="v2-comparison-detail",
     ),
     path("evidence/<uuid:pk>/", views.EvidenceDetail.as_view(), name="v2-evidence-detail"),
     path("documents/<uuid:pk>/file/", views.DocumentFile.as_view(), name="v2-document-file"),

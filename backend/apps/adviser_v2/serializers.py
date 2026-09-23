@@ -29,7 +29,7 @@ class V2ConversationSerializer(serializers.ModelSerializer[Conversation]):
 
 
 class V2MessageSerializer(serializers.ModelSerializer[Message]):
-    recommendation_id = serializers.UUIDField(read_only=True, allow_null=True)
+    comparison_id = serializers.UUIDField(read_only=True, allow_null=True)
 
     class Meta:
         model = Message
@@ -41,7 +41,7 @@ class V2MessageSerializer(serializers.ModelSerializer[Message]):
             "origin",
             "submitted_at",
             "created_at",
-            "recommendation_id",
+            "comparison_id",
         ]
 
 
@@ -178,20 +178,6 @@ class RequirementMatchSerializer(serializers.Serializer[dict[str, Any]]):
     comparison_value = serializers.JSONField(allow_null=True)
 
 
-class CandidateDetailSerializer(serializers.Serializer[dict[str, Any]]):
-    id = serializers.UUIDField()
-    product_variant_id = serializers.UUIDField()
-    product = serializers.CharField()
-    insurer = serializers.CharField()
-    uin = serializers.CharField()
-    variant = serializers.CharField()
-    disposition = serializers.CharField()
-    rank = serializers.IntegerField()
-    evaluated_selection = serializers.JSONField()
-    quote_id = serializers.UUIDField(allow_null=True)
-    requirement_matches = RequirementMatchSerializer(many=True)
-
-
 class InformationNeedSerializer(serializers.Serializer[dict[str, Any]]):
     id = serializers.UUIDField()
     need_kind = serializers.CharField()
@@ -201,7 +187,7 @@ class InformationNeedSerializer(serializers.Serializer[dict[str, Any]]):
     status = serializers.CharField()
 
 
-class RecommendationCitationSerializer(serializers.Serializer[dict[str, Any]]):
+class ComparisonCitationSerializer(serializers.Serializer[dict[str, Any]]):
     id = serializers.UUIDField()
     evidence_span_id = serializers.UUIDField()
     policy_rule_id = serializers.UUIDField(allow_null=True)
@@ -213,18 +199,45 @@ class RecommendationCitationSerializer(serializers.Serializer[dict[str, Any]]):
     locator = serializers.JSONField()
 
 
-class RecommendationStatementSerializer(serializers.Serializer[dict[str, Any]]):
+class EvidenceGapSerializer(serializers.Serializer[dict[str, Any]]):
+    requirement_id = serializers.UUIDField()
+    criterion = serializers.CharField()
+    outcome = serializers.ChoiceField(choices=["unknown", "partly_meets"])
+
+
+class ProductRestrictionSerializer(serializers.Serializer[dict[str, Any]]):
+    statement_id = serializers.UUIDField()
+    text = serializers.CharField()
+    citations = ComparisonCitationSerializer(many=True)
+
+
+class ComparedProductSerializer(serializers.Serializer[dict[str, Any]]):
+    id = serializers.UUIDField()
+    product_variant_id = serializers.UUIDField()
+    product = serializers.CharField()
+    insurer = serializers.CharField()
+    uin = serializers.CharField(allow_null=True)
+    variant = serializers.CharField()
+    evaluated_selection = serializers.JSONField()
+    quote_id = serializers.UUIDField(allow_null=True)
+    criteria = RequirementMatchSerializer(many=True)
+    evidence_gaps = EvidenceGapSerializer(many=True)
+    restrictions = ProductRestrictionSerializer(many=True)
+    evidence = ComparisonCitationSerializer(many=True)
+
+
+class ComparisonStatementSerializer(serializers.Serializer[dict[str, Any]]):
     id = serializers.UUIDField()
     ordinal = serializers.IntegerField()
     text = serializers.CharField()
     statement_type = serializers.CharField()
     critical = serializers.BooleanField()
     support_status = serializers.CharField()
-    candidate_assessment_id = serializers.UUIDField(allow_null=True)
-    citations = RecommendationCitationSerializer(many=True)
+    comparison_assessment_id = serializers.UUIDField(allow_null=True)
+    citations = ComparisonCitationSerializer(many=True)
 
 
-class RecommendationDetailSerializer(serializers.Serializer[dict[str, Any]]):
+class ComparisonDetailSerializer(serializers.Serializer[dict[str, Any]]):
     id = serializers.UUIDField()
     turn_id = serializers.UUIDField()
     outcome = serializers.CharField()
@@ -233,9 +246,9 @@ class RecommendationDetailSerializer(serializers.Serializer[dict[str, Any]]):
     catalogue_limit = serializers.IntegerField()
     comparison_label = serializers.CharField()
     created_at = serializers.DateTimeField()
-    candidates = CandidateDetailSerializer(many=True)
+    products = ComparedProductSerializer(many=True)
     information_needs = InformationNeedSerializer(many=True)
-    statements = RecommendationStatementSerializer(many=True)
+    statements = ComparisonStatementSerializer(many=True)
 
 
 class EvidenceDetailSerializer(serializers.Serializer[dict[str, Any]]):

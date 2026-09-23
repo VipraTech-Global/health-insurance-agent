@@ -94,9 +94,7 @@ def normalize_first_turn_references(
             subject.person_id = None
 
 
-def normalize_self_insured_fact(
-    source_text: str, value: CustomerInterpretationV1
-) -> None:
+def normalize_self_insured_fact(source_text: str, value: CustomerInterpretationV1) -> None:
     """Treat an explicit self-cover statement as the registered boolean fact."""
 
     if not re.search(r"\b(?:for myself|for self|covering myself)\b", source_text, re.I):
@@ -131,7 +129,8 @@ def recover_explicit_city(source_text: str, value: CustomerInterpretationV1) -> 
     match = matches[0]
     statement_index = next(
         (
-            index for index, statement in enumerate(value.statements)
+            index
+            for index, statement in enumerate(value.statements)
             if statement.start_offset <= match.start()
             and statement.end_offset >= match.end()
             and not statement.ambiguous
@@ -139,17 +138,31 @@ def recover_explicit_city(source_text: str, value: CustomerInterpretationV1) -> 
         None,
     )
     if statement_index is None:
-        value.statements.append(InterpretedStatement(
-            start_offset=match.start(), end_offset=match.end(), subject_key=None,
-            kind="fact", ambiguous=False, ambiguity_reason=None,
-        ))
+        value.statements.append(
+            InterpretedStatement(
+                start_offset=match.start(),
+                end_offset=match.end(),
+                subject_key=None,
+                kind="fact",
+                ambiguous=False,
+                ambiguity_reason=None,
+            )
+        )
         statement_index = len(value.statements) - 1
-    city = "Bengaluru" if match.group("city").casefold() == "bangalore" else match.group("city").title()
-    value.facts.append(InterpretedFact(
-        statement_index=statement_index, subject_key=None, fact_type="city",
-        value={"state": "known", "kind": "text", "value": city},
-        confidence="explicit",
-    ))
+    city = (
+        "Bengaluru"
+        if match.group("city").casefold() == "bangalore"
+        else match.group("city").title()
+    )
+    value.facts.append(
+        InterpretedFact(
+            statement_index=statement_index,
+            subject_key=None,
+            fact_type="city",
+            value={"state": "known", "kind": "text", "value": city},
+            confidence="explicit",
+        )
+    )
 
 
 _CHILD_AGE = re.compile(
@@ -253,7 +266,9 @@ def recover_explicit_policy_term(source_text: str, value: CustomerInterpretation
                 "value": str(years),
                 "unit": "year",
             },
-            priority="mandatory" if re.search(r"\b(mandatory|required|must)\b", source_text, re.I) else "preferred",
+            priority="mandatory"
+            if re.search(r"\b(mandatory|required|must)\b", source_text, re.I)
+            else "preferred",
             scope="entire_purchase",
         )
     )
@@ -319,29 +334,50 @@ def normalize_explicit_restoration_scenario(
 
 
 _ROOM_ILLUSTRATION_AMOUNTS = {
-    "eligible_room_rent_limit": re.compile(r"eligible room rent\s*(?:is|of|:)\s*₹\s*([\d,]+)(?:\s*(lakh|lakhs))?", re.I),
-    "room_rent_actually_incurred": re.compile(r"actual room rent\s*(?:is|of|:)\s*₹\s*([\d,]+)(?:\s*(lakh|lakhs))?", re.I),
-    "total_associated_medical_expenses": re.compile(r"associated medical expenses\s*(?:are|is|of|:)\s*₹\s*([\d,]+)(?:\s*(lakh|lakhs))?", re.I),
+    "eligible_room_rent_limit": re.compile(
+        r"eligible room rent\s*(?:is|of|:)\s*₹\s*([\d,]+)(?:\s*(lakh|lakhs))?", re.I
+    ),
+    "room_rent_actually_incurred": re.compile(
+        r"actual room rent\s*(?:is|of|:)\s*₹\s*([\d,]+)(?:\s*(lakh|lakhs))?", re.I
+    ),
+    "total_associated_medical_expenses": re.compile(
+        r"associated medical expenses\s*(?:are|is|of|:)\s*₹\s*([\d,]+)(?:\s*(lakh|lakhs))?", re.I
+    ),
 }
-_HIGHER_ROOM = re.compile(r"(?:higher room category|room category above the eligible|above the eligible category)", re.I)
+_HIGHER_ROOM = re.compile(
+    r"(?:higher room category|room category above the eligible|above the eligible category)", re.I
+)
 
 
 def recover_explicit_room_illustration(source_text: str, value: CustomerInterpretationV1) -> None:
     """Record exact stipulated claim inputs without inferring a purchase preference."""
 
-    matches = {key: list(pattern.finditer(source_text)) for key, pattern in _ROOM_ILLUSTRATION_AMOUNTS.items()}
+    matches = {
+        key: list(pattern.finditer(source_text))
+        for key, pattern in _ROOM_ILLUSTRATION_AMOUNTS.items()
+    }
     higher = list(_HIGHER_ROOM.finditer(source_text))
     if any(len(found) != 1 for found in matches.values()) or len(higher) != 1:
         return
 
     def statement_for(match: re.Match[str]) -> int:
         for index, statement in enumerate(value.statements):
-            if statement.start_offset <= match.start() and statement.end_offset >= match.end() and not statement.ambiguous:
+            if (
+                statement.start_offset <= match.start()
+                and statement.end_offset >= match.end()
+                and not statement.ambiguous
+            ):
                 return index
-        value.statements.append(InterpretedStatement(
-            start_offset=match.start(), end_offset=match.end(), subject_key=None,
-            kind="fact", ambiguous=False, ambiguity_reason=None,
-        ))
+        value.statements.append(
+            InterpretedStatement(
+                start_offset=match.start(),
+                end_offset=match.end(),
+                subject_key=None,
+                kind="fact",
+                ambiguous=False,
+                ambiguity_reason=None,
+            )
+        )
         return len(value.statements) - 1
 
     for key, found in matches.items():
@@ -355,22 +391,32 @@ def recover_explicit_room_illustration(source_text: str, value: CustomerInterpre
             "unit": "INR",
         }
         if fact is None:
-            value.facts.append(InterpretedFact(
-                statement_index=statement_for(match), subject_key=None,
-                fact_type=key, value=payload, confidence="explicit",
-            ))
+            value.facts.append(
+                InterpretedFact(
+                    statement_index=statement_for(match),
+                    subject_key=None,
+                    fact_type=key,
+                    value=payload,
+                    confidence="explicit",
+                )
+            )
         elif fact.value.get("state") != "known":
             fact.value = payload
             fact.subject_key = None
             fact.statement_index = statement_for(match)
             fact.confidence = "explicit"
-    if not any(item.fact_type == "actual_room_category_higher_than_eligible" for item in value.facts):
-        value.facts.append(InterpretedFact(
-            statement_index=statement_for(higher[0]), subject_key=None,
-            fact_type="actual_room_category_higher_than_eligible",
-            value={"state": "known", "kind": "boolean", "value": True},
-            confidence="explicit",
-        ))
+    if not any(
+        item.fact_type == "actual_room_category_higher_than_eligible" for item in value.facts
+    ):
+        value.facts.append(
+            InterpretedFact(
+                statement_index=statement_for(higher[0]),
+                subject_key=None,
+                fact_type="actual_room_category_higher_than_eligible",
+                value={"state": "known", "kind": "boolean", "value": True},
+                confidence="explicit",
+            )
+        )
 
 
 def validate_interpretation(source_text: str, value: CustomerInterpretationV1) -> None:

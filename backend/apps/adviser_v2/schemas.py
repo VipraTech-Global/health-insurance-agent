@@ -190,7 +190,6 @@ class CustomerInterpretationV1(StrictOutput):
     requirements: list[InterpretedRequirement]
     corrections: list[InterpretedCorrection]
     intent: Literal[
-        "purchase_recommendation",
         "product_comparison",
         "coverage_question",
         "renewal_review",
@@ -306,16 +305,15 @@ class PolicyRuleReviewV1(StrictOutput):
     missing_rules: list[ExtractedPolicyRule]
 
 
-class RecommendationCitationDraft(StrictOutput):
+class ComparisonCitationDraft(StrictOutput):
     evidence_span_id: str
     policy_rule_id: str | None
     role: Literal["supports", "restricts", "excepts", "conflicts", "assumption_source"]
 
 
-class RecommendationStatementDraft(StrictOutput):
+class ComparisonStatementDraft(StrictOutput):
     text: str = Field(min_length=1, max_length=4000)
     statement_type: Literal[
-        "customer_context",
         "eligibility",
         "requirement_match",
         "benefit",
@@ -323,20 +321,13 @@ class RecommendationStatementDraft(StrictOutput):
         "price",
         "provider",
         "calculation",
-        "limitation",
-        "next_step",
     ]
-    critical: bool
-    candidate_assessment_id: str | None
+    comparison_assessment_id: str | None
     requirement_match_id: str | None
-    information_need_id: str | None
     calculation_id: str | None
-    citations: list[RecommendationCitationDraft]
+    citations: list[ComparisonCitationDraft] = Field(min_length=1)
 
 
-class RecommendationDraftV1(StrictOutput):
+class ComparisonDraftV1(StrictOutput):
     schema_version: Literal[1]
-    outcome: Literal["completed", "conditional", "clarification_required", "insufficient_evidence"]
-    introduction: str = Field(min_length=1, max_length=4000)
-    statements: list[RecommendationStatementDraft]
-    follow_up: str | None
+    statements: list[ComparisonStatementDraft]

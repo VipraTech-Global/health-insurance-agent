@@ -1,4 +1,4 @@
-"""Generate the 61 replacement-app models from the approved r25 field authority.
+"""Generate the replacement-app models from the approved neutral-comparison authority.
 
 Account remains ``accounts.User``. This generator intentionally handles only the
 mechanical field surface; the reviewed cross-row invariants live in the integrity
@@ -70,17 +70,18 @@ GROUPS = {
         "PolicySearchChunk",
         "PolicyPackageComponent",
     },
-    "recommendations": {
-        "Recommendation",
-        "PolicyCandidateAssessment",
+    "comparisons": {
+        "Comparison",
+        "PolicyComparisonAssessment",
         "PolicyRequirementMatch",
         "InformationNeed",
-        "RecommendationStatement",
-        "RecommendationCitation",
+        "ComparisonStatement",
+        "ComparisonCitation",
         "Calculation",
     },
     "operations": {
         "Turn",
+        "TurnRouteBinding",
         "TurnEvent",
         "Outbox",
         "ModelRoute",
@@ -100,18 +101,28 @@ ENCRYPTED_FIELDS = {
     ("EvidenceSpan", "quote"),
     ("Quote", "insurer_quote_reference"),
     ("InformationNeed", "reason"),
-    ("RecommendationStatement", "text"),
+    ("ComparisonStatement", "text"),
+}
+
+RELATED_NAMES = {
+    ("TurnRouteBinding", "turn_id"): "route_bindings",
+    ("TurnRouteBinding", "route_id"): "turn_bindings",
+    ("TurnRouteBinding", "qualification_id"): "turn_bindings",
 }
 
 UNIQUE_FIELDS: dict[str, list[tuple[list[str], str | None, bool]]] = {
     "PersonRelationship": [
-        (["owner", "from_person", "to_person", "relationship_type", "valid_from", "valid_to"], None, True)
+        (
+            ["owner", "from_person", "to_person", "relationship_type", "valid_from", "valid_to"],
+            None,
+            True,
+        )
     ],
     "Conversation": [],
     "Message": [
         (["conversation", "sequence"], None, False),
         (["owner", "client_request_id"], "Q(client_request_id__isnull=False)", False),
-        (["recommendation"], "Q(recommendation__isnull=False)", False),
+        (["comparison"], "Q(comparison__isnull=False)", False),
     ],
     "ConversationMessageChunk": [(["message", "chunk_index", "index_revision"], None, False)],
     "CustomerProfileRevision": [(["conversation", "revision"], None, False)],
@@ -127,9 +138,7 @@ UNIQUE_FIELDS: dict[str, list[tuple[list[str], str | None, bool]]] = {
     "ProductOption": [(["product_variant", "name"], None, False)],
     "CustomerPolicyRevision": [(["customer_policy", "revision_number"], None, False)],
     "CustomerPolicyOption": [(["customer_policy_revision", "product_option"], None, False)],
-    "CustomerPolicyFact": [
-        (["supersedes"], "Q(supersedes__isnull=False)", False)
-    ],
+    "CustomerPolicyFact": [(["supersedes"], "Q(supersedes__isnull=False)", False)],
     "PolicyRule": [
         (["supersedes"], "Q(supersedes__isnull=False)", False),
     ],
@@ -144,30 +153,22 @@ UNIQUE_FIELDS: dict[str, list[tuple[list[str], str | None, bool]]] = {
     "KnowledgeReleaseRule": [(["knowledge_release", "policy_rule"], None, False)],
     "KnowledgeChannel": [(["name"], None, False)],
     "PolicySearchChunk": [(["document_version", "index_version", "chunk_sha256"], None, False)],
-    "Recommendation": [(["turn"], None, False)],
-    "PolicyCandidateAssessment": [
-        (["recommendation", "product_variant", "selection_commitment"], None, False),
-        (
-            ["recommendation", "rank"],
-            "Q(rank__isnull=False, disposition__in=['recommended', 'alternative'])",
-            False,
-        ),
+    "Comparison": [(["turn"], None, False)],
+    "PolicyComparisonAssessment": [
+        (["comparison", "product_variant", "selection_commitment"], None, False),
     ],
-    "PolicyRequirementMatch": [(["candidate_assessment", "customer_requirement"], None, False)],
+    "PolicyRequirementMatch": [(["comparison_assessment", "customer_requirement"], None, False)],
     "InformationNeed": [
-        (["recommendation", "subject_person", "need_kind", "information_key"], None, True)
+        (["comparison", "subject_person", "need_kind", "information_key"], None, True)
     ],
-    "RecommendationStatement": [(["recommendation", "ordinal"], None, False)],
-    "RecommendationCitation": [
-        (["recommendation_statement", "evidence_span", "role"], None, False)
-    ],
+    "ComparisonStatement": [(["comparison", "ordinal"], None, False)],
+    "ComparisonCitation": [(["comparison_statement", "evidence_span", "role"], None, False)],
     "Turn": [(["owner", "request_id"], None, False)],
+    "TurnRouteBinding": [(["turn", "role"], None, False)],
     "TurnEvent": [(["turn", "sequence"], None, False)],
     "Outbox": [(["event_type", "idempotency_key"], None, False)],
     "ModelRoute": [(["route_key"], None, False)],
-    "ModelQualification": [
-        (["route", "schema_name", "schema_sha256", "created_at"], None, False)
-    ],
+    "ModelQualification": [(["route", "schema_name", "schema_sha256", "created_at"], None, False)],
     "ProcessingJob": [
         (
             ["source_capture", "stage", "input_commitment", "attempt_number"],
@@ -223,19 +224,25 @@ CHECKS: dict[str, list[str]] = {
     ],
     "KnowledgeRelease": [
         "Q(release_number__gt=0)",
-        "(Q(state='draft') & Q(published_at__isnull=True)) | (Q(state__in=['published', 'retired']) & Q(published_at__isnull=False))",
+        "(Q(state__in=['draft', 'ready', 'blocked']) & Q(published_at__isnull=True)) | (Q(state__in=['published', 'retired']) & Q(published_at__isnull=False))",
     ],
-    "PolicyCandidateAssessment": ["Q(rank__isnull=True) | Q(rank__gt=0)"],
     "InformationNeed": [
         "~Q(status='asked') | Q(asked_in_message__isnull=False)",
         "~Q(status='resolved') | Q(resolved_in_profile_revision__isnull=False)",
     ],
-    "RecommendationStatement": [
-        "(Q(candidate_assessment__isnull=True) & Q(requirement_match__isnull=True) & Q(information_need__isnull=True)) | (Q(candidate_assessment__isnull=False) & Q(requirement_match__isnull=True) & Q(information_need__isnull=True)) | (Q(candidate_assessment__isnull=True) & Q(requirement_match__isnull=False) & Q(information_need__isnull=True)) | (Q(candidate_assessment__isnull=True) & Q(requirement_match__isnull=True) & Q(information_need__isnull=False))"
+    "ComparisonStatement": [
+        "(Q(comparison_assessment__isnull=True) & Q(requirement_match__isnull=True) & Q(information_need__isnull=True)) | (Q(comparison_assessment__isnull=False) & Q(requirement_match__isnull=True) & Q(information_need__isnull=True)) | (Q(comparison_assessment__isnull=True) & Q(requirement_match__isnull=False) & Q(information_need__isnull=True)) | (Q(comparison_assessment__isnull=True) & Q(requirement_match__isnull=True) & Q(information_need__isnull=False))"
     ],
     "Turn": [
         "~Q(state='running') | (Q(lease_token__isnull=False) & Q(lease_until__isnull=False))",
         "Q(deadline__gt=F('created_at'))",
+        "Q(route_commitment='') | Q(route_commitment__regex=r'^[0-9a-f]{64}$')",
+    ],
+    "TurnRouteBinding": [
+        "Q(role__in=['fact_interpretation', 'comparison_answer'])",
+        "Q(route_configuration_sha256__regex=r'^[0-9a-f]{64}$')",
+        "Q(schema_sha256__regex=r'^[0-9a-f]{64}$')",
+        "Q(expected_model=F('observed_model'))",
     ],
     "TurnEvent": ["Q(sequence__gt=0)"],
     "Outbox": [
@@ -264,6 +271,14 @@ CHECKS: dict[str, list[str]] = {
     "PolicyPackageComponent": [
         "~Q(review_status='reviewed') | (Q(component_product__isnull=False) & Q(evidence_span__isnull=False))"
     ],
+}
+
+CHECK_NAMES: dict[tuple[str, int], str] = {
+    ("Turn", 3): "v2_turn_route_commitment_ck",
+    ("TurnRouteBinding", 1): "v2_turn_route_binding_role_ck",
+    ("TurnRouteBinding", 2): "v2_turn_route_binding_config_ck",
+    ("TurnRouteBinding", 3): "v2_turn_route_binding_schema_ck",
+    ("TurnRouteBinding", 4): "v2_turn_route_binding_identity_ck",
 }
 
 INDEXES: dict[str, list[tuple[str, list[str]]]] = {
@@ -331,7 +346,12 @@ def default_arguments(field: dict[str, Any]) -> list[str]:
         arguments.append("auto_now=True")
     elif default == "now":
         arguments.append("default=timezone.now")
-    elif default in {"uuid4", "uuid4 for new records; preserve original UUID during migration", "uuid4 for the first version; reuse for corrections", "uuid4 for first version; reuse for corrections"}:
+    elif default in {
+        "uuid4",
+        "uuid4 for new records; preserve original UUID during migration",
+        "uuid4 for the first version; reuse for corrections",
+        "uuid4 for first version; reuse for corrections",
+    }:
         arguments.append("default=uuid.uuid4")
     elif default in {"empty array", "[]"}:
         arguments.append("default=list")
@@ -366,23 +386,47 @@ def field_source(entity: dict[str, Any], field: dict[str, Any]) -> tuple[str, st
     field_type = field["type"]
     attribute = name[:-3] if field_type.startswith("fk:") and name.endswith("_id") else name
     arguments = default_arguments(field)
+    if (entity["entity"], name) == ("Turn", "route_commitment"):
+        arguments = [argument for argument in arguments if argument != "blank=True"]
+        arguments.append("editable=False")
     if name == "id":
         return name, "models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)"
     if field_type.startswith("fk:"):
         target = field_type.split(":", 1)[1]
-        reference = "settings.AUTH_USER_MODEL" if target == "Account" else repr("self" if target == entity["entity"] else target)
-        arguments = [reference, "on_delete=models.PROTECT", 'related_name="+"', *arguments]
+        reference = (
+            "settings.AUTH_USER_MODEL"
+            if target == "Account"
+            else repr("self" if target == entity["entity"] else target)
+        )
+        related_name = RELATED_NAMES.get((entity["entity"], name), "+")
+        arguments = [
+            reference,
+            "on_delete=models.PROTECT",
+            f"related_name={related_name!r}",
+            *arguments,
+        ]
         return attribute, f"models.ForeignKey({', '.join(arguments)})"
     if field_type.startswith("json:"):
         contract = field_type.split(":", 1)[1]
-        return name, f"ValidatedJSONField(contract={contract!r}{', ' if arguments else ''}{', '.join(arguments)})"
+        return (
+            name,
+            f"ValidatedJSONField(contract={contract!r}{', ' if arguments else ''}{', '.join(arguments)})",
+        )
+    if field_type == "jsonb":
+        return name, f"models.JSONField({', '.join(arguments)})"
     if field_type.startswith("encrypted_varchar"):
         maximum = required_numeric_size(field_type)
-        return name, f"EncryptedCharField(max_length={maximum}{', ' if arguments else ''}{', '.join(arguments)})"
+        return (
+            name,
+            f"EncryptedCharField(max_length={maximum}{', ' if arguments else ''}{', '.join(arguments)})",
+        )
     if (entity["entity"], name) in ENCRYPTED_FIELDS:
         if field_type.startswith("varchar"):
             maximum = required_numeric_size(field_type)
-            return name, f"EncryptedCharField(max_length={maximum}{', ' if arguments else ''}{', '.join(arguments)})"
+            return (
+                name,
+                f"EncryptedCharField(max_length={maximum}{', ' if arguments else ''}{', '.join(arguments)})",
+            )
         return name, f"EncryptedTextField({', '.join(arguments)})"
     if field_type == "uuid":
         constructor = "models.UUIDField"
@@ -438,8 +482,9 @@ def meta_source(entity: dict[str, Any]) -> list[str]:
             options.append("nulls_distinct=False")
         constraints.append(f"models.UniqueConstraint({', '.join(options)})")
     for index, condition in enumerate(CHECKS.get(name, []), 1):
+        constraint_name = CHECK_NAMES.get((name, index), safe_name(name, f"ck_{index}"))
         constraints.append(
-            f"models.CheckConstraint(condition={condition}, name={safe_name(name, f'ck_{index}')!r})"
+            f"models.CheckConstraint(condition={condition}, name={constraint_name!r})"
         )
     indexes: list[str] = []
     for index, (kind, fields) in enumerate(INDEXES.get(name, []), 1):
@@ -465,28 +510,9 @@ def meta_source(entity: dict[str, Any]) -> list[str]:
 
 
 def module_source(entities: list[dict[str, Any]]) -> str:
-    lines = [
-        '"""Generated from research/design/entity-field-dictionary.json (discussion-r25-final-review)."""',
-        "",
-        "from __future__ import annotations",
-        "",
-        "import uuid",
-        "",
-        "from django.conf import settings",
-        "from django.contrib.postgres.fields import DateRangeField",
-        "from django.contrib.postgres.indexes import GinIndex",
-        "from django.contrib.postgres.search import SearchVectorField",
-        "from django.db import models",
-        "from django.db.models import F, Q",
-        "from django.utils import timezone",
-        "from pgvector.django import HnswIndex, VectorField",
-        "",
-        "from ..fields import EncryptedCharField, EncryptedTextField, ValidatedJSONField",
-        "from .base import ApprovedModel, default_accepted_selection",
-        "",
-    ]
+    body: list[str] = []
     for entity in entities:
-        lines.extend(
+        body.extend(
             [
                 f"class {entity['entity']}(ApprovedModel):",
                 f"    {entity['purpose']!r}",
@@ -494,22 +520,61 @@ def module_source(entities: list[dict[str, Any]]) -> str:
         )
         for field in entity["fields"]:
             attribute, source = field_source(entity, field)
-            lines.append(f"    {attribute} = {source}")
-        lines.append("")
-        lines.extend(meta_source(entity))
-        lines.extend(["", ""])
+            body.append(f"    {attribute} = {source}")
+        body.append("")
+        body.extend(meta_source(entity))
+        body.extend(["", ""])
+    rendered_body = "\n".join(body)
+    django_model_imports = [name for name in ("F", "Q") if f"{name}(" in rendered_body]
+    lines = [
+        '"""Generated from research/design/entity-field-dictionary.json (discussion-r26-neutral-comparison)."""',
+        "",
+        "from __future__ import annotations",
+        "",
+    ]
+    if "uuid." in rendered_body:
+        lines.extend(["import uuid", ""])
+    optional_imports = [
+        ("settings.", "from django.conf import settings"),
+        ("DateRangeField", "from django.contrib.postgres.fields import DateRangeField"),
+        ("GinIndex", "from django.contrib.postgres.indexes import GinIndex"),
+        ("SearchVectorField", "from django.contrib.postgres.search import SearchVectorField"),
+    ]
+    lines.extend(source for token, source in optional_imports if token in rendered_body)
+    lines.append("from django.db import models")
+    if django_model_imports:
+        lines.append(f"from django.db.models import {', '.join(django_model_imports)}")
+    if "timezone." in rendered_body:
+        lines.append("from django.utils import timezone")
+    vector_imports = [name for name in ("HnswIndex", "VectorField") if name in rendered_body]
+    if vector_imports:
+        lines.append(f"from pgvector.django import {', '.join(vector_imports)}")
+    lines.append("")
+    field_imports = [
+        name
+        for name in ("EncryptedCharField", "EncryptedTextField", "ValidatedJSONField")
+        if name in rendered_body
+    ]
+    if field_imports:
+        lines.append(f"from ..fields import {', '.join(field_imports)}")
+    base_imports = ["ApprovedModel"]
+    if "default_accepted_selection" in rendered_body:
+        base_imports.append("default_accepted_selection")
+    lines.extend([f"from .base import {', '.join(base_imports)}", "", "", rendered_body])
     return "\n".join(lines).rstrip() + "\n"
 
 
 def main() -> None:
     document = json.loads(SOURCE.read_text(encoding="utf-8"))
     entities = {entity["entity"]: entity for entity in document["entities"]}
-    if document["revision"] != "discussion-r25-final-review" or len(entities) != 62:
+    if document["revision"] != "discussion-r26-neutral-comparison" or len(entities) != 63:
         raise RuntimeError("The approved design authority changed; review before regenerating.")
     expected = set().union(*GROUPS.values())
     actual = set(entities) - {"Account"}
     if expected != actual:
-        raise RuntimeError(f"Model grouping drift: missing={actual - expected}, extra={expected - actual}")
+        raise RuntimeError(
+            f"Model grouping drift: missing={actual - expected}, extra={expected - actual}"
+        )
     for entity_name, unique_constraints in UNIQUE_FIELDS.items():
         available = {
             field["name"][:-3]

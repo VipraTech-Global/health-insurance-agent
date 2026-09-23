@@ -3,512 +3,6 @@ info:
   title: Health Insurance Adviser API
   version: 1.0.0
 paths:
-  /api/v1/admin/ai-relay/:
-    get:
-      operationId: v1_admin_ai_relay_retrieve
-      tags:
-      - v1
-      security:
-      - cookieAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RelayStatus'
-          description: ''
-  /api/v1/admin/ai-relay/accounts/:
-    post:
-      operationId: v1_admin_ai_relay_accounts_create
-      tags:
-      - v1
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/AccountAction'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/AccountAction'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/AccountAction'
-        required: true
-      security:
-      - cookieAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/AccountActionResult'
-          description: ''
-  /api/v1/admin/ai-relay/qualifications/:
-    post:
-      operationId: v1_admin_ai_relay_qualifications_create
-      tags:
-      - v1
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/QualificationInput'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/QualificationInput'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/QualificationInput'
-        required: true
-      security:
-      - cookieAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Qualification'
-          description: ''
-  /api/v1/ai/models/:
-    get:
-      operationId: v1_ai_models_retrieve
-      tags:
-      - v1
-      security:
-      - cookieAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ModelList'
-          description: ''
-  /api/v1/ai/preferences/:
-    patch:
-      operationId: v1_ai_preferences_partial_update
-      tags:
-      - v1
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedPreferenceInput'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedPreferenceInput'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/PatchedPreferenceInput'
-      security:
-      - cookieAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ModelList'
-          description: ''
-  /api/v1/answers/{id}/:
-    get:
-      operationId: v1_answers_retrieve
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: string
-          format: uuid
-        required: true
-      tags:
-      - v1
-      security:
-      - cookieAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Answer'
-          description: ''
-  /api/v1/catalogue/coverage/:
-    get:
-      operationId: v1_catalogue_coverage_retrieve
-      tags:
-      - v1
-      security:
-      - cookieAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Answer'
-          description: ''
-  /api/v1/conversations/:
-    get:
-      operationId: conversation_list
-      tags:
-      - v1
-      security:
-      - cookieAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Conversation'
-          description: ''
-    post:
-      operationId: conversation_create
-      tags:
-      - v1
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Conversation'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/Conversation'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/Conversation'
-      security:
-      - cookieAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Conversation'
-          description: ''
-  /api/v1/conversations/{id}/:
-    get:
-      operationId: v1_conversations_retrieve
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: string
-          format: uuid
-        required: true
-      tags:
-      - v1
-      security:
-      - cookieAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Conversation'
-          description: ''
-    delete:
-      operationId: v1_conversations_destroy
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: string
-          format: uuid
-        required: true
-      tags:
-      - v1
-      security:
-      - cookieAuth: []
-      responses:
-        '204':
-          description: No response body
-  /api/v1/conversations/{id}/messages/:
-    get:
-      operationId: v1_conversations_messages_retrieve
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: string
-          format: uuid
-        required: true
-      tags:
-      - v1
-      security:
-      - cookieAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Message'
-          description: ''
-  /api/v1/conversations/{id}/profile/:
-    get:
-      operationId: v1_conversations_profile_retrieve
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: string
-          format: uuid
-        required: true
-      tags:
-      - v1
-      security:
-      - cookieAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Profile'
-          description: ''
-    patch:
-      operationId: v1_conversations_profile_partial_update
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: string
-          format: uuid
-        required: true
-      tags:
-      - v1
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PatchedProfile'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/PatchedProfile'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/PatchedProfile'
-      security:
-      - cookieAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Profile'
-          description: ''
-  /api/v1/conversations/{id}/profile/confirm/:
-    post:
-      operationId: v1_conversations_profile_confirm_create
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: string
-          format: uuid
-        required: true
-      tags:
-      - v1
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Profile'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/Profile'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/Profile'
-        required: true
-      security:
-      - cookieAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Profile'
-          description: ''
-  /api/v1/documents/{id}/:
-    get:
-      operationId: v1_documents_retrieve
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: string
-          format: uuid
-        required: true
-      tags:
-      - v1
-      security:
-      - cookieAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Answer'
-          description: ''
-  /api/v1/documents/{id}/file/:
-    get:
-      operationId: v1_documents_file_retrieve
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: string
-          format: uuid
-        required: true
-      tags:
-      - v1
-      security:
-      - cookieAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Answer'
-          description: ''
-  /api/v1/evidence/{id}/:
-    get:
-      operationId: v1_evidence_retrieve
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: string
-          format: uuid
-        required: true
-      tags:
-      - v1
-      security:
-      - cookieAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Answer'
-          description: ''
-  /api/v1/readiness/:
-    get:
-      operationId: v1_readiness_retrieve
-      tags:
-      - v1
-      security:
-      - cookieAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Answer'
-          description: ''
-  /api/v1/recommendations/{id}/:
-    get:
-      operationId: v1_recommendations_retrieve
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: string
-          format: uuid
-        required: true
-      tags:
-      - v1
-      security:
-      - cookieAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Answer'
-          description: ''
-  /api/v1/turns/{id}/:
-    get:
-      operationId: v1_turns_retrieve
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: string
-          format: uuid
-        required: true
-      tags:
-      - v1
-      security:
-      - cookieAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Turn'
-          description: ''
-  /api/v1/turns/{id}/cancel/:
-    post:
-      operationId: v1_turns_cancel_create
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: string
-          format: uuid
-        required: true
-      tags:
-      - v1
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Turn'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/Turn'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/Turn'
-        required: true
-      security:
-      - cookieAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Turn'
-          description: ''
-  /api/v1/turns/{id}/retry/:
-    post:
-      operationId: v1_turns_retry_create
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: string
-          format: uuid
-        required: true
-      tags:
-      - v1
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Turn'
-          application/x-www-form-urlencoded:
-            schema:
-              $ref: '#/components/schemas/Turn'
-          multipart/form-data:
-            schema:
-              $ref: '#/components/schemas/Turn'
-        required: true
-      security:
-      - cookieAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Turn'
-          description: ''
   /api/v2/catalogue/:
     get:
       operationId: v2_catalogue_readiness
@@ -522,6 +16,27 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CatalogueReadiness'
+          description: ''
+  /api/v2/comparisons/{id}/:
+    get:
+      operationId: v2_comparison_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ComparisonDetail'
           description: ''
   /api/v2/conversations/:
     get:
@@ -777,27 +292,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/CatalogueReadiness'
           description: ''
-  /api/v2/recommendations/{id}/:
-    get:
-      operationId: v2_recommendation_retrieve
-      parameters:
-      - in: path
-        name: id
-        schema:
-          type: string
-          format: uuid
-        required: true
-      tags:
-      - v2
-      security:
-      - cookieAuth: []
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RecommendationDetail'
-          description: ''
   /api/v2/turns/{id}/:
     get:
       operationId: v2_turn_retrieve
@@ -1047,150 +541,6 @@ paths:
                 type: string
 components:
   schemas:
-    Account:
-      type: object
-      properties:
-        provider:
-          type: string
-        label:
-          type: string
-        state:
-          type: string
-        masked_identifier:
-          type: string
-        has_active_account:
-          type: boolean
-        can_restore:
-          type: boolean
-        login_in_progress:
-          type: boolean
-        action_required:
-          type: boolean
-      required:
-      - action_required
-      - can_restore
-      - has_active_account
-      - label
-      - login_in_progress
-      - masked_identifier
-      - provider
-      - state
-    AccountAction:
-      type: object
-      properties:
-        action:
-          $ref: '#/components/schemas/ActionEnum'
-      required:
-      - action
-    AccountActionResult:
-      type: object
-      properties:
-        account:
-          $ref: '#/components/schemas/Account'
-        provider:
-          type: string
-        authorization_url:
-          type: string
-          format: uri
-        expires_at:
-          type: integer
-    ActionEnum:
-      enum:
-      - connect
-      - status
-      - cancel
-      - disconnect
-      - restore
-      - forget
-      type: string
-      description: |-
-        * `connect` - connect
-        * `status` - status
-        * `cancel` - cancel
-        * `disconnect` - disconnect
-        * `restore` - restore
-        * `forget` - forget
-    Answer:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        outcome:
-          type: string
-          maxLength: 40
-        blocks: {}
-        verification_status:
-          type: string
-          maxLength: 30
-        profile_revision:
-          type: integer
-          maximum: 2147483647
-          minimum: 0
-          nullable: true
-        corpus_release:
-          type: string
-          format: uuid
-          nullable: true
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        claims:
-          type: array
-          items:
-            type: object
-            additionalProperties: {}
-          readOnly: true
-      required:
-      - claims
-      - created_at
-      - id
-      - outcome
-      - verification_status
-    CandidateDetail:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        product_variant_id:
-          type: string
-          format: uuid
-        product:
-          type: string
-        insurer:
-          type: string
-        uin:
-          type: string
-        variant:
-          type: string
-        disposition:
-          type: string
-        rank:
-          type: integer
-        evaluated_selection: {}
-        quote_id:
-          type: string
-          format: uuid
-          nullable: true
-        requirement_matches:
-          type: array
-          items:
-            $ref: '#/components/schemas/RequirementMatch'
-      required:
-      - disposition
-      - evaluated_selection
-      - id
-      - insurer
-      - product
-      - product_variant_id
-      - quote_id
-      - rank
-      - requirement_matches
-      - uin
-      - variant
     CatalogueProduct:
       type: object
       properties:
@@ -1286,33 +636,176 @@ components:
       - ready
       - release
       - warning
-    Conversation:
+    ComparedProduct:
       type: object
       properties:
         id:
           type: string
           format: uuid
-          readOnly: true
-        title:
+        product_variant_id:
           type: string
-          maxLength: 200
+          format: uuid
+        product:
+          type: string
+        insurer:
+          type: string
+        uin:
+          type: string
+          nullable: true
+        variant:
+          type: string
+        evaluated_selection: {}
+        quote_id:
+          type: string
+          format: uuid
+          nullable: true
+        criteria:
+          type: array
+          items:
+            $ref: '#/components/schemas/RequirementMatch'
+        evidence_gaps:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvidenceGap'
+        restrictions:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductRestriction'
+        evidence:
+          type: array
+          items:
+            $ref: '#/components/schemas/ComparisonCitation'
+      required:
+      - criteria
+      - evaluated_selection
+      - evidence
+      - evidence_gaps
+      - id
+      - insurer
+      - product
+      - product_variant_id
+      - quote_id
+      - restrictions
+      - uin
+      - variant
+    ComparisonCitation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        evidence_span_id:
+          type: string
+          format: uuid
+        policy_rule_id:
+          type: string
+          format: uuid
+          nullable: true
+        role:
+          type: string
+        quote:
+          type: string
+        section_label:
+          type: string
+          nullable: true
+        page:
+          type: integer
+          nullable: true
+        document_version_id:
+          type: string
+          format: uuid
+          nullable: true
+        locator: {}
+      required:
+      - document_version_id
+      - evidence_span_id
+      - id
+      - locator
+      - page
+      - policy_rule_id
+      - quote
+      - role
+      - section_label
+    ComparisonDetail:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        turn_id:
+          type: string
+          format: uuid
+        outcome:
+          type: string
+        profile_revision:
+          type: integer
+        knowledge_release_id:
+          type: string
+          format: uuid
+        catalogue_limit:
+          type: integer
+        comparison_label:
+          type: string
         created_at:
           type: string
           format: date-time
-          readOnly: true
-        updated_at:
-          type: string
-          format: date-time
-          readOnly: true
-        profile_revision:
-          type: integer
-          nullable: true
-          readOnly: true
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/ComparedProduct'
+        information_needs:
+          type: array
+          items:
+            $ref: '#/components/schemas/InformationNeed'
+        statements:
+          type: array
+          items:
+            $ref: '#/components/schemas/ComparisonStatement'
       required:
+      - catalogue_limit
+      - comparison_label
       - created_at
       - id
+      - information_needs
+      - knowledge_release_id
+      - outcome
+      - products
       - profile_revision
-      - updated_at
+      - statements
+      - turn_id
+    ComparisonStatement:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        ordinal:
+          type: integer
+        text:
+          type: string
+        statement_type:
+          type: string
+        critical:
+          type: boolean
+        support_status:
+          type: string
+        comparison_assessment_id:
+          type: string
+          format: uuid
+          nullable: true
+        citations:
+          type: array
+          items:
+            $ref: '#/components/schemas/ComparisonCitation'
+      required:
+      - citations
+      - comparison_assessment_id
+      - critical
+      - id
+      - ordinal
+      - statement_type
+      - support_status
+      - text
     ConversationPage:
       type: object
       properties:
@@ -1398,6 +891,20 @@ components:
       - quote
       - section_label
       - verification
+    EvidenceGap:
+      type: object
+      properties:
+        requirement_id:
+          type: string
+          format: uuid
+        criterion:
+          type: string
+        outcome:
+          $ref: '#/components/schemas/OutcomeEnum'
+      required:
+      - criterion
+      - outcome
+      - requirement_id
     InformationNeed:
       type: object
       properties:
@@ -1508,35 +1015,6 @@ components:
       - number
       - published_at
       - state
-    Message:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        role:
-          $ref: '#/components/schemas/MessageRoleEnum'
-        content:
-          type: string
-        origin:
-          type: string
-          maxLength: 30
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        answer:
-          type: object
-          additionalProperties: {}
-          nullable: true
-          readOnly: true
-      required:
-      - answer
-      - content
-      - created_at
-      - id
-      - role
     MessagePage:
       type: object
       properties:
@@ -1556,14 +1034,6 @@ components:
       - next
       - previous
       - results
-    MessageRoleEnum:
-      enum:
-      - user
-      - assistant
-      type: string
-      description: |-
-        * `user` - User
-        * `assistant` - Assistant
     MessageSubmission:
       type: object
       properties:
@@ -1580,41 +1050,6 @@ components:
       required:
       - request_id
       - text
-    ModelChoice:
-      type: object
-      properties:
-        route_id:
-          type: string
-          format: uuid
-        model:
-          type: string
-        provider:
-          $ref: '#/components/schemas/ProviderEnum'
-      required:
-      - model
-      - provider
-      - route_id
-    ModelList:
-      type: object
-      properties:
-        models:
-          type: array
-          items:
-            $ref: '#/components/schemas/ModelChoice'
-        selected_route_id:
-          type: string
-          format: uuid
-          nullable: true
-        selected_model:
-          type: string
-          nullable: true
-        selected_available:
-          type: boolean
-      required:
-      - models
-      - selected_available
-      - selected_model
-      - selected_route_id
     OriginEnum:
       enum:
       - text
@@ -1629,33 +1064,14 @@ components:
         * `document_import` - document_import
         * `system` - system
         * `migration` - migration
-    PatchedPreferenceInput:
-      type: object
-      properties:
-        route_id:
-          type: string
-          format: uuid
-    PatchedProfile:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        revision:
-          type: integer
-          maximum: 2147483647
-          minimum: 0
-        data: {}
-        field_provenance: {}
-        confirmed_at:
-          type: string
-          format: date-time
-          nullable: true
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
+    OutcomeEnum:
+      enum:
+      - unknown
+      - partly_meets
+      type: string
+      description: |-
+        * `unknown` - unknown
+        * `partly_meets` - partly_meets
     PatchedProfileCorrection:
       type: object
       properties:
@@ -1676,31 +1092,22 @@ components:
           items:
             type: object
             additionalProperties: {}
-    Profile:
+    ProductRestriction:
       type: object
       properties:
-        id:
+        statement_id:
           type: string
           format: uuid
-          readOnly: true
-        revision:
-          type: integer
-          maximum: 2147483647
-          minimum: 0
-        data: {}
-        field_provenance: {}
-        confirmed_at:
+        text:
           type: string
-          format: date-time
-          nullable: true
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
+        citations:
+          type: array
+          items:
+            $ref: '#/components/schemas/ComparisonCitation'
       required:
-      - created_at
-      - id
-      - revision
+      - citations
+      - statement_id
+      - text
     ProfileFact:
       type: object
       properties:
@@ -1772,190 +1179,6 @@ components:
       - status
       - subject_person_id
       - target_value
-    ProviderEnum:
-      enum:
-      - cliproxyapi
-      - omniroute
-      type: string
-      description: |-
-        * `cliproxyapi` - cliproxyapi
-        * `omniroute` - omniroute
-    Qualification:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        route_id:
-          type: string
-          format: uuid
-        model:
-          type: string
-        state:
-          type: string
-        results:
-          type: object
-          additionalProperties: {}
-      required:
-      - id
-      - model
-      - results
-      - route_id
-      - state
-    QualificationInput:
-      type: object
-      properties:
-        model:
-          type: string
-          maxLength: 160
-        provider:
-          allOf:
-          - $ref: '#/components/schemas/ProviderEnum'
-          default: cliproxyapi
-      required:
-      - model
-    RecommendationCitation:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        evidence_span_id:
-          type: string
-          format: uuid
-        policy_rule_id:
-          type: string
-          format: uuid
-          nullable: true
-        role:
-          type: string
-        quote:
-          type: string
-        section_label:
-          type: string
-          nullable: true
-        page:
-          type: integer
-          nullable: true
-        document_version_id:
-          type: string
-          format: uuid
-          nullable: true
-        locator: {}
-      required:
-      - document_version_id
-      - evidence_span_id
-      - id
-      - locator
-      - page
-      - policy_rule_id
-      - quote
-      - role
-      - section_label
-    RecommendationDetail:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        turn_id:
-          type: string
-          format: uuid
-        outcome:
-          type: string
-        profile_revision:
-          type: integer
-        knowledge_release_id:
-          type: string
-          format: uuid
-        catalogue_limit:
-          type: integer
-        comparison_label:
-          type: string
-        created_at:
-          type: string
-          format: date-time
-        candidates:
-          type: array
-          items:
-            $ref: '#/components/schemas/CandidateDetail'
-        information_needs:
-          type: array
-          items:
-            $ref: '#/components/schemas/InformationNeed'
-        statements:
-          type: array
-          items:
-            $ref: '#/components/schemas/RecommendationStatement'
-      required:
-      - candidates
-      - catalogue_limit
-      - comparison_label
-      - created_at
-      - id
-      - information_needs
-      - knowledge_release_id
-      - outcome
-      - profile_revision
-      - statements
-      - turn_id
-    RecommendationStatement:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        ordinal:
-          type: integer
-        text:
-          type: string
-        statement_type:
-          type: string
-        critical:
-          type: boolean
-        support_status:
-          type: string
-        candidate_assessment_id:
-          type: string
-          format: uuid
-          nullable: true
-        citations:
-          type: array
-          items:
-            $ref: '#/components/schemas/RecommendationCitation'
-      required:
-      - candidate_assessment_id
-      - citations
-      - critical
-      - id
-      - ordinal
-      - statement_type
-      - support_status
-      - text
-    RelayStatus:
-      type: object
-      properties:
-        account:
-          $ref: '#/components/schemas/Account'
-        discovered_models:
-          type: array
-          items:
-            type: string
-        omniroute_models:
-          type: array
-          items:
-            type: string
-        catalogue_error:
-          type: string
-          nullable: true
-        laptop_wide:
-          type: boolean
-      required:
-      - account
-      - catalogue_error
-      - discovered_models
-      - laptop_wide
-      - omniroute_models
     RequirementMatch:
       type: object
       properties:
@@ -2010,42 +1233,6 @@ components:
         * `archived` - archived
         * `deleting` - deleting
         * `deleted` - deleted
-    Turn:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-          readOnly: true
-        request_id:
-          type: string
-          format: uuid
-        input_text:
-          type: string
-        operation:
-          type: string
-          maxLength: 50
-        expected_profile_revision:
-          type: integer
-          maximum: 2147483647
-          minimum: 0
-          nullable: true
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        attempts:
-          type: array
-          items:
-            type: object
-            additionalProperties: {}
-          readOnly: true
-      required:
-      - attempts
-      - created_at
-      - id
-      - input_text
-      - request_id
     TurnAccepted:
       type: object
       properties:
@@ -2116,11 +1303,11 @@ components:
     TurnRouteBindingRoleEnum:
       enum:
       - fact_interpretation
-      - recommendation_answer
+      - comparison_answer
       type: string
       description: |-
         * `fact_interpretation` - fact_interpretation
-        * `recommendation_answer` - recommendation_answer
+        * `comparison_answer` - comparison_answer
     Upload:
       type: object
       properties:
@@ -2214,17 +1401,17 @@ components:
           type: string
           format: date-time
           readOnly: true
-        recommendation_id:
+        comparison_id:
           type: string
           format: uuid
           readOnly: true
           nullable: true
       required:
+      - comparison_id
       - content
       - created_at
       - id
       - origin
-      - recommendation_id
       - role
       - sequence
       - submitted_at

@@ -131,7 +131,7 @@ def build_release(
     }
     partial = any(product["missing_inventory_categories"] for product in readiness["products"])
     scope = {
-        "intent_kinds": ["purchase_recommendation", "product_comparison", "coverage_question"],
+        "intent_kinds": ["product_comparison", "coverage_question"],
         "insurer_ids": sorted(
             {
                 str(item)

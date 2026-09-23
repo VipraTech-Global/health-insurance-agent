@@ -33,7 +33,9 @@ FACT_TYPES: dict[str, AssertionType] = {
         AssertionType("eligible_room_rent_limit", frozenset({"quantity", "unknown"})),
         AssertionType("room_rent_actually_incurred", frozenset({"quantity", "unknown"})),
         AssertionType("total_associated_medical_expenses", frozenset({"quantity", "unknown"})),
-        AssertionType("actual_room_category_higher_than_eligible", frozenset({"boolean", "unknown"})),
+        AssertionType(
+            "actual_room_category_higher_than_eligible", frozenset({"boolean", "unknown"})
+        ),
         AssertionType("policy_tenure_selection", frozenset({"quantity", "unknown"})),
         AssertionType("family_composition", frozenset({"text", "code", "unknown"})),
         AssertionType("purchase_for", frozenset({"reference", "code", "text", "unknown"})),

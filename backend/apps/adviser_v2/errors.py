@@ -17,5 +17,5 @@ class TurnCancellationRequested(RuntimeError):
     """Customer cancellation fenced the next durable mutation boundary."""
 
 
-class UnsupportedRecommendationError(ValueError):
-    """A generated adviser answer failed deterministic support validation."""
+class UnsupportedComparisonError(ValueError):
+    """Generated comparison prose failed deterministic support or neutrality validation."""

@@ -1,4 +1,4 @@
-"""Deterministic three-valued policy-rule evaluation and candidate ranking."""
+"""Deterministic policy-rule evaluation for neutral product comparisons."""
 
 from __future__ import annotations
 
@@ -81,13 +81,10 @@ class RequirementResult:
 
 
 @dataclass(frozen=True)
-class CandidateResult:
+class PolicyComparisonResult:
     variant: ProductVariant
-    disposition: str
-    rank: int
     matches: tuple[RequirementResult, ...]
     rules: tuple[RuleResult, ...]
-    score: tuple[int, int, int, int, tuple[Decimal, ...], str]
 
 
 def _typed_value(value: object) -> Scalar | None:
@@ -185,7 +182,11 @@ def _serialize_comparison_value(actual: Scalar | None) -> dict[str, object] | No
         return None
     if actual.unit not in _QUANTITY_V1_UNITS:
         return None
-    payload: dict[str, object] = {"state": "finite", "value": str(actual.value), "unit": actual.unit}
+    payload: dict[str, object] = {
+        "state": "finite",
+        "value": str(actual.value),
+        "unit": actual.unit,
+    }
     if actual.currency is not None:
         payload["currency"] = actual.currency
     return payload
@@ -202,22 +203,6 @@ def _aggregate_comparison_value(
     if operator == "maximize":
         return max(candidates, key=lambda item: Decimal(str(item["value"])))
     return candidates[0]
-
-
-def _tie_break_value(
-    requirement: CustomerRequirement, comparison_value: dict[str, object] | None
-) -> Decimal:
-    if (
-        requirement.priority != "preferred"
-        or requirement.operator not in {"maximize", "minimize"}
-        or comparison_value is None
-    ):
-        return Decimal(0)
-    try:
-        magnitude = Decimal(str(comparison_value["value"]))
-    except (InvalidOperation, KeyError, TypeError):
-        return Decimal(0)
-    return -magnitude if requirement.operator == "maximize" else magnitude
 
 
 def _calendar_add(value: dt.date, amount: int, unit: str) -> dt.date | None:
@@ -819,7 +804,9 @@ def _deductible_configuration_inputs(
 
 
 def _childbirth_request(requirement: CustomerRequirement) -> bool:
-    if requirement.criterion != "maternity" or _typed_value(requirement.target_value) != Scalar(True):
+    if requirement.criterion != "maternity" or _typed_value(requirement.target_value) != Scalar(
+        True
+    ):
         return False
     statement = getattr(requirement, "source_statement", None)
     message = getattr(statement, "source_message", None)
@@ -838,7 +825,9 @@ def _childbirth_rule_inputs(requirements: list[CustomerRequirement]) -> dict[str
 
 def _ayush_rule_inputs(requirements: list[CustomerRequirement]) -> dict[str, object]:
     texts = [
-        getattr(getattr(getattr(item, "source_statement", None), "source_message", None), "content", "")
+        getattr(
+            getattr(getattr(item, "source_statement", None), "source_message", None), "content", ""
+        )
         for item in requirements
         if item.criterion == "specific_treatment"
     ]
@@ -846,7 +835,12 @@ def _ayush_rule_inputs(requirements: list[CustomerRequirement]) -> dict[str, obj
         return {}
     text = texts[0].casefold()
     inputs: dict[str, object] = {
-        "ayush_system": {"state": "known", "kind": "code", "namespace": "ayush_system", "value": "ayurveda"}
+        "ayush_system": {
+            "state": "known",
+            "kind": "code",
+            "namespace": "ayush_system",
+            "value": "ayurveda",
+        }
     }
     for key, present in (
         (
@@ -930,8 +924,7 @@ def _child_entry_unverified(
         if age is None or not isinstance(age.value, Decimal):
             continue
         if not (
-            (age.unit == "year" and age.value < 18)
-            or (age.unit == "day" and age.value < 18 * 365)
+            (age.unit == "year" and age.value < 18) or (age.unit == "day" and age.value < 18 * 365)
         ):
             continue
         has_entry_rule = any(
@@ -1015,7 +1008,9 @@ def _no_separate_room_icu_match(
     phrase = str(target.get("value", "")).casefold()
     if not (
         target.get("kind") == "text"
-        and ("no separate" in phrase or (requirement.operator == "excludes" and "separate" in phrase))
+        and (
+            "no separate" in phrase or (requirement.operator == "excludes" and "separate" in phrase)
+        )
         and "room" in phrase
         and "icu" in phrase
         and "limit" in phrase
@@ -1069,19 +1064,13 @@ def _subject_requirement_result(
     subject_person_id: uuid.UUID | None,
     inputs: dict[str, object],
 ) -> tuple[str, tuple[str, ...], dict[str, object] | None]:
-    room_icu = _no_separate_room_icu_match(
-        requirement, evaluated_rules, subject_person_id
-    )
+    room_icu = _no_separate_room_icu_match(requirement, evaluated_rules, subject_person_id)
     if room_icu is not None:
         return room_icu
-    childbirth = _childbirth_exclusion_match(
-        requirement, evaluated_rules, subject_person_id
-    )
+    childbirth = _childbirth_exclusion_match(requirement, evaluated_rules, subject_person_id)
     if childbirth is not None:
         return childbirth
-    deductible = _deductible_selection_match(
-        requirement, evaluated_rules, subject_person_id
-    )
+    deductible = _deductible_selection_match(requirement, evaluated_rules, subject_person_id)
     if deductible is not None:
         return deductible
     outcomes: list[str] = []
@@ -1200,7 +1189,7 @@ def evaluate_release(
     release: KnowledgeRelease,
     facts: list[CustomerFact],
     requirements: list[CustomerRequirement],
-) -> list[CandidateResult]:
+) -> list[PolicyComparisonResult]:
     rules = list(
         PolicyRule.objects.filter(
             id__in=KnowledgeReleaseRule.objects.filter(knowledge_release=release).values(
@@ -1272,8 +1261,17 @@ def evaluate_release(
             inputs["selected_policy_tenure"] = selected_tenure
     for inputs in inputs_by_subject.values():
         inputs.update(configuration_inputs)
-    candidates: list[CandidateResult] = []
-    for variant in variants:
+    products: list[PolicyComparisonResult] = []
+    ordered_variants = sorted(
+        variants,
+        key=lambda item: (
+            item.policy_version.product.insurer.name.casefold(),
+            item.policy_version.product.name.casefold(),
+            (item.policy_version.uin or "").casefold(),
+            str(item.id),
+        ),
+    )
+    for variant in ordered_variants:
         variant_rules = rules_by_version[variant.policy_version_id]
         evaluated_rule_values: list[RuleResult] = []
         for rule in variant_rules:
@@ -1304,9 +1302,6 @@ def evaluate_release(
             )
         evaluated_rules = tuple(evaluated_rule_values)
         matches: list[RequirementResult] = []
-        hard_failures = 0
-        unknown_mandatory = 0
-        preferred_met = 0
         for requirement in requirements:
             if requirement.scope == "person":
                 target_subjects: tuple[uuid.UUID | None, ...] = (
@@ -1348,71 +1343,12 @@ def evaluate_release(
             comparison_value = _aggregate_comparison_value(
                 requirement.operator, [value[2] for value in subject_matches]
             )
-            if requirement.priority == "mandatory" and outcome == "does_not_meet":
-                hard_failures += 1
-            if requirement.priority == "mandatory" and outcome in {"unknown", "partly_meets"}:
-                unknown_mandatory += 1
-            if requirement.priority == "preferred" and outcome == "meets":
-                preferred_met += 1
             matches.append(RequirementResult(requirement, outcome, comparison_value, rule_ids))
-        eligibility_failures = sum(
-            1
-            for rule_result in evaluated_rules
-            if rule_result.applies == Truth.TRUE
-            and any(
-                isinstance(effect, dict)
-                and effect.get("kind") == "eligibility"
-                and effect.get("decision") == "ineligible"
-                for effect in rule_result.rule.body.get("effects", [])
-            )
-        )
-        hard_failures += eligibility_failures
-        if _child_entry_unverified(intended_subject_ids, inputs_by_subject, evaluated_rules):
-            unknown_mandatory += 1
-        incomplete = sum(1 for rule_result in evaluated_rules if not rule_result.evidence_complete)
-        disposition = (
-            "excluded"
-            if hard_failures
-            else "conditional"
-            if unknown_mandatory or incomplete
-            else "eligible"
-        )
-        coverage_tie_break = tuple(
-            _tie_break_value(match.requirement, match.comparison_value) for match in matches
-        )
-        candidates.append(
-            CandidateResult(
+        products.append(
+            PolicyComparisonResult(
                 variant=variant,
-                disposition=disposition,
-                rank=0,
                 matches=tuple(matches),
                 rules=evaluated_rules,
-                score=(
-                    hard_failures,
-                    unknown_mandatory,
-                    -preferred_met,
-                    incomplete,
-                    coverage_tie_break,
-                    variant.name,
-                ),
             )
         )
-    ordered = sorted(candidates, key=lambda item: item.score)
-    ranked: list[CandidateResult] = []
-    for rank, candidate in enumerate(ordered, 1):
-        disposition = candidate.disposition
-        if rank == 1 and disposition == "eligible":
-            disposition = "recommended"
-        elif disposition == "eligible":
-            disposition = "alternative"
-        ranked.append(
-            CandidateResult(
-                candidate.variant,
-                disposition,
-                rank,
-                candidate.matches,
-                candidate.rules,
-                candidate.score,
-            )
-        )
-    return ranked
+    return products

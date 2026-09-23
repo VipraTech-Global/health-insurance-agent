@@ -15,12 +15,12 @@ from apps.accounts.models import User
 
 from .engine import process_turn
 from .models import (
+    Comparison,
     Conversation,
     CustomerProfileRevision,
     KnowledgeChannel,
     KnowledgeRelease,
     KnowledgeReleaseRule,
-    Recommendation,
     Turn,
 )
 from .readiness import find_captured_manifest, load_captured_manifest
@@ -215,7 +215,7 @@ def run_scenario_attempt(record: dict[str, Any], attempt: int) -> dict[str, obje
             "state": "not_executable",
             "error_code": "customer_conversation_missing",
             "raised_error_type": None,
-            "recommendation_id": None,
+            "comparison_id": None,
             "outcome": "insufficient_evidence",
             "semantic_assessment": "not_assessable",
         }
@@ -251,7 +251,7 @@ def run_scenario_attempt(record: dict[str, Any], attempt: int) -> dict[str, obje
             break
     if last_turn is None:
         raise AssertionError("An executable scenario did not produce a turn.")
-    recommendation = Recommendation.objects.filter(turn=last_turn).first()
+    comparison = Comparison.objects.filter(turn=last_turn).first()
     return {
         "case_id": case_id,
         "attempt": attempt,
@@ -259,8 +259,8 @@ def run_scenario_attempt(record: dict[str, Any], attempt: int) -> dict[str, obje
         "state": last_turn.state,
         "error_code": last_turn.error_code,
         "raised_error_type": raised_error,
-        "recommendation_id": str(recommendation.id) if recommendation else None,
-        "outcome": recommendation.outcome if recommendation else None,
+        "comparison_id": str(comparison.id) if comparison else None,
+        "outcome": comparison.outcome if comparison else None,
         "semantic_assessment": "pending_independent_assessment",
     }
 
