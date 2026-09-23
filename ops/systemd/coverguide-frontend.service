@@ -1,0 +1,38 @@
+[Unit]
+Description=CoverGuide Next.js frontend
+Requires=coverguide-infra.service omniroute.service
+After=coverguide-infra.service coverguide-web.service omniroute.service
+Wants=coverguide-web.service
+
+[Service]
+Type=simple
+WorkingDirectory=/home/akhilesh/Projects/health-insurance-agent/frontend
+Environment=NODE_ENV=production
+Environment=PATH=/home/akhilesh/.nvm/versions/node/v24.1.0/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=/home/akhilesh/Projects/health-insurance-agent/frontend/node_modules/.bin/next start --hostname 127.0.0.1 --port 3018
+Restart=on-failure
+RestartSec=5s
+TimeoutStopSec=30s
+UMask=0077
+StandardOutput=journal
+StandardError=journal
+
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/home/akhilesh/Projects/health-insurance-agent/frontend/.next/cache
+ProtectControlGroups=yes
+ProtectKernelTunables=yes
+ProtectHostname=yes
+ProtectProc=invisible
+ProcSubset=pid
+RestrictNamespaces=yes
+RestrictRealtime=yes
+RestrictSUIDSGID=yes
+LockPersonality=yes
+SystemCallArchitectures=native
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+
+[Install]
+WantedBy=default.target
