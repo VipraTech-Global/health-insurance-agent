@@ -28,13 +28,13 @@ test("three-product demo streams an evidence-cited comparison", async ({ page })
   );
   await page.getByRole("button", { name: "Send →" }).click();
   await expect(page.locator(".processing")).toBeVisible({ timeout: 30_000 });
-  const recommendation = page.locator(".recommendation-detail");
+  const comparison = page.locator(".comparison-detail");
   const errorBanner = page.locator(".error-banner");
   for (let attempt = 0; attempt <= 2; attempt += 1) {
-    await expect(page.locator(".recommendation-detail, .error-banner")).toBeVisible({
+    await expect(page.locator(".comparison-detail, .error-banner")).toBeVisible({
       timeout: 220_000,
     });
-    if (await recommendation.isVisible()) break;
+    if (await comparison.isVisible()) break;
     await expect(errorBanner).toContainText("stopped safely");
     if (attempt === 2) break;
     const retry = page.getByRole("button", { name: "Retry safely" });
@@ -43,15 +43,19 @@ test("three-product demo streams an evidence-cited comparison", async ({ page })
     await expect(errorBanner).toBeHidden();
     await expect(page.locator(".processing")).toBeVisible({ timeout: 30_000 });
   }
-  await expect(recommendation).toBeVisible();
-  await expect(page.locator(".candidate")).toHaveCount(3);
-  await expect(page.locator(".recommendation-statements")).toContainText(
+  await expect(comparison).toBeVisible();
+  await expect(page.locator(".compared-product")).toHaveCount(3);
+  await expect(page.locator(".comparison-framing")).toHaveText(
+    "CoverGuide compares the reviewed products against the criteria you shared. It does not choose a policy; the decision is yours.",
+  );
+  await expect(page.locator(".comparison-statements")).toContainText(
     "not confirmed whether you already hold health insurance",
   );
+  await expect(comparison).not.toContainText(/#\d|winner|top pick|recommended/i);
 
-  // A candidate's matched amount, when the deterministic rule engine resolved one,
+  // A product's matched amount, when the deterministic rule engine resolved one,
   // renders beside its outcome — never a "Not specified" placeholder for a null match.
-  const sumInsuredMatch = page.locator("li:has-text(\"sum insured\")").first();
+  const sumInsuredMatch = page.locator(".criterion-row:has-text(\"sum insured\")").first();
   if (await sumInsuredMatch.count()) {
     await expect(sumInsuredMatch).not.toContainText("Not specified");
   }

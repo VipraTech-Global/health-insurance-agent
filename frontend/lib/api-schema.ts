@@ -4,326 +4,6 @@
  */
 
 export interface paths {
-    "/api/v1/admin/ai-relay/": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["v1_admin_ai_relay_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/ai-relay/accounts/": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post: operations["v1_admin_ai_relay_accounts_create"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/admin/ai-relay/qualifications/": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post: operations["v1_admin_ai_relay_qualifications_create"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/ai/models/": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["v1_ai_models_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/ai/preferences/": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch: operations["v1_ai_preferences_partial_update"];
-        trace?: never;
-    };
-    "/api/v1/answers/{id}/": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["v1_answers_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/catalogue/coverage/": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["v1_catalogue_coverage_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/conversations/": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["conversation_list"];
-        put?: never;
-        post: operations["conversation_create"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/conversations/{id}/": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["v1_conversations_retrieve"];
-        put?: never;
-        post?: never;
-        delete: operations["v1_conversations_destroy"];
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/conversations/{id}/messages/": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["v1_conversations_messages_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/conversations/{id}/profile/": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["v1_conversations_profile_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch: operations["v1_conversations_profile_partial_update"];
-        trace?: never;
-    };
-    "/api/v1/conversations/{id}/profile/confirm/": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post: operations["v1_conversations_profile_confirm_create"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/documents/{id}/": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["v1_documents_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/documents/{id}/file/": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["v1_documents_file_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/evidence/{id}/": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["v1_evidence_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/readiness/": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["v1_readiness_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/recommendations/{id}/": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["v1_recommendations_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/turns/{id}/": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["v1_turns_retrieve"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/turns/{id}/cancel/": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post: operations["v1_turns_cancel_create"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v1/turns/{id}/retry/": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post: operations["v1_turns_retry_create"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
     "/api/v2/catalogue/": {
         parameters: {
             query?: never;
@@ -332,6 +12,22 @@ export interface paths {
             cookie?: never;
         };
         get: operations["v2_catalogue_readiness"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v2/comparisons/{id}/": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["v2_comparison_retrieve"];
         put?: never;
         post?: never;
         delete?: never;
@@ -460,22 +156,6 @@ export interface paths {
             cookie?: never;
         };
         get: operations["v2_knowledge_readiness"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/api/v2/recommendations/{id}/": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["v2_recommendation_retrieve"];
         put?: never;
         post?: never;
         delete?: never;
@@ -696,67 +376,6 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
-        Account: {
-            provider: string;
-            label: string;
-            state: string;
-            masked_identifier: string;
-            has_active_account: boolean;
-            can_restore: boolean;
-            login_in_progress: boolean;
-            action_required: boolean;
-        };
-        AccountAction: {
-            action: components["schemas"]["ActionEnum"];
-        };
-        AccountActionResult: {
-            account?: components["schemas"]["Account"];
-            provider?: string;
-            /** Format: uri */
-            authorization_url?: string;
-            expires_at?: number;
-        };
-        /**
-         * @description * `connect` - connect
-         *     * `status` - status
-         *     * `cancel` - cancel
-         *     * `disconnect` - disconnect
-         *     * `restore` - restore
-         *     * `forget` - forget
-         * @enum {string}
-         */
-        ActionEnum: "connect" | "status" | "cancel" | "disconnect" | "restore" | "forget";
-        Answer: {
-            /** Format: uuid */
-            readonly id: string;
-            outcome: string;
-            blocks?: unknown;
-            verification_status: string;
-            profile_revision?: number | null;
-            /** Format: uuid */
-            corpus_release?: string | null;
-            /** Format: date-time */
-            readonly created_at: string;
-            readonly claims: {
-                [key: string]: unknown;
-            }[];
-        };
-        CandidateDetail: {
-            /** Format: uuid */
-            id: string;
-            /** Format: uuid */
-            product_variant_id: string;
-            product: string;
-            insurer: string;
-            uin: string;
-            variant: string;
-            disposition: string;
-            rank: number;
-            evaluated_selection: unknown;
-            /** Format: uuid */
-            quote_id: string | null;
-            requirement_matches: components["schemas"]["RequirementMatch"][];
-        };
         CatalogueProduct: {
             /** Format: uuid */
             id: string;
@@ -787,15 +406,66 @@ export interface components {
             interactive_routes: components["schemas"]["InteractiveRouteStatus"][];
             blocking_reason: string | null;
         };
-        Conversation: {
+        ComparedProduct: {
             /** Format: uuid */
-            readonly id: string;
-            title?: string;
+            id: string;
+            /** Format: uuid */
+            product_variant_id: string;
+            product: string;
+            insurer: string;
+            uin: string | null;
+            variant: string;
+            evaluated_selection: unknown;
+            /** Format: uuid */
+            quote_id: string | null;
+            criteria: components["schemas"]["RequirementMatch"][];
+            evidence_gaps: components["schemas"]["EvidenceGap"][];
+            restrictions: components["schemas"]["ProductRestriction"][];
+            evidence: components["schemas"]["ComparisonCitation"][];
+        };
+        ComparisonCitation: {
+            /** Format: uuid */
+            id: string;
+            /** Format: uuid */
+            evidence_span_id: string;
+            /** Format: uuid */
+            policy_rule_id: string | null;
+            role: string;
+            quote: string;
+            section_label: string | null;
+            page: number | null;
+            /** Format: uuid */
+            document_version_id: string | null;
+            locator: unknown;
+        };
+        ComparisonDetail: {
+            /** Format: uuid */
+            id: string;
+            /** Format: uuid */
+            turn_id: string;
+            outcome: string;
+            profile_revision: number;
+            /** Format: uuid */
+            knowledge_release_id: string;
+            catalogue_limit: number;
+            comparison_label: string;
             /** Format: date-time */
-            readonly created_at: string;
-            /** Format: date-time */
-            readonly updated_at: string;
-            readonly profile_revision: number | null;
+            created_at: string;
+            products: components["schemas"]["ComparedProduct"][];
+            information_needs: components["schemas"]["InformationNeed"][];
+            statements: components["schemas"]["ComparisonStatement"][];
+        };
+        ComparisonStatement: {
+            /** Format: uuid */
+            id: string;
+            ordinal: number;
+            text: string;
+            statement_type: string;
+            critical: boolean;
+            support_status: string;
+            /** Format: uuid */
+            comparison_assessment_id: string | null;
+            citations: components["schemas"]["ComparisonCitation"][];
         };
         ConversationPage: {
             /** Format: uri */
@@ -827,6 +497,12 @@ export interface components {
             context: unknown;
             verification: string;
             locator: unknown;
+        };
+        EvidenceGap: {
+            /** Format: uuid */
+            requirement_id: string;
+            criterion: string;
+            outcome: components["schemas"]["OutcomeEnum"];
         };
         InformationNeed: {
             /** Format: uuid */
@@ -871,18 +547,6 @@ export interface components {
             published_at: string | null;
             manifest_sha256: string;
         };
-        Message: {
-            /** Format: uuid */
-            readonly id: string;
-            role: components["schemas"]["MessageRoleEnum"];
-            content: string;
-            origin?: string;
-            /** Format: date-time */
-            readonly created_at: string;
-            readonly answer: {
-                [key: string]: unknown;
-            } | null;
-        };
         MessagePage: {
             /** Format: uri */
             next: string | null;
@@ -890,30 +554,11 @@ export interface components {
             previous: string | null;
             results: components["schemas"]["V2Message"][];
         };
-        /**
-         * @description * `user` - User
-         *     * `assistant` - Assistant
-         * @enum {string}
-         */
-        MessageRoleEnum: "user" | "assistant";
         MessageSubmission: {
             /** Format: uuid */
             request_id: string;
             text: string;
             expected_profile_revision?: number;
-        };
-        ModelChoice: {
-            /** Format: uuid */
-            route_id: string;
-            model: string;
-            provider: components["schemas"]["ProviderEnum"];
-        };
-        ModelList: {
-            models: components["schemas"]["ModelChoice"][];
-            /** Format: uuid */
-            selected_route_id: string | null;
-            selected_model: string | null;
-            selected_available: boolean;
         };
         /**
          * @description * `text` - text
@@ -924,21 +569,12 @@ export interface components {
          * @enum {string}
          */
         OriginEnum: "text" | "voice_transcription" | "document_import" | "system" | "migration";
-        PatchedPreferenceInput: {
-            /** Format: uuid */
-            route_id?: string;
-        };
-        PatchedProfile: {
-            /** Format: uuid */
-            readonly id?: string;
-            revision?: number;
-            data?: unknown;
-            field_provenance?: unknown;
-            /** Format: date-time */
-            confirmed_at?: string | null;
-            /** Format: date-time */
-            readonly created_at?: string;
-        };
+        /**
+         * @description * `unknown` - unknown
+         *     * `partly_meets` - partly_meets
+         * @enum {string}
+         */
+        OutcomeEnum: "unknown" | "partly_meets";
         PatchedProfileCorrection: {
             expected_revision?: number;
             correction_text?: string;
@@ -949,16 +585,11 @@ export interface components {
                 [key: string]: unknown;
             }[];
         };
-        Profile: {
+        ProductRestriction: {
             /** Format: uuid */
-            readonly id: string;
-            revision: number;
-            data?: unknown;
-            field_provenance?: unknown;
-            /** Format: date-time */
-            confirmed_at?: string | null;
-            /** Format: date-time */
-            readonly created_at: string;
+            statement_id: string;
+            text: string;
+            citations: components["schemas"]["ComparisonCitation"][];
         };
         ProfileFact: {
             /** Format: uuid */
@@ -990,79 +621,6 @@ export interface components {
             /** Format: uuid */
             subject_person_id: string | null;
         };
-        /**
-         * @description * `cliproxyapi` - cliproxyapi
-         *     * `omniroute` - omniroute
-         * @enum {string}
-         */
-        ProviderEnum: "cliproxyapi" | "omniroute";
-        Qualification: {
-            /** Format: uuid */
-            id: string;
-            /** Format: uuid */
-            route_id: string;
-            model: string;
-            state: string;
-            results: {
-                [key: string]: unknown;
-            };
-        };
-        QualificationInput: {
-            model: string;
-            /** @default cliproxyapi */
-            provider: components["schemas"]["ProviderEnum"];
-        };
-        RecommendationCitation: {
-            /** Format: uuid */
-            id: string;
-            /** Format: uuid */
-            evidence_span_id: string;
-            /** Format: uuid */
-            policy_rule_id: string | null;
-            role: string;
-            quote: string;
-            section_label: string | null;
-            page: number | null;
-            /** Format: uuid */
-            document_version_id: string | null;
-            locator: unknown;
-        };
-        RecommendationDetail: {
-            /** Format: uuid */
-            id: string;
-            /** Format: uuid */
-            turn_id: string;
-            outcome: string;
-            profile_revision: number;
-            /** Format: uuid */
-            knowledge_release_id: string;
-            catalogue_limit: number;
-            comparison_label: string;
-            /** Format: date-time */
-            created_at: string;
-            candidates: components["schemas"]["CandidateDetail"][];
-            information_needs: components["schemas"]["InformationNeed"][];
-            statements: components["schemas"]["RecommendationStatement"][];
-        };
-        RecommendationStatement: {
-            /** Format: uuid */
-            id: string;
-            ordinal: number;
-            text: string;
-            statement_type: string;
-            critical: boolean;
-            support_status: string;
-            /** Format: uuid */
-            candidate_assessment_id: string | null;
-            citations: components["schemas"]["RecommendationCitation"][];
-        };
-        RelayStatus: {
-            account: components["schemas"]["Account"];
-            discovered_models: string[];
-            omniroute_models: string[];
-            catalogue_error: string | null;
-            laptop_wide: boolean;
-        };
         RequirementMatch: {
             /** Format: uuid */
             id: string;
@@ -1092,20 +650,6 @@ export interface components {
          * @enum {string}
          */
         StatusEnum: "open" | "archived" | "deleting" | "deleted";
-        Turn: {
-            /** Format: uuid */
-            readonly id: string;
-            /** Format: uuid */
-            request_id: string;
-            input_text: string;
-            operation?: string;
-            expected_profile_revision?: number | null;
-            /** Format: date-time */
-            readonly created_at: string;
-            readonly attempts: {
-                [key: string]: unknown;
-            }[];
-        };
         TurnAccepted: {
             /** Format: uuid */
             message_id: string;
@@ -1132,10 +676,10 @@ export interface components {
         };
         /**
          * @description * `fact_interpretation` - fact_interpretation
-         *     * `recommendation_answer` - recommendation_answer
+         *     * `comparison_answer` - comparison_answer
          * @enum {string}
          */
-        TurnRouteBindingRoleEnum: "fact_interpretation" | "recommendation_answer";
+        TurnRouteBindingRoleEnum: "fact_interpretation" | "comparison_answer";
         Upload: {
             /** Format: uri */
             file: string;
@@ -1176,7 +720,7 @@ export interface components {
             /** Format: date-time */
             readonly created_at: string;
             /** Format: uuid */
-            readonly recommendation_id: string | null;
+            readonly comparison_id: string | null;
         };
         /**
          * @description * `customer` - customer
@@ -1217,518 +761,6 @@ export interface components {
 }
 export type $defs = Record<string, never>;
 export interface operations {
-    v1_admin_ai_relay_retrieve: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RelayStatus"];
-                };
-            };
-        };
-    };
-    v1_admin_ai_relay_accounts_create: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["AccountAction"];
-                "application/x-www-form-urlencoded": components["schemas"]["AccountAction"];
-                "multipart/form-data": components["schemas"]["AccountAction"];
-            };
-        };
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["AccountActionResult"];
-                };
-            };
-        };
-    };
-    v1_admin_ai_relay_qualifications_create: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["QualificationInput"];
-                "application/x-www-form-urlencoded": components["schemas"]["QualificationInput"];
-                "multipart/form-data": components["schemas"]["QualificationInput"];
-            };
-        };
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Qualification"];
-                };
-            };
-        };
-    };
-    v1_ai_models_retrieve: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ModelList"];
-                };
-            };
-        };
-    };
-    v1_ai_preferences_partial_update: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: {
-            content: {
-                "application/json": components["schemas"]["PatchedPreferenceInput"];
-                "application/x-www-form-urlencoded": components["schemas"]["PatchedPreferenceInput"];
-                "multipart/form-data": components["schemas"]["PatchedPreferenceInput"];
-            };
-        };
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["ModelList"];
-                };
-            };
-        };
-    };
-    v1_answers_retrieve: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Answer"];
-                };
-            };
-        };
-    };
-    v1_catalogue_coverage_retrieve: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Answer"];
-                };
-            };
-        };
-    };
-    conversation_list: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Conversation"];
-                };
-            };
-        };
-    };
-    conversation_create: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: {
-            content: {
-                "application/json": components["schemas"]["Conversation"];
-                "application/x-www-form-urlencoded": components["schemas"]["Conversation"];
-                "multipart/form-data": components["schemas"]["Conversation"];
-            };
-        };
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Conversation"];
-                };
-            };
-        };
-    };
-    v1_conversations_retrieve: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Conversation"];
-                };
-            };
-        };
-    };
-    v1_conversations_destroy: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description No response body */
-            204: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
-    v1_conversations_messages_retrieve: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Message"];
-                };
-            };
-        };
-    };
-    v1_conversations_profile_retrieve: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Profile"];
-                };
-            };
-        };
-    };
-    v1_conversations_profile_partial_update: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: {
-            content: {
-                "application/json": components["schemas"]["PatchedProfile"];
-                "application/x-www-form-urlencoded": components["schemas"]["PatchedProfile"];
-                "multipart/form-data": components["schemas"]["PatchedProfile"];
-            };
-        };
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Profile"];
-                };
-            };
-        };
-    };
-    v1_conversations_profile_confirm_create: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: string;
-            };
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["Profile"];
-                "application/x-www-form-urlencoded": components["schemas"]["Profile"];
-                "multipart/form-data": components["schemas"]["Profile"];
-            };
-        };
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Profile"];
-                };
-            };
-        };
-    };
-    v1_documents_retrieve: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Answer"];
-                };
-            };
-        };
-    };
-    v1_documents_file_retrieve: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Answer"];
-                };
-            };
-        };
-    };
-    v1_evidence_retrieve: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Answer"];
-                };
-            };
-        };
-    };
-    v1_readiness_retrieve: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Answer"];
-                };
-            };
-        };
-    };
-    v1_recommendations_retrieve: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Answer"];
-                };
-            };
-        };
-    };
-    v1_turns_retrieve: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Turn"];
-                };
-            };
-        };
-    };
-    v1_turns_cancel_create: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: string;
-            };
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["Turn"];
-                "application/x-www-form-urlencoded": components["schemas"]["Turn"];
-                "multipart/form-data": components["schemas"]["Turn"];
-            };
-        };
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Turn"];
-                };
-            };
-        };
-    };
-    v1_turns_retry_create: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: string;
-            };
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["Turn"];
-                "application/x-www-form-urlencoded": components["schemas"]["Turn"];
-                "multipart/form-data": components["schemas"]["Turn"];
-            };
-        };
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["Turn"];
-                };
-            };
-        };
-    };
     v2_catalogue_readiness: {
         parameters: {
             query?: never;
@@ -1744,6 +776,27 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["CatalogueReadiness"];
+                };
+            };
+        };
+    };
+    v2_comparison_retrieve: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ComparisonDetail"];
                 };
             };
         };
@@ -1993,27 +1046,6 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["CatalogueReadiness"];
-                };
-            };
-        };
-    };
-    v2_recommendation_retrieve: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["RecommendationDetail"];
                 };
             };
         };

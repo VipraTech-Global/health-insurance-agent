@@ -12,8 +12,8 @@ type Message = components["schemas"]["V2Message"];
 type Profile = components["schemas"]["CurrentProfile"];
 type ProfileFact = components["schemas"]["ProfileFact"];
 type ProfileRequirement = components["schemas"]["ProfileRequirement"];
-type Recommendation = components["schemas"]["RecommendationDetail"];
-type RecommendationCitation = components["schemas"]["RecommendationCitation"];
+type Comparison = components["schemas"]["ComparisonDetail"];
+type ComparisonCitation = components["schemas"]["ComparisonCitation"];
 type Catalogue = components["schemas"]["CatalogueReadiness"];
 type TurnAccepted = components["schemas"]["TurnAccepted"];
 type Page<T> = { next: string | null; previous: string | null; results: T[] };
@@ -71,7 +71,7 @@ function monthlyEmiLabel(criterion: string, comparisonValue: unknown): string | 
   return [item.currency, monthly].filter(Boolean).join(" ") + "/month";
 }
 
-function citationView(citation: RecommendationCitation): CitationView {
+function citationView(citation: ComparisonCitation): CitationView {
   const locator = objectValue(citation.locator);
   const rawBox = locator?.kind === "pdf_region" ? locator.bbox : null;
   const bbox = Array.isArray(rawBox) && rawBox.length === 4 && rawBox.every(Number.isFinite)
@@ -102,7 +102,7 @@ export function AdviserApp({ email, onLogout }: { email: string; onLogout: () =>
   const [active, setActive] = useState<Conversation | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
   const [profile, setProfile] = useState<Profile | null>(null);
-  const [recommendations, setRecommendations] = useState<Record<string, Recommendation>>({});
+  const [comparisons, setComparisons] = useState<Record<string, Comparison>>({});
   const [catalogue, setCatalogue] = useState<Catalogue | null>(null);
   const [tab, setTab] = useState<"chat" | "catalogue">("chat");
   const [progress, setProgress] = useState("");
@@ -121,15 +121,15 @@ export function AdviserApp({ email, onLogout }: { email: string; onLogout: () =>
       allPages<Message>(`/api/v2/conversations/${conversationId}/messages/`),
       api<Profile>(`/api/v2/conversations/${conversationId}/profile/`),
     ]);
-    const recommendationIds = [...new Set(
-      loadedMessages.map((item) => item.recommendation_id).filter((id): id is string => !!id),
+    const comparisonIds = [...new Set(
+      loadedMessages.map((item) => item.comparison_id).filter((id): id is string => !!id),
     )];
-    const loadedRecommendations = await Promise.all(
-      recommendationIds.map(async (id) => [id, await api<Recommendation>(`/api/v2/recommendations/${id}/`)] as const),
+    const loadedComparisons = await Promise.all(
+      comparisonIds.map(async (id) => [id, await api<Comparison>(`/api/v2/comparisons/${id}/`)] as const),
     );
     setMessages(loadedMessages);
     setProfile(loadedProfile);
-    setRecommendations(Object.fromEntries(loadedRecommendations));
+    setComparisons(Object.fromEntries(loadedComparisons));
   }, []);
 
   const refreshCatalogue = useCallback(async () => {
@@ -166,10 +166,10 @@ export function AdviserApp({ email, onLogout }: { email: string; onLogout: () =>
             if (event.event === "turn.progress" && typeof payload.progress_code === "string") {
               setProgress(payload.progress_code);
             }
-            if (event.event === "recommendation.completed" || event.event === "clarification.required") {
+            if (event.event === "comparison.completed" || event.event === "clarification.required") {
               terminal = true;
               setRetryableTurnId(null);
-              setNotice(event.event === "clarification.required" ? "One focused clarification is needed." : "Recommendation validated and saved.");
+              setNotice(event.event === "clarification.required" ? "One focused clarification is needed." : "Policy comparison validated and saved.");
             }
             if (event.event === "turn.failed") {
               terminal = true;
@@ -236,7 +236,7 @@ export function AdviserApp({ email, onLogout }: { email: string; onLogout: () =>
     if (!active) {
       setMessages([]);
       setProfile(null);
-      setRecommendations({});
+      setComparisons({});
       return;
     }
     let disposed = false;
@@ -290,7 +290,7 @@ export function AdviserApp({ email, onLogout }: { email: string; onLogout: () =>
       origin: "text",
       submitted_at: new Date().toISOString(),
       created_at: new Date().toISOString(),
-      recommendation_id: null,
+      comparison_id: null,
     }]);
     try {
       const accepted = await api<TurnAccepted>(`/api/v2/conversations/${active.id}/messages/`, {
@@ -421,15 +421,15 @@ export function AdviserApp({ email, onLogout }: { email: string; onLogout: () =>
     }
   }
 
-  const latestRecommendation = useMemo(() => {
-    const id = [...messages].reverse().find((item) => item.recommendation_id)?.recommendation_id;
-    return id ? recommendations[id] : undefined;
-  }, [messages, recommendations]);
+  const latestComparison = useMemo(() => {
+    const id = [...messages].reverse().find((item) => item.comparison_id)?.comparison_id;
+    return id ? comparisons[id] : undefined;
+  }, [messages, comparisons]);
 
   return (
     <div className="app-shell">
       <aside className="rail">
-        <div className="brand"><span className="mark small">CG</span><div><strong>CoverGuide</strong><small>Evidence-grounded adviser</small></div></div>
+        <div className="brand"><span className="mark small">CG</span><div><strong>CoverGuide</strong><small>Evidence-grounded policy comparison</small></div></div>
         <button className="new-chat" onClick={newConversation} disabled={busy}>＋ New conversation</button>
         <nav>
           <p className="nav-label">CONVERSATIONS</p>
@@ -452,20 +452,20 @@ export function AdviserApp({ email, onLogout }: { email: string; onLogout: () =>
           <div className="empty"><span>✦</span><h1>Start with your own words.</h1><p>No profile form is required. Tell CoverGuide who needs cover, what matters, or what is uncertain.</p><button className="primary" onClick={newConversation}>Start a conversation</button></div>
         ) : (
           <>
-            <header className="topbar"><div><p className="eyebrow">ADVISORY CONVERSATION</p><h2>{active.title || "Insurance planning"}</h2></div><span className={catalogue?.ready ? "ready-badge" : "blocked-badge"}>{catalogue?.ready ? `${catalogue.catalogue_limit} products ready` : "Knowledge gated"}</span></header>
+            <header className="topbar"><div><p className="eyebrow">POLICY COMPARISON</p><h2>{active.title || "Insurance planning"}</h2></div><span className={catalogue?.ready ? "ready-badge" : "blocked-badge"}>{catalogue?.ready ? `${catalogue.catalogue_limit} products ready` : "Knowledge gated"}</span></header>
             <div className="conversation-layout">
               <section className="chat-panel">
                 <div className="catalogue-limit">{catalogue?.comparison_label || "Only published reviewed products are compared."} Premiums and underwriting remain conditional until supported by your quote or schedule.</div>
                 <div className="messages">
                   {messages.length === 0 && <div className="welcome"><span>✦</span><h1>What would a good policy need to do for you?</h1><p>Write naturally. I’ll keep uncertain details unresolved and ask one focused question when needed.</p></div>}
                   {messages.map((message) => {
-                    const recommendation = message.recommendation_id ? recommendations[message.recommendation_id] : undefined;
-                    const isClarification = recommendation?.outcome === "clarification_required";
+                    const comparison = message.comparison_id ? comparisons[message.comparison_id] : undefined;
+                    const isClarification = comparison?.outcome === "clarification_required";
                     return (
                       <article key={message.id} className={`message ${message.role === "customer" ? "user" : "assistant"}`}>
                         <div className="message-label">{message.role === "customer" ? "You" : "CoverGuide"}</div>
                         {!isClarification && <p>{message.content}</p>}
-                        {recommendation && <RecommendationPanel recommendation={recommendation} onCitation={setCitation} />}
+                        {comparison && <ComparisonPanel comparison={comparison} onCitation={setCitation} />}
                       </article>
                     );
                   })}
@@ -482,7 +482,7 @@ export function AdviserApp({ email, onLogout }: { email: string; onLogout: () =>
                 <div className="profile-heading"><div><p className="eyebrow">CURRENT PROFILE</p><h3>People & priorities</h3></div><span className="revision-badge">r{profile?.revision ?? "–"}</span></div>
                 <ProfilePanel profile={profile} onEdit={setProfileEdit} />
                 <form className="quote-upload" onSubmit={uploadQuote}><p className="eyebrow">OPTIONAL QUOTE</p><label>Confirm premium and selected options<input name="file" type="file" accept="application/pdf" disabled={busy} /></label><button className="secondary" disabled={busy}>Upload PDF</button></form>
-                {latestRecommendation?.information_needs.length ? <div className="open-needs"><p className="eyebrow">STILL NEEDED</p>{latestRecommendation.information_needs.map((need) => <p key={need.id}>{need.reason}</p>)}</div> : null}
+                {latestComparison?.information_needs.length ? <div className="open-needs"><p className="eyebrow">STILL NEEDED</p>{latestComparison.information_needs.map((need) => <p key={need.id}>{need.reason}</p>)}</div> : null}
               </aside>
             </div>
           </>
@@ -505,9 +505,23 @@ function ProfilePanel({ profile, onEdit }: { profile: Profile | null; onEdit: (e
   })}</div>;
 }
 
-function RecommendationPanel({ recommendation, onCitation }: { recommendation: Recommendation; onCitation: (citation: CitationView) => void }) {
-  const showCandidates = recommendation.outcome !== "clarification_required";
-  return <div className="recommendation-detail">{showCandidates ? <div className="candidate-grid">{recommendation.candidates.map((candidate) => <section key={candidate.id} className={`candidate ${candidate.disposition}`}><div><b>#{candidate.rank}</b><span>{candidate.disposition.replaceAll("_", " ")}</span></div><h4>{candidate.product}</h4><p>{candidate.insurer}</p><code>{candidate.uin}</code><ul>{candidate.requirement_matches.map((match) => <li key={match.id} className={`match-${match.outcome}`}><span>{match.criterion.replaceAll("_", " ")}</span><b>{match.outcome.replaceAll("_", " ")}</b>{match.comparison_value != null ? <em>{displayValue(match.comparison_value)}</em> : null}{monthlyEmiLabel(match.criterion, match.comparison_value) ? <em className="derived-emi">≈ {monthlyEmiLabel(match.criterion, match.comparison_value)} (derived, not an insurer-published rate)</em> : null}</li>)}</ul></section>)}</div> : null}<div className="recommendation-statements">{recommendation.statements.map((statement) => <div key={statement.id} className={statement.critical ? "critical-statement" : ""}><p>{statement.text}</p>{statement.citations.length ? <div className="claim-sources">{statement.citations.map((source, index) => <button type="button" className="citation-button" key={source.id} onClick={() => onCitation(citationView(source))}>Source {index + 1} · p.{source.page ?? "–"}</button>)}</div> : null}</div>)}</div></div>;
+function ComparisonPanel({ comparison, onCitation }: { comparison: Comparison; onCitation: (citation: CitationView) => void }) {
+  const showProducts = comparison.outcome !== "clarification_required";
+  return <div className="comparison-detail">
+    <div className="comparison-heading"><div><p className="eyebrow">POLICY COMPARISON</p><h3>Policy comparison</h3></div><span>{comparison.comparison_label}</span></div>
+    <p className="comparison-framing">CoverGuide compares the reviewed products against the criteria you shared. It does not choose a policy; the decision is yours.</p>
+    {showProducts ? <div className="compared-product-grid">{comparison.products.map((product) => <section key={product.id} className="compared-product">
+      <div className="product-identity"><div><h4>{product.product}</h4><p>{product.insurer}</p></div><span>{product.variant}</span></div>
+      <code>{product.uin || "UIN not verified"}</code>
+      <div className="criterion-matrix" role="table" aria-label={`${product.product} criteria`}>
+        {product.criteria.map((criterion) => <div key={criterion.id} className={`criterion-row match-${criterion.outcome}`} role="row"><span role="cell">{criterion.criterion.replaceAll("_", " ")}</span><b role="cell">{criterion.outcome.replaceAll("_", " ")}</b>{criterion.comparison_value != null ? <em role="cell">{displayValue(criterion.comparison_value)}</em> : null}{monthlyEmiLabel(criterion.criterion, criterion.comparison_value) ? <em className="derived-emi" role="cell">≈ {monthlyEmiLabel(criterion.criterion, criterion.comparison_value)} (derived, not an insurer-published rate)</em> : null}</div>)}
+      </div>
+      <div className="product-evidence-section"><b>Evidence gaps and unknowns</b>{product.evidence_gaps.length ? <ul>{product.evidence_gaps.map((gap) => <li key={`${gap.requirement_id}-${gap.criterion}`}>{gap.criterion.replaceAll("_", " ")} · {gap.outcome.replaceAll("_", " ")}</li>)}</ul> : <p>None identified for the shared criteria.</p>}</div>
+      <div className="product-evidence-section"><b>Applicable restrictions</b>{product.restrictions.length ? product.restrictions.map((restriction) => <div key={restriction.statement_id} className="restriction"><p>{restriction.text}</p><div className="claim-sources">{restriction.citations.map((source, index) => <button type="button" className="citation-button" key={source.id} onClick={() => onCitation(citationView(source))}>Restriction source {index + 1} · p.{source.page ?? "–"}</button>)}</div></div>) : <p>No applicable restriction was established from the published evidence.</p>}</div>
+      <div className="product-evidence-section"><b>Policy evidence</b>{product.evidence.length ? <div className="claim-sources">{product.evidence.map((source, index) => <button type="button" className="citation-button" key={`${source.id}-${index}`} onClick={() => onCitation(citationView(source))}>Evidence {index + 1} · p.{source.page ?? "–"}</button>)}</div> : <p>No cited product statement is available.</p>}</div>
+    </section>)}</div> : null}
+    <div className="comparison-statements">{comparison.statements.map((statement) => <div key={statement.id} className={statement.critical ? "critical-statement" : ""}><p>{statement.text}</p>{statement.citations.length ? <div className="claim-sources">{statement.citations.map((source, index) => <button type="button" className="citation-button" key={source.id} onClick={() => onCitation(citationView(source))}>Source {index + 1} · p.{source.page ?? "–"}</button>)}</div> : null}</div>)}</div>
+  </div>;
 }
 
 function ProfileEditDialog({ edit, busy, onSubmit, onClose }: { edit: ProfileEdit; busy: boolean; onSubmit: (event: FormEvent<HTMLFormElement>) => void; onClose: () => void }) {
