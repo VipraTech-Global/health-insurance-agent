@@ -1,6 +1,6 @@
 {
-  "revision": "discussion-r25-final-review",
-  "status": "Revision discussion-r25-final-review and the route-pinning amendment were explicitly approved for local implementation on 2026-09-22. Production deployment and cutover remain unapproved.",
+  "revision": "discussion-r26-neutral-comparison",
+  "status": "Revision discussion-r26-neutral-comparison incorporates the locally implemented neutral-comparison and route-pinning amendments. Production deployment and cutover remain unapproved.",
   "common_rules": [
     "Types and JSON contracts are detailed in value-and-rule-contracts.md.",
     "Required means NOT NULL; optional defaults NULL unless listed. Empty collection only means no recorded entries, never proof none exist.",
@@ -778,11 +778,11 @@
           ]
         },
         {
-          "name": "recommendation_id",
-          "type": "fk:Recommendation",
+          "name": "comparison_id",
+          "type": "fk:Comparison",
           "required": false,
           "default": "NULL",
-          "purpose": "Structured recommendation published by this adviser message",
+          "purpose": "Structured comparison published by this adviser message",
           "validation": "Same owner/conversation; unique when nonnull",
           "units": null,
           "allowed_values": null,
@@ -813,7 +813,7 @@
       "constraints": [
         "unique(conversation_id,sequence)",
         "unique(owner_id,client_request_id) where nonnull",
-        "recommendation_id is NULL or identifies a recommendation owned by the same account and conversation",
+        "comparison_id is NULL or identifies a comparison owned by the same account and conversation",
         "authorized erasure replaces content with a fixed tombstone, sets redacted_at and invalidates all ConversationMessageChunk rows",
         "payload_commitment is a keyed HMAC and cannot be used as a public content hash",
         "unique(id,owner_id); owner_id immutable"
@@ -1510,7 +1510,7 @@
     },
     {
       "entity": "CustomerRequirement",
-      "purpose": "One atomic mandatory, preferred or informational condition used to filter, rank or explain policy configurations.",
+      "purpose": "One atomic mandatory, preferred or informational criterion used to compare policy configurations.",
       "scope": "private",
       "requirements": [
         "CUS-01",
@@ -1663,7 +1663,7 @@
           "type": "enum",
           "required": true,
           "default": "none",
-          "purpose": "Whether failure excludes or only ranks a configuration",
+          "purpose": "Customer-stated importance shown with the criterion outcome",
           "validation": "mandatory,preferred,informational",
           "units": null,
           "allowed_values": "mandatory,preferred,informational",
@@ -1834,10 +1834,10 @@
           "required": true,
           "default": "none",
           "purpose": "Buying/comparison goal, including comparison with existing cover",
-          "validation": "purchase_recommendation,product_comparison,coverage_question,renewal_review,portability_review",
+          "validation": "product_comparison,coverage_question,renewal_review,portability_review",
           "units": null,
-          "allowed_values": "purchase_recommendation,product_comparison,coverage_question,renewal_review,portability_review",
-          "example": "Synthetic: purchase_recommendation",
+          "allowed_values": "product_comparison,coverage_question,renewal_review,portability_review",
+          "example": "Synthetic: product_comparison",
           "basis": [
             "CUS-01",
             "CUS-03",
@@ -3708,7 +3708,7 @@
           ]
         },
         {
-          "name": "recommendation_role",
+          "name": "comparison_role",
           "type": "enum",
           "required": true,
           "default": "unresolved",
@@ -3747,11 +3747,11 @@
       "constraints": [
         "no global unique-name assumption",
         "identity_evidence_id required",
-        "recommendation_role and benefit_type remain distinct"
+        "comparison_role and benefit_type remain distinct"
       ],
       "indexes": [
         "insurer_id,name",
-        "benefit_type,lifecycle_status,recommendation_role"
+        "benefit_type,lifecycle_status,comparison_role"
       ]
     },
     {
@@ -4534,7 +4534,7 @@
         "unique(id,owner_id); owner_id immutable",
         "proposer_id and payer_id have the same owner_id",
         "group_master_reference is allowed only when coverage_type=group_member",
-        "public recommendations do not create CustomerPolicy rows"
+        "public comparisons do not create CustomerPolicy rows"
       ],
       "indexes": [
         "owner_id,insurer_id",
@@ -6622,22 +6622,6 @@
           ]
         },
         {
-          "name": "manifest_sha256",
-          "type": "char(64)",
-          "required": true,
-          "default": "none",
-          "purpose": "Digest of the exact rule membership and supported scope",
-          "validation": "Recomputed and verified before publication",
-          "units": null,
-          "allowed_values": null,
-          "example": "No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md.",
-          "basis": [
-            "OPS-03",
-            "RET-01",
-            "DEC-01"
-          ]
-        },
-        {
           "name": "published_at",
           "type": "instant",
           "required": false,
@@ -6660,6 +6644,50 @@
           "default": "NULL",
           "purpose": "Immediately preceding published knowledge release",
           "validation": "Acyclic",
+          "units": null,
+          "allowed_values": null,
+          "example": "No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md.",
+          "basis": [
+            "OPS-03",
+            "RET-01",
+            "DEC-01"
+          ]
+        },
+        {
+          "name": "release_label",
+          "type": "varchar(32)",
+          "required": true,
+          "default": "development_alpha",
+          "purpose": "Versioned local release mode",
+          "validation": "Stable release-scope label",
+          "units": null,
+          "allowed_values": null,
+          "example": "development_alpha",
+          "basis": [
+            "OPS-04"
+          ]
+        },
+        {
+          "name": "readiness",
+          "type": "jsonb",
+          "required": true,
+          "default": "empty object",
+          "purpose": "Public readiness evidence and product coverage summary",
+          "validation": "Server-generated non-private metadata",
+          "units": null,
+          "allowed_values": null,
+          "example": {},
+          "basis": [
+            "OPS-04"
+          ]
+        },
+        {
+          "name": "manifest_sha256",
+          "type": "char(64)",
+          "required": true,
+          "default": "none",
+          "purpose": "Digest of the exact rule membership and supported scope",
+          "validation": "Recomputed and verified before publication",
           "units": null,
           "allowed_values": null,
           "example": "No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md.",
@@ -7030,8 +7058,8 @@
       ]
     },
     {
-      "entity": "Recommendation",
-      "purpose": "One saved buying/comparison result for an exact customer profile and published policy-knowledge release.",
+      "entity": "Comparison",
+      "purpose": "One saved neutral policy comparison for an exact customer profile and published policy-knowledge release.",
       "scope": "private",
       "requirements": [
         "DEC-01",
@@ -7161,10 +7189,10 @@
         },
         {
           "name": "supersedes_id",
-          "type": "fk:Recommendation",
+          "type": "fk:Comparison",
           "required": false,
           "default": "NULL",
-          "purpose": "Earlier recommendation replaced after a correction or later comparison",
+          "purpose": "Earlier comparison replaced after a correction or later comparison",
           "validation": "Same conversation",
           "units": null,
           "allowed_values": null,
@@ -7180,8 +7208,8 @@
         "turn, advice request and profile revision belong to the same owner and conversation",
         "knowledge_release_id is published and immutable",
         "supersedes_id has the same owner and advice request and is acyclic",
-        "technical failure is stored on Turn and does not create a Recommendation",
-        "completed or conditional publication requires no unsupported critical RecommendationStatement",
+        "technical failure is stored on Turn and does not create a Comparison",
+        "completed or conditional publication requires no unsupported critical ComparisonStatement",
         "unique(id,owner_id); owner_id immutable"
       ],
       "indexes": [
@@ -7191,8 +7219,8 @@
       ]
     },
     {
-      "entity": "PolicyCandidateAssessment",
-      "purpose": "One exact public policy configuration evaluated for the customer, including exclusions and uncertain candidates.",
+      "entity": "PolicyComparisonAssessment",
+      "purpose": "One exact public policy configuration evaluated neutrally against the customer criteria.",
       "scope": "private",
       "requirements": [
         "INS-01",
@@ -7247,8 +7275,8 @@
           ]
         },
         {
-          "name": "recommendation_id",
-          "type": "fk:Recommendation",
+          "name": "comparison_id",
+          "type": "fk:Comparison",
           "required": true,
           "default": "none",
           "purpose": "Parent buying/comparison result",
@@ -7267,7 +7295,7 @@
           "required": true,
           "default": "none",
           "purpose": "Public policy variant evaluated",
-          "validation": "Variant is eligible for recommendation scope or explicitly retained as excluded",
+          "validation": "Variant is eligible for comparison scope or explicitly retained as excluded",
           "units": null,
           "allowed_values": null,
           "example": "Synthetic design example only; no real customer value inspected.",
@@ -7310,42 +7338,12 @@
           ]
         },
         {
-          "name": "disposition",
-          "type": "enum",
-          "required": true,
-          "default": "none",
-          "purpose": "How this candidate finished the comparison",
-          "validation": "recommended,alternative,eligible,excluded,conditional,insufficient_evidence",
-          "units": null,
-          "allowed_values": "recommended,alternative,eligible,excluded,conditional,insufficient_evidence",
-          "example": "Synthetic design example only; no real customer value inspected.",
-          "basis": [
-            "INS-01",
-            "INS-02",
-            "DEC-01"
-          ]
-        },
-        {
-          "name": "rank",
-          "type": "integer",
-          "required": false,
-          "default": "NULL",
-          "purpose": "Customer-facing order when the recommendation ranks candidates",
-          "validation": "Positive; NULL for excluded or unranked candidates; no unexplained score",
-          "units": null,
-          "allowed_values": null,
-          "example": "Synthetic design example only; no real customer value inspected.",
-          "basis": [
-            "DEC-01"
-          ]
-        },
-        {
           "name": "quote_id",
           "type": "fk:Quote",
           "required": false,
           "default": "NULL",
           "purpose": "Exact personal quote used for price comparison",
-          "validation": "Same owner and profile revision; selection matches candidate; unexpired at evaluation or explicitly historical",
+          "validation": "Same owner and profile revision; selection matches compared product; unexpired at evaluation or explicitly historical",
           "units": null,
           "allowed_values": null,
           "example": "Synthetic design example only; no real customer value inspected.",
@@ -7356,22 +7354,20 @@
         }
       ],
       "constraints": [
-        "unique(recommendation_id,product_variant_id,selection_sha256)",
-        "rank IS NULL OR rank > 0",
-        "recommended and alternative ranks are unique within recommendation when nonnull",
+        "unique(comparison_id,product_variant_id,selection_commitment)",
         "quote_id is NULL or matches owner, profile revision, variant and evaluated selection",
-        "no opaque numeric recommendation score is stored",
+        "no overall disposition, score or rank is stored",
         "unique(id,owner_id); owner_id immutable"
       ],
       "indexes": [
-        "recommendation_id,rank",
+        "comparison_id,product_variant_id",
         "product_variant_id",
         "quote_id"
       ]
     },
     {
       "entity": "PolicyRequirementMatch",
-      "purpose": "How one policy candidate performs against one exact customer requirement.",
+      "purpose": "How one compared policy performs against one exact customer requirement.",
       "scope": "private",
       "requirements": [
         "CUS-03",
@@ -7424,8 +7420,8 @@
           ]
         },
         {
-          "name": "candidate_assessment_id",
-          "type": "fk:PolicyCandidateAssessment",
+          "name": "comparison_assessment_id",
+          "type": "fk:PolicyComparisonAssessment",
           "required": true,
           "default": "none",
           "purpose": "Policy configuration being compared",
@@ -7443,7 +7439,7 @@
           "required": true,
           "default": "none",
           "purpose": "Exact requirement version tested",
-          "validation": "Same owner; active in recommendation profile revision",
+          "validation": "Same owner; active in comparison profile revision",
           "units": null,
           "allowed_values": null,
           "example": "Synthetic design example only; no real customer value inspected.",
@@ -7501,13 +7497,13 @@
         }
       ],
       "constraints": [
-        "unique(candidate_assessment_id,customer_requirement_id)",
+        "unique(comparison_assessment_id,customer_requirement_id)",
         "requirement is active in the pinned customer profile revision",
-        "unknown and not_applicable require an explanatory RecommendationStatement",
+        "unknown and not_applicable require an explanatory ComparisonStatement",
         "unique(id,owner_id); owner_id immutable"
       ],
       "indexes": [
-        "candidate_assessment_id,outcome",
+        "comparison_assessment_id,outcome",
         "customer_requirement_id",
         "provider_network_entry_id"
       ]
@@ -7568,8 +7564,8 @@
           ]
         },
         {
-          "name": "recommendation_id",
-          "type": "fk:Recommendation",
+          "name": "comparison_id",
+          "type": "fk:Comparison",
           "required": true,
           "default": "none",
           "purpose": "Result that identified the missing information",
@@ -7703,21 +7699,21 @@
         }
       ],
       "constraints": [
-        "unique(recommendation_id,subject_person_id,need_kind,information_key) NULLS NOT DISTINCT",
+        "unique(comparison_id,subject_person_id,need_kind,information_key) NULLS NOT DISTINCT",
         "asked requires asked_in_message_id; resolved requires resolved_in_profile_revision_id",
-        "required open, asked or unavailable needs prevent a completed recommendation",
+        "required open, asked or unavailable needs prevent a completed comparison",
         "information_key is code-controlled and AI output cannot extend the registry",
         "unique(id,owner_id); owner_id immutable"
       ],
       "indexes": [
-        "recommendation_id,status,priority",
+        "comparison_id,status,priority",
         "owner_id,subject_person_id,status",
         "asked_in_message_id"
       ]
     },
     {
-      "entity": "RecommendationStatement",
-      "purpose": "One independently checkable customer-facing statement in a buying recommendation.",
+      "entity": "ComparisonStatement",
+      "purpose": "One independently checkable cited factual statement in a policy comparison.",
       "scope": "private",
       "requirements": [
         "DEC-01",
@@ -7769,11 +7765,11 @@
           ]
         },
         {
-          "name": "recommendation_id",
-          "type": "fk:Recommendation",
+          "name": "comparison_id",
+          "type": "fk:Comparison",
           "required": true,
           "default": "none",
-          "purpose": "Parent recommendation",
+          "purpose": "Parent comparison",
           "validation": "Same owner",
           "units": null,
           "allowed_values": null,
@@ -7799,12 +7795,12 @@
           ]
         },
         {
-          "name": "candidate_assessment_id",
-          "type": "fk:PolicyCandidateAssessment",
+          "name": "comparison_assessment_id",
+          "type": "fk:PolicyComparisonAssessment",
           "required": false,
           "default": "NULL",
-          "purpose": "Candidate this statement concerns",
-          "validation": "Same recommendation and owner",
+          "purpose": "Compared product this statement concerns",
+          "validation": "Same comparison and owner",
           "units": null,
           "allowed_values": null,
           "example": "Synthetic design example only; no real customer value inspected.",
@@ -7818,7 +7814,7 @@
           "required": false,
           "default": "NULL",
           "purpose": "Requirement result this statement explains",
-          "validation": "Same recommendation and owner",
+          "validation": "Same comparison and owner",
           "units": null,
           "allowed_values": null,
           "example": "Synthetic design example only; no real customer value inspected.",
@@ -7833,7 +7829,7 @@
           "required": false,
           "default": "NULL",
           "purpose": "Clarification gap this statement explains",
-          "validation": "Same recommendation and owner",
+          "validation": "Same comparison and owner",
           "units": null,
           "allowed_values": null,
           "example": "Synthetic design example only; no real customer value inspected.",
@@ -7919,24 +7915,24 @@
         }
       ],
       "constraints": [
-        "unique(recommendation_id,ordinal)",
-        "at most one of candidate_assessment_id, requirement_match_id and information_need_id is nonnull; none means recommendation-wide",
-        "requirement_match and information_need targets belong to the same recommendation",
+        "unique(comparison_id,ordinal)",
+        "at most one of comparison_assessment_id, requirement_match_id and information_need_id is nonnull; none means comparison-wide",
+        "requirement_match and information_need targets belong to the same comparison",
         "unsupported critical statement blocks publication",
         "calculation statement requires calculation_id",
         "unique(id,owner_id); owner_id immutable"
       ],
       "indexes": [
-        "recommendation_id,ordinal",
-        "candidate_assessment_id",
+        "comparison_id,ordinal",
+        "comparison_assessment_id",
         "requirement_match_id",
         "information_need_id",
         "calculation_id"
       ]
     },
     {
-      "entity": "RecommendationCitation",
-      "purpose": "Exact original policy passage supporting, restricting or conflicting with one recommendation statement.",
+      "entity": "ComparisonCitation",
+      "purpose": "Exact original policy passage supporting, restricting or conflicting with one comparison statement.",
       "scope": "private",
       "requirements": [
         "DEC-01",
@@ -7988,8 +7984,8 @@
           ]
         },
         {
-          "name": "recommendation_statement_id",
-          "type": "fk:RecommendationStatement",
+          "name": "comparison_statement_id",
+          "type": "fk:ComparisonStatement",
           "required": true,
           "default": "none",
           "purpose": "Customer-facing statement being evidenced",
@@ -8064,14 +8060,14 @@
         }
       ],
       "constraints": [
-        "unique(recommendation_statement_id,evidence_span_id,role)",
+        "unique(comparison_statement_id,evidence_span_id,role)",
         "policy_rule_id is NULL only for direct source facts that need no interpreted policy rule",
-        "policy_rule_id when present is in the recommendation's KnowledgeRelease and is supported by evidence_span_id",
+        "policy_rule_id when present is in the comparison's KnowledgeRelease and is supported by evidence_span_id",
         "private evidence is accessible only to the same owner; public evidence requires citation access",
         "unique(id,owner_id); owner_id immutable"
       ],
       "indexes": [
-        "recommendation_statement_id,ordinal",
+        "comparison_statement_id,ordinal",
         "evidence_span_id",
         "policy_rule_id"
       ]
@@ -8509,23 +8505,27 @@
           "name": "route_commitment",
           "type": "char(64)",
           "required": true,
-          "default": "empty only for pre-amendment rows",
+          "default": "empty string",
           "purpose": "Keyed commitment over both immutable interactive-role bindings",
           "validation": "Versioned HMAC; set before enqueue; immutable once set; new turns require exactly both interactive roles",
           "units": null,
           "allowed_values": null,
           "example": "Synthetic operational example only; no real customer value inspected.",
-          "basis": ["OPS-02", "OPS-04", "OPS-06"]
+          "basis": [
+            "OPS-02",
+            "OPS-04",
+            "OPS-06"
+          ]
         }
       ],
       "constraints": [
         "unique(owner_id,request_id)",
         "input message and optional starting profile belong to the same owner and conversation",
-        "every newly accepted turn has exactly one fact_interpretation and one recommendation_answer binding before enqueue",
+        "every newly accepted turn has exactly one fact_interpretation and one comparison_answer binding before enqueue",
         "route_commitment is immutable once set",
         "running requires a current lease token and lease_until",
         "only the current lease token may publish",
-        "completed requires a Recommendation whose profile_revision_id is the final evaluated revision; technical failure creates none",
+        "completed requires a Comparison whose profile_revision_id is the final evaluated revision; technical failure creates none",
         "a newer concurrent profile makes the result stale unless the publication transaction proves its correction lineage is compatible",
         "unique(id,owner_id); owner_id immutable"
       ],
@@ -8539,21 +8539,196 @@
       "entity": "TurnRouteBinding",
       "purpose": "One immutable exact route and passed qualification captured for an interactive role before a turn is queued.",
       "scope": "private",
-      "requirements": ["OPS-02", "OPS-04", "OPS-06"],
+      "requirements": [
+        "OPS-02",
+        "OPS-04",
+        "OPS-06"
+      ],
       "fields": [
-        {"name": "id", "type": "uuid", "required": true, "default": "uuid4", "purpose": "Stable row identity", "validation": "Primary key; immutable; never reused", "units": null, "allowed_values": null, "example": "Synthetic operational example only; no real customer value inspected.", "basis": ["OPS-02", "OPS-04"]},
-        {"name": "created_at", "type": "timestamptz", "required": true, "default": "transaction timestamp at insertion", "purpose": "When the route was pinned", "validation": "UTC; immutable", "units": "instant", "allowed_values": null, "example": "Synthetic operational example only; no real customer value inspected.", "basis": ["OPS-06"]},
-        {"name": "turn_id", "type": "fk:Turn", "required": true, "default": "none", "purpose": "Accepted turn that owns the binding", "validation": "Exactly two per newly accepted turn; immutable", "units": null, "allowed_values": null, "example": "Synthetic operational example only; no real customer value inspected.", "basis": ["OPS-02", "OPS-04"]},
-        {"name": "role", "type": "enum", "required": true, "default": "none", "purpose": "Interactive operation", "validation": "fact_interpretation,recommendation_answer", "units": null, "allowed_values": "fact_interpretation,recommendation_answer", "example": "fact_interpretation (synthetic)", "basis": ["OPS-04"]},
-        {"name": "route_id", "type": "fk:ModelRoute", "required": true, "default": "none", "purpose": "Exact immutable route revision", "validation": "Active when called; must match all captured route fields", "units": null, "allowed_values": null, "example": "Synthetic operational example only; no real customer value inspected.", "basis": ["OPS-04"]},
-        {"name": "qualification_id", "type": "fk:ModelQualification", "required": true, "default": "none", "purpose": "Exact passed qualification", "validation": "Same route and role/schema; current schema hash; passed exact-identity capabilities", "units": null, "allowed_values": null, "example": "Synthetic operational example only; no real customer value inspected.", "basis": ["OPS-04"]},
-        {"name": "requested_model", "type": "varchar(160)", "required": true, "default": "none", "purpose": "Exact requested provider/model ID", "validation": "Must equal the bound route", "units": null, "allowed_values": null, "example": "gemini/gemini-3.5-flash-lite (operator configuration example)", "basis": ["OPS-04"]},
-        {"name": "expected_model", "type": "varchar(160)", "required": true, "default": "none", "purpose": "Exact model ID expected in the response", "validation": "Must equal observed_model for a passed binding", "units": null, "allowed_values": null, "example": "gemini-3.5-flash-lite (operator configuration example)", "basis": ["OPS-04"]},
-        {"name": "observed_model", "type": "varchar(160)", "required": true, "default": "none", "purpose": "Model ID observed during qualification", "validation": "Exact equality with expected_model", "units": null, "allowed_values": null, "example": "gemini-3.5-flash-lite (operator configuration example)", "basis": ["OPS-04"]},
-        {"name": "endpoint_profile", "type": "varchar(120)", "required": true, "default": "none", "purpose": "Secret-free endpoint identity", "validation": "Interactive relay or loopback OmniRoute profile only", "units": null, "allowed_values": null, "example": "omniroute-loopback (operator configuration example)", "basis": ["OPS-04"]},
-        {"name": "adapter_version", "type": "varchar(120)", "required": true, "default": "none", "purpose": "Strict transport implementation identity", "validation": "Must equal the bound route", "units": null, "allowed_values": null, "example": "strict-relay-v2/1 (implementation example)", "basis": ["OPS-04"]},
-        {"name": "route_configuration_sha256", "type": "char(64)", "required": true, "default": "none", "purpose": "Digest of endpoint/model/adapter configuration", "validation": "Lowercase hex; must equal the bound route", "units": null, "allowed_values": null, "example": "Synthetic operational example only; no real customer value inspected.", "basis": ["OPS-04"]},
-        {"name": "schema_sha256", "type": "char(64)", "required": true, "default": "none", "purpose": "Digest of the exact output schema qualified", "validation": "Lowercase hex; must equal the bound qualification and current schema", "units": null, "allowed_values": null, "example": "Synthetic operational example only; no real customer value inspected.", "basis": ["OPS-04"]}
+        {
+          "name": "id",
+          "type": "uuid",
+          "required": true,
+          "default": "uuid4",
+          "purpose": "Stable row identity",
+          "validation": "Primary key; immutable; never reused",
+          "units": null,
+          "allowed_values": null,
+          "example": "Synthetic operational example only; no real customer value inspected.",
+          "basis": [
+            "OPS-02",
+            "OPS-04"
+          ]
+        },
+        {
+          "name": "created_at",
+          "type": "timestamptz",
+          "required": true,
+          "default": "transaction timestamp at insertion",
+          "purpose": "When the route was pinned",
+          "validation": "UTC; immutable",
+          "units": "instant",
+          "allowed_values": null,
+          "example": "Synthetic operational example only; no real customer value inspected.",
+          "basis": [
+            "OPS-06"
+          ]
+        },
+        {
+          "name": "turn_id",
+          "type": "fk:Turn",
+          "required": true,
+          "default": "none",
+          "purpose": "Accepted turn that owns the binding",
+          "validation": "Exactly two per newly accepted turn; immutable",
+          "units": null,
+          "allowed_values": null,
+          "example": "Synthetic operational example only; no real customer value inspected.",
+          "basis": [
+            "OPS-02",
+            "OPS-04"
+          ]
+        },
+        {
+          "name": "role",
+          "type": "enum",
+          "required": true,
+          "default": "none",
+          "purpose": "Interactive operation",
+          "validation": "fact_interpretation,comparison_answer",
+          "units": null,
+          "allowed_values": "fact_interpretation,comparison_answer",
+          "example": "fact_interpretation (synthetic)",
+          "basis": [
+            "OPS-04"
+          ]
+        },
+        {
+          "name": "route_id",
+          "type": "fk:ModelRoute",
+          "required": true,
+          "default": "none",
+          "purpose": "Exact immutable route revision",
+          "validation": "Active when called; must match all captured route fields",
+          "units": null,
+          "allowed_values": null,
+          "example": "Synthetic operational example only; no real customer value inspected.",
+          "basis": [
+            "OPS-04"
+          ]
+        },
+        {
+          "name": "qualification_id",
+          "type": "fk:ModelQualification",
+          "required": true,
+          "default": "none",
+          "purpose": "Exact passed qualification",
+          "validation": "Same route and role/schema; current schema hash; passed exact-identity capabilities",
+          "units": null,
+          "allowed_values": null,
+          "example": "Synthetic operational example only; no real customer value inspected.",
+          "basis": [
+            "OPS-04"
+          ]
+        },
+        {
+          "name": "requested_model",
+          "type": "varchar(160)",
+          "required": true,
+          "default": "none",
+          "purpose": "Exact requested provider/model ID",
+          "validation": "Must equal the bound route",
+          "units": null,
+          "allowed_values": null,
+          "example": "gemini/gemini-3.5-flash-lite (operator configuration example)",
+          "basis": [
+            "OPS-04"
+          ]
+        },
+        {
+          "name": "expected_model",
+          "type": "varchar(160)",
+          "required": true,
+          "default": "none",
+          "purpose": "Exact model ID expected in the response",
+          "validation": "Must equal observed_model for a passed binding",
+          "units": null,
+          "allowed_values": null,
+          "example": "gemini-3.5-flash-lite (operator configuration example)",
+          "basis": [
+            "OPS-04"
+          ]
+        },
+        {
+          "name": "observed_model",
+          "type": "varchar(160)",
+          "required": true,
+          "default": "none",
+          "purpose": "Model ID observed during qualification",
+          "validation": "Exact equality with expected_model",
+          "units": null,
+          "allowed_values": null,
+          "example": "gemini-3.5-flash-lite (operator configuration example)",
+          "basis": [
+            "OPS-04"
+          ]
+        },
+        {
+          "name": "endpoint_profile",
+          "type": "varchar(120)",
+          "required": true,
+          "default": "none",
+          "purpose": "Secret-free endpoint identity",
+          "validation": "Interactive relay or loopback OmniRoute profile only",
+          "units": null,
+          "allowed_values": null,
+          "example": "omniroute-loopback (operator configuration example)",
+          "basis": [
+            "OPS-04"
+          ]
+        },
+        {
+          "name": "adapter_version",
+          "type": "varchar(120)",
+          "required": true,
+          "default": "none",
+          "purpose": "Strict transport implementation identity",
+          "validation": "Must equal the bound route",
+          "units": null,
+          "allowed_values": null,
+          "example": "strict-relay-v2/1 (implementation example)",
+          "basis": [
+            "OPS-04"
+          ]
+        },
+        {
+          "name": "route_configuration_sha256",
+          "type": "char(64)",
+          "required": true,
+          "default": "none",
+          "purpose": "Digest of endpoint/model/adapter configuration",
+          "validation": "Lowercase hex; must equal the bound route",
+          "units": null,
+          "allowed_values": null,
+          "example": "Synthetic operational example only; no real customer value inspected.",
+          "basis": [
+            "OPS-04"
+          ]
+        },
+        {
+          "name": "schema_sha256",
+          "type": "char(64)",
+          "required": true,
+          "default": "none",
+          "purpose": "Digest of the exact output schema qualified",
+          "validation": "Lowercase hex; must equal the bound qualification and current schema",
+          "units": null,
+          "allowed_values": null,
+          "example": "Synthetic operational example only; no real customer value inspected.",
+          "basis": [
+            "OPS-04"
+          ]
+        }
       ],
       "constraints": [
         "unique(turn_id,role)",
@@ -8562,7 +8737,11 @@
         "disabled route, failed or missing qualification, schema, configuration, identity or commitment mismatch fails closed",
         "retries copy the original bindings and never switch provider, model or endpoint"
       ],
-      "indexes": ["turn_id,role unique", "route_id", "qualification_id"]
+      "indexes": [
+        "turn_id,role unique",
+        "route_id",
+        "qualification_id"
+      ]
     },
     {
       "entity": "TurnEvent",
@@ -8651,9 +8830,9 @@
           "required": true,
           "default": "none",
           "purpose": "Durable UI event kind",
-          "validation": "queued,started,clarification,progress,recommendation,cancelled,failed,stale",
+          "validation": "queued,started,clarification,progress,comparison,cancelled,failed,stale",
           "units": null,
-          "allowed_values": "queued,started,clarification,progress,recommendation,cancelled,failed,stale",
+          "allowed_values": "queued,started,clarification,progress,comparison,cancelled,failed,stale",
           "example": "No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md.",
           "basis": [
             "OPS-02"
@@ -9107,9 +9286,9 @@
           "required": true,
           "default": "none",
           "purpose": "Actual use schema",
-          "validation": "fact_interpretation,policy_extraction,policy_review,recommendation_answer",
+          "validation": "fact_interpretation,policy_extraction,policy_review,comparison_answer",
           "units": null,
-          "allowed_values": "fact_interpretation,policy_extraction,policy_review,recommendation_answer",
+          "allowed_values": "fact_interpretation,policy_extraction,policy_review,comparison_answer",
           "example": "No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md.",
           "basis": [
             "OPS-04"
@@ -9551,9 +9730,9 @@
           "required": true,
           "default": "none",
           "purpose": "Replaceable processing step",
-          "validation": "classify,read,ocr,extract,validate,independent_review,reconcile",
+          "validation": "classify,read,ocr,extract,validate,index,independent_review,reconcile",
           "units": null,
-          "allowed_values": "classify,read,ocr,extract,validate,independent_review,reconcile",
+          "allowed_values": "classify,read,ocr,extract,validate,index,independent_review,reconcile",
           "example": "No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md.",
           "basis": [
             "OPS-03"
@@ -10420,7 +10599,7 @@
         "reviewed requires component_product_id and evidence_span_id",
         "component_policy_version belongs to component_product",
         "conditional selection requires a same-package PolicyRule",
-        "conflicting asserted UIN blocks affected recommendation capability",
+        "conflicting asserted UIN blocks affected comparison capability",
         "package composition is acyclic",
         "history comes from PolicyVersion; no duplicate component self-supersession"
       ],

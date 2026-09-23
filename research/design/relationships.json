@@ -1,5 +1,5 @@
 {
-  "revision": "discussion-r25-final-review",
+  "revision": "discussion-r26-neutral-comparison",
   "relationships": [
     {
       "source_entity": "AdviceRequest",
@@ -695,7 +695,7 @@
       "orm_on_delete": "PROTECT except explicit authorized erasure service",
       "on_update": "NO ACTION; identity and ownership immutable",
       "deferrable": "INITIALLY DEFERRED",
-      "enforcement": "ordinary typed FK plus same-owner and same-recommendation checks where private; explicit service handles authorized erasure"
+      "enforcement": "ordinary typed FK plus same-owner and same-comparison checks where private; explicit service handles authorized erasure"
     },
     {
       "source_entity": "InformationNeed",
@@ -707,19 +707,19 @@
       "orm_on_delete": "PROTECT except explicit authorized erasure service",
       "on_update": "NO ACTION; identity and ownership immutable",
       "deferrable": "INITIALLY DEFERRED",
-      "enforcement": "ordinary typed FK plus same-owner and same-recommendation checks where private; explicit service handles authorized erasure"
+      "enforcement": "ordinary typed FK plus same-owner and same-comparison checks where private; explicit service handles authorized erasure"
     },
     {
       "source_entity": "InformationNeed",
-      "field": "recommendation_id",
-      "target_entity": "Recommendation",
+      "field": "comparison_id",
+      "target_entity": "Comparison",
       "required": true,
       "access": "same_owner",
       "on_delete": "NO ACTION",
       "orm_on_delete": "PROTECT except explicit authorized erasure service",
       "on_update": "NO ACTION; identity and ownership immutable",
       "deferrable": "INITIALLY DEFERRED",
-      "enforcement": "ordinary typed FK plus same-owner and same-recommendation checks where private; explicit service handles authorized erasure"
+      "enforcement": "ordinary typed FK plus same-owner and same-comparison checks where private; explicit service handles authorized erasure"
     },
     {
       "source_entity": "InformationNeed",
@@ -731,7 +731,7 @@
       "orm_on_delete": "PROTECT except explicit authorized erasure service",
       "on_update": "NO ACTION; identity and ownership immutable",
       "deferrable": "INITIALLY DEFERRED",
-      "enforcement": "ordinary typed FK plus same-owner and same-recommendation checks where private; explicit service handles authorized erasure"
+      "enforcement": "ordinary typed FK plus same-owner and same-comparison checks where private; explicit service handles authorized erasure"
     },
     {
       "source_entity": "InformationNeed",
@@ -743,7 +743,7 @@
       "orm_on_delete": "PROTECT except explicit authorized erasure service",
       "on_update": "NO ACTION; identity and ownership immutable",
       "deferrable": "INITIALLY DEFERRED",
-      "enforcement": "ordinary typed FK plus same-owner and same-recommendation checks where private; explicit service handles authorized erasure"
+      "enforcement": "ordinary typed FK plus same-owner and same-comparison checks where private; explicit service handles authorized erasure"
     },
     {
       "source_entity": "KnowledgeChannel",
@@ -819,8 +819,8 @@
     },
     {
       "source_entity": "Message",
-      "field": "recommendation_id",
-      "target_entity": "Recommendation",
+      "field": "comparison_id",
+      "target_entity": "Comparison",
       "required": false,
       "access": "same_owner",
       "on_delete": "NO ACTION",
@@ -1010,7 +1010,7 @@
       "enforcement": "ordinary existence FK plus composite FK(target_id,owner_id) to unique(id,owner_id);source CHECK: target_id IS NULL OR owner_id IS NOT NULL"
     },
     {
-      "source_entity": "PolicyCandidateAssessment",
+      "source_entity": "PolicyComparisonAssessment",
       "field": "owner_id",
       "target_entity": "Account",
       "required": true,
@@ -1019,10 +1019,10 @@
       "orm_on_delete": "PROTECT except explicit authorized erasure service",
       "on_update": "NO ACTION; identity and ownership immutable",
       "deferrable": "INITIALLY DEFERRED",
-      "enforcement": "ordinary typed FK plus same-owner and same-recommendation checks where private; explicit service handles authorized erasure"
+      "enforcement": "ordinary typed FK plus same-owner and same-comparison checks where private; explicit service handles authorized erasure"
     },
     {
-      "source_entity": "PolicyCandidateAssessment",
+      "source_entity": "PolicyComparisonAssessment",
       "field": "product_variant_id",
       "target_entity": "ProductVariant",
       "required": true,
@@ -1031,10 +1031,10 @@
       "orm_on_delete": "PROTECT except explicit authorized erasure service",
       "on_update": "NO ACTION; identity and ownership immutable",
       "deferrable": "INITIALLY DEFERRED",
-      "enforcement": "ordinary typed FK plus same-owner and same-recommendation checks where private; explicit service handles authorized erasure"
+      "enforcement": "ordinary typed FK plus same-owner and same-comparison checks where private; explicit service handles authorized erasure"
     },
     {
-      "source_entity": "PolicyCandidateAssessment",
+      "source_entity": "PolicyComparisonAssessment",
       "field": "quote_id",
       "target_entity": "Quote",
       "required": false,
@@ -1043,19 +1043,19 @@
       "orm_on_delete": "PROTECT except explicit authorized erasure service",
       "on_update": "NO ACTION; identity and ownership immutable",
       "deferrable": "INITIALLY DEFERRED",
-      "enforcement": "ordinary typed FK plus same-owner and same-recommendation checks where private; explicit service handles authorized erasure"
+      "enforcement": "ordinary typed FK plus same-owner and same-comparison checks where private; explicit service handles authorized erasure"
     },
     {
-      "source_entity": "PolicyCandidateAssessment",
-      "field": "recommendation_id",
-      "target_entity": "Recommendation",
+      "source_entity": "PolicyComparisonAssessment",
+      "field": "comparison_id",
+      "target_entity": "Comparison",
       "required": true,
       "access": "same_owner",
       "on_delete": "NO ACTION",
       "orm_on_delete": "PROTECT except explicit authorized erasure service",
       "on_update": "NO ACTION; identity and ownership immutable",
       "deferrable": "INITIALLY DEFERRED",
-      "enforcement": "ordinary typed FK plus same-owner and same-recommendation checks where private; explicit service handles authorized erasure"
+      "enforcement": "ordinary typed FK plus same-owner and same-comparison checks where private; explicit service handles authorized erasure"
     },
     {
       "source_entity": "PolicyMember",
@@ -1167,15 +1167,15 @@
     },
     {
       "source_entity": "PolicyRequirementMatch",
-      "field": "candidate_assessment_id",
-      "target_entity": "PolicyCandidateAssessment",
+      "field": "comparison_assessment_id",
+      "target_entity": "PolicyComparisonAssessment",
       "required": true,
       "access": "same_owner",
       "on_delete": "NO ACTION",
       "orm_on_delete": "PROTECT except explicit authorized erasure service",
       "on_update": "NO ACTION; identity and ownership immutable",
       "deferrable": "INITIALLY DEFERRED",
-      "enforcement": "ordinary typed FK plus same-owner and same-recommendation checks where private; explicit service handles authorized erasure"
+      "enforcement": "ordinary typed FK plus same-owner and same-comparison checks where private; explicit service handles authorized erasure"
     },
     {
       "source_entity": "PolicyRequirementMatch",
@@ -1187,7 +1187,7 @@
       "orm_on_delete": "PROTECT except explicit authorized erasure service",
       "on_update": "NO ACTION; identity and ownership immutable",
       "deferrable": "INITIALLY DEFERRED",
-      "enforcement": "ordinary typed FK plus same-owner and same-recommendation checks where private; explicit service handles authorized erasure"
+      "enforcement": "ordinary typed FK plus same-owner and same-comparison checks where private; explicit service handles authorized erasure"
     },
     {
       "source_entity": "PolicyRequirementMatch",
@@ -1199,7 +1199,7 @@
       "orm_on_delete": "PROTECT except explicit authorized erasure service",
       "on_update": "NO ACTION; identity and ownership immutable",
       "deferrable": "INITIALLY DEFERRED",
-      "enforcement": "ordinary typed FK plus same-owner and same-recommendation checks where private; explicit service handles authorized erasure"
+      "enforcement": "ordinary typed FK plus same-owner and same-comparison checks where private; explicit service handles authorized erasure"
     },
     {
       "source_entity": "PolicyRequirementMatch",
@@ -1211,7 +1211,7 @@
       "orm_on_delete": "PROTECT except explicit authorized erasure service",
       "on_update": "NO ACTION; identity and ownership immutable",
       "deferrable": "INITIALLY DEFERRED",
-      "enforcement": "ordinary typed FK plus same-owner and same-recommendation checks where private; explicit service handles authorized erasure"
+      "enforcement": "ordinary typed FK plus same-owner and same-comparison checks where private; explicit service handles authorized erasure"
     },
     {
       "source_entity": "PolicyRule",
@@ -1658,7 +1658,7 @@
       "enforcement": "Typed foreign key plus source-entity ownership, applicability and lineage constraints"
     },
     {
-      "source_entity": "Recommendation",
+      "source_entity": "Comparison",
       "field": "advice_request_id",
       "target_entity": "AdviceRequest",
       "required": true,
@@ -1670,7 +1670,7 @@
       "enforcement": "ordinary existence FK plus composite FK(target_id,owner_id) to unique(id,owner_id);source CHECK: target_id IS NULL OR owner_id IS NOT NULL"
     },
     {
-      "source_entity": "Recommendation",
+      "source_entity": "Comparison",
       "field": "knowledge_release_id",
       "target_entity": "KnowledgeRelease",
       "required": true,
@@ -1682,7 +1682,7 @@
       "enforcement": "ordinary typed FK; globally scoped target has no owner_id predicate; API role still required"
     },
     {
-      "source_entity": "Recommendation",
+      "source_entity": "Comparison",
       "field": "owner_id",
       "target_entity": "Account",
       "required": true,
@@ -1694,7 +1694,7 @@
       "enforcement": "ordinary Account FK;resource owner authorized before reads/writes;never null a private owner to publish it"
     },
     {
-      "source_entity": "Recommendation",
+      "source_entity": "Comparison",
       "field": "profile_revision_id",
       "target_entity": "CustomerProfileRevision",
       "required": true,
@@ -1706,9 +1706,9 @@
       "enforcement": "ordinary existence FK plus composite FK(target_id,owner_id) to unique(id,owner_id);source CHECK: target_id IS NULL OR owner_id IS NOT NULL"
     },
     {
-      "source_entity": "Recommendation",
+      "source_entity": "Comparison",
       "field": "supersedes_id",
-      "target_entity": "Recommendation",
+      "target_entity": "Comparison",
       "required": false,
       "access": "same_owner",
       "on_delete": "NO ACTION",
@@ -1718,7 +1718,7 @@
       "enforcement": "ordinary existence FK plus composite FK(target_id,owner_id) to unique(id,owner_id);source CHECK: target_id IS NULL OR owner_id IS NOT NULL"
     },
     {
-      "source_entity": "Recommendation",
+      "source_entity": "Comparison",
       "field": "turn_id",
       "target_entity": "Turn",
       "required": true,
@@ -1730,7 +1730,7 @@
       "enforcement": "ordinary existence FK plus composite FK(target_id,owner_id) to unique(id,owner_id);source CHECK: target_id IS NULL OR owner_id IS NOT NULL"
     },
     {
-      "source_entity": "RecommendationCitation",
+      "source_entity": "ComparisonCitation",
       "field": "evidence_span_id",
       "target_entity": "EvidenceSpan",
       "required": true,
@@ -1742,7 +1742,7 @@
       "enforcement": "ordinary existence FK PLUS DEFERRABLE INITIALLY DEFERRED constraint trigger requiring (target.owner_id IS NULL OR target.owner_id = source.owner_id) IS TRUE;key-share locks;validate target update/delete and forbid owner changes"
     },
     {
-      "source_entity": "RecommendationCitation",
+      "source_entity": "ComparisonCitation",
       "field": "owner_id",
       "target_entity": "Account",
       "required": true,
@@ -1754,7 +1754,7 @@
       "enforcement": "ordinary Account FK;resource owner authorized before reads/writes;never null a private owner to publish it"
     },
     {
-      "source_entity": "RecommendationCitation",
+      "source_entity": "ComparisonCitation",
       "field": "policy_rule_id",
       "target_entity": "PolicyRule",
       "required": false,
@@ -1766,9 +1766,9 @@
       "enforcement": "Typed foreign key plus source-entity ownership, applicability and lineage constraints"
     },
     {
-      "source_entity": "RecommendationCitation",
-      "field": "recommendation_statement_id",
-      "target_entity": "RecommendationStatement",
+      "source_entity": "ComparisonCitation",
+      "field": "comparison_statement_id",
+      "target_entity": "ComparisonStatement",
       "required": true,
       "access": "same_owner",
       "on_delete": "NO ACTION",
@@ -1778,7 +1778,7 @@
       "enforcement": "ordinary existence FK plus composite FK(target_id,owner_id) to unique(id,owner_id);source CHECK: target_id IS NULL OR owner_id IS NOT NULL"
     },
     {
-      "source_entity": "RecommendationStatement",
+      "source_entity": "ComparisonStatement",
       "field": "calculation_id",
       "target_entity": "Calculation",
       "required": false,
@@ -1787,22 +1787,22 @@
       "orm_on_delete": "PROTECT except explicit authorized erasure service",
       "on_update": "NO ACTION; identity and ownership immutable",
       "deferrable": "INITIALLY DEFERRED",
-      "enforcement": "ordinary typed FK plus same-owner and same-recommendation checks where private; explicit service handles authorized erasure"
+      "enforcement": "ordinary typed FK plus same-owner and same-comparison checks where private; explicit service handles authorized erasure"
     },
     {
-      "source_entity": "RecommendationStatement",
-      "field": "candidate_assessment_id",
-      "target_entity": "PolicyCandidateAssessment",
+      "source_entity": "ComparisonStatement",
+      "field": "comparison_assessment_id",
+      "target_entity": "PolicyComparisonAssessment",
       "required": false,
       "access": "same_owner",
       "on_delete": "NO ACTION",
       "orm_on_delete": "PROTECT except explicit authorized erasure service",
       "on_update": "NO ACTION; identity and ownership immutable",
       "deferrable": "INITIALLY DEFERRED",
-      "enforcement": "ordinary typed FK plus same-owner and same-recommendation checks where private; explicit service handles authorized erasure"
+      "enforcement": "ordinary typed FK plus same-owner and same-comparison checks where private; explicit service handles authorized erasure"
     },
     {
-      "source_entity": "RecommendationStatement",
+      "source_entity": "ComparisonStatement",
       "field": "information_need_id",
       "target_entity": "InformationNeed",
       "required": false,
@@ -1811,10 +1811,10 @@
       "orm_on_delete": "PROTECT except explicit authorized erasure service",
       "on_update": "NO ACTION; identity and ownership immutable",
       "deferrable": "INITIALLY DEFERRED",
-      "enforcement": "ordinary typed FK plus same-owner and same-recommendation checks where private; explicit service handles authorized erasure"
+      "enforcement": "ordinary typed FK plus same-owner and same-comparison checks where private; explicit service handles authorized erasure"
     },
     {
-      "source_entity": "RecommendationStatement",
+      "source_entity": "ComparisonStatement",
       "field": "owner_id",
       "target_entity": "Account",
       "required": true,
@@ -1826,9 +1826,9 @@
       "enforcement": "ordinary Account FK;resource owner authorized before reads/writes;never null a private owner to publish it"
     },
     {
-      "source_entity": "RecommendationStatement",
-      "field": "recommendation_id",
-      "target_entity": "Recommendation",
+      "source_entity": "ComparisonStatement",
+      "field": "comparison_id",
+      "target_entity": "Comparison",
       "required": true,
       "access": "same_owner",
       "on_delete": "NO ACTION",
@@ -1838,7 +1838,7 @@
       "enforcement": "ordinary existence FK plus composite FK(target_id,owner_id) to unique(id,owner_id);source CHECK: target_id IS NULL OR owner_id IS NOT NULL"
     },
     {
-      "source_entity": "RecommendationStatement",
+      "source_entity": "ComparisonStatement",
       "field": "requirement_match_id",
       "target_entity": "PolicyRequirementMatch",
       "required": false,
@@ -1847,7 +1847,7 @@
       "orm_on_delete": "PROTECT except explicit authorized erasure service",
       "on_update": "NO ACTION; identity and ownership immutable",
       "deferrable": "INITIALLY DEFERRED",
-      "enforcement": "ordinary typed FK plus same-owner and same-recommendation checks where private; explicit service handles authorized erasure"
+      "enforcement": "ordinary typed FK plus same-owner and same-comparison checks where private; explicit service handles authorized erasure"
     },
     {
       "source_entity": "SourceCapture",

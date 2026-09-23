@@ -1,8 +1,8 @@
 # Final application entity catalogue
 
-Revision: `discussion-r25-final-review`
+Revision: `discussion-r26-neutral-comparison`
 
-Revision `discussion-r25-final-review` and the route-pinning amendment were explicitly approved for local implementation on 2026-09-22. Production deployment and cutover remain unapproved.
+Revision `discussion-r26-neutral-comparison` incorporates the locally implemented neutral-comparison and route-pinning amendments. Production deployment and cutover remain unapproved.
 
 | Entity | Purpose | Access | Fields | Outgoing relationships |
 |---|---|---|---:|---|
@@ -10,12 +10,12 @@ Revision `discussion-r25-final-review` and the route-pinning amendment were expl
 | Person | A minimal owner-scoped human label; medical, role and identity assertions live in sourced fact records. | private | 4 | owner_id → Account |
 | PersonRelationship | Directional relationship between two owner-scoped people, separate from proposed or issued policy membership. | private | 9 | from_person_id → Person; owner_id → Account; source_statement_id → CustomerStatement; to_person_id → Person |
 | Conversation | Persistent conversation and its current accepted state. | private | 8 | current_profile_revision_id → CustomerProfileRevision; owner_id → Account |
-| Message | Immutable submitted or published conversational content. | private | 13 | conversation_id → Conversation; owner_id → Account; recommendation_id → Recommendation |
+| Message | Immutable submitted or published conversational content. | private | 13 | conversation_id → Conversation; owner_id → Account; comparison_id → Comparison |
 | ConversationMessageChunk | Replaceable private lexical/semantic index for an exact section of one immutable conversation message. | private | 13 | conversation_id → Conversation; message_id → Message; owner_id → Account |
 | CustomerStatement | A meaningful source span inside one customer message, retained so unusual or unresolved information cannot be silently dropped. | private | 10 | owner_id → Account; source_message_id → Message; subject_person_id → Person |
 | CustomerProfileRevision | Small immutable checkpoint created only when customer facts or requirements change. | private | 5 | conversation_id → Conversation; owner_id → Account |
 | CustomerFact | One validated version of a customer fact; active historical state is reconstructed by logical key and profile revision. | private | 10 | introduced_in_revision_id → CustomerProfileRevision; owner_id → Account; source_statement_id → CustomerStatement |
-| CustomerRequirement | One atomic mandatory, preferred or informational condition used to filter, rank or explain policy configurations. | private | 13 | introduced_in_revision_id → CustomerProfileRevision; owner_id → Account; source_statement_id → CustomerStatement; subject_person_id → Person |
+| CustomerRequirement | One atomic mandatory, preferred or informational criterion used to compare policy configurations. | private | 13 | introduced_in_revision_id → CustomerProfileRevision; owner_id → Account; source_statement_id → CustomerStatement; subject_person_id → Person |
 | AdviceRequest | One customer advice goal spanning any number of clarification messages; execution attempts later pin exact profile revisions. | private | 7 | conversation_id → Conversation; owner_id → Account; source_statement_id → CustomerStatement |
 | Insurer | One insurer in the approved research roster and the issuer identity used by products and official documents. | public | 3 | None |
 | DiscoveryRun | One autonomous Codex session tasked with discovering public documents for one insurer. | public | 10 | insurer_id → Insurer |
@@ -50,12 +50,12 @@ Revision `discussion-r25-final-review` and the route-pinning amendment were expl
 | KnowledgeReleaseRule | Includes one exact reviewed policy rule in one knowledge release. | public | 4 | knowledge_release_id → KnowledgeRelease; policy_rule_id → PolicyRule |
 | KnowledgeChannel | Selects the current published knowledge release for one application environment. | public | 6 | current_release_id → KnowledgeRelease |
 | PolicySearchChunk | Replaceable public search index text for one exact section of a policy document. | public | 9 | document_version_id → DocumentVersion |
-| Recommendation | One saved buying/comparison result for an exact customer profile and published policy-knowledge release. | private | 9 | advice_request_id → AdviceRequest; knowledge_release_id → KnowledgeRelease; owner_id → Account; profile_revision_id → CustomerProfileRevision; supersedes_id → Recommendation; turn_id → Turn |
-| PolicyCandidateAssessment | One exact public policy configuration evaluated for the customer, including exclusions and uncertain candidates. | private | 10 | owner_id → Account; product_variant_id → ProductVariant; quote_id → Quote; recommendation_id → Recommendation |
-| PolicyRequirementMatch | How one policy candidate performs against one exact customer requirement. | private | 8 | candidate_assessment_id → PolicyCandidateAssessment; customer_requirement_id → CustomerRequirement; owner_id → Account; provider_network_entry_id → ProviderNetworkEntry |
-| InformationNeed | One missing customer fact, requirement or document confirmation that should be asked before stronger advice. | private | 12 | asked_in_message_id → Message; owner_id → Account; recommendation_id → Recommendation; resolved_in_profile_revision_id → CustomerProfileRevision; subject_person_id → Person |
-| RecommendationStatement | One independently checkable customer-facing statement in a buying recommendation. | private | 13 | calculation_id → Calculation; candidate_assessment_id → PolicyCandidateAssessment; information_need_id → InformationNeed; owner_id → Account; recommendation_id → Recommendation; requirement_match_id → PolicyRequirementMatch |
-| RecommendationCitation | Exact original policy passage supporting, restricting or conflicting with one recommendation statement. | private | 8 | evidence_span_id → EvidenceSpan; owner_id → Account; policy_rule_id → PolicyRule; recommendation_statement_id → RecommendationStatement |
+| Comparison | One saved buying/comparison result for an exact customer profile and published policy-knowledge release. | private | 9 | advice_request_id → AdviceRequest; knowledge_release_id → KnowledgeRelease; owner_id → Account; profile_revision_id → CustomerProfileRevision; supersedes_id → Comparison; turn_id → Turn |
+| PolicyComparisonAssessment | One exact public policy configuration evaluated neutrally against the customer criteria. | private | 8 | owner_id → Account; product_variant_id → ProductVariant; quote_id → Quote; comparison_id → Comparison |
+| PolicyRequirementMatch | How one compared policy performs against one exact customer requirement. | private | 8 | comparison_assessment_id → PolicyComparisonAssessment; customer_requirement_id → CustomerRequirement; owner_id → Account; provider_network_entry_id → ProviderNetworkEntry |
+| InformationNeed | One missing customer fact, requirement or document confirmation that should be asked before stronger advice. | private | 12 | asked_in_message_id → Message; owner_id → Account; comparison_id → Comparison; resolved_in_profile_revision_id → CustomerProfileRevision; subject_person_id → Person |
+| ComparisonStatement | One independently checkable cited factual statement in a policy comparison. | private | 13 | calculation_id → Calculation; comparison_assessment_id → PolicyComparisonAssessment; information_need_id → InformationNeed; owner_id → Account; comparison_id → Comparison; requirement_match_id → PolicyRequirementMatch |
+| ComparisonCitation | Exact original policy passage supporting, restricting or conflicting with one comparison statement. | private | 8 | evidence_span_id → EvidenceSpan; owner_id → Account; policy_rule_id → PolicyRule; comparison_statement_id → ComparisonStatement |
 | Calculation | One immutable deterministic calculation with exact inputs, operation order, assumptions and result. | private | 11 | advice_request_id → AdviceRequest; owner_id → Account |
 | Turn | One durable, idempotent and cancellable customer-message processing request with a keyed commitment to its pinned role routes. | private | 15 | conversation_id → Conversation; input_message_id → Message; owner_id → Account; starting_profile_revision_id → CustomerProfileRevision |
 | TurnRouteBinding | One immutable exact route and passed qualification captured for an interactive role before enqueue. | private | 13 | qualification_id → ModelQualification; route_id → ModelRoute; turn_id → Turn |

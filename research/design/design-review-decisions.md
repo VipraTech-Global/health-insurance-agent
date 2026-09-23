@@ -65,8 +65,8 @@ Approved decisions:
 
 1. Remove `LegacyListing` and `ListingCandidate` from the replacement application schema. Historical source records may remain in migration evidence, but there are no live legacy product models.
 2. Use five models: `Product`, `PolicyVersion`, `PolicyVersionDocument`, `ProductVariant` and `ProductOption`.
-3. `Product` is the stable insurer product family. Rename `canonical_name` to `name`, `kind` to `benefit_type`, `lifecycle` to `lifecycle_status`, `advice_scope` to `recommendation_role`, and `identity_span_id` to `identity_evidence_id`.
-4. Keep `benefit_type` for coarse payment-form filtering and `recommendation_role` for primary, supplementary, reference-only or excluded advice use; they answer different questions.
+3. `Product` is the stable insurer product family. Rename `canonical_name` to `name`, `kind` to `benefit_type`, `lifecycle` to `lifecycle_status`, `advice_scope` to `comparison_role`, and `identity_span_id` to `identity_evidence_id`.
+4. Keep `benefit_type` for coarse payment-form filtering and `comparison_role` for primary, supplementary, reference-only or excluded advice use; they answer different questions.
 5. Rename `TermsRevision` to `PolicyVersion`. It represents the complete legal terms package, not one source file. Remove redundant `revision_key` and derived `bundle_sha256`.
 6. Rename `TermsDocument` to `PolicyVersionDocument`. Its role, required status, applicability and evidenced precedence explain how each DocumentVersion participates in the policy package.
 7. Rename `Configuration` to `ProductVariant`. Store allowed base choices in `choices`; do not create one row for every possible customer combination. Remove `variant_code`, duplicate `label` and derived `selection_sha256`.
@@ -154,7 +154,7 @@ Approved decisions:
 2. Remove `TreatmentEpisode`, `TreatmentExpense`, `CoverageAssessment` and `ExpenseCoverageResult`. CoverGuide does not administer treatment bills or estimate itemized customer claims.
 3. A planned treatment or prior claim relevant to buying remains a sourced `CustomerFact` or `CustomerRequirement` about the affected person.
 4. Public claim procedures, documentary conditions, limits and deductions remain `PolicyRule` records so they can be compared before purchase.
-5. A buyer-focused `PolicyCandidateAssessment` will be reviewed with saved recommendation records; it will evaluate one candidate against customer facts and requirements rather than model a claim.
+5. A buyer-focused `PolicyComparisonAssessment` will be reviewed with saved comparison records; it will evaluate one candidate against customer facts and requirements rather than model a claim.
 
 ## Batch 10 scope exclusion — approved 2026-09-12
 
@@ -180,24 +180,24 @@ Approved decisions:
 4. Rename `CorpusPointer` to `KnowledgeChannel`; it atomically selects the published release for an environment such as production, review or pilot.
 5. Replace mixed/private `SearchChunk` with public-only `PolicySearchChunk`. It indexes exact document sections and always resolves back to `EvidenceSpan` records.
 6. Do not duplicate chunks per release. Retrieval first filters rules through the selected release, then reaches reusable document chunks through rule evidence.
-7. Remove generic `Artifact` and `Dependency`. Saved recommendation lineage will use direct typed foreign keys reviewed with the recommendation models.
+7. Remove generic `Artifact` and `Dependency`. Saved comparison lineage will use direct typed foreign keys reviewed with the comparison models.
 8. Defer the unreviewed `ReviewRecord` and `ContentCopy` models because their only target was the removed generic artifact table. Necessary review and erasure behavior will be redesigned later with explicit typed targets.
 9. This batch serves buying and comparison only: it publishes searchable policy facts and does not model claims administration.
 
 ## Batch 12 — approved 2026-09-12
 
-Scope: saved buyer recommendations, compared policy candidates, requirement matches, clarification gaps and exact citations.
+Scope: saved buyer comparisons, compared policy candidates, requirement matches, clarification gaps and exact citations.
 
 Approved decisions:
 
-1. Rename `Decision` to `Recommendation` and remove duplicated conversation, answer text, scope JSON, validation JSON, publication time and stored validity fields.
-2. A recommendation pins its `Turn`, `AdviceRequest`, exact `CustomerProfileRevision` and exact published `KnowledgeRelease`.
-3. Add `PolicyCandidateAssessment` for every assessed configuration, including recommended, alternative, eligible, excluded, conditional and insufficient-evidence candidates. Store rank, not an unexplained score.
-4. Add `PolicyRequirementMatch` for the structured comparison of one candidate with one active customer requirement.
+1. Rename `Decision` to `Comparison` and remove duplicated conversation, answer text, scope JSON, validation JSON, publication time and stored validity fields.
+2. A comparison pins its `Turn`, `AdviceRequest`, exact `CustomerProfileRevision` and exact published `KnowledgeRelease`.
+3. Add `PolicyComparisonAssessment` for every reviewed configuration. Store no score, rank, shortlist, winner, or overall disposition.
+4. Add `PolicyRequirementMatch` for the structured comparison of one product with one active customer requirement; a failed criterion never hides the product.
 5. Add `InformationNeed` so the adviser remembers missing facts, requirements and document confirmations, asks focused questions and records their resolution. Information keys are code-controlled.
-6. Rename `DecisionClaim` to `RecommendationStatement` to avoid confusion with insurance claims. It stores one checkable customer-facing statement and may point to a candidate, requirement match, information need or calculation.
-7. Rename `ClaimCitation` to `RecommendationCitation`; every policy statement resolves to exact original evidence and, where interpreted, the exact policy rule.
-8. The displayed answer remains in `Message.content`; `Message.recommendation_id` links it to the structured result.
+6. Rename `DecisionClaim` to `ComparisonStatement` to avoid confusion with insurance claims. It stores one checkable customer-facing statement and may point to a compared product, requirement match, information need or calculation.
+7. Rename `ClaimCitation` to `ComparisonCitation`; every policy statement resolves to exact original evidence and, where interpreted, the exact policy rule.
+8. The displayed answer remains in `Message.content`; `Message.comparison_id` links it to the structured result.
 9. Freshness is derived from direct typed links to the customer revision, knowledge release, quote and provider observation. No generic artifact/dependency table or customer claim administration is reintroduced.
 
 ## Batch 13 — approved 2026-09-12
@@ -207,7 +207,7 @@ Scope: durable customer turns, reconnectable events, reliable typed dispatch, st
 Approved decisions:
 
 1. Keep and simplify `Turn`; remove duplicate payload hash and numeric expected revision because the immutable input message and pinned profile revision already supply them.
-2. Keep and simplify `TurnEvent`; inherited `created_at` is the event time and `recommendation` replaces the misleading `decision` event kind.
+2. Keep and simplify `TurnEvent`; inherited `created_at` is the event time and `comparison` replaces the misleading `decision` event kind.
 3. Keep `Outbox` but replace generic aggregate IDs and copied payloads with an exact typed FK to `Turn`, `ProcessingJob` or `KnowledgeRelease`.
 4. Keep `ModelRoute`; replace derived qualification status with a one-way optional `disabled_at` value.
 5. Keep `ModelQualification` per route and schema; remove duplicate qualification time and an unresolvable artifact digest.
@@ -258,7 +258,7 @@ Scope: physically separate independent quality and evaluation database.
 1. Remove `AIPreference`; customers do not select model routes. `ModelRoute` and `ModelQualification` are system-controlled.
 2. Remove `PolicyEvent`; customer-specific claim, payment, cancellation, receipt and refund workflow is outside buying/comparison scope. Existing-cover terms and relevant dates remain in `CustomerPolicyRevision`, `CustomerPolicyFact` and sourced `CustomerFact` records.
 3. Remove duplicate `Message.turn_id`; `Turn.input_message_id` is authoritative.
-4. Rename `Turn.profile_revision_id` to optional `starting_profile_revision_id`; a first message may have no profile, and the final evaluated profile is pinned by `Recommendation`.
+4. Rename `Turn.profile_revision_id` to optional `starting_profile_revision_id`; a first message may have no profile, and the final evaluated profile is pinned by `Comparison`.
 5. Replace raw hashes of private low-entropy messages, chunks, selections and model requests with keyed commitments; stored result hashes cover encrypted bytes.
 6. Remove `claim_explanation`, `receipt` and `claim_document` from customer-facing type lists.
 7. Strengthen public/private file ownership and contractual document-authority constraints.
@@ -288,3 +288,17 @@ production deployment, production consent policy, provider-retention claim or cu
    after an actual customer action is captured; no migration fabricates a grant.
 9. The local replacement is greenfield: new accounts only and no import of historical pilot rows,
    sessions, conversations, uploads or derived private indexes.
+
+## Neutral-comparison amendment — implemented locally 2026-09-23
+
+1. Rename the active recommendation aggregate and all statement, citation, assessment and message
+   links to comparison terminology; historical migration values remain audit-only.
+2. Store no overall score, rank, shortlist, winner or disposition. Keep only per-criterion outcomes,
+   evidence gaps, restrictions and citations for every reviewed product.
+3. Order products stably by insurer, product, UIN and variant ID. A failed criterion never removes a
+   reviewed product from the comparison.
+4. Constrain generated text to cited factual statements. The application owns the outcome,
+   introduction, clarification question and fixed non-advisory closing notice.
+5. Reject generated endorsement, ranking, selection and purchase-direction language fail closed.
+6. Retire v1 adviser routes and the former v2 recommendation interface; retain v1 authentication.
+7. Do not add a chosen-product field, selection endpoint, purchase action or stored user decision.

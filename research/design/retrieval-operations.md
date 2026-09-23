@@ -11,10 +11,10 @@ For every buying/comparison request, the selector:
 5. uses BM25/BGE-M3 only to retrieve additional supporting passages within that release;
 6. selects date- and scope-specific quotes and provider-network observations;
 7. performs deterministic calculations only with known typed inputs and operation order; and
-8. persists candidate dispositions, requirement matches, information needs, statements and citations against the final profile revision.
+8. persists every reviewed product, its per-criterion outcomes, information needs, statements and citations against the final profile revision; it stores no overall disposition, score or rank.
 
 The 20 scenario families exercise first purchase, family composition, children, senior cover, diabetes, other medical history, mental/disability/congenital terms, maternity/newborn, procedures, outpatient/services, deductions, bonus/restoration, employer overlap, top-ups, portability, renewals, hospitals/cashless, quotes, planned-care/waiting-period questions and multi-turn conversation behavior. Every frozen evaluation case must still be a buying/comparison decision. Operational behavior is tested inside the decision rather than counted as advice by itself.
 
-Representative operations include mandatory-rule graph closure, historical policy-version selection, exact table-cell lookup, member-equivalent quote comparison, dated provider-branch matching, current-versus-proposed cover comparison, supported waiting-period arithmetic and atomic recommendation publication. Public claim procedures may be compared as policy features; no customer claim timeline or insurer-receipt inference is created.
+Representative operations include mandatory-rule graph closure, historical policy-version selection, exact table-cell lookup, member-equivalent quote comparison, dated provider-branch matching, current-versus-proposed cover comparison, supported waiting-period arithmetic and atomic comparison publication. Public claim procedures may be compared as policy features; no customer claim timeline or insurer-receipt inference is created.
 
 Suggested indexes are declared per entity in `field-dictionary.md`. Actual query plans and the five-conversation p95 targets remain unmeasured until implementation with representative knowledge and customer fixtures.

@@ -1,16 +1,16 @@
 # CoverGuide database design in simple language
 
-Revision: `discussion-r25-final-review`
+Revision: `discussion-r26-neutral-comparison`
 
 This guide explains the approved and locally implemented application design in small review sections. It contains 63 custom application models. Django's standard group, permission, session, content-type and admin-log tables are documented separately. The independent evaluation database has 24 models and is explained in `benchmark-storage-proposal.md`.
 
-The application is a buying and comparison adviser. It stores what the customer said, the exact original policy evidence, structured rules, dated quotes/network observations and the recommendation it produced. It does not administer claims, treatment bills, insurer receipts, premium payments, cancellations or refunds.
+The application is a buying and comparison adviser. It stores what the customer said, the exact original policy evidence, structured rules, dated quotes/network observations and the comparison it produced. It does not administer claims, treatment bills, insurer receipts, premium payments, cancellations or refunds.
 
 ## End-to-end example
 
-Asha asks for insurance for her father Ravi and initially says, ambiguously, ‘I have diabetes.’ CoverGuide keeps the message, extracts separate statements, asks who has diabetes, records the correction against the correct person, and creates a new profile revision. It filters exact product variants by entry age and other mandatory rules, retrieves diabetes waiting-period and underwriting clauses with connected exceptions, compares any dated quotes, asks for missing facts, calculates only supported examples, and saves each recommendation statement with an exact citation.
+Asha asks for insurance for her father Ravi and initially says, ambiguously, ‘I have diabetes.’ CoverGuide keeps the message, extracts separate statements, asks who has diabetes, records the correction against the correct person, and creates a new profile revision. It evaluates every reviewed product variant against the same criteria, retrieves diabetes waiting-period and underwriting clauses with connected exceptions, compares any dated quotes, asks for missing facts, calculates only supported examples, and saves each comparison statement with an exact citation.
 
-If Asha corrects Ravi's age, the old profile and recommendation remain historical. A new turn starts from the last accepted profile, applies the new message, and publishes a recommendation against the resulting profile only if concurrent corrections did not make it stale.
+If Asha corrects Ravi's age, the old profile and comparison remain historical. A new turn starts from the last accepted profile, applies the new message, and publishes a comparison against the resulting profile only if concurrent corrections did not make it stale.
 
 ## 1. Account, people and conversation
 
@@ -30,7 +30,7 @@ If Asha corrects Ravi's age, the old profile and recommendation remain historica
 | `CustomerStatement` | A meaningful source span inside one customer message, retained so unusual or unresolved information cannot be silently dropped.. |
 | `CustomerProfileRevision` | Small immutable checkpoint created only when customer facts or requirements change.. |
 | `CustomerFact` | One validated version of a customer fact; active historical state is reconstructed by logical key and profile revision.. |
-| `CustomerRequirement` | One atomic mandatory, preferred or informational condition used to filter, rank or explain policy configurations.. |
+| `CustomerRequirement` | One atomic mandatory, preferred or informational criterion used to compare policy configurations. |
 | `AdviceRequest` | One customer advice goal spanning any number of clarification messages; execution attempts later pin exact profile revisions.. |
 
 ## 3. Autonomous source discovery and exact evidence
@@ -101,12 +101,12 @@ If Asha corrects Ravi's age, the old profile and recommendation remain historica
 
 | Model | What it stores |
 |---|---|
-| `Recommendation` | One saved buying/comparison result for an exact customer profile and published policy-knowledge release.. |
-| `PolicyCandidateAssessment` | One exact public policy configuration evaluated for the customer, including exclusions and uncertain candidates.. |
-| `PolicyRequirementMatch` | How one policy candidate performs against one exact customer requirement.. |
+| `Comparison` | One saved buying/comparison result for an exact customer profile and published policy-knowledge release.. |
+| `PolicyComparisonAssessment` | One exact public policy configuration evaluated for the customer, including exclusions and uncertain candidates.. |
+| `PolicyRequirementMatch` | How one compared policy performs against one exact customer requirement. |
 | `InformationNeed` | One missing customer fact, requirement or document confirmation that should be asked before stronger advice.. |
-| `RecommendationStatement` | One independently checkable customer-facing statement in a buying recommendation.. |
-| `RecommendationCitation` | Exact original policy passage supporting, restricting or conflicting with one recommendation statement.. |
+| `ComparisonStatement` | One independently checkable customer-facing statement in a buying comparison.. |
+| `ComparisonCitation` | Exact original policy passage supporting, restricting or conflicting with one comparison statement.. |
 | `Calculation` | One immutable deterministic calculation with exact inputs, operation order, assumptions and result.. |
 
 ## 10. Durable processing and model evidence
@@ -138,7 +138,7 @@ If Asha corrects Ravi's age, the old profile and recommendation remain historica
 - `Product`, `PolicyVersion`, `ProductVariant` and `ProductOption` are separate because a product family, legal edition, base configuration and optional add-on change independently.
 - `CustomerPolicy` models existing cover or a customer-specific offer only so it can be compared with a proposed purchase. There is no servicing workflow.
 - `PolicyRule` is mandatory structured knowledge. `PolicySearchChunk` helps find supporting text quickly but cannot override mandatory-rule selection.
-- `Recommendation` pins the final customer profile and knowledge release. `Turn` pins the starting profile and commits both interactive role bindings before enqueue; retries copy those bindings rather than reading changed settings.
+- `Comparison` pins the final customer profile and knowledge release. `Turn` pins the starting profile and commits both interactive role bindings before enqueue; retries copy those bindings rather than reading changed settings.
 - Evaluation questions and answers live only in the separate benchmark service and cannot enter application retrieval or tuning data.
 
 For every field, default, validation rule, unit, constraint and index, use [field-dictionary.md](field-dictionary.md). For relationships, use [complete-entity-relationships.mmd](complete-entity-relationships.mmd).

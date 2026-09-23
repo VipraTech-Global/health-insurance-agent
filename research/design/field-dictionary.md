@@ -1,6 +1,6 @@
 # Final application field dictionary
 
-Revision: `discussion-r25-final-review`
+Revision: `discussion-r26-neutral-comparison`
 
 This is the field-level authority for the application proposal. The design is ready for human review and is not implemented.
 
@@ -98,10 +98,10 @@ Immutable submitted or published conversational content.
 | client_request_id | uuid optional | NULL | Submission idempotency identifier | Unique per owner when nonnull | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["CUS-02", "OPS-02", "DEC-01"] |
 | payload_commitment | char(64) required | none | Keyed commitment used to reject an idempotency-key collision with different submitted content | 64 lowercase hex characters produced by the versioned server HMAC key; never a raw content hash | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["CUS-02", "OPS-02", "DEC-01"] |
 | submitted_at | instant required | none | Original receipt time | UTC; not rewritten on retry | instant | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["CUS-02", "OPS-02", "DEC-01"] |
-| recommendation_id | fk:Recommendation optional | NULL | Structured recommendation published by this adviser message | Same owner/conversation; unique when nonnull | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["CUS-02", "OPS-02", "DEC-01"] |
+| comparison_id | fk:Comparison optional | NULL | Structured comparison published by this adviser message | Same owner/conversation; unique when nonnull | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["CUS-02", "OPS-02", "DEC-01"] |
 | redacted_at | instant optional | NULL | Content erasure event | Content and copies cleared atomically or deletion job blocks access | instant | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["CUS-02", "OPS-02", "DEC-01"] |
 
-Constraints: unique(conversation_id,sequence); unique(owner_id,client_request_id) where nonnull; recommendation_id is NULL or identifies a recommendation owned by the same account and conversation; authorized erasure replaces content with a fixed tombstone, sets redacted_at and invalidates all ConversationMessageChunk rows; payload_commitment is a keyed HMAC and cannot be used as a public content hash; unique(id,owner_id); owner_id immutable
+Constraints: unique(conversation_id,sequence); unique(owner_id,client_request_id) where nonnull; comparison_id is NULL or identifies a comparison owned by the same account and conversation; authorized erasure replaces content with a fixed tombstone, sets redacted_at and invalidates all ConversationMessageChunk rows; payload_commitment is a keyed HMAC and cannot be used as a public content hash; unique(id,owner_id); owner_id immutable
 
 Indexes: conversation_id,sequence; turn_id
 
@@ -189,7 +189,7 @@ Indexes: introduced_in_revision_id; owner_id,logical_key,introduced_in_revision_
 
 ## CustomerRequirement
 
-One atomic mandatory, preferred or informational condition used to filter, rank or explain policy configurations.
+One atomic mandatory, preferred or informational criterion used to compare policy configurations.
 
 | Field | Type / required | Default | Purpose | Validation | Units | Example | Basis |
 |---|---|---|---|---|---|---|---|
@@ -202,7 +202,7 @@ One atomic mandatory, preferred or informational condition used to filter, rank 
 | criterion | varchar(120) required | none | Policy outcome the customer wants tested | Must exist in reviewed comparison-criterion registry | None | Synthetic: claim.copay_percent | ["CUS-01", "CUS-03", "RET-01"] |
 | operator | enum required | none | Comparison to apply to policy outcome | equals,not_equals,less_than_or_equal,greater_than_or_equal,includes,excludes,is_available,is_not_available,minimize,maximize; registry restricts per criterion | None | Synthetic: equals | ["CUS-01", "CUS-03", "RET-01"] |
 | target_value | json:FactValueV1 optional | NULL | Desired boundary or value | Required except for minimize/maximize; type and unit fixed by criterion | None | Synthetic: {"state":"known","kind":"quantity","value":"0","unit":"ratio"} | ["CUS-01", "CUS-03", "RET-01"] |
-| priority | enum required | none | Whether failure excludes or only ranks a configuration | mandatory,preferred,informational | None | Synthetic: mandatory | ["CUS-01", "CUS-03", "RET-01"] |
+| priority | enum required | none | Customer-stated importance shown with the criterion outcome | mandatory,preferred,informational | None | Synthetic: mandatory | ["CUS-01", "CUS-03", "RET-01"] |
 | scope | enum required | none | People or purchase to which this requirement applies | entire_purchase,all_intended_insured,person | None | Synthetic: person | ["CUS-01", "CUS-03", "RET-01"] |
 | subject_person_id | fk:Person optional | NULL | Exact person for person-scoped requirement | Required exactly when scope=person; same owner and conversation | None | Synthetic design example only; no real customer value inspected. | ["CUS-01", "CUS-03", "RET-01"] |
 | status | enum required | reported | Customer acceptance state of this version | reported,confirmed,disputed,withdrawn | None | Synthetic: reported | ["CUS-01", "CUS-03", "RET-01"] |
@@ -222,7 +222,7 @@ One customer advice goal spanning any number of clarification messages; executio
 | owner_id | fk:Account required | none | Account whose authorization governs this row | Required; immutable; related private rows must have the same owner | None | Synthetic design example only; no real customer value inspected. | ["OPS-01"] |
 | conversation_id | fk:Conversation required | none | Conversation containing the customer goal | Same owner | None | Synthetic design example only; no real customer value inspected. | ["CUS-01", "CUS-03", "RET-01"] |
 | source_statement_id | fk:CustomerStatement required | none | Statement that initiated this advice goal | Same owner and conversation; normally question, requirement or context | None | Synthetic design example only; no real customer value inspected. | ["CUS-01", "CUS-03", "RET-01"] |
-| request_type | enum required | none | Buying/comparison goal, including comparison with existing cover | purchase_recommendation,product_comparison,coverage_question,renewal_review,portability_review | None | Synthetic: purchase_recommendation | ["CUS-01", "CUS-03", "RET-01"] |
+| request_type | enum required | none | Buying/comparison goal, including comparison with existing cover | purchase_comparison,product_comparison,coverage_question,renewal_review,portability_review | None | Synthetic: purchase_comparison | ["CUS-01", "CUS-03", "RET-01"] |
 | status | enum required | open | Whether the customer goal remains active | open,fulfilled,cancelled | None | Synthetic: open | ["CUS-01", "CUS-03", "RET-01"] |
 
 Constraints: source statement and conversation share owner and conversation; ten information-gathering messages may still serve one AdviceRequest; processing state and failures belong to Turn/ModelAttempt, not this customer goal; each Turn references the exact CustomerProfileRevision it evaluates; unique(id,owner_id); owner_id immutable
@@ -458,12 +458,12 @@ Stable insurer product family, independent of policy editions, named variants an
 | name | varchar(250) required | none | Official product-family name | Nonempty; not globally unique; edition years belong to PolicyVersion | None | Care Supreme | ["INS-01", "INS-02"] |
 | benefit_type | enum required | unresolved | How the product pays benefits | medical_indemnity, fixed_benefit, hybrid, addon or unresolved | None | medical_indemnity | ["INS-01", "INS-05"] |
 | lifecycle_status | enum required | unresolved | Whether the product is sold or retained only historically | open, withdrawn, renewal_only, historical or unresolved | None | open | ["INS-01", "INS-03"] |
-| recommendation_role | enum required | unresolved | How CoverGuide may use the product in advice | primary_policy, supplementary, reference_only, excluded or unresolved | None | primary_policy | ["INS-01", "DEC-01"] |
+| comparison_role | enum required | unresolved | How CoverGuide may use the product in advice | primary_policy, supplementary, reference_only, excluded or unresolved | None | primary_policy | ["INS-01", "DEC-01"] |
 | identity_evidence_id | fk:EvidenceSpan required | none | Exact original passage establishing product identity | Required reviewed evidence; a comparison name alone cannot establish official identity | None | Synthetic design example; no customer value used. | ["INS-01", "INS-04"] |
 
-Constraints: no global unique-name assumption; identity_evidence_id required; recommendation_role and benefit_type remain distinct
+Constraints: no global unique-name assumption; identity_evidence_id required; comparison_role and benefit_type remain distinct
 
-Indexes: insurer_id,name; benefit_type,lifecycle_status,recommendation_role
+Indexes: insurer_id,name; benefit_type,lifecycle_status,comparison_role
 
 ## PolicyVersion
 
@@ -561,7 +561,7 @@ Stable identity of one insurer-issued customer policy or customer-specific offer
 | lifecycle_status | enum required | unresolved | Current state of the customer-specific policy relationship | offered,active,lapsed,expired,cancelled,declined,unresolved | None | active (synthetic) | ["INS-03", "INS-08"] |
 | group_master_reference | encrypted_varchar(250) optional | NULL | Employer or master-policy reference for group membership | Allowed only for group_member; it does not prove individual membership | None | EMP-GRP-77 (synthetic) | ["INS-03", "INS-07", "OPS-01"] |
 
-Constraints: unique(id,owner_id); owner_id immutable; proposer_id and payer_id have the same owner_id; group_master_reference is allowed only when coverage_type=group_member; public recommendations do not create CustomerPolicy rows
+Constraints: unique(id,owner_id); owner_id immutable; proposer_id and payer_id have the same owner_id; group_master_reference is allowed only when coverage_type=group_member; public comparisons do not create CustomerPolicy rows
 
 Indexes: owner_id,insurer_id; owner_id,lifecycle_status
 
@@ -879,7 +879,7 @@ Constraints: unique(document_version_id,index_version,chunk_sha256); all evidenc
 
 Indexes: document_version_id,index_version; GIN lexical_vector; HNSW embedding vector_cosine_ops WHERE embedding IS NOT NULL
 
-## Recommendation
+## Comparison
 
 One saved buying/comparison result for an exact customer profile and published policy-knowledge release.
 
@@ -893,51 +893,49 @@ One saved buying/comparison result for an exact customer profile and published p
 | profile_revision_id | fk:CustomerProfileRevision required | none | Exact customer profile evaluated | Same conversation | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["DEC-01", "RET-01"] |
 | knowledge_release_id | fk:KnowledgeRelease required | none | Exact published policy-knowledge release used for this answer | Required published release; immutable after answer publication | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["DEC-01", "RET-01"] |
 | outcome | enum required | none | Buyer-advice result state | completed,conditional,clarification_required,insufficient_evidence | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["DEC-01", "RET-01"] |
-| supersedes_id | fk:Recommendation optional | NULL | Earlier recommendation replaced after a correction or later comparison | Same conversation | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["DEC-01", "RET-01"] |
+| supersedes_id | fk:Comparison optional | NULL | Earlier comparison replaced after a correction or later comparison | Same conversation | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["DEC-01", "RET-01"] |
 
-Constraints: unique(turn_id); turn, advice request and profile revision belong to the same owner and conversation; knowledge_release_id is published and immutable; supersedes_id has the same owner and advice request and is acyclic; technical failure is stored on Turn and does not create a Recommendation; completed or conditional publication requires no unsupported critical RecommendationStatement; unique(id,owner_id); owner_id immutable
+Constraints: unique(turn_id); turn, advice request and profile revision belong to the same owner and conversation; knowledge_release_id is published and immutable; supersedes_id has the same owner and advice request and is acyclic; technical failure is stored on Turn and does not create a Comparison; completed or conditional publication requires no unsupported critical ComparisonStatement; unique(id,owner_id); owner_id immutable
 
 Indexes: owner_id,advice_request_id,created_at DESC; turn_id unique; supersedes_id
 
-## PolicyCandidateAssessment
+## PolicyComparisonAssessment
 
-One exact public policy configuration evaluated for the customer, including exclusions and uncertain candidates.
+One exact public policy configuration evaluated for the customer, including failed and uncertain criteria.
 
 | Field | Type / required | Default | Purpose | Validation | Units | Example | Basis |
 |---|---|---|---|---|---|---|---|
 | id | uuid required | uuid4 for new records; preserve original UUID during migration | Stable row identity | Primary key; immutable; never reused | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["DEC-01", "INS-05"] |
 | created_at | timestamptz required | transaction timestamp at insertion | When this row was first recorded | UTC storage; immutable; not a source effective date | instant | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-06"] |
 | owner_id | fk:Account required | none | Account whose authorization governs this row | Composite owner foreign keys on private relationships; mixed rows require public/private scope check | None | Intentionally no real customer/authentication values inspected or included. | ["OPS-01"] |
-| recommendation_id | fk:Recommendation required | none | Parent buying/comparison result | Same owner | None | Synthetic design example only; no real customer value inspected. | ["DEC-01", "OPS-01"] |
-| product_variant_id | fk:ProductVariant required | none | Public policy variant evaluated | Variant is eligible for recommendation scope or explicitly retained as excluded | None | Synthetic design example only; no real customer value inspected. | ["INS-01", "INS-02", "INS-03", "DEC-01"] |
+| comparison_id | fk:Comparison required | none | Parent buying/comparison result | Same owner | None | Synthetic design example only; no real customer value inspected. | ["DEC-01", "OPS-01"] |
+| product_variant_id | fk:ProductVariant required | none | Public policy variant evaluated | Variant is eligible for comparison scope or explicitly retained as excluded | None | Synthetic design example only; no real customer value inspected. | ["INS-01", "INS-02", "INS-03", "DEC-01"] |
 | evaluated_selection | json:AcceptedSelectionV1 required | none | Exact people, options and quantities evaluated | Closed selection; referenced people share owner and options belong to variant | None | Synthetic design example only; no real customer value inspected. | ["INS-03", "INS-05", "DEC-01"] |
 | selection_commitment | char(64) required | none | Keyed canonical commitment distinguishing two private evaluated selections | Versioned HMAC over the closed evaluated_selection payload | None | Synthetic design example only; no real customer value inspected. | ["DEC-01", "OPS-06"] |
-| disposition | enum required | none | How this candidate finished the comparison | recommended,alternative,eligible,excluded,conditional,insufficient_evidence | None | Synthetic design example only; no real customer value inspected. | ["INS-01", "INS-02", "DEC-01"] |
-| rank | integer optional | NULL | Customer-facing order when the recommendation ranks candidates | Positive; NULL for excluded or unranked candidates; no unexplained score | None | Synthetic design example only; no real customer value inspected. | ["DEC-01"] |
-| quote_id | fk:Quote optional | NULL | Exact personal quote used for price comparison | Same owner and profile revision; selection matches candidate; unexpired at evaluation or explicitly historical | None | Synthetic design example only; no real customer value inspected. | ["OBS-02", "DEC-01"] |
+| quote_id | fk:Quote optional | NULL | Exact personal quote used for price comparison | Same owner and profile revision; selection matches the compared product; unexpired at evaluation or explicitly historical | None | Synthetic design example only; no real customer value inspected. | ["OBS-02", "DEC-01"] |
 
-Constraints: unique(recommendation_id,product_variant_id,selection_sha256); rank IS NULL OR rank > 0; recommended and alternative ranks are unique within recommendation when nonnull; quote_id is NULL or matches owner, profile revision, variant and evaluated selection; no opaque numeric recommendation score is stored; unique(id,owner_id); owner_id immutable
+Constraints: unique(comparison_id,product_variant_id,selection_commitment); quote_id is NULL or matches owner, profile revision, variant and evaluated selection; no overall disposition, score or rank is stored; unique(id,owner_id); owner_id immutable
 
-Indexes: recommendation_id,rank; product_variant_id; quote_id
+Indexes: comparison_id,product_variant_id; product_variant_id; quote_id
 
 ## PolicyRequirementMatch
 
-How one policy candidate performs against one exact customer requirement.
+How one compared policy performs against one exact customer requirement.
 
 | Field | Type / required | Default | Purpose | Validation | Units | Example | Basis |
 |---|---|---|---|---|---|---|---|
 | id | uuid required | uuid4 | Stable row identity | Primary key; immutable | None | Synthetic design example only; no real customer value inspected. | ["DEC-01"] |
 | created_at | timestamptz required | transaction timestamp at insertion | When this match was recorded | UTC; immutable | instant | Synthetic design example only; no real customer value inspected. | ["OPS-06"] |
 | owner_id | fk:Account required | none | Customer account owning this private comparison | Required; immutable | None | Synthetic design example only; no real customer value inspected. | ["OPS-01"] |
-| candidate_assessment_id | fk:PolicyCandidateAssessment required | none | Policy configuration being compared | Same owner | None | Synthetic design example only; no real customer value inspected. | ["DEC-01"] |
-| customer_requirement_id | fk:CustomerRequirement required | none | Exact requirement version tested | Same owner; active in recommendation profile revision | None | Synthetic design example only; no real customer value inspected. | ["CUS-03", "DEC-01"] |
+| comparison_assessment_id | fk:PolicyComparisonAssessment required | none | Policy configuration being compared | Same owner | None | Synthetic design example only; no real customer value inspected. | ["DEC-01"] |
+| customer_requirement_id | fk:CustomerRequirement required | none | Exact requirement version tested | Same owner; active in comparison profile revision | None | Synthetic design example only; no real customer value inspected. | ["CUS-03", "DEC-01"] |
 | outcome | enum required | none | Whether the policy satisfies the requirement | meets,partly_meets,does_not_meet,unknown,not_applicable | None | Synthetic design example only; no real customer value inspected. | ["INS-01", "INS-02", "DEC-01"] |
 | comparison_value | json:TypedValueV1 optional | NULL | Structured policy value compared with the customer's target | Unit and state are explicit; unknown differs from zero and not applicable | None | Synthetic design example only; no real customer value inspected. | ["CUS-03", "CAL-03", "DEC-01"] |
 | provider_network_entry_id | fk:ProviderNetworkEntry optional | NULL | Exact dated facility result used for a hospital requirement | Entry belongs to the assessed insurer/variant scope; absence does not imply non-network unless snapshot is complete | None | Synthetic design example only; no real customer value inspected. | ["OBS-01", "DEC-01"] |
 
-Constraints: unique(candidate_assessment_id,customer_requirement_id); requirement is active in the pinned customer profile revision; unknown and not_applicable require an explanatory RecommendationStatement; unique(id,owner_id); owner_id immutable
+Constraints: unique(comparison_assessment_id,customer_requirement_id); requirement is active in the pinned customer profile revision; unknown and not_applicable require an explanatory ComparisonStatement; unique(id,owner_id); owner_id immutable
 
-Indexes: candidate_assessment_id,outcome; customer_requirement_id; provider_network_entry_id
+Indexes: comparison_assessment_id,outcome; customer_requirement_id; provider_network_entry_id
 
 ## InformationNeed
 
@@ -948,7 +946,7 @@ One missing customer fact, requirement or document confirmation that should be a
 | id | uuid required | uuid4 | Stable row identity | Primary key; immutable | None | Synthetic design example only; no real customer value inspected. | ["CUS-03", "DEC-01"] |
 | created_at | timestamptz required | transaction timestamp at insertion | When the gap was recorded | UTC; immutable | instant | Synthetic design example only; no real customer value inspected. | ["OPS-06"] |
 | owner_id | fk:Account required | none | Customer account owning this private gap | Required; immutable | None | Synthetic design example only; no real customer value inspected. | ["OPS-01"] |
-| recommendation_id | fk:Recommendation required | none | Result that identified the missing information | Same owner | None | Synthetic design example only; no real customer value inspected. | ["DEC-01"] |
+| comparison_id | fk:Comparison required | none | Result that identified the missing information | Same owner | None | Synthetic design example only; no real customer value inspected. | ["DEC-01"] |
 | subject_person_id | fk:Person optional | NULL | Person the missing information concerns | Same owner; NULL only for purchase-wide information | None | Synthetic design example only; no real customer value inspected. | ["CUS-01", "CUS-03"] |
 | need_kind | enum required | none | Kind of information required | fact,requirement,document_confirmation | None | Synthetic design example only; no real customer value inspected. | ["CUS-02", "CUS-03"] |
 | information_key | varchar(120) required | none | Reviewed code-controlled fact, requirement or document key | Must exist in the matching approved registry; AI cannot invent keys | None | Synthetic design example only; no real customer value inspected. | ["CUS-02", "CUS-03", "INS-01"] |
@@ -958,52 +956,52 @@ One missing customer fact, requirement or document confirmation that should be a
 | asked_in_message_id | fk:Message optional | NULL | Adviser message that asked the focused question | Same owner/conversation; required when status is asked | None | Synthetic design example only; no real customer value inspected. | ["CUS-02", "OPS-02"] |
 | resolved_in_profile_revision_id | fk:CustomerProfileRevision optional | NULL | Customer profile revision containing the accepted answer | Same conversation; required when status is resolved | None | Synthetic design example only; no real customer value inspected. | ["CUS-02", "CUS-03"] |
 
-Constraints: unique(recommendation_id,subject_person_id,need_kind,information_key) NULLS NOT DISTINCT; asked requires asked_in_message_id; resolved requires resolved_in_profile_revision_id; required open, asked or unavailable needs prevent a completed recommendation; information_key is code-controlled and AI output cannot extend the registry; unique(id,owner_id); owner_id immutable
+Constraints: unique(comparison_id,subject_person_id,need_kind,information_key) NULLS NOT DISTINCT; asked requires asked_in_message_id; resolved requires resolved_in_profile_revision_id; required open, asked or unavailable needs prevent a completed comparison; information_key is code-controlled and AI output cannot extend the registry; unique(id,owner_id); owner_id immutable
 
-Indexes: recommendation_id,status,priority; owner_id,subject_person_id,status; asked_in_message_id
+Indexes: comparison_id,status,priority; owner_id,subject_person_id,status; asked_in_message_id
 
-## RecommendationStatement
+## ComparisonStatement
 
-One independently checkable customer-facing statement in a buying recommendation.
+One independently checkable customer-facing statement in a buying comparison.
 
 | Field | Type / required | Default | Purpose | Validation | Units | Example | Basis |
 |---|---|---|---|---|---|---|---|
 | id | uuid required | uuid4 for new records; preserve original UUID during migration | Stable row identity | Primary key; immutable; never reused | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["DEC-01", "INS-05"] |
 | created_at | timestamptz required | transaction timestamp at insertion | When this row was first recorded | UTC storage; immutable; not a source effective date | instant | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-06"] |
 | owner_id | fk:Account required | none | Account whose authorization governs this row | Composite owner foreign keys on private relationships; mixed rows require public/private scope check | None | Intentionally no real customer/authentication values inspected or included. | ["OPS-01"] |
-| recommendation_id | fk:Recommendation required | none | Parent recommendation | Same owner | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["DEC-01", "INS-05"] |
+| comparison_id | fk:Comparison required | none | Parent comparison | Same owner | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["DEC-01", "INS-05"] |
 | ordinal | integer required | none | Claim order | Positive | count | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["DEC-01", "INS-05"] |
-| candidate_assessment_id | fk:PolicyCandidateAssessment optional | NULL | Candidate this statement concerns | Same recommendation and owner | None | Synthetic design example only; no real customer value inspected. | ["DEC-01"] |
-| requirement_match_id | fk:PolicyRequirementMatch optional | NULL | Requirement result this statement explains | Same recommendation and owner | None | Synthetic design example only; no real customer value inspected. | ["CUS-03", "DEC-01"] |
-| information_need_id | fk:InformationNeed optional | NULL | Clarification gap this statement explains | Same recommendation and owner | None | Synthetic design example only; no real customer value inspected. | ["CUS-03", "DEC-01"] |
+| comparison_assessment_id | fk:PolicyComparisonAssessment optional | NULL | Candidate this statement concerns | Same comparison and owner | None | Synthetic design example only; no real customer value inspected. | ["DEC-01"] |
+| requirement_match_id | fk:PolicyRequirementMatch optional | NULL | Requirement result this statement explains | Same comparison and owner | None | Synthetic design example only; no real customer value inspected. | ["CUS-03", "DEC-01"] |
+| information_need_id | fk:InformationNeed optional | NULL | Clarification gap this statement explains | Same comparison and owner | None | Synthetic design example only; no real customer value inspected. | ["CUS-03", "DEC-01"] |
 | calculation_id | fk:Calculation optional | NULL | Exact deterministic calculation supporting this statement | Same owner and advice request | None | Synthetic design example only; no real customer value inspected. | ["CAL-04", "DEC-01"] |
 | text | text required | none | Exact supported assertion | Scope restricted to cited evidence | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["DEC-01", "INS-05"] |
 | statement_type | enum required | none | Customer-facing statement category | customer_context,eligibility,requirement_match,benefit,restriction,price,provider,calculation,limitation,next_step | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["DEC-01", "INS-05"] |
 | critical | boolean required | true | Material correctness flag | Eligibility/calculation/privacy claims critical | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["DEC-01", "INS-05"] |
 | support_status | enum required | unverified | Whether this statement has adequate support | supported,partly_supported,unsupported,customer_profile_supported | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["DEC-01", "INS-05"] |
 
-Constraints: unique(recommendation_id,ordinal); at most one of candidate_assessment_id, requirement_match_id and information_need_id is nonnull; none means recommendation-wide; requirement_match and information_need targets belong to the same recommendation; unsupported critical statement blocks publication; calculation statement requires calculation_id; unique(id,owner_id); owner_id immutable
+Constraints: unique(comparison_id,ordinal); at most one of comparison_assessment_id, requirement_match_id and information_need_id is nonnull; none means comparison-wide; requirement_match and information_need targets belong to the same comparison; unsupported critical statement blocks publication; calculation statement requires calculation_id; unique(id,owner_id); owner_id immutable
 
-Indexes: recommendation_id,ordinal; candidate_assessment_id; requirement_match_id; information_need_id; calculation_id
+Indexes: comparison_id,ordinal; comparison_assessment_id; requirement_match_id; information_need_id; calculation_id
 
-## RecommendationCitation
+## ComparisonCitation
 
-Exact original policy passage supporting, restricting or conflicting with one recommendation statement.
+Exact original policy passage supporting, restricting or conflicting with one comparison statement.
 
 | Field | Type / required | Default | Purpose | Validation | Units | Example | Basis |
 |---|---|---|---|---|---|---|---|
 | id | uuid required | uuid4 for new records; preserve original UUID during migration | Stable row identity | Primary key; immutable; never reused | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["DEC-01", "INS-04"] |
 | created_at | timestamptz required | transaction timestamp at insertion | When this row was first recorded | UTC storage; immutable; not a source effective date | instant | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-06"] |
 | owner_id | fk:Account required | none | Account whose authorization governs this row | Composite owner foreign keys on private relationships; mixed rows require public/private scope check | None | Intentionally no real customer/authentication values inspected or included. | ["OPS-01"] |
-| recommendation_statement_id | fk:RecommendationStatement required | none | Customer-facing statement being evidenced | Same owner | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["DEC-01", "INS-04"] |
+| comparison_statement_id | fk:ComparisonStatement required | none | Customer-facing statement being evidenced | Same owner | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["DEC-01", "INS-04"] |
 | evidence_span_id | fk:EvidenceSpan required | none | Exact original passage, table cell or footnote | Public or same owner | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["DEC-01", "INS-04"] |
 | policy_rule_id | fk:PolicyRule optional | NULL | Interpreted policy rule connecting original to claim | Exact corpus revision | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["DEC-01", "INS-04"] |
 | role | enum required | none | Support relationship | supports,restricts,excepts,conflicts,assumption_source | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["DEC-01", "INS-04"] |
 | ordinal | integer required | none | Display order | Positive | count | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["DEC-01", "INS-04"] |
 
-Constraints: unique(recommendation_statement_id,evidence_span_id,role); policy_rule_id is NULL only for direct source facts that need no interpreted policy rule; policy_rule_id when present is in the recommendation's KnowledgeRelease and is supported by evidence_span_id; private evidence is accessible only to the same owner; public evidence requires citation access; unique(id,owner_id); owner_id immutable
+Constraints: unique(comparison_statement_id,evidence_span_id,role); policy_rule_id is NULL only for direct source facts that need no interpreted policy rule; policy_rule_id when present is in the comparison's KnowledgeRelease and is supported by evidence_span_id; private evidence is accessible only to the same owner; public evidence requires citation access; unique(id,owner_id); owner_id immutable
 
-Indexes: recommendation_statement_id,ordinal; evidence_span_id; policy_rule_id
+Indexes: comparison_statement_id,ordinal; evidence_span_id; policy_rule_id
 
 ## Calculation
 
@@ -1049,7 +1047,7 @@ One durable, idempotent and cancellable customer-message processing request.
 | error_code | varchar(100) optional | NULL | Explicit technical failure | Safe bounded code, no raw provider secrets | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-02", "OPS-04"] |
 | route_commitment | char(64) required | empty only for pre-amendment rows | Keyed commitment over both immutable interactive-role bindings | HMAC; set before enqueue; immutable once set; new turns require exactly both roles | None | Synthetic operational example only; no real customer value inspected. | ["OPS-02", "OPS-04", "OPS-06"] |
 
-Constraints: unique(owner_id,request_id); input message and optional starting profile belong to the same owner and conversation; every newly accepted turn has exactly one fact_interpretation and one recommendation_answer binding before enqueue; route_commitment is immutable once set; running requires a current lease token and lease_until; only the current lease token may publish; completed requires a Recommendation whose profile_revision_id is the final evaluated revision; technical failure creates none; a newer concurrent profile makes the result stale unless the publication transaction proves its correction lineage is compatible; unique(id,owner_id); owner_id immutable
+Constraints: unique(owner_id,request_id); input message and optional starting profile belong to the same owner and conversation; every newly accepted turn has exactly one fact_interpretation and one comparison_answer binding before enqueue; route_commitment is immutable once set; running requires a current lease token and lease_until; only the current lease token may publish; completed requires a Comparison whose profile_revision_id is the final evaluated revision; technical failure creates none; a newer concurrent profile makes the result stale unless the publication transaction proves its correction lineage is compatible; unique(id,owner_id); owner_id immutable
 
 Indexes: owner_id,conversation_id,created_at DESC; state,lease_until; owner_id,request_id unique
 
@@ -1062,7 +1060,7 @@ One immutable exact route and passed qualification captured for an interactive r
 | id | uuid required | uuid4 | Stable row identity | Primary key; immutable; never reused | None | Synthetic operational example only; no real customer value inspected. | ["OPS-02", "OPS-04"] |
 | created_at | timestamptz required | transaction timestamp at insertion | When the route was pinned | UTC; immutable | instant | Synthetic operational example only; no real customer value inspected. | ["OPS-06"] |
 | turn_id | fk:Turn required | none | Accepted turn that owns the binding | Exactly two per new turn; immutable | None | Synthetic operational example only; no real customer value inspected. | ["OPS-02", "OPS-04"] |
-| role | enum required | none | Interactive operation | fact_interpretation,recommendation_answer | None | fact_interpretation (synthetic) | ["OPS-04"] |
+| role | enum required | none | Interactive operation | fact_interpretation,comparison_answer | None | fact_interpretation (synthetic) | ["OPS-04"] |
 | route_id | fk:ModelRoute required | none | Exact immutable route revision | Active when called; must match all captured route fields | None | Synthetic operational example only; no real customer value inspected. | ["OPS-04"] |
 | qualification_id | fk:ModelQualification required | none | Exact passed qualification | Same route and role/schema; current schema hash; passed exact-identity capabilities | None | Synthetic operational example only; no real customer value inspected. | ["OPS-04"] |
 | requested_model | varchar(160) required | none | Exact requested provider/model ID | Must equal the bound route | None | gemini/gemini-3.5-flash-lite (operator configuration example) | ["OPS-04"] |
@@ -1088,7 +1086,7 @@ One immutable ordered UI event that reconnecting clients can replay without repe
 | owner_id | fk:Account required | none | Account whose authorization governs this row | Composite owner foreign keys on private relationships; mixed rows require public/private scope check | None | Intentionally no real customer/authentication values inspected or included. | ["OPS-01"] |
 | turn_id | fk:Turn required | none | Owning work item | Same owner | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-02"] |
 | sequence | bigint required | none | Monotonic replay cursor | Positive | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-02"] |
-| event_type | enum required | none | Durable UI event kind | queued,started,clarification,progress,recommendation,cancelled,failed,stale | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-02"] |
+| event_type | enum required | none | Durable UI event kind | queued,started,clarification,progress,comparison,cancelled,failed,stale | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-02"] |
 | payload | json:TurnEventV1 required | none | Safe UI event content/reference | Strict kind union; no raw model chain-of-thought or private-other-owner IDs | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-02"] |
 
 Constraints: unique(turn_id,sequence); append-only except authorized erasure; payload matches event_type and contains no hidden reasoning or another owner identity; unique(id,owner_id); owner_id immutable
@@ -1148,7 +1146,7 @@ One completed test of an exact route against one application schema and capabili
 | id | uuid required | uuid4 for new records; preserve original UUID during migration | Stable row identity | Primary key; immutable; never reused | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-04"] |
 | created_at | timestamptz required | transaction timestamp at insertion | Qualification completion time | UTC storage; immutable; not a source effective date | instant | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-06"] |
 | route_id | fk:ModelRoute required | none | Qualified route revision | Required | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-04"] |
-| schema_name | enum required | none | Actual use schema | fact_interpretation,policy_extraction,policy_review,recommendation_answer | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-04"] |
+| schema_name | enum required | none | Actual use schema | fact_interpretation,policy_extraction,policy_review,comparison_answer | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-04"] |
 | schema_sha256 | char(64) required | none | Exact tested JSON schema | Required | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-04"] |
 | observed_model | varchar(160) required | none | Actual returned model identity | Must exactly satisfy strict identity policy | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-04"] |
 | capabilities | json:QualificationV1 required | none | Context/image/structured output checks used | Measured capability, test inputs hashes, results and limits | None | No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md. | ["OPS-04"] |
@@ -1294,6 +1292,6 @@ One original-backed component slot in a public packaged policy, used to compare 
 | evidence_span_id | fk:EvidenceSpan required | none | Exact original support for the package/component association | Required typed identity; no inferred association | None | No authentic private/database identity inspected. See the explicitly synthetic additional-r13-combi-01 fixture. | ["INS-10"] |
 | review_status | enum required | unresolved | Association review outcome | unresolved,reviewed,conflict,excluded | None | No authentic private/database identity inspected. See the explicitly synthetic additional-r13-combi-01 fixture. | ["INS-10"] |
 
-Constraints: unique(package_policy_version_id,slot_key); reviewed requires component_product_id and evidence_span_id; component_policy_version belongs to component_product; conditional selection requires a same-package PolicyRule; conflicting asserted UIN blocks affected recommendation capability; package composition is acyclic; history comes from PolicyVersion; no duplicate component self-supersession
+Constraints: unique(package_policy_version_id,slot_key); reviewed requires component_product_id and evidence_span_id; component_policy_version belongs to component_product; conditional selection requires a same-package PolicyRule; conflicting asserted UIN blocks affected comparison capability; package composition is acyclic; history comes from PolicyVersion; no duplicate component self-supersession
 
 Indexes: package_policy_version_id,slot_key unique; component_product_id; component_policy_version_id; selection_policy_rule_id
