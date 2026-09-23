@@ -1,197 +1,161 @@
 # CoverGuide health insurance adviser
 
-CoverGuide is an evidence-first local pilot for health insurance conversations. The current
-implementation establishes the account, profile, conversation, provenance, catalogue, and
-streaming boundaries. A hash-pinned Care Supreme policy wording is active for a narrow local test;
-other plans and unsupported questions still return an evidence-limited outcome.
+CoverGuide is an evidence-grounded, local-only health-insurance policy comparison pilot. It
+compares every reviewed product against customer-supplied criteria, exposes per-criterion outcomes,
+evidence gaps, restrictions, and citations, and never ranks products or chooses a policy.
 
-The v2 route-pinning and PostgreSQL 18 replacement are local proof only, not production readiness.
-As of 2026-09-22, deterministic tests and the isolated service stack pass, but live Gemini
-qualification is blocked by the absent loopback OmniRoute credential/runtime and the five-product
-release is blocked by reviewed source-hash drift. No production deployment or old-runtime deletion
-is authorized by this state. See [the local v2 closeout report](docs/LOCAL_V2_CLOSEOUT_2026-09-22.md).
+The customer-facing contract is fixed: “CoverGuide compares the reviewed products against the
+criteria you shared. It does not choose a policy; the decision is yours.” There is no selected-product
+field, purchase action, or stored user decision.
+
+This repository is approved only for a single operator's synthetic/local pilot. It is not approved
+for public or multi-user health-data use because per-user consent to third-party AI processing has
+not been implemented.
 
 ## Run locally
 
-Requirements: Python 3.12 through uv, Node.js 24, and Docker.
+Requirements: Python 3.12 through uv, Node.js 24, Docker, and the loopback OmniRoute service when
+either interactive role is routed to Gemini.
 
-0. Run `cp .env.example .env`, then `chmod 600 .env`. Replace every `/absolute/path/to/...`
-   placeholder with a real path on your machine and generate fresh values for
-   `DJANGO_SECRET_KEY`, `COVERGUIDE_ENCRYPTION_KEYS`, and `COVERGUIDE_COMMITMENT_KEYS`. `.env` is
-   gitignored; never commit it.
-1. Run `docker compose up -d postgres18 redis nginx` to start the PostgreSQL 18 replacement,
-   Redis, and Nginx. Use a distinct Compose project name and a distinct
-   `COVERGUIDE_V2_STORAGE_ROOT` when preserving an earlier pilot for rollback.
-2. Run `uv sync --all-groups`.
-3. Run `uv run python backend/manage.py migrate`.
-4. Acquire the pinned official pilot source with `uv run python backend/manage.py ingest_document
-   'https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---policy-terms-%26-conditions-%28effective-from-29-april-2026%29.pdf?rv=0.39631700+1788960674'
-   --identity 'Care Supreme policy wording (Ditto-hosted)' --allow-host cms.careinsurance.com`.
-5. Extract the document ID printed by that command with `uv run python backend/manage.py
-   extract_document <document-id>`, then run `uv run python backend/manage.py
-   activate_care_supreme_pilot`.
-6. Run `uv run --env-file .env uvicorn config.asgi:application --app-dir backend --host 127.0.0.1 --port 8018`.
-7. In another terminal, run `uv run celery --workdir backend -A config worker --beat --loglevel=INFO --concurrency=1`.
-8. In `frontend`, run `npm ci`, `npm run build`, and `npm start`.
-9. Keep the host processes running; Nginx in Compose routes the single local origin.
+1. Copy `.env.example` to `.env`, set mode `0600`, replace every placeholder, and generate fresh
+   Django, encryption, and commitment keys. `.env` is ignored; never commit it.
+2. Start infrastructure with
+   `docker compose -p coverguide-v2-closeout up -d postgres18 redis nginx`.
+3. Run `uv sync --all-groups` and `uv run --env-file .env python backend/manage.py migrate`.
+4. Build the frontend with `npm --prefix frontend ci` and `npm --prefix frontend run build`.
+5. Start the backend on `127.0.0.1:8018`, the frontend on `127.0.0.1:3018`, and separate Celery
+   worker and beat processes. Nginx serves the single origin at <http://127.0.0.1:8088>.
 
-The site is then available at http://localhost:8088. API documentation is at
-http://localhost:8088/api/docs/.
+For the persistent local runtime, link and enable the checked-in hardened user units:
 
-## Implemented boundary
+```console
+systemctl --user link "$PWD"/ops/systemd/coverguide-*.service
+systemctl --user daemon-reload
+systemctl --user enable --now \
+  coverguide-infra.service coverguide-web.service \
+  coverguide-celery-worker.service coverguide-celery-beat.service \
+  coverguide-frontend.service
+```
 
-- Session accounts with CSRF-protected register, login, logout, password change, and deletion.
-- Owned conversations, immutable profile revisions, profile confirmation, and canonical messages.
-- Idempotent logical turns separated from execution attempts.
-- POST-based SSE with accepted, progress, result, and error events.
-- Cancellation state, explicit retry rules, and stale-profile publication checks.
-- Catalogue, document, extraction, source-map, evidence, fact, corpus, answer, and recommendation
-  persistence models.
-- Live sitemap discovery and coverage reporting for 203 current Ditto plan listings, separated from
-  recommendation readiness.
-- Content-addressed PDF storage, native word geometry, frozen source maps, exact evidence spans,
-  protected range-capable source delivery, and browser highlight rendering.
-- Three-state applicability and deterministic suitability/rating/premium tie rules.
-- A strict relay boundary with complete-message preservation and no silent retry or model substitution.
-- A responsive Next.js interface for accounts, conversations, profile confirmation, and coverage.
-- OpenAPI schema generation and generated TypeScript contracts.
+The units use journald, restart-on-failure, `UMask=0077`, `NoNewPrivileges`, read-only project/home
+access, and narrow writable paths for application data, the beat schedule, and Next.js cache. The
+account must have lingering enabled. Reboot validation is a separate operator checkpoint.
 
-## Evidence status
+## Active API and comparison contract
 
-One Care Supreme version is active for local evidence-delivery testing. Its preserved bytes match
-Care Health Insurance's official policy download effective 29 April 2026. Four facts are verified:
-the pre-existing disease, named ailment, and initial waiting periods, plus optional co-payment terms.
-Live discovery found 203 plan-shaped Ditto listings; the other 202 are not active. The active result
-does not provide a personalised premium or predict underwriting, and it is not a full-catalogue
-recommendation.
+Only `/api/v1/auth/*` remains active under v1. Adviser conversations, turns, streaming, catalogue,
+evidence, documents, and comparisons are under `/api/v2/*`; the comparison resource is
+`GET /api/v2/comparisons/{id}/`. The prior v1 adviser routes and v2 recommendation endpoint are
+retired rather than aliased.
 
-For an HTTPS deployment, set `DJANGO_DEBUG=0`, use a high-entropy `DJANGO_SECRET_KEY`, and enable
-`DJANGO_SECURE_SSL_REDIRECT`, `DJANGO_SECURE_COOKIES`, and a suitable `DJANGO_HSTS_SECONDS` value.
+The active contract uses `Comparison`, `PolicyComparisonAssessment`, `comparison_id`, SSE event
+`comparison.completed`, event kind `comparison`, and model role `comparison_answer`. Every reviewed
+product remains visible in stable insurer/product/UIN/variant order. Cards have equal visual weight
+and show criterion outcomes (`meets`, `partly_meets`, `does_not_meet`, `unknown`, or
+`not_applicable`), evidence, gaps, and applicable decision-critical restrictions.
 
-See docs/STATUS.md for milestone status and acceptance evidence.
+Generated comparison prose is limited to cited factual statements. The application owns the
+outcome, introduction, missing-information question, and closing notice. Generated endorsement,
+ranking, shortlisting, winner, selection, or purchase-direction language fails the turn closed.
+Existing hard validation also rejects unsupported facts and numbers, wrong-person or wrong-product
+references, policy-version mismatches, invalid calculations, and cross-product citations.
 
-## AI settings and the shared relay
+## Evidence and privacy boundary
 
-> The relay, systemd unit, and admin-promotion details below describe the maintainer's development
-> machine. The relay is an OpenAI-compatible endpoint configured through the `AI_RELAY_*`
-> variables in `.env`; other environments must provide their own equivalent and deployment.
+Policy versions, source bytes, extraction revisions, source maps, evidence spans, rules, and release
+membership are hash-bound. Product IDs, criteria, evidence, restrictions, and citations are retained
+through the comparison migration; overall scores, ranks, dispositions, and candidate filtering are
+not part of the active model.
 
-CLIProxyAPI is activated locally at `http://127.0.0.1:8317`. Open **AI settings** in
-CoverGuide to choose a qualified model. `gpt-6-astra` is the initial choice; `gpt-5.6-sol`,
-`gpt-5.6-terra`, and `gpt-5.6-luna` are also qualified. Preferences apply to future turns,
-and existing turns retain their captured model. No terminal or provider login is needed
-for ordinary users.
+Loopback is not data residency. If an interactive role is routed through OmniRoute, its synthetic or
+customer context is sent to the selected Gemini account under Google's applicable terms. The local
+operator acknowledgment is not a substitute for per-user consent. Policy extraction and review may
+process private uploads, so they remain on the existing relay and cannot use OmniRoute.
 
-The pilot administrator sees masked Codex account controls and can qualify newly discovered
-models. OAuth opens a new tab and status polling completes or rolls back the switch. The
-subscription and account-operation locks are shared with Job-In; account changes affect both
-applications. Read-only status requests never complete an OAuth operation. Polling and account
-changes use authenticated, CSRF-protected POST requests.
+## OmniRoute gateway
 
-Server credentials belong only in the ignored `.env` (mode `0600`), loaded by the backend
-process. Never put them in frontend environment variables, route records, or source control.
-The live backend runs with debug error pages disabled. OmniRoute is optional and off by default;
-see [Optional OmniRoute gateway](#optional-omniroute-gateway).
+OmniRoute must bind only to `127.0.0.1:20128`. The CoverGuide server key must remain private,
+non-expiring, `noLog=true`, compression disabled, combination access empty, automatic model
+resolution disabled, and restricted to exactly:
 
-The shared relay explicitly sets `request-retry: 0`, `max-retry-credentials: 1`,
-`max-retry-interval: 0`, and all three `quota-exceeded` fallbacks to false, with loopback
-listener and management access. These override the defaults in the
-[official CLIProxyAPI configuration](https://github.com/router-for-me/CLIProxyAPI/blob/main/config.example.yaml).
-The original configuration is backed up beside the shared relay configuration, with mode `0600`.
+- `gemini/gemini-3.5-flash-lite`
+- `gemini/gemini-3.1-flash-lite`
 
-Live host services are `coverguide-web.service` and `coverguide-frontend.service` in the
-user systemd manager (transient units for this login session). Use `systemctl --user restart
-coverguide-web.service coverguide-frontend.service` after code/build changes; the existing
-Celery process and Compose PostgreSQL, Redis, and Nginx services remain in place.
+It is pinned to the five approved Gemini connections. `providerStrategies.gemini` uses
+`fallbackStrategy="round-robin"` and `stickyRoundRobinLimit=1`; cross-provider and cross-model
+fallback are not enabled. Provider credentials stay in OmniRoute. The CoverGuide gateway key stays
+only in the ignored server `.env`.
 
-AI selects relevant verified policy explanations. Publication accepts only the exact approved
-fact text, with resolved evidence IDs, and rechecks the profile, corpus, route qualification,
-account, cancellation, and deadline. Interview suggestions quote the user's message and need
-review before becoming a new profile revision. These safeguards deliberately limit generated
-prose. Personalised recommendations remain withheld pending reviewed recommendable plans.
+The reproducible policy helper is:
 
-Authenticated endpoints: `GET /api/v1/ai/models/`, `PATCH /api/v1/ai/preferences/`,
-`GET /api/v1/admin/ai-relay/`, `POST /api/v1/admin/ai-relay/accounts/` (connect, status,
-cancel, disconnect, restore, forget), and `POST /api/v1/admin/ai-relay/qualifications/`.
-Each qualification tests both answer and interview schemas and records safe call metadata.
-The one-time `promote_pilot_admin` command requires an inspected user ID and exact last-login
-timestamp and refuses ambiguous accounts, changed logins, or repeat promotion.
+```console
+uv run python scripts/configure_coverguide_omniroute.py
+```
 
-## Optional OmniRoute gateway
+It authenticates through the supported dashboard API and never prints the dashboard password or
+session cookie. After initial setup, remove `INITIAL_PASSWORD` from OmniRoute's runtime environment;
+to reconfigure later, supply the current password through the protected
+`OMNIROUTE_DASHBOARD_PASSWORD` process environment.
 
-[OmniRoute](https://github.com/diegosouzapw/OmniRoute) is a self-hosted, OpenAI-compatible gateway
-that can serve the two **interactive** v2 roles (customer interpretation and final explanation)
-from free provider tiers. The CLIProxyAPI relay stays the default. Policy extraction and review
-handle private uploads, so they are relay-only and refuse OmniRoute in code. There is no fallback
-between providers: if OmniRoute is disabled, misconfigured, unqualified or failing, the role fails
-closed and the turn reports the error. Customers do not choose a route; the operator does.
+Configure the application with `OMNIROUTE_ENABLED=1`, the loopback base URL, the server-only API
+key, `OMNIROUTE_LOGGING_DISABLED_CONFIRMED=1`, the local-pilot acknowledgment, and exact
+requested-to-reported model mappings. The two optional route overrides are
+`COVERGUIDE_CUSTOMER_INTERPRETATION_ROUTE` and `COVERGUIDE_COMPARISON_ROUTE`; an empty value keeps
+that role on its relay model.
 
-**Data flow.** Loopback is not data residency. With OmniRoute selected, the customer's message and
-the decision context are sent through the gateway to whichever upstream provider it routes to
-(Gemini, Cohere, Hugging Face, OpenRouter, ...), under that provider's free-tier terms, which may
-allow retention and training. There is no per-customer consent prompt; this page and
-`docs/SECURITY.md` are the disclosure. Do not enable it for data you would not send to those
-providers.
+Before activation, run:
 
-Set it up on the operator machine, outside this repository:
+```console
+uv run --env-file .env python backend/manage.py check_omniroute
+uv run --env-file .env python backend/manage.py qualify_v2_models
+uv run --env-file .env python scripts/verify_coverguide_omniroute.py
+```
 
-1. Install OmniRoute and start it bound to loopback, with its data directory outside the repo:
-   `OMNIROUTE_SERVER_HOST=127.0.0.1 DATA_DIR=/path/outside/repo PORT=20128 omniroute serve --no-open`.
-   `HOSTNAME` and `HOST` are ignored and the default bind is `0.0.0.0`.
-2. Add provider API keys in OmniRoute only; they never enter this repository or `.env`. Keep
-   routing on `round-robin` if several keys share a provider. Never connect OAuth or coding-tool
-   accounts (Antigravity, Cline, Kilo, Grok CLI, GitHub, ...) as providers.
-3. Create an OmniRoute API key for CoverGuide and turn **request logging off (`noLog`) and prompt
-   compression off** on that key. New keys default to logging on and compression on, and logged
-   bodies would retain customer text. Verify this in the dashboard before continuing.
-4. Set in `.env` (placeholders are in `.env.example`):
-   - `OMNIROUTE_ENABLED=1`, `OMNIROUTE_BASE_URL=http://127.0.0.1:20128`, `OMNIROUTE_API_KEY=...`
-   - `OMNIROUTE_LOGGING_DISABLED_CONFIRMED=1` once step 3 is true. This is your attestation; the
-     backend refuses to start OmniRoute without it.
-   - `COVERGUIDE_LOCAL_OMNIROUTE_PILOT_ACK=1` only after the local operator accepts the documented
-     upstream-data disclosure. This gate is accepted only with `DJANGO_DEBUG=1` and a literal
-     loopback gateway; it is not a production privacy approval.
-   - `OMNIROUTE_MODELS`: comma-separated `requested-id=reported-id` pairs. OmniRoute reports the
-     model without its leading provider segment, and CoverGuide compares the reported id exactly,
-     so each pair states it explicitly. The approved local allowlist is
-     `gemini/gemini-3.5-flash-lite=gemini-3.5-flash-lite,gemini/gemini-3.1-flash-lite=gemini-3.1-flash-lite`.
-   - `COVERGUIDE_CUSTOMER_INTERPRETATION_ROUTE` and/or `COVERGUIDE_FINAL_EXPLANATION_ROUTE` as
-     `omniroute:<requested id>`. Leave a role empty to keep it on the relay.
-5. Run `python backend/manage.py check_omniroute` (settings, reachability and that every
-   allowlisted id is in the live catalogue; sends no customer data), then
-   `python backend/manage.py qualify_v2_models` to qualify each role's configured route on its
-   schema. Readiness blocks any role whose configured route is not qualified. Restart the backend
-   and Celery workers after changing routes.
+The qualification suite makes 40 normal interactive calls: 12 interpretation and 8 comparison
+cases against each Gemini model. It checks exact reported identity, current suite/corpus/prompt/
+validator/protocol/schema hashes, 100% assertions, neutrality, a 75-second p95, and a 120-second
+hard call timeout. Only no-output transport or quota failures receive one retry; semantic and schema
+failures do not. Each role selects independently by assertion score, then lower p95 latency, with
+Gemini 3.5 winning only an exact tie. A newer failure invalidates an older pass. If neither model
+passes a role, leave that role on the relay and do not run a real-data OmniRoute pilot.
 
-Changing a route creates a new immutable route record, so it must be re-qualified. Before a new
-turn is enqueued, CoverGuide stores immutable bindings for both interactive roles and a keyed
-commitment over their exact route, qualification, identities, endpoint, configuration and schema
-hashes. Workers use only those bindings; an explicit retry copies them and never follows later
-settings changes. Each model call records its exact qualification, route/configuration identity and
-the raw reported model in `ModelAttempt`. The 2026-09-19 probe results
-(models that passed strict `json_schema` and ones that did not) are in
-`docs/omniroute-spike-2026-09-19.json`. Free-tier quotas and catalogues change, so re-run the
-check before relying on a model.
+The gateway acceptance helper requires ten consecutive successful synthetic calls, exactly two per
+Gemini connection, and verifies that the no-log key retained only administrative metadata—not
+request/response bodies, detail rows, or request artifacts.
+
+## Verification
+
+Run the repository checks before review:
+
+```console
+uv run ruff check backend scripts
+uv run --env-file .env pytest
+uv run --env-file .env python backend/manage.py check
+uv run --env-file .env python backend/manage.py makemigrations --check --dry-run
+npm --prefix frontend run generate:api
+npm --prefix frontend run lint
+npm --prefix frontend run typecheck
+npm --prefix frontend run build
+```
+
+Regenerate `openapi.json` before the TypeScript contract whenever the API changes. Browser smoke
+tests must use synthetic data. No push, merge, production deployment, real-health-data pilot, or
+reboot is implied by local acceptance.
 
 ## Local-only inputs
 
 These are deliberately not in the repository and must be supplied locally:
 
-- `research/seeds/scenarios.txt`: the private combined scenario set read by
-  `backend/research_workspace/cases.py` and `build_bge_m3_reference`. It is gitignored because it
-  overlaps the private evaluation benchmark. See `research/README.md` for the evaluation boundary.
-- `research/objects/`, `research/evaluation/`, and `data/source-blobs/`: original insurer
-  documents and private benchmark material.
-- `data/v2/`, `data/reports/`, and `data/manifests/`: encrypted runtime storage and generated
-  run artifacts (only `data/reports/corpus-coverage.json` is tracked).
+- `research/seeds/scenarios.txt`: the private combined scenario set read by the research tooling.
+- `research/objects/`, `research/evaluation/`, and `data/source-blobs/`: original insurer documents
+  and private benchmark material.
+- `data/v2/`, `data/reports/`, and `data/manifests/`: encrypted runtime storage and generated run
+  artifacts (only `data/reports/corpus-coverage.json` is tracked).
 
 ## Contributing
 
-Work on a branch and open a pull request against `main`. Before opening one, run
-`uv run ruff check backend`, `uv run pytest`, and, in `frontend`, `npm run lint` and
-`npm run build`. Regenerate `openapi.json` and `frontend/lib/api-schema.ts` when the API changes.
-Report security issues privately to the maintainers rather than in a public issue; see
-`docs/SECURITY.md` for the current security posture.
+Work on a branch and open a pull request against `main`. Report security issues privately to the
+maintainers; see [docs/SECURITY.md](docs/SECURITY.md) for the current security posture.
 
 ## License
 
