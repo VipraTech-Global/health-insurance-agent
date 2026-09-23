@@ -9,8 +9,9 @@ from apps.accounts.models import User
 from apps.adviser_v2.crypto import commitment_key_ring, encryption_key_ring
 from apps.adviser_v2.model_gateway import schema_sha256
 from apps.adviser_v2.models import ModelQualification, ModelRoute
+from apps.adviser_v2.qualification_suite import expected_qualification_hashes
 from apps.adviser_v2.role_routes import configured_route
-from apps.adviser_v2.schemas import CustomerInterpretationV1, RecommendationDraftV1
+from apps.adviser_v2.schemas import ComparisonDraftV1, CustomerInterpretationV1
 
 
 @pytest.fixture(autouse=True)
@@ -19,6 +20,10 @@ def v2_server_keys(settings, tmp_path: Path):
     settings.COVERGUIDE_ENCRYPTION_KEYS = f"test-v1:{encoded}"
     settings.COVERGUIDE_COMMITMENT_KEYS = f"test-v1:{encoded}"
     settings.COVERGUIDE_V2_STORAGE_ROOT = tmp_path / "v2"
+    # Operator route overrides from a developer's .env must not leak into the
+    # isolated test contract. Tests that exercise OmniRoute opt in explicitly.
+    settings.COVERGUIDE_CUSTOMER_INTERPRETATION_ROUTE = ""
+    settings.COVERGUIDE_COMPARISON_ROUTE = ""
     encryption_key_ring.cache_clear()
     commitment_key_ring.cache_clear()
     yield
@@ -30,7 +35,7 @@ def v2_server_keys(settings, tmp_path: Path):
 def qualified_interactive_routes(db: None) -> None:
     for role, output_type in (
         ("fact_interpretation", CustomerInterpretationV1),
-        ("recommendation_answer", RecommendationDraftV1),
+        ("comparison_answer", ComparisonDraftV1),
     ):
         role_route = configured_route(role)
         route, _ = ModelRoute.objects.get_or_create(
@@ -58,6 +63,11 @@ def qualified_interactive_routes(db: None) -> None:
                     "identity_exact": True,
                     "latency_ms": 1,
                     "limitations": [],
+                    **expected_qualification_hashes(role, output_type),
+                    "case_total": 1,
+                    "case_passed": 1,
+                    "failure_categories": [],
+                    "p95_latency_ms": 1,
                 }
             },
         )

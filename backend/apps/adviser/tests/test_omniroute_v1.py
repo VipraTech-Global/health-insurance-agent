@@ -1,5 +1,3 @@
-import json
-
 import pytest
 from django.test import Client
 
@@ -112,35 +110,10 @@ def test_qualifying_a_disabled_or_unlisted_omniroute_model_is_refused(omni, db):
         qualify_model(REQUESTED, "omniroute")
 
 
-def test_admin_api_lists_and_validates_omniroute_models(user, omni, monkeypatch):
-    from apps.adviser.relay_accounts import ProviderAccountSummary
-
-    monkeypatch.setattr("apps.adviser.ai_views.discover_models", lambda: ["gpt-6-astra"])
-    monkeypatch.setattr(
-        "apps.adviser.ai_views.provider_account_summary",
-        lambda _: ProviderAccountSummary(
-            "codex", "Codex", "Connected", "p***@e***.com", True, False, False, False
-        ),
-    )
+def test_v1_admin_ai_routes_are_retired(user):
     user.is_staff = True
     user.save()
-    browser = Client(enforce_csrf_checks=True)
+    browser = Client()
     browser.force_login(user)
-    browser.get("/api/v1/auth/csrf/")
-    body = browser.get("/api/v1/admin/ai-relay/").json()
-    assert body["omniroute_models"] == [REQUESTED] and body["discovered_models"] == ["gpt-6-astra"]
-
-    def post(payload):
-        return browser.post(
-            "/api/v1/admin/ai-relay/qualifications/",
-            data=json.dumps(payload),
-            content_type="application/json",
-            HTTP_X_CSRFTOKEN=browser.cookies["csrftoken"].value,
-        )
-
-    assert post({"model": "bad model!", "provider": "omniroute"}).status_code == 400
-    assert post({"model": "gemini/x", "provider": "cliproxyapi"}).status_code == 400
-    assert post({"model": "gpt-x", "provider": "unknown"}).status_code == 400
-    omni.OMNIROUTE_ENABLED = False
-    assert post({"model": REQUESTED, "provider": "omniroute"}).status_code == 503
-    assert browser.get("/api/v1/admin/ai-relay/").json()["omniroute_models"] == []
+    assert browser.get("/api/v1/admin/ai-relay/").status_code == 404
+    assert browser.post("/api/v1/admin/ai-relay/qualifications/").status_code == 404

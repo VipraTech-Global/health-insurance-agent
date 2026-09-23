@@ -87,7 +87,7 @@ def test_five_product_partial_release_is_published_as_development_alpha(
             name=f"Alpha product {index}",
             benefit_type="medical_indemnity",
             lifecycle_status="open",
-            recommendation_role="primary_policy",
+            comparison_role="primary_policy",
             identity_evidence=span,
         )
         policy = PolicyVersion.objects.create(
@@ -206,7 +206,7 @@ def test_three_product_demo_release_publishes_only_ready_manifest_prefix(
             name=f"Demo product {index}",
             benefit_type="medical_indemnity",
             lifecycle_status="open",
-            recommendation_role="primary_policy",
+            comparison_role="primary_policy",
             identity_evidence=span,
         )
         policy = PolicyVersion.objects.create(
@@ -239,9 +239,7 @@ def test_three_product_demo_release_publishes_only_ready_manifest_prefix(
 
     manifest = {
         "manifest_sha256": "3" * 64,
-        "products": [
-            {"policy_version_id": str(policy.id)} for policy in policies
-        ],
+        "products": [{"policy_version_id": str(policy.id)} for policy in policies],
     }
     report_products = [
         {
@@ -277,9 +275,7 @@ def test_three_product_demo_release_publishes_only_ready_manifest_prefix(
         lambda _sha256: Path("captured.json"),
     )
 
-    release, build_report = build_release(
-        Path("captured.json"), comparison_product_count=3
-    )
+    release, build_report = build_release(Path("captured.json"), comparison_product_count=3)
     published = publish_release(release.id)
 
     assert build_report["ready"] is True
@@ -290,12 +286,18 @@ def test_three_product_demo_release_publishes_only_ready_manifest_prefix(
     assert published.readiness["comparison_product_count"] == 3
     assert len(published.readiness["products"]) == 3
     assert KnowledgeReleaseRule.objects.filter(knowledge_release=published).count() == 3
-    assert PolicyVersion.objects.filter(
-        id__in=[policy.id for policy in policies[:3]], publication_status="published"
-    ).count() == 3
-    assert PolicyVersion.objects.filter(
-        id__in=[policy.id for policy in policies[3:]], publication_status="draft"
-    ).count() == 2
+    assert (
+        PolicyVersion.objects.filter(
+            id__in=[policy.id for policy in policies[:3]], publication_status="published"
+        ).count()
+        == 3
+    )
+    assert (
+        PolicyVersion.objects.filter(
+            id__in=[policy.id for policy in policies[3:]], publication_status="draft"
+        ).count()
+        == 2
+    )
     assert KnowledgeChannel.objects.get(name="live").current_release_id == published.id
     readiness = catalogue_readiness()
     assert readiness["ready"] is True

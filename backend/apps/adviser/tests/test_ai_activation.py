@@ -1,19 +1,14 @@
-import json
 import uuid
 from datetime import timedelta
 
-import httpx
 import pytest
-from asgiref.sync import async_to_sync
-from django.db import DatabaseError, connection, transaction
-from django.test import Client
+from django.db import DatabaseError, transaction
 from django.utils import timezone
 
 from apps.accounts.models import User
 from apps.adviser.ai import InterviewDraft, RelayFailure
 from apps.adviser.ai_turns import prepare_turn, publish_ai_answer
 from apps.adviser.models import (
-    AIPreference,
     AnswerArtifact,
     ModelCallAttempt,
     RouteConfiguration,
@@ -113,118 +108,6 @@ def test_publication_rechecks_captured_state(user, qualified, change):
     assert not AnswerArtifact.objects.exists()
 
 
-def test_admin_permissions_csrf_and_user_preferences(user, qualified, monkeypatch):
-    browser = Client(enforce_csrf_checks=True)
-    assert browser.get("/api/v1/ai/models/").status_code == 403
-    browser.force_login(user)
-    assert browser.get("/api/v1/admin/ai-relay/").status_code == 403
-    assert (
-        browser.post("/api/v1/admin/ai-relay/accounts/", data={"action": "forget"}).status_code
-        == 403
-    )
-    assert (
-        browser.post(
-            "/api/v1/admin/ai-relay/qualifications/", data={"model": "gpt-6-astra"}
-        ).status_code
-        == 403
-    )
-    assert (
-        browser.patch(
-            "/api/v1/ai/preferences/",
-            data=json.dumps({"route_id": str(qualified.id)}),
-            content_type="application/json",
-        ).status_code
-        == 403
-    )
-    browser.get("/api/v1/auth/csrf/")
-    response = browser.patch(
-        "/api/v1/ai/preferences/",
-        data=json.dumps({"route_id": str(qualified.id)}),
-        content_type="application/json",
-        HTTP_X_CSRFTOKEN=browser.cookies["csrftoken"].value,
-    )
-    assert response.status_code == 200 and AIPreference.objects.get(user=user).route == qualified
-    user.is_staff = True
-    user.save()
-    assert (
-        browser.post("/api/v1/admin/ai-relay/accounts/", data={"action": "forget"}).status_code
-        == 403
-    )
-    monkeypatch.setattr("apps.adviser.ai_views.discover_models", lambda: ["gpt-6-astra"])
-    from apps.adviser.relay_accounts import ProviderAccountSummary
-
-    monkeypatch.setattr(
-        "apps.adviser.ai_views.provider_account_summary",
-        lambda _: ProviderAccountSummary(
-            "codex", "Codex", "Connected", "p***@e***.com", True, False, False, False
-        ),
-    )
-    response = browser.get("/api/v1/admin/ai-relay/")
-    assert response.status_code == 200 and response["Cache-Control"] == "no-store"
-
-
-@pytest.mark.django_db(transaction=True)
-def test_stream_calls_provider_with_no_database_connection(user, qualified, monkeypatch, settings):
-    from config.lifecycle import runtime
-
-    settings.AI_RELAY_API_KEY = "fake-secret"
-    monkeypatch.setattr("apps.adviser.streaming.active_account_identity", lambda: "account-hash")
-    conversation = create_conversation(user.id)
-    captured = []
-
-    async def handler(request):
-        def check():
-            # Runs in the same thread as all preceding ORM boundaries.
-            assert connection.connection is None
-
-        from asgiref.sync import sync_to_async
-
-        await sync_to_async(check, thread_sensitive=True)()
-        captured.append(json.loads(request.content))
-        return httpx.Response(
-            200,
-            json={
-                "model": "gpt-6-astra",
-                "status": "completed",
-                "output": [
-                    {
-                        "type": "message",
-                        "content": [
-                            {
-                                "type": "output_text",
-                                "text": '{"fields":[{"field":"location","value":"Bengaluru"}]}',
-                            }
-                        ],
-                    }
-                ],
-            },
-        )
-
-    browser = Client()
-    browser.force_login(user)
-    response = browser.post(
-        f"/api/v1/conversations/{conversation.id}/turns/",
-        data=json.dumps(
-            {
-                "request_id": str(uuid.uuid4()),
-                "text": "I live in Bengaluru",
-                "expected_profile_revision": 1,
-            }
-        ),
-        content_type="application/json",
-    )
-
-    async def collect():
-        async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as client:
-            monkeypatch.setattr(runtime, "http_client", client)
-            return b"".join([chunk async for chunk in response.streaming_content])
-
-    content = async_to_sync(collect)()
-    assert b"event: result" in content and len(captured) == 1
-    assert ModelCallAttempt.objects.get().status == "succeeded"
-    assert ModelCallAttempt.objects.get().upstream_reported_model == "gpt-6-astra"
-
-
 @pytest.mark.django_db(transaction=True)
 def test_failed_qualification_stays_hidden_and_audited(monkeypatch, user):
     from apps.adviser import relay_routes
@@ -248,54 +131,3 @@ def test_failed_qualification_stays_hidden_and_audited(monkeypatch, user):
     assert call.status == "failed" and call.safe_error_code == "model_identity_mismatch"
     with pytest.raises(DatabaseError), transaction.atomic():
         RouteQualification.objects.filter(pk=qualification.pk).update(state="qualified")
-
-
-@pytest.mark.django_db(transaction=True)
-def test_cancelling_stream_stops_provider_and_never_publishes(
-    user, qualified, monkeypatch, settings
-):
-    import asyncio
-
-    from config.lifecycle import runtime
-
-    from apps.adviser.streaming import _database_call
-
-    settings.AI_RELAY_API_KEY = "fake-secret"
-    monkeypatch.setattr("apps.adviser.streaming.active_account_identity", lambda: "account-hash")
-    conversation = create_conversation(user.id)
-    browser = Client()
-    browser.force_login(user)
-    response = browser.post(
-        f"/api/v1/conversations/{conversation.id}/turns/",
-        data=json.dumps(
-            {
-                "request_id": str(uuid.uuid4()),
-                "text": "I live in Bengaluru",
-                "expected_profile_revision": 1,
-            }
-        ),
-        content_type="application/json",
-    )
-    attempt_id = TurnAttempt.objects.get().id
-    cancelled = []
-
-    async def handler(request):
-        await _database_call(cancel_attempt, user.id, attempt_id)
-        try:
-            await asyncio.sleep(10)
-        except asyncio.CancelledError:
-            cancelled.append(True)
-            raise
-        return httpx.Response(500)
-
-    async def collect():
-        async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as client:
-            monkeypatch.setattr(runtime, "http_client", client)
-            return b"".join([chunk async for chunk in response.streaming_content])
-
-    content = async_to_sync(collect)()
-    assert b"attempt_not_active" in content and cancelled == [True]
-    assert not AnswerArtifact.objects.exists()
-    call = ModelCallAttempt.objects.get()
-    assert call.status == "failed" and call.safe_error_code == "attempt_not_active"
-    assert TurnAttempt.objects.get().status == "cancelled"

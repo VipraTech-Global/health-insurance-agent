@@ -53,6 +53,18 @@ def test_pdf_range_clamps_an_overlong_end_to_the_preserved_file() -> None:
 
 
 @pytest.mark.django_db
+def test_retired_adviser_urls_and_recommendation_url_are_unavailable(
+    v2_client: Client,
+) -> None:
+    identifier = uuid.uuid4()
+
+    assert v2_client.get(f"/api/v2/recommendations/{identifier}/").status_code == 404
+    assert v2_client.get("/api/v1/conversations/").status_code == 404
+    assert v2_client.get(f"/api/v1/recommendations/{identifier}/").status_code == 404
+    assert v2_client.get("/api/v1/auth/session/").status_code == 200
+
+
+@pytest.mark.django_db
 def test_quote_upload_is_encrypted_owner_scoped_and_range_downloadable(
     v2_client: Client,
     v2_user: User,
@@ -198,6 +210,34 @@ def test_sse_reconnect_resumes_after_sequence_and_queued_cancel_is_durable(
     terminal_stream = v2_client.get(submitted["event_url"], {"after_sequence": 2, "timeout": 0})
     terminal_body = b"".join(cast(Any, terminal_stream).streaming_content)
     assert b"id: 3\nevent: turn.cancelled" in terminal_body
+
+
+@pytest.mark.django_db
+def test_sse_uses_comparison_terminal_event_name(v2_client: Client) -> None:
+    with patch("apps.adviser_v2.views._schedule_turn"):
+        conversation = post_json(v2_client, "/api/v2/conversations/", {}).json()
+        submitted = post_json(
+            v2_client,
+            f"/api/v2/conversations/{conversation['id']}/messages/",
+            {
+                "request_id": str(uuid.uuid4()),
+                "text": "Compare the reviewed products.",
+                "expected_profile_revision": 1,
+            },
+        ).json()
+    turn = Turn.objects.get(pk=submitted["turn_id"])
+    comparison_id = uuid.uuid4()
+    append_turn_event(
+        turn,
+        "comparison",
+        {"schema_version": 1, "kind": "comparison", "comparison_id": str(comparison_id)},
+    )
+
+    stream = v2_client.get(submitted["event_url"], {"after_sequence": 1, "timeout": 0})
+    rendered = b"".join(cast(Any, stream).streaming_content)
+    assert b"event: comparison.completed" in rendered
+    assert str(comparison_id).encode() in rendered
+    assert b"recommendation.completed" not in rendered
 
 
 @pytest.mark.django_db

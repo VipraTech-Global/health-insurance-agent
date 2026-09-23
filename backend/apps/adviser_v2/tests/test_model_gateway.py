@@ -18,6 +18,7 @@ from apps.adviser_v2.models import (
     ModelRoute,
     ProcessingJob,
 )
+from apps.adviser_v2.qualification_suite import expected_qualification_hashes
 from apps.adviser_v2.role_routes import RoleRoute
 from apps.adviser_v2.schemas import PolicyRuleExtractionV1
 from apps.adviser_v2.storage import store_model_result
@@ -29,14 +30,14 @@ def test_v2_model_roles_are_exact_and_exclude_astra() -> None:
         "fact_interpretation": settings.COVERGUIDE_CUSTOMER_INTERPRETATION_MODEL,
         "policy_extraction": settings.COVERGUIDE_POLICY_EXTRACTION_MODEL,
         "policy_review": settings.COVERGUIDE_POLICY_REVIEW_MODEL,
-        "recommendation_answer": settings.COVERGUIDE_FINAL_EXPLANATION_MODEL,
+        "comparison_answer": settings.COVERGUIDE_COMPARISON_MODEL,
     }
 
     assert assignments == {
         "fact_interpretation": "gpt-5.6-luna",
         "policy_extraction": "gpt-5.6-sol",
         "policy_review": "gpt-5.6-terra",
-        "recommendation_answer": "gpt-5.6-sol",
+        "comparison_answer": "gpt-5.6-sol",
     }
     assert all("astra" not in model.casefold() for model in assignments.values())
 
@@ -66,6 +67,11 @@ def test_qualified_route_checks_closed_capability_object_without_json_path_looku
             "identity_exact": True,
             "latency_ms": 10,
             "limitations": [],
+            **expected_qualification_hashes("policy_extraction", PolicyRuleExtractionV1),
+            "case_total": 1,
+            "case_passed": 1,
+            "failure_categories": [],
+            "p95_latency_ms": 10,
         },
         result="passed",
     )
@@ -113,6 +119,11 @@ def test_offline_processing_reuses_an_exact_successful_response(db: None, monkey
             "identity_exact": True,
             "latency_ms": 10,
             "limitations": [],
+            **expected_qualification_hashes("policy_extraction", PolicyRuleExtractionV1),
+            "case_total": 1,
+            "case_passed": 1,
+            "failure_categories": [],
+            "p95_latency_ms": 10,
         },
         result="passed",
     )

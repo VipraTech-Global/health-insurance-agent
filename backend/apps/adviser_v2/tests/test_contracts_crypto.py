@@ -14,10 +14,10 @@ from apps.adviser_v2.contracts import (
 from apps.adviser_v2.crypto import commitment, commitment_matches
 from apps.adviser_v2.models import Conversation
 from apps.adviser_v2.schemas import (
+    ComparisonDraftV1,
     CustomerInterpretationV1,
     PolicyRuleExtractionV1,
     PolicyRuleReviewV1,
-    RecommendationDraftV1,
 )
 
 
@@ -80,7 +80,7 @@ def test_all_v2_model_schemas_are_strict_relay_compatible() -> None:
         CustomerInterpretationV1,
         PolicyRuleExtractionV1,
         PolicyRuleReviewV1,
-        RecommendationDraftV1,
+        ComparisonDraftV1,
     ):
         validate_strict_schema(model.model_json_schema())
 

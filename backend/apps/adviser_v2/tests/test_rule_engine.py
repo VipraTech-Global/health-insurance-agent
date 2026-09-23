@@ -39,7 +39,6 @@ from apps.adviser_v2.rule_engine import (
     _no_separate_room_icu_match,
     _room_illustration_inputs,
     _selected_policy_tenure,
-    _tie_break_value,
     current_inputs,
     evaluate_expression,
     evaluate_predicate,
@@ -121,23 +120,36 @@ def test_explicit_day_age_reaches_minimum_entry_age_rule() -> None:
     inputs = _age_rule_inputs(
         {"age": {"state": "known", "kind": "quantity", "value": "60", "unit": "day"}}
     )
-    assert evaluate_predicate(
-        {
-            "node": "compare",
-            "left": {"node": "input", "key": "proposed_insured_age_days"},
-            "operator": "lt",
-            "right": _literal(_quantity("91", "day")),
-        },
-        inputs,
-    ) == Truth.TRUE
+    assert (
+        evaluate_predicate(
+            {
+                "node": "compare",
+                "left": {"node": "input", "key": "proposed_insured_age_days"},
+                "operator": "lt",
+                "right": _literal(_quantity("91", "day")),
+            },
+            inputs,
+        )
+        == Truth.TRUE
+    )
 
 
 def test_child_entry_needs_affirmative_verified_rule() -> None:
     child_id = uuid.uuid4()
-    inputs = {child_id: {"age": {"state": "known", "kind": "quantity", "value": "60", "unit": "day"}}}
+    inputs = {
+        child_id: {"age": {"state": "known", "kind": "quantity", "value": "60", "unit": "day"}}
+    }
     assert _child_entry_unverified((child_id,), inputs, ())
     rule = SimpleNamespace(
-        body={"effects": [{"kind": "eligibility", "target_key": "young_dependent_child_entry", "decision": "eligible"}]}
+        body={
+            "effects": [
+                {
+                    "kind": "eligibility",
+                    "target_key": "young_dependent_child_entry",
+                    "decision": "eligible",
+                }
+            ]
+        }
     )
     result = SimpleNamespace(
         rule=rule,
@@ -158,46 +170,68 @@ def test_parent_child_input_requires_both_recorded_people_to_be_insured() -> Non
     assert "either_parent_insured_under_policy" not in inputs[child_id]
     _apply_parent_child_inputs(inputs, (parent_id, child_id), [(parent_id, child_id)])
     assert inputs[child_id]["either_parent_insured_under_policy"] == {
-        "state": "known", "kind": "boolean", "value": True
+        "state": "known",
+        "kind": "boolean",
+        "value": True,
     }
 
 
 def test_deductible_configuration_uses_exact_stated_inr_amounts() -> None:
-    facts = [SimpleNamespace(
-        fact_type="sum_insured", status="reported",
-        value={"state": "known", "kind": "quantity", "value": "10", "unit": "lakh"},
-    )]
-    requirements = [SimpleNamespace(
-        criterion="deductible", status="reported",
-        target_value={"state": "known", "kind": "quantity", "value": "500000", "unit": "INR"},
-    )]
+    facts = [
+        SimpleNamespace(
+            fact_type="sum_insured",
+            status="reported",
+            value={"state": "known", "kind": "quantity", "value": "10", "unit": "lakh"},
+        )
+    ]
+    requirements = [
+        SimpleNamespace(
+            criterion="deductible",
+            status="reported",
+            target_value={"state": "known", "kind": "quantity", "value": "500000", "unit": "INR"},
+        )
+    ]
     inputs = _deductible_configuration_inputs(facts, requirements)
-    assert evaluate_predicate(
-        {
-            "node": "all",
-            "arguments": [
-                {
-                    "node": "compare", "operator": "eq",
-                    "left": {"node": "input", "key": "selected_aggregate_deductible"},
-                    "right": _literal(_quantity("500000", "money", currency="INR")),
-                },
-                {
-                    "node": "compare", "operator": "lt",
-                    "left": {"node": "input", "key": "selected_base_sum_insured"},
-                    "right": _literal(_quantity("2500000", "money", currency="INR")),
-                },
-            ],
-        },
-        inputs,
-    ) == Truth.TRUE
+    assert (
+        evaluate_predicate(
+            {
+                "node": "all",
+                "arguments": [
+                    {
+                        "node": "compare",
+                        "operator": "eq",
+                        "left": {"node": "input", "key": "selected_aggregate_deductible"},
+                        "right": _literal(_quantity("500000", "money", currency="INR")),
+                    },
+                    {
+                        "node": "compare",
+                        "operator": "lt",
+                        "left": {"node": "input", "key": "selected_base_sum_insured"},
+                        "right": _literal(_quantity("2500000", "money", currency="INR")),
+                    },
+                ],
+            },
+            inputs,
+        )
+        == Truth.TRUE
+    )
 
 
 def test_deductible_match_rejects_only_verified_ineligible_selection() -> None:
     requirement = SimpleNamespace(criterion="deductible")
     result = SimpleNamespace(
-        rule=SimpleNamespace(id=uuid.uuid4(), body={"effects": [
-            {"kind": "eligibility", "target_key": "aggregate_deductible_selection", "decision": "ineligible"}
-        ]}),
+        rule=SimpleNamespace(
+            id=uuid.uuid4(),
+            body={
+                "effects": [
+                    {
+                        "kind": "eligibility",
+                        "target_key": "aggregate_deductible_selection",
+                        "decision": "ineligible",
+                    }
+                ]
+            },
+        ),
         evidence_complete=True,
         subject_results=(SimpleNamespace(subject_person_id=None, applies=Truth.TRUE),),
     )
@@ -214,11 +248,14 @@ def test_childbirth_exclusion_applies_only_to_explicit_childbirth_request() -> N
             source_message=SimpleNamespace(content="Childbirth-expense cover is mandatory.")
         ),
     )
-    assert _childbirth_rule_inputs([requirement])["condition_is_ectopic_pregnancy"]["value"] is False
+    assert (
+        _childbirth_rule_inputs([requirement])["condition_is_ectopic_pregnancy"]["value"] is False
+    )
     result = SimpleNamespace(
-        rule=SimpleNamespace(id=uuid.uuid4(), body={"effects": [
-            {"kind": "exclusion", "target_key": "childbirth_expense_exclusion"}
-        ]}),
+        rule=SimpleNamespace(
+            id=uuid.uuid4(),
+            body={"effects": [{"kind": "exclusion", "target_key": "childbirth_expense_exclusion"}]},
+        ),
         evidence_complete=True,
         subject_results=(SimpleNamespace(subject_person_id=None, applies=Truth.TRUE),),
     )
@@ -230,9 +267,11 @@ def test_childbirth_exclusion_applies_only_to_explicit_childbirth_request() -> N
 def test_ayurveda_scenario_keeps_unstated_claim_admissibility_unknown() -> None:
     requirement = SimpleNamespace(
         criterion="specific_treatment",
-        source_statement=SimpleNamespace(source_message=SimpleNamespace(
-            content="Ayurveda hospitalization in India at an eligible AYUSH healthcare facility with a licensed practitioner."
-        )),
+        source_statement=SimpleNamespace(
+            source_message=SimpleNamespace(
+                content="Ayurveda hospitalization in India at an eligible AYUSH healthcare facility with a licensed practitioner."
+            )
+        ),
     )
     inputs = _ayush_rule_inputs([requirement])
     assert inputs["ayush_system"]["value"] == "ayurveda"
@@ -243,17 +282,40 @@ def test_ayurveda_scenario_keeps_unstated_claim_admissibility_unknown() -> None:
 
 
 def test_higher_room_claim_illustration_uses_exact_ratio() -> None:
-    inputs = _room_illustration_inputs({
-        "eligible_room_rent_limit": {"state": "known", "kind": "quantity", "unit": "INR", "value": "5000"},
-        "room_rent_actually_incurred": {"state": "known", "kind": "quantity", "unit": "INR", "value": "10000"},
-        "total_associated_medical_expenses": {"state": "known", "kind": "quantity", "unit": "lakh", "value": "1"},
-    })
+    inputs = _room_illustration_inputs(
+        {
+            "eligible_room_rent_limit": {
+                "state": "known",
+                "kind": "quantity",
+                "unit": "INR",
+                "value": "5000",
+            },
+            "room_rent_actually_incurred": {
+                "state": "known",
+                "kind": "quantity",
+                "unit": "INR",
+                "value": "10000",
+            },
+            "total_associated_medical_expenses": {
+                "state": "known",
+                "kind": "quantity",
+                "unit": "lakh",
+                "value": "1",
+            },
+        }
+    )
     expression = {
-        "node": "operation", "operator": "multiply", "arguments": [
-            {"node": "operation", "operator": "divide", "arguments": [
-                {"node": "input", "key": "eligible_room_rent_limit"},
-                {"node": "input", "key": "room_rent_actually_incurred"},
-            ]},
+        "node": "operation",
+        "operator": "multiply",
+        "arguments": [
+            {
+                "node": "operation",
+                "operator": "divide",
+                "arguments": [
+                    {"node": "input", "key": "eligible_room_rent_limit"},
+                    {"node": "input", "key": "room_rent_actually_incurred"},
+                ],
+            },
             {"node": "input", "key": "total_associated_medical_expenses"},
         ],
     }
@@ -320,14 +382,17 @@ def test_five_year_requirement_supplies_exact_tenure_rule_input() -> None:
     )
     selected = _selected_policy_tenure([requirement])
     assert selected == target
-    assert evaluate_predicate(
-        {
-            "node": "membership",
-            "item": {"node": "input", "key": "selected_policy_tenure"},
-            "members": [_literal(_quantity("5", "year"))],
-        },
-        {"selected_policy_tenure": selected},
-    ) == Truth.TRUE
+    assert (
+        evaluate_predicate(
+            {
+                "node": "membership",
+                "item": {"node": "input", "key": "selected_policy_tenure"},
+                "members": [_literal(_quantity("5", "year"))],
+            },
+            {"selected_policy_tenure": selected},
+        )
+        == Truth.TRUE
+    )
 
 
 def test_unknown_and_unlimited_quantities_propagate_as_unknown() -> None:
@@ -946,37 +1011,13 @@ def test_aggregate_comparison_value_picks_the_minimum_for_minimize() -> None:
     assert _aggregate_comparison_value("minimize", [high, low]) == low
 
 
-def test_tie_break_value_ranks_higher_coverage_ahead_of_lower_coverage() -> None:
-    high = _tie_break_value(
-        _requirement(operator="maximize"), _quantity("1500000", "money", currency="INR")
-    )
-    low = _tie_break_value(
-        _requirement(operator="maximize"), _quantity("500000", "money", currency="INR")
-    )
-
-    assert high < low
-
-
-def test_tie_break_value_is_zero_for_mandatory_requirements() -> None:
-    value = _tie_break_value(
-        _requirement(operator="maximize", priority="mandatory"),
-        _quantity("1500000", "money", currency="INR"),
-    )
-
-    assert value == Decimal(0)
-
-
-def test_tie_break_value_is_zero_without_a_comparison_value() -> None:
-    assert _tie_break_value(_requirement(operator="maximize"), None) == Decimal(0)
-
-
 @pytest.mark.django_db
-def test_evaluate_release_ranks_higher_coverage_ahead_of_lower_coverage() -> None:
-    """DB-level Phase B proof, using synthetic test-only fixtures (not real insurer data).
+def test_evaluate_release_keeps_stable_product_order_regardless_of_coverage() -> None:
+    """DB-level neutral-order proof using synthetic test-only fixtures.
 
     Builds a throwaway five-product KnowledgeRelease with one rule per product so
     evaluate_release()'s comparison_product_count() gate (exactly 5, standard label) is
-    satisfied, then asserts the real ranking path prefers the higher maximize_cover amount.
+    satisfied, then proves criterion outcomes cannot alter the stable product order.
     """
     capture = public_html_capture()
     span = EvidenceSpan.objects.create(
@@ -1024,7 +1065,7 @@ def test_evaluate_release_ranks_higher_coverage_ahead_of_lower_coverage() -> Non
             name=f"Coverage test product {index}",
             benefit_type="medical_indemnity",
             lifecycle_status="open",
-            recommendation_role="primary_policy",
+            comparison_role="primary_policy",
             identity_evidence=span,
         )
         policy = PolicyVersion.objects.create(
@@ -1113,10 +1154,8 @@ def test_evaluate_release_ranks_higher_coverage_ahead_of_lower_coverage() -> Non
 
     results = evaluate_release(release, [], [requirement])
 
-    ranks_by_product = {
-        result.variant.policy_version.product.name: result.rank for result in results
-    }
-    assert ranks_by_product["Coverage test product 1"] < ranks_by_product["Coverage test product 0"]
-    assert ranks_by_product["Coverage test product 0"] < ranks_by_product["Coverage test product 2"]
-    assert results[0].variant.policy_version.product.name == "Coverage test product 1"
-    assert results[0].disposition == "recommended"
+    assert [result.variant.policy_version.product.name for result in results] == [
+        f"Coverage test product {index}" for index in range(5)
+    ]
+    assert results[0].matches[0].comparison_value == _quantity("500000", "money", currency="INR")
+    assert results[1].matches[0].comparison_value == _quantity("1500000", "money", currency="INR")

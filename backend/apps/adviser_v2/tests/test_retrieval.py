@@ -109,7 +109,7 @@ def test_policy_retrieval_fuses_search_and_expands_reviewed_dependencies(
         name="Retrieval test policy",
         benefit_type="medical_indemnity",
         lifecycle_status="open",
-        recommendation_role="primary_policy",
+        comparison_role="primary_policy",
         identity_evidence=first_span,
     )
     policy = PolicyVersion.objects.create(
@@ -158,7 +158,7 @@ def test_policy_retrieval_fuses_search_and_expands_reviewed_dependencies(
         release_number=1,
         state="ready",
         supported_scope={
-            "intent_kinds": ["purchase_recommendation"],
+            "intent_kinds": ["product_comparison"],
             "insurer_ids": [str(product.insurer_id)],
             "rule_keys": [first_rule.rule_key, second_rule.rule_key],
             "state": "supported",

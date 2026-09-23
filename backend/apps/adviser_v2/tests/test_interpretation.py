@@ -108,7 +108,7 @@ def _family_interpretation(
             "facts": [],
             "requirements": [],
             "corrections": [],
-            "intent": "purchase_recommendation",
+            "intent": "product_comparison",
             "ambiguity": False,
             "clarification_question": None,
         }
@@ -174,24 +174,36 @@ def test_explicit_policy_term_survives_catalogue_name_clarification() -> None:
     assert value.requirements[0].criterion == "policy_tenure_selection"
     assert value.requirements[0].priority == "mandatory"
     assert value.requirements[0].target_value == {
-        "state": "known", "kind": "quantity", "value": "5", "unit": "year"
+        "state": "known",
+        "kind": "quantity",
+        "value": "5",
+        "unit": "year",
     }
 
 
 def test_requested_cover_amount_does_not_block_a_verified_term_match() -> None:
     value = _family_interpretation("Want ₹10 lakh cover. A five-year term is mandatory.")
     value.requirements.append(
-        InterpretedRequirement.model_validate({
-            "statement_index": 0,
-            "subject_key": None,
-            "criterion": "sum_insured",
-            "operator": "equals",
-            "target_value": {"state": "known", "kind": "quantity", "value": "1000000", "unit": "INR"},
-            "priority": "mandatory",
-            "scope": "entire_purchase",
-        })
+        InterpretedRequirement.model_validate(
+            {
+                "statement_index": 0,
+                "subject_key": None,
+                "criterion": "sum_insured",
+                "operator": "equals",
+                "target_value": {
+                    "state": "known",
+                    "kind": "quantity",
+                    "value": "1000000",
+                    "unit": "INR",
+                },
+                "priority": "mandatory",
+                "scope": "entire_purchase",
+            }
+        )
     )
-    normalize_requested_sum_insured_priority("Want ₹10 lakh cover. A five-year term is mandatory.", value)
+    normalize_requested_sum_insured_priority(
+        "Want ₹10 lakh cover. A five-year term is mandatory.", value
+    )
     assert value.requirements[0].priority == "preferred"
     value.requirements[0].priority = "mandatory"
     normalize_requested_sum_insured_priority(
@@ -207,29 +219,59 @@ def test_requested_cover_amount_does_not_block_a_verified_term_match() -> None:
 
 def test_money_quantity_units_are_canonicalized_for_the_rule_engine() -> None:
     value = _family_interpretation("₹15,000 a year budget, ₹10 lakh sum insured target.")
-    value.requirements.append(InterpretedRequirement.model_validate({
-        "statement_index": 0, "subject_key": None, "criterion": "budget",
-        "operator": "less_than_or_equal", "target_value": {
-            "state": "known", "kind": "quantity", "value": "15000", "unit": "INR per year",
-        }, "priority": "preferred", "scope": "entire_purchase",
-    }))
-    value.requirements.append(InterpretedRequirement.model_validate({
-        "statement_index": 0, "subject_key": None, "criterion": "sum_insured",
-        "operator": "equals", "target_value": {
-            "state": "known", "kind": "quantity", "value": "1000000", "unit": "INR",
-        }, "priority": "preferred", "scope": "entire_purchase",
-    }))
+    value.requirements.append(
+        InterpretedRequirement.model_validate(
+            {
+                "statement_index": 0,
+                "subject_key": None,
+                "criterion": "budget",
+                "operator": "less_than_or_equal",
+                "target_value": {
+                    "state": "known",
+                    "kind": "quantity",
+                    "value": "15000",
+                    "unit": "INR per year",
+                },
+                "priority": "preferred",
+                "scope": "entire_purchase",
+            }
+        )
+    )
+    value.requirements.append(
+        InterpretedRequirement.model_validate(
+            {
+                "statement_index": 0,
+                "subject_key": None,
+                "criterion": "sum_insured",
+                "operator": "equals",
+                "target_value": {
+                    "state": "known",
+                    "kind": "quantity",
+                    "value": "1000000",
+                    "unit": "INR",
+                },
+                "priority": "preferred",
+                "scope": "entire_purchase",
+            }
+        )
+    )
 
     normalize_money_quantity_units(value)
 
     budget, sum_insured = value.requirements
     assert budget.target_value == {
-        "state": "known", "kind": "quantity", "value": "15000",
-        "unit": "money_per_year", "currency": "INR",
+        "state": "known",
+        "kind": "quantity",
+        "value": "15000",
+        "unit": "money_per_year",
+        "currency": "INR",
     }
     assert sum_insured.target_value == {
-        "state": "known", "kind": "quantity", "value": "1000000",
-        "unit": "money", "currency": "INR",
+        "state": "known",
+        "kind": "quantity",
+        "value": "1000000",
+        "unit": "money",
+        "currency": "INR",
     }
 
 
@@ -240,27 +282,46 @@ def test_second_hospitalization_restoration_stays_typed() -> None:
         "claim uses all the base cover."
     )
     value = _family_interpretation(text)
-    value.requirements.append(InterpretedRequirement.model_validate({
-        "statement_index": 0, "subject_key": None, "criterion": "restoration",
-        "operator": "equals", "target_value": {
-            "state": "known", "kind": "text", "value": text,
-        }, "priority": "mandatory", "scope": "entire_purchase",
-    }))
+    value.requirements.append(
+        InterpretedRequirement.model_validate(
+            {
+                "statement_index": 0,
+                "subject_key": None,
+                "criterion": "restoration",
+                "operator": "equals",
+                "target_value": {
+                    "state": "known",
+                    "kind": "text",
+                    "value": text,
+                },
+                "priority": "mandatory",
+                "scope": "entire_purchase",
+            }
+        )
+    )
 
     normalize_explicit_restoration_scenario(text, value)
 
     assert value.requirements[-1].target_value == {
-        "state": "known", "kind": "boolean", "value": True,
+        "state": "known",
+        "kind": "boolean",
+        "value": True,
     }
 
 
 def test_explicit_self_cover_has_boolean_intended_insured_fact() -> None:
     value = _family_interpretation("I want health insurance for myself.")
-    value.facts.append(InterpretedFact.model_validate({
-        "statement_index": 0, "subject_key": "buyer", "fact_type": "intended_insured",
-        "value": {"state": "known", "kind": "text", "value": "self"},
-        "confidence": "explicit",
-    }))
+    value.facts.append(
+        InterpretedFact.model_validate(
+            {
+                "statement_index": 0,
+                "subject_key": "buyer",
+                "fact_type": "intended_insured",
+                "value": {"state": "known", "kind": "text", "value": "self"},
+                "confidence": "explicit",
+            }
+        )
+    )
 
     normalize_self_insured_fact("I want health insurance for myself.", value)
 
@@ -276,19 +337,26 @@ def test_explicit_family_city_survives_an_omitted_model_fact() -> None:
     assert value.facts[-1].fact_type == "city"
     assert value.facts[-1].subject_key is None
     assert value.facts[-1].value == {
-        "state": "known", "kind": "text", "value": "Bengaluru",
+        "state": "known",
+        "kind": "text",
+        "value": "Bengaluru",
     }
 
 
 def test_first_turn_cannot_reference_nonexistent_customer_records() -> None:
     value = _family_interpretation("Apply the verified Care Supreme exclusion.")
     value.subjects[0].person_id = str(uuid.uuid4())
-    value.corrections.append(InterpretedCorrection.model_validate({
-        "statement_index": 0, "assertion_kind": "fact",
-        "logical_key": "maternity_coverage.care_supreme",
-        "replacement_value": {"state": "known", "kind": "boolean", "value": False},
-        "replacement_status": "confirmed",
-    }))
+    value.corrections.append(
+        InterpretedCorrection.model_validate(
+            {
+                "statement_index": 0,
+                "assertion_kind": "fact",
+                "logical_key": "maternity_coverage.care_supreme",
+                "replacement_value": {"state": "known", "kind": "boolean", "value": False},
+                "replacement_status": "confirmed",
+            }
+        )
+    )
 
     normalize_first_turn_references(value, starting_revision=1)
 
@@ -390,7 +458,7 @@ def test_explicit_child_age_is_recovered_from_exact_source(
             ],
             "requirements": [],
             "corrections": [],
-            "intent": "purchase_recommendation",
+            "intent": "product_comparison",
             "ambiguity": False,
             "clarification_question": None,
         }
@@ -424,7 +492,7 @@ def test_person_fact_uses_its_own_subject_when_statement_is_unscoped(v2_user: Us
                     "person_id": None,
                     "display_name": "Child",
                     "relationship": "child",
-                }
+                },
             ],
             "statements": [
                 {
@@ -447,7 +515,7 @@ def test_person_fact_uses_its_own_subject_when_statement_is_unscoped(v2_user: Us
             ],
             "requirements": [],
             "corrections": [],
-            "intent": "purchase_recommendation",
+            "intent": "product_comparison",
             "ambiguity": False,
             "clarification_question": None,
         }

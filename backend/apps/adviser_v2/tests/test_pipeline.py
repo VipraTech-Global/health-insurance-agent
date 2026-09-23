@@ -153,7 +153,7 @@ def rule_revision_policy() -> PolicyVersion:
         name="Rule revision test product",
         benefit_type="medical_indemnity",
         lifecycle_status="open",
-        recommendation_role="primary_policy",
+        comparison_role="primary_policy",
         identity_evidence=span,
     )
     return PolicyVersion.objects.create(
@@ -845,7 +845,7 @@ def test_bundle_passages_use_only_latest_capture_for_each_document(db: None) -> 
         name="Example policy",
         benefit_type="medical_indemnity",
         lifecycle_status="open",
-        recommendation_role="primary_policy",
+        comparison_role="primary_policy",
         identity_evidence=old_span,
     )
     policy = PolicyVersion.objects.create(
@@ -910,7 +910,7 @@ def test_rule_processing_requires_one_selected_comparison_variant(db: None) -> N
         name="Variant-scoped example policy",
         benefit_type="medical_indemnity",
         lifecycle_status="open",
-        recommendation_role="primary_policy",
+        comparison_role="primary_policy",
         identity_evidence=span,
     )
     policy = PolicyVersion.objects.create(
@@ -1270,7 +1270,7 @@ def test_partial_validation_persists_supported_agreed_rules(db: None) -> None:
         name="Fail-closed example policy",
         benefit_type="medical_indemnity",
         lifecycle_status="open",
-        recommendation_role="primary_policy",
+        comparison_role="primary_policy",
         identity_evidence=span,
     )
     policy = PolicyVersion.objects.create(

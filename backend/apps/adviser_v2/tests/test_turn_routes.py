@@ -22,12 +22,15 @@ def test_submission_pins_both_interactive_routes(v2_user: User) -> None:
     bindings = list(turn.route_bindings.select_related("route", "qualification").order_by("role"))
 
     assert [binding.role for binding in bindings] == [
+        "comparison_answer",
         "fact_interpretation",
-        "recommendation_answer",
     ]
     assert len(turn.route_commitment) == 64
     assert all(binding.qualification.result == "passed" for binding in bindings)
-    assert all(binding.route.configuration_sha256 == binding.route_configuration_sha256 for binding in bindings)
+    assert all(
+        binding.route.configuration_sha256 == binding.route_configuration_sha256
+        for binding in bindings
+    )
     assert all(binding.expected_model == binding.observed_model for binding in bindings)
 
 
@@ -47,7 +50,7 @@ def test_retry_keeps_the_original_routes_after_operator_settings_change(
     }
 
     settings.COVERGUIDE_CUSTOMER_INTERPRETATION_ROUTE = "omniroute:not-qualified"
-    settings.COVERGUIDE_FINAL_EXPLANATION_ROUTE = "omniroute:not-qualified"
+    settings.COVERGUIDE_COMPARISON_ROUTE = "omniroute:not-qualified"
     retried = retry_turn(v2_user.id, original.id).turn
 
     assert retried.route_commitment == original.route_commitment
@@ -83,9 +86,7 @@ def test_disabled_pinned_route_fails_closed(v2_user: User) -> None:
     assert caught.value.code == "route_disabled"
 
 
-def test_changed_pinned_endpoint_configuration_fails_closed(
-    v2_user: User, settings: Any
-) -> None:
+def test_changed_pinned_endpoint_configuration_fails_closed(v2_user: User, settings: Any) -> None:
     turn = queued_turn(v2_user)
     binding = turn.route_bindings.select_related("route", "qualification").get(
         role="fact_interpretation"
@@ -116,9 +117,7 @@ def test_turn_route_binding_and_commitment_are_database_immutable(v2_user: User)
     route_for_binding(binding, "fact_interpretation", CustomerInterpretationV1)
 
 
-def test_unqualified_operator_route_rolls_back_submission(
-    v2_user: User, settings: Any
-) -> None:
+def test_unqualified_operator_route_rolls_back_submission(v2_user: User, settings: Any) -> None:
     settings.DEBUG = True
     settings.OMNIROUTE_ENABLED = True
     settings.OMNIROUTE_BASE_URL = "http://127.0.0.1:20128"
@@ -126,7 +125,7 @@ def test_unqualified_operator_route_rolls_back_submission(
     settings.OMNIROUTE_LOGGING_DISABLED_CONFIRMED = True
     settings.COVERGUIDE_LOCAL_OMNIROUTE_PILOT_ACK = True
     settings.OMNIROUTE_MODELS = "gemini/unqualified=unqualified"
-    settings.COVERGUIDE_FINAL_EXPLANATION_ROUTE = "omniroute:gemini/unqualified"
+    settings.COVERGUIDE_COMPARISON_ROUTE = "omniroute:gemini/unqualified"
     conversation = create_conversation(v2_user.id)
 
     with pytest.raises(RelayFailure) as caught:

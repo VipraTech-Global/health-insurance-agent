@@ -2,7 +2,6 @@ import json
 import uuid
 
 import pytest
-from asgiref.sync import async_to_sync
 from django.db import IntegrityError, transaction
 from django.test import Client
 from django.urls import reverse
@@ -11,7 +10,6 @@ from django.utils import timezone
 from apps.accounts.models import User
 from apps.adviser.management.commands.discover_ditto import plan_identity
 from apps.adviser.models import (
-    AnswerArtifact,
     Conversation,
     CorpusRelease,
     DocumentPage,
@@ -30,32 +28,12 @@ from apps.adviser.models import (
     TurnAttempt,
     VerifiedFact,
 )
-from apps.adviser.services import accept_turn
 from apps.adviser.source_maps import DocumentValidationError
 
 
 @pytest.fixture
 def user(db: None) -> User:
     return User.objects.create_user(email="pilot@example.com", password="Valid-Pilot-Password-42")
-
-
-@pytest.fixture
-def client(user: User) -> Client:
-    browser = Client(enforce_csrf_checks=True)
-    browser.force_login(user)
-    return browser
-
-
-def csrf_post(client: Client, path: str, body: dict[str, object]):
-    client.get(reverse("csrf"))
-    token = client.cookies["csrftoken"].value
-    return client.post(
-        path, data=json.dumps(body), content_type="application/json", HTTP_X_CSRFTOKEN=token
-    )
-
-
-async def collect_stream(streaming_content) -> bytes:
-    return b"".join([chunk async for chunk in streaming_content])
 
 
 @pytest.mark.django_db
@@ -79,108 +57,25 @@ def test_plan_identity_rejects_comparisons_and_other_hosts() -> None:
 
 
 @pytest.mark.django_db
-def test_conversation_is_owner_scoped(client: Client) -> None:
-    response = csrf_post(client, reverse("conversations"), {"title": "Family cover"})
-    assert response.status_code == 201
-    conversation_id = response.json()["id"]
-    other = User.objects.create_user(email="other@example.com", password="Other-Password-42")
-    other_client = Client()
-    other_client.force_login(other)
-    forbidden = other_client.get(reverse("conversation-detail", args=[conversation_id]))
-    assert forbidden.status_code == 404
-
-
-@pytest.mark.django_db
-def test_profile_revisions_and_stale_write_conflict(client: Client) -> None:
-    created = csrf_post(client, reverse("conversations"), {"title": "My cover"}).json()
-    path = reverse("conversation-profile", args=[created["id"]])
-    updated = client.patch(
-        path,
-        data=json.dumps({"expected_revision": 1, "patch": {"location": "Bengaluru"}}),
-        content_type="application/json",
-        HTTP_X_CSRFTOKEN=client.cookies["csrftoken"].value,
+def test_v1_adviser_routes_are_retired_while_auth_remains(user: User) -> None:
+    browser = Client()
+    browser.force_login(user)
+    identifier = uuid.uuid4()
+    retired_paths = (
+        "/api/v1/conversations/",
+        f"/api/v1/conversations/{identifier}/",
+        f"/api/v1/conversations/{identifier}/profile/",
+        f"/api/v1/conversations/{identifier}/turns/",
+        f"/api/v1/recommendations/{identifier}/",
+        "/api/v1/ai/models/",
+        "/api/v1/ai/preferences/",
+        "/api/v1/admin/ai-relay/",
+        "/api/v1/admin/ai-relay/accounts/",
+        "/api/v1/admin/ai-relay/qualifications/",
     )
-    assert updated.status_code == 200
-    assert updated.json()["revision"] == 2
-    stale = client.patch(
-        path,
-        data=json.dumps({"expected_revision": 1, "patch": {"budget": "25000"}}),
-        content_type="application/json",
-        HTTP_X_CSRFTOKEN=client.cookies["csrftoken"].value,
-    )
-    assert stale.status_code == 409
 
-
-@pytest.mark.django_db(transaction=True)
-def test_turn_is_idempotent_and_publishes_only_controlled_text(client: Client) -> None:
-    created = csrf_post(client, reverse("conversations"), {"title": "Questions"}).json()
-    request_id = str(uuid.uuid4())
-    path = reverse("stream-turn", args=[created["id"]])
-    body = {
-        "request_id": request_id,
-        "text": "Which plan should I buy?",
-        "operation": "chat",
-        "expected_profile_revision": 1,
-    }
-    response = csrf_post(client, path, body)
-    assert response.status_code == 200
-    chunks = async_to_sync(collect_stream)(response.streaming_content)
-    assert b"event: accepted" in chunks
-    assert b"event: result" in chunks
-    assert Turn.objects.count() == 1
-    assert Message.objects.filter(role="user").count() == 1
-    assert AnswerArtifact.objects.get().verification_status == "controlled_template"
-    assert Conversation.objects.get(id=created["id"]).active_attempt_id is None
-
-    repeated = csrf_post(client, path, body)
-    repeated_chunks = async_to_sync(collect_stream)(repeated.streaming_content)
-    assert b"event: result" in repeated_chunks
-    assert b'"answer":' not in repeated_chunks
-    assert Turn.objects.count() == 1
-    assert Message.objects.filter(role="user").count() == 1
-
-
-@pytest.mark.django_db(transaction=True)
-def test_running_idempotent_turn_returns_status_without_failure(client: Client) -> None:
-    created = csrf_post(client, reverse("conversations"), {"title": "Running"}).json()
-    body = {
-        "request_id": str(uuid.uuid4()),
-        "text": "Keep checking",
-        "operation": "chat",
-        "expected_profile_revision": 1,
-    }
-    accept_turn(uuid.UUID(client.session["_auth_user_id"]), uuid.UUID(created["id"]), body)
-    response = csrf_post(client, reverse("stream-turn", args=[created["id"]]), body)
-    chunks = async_to_sync(collect_stream)(response.streaming_content)
-    assert b"event: result" in chunks
-    assert b'"status":"accepted"' in chunks
-    assert b"event: error" not in chunks
-
-
-@pytest.mark.django_db
-def test_recommendation_fails_closed_without_confirmed_profile(client: Client) -> None:
-    created = csrf_post(client, reverse("conversations"), {"title": "Recommendation"}).json()
-    conversation = Conversation.objects.get(id=created["id"])
-    turn = Turn.objects.create(
-        conversation=conversation,
-        request_id=uuid.uuid4(),
-        payload_hash="a" * 64,
-        input_text="Recommend",
-        operation="recommend",
-        expected_profile_revision=1,
-    )
-    attempt = TurnAttempt.objects.create(
-        turn=turn,
-        conversation=conversation,
-        status=TurnAttempt.Status.RUNNING,
-        profile_revision=1,
-        deadline_at=conversation.created_at,
-    )
-    from apps.adviser.services import publish_controlled_answer
-
-    answer = publish_controlled_answer(client.session["_auth_user_id"], attempt.id)
-    assert answer["outcome"] == TurnAttempt.Status.NEEDS_INPUT
-    assert answer["claims"] == []
+    assert browser.get("/api/v1/auth/csrf/").status_code == 200
+    assert all(browser.get(path).status_code == 404 for path in retired_paths)
 
 
 @pytest.mark.django_db
