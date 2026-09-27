@@ -13,6 +13,7 @@ from urllib.parse import urlsplit
 OUTCOMES = {"meets", "partly_meets", "does_not_meet", "unknown", "not_applicable"}
 SUPPORTED = {"meets", "partly_meets", "does_not_meet"}
 FORBIDDEN_OUTPUT_KEYS = {"rank", "score", "winner", "recommendation", "selected_policy"}
+REQUIRED_INSURERS = {"star", "care", "niva"}
 
 
 def check_release_gate(
@@ -24,12 +25,13 @@ def check_release_gate(
     """Account for every listed product, included variant and comparison cell."""
     blockers: list[str] = []
     insurer_ids = [item.get("insurer_id") for item in catalogues]
-    if len(set(insurer_ids)) < 2 or len(insurer_ids) != len(set(insurer_ids)):
-        blockers.append("at_least_two_distinct_insurers_required")
+    if set(insurer_ids) != REQUIRED_INSURERS or len(insurer_ids) != len(REQUIRED_INSURERS):
+        blockers.append("exact_star_care_niva_scope_required")
     if not criteria or len(criteria) != len(set(criteria)):
         blockers.append("criteria_missing_or_duplicated")
     expected: set[tuple[str, str, str]] = set()
     document_hashes_by_variant: dict[tuple[str, str], set[str]] = {}
+    variant_owners: set[tuple[str, str]] = set()
     for insurer in catalogues:
         insurer_id = insurer.get("insurer_id")
         roster = insurer.get("products", [])
@@ -40,6 +42,8 @@ def check_release_gate(
         if not roster:
             blockers.append(f"{insurer_id}:empty_product_roster")
         identities = [row.get("uin") for row in roster]
+        if not all(isinstance(uin, str) and uin.strip() for uin in identities):
+            blockers.append(f"{insurer_id}:product_identity_missing")
         if len(identities) != len(set(identities)):
             blockers.append(f"{insurer_id}:duplicate_product")
         for product in roster:
@@ -64,6 +68,10 @@ def check_release_gate(
                 variant_id = variant.get("id")
                 if not variant_id:
                     continue
+                owner_key = (insurer_id, variant_id)
+                if owner_key in variant_owners:
+                    blockers.append(f"{insurer_id}:{variant_id}:duplicate_variant_across_products")
+                variant_owners.add(owner_key)
                 expected.update((insurer_id, variant_id, criterion) for criterion in criteria)
                 if not variant.get("option_inventory_complete"):
                     blockers.append(f"{insurer_id}:{variant_id}:option_inventory_incomplete")
@@ -133,6 +141,12 @@ def check_release_gate(
         blockers.append("heldout_assessment_missing")
     if heldout.get("independent") is not True:
         blockers.append("heldout_independence_unverified")
+    if (
+        heldout.get("frozen_before_implementation") is not True
+        or not _sha(heldout.get("frozen_set_sha256"))
+        or not _sha(heldout.get("scoring_report_sha256"))
+    ):
+        blockers.append("heldout_freeze_or_scoring_provenance_missing")
     if heldout.get("material_criteria_passed") is not True:
         blockers.append("heldout_material_criteria_unverified")
     if heldout.get("essential_evidence_complete") is not True:
@@ -143,8 +157,12 @@ def check_release_gate(
         blockers.append("heldout_decision_critical_errors")
     if heldout.get("cross_account_leakage") is not False:
         blockers.append("cross_account_boundary_unverified")
+    if heldout.get("privacy_tests_run") is not True:
+        blockers.append("privacy_tests_unverified")
     if heldout.get("purchase_direction") is not False:
         blockers.append("purchase_direction_unverified")
+    if heldout.get("neutral_wording_reviewed") is not True:
+        blockers.append("neutral_wording_review_unverified")
     return {
         "ready": not blockers,
         "blockers": sorted(set(blockers)),

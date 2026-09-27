@@ -134,9 +134,9 @@ def _hypothetical_release() -> tuple[list[dict], list[str], list[dict], dict]:
     criteria = ["age", "family", "sum_insured", "waiting_period", "exclusion", "addon", "price"]
     catalogues = []
     cells = []
-    for insurer in ("star", "other"):
+    for insurer in ("star", "care", "niva"):
         variant_id = f"{insurer}:variant"
-        document_sha = ("b" if insurer == "star" else "c") * 64
+        document_sha = {"star": "b", "care": "c", "niva": "d"}[insurer] * 64
         catalogues.append(
             {
                 "insurer_id": insurer,
@@ -203,10 +203,15 @@ def _hypothetical_release() -> tuple[list[dict], list[str], list[dict], dict]:
         "cases_scored": 8,
         "decision_critical_errors": 0,
         "independent": True,
+        "frozen_before_implementation": True,
+        "frozen_set_sha256": "e" * 64,
+        "scoring_report_sha256": "f" * 64,
         "material_criteria_passed": True,
         "essential_evidence_complete": True,
         "cross_account_leakage": False,
+        "privacy_tests_run": True,
         "purchase_direction": False,
+        "neutral_wording_reviewed": True,
     }
     return catalogues, criteria, cells, heldout
 
@@ -239,12 +244,20 @@ def test_release_gate_blocks_cross_product_citation() -> None:
     assert not result["ready"]
 
 
+def test_release_gate_requires_frozen_independent_scoring() -> None:
+    catalogues, criteria, cells, heldout = _hypothetical_release()
+    heldout["frozen_set_sha256"] = None
+    result = check_release_gate(catalogues, criteria, cells, heldout)
+    assert "heldout_freeze_or_scoring_provenance_missing" in result["blockers"]
+    assert not result["ready"]
+
+
 def test_release_gate_blocks_unresolved_editions_and_star_only_release() -> None:
     catalogues, criteria, cells, heldout = _hypothetical_release()
     catalogues[0]["products"][0]["variants"][0]["documents"][0]["state"] = "edition_unresolved"
     result = check_release_gate(
         catalogues[:1], criteria, [x for x in cells if x["insurer_id"] == "star"], heldout
     )
-    assert "at_least_two_distinct_insurers_required" in result["blockers"]
+    assert "exact_star_care_niva_scope_required" in result["blockers"]
     assert "star:star:variant:required_documents_unverified" in result["blockers"]
     assert not result["ready"]
