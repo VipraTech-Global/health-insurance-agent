@@ -1,0 +1,291 @@
+{
+  "format_version": 1,
+  "products": [
+    {
+      "blockers": [
+        "No official applicability chain ties these document editions to the same inception dates and variants.",
+        "Options, amendments, schedules, complete clauses and exclusions have not been reviewed."
+      ],
+      "documents": [
+        {
+          "applicability_status": "unresolved",
+          "edition_status": "unresolved",
+          "observed_codes_in_full_text": [
+            "POL / SS / V.1 / 2024"
+          ],
+          "observed_uins_first_two_pages": [
+            "SHAHLIP26046V092526"
+          ],
+          "pdf_text_pages": 59,
+          "role": "prospectus",
+          "sha256": "abe38283100d6402e1ac22929bb94c23bb53994bef7a378196e48900cd4da025",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Family_Health_Optima_Insurance_Plan_V_10_79f547c311.pdf",
+          "variant": null
+        },
+        {
+          "applicability_status": "unresolved",
+          "edition_status": "unresolved",
+          "observed_codes_in_full_text": [
+            "POL / FHO / V.26 / 2026"
+          ],
+          "observed_uins_first_two_pages": [
+            "SHAHLIP26046V092526"
+          ],
+          "pdf_text_pages": 44,
+          "role": "policy_wording",
+          "sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Family_Health_Optima_Insurance_Plan_V_21_bbe089bd74.pdf",
+          "variant": null
+        },
+        {
+          "applicability_status": "unresolved",
+          "edition_status": "unresolved",
+          "observed_codes_in_full_text": [
+            "CIS / FHO / V.6 / 2026"
+          ],
+          "observed_uins_first_two_pages": [
+            "SHAHLIP26046V092526"
+          ],
+          "pdf_text_pages": 17,
+          "role": "customer_information_sheet",
+          "sha256": "5527cb614c86736ca494d8ce97cce70abeca12ef861c425bbf011627dbc8ae35",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/CIS_Family_Health_Optima_Insurance_Plan_V_2_b5d9cdf635.pdf",
+          "variant": null
+        },
+        {
+          "applicability_status": "unresolved",
+          "edition_status": "unresolved",
+          "observed_codes_in_full_text": [
+            "POL / SS / V.1 / 2024"
+          ],
+          "observed_uins_first_two_pages": [
+            "SHAHLIP26046V092526"
+          ],
+          "pdf_text_pages": 1,
+          "role": "excluded_expenses",
+          "sha256": "1def1773a1a07694531572b226a8ecbd1faefaec2e348d5e191cd32633e4c9b4",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/FHO_Other_excluded_b6ac7e9f79.pdf",
+          "variant": null
+        },
+        {
+          "applicability_status": "unresolved",
+          "edition_status": "unresolved",
+          "observed_codes_in_full_text": [],
+          "observed_uins_first_two_pages": [
+            "SHAHLIP26046V092526"
+          ],
+          "pdf_text_pages": 2,
+          "role": "modern_treatment_schedule",
+          "sha256": "066c9150d12c1df1f1fa04c326bd273afd3f78639c705195c5923e9293019c11",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Family_Health_Optima_Insurance_Plan_9428c181fe.pdf",
+          "variant": null
+        },
+        {
+          "applicability_status": "unresolved",
+          "edition_status": "unresolved",
+          "observed_codes_in_full_text": [],
+          "observed_uins_first_two_pages": [
+            "SHAHLIP26046V092526"
+          ],
+          "pdf_text_pages": 1,
+          "role": "preventive_health_schedule",
+          "sha256": "667646c6e403db44541256481b8cf26f13ee23369206c0125bb4b7f8063b09a9",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Preventive_Health_Check_up_Family_Health_Optima_Insurance_Plan_13ff4299eb.pdf",
+          "variant": null
+        }
+      ],
+      "name": "Family Health Optima Insurance Plan",
+      "ready": false,
+      "reviewed_policy_rules": 0,
+      "uin": "SHAHLIP26046V092526"
+    },
+    {
+      "blockers": [
+        "No official applicability chain ties these document editions to the same inception dates and variants.",
+        "Options, amendments, schedules, complete clauses and exclusions have not been reviewed.",
+        "Wording and CIS carry 2025 document codes while the roster UIN is 2026; applicability date needs review."
+      ],
+      "documents": [
+        {
+          "applicability_status": "unresolved",
+          "edition_status": "unresolved",
+          "observed_codes_in_full_text": [
+            "POL / SS / V.1 / 2024"
+          ],
+          "observed_uins_first_two_pages": [
+            "SHAHLIP26044V092526"
+          ],
+          "pdf_text_pages": 53,
+          "role": "prospectus",
+          "sha256": "0404693147bd5202e28e39bfdb8fcc87f78e7ee6aa6a6f1032f63cbec63698e1",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Star_Comprehensive_Insurance_Policy_V_12_dc6058c95e.pdf",
+          "variant": null
+        },
+        {
+          "applicability_status": "unresolved",
+          "edition_status": "unresolved",
+          "observed_codes_in_full_text": [
+            "POL / COMP / V.24 / 2025"
+          ],
+          "observed_uins_first_two_pages": [
+            "SHAHLIP26044V092526"
+          ],
+          "pdf_text_pages": 48,
+          "role": "policy_wording",
+          "sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Comprehensive_Insurance_Policy_V_21_3a414ab104.pdf",
+          "variant": null
+        },
+        {
+          "applicability_status": "unresolved",
+          "edition_status": "unresolved",
+          "observed_codes_in_full_text": [
+            "CIS / COMP / V.5 / 2025"
+          ],
+          "observed_uins_first_two_pages": [
+            "SHAHLIP26044V092526"
+          ],
+          "pdf_text_pages": 20,
+          "role": "customer_information_sheet",
+          "sha256": "afe91f7446ed4dfc6090d3ce746386cf182ab5b094c9c6ae1b5af81a1375e665",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/CIS_Star_Comprehensive_Insurance_Policy_V_2_69c15a9ee1.pdf",
+          "variant": null
+        },
+        {
+          "applicability_status": "unresolved",
+          "edition_status": "unresolved",
+          "observed_codes_in_full_text": [
+            "POL / SS / V.1 / 2024"
+          ],
+          "observed_uins_first_two_pages": [
+            "SHAHLIP26044V092526"
+          ],
+          "pdf_text_pages": 1,
+          "role": "excluded_expenses",
+          "sha256": "ae1e4a9fec23d65f8f983e22b9b76b6c8601baa9dcd2a0dc7b35530607b0f0b8",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/star_comprehensive_other_excluded_expenses_new_ae97610427.pdf",
+          "variant": null
+        },
+        {
+          "applicability_status": "unresolved",
+          "edition_status": "unresolved",
+          "observed_codes_in_full_text": [],
+          "observed_uins_first_two_pages": [
+            "SHAHLIP26044V092526"
+          ],
+          "pdf_text_pages": 2,
+          "role": "modern_treatment_schedule",
+          "sha256": "a167e20343d2dfbecf51bebcd64ac0fde4e3ba35431f27490fe94ca6cfadc480",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Star_Comprehensive_Insurance_Policy_627f5a8912.pdf",
+          "variant": null
+        },
+        {
+          "applicability_status": "unresolved",
+          "edition_status": "unresolved",
+          "observed_codes_in_full_text": [],
+          "observed_uins_first_two_pages": [
+            "SHAHLIP26044V092526"
+          ],
+          "pdf_text_pages": 1,
+          "role": "preventive_health_schedule",
+          "sha256": "c7f4ceb7fb7d3ee02937d107c96f81859b3ecab5c045fbf63aa312bb07770358",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Preventive_Health_Checkup_Star_Comprehensive_Insurance_Policy_87eabc5749.pdf",
+          "variant": null
+        }
+      ],
+      "name": "Star Comprehensive Insurance Policy",
+      "ready": false,
+      "reviewed_policy_rules": 0,
+      "uin": "SHAHLIP26044V092526"
+    },
+    {
+      "blockers": [
+        "No official applicability chain ties these document editions to the same inception dates and variants.",
+        "Options, amendments, schedules, complete clauses and exclusions have not been reviewed.",
+        "The document labelled excluded expenses says items for which coverage is available; meaning and applicability need manual review."
+      ],
+      "documents": [
+        {
+          "applicability_status": "unresolved",
+          "edition_status": "unresolved",
+          "observed_codes_in_full_text": [
+            "POL / SS / V.1 / 2024"
+          ],
+          "observed_uins_first_two_pages": [
+            "SHAHLIP26048V032526"
+          ],
+          "pdf_text_pages": 56,
+          "role": "prospectus",
+          "sha256": "91a761206899caafe957f0c874d75c1b05b9e0b53601d2f57761309a9b0899be",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Star_Health_Assure_Insurance_Policy_V_3_9b8479dfdd.pdf",
+          "variant": null
+        },
+        {
+          "applicability_status": "unresolved",
+          "edition_status": "unresolved",
+          "observed_codes_in_full_text": [
+            "POL / HA / V.12 / 2026"
+          ],
+          "observed_uins_first_two_pages": [
+            "SHAHLIP26048V032526"
+          ],
+          "pdf_text_pages": 47,
+          "role": "policy_wording",
+          "sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Health_Assure_Insurance_Policy_V_9_c53663e68a.pdf",
+          "variant": null
+        },
+        {
+          "applicability_status": "unresolved",
+          "edition_status": "unresolved",
+          "observed_codes_in_full_text": [
+            "CIS / SHA / V.7 / 2026"
+          ],
+          "observed_uins_first_two_pages": [
+            "SHAHLIP26048V032526"
+          ],
+          "pdf_text_pages": 21,
+          "role": "customer_information_sheet",
+          "sha256": "9b577e1226bbfde552575bedf8e0b74edf792a2db5c788b008196d99f23d5f2e",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/CIS_Star_Health_Assure_Insurance_Policy_V_2_380ce4ce6b.pdf",
+          "variant": null
+        },
+        {
+          "applicability_status": "unresolved",
+          "edition_status": "unresolved",
+          "observed_codes_in_full_text": [
+            "POL / SS / V.1 / 2024"
+          ],
+          "observed_uins_first_two_pages": [
+            "SHAHLIP26048V032526"
+          ],
+          "pdf_text_pages": 1,
+          "role": "excluded_expenses",
+          "sha256": "1f277749e6cbce0dac5e9a1ca0fdf2a8790c71a2bf12d7169a7ebf9a897e04da",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Health_Assure_List_of_Excluded_Expenses_9be58ee6be.pdf",
+          "variant": null
+        },
+        {
+          "applicability_status": "unresolved",
+          "edition_status": "unresolved",
+          "observed_codes_in_full_text": [],
+          "observed_uins_first_two_pages": [
+            "SHAHLIP26048V032526"
+          ],
+          "pdf_text_pages": 1,
+          "role": "modern_treatment_schedule",
+          "sha256": "4e199d99893cb7966344788f6994137c4d09a7aa8c59aff6439c6e2036ec0667",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Star_Health_Assure_Insurance_Policy_7746fe52d9.pdf",
+          "variant": null
+        }
+      ],
+      "name": "Star Health Assure Insurance Policy",
+      "ready": false,
+      "reviewed_policy_rules": 0,
+      "uin": "SHAHLIP26048V032526"
+    }
+  ],
+  "release_ready": false,
+  "review_method": "Full PDF text scanned for UIN/code strings; no clause-level legal interpretation or edition applicability review.",
+  "source_audit": "pilot-audit-2026-09-27.json"
+}

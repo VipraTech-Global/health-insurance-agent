@@ -1,0 +1,21 @@
+{
+  "capture_method": "Official HTML and resolver JavaScript fetched with public HTTP User-Agent; originals preserved outside repository.",
+  "direct_pdf_links_on_main_page": 218,
+  "dynamic_proposal_links_resolved": 15,
+  "format_version": 1,
+  "main_document_link_occurrences": 234,
+  "main_link_labels_reconciled_to_preserved_html": true,
+  "reconciliation_method": "Normalized label multisets including repeated JavaScript proposal links; 234 main and 207 vernacular occurrences.",
+  "source_sha256": {
+    "niva_downloads": "a4228ad94a78c94d119c87ab426e71d3bdae2d56f19ae096397fe1a08d4cb138",
+    "niva_resolver_js": "f8875f6c397de81ad0e1da02709f2530004842fdaf48263093d0ed863172f591",
+    "niva_vernacular": "4ae96805cff3db34179695be75610f1929ef41291c2b80bf27c13e0a26cf7bd3"
+  },
+  "source_urls": {
+    "downloads": "https://transactions.nivabupa.com/pages/downloads.aspx",
+    "resolver_js": "https://transactions.nivabupa.com/pages/js/downloaddocs.js?v=1.4",
+    "vernacular": "https://transactions.nivabupa.com/pages/vernacular.aspx"
+  },
+  "vernacular_link_labels_reconciled_to_preserved_html": true,
+  "vernacular_proposal_links": 207
+}
