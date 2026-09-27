@@ -1159,3 +1159,14 @@ def test_evaluate_release_keeps_stable_product_order_regardless_of_coverage() ->
     ]
     assert results[0].matches[0].comparison_value == _quantity("500000", "money", currency="INR")
     assert results[1].matches[0].comparison_value == _quantity("1500000", "money", currency="INR")
+
+    first = results[0].variant
+    ProductVariant.objects.create(
+        policy_version=first.policy_version,
+        name="Another option",
+        choices={"other_selectors": []},
+        availability=applicability,
+        identity_evidence=span,
+    )
+    with pytest.raises(ValueError, match="explicitly account for every product variant"):
+        evaluate_release(release, [], [requirement])

@@ -1223,15 +1223,21 @@ def evaluate_release(
     variants: list[ProductVariant] = []
     seen_products: set[uuid.UUID] = set()
     for version_id in sorted(rules_by_version, key=str):
-        available = (
+        available = list(
             ProductVariant.objects.filter(policy_version_id=version_id)
             .select_related("policy_version__product__insurer")
-            .order_by("created_at")
+            .order_by("created_at", "id")
         )
-        variant = available.first()
-        if variant and variant.policy_version.product_id not in seen_products:
-            variants.append(variant)
-            seen_products.add(variant.policy_version.product_id)
+        if len(available) != 1:
+            raise ValueError(
+                "The release must explicitly account for every product variant; "
+                f"policy version {version_id} has {len(available)} variants."
+            )
+        variant = available[0]
+        if variant.policy_version.product_id in seen_products:
+            raise ValueError("The release contains more than one policy version for a product.")
+        variants.append(variant)
+        seen_products.add(variant.policy_version.product_id)
     expected_count = comparison_product_count(release)
     if len(variants) != expected_count:
         raise ValueError(
