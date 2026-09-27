@@ -1,0 +1,772 @@
+{
+  "document_states": {
+    "applicability_unresolved": 8,
+    "discovery_only": 6,
+    "edition_unresolved": 9
+  },
+  "download_link_count": 338,
+  "format_version": 1,
+  "insurer_id": "star",
+  "pilot_products": [
+    {
+      "comparison_scope": "internal_pilot",
+      "documents": [
+        {
+          "captured_at": "2026-09-27T07:50:55.021332+00:00",
+          "edition_markers": [],
+          "insurer_id": "star",
+          "observed_uins": [
+            "SHAHLIP26046V092526"
+          ],
+          "option": null,
+          "product_uin": "SHAHLIP26046V092526",
+          "role": "brochure",
+          "sha256": "9f86ed7d514afe927911b26f6c2b4141e81decfdb3bb835886e8655bae5a04c3",
+          "state": "discovery_only",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Brochure_Family_Health_Optima_Insurance_Plan_V_15_Web_74cee1b82f.pdf",
+          "variant": null
+        },
+        {
+          "captured_at": "2026-09-27T07:51:02.499342+00:00",
+          "edition_markers": [
+            "POL / SS / V.1 / 2024"
+          ],
+          "insurer_id": "star",
+          "observed_uins": [
+            "SHAHLIP26046V092526"
+          ],
+          "option": null,
+          "product_uin": "SHAHLIP26046V092526",
+          "role": "prospectus",
+          "sha256": "abe38283100d6402e1ac22929bb94c23bb53994bef7a378196e48900cd4da025",
+          "state": "edition_unresolved",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Family_Health_Optima_Insurance_Plan_V_10_79f547c311.pdf",
+          "variant": null
+        },
+        {
+          "captured_at": "2026-09-27T07:50:59.678167+00:00",
+          "edition_markers": [
+            "PRO/COMMON/V.33/2026"
+          ],
+          "insurer_id": "star",
+          "observed_uins": [
+            "SHAHLIA23061V012223",
+            "SHAHLIA23171V012223",
+            "SHAHLIP21262V032021",
+            "SHAHLIP22162V032021",
+            "SHAHLIP25027V072425",
+            "SHAHLIP25035V052425",
+            "SHAHLIP25038V082425",
+            "SHAHLIP25039V082425",
+            "SHAHLIP26041V082526",
+            "SHAHLIP26042V012526",
+            "SHAHLIP26043V062526",
+            "SHAHLIP26044V092526",
+            "SHAHLIP26046V092526",
+            "SHAHLIP26047V092526"
+          ],
+          "option": null,
+          "product_uin": "SHAHLIP26046V092526",
+          "role": "proposal_form",
+          "sha256": "ca3c33d9bdc5f52898743c69956864b4cc2329ae79a82bf2b87f9ffca0b06bf3",
+          "state": "discovery_only",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Offline_Proposal_Form_138e10d5db.pdf",
+          "variant": null
+        },
+        {
+          "captured_at": "2026-09-27T07:50:59.996156+00:00",
+          "edition_markers": [
+            "POL / FHO / V.26 / 2026"
+          ],
+          "insurer_id": "star",
+          "observed_uins": [
+            "SHAHLIP26046V092526"
+          ],
+          "option": null,
+          "product_uin": "SHAHLIP26046V092526",
+          "role": "policy_wording",
+          "sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
+          "state": "edition_unresolved",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Family_Health_Optima_Insurance_Plan_V_21_bbe089bd74.pdf",
+          "variant": null
+        },
+        {
+          "captured_at": "2026-09-27T07:50:56.984024+00:00",
+          "edition_markers": [
+            "CIS / FHO / V.6 / 2026"
+          ],
+          "insurer_id": "star",
+          "observed_uins": [
+            "SHAHLIP26046V092526"
+          ],
+          "option": null,
+          "product_uin": "SHAHLIP26046V092526",
+          "role": "customer_information_sheet",
+          "sha256": "5527cb614c86736ca494d8ce97cce70abeca12ef861c425bbf011627dbc8ae35",
+          "state": "edition_unresolved",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/CIS_Family_Health_Optima_Insurance_Plan_V_2_b5d9cdf635.pdf",
+          "variant": null
+        },
+        {
+          "captured_at": "2026-09-27T07:50:58.172578+00:00",
+          "edition_markers": [
+            "POL / SS / V.1 / 2024"
+          ],
+          "insurer_id": "star",
+          "observed_uins": [
+            "SHAHLIP26046V092526"
+          ],
+          "option": null,
+          "product_uin": "SHAHLIP26046V092526",
+          "role": "excluded_expenses",
+          "sha256": "1def1773a1a07694531572b226a8ecbd1faefaec2e348d5e191cd32633e4c9b4",
+          "state": "applicability_unresolved",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/FHO_Other_excluded_b6ac7e9f79.pdf",
+          "variant": null
+        },
+        {
+          "captured_at": "2026-09-27T07:50:58.802377+00:00",
+          "edition_markers": [],
+          "insurer_id": "star",
+          "observed_uins": [
+            "SHAHLIP26046V092526"
+          ],
+          "option": null,
+          "product_uin": "SHAHLIP26046V092526",
+          "role": "modern_treatment_schedule",
+          "sha256": "066c9150d12c1df1f1fa04c326bd273afd3f78639c705195c5923e9293019c11",
+          "state": "applicability_unresolved",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Family_Health_Optima_Insurance_Plan_9428c181fe.pdf",
+          "variant": null
+        },
+        {
+          "captured_at": "2026-09-27T07:51:01.520751+00:00",
+          "edition_markers": [],
+          "insurer_id": "star",
+          "observed_uins": [
+            "SHAHLIP26046V092526"
+          ],
+          "option": null,
+          "product_uin": "SHAHLIP26046V092526",
+          "role": "preventive_health_schedule",
+          "sha256": "667646c6e403db44541256481b8cf26f13ee23369206c0125bb4b7f8063b09a9",
+          "state": "applicability_unresolved",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Preventive_Health_Check_up_Family_Health_Optima_Insurance_Plan_13ff4299eb.pdf",
+          "variant": null
+        }
+      ],
+      "insurer_id": "star",
+      "issues": [
+        "customer_information_sheet:edition_unresolved",
+        "excluded_expenses:applicability_unresolved",
+        "modern_treatment_schedule:applicability_unresolved",
+        "option_inventory:unresolved",
+        "policy_wording:edition_unresolved",
+        "preventive_health_schedule:applicability_unresolved",
+        "prospectus:edition_unresolved",
+        "rule_review:not_done",
+        "variant_inventory:unresolved"
+      ],
+      "launch_date_as_listed": "09/02/2026",
+      "name": "Family Health Optima Insurance Plan",
+      "option_inventory": "unresolved",
+      "pilot_ready": false,
+      "price": {
+        "amount": null,
+        "status": "unavailable"
+      },
+      "scope_evidence": "https://www.starhealth.in/list-products/",
+      "scope_reason": "first_three_named_by_pilot_plan",
+      "scope_review_status": "pilot_only",
+      "source_row": 9,
+      "uin": "SHAHLIP26046V092526",
+      "variant_inventory": "unresolved"
+    },
+    {
+      "comparison_scope": "internal_pilot",
+      "documents": [
+        {
+          "captured_at": "2026-09-27T07:50:55.699144+00:00",
+          "edition_markers": [],
+          "insurer_id": "star",
+          "observed_uins": [],
+          "option": null,
+          "product_uin": "SHAHLIP26044V092526",
+          "role": "brochure",
+          "sha256": "cca93014d1edc07a3e17d73cf70f900cb1ca85db3398bd637fa81d916ad3d564",
+          "state": "discovery_only",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Brochure_Star_Comprehensive_Insurance_Policy_V_15_Web_633bcfcaaf.pdf",
+          "variant": null
+        },
+        {
+          "captured_at": "2026-09-27T07:51:03.249704+00:00",
+          "edition_markers": [],
+          "insurer_id": "star",
+          "observed_uins": [
+            "SHAHLIP26044V092526"
+          ],
+          "option": null,
+          "product_uin": "SHAHLIP26044V092526",
+          "role": "prospectus",
+          "sha256": "0404693147bd5202e28e39bfdb8fcc87f78e7ee6aa6a6f1032f63cbec63698e1",
+          "state": "edition_unresolved",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Star_Comprehensive_Insurance_Policy_V_12_dc6058c95e.pdf",
+          "variant": null
+        },
+        {
+          "captured_at": "2026-09-27T07:50:59.678167+00:00",
+          "edition_markers": [
+            "PRO/COMMON/V.33/2026"
+          ],
+          "insurer_id": "star",
+          "observed_uins": [
+            "SHAHLIA23061V012223",
+            "SHAHLIA23171V012223",
+            "SHAHLIP21262V032021",
+            "SHAHLIP22162V032021",
+            "SHAHLIP25027V072425",
+            "SHAHLIP25035V052425",
+            "SHAHLIP25038V082425",
+            "SHAHLIP25039V082425",
+            "SHAHLIP26041V082526",
+            "SHAHLIP26042V012526",
+            "SHAHLIP26043V062526",
+            "SHAHLIP26044V092526",
+            "SHAHLIP26046V092526",
+            "SHAHLIP26047V092526"
+          ],
+          "option": null,
+          "product_uin": "SHAHLIP26044V092526",
+          "role": "proposal_form",
+          "sha256": "ca3c33d9bdc5f52898743c69956864b4cc2329ae79a82bf2b87f9ffca0b06bf3",
+          "state": "discovery_only",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Offline_Proposal_Form_138e10d5db.pdf",
+          "variant": null
+        },
+        {
+          "captured_at": "2026-09-27T07:51:00.571042+00:00",
+          "edition_markers": [
+            "POL / COMP / V.24 / 2025"
+          ],
+          "insurer_id": "star",
+          "observed_uins": [
+            "SHAHLIP26044V092526"
+          ],
+          "option": null,
+          "product_uin": "SHAHLIP26044V092526",
+          "role": "policy_wording",
+          "sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+          "state": "edition_unresolved",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Comprehensive_Insurance_Policy_V_21_3a414ab104.pdf",
+          "variant": null
+        },
+        {
+          "captured_at": "2026-09-27T07:50:57.453679+00:00",
+          "edition_markers": [
+            "CIS / COMP / V.5 / 2025"
+          ],
+          "insurer_id": "star",
+          "observed_uins": [
+            "SHAHLIP26044V092526"
+          ],
+          "option": null,
+          "product_uin": "SHAHLIP26044V092526",
+          "role": "customer_information_sheet",
+          "sha256": "afe91f7446ed4dfc6090d3ce746386cf182ab5b094c9c6ae1b5af81a1375e665",
+          "state": "edition_unresolved",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/CIS_Star_Comprehensive_Insurance_Policy_V_2_69c15a9ee1.pdf",
+          "variant": null
+        },
+        {
+          "captured_at": "2026-09-27T07:51:04.288025+00:00",
+          "edition_markers": [
+            "POL / SS / V.1 / 2024"
+          ],
+          "insurer_id": "star",
+          "observed_uins": [
+            "SHAHLIP26044V092526"
+          ],
+          "option": null,
+          "product_uin": "SHAHLIP26044V092526",
+          "role": "excluded_expenses",
+          "sha256": "ae1e4a9fec23d65f8f983e22b9b76b6c8601baa9dcd2a0dc7b35530607b0f0b8",
+          "state": "applicability_unresolved",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/star_comprehensive_other_excluded_expenses_new_ae97610427.pdf",
+          "variant": null
+        },
+        {
+          "captured_at": "2026-09-27T07:50:59.161858+00:00",
+          "edition_markers": [],
+          "insurer_id": "star",
+          "observed_uins": [
+            "SHAHLIP26044V092526"
+          ],
+          "option": null,
+          "product_uin": "SHAHLIP26044V092526",
+          "role": "modern_treatment_schedule",
+          "sha256": "a167e20343d2dfbecf51bebcd64ac0fde4e3ba35431f27490fe94ca6cfadc480",
+          "state": "applicability_unresolved",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Star_Comprehensive_Insurance_Policy_627f5a8912.pdf",
+          "variant": null
+        },
+        {
+          "captured_at": "2026-09-27T07:51:01.844706+00:00",
+          "edition_markers": [],
+          "insurer_id": "star",
+          "observed_uins": [
+            "SHAHLIP26044V092526"
+          ],
+          "option": null,
+          "product_uin": "SHAHLIP26044V092526",
+          "role": "preventive_health_schedule",
+          "sha256": "c7f4ceb7fb7d3ee02937d107c96f81859b3ecab5c045fbf63aa312bb07770358",
+          "state": "applicability_unresolved",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Preventive_Health_Checkup_Star_Comprehensive_Insurance_Policy_87eabc5749.pdf",
+          "variant": null
+        }
+      ],
+      "insurer_id": "star",
+      "issues": [
+        "customer_information_sheet:edition_unresolved",
+        "excluded_expenses:applicability_unresolved",
+        "modern_treatment_schedule:applicability_unresolved",
+        "option_inventory:unresolved",
+        "policy_wording:edition_unresolved",
+        "preventive_health_schedule:applicability_unresolved",
+        "prospectus:edition_unresolved",
+        "rule_review:not_done",
+        "variant_inventory:unresolved"
+      ],
+      "launch_date_as_listed": "09/02/2026",
+      "name": "Star Comprehensive Insurance Policy",
+      "option_inventory": "unresolved",
+      "pilot_ready": false,
+      "price": {
+        "amount": null,
+        "status": "unavailable"
+      },
+      "scope_evidence": "https://www.starhealth.in/list-products/",
+      "scope_reason": "first_three_named_by_pilot_plan",
+      "scope_review_status": "pilot_only",
+      "source_row": 7,
+      "uin": "SHAHLIP26044V092526",
+      "variant_inventory": "unresolved"
+    },
+    {
+      "comparison_scope": "internal_pilot",
+      "documents": [
+        {
+          "captured_at": "2026-09-27T07:50:56.811306+00:00",
+          "edition_markers": [],
+          "insurer_id": "star",
+          "observed_uins": [
+            "SHAHLIP26048V032526"
+          ],
+          "option": null,
+          "product_uin": "SHAHLIP26048V032526",
+          "role": "brochure",
+          "sha256": "2c4e128c6ddacb9a809d5e4ec52d6468ed8bed4cd9b23ee7234078257eb4dc7b",
+          "state": "discovery_only",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Brochure_Star_Health_Assure_Insurance_Policy_V_5_Web_8153c42b87.pdf",
+          "variant": null
+        },
+        {
+          "captured_at": "2026-09-27T07:51:03.893128+00:00",
+          "edition_markers": [],
+          "insurer_id": "star",
+          "observed_uins": [
+            "SHAHLIP26048V032526"
+          ],
+          "option": null,
+          "product_uin": "SHAHLIP26048V032526",
+          "role": "prospectus",
+          "sha256": "91a761206899caafe957f0c874d75c1b05b9e0b53601d2f57761309a9b0899be",
+          "state": "edition_unresolved",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Star_Health_Assure_Insurance_Policy_V_3_9b8479dfdd.pdf",
+          "variant": null
+        },
+        {
+          "captured_at": "2026-09-27T07:51:02.144679+00:00",
+          "edition_markers": [],
+          "insurer_id": "star",
+          "observed_uins": [
+            "SHAHLIP22226V012122",
+            "SHAHLIP23131V022223",
+            "SHAHLIP23132V022223",
+            "SHAHLIP25035V022425",
+            "SHAHLIP26048V032526"
+          ],
+          "option": null,
+          "product_uin": "SHAHLIP26048V032526",
+          "role": "proposal_form",
+          "sha256": "10d59c5e7a6b08c963da9942f59415ae9cb72614a3069807a74b49e9d785d683",
+          "state": "discovery_only",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Proposal_Form_0b4f1c4c9c.pdf",
+          "variant": null
+        },
+        {
+          "captured_at": "2026-09-27T07:51:01.266167+00:00",
+          "edition_markers": [
+            "POL / HA / V.12 / 2026"
+          ],
+          "insurer_id": "star",
+          "observed_uins": [
+            "SHAHLIP26048V032526"
+          ],
+          "option": null,
+          "product_uin": "SHAHLIP26048V032526",
+          "role": "policy_wording",
+          "sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+          "state": "edition_unresolved",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Health_Assure_Insurance_Policy_V_9_c53663e68a.pdf",
+          "variant": null
+        },
+        {
+          "captured_at": "2026-09-27T07:50:57.850042+00:00",
+          "edition_markers": [
+            "CIS / SHA / V.7 / 2026"
+          ],
+          "insurer_id": "star",
+          "observed_uins": [
+            "SHAHLIP26048V032526"
+          ],
+          "option": null,
+          "product_uin": "SHAHLIP26048V032526",
+          "role": "customer_information_sheet",
+          "sha256": "9b577e1226bbfde552575bedf8e0b74edf792a2db5c788b008196d99f23d5f2e",
+          "state": "edition_unresolved",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/CIS_Star_Health_Assure_Insurance_Policy_V_2_380ce4ce6b.pdf",
+          "variant": null
+        },
+        {
+          "captured_at": "2026-09-27T07:50:58.561561+00:00",
+          "edition_markers": [
+            "POL / SS / V.1 / 2024"
+          ],
+          "insurer_id": "star",
+          "observed_uins": [
+            "SHAHLIP26048V032526"
+          ],
+          "option": null,
+          "product_uin": "SHAHLIP26048V032526",
+          "role": "excluded_expenses",
+          "sha256": "1f277749e6cbce0dac5e9a1ca0fdf2a8790c71a2bf12d7169a7ebf9a897e04da",
+          "state": "applicability_unresolved",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Health_Assure_List_of_Excluded_Expenses_9be58ee6be.pdf",
+          "variant": null
+        },
+        {
+          "captured_at": "2026-09-27T07:50:59.413095+00:00",
+          "edition_markers": [],
+          "insurer_id": "star",
+          "observed_uins": [
+            "SHAHLIP26048V032526"
+          ],
+          "option": null,
+          "product_uin": "SHAHLIP26048V032526",
+          "role": "modern_treatment_schedule",
+          "sha256": "4e199d99893cb7966344788f6994137c4d09a7aa8c59aff6439c6e2036ec0667",
+          "state": "applicability_unresolved",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Star_Health_Assure_Insurance_Policy_7746fe52d9.pdf",
+          "variant": null
+        }
+      ],
+      "insurer_id": "star",
+      "issues": [
+        "customer_information_sheet:edition_unresolved",
+        "excluded_expenses:applicability_unresolved",
+        "modern_treatment_schedule:applicability_unresolved",
+        "option_inventory:unresolved",
+        "policy_wording:edition_unresolved",
+        "prospectus:edition_unresolved",
+        "rule_review:not_done",
+        "variant_inventory:unresolved"
+      ],
+      "launch_date_as_listed": "16/04/2026",
+      "name": "Star Health Assure Insurance Policy",
+      "option_inventory": "unresolved",
+      "pilot_ready": false,
+      "price": {
+        "amount": null,
+        "status": "unavailable"
+      },
+      "scope_evidence": "https://www.starhealth.in/list-products/",
+      "scope_reason": "first_three_named_by_pilot_plan",
+      "scope_review_status": "pilot_only",
+      "source_row": 3,
+      "uin": "SHAHLIP26048V032526",
+      "variant_inventory": "unresolved"
+    }
+  ],
+  "primary_candidate_accounting": [
+    {
+      "candidate_document_links": 6,
+      "captured_document_links": 6,
+      "comparison_scope": "primary_health_candidate",
+      "core_document_count": 3,
+      "core_document_uin_matches": 3,
+      "listed_roles": [
+        "brochure",
+        "customer_information_sheet",
+        "modern_treatment_schedule",
+        "policy_wording",
+        "proposal_form",
+        "prospectus"
+      ],
+      "missing_core_roles": [],
+      "name": "Arogya Sanjeevani Policy, Star Health and Allied Insurance Co Ltd.",
+      "status": "unresolved",
+      "uin": "SHAHLIP26045V042526"
+    },
+    {
+      "candidate_document_links": 8,
+      "captured_document_links": 8,
+      "comparison_scope": "internal_pilot",
+      "core_document_count": 3,
+      "core_document_uin_matches": 3,
+      "listed_roles": [
+        "brochure",
+        "customer_information_sheet",
+        "excluded_expenses",
+        "modern_treatment_schedule",
+        "policy_wording",
+        "preventive_health_schedule",
+        "proposal_form",
+        "prospectus"
+      ],
+      "missing_core_roles": [],
+      "name": "Family Health Optima Insurance Plan",
+      "status": "unresolved",
+      "uin": "SHAHLIP26046V092526"
+    },
+    {
+      "candidate_document_links": 8,
+      "captured_document_links": 8,
+      "comparison_scope": "primary_health_candidate",
+      "core_document_count": 3,
+      "core_document_uin_matches": 3,
+      "listed_roles": [
+        "brochure",
+        "customer_information_sheet",
+        "excluded_expenses",
+        "modern_treatment_schedule",
+        "policy_wording",
+        "preventive_health_schedule",
+        "proposal_form",
+        "prospectus"
+      ],
+      "missing_core_roles": [],
+      "name": "Medi Classic Insurance Policy (Individual)",
+      "status": "unresolved",
+      "uin": "SHAHLIP26047V092526"
+    },
+    {
+      "candidate_document_links": 8,
+      "captured_document_links": 8,
+      "comparison_scope": "primary_health_candidate",
+      "core_document_count": 3,
+      "core_document_uin_matches": 3,
+      "listed_roles": [
+        "brochure",
+        "customer_information_sheet",
+        "excluded_expenses",
+        "modern_treatment_schedule",
+        "policy_wording",
+        "preventive_health_schedule",
+        "proposal_form",
+        "prospectus"
+      ],
+      "missing_core_roles": [],
+      "name": "Senior Citizens Red Carpet Health Insurance Policy",
+      "status": "unresolved",
+      "uin": "SHAHLIP26041V082526"
+    },
+    {
+      "candidate_document_links": 6,
+      "captured_document_links": 6,
+      "comparison_scope": "primary_health_candidate",
+      "core_document_count": 3,
+      "core_document_uin_matches": 3,
+      "listed_roles": [
+        "brochure",
+        "customer_information_sheet",
+        "excluded_expenses",
+        "modern_treatment_schedule",
+        "policy_wording",
+        "prospectus"
+      ],
+      "missing_core_roles": [],
+      "name": "Smart Health Pro",
+      "status": "unresolved",
+      "uin": "SHAHLIP23172V012223"
+    },
+    {
+      "candidate_document_links": 8,
+      "captured_document_links": 8,
+      "comparison_scope": "internal_pilot",
+      "core_document_count": 3,
+      "core_document_uin_matches": 3,
+      "listed_roles": [
+        "brochure",
+        "customer_information_sheet",
+        "excluded_expenses",
+        "modern_treatment_schedule",
+        "policy_wording",
+        "preventive_health_schedule",
+        "proposal_form",
+        "prospectus"
+      ],
+      "missing_core_roles": [],
+      "name": "Star Comprehensive Insurance Policy",
+      "status": "unresolved",
+      "uin": "SHAHLIP26044V092526"
+    },
+    {
+      "candidate_document_links": 7,
+      "captured_document_links": 7,
+      "comparison_scope": "internal_pilot",
+      "core_document_count": 3,
+      "core_document_uin_matches": 3,
+      "listed_roles": [
+        "brochure",
+        "customer_information_sheet",
+        "excluded_expenses",
+        "modern_treatment_schedule",
+        "policy_wording",
+        "proposal_form",
+        "prospectus"
+      ],
+      "missing_core_roles": [],
+      "name": "Star Health Assure Insurance Policy",
+      "status": "unresolved",
+      "uin": "SHAHLIP26048V032526"
+    },
+    {
+      "candidate_document_links": 7,
+      "captured_document_links": 7,
+      "comparison_scope": "primary_health_candidate",
+      "core_document_count": 3,
+      "core_document_uin_matches": 3,
+      "listed_roles": [
+        "brochure",
+        "customer_information_sheet",
+        "excluded_expenses",
+        "modern_treatment_schedule",
+        "policy_wording",
+        "proposal_form",
+        "prospectus"
+      ],
+      "missing_core_roles": [],
+      "name": "Star Health Gain Insurance Policy",
+      "status": "unresolved",
+      "uin": "SHAHLIP21262V032021"
+    },
+    {
+      "candidate_document_links": 6,
+      "captured_document_links": 6,
+      "comparison_scope": "primary_health_candidate",
+      "core_document_count": 3,
+      "core_document_uin_matches": 3,
+      "listed_roles": [
+        "brochure",
+        "customer_information_sheet",
+        "modern_treatment_schedule",
+        "policy_wording",
+        "proposal_form",
+        "prospectus"
+      ],
+      "missing_core_roles": [],
+      "name": "Star Health Premier Insurance Policy",
+      "status": "unresolved",
+      "uin": "SHAHLIP22226V012122"
+    },
+    {
+      "candidate_document_links": 7,
+      "captured_document_links": 7,
+      "comparison_scope": "primary_health_candidate",
+      "core_document_count": 3,
+      "core_document_uin_matches": 3,
+      "listed_roles": [
+        "brochure",
+        "customer_information_sheet",
+        "excluded_expenses",
+        "modern_treatment_schedule",
+        "policy_wording",
+        "proposal_form",
+        "prospectus"
+      ],
+      "missing_core_roles": [],
+      "name": "Star Micro Rural and Farmers Care",
+      "status": "unresolved",
+      "uin": "SHAHMIP22038V032122"
+    },
+    {
+      "candidate_document_links": 6,
+      "captured_document_links": 6,
+      "comparison_scope": "primary_health_candidate",
+      "core_document_count": 3,
+      "core_document_uin_matches": 3,
+      "listed_roles": [
+        "brochure",
+        "customer_information_sheet",
+        "modern_treatment_schedule",
+        "policy_wording",
+        "proposal_form",
+        "prospectus"
+      ],
+      "missing_core_roles": [],
+      "name": "Star Women Care Insurance Policy",
+      "status": "unresolved",
+      "uin": "SHAHLIP23132V022223"
+    },
+    {
+      "candidate_document_links": 6,
+      "captured_document_links": 6,
+      "comparison_scope": "primary_health_candidate",
+      "core_document_count": 3,
+      "core_document_uin_matches": 3,
+      "listed_roles": [
+        "brochure",
+        "customer_information_sheet",
+        "excluded_expenses",
+        "modern_treatment_schedule",
+        "policy_wording",
+        "prospectus"
+      ],
+      "missing_core_roles": [],
+      "name": "Super Star",
+      "status": "unresolved",
+      "uin": "SHAHLIP27049V022627"
+    },
+    {
+      "candidate_document_links": 8,
+      "captured_document_links": 8,
+      "comparison_scope": "primary_health_candidate",
+      "core_document_count": 3,
+      "core_document_uin_matches": 3,
+      "listed_roles": [
+        "brochure",
+        "customer_information_sheet",
+        "excluded_expenses",
+        "modern_treatment_schedule",
+        "policy_wording",
+        "preventive_health_schedule",
+        "proposal_form",
+        "prospectus"
+      ],
+      "missing_core_roles": [],
+      "name": "Young Star Insurance Policy",
+      "status": "unresolved",
+      "uin": "SHAHLIP26043V062526"
+    }
+  ],
+  "product_count_on_official_list": 56,
+  "release_blockers": [
+    "Only Star has been inventoried for this pilot; multi-insurer scope is incomplete.",
+    "Variant and option universes, applicable document editions and complete rule evidence remain unreviewed.",
+    "No independent held-out domain assessment or release gate has passed."
+  ],
+  "release_ready": false,
+  "source_captured_at": "2026-09-27T08:00:02.051580+00:00",
+  "status": "unresolved"
+}

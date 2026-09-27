@@ -1,0 +1,50 @@
+[
+  {
+    "id": "adult_individual",
+    "facts": {
+      "ages": [32],
+      "relationships": ["self"],
+      "requested_sum_insured_inr": 1000000,
+      "waiting_period_question": "pre_existing_condition",
+      "exclusion_question": "non_medical_expenses",
+      "selected_addons": [],
+      "price_requested": true
+    }
+  },
+  {
+    "id": "family_with_child",
+    "facts": {
+      "ages": [38, 35, 4],
+      "relationships": ["self", "spouse", "child"],
+      "requested_sum_insured_inr": 2000000,
+      "waiting_period_question": "maternity",
+      "exclusion_question": "room_category",
+      "selected_addons": ["hypothetical_optional_cover"],
+      "price_requested": true
+    }
+  },
+  {
+    "id": "older_parent",
+    "facts": {
+      "ages": [68],
+      "relationships": ["parent"],
+      "requested_sum_insured_inr": 500000,
+      "waiting_period_question": "specified_disease",
+      "exclusion_question": "pre_existing_condition",
+      "selected_addons": [],
+      "price_requested": true
+    }
+  },
+  {
+    "id": "mixed_age_family",
+    "facts": {
+      "ages": [61, 59, 22],
+      "relationships": ["self", "spouse", "dependent_child"],
+      "requested_sum_insured_inr": 5000000,
+      "waiting_period_question": "initial_waiting_period",
+      "exclusion_question": "modern_treatment_limit",
+      "selected_addons": ["hypothetical_optional_cover"],
+      "price_requested": true
+    }
+  }
+]

@@ -1,0 +1,931 @@
+{
+  "format_version": 1,
+  "limitations": "No coverage, eligibility or price outcome is asserted. These matrices test complete accounting and abstention only.",
+  "profiles": [
+    {
+      "cells": [
+        {
+          "criterion": "age_eligibility",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "family_composition",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "sum_insured",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "waiting_period",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "exclusions",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "selected_addons",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "price",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "verified_price_unavailable",
+          "variant": null
+        },
+        {
+          "criterion": "age_eligibility",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "family_composition",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "sum_insured",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "waiting_period",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "exclusions",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "selected_addons",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "price",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "verified_price_unavailable",
+          "variant": null
+        },
+        {
+          "criterion": "age_eligibility",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "family_composition",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "sum_insured",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "waiting_period",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "exclusions",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "selected_addons",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "price",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "verified_price_unavailable",
+          "variant": null
+        }
+      ],
+      "profile_id": "adult_individual",
+      "synthetic_facts": {
+        "ages": [
+          32
+        ],
+        "exclusion_question": "non_medical_expenses",
+        "price_requested": true,
+        "relationships": [
+          "self"
+        ],
+        "requested_sum_insured_inr": 1000000,
+        "selected_addons": [],
+        "waiting_period_question": "pre_existing_condition"
+      }
+    },
+    {
+      "cells": [
+        {
+          "criterion": "age_eligibility",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "family_composition",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "sum_insured",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "waiting_period",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "exclusions",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "selected_addons",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "price",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "verified_price_unavailable",
+          "variant": null
+        },
+        {
+          "criterion": "age_eligibility",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "family_composition",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "sum_insured",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "waiting_period",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "exclusions",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "selected_addons",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "price",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "verified_price_unavailable",
+          "variant": null
+        },
+        {
+          "criterion": "age_eligibility",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "family_composition",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "sum_insured",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "waiting_period",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "exclusions",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "selected_addons",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "price",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "verified_price_unavailable",
+          "variant": null
+        }
+      ],
+      "profile_id": "family_with_child",
+      "synthetic_facts": {
+        "ages": [
+          38,
+          35,
+          4
+        ],
+        "exclusion_question": "room_category",
+        "price_requested": true,
+        "relationships": [
+          "self",
+          "spouse",
+          "child"
+        ],
+        "requested_sum_insured_inr": 2000000,
+        "selected_addons": [
+          "hypothetical_optional_cover"
+        ],
+        "waiting_period_question": "maternity"
+      }
+    },
+    {
+      "cells": [
+        {
+          "criterion": "age_eligibility",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "family_composition",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "sum_insured",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "waiting_period",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "exclusions",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "selected_addons",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "price",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "verified_price_unavailable",
+          "variant": null
+        },
+        {
+          "criterion": "age_eligibility",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "family_composition",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "sum_insured",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "waiting_period",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "exclusions",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "selected_addons",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "price",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "verified_price_unavailable",
+          "variant": null
+        },
+        {
+          "criterion": "age_eligibility",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "family_composition",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "sum_insured",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "waiting_period",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "exclusions",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "selected_addons",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "price",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "verified_price_unavailable",
+          "variant": null
+        }
+      ],
+      "profile_id": "older_parent",
+      "synthetic_facts": {
+        "ages": [
+          68
+        ],
+        "exclusion_question": "pre_existing_condition",
+        "price_requested": true,
+        "relationships": [
+          "parent"
+        ],
+        "requested_sum_insured_inr": 500000,
+        "selected_addons": [],
+        "waiting_period_question": "specified_disease"
+      }
+    },
+    {
+      "cells": [
+        {
+          "criterion": "age_eligibility",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "family_composition",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "sum_insured",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "waiting_period",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "exclusions",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "selected_addons",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "price",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26046V092526",
+          "reason": "verified_price_unavailable",
+          "variant": null
+        },
+        {
+          "criterion": "age_eligibility",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "family_composition",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "sum_insured",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "waiting_period",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "exclusions",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "selected_addons",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "price",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26044V092526",
+          "reason": "verified_price_unavailable",
+          "variant": null
+        },
+        {
+          "criterion": "age_eligibility",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "family_composition",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "sum_insured",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "waiting_period",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "exclusions",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "selected_addons",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "policy_rules_and_applicability_unreviewed",
+          "variant": null
+        },
+        {
+          "criterion": "price",
+          "evidence": [],
+          "insurer_id": "star",
+          "option": null,
+          "outcome": "unknown",
+          "product_uin": "SHAHLIP26048V032526",
+          "reason": "verified_price_unavailable",
+          "variant": null
+        }
+      ],
+      "profile_id": "mixed_age_family",
+      "synthetic_facts": {
+        "ages": [
+          61,
+          59,
+          22
+        ],
+        "exclusion_question": "modern_treatment_limit",
+        "price_requested": true,
+        "relationships": [
+          "self",
+          "spouse",
+          "dependent_child"
+        ],
+        "requested_sum_insured_inr": 5000000,
+        "selected_addons": [
+          "hypothetical_optional_cover"
+        ],
+        "waiting_period_question": "initial_waiting_period"
+      }
+    }
+  ],
+  "status": "provisional_unresolved_probe"
+}
