@@ -25,6 +25,11 @@ ROSTER_URL = (
     "https://www.nivabupa.com/content/dam/nivabupa/PDF/"
     "List%20of%20Products%20Offered_22nd%20November%202023.pdf"
 )
+CARE_ROSTER_URL = (
+    "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/"
+    "Launch_and_Withdrawn_dates_of_Products_1754900556.pdf"
+)
+CARE_ROSTER_2025_SHA256 = "b2f77f605da9156dd4f470404b7d3b1a3222bdd4591705833058a3a1882945c7"
 HOSTS = {
     "care": ["careinsurance.com"],
     "niva": ["nivabupa.com"],
@@ -35,6 +40,17 @@ ROSTER_UIN = re.compile(
     r"IRDAI?/[^\s]+|\b104Y134V01\b)",
     re.I,
 )
+CARE_ROSTER_UIN = re.compile(
+    r"(?:\b(?:CHI|RHI)[A-Z]{2,5}\d{4,7}V\d{2,3}\d{4,6}\b|\bIRDAI?/[^\s]+)",
+    re.I,
+)
+CARE_MULTILINE_NAMES = {
+    "RHIHLIP20154V011920": "Arogya Sanjeevani Policy-Care Health Insurance",
+    "RHIHLIP21087V012021": "Corona Kavach Policy -Care Health Insurance",
+    "CHIHMGP25039V022425": "Grameen Care Plus - Micro Insurance Product",
+    "CHIPAGP22044V012122": "Group Saral Suraksha Bima- Care Health Insurance",
+    "CHIHLGP21597V012021": "Group Arogya Sanjeevani Policy - Care Health Insurance",
+}
 CURRENT_ROLES = {
     "policy_wording",
     "customer_information_sheet",
@@ -130,6 +146,140 @@ def parse_niva_roster(content: bytes, captured_at: str) -> dict[str, Any]:
     }
 
 
+def parse_care_roster(content: bytes, captured_at: str) -> dict[str, Any]:
+    """Parse Care's dated launch register without asserting 2026 currentness."""
+    if not content.startswith(b"%PDF-"):
+        raise ValueError("Care launch register is not a PDF")
+    body = text_from_pdf(content)
+    if "Launched Products:" not in body or "Withdrawn Products:" not in body:
+        raise ValueError("Care launch or withdrawal section is missing")
+    launched, withdrawn = body.split("Withdrawn Products:", 1)
+    rows = []
+    seen: set[str] = set()
+    for section, section_text in (("launched", launched), ("withdrawn", withdrawn)):
+        for line in section_text.splitlines():
+            match = CARE_ROSTER_UIN.search(line)
+            if not match:
+                continue
+            uin = match.group(0)
+            if uin in seen:
+                raise ValueError(f"Duplicate Care roster UIN: {uin}")
+            seen.add(uin)
+            name = " ".join(line[: match.start()].split())
+            if uin in CARE_MULTILINE_NAMES:
+                name = CARE_MULTILINE_NAMES[uin]
+            if not name:
+                raise ValueError(f"Care roster name could not be parsed for {uin}")
+            date = line[match.end() :].strip()
+            if not re.fullmatch(r"\d{2}[-/]\d{2}[-/]\d{4}", date):
+                raise ValueError(f"Care roster date could not be parsed for {uin}")
+            rows.append(
+                {
+                    "insurer_id": "care",
+                    "source_row": len(rows) + 1,
+                    "name_as_listed": name,
+                    "uin": uin,
+                    "roster_section": section,
+                    "date_as_listed": date,
+                    "name_review_status": (
+                        "manual_multiline_join" if uin in CARE_MULTILINE_NAMES else "machine_parsed"
+                    ),
+                    "comparison_scope": "review_pending",
+                    "variant_inventory": "unresolved",
+                    "option_inventory": "unresolved",
+                }
+            )
+    if len(rows) < 40 or not any(row["roster_section"] == "withdrawn" for row in rows):
+        raise ValueError("Care launch register parse is unexpectedly short")
+    observed_sha256 = digest(content)
+    known_2025_edition = observed_sha256 == CARE_ROSTER_2025_SHA256
+    return {
+        "format_version": 1,
+        "insurer_id": "care",
+        "source_url": CARE_ROSTER_URL,
+        "source_sha256": observed_sha256,
+        "captured_at": captured_at,
+        "source_last_modified": "2025-09-04" if known_2025_edition else None,
+        "source_roster_complete": False,
+        "status": (
+            "dated_launch_register_requires_2026_reconciliation"
+            if known_2025_edition
+            else "source_changed_requires_date_review"
+        ),
+        "products": rows,
+        "limitations": [
+            "This linked first-party register was last modified in September 2025 and cannot establish the complete 2026 current roster.",
+            "Product scope, variants, options, and document applicability remain unreviewed.",
+        ],
+    }
+
+
+def merge_source_register(base: dict[str, Any], supplement: dict[str, Any]) -> dict[str, Any]:
+    """Add a separately observed official listing without losing source identity."""
+    if supplement.get("insurer_id") != "care" or not supplement.get("source_page"):
+        raise ValueError("Invalid Care supplement")
+    additions = []
+    for row in supplement.get("documents", []):
+        if row.get("role") != "proposal_form" or not row.get("url"):
+            raise ValueError("Invalid Care proposal link")
+        additions.append({**row, "insurer_id": "care", "source_page": supplement["source_page"]})
+    if not additions:
+        raise ValueError("Care proposal supplement is empty")
+    documents = [*base["documents"], *additions]
+    identities = [(row["insurer_id"], row["url"]) for row in documents]
+    if len(identities) != len(set(identities)):
+        raise ValueError("Duplicate insurer document URL after supplement")
+    return {
+        **base,
+        "captured_at": supplement["source_observed_at"],
+        "documents": documents,
+        "supplemental_source": {
+            "url": supplement["source_page"],
+            "observed_at": supplement["source_observed_at"],
+            "link_count": len(additions),
+            "direct_html_status": "http_403",
+        },
+    }
+
+
+def apply_source_refresh(register: dict[str, Any], refresh: dict[str, Any]) -> dict[str, Any]:
+    """Replace only exact old listing links; preserve the prior dated snapshot."""
+    if refresh.get("insurer_id") != "niva" or not refresh.get("source_html_sha256"):
+        raise ValueError("Invalid Niva source refresh")
+    documents = [dict(row) for row in register["documents"]]
+    for change in refresh.get("material_source_changes", []):
+        matches = [
+            row
+            for row in documents
+            if row["insurer_id"] == refresh["insurer_id"]
+            and row["source_page"] == refresh["source_page"]
+            and row["role"] == change["role"]
+            and row["label"] == change["label"]
+            and row["url"] == change["previous_url"]
+        ]
+        if len(matches) != 1:
+            raise ValueError(f"Niva source refresh has {len(matches)} old-link matches")
+        matches[0]["url"] = change["url"]
+        matches[0]["association_status"] = "unreviewed"
+        matches[0]["applicability_status"] = "unresolved"
+    if not refresh.get("material_source_changes"):
+        raise ValueError("Niva source refresh has no changes")
+    identities = [(row["insurer_id"], row["url"]) for row in documents]
+    if len(identities) != len(set(identities)):
+        raise ValueError("Duplicate insurer document URL after refresh")
+    return {
+        **register,
+        "captured_at": refresh["observed_at"],
+        "documents": documents,
+        "source_refresh": {
+            "url": refresh["source_page"],
+            "observed_at": refresh["observed_at"],
+            "source_html_sha256": refresh["source_html_sha256"],
+            "material_change_count": len(refresh["material_source_changes"]),
+        },
+    }
+
+
 def select_links(register: dict[str, Any], scope: str) -> list[dict[str, Any]]:
     rows = register.get("documents")
     if not isinstance(rows, list) or not rows:
@@ -151,6 +301,8 @@ def select_links(register: dict[str, Any], scope: str) -> list[dict[str, Any]]:
         return [row for row in rows if row.get("role") in CURRENT_ROLES]
     if scope == "wordings":
         return [row for row in rows if row.get("role") == "policy_wording"]
+    if scope == "proposal_forms":
+        return [row for row in rows if row.get("role") == "proposal_form"]
     raise ValueError(f"Unknown capture scope: {scope}")
 
 
@@ -271,6 +423,7 @@ def audit_links(
     captures: dict[str, dict[str, Any]],
     niva_roster: dict[str, Any] | None,
     root: Path | None = None,
+    care_roster: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     documents = []
     care_candidates = []
@@ -361,15 +514,23 @@ def audit_links(
             "wording_uins_outside_roster": sorted(wording_uins - niva_uins),
             "status": "identity_leads_only",
         },
-        "care_roster": {
-            "source_roster_complete": False,
-            "status": "independent_product_uin_roster_not_verified",
-            "wording_derived_candidates": care_candidates,
-        },
+        "care_roster": (
+            {**care_roster, "wording_derived_candidates": care_candidates}
+            if care_roster
+            else {
+                "source_roster_complete": False,
+                "status": "independent_product_uin_roster_not_verified",
+                "wording_derived_candidates": care_candidates,
+            }
+        ),
         "release_blockers": [
-            "Care independent current product/UIN roster has not been verified.",
+            "Care independent current product/UIN roster has not been verified; its linked launch register was last modified in September 2025."
+            if care_roster
+            else "Care independent current product/UIN roster has not been verified.",
             "Care listing pages were browser-readable but raw HTML could not be preserved.",
-            "Care proposal-form listing has not been fully inventoried.",
+            "Care proposal-form listing has not been fully inventoried."
+            if not register.get("supplemental_source")
+            else "Care proposal-form links are inventoried, but applicability is unreviewed.",
             "Document editions, variants, options, schedules and amendments are not reconciled.",
             "No policy rules or independent held-out assessment are reviewed.",
         ],
@@ -378,14 +539,22 @@ def audit_links(
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("roster", "capture", "audit"))
+    parser.add_argument("command", choices=("roster", "care-roster", "capture", "audit"))
     parser.add_argument("--root", required=True, type=Path)
     parser.add_argument("--links", required=True, type=Path)
-    parser.add_argument("--scope", choices=("all", "current", "wordings"), default="current")
+    parser.add_argument(
+        "--scope", choices=("all", "current", "wordings", "proposal_forms"), default="current"
+    )
+    parser.add_argument("--supplement", type=Path)
+    parser.add_argument("--refresh", type=Path)
     parser.add_argument("--max-new-bytes", type=int, default=1_000_000_000)
     args = parser.parse_args()
     root: Path = args.root
     register = read_json(args.links)
+    if args.supplement:
+        register = merge_source_register(register, read_json(args.supplement))
+    if args.refresh:
+        register = apply_source_refresh(register, read_json(args.refresh))
     if args.command == "roster":
         with httpx.Client(timeout=45, follow_redirects=False, headers=PUBLIC_PDF_HEADERS) as client:
             result = acquire(
@@ -396,6 +565,16 @@ def main() -> None:
         roster = parse_niva_roster(read_object(root, result["sha256"]), result["acquired_at"])
         write_json(root / "three-insurer/niva-roster.json", roster)
         print(json.dumps({"niva_roster_products": len(roster["products"])}))
+    elif args.command == "care-roster":
+        with httpx.Client(timeout=45, follow_redirects=False, headers=PUBLIC_PDF_HEADERS) as client:
+            result = acquire(
+                root, CARE_ROSTER_URL, HOSTS["care"], client, insurer_id="care", expected_pdf=True
+            )
+        if result["status"] != "acquired":
+            raise RuntimeError(f"Care official launch register capture failed: {result['issues']}")
+        roster = parse_care_roster(read_object(root, result["sha256"]), result["acquired_at"])
+        write_json(root / "three-insurer/care-roster.json", roster)
+        print(json.dumps({"care_dated_roster_products": len(roster["products"])}))
     elif args.command == "capture":
         if args.max_new_bytes < 0:
             parser.error("--max-new-bytes must be nonnegative")
@@ -407,11 +586,13 @@ def main() -> None:
     else:
         captures_path = root / "three-insurer/captures.json"
         roster_path = root / "three-insurer/niva-roster.json"
+        care_roster_path = root / "three-insurer/care-roster.json"
         audit = audit_links(
             register,
             read_json(captures_path) if captures_path.exists() else {},
             read_json(roster_path) if roster_path.exists() else None,
             root,
+            read_json(care_roster_path) if care_roster_path.exists() else None,
         )
         write_json(root / "three-insurer/audit.json", audit)
         print(

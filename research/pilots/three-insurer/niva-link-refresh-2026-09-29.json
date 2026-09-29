@@ -1,0 +1,26 @@
+{
+  "format_version": 1,
+  "insurer_id": "niva",
+  "observed_at": "2026-09-29",
+  "source_page": "https://transactions.nivabupa.com/pages/downloads.aspx",
+  "previous_source_html_sha256": "a4228ad94a78c94d119c87ab426e71d3bdae2d56f19ae096397fe1a08d4cb138",
+  "source_html_sha256": "3b378f0b3efff6d0d5883867e7b2ff006f93f1f295675523ada66d8b92229056",
+  "vernacular_source_html_sha256": "11cc4b2d36efd92ed0c4bb7224523290a6a965e0bf8439b2d04b40252d4708de",
+  "material_source_changes": [
+    {
+      "role": "policy_wording",
+      "label": "Heartbeat Policy Wording",
+      "previous_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/HBPolicy-Wording.pdf?v=1.6",
+      "url": "https://transactions.nivabupa.com/pages/doc/policy_wording/HBPolicy-Wording.pdf?v=1.7",
+      "previous_pdf_sha256": "54d29a1c4f676e3fdf4ce771c4a6cfc60c5528dc4f7b8dc1ee4eb2a2fd96f8eb",
+      "pdf_sha256": "c05b3dd3e5a7bf24037287fded39c78ddb6b2e40011609e4daa3933419061729",
+      "first_two_page_uin": "NBHHLIP27058V102627",
+      "status": "new_pdf_bytes_captured_identity_only"
+    }
+  ],
+  "dynamic_html_changes": ["__VIEWSTATE", "__EVENTVALIDATION"],
+  "limitations": [
+    "The updated wording still requires edition, variant, and applicability review against other Heartbeat documents.",
+    "The Niva roster PDF bytes match the 27 September snapshot; the vernacular page differs only in dynamic form fields."
+  ]
+}

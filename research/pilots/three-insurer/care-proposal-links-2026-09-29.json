@@ -1,0 +1,436 @@
+{
+  "format_version": 1,
+  "insurer_id": "care",
+  "source_page": "https://www.careinsurance.com/health-insurance-proposal-forms.html",
+  "source_observed_at": "2026-09-29",
+  "source_capture_method": "public web renderer; direct source HTML returned HTTP 403",
+  "documents": [
+    {
+      "source_link_id": 1,
+      "web_link_id": 66,
+      "label": "En Ultimate Care - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/en-ultimate-care----proposal-form.pdf?rv=0.58039100+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 2,
+      "web_link_id": 67,
+      "label": "Ultimate Joy - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/ultimate-joy---proposal-form.pdf?rv=0.58040700+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 3,
+      "web_link_id": 68,
+      "label": "Special Care - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/special-care---proposal-form.pdf?rv=0.58041800+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 4,
+      "web_link_id": 69,
+      "label": "Protect Plus - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/protect-plus---proposal-form.pdf?rv=0.58042900+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 5,
+      "web_link_id": 70,
+      "label": "Ultimate Care - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/ultimate-care-----proposal-form.pdf?rv=0.58043900+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 6,
+      "web_link_id": 71,
+      "label": "Care Advanced - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-advanced---proposal-form.pdf?rv=0.58044900+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 7,
+      "web_link_id": 72,
+      "label": "Supreme Enhance - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/supreme-enhance---proposal-form.pdf?rv=0.58045800+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 8,
+      "web_link_id": 73,
+      "label": "Secure (Personal Accident Insurance) - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/secure-%28personal-accident-insurance%29---proposal-form.pdf?rv=0.58046900+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 9,
+      "web_link_id": 74,
+      "label": "Care Advantage - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-advantage---proposal-form.pdf?rv=0.58047800+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 10,
+      "web_link_id": 75,
+      "label": "Extra Care - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/extra-care---proposal-form.pdf?rv=0.58048800+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 11,
+      "web_link_id": 76,
+      "label": "Surrogacy and Oocyte Care- Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/surrogacy-and-oocyte-care--proposal-form.pdf?rv=0.58049800+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 12,
+      "web_link_id": 77,
+      "label": "Explore Advantage - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/explore-advantage---proposal-form.pdf?rv=0.58050800+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 13,
+      "web_link_id": 78,
+      "label": "Student Explore Health Unlimited - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/student-explore-health-unlimited----proposal-form.pdf?rv=0.58051800+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 14,
+      "web_link_id": 79,
+      "label": "Explore Protect Plus - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/explore-protect-plus---proposal-form.pdf?rv=0.58052800+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 15,
+      "web_link_id": 80,
+      "label": "Care Saksham - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-saksham---proposal-form.pdf?rv=0.58053800+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 16,
+      "web_link_id": 81,
+      "label": "Instant Care - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/instant-care---proposal-form.pdf?rv=0.58054800+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 17,
+      "web_link_id": 82,
+      "label": "Care OPD - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-opd---proposal-form.pdf?rv=0.58055800+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 18,
+      "web_link_id": 84,
+      "label": "Care (Health Insurance Product) - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-%28health-insurance-product%29---proposal-form.pdf?rv=0.58057800+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 19,
+      "web_link_id": 85,
+      "label": "Care Classic - (Health Insurance Product)-Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-classic---%28health-insurance-product%29-proposal-form.pdf?rv=0.58058800+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 20,
+      "web_link_id": 86,
+      "label": "Joy (Maternity Insurance Product) - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/joy-%28maternity-insurance-product%29---proposal-form.pdf?rv=0.58059800+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 21,
+      "web_link_id": 87,
+      "label": "Group Secure (Group Personal Accident Insurance Product) - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/group-secure-%28group-personal-accident-insurance-product%29---proposal-form.pdf?rv=0.58060900+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 22,
+      "web_link_id": 88,
+      "label": "Group Explore (Group Travel Insurance Product) - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/group-explore-%28group-travel-insurance-product%29---proposal-form.pdf?rv=0.58061900+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 23,
+      "web_link_id": 89,
+      "label": "Group Credit protection (Group Insurance Product)- Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/group-credit-protection-%28group-insurance-product%29--proposal-form.pdf?rv=0.58063000+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 24,
+      "web_link_id": 90,
+      "label": "Group Care 360 (Group Insurance Product) - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/group-care-360-%28group-insurance-product%29---proposal-form.pdf?rv=0.58064000+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 25,
+      "web_link_id": 91,
+      "label": "Group Care (Group Health Insurance Product) - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/group-care-%28group-health-insurance-product%29---proposal-form.pdf?rv=0.58065000+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 26,
+      "web_link_id": 92,
+      "label": "Care Supreme - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---proposal-form.pdf?rv=0.58066000+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 27,
+      "web_link_id": 93,
+      "label": "Senior Health Advantage - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/senior-health-advantage---proposal-form.pdf?rv=0.58067000+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 28,
+      "web_link_id": 94,
+      "label": "Group Global Care - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/group-global-care---proposal-form.pdf?rv=0.58068000+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 29,
+      "web_link_id": 95,
+      "label": "Arogya Sanjeevani Policy - Care Health Insurance (Health Insurance Product) - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/arogya-sanjeevani-policy---care-health-insurance-%28health-insurance-product%29---proposal-form.pdf?rv=0.58069300+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 30,
+      "web_link_id": 96,
+      "label": "Super Mediclaim - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/super-mediclaim---proposal-form.pdf?rv=0.58070300+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 31,
+      "web_link_id": 97,
+      "label": "Student Explore (Travel Insurance Product) - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/student-explore-%28travel-insurance-product%29---proposal-form.pdf?rv=0.58071300+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 32,
+      "web_link_id": 98,
+      "label": "Explore (Travel Insurance Product) - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/explore-%28travel-insurance-product%29---proposal-form.pdf?rv=0.58072300+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 33,
+      "web_link_id": 99,
+      "label": "Domestic Staff Insurance ADD-ON - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/domestic-staff-insurance-add-on---proposal-form.pdf?rv=0.58073400+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 34,
+      "web_link_id": 100,
+      "label": "Care Heart - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-heart---proposal-form.pdf?rv=0.58074300+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 35,
+      "web_link_id": 101,
+      "label": "Care Freedom (Health Insurance Product) - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-freedom-%28health-insurance-product%29---proposal-form.pdf?rv=0.58075400+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 36,
+      "web_link_id": 102,
+      "label": "Care (Health Insurance Product) - Proposal Form (Annexure-II)",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-%28health-insurance-product%29---proposal-form-%28annexure-ii%29.pdf?rv=0.58076400+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 37,
+      "web_link_id": 103,
+      "label": "Assure (Critical Illness Insurance Product) - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/assure-%28critical-illness-insurance-product%29---proposal-form.pdf?rv=0.58077400+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 38,
+      "web_link_id": 104,
+      "label": "Grameen Care Plus (Micro Insurance Product) - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/grameen-care-plus-%28micro-insurance-product%29---proposal-form.pdf?rv=0.58078500+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 39,
+      "web_link_id": 105,
+      "label": "Care Plus -(Health Insurance Product) - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-plus--%28health-insurance-product%29---proposal-form.pdf?rv=0.58079500+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 40,
+      "web_link_id": 106,
+      "label": "Add-on-Explore Plus- Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/add-on-explore-plus--proposal-form.pdf?rv=0.58080500+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 41,
+      "web_link_id": 107,
+      "label": "Care Shield ADD-ON - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-shield-add-on---proposal-form.pdf?rv=0.58081400+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 42,
+      "web_link_id": 108,
+      "label": "Saral Suraksha Bima - Care Health Insurance (Personal Accident Product) - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/saral-suraksha-bima---care-health-insurance-%28personal-accident-product%29---proposal-form.pdf?rv=0.58082500+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 43,
+      "web_link_id": 109,
+      "label": "Group Arogya Sanjeevani Policy - Care Health Insurance - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/group-arogya-sanjeevani-policy---care-health-insurance---proposal-form.pdf?rv=0.58083600+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 44,
+      "web_link_id": 110,
+      "label": "Grameen Care (Micro Insurance Product) - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/grameen-care-%28micro-insurance-product%29---proposal-form.pdf?rv=0.58084600+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 45,
+      "web_link_id": 111,
+      "label": "Corona Kavach-Policy-Care Health Insurance -(Health Insurance Product)-Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/corona-kavach-policy-care-health-insurance--%28health-insurance-product%29-proposal-form.pdf?rv=0.58085700+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 46,
+      "web_link_id": 112,
+      "label": "Enhance (Top-up Insurance Product) - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/enhance-%28top-up-insurance-product%29---proposal-form.pdf?rv=0.58086700+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    },
+    {
+      "source_link_id": 47,
+      "web_link_id": 113,
+      "label": "Group Saral Suraksha Bima - Care Health Insurance (Personal Accident Product) - Proposal Form",
+      "role": "proposal_form",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/group-saral-suraksha-bima---care-health-insurance-%28personal-accident-product%29---proposal-form.pdf?rv=0.58087800+1790584587",
+      "association_status": "unreviewed",
+      "applicability_status": "unresolved"
+    }
+  ],
+  "limitations": [
+    "Proposal forms are discovery and underwriting context, not proof of an issued policy or coverage.",
+    "The source HTML could not be checksummed because the direct page response returned HTTP 403."
+  ]
+}

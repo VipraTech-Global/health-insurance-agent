@@ -8,7 +8,10 @@ from pathlib import Path
 import pytest
 from research_workspace.three_insurer_assessment import assess
 from research_workspace.three_insurer_catalogue import (
+    apply_source_refresh,
     audit_links,
+    merge_source_register,
+    parse_care_roster,
     parse_niva_roster,
     recover_pdf_with_trailing_html,
     scope_lead,
@@ -19,6 +22,8 @@ ROOT = Path(__file__).resolve().parents[3]
 LINKS = ROOT / "research/pilots/three-insurer/source-links-2026-09-27.json"
 ROSTER = ROOT / "research/pilots/three-insurer/niva-roster-2026-09-27.json"
 AUDIT = ROOT / "research/pilots/three-insurer/audit-2026-09-27.json"
+CARE_PROPOSALS = ROOT / "research/pilots/three-insurer/care-proposal-links-2026-09-29.json"
+NIVA_REFRESH = ROOT / "research/pilots/three-insurer/niva-link-refresh-2026-09-29.json"
 STAR_SOURCE = ROOT / "research/pilots/star/source-snapshot-2026-09-27.json"
 STAR_AUDIT = ROOT / "research/pilots/star/pilot-audit-2026-09-27.json"
 
@@ -116,3 +121,60 @@ def test_roster_rejects_duplicate_uin(monkeypatch: pytest.MonkeyPatch) -> None:
     )
     with pytest.raises(ValueError, match="Duplicate roster UIN"):
         parse_niva_roster(b"%PDF-test", "2026-09-27T00:00:00Z")
+
+
+def test_care_dated_roster_keeps_withdrawals_and_currentness_unresolved(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    launched = [f"Plan {i}  CHIHLIP{25000 + i}V012425  01-01-2025" for i in range(39)]
+    launched.append("Arogya Sanjeevani Policy-Care Health  RHIHLIP20154V011920  01-04-2020")
+    body = (
+        "Launched Products:\n"
+        + "\n".join(launched)
+        + "\nWithdrawn Products:\nOld Plan  RHIHLIP21073V012021  01/03/2024\n"
+    )
+    monkeypatch.setattr(
+        "research_workspace.three_insurer_catalogue.text_from_pdf", lambda *_args: body
+    )
+    roster = parse_care_roster(b"%PDF-test", "2026-09-29T00:00:00Z")
+    assert len(roster["products"]) == 41
+    assert roster["source_roster_complete"] is False
+    assert roster["products"][-1]["roster_section"] == "withdrawn"
+    assert roster["products"][39]["name_as_listed"] == (
+        "Arogya Sanjeevani Policy-Care Health Insurance"
+    )
+
+
+def test_care_proposal_supplement_preserves_all_source_links() -> None:
+    base = json.loads(LINKS.read_text())
+    supplement = json.loads(CARE_PROPOSALS.read_text())
+    merged = merge_source_register(base, supplement)
+    assert len(supplement["documents"]) == 47
+    assert len(merged["documents"]) == 685
+    assert len(select_links(merged, "proposal_forms")) == 86
+    assert merged["supplemental_source"]["direct_html_status"] == "http_403"
+    assert "not_attempted" in audit_links(merged, {}, None)["capture_status_counts"]
+
+
+def test_niva_refresh_replaces_only_verified_old_link() -> None:
+    base = json.loads(LINKS.read_text())
+    refresh = json.loads(NIVA_REFRESH.read_text())
+    result = apply_source_refresh(base, refresh)
+    assert len(result["documents"]) == len(base["documents"])
+    heartbeat = [row for row in result["documents"] if row["label"] == "Heartbeat Policy Wording"]
+    assert len(heartbeat) == 1
+    assert heartbeat[0]["url"].endswith("HBPolicy-Wording.pdf?v=1.7")
+    assert heartbeat[0]["applicability_status"] == "unresolved"
+    old_heartbeat = [row for row in base["documents"] if row["label"] == "Heartbeat Policy Wording"]
+    assert old_heartbeat[0]["url"].endswith("HBPolicy-Wording.pdf?v=1.6")
+    wrong = {
+        **refresh,
+        "material_source_changes": [
+            {
+                **refresh["material_source_changes"][0],
+                "previous_url": "https://transactions.nivabupa.com/missing.pdf",
+            }
+        ],
+    }
+    with pytest.raises(ValueError, match="old-link matches"):
+        apply_source_refresh(base, wrong)
