@@ -91,3 +91,23 @@ def test_expanded_ledger_keeps_revision_identity_conflict_visible() -> None:
         for document in ledger["documents"]
     )
     assert ledger["catalogue_complete"] is False
+
+
+def test_niva_exclusion_page_adds_historical_wordings_without_completing_bundle() -> None:
+    star, captures, _, care, niva = _inputs()
+    expanded = json.loads(
+        (PILOT / "three-insurer/audit-2026-09-29-niva-exclusions.json").read_text()
+    )
+    ledger = build_ledger(star, captures, expanded, care, niva)
+    assert ledger["accounting"]["source_document_rows"] == 1070
+    assert ledger["accounting"]["associated_document_rows"] == 793
+    assert ledger["accounting"]["unassigned_document_rows"] == 277
+    assert (
+        sum(
+            doc["role"] == "historical_wording"
+            for doc in ledger["documents"]
+            if doc["insurer_id"] == "niva"
+        )
+        >= 3
+    )
+    assert ledger["catalogue_complete"] is False

@@ -31,6 +31,11 @@ CARE_HANDBOOKS = (
     ROOT / "research/pilots/three-insurer/care-handbooks-exclusions-links-2026-09-29.json"
 )
 CARE_REVISIONS = ROOT / "research/pilots/three-insurer/care-premium-revision-links-2026-09-29.json"
+NIVA_EXCLUSIONS = ROOT / "research/pilots/three-insurer/niva-exclusions-links-2026-09-29.json"
+NIVA_EXCLUSION_TRIAGE = (
+    ROOT / "research/pilots/three-insurer/niva-exclusions-identity-triage-2026-09-29.json"
+)
+NIVA_EXCLUSION_AUDIT = ROOT / "research/pilots/three-insurer/audit-2026-09-29-niva-exclusions.json"
 EXPANDED_AUDIT = ROOT / "research/pilots/three-insurer/audit-2026-09-29-expanded.json"
 REVISION_TRIAGE = (
     ROOT / "research/pilots/three-insurer/care-revision-identity-triage-2026-09-29.json"
@@ -256,3 +261,27 @@ def test_listed_word_and_image_are_preserved_only_after_format_check(tmp_path: P
         },
     )
     assert malformed["status"] == "failed"
+
+
+def test_niva_exclusion_listing_preserves_extra_historical_editions() -> None:
+    register = json.loads(LINKS.read_text())
+    for path in (CARE_PROPOSALS, CARE_HANDBOOKS, CARE_REVISIONS, NIVA_EXCLUSIONS):
+        register = merge_source_register(register, json.loads(path.read_text()))
+    register = apply_source_refresh(register, json.loads(NIVA_REFRESH.read_text()))
+    triage = json.loads(NIVA_EXCLUSION_TRIAGE.read_text())
+    audit = json.loads(NIVA_EXCLUSION_AUDIT.read_text())
+    assert len(register["documents"]) == len(audit["documents"]) == 732
+    assert len(select_links(register, "niva_exclusions")) == 19
+    assert triage["audit_sha256"] == digest(NIVA_EXCLUSION_AUDIT.read_bytes())
+    assert triage["accounting"]["relation_counts"] == {
+        "same_pdf_bytes_as_download_centre": 15,
+        "not_listed_on_download_centre_path": 4,
+    }
+    companion = next(
+        row for row in triage["rows"] if row["label"] == "Health Companion Policy Wording"
+    )
+    assert companion["observed_uins_first_two_pages"] == ["NBHHLIP24115V072324"]
+    assert audit["niva_wording_identity_reconciliation"]["wording_uins_outside_roster"] == [
+        "NBHHLIP24115V072324"
+    ]
+    assert sum(row["role"] == "historical_wording" for row in triage["rows"]) == 3

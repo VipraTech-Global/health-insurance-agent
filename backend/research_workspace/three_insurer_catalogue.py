@@ -67,6 +67,7 @@ CARE_SUPPLEMENT_ROLES = {
     "premium_revision_rationale",
     "customer_communication",
 }
+NIVA_SUPPLEMENT_ROLES = {"policy_wording", "historical_wording", "other_support"}
 PUBLIC_PDF_HEADERS = {"User-Agent": "Mozilla/5.0", "Accept": "application/pdf,*/*;q=0.8"}
 OUTSIDE_SCOPE_HINTS = (
     "group",
@@ -224,19 +225,29 @@ def parse_care_roster(content: bytes, captured_at: str) -> dict[str, Any]:
 
 def merge_source_register(base: dict[str, Any], supplement: dict[str, Any]) -> dict[str, Any]:
     """Add a separately observed official listing without losing source identity."""
-    if supplement.get("insurer_id") != "care" or not supplement.get("source_page"):
-        raise ValueError("Invalid Care supplement")
+    insurer_id = supplement.get("insurer_id")
+    allowed_roles = {
+        "care": CARE_SUPPLEMENT_ROLES,
+        "niva": NIVA_SUPPLEMENT_ROLES,
+    }.get(insurer_id)
+    if allowed_roles is None or not supplement.get("source_page"):
+        raise ValueError("Invalid official supplement")
     additions = []
     for row in supplement.get("documents", []):
-        if row.get("role") not in CARE_SUPPLEMENT_ROLES or not row.get("url"):
-            raise ValueError("Invalid Care supplemental link")
-        additions.append({**row, "insurer_id": "care", "source_page": supplement["source_page"]})
+        if row.get("role") not in allowed_roles or not row.get("url"):
+            raise ValueError("Invalid official supplemental link")
+        additions.append(
+            {**row, "insurer_id": insurer_id, "source_page": supplement["source_page"]}
+        )
     if not additions:
-        raise ValueError("Care supplement is empty")
+        raise ValueError("Official supplement is empty")
     documents = [*base["documents"], *additions]
-    identities = [(row["insurer_id"], row["url"]) for row in documents]
+    identities = [
+        (row["insurer_id"], row["source_page"], row["source_link_id"], row["label"])
+        for row in documents
+    ]
     if len(identities) != len(set(identities)):
-        raise ValueError("Duplicate insurer document URL after supplement")
+        raise ValueError("Duplicate source row after supplement")
     return {
         **base,
         "captured_at": supplement["source_observed_at"],
@@ -282,9 +293,12 @@ def apply_source_refresh(register: dict[str, Any], refresh: dict[str, Any]) -> d
         matches[0]["applicability_status"] = "unresolved"
     if not refresh.get("material_source_changes"):
         raise ValueError("Niva source refresh has no changes")
-    identities = [(row["insurer_id"], row["url"]) for row in documents]
+    identities = [
+        (row["insurer_id"], row["source_page"], row["source_link_id"], row["label"])
+        for row in documents
+    ]
     if len(identities) != len(set(identities)):
-        raise ValueError("Duplicate insurer document URL after refresh")
+        raise ValueError("Duplicate source row after refresh")
     return {
         **register,
         "captured_at": refresh["observed_at"],
@@ -327,6 +341,13 @@ def select_links(register: dict[str, Any], scope: str) -> list[dict[str, Any]]:
             for row in rows
             if row.get("insurer_id") == "care"
             and row.get("role") in CARE_SUPPLEMENT_ROLES - {"proposal_form"}
+        ]
+    if scope == "niva_exclusions":
+        return [
+            row
+            for row in rows
+            if row["insurer_id"] == "niva"
+            and row["source_page"] == "https://transactions.nivabupa.com/pages/exclusions.aspx"
         ]
     raise ValueError(f"Unknown capture scope: {scope}")
 
@@ -635,6 +656,7 @@ def audit_links(
             else "Care proposal-form links are inventoried, but applicability is unreviewed.",
             "Document editions, variants, options, schedules and amendments are not reconciled.",
             "Care premium-revision table and linked customer-communication UINs differ in some rows; version applicability needs review.",
+            "Niva's exclusions listing contains versionless wording links; their editions need reconciliation with its download centre.",
             "No policy rules or independent held-out assessment are reviewed.",
         ],
     }
@@ -647,7 +669,14 @@ def main() -> None:
     parser.add_argument("--links", required=True, type=Path)
     parser.add_argument(
         "--scope",
-        choices=("all", "current", "wordings", "proposal_forms", "additional_care_sources"),
+        choices=(
+            "all",
+            "current",
+            "wordings",
+            "proposal_forms",
+            "additional_care_sources",
+            "niva_exclusions",
+        ),
         default="current",
     )
     parser.add_argument("--supplement", action="append", type=Path)

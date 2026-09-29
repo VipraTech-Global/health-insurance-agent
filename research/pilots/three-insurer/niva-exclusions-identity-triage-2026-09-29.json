@@ -1,0 +1,284 @@
+{
+  "accounting": {
+    "link_count": 19,
+    "relation_counts": {
+      "not_listed_on_download_centre_path": 4,
+      "same_pdf_bytes_as_download_centre": 15
+    }
+  },
+  "audit_sha256": "a19cf947c658adb01cd8dfe6b8b0f958467110ce360cdc17c421d5e1897499c6",
+  "blockers": [
+    "The Health Companion wording linked from the exclusions page has UIN NBHHLIP24115V072324, while the current offered-products roster lists NBHHLIP26051V092526.",
+    "The 2023 withdrawal register classifies Group Criticare, Group Health Secure and Employee First as withdrawn, but other exclusion-page editions remain unreviewed."
+  ],
+  "format_version": 1,
+  "method": "Compare captured bytes against refreshed download-centre URLs by URL path; first-two-page identity only.",
+  "rows": [
+    {
+      "download_centre_sha256": "5aaff91835ef2dbfeedce2d63c5bbdffc3ab62e3fea474cc9dfa34a9bcd80823",
+      "download_centre_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/goactive-policy-document.pdf?v=1.1",
+      "edition_applicability": "unresolved",
+      "label": "GoActive",
+      "observed_uins_first_two_pages": [
+        "NBHHLIP26046V032526"
+      ],
+      "relation_to_download_centre": "same_pdf_bytes_as_download_centre",
+      "role": "policy_wording",
+      "sha256": "5aaff91835ef2dbfeedce2d63c5bbdffc3ab62e3fea474cc9dfa34a9bcd80823",
+      "source_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/goactive-policy-document.pdf",
+      "withdrawal_date_as_listed": null
+    },
+    {
+      "download_centre_sha256": "1221e8636a44828e7c85c071f04b2e132624dd057ccbdb96327b43f940dec53d",
+      "download_centre_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Health-Assurance-Policy-Wording.pdf?v=1.0",
+      "edition_applicability": "unresolved",
+      "label": "Health Assurance Policy Wording",
+      "observed_uins_first_two_pages": [],
+      "relation_to_download_centre": "same_pdf_bytes_as_download_centre",
+      "role": "policy_wording",
+      "sha256": "1221e8636a44828e7c85c071f04b2e132624dd057ccbdb96327b43f940dec53d",
+      "source_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Health-Assurance-Policy-Wording.pdf",
+      "withdrawal_date_as_listed": null
+    },
+    {
+      "download_centre_sha256": "2e4c4347525b5b1f87d54c6c38a8e034e46c3c833e1f829f0e1b0041685b7c6a",
+      "download_centre_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/health-recharge-t-and-c.pdf?v=1.0",
+      "edition_applicability": "unresolved",
+      "label": "Health Recharge Policy Wording",
+      "observed_uins_first_two_pages": [
+        "NBHHLIP22156V032122"
+      ],
+      "relation_to_download_centre": "same_pdf_bytes_as_download_centre",
+      "role": "policy_wording",
+      "sha256": "2e4c4347525b5b1f87d54c6c38a8e034e46c3c833e1f829f0e1b0041685b7c6a",
+      "source_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/health-recharge-t-and-c.pdf",
+      "withdrawal_date_as_listed": null
+    },
+    {
+      "download_centre_sha256": "c05b3dd3e5a7bf24037287fded39c78ddb6b2e40011609e4daa3933419061729",
+      "download_centre_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/HBPolicy-Wording.pdf?v=1.7",
+      "edition_applicability": "unresolved",
+      "label": "Heartbeat Policy Wording",
+      "observed_uins_first_two_pages": [
+        "NBHHLIP27058V102627"
+      ],
+      "relation_to_download_centre": "same_pdf_bytes_as_download_centre",
+      "role": "policy_wording",
+      "sha256": "c05b3dd3e5a7bf24037287fded39c78ddb6b2e40011609e4daa3933419061729",
+      "source_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/HBPolicy-Wording.pdf",
+      "withdrawal_date_as_listed": null
+    },
+    {
+      "download_centre_sha256": null,
+      "download_centre_url": null,
+      "edition_applicability": "unresolved",
+      "label": "Health Companion Policy Wording",
+      "observed_uins_first_two_pages": [
+        "NBHHLIP24115V072324"
+      ],
+      "relation_to_download_centre": "not_listed_on_download_centre_path",
+      "role": "policy_wording",
+      "sha256": "2038e3540754bc070d24f034d6d14bd79716f6c5dd1e33432b1c9dd4f322ed56",
+      "source_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/health-companion-policy-wording.pdf",
+      "withdrawal_date_as_listed": null
+    },
+    {
+      "download_centre_sha256": null,
+      "download_centre_url": null,
+      "edition_applicability": "unresolved",
+      "label": "Group Criticare Policy Wording",
+      "observed_uins_first_two_pages": [],
+      "relation_to_download_centre": "not_listed_on_download_centre_path",
+      "role": "historical_wording",
+      "sha256": "b4406fdbe5302e530cc9d30ab9ea024a528e610a38ec8f61f5276e5812e4c5a8",
+      "source_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/group-criticare-policy-wording.pdf",
+      "withdrawal_date_as_listed": "2020-10-01"
+    },
+    {
+      "download_centre_sha256": null,
+      "download_centre_url": null,
+      "edition_applicability": "unresolved",
+      "label": "Group Health Secure Policy Wording",
+      "observed_uins_first_two_pages": [],
+      "relation_to_download_centre": "not_listed_on_download_centre_path",
+      "role": "historical_wording",
+      "sha256": "a96a1838b000eb8d1b256639fd8665098178eb41d303c8b1185eafbe0de15cf8",
+      "source_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/group-health-secure-terms-and-conditions.pdf",
+      "withdrawal_date_as_listed": "2020-10-01"
+    },
+    {
+      "download_centre_sha256": "0c83d23eb48b35b971037717a9b06536dc52b6130a19e73410ec877e5c059821",
+      "download_centre_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/healthplus-policydocument.pdf?v=1.7",
+      "edition_applicability": "unresolved",
+      "label": "Health Plus Policy Document",
+      "observed_uins_first_two_pages": [
+        "NBHHLGP27057V042627"
+      ],
+      "relation_to_download_centre": "same_pdf_bytes_as_download_centre",
+      "role": "policy_wording",
+      "sha256": "0c83d23eb48b35b971037717a9b06536dc52b6130a19e73410ec877e5c059821",
+      "source_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/healthplus-policydocument.pdf",
+      "withdrawal_date_as_listed": null
+    },
+    {
+      "download_centre_sha256": "768826d18ad9af0f5a5dd7440c5c5f1d3c1a1cf320450ef76c8c7081dff533bf",
+      "download_centre_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/health-pulse-t-and-c.pdf?v=1.2",
+      "edition_applicability": "unresolved",
+      "label": "Health Pulse Policy Wording",
+      "observed_uins_first_two_pages": [
+        "NBHHLIP27055V052627"
+      ],
+      "relation_to_download_centre": "same_pdf_bytes_as_download_centre",
+      "role": "policy_wording",
+      "sha256": "768826d18ad9af0f5a5dd7440c5c5f1d3c1a1cf320450ef76c8c7081dff533bf",
+      "source_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/health-pulse-t-and-c.pdf",
+      "withdrawal_date_as_listed": null
+    },
+    {
+      "download_centre_sha256": "4cac748cb130ac53576b79853d6979c34a62eb67a1b8d22b811f56ed088be69f",
+      "download_centre_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Health-Premia-Policy-Wording.pdf?v=1.0",
+      "edition_applicability": "unresolved",
+      "label": "Health Premia Policy Wording",
+      "observed_uins_first_two_pages": [
+        "MAXHLIP21176V022021"
+      ],
+      "relation_to_download_centre": "same_pdf_bytes_as_download_centre",
+      "role": "policy_wording",
+      "sha256": "4cac748cb130ac53576b79853d6979c34a62eb67a1b8d22b811f56ed088be69f",
+      "source_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Health-Premia-Policy-Wording.pdf",
+      "withdrawal_date_as_listed": null
+    },
+    {
+      "download_centre_sha256": "6cfb316dcde891b34a6e608d80fc5d9df97b77f8570fa50a579abfbd1fa94b8d",
+      "download_centre_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Zero-co-pay-Endorsement-Document.pdf",
+      "edition_applicability": "unresolved",
+      "label": "Zero Co-Pay Endorsement Document",
+      "observed_uins_first_two_pages": [
+        "NBHHLIA22175V012122"
+      ],
+      "relation_to_download_centre": "same_pdf_bytes_as_download_centre",
+      "role": "other_support",
+      "sha256": "6cfb316dcde891b34a6e608d80fc5d9df97b77f8570fa50a579abfbd1fa94b8d",
+      "source_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Zero-co-pay-Endorsement-Document.pdf",
+      "withdrawal_date_as_listed": null
+    },
+    {
+      "download_centre_sha256": "e7a867eed5138dd7e6cce0d9127f26e1cc6a99d1eef90295b8ee4b6196644ebe",
+      "download_centre_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/TravelAssure-Policy-Wording.pdf?v=1.5",
+      "edition_applicability": "unresolved",
+      "label": "Travel Assure Policy Wording",
+      "observed_uins_first_two_pages": [
+        "NBHTIOP26043V022526"
+      ],
+      "relation_to_download_centre": "same_pdf_bytes_as_download_centre",
+      "role": "policy_wording",
+      "sha256": "e7a867eed5138dd7e6cce0d9127f26e1cc6a99d1eef90295b8ee4b6196644ebe",
+      "source_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/TravelAssure-Policy-Wording.pdf",
+      "withdrawal_date_as_listed": null
+    },
+    {
+      "download_centre_sha256": "f5ecb7cb44806e3dd6a55dd87d7678d40405d36371a287f0fa1d075b20ff4e72",
+      "download_centre_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/PA-Plan-Policy-wording.pdf?v=1.2",
+      "edition_applicability": "unresolved",
+      "label": "Personal Accident Policy Wording",
+      "observed_uins_first_two_pages": [
+        "NBHPAIP25036V022425"
+      ],
+      "relation_to_download_centre": "same_pdf_bytes_as_download_centre",
+      "role": "policy_wording",
+      "sha256": "f5ecb7cb44806e3dd6a55dd87d7678d40405d36371a287f0fa1d075b20ff4e72",
+      "source_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/PA-Plan-Policy-wording.pdf",
+      "withdrawal_date_as_listed": null
+    },
+    {
+      "download_centre_sha256": "48a2ab6a91eb5a841e6dc38a682d16934527a3600e86ecdec956c978bc4d06ba",
+      "download_centre_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Swasthya-Suraksha-Policy-Wording.pdf?v=1.4",
+      "edition_applicability": "unresolved",
+      "label": "Swasthya Suraksha Policy Wording",
+      "observed_uins_first_two_pages": [
+        "NBHHLGP22117V012122"
+      ],
+      "relation_to_download_centre": "same_pdf_bytes_as_download_centre",
+      "role": "policy_wording",
+      "sha256": "48a2ab6a91eb5a841e6dc38a682d16934527a3600e86ecdec956c978bc4d06ba",
+      "source_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Swasthya-Suraksha-Policy-Wording.pdf",
+      "withdrawal_date_as_listed": null
+    },
+    {
+      "download_centre_sha256": "76fd30879d5c237c032bb3dce83df6d614c379b07ef0a6d96a166a4a13d73f27",
+      "download_centre_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Smart-HealthplusEndorsement-Document.pdf?v=1.0",
+      "edition_applicability": "unresolved",
+      "label": "Smart Health+ Endorsement Document",
+      "observed_uins_first_two_pages": [
+        "NBHHLIA22164V012122"
+      ],
+      "relation_to_download_centre": "same_pdf_bytes_as_download_centre",
+      "role": "other_support",
+      "sha256": "76fd30879d5c237c032bb3dce83df6d614c379b07ef0a6d96a166a4a13d73f27",
+      "source_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Smart-HealthplusEndorsement-Document.pdf",
+      "withdrawal_date_as_listed": null
+    },
+    {
+      "download_centre_sha256": "b78b6cff748a20fffe4cf1bedb95a73869ec60c5bc27ae59d534ae94e915e974",
+      "download_centre_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Elixir_PolicyWording.pdf",
+      "edition_applicability": "unresolved",
+      "label": "Elixir Policy Wording",
+      "observed_uins_first_two_pages": [
+        "NBHHLIP23156V012223"
+      ],
+      "relation_to_download_centre": "same_pdf_bytes_as_download_centre",
+      "role": "policy_wording",
+      "sha256": "b78b6cff748a20fffe4cf1bedb95a73869ec60c5bc27ae59d534ae94e915e974",
+      "source_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Elixir_PolicyWording.pdf",
+      "withdrawal_date_as_listed": null
+    },
+    {
+      "download_centre_sha256": "366e08afe7e9b71238d74db9e9988767c901b8e3eabca7ffc30c4892c6b210c5",
+      "download_centre_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/ReAssure-Policy-Wording.pdf?v=1.5",
+      "edition_applicability": "unresolved",
+      "label": "ReAssure Policy Wording",
+      "observed_uins_first_two_pages": [
+        "NBHHLIP26050V042526"
+      ],
+      "relation_to_download_centre": "same_pdf_bytes_as_download_centre",
+      "role": "policy_wording",
+      "sha256": "366e08afe7e9b71238d74db9e9988767c901b8e3eabca7ffc30c4892c6b210c5",
+      "source_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/ReAssure-Policy-Wording.pdf",
+      "withdrawal_date_as_listed": null
+    },
+    {
+      "download_centre_sha256": "bd00c98a432db2c343736278f2c9c787608a036f6ff4eff406ca920286999e0f",
+      "download_centre_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/ReAssure-2.0-Policy-Wording.pdf?v=1.8",
+      "edition_applicability": "unresolved",
+      "label": "ReAssure 2.0 Policy Wording",
+      "observed_uins_first_two_pages": [
+        "NBHHLIP27054V032627"
+      ],
+      "relation_to_download_centre": "same_pdf_bytes_as_download_centre",
+      "role": "policy_wording",
+      "sha256": "bd00c98a432db2c343736278f2c9c787608a036f6ff4eff406ca920286999e0f",
+      "source_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/ReAssure-2.0-Policy-Wording.pdf",
+      "withdrawal_date_as_listed": null
+    },
+    {
+      "download_centre_sha256": null,
+      "download_centre_url": null,
+      "edition_applicability": "unresolved",
+      "label": "Employee First Policy Wording",
+      "observed_uins_first_two_pages": [],
+      "relation_to_download_centre": "not_listed_on_download_centre_path",
+      "role": "historical_wording",
+      "sha256": "a88bb20f3de1bf13c0a54eca379f7a5e042a3b6f4090ca029eb21390eeb6f09f",
+      "source_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Employ-FirstPolicyWording.pdf",
+      "withdrawal_date_as_listed": "2020-10-01"
+    }
+  ],
+  "source_page": "https://transactions.nivabupa.com/pages/exclusions.aspx",
+  "source_register_sha256": "671b9a20db51e48ada192724b4f375080f5c08474b6e54205a20ca68514186c4",
+  "withdrawn_register": {
+    "sha256": "234d2ff05955aeeaa9e81ee621c3566740406cea4e9aa7a20262d5b580817249",
+    "updated_on": "2023-01-17",
+    "url": "https://www.nivabupa.com/content/dam/nivabupa/PDF/Modified%20and%20Withdrawn%20Products_17012023.pdf",
+    "withdrawal_date_for_historical_rows": "2020-10-01"
+  }
+}
