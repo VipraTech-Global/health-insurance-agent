@@ -1,0 +1,70 @@
+{
+  "catalogue_complete": false,
+  "document_refetch": {
+    "care": {
+      "http_statuses": {
+        "200": 149,
+        "404": 2
+      },
+      "known_current_urls_refetched": 151,
+      "response_statuses": {
+        "acquired": 149,
+        "failed": 2
+      },
+      "successful_bytes_changed": 0
+    },
+    "niva": {
+      "http_statuses": {
+        "200": 200
+      },
+      "known_current_urls_refetched": 200,
+      "response_statuses": {
+        "acquired": 102,
+        "failed": 98
+      },
+      "successful_bytes_changed": 0
+    },
+    "star": {
+      "known_primary_urls_refetched": 85,
+      "response_statuses": {
+        "acquired": 85
+      },
+      "successful_bytes_changed": 0
+    }
+  },
+  "failure_details": {
+    "care_404_urls": [
+      "https://cms.careinsurance.com/cms/public/uploads/download_center/joy---policy-terms-and-conditions.pdf?rv=0.71672700%201668687223",
+      "https://cms.careinsurance.com/cms/public/uploads/download_center/secure--policy-terms-&-conditions-%28effective-from-05-march-2025%29.pdf?rv=0.60411600%201599731943"
+    ],
+    "niva_captcha_response_http_status": 200,
+    "niva_captcha_url_count": 98
+  },
+  "format_version": 1,
+  "full_report_paths": [
+    "/home/akhilesh/Projects/coverguide-star-pilot-data/star/primary-refresh-2026-09-29.json",
+    "/home/akhilesh/Projects/coverguide-star-pilot-data/three-insurer/current-refresh-2026-09-29.json"
+  ],
+  "full_report_sha256": [
+    "50d55c6fceebfaa08533951653a8c5ea26131550bbc554bfff5a3bdcf95be77c",
+    "2dc22559ea7151217f07a0709eea722ae29444dc962cdb83784faa2dee76220f"
+  ],
+  "limitations": [
+    "This batch checks known URLs, not every link that might have been newly added to Care listings.",
+    "A matching byte hash does not establish edition, option, variant, or policy-date applicability.",
+    "Niva CAPTCHA responses and two Care 404s leave those URLs unverified on this refresh; previously preserved originals remain available for review."
+  ],
+  "method": "One bounded bulk re-fetch of current known URLs; SHA-256 comparison with earlier preserved response bytes. Failed response bodies are retained in the isolated artifact store.",
+  "observed_at": "2026-09-29",
+  "source_state": {
+    "care_launch_register_bytes_changed": false,
+    "care_launch_register_rows": 51,
+    "care_listing_links_freshness": "unverified_raw_listing_due_intermittent_403",
+    "niva_main_and_vernacular_anchor_url_sets_changed": false,
+    "niva_offered_products_bytes_changed": false,
+    "niva_offered_products_rows": 44,
+    "star_document_url_set_changed": false,
+    "star_product_uin_set_changed": false,
+    "star_product_uins": 56
+  }
+}

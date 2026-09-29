@@ -2,6 +2,10 @@
 
 Base snapshot: 2026-09-27. Catalogue follow-up: 2026-09-29. This remains an internal source inventory, not a reviewed catalogue or customer release. It does not publish or change the customer adviser.
 
+## Bulk freshness check on 29 September
+
+`bulk-refresh-2026-09-29.json` records a single bounded re-fetch of 436 known current-document URLs. All 85 Star primary-candidate PDFs, 149 of 151 Care PDFs, and 102 of 200 Niva PDFs returned readable PDFs with bytes identical to the preserved copies. Two Care product-page links still returned HTTP 404. The other 98 Niva URLs returned HTTP 200 CAPTCHA HTML rather than PDFs; their earlier captured PDFs remain preserved, but this refresh cannot establish their current bytes. Star's live roster still has the same 56 UINs and document URL set, while the Care launch-register PDF and Niva offered-products PDF have unchanged bytes. Niva's main and vernacular anchor URL sets are unchanged despite dynamic HTML bytes. Care listing pages intermittently returned HTTP 403 to direct and browser requests, so a complete fresh Care link-set comparison remains open. Bulk capture took minutes; it did not determine which edition, option, variant, or supporting document legally applies together.
+
 ## Sources and captured material
 
 - Star: [product list](https://www.starhealth.in/list-products/) and [downloads](https://www.starhealth.in/downloads/), audited in `../star/`. The list has 56 products; 13 are provisional primary hospitalisation candidates, including the three-product pilot.
