@@ -1,0 +1,1885 @@
+{
+  "accounting": {
+    "candidate_uin_absent_urls": 0,
+    "cross_role_url_count": 1,
+    "excluded_expenses_option_condition_urls": 2,
+    "excluded_expenses_phrase_counts": {
+      "coverage_available": 1,
+      "coverage_not_available": 7,
+      "neither_phrase_found": 2
+    },
+    "listed_role_counts": {
+      "customer_information_sheet": 13,
+      "excluded_expenses": 10,
+      "modern_treatment_schedule": 13,
+      "policy_wording": 13,
+      "preventive_health_schedule": 5,
+      "prospectus": 13
+    },
+    "primary_candidate_products": 13,
+    "review_document_urls": 66,
+    "review_role_associations": 67
+  },
+  "blockers": [
+    "Observed UIN and code strings do not establish edition or variant applicability.",
+    "The excluded-expenses sheet for Star Health Assure says coverage is available under that heading.",
+    "The Star Health Premier modern-treatment listing reuses its policy-wording PDF URL.",
+    "Smart Health Pro and Super Star excluded-expenses sheets state an optional-cover condition that needs variant review.",
+    "Every variant, option, applicable document bundle, and product scope still needs review."
+  ],
+  "catalogue_complete": false,
+  "documents": [
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26045V042526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26045V042526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "customer_information_sheet"
+      ],
+      "observed_code_strings_full_text": [
+        "CIS / ASP / V.4 / 2025"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP26045V042526"
+      ],
+      "page_count": 16,
+      "sha256": "f222f8ea5d6b407430a05ff1677c5a89e507ae43fd7306ee86e6a3694b5630d2",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/CIS_Arogya_Sanjeevani_Insurance_Policy_V_2_54bfcb3b5e.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26046V092526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26046V092526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "customer_information_sheet"
+      ],
+      "observed_code_strings_full_text": [
+        "CIS / FHO / V.6 / 2026"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP26046V092526"
+      ],
+      "page_count": 17,
+      "sha256": "5527cb614c86736ca494d8ce97cce70abeca12ef861c425bbf011627dbc8ae35",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/CIS_Family_Health_Optima_Insurance_Plan_V_2_b5d9cdf635.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26047V092526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26047V092526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "customer_information_sheet"
+      ],
+      "observed_code_strings_full_text": [
+        "CIS / MCI / V.5 / 2026"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP26047V092526"
+      ],
+      "page_count": 18,
+      "sha256": "1037793484539a871cfb5136f682261ad170c859df8ddf06766b5bbfa487ad37",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/CIS_Medi_Classic_Insurance_Policy_Individual_V_2_c82b6ef8f2.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26041V082526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26041V082526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "customer_information_sheet"
+      ],
+      "observed_code_strings_full_text": [
+        "CIS / SCRC / V.4 / 2025"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP26041V082526"
+      ],
+      "page_count": 18,
+      "sha256": "3d5d8c4624e7e26126107dc1a66e0fb366ecaa80ca0fb7bfe70cf0a97cf8d15f",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/CIS_Senior_Citizens_Red_Carpet_Policy_V_4_4e26e34b21.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP23172V012223"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP23172V012223"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "customer_information_sheet"
+      ],
+      "observed_code_strings_full_text": [
+        "CIS / SHPRO / V.3 / 2025"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP23172V012223"
+      ],
+      "page_count": 14,
+      "sha256": "31a00d0ec8e49011068116fa7736ed52f45d92f52654f37ab601d4acb6625563",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/CIS_Smart_Health_Pro_V_2_fe6b42155e.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26044V092526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26044V092526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "customer_information_sheet"
+      ],
+      "observed_code_strings_full_text": [
+        "CIS / COMP / V.5 / 2025"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP26044V092526"
+      ],
+      "page_count": 20,
+      "sha256": "afe91f7446ed4dfc6090d3ce746386cf182ab5b094c9c6ae1b5af81a1375e665",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/CIS_Star_Comprehensive_Insurance_Policy_V_2_69c15a9ee1.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26048V032526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26048V032526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "customer_information_sheet"
+      ],
+      "observed_code_strings_full_text": [
+        "CIS / SHA / V.7 / 2026"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP26048V032526"
+      ],
+      "page_count": 21,
+      "sha256": "9b577e1226bbfde552575bedf8e0b74edf792a2db5c788b008196d99f23d5f2e",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/CIS_Star_Health_Assure_Insurance_Policy_V_2_380ce4ce6b.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP21262V032021"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP21262V032021"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "customer_information_sheet"
+      ],
+      "observed_code_strings_full_text": [
+        "CIS / GAIN / V.2 / 2025"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP21262V032021"
+      ],
+      "page_count": 14,
+      "sha256": "8db797e6df61f22d2a3cf52c63a0b2fff5ceae0934b82b7ea56469c2ad03a2fa",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/CIS_Star_Health_Gain_Insurance_Policy_V_2_02d304d58a.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP22226V012122"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP22226V012122"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "customer_information_sheet"
+      ],
+      "observed_code_strings_full_text": [
+        "CIS / SHP / V.3 / 2025"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP22226V012122"
+      ],
+      "page_count": 15,
+      "sha256": "12a4b013d4e975a80894c1e329b14acf82f02e3637dba2d68a57580ef16a96d3",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/CIS_Star_Health_Premier_Insurance_Policy_V_2_f232a015a9.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHMIP22038V032122"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHMIP22038V032122"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "customer_information_sheet"
+      ],
+      "observed_code_strings_full_text": [
+        "CIS / SMRF / V.3 / 2025"
+      ],
+      "observed_uins_full_text": [
+        "SHAHMIP22038V032122"
+      ],
+      "page_count": 13,
+      "sha256": "fc7bc8757c2eed81f54a1b77f509e6f537f2c4a1aeb73e60d86f7642a82a9514",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/CIS_Star_Micro_Rural_And_Farmers_Care_V_2_723fa1ad09.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP23132V022223"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP23132V022223"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "customer_information_sheet"
+      ],
+      "observed_code_strings_full_text": [
+        "CIS / SWC / V.3 / 2025"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP23132V022223"
+      ],
+      "page_count": 20,
+      "sha256": "5cc0527f00713c9719a6013a01b9429360114690f55b7f16d3e54c762205e244",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/CIS_Star_Women_Care_Insurance_Policy_V_2_c191b434ab.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP27049V022627"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP27049V022627"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "customer_information_sheet"
+      ],
+      "observed_code_strings_full_text": [
+        "CIS / SS / V.4 / 2026"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP27049V022627"
+      ],
+      "page_count": 18,
+      "sha256": "2e00f24e049bf6df7516786774d2b65ea0e9f4ebfd38124a43b4f972e4fc64bd",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/CIS_Super_Star_V_2_89eb6ddab6.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26043V062526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26043V062526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "customer_information_sheet"
+      ],
+      "observed_code_strings_full_text": [
+        "CIS / YSI / V.5 / 2025"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP26043V062526"
+      ],
+      "page_count": 14,
+      "sha256": "f61f51ba13fe8a0eeb9f18be86d7eb09150ee9195dd3fb7aab15c06d5f04c55c",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/CIS_Young_Star_Insurance_Policy_V_2_090b7cbb41.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26046V092526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26046V092526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": "coverage_not_available",
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "excluded_expenses"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / SS / V.1 / 2024"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP26046V092526"
+      ],
+      "page_count": 1,
+      "sha256": "1def1773a1a07694531572b226a8ecbd1faefaec2e348d5e191cd32633e4c9b4",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/FHO_Other_excluded_b6ac7e9f79.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26048V032526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26048V032526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": "coverage_available",
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "excluded_expenses"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / SS / V.1 / 2024"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP26048V032526"
+      ],
+      "page_count": 1,
+      "sha256": "1f277749e6cbce0dac5e9a1ca0fdf2a8790c71a2bf12d7169a7ebf9a897e04da",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Health_Assure_List_of_Excluded_Expenses_9be58ee6be.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26047V092526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26047V092526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "preventive_health_schedule"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIP26047V092526"
+      ],
+      "page_count": 1,
+      "sha256": "5100c8a0e3ad93af230fef3e846dbb1a21a11a201f75d7b758afb7231d4935e2",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/MCI_Preventive_Health_Checkup_1ea176ce69.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26045V042526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26045V042526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "modern_treatment_schedule"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIP26045V042526"
+      ],
+      "page_count": 2,
+      "sha256": "976d2344c87f1cf13ba9d5d877f35c33cb2eabe67ef6b44cc283e9ca38889783",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Arogya_Sanjeevani_Policy_10ed7a4391.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26046V092526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26046V092526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "modern_treatment_schedule"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIP26046V092526"
+      ],
+      "page_count": 2,
+      "sha256": "066c9150d12c1df1f1fa04c326bd273afd3f78639c705195c5923e9293019c11",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Family_Health_Optima_Insurance_Plan_9428c181fe.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26047V092526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26047V092526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "modern_treatment_schedule"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIP26047V092526"
+      ],
+      "page_count": 4,
+      "sha256": "aeff2b2b488193294bb4ff513133769d5671467a846764ae80897046235f7e6d",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Medi_classic_Insurance_Policy_Individual_7c648b3606.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26041V082526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26041V082526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "modern_treatment_schedule"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIP26041V082526"
+      ],
+      "page_count": 3,
+      "sha256": "f9f9fbbaa7cfc79bd6e1bcd32c1be82640caca701524b1be2550c845042cff33",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Senior_Citizens_Red_Carpet_Health_Insurance_Policy_d9f7c83493.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP23172V012223"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP23172V012223"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "modern_treatment_schedule"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIP23172V012223"
+      ],
+      "page_count": 1,
+      "sha256": "77134f1a823f9333442b061b5831024382e15b71a72a4cdaeaf0eea252241d2e",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Smart_Health_Pro_3f05d17fb5.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26044V092526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26044V092526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "modern_treatment_schedule"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIP26044V092526"
+      ],
+      "page_count": 2,
+      "sha256": "a167e20343d2dfbecf51bebcd64ac0fde4e3ba35431f27490fe94ca6cfadc480",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Star_Comprehensive_Insurance_Policy_627f5a8912.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26048V032526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26048V032526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "modern_treatment_schedule"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIP26048V032526"
+      ],
+      "page_count": 1,
+      "sha256": "4e199d99893cb7966344788f6994137c4d09a7aa8c59aff6439c6e2036ec0667",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Star_Health_Assure_Insurance_Policy_7746fe52d9.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP21262V032021"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP21262V032021"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "modern_treatment_schedule"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIP21262V032021"
+      ],
+      "page_count": 1,
+      "sha256": "494a08c720f440e9fbc6ae7a6ef08657f2fcead6b1c8e4fd0182790dc13f814f",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Star_Health_Gain_Insurance_Policy_7c2f36bb6b.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHMIP22038V032122"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHMIP22038V032122"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "modern_treatment_schedule"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHMIP22038V032122"
+      ],
+      "page_count": 1,
+      "sha256": "cd9128c16f5c504fe3670a4ea05b1d686ae21c0701eaad7d69b8b0b3a74fcd44",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Star_Micro_Rural_And_Farmers_Care_628225170a.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP27049V022627"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP27049V022627"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "modern_treatment_schedule"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIP27049V022627"
+      ],
+      "page_count": 1,
+      "sha256": "d21b5f7cc18a0aadf3d5836caf97670336f13e743e1c8c35461317cbc05d8325",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Super_Star_af754b45a9.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP23132V022223"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP23132V022223"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "modern_treatment_schedule"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIP23132V022223"
+      ],
+      "page_count": 1,
+      "sha256": "64ea7129080a46b6a4f555684a2813738c1cda33dc3feebbe9d5e006666c0a99",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Women_Care_Insurance_Policy_8e0d0ac9ad.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26043V062526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26043V062526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "modern_treatment_schedule"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIP26043V062526"
+      ],
+      "page_count": 2,
+      "sha256": "728e98db80c7881695010dadf4de4550099c41ae7d8f0a78c0b191b9c031c9aa",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Young_Star_Insurance_Policy_94395476fb.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP23172V012223"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP23172V012223"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": "neither_phrase_found",
+      "excluded_expenses_option_condition": "Not Applicable if Optional Cover “Coverage for Non-Medical Items (Consumables)\" is opted by the insured)",
+      "listed_roles": [
+        "excluded_expenses"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIP23172V012223"
+      ],
+      "page_count": 1,
+      "sha256": "5f2c822982a36262e8c5a5fb12bf15e10240ede8735189b516794e86643adb39",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Other_Excluded_Expenses_Smart_Health_Pro_efa1ad9ea1.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHMIP22038V032122"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHMIP22038V032122"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": "coverage_not_available",
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "excluded_expenses"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHMIP22038V032122"
+      ],
+      "page_count": 1,
+      "sha256": "5e55dc65f73cb7345832aec1f6783d5d0add4559c4d90d2b38a5efb9eba1fe96",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Other_Excluded_Expenses_Star_Micro_Rural_And_Farmers_Care_23bc3999ca.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP27049V022627"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP27049V022627"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": "neither_phrase_found",
+      "excluded_expenses_option_condition": "Not Applicable if Optional Cover “Coverage for Non-Medical Items (Consumables)” is opted by the insured)",
+      "listed_roles": [
+        "excluded_expenses"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / SS / V.1 / 2024"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP27049V022627"
+      ],
+      "page_count": 1,
+      "sha256": "0a680613bf724f405c45b15da485051c627f6c424caac646db5ed6340e78a5ee",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Other_Excluded_Expenses_Super_Star_9c8ee6562e.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26043V062526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26043V062526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": "coverage_not_available",
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "excluded_expenses"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / SS / V.1 / 2024"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP26043V062526"
+      ],
+      "page_count": 1,
+      "sha256": "759deefd22667444860f9b8c3d3740e3eebfcb5297b49136291efa8b70bf1c32",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Other_Excluded_Expenses_Young_Star_Insurance_Policy_26c045cd1a.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26045V042526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26045V042526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "policy_wording"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / ASP / V.14 / 2025"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP26045V042526"
+      ],
+      "page_count": 26,
+      "sha256": "ee7b02424ab9274b790a0935d1f51f3c8088bd9a80f485d411597dbe8e4954c0",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Arogya_Sanjeevani_Insurance_Policy_V_12_84d133b97f.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26046V092526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26046V092526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "policy_wording"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / FHO / V.26 / 2026"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP26046V092526"
+      ],
+      "page_count": 44,
+      "sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Family_Health_Optima_Insurance_Plan_V_21_bbe089bd74.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26047V092526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26047V092526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "policy_wording"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / MCI / V.25 / 2026"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP26047V092526"
+      ],
+      "page_count": 36,
+      "sha256": "440dc2380a83c36fa2e438d98b252c894bef544f52849f15a21d93893e287a3a",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Medi_Classic_Insurance_Policy_Individual_V_24_efeec2343d.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26041V082526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26041V082526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "policy_wording"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / SCRC / V.21 / 2025"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP26041V082526"
+      ],
+      "page_count": 32,
+      "sha256": "116fa331f5cf4d24199ce99b7c4658887810bf7a0bd27fb47affe37d51a13dfc",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Senior_Citizens_Red_Carpet_Policy_V_19_293f3b97b4.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP23172V012223"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP23172V012223"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "policy_wording"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / SHPRO / V.4 / 2025"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP23172V012223"
+      ],
+      "page_count": 14,
+      "sha256": "5a558c4218c54fe54b5fd2db7b5b86fa3f1a17efb215cb060ebd694ab99e1f60",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Smart_Health_Pro_V_3_51c653ee1a.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26044V092526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26044V092526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "policy_wording"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / COMP / V.24 / 2025"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP26044V092526"
+      ],
+      "page_count": 48,
+      "sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Comprehensive_Insurance_Policy_V_21_3a414ab104.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26048V032526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26048V032526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "policy_wording"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / HA / V.12 / 2026"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP26048V032526"
+      ],
+      "page_count": 47,
+      "sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Health_Assure_Insurance_Policy_V_9_c53663e68a.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP21262V032021"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP21262V032021"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "policy_wording"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / GAIN / V.18 / 2025"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP21262V032021"
+      ],
+      "page_count": 8,
+      "sha256": "9d3f44d5625f69d82e6613ef897809e639b21c0dc8e35d0c344edb9b061a4733",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Health_Gain_Insurance_Policy_V_17_21eac0dc50.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP22226V012122"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP22226V012122"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "modern_treatment_schedule",
+        "policy_wording"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / SHP / V.8 / 2025"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP22226V012122"
+      ],
+      "page_count": 12,
+      "sha256": "e2ae0252f3763e4d6dc66f9dc69e12e775431e2600a72b79372781ae8e971620",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Health_Premier_Insurance_Policy_V_7_676175d548.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHMIP22038V032122"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHMIP22038V032122"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "policy_wording"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / SMRF / V.14 / 2025"
+      ],
+      "observed_uins_full_text": [
+        "SHAHMIP22038V032122"
+      ],
+      "page_count": 8,
+      "sha256": "c10c35b15a9062900cd0208a49b30d0fb71b779c24bf7eb4e8540ad24eef02d0",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Micro_Rural_And_Farmers_Care_V_13_74fd886525.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP23132V022223"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP23132V022223"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "policy_wording"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / SWC / V.11 / 2025"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP23132V022223"
+      ],
+      "page_count": 15,
+      "sha256": "d9488c404b479351ae41a90b17c739e8c220c1f1e4cfd52e0b8f5ec348b5ce5a",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Women_Care_Insurance_Policy_V_10_df1ca05df6.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP27049V022627"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP27049V022627"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "policy_wording"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / SS / V.5 / 2026"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP27049V022627"
+      ],
+      "page_count": 67,
+      "sha256": "9b9e4ae76ad54ed77449011b4357eb5cbaa3081d9dc83f88e9c91d65b816e609",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Super_Star_V_3_80e5dd8988.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26043V062526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26043V062526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "policy_wording"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / YSI / V.15 / 2025"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP26043V062526"
+      ],
+      "page_count": 39,
+      "sha256": "23b8e218a0971f09f35f1e529330df37d6c48a91fd17da7094346982e43fa14d",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Young_Star_Insurance_Policy_V_12_59f47a25f5.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26046V092526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26046V092526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "preventive_health_schedule"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIP26046V092526"
+      ],
+      "page_count": 1,
+      "sha256": "667646c6e403db44541256481b8cf26f13ee23369206c0125bb4b7f8063b09a9",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Preventive_Health_Check_up_Family_Health_Optima_Insurance_Plan_13ff4299eb.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26044V092526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26044V092526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "preventive_health_schedule"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIP26044V092526"
+      ],
+      "page_count": 1,
+      "sha256": "c7f4ceb7fb7d3ee02937d107c96f81859b3ecab5c045fbf63aa312bb07770358",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Preventive_Health_Checkup_Star_Comprehensive_Insurance_Policy_87eabc5749.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26045V042526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26045V042526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "prospectus"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIP26045V042526"
+      ],
+      "page_count": 17,
+      "sha256": "83726401b8f6a57b74fc66a1d5f786387e962a266a52286edd371f423f7532a5",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Arogya_Sanjeevani_Policy_V_8_9a95b2c87f.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26046V092526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26046V092526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "prospectus"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / SS / V.1 / 2024"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIA23061V012223",
+        "SHAHLIA26040V012526",
+        "SHAHLIP26046V092526"
+      ],
+      "page_count": 59,
+      "sha256": "abe38283100d6402e1ac22929bb94c23bb53994bef7a378196e48900cd4da025",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Family_Health_Optima_Insurance_Plan_V_10_79f547c311.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP22226V012122"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP22226V012122"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "prospectus"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIP22226V012122"
+      ],
+      "page_count": 17,
+      "sha256": "504193a4904099b21fd11a6f3628a9df97e1e1143861811421872bf3f27fd6d4",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Health_Premier_Insurance_V_2_1d07f8ba27.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26047V092526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26047V092526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "prospectus"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIA23061V012223",
+        "SHAHLIA26040V012526",
+        "SHAHLIP26047V092526"
+      ],
+      "page_count": 32,
+      "sha256": "b2454f3956f5a201eefd2339188528ab14cbb650e74fecc657f46cb18353dca2",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Medi_Classic_Insurance_Policy_Individual_V_12_37dd902200.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26041V082526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26041V082526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "prospectus"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / SS / V.1 / 2024"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIA26040V012526",
+        "SHAHLIP26041V082526"
+      ],
+      "page_count": 24,
+      "sha256": "2c310cd7d3ca5d3f556c8995ddaf5e007c6c6f20b5f709e5a7bc9cb337429b59",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Senior_Citizens_Red_Carpet_Policy_V_11_ed34026052.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP23172V012223"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP23172V012223"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "prospectus"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIP23172V012223"
+      ],
+      "page_count": 13,
+      "sha256": "57b9113ff0e10ae9ad6fcd70781a1d3f765e580c7d878a87c68588d478fcf317",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Smart_Health_Pro_V_3_ef61087a6b.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26044V092526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26044V092526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "prospectus"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / SS / V.1 / 2024"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIA23061V012223",
+        "SHAHLIA26040V012526",
+        "SHAHLIP26044V092526"
+      ],
+      "page_count": 53,
+      "sha256": "0404693147bd5202e28e39bfdb8fcc87f78e7ee6aa6a6f1032f63cbec63698e1",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Star_Comprehensive_Insurance_Policy_V_12_dc6058c95e.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26048V032526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26048V032526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "prospectus"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / SS / V.1 / 2024"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIA26040V012526",
+        "SHAHLIP26048V032526"
+      ],
+      "page_count": 56,
+      "sha256": "91a761206899caafe957f0c874d75c1b05b9e0b53601d2f57761309a9b0899be",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Star_Health_Assure_Insurance_Policy_V_3_9b8479dfdd.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP21262V032021"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP21262V032021"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "prospectus"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIP21262V032021"
+      ],
+      "page_count": 7,
+      "sha256": "d7ed421f03c0b7021608ca72e7836e44f268665e93f30a7e95b37972eed6cda3",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Star_Health_Gain_Insurance_Policy_V_7_98d5126f06.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHMIP22038V032122"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHMIP22038V032122"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "prospectus"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHMIP22038V032122"
+      ],
+      "page_count": 4,
+      "sha256": "6354f937b115e5c1b2405e9ddb3fa4550039a52faf21ee5fb408958ac6bd0e89",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Star_Micro_Rural_And_Farmers_Care_V_8_71a9c45e22.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP23132V022223"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP23132V022223"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "prospectus"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIP23132V022223"
+      ],
+      "page_count": 16,
+      "sha256": "632c212c02d23f517fffd181a1abe865239317a3af93b7b6a143686ce1405ecc",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Star_Women_Care_Insurance_Policy_V_4_7f70e88a4c.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP27049V022627"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP27049V022627"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "prospectus"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / SS / V.1 / 2024"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIA26040V012526",
+        "SHAHLIP27049V022627"
+      ],
+      "page_count": 68,
+      "sha256": "e678f0c5e3db0a17278af7cef19e6988358f661d3fec3f1b2514c0872829088b",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Super_Star_V_1_without_Premium_Chart_Single_Page_25b70db850.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26043V062526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26043V062526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "prospectus"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / SS / V.1 / 2024"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIA23171V012223",
+        "SHAHLIA26040V012526",
+        "SHAHLIP26043V062526"
+      ],
+      "page_count": 55,
+      "sha256": "e9dc41ac387e2af2de8362af131051c80af24a3fcdf20061b389df7fd4c6438f",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Young_Star_Insurance_Policy_V_8_f21b6037ff.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26041V082526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26041V082526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": "coverage_not_available",
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "excluded_expenses"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / SS / V.1 / 2024"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP26041V082526"
+      ],
+      "page_count": 1,
+      "sha256": "75a9506327e46c5810ae5b38aeb4936c78d50352f1d8da348047d77723f63b80",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/SCRC_List_of_Excluded_Expenses_62739b463e.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26041V082526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26041V082526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "preventive_health_schedule"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIP26041V082526"
+      ],
+      "page_count": 1,
+      "sha256": "e56dd87df8fa1c0b19e0eaa3cf392bfcf303f95762c6b6720d5818fffbbded96",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/SCRC_Preventive_Health_Checkup_0be6cb9c81.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP21262V032021"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP21262V032021"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": "coverage_not_available",
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "excluded_expenses"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIP21262V032021"
+      ],
+      "page_count": 1,
+      "sha256": "44852435ad4e6e0136c910005faa157794c0f0232997c7d15f5c601bb33abfb2",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Star_healht_gain_Other_Excluded_Expenses_83b3e1cf37.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26043V062526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26043V062526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": null,
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "preventive_health_schedule"
+      ],
+      "observed_code_strings_full_text": [],
+      "observed_uins_full_text": [
+        "SHAHLIP26043V062526"
+      ],
+      "page_count": 1,
+      "sha256": "33ca97b90705cde2b090598de6c806fbc6851eef67ef4847e34c9caaeb311297",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/Young_Star_Preventive_Health_Checkup_4ad14bc49c.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26047V092526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26047V092526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": "coverage_not_available",
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "excluded_expenses"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / SS / V.1 / 2024"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP26047V092526"
+      ],
+      "page_count": 1,
+      "sha256": "28cb46f7d7b2a5bbc2ad2aa90afd7a0ea86aecf6426e212a28404bea6e257c4b",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/mediclassic_individual_insurance_policy_v1_a0ef065963.pdf"
+    },
+    {
+      "applicability_status": "unresolved",
+      "candidate_uins": [
+        "SHAHLIP26044V092526"
+      ],
+      "candidate_uins_found_full_text": [
+        "SHAHLIP26044V092526"
+      ],
+      "edition_status": "unresolved",
+      "excluded_expenses_heading_phrase": "coverage_not_available",
+      "excluded_expenses_option_condition": null,
+      "listed_roles": [
+        "excluded_expenses"
+      ],
+      "observed_code_strings_full_text": [
+        "POL / SS / V.1 / 2024"
+      ],
+      "observed_uins_full_text": [
+        "SHAHLIP26044V092526"
+      ],
+      "page_count": 1,
+      "sha256": "ae1e4a9fec23d65f8f983e22b9b76b6c8601baa9dcd2a0dc7b35530607b0f0b8",
+      "url": "https://d28c6jni2fmamz.cloudfront.net/star_comprehensive_other_excluded_expenses_new_ae97610427.pdf"
+    }
+  ],
+  "format_version": 1,
+  "input_sha256": {
+    "captures": "3ca06a36f97e5d04c5e39ccec471ba73c7942650c296443721022f50e1b94902",
+    "source": "59ee637aff49667ace6bd63bc67c3545a05fd0f5830e8e5cae466b07864a726f"
+  },
+  "method": "Full PDF text identity/code/heading scan; no clause or applicability adjudication.",
+  "products": [
+    {
+      "applicable_bundle_complete": false,
+      "candidate_document_urls": [
+        "https://d28c6jni2fmamz.cloudfront.net/CIS_Star_Health_Gain_Insurance_Policy_V_2_02d304d58a.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Star_Health_Gain_Insurance_Policy_7c2f36bb6b.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Health_Gain_Insurance_Policy_V_17_21eac0dc50.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Star_Health_Gain_Insurance_Policy_V_7_98d5126f06.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Star_healht_gain_Other_Excluded_Expenses_83b3e1cf37.pdf"
+      ],
+      "candidate_uin_found_in_all_review_pdfs": true,
+      "name": "Star Health Gain Insurance Policy",
+      "option_inventory": "unresolved",
+      "role_counts": {
+        "customer_information_sheet": 1,
+        "excluded_expenses": 1,
+        "modern_treatment_schedule": 1,
+        "policy_wording": 1,
+        "prospectus": 1
+      },
+      "scope_status": "provisional",
+      "uin": "SHAHLIP21262V032021",
+      "variant_inventory": "unresolved"
+    },
+    {
+      "applicable_bundle_complete": false,
+      "candidate_document_urls": [
+        "https://d28c6jni2fmamz.cloudfront.net/CIS_Star_Health_Premier_Insurance_Policy_V_2_f232a015a9.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Health_Premier_Insurance_Policy_V_7_676175d548.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Health_Premier_Insurance_V_2_1d07f8ba27.pdf"
+      ],
+      "candidate_uin_found_in_all_review_pdfs": true,
+      "name": "Star Health Premier Insurance Policy",
+      "option_inventory": "unresolved",
+      "role_counts": {
+        "customer_information_sheet": 1,
+        "modern_treatment_schedule": 1,
+        "policy_wording": 1,
+        "prospectus": 1
+      },
+      "scope_status": "provisional",
+      "uin": "SHAHLIP22226V012122",
+      "variant_inventory": "unresolved"
+    },
+    {
+      "applicable_bundle_complete": false,
+      "candidate_document_urls": [
+        "https://d28c6jni2fmamz.cloudfront.net/CIS_Star_Women_Care_Insurance_Policy_V_2_c191b434ab.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Women_Care_Insurance_Policy_8e0d0ac9ad.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Women_Care_Insurance_Policy_V_10_df1ca05df6.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Star_Women_Care_Insurance_Policy_V_4_7f70e88a4c.pdf"
+      ],
+      "candidate_uin_found_in_all_review_pdfs": true,
+      "name": "Star Women Care Insurance Policy",
+      "option_inventory": "unresolved",
+      "role_counts": {
+        "customer_information_sheet": 1,
+        "modern_treatment_schedule": 1,
+        "policy_wording": 1,
+        "prospectus": 1
+      },
+      "scope_status": "provisional",
+      "uin": "SHAHLIP23132V022223",
+      "variant_inventory": "unresolved"
+    },
+    {
+      "applicable_bundle_complete": false,
+      "candidate_document_urls": [
+        "https://d28c6jni2fmamz.cloudfront.net/CIS_Smart_Health_Pro_V_2_fe6b42155e.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Smart_Health_Pro_3f05d17fb5.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Other_Excluded_Expenses_Smart_Health_Pro_efa1ad9ea1.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Policy_Smart_Health_Pro_V_3_51c653ee1a.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Smart_Health_Pro_V_3_ef61087a6b.pdf"
+      ],
+      "candidate_uin_found_in_all_review_pdfs": true,
+      "name": "Smart Health Pro",
+      "option_inventory": "unresolved",
+      "role_counts": {
+        "customer_information_sheet": 1,
+        "excluded_expenses": 1,
+        "modern_treatment_schedule": 1,
+        "policy_wording": 1,
+        "prospectus": 1
+      },
+      "scope_status": "provisional",
+      "uin": "SHAHLIP23172V012223",
+      "variant_inventory": "unresolved"
+    },
+    {
+      "applicable_bundle_complete": false,
+      "candidate_document_urls": [
+        "https://d28c6jni2fmamz.cloudfront.net/CIS_Senior_Citizens_Red_Carpet_Policy_V_4_4e26e34b21.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Senior_Citizens_Red_Carpet_Health_Insurance_Policy_d9f7c83493.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Policy_Senior_Citizens_Red_Carpet_Policy_V_19_293f3b97b4.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Senior_Citizens_Red_Carpet_Policy_V_11_ed34026052.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/SCRC_List_of_Excluded_Expenses_62739b463e.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/SCRC_Preventive_Health_Checkup_0be6cb9c81.pdf"
+      ],
+      "candidate_uin_found_in_all_review_pdfs": true,
+      "name": "Senior Citizens Red Carpet Health Insurance Policy",
+      "option_inventory": "unresolved",
+      "role_counts": {
+        "customer_information_sheet": 1,
+        "excluded_expenses": 1,
+        "modern_treatment_schedule": 1,
+        "policy_wording": 1,
+        "preventive_health_schedule": 1,
+        "prospectus": 1
+      },
+      "scope_status": "provisional",
+      "uin": "SHAHLIP26041V082526",
+      "variant_inventory": "unresolved"
+    },
+    {
+      "applicable_bundle_complete": false,
+      "candidate_document_urls": [
+        "https://d28c6jni2fmamz.cloudfront.net/CIS_Young_Star_Insurance_Policy_V_2_090b7cbb41.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Young_Star_Insurance_Policy_94395476fb.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Other_Excluded_Expenses_Young_Star_Insurance_Policy_26c045cd1a.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Policy_Young_Star_Insurance_Policy_V_12_59f47a25f5.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Young_Star_Insurance_Policy_V_8_f21b6037ff.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Young_Star_Preventive_Health_Checkup_4ad14bc49c.pdf"
+      ],
+      "candidate_uin_found_in_all_review_pdfs": true,
+      "name": "Young Star Insurance Policy",
+      "option_inventory": "unresolved",
+      "role_counts": {
+        "customer_information_sheet": 1,
+        "excluded_expenses": 1,
+        "modern_treatment_schedule": 1,
+        "policy_wording": 1,
+        "preventive_health_schedule": 1,
+        "prospectus": 1
+      },
+      "scope_status": "provisional",
+      "uin": "SHAHLIP26043V062526",
+      "variant_inventory": "unresolved"
+    },
+    {
+      "applicable_bundle_complete": false,
+      "candidate_document_urls": [
+        "https://d28c6jni2fmamz.cloudfront.net/CIS_Star_Comprehensive_Insurance_Policy_V_2_69c15a9ee1.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Star_Comprehensive_Insurance_Policy_627f5a8912.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Comprehensive_Insurance_Policy_V_21_3a414ab104.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Preventive_Health_Checkup_Star_Comprehensive_Insurance_Policy_87eabc5749.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Star_Comprehensive_Insurance_Policy_V_12_dc6058c95e.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/star_comprehensive_other_excluded_expenses_new_ae97610427.pdf"
+      ],
+      "candidate_uin_found_in_all_review_pdfs": true,
+      "name": "Star Comprehensive Insurance Policy",
+      "option_inventory": "unresolved",
+      "role_counts": {
+        "customer_information_sheet": 1,
+        "excluded_expenses": 1,
+        "modern_treatment_schedule": 1,
+        "policy_wording": 1,
+        "preventive_health_schedule": 1,
+        "prospectus": 1
+      },
+      "scope_status": "provisional",
+      "uin": "SHAHLIP26044V092526",
+      "variant_inventory": "unresolved"
+    },
+    {
+      "applicable_bundle_complete": false,
+      "candidate_document_urls": [
+        "https://d28c6jni2fmamz.cloudfront.net/CIS_Arogya_Sanjeevani_Insurance_Policy_V_2_54bfcb3b5e.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Arogya_Sanjeevani_Policy_10ed7a4391.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Policy_Arogya_Sanjeevani_Insurance_Policy_V_12_84d133b97f.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Arogya_Sanjeevani_Policy_V_8_9a95b2c87f.pdf"
+      ],
+      "candidate_uin_found_in_all_review_pdfs": true,
+      "name": "Arogya Sanjeevani Policy, Star Health and Allied Insurance Co Ltd.",
+      "option_inventory": "unresolved",
+      "role_counts": {
+        "customer_information_sheet": 1,
+        "modern_treatment_schedule": 1,
+        "policy_wording": 1,
+        "prospectus": 1
+      },
+      "scope_status": "provisional",
+      "uin": "SHAHLIP26045V042526",
+      "variant_inventory": "unresolved"
+    },
+    {
+      "applicable_bundle_complete": false,
+      "candidate_document_urls": [
+        "https://d28c6jni2fmamz.cloudfront.net/CIS_Family_Health_Optima_Insurance_Plan_V_2_b5d9cdf635.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/FHO_Other_excluded_b6ac7e9f79.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Family_Health_Optima_Insurance_Plan_9428c181fe.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Policy_Family_Health_Optima_Insurance_Plan_V_21_bbe089bd74.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Preventive_Health_Check_up_Family_Health_Optima_Insurance_Plan_13ff4299eb.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Family_Health_Optima_Insurance_Plan_V_10_79f547c311.pdf"
+      ],
+      "candidate_uin_found_in_all_review_pdfs": true,
+      "name": "Family Health Optima Insurance Plan",
+      "option_inventory": "unresolved",
+      "role_counts": {
+        "customer_information_sheet": 1,
+        "excluded_expenses": 1,
+        "modern_treatment_schedule": 1,
+        "policy_wording": 1,
+        "preventive_health_schedule": 1,
+        "prospectus": 1
+      },
+      "scope_status": "provisional",
+      "uin": "SHAHLIP26046V092526",
+      "variant_inventory": "unresolved"
+    },
+    {
+      "applicable_bundle_complete": false,
+      "candidate_document_urls": [
+        "https://d28c6jni2fmamz.cloudfront.net/CIS_Medi_Classic_Insurance_Policy_Individual_V_2_c82b6ef8f2.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/MCI_Preventive_Health_Checkup_1ea176ce69.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Medi_classic_Insurance_Policy_Individual_7c648b3606.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Policy_Medi_Classic_Insurance_Policy_Individual_V_24_efeec2343d.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Medi_Classic_Insurance_Policy_Individual_V_12_37dd902200.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/mediclassic_individual_insurance_policy_v1_a0ef065963.pdf"
+      ],
+      "candidate_uin_found_in_all_review_pdfs": true,
+      "name": "Medi Classic Insurance Policy (Individual)",
+      "option_inventory": "unresolved",
+      "role_counts": {
+        "customer_information_sheet": 1,
+        "excluded_expenses": 1,
+        "modern_treatment_schedule": 1,
+        "policy_wording": 1,
+        "preventive_health_schedule": 1,
+        "prospectus": 1
+      },
+      "scope_status": "provisional",
+      "uin": "SHAHLIP26047V092526",
+      "variant_inventory": "unresolved"
+    },
+    {
+      "applicable_bundle_complete": false,
+      "candidate_document_urls": [
+        "https://d28c6jni2fmamz.cloudfront.net/CIS_Star_Health_Assure_Insurance_Policy_V_2_380ce4ce6b.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Health_Assure_List_of_Excluded_Expenses_9be58ee6be.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Star_Health_Assure_Insurance_Policy_7746fe52d9.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Health_Assure_Insurance_Policy_V_9_c53663e68a.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Star_Health_Assure_Insurance_Policy_V_3_9b8479dfdd.pdf"
+      ],
+      "candidate_uin_found_in_all_review_pdfs": true,
+      "name": "Star Health Assure Insurance Policy",
+      "option_inventory": "unresolved",
+      "role_counts": {
+        "customer_information_sheet": 1,
+        "excluded_expenses": 1,
+        "modern_treatment_schedule": 1,
+        "policy_wording": 1,
+        "prospectus": 1
+      },
+      "scope_status": "provisional",
+      "uin": "SHAHLIP26048V032526",
+      "variant_inventory": "unresolved"
+    },
+    {
+      "applicable_bundle_complete": false,
+      "candidate_document_urls": [
+        "https://d28c6jni2fmamz.cloudfront.net/CIS_Super_Star_V_2_89eb6ddab6.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Super_Star_af754b45a9.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Other_Excluded_Expenses_Super_Star_9c8ee6562e.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Policy_Super_Star_V_3_80e5dd8988.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Super_Star_V_1_without_Premium_Chart_Single_Page_25b70db850.pdf"
+      ],
+      "candidate_uin_found_in_all_review_pdfs": true,
+      "name": "Super Star",
+      "option_inventory": "unresolved",
+      "role_counts": {
+        "customer_information_sheet": 1,
+        "excluded_expenses": 1,
+        "modern_treatment_schedule": 1,
+        "policy_wording": 1,
+        "prospectus": 1
+      },
+      "scope_status": "provisional",
+      "uin": "SHAHLIP27049V022627",
+      "variant_inventory": "unresolved"
+    },
+    {
+      "applicable_bundle_complete": false,
+      "candidate_document_urls": [
+        "https://d28c6jni2fmamz.cloudfront.net/CIS_Star_Micro_Rural_And_Farmers_Care_V_2_723fa1ad09.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Star_Micro_Rural_And_Farmers_Care_628225170a.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Other_Excluded_Expenses_Star_Micro_Rural_And_Farmers_Care_23bc3999ca.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Micro_Rural_And_Farmers_Care_V_13_74fd886525.pdf",
+        "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Star_Micro_Rural_And_Farmers_Care_V_8_71a9c45e22.pdf"
+      ],
+      "candidate_uin_found_in_all_review_pdfs": true,
+      "name": "Star Micro Rural and Farmers Care",
+      "option_inventory": "unresolved",
+      "role_counts": {
+        "customer_information_sheet": 1,
+        "excluded_expenses": 1,
+        "modern_treatment_schedule": 1,
+        "policy_wording": 1,
+        "prospectus": 1
+      },
+      "scope_status": "provisional",
+      "uin": "SHAHMIP22038V032122",
+      "variant_inventory": "unresolved"
+    }
+  ]
+}
