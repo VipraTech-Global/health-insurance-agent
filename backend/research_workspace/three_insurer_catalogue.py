@@ -11,6 +11,7 @@ import io
 import json
 import re
 import subprocess
+import zipfile
 from collections import Counter
 from pathlib import Path
 from typing import Any
@@ -59,6 +60,13 @@ CURRENT_ROLES = {
     "premium_chart",
 }
 EXPECTED_INSURERS = {"care", "niva"}
+CARE_SUPPLEMENT_ROLES = {
+    "proposal_form",
+    "other_support",
+    "health_handbook",
+    "premium_revision_rationale",
+    "customer_communication",
+}
 PUBLIC_PDF_HEADERS = {"User-Agent": "Mozilla/5.0", "Accept": "application/pdf,*/*;q=0.8"}
 OUTSIDE_SCOPE_HINTS = (
     "group",
@@ -220,11 +228,11 @@ def merge_source_register(base: dict[str, Any], supplement: dict[str, Any]) -> d
         raise ValueError("Invalid Care supplement")
     additions = []
     for row in supplement.get("documents", []):
-        if row.get("role") != "proposal_form" or not row.get("url"):
-            raise ValueError("Invalid Care proposal link")
+        if row.get("role") not in CARE_SUPPLEMENT_ROLES or not row.get("url"):
+            raise ValueError("Invalid Care supplemental link")
         additions.append({**row, "insurer_id": "care", "source_page": supplement["source_page"]})
     if not additions:
-        raise ValueError("Care proposal supplement is empty")
+        raise ValueError("Care supplement is empty")
     documents = [*base["documents"], *additions]
     identities = [(row["insurer_id"], row["url"]) for row in documents]
     if len(identities) != len(set(identities)):
@@ -233,12 +241,22 @@ def merge_source_register(base: dict[str, Any], supplement: dict[str, Any]) -> d
         **base,
         "captured_at": supplement["source_observed_at"],
         "documents": documents,
-        "supplemental_source": {
+        "supplemental_source": base.get("supplemental_source")
+        or {
             "url": supplement["source_page"],
             "observed_at": supplement["source_observed_at"],
             "link_count": len(additions),
-            "direct_html_status": "http_403",
+            "direct_html_status": supplement.get("direct_html_status", "http_403"),
         },
+        "supplemental_sources": [
+            *base.get("supplemental_sources", []),
+            {
+                "url": supplement["source_page"],
+                "observed_at": supplement["source_observed_at"],
+                "link_count": len(additions),
+                "direct_html_status": supplement.get("direct_html_status", "http_403"),
+            },
+        ],
     }
 
 
@@ -303,6 +321,13 @@ def select_links(register: dict[str, Any], scope: str) -> list[dict[str, Any]]:
         return [row for row in rows if row.get("role") == "policy_wording"]
     if scope == "proposal_forms":
         return [row for row in rows if row.get("role") == "proposal_form"]
+    if scope == "additional_care_sources":
+        return [
+            row
+            for row in rows
+            if row.get("insurer_id") == "care"
+            and row.get("role") in CARE_SUPPLEMENT_ROLES - {"proposal_form"}
+        ]
     raise ValueError(f"Unknown capture scope: {scope}")
 
 
@@ -351,6 +376,44 @@ def recover_pdf_with_trailing_html(root: Path, row: dict[str, Any]) -> dict[str,
     }
 
 
+def preserve_listed_non_pdf(root: Path, row: dict[str, Any]) -> dict[str, Any]:
+    """Accept the two explicitly listed Care image/Word files after format checks."""
+    url = row.get("url", "").lower()
+    if row.get("status") != "failed" or row.get("http_status") != 200 or not row.get("sha256"):
+        return row
+    try:
+        content = read_object(root, row["sha256"])
+    except (OSError, ValueError):
+        return row
+    if (
+        url.endswith(".jpg")
+        and content.startswith(b"\xff\xd8\xff")
+        and content.endswith(b"\xff\xd9")
+    ):
+        document_type = "jpeg_image"
+    elif url.endswith(".docx"):
+        try:
+            with zipfile.ZipFile(io.BytesIO(content)) as archive:
+                if not {"[Content_Types].xml", "word/document.xml"}.issubset(archive.namelist()):
+                    return row
+        except (OSError, zipfile.BadZipFile):
+            return row
+        document_type = "docx_document"
+    else:
+        return row
+    return {
+        **row,
+        "status": "acquired_non_pdf",
+        "document_type": document_type,
+        "issues": [
+            issue
+            for issue in row.get("issues", [])
+            if issue != "expected_pdf_received_other_content"
+        ],
+        "first_two_page_uins": [],
+    }
+
+
 def capture_links(
     root: Path,
     register: dict[str, Any],
@@ -369,7 +432,11 @@ def capture_links(
     new_bytes = 0
     for (insurer_id, url), row in sorted(selected.items()):
         key = f"{insurer_id}:{url}"
-        if captures.get(key, {}).get("status") in {"acquired", "acquired_with_trailing_html"}:
+        if captures.get(key, {}).get("status") in {
+            "acquired",
+            "acquired_with_trailing_html",
+            "acquired_non_pdf",
+        }:
             try:
                 read_object(root, captures[key]["sha256"])
                 continue
@@ -378,6 +445,12 @@ def capture_links(
         if captures.get(key, {}).get("status") == "unreadable":
             recovered = recover_pdf_with_trailing_html(root, captures[key])
             if recovered["status"] == "acquired_with_trailing_html":
+                captures[key] = recovered
+                write_json(path, captures)
+                continue
+        if captures.get(key, {}).get("status") == "failed":
+            recovered = preserve_listed_non_pdf(root, captures[key])
+            if recovered["status"] == "acquired_non_pdf":
                 captures[key] = recovered
                 write_json(path, captures)
                 continue
@@ -398,7 +471,8 @@ def capture_links(
             expected_pdf=row["role"] != "proposal_form_index",
         )
         result = recover_pdf_with_trailing_html(root, result)
-        if result["status"] in {"acquired", "acquired_with_trailing_html"}:
+        result = preserve_listed_non_pdf(root, result)
+        if result["status"] in {"acquired", "acquired_with_trailing_html", "acquired_non_pdf"}:
             new_bytes += result.get("byte_count", 0)
             if result["document_type"] == "pdf_unclassified":
                 try:
@@ -431,7 +505,11 @@ def audit_links(
     for row in register["documents"]:
         capture = captures.get(f"{row['insurer_id']}:{row['url']}")
         capture_status = capture.get("status") if capture else "not_attempted"
-        if root is not None and capture_status in {"acquired", "acquired_with_trailing_html"}:
+        if root is not None and capture_status in {
+            "acquired",
+            "acquired_with_trailing_html",
+            "acquired_non_pdf",
+        }:
             try:
                 read_object(root, capture["sha256"])
                 if capture.get("derived_pdf_sha256"):
@@ -447,6 +525,19 @@ def audit_links(
             identity_roles[(row["insurer_id"], observed_uin, row["role"])] += 1
         candidate_uin = observed_uins[0] if len(observed_uins) == 1 else None
         scope, scope_reason = scope_lead(row["label"], candidate_uin)
+        listed_uin = row.get("listed_uin")
+        listed_uin_reconciliation = None
+        if listed_uin:
+            if capture_status == "acquired_non_pdf":
+                listed_uin_reconciliation = "identity_not_extracted_from_non_pdf"
+            elif capture_status not in {"acquired", "acquired_with_trailing_html"}:
+                listed_uin_reconciliation = "document_not_readable"
+            elif not observed_uins:
+                listed_uin_reconciliation = "no_uin_in_first_two_pages"
+            elif listed_uin in observed_uins:
+                listed_uin_reconciliation = "listed_uin_observed"
+            else:
+                listed_uin_reconciliation = "different_uin_observed"
         documents.append(
             {
                 **row,
@@ -456,6 +547,7 @@ def audit_links(
                 "first_two_page_uins": observed_uins,
                 "comparison_scope_candidate": scope,
                 "scope_reason": scope_reason,
+                "listed_uin_reconciliation": listed_uin_reconciliation,
                 "edition_status": "unresolved",
                 "variant_applicability": "unresolved",
             }
@@ -507,6 +599,13 @@ def audit_links(
         "release_ready": False,
         "documents": documents,
         "capture_status_counts": dict(Counter(row["capture_status"] for row in documents)),
+        "listed_uin_reconciliation_counts": dict(
+            Counter(
+                row["listed_uin_reconciliation"]
+                for row in documents
+                if row["listed_uin_reconciliation"] is not None
+            )
+        ),
         "niva_roster": {**niva_roster, "products": niva_products} if niva_roster else None,
         "niva_wording_identity_reconciliation": {
             "first_two_page_wording_uins_in_roster": len(wording_uins & niva_uins),
@@ -529,9 +628,13 @@ def audit_links(
             else "Care independent current product/UIN roster has not been verified.",
             "Care listing pages were browser-readable but raw HTML could not be preserved.",
             "Care proposal-form listing has not been fully inventoried."
-            if not register.get("supplemental_source")
+            if not any(
+                source["url"].endswith("health-insurance-proposal-forms.html")
+                for source in register.get("supplemental_sources", [])
+            )
             else "Care proposal-form links are inventoried, but applicability is unreviewed.",
             "Document editions, variants, options, schedules and amendments are not reconciled.",
+            "Care premium-revision table and linked customer-communication UINs differ in some rows; version applicability needs review.",
             "No policy rules or independent held-out assessment are reviewed.",
         ],
     }
@@ -543,16 +646,18 @@ def main() -> None:
     parser.add_argument("--root", required=True, type=Path)
     parser.add_argument("--links", required=True, type=Path)
     parser.add_argument(
-        "--scope", choices=("all", "current", "wordings", "proposal_forms"), default="current"
+        "--scope",
+        choices=("all", "current", "wordings", "proposal_forms", "additional_care_sources"),
+        default="current",
     )
-    parser.add_argument("--supplement", type=Path)
+    parser.add_argument("--supplement", action="append", type=Path)
     parser.add_argument("--refresh", type=Path)
     parser.add_argument("--max-new-bytes", type=int, default=1_000_000_000)
     args = parser.parse_args()
     root: Path = args.root
     register = read_json(args.links)
-    if args.supplement:
-        register = merge_source_register(register, read_json(args.supplement))
+    for supplement_path in args.supplement or []:
+        register = merge_source_register(register, read_json(supplement_path))
     if args.refresh:
         register = apply_source_refresh(register, read_json(args.refresh))
     if args.command == "roster":

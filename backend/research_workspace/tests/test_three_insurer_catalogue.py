@@ -2,10 +2,13 @@
 
 from __future__ import annotations
 
+import io
 import json
+import zipfile
 from pathlib import Path
 
 import pytest
+from research_workspace.storage import digest, put_object
 from research_workspace.three_insurer_assessment import assess
 from research_workspace.three_insurer_catalogue import (
     apply_source_refresh,
@@ -13,6 +16,7 @@ from research_workspace.three_insurer_catalogue import (
     merge_source_register,
     parse_care_roster,
     parse_niva_roster,
+    preserve_listed_non_pdf,
     recover_pdf_with_trailing_html,
     scope_lead,
     select_links,
@@ -23,6 +27,14 @@ LINKS = ROOT / "research/pilots/three-insurer/source-links-2026-09-27.json"
 ROSTER = ROOT / "research/pilots/three-insurer/niva-roster-2026-09-27.json"
 AUDIT = ROOT / "research/pilots/three-insurer/audit-2026-09-27.json"
 CARE_PROPOSALS = ROOT / "research/pilots/three-insurer/care-proposal-links-2026-09-29.json"
+CARE_HANDBOOKS = (
+    ROOT / "research/pilots/three-insurer/care-handbooks-exclusions-links-2026-09-29.json"
+)
+CARE_REVISIONS = ROOT / "research/pilots/three-insurer/care-premium-revision-links-2026-09-29.json"
+EXPANDED_AUDIT = ROOT / "research/pilots/three-insurer/audit-2026-09-29-expanded.json"
+REVISION_TRIAGE = (
+    ROOT / "research/pilots/three-insurer/care-revision-identity-triage-2026-09-29.json"
+)
 NIVA_REFRESH = ROOT / "research/pilots/three-insurer/niva-link-refresh-2026-09-29.json"
 STAR_SOURCE = ROOT / "research/pilots/star/source-snapshot-2026-09-27.json"
 STAR_AUDIT = ROOT / "research/pilots/star/pilot-audit-2026-09-27.json"
@@ -178,3 +190,69 @@ def test_niva_refresh_replaces_only_verified_old_link() -> None:
     }
     with pytest.raises(ValueError, match="old-link matches"):
         apply_source_refresh(base, wrong)
+
+
+def test_additional_care_sources_and_revision_conflicts_are_accounted_for() -> None:
+    register = json.loads(LINKS.read_text())
+    for path in (CARE_PROPOSALS, CARE_HANDBOOKS, CARE_REVISIONS):
+        register = merge_source_register(register, json.loads(path.read_text()))
+    register = apply_source_refresh(register, json.loads(NIVA_REFRESH.read_text()))
+    audit = json.loads(EXPANDED_AUDIT.read_text())
+    triage = json.loads(REVISION_TRIAGE.read_text())
+    assert len(register["documents"]) == len(audit["documents"]) == 713
+    assert len(select_links(register, "additional_care_sources")) == 28
+    assert audit["capture_status_counts"] == {
+        "acquired": 691,
+        "acquired_non_pdf": 2,
+        "acquired_with_trailing_html": 15,
+        "failed": 5,
+    }
+    assert triage["accounting"]["reconciliation_counts"] == {
+        "listed_uin_observed": 17,
+        "different_uin_observed": 6,
+        "no_uin_observed": 1,
+    }
+    assert triage["audit_sha256"] == digest(EXPANDED_AUDIT.read_bytes())
+    by_url = {row["url"]: row for row in audit["documents"]}
+    assert all(row["sha256"] == by_url[row["url"]]["sha256"] for row in triage["rows"])
+    assert all(
+        row["observed_uins"] == by_url[row["url"]]["first_two_page_uins"]
+        for row in triage["rows"]
+        if row["observation_method"] == "pdf_first_two_pages"
+    )
+    assert all(row["edition_applicability"] == "unresolved" for row in triage["rows"])
+
+
+def test_listed_word_and_image_are_preserved_only_after_format_check(tmp_path: Path) -> None:
+    stream = io.BytesIO()
+    with zipfile.ZipFile(stream, "w") as archive:
+        archive.writestr("[Content_Types].xml", "<Types/>")
+        archive.writestr("word/document.xml", "<document/>")
+    cases = (
+        ("https://careinsurance.com/example.docx", stream.getvalue(), "docx_document"),
+        ("https://careinsurance.com/example.jpg", b"\xff\xd8\xfftest\xff\xd9", "jpeg_image"),
+    )
+    for url, content, document_type in cases:
+        result = preserve_listed_non_pdf(
+            tmp_path,
+            {
+                "status": "failed",
+                "http_status": 200,
+                "url": url,
+                "sha256": put_object(tmp_path, content),
+                "issues": ["expected_pdf_received_other_content"],
+            },
+        )
+        assert result["status"] == "acquired_non_pdf"
+        assert result["document_type"] == document_type
+        assert result["issues"] == []
+    malformed = preserve_listed_non_pdf(
+        tmp_path,
+        {
+            "status": "failed",
+            "http_status": 200,
+            "url": "https://careinsurance.com/other.jpg",
+            "sha256": put_object(tmp_path, b"not a JPEG"),
+        },
+    )
+    assert malformed["status"] == "failed"

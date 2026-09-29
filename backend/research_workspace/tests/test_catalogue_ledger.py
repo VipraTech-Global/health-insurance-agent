@@ -66,9 +66,7 @@ def test_variant_leads_reconcile_to_captured_wordings() -> None:
     audit = _inputs()[2]
     leads = json.loads(VARIANT_LEADS.read_text())
     wording_by_url = {
-        row["url"]: row
-        for row in audit["documents"]
-        if row["role"] == "policy_wording"
+        row["url"]: row for row in audit["documents"] if row["role"] == "policy_wording"
     }
     for lead in leads["care"]:
         wording = wording_by_url[lead["newer_wording_url"]]
@@ -79,3 +77,17 @@ def test_variant_leads_reconcile_to_captured_wordings() -> None:
             wording = wording_by_url[wording_lead["url"]]
             assert wording["sha256"] == wording_lead["sha256"]
             assert lead["uin_observed_in_both_wordings"] in wording["first_two_page_uins"]
+
+
+def test_expanded_ledger_keeps_revision_identity_conflict_visible() -> None:
+    star, captures, _, care, niva = _inputs()
+    expanded = json.loads((PILOT / "three-insurer/audit-2026-09-29-expanded.json").read_text())
+    ledger = build_ledger(star, captures, expanded, care, niva)
+    assert ledger["accounting"]["source_document_rows"] == 1051
+    assert ledger["accounting"]["associated_document_rows"] == 779
+    assert ledger["accounting"]["unassigned_document_rows"] == 272
+    assert any(
+        document["listed_uin_reconciliation"] == "different_uin_observed"
+        for document in ledger["documents"]
+    )
+    assert ledger["catalogue_complete"] is False

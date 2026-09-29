@@ -24,6 +24,9 @@ DOCUMENT_ROLE_CLASS = {
     "modern_treatment_schedule": "supporting_schedule_candidate",
     "preventive_health_schedule": "supporting_schedule_candidate",
     "other_support": "supporting_document_review_pending",
+    "health_handbook": "general_guidance_context",
+    "premium_revision_rationale": "revision_context",
+    "customer_communication": "revision_context",
     "proposal_form": "underwriting_context",
     "proposal_form_translation": "underwriting_context",
     "proposal_form_index": "underwriting_context",
@@ -141,11 +144,15 @@ def build_ledger(
             "candidate_uins": sorted(
                 set(row.get("candidate_product_uins", [])) & products["star"].keys()
             ),
+            "listed_uin_reconciliation": None,
             "association_basis": "source_label_or_uin_candidate",
         }
         documents.append(document)
     for index, row in enumerate(other_audit["documents"]):
         insurer_id = row["insurer_id"]
+        observed_uins = set(row["first_two_page_uins"])
+        if row.get("listed_uin"):
+            observed_uins.add(row["listed_uin"])
         document = {
             "ref": f"other:{index}",
             "insurer_id": insurer_id,
@@ -157,8 +164,13 @@ def build_ledger(
             "url": row["url"],
             "capture_status": row["capture_status"],
             "sha256": row.get("sha256"),
-            "candidate_uins": sorted(set(row["first_two_page_uins"]) & products[insurer_id].keys()),
-            "association_basis": "first_two_page_uin_identity_only",
+            "candidate_uins": sorted(observed_uins & products[insurer_id].keys()),
+            "listed_uin_reconciliation": row.get("listed_uin_reconciliation"),
+            "association_basis": (
+                "first_two_page_or_source_table_uin_identity_only"
+                if row.get("listed_uin")
+                else "first_two_page_uin_identity_only"
+            ),
         }
         documents.append(document)
 
@@ -210,6 +222,7 @@ def build_ledger(
             "All primary-versus-other classifications need reviewed evidence.",
             "Every product variant, option, edition, and applicable document bundle still needs review.",
             "Unassigned source documents and failed captures require classification or resolution.",
+            "Care revision-table UINs and linked communication UINs differ in some rows.",
         ],
     }
 

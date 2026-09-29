@@ -1,0 +1,49 @@
+{
+  "direct_html_status": "http_403",
+  "documents": [
+    {
+      "applicability_status": "unresolved",
+      "association_status": "unreviewed",
+      "label": "List of Standard Claim Exclusions",
+      "role": "other_support",
+      "source_link_id": 1,
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/list-of-standard-claim-exclusions.pdf?rv=0.70236000+1789661466",
+      "web_link_id": 66
+    },
+    {
+      "applicability_status": "unresolved",
+      "association_status": "unreviewed",
+      "label": "IRDA's Health Handbook - in English",
+      "role": "health_handbook",
+      "source_link_id": 2,
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/irda%27s-health-handbook---in-english.pdf?rv=0.70237300+1789661466",
+      "web_link_id": 67
+    },
+    {
+      "applicability_status": "unresolved",
+      "association_status": "unreviewed",
+      "label": "IRDA's Health Handbook - in Hindi",
+      "role": "health_handbook",
+      "source_link_id": 3,
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/irda%27s-health-handbook---in-hindi.pdf?rv=0.70238000+1789661466",
+      "web_link_id": 68
+    },
+    {
+      "applicability_status": "unresolved",
+      "association_status": "unreviewed",
+      "label": "Standard list of medical exclusions",
+      "role": "other_support",
+      "source_link_id": 4,
+      "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/standard-list-of-medical-exclusions.pdf?rv=0.70238800+1789661466",
+      "web_link_id": 69
+    }
+  ],
+  "format_version": 1,
+  "insurer_id": "care",
+  "limitations": [
+    "These generic sheets and handbooks have not been tied to any product/variant or policy inception date."
+  ],
+  "source_capture_method": "official page read through public web renderer; direct HTML returned HTTP 403",
+  "source_observed_at": "2026-09-29",
+  "source_page": "https://www.careinsurance.com/tools.html"
+}

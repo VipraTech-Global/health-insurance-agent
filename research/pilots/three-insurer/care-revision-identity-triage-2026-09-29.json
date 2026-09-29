@@ -1,0 +1,380 @@
+{
+  "accounting": {
+    "link_count": 24,
+    "reconciliation_counts": {
+      "different_uin_observed": 6,
+      "listed_uin_observed": 17,
+      "no_uin_observed": 1
+    }
+  },
+  "audit_sha256": "6d9874194448f87eb44613b7cae6b88d02cbcbc01ae29c10126e1ed343bd4424",
+  "blockers": [
+    "Six linked customer communications show an older/different UIN than their source-table row.",
+    "One communication has no UIN in its first two PDF pages.",
+    "Renewal effective dates and optional benefit changes require per-policy edition/variant review."
+  ],
+  "format_version": 1,
+  "link_register_sha256": "7e07b7d7b1bcf53b7b1e402951eeb2f0be94358fbac7b2d96e169f722829c39b",
+  "method": "Identity comparison only; no revision applicability or coverage rules established.",
+  "rows": [
+    {
+      "capture_status": "acquired",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "01-Oct-24",
+      "listed_product_name": "Care",
+      "listed_uin": "CHIHLIP25042V082425",
+      "observation_method": "pdf_first_two_pages",
+      "observed_uins": [
+        "CHIHLIP25042V082425"
+      ],
+      "reconciliation": "listed_uin_observed",
+      "role": "premium_revision_rationale",
+      "sha256": "4cdf003c63eca2f2a738457e6846520ca52163e51ab60038bc4a25bd98346118",
+      "url": "https://selfcare.careinsurance.com/data/Premium%20change%20-%20Rationale%20Care.pdf"
+    },
+    {
+      "capture_status": "acquired",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "01-Oct-24",
+      "listed_product_name": "Care",
+      "listed_uin": "CHIHLIP25042V082425",
+      "observation_method": "pdf_first_two_pages",
+      "observed_uins": [
+        "CHIHLIP25042V082425"
+      ],
+      "reconciliation": "listed_uin_observed",
+      "role": "customer_communication",
+      "sha256": "a21b2e4c25dc2552d8e251d828f0f7f206104c66ad063e837a63254e37dd5642",
+      "url": "https://selfcare.careinsurance.com/data/CARE_CUSTOMER_COMMUNICATION.pdf"
+    },
+    {
+      "capture_status": "acquired",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "29-Mar-24",
+      "listed_product_name": "Care Advantage",
+      "listed_uin": "CHIHLIP24183V032324",
+      "observation_method": "pdf_first_two_pages",
+      "observed_uins": [
+        "CHIHLIP24183V032324"
+      ],
+      "reconciliation": "listed_uin_observed",
+      "role": "premium_revision_rationale",
+      "sha256": "f834d289e406557cb76359d7a285426768f789cf060061bb4c665cab011ff711",
+      "url": "https://selfcare.careinsurance.com/data/Premium%20change%20-%20Rationale.pdf"
+    },
+    {
+      "capture_status": "acquired",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "29-Mar-24",
+      "listed_product_name": "Care Advantage",
+      "listed_uin": "CHIHLIP24183V032324",
+      "observation_method": "pdf_first_two_pages",
+      "observed_uins": [],
+      "reconciliation": "no_uin_observed",
+      "role": "customer_communication",
+      "sha256": "284212dfb23520b7566dee4410288adb21e39aa1096d693390ed70fcd48ee2c6",
+      "url": "https://selfcare.careinsurance.com/data/Cust%20communication.pdf"
+    },
+    {
+      "capture_status": "acquired",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "05-Feb-25",
+      "listed_product_name": "Protect Plus",
+      "listed_uin": "CHIHLIA25045V022425",
+      "observation_method": "pdf_first_two_pages",
+      "observed_uins": [
+        "CHIHLIA25045V022425"
+      ],
+      "reconciliation": "listed_uin_observed",
+      "role": "premium_revision_rationale",
+      "sha256": "065d406cddc30f1bc73ced7c6964ae4fdbee7bede69933c36a9340fd91de037d",
+      "url": "https://selfcare.careinsurance.com/data/Premium%20modification%20rationale.pdf"
+    },
+    {
+      "capture_status": "acquired",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "05-Feb-25",
+      "listed_product_name": "Protect Plus",
+      "listed_uin": "CHIHLIA25045V022425",
+      "observation_method": "pdf_first_two_pages",
+      "observed_uins": [
+        "CHIHLIA25045V022425"
+      ],
+      "reconciliation": "listed_uin_observed",
+      "role": "customer_communication",
+      "sha256": "d5c2280794fa4dccc8c45c1656b4af90e53287716d42baafdb05e54685f53b01",
+      "url": "https://selfcare.careinsurance.com/data/PROTECT%20PLUS%20CUSTOMER%20COMMUNICATION.pdf"
+    },
+    {
+      "capture_status": "acquired",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "09-Apr-25",
+      "listed_product_name": "Care Classic",
+      "listed_uin": "CHIHLIP26048V022526",
+      "observation_method": "pdf_first_two_pages",
+      "observed_uins": [
+        "CHIHLIP26048V022526"
+      ],
+      "reconciliation": "listed_uin_observed",
+      "role": "premium_revision_rationale",
+      "sha256": "b088073b87849c1f8e63545727081d5c84da8e7963c30e1fae3c49c8c9ebd799",
+      "url": "https://selfcare.careinsurance.com/data/Care%20Classic.pdf"
+    },
+    {
+      "capture_status": "acquired",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "09-Apr-25",
+      "listed_product_name": "Care Classic",
+      "listed_uin": "CHIHLIP26048V022526",
+      "observation_method": "pdf_first_two_pages",
+      "observed_uins": [
+        "CHIHLIP25042V082425"
+      ],
+      "reconciliation": "different_uin_observed",
+      "role": "customer_communication",
+      "sha256": "c0ae15ba5a248ab63776068bd2646261a2430d593b7964028937d1f2a8ee47ed",
+      "url": "https://selfcare.careinsurance.com/data/CARE%20CLASSIC%20CUSTOMER%20COMMUNICATION.pdf"
+    },
+    {
+      "capture_status": "acquired",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "19-Mar-25",
+      "listed_product_name": "Care supreme",
+      "listed_uin": "CHIHLIP25047V022425",
+      "observation_method": "pdf_first_two_pages",
+      "observed_uins": [
+        "CHIHLIP25047V022425"
+      ],
+      "reconciliation": "listed_uin_observed",
+      "role": "premium_revision_rationale",
+      "sha256": "308c2224c4db0663c93f5c0fdcd115926bd8dc82f974800757ebf03c9dcfdde7",
+      "url": "https://selfcare.careinsurance.com/data/Care%20Supreme.pdf"
+    },
+    {
+      "capture_status": "acquired",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "19-Mar-25",
+      "listed_product_name": "Care supreme",
+      "listed_uin": "CHIHLIP25047V022425",
+      "observation_method": "pdf_first_two_pages",
+      "observed_uins": [
+        "CHIHLIP23128V012223"
+      ],
+      "reconciliation": "different_uin_observed",
+      "role": "customer_communication",
+      "sha256": "44e0d322698467177574575df30bf41afd25d2e342a3a8f7e8f74bc978bb2d0a",
+      "url": "https://selfcare.careinsurance.com/data/CARE%20SUPREME%20CUSTOMER%20COMMUNICATION.pdf"
+    },
+    {
+      "capture_status": "acquired",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "02-May-25",
+      "listed_product_name": "Care Advantage",
+      "listed_uin": "CHIHLIP26049V042526",
+      "observation_method": "pdf_first_two_pages",
+      "observed_uins": [
+        "CHIHLIP26049V042526"
+      ],
+      "reconciliation": "listed_uin_observed",
+      "role": "premium_revision_rationale",
+      "sha256": "cdd7c6da77559d09c014c514fedae9458d6c250717f37e083822b8cc3a28266b",
+      "url": "https://selfcare.careinsurance.com/data/Care%20Advantage.pdf"
+    },
+    {
+      "capture_status": "acquired",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "02-May-25",
+      "listed_product_name": "Care Advantage",
+      "listed_uin": "CHIHLIP26049V042526",
+      "observation_method": "pdf_first_two_pages",
+      "observed_uins": [
+        "CHIHLIP26049V042526"
+      ],
+      "reconciliation": "listed_uin_observed",
+      "role": "customer_communication",
+      "sha256": "03598d25cd4088e8fd37cff670435ac000b5e4402910823933da7a82dc8d17a4",
+      "url": "https://selfcare.careinsurance.com/data/CARE%20ADVANTAGE%20CUSTOMER%20COMMUNICATION.pdf"
+    },
+    {
+      "capture_status": "acquired",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "03-Sep-25",
+      "listed_product_name": "Care Heart",
+      "listed_uin": "CHIHLIP26053V032526",
+      "observation_method": "pdf_first_two_pages",
+      "observed_uins": [
+        "CHIHLIP26053V032526"
+      ],
+      "reconciliation": "listed_uin_observed",
+      "role": "premium_revision_rationale",
+      "sha256": "9609d62e5fbd01336508a2c7694fcfa775ae4b2de3b1d20a2947c5fb9cba096e",
+      "url": "https://selfcare.careinsurance.com/data/Care%20Heart%20-%20Rationale%20for%20Premium%20change.pdf"
+    },
+    {
+      "capture_status": "acquired",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "03-Sep-25",
+      "listed_product_name": "Care Heart",
+      "listed_uin": "CHIHLIP26053V032526",
+      "observation_method": "pdf_first_two_pages",
+      "observed_uins": [
+        "CHIHLIP26053V032526"
+      ],
+      "reconciliation": "listed_uin_observed",
+      "role": "customer_communication",
+      "sha256": "52e149f0562909cd3dfa2d83ca7469cf7d695a2dd38ad856ab4029e31da390ac",
+      "url": "https://selfcare.careinsurance.com/data/CARE%20HEART%20CUSTOMER%20COMMUNICATION.pdf"
+    },
+    {
+      "capture_status": "acquired",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "03-Sep-25",
+      "listed_product_name": "Care Freedom",
+      "listed_uin": "CHIHLIP26052V032526",
+      "observation_method": "pdf_first_two_pages",
+      "observed_uins": [
+        "CHIHLIP26052V032526"
+      ],
+      "reconciliation": "listed_uin_observed",
+      "role": "premium_revision_rationale",
+      "sha256": "f5224b780631c06348f51e4c37ad56033bdb7487cfeefcaf9f7de040d4ec5bf4",
+      "url": "https://selfcare.careinsurance.com/data/Care%20Freedom%20-%20Rationale%20for%20Premium%20change.pdf"
+    },
+    {
+      "capture_status": "acquired",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "03-Sep-25",
+      "listed_product_name": "Care Freedom",
+      "listed_uin": "CHIHLIP26052V032526",
+      "observation_method": "pdf_first_two_pages",
+      "observed_uins": [
+        "CHIHLIP26052V032526"
+      ],
+      "reconciliation": "listed_uin_observed",
+      "role": "customer_communication",
+      "sha256": "49158f63fed62a83b4643c78acd7f84841ffb726b0c34cb7cd980708ab711590",
+      "url": "https://selfcare.careinsurance.com/data/CARE%20FREEDOM%20CUSTOMER%20COMMUNICATION.pdf"
+    },
+    {
+      "capture_status": "acquired",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "16-Jan-26",
+      "listed_product_name": "Ultimate Care",
+      "listed_uin": "CHIHLIP26058V022526",
+      "observation_method": "pdf_first_two_pages",
+      "observed_uins": [
+        "CHIHLIP26058V022526"
+      ],
+      "reconciliation": "listed_uin_observed",
+      "role": "premium_revision_rationale",
+      "sha256": "d98cbe01bd5930c438457231d8c9ca545f2c01027e05afcc2dd31d783112ba75",
+      "url": "https://selfcare.careinsurance.com/data/Ultimate%20Care%20-%20Rationale%20for%20Premium%20Change.pdf"
+    },
+    {
+      "capture_status": "acquired",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "16-Jan-26",
+      "listed_product_name": "Ultimate Care",
+      "listed_uin": "CHIHLIP26058V022526",
+      "observation_method": "pdf_first_two_pages",
+      "observed_uins": [
+        "CHIHLIP25044V012425"
+      ],
+      "reconciliation": "different_uin_observed",
+      "role": "customer_communication",
+      "sha256": "4f2be808685e1ed4058c98834f8d77cb4d5dbc158959c73a8d7f896279240c57",
+      "url": "https://selfcare.careinsurance.com/data/ULTIMATE%20CARE%20CUSTOMER%20COMMUNICATION%20-%202026.pdf"
+    },
+    {
+      "capture_status": "acquired_non_pdf",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "21-Mar-26",
+      "listed_product_name": "Care",
+      "listed_uin": "CHIHLIP26055V092526",
+      "observation_method": "docx_full_document_xml_text",
+      "observed_uins": [
+        "CHIHLIP26055V092526"
+      ],
+      "reconciliation": "listed_uin_observed",
+      "role": "premium_revision_rationale",
+      "sha256": "0d06b16942e5c95f43a3de9d53ba6821b55da7abe228334e96d77f78a1320924",
+      "url": "https://selfcare.careinsurance.com/data/Care%20-%20Rationale%20for%20Premium%20change.docx"
+    },
+    {
+      "capture_status": "acquired",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "21-Mar-26",
+      "listed_product_name": "Care",
+      "listed_uin": "CHIHLIP26055V092526",
+      "observation_method": "pdf_first_two_pages",
+      "observed_uins": [
+        "CHIHLIP25042V082425"
+      ],
+      "reconciliation": "different_uin_observed",
+      "role": "customer_communication",
+      "sha256": "9f380d7f31c8077605bb1c6a589598c5001323e1d237446d4229f27acda5ef42",
+      "url": "https://selfcare.careinsurance.com/data/CARE%20CUSTOMER%20COMMUNICATION%20-%202026.pdf"
+    },
+    {
+      "capture_status": "acquired",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "29-Apr-26",
+      "listed_product_name": "Care Supreme",
+      "listed_uin": "CHIHLIP27061V032627",
+      "observation_method": "pdf_first_two_pages",
+      "observed_uins": [
+        "CHIHLIP27061V032627"
+      ],
+      "reconciliation": "listed_uin_observed",
+      "role": "premium_revision_rationale",
+      "sha256": "d3aae5e81dba25b88c00b6563c60ac5e8a576a1b4c02ac4b03ad857618da1ffb",
+      "url": "https://selfcare.careinsurance.com/data/Care%20Supreme%20-%20Rationale%20for%20Premium%20change.pdf"
+    },
+    {
+      "capture_status": "acquired",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "29-Apr-26",
+      "listed_product_name": "Care Supreme",
+      "listed_uin": "CHIHLIP27061V032627",
+      "observation_method": "pdf_first_two_pages",
+      "observed_uins": [
+        "CHIHLIP25047V022425"
+      ],
+      "reconciliation": "different_uin_observed",
+      "role": "customer_communication",
+      "sha256": "8cac9c9b7ef5d6531c45cbc1646957d1d8eb2f1ecc4f63f82f56a4a4ce7b38ab",
+      "url": "https://selfcare.careinsurance.com/data/CARE%20SUPREME%20CUSTOMER%20COMMUNICATION%20-%20APRIL_26.pdf"
+    },
+    {
+      "capture_status": "acquired",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "02-Jun-26",
+      "listed_product_name": "Care Advantage",
+      "listed_uin": "CHIHLIP27062V052627",
+      "observation_method": "pdf_first_two_pages",
+      "observed_uins": [
+        "CHIHLIP27062V052627"
+      ],
+      "reconciliation": "listed_uin_observed",
+      "role": "premium_revision_rationale",
+      "sha256": "1e38f9de34135114affcf86e38765551aa32a41659984763cab4fec80f56e54b",
+      "url": "https://selfcare.careinsurance.com/data/Care%20Advantage%20-%20Rationale%20for%20Premium%20change.pdf"
+    },
+    {
+      "capture_status": "acquired_non_pdf",
+      "edition_applicability": "unresolved",
+      "listed_effective_date": "02-Jun-26",
+      "listed_product_name": "Care Advantage",
+      "listed_uin": "CHIHLIP27062V052627",
+      "observation_method": "jpeg_visual_footer_review",
+      "observed_uins": [
+        "CHIHLIP26049V042526"
+      ],
+      "reconciliation": "different_uin_observed",
+      "role": "customer_communication",
+      "sha256": "2a2f20213718124a43e33664a7472a107c314d55993b0dd677fb11ea1b67353b",
+      "url": "https://selfcare.careinsurance.com/data/CARE%20ADVANTAGE%20CUSTOMER%20COMMUNICATION%20-%20JUNE%202026-01.jpg"
+    }
+  ],
+  "source_page": "https://selfcare.careinsurance.com/premium-revision"
+}
