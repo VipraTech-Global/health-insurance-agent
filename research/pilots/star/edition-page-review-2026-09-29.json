@@ -1,0 +1,297 @@
+{
+  "catalogue_complete": false,
+  "format_version": 1,
+  "limitations": [
+    "A visible prospectus code is evidence about the captured file, not proof that its wording, CIS, options and schedules share an applicable edition.",
+    "POL / SS / V.1 / 2024 accompanies SUPER STAR text in the extracted PDF layer, while the three pilot prospectuses visibly show their own PROS codes; the POL / SS string is not assigned as their edition.",
+    "The Star Health Assure expense sheet heading conflicts with its excluded-expenses source label; coverage meaning and applicability remain unresolved."
+  ],
+  "method": "Page-level pdftotext scan for all 13 prospectuses; rendered-page visual review for the three pilot prospectuses and their one-page expense sheets.",
+  "observed_at": "2026-09-29",
+  "pilot_excluded_expenses": [
+    {
+      "applicability": "unresolved",
+      "extracted_template_code": "POL / SS / V.1 / 2024",
+      "extracted_template_name": "SUPER STAR",
+      "pdf_page": 1,
+      "product_uin": "SHAHLIP26044V092526",
+      "sha256": "ae1e4a9fec23d65f8f983e22b9b76b6c8601baa9dcd2a0dc7b35530607b0f0b8",
+      "source_url": "https://d28c6jni2fmamz.cloudfront.net/star_comprehensive_other_excluded_expenses_new_ae97610427.pdf",
+      "visually_reviewed_heading": "Items for which coverage is not available in the policy"
+    },
+    {
+      "applicability": "unresolved",
+      "extracted_template_code": "POL / SS / V.1 / 2024",
+      "extracted_template_name": "SUPER STAR",
+      "pdf_page": 1,
+      "product_uin": "SHAHLIP26046V092526",
+      "sha256": "1def1773a1a07694531572b226a8ecbd1faefaec2e348d5e191cd32633e4c9b4",
+      "source_url": "https://d28c6jni2fmamz.cloudfront.net/FHO_Other_excluded_b6ac7e9f79.pdf",
+      "visually_reviewed_heading": "Items for which coverage is not available in the policy"
+    },
+    {
+      "applicability": "unresolved",
+      "extracted_template_code": "POL / SS / V.1 / 2024",
+      "extracted_template_name": "SUPER STAR",
+      "pdf_page": 1,
+      "product_uin": "SHAHLIP26048V032526",
+      "sha256": "1f277749e6cbce0dac5e9a1ca0fdf2a8790c71a2bf12d7169a7ebf9a897e04da",
+      "source_url": "https://d28c6jni2fmamz.cloudfront.net/Health_Assure_List_of_Excluded_Expenses_9be58ee6be.pdf",
+      "visually_reviewed_heading": "Items for which coverage is available in the policy"
+    }
+  ],
+  "prospectuses": [
+    {
+      "code_observations": [
+        {
+          "code": "PROS / ASP / V.10 / 2025",
+          "first_pdf_page": 1,
+          "interpretation": "prospectus_code_candidate",
+          "page_count_with_text": 17
+        }
+      ],
+      "edition_applicability": "unresolved",
+      "pdf_pages": 17,
+      "product_uin": "SHAHLIP26045V042526",
+      "prospectus_code_status": "observed_candidate",
+      "sha256": "83726401b8f6a57b74fc66a1d5f786387e962a266a52286edd371f423f7532a5",
+      "source_url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Arogya_Sanjeevani_Policy_V_8_9a95b2c87f.pdf",
+      "visual_footer_review_pdf_page": null
+    },
+    {
+      "code_observations": [
+        {
+          "code": "POL / SS / V.1 / 2024",
+          "first_pdf_page": 1,
+          "interpretation": "other_code_unattributed",
+          "page_count_with_text": 59
+        },
+        {
+          "code": "PROS / FHO / V.16 / 2026",
+          "first_pdf_page": 1,
+          "interpretation": "prospectus_code_candidate",
+          "page_count_with_text": 59
+        }
+      ],
+      "edition_applicability": "unresolved",
+      "pdf_pages": 59,
+      "product_uin": "SHAHLIP26046V092526",
+      "prospectus_code_status": "observed_candidate",
+      "sha256": "abe38283100d6402e1ac22929bb94c23bb53994bef7a378196e48900cd4da025",
+      "source_url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Family_Health_Optima_Insurance_Plan_V_10_79f547c311.pdf",
+      "visual_footer_review_pdf_page": 2
+    },
+    {
+      "code_observations": [
+        {
+          "code": "PROS / SHP / V.3 / 2025",
+          "first_pdf_page": 1,
+          "interpretation": "prospectus_code_candidate",
+          "page_count_with_text": 17
+        }
+      ],
+      "edition_applicability": "unresolved",
+      "pdf_pages": 17,
+      "product_uin": "SHAHLIP22226V012122",
+      "prospectus_code_status": "observed_candidate",
+      "sha256": "504193a4904099b21fd11a6f3628a9df97e1e1143861811421872bf3f27fd6d4",
+      "source_url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Health_Premier_Insurance_V_2_1d07f8ba27.pdf",
+      "visual_footer_review_pdf_page": null
+    },
+    {
+      "code_observations": [
+        {
+          "code": "PROS / MCI / V.15 / 2026",
+          "first_pdf_page": 2,
+          "interpretation": "prospectus_code_candidate",
+          "page_count_with_text": 31
+        }
+      ],
+      "edition_applicability": "unresolved",
+      "pdf_pages": 32,
+      "product_uin": "SHAHLIP26047V092526",
+      "prospectus_code_status": "observed_candidate",
+      "sha256": "b2454f3956f5a201eefd2339188528ab14cbb650e74fecc657f46cb18353dca2",
+      "source_url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Medi_Classic_Insurance_Policy_Individual_V_12_37dd902200.pdf",
+      "visual_footer_review_pdf_page": null
+    },
+    {
+      "code_observations": [
+        {
+          "code": "POL / SS / V.1 / 2024",
+          "first_pdf_page": 2,
+          "interpretation": "other_code_unattributed",
+          "page_count_with_text": 12
+        },
+        {
+          "code": "PROS / SCRC / V.13 / 2025",
+          "first_pdf_page": 1,
+          "interpretation": "prospectus_code_candidate",
+          "page_count_with_text": 24
+        }
+      ],
+      "edition_applicability": "unresolved",
+      "pdf_pages": 24,
+      "product_uin": "SHAHLIP26041V082526",
+      "prospectus_code_status": "observed_candidate",
+      "sha256": "2c310cd7d3ca5d3f556c8995ddaf5e007c6c6f20b5f709e5a7bc9cb337429b59",
+      "source_url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Senior_Citizens_Red_Carpet_Policy_V_11_ed34026052.pdf",
+      "visual_footer_review_pdf_page": null
+    },
+    {
+      "code_observations": [
+        {
+          "code": "PROS / SHPRO / V.4 / 2025",
+          "first_pdf_page": 1,
+          "interpretation": "prospectus_code_candidate",
+          "page_count_with_text": 13
+        }
+      ],
+      "edition_applicability": "unresolved",
+      "pdf_pages": 13,
+      "product_uin": "SHAHLIP23172V012223",
+      "prospectus_code_status": "observed_candidate",
+      "sha256": "57b9113ff0e10ae9ad6fcd70781a1d3f765e580c7d878a87c68588d478fcf317",
+      "source_url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Smart_Health_Pro_V_3_ef61087a6b.pdf",
+      "visual_footer_review_pdf_page": null
+    },
+    {
+      "code_observations": [
+        {
+          "code": "POL / SS / V.1 / 2024",
+          "first_pdf_page": 5,
+          "interpretation": "other_code_unattributed",
+          "page_count_with_text": 25
+        },
+        {
+          "code": "PROS / COMP / V.15 / 2025",
+          "first_pdf_page": 3,
+          "interpretation": "prospectus_code_candidate",
+          "page_count_with_text": 27
+        }
+      ],
+      "edition_applicability": "unresolved",
+      "pdf_pages": 53,
+      "product_uin": "SHAHLIP26044V092526",
+      "prospectus_code_status": "observed_candidate",
+      "sha256": "0404693147bd5202e28e39bfdb8fcc87f78e7ee6aa6a6f1032f63cbec63698e1",
+      "source_url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Star_Comprehensive_Insurance_Policy_V_12_dc6058c95e.pdf",
+      "visual_footer_review_pdf_page": 3
+    },
+    {
+      "code_observations": [
+        {
+          "code": "POL / SS / V.1 / 2024",
+          "first_pdf_page": 3,
+          "interpretation": "other_code_unattributed",
+          "page_count_with_text": 27
+        },
+        {
+          "code": "PROS / SHA / V.6 / 2026",
+          "first_pdf_page": 3,
+          "interpretation": "prospectus_code_candidate",
+          "page_count_with_text": 27
+        }
+      ],
+      "edition_applicability": "unresolved",
+      "pdf_pages": 56,
+      "product_uin": "SHAHLIP26048V032526",
+      "prospectus_code_status": "observed_candidate",
+      "sha256": "91a761206899caafe957f0c874d75c1b05b9e0b53601d2f57761309a9b0899be",
+      "source_url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Star_Health_Assure_Insurance_Policy_V_3_9b8479dfdd.pdf",
+      "visual_footer_review_pdf_page": 3
+    },
+    {
+      "code_observations": [
+        {
+          "code": "PROS / GAIN / V.8 / 2025",
+          "first_pdf_page": 1,
+          "interpretation": "prospectus_code_candidate",
+          "page_count_with_text": 7
+        }
+      ],
+      "edition_applicability": "unresolved",
+      "pdf_pages": 7,
+      "product_uin": "SHAHLIP21262V032021",
+      "prospectus_code_status": "observed_candidate",
+      "sha256": "d7ed421f03c0b7021608ca72e7836e44f268665e93f30a7e95b37972eed6cda3",
+      "source_url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Star_Health_Gain_Insurance_Policy_V_7_98d5126f06.pdf",
+      "visual_footer_review_pdf_page": null
+    },
+    {
+      "code_observations": [
+        {
+          "code": "PROS / SMRF / V.9 / 2025",
+          "first_pdf_page": 1,
+          "interpretation": "prospectus_code_candidate",
+          "page_count_with_text": 4
+        }
+      ],
+      "edition_applicability": "unresolved",
+      "pdf_pages": 4,
+      "product_uin": "SHAHMIP22038V032122",
+      "prospectus_code_status": "observed_candidate",
+      "sha256": "6354f937b115e5c1b2405e9ddb3fa4550039a52faf21ee5fb408958ac6bd0e89",
+      "source_url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Star_Micro_Rural_And_Farmers_Care_V_8_71a9c45e22.pdf",
+      "visual_footer_review_pdf_page": null
+    },
+    {
+      "code_observations": [
+        {
+          "code": "PROS / SWC / V.5 / 2025",
+          "first_pdf_page": 1,
+          "interpretation": "prospectus_code_candidate",
+          "page_count_with_text": 16
+        }
+      ],
+      "edition_applicability": "unresolved",
+      "pdf_pages": 16,
+      "product_uin": "SHAHLIP23132V022223",
+      "prospectus_code_status": "observed_candidate",
+      "sha256": "632c212c02d23f517fffd181a1abe865239317a3af93b7b6a143686ce1405ecc",
+      "source_url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Star_Women_Care_Insurance_Policy_V_4_7f70e88a4c.pdf",
+      "visual_footer_review_pdf_page": null
+    },
+    {
+      "code_observations": [
+        {
+          "code": "POL / SS / V.1 / 2024",
+          "first_pdf_page": 1,
+          "interpretation": "other_code_unattributed",
+          "page_count_with_text": 1
+        }
+      ],
+      "edition_applicability": "unresolved",
+      "pdf_pages": 68,
+      "product_uin": "SHAHLIP27049V022627",
+      "prospectus_code_status": "not_found_in_extracted_text",
+      "sha256": "e678f0c5e3db0a17278af7cef19e6988358f661d3fec3f1b2514c0872829088b",
+      "source_url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Super_Star_V_1_without_Premium_Chart_Single_Page_25b70db850.pdf",
+      "visual_footer_review_pdf_page": null
+    },
+    {
+      "code_observations": [
+        {
+          "code": "POL / SS / V.1 / 2024",
+          "first_pdf_page": 2,
+          "interpretation": "other_code_unattributed",
+          "page_count_with_text": 27
+        },
+        {
+          "code": "PROS / YSI / V.10 / 2025",
+          "first_pdf_page": 1,
+          "interpretation": "prospectus_code_candidate",
+          "page_count_with_text": 55
+        }
+      ],
+      "edition_applicability": "unresolved",
+      "pdf_pages": 55,
+      "product_uin": "SHAHLIP26043V062526",
+      "prospectus_code_status": "observed_candidate",
+      "sha256": "e9dc41ac387e2af2de8362af131051c80af24a3fcdf20061b389df7fd4c6438f",
+      "source_url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Young_Star_Insurance_Policy_V_8_f21b6037ff.pdf",
+      "visual_footer_review_pdf_page": null
+    }
+  ],
+  "source_triage_sha256": "0650425efec6878cf1d625d02f9b51da80c75353ca91a712e4d995664c5f4173"
+}
