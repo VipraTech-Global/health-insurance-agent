@@ -88,6 +88,7 @@ def build_ledger(
         )
         products["star"][uin]["source_row"] = row["source_row"]
         products["star"][uin]["source_url"] = PRODUCTS_URL
+    care_roster_year = (care_roster.get("source_last_modified") or "unknown")[:4]
     for row in care_roster["products"]:
         uin = row["uin"]
         if uin in products["care"]:
@@ -97,7 +98,7 @@ def build_ledger(
             "care",
             uin,
             row["name_as_listed"],
-            f"dated_2025_{row['roster_section']}_register",
+            f"dated_{care_roster_year}_{row['roster_section']}_register",
             scope,
             reason,
         )
@@ -114,17 +115,20 @@ def build_ledger(
         products["niva"][uin]["source_row"] = row["source_row"]
         products["niva"][uin]["source_url"] = niva_roster["source_url"]
 
-    # Current Care wordings expose newer UINs than the linked 2025 register.
-    # Keep them as identity leads instead of silently omitting them.
+    # Wordings can expose UINs outside the dated Care register. Keep current
+    # listing leads separate from older wordings linked on product pages.
     for row in other_audit["documents"]:
         if row["insurer_id"] != "care" or row["role"] != "policy_wording":
             continue
         for uin in row["first_two_page_uins"]:
             if uin not in products["care"]:
                 scope, reason = scope_lead(row["label"], uin)
-                products["care"][uin] = _product(
-                    "care", uin, row["label"], "current_wording_identity_only", scope, reason
+                origin = (
+                    "current_wording_identity_only"
+                    if row["source_page"] == "https://www.careinsurance.com/other-downloads.html"
+                    else "other_wording_identity_only"
                 )
+                products["care"][uin] = _product("care", uin, row["label"], origin, scope, reason)
                 products["care"][uin]["source_url"] = row["source_page"]
 
     documents = []
@@ -210,6 +214,9 @@ def build_ledger(
             "care_current_wording_only_rows": sum(
                 row["origin"] == "current_wording_identity_only"
                 for row in products["care"].values()
+            ),
+            "care_other_wording_only_rows": sum(
+                row["origin"] == "other_wording_identity_only" for row in products["care"].values()
             ),
             "niva_official_roster_rows": len(niva_roster["products"]),
             "source_document_rows": len(documents),

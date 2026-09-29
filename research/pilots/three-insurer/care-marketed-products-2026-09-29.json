@@ -1,0 +1,991 @@
+{
+  "format_version": 1,
+  "health_panel_count": 19,
+  "limitations": [
+    "The All Insurance Plans modal is a marketing listing, not a complete current product/UIN register.",
+    "UINs visible on product pages are copied as page mentions only; editions and variant applicability remain unresolved."
+  ],
+  "observed_at": "2026-09-29",
+  "product_count": 29,
+  "products": [
+    {
+      "linked_pdfs": [
+        {
+          "label": "Download Terms and Conditions",
+          "url": "https://cms.careinsurance.com/upload_master/landingpages/upload/ultimate-joy-policy-terms-and-conditions.pdf?rv=0.71672700%201668687223"
+        },
+        {
+          "label": "Claim Procedure",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/claimsprocedurepdf/Claims_Procedure.pdf"
+        },
+        {
+          "label": "Change Request Form & NCD",
+          "url": "https://www.careinsurance.com/cpproject/rhiclfrontend/assets/ncdpdf/change-request-form-with-ncd.pdf"
+        },
+        {
+          "label": "IRDA's Health Handbook",
+          "url": "https://www.careinsurance.com/cms/public/uploads/download_center/irda's-health-handbook---in-english.pdf?rv=0.55507000%201606915975"
+        },
+        {
+          "label": "Fever Management Guideline",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/fever-management.pdf"
+        },
+        {
+          "label": "Guideline Robotic Surgery & Immunotherapy",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/evidence-based-reimbursement-policy-for-robotic-surgery-and-immunotherapy.pdf"
+        },
+        {
+          "label": "Launch & Withdrawal dates of Products",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf"
+        }
+      ],
+      "listed_name": "Ultimate Joy",
+      "listing_panel": "panel-health",
+      "product_page": {
+        "byte_count": 374629,
+        "captured_at": "2026-09-29T13:14:34.656278+00:00",
+        "content_type": "text/html; charset=UTF-8",
+        "http_status": 200,
+        "sha256": "c0306de87549d5e8a3b4298301ee4dd4ef9a3b78f195efda771bf37a8869a697",
+        "url": "https://www.careinsurance.com/product/ultimate-joy"
+      },
+      "product_page_url": "https://www.careinsurance.com/product/ultimate-joy",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": []
+    },
+    {
+      "linked_pdfs": [
+        {
+          "label": "Download Terms and Conditions",
+          "url": "https://cms.careinsurance.com/upload_master/landingpages/upload/ultimate-care-terms-and-conditions.pdf?rv=0.71672700%201668687223"
+        },
+        {
+          "label": "Claim Procedure",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/claimsprocedurepdf/Claims_Procedure.pdf"
+        },
+        {
+          "label": "Change Request Form & NCD",
+          "url": "https://www.careinsurance.com/cpproject/rhiclfrontend/assets/ncdpdf/change-request-form-with-ncd.pdf"
+        },
+        {
+          "label": "IRDA's Health Handbook",
+          "url": "https://www.careinsurance.com/cms/public/uploads/download_center/irda's-health-handbook---in-english.pdf?rv=0.55507000%201606915975"
+        },
+        {
+          "label": "Fever Management Guideline",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/fever-management.pdf"
+        },
+        {
+          "label": "Guideline Robotic Surgery & Immunotherapy",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/evidence-based-reimbursement-policy-for-robotic-surgery-and-immunotherapy.pdf"
+        },
+        {
+          "label": "Launch & Withdrawal dates of Products",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf"
+        }
+      ],
+      "listed_name": "Ultimate Care - Unlimited Coverage",
+      "listing_panel": "panel-health",
+      "product_page": {
+        "byte_count": 373657,
+        "captured_at": "2026-09-29T13:14:35.159433+00:00",
+        "content_type": "text/html; charset=UTF-8",
+        "http_status": 200,
+        "sha256": "ab1086f94ef63419127758033548f1e66ddf6c31a95118596d9171806c8e8de1",
+        "url": "https://www.careinsurance.com/product/ultimate-care-unlimited-coverage"
+      },
+      "product_page_url": "https://www.careinsurance.com/product/ultimate-care-unlimited-coverage",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": [
+        "CHIHLIP25044V012425"
+      ]
+    },
+    {
+      "linked_pdfs": [
+        {
+          "label": "Download Terms and Conditions",
+          "url": "https://cms.careinsurance.com/upload_master/landingpages/upload/ultimate-care-terms-and-conditions.pdf?rv=0.71672700%201668687223"
+        },
+        {
+          "label": "Claim Procedure",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/claimsprocedurepdf/Claims_Procedure.pdf"
+        },
+        {
+          "label": "Change Request Form & NCD",
+          "url": "https://www.careinsurance.com/cpproject/rhiclfrontend/assets/ncdpdf/change-request-form-with-ncd.pdf"
+        },
+        {
+          "label": "IRDA's Health Handbook",
+          "url": "https://www.careinsurance.com/cms/public/uploads/download_center/irda's-health-handbook---in-english.pdf?rv=0.55507000%201606915975"
+        },
+        {
+          "label": "Fever Management Guideline",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/fever-management.pdf"
+        },
+        {
+          "label": "Guideline Robotic Surgery & Immunotherapy",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/evidence-based-reimbursement-policy-for-robotic-surgery-and-immunotherapy.pdf"
+        },
+        {
+          "label": "Launch & Withdrawal dates of Products",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf"
+        }
+      ],
+      "listed_name": "Ultimate Care",
+      "listing_panel": "panel-health",
+      "product_page": {
+        "byte_count": 395777,
+        "captured_at": "2026-09-29T13:14:35.750311+00:00",
+        "content_type": "text/html; charset=UTF-8",
+        "http_status": 200,
+        "sha256": "0dd8c1c68ffef6c8c1ea0c34e3236f6413c7f4d1d5d60ef5d83b29ff1b3f83bb",
+        "url": "https://www.careinsurance.com/product/ultimate-care"
+      },
+      "product_page_url": "https://www.careinsurance.com/product/ultimate-care",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": [
+        "CHIHLIP25044V012425"
+      ]
+    },
+    {
+      "linked_pdfs": [
+        {
+          "label": "Download Terms and Conditions",
+          "url": "https://cms.careinsurance.com/upload_master/landingpages/upload/ultimate-care-policy-terms-conditions.pdf?rv=0.71672700%201668687223"
+        },
+        {
+          "label": "Claim Procedure",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/claimsprocedurepdf/Claims_Procedure.pdf"
+        },
+        {
+          "label": "Change Request Form & NCD",
+          "url": "https://www.careinsurance.com/cpproject/rhiclfrontend/assets/ncdpdf/change-request-form-with-ncd.pdf"
+        },
+        {
+          "label": "IRDA's Health Handbook",
+          "url": "https://www.careinsurance.com/cms/public/uploads/download_center/irda's-health-handbook---in-english.pdf?rv=0.55507000%201606915975"
+        },
+        {
+          "label": "Fever Management Guideline",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/fever-management.pdf"
+        },
+        {
+          "label": "Guideline Robotic Surgery & Immunotherapy",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/evidence-based-reimbursement-policy-for-robotic-surgery-and-immunotherapy.pdf"
+        },
+        {
+          "label": "Launch & Withdrawal dates of Products",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf"
+        }
+      ],
+      "listed_name": "Ultimate Care Senior",
+      "listing_panel": "panel-health",
+      "product_page": {
+        "byte_count": 379866,
+        "captured_at": "2026-09-29T13:14:36.285140+00:00",
+        "content_type": "text/html; charset=UTF-8",
+        "http_status": 200,
+        "sha256": "d070b5bc824e60e8a1b251589ba3e5913b8f3e109882ddde2f3990bb24523da0",
+        "url": "https://www.careinsurance.com/product/ultimate-care-senior"
+      },
+      "product_page_url": "https://www.careinsurance.com/product/ultimate-care-senior",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": []
+    },
+    {
+      "linked_pdfs": [
+        {
+          "label": "Download Terms and Conditions",
+          "url": "https://cms.careinsurance.com/upload_master/landingpages/upload/en-ultimate-care-policy-terms-conditions.pdf?rv=0.71672700%201668687223"
+        },
+        {
+          "label": "Claim Procedure",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/claimsprocedurepdf/Claims_Procedure.pdf"
+        },
+        {
+          "label": "Change Request Form & NCD",
+          "url": "https://www.careinsurance.com/cpproject/rhiclfrontend/assets/ncdpdf/change-request-form-with-ncd.pdf"
+        },
+        {
+          "label": "IRDA's Health Handbook",
+          "url": "https://www.careinsurance.com/cms/public/uploads/download_center/irda's-health-handbook---in-english.pdf?rv=0.55507000%201606915975"
+        },
+        {
+          "label": "Fever Management Guideline",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/fever-management.pdf"
+        },
+        {
+          "label": "Guideline Robotic Surgery & Immunotherapy",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/evidence-based-reimbursement-policy-for-robotic-surgery-and-immunotherapy.pdf"
+        },
+        {
+          "label": "Launch & Withdrawal dates of Products",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf"
+        }
+      ],
+      "listed_name": "En Ultimate Care",
+      "listing_panel": "panel-health",
+      "product_page": {
+        "byte_count": 375412,
+        "captured_at": "2026-09-29T13:14:36.795759+00:00",
+        "content_type": "text/html; charset=UTF-8",
+        "http_status": 200,
+        "sha256": "de54b82d7407c0ac1c0b83b1358393cf930cd9408d542727dd2ff74e68fa1d61",
+        "url": "https://www.careinsurance.com/product/en-ultimate-care"
+      },
+      "product_page_url": "https://www.careinsurance.com/product/en-ultimate-care",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": []
+    },
+    {
+      "linked_pdfs": [
+        {
+          "label": "Download Terms and Conditions",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---policy-terms-and-conditions.pdf?rv=0.71672700%201668687223"
+        },
+        {
+          "label": "Claim Procedure",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/claimsprocedurepdf/Claims_Procedure.pdf"
+        },
+        {
+          "label": "Change Request Form & NCD",
+          "url": "https://www.careinsurance.com/cpproject/rhiclfrontend/assets/ncdpdf/change-request-form-with-ncd.pdf"
+        },
+        {
+          "label": "IRDA's Health Handbook",
+          "url": "https://www.careinsurance.com/cms/public/uploads/download_center/irda's-health-handbook---in-english.pdf?rv=0.55507000%201606915975"
+        },
+        {
+          "label": "Fever Management Guideline",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/fever-management.pdf"
+        },
+        {
+          "label": "Guideline Robotic Surgery & Immunotherapy",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/evidence-based-reimbursement-policy-for-robotic-surgery-and-immunotherapy.pdf"
+        },
+        {
+          "label": "Launch & Withdrawal dates of Products",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf"
+        }
+      ],
+      "listed_name": "Care Supreme",
+      "listing_panel": "panel-health",
+      "product_page": {
+        "byte_count": 463368,
+        "captured_at": "2026-09-29T13:14:37.173154+00:00",
+        "content_type": "text/html; charset=UTF-8",
+        "http_status": 200,
+        "sha256": "4bd297e83afbe297095a0b759b80bf00b59faaa648fe28e23ef52101f8515bfa",
+        "url": "https://www.careinsurance.com/product/care-supreme"
+      },
+      "product_page_url": "https://www.careinsurance.com/product/care-supreme",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": [
+        "CHIHLIP25047V022425"
+      ]
+    },
+    {
+      "linked_pdfs": [
+        {
+          "label": "Download Terms and Conditions",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---policy-terms-and-conditions.pdf?rv=0.71672700%201668687223"
+        },
+        {
+          "label": "Claim Procedure",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/claimsprocedurepdf/Claims_Procedure.pdf"
+        },
+        {
+          "label": "Change Request Form & NCD",
+          "url": "https://www.careinsurance.com/cpproject/rhiclfrontend/assets/ncdpdf/change-request-form-with-ncd.pdf"
+        },
+        {
+          "label": "IRDA's Health Handbook",
+          "url": "https://www.careinsurance.com/cms/public/uploads/download_center/irda's-health-handbook---in-english.pdf?rv=0.55507000%201606915975"
+        },
+        {
+          "label": "Fever Management Guideline",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/fever-management.pdf"
+        },
+        {
+          "label": "Guideline Robotic Surgery & Immunotherapy",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/evidence-based-reimbursement-policy-for-robotic-surgery-and-immunotherapy.pdf"
+        },
+        {
+          "label": "Launch & Withdrawal dates of Products",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf"
+        }
+      ],
+      "listed_name": "Care Supreme - Value Plus",
+      "listing_panel": "panel-health",
+      "product_page": {
+        "byte_count": 378180,
+        "captured_at": "2026-09-29T13:14:37.579115+00:00",
+        "content_type": "text/html; charset=UTF-8",
+        "http_status": 200,
+        "sha256": "093285942c124e9f5b96e83be329f879c78e36314c8c09cfd557c6a995b27f81",
+        "url": "https://www.careinsurance.com/product/care-supreme-value-plus"
+      },
+      "product_page_url": "https://www.careinsurance.com/product/care-supreme-value-plus",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": [
+        "CHIHLIP25047V022425"
+      ]
+    },
+    {
+      "linked_pdfs": [
+        {
+          "label": "Download Terms and Conditions",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---policy-terms-and-conditions.pdf?rv=0.71672700%201668687223"
+        },
+        {
+          "label": "Claim Procedure",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/claimsprocedurepdf/Claims_Procedure.pdf"
+        },
+        {
+          "label": "Change Request Form & NCD",
+          "url": "https://www.careinsurance.com/cpproject/rhiclfrontend/assets/ncdpdf/change-request-form-with-ncd.pdf"
+        },
+        {
+          "label": "IRDA's Health Handbook",
+          "url": "https://www.careinsurance.com/cms/public/uploads/download_center/irda's-health-handbook---in-english.pdf?rv=0.55507000%201606915975"
+        },
+        {
+          "label": "Fever Management Guideline",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/fever-management.pdf"
+        },
+        {
+          "label": "Guideline Robotic Surgery & Immunotherapy",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/evidence-based-reimbursement-policy-for-robotic-surgery-and-immunotherapy.pdf"
+        },
+        {
+          "label": "Launch & Withdrawal dates of Products",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf"
+        }
+      ],
+      "listed_name": "Care Supreme - Value for Money",
+      "listing_panel": "panel-health",
+      "product_page": {
+        "byte_count": 380209,
+        "captured_at": "2026-09-29T13:14:38.026963+00:00",
+        "content_type": "text/html; charset=UTF-8",
+        "http_status": 200,
+        "sha256": "eb1f78265d8ed9993dcfaae3497fd70ba21952d01393f72d4b562b3dbe19ef8e",
+        "url": "https://www.careinsurance.com/product/care-supreme-value"
+      },
+      "product_page_url": "https://www.careinsurance.com/product/care-supreme-value",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": [
+        "CHIHLIP25047V022425"
+      ]
+    },
+    {
+      "linked_pdfs": [
+        {
+          "label": "Download Terms and Conditions",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---policy-terms-and-conditions.pdf?rv=0.71672700%201668687223"
+        },
+        {
+          "label": "Claim Procedure",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/claimsprocedurepdf/Claims_Procedure.pdf"
+        },
+        {
+          "label": "Change Request Form & NCD",
+          "url": "https://www.careinsurance.com/cpproject/rhiclfrontend/assets/ncdpdf/change-request-form-with-ncd.pdf"
+        },
+        {
+          "label": "IRDA's Health Handbook",
+          "url": "https://www.careinsurance.com/cms/public/uploads/download_center/irda's-health-handbook---in-english.pdf?rv=0.55507000%201606915975"
+        },
+        {
+          "label": "Fever Management Guideline",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/fever-management.pdf"
+        },
+        {
+          "label": "Guideline Robotic Surgery & Immunotherapy",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/evidence-based-reimbursement-policy-for-robotic-surgery-and-immunotherapy.pdf"
+        },
+        {
+          "label": "Launch & Withdrawal dates of Products",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf"
+        }
+      ],
+      "listed_name": "Care Supreme-Vikas",
+      "listing_panel": "panel-health",
+      "product_page": {
+        "byte_count": 376070,
+        "captured_at": "2026-09-29T13:14:38.533101+00:00",
+        "content_type": "text/html; charset=UTF-8",
+        "http_status": 200,
+        "sha256": "479e02011b2572116b9f4a67fe0ae4f9cbd64b47d0be4d3afd44ff67f827686f",
+        "url": "https://www.careinsurance.com/product/care-supreme-vikas"
+      },
+      "product_page_url": "https://www.careinsurance.com/product/care-supreme-vikas",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": [
+        "CHIHLIP25047V022425"
+      ]
+    },
+    {
+      "linked_pdfs": [
+        {
+          "label": "Download Terms and Conditions",
+          "url": "https://cms.careinsurance.com/upload_master/landingpages/upload/supreme-enhance-policy-terms-and-conditions.pdf?rv=0.71672700%201668687223"
+        },
+        {
+          "label": "Claim Procedure",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/claimsprocedurepdf/Claims_Procedure.pdf"
+        },
+        {
+          "label": "Change Request Form & NCD",
+          "url": "https://www.careinsurance.com/cpproject/rhiclfrontend/assets/ncdpdf/change-request-form-with-ncd.pdf"
+        },
+        {
+          "label": "IRDA's Health Handbook",
+          "url": "https://www.careinsurance.com/cms/public/uploads/download_center/irda's-health-handbook---in-english.pdf?rv=0.55507000%201606915975"
+        },
+        {
+          "label": "Fever Management Guideline",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/fever-management.pdf"
+        },
+        {
+          "label": "Guideline Robotic Surgery & Immunotherapy",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/evidence-based-reimbursement-policy-for-robotic-surgery-and-immunotherapy.pdf"
+        },
+        {
+          "label": "Launch & Withdrawal dates of Products",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf"
+        }
+      ],
+      "listed_name": "Supreme Enhance",
+      "listing_panel": "panel-health",
+      "product_page": {
+        "byte_count": 376743,
+        "captured_at": "2026-09-29T13:14:38.915313+00:00",
+        "content_type": "text/html; charset=UTF-8",
+        "http_status": 200,
+        "sha256": "22d827de96eef715704047231042ca4cc9564975a48406f230cede3270bd9d37",
+        "url": "https://www.careinsurance.com/product/care-supreme-enhance"
+      },
+      "product_page_url": "https://www.careinsurance.com/product/care-supreme-enhance",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": [
+        "CHIHLIP25036V012425"
+      ]
+    },
+    {
+      "linked_pdfs": [
+        {
+          "label": "Download Terms and Conditions",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---policy-terms-and-conditions.pdf?rv=0.71672700%201668687223"
+        },
+        {
+          "label": "Claim Procedure",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/claimsprocedurepdf/Claims_Procedure.pdf"
+        },
+        {
+          "label": "Change Request Form & NCD",
+          "url": "https://www.careinsurance.com/cpproject/rhiclfrontend/assets/ncdpdf/change-request-form-with-ncd.pdf"
+        },
+        {
+          "label": "IRDA's Health Handbook",
+          "url": "https://www.careinsurance.com/cms/public/uploads/download_center/irda's-health-handbook---in-english.pdf?rv=0.55507000%201606915975"
+        },
+        {
+          "label": "Fever Management Guideline",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/fever-management.pdf"
+        },
+        {
+          "label": "Guideline Robotic Surgery & Immunotherapy",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/evidence-based-reimbursement-policy-for-robotic-surgery-and-immunotherapy.pdf"
+        },
+        {
+          "label": "Launch & Withdrawal dates of Products",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf"
+        }
+      ],
+      "listed_name": "Care Supreme - Super Saver",
+      "listing_panel": "panel-health",
+      "product_page": {
+        "byte_count": 380088,
+        "captured_at": "2026-09-29T13:14:39.271825+00:00",
+        "content_type": "text/html; charset=UTF-8",
+        "http_status": 200,
+        "sha256": "b0d422ff58edff97d561ba83c41b073fd951c38bdfdc052b1a108af4c06c3c06",
+        "url": "https://www.careinsurance.com/product/care-supreme-super-saver"
+      },
+      "product_page_url": "https://www.careinsurance.com/product/care-supreme-super-saver",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": []
+    },
+    {
+      "linked_pdfs": [
+        {
+          "label": "Download Terms and Conditions",
+          "url": "https://cms.careinsurance.com/upload_master/landingpages/upload/care-advantage-policy-terms-condition-effective-from-02-may-2025-.pdf?rv=0.71672700%201668687223"
+        },
+        {
+          "label": "Claim Procedure",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/claimsprocedurepdf/Claims_Procedure.pdf"
+        },
+        {
+          "label": "Change Request Form & NCD",
+          "url": "https://www.careinsurance.com/cpproject/rhiclfrontend/assets/ncdpdf/change-request-form-with-ncd.pdf"
+        },
+        {
+          "label": "IRDA's Health Handbook",
+          "url": "https://www.careinsurance.com/cms/public/uploads/download_center/irda's-health-handbook---in-english.pdf?rv=0.55507000%201606915975"
+        },
+        {
+          "label": "Fever Management Guideline",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/fever-management.pdf"
+        },
+        {
+          "label": "Guideline Robotic Surgery & Immunotherapy",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/evidence-based-reimbursement-policy-for-robotic-surgery-and-immunotherapy.pdf"
+        },
+        {
+          "label": "Launch & Withdrawal dates of Products",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf"
+        }
+      ],
+      "listed_name": "Care Advantage",
+      "listing_panel": "panel-health",
+      "product_page": {
+        "byte_count": 392968,
+        "captured_at": "2026-09-29T13:14:39.734844+00:00",
+        "content_type": "text/html; charset=UTF-8",
+        "http_status": 200,
+        "sha256": "0ab323037ade631b0a1798d432406dd941007f9a96e2b64cab8cd3c7c0925331",
+        "url": "https://www.careinsurance.com/product/care-advantage"
+      },
+      "product_page_url": "https://www.careinsurance.com/product/care-advantage",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": [
+        "CHIHLIP26049V042526"
+      ]
+    },
+    {
+      "linked_pdfs": [
+        {
+          "label": "Download Terms and Conditions",
+          "url": "https://cms.careinsurance.com/upload_master/landingpages/upload/secure-policy-terms-conditions-effective-from-05-march-2025-.pdf?rv=0.60411600%201599731943"
+        },
+        {
+          "label": "Claim Procedure",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/claimsprocedurepdf/Claims_Procedure.pdf"
+        },
+        {
+          "label": "Change Request Form & NCD",
+          "url": "https://www.careinsurance.com/cpproject/rhiclfrontend/assets/ncdpdf/change-request-form-with-ncd.pdf"
+        },
+        {
+          "label": "IRDA's Health Handbook",
+          "url": "https://www.careinsurance.com/cms/public/uploads/download_center/irda's-health-handbook---in-english.pdf?rv=0.55507000%201606915975"
+        },
+        {
+          "label": "Fever Management Guideline",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/fever-management.pdf"
+        },
+        {
+          "label": "Guideline Robotic Surgery & Immunotherapy",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/evidence-based-reimbursement-policy-for-robotic-surgery-and-immunotherapy.pdf"
+        },
+        {
+          "label": "Launch & Withdrawal dates of Products",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf"
+        }
+      ],
+      "listed_name": "Secure Plus",
+      "listing_panel": "panel-health",
+      "product_page": {
+        "byte_count": 364845,
+        "captured_at": "2026-09-29T13:14:40.041276+00:00",
+        "content_type": "text/html; charset=UTF-8",
+        "http_status": 200,
+        "sha256": "2e999b65976cf0bfc4c0e456b919d9ade972bd93576af099182b51b84c4cee53",
+        "url": "https://www.careinsurance.com/product/secure-plus"
+      },
+      "product_page_url": "https://www.careinsurance.com/product/secure-plus",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": []
+    },
+    {
+      "linked_pdfs": [
+        {
+          "label": "Download Terms and Conditions",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/secure--policy-terms-&-conditions-%28effective-from-05-march-2025%29.pdf?rv=0.60411600%201599731943"
+        },
+        {
+          "label": "Claim Procedure",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/claimsprocedurepdf/Claims_Procedure.pdf"
+        },
+        {
+          "label": "Change Request Form & NCD",
+          "url": "https://www.careinsurance.com/cpproject/rhiclfrontend/assets/ncdpdf/change-request-form-with-ncd.pdf"
+        },
+        {
+          "label": "IRDA's Health Handbook",
+          "url": "https://www.careinsurance.com/cms/public/uploads/download_center/irda's-health-handbook---in-english.pdf?rv=0.55507000%201606915975"
+        },
+        {
+          "label": "Fever Management Guideline",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/fever-management.pdf"
+        },
+        {
+          "label": "Guideline Robotic Surgery & Immunotherapy",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/evidence-based-reimbursement-policy-for-robotic-surgery-and-immunotherapy.pdf"
+        },
+        {
+          "label": "Launch & Withdrawal dates of Products",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf"
+        }
+      ],
+      "listed_name": "Secure-Child Personal Accident Insurance",
+      "listing_panel": "panel-health",
+      "product_page": {
+        "byte_count": 368468,
+        "captured_at": "2026-09-29T13:14:40.414691+00:00",
+        "content_type": "text/html; charset=UTF-8",
+        "http_status": 200,
+        "sha256": "560cce206b439bb091dd931ab3f1487bf637d2c7df9a38aa50f4cc304b7739e5",
+        "url": "https://www.careinsurance.com/product/secure-child"
+      },
+      "product_page_url": "https://www.careinsurance.com/product/secure-child",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": []
+    },
+    {
+      "linked_pdfs": [
+        {
+          "label": "Download Terms and Conditions",
+          "url": "https://cms.careinsurance.com/upload_master/landingpages/upload/care-freedom-t-c-effective-from-3-september-2025-.pdf?rv=0.71672700%201668687223"
+        },
+        {
+          "label": "Claim Procedure",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/claimsprocedurepdf/Claims_Procedure.pdf"
+        },
+        {
+          "label": "Change Request Form & NCD",
+          "url": "https://www.careinsurance.com/cpproject/rhiclfrontend/assets/ncdpdf/change-request-form-with-ncd.pdf"
+        },
+        {
+          "label": "IRDA's Health Handbook",
+          "url": "https://www.careinsurance.com/cms/public/uploads/download_center/irda's-health-handbook---in-english.pdf?rv=0.55507000%201606915975"
+        },
+        {
+          "label": "Fever Management Guideline",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/fever-management.pdf"
+        },
+        {
+          "label": "Guideline Robotic Surgery & Immunotherapy",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/evidence-based-reimbursement-policy-for-robotic-surgery-and-immunotherapy.pdf"
+        },
+        {
+          "label": "Launch & Withdrawal dates of Products",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf"
+        }
+      ],
+      "listed_name": "Care Freedom",
+      "listing_panel": "panel-health",
+      "product_page": {
+        "byte_count": 388111,
+        "captured_at": "2026-09-29T13:14:40.699702+00:00",
+        "content_type": "text/html; charset=UTF-8",
+        "http_status": 200,
+        "sha256": "e0c1974d603310b7d3e6d730b470050540fb596c071e1d90107ee833d115cf8b",
+        "url": "https://www.careinsurance.com/product/care-freedom"
+      },
+      "product_page_url": "https://www.careinsurance.com/product/care-freedom",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": [
+        "RHIHLIP21519V022021"
+      ]
+    },
+    {
+      "linked_pdfs": [
+        {
+          "label": "Download Terms and Conditions",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/senior-health-advantage---policy-terms-and-conditions.pdf?rv=0.71672700%201668687223"
+        },
+        {
+          "label": "Claim Procedure",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/claimsprocedurepdf/Claims_Procedure.pdf"
+        },
+        {
+          "label": "Change Request Form & NCD",
+          "url": "https://www.careinsurance.com/cpproject/rhiclfrontend/assets/ncdpdf/change-request-form-with-ncd.pdf"
+        },
+        {
+          "label": "IRDA's Health Handbook",
+          "url": "https://www.careinsurance.com/cms/public/uploads/download_center/irda's-health-handbook---in-english.pdf?rv=0.55507000%201606915975"
+        },
+        {
+          "label": "Fever Management Guideline",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/fever-management.pdf"
+        },
+        {
+          "label": "Guideline Robotic Surgery & Immunotherapy",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/evidence-based-reimbursement-policy-for-robotic-surgery-and-immunotherapy.pdf"
+        },
+        {
+          "label": "Launch & Withdrawal dates of Products",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf"
+        }
+      ],
+      "listed_name": "Senior Health Advantage",
+      "listing_panel": "panel-health",
+      "product_page": {
+        "byte_count": 364293,
+        "captured_at": "2026-09-29T13:14:41.198917+00:00",
+        "content_type": "text/html; charset=UTF-8",
+        "http_status": 200,
+        "sha256": "e18de7d3f188243c4a64864cffbccdf8a7c6f20d113e040737b8a5733de4b771",
+        "url": "https://www.careinsurance.com/product/senior-health-advantage"
+      },
+      "product_page_url": "https://www.careinsurance.com/product/senior-health-advantage",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": [
+        "CHIHLIP22223V012122"
+      ]
+    },
+    {
+      "linked_pdfs": [
+        {
+          "label": "Download Terms and Conditions",
+          "url": "https://cms.careinsurance.com/upload_master/landingpages/upload/care-heart-policy-terms-and-conditions-effective-from-03-september-2025-.pdf?rv=0.71672700%201668687223"
+        },
+        {
+          "label": "Claim Procedure",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/claimsprocedurepdf/Claims_Procedure.pdf"
+        },
+        {
+          "label": "Change Request Form & NCD",
+          "url": "https://www.careinsurance.com/cpproject/rhiclfrontend/assets/ncdpdf/change-request-form-with-ncd.pdf"
+        },
+        {
+          "label": "IRDA's Health Handbook",
+          "url": "https://www.careinsurance.com/cms/public/uploads/download_center/irda's-health-handbook---in-english.pdf?rv=0.55507000%201606915975"
+        },
+        {
+          "label": "Fever Management Guideline",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/fever-management.pdf"
+        },
+        {
+          "label": "Guideline Robotic Surgery & Immunotherapy",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/evidence-based-reimbursement-policy-for-robotic-surgery-and-immunotherapy.pdf"
+        },
+        {
+          "label": "Launch & Withdrawal dates of Products",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf"
+        }
+      ],
+      "listed_name": "Care Heart",
+      "listing_panel": "panel-health",
+      "product_page": {
+        "byte_count": 377743,
+        "captured_at": "2026-09-29T13:14:41.503131+00:00",
+        "content_type": "text/html; charset=UTF-8",
+        "http_status": 200,
+        "sha256": "3a29a8e0a9979ac1b3d07174e834a7975ae95662a5451c8e9d5006c54934cd79",
+        "url": "https://www.careinsurance.com/product/care-heart"
+      },
+      "product_page_url": "https://www.careinsurance.com/product/care-heart",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": [
+        "RHIHLIP21371V022021"
+      ]
+    },
+    {
+      "linked_pdfs": [
+        {
+          "label": "Download Terms and Conditions",
+          "url": "https://cms.careinsurance.com/upload_master/landingpages/upload/enhance-t-c-effective-from-12-september-2024-.pdf?rv=0.71672700%201668687223"
+        },
+        {
+          "label": "Claim Procedure",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/claimsprocedurepdf/Claims_Procedure.pdf"
+        },
+        {
+          "label": "Change Request Form & NCD",
+          "url": "https://www.careinsurance.com/cpproject/rhiclfrontend/assets/ncdpdf/change-request-form-with-ncd.pdf"
+        },
+        {
+          "label": "IRDA's Health Handbook",
+          "url": "https://www.careinsurance.com/cms/public/uploads/download_center/irda's-health-handbook---in-english.pdf?rv=0.55507000%201606915975"
+        },
+        {
+          "label": "Fever Management Guideline",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/fever-management.pdf"
+        },
+        {
+          "label": "Guideline Robotic Surgery & Immunotherapy",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/evidence-based-reimbursement-policy-for-robotic-surgery-and-immunotherapy.pdf"
+        },
+        {
+          "label": "Launch & Withdrawal dates of Products",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf"
+        }
+      ],
+      "listed_name": "Enhance",
+      "listing_panel": "panel-health",
+      "product_page": {
+        "byte_count": 379752,
+        "captured_at": "2026-09-29T13:14:41.838727+00:00",
+        "content_type": "text/html; charset=UTF-8",
+        "http_status": 200,
+        "sha256": "5e6617a3c3b19319a79698375630caac5420ca170a8c7d46afdb336924ad49bc",
+        "url": "https://www.careinsurance.com/product/enhance"
+      },
+      "product_page_url": "https://www.careinsurance.com/product/enhance",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": []
+    },
+    {
+      "linked_pdfs": [
+        {
+          "label": "Download Terms and Conditions",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/joy---policy-terms-and-conditions.pdf?rv=0.71672700%201668687223"
+        },
+        {
+          "label": "Claim Procedure",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/claimsprocedurepdf/Claims_Procedure.pdf"
+        },
+        {
+          "label": "Change Request Form & NCD",
+          "url": "https://www.careinsurance.com/cpproject/rhiclfrontend/assets/ncdpdf/change-request-form-with-ncd.pdf"
+        },
+        {
+          "label": "IRDA's Health Handbook",
+          "url": "https://www.careinsurance.com/cms/public/uploads/download_center/irda's-health-handbook---in-english.pdf?rv=0.55507000%201606915975"
+        },
+        {
+          "label": "Fever Management Guideline",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/fever-management.pdf"
+        },
+        {
+          "label": "Guideline Robotic Surgery & Immunotherapy",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/evidence-based-reimbursement-policy-for-robotic-surgery-and-immunotherapy.pdf"
+        },
+        {
+          "label": "Launch & Withdrawal dates of Products",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf"
+        }
+      ],
+      "listed_name": "Joy",
+      "listing_panel": "panel-health",
+      "product_page": {
+        "byte_count": 365974,
+        "captured_at": "2026-09-29T13:14:42.105480+00:00",
+        "content_type": "text/html; charset=UTF-8",
+        "http_status": 200,
+        "sha256": "b9a103057d397f272a84e8f7775eb46c40ef9901ab026584fb5dad07c7439101",
+        "url": "https://www.careinsurance.com/product/joy"
+      },
+      "product_page_url": "https://www.careinsurance.com/product/joy",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": [
+        "RHIHLIP21373V022021"
+      ]
+    },
+    {
+      "linked_pdfs": [],
+      "listed_name": "Explore",
+      "listing_panel": "panel-travel",
+      "product_page": null,
+      "product_page_url": "https://www.careinsurance.com/product/explore",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": []
+    },
+    {
+      "linked_pdfs": [],
+      "listed_name": "Student Explore",
+      "listing_panel": "panel-travel",
+      "product_page": null,
+      "product_page_url": "https://www.careinsurance.com/product/student-explore",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": []
+    },
+    {
+      "linked_pdfs": [],
+      "listed_name": "Student Explore-Health Unlimited",
+      "listing_panel": "panel-travel",
+      "product_page": null,
+      "product_page_url": "https://www.careinsurance.com/product/explore-health-unlimited-for-students",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": []
+    },
+    {
+      "linked_pdfs": [],
+      "listed_name": "Critical Mediclaim",
+      "listing_panel": "panel-mediclaim",
+      "product_page": null,
+      "product_page_url": "https://www.careinsurance.com/product/care-critical-mediclaim",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": []
+    },
+    {
+      "linked_pdfs": [],
+      "listed_name": "Heart Mediclaim",
+      "listing_panel": "panel-mediclaim",
+      "product_page": null,
+      "product_page_url": "https://www.careinsurance.com/product/care-heart-mediclaim",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": []
+    },
+    {
+      "linked_pdfs": [],
+      "listed_name": "Cancer Mediclaim",
+      "listing_panel": "panel-mediclaim",
+      "product_page": null,
+      "product_page_url": "https://www.careinsurance.com/product/care-cancer-mediclaim",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": []
+    },
+    {
+      "linked_pdfs": [],
+      "listed_name": "Operation Mediclaim",
+      "listing_panel": "panel-mediclaim",
+      "product_page": null,
+      "product_page_url": "https://www.careinsurance.com/product/care-operation-mediclaim",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": []
+    },
+    {
+      "linked_pdfs": [],
+      "listed_name": "Group Care",
+      "listing_panel": "panel-group",
+      "product_page": null,
+      "product_page_url": "https://www.careinsurance.com/corporate-insurance/group-health-insurance",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": []
+    },
+    {
+      "linked_pdfs": [],
+      "listed_name": "Group Secure",
+      "listing_panel": "panel-group",
+      "product_page": null,
+      "product_page_url": "https://www.careinsurance.com/corporate-insurance/group-personal-accident-insurance",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": []
+    },
+    {
+      "linked_pdfs": [],
+      "listed_name": "Premium Calculator For All Products",
+      "listing_panel": "panel-calculator",
+      "product_page": null,
+      "product_page_url": "https://abacus.careinsurance.com/religare/partner/generic-care-popup",
+      "review_status": "scope_identity_edition_and_variants_unresolved",
+      "visible_uin_mentions": []
+    }
+  ],
+  "source_page": {
+    "byte_count": 428138,
+    "captured_at": "2026-09-29T13:14:34.074108+00:00",
+    "content_type": "text/html; charset=UTF-8",
+    "http_status": 200,
+    "sha256": "bae941a0ae3b860d46bb243139193882ada52a25eae1df9e9153040be4e5b568",
+    "url": "https://www.careinsurance.com/"
+  },
+  "source_roster_complete": false,
+  "status": "marketed_names_and_identity_leads_only"
+}

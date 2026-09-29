@@ -1,0 +1,397 @@
+{
+  "current_wording_listing": {
+    "distinct_first_two_page_uins": 44,
+    "uins_absent_from_july_register": [
+      "CHIHLIP27063V012627"
+    ],
+    "url": "https://www.careinsurance.com/other-downloads.html",
+    "wording_rows": 46
+  },
+  "format_version": 1,
+  "limitations": [
+    "A July 2026 register and September 2026 wording links do not establish a complete current Care product roster.",
+    "Product-page footer UINs and linked terms UINs are separate observations; mismatches need edition and variant review.",
+    "A matching UIN establishes identity only, not document applicability or bundle completeness."
+  ],
+  "observed_at": "2026-09-29",
+  "product_page_terms": [
+    {
+      "edition_and_variant_applicability": "unresolved",
+      "linked_terms_capture_status": "acquired",
+      "linked_terms_first_two_page_uins": [
+        "CHIHLIP27060V012627"
+      ],
+      "linked_terms_sha256": "28c0b6b96e4dc26e3d547436458cae7212f880f8bf02f2f832f5207bd9fa1fa9",
+      "linked_terms_url": "https://cms.careinsurance.com/upload_master/landingpages/upload/ultimate-joy-policy-terms-and-conditions.pdf?rv=0.71672700%201668687223",
+      "listed_name": "Ultimate Joy",
+      "page_vs_linked_terms_uin": "no_visible_page_uin",
+      "product_page_sha256": "c0306de87549d5e8a3b4298301ee4dd4ef9a3b78f195efda771bf37a8869a697",
+      "product_page_url": "https://www.careinsurance.com/product/ultimate-joy",
+      "visible_product_page_uins": []
+    },
+    {
+      "edition_and_variant_applicability": "unresolved",
+      "linked_terms_capture_status": "acquired",
+      "linked_terms_first_two_page_uins": [
+        "CHIHLIP25044V012425"
+      ],
+      "linked_terms_sha256": "a273ce33a0dd1cc555169ca1f44089b41e30adccf46e1c9194ab0ad6a2c9ab19",
+      "linked_terms_url": "https://cms.careinsurance.com/upload_master/landingpages/upload/ultimate-care-terms-and-conditions.pdf?rv=0.71672700%201668687223",
+      "listed_name": "Ultimate Care - Unlimited Coverage",
+      "page_vs_linked_terms_uin": "matching_uin",
+      "product_page_sha256": "ab1086f94ef63419127758033548f1e66ddf6c31a95118596d9171806c8e8de1",
+      "product_page_url": "https://www.careinsurance.com/product/ultimate-care-unlimited-coverage",
+      "visible_product_page_uins": [
+        "CHIHLIP25044V012425"
+      ]
+    },
+    {
+      "edition_and_variant_applicability": "unresolved",
+      "linked_terms_capture_status": "acquired",
+      "linked_terms_first_two_page_uins": [
+        "CHIHLIP25044V012425"
+      ],
+      "linked_terms_sha256": "a273ce33a0dd1cc555169ca1f44089b41e30adccf46e1c9194ab0ad6a2c9ab19",
+      "linked_terms_url": "https://cms.careinsurance.com/upload_master/landingpages/upload/ultimate-care-terms-and-conditions.pdf?rv=0.71672700%201668687223",
+      "listed_name": "Ultimate Care",
+      "page_vs_linked_terms_uin": "matching_uin",
+      "product_page_sha256": "0dd8c1c68ffef6c8c1ea0c34e3236f6413c7f4d1d5d60ef5d83b29ff1b3f83bb",
+      "product_page_url": "https://www.careinsurance.com/product/ultimate-care",
+      "visible_product_page_uins": [
+        "CHIHLIP25044V012425"
+      ]
+    },
+    {
+      "edition_and_variant_applicability": "unresolved",
+      "linked_terms_capture_status": "acquired",
+      "linked_terms_first_two_page_uins": [
+        "CHIHLIP25044V012425"
+      ],
+      "linked_terms_sha256": "a273ce33a0dd1cc555169ca1f44089b41e30adccf46e1c9194ab0ad6a2c9ab19",
+      "linked_terms_url": "https://cms.careinsurance.com/upload_master/landingpages/upload/ultimate-care-policy-terms-conditions.pdf?rv=0.71672700%201668687223",
+      "listed_name": "Ultimate Care Senior",
+      "page_vs_linked_terms_uin": "no_visible_page_uin",
+      "product_page_sha256": "d070b5bc824e60e8a1b251589ba3e5913b8f3e109882ddde2f3990bb24523da0",
+      "product_page_url": "https://www.careinsurance.com/product/ultimate-care-senior",
+      "visible_product_page_uins": []
+    },
+    {
+      "edition_and_variant_applicability": "unresolved",
+      "linked_terms_capture_status": "acquired",
+      "linked_terms_first_two_page_uins": [
+        "CHIHLIP27063V012627"
+      ],
+      "linked_terms_sha256": "9adc5eb689f0c9daef919d49ea2b9e95fae1cc47747f699d4d73c029b73927ed",
+      "linked_terms_url": "https://cms.careinsurance.com/upload_master/landingpages/upload/en-ultimate-care-policy-terms-conditions.pdf?rv=0.71672700%201668687223",
+      "listed_name": "En Ultimate Care",
+      "page_vs_linked_terms_uin": "no_visible_page_uin",
+      "product_page_sha256": "de54b82d7407c0ac1c0b83b1358393cf930cd9408d542727dd2ff74e68fa1d61",
+      "product_page_url": "https://www.careinsurance.com/product/en-ultimate-care",
+      "visible_product_page_uins": []
+    },
+    {
+      "edition_and_variant_applicability": "unresolved",
+      "linked_terms_capture_status": "acquired",
+      "linked_terms_first_two_page_uins": [
+        "CHIHLIP23128V012223"
+      ],
+      "linked_terms_sha256": "2ed123866ffe89b0ddc455ebe867273450b1dbe1d5e3f3040427b0c1ba4d0a4a",
+      "linked_terms_url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---policy-terms-and-conditions.pdf?rv=0.71672700%201668687223",
+      "listed_name": "Care Supreme",
+      "page_vs_linked_terms_uin": "different_uin",
+      "product_page_sha256": "4bd297e83afbe297095a0b759b80bf00b59faaa648fe28e23ef52101f8515bfa",
+      "product_page_url": "https://www.careinsurance.com/product/care-supreme",
+      "visible_product_page_uins": [
+        "CHIHLIP25047V022425"
+      ]
+    },
+    {
+      "edition_and_variant_applicability": "unresolved",
+      "linked_terms_capture_status": "acquired",
+      "linked_terms_first_two_page_uins": [
+        "CHIHLIP23128V012223"
+      ],
+      "linked_terms_sha256": "2ed123866ffe89b0ddc455ebe867273450b1dbe1d5e3f3040427b0c1ba4d0a4a",
+      "linked_terms_url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---policy-terms-and-conditions.pdf?rv=0.71672700%201668687223",
+      "listed_name": "Care Supreme - Value Plus",
+      "page_vs_linked_terms_uin": "different_uin",
+      "product_page_sha256": "093285942c124e9f5b96e83be329f879c78e36314c8c09cfd557c6a995b27f81",
+      "product_page_url": "https://www.careinsurance.com/product/care-supreme-value-plus",
+      "visible_product_page_uins": [
+        "CHIHLIP25047V022425"
+      ]
+    },
+    {
+      "edition_and_variant_applicability": "unresolved",
+      "linked_terms_capture_status": "acquired",
+      "linked_terms_first_two_page_uins": [
+        "CHIHLIP23128V012223"
+      ],
+      "linked_terms_sha256": "2ed123866ffe89b0ddc455ebe867273450b1dbe1d5e3f3040427b0c1ba4d0a4a",
+      "linked_terms_url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---policy-terms-and-conditions.pdf?rv=0.71672700%201668687223",
+      "listed_name": "Care Supreme - Value for Money",
+      "page_vs_linked_terms_uin": "different_uin",
+      "product_page_sha256": "eb1f78265d8ed9993dcfaae3497fd70ba21952d01393f72d4b562b3dbe19ef8e",
+      "product_page_url": "https://www.careinsurance.com/product/care-supreme-value",
+      "visible_product_page_uins": [
+        "CHIHLIP25047V022425"
+      ]
+    },
+    {
+      "edition_and_variant_applicability": "unresolved",
+      "linked_terms_capture_status": "acquired",
+      "linked_terms_first_two_page_uins": [
+        "CHIHLIP23128V012223"
+      ],
+      "linked_terms_sha256": "2ed123866ffe89b0ddc455ebe867273450b1dbe1d5e3f3040427b0c1ba4d0a4a",
+      "linked_terms_url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---policy-terms-and-conditions.pdf?rv=0.71672700%201668687223",
+      "listed_name": "Care Supreme-Vikas",
+      "page_vs_linked_terms_uin": "different_uin",
+      "product_page_sha256": "479e02011b2572116b9f4a67fe0ae4f9cbd64b47d0be4d3afd44ff67f827686f",
+      "product_page_url": "https://www.careinsurance.com/product/care-supreme-vikas",
+      "visible_product_page_uins": [
+        "CHIHLIP25047V022425"
+      ]
+    },
+    {
+      "edition_and_variant_applicability": "unresolved",
+      "linked_terms_capture_status": "acquired",
+      "linked_terms_first_two_page_uins": [
+        "CHIHLIP25036V012425"
+      ],
+      "linked_terms_sha256": "f7c50e9fa20abaf23943fded62a124cf589b830caf9ce9ed1cb3e42f3eb04c30",
+      "linked_terms_url": "https://cms.careinsurance.com/upload_master/landingpages/upload/supreme-enhance-policy-terms-and-conditions.pdf?rv=0.71672700%201668687223",
+      "listed_name": "Supreme Enhance",
+      "page_vs_linked_terms_uin": "matching_uin",
+      "product_page_sha256": "22d827de96eef715704047231042ca4cc9564975a48406f230cede3270bd9d37",
+      "product_page_url": "https://www.careinsurance.com/product/care-supreme-enhance",
+      "visible_product_page_uins": [
+        "CHIHLIP25036V012425"
+      ]
+    },
+    {
+      "edition_and_variant_applicability": "unresolved",
+      "linked_terms_capture_status": "acquired",
+      "linked_terms_first_two_page_uins": [
+        "CHIHLIP23128V012223"
+      ],
+      "linked_terms_sha256": "2ed123866ffe89b0ddc455ebe867273450b1dbe1d5e3f3040427b0c1ba4d0a4a",
+      "linked_terms_url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---policy-terms-and-conditions.pdf?rv=0.71672700%201668687223",
+      "listed_name": "Care Supreme - Super Saver",
+      "page_vs_linked_terms_uin": "no_visible_page_uin",
+      "product_page_sha256": "b0d422ff58edff97d561ba83c41b073fd951c38bdfdc052b1a108af4c06c3c06",
+      "product_page_url": "https://www.careinsurance.com/product/care-supreme-super-saver",
+      "visible_product_page_uins": []
+    },
+    {
+      "edition_and_variant_applicability": "unresolved",
+      "linked_terms_capture_status": "acquired",
+      "linked_terms_first_two_page_uins": [
+        "CHIHLIP26049V042526"
+      ],
+      "linked_terms_sha256": "72ff9d4f4212a4ee6c9dd37c109685d6c0fd20a1f17fc3a5a6a74e1bc87dc629",
+      "linked_terms_url": "https://cms.careinsurance.com/upload_master/landingpages/upload/care-advantage-policy-terms-condition-effective-from-02-may-2025-.pdf?rv=0.71672700%201668687223",
+      "listed_name": "Care Advantage",
+      "page_vs_linked_terms_uin": "matching_uin",
+      "product_page_sha256": "0ab323037ade631b0a1798d432406dd941007f9a96e2b64cab8cd3c7c0925331",
+      "product_page_url": "https://www.careinsurance.com/product/care-advantage",
+      "visible_product_page_uins": [
+        "CHIHLIP26049V042526"
+      ]
+    },
+    {
+      "edition_and_variant_applicability": "unresolved",
+      "linked_terms_capture_status": "acquired",
+      "linked_terms_first_two_page_uins": [
+        "CHIPAIP25046V042425"
+      ],
+      "linked_terms_sha256": "a4735bee7caea6dc657e37ed83d6d89f9dbcde16f93d292d2e63ebfc0aeb0f25",
+      "linked_terms_url": "https://cms.careinsurance.com/upload_master/landingpages/upload/secure-policy-terms-conditions-effective-from-05-march-2025-.pdf?rv=0.60411600%201599731943",
+      "listed_name": "Secure Plus",
+      "page_vs_linked_terms_uin": "no_visible_page_uin",
+      "product_page_sha256": "2e999b65976cf0bfc4c0e456b919d9ade972bd93576af099182b51b84c4cee53",
+      "product_page_url": "https://www.careinsurance.com/product/secure-plus",
+      "visible_product_page_uins": []
+    },
+    {
+      "edition_and_variant_applicability": "unresolved",
+      "linked_terms_capture_status": "failed",
+      "linked_terms_first_two_page_uins": [],
+      "linked_terms_sha256": "f637a02ec28c5871650231aa47b546d790a00dfba0524e8ab9225b29d2265f5e",
+      "linked_terms_url": "https://cms.careinsurance.com/cms/public/uploads/download_center/secure--policy-terms-&-conditions-%28effective-from-05-march-2025%29.pdf?rv=0.60411600%201599731943",
+      "listed_name": "Secure-Child Personal Accident Insurance",
+      "page_vs_linked_terms_uin": "linked_pdf_unreadable",
+      "product_page_sha256": "560cce206b439bb091dd931ab3f1487bf637d2c7df9a38aa50f4cc304b7739e5",
+      "product_page_url": "https://www.careinsurance.com/product/secure-child",
+      "visible_product_page_uins": []
+    },
+    {
+      "edition_and_variant_applicability": "unresolved",
+      "linked_terms_capture_status": "acquired",
+      "linked_terms_first_two_page_uins": [
+        "CHIHLIP26052V032526"
+      ],
+      "linked_terms_sha256": "17935f320d714e6aa7976724f4f7bc3b25fcfce01b2e5c799ce9c77a362c30c2",
+      "linked_terms_url": "https://cms.careinsurance.com/upload_master/landingpages/upload/care-freedom-t-c-effective-from-3-september-2025-.pdf?rv=0.71672700%201668687223",
+      "listed_name": "Care Freedom",
+      "page_vs_linked_terms_uin": "different_uin",
+      "product_page_sha256": "e0c1974d603310b7d3e6d730b470050540fb596c071e1d90107ee833d115cf8b",
+      "product_page_url": "https://www.careinsurance.com/product/care-freedom",
+      "visible_product_page_uins": [
+        "RHIHLIP21519V022021"
+      ]
+    },
+    {
+      "edition_and_variant_applicability": "unresolved",
+      "linked_terms_capture_status": "acquired",
+      "linked_terms_first_two_page_uins": [
+        "CHIHLIP22223V012122"
+      ],
+      "linked_terms_sha256": "2ad1216c9c81bd7d6acddcc4cf95211035c2a93d69a81c6ee65f5e75c9b889df",
+      "linked_terms_url": "https://cms.careinsurance.com/cms/public/uploads/download_center/senior-health-advantage---policy-terms-and-conditions.pdf?rv=0.71672700%201668687223",
+      "listed_name": "Senior Health Advantage",
+      "page_vs_linked_terms_uin": "matching_uin",
+      "product_page_sha256": "e18de7d3f188243c4a64864cffbccdf8a7c6f20d113e040737b8a5733de4b771",
+      "product_page_url": "https://www.careinsurance.com/product/senior-health-advantage",
+      "visible_product_page_uins": [
+        "CHIHLIP22223V012122"
+      ]
+    },
+    {
+      "edition_and_variant_applicability": "unresolved",
+      "linked_terms_capture_status": "acquired",
+      "linked_terms_first_two_page_uins": [
+        "CHIHLIP26053V032526"
+      ],
+      "linked_terms_sha256": "c7129fd19a356f30c4e6939c1cac49b1660b968f8fde53e7ab0b9c9ce5d0700c",
+      "linked_terms_url": "https://cms.careinsurance.com/upload_master/landingpages/upload/care-heart-policy-terms-and-conditions-effective-from-03-september-2025-.pdf?rv=0.71672700%201668687223",
+      "listed_name": "Care Heart",
+      "page_vs_linked_terms_uin": "different_uin",
+      "product_page_sha256": "3a29a8e0a9979ac1b3d07174e834a7975ae95662a5451c8e9d5006c54934cd79",
+      "product_page_url": "https://www.careinsurance.com/product/care-heart",
+      "visible_product_page_uins": [
+        "RHIHLIP21371V022021"
+      ]
+    },
+    {
+      "edition_and_variant_applicability": "unresolved",
+      "linked_terms_capture_status": "acquired",
+      "linked_terms_first_two_page_uins": [
+        "RHIHLIP21372V022021"
+      ],
+      "linked_terms_sha256": "941953e73191b029d0903818d24c19f790c5f73e10d00bd36a3435c959e04a74",
+      "linked_terms_url": "https://cms.careinsurance.com/upload_master/landingpages/upload/enhance-t-c-effective-from-12-september-2024-.pdf?rv=0.71672700%201668687223",
+      "listed_name": "Enhance",
+      "page_vs_linked_terms_uin": "no_visible_page_uin",
+      "product_page_sha256": "5e6617a3c3b19319a79698375630caac5420ca170a8c7d46afdb336924ad49bc",
+      "product_page_url": "https://www.careinsurance.com/product/enhance",
+      "visible_product_page_uins": []
+    },
+    {
+      "edition_and_variant_applicability": "unresolved",
+      "linked_terms_capture_status": "failed",
+      "linked_terms_first_two_page_uins": [],
+      "linked_terms_sha256": "f683cafb89cd82beee2aec540eea43f14900f3d2671706c09083d4a2fc99fa49",
+      "linked_terms_url": "https://cms.careinsurance.com/cms/public/uploads/download_center/joy---policy-terms-and-conditions.pdf?rv=0.71672700%201668687223",
+      "listed_name": "Joy",
+      "page_vs_linked_terms_uin": "linked_pdf_unreadable",
+      "product_page_sha256": "b9a103057d397f272a84e8f7775eb46c40ef9901ab026584fb5dad07c7439101",
+      "product_page_url": "https://www.careinsurance.com/product/joy",
+      "visible_product_page_uins": [
+        "RHIHLIP21373V022021"
+      ]
+    }
+  ],
+  "product_page_terms_status_counts": {
+    "different_uin": 6,
+    "linked_pdf_unreadable": 2,
+    "matching_uin": 5,
+    "no_visible_page_uin": 6
+  },
+  "registers": {
+    "july_2026": {
+      "last_modified": "2026-07-15",
+      "rows": 51,
+      "sha256": "c7273e0fa511076cd4021f679c9c88df54a939867c10a072675d507f95b01f02",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf"
+    },
+    "new_uins_in_july_register": [
+      {
+        "name": "Group Care 360˚",
+        "uin": "CHIHLGP26057V032526"
+      },
+      {
+        "name": "Special Care",
+        "uin": "CHIHLIA26056V022526"
+      },
+      {
+        "name": "Care Advanced",
+        "uin": "CHIHLIA27059V022627"
+      },
+      {
+        "name": "Care",
+        "uin": "CHIHLIP26055V092526"
+      },
+      {
+        "name": "Ultimate Care",
+        "uin": "CHIHLIP26058V022526"
+      },
+      {
+        "name": "Ultimate Joy",
+        "uin": "CHIHLIP27060V012627"
+      },
+      {
+        "name": "Care Supreme",
+        "uin": "CHIHLIP27061V032627"
+      },
+      {
+        "name": "Care Advantage",
+        "uin": "CHIHLIP27062V052627"
+      },
+      {
+        "name": "Explore",
+        "uin": "CHITIOP26051V042526"
+      }
+    ],
+    "old_uins_absent_from_july_register": [
+      {
+        "name": "Group Care 360˚",
+        "uin": "CHIHLGP25038V022425"
+      },
+      {
+        "name": "Care Advanced",
+        "uin": "CHIHLIA25043V012425"
+      },
+      {
+        "name": "Special Care",
+        "uin": "CHIHLIA26050V012526"
+      },
+      {
+        "name": "Care",
+        "uin": "CHIHLIP25042V082425"
+      },
+      {
+        "name": "Ultimate Care",
+        "uin": "CHIHLIP25044V012425"
+      },
+      {
+        "name": "Care Supreme",
+        "uin": "CHIHLIP25047V022425"
+      },
+      {
+        "name": "Care Advantage",
+        "uin": "CHIHLIP26049V042526"
+      },
+      {
+        "name": "Explore",
+        "uin": "RHITIOP20134V031920"
+      }
+    ],
+    "september_2025": {
+      "rows": 50,
+      "sha256": "b2f77f605da9156dd4f470404b7d3b1a3222bdd4591705833058a3a1882945c7",
+      "url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/Launch_and_Withdrawn_dates_of_Products_1754900556.pdf"
+    }
+  },
+  "status": "identity_and_edition_conflicts_unresolved"
+}

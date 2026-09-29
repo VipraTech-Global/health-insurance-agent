@@ -19,7 +19,7 @@ from typing import Any
 import httpx
 import pdfplumber
 
-from research_workspace.acquisition import acquire
+from research_workspace.acquisition import acquire, allowed_url
 from research_workspace.storage import digest, put_object, read_json, read_object, write_json
 
 ROSTER_URL = (
@@ -28,9 +28,9 @@ ROSTER_URL = (
 )
 CARE_ROSTER_URL = (
     "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/"
-    "Launch_and_Withdrawn_dates_of_Products_1754900556.pdf"
+    "LaunchandWithdrawndatesofProducts_1784112873.pdf"
 )
-CARE_ROSTER_2025_SHA256 = "b2f77f605da9156dd4f470404b7d3b1a3222bdd4591705833058a3a1882945c7"
+CARE_ROSTER_2026_SHA256 = "c7273e0fa511076cd4021f679c9c88df54a939867c10a072675d507f95b01f02"
 HOSTS = {
     "care": ["careinsurance.com"],
     "niva": ["nivabupa.com"],
@@ -61,6 +61,7 @@ CURRENT_ROLES = {
 }
 EXPECTED_INSURERS = {"care", "niva"}
 CARE_SUPPLEMENT_ROLES = {
+    "policy_wording",
     "proposal_form",
     "other_support",
     "health_handbook",
@@ -201,23 +202,28 @@ def parse_care_roster(content: bytes, captured_at: str) -> dict[str, Any]:
     if len(rows) < 40 or not any(row["roster_section"] == "withdrawn" for row in rows):
         raise ValueError("Care launch register parse is unexpectedly short")
     observed_sha256 = digest(content)
-    known_2025_edition = observed_sha256 == CARE_ROSTER_2025_SHA256
+    known_2026_edition = observed_sha256 == CARE_ROSTER_2026_SHA256
     return {
         "format_version": 1,
         "insurer_id": "care",
         "source_url": CARE_ROSTER_URL,
         "source_sha256": observed_sha256,
         "captured_at": captured_at,
-        "source_last_modified": "2025-09-04" if known_2025_edition else None,
+        "source_last_modified": "2026-07-15" if known_2026_edition else None,
         "source_roster_complete": False,
         "status": (
-            "dated_launch_register_requires_2026_reconciliation"
-            if known_2025_edition
+            "dated_july_2026_register_requires_september_reconciliation"
+            if known_2026_edition
             else "source_changed_requires_date_review"
         ),
         "products": rows,
         "limitations": [
-            "This linked first-party register was last modified in September 2025 and cannot establish the complete 2026 current roster.",
+            (
+                "This linked first-party register was last modified in July 2026 and cannot "
+                "establish the complete September 2026 roster."
+                if known_2026_edition
+                else "This linked register changed; its date and currentness need review."
+            ),
             "Product scope, variants, options, and document applicability remain unreviewed.",
         ],
     }
@@ -230,15 +236,20 @@ def merge_source_register(base: dict[str, Any], supplement: dict[str, Any]) -> d
         "care": CARE_SUPPLEMENT_ROLES,
         "niva": NIVA_SUPPLEMENT_ROLES,
     }.get(insurer_id)
-    if allowed_roles is None or not supplement.get("source_page"):
+    if allowed_roles is None or not allowed_url(
+        supplement.get("source_page", ""), HOSTS.get(insurer_id, [])
+    ):
         raise ValueError("Invalid official supplement")
     additions = []
     for row in supplement.get("documents", []):
-        if row.get("role") not in allowed_roles or not row.get("url"):
+        source_page = row.get("source_page", supplement["source_page"])
+        if (
+            row.get("role") not in allowed_roles
+            or not row.get("url")
+            or not allowed_url(source_page, HOSTS[insurer_id])
+        ):
             raise ValueError("Invalid official supplemental link")
-        additions.append(
-            {**row, "insurer_id": insurer_id, "source_page": supplement["source_page"]}
-        )
+        additions.append({**row, "insurer_id": insurer_id, "source_page": source_page})
     if not additions:
         raise ValueError("Official supplement is empty")
     documents = [*base["documents"], *additions]
@@ -340,7 +351,7 @@ def select_links(register: dict[str, Any], scope: str) -> list[dict[str, Any]]:
             row
             for row in rows
             if row.get("insurer_id") == "care"
-            and row.get("role") in CARE_SUPPLEMENT_ROLES - {"proposal_form"}
+            and row.get("role") in CARE_SUPPLEMENT_ROLES - {"proposal_form", "policy_wording"}
         ]
     if scope == "niva_exclusions":
         return [
@@ -644,10 +655,10 @@ def audit_links(
             }
         ),
         "release_blockers": [
-            "Care independent current product/UIN roster has not been verified; its linked launch register was last modified in September 2025."
+            "Care independent current product/UIN roster has not been verified; its dated launch register needs reconciliation with current wordings."
             if care_roster
             else "Care independent current product/UIN roster has not been verified.",
-            "Care listing pages were browser-readable but raw HTML could not be preserved.",
+            "Care download-listing HTML has not been preserved; linked document rows remain discovery evidence.",
             "Care proposal-form listing has not been fully inventoried."
             if not any(
                 source["url"].endswith("health-insurance-proposal-forms.html")

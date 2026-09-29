@@ -27,6 +27,9 @@ LINKS = ROOT / "research/pilots/three-insurer/source-links-2026-09-27.json"
 ROSTER = ROOT / "research/pilots/three-insurer/niva-roster-2026-09-27.json"
 AUDIT = ROOT / "research/pilots/three-insurer/audit-2026-09-27.json"
 CARE_PROPOSALS = ROOT / "research/pilots/three-insurer/care-proposal-links-2026-09-29.json"
+CARE_PRODUCT_TERMS = (
+    ROOT / "research/pilots/three-insurer/care-product-page-terms-links-2026-09-29.json"
+)
 CARE_HANDBOOKS = (
     ROOT / "research/pilots/three-insurer/care-handbooks-exclusions-links-2026-09-29.json"
 )
@@ -171,6 +174,20 @@ def test_care_proposal_supplement_preserves_all_source_links() -> None:
     assert len(select_links(merged, "proposal_forms")) == 86
     assert merged["supplemental_source"]["direct_html_status"] == "http_403"
     assert "not_attempted" in audit_links(merged, {}, None)["capture_status_counts"]
+
+
+def test_care_product_page_terms_keep_individual_source_pages() -> None:
+    base = json.loads(LINKS.read_text())
+    supplement = json.loads(CARE_PRODUCT_TERMS.read_text())
+    merged = merge_source_register(base, supplement)
+    additions = merged["documents"][len(base["documents"]) :]
+    assert len(additions) == 19
+    assert {row["role"] for row in additions} == {"policy_wording"}
+    assert len({row["source_page"] for row in additions}) == 19
+    assert all(row["source_html_sha256"] for row in additions)
+    supplement["documents"][0]["source_page"] = "https://example.org/product/not-care"
+    with pytest.raises(ValueError, match="Invalid official supplemental link"):
+        merge_source_register(base, supplement)
 
 
 def test_niva_refresh_replaces_only_verified_old_link() -> None:

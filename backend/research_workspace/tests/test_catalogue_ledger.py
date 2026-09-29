@@ -111,3 +111,19 @@ def test_niva_exclusion_page_adds_historical_wordings_without_completing_bundle(
         >= 3
     )
     assert ledger["catalogue_complete"] is False
+
+
+def test_july_care_register_keeps_product_page_wordings_separate() -> None:
+    star, captures, _, _, niva = _inputs()
+    audit = json.loads((PILOT / "three-insurer/audit-2026-09-29-care-marketing.json").read_text())
+    care = json.loads((PILOT / "three-insurer/care-roster-2026-09-29-july.json").read_text())
+    ledger = build_ledger(star, captures, audit, care, niva)
+    accounting = ledger["accounting"]
+    assert accounting["source_document_rows"] == 1089
+    assert accounting["care_dated_roster_rows"] == 51
+    assert accounting["care_current_wording_only_rows"] == 1
+    assert accounting["care_other_wording_only_rows"] == 3
+    products = {row["uin"]: row for row in ledger["insurers"]["care"]}
+    assert products["CHIHLIP27063V012627"]["origin"] == "current_wording_identity_only"
+    assert products["CHIHLIP23128V012223"]["origin"] == "other_wording_identity_only"
+    assert ledger["catalogue_complete"] is False
