@@ -1,0 +1,262 @@
+{
+  "care_withdrawn_currentness_resolutions": [
+    {
+      "name_as_listed": "Grameen Care V1",
+      "register_sha256": "c7273e0fa511076cd4021f679c9c88df54a939867c10a072675d507f95b01f02",
+      "register_url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf",
+      "uin": "IRDAI/HLT/RHI/P-H/V.I/27/2015-16",
+      "withdrawn_date_as_listed": "28/02/2018"
+    },
+    {
+      "name_as_listed": "Group Credit Protection V1",
+      "register_sha256": "c7273e0fa511076cd4021f679c9c88df54a939867c10a072675d507f95b01f02",
+      "register_url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf",
+      "uin": "IRDAI/HLT/RHI/P-H(G)/V.I/3/2017-18",
+      "withdrawn_date_as_listed": "30/09/2020"
+    },
+    {
+      "name_as_listed": "Covid Care",
+      "register_sha256": "c7273e0fa511076cd4021f679c9c88df54a939867c10a072675d507f95b01f02",
+      "register_url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf",
+      "uin": "RHIHLIP21073V012021",
+      "withdrawn_date_as_listed": "01/03/2024"
+    },
+    {
+      "name_as_listed": "Group Credit Protection",
+      "register_sha256": "c7273e0fa511076cd4021f679c9c88df54a939867c10a072675d507f95b01f02",
+      "register_url": "https://cms.careinsurance.com/cms/public/uploads/uploads/other_disclosure/LaunchandWithdrawndatesofProducts_1784112873.pdf",
+      "uin": "RHIHLGP21405V032021",
+      "withdrawn_date_as_listed": "10-09-2024"
+    }
+  ],
+  "catalogue_complete": false,
+  "catalogue_ledger_sha256": "f7b6a59b280f8989f197cabf9ab2251488ec952364a29da916114bcd8c039db9",
+  "format_version": 1,
+  "limitations": [
+    "These determinations exclude only independently evidenced non-primary categories; all other scope candidates still need review.",
+    "The four Care withdrawal entries resolve currentness as of the July 2026 register, not every later marketing or renewal question.",
+    "No included product or variant has a reviewed applicable document bundle."
+  ],
+  "observed_at": "2026-09-29",
+  "outside_primary_resolutions": [
+    {
+      "insurer_id": "care",
+      "name_as_source": "Instant Care",
+      "policy_wording_evidence": {
+        "first_two_page_uin_match": true,
+        "observed_phrase": "Add-on Policy",
+        "page": 4,
+        "sha256": "84a67778977c06344edc8b812562dcac8e72b374d6e9307db13cc999371462b5",
+        "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/instant-care---policy-terms-and-conditions.pdf?rv=0.00109300+1790501132"
+      },
+      "reason": "dependent_add_on",
+      "scope_determination": "outside_primary_hospitalisation",
+      "uin": "CHIHLIA23083V012223"
+    },
+    {
+      "insurer_id": "care",
+      "name_as_source": "Extra Care",
+      "policy_wording_evidence": {
+        "first_two_page_uin_match": true,
+        "observed_phrase": "Add-on Policy",
+        "page": 2,
+        "sha256": "3f4fd41ebeb9a709745d8da20f397dc054a0495d482544cf3b052975e59ed2a1",
+        "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/extra-care----policy-terms-and-conditions.pdf?rv=0.00103100+1790501132"
+      },
+      "reason": "dependent_add_on",
+      "scope_determination": "outside_primary_hospitalisation",
+      "uin": "CHIHLIA24167V012324"
+    },
+    {
+      "insurer_id": "care",
+      "name_as_source": "Protect Plus",
+      "policy_wording_evidence": {
+        "first_two_page_uin_match": true,
+        "observed_phrase": "Add-on Policy",
+        "page": 2,
+        "sha256": "cd3b8d0b4fec4e95b7f0bbf1ab0e72b5ba9097a504b785565e01a84f18d854cb",
+        "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/protect-plus---t%26c-%28effective-from-05-february-2025%29.pdf?rv=0.00096600+1790501132"
+      },
+      "reason": "dependent_add_on",
+      "scope_determination": "outside_primary_hospitalisation",
+      "uin": "CHIHLIA25045V022425"
+    },
+    {
+      "insurer_id": "care",
+      "name_as_source": "Special Care",
+      "policy_wording_evidence": {
+        "first_two_page_uin_match": true,
+        "observed_phrase": "Add-on Policy Year",
+        "page": 2,
+        "sha256": "712cf60ee03dd22385656fb04e1c113fa1c04c68c0cc3141c73b4d9f3caa9881",
+        "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/special-care---policy-terms-%26-conditions%28effective-from-21-november-2025%29.pdf?rv=0.00095500+1790501132"
+      },
+      "reason": "dependent_add_on",
+      "scope_determination": "outside_primary_hospitalisation",
+      "uin": "CHIHLIA26056V022526"
+    },
+    {
+      "insurer_id": "care",
+      "name_as_source": "Care Advanced",
+      "policy_wording_evidence": {
+        "first_two_page_uin_match": true,
+        "observed_phrase": "Add-on Policy Year",
+        "page": 2,
+        "sha256": "81d0d4602936b53b590af66ecc7364cce5085dfc88e1e3bcfaa21013803ad889",
+        "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-advanced-policy-terms-%26-conditions-%28effective-from-16-april-2026%29.pdf?rv=0.00097700+1790501132"
+      },
+      "reason": "dependent_add_on",
+      "scope_determination": "outside_primary_hospitalisation",
+      "uin": "CHIHLIA27059V022627"
+    },
+    {
+      "insurer_id": "care",
+      "name_as_source": "Supreme Enhance",
+      "policy_wording_evidence": {
+        "first_two_page_uin_match": true,
+        "observed_phrase": "Deductible",
+        "page": 3,
+        "sha256": "f7c50e9fa20abaf23943fded62a124cf589b830caf9ce9ed1cb3e42f3eb04c30",
+        "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/supreme-enhance---policy-terms-and-conditions.pdf?rv=0.00099800+1790501132"
+      },
+      "product_page_evidence": {
+        "observed_phrase": "super top-up",
+        "sha256": "22d827de96eef715704047231042ca4cc9564975a48406f230cede3270bd9d37",
+        "url": "https://www.careinsurance.com/product/care-supreme-enhance"
+      },
+      "reason": "super_top_up",
+      "scope_determination": "outside_primary_hospitalisation",
+      "uin": "CHIHLIP25036V012425"
+    },
+    {
+      "insurer_id": "care",
+      "name_as_source": "Enhance",
+      "policy_wording_evidence": {
+        "first_two_page_uin_match": true,
+        "observed_phrase": "High Deductible Health Insurance plan",
+        "page": 1,
+        "sha256": "941953e73191b029d0903818d24c19f790c5f73e10d00bd36a3435c959e04a74",
+        "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/enhance---t%26c-%28effective-from-12-september-2024-%29.pdf?rv=0.00127000+1790501132"
+      },
+      "product_page_evidence": {
+        "observed_phrase": "super top-up",
+        "sha256": "5e6617a3c3b19319a79698375630caac5420ca170a8c7d46afdb336924ad49bc",
+        "url": "https://www.careinsurance.com/product/enhance"
+      },
+      "reason": "super_top_up",
+      "scope_determination": "outside_primary_hospitalisation",
+      "uin": "RHIHLIP21372V022021"
+    },
+    {
+      "insurer_id": "care",
+      "name_as_source": "Assure",
+      "policy_wording_evidence": {
+        "first_two_page_uin_match": true,
+        "observed_phrase": "Critical Illness & Personal Accident Cover",
+        "page": 1,
+        "sha256": "fec8f98227f62ad244633f7f043684f0c16fcfa15ac2100a10e3f81ba2392da2",
+        "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/assure---t%26c-%28effective-from-12-september-2024-%29.pdf?rv=0.00139800+1790501132"
+      },
+      "reason": "critical_illness_and_accident",
+      "scope_determination": "outside_primary_hospitalisation",
+      "uin": "RHIHLIP21375V022021"
+    },
+    {
+      "insurer_id": "niva",
+      "name_as_source": "Zero Co-Pay (Add on)",
+      "policy_wording_evidence": {
+        "first_two_page_uin_match": true,
+        "observed_phrase": "cannot be bought in isolation",
+        "page": 1,
+        "sha256": "6cfb316dcde891b34a6e608d80fc5d9df97b77f8570fa50a579abfbd1fa94b8d",
+        "url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Zero-co-pay-Endorsement-Document.pdf"
+      },
+      "reason": "dependent_add_on",
+      "scope_determination": "outside_primary_hospitalisation",
+      "uin": "NBHHLIA22175V012122"
+    },
+    {
+      "insurer_id": "niva",
+      "name_as_source": "Fast Forward",
+      "policy_wording_evidence": {
+        "first_two_page_uin_match": true,
+        "observed_phrase": "cannot be bought in isolation",
+        "page": 1,
+        "sha256": "d96a1083ed9218ff637778fa3fbf207d23a133c7c5b8c8cf2bb9dbd44a38bfb4",
+        "url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Fast-Forward-Add-o-Endorsment-Document.pdf?v=1.0"
+      },
+      "reason": "dependent_add_on",
+      "scope_determination": "outside_primary_hospitalisation",
+      "uin": "NBHHLIA24126V012324"
+    },
+    {
+      "insurer_id": "niva",
+      "name_as_source": "Tiered Network",
+      "policy_wording_evidence": {
+        "first_two_page_uin_match": true,
+        "observed_phrase": "cannot be bought in isolation",
+        "page": 1,
+        "sha256": "6c84d838a1d04c2298e94f9df42492efa6e05e942aab44bdc1ecacc80dbdf572",
+        "url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Tiered-Network-Rider-Policy-Wording.pdf?v=1.2"
+      },
+      "reason": "dependent_add_on",
+      "scope_determination": "outside_primary_hospitalisation",
+      "uin": "NBHHLIA25039V012425"
+    },
+    {
+      "insurer_id": "niva",
+      "name_as_source": "Xtend",
+      "policy_wording_evidence": {
+        "first_two_page_uin_match": true,
+        "observed_phrase": "cannot be bought in isolation",
+        "page": 1,
+        "sha256": "8cc6475f19ba8e80d0a70c6e7c7957d4a6ef22ad53e2ba56de96d8ddc624455e",
+        "url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Xtend-Add-on-Endorsement-Policy_Wordings.pdf?v=1.0"
+      },
+      "reason": "dependent_add_on",
+      "scope_determination": "outside_primary_hospitalisation",
+      "uin": "NBHHLIA26052V012526"
+    },
+    {
+      "insurer_id": "niva",
+      "name_as_source": "Health Recharge",
+      "policy_wording_evidence": {
+        "first_two_page_uin_match": true,
+        "observed_phrase": "Super Top-up",
+        "page": 40,
+        "sha256": "2e4c4347525b5b1f87d54c6c38a8e034e46c3c833e1f829f0e1b0041685b7c6a",
+        "url": "https://transactions.nivabupa.com/pages/doc/policy_wording/health-recharge-t-and-c.pdf?v=1.0"
+      },
+      "reason": "super_top_up",
+      "scope_determination": "outside_primary_hospitalisation",
+      "uin": "NBHHLIP22156V032122"
+    },
+    {
+      "insurer_id": "niva",
+      "name_as_source": "Everyday Health",
+      "policy_wording_evidence": {
+        "first_two_page_uin_match": true,
+        "observed_phrase": "Wellness and OPD",
+        "page": 1,
+        "sha256": "2dc99db4cff1b9783633b7d314a960ac88589f2837034edd758f417a7c45d29f",
+        "url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Everyday_Health_Policy_Wording.pdf?v=1.2"
+      },
+      "reason": "wellness_and_opd",
+      "scope_determination": "outside_primary_hospitalisation",
+      "uin": "NBHHLGP24173V012324"
+    }
+  ],
+  "roster_product_rows": 155,
+  "status": "partial_scope_review",
+  "unresolved_identity_flags": [
+    {
+      "insurer_id": "niva",
+      "name": "SavePlus",
+      "roster_uin": "NBHHLIA24070V012324",
+      "status": "uin_character_conflict_and_variant_applicability_unresolved",
+      "uin_text_in_wording": "NBHHLIA24070VO12324",
+      "wording_sha256": "9cebb66b8df4d13bffe7b3739304a65310ab95d2f4333a717ff09fb3e73dc5fb",
+      "wording_url": "https://transactions.nivabupa.com/pages/doc/policy_wording/SavePlus-Endorsement-Document.pdf"
+    }
+  ]
+}
