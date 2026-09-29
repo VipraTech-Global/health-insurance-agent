@@ -1,0 +1,71 @@
+{
+  "format_version": 1,
+  "observed_at": "2026-09-29",
+  "status": "identity_and_variant_leads_only",
+  "care": [
+    {
+      "listed_name": "Care Supreme - Value",
+      "product_page": "https://www.careinsurance.com/product/care-supreme-value",
+      "uin_on_product_page": "CHIHLIP25047V022425",
+      "newer_wording_uin": "CHIHLIP27061V032627",
+      "newer_wording_url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---policy-terms-%26-conditions-%28effective-from-29-april-2026%29.pdf?rv=0.00091100+1790501132",
+      "review_status": "edition_and_variant_applicability_unresolved"
+    },
+    {
+      "listed_name": "Care Supreme - Value Plus",
+      "product_page": "https://www.careinsurance.com/product/care-supreme-value-plus",
+      "uin_on_product_page": "CHIHLIP25047V022425",
+      "newer_wording_uin": "CHIHLIP27061V032627",
+      "newer_wording_url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---policy-terms-%26-conditions-%28effective-from-29-april-2026%29.pdf?rv=0.00091100+1790501132",
+      "review_status": "edition_and_variant_applicability_unresolved"
+    },
+    {
+      "listed_name": "Care Supreme Senior",
+      "product_page": "https://www.careinsurance.com/product/care-supreme-senior",
+      "uin_on_product_page": "CHIHLIP25047V022425",
+      "newer_wording_uin": "CHIHLIP27061V032627",
+      "newer_wording_url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---policy-terms-%26-conditions-%28effective-from-29-april-2026%29.pdf?rv=0.00091100+1790501132",
+      "review_status": "edition_and_variant_applicability_unresolved"
+    },
+    {
+      "listed_name": "Ultimate Care with Unlimited Coverage",
+      "product_page": "https://www.careinsurance.com/product/ultimate-care-unlimited-coverage",
+      "uin_on_product_page": "CHIHLIP25044V012425",
+      "newer_wording_uin": "CHIHLIP26058V022526",
+      "newer_wording_url": "https://cms.careinsurance.com/cms/public/uploads/download_center/ultimate-care---policy-terms-%26-conditions-%28effective-from-16-january-2026%29.pdf?rv=0.00093400+1790501132",
+      "review_status": "edition_and_variant_applicability_unresolved"
+    },
+    {
+      "listed_name": "Ultimate Care Senior",
+      "product_page": "https://www.careinsurance.com/product/ultimate-care-senior",
+      "uin_on_product_page": null,
+      "newer_wording_uin": "CHIHLIP26058V022526",
+      "newer_wording_url": "https://cms.careinsurance.com/cms/public/uploads/download_center/ultimate-care---policy-terms-%26-conditions-%28effective-from-16-january-2026%29.pdf?rv=0.00093400+1790501132",
+      "review_status": "identity_and_variant_applicability_unresolved"
+    }
+  ],
+  "niva": [
+    {
+      "listed_name": "Health Companion",
+      "uin_observed_in_both_wordings": "NBHHLIP26051V092526",
+      "wordings": [
+        {
+          "label": "Health Companion Policy Wording - Variant 2022",
+          "url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Health-Companion-Variant2022-PolicyWording.pdf?v=1.4",
+          "sha256": "f0d9e3ddc037784a10e11d6684484be34ea3a0c8f720aed5a8ea6b820d7fd62d"
+        },
+        {
+          "label": "Health Companion variant 1,2,3, Family First",
+          "url": "https://transactions.nivabupa.com/pages/doc/policy_wording/Health-Companion_Variant-1-2-3-EFF_Policy-Wording.pdf?v=1.4",
+          "sha256": "209a0e88f19e44f5b414955b014856d68235a3fbbcd3aa158a2183e2a4622303"
+        }
+      ],
+      "review_status": "variant_editions_and_applicability_unresolved"
+    }
+  ],
+  "limitations": [
+    "Care product pages were read through the public web renderer; direct page HTML returned HTTP 403 and was not checksummed.",
+    "Marketing names and matching UINs are leads, not a reviewed legal variant inventory.",
+    "No variant is marked complete or applicable to a customer configuration."
+  ]
+}
