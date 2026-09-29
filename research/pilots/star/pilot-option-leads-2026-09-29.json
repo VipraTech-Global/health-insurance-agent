@@ -1,0 +1,47 @@
+{
+  "catalogue_complete": false,
+  "format_version": 1,
+  "limitations": [
+    "Other options, endorsements, amendments, schedules, and variant applicability remain unreviewed.",
+    "Visible wording text does not establish that the option is currently offered or selected for a policy.",
+    "Premium discounts on these pages are not a current customer quote."
+  ],
+  "method": "Rendered-page review of the named option section in each pilot wording PDF. This is an option lead inventory, not a complete option or rule review.",
+  "observed_at": "2026-09-29",
+  "option_inventory_complete": false,
+  "option_leads": [
+    {
+      "evidence_pdf_page": 30,
+      "option_name_as_summarised": "Buy Back of Pre-Existing Disease Waiting Period",
+      "product_uin": "SHAHLIP26044V092526",
+      "sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+      "source_role": "policy_wording",
+      "source_url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Comprehensive_Insurance_Policy_V_21_3a414ab104.pdf",
+      "variant_or_option_applicability": "unresolved",
+      "visible_choices_summary": "36 months to 12 months; additional premium; first purchase condition stated on page",
+      "visually_reviewed": true
+    },
+    {
+      "evidence_pdf_page": 28,
+      "option_name_as_summarised": "Voluntary Co-payment",
+      "product_uin": "SHAHLIP26046V092526",
+      "sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
+      "source_role": "policy_wording",
+      "source_url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Family_Health_Optima_Insurance_Plan_V_21_bbe089bd74.pdf",
+      "variant_or_option_applicability": "unresolved",
+      "visible_choices_summary": "10% or 20% co-payment; policy schedule determines selected option",
+      "visually_reviewed": true
+    },
+    {
+      "evidence_pdf_page": 25,
+      "option_name_as_summarised": "Aggregate deductible",
+      "product_uin": "SHAHLIP26048V032526",
+      "sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+      "source_role": "policy_wording",
+      "source_url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Health_Assure_Insurance_Policy_V_9_c53663e68a.pdf",
+      "variant_or_option_applicability": "unresolved",
+      "visible_choices_summary": "Rs. 50,000 or Rs. 1,00,000; page shows sum-insured dependent discount table",
+      "visually_reviewed": true
+    }
+  ]
+}
