@@ -331,24 +331,43 @@ def quantity_support_problems(value: object, quotes: list[str]) -> list[str]:
     return problems
 
 
+def has_copay_value(body: dict[str, Any]) -> bool:
+    """Distinguish operative copay values from a glossary definition of cost sharing."""
+    for effect in body.get("effects", []):
+        if effect.get("kind") in {"deduction", "exception"}:
+            return True
+        if effect.get("kind") == "definition":
+            value = effect.get("value", {}).get("value", {})
+            if value.get("state") == "not_applicable" or value.get("unit") == "ratio":
+                return True
+    return False
+
+
 def no_copay_body(copay_key: str, validated_body: dict[str, Any]) -> dict[str, Any] | None:
-    """Derive only a validated literal rate; retain its complete applicability and citations."""
+    """Derive a validated literal rate or explicit non-application, retaining conditions."""
     if validated_body.get("unresolved"):
         return None
     effects = validated_body.get("effects", [])
-    if len(effects) != 1 or effects[0].get("kind") != "deduction":
+    if len(effects) != 1:
         return None
     effect = effects[0]
-    amount = effect.get("amount", {})
-    value = amount.get("value", {})
-    if (
-        amount.get("node") != "literal"
-        or value.get("state") != "finite"
-        or value.get("unit") != "ratio"
-    ):
+    field = {"deduction": "amount", "exception": "replacement", "definition": "value"}.get(
+        effect.get("kind")
+    )
+    if field is None:
         return None
-    rate = Decimal(str(value["value"]))
-    if not Decimal(0) <= rate <= Decimal(1):
+    amount = effect.get(field, {})
+    value = amount.get("value", {})
+    if amount.get("node") != "literal":
+        return None
+    if value.get("state") == "not_applicable":
+        absent = True
+    elif value.get("state") == "finite" and value.get("unit") == "ratio":
+        rate = Decimal(str(value["value"]))
+        if not Decimal(0) <= rate <= Decimal(1):
+            return None
+        absent = rate == 0
+    else:
         return None
     body = deepcopy(validated_body)
     body["effects"] = [
@@ -357,7 +376,7 @@ def no_copay_body(copay_key: str, validated_body: dict[str, Any]) -> dict[str, A
             "target_key": "no_copay",
             "scope": deepcopy(effect["scope"]),
             "term_key": "no_copay",
-            "value": {"node": "literal", "value": {"kind": "boolean", "value": rate == 0}},
+            "value": {"node": "literal", "value": {"kind": "boolean", "value": absent}},
         }
     ]
     body["mandatory_rule_keys"] = list(dict.fromkeys([*body["mandatory_rule_keys"], copay_key]))

@@ -14,6 +14,7 @@ from apps.adviser_v2.processing.criterion_evidence import (
     CRITERIA,
     PROCESSING_VERSION,
     criterion_inventory_problems,
+    has_copay_value,
     no_copay_body,
     quantity_support_problems,
     request_bytes_with_headroom,
@@ -186,6 +187,48 @@ def test_no_copay_derivation_preserves_conditions_and_does_not_infer_zero_elsewh
         assert derived[key] == body[key]
     assert derived["mandatory_rule_keys"] == ["copay.deduction.copay_entry_age"]
     assert body == original
+    assert has_copay_value(body)
+    non_application = deepcopy(body)
+    non_application["applies_when"]["operator"] = "lt"
+    non_application["effects"] = [
+        {
+            "kind": "exception",
+            "target_key": "copay",
+            "scope": body["effects"][0]["scope"],
+            "target_rule_keys": ["copay.deduction.copay_entry_age"],
+            "replacement": {
+                "node": "literal",
+                "value": {
+                    "state": "not_applicable",
+                    "reason": "This co-payment will not apply under the quoted conditions.",
+                    "basis_span_ids": body["source_span_ids"],
+                },
+            },
+        }
+    ]
+    non_application["mandatory_rule_keys"] = ["copay.deduction.copay_entry_age"]
+    validate_contract("RuleV1", non_application)
+    derived_exception = no_copay_body("copay.exception.copay_non_application", non_application)
+    validate_contract("RuleV1", derived_exception)
+    assert derived_exception["effects"][0]["value"]["value"]["value"] is True
+    assert derived_exception["applies_when"] == non_application["applies_when"]
+    assert derived_exception["source_span_ids"] == body["source_span_ids"]
+    assert derived_exception["mandatory_rule_keys"] == [
+        "copay.deduction.copay_entry_age",
+        "copay.exception.copay_non_application",
+    ]
+    glossary = {
+        "effects": [
+            {
+                "kind": "definition",
+                "value": {
+                    "node": "literal",
+                    "value": {"kind": "text", "value": "Co-payment means cost sharing."},
+                },
+            }
+        ]
+    }
+    assert not has_copay_value(glossary)
     assert len(CRITERIA) == 13
     assert {item.key for item in CRITERIA}.isdisjoint({"no_copay", "budget"})
     body["unresolved"] = ["Uncertain base rate"]

@@ -34,11 +34,21 @@ the wording has four table-text disagreements and two table disagreements;
 the CIS has three table-text disagreements. The three separate schedules passed.
 Figure-count warnings are retained separately and are not the reason for the block.
 
+## Assure: failed before extraction
+
+The unchanged process exited 1 before extraction or independent review, with all
+four executable documents blocked. Prospectus, wording and CIS each have a
+`reader_text_disagreement`; their table-text/table disagreements are respectively
+5/1, 3/2 and 2/1. The modern-treatment schedule has one table disagreement.
+Figure-count warnings are retained separately. Validation using the original
+`e2728a2` readiness implementation also failed; its separate log is
+`star-health-assure-original-baseline-validation.log`.
+
 ## Version-2 correction and verification in progress
 
 A version-2-only reader is connected to the existing stage runners. The Assure
 baseline process had already loaded the unchanged implementation before this
-connection, and continues with that implementation. The corrected reader preserves
+connection, and completed with that implementation. The corrected reader preserves
 complete `pdftotext -raw` physical pages and their character offsets, with no
 retrieval, ranking, text splitting or truncation. Exact source identity and quote
 checks precede evidence use; reference/excluded captures cannot enter the bundle.
@@ -64,4 +74,5 @@ existing application byte bound; the provider reported roughly 73,000 input
 tokens. No source text is truncated. These are candidate extraction outputs,
 not independently validated benefit findings.
 
-Assure's unchanged baseline result remains pending. No release is published.
+All three unchanged baselines are now complete. None reached rule extraction.
+No release is published.

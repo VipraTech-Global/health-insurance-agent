@@ -20,6 +20,7 @@ from .criterion_evidence import (
     Criterion,
     criterion_for_key,
     criterion_rule_problems,
+    has_copay_value,
     no_copay_body,
 )
 from .manifest_v2 import raw_bundle_passages
@@ -307,10 +308,12 @@ def finalize_criterion_validation(job: ProcessingJob, artifact: dict[str, Any]) 
     else:
         by_key = {rule.rule_key: rule for rule in rules}
         for source in [rule for rule in rules if str(rule.id) in copay["rule_ids"]]:
+            if not has_copay_value(source.body):
+                continue
             body = no_copay_body(source.rule_key, source.body)
             if body is None:
                 derived_reasons.append(
-                    f"{source.rule_key}: copay is not a supported literal rate; no Boolean value was inferred."
+                    f"{source.rule_key}: copay is not a supported literal rate or explicit non-application; no Boolean value was inferred."
                 )
                 continue
             validate_contract("RuleV1", body)
