@@ -16,6 +16,8 @@ from .embedding import policy_index_version, qualified_embedding_status
 from .manifest import (
     ALL_DOCUMENT_ROLES,
     POLICY_MEMBERSHIP_ROLE_BY_DOCUMENT_ROLE,
+    CuratedManifestV2,
+    ManifestProductV2,
 )
 from .model_gateway import qualified_route
 from .models import (
@@ -165,6 +167,12 @@ def _persisted_rule_blockers(rules: list[PolicyRule]) -> list[str]:
 
 
 def role_inventory_blockers(product_entry: dict[str, Any]) -> list[str]:
+    if product_entry.get("manifest_schema_version") == 2:
+        try:
+            ManifestProductV2.model_validate(_v2_product_input(product_entry))
+        except (KeyError, TypeError, ValueError) as exc:
+            return [f"version_2_document_inventory_invalid:{exc}"]
+        return []
     blockers: list[str] = []
     raw_decisions = product_entry.get("role_decisions")
     raw_documents = product_entry.get("documents")
@@ -213,13 +221,38 @@ def role_inventory_blockers(product_entry: dict[str, Any]) -> list[str]:
     return blockers
 
 
+def _v2_product_input(product: dict[str, Any]) -> dict[str, Any]:
+    """Revalidate retained non-executable metadata as well as executable documents."""
+    value = {
+        key: product[key]
+        for key in ("product_key", "insurer", "name", "uin", "variant", "role_decisions", "optional_covers")
+    }
+    value["documents"] = [
+        {
+            "document_key": document["document_key"],
+            "role": document["role"],
+            "url": document["official_url"],
+            "authority": "insurer_issued",
+            "expected_media_type": "application/pdf",
+            "required": document["required"],
+            "applicability": document["expected_applicability"],
+            "applicability_reason": document["applicability_reason"],
+            "expected_sha256": document["expected_sha256"],
+            "page_count": document["page_count"],
+            "evidence_use": document["evidence_use"],
+        }
+        for document in product["documents"]
+    ]
+    return value
+
+
 def load_captured_manifest(path: Path) -> dict[str, Any]:
     try:
         value = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, ValueError) as exc:
         raise ValueError(f"Captured manifest is unreadable: {exc}") from exc
-    if not isinstance(value, dict) or value.get("schema_version") != 1:
-        raise ValueError("Captured manifest must be a schema-version 1 object.")
+    if not isinstance(value, dict) or value.get("schema_version") not in {1, 2}:
+        raise ValueError("Captured manifest must be a schema-version 1 or 2 object.")
     claimed = value.get("manifest_sha256")
     unsigned = dict(value)
     unsigned.pop("manifest_sha256", None)
@@ -228,8 +261,24 @@ def load_captured_manifest(path: Path) -> dict[str, Any]:
     if not isinstance(claimed, str) or manifest_sha256(unsigned) != claimed:
         raise ValueError("Captured manifest integrity hash is invalid.")
     products = value.get("products")
-    if not isinstance(products, list) or len(products) != 5:
-        raise ValueError("Captured manifest must contain exactly five products.")
+    expected_count = 3 if value["schema_version"] == 2 else 5
+    if not isinstance(products, list) or len(products) != expected_count:
+        raise ValueError(f"Captured manifest must contain exactly {expected_count} products.")
+    if value["schema_version"] == 2:
+        try:
+            if any(item.get("manifest_schema_version") != 2 for item in products):
+                raise ValueError("Every captured product must retain its manifest version.")
+            CuratedManifestV2.model_validate({
+                "schema_version": 2,
+                "manifest_id": value["manifest_id"],
+                "freeze_date": value["freeze_date"],
+                "release_label": value["release_label"],
+                "demo_subset": value["demo_subset"],
+                "official_hosts": value["official_hosts"],
+                "products": [_v2_product_input(item) for item in products],
+            })
+        except (KeyError, TypeError, ValueError) as exc:
+            raise ValueError(f"Captured version-2 manifest is invalid: {exc}") from exc
     return value
 
 
@@ -336,7 +385,11 @@ def validate_bundle(
         ).select_related("document_version")
     }
     manifest_document_ids = {
-        str(item.get("document_version_id")) for item in documents if isinstance(item, dict)
+        str(item.get("document_version_id")) for item in documents
+        if isinstance(item, dict) and (
+            product_entry.get("manifest_schema_version") != 2
+            or item.get("evidence_use") == "executable"
+        )
     }
     if set(memberships) != manifest_document_ids:
         blockers.append("policy_bundle_membership_mismatch")
@@ -353,7 +406,6 @@ def validate_bundle(
         except (KeyError, ValueError, SourceCapture.DoesNotExist):
             blockers.append(f"capture_missing:{document.get('document_key', 'unknown')}")
             continue
-        capture_ids.append(capture.id)
         if capture.original_file is None:
             blockers.append(f"original_missing:{document.get('document_key')}")
             continue
@@ -364,6 +416,12 @@ def validate_bundle(
             blockers.append(f"capture_integrity_mismatch:{document.get('document_key')}")
         if capture.document_version_id != uuid.UUID(str(document["document_version_id"])):
             blockers.append(f"capture_version_mismatch:{document.get('document_key')}")
+        if product_entry.get("manifest_schema_version") == 2:
+            if capture.original_file.sha256 != document.get("expected_sha256"):
+                blockers.append(f"reviewed_hash_mismatch:{document.get('document_key')}")
+            if document.get("evidence_use") != "executable":
+                continue
+        capture_ids.append(capture.id)
         membership = memberships.get(str(capture.document_version_id))
         document_role = document.get("role")
         expected_membership_role = POLICY_MEMBERSHIP_ROLE_BY_DOCUMENT_ROLE.get(str(document_role))
@@ -543,6 +601,10 @@ def validate_bundle(
     )
     if bad_evidence.exists():
         blockers.append("rule_evidence_not_verified")
+    if product_entry.get("manifest_schema_version") == 2 and PolicyRuleEvidence.objects.filter(
+        policy_rule__in=rules
+    ).exclude(evidence_span__source_capture_id__in=capture_ids).exists():
+        blockers.append("rule_uses_non_executable_evidence")
     blockers.extend(_persisted_rule_blockers(rules))
     embedding_ok, embedding_reason, qualification = qualified_embedding_status()
     current_index_version = (
@@ -608,6 +670,7 @@ def validate_bundle(
 
 
 def validate_five_product_manifest(path: Path) -> dict[str, Any]:
+    """Validate the exact catalogue (historical name retained for v1 callers)."""
     manifest = load_captured_manifest(path)
     products = [validate_bundle(item) for item in manifest["products"]]
     product_ids = {item["policy_version_id"] for item in products}
@@ -622,9 +685,9 @@ def validate_five_product_manifest(path: Path) -> dict[str, Any]:
         for index, product in enumerate(products)
         for warning in [f"product-{index + 1}:{item}" for item in product.get("warnings", [])]
     ]
-    if len(product_ids) != 5:
+    if len(product_ids) != len(manifest["products"]):
         blockers.append("release_policy_versions_not_distinct")
-    if len(uins) != 5:
+    if len(uins) != len(manifest["products"]):
         blockers.append("release_uins_not_distinct")
     return {
         "manifest_sha256": manifest["manifest_sha256"],

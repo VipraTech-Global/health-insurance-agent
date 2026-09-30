@@ -1,4 +1,4 @@
-"""Directly capture only entries in a reviewed five-product manifest."""
+"""Capture only the entries of a reviewed, versioned official-source manifest."""
 
 from __future__ import annotations
 
@@ -15,8 +15,10 @@ from django.utils import timezone
 from apps.adviser_v2.manifest import (
     POLICY_MEMBERSHIP_ROLE_BY_DOCUMENT_ROLE,
     ManifestDocument,
+    ManifestDocumentV2,
     ManifestProduct,
-    download_manifest_entry,
+    ManifestProductV2,
+    acquire_manifest_entry,
     load_manifest,
     manifest_sha256,
 )
@@ -58,15 +60,20 @@ KIND_MAP = {
     "revision_notice": "notice",
     "product_page": "web_page",
     "provider_network": "provider_list",
+    "excluded_expenses": "other",
+    "modern_treatment_schedule": "other",
+    "preventive_health_schedule": "other",
+    "brochure": "other",
 }
 
 
 class Command(BaseCommand):
-    help = "Capture only a closed, reviewed five-product official-source manifest."
+    help = "Capture only a closed, reviewed version-1 or version-2 manifest."
 
     def add_arguments(self, parser: CommandParser) -> None:
         parser.add_argument("manifest", type=Path)
         parser.add_argument("--output", type=Path)
+        parser.add_argument("--local-object-root", type=Path)
 
     def handle(self, *args: Any, **options: Any) -> None:
         manifest_path: Path = options["manifest"].resolve()
@@ -76,6 +83,10 @@ class Command(BaseCommand):
             raise CommandError(f"Manifest validation failed: {exc}") from exc
         reviewed_hosts = {host.lower() for host in manifest.official_hosts}
         input_hash = manifest_sha256(manifest.model_dump(mode="json"))
+        root = options.get("local_object_root") or settings.COVERGUIDE_LOCAL_OBJECT_ROOT
+        local_object_root = Path(root).resolve() if root else None
+        if manifest.schema_version == 2 and local_object_root is None:
+            raise CommandError("Version-2 ingestion requires an explicit local object root.")
         captured_products: list[dict[str, Any]] = []
         with httpx.Client(
             timeout=httpx.Timeout(60.0, connect=10.0),
@@ -84,10 +95,18 @@ class Command(BaseCommand):
             for product in manifest.products:
                 insurer, _ = Insurer.objects.get_or_create(name=product.insurer)
                 run, _ = DiscoveryRun.objects.get_or_create(
-                    session_id=f"fixed-manifest:{input_hash}:{product.product_key}",
+                    session_id=(
+                        f"fixed-manifest-v2:{input_hash}:{product.product_key}"
+                        if manifest.schema_version == 2
+                        else f"fixed-manifest:{input_hash}:{product.product_key}"
+                    ),
                     defaults={
                         "insurer": insurer,
-                        "instructions": (
+                        "instructions": json.dumps({
+                            "manifest_schema_version": 2,
+                            "input_manifest_sha256": input_hash,
+                            "product": product.model_dump(mode="json"),
+                        }) if manifest.schema_version == 2 else (
                             "Direct acquisition of reviewed manifest entries; no traversal."
                         ),
                         "model_name": "none",
@@ -106,7 +125,10 @@ class Command(BaseCommand):
                 )
                 try:
                     captured_products.append(
-                        self._capture_product(run, product, reviewed_hosts, client)
+                        self._capture_product(
+                            run, product, reviewed_hosts, client,
+                            local_object_root=local_object_root,
+                        )
                     )
                 except (httpx.HTTPError, OSError, ValueError) as exc:
                     run.status = "failed"
@@ -127,12 +149,17 @@ class Command(BaseCommand):
                 run.completed_at = timezone.now()
                 run.save(update_fields=["status", "completed_at", "updated_at"])
         frozen = {
-            "schema_version": 1,
+            "schema_version": manifest.schema_version,
             "manifest_id": manifest.manifest_id,
             "freeze_date": manifest.freeze_date,
             "input_manifest_sha256": input_hash,
             "products": captured_products,
         }
+        if manifest.schema_version == 2:
+            frozen.update(
+                release_label=manifest.release_label, demo_subset=manifest.demo_subset,
+                official_hosts=manifest.official_hosts,
+            )
         frozen["manifest_sha256"] = manifest_sha256(frozen)
         output = options.get("output") or (
             Path(settings.COVERGUIDE_MANIFEST_ROOT) / f"{manifest.manifest_id}-captured.json"
@@ -155,15 +182,19 @@ class Command(BaseCommand):
     def _capture_product(
         self,
         run: DiscoveryRun,
-        product: ManifestProduct,
+        product: ManifestProduct | ManifestProductV2,
         hosts: set[str],
         client: httpx.Client,
+        *,
+        local_object_root: Path | None = None,
     ) -> dict[str, Any]:
         insurer, _ = Insurer.objects.get_or_create(name=product.insurer)
         captured: list[tuple[ManifestDocument, SourceCapture, EvidenceSpan, dict[str, Any]]] = []
         for entry in product.documents:
             try:
-                payload, acquisition = download_manifest_entry(entry, hosts, client)
+                payload, acquisition = acquire_manifest_entry(
+                    entry, hosts, client, local_object_root=local_object_root
+                )
             except (httpx.HTTPError, OSError, ValueError) as exc:
                 raise ValueError(f"{entry.document_key}: {exc}") from exc
             captured.append(
@@ -173,6 +204,12 @@ class Command(BaseCommand):
                     acquisition,
                 )
             )
+            if acquisition.get("acquisition_method") == "official_url_missing_local_object":
+                self.stdout.write(f"Missing local object; fetched only {entry.url}.")
+        executable = [
+            item for item in captured
+            if not isinstance(item[0], ManifestDocumentV2) or item[0].evidence_use == "executable"
+        ]
         contractual = next((item for item in captured if item[0].role == "base_wording"), None)
         if contractual is None or product.uin.lower() not in contractual[2].quote.lower():
             raise ValueError(
@@ -210,12 +247,12 @@ class Command(BaseCommand):
                 },
             )
             captured_document_ids = {
-                capture.document_version_id for _entry, capture, _span, _meta in captured
+                capture.document_version_id for _entry, capture, _span, _meta in executable
             }
             PolicyVersionDocument.objects.filter(policy_version=version).exclude(
                 document_version_id__in=captured_document_ids
             ).delete()
-            for entry, capture, _span, _acquisition in captured:
+            for entry, capture, _span, _acquisition in executable:
                 PolicyVersionDocument.objects.get_or_create(
                     policy_version=version,
                     document_version=capture.document_version,
@@ -226,6 +263,10 @@ class Command(BaseCommand):
                     },
                 )
         return {
+            **({
+                "manifest_schema_version": 2,
+                "optional_covers": [item.model_dump(mode="json") for item in product.optional_covers],
+            } if isinstance(product, ManifestProductV2) else {}),
             "product_key": product.product_key,
             "insurer": product.insurer,
             "name": product.name,
@@ -243,6 +284,11 @@ class Command(BaseCommand):
                     "required": entry.required,
                     "expected_applicability": entry.applicability,
                     "applicability_reason": entry.applicability_reason,
+                    **({
+                        "evidence_use": entry.evidence_use,
+                        "expected_sha256": entry.expected_sha256,
+                        "page_count": entry.page_count,
+                    } if isinstance(entry, ManifestDocumentV2) else {}),
                     **acquisition,
                 }
                 for entry, capture, _span, acquisition in captured
@@ -311,7 +357,10 @@ class Command(BaseCommand):
                 source_url=source_url,
                 completed_at=timezone.now(),
                 status="captured",
-                http_status=int(str(acquisition["http_status"])),
+                http_status=(
+                    int(str(acquisition["http_status"]))
+                    if acquisition.get("http_status") is not None else None
+                ),
                 original_file=original,
                 document_version=version,
             )

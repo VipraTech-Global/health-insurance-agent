@@ -4,6 +4,7 @@ import uuid
 from pathlib import Path
 
 import pytest
+from django.db import DatabaseError, connection, transaction
 
 from apps.adviser_v2.models import (
     EvidenceSpan,
@@ -11,6 +12,7 @@ from apps.adviser_v2.models import (
     KnowledgeReleaseRule,
     PolicyRule,
     PolicyRuleEvidence,
+    PolicyRuleLink,
     PolicyVersion,
     PolicyVersionDocument,
     Product,
@@ -167,8 +169,10 @@ def test_five_product_partial_release_is_published_as_development_alpha(
 
 
 @pytest.mark.django_db
+@pytest.mark.parametrize("catalogue_size", [3, 5])
 def test_three_product_demo_release_publishes_only_ready_manifest_prefix(
     monkeypatch: pytest.MonkeyPatch,
+    catalogue_size: int,
 ) -> None:
     capture = public_html_capture()
     span = EvidenceSpan.objects.create(
@@ -200,7 +204,7 @@ def test_three_product_demo_release_publishes_only_ready_manifest_prefix(
     }
     policies: list[PolicyVersion] = []
     rule_ids: list[str] = []
-    for index in range(5):
+    for index in range(catalogue_size):
         product = Product.objects.create(
             insurer=capture.discovery_run.insurer,
             name=f"Demo product {index}",
@@ -239,6 +243,7 @@ def test_three_product_demo_release_publishes_only_ready_manifest_prefix(
 
     manifest = {
         "manifest_sha256": "3" * 64,
+        "schema_version": 2 if catalogue_size == 3 else 1,
         "products": [{"policy_version_id": str(policy.id)} for policy in policies],
     }
     report_products = [
@@ -255,11 +260,11 @@ def test_three_product_demo_release_publishes_only_ready_manifest_prefix(
         for index, policy in enumerate(policies)
     ]
     full_report = {
-        "ready": False,
+        "ready": catalogue_size == 3,
         "blockers": [
             "product-4:policy_index_stage_missing",
             "product-5:policy_index_stage_missing",
-        ],
+        ] if catalogue_size == 5 else [],
         "warnings": [],
         "products": report_products,
     }
@@ -276,13 +281,34 @@ def test_three_product_demo_release_publishes_only_ready_manifest_prefix(
     )
 
     release, build_report = build_release(Path("captured.json"), comparison_product_count=3)
+
+    # Even if an application readiness report is stale, the database enforces both gates.
+    PolicyRule.objects.filter(pk=rule_ids[0]).update(review_status="draft")
+    with pytest.raises(DatabaseError, match="verified-rule"), transaction.atomic():
+        publish_release(release.id)
+        with connection.cursor() as cursor:
+            cursor.execute("SET CONSTRAINTS ALL IMMEDIATE")
+    PolicyRule.objects.filter(pk=rule_ids[0]).update(review_status="verified")
+    dependency = PolicyRule.objects.create(
+        policy_version=policies[0], rule_key="unpublished-dependency",
+        rule_type="eligibility", body=_rule_body(span.id), review_status="verified",
+    )
+    PolicyRuleEvidence.objects.create(policy_rule=dependency, evidence_span=span, role="supports")
+    link = PolicyRuleLink.objects.create(
+        from_policy_rule_id=rule_ids[0], to_policy_rule=dependency, link_type="prerequisite",
+    )
+    with pytest.raises(DatabaseError, match="mandatory linked-rule closure"), transaction.atomic():
+        publish_release(release.id)
+        with connection.cursor() as cursor:
+            cursor.execute("SET CONSTRAINTS ALL IMMEDIATE")
+    link.delete()
     published = publish_release(release.id)
 
     assert build_report["ready"] is True
     assert published.state == "published"
     assert published.release_label == "development_alpha_3_product"
     assert published.readiness["demo_subset"] is True
-    assert published.readiness["catalogue_product_count"] == 5
+    assert published.readiness["catalogue_product_count"] == catalogue_size
     assert published.readiness["comparison_product_count"] == 3
     assert len(published.readiness["products"]) == 3
     assert KnowledgeReleaseRule.objects.filter(knowledge_release=published).count() == 3
@@ -296,11 +322,11 @@ def test_three_product_demo_release_publishes_only_ready_manifest_prefix(
         PolicyVersion.objects.filter(
             id__in=[policy.id for policy in policies[3:]], publication_status="draft"
         ).count()
-        == 2
+        == catalogue_size - 3
     )
     assert KnowledgeChannel.objects.get(name="live").current_release_id == published.id
     readiness = catalogue_readiness()
     assert readiness["ready"] is True
     assert readiness["catalogue_limit"] == 3
-    assert "3 of 5 products available" in readiness["comparison_label"]
+    assert f"3 of {catalogue_size} products available" in readiness["comparison_label"]
     assert sum(item["included_in_current_release"] for item in readiness["products"]) == 3

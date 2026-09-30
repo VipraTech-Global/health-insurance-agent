@@ -143,13 +143,17 @@ def catalogue_readiness(channel_name: str = "live") -> dict[str, Any]:
             }
         )
     included_count = sum(1 for item in items if item["included_in_current_release"])
+    catalogue_count = (
+        release.readiness.get("catalogue_product_count", FIVE_PRODUCT_COUNT)
+        if release is not None else FIVE_PRODUCT_COUNT
+    )
     comparison_label = (
-        f"Development demo: {comparison_count} of {FIVE_PRODUCT_COUNT} products available."
+        f"Development demo: {comparison_count} of {catalogue_count} products available."
         if release is not None and comparison_count < FIVE_PRODUCT_COUNT
         else "Development alpha: five products with incomplete knowledge."
     )
     warning = (
-        f"This demo compares only {comparison_count} of {FIVE_PRODUCT_COUNT} planned products. "
+        f"This demo compares {comparison_count} of {catalogue_count} reviewed products. "
         "Missing products and categories are unknown, not evidence of coverage or exclusion. "
         "Eligibility remains conditional unless verified."
         if release is not None and comparison_count < FIVE_PRODUCT_COUNT

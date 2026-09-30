@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import io
 import ipaddress
 import json
 import re
@@ -14,6 +15,7 @@ from typing import Literal
 from urllib.parse import urljoin, urlsplit
 
 import httpx
+import pdfplumber
 from pydantic import BaseModel, ConfigDict, Field, HttpUrl, model_validator
 
 MAX_SOURCE_BYTES = 50 * 1024 * 1024
@@ -59,6 +61,9 @@ POLICY_MEMBERSHIP_ROLE_BY_DOCUMENT_ROLE = {
     "revision_notice": "regulatory_modification",
     "product_page": "other_dependency",
     "provider_network": "other_dependency",
+    "excluded_expenses": "referenced_schedule",
+    "modern_treatment_schedule": "referenced_schedule",
+    "preventive_health_schedule": "referenced_schedule",
 }
 
 
@@ -155,8 +160,123 @@ class CuratedManifest(BaseModel):
         return self
 
 
-def load_manifest(path: Path) -> CuratedManifest:
-    return CuratedManifest.model_validate_json(path.read_text(encoding="utf-8"))
+V2_DOCUMENT_ROLES = ALL_DOCUMENT_ROLES | {
+    "excluded_expenses", "modern_treatment_schedule", "preventive_health_schedule", "brochure"
+}
+STAR_CAPTURE_HOSTS = {"www.starhealth.in", "d28c6jni2fmamz.cloudfront.net"}
+type DocumentRoleV2 = DocumentRole | Literal[
+    "excluded_expenses", "modern_treatment_schedule", "preventive_health_schedule", "brochure"
+]
+type ApplicabilityV2 = Literal[
+    "applicable", "not_applicable", "conditional", "needs_human_decision"
+]
+
+
+class ManifestRoleDecisionV2(ManifestRoleDecision):
+    role: DocumentRoleV2
+    applicability: ApplicabilityV2
+
+
+class ManifestDocumentV2(ManifestDocument):
+    role: DocumentRoleV2
+    applicability: ApplicabilityV2
+    expected_media_type: Literal["application/pdf"]
+    expected_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
+    page_count: int = Field(gt=0)
+    evidence_use: Literal["executable", "reference", "excluded"]
+
+    @model_validator(mode="after")
+    def explicit_evidence_boundary(self) -> ManifestDocumentV2:
+        if self.evidence_use == "executable":
+            if self.applicability != "applicable" or not self.required:
+                raise ValueError("Executable documents must be applicable and required.")
+            if self.role not in POLICY_MEMBERSHIP_ROLE_BY_DOCUMENT_ROLE:
+                raise ValueError("This document role cannot be executable evidence.")
+        elif self.required:
+            raise ValueError("Reference/excluded documents cannot be required executable evidence.")
+        if self.applicability == "not_applicable" and self.evidence_use != "excluded":
+            raise ValueError("Not-applicable documents must be excluded from evidence.")
+        return self
+
+
+class OptionalCoverV2(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    cover_key: str = Field(min_length=1, max_length=100)
+    name: str = Field(min_length=1, max_length=200)
+    wording_document_key: str
+    page_number: int = Field(gt=0)
+    selected: Literal[False]
+    reason: str = Field(min_length=1, max_length=1000)
+
+
+class ManifestProductV2(ManifestProduct):
+    variant: Literal["Base policy without optional covers"]
+    role_decisions: list[ManifestRoleDecisionV2]
+    documents: list[ManifestDocumentV2]
+    optional_covers: list[OptionalCoverV2]
+
+    @model_validator(mode="after")
+    def complete_minimum_bundle(self) -> ManifestProductV2:
+        decisions = {item.role: item for item in self.role_decisions}
+        if len(decisions) != len(self.role_decisions) or set(decisions) != V2_DOCUMENT_ROLES:
+            raise ValueError("Every version-2 document role needs exactly one decision.")
+        keys = {item.document_key: item for item in self.documents}
+        if len(keys) != len(self.documents):
+            raise ValueError("Document keys must be unique within a product bundle.")
+        for role, decision in decisions.items():
+            documents = [item for item in self.documents if item.role == role]
+            if decision.applicability != "not_applicable" and not documents:
+                raise ValueError(f"Role {role} requires preserved document metadata.")
+            if any(item.applicability != decision.applicability for item in documents):
+                raise ValueError(f"Role {role} document applicability conflicts with its decision.")
+        for role in {"base_wording", "customer_information_sheet", "prospectus"}:
+            documents = [item for item in self.documents if item.role == role]
+            if len(documents) != 1 or documents[0].evidence_use != "executable":
+                raise ValueError(f"Version-2 bundle requires one executable {role}.")
+        cover_keys = [item.cover_key for item in self.optional_covers]
+        if len(cover_keys) != len(set(cover_keys)):
+            raise ValueError("Optional-cover keys must be unique.")
+        for cover in self.optional_covers:
+            wording = keys.get(cover.wording_document_key)
+            if (
+                wording is None or wording.role != "base_wording"
+                or cover.page_number > wording.page_count
+            ):
+                raise ValueError("Optional cover must cite a physical page in this base wording.")
+        return self
+
+
+class CuratedManifestV2(CuratedManifest):
+    schema_version: Literal[2]
+    release_label: Literal["development_alpha_3_product"]
+    demo_subset: Literal[True]
+    products: list[ManifestProductV2]
+
+    @model_validator(mode="after")
+    def exactly_five_distinct_products(self) -> CuratedManifestV2:
+        # Override only v1's size validator; its public contract remains unchanged.
+        if len(self.products) != 3:
+            raise ValueError("Version-2 Star manifest must contain exactly three products.")
+        if len({item.product_key for item in self.products}) != 3:
+            raise ValueError("Product keys must be unique.")
+        if len({item.uin for item in self.products}) != 3:
+            raise ValueError("Every selected product must have a distinct exact UIN.")
+        hosts = set(self.official_hosts)
+        if not hosts or not hosts <= STAR_CAPTURE_HOSTS or len(hosts) != len(self.official_hosts):
+            raise ValueError("Version-2 hosts must be distinct exact captured Star hosts.")
+        for product in self.products:
+            for entry in product.documents:
+                validate_public_url(str(entry.url), hosts, resolve=False)
+        return self
+
+
+def load_manifest(path: Path) -> CuratedManifest | CuratedManifestV2:
+    value = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(value, dict):
+        raise ValueError("Manifest must be an object.")
+    contract = CuratedManifestV2 if value.get("schema_version") == 2 else CuratedManifest
+    return contract.model_validate(value)
 
 
 def manifest_sha256(value: object) -> str:
@@ -179,7 +299,7 @@ def is_complete_pdf(payload: bytes) -> bool:
     return eof_position >= max(0, len(payload) - MAX_PDF_TRAILING_BYTES)
 
 
-def validate_public_url(url: str, allowed_hosts: set[str]) -> None:
+def validate_public_url(url: str, allowed_hosts: set[str], *, resolve: bool = True) -> None:
     try:
         parsed = urlsplit(url)
         port = parsed.port
@@ -195,6 +315,8 @@ def validate_public_url(url: str, allowed_hosts: set[str]) -> None:
         or parsed.fragment
     ):
         raise ValueError("Source URL is outside the reviewed HTTPS host allowlist.")
+    if not resolve:
+        return
     try:
         addresses = socket.getaddrinfo(host, 443, type=socket.SOCK_STREAM)
     except socket.gaierror as exc:
@@ -250,3 +372,45 @@ def download_manifest_entry(
                 "content_type": response.headers.get("content-type", ""),
             }
     raise ValueError("Source exceeded the five-redirect limit.")
+
+
+def acquire_manifest_entry(
+    entry: ManifestDocument | ManifestDocumentV2,
+    allowed_hosts: set[str],
+    client: httpx.Client,
+    *,
+    local_object_root: Path | None = None,
+) -> tuple[bytes, dict[str, object]]:
+    """Keep v1 acquisition intact; v2 uses exact local bytes, or its one listed URL."""
+    if not isinstance(entry, ManifestDocumentV2):
+        return download_manifest_entry(entry, allowed_hosts, client)
+    if local_object_root is None:
+        raise ValueError("Version-2 acquisition requires an explicit local object root.")
+    validate_public_url(str(entry.url), allowed_hosts, resolve=False)
+    path = local_object_root / entry.expected_sha256[:2] / entry.expected_sha256
+    try:
+        with path.open("rb") as handle:
+            payload = handle.read(MAX_SOURCE_BYTES + 1)
+    except FileNotFoundError:
+        payload, acquisition = download_manifest_entry(entry, allowed_hosts, client)
+        acquisition["acquisition_method"] = "official_url_missing_local_object"
+    else:
+        acquisition = {
+            "captured_at": datetime.now(UTC).isoformat(),
+            "final_url": str(entry.url),
+            "http_status": None,
+            "sha256": hashlib.sha256(payload).hexdigest(),
+            "byte_count": len(payload),
+            "content_type": "application/pdf",
+            "acquisition_method": "verified_local_object",
+        }
+    if len(payload) > MAX_SOURCE_BYTES or not is_complete_pdf(payload):
+        raise ValueError("Local/captured object must be a complete PDF within 50 MiB.")
+    if hashlib.sha256(payload).hexdigest() != entry.expected_sha256:
+        raise ValueError("Local/captured object did not match the reviewed expected SHA-256.")
+    with pdfplumber.open(io.BytesIO(payload), strict_metadata=True) as document:
+        page_count = len(document.pages)
+    if page_count != entry.page_count:
+        raise ValueError("Local/captured PDF page count differs from the reviewed manifest.")
+    acquisition["page_count"] = page_count
+    return payload, acquisition

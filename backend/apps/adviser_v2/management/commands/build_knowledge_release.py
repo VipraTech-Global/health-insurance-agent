@@ -12,7 +12,7 @@ from apps.adviser_v2.services.releases import build_release
 
 
 class Command(BaseCommand):
-    help = "Build a release from one exact five-product manifest."
+    help = "Build a release from an exact five-product or three-product manifest."
 
     def add_arguments(self, parser: CommandParser) -> None:
         parser.add_argument("manifest", type=Path)
@@ -20,7 +20,7 @@ class Command(BaseCommand):
             "--three-product-demo",
             action="store_true",
             help=(
-                "Publish only the first three fully ready manifest products as an explicitly "
+                "Build only the first three fully ready manifest products as an explicitly "
                 "restricted development demo."
             ),
         )

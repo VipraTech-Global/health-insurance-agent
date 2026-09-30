@@ -1,0 +1,600 @@
+{
+  "schema_version": 2,
+  "manifest_id": "star-three-plan-2026-09-30",
+  "freeze_date": "2026-09-30",
+  "official_hosts": [
+    "www.starhealth.in",
+    "d28c6jni2fmamz.cloudfront.net"
+  ],
+  "release_label": "development_alpha_3_product",
+  "demo_subset": true,
+  "products": [
+    {
+      "product_key": "star-comprehensive",
+      "insurer": "Star Health and Allied Insurance Company Limited",
+      "name": "Star Comprehensive Insurance Policy",
+      "uin": "SHAHLIP26044V092526",
+      "variant": "Base policy without optional covers",
+      "role_decisions": [
+        {
+          "role": "base_wording",
+          "applicability": "applicable",
+          "reason": "Captured linked current edition accepted under Checkpoint 1. The 2025 document code differs from the 2026 roster UIN; accepted as the captured current linked edition."
+        },
+        {
+          "role": "customer_information_sheet",
+          "applicability": "applicable",
+          "reason": "Captured linked current edition accepted under Checkpoint 1. The 2025 document code differs from the 2026 roster UIN; accepted as the captured current linked edition."
+        },
+        {
+          "role": "prospectus",
+          "applicability": "applicable",
+          "reason": "Captured linked current edition accepted under Checkpoint 1. The 2025 document code differs from the 2026 roster UIN; accepted as the captured current linked edition. Applicable reference retained in the unchanged baseline pipeline; prompt omission later does not change applicability."
+        },
+        {
+          "role": "premium_table",
+          "applicability": "not_applicable",
+          "reason": "Not applicable for this comparison; budget and price remain unavailable, including prospectus premium illustrations."
+        },
+        {
+          "role": "proposal_form",
+          "applicability": "not_applicable",
+          "reason": "Proposal form is not required by the manifest for eligibility and is not rule evidence."
+        },
+        {
+          "role": "endorsement",
+          "applicability": "not_applicable",
+          "reason": "No separate applicable captured document in this approved base-policy slice; do not fetch additional sources."
+        },
+        {
+          "role": "addon_wording",
+          "applicability": "not_applicable",
+          "reason": "No separate applicable captured document in this approved base-policy slice; do not fetch additional sources."
+        },
+        {
+          "role": "addon_cis",
+          "applicability": "not_applicable",
+          "reason": "No separate applicable captured document in this approved base-policy slice; do not fetch additional sources."
+        },
+        {
+          "role": "revision_notice",
+          "applicability": "not_applicable",
+          "reason": "No separate applicable captured document in this approved base-policy slice; do not fetch additional sources."
+        },
+        {
+          "role": "product_page",
+          "applicability": "not_applicable",
+          "reason": "No separate applicable captured document in this approved base-policy slice; do not fetch additional sources."
+        },
+        {
+          "role": "provider_network",
+          "applicability": "not_applicable",
+          "reason": "No separate applicable captured document in this approved base-policy slice; do not fetch additional sources."
+        },
+        {
+          "role": "excluded_expenses",
+          "applicability": "applicable",
+          "reason": "Captured product-specific supporting schedule approved at Checkpoint 1."
+        },
+        {
+          "role": "modern_treatment_schedule",
+          "applicability": "applicable",
+          "reason": "Captured product-specific supporting schedule approved at Checkpoint 1."
+        },
+        {
+          "role": "preventive_health_schedule",
+          "applicability": "applicable",
+          "reason": "Captured product-specific supporting schedule approved at Checkpoint 1."
+        },
+        {
+          "role": "brochure",
+          "applicability": "not_applicable",
+          "reason": "Brochure is not rule evidence."
+        }
+      ],
+      "documents": [
+        {
+          "document_key": "star-comprehensive-brochure",
+          "role": "brochure",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Brochure_Star_Comprehensive_Insurance_Policy_V_15_Web_633bcfcaaf.pdf",
+          "authority": "insurer_issued",
+          "expected_media_type": "application/pdf",
+          "required": false,
+          "applicability": "not_applicable",
+          "applicability_reason": "Brochure is not rule evidence.",
+          "expected_sha256": "cca93014d1edc07a3e17d73cf70f900cb1ca85db3398bd637fa81d916ad3d564",
+          "page_count": 13,
+          "evidence_use": "excluded"
+        },
+        {
+          "document_key": "star-comprehensive-prospectus",
+          "role": "prospectus",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Star_Comprehensive_Insurance_Policy_V_12_dc6058c95e.pdf",
+          "authority": "insurer_issued",
+          "expected_media_type": "application/pdf",
+          "required": true,
+          "applicability": "applicable",
+          "applicability_reason": "Captured linked current edition accepted under Checkpoint 1. The 2025 document code differs from the 2026 roster UIN; accepted as the captured current linked edition. Applicable reference retained in the unchanged baseline pipeline; prompt omission later does not change applicability.",
+          "expected_sha256": "0404693147bd5202e28e39bfdb8fcc87f78e7ee6aa6a6f1032f63cbec63698e1",
+          "page_count": 53,
+          "evidence_use": "executable"
+        },
+        {
+          "document_key": "star-comprehensive-proposal-form",
+          "role": "proposal_form",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Offline_Proposal_Form_138e10d5db.pdf",
+          "authority": "insurer_issued",
+          "expected_media_type": "application/pdf",
+          "required": false,
+          "applicability": "not_applicable",
+          "applicability_reason": "Proposal form is not required by the manifest for eligibility and is not rule evidence.",
+          "expected_sha256": "ca3c33d9bdc5f52898743c69956864b4cc2329ae79a82bf2b87f9ffca0b06bf3",
+          "page_count": 4,
+          "evidence_use": "excluded"
+        },
+        {
+          "document_key": "star-comprehensive-base-wording",
+          "role": "base_wording",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Comprehensive_Insurance_Policy_V_21_3a414ab104.pdf",
+          "authority": "insurer_issued",
+          "expected_media_type": "application/pdf",
+          "required": true,
+          "applicability": "applicable",
+          "applicability_reason": "Captured linked current edition accepted under Checkpoint 1. The 2025 document code differs from the 2026 roster UIN; accepted as the captured current linked edition.",
+          "expected_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+          "page_count": 48,
+          "evidence_use": "executable"
+        },
+        {
+          "document_key": "star-comprehensive-customer-information-sheet",
+          "role": "customer_information_sheet",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/CIS_Star_Comprehensive_Insurance_Policy_V_2_69c15a9ee1.pdf",
+          "authority": "insurer_issued",
+          "expected_media_type": "application/pdf",
+          "required": true,
+          "applicability": "applicable",
+          "applicability_reason": "Captured linked current edition accepted under Checkpoint 1. The 2025 document code differs from the 2026 roster UIN; accepted as the captured current linked edition.",
+          "expected_sha256": "afe91f7446ed4dfc6090d3ce746386cf182ab5b094c9c6ae1b5af81a1375e665",
+          "page_count": 20,
+          "evidence_use": "executable"
+        },
+        {
+          "document_key": "star-comprehensive-excluded-expenses",
+          "role": "excluded_expenses",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/star_comprehensive_other_excluded_expenses_new_ae97610427.pdf",
+          "authority": "insurer_issued",
+          "expected_media_type": "application/pdf",
+          "required": true,
+          "applicability": "applicable",
+          "applicability_reason": "Captured product-specific supporting schedule approved at Checkpoint 1.",
+          "expected_sha256": "ae1e4a9fec23d65f8f983e22b9b76b6c8601baa9dcd2a0dc7b35530607b0f0b8",
+          "page_count": 1,
+          "evidence_use": "executable"
+        },
+        {
+          "document_key": "star-comprehensive-modern-treatment-schedule",
+          "role": "modern_treatment_schedule",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Star_Comprehensive_Insurance_Policy_627f5a8912.pdf",
+          "authority": "insurer_issued",
+          "expected_media_type": "application/pdf",
+          "required": true,
+          "applicability": "applicable",
+          "applicability_reason": "Captured product-specific supporting schedule approved at Checkpoint 1.",
+          "expected_sha256": "a167e20343d2dfbecf51bebcd64ac0fde4e3ba35431f27490fe94ca6cfadc480",
+          "page_count": 2,
+          "evidence_use": "executable"
+        },
+        {
+          "document_key": "star-comprehensive-preventive-health-schedule",
+          "role": "preventive_health_schedule",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Preventive_Health_Checkup_Star_Comprehensive_Insurance_Policy_87eabc5749.pdf",
+          "authority": "insurer_issued",
+          "expected_media_type": "application/pdf",
+          "required": true,
+          "applicability": "applicable",
+          "applicability_reason": "Captured product-specific supporting schedule approved at Checkpoint 1.",
+          "expected_sha256": "c7f4ceb7fb7d3ee02937d107c96f81859b3ecab5c045fbf63aa312bb07770358",
+          "page_count": 1,
+          "evidence_use": "executable"
+        }
+      ],
+      "optional_covers": [
+        {
+          "cover_key": "star-comprehensive-optional-cover",
+          "name": "Buy Back of Pre-Existing Disease Waiting Period",
+          "wording_document_key": "star-comprehensive-base-wording",
+          "page_number": 30,
+          "selected": false,
+          "reason": "Not applied to the selected base variant. 36 months to 12 months; additional premium; first purchase condition stated on page"
+        }
+      ]
+    },
+    {
+      "product_key": "star-family-health-optima",
+      "insurer": "Star Health and Allied Insurance Company Limited",
+      "name": "Family Health Optima Insurance Plan",
+      "uin": "SHAHLIP26046V092526",
+      "variant": "Base policy without optional covers",
+      "role_decisions": [
+        {
+          "role": "base_wording",
+          "applicability": "applicable",
+          "reason": "Captured linked current edition accepted under Checkpoint 1."
+        },
+        {
+          "role": "customer_information_sheet",
+          "applicability": "applicable",
+          "reason": "Captured linked current edition accepted under Checkpoint 1."
+        },
+        {
+          "role": "prospectus",
+          "applicability": "applicable",
+          "reason": "Captured linked current edition accepted under Checkpoint 1. Applicable reference retained in the unchanged baseline pipeline; prompt omission later does not change applicability."
+        },
+        {
+          "role": "premium_table",
+          "applicability": "not_applicable",
+          "reason": "Not applicable for this comparison; budget and price remain unavailable, including prospectus premium illustrations."
+        },
+        {
+          "role": "proposal_form",
+          "applicability": "not_applicable",
+          "reason": "Proposal form is not required by the manifest for eligibility and is not rule evidence."
+        },
+        {
+          "role": "endorsement",
+          "applicability": "not_applicable",
+          "reason": "No separate applicable captured document in this approved base-policy slice; do not fetch additional sources."
+        },
+        {
+          "role": "addon_wording",
+          "applicability": "not_applicable",
+          "reason": "No separate applicable captured document in this approved base-policy slice; do not fetch additional sources."
+        },
+        {
+          "role": "addon_cis",
+          "applicability": "not_applicable",
+          "reason": "No separate applicable captured document in this approved base-policy slice; do not fetch additional sources."
+        },
+        {
+          "role": "revision_notice",
+          "applicability": "not_applicable",
+          "reason": "No separate applicable captured document in this approved base-policy slice; do not fetch additional sources."
+        },
+        {
+          "role": "product_page",
+          "applicability": "not_applicable",
+          "reason": "No separate applicable captured document in this approved base-policy slice; do not fetch additional sources."
+        },
+        {
+          "role": "provider_network",
+          "applicability": "not_applicable",
+          "reason": "No separate applicable captured document in this approved base-policy slice; do not fetch additional sources."
+        },
+        {
+          "role": "excluded_expenses",
+          "applicability": "applicable",
+          "reason": "Captured product-specific supporting schedule approved at Checkpoint 1."
+        },
+        {
+          "role": "modern_treatment_schedule",
+          "applicability": "applicable",
+          "reason": "Captured product-specific supporting schedule approved at Checkpoint 1."
+        },
+        {
+          "role": "preventive_health_schedule",
+          "applicability": "applicable",
+          "reason": "Captured product-specific supporting schedule approved at Checkpoint 1."
+        },
+        {
+          "role": "brochure",
+          "applicability": "not_applicable",
+          "reason": "Brochure is not rule evidence."
+        }
+      ],
+      "documents": [
+        {
+          "document_key": "star-family-health-optima-brochure",
+          "role": "brochure",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Brochure_Family_Health_Optima_Insurance_Plan_V_15_Web_74cee1b82f.pdf",
+          "authority": "insurer_issued",
+          "expected_media_type": "application/pdf",
+          "required": false,
+          "applicability": "not_applicable",
+          "applicability_reason": "Brochure is not rule evidence.",
+          "expected_sha256": "9f86ed7d514afe927911b26f6c2b4141e81decfdb3bb835886e8655bae5a04c3",
+          "page_count": 14,
+          "evidence_use": "excluded"
+        },
+        {
+          "document_key": "star-family-health-optima-prospectus",
+          "role": "prospectus",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Family_Health_Optima_Insurance_Plan_V_10_79f547c311.pdf",
+          "authority": "insurer_issued",
+          "expected_media_type": "application/pdf",
+          "required": true,
+          "applicability": "applicable",
+          "applicability_reason": "Captured linked current edition accepted under Checkpoint 1. Applicable reference retained in the unchanged baseline pipeline; prompt omission later does not change applicability.",
+          "expected_sha256": "abe38283100d6402e1ac22929bb94c23bb53994bef7a378196e48900cd4da025",
+          "page_count": 59,
+          "evidence_use": "executable"
+        },
+        {
+          "document_key": "star-family-health-optima-proposal-form",
+          "role": "proposal_form",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Offline_Proposal_Form_138e10d5db.pdf",
+          "authority": "insurer_issued",
+          "expected_media_type": "application/pdf",
+          "required": false,
+          "applicability": "not_applicable",
+          "applicability_reason": "Proposal form is not required by the manifest for eligibility and is not rule evidence.",
+          "expected_sha256": "ca3c33d9bdc5f52898743c69956864b4cc2329ae79a82bf2b87f9ffca0b06bf3",
+          "page_count": 4,
+          "evidence_use": "excluded"
+        },
+        {
+          "document_key": "star-family-health-optima-base-wording",
+          "role": "base_wording",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Family_Health_Optima_Insurance_Plan_V_21_bbe089bd74.pdf",
+          "authority": "insurer_issued",
+          "expected_media_type": "application/pdf",
+          "required": true,
+          "applicability": "applicable",
+          "applicability_reason": "Captured linked current edition accepted under Checkpoint 1.",
+          "expected_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
+          "page_count": 44,
+          "evidence_use": "executable"
+        },
+        {
+          "document_key": "star-family-health-optima-customer-information-sheet",
+          "role": "customer_information_sheet",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/CIS_Family_Health_Optima_Insurance_Plan_V_2_b5d9cdf635.pdf",
+          "authority": "insurer_issued",
+          "expected_media_type": "application/pdf",
+          "required": true,
+          "applicability": "applicable",
+          "applicability_reason": "Captured linked current edition accepted under Checkpoint 1.",
+          "expected_sha256": "5527cb614c86736ca494d8ce97cce70abeca12ef861c425bbf011627dbc8ae35",
+          "page_count": 17,
+          "evidence_use": "executable"
+        },
+        {
+          "document_key": "star-family-health-optima-excluded-expenses",
+          "role": "excluded_expenses",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/FHO_Other_excluded_b6ac7e9f79.pdf",
+          "authority": "insurer_issued",
+          "expected_media_type": "application/pdf",
+          "required": true,
+          "applicability": "applicable",
+          "applicability_reason": "Captured product-specific supporting schedule approved at Checkpoint 1.",
+          "expected_sha256": "1def1773a1a07694531572b226a8ecbd1faefaec2e348d5e191cd32633e4c9b4",
+          "page_count": 1,
+          "evidence_use": "executable"
+        },
+        {
+          "document_key": "star-family-health-optima-modern-treatment-schedule",
+          "role": "modern_treatment_schedule",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Family_Health_Optima_Insurance_Plan_9428c181fe.pdf",
+          "authority": "insurer_issued",
+          "expected_media_type": "application/pdf",
+          "required": true,
+          "applicability": "applicable",
+          "applicability_reason": "Captured product-specific supporting schedule approved at Checkpoint 1.",
+          "expected_sha256": "066c9150d12c1df1f1fa04c326bd273afd3f78639c705195c5923e9293019c11",
+          "page_count": 2,
+          "evidence_use": "executable"
+        },
+        {
+          "document_key": "star-family-health-optima-preventive-health-schedule",
+          "role": "preventive_health_schedule",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Preventive_Health_Check_up_Family_Health_Optima_Insurance_Plan_13ff4299eb.pdf",
+          "authority": "insurer_issued",
+          "expected_media_type": "application/pdf",
+          "required": true,
+          "applicability": "applicable",
+          "applicability_reason": "Captured product-specific supporting schedule approved at Checkpoint 1.",
+          "expected_sha256": "667646c6e403db44541256481b8cf26f13ee23369206c0125bb4b7f8063b09a9",
+          "page_count": 1,
+          "evidence_use": "executable"
+        }
+      ],
+      "optional_covers": [
+        {
+          "cover_key": "star-family-health-optima-optional-cover",
+          "name": "Voluntary Co-payment",
+          "wording_document_key": "star-family-health-optima-base-wording",
+          "page_number": 28,
+          "selected": false,
+          "reason": "Not applied to the selected base variant. 10% or 20% co-payment; policy schedule determines selected option"
+        }
+      ]
+    },
+    {
+      "product_key": "star-health-assure",
+      "insurer": "Star Health and Allied Insurance Company Limited",
+      "name": "Star Health Assure Insurance Policy",
+      "uin": "SHAHLIP26048V032526",
+      "variant": "Base policy without optional covers",
+      "role_decisions": [
+        {
+          "role": "base_wording",
+          "applicability": "applicable",
+          "reason": "Captured linked current edition accepted under Checkpoint 1."
+        },
+        {
+          "role": "customer_information_sheet",
+          "applicability": "applicable",
+          "reason": "Captured linked current edition accepted under Checkpoint 1."
+        },
+        {
+          "role": "prospectus",
+          "applicability": "applicable",
+          "reason": "Captured linked current edition accepted under Checkpoint 1. Applicable reference retained in the unchanged baseline pipeline; prompt omission later does not change applicability."
+        },
+        {
+          "role": "premium_table",
+          "applicability": "not_applicable",
+          "reason": "Not applicable for this comparison; budget and price remain unavailable, including prospectus premium illustrations."
+        },
+        {
+          "role": "proposal_form",
+          "applicability": "not_applicable",
+          "reason": "Proposal form is not required by the manifest for eligibility and is not rule evidence."
+        },
+        {
+          "role": "endorsement",
+          "applicability": "not_applicable",
+          "reason": "No separate applicable captured document in this approved base-policy slice; do not fetch additional sources."
+        },
+        {
+          "role": "addon_wording",
+          "applicability": "not_applicable",
+          "reason": "No separate applicable captured document in this approved base-policy slice; do not fetch additional sources."
+        },
+        {
+          "role": "addon_cis",
+          "applicability": "not_applicable",
+          "reason": "No separate applicable captured document in this approved base-policy slice; do not fetch additional sources."
+        },
+        {
+          "role": "revision_notice",
+          "applicability": "not_applicable",
+          "reason": "No separate applicable captured document in this approved base-policy slice; do not fetch additional sources."
+        },
+        {
+          "role": "product_page",
+          "applicability": "not_applicable",
+          "reason": "No separate applicable captured document in this approved base-policy slice; do not fetch additional sources."
+        },
+        {
+          "role": "provider_network",
+          "applicability": "not_applicable",
+          "reason": "No separate applicable captured document in this approved base-policy slice; do not fetch additional sources."
+        },
+        {
+          "role": "excluded_expenses",
+          "applicability": "applicable",
+          "reason": "Reference only. Coverage is established by wording clause 27 (physical PDF p20, printed p19) and wording List I (physical p44). Use the wording list for executable evidence; the separate list is not a conflict and does not override the wording."
+        },
+        {
+          "role": "modern_treatment_schedule",
+          "applicability": "applicable",
+          "reason": "Captured product-specific supporting schedule approved at Checkpoint 1."
+        },
+        {
+          "role": "preventive_health_schedule",
+          "applicability": "not_applicable",
+          "reason": "No separate applicable captured document in this approved base-policy slice; do not fetch additional sources."
+        },
+        {
+          "role": "brochure",
+          "applicability": "not_applicable",
+          "reason": "Brochure is not rule evidence."
+        }
+      ],
+      "documents": [
+        {
+          "document_key": "star-health-assure-brochure",
+          "role": "brochure",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Brochure_Star_Health_Assure_Insurance_Policy_V_5_Web_8153c42b87.pdf",
+          "authority": "insurer_issued",
+          "expected_media_type": "application/pdf",
+          "required": false,
+          "applicability": "not_applicable",
+          "applicability_reason": "Brochure is not rule evidence.",
+          "expected_sha256": "2c4e128c6ddacb9a809d5e4ec52d6468ed8bed4cd9b23ee7234078257eb4dc7b",
+          "page_count": 18,
+          "evidence_use": "excluded"
+        },
+        {
+          "document_key": "star-health-assure-prospectus",
+          "role": "prospectus",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Prospectus_Star_Health_Assure_Insurance_Policy_V_3_9b8479dfdd.pdf",
+          "authority": "insurer_issued",
+          "expected_media_type": "application/pdf",
+          "required": true,
+          "applicability": "applicable",
+          "applicability_reason": "Captured linked current edition accepted under Checkpoint 1. Applicable reference retained in the unchanged baseline pipeline; prompt omission later does not change applicability.",
+          "expected_sha256": "91a761206899caafe957f0c874d75c1b05b9e0b53601d2f57761309a9b0899be",
+          "page_count": 56,
+          "evidence_use": "executable"
+        },
+        {
+          "document_key": "star-health-assure-proposal-form",
+          "role": "proposal_form",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Proposal_Form_0b4f1c4c9c.pdf",
+          "authority": "insurer_issued",
+          "expected_media_type": "application/pdf",
+          "required": false,
+          "applicability": "not_applicable",
+          "applicability_reason": "Proposal form is not required by the manifest for eligibility and is not rule evidence.",
+          "expected_sha256": "10d59c5e7a6b08c963da9942f59415ae9cb72614a3069807a74b49e9d785d683",
+          "page_count": 2,
+          "evidence_use": "excluded"
+        },
+        {
+          "document_key": "star-health-assure-base-wording",
+          "role": "base_wording",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Health_Assure_Insurance_Policy_V_9_c53663e68a.pdf",
+          "authority": "insurer_issued",
+          "expected_media_type": "application/pdf",
+          "required": true,
+          "applicability": "applicable",
+          "applicability_reason": "Captured linked current edition accepted under Checkpoint 1.",
+          "expected_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+          "page_count": 47,
+          "evidence_use": "executable"
+        },
+        {
+          "document_key": "star-health-assure-customer-information-sheet",
+          "role": "customer_information_sheet",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/CIS_Star_Health_Assure_Insurance_Policy_V_2_380ce4ce6b.pdf",
+          "authority": "insurer_issued",
+          "expected_media_type": "application/pdf",
+          "required": true,
+          "applicability": "applicable",
+          "applicability_reason": "Captured linked current edition accepted under Checkpoint 1.",
+          "expected_sha256": "9b577e1226bbfde552575bedf8e0b74edf792a2db5c788b008196d99f23d5f2e",
+          "page_count": 21,
+          "evidence_use": "executable"
+        },
+        {
+          "document_key": "star-health-assure-excluded-expenses",
+          "role": "excluded_expenses",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Health_Assure_List_of_Excluded_Expenses_9be58ee6be.pdf",
+          "authority": "insurer_issued",
+          "expected_media_type": "application/pdf",
+          "required": false,
+          "applicability": "applicable",
+          "applicability_reason": "Reference only. Coverage is established by wording clause 27 (physical PDF p20, printed p19) and wording List I (physical p44). Use the wording list for executable evidence; the separate list is not a conflict and does not override the wording.",
+          "expected_sha256": "1f277749e6cbce0dac5e9a1ca0fdf2a8790c71a2bf12d7169a7ebf9a897e04da",
+          "page_count": 1,
+          "evidence_use": "reference"
+        },
+        {
+          "document_key": "star-health-assure-modern-treatment-schedule",
+          "role": "modern_treatment_schedule",
+          "url": "https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Star_Health_Assure_Insurance_Policy_7746fe52d9.pdf",
+          "authority": "insurer_issued",
+          "expected_media_type": "application/pdf",
+          "required": true,
+          "applicability": "applicable",
+          "applicability_reason": "Captured product-specific supporting schedule approved at Checkpoint 1.",
+          "expected_sha256": "4e199d99893cb7966344788f6994137c4d09a7aa8c59aff6439c6e2036ec0667",
+          "page_count": 1,
+          "evidence_use": "executable"
+        }
+      ],
+      "optional_covers": [
+        {
+          "cover_key": "star-health-assure-optional-cover",
+          "name": "Aggregate deductible",
+          "wording_document_key": "star-health-assure-base-wording",
+          "page_number": 25,
+          "selected": false,
+          "reason": "Not applied to the selected base variant. Rs. 50,000 or Rs. 1,00,000; page shows sum-insured dependent discount table"
+        }
+      ]
+    }
+  ]
+}

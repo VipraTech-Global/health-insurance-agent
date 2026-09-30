@@ -1,6 +1,6 @@
 # Star three-plan document review - Checkpoint 1
 
-Status: awaiting Checkpoint 1 approval. This is the document decision sheet, not the rule review or an executable manifest.
+Status: Checkpoint 1 approved with the Assure correction below. This is the document decision sheet; the executable version-2 manifest is `data/manifests/star-three-plan-2026-09-30.json`.
 
 Branch: `feat/star-three-plan-slice`, created from the clean Star worktree at `bfa1c25`. Only the three products below are in scope. No new documents were sought or fetched.
 
@@ -9,10 +9,10 @@ Branch: `feat/star-three-plan-slice`, created from the clean Star worktree at `b
 - Selected variant: **Base policy without optional covers**. Optional-cover clauses remain identifiable in the wording but must not become selected base benefits. Individual/floater differences belong in eligibility rules, not extra variants.
 - Accept the captured linked current editions under the brief's decision. The capture files were locally rechecked by SHA-256 and physical PDF page count; this is not a new live-currentness check.
 - Wording, CIS and prospectus are applicable. Retain every prospectus as reference and in the unchanged baseline processing. Later omission from an extraction prompt does not change applicability.
-- Captured excluded-expenses, modern-treatment and preventive-health schedules are applicable, except the Assure expense sheet held below.
+- Captured excluded-expenses, modern-treatment and preventive-health schedules are applicable, with the separate Assure expense sheet retained as reference only.
 - Brochures and proposal forms are not applicable for rules. `ManifestProduct.complete_minimum_bundle` does not require proposal forms for eligibility.
 - Premium-table role is not applicable. No separate premium-table capture is listed for these bundles; price and budget remain unavailable, including if a prospectus contains premium illustrations.
-- Preserve excluded and unresolved document metadata outside executable evidence. Do not infer the meaning of the Assure sheet.
+- Preserve excluded and unresolved document metadata outside executable evidence. Assure consumables coverage uses clause 27 and List I inside its wording.
 - The exact captured PDF host is `d28c6jni2fmamz.cloudfront.net`; the captured official listing provenance uses `www.starhealth.in`. No wildcard CloudFront allowance.
 
 ## Compact document table
@@ -24,7 +24,7 @@ Numbers are physical PDF page counts. Full original filenames, URLs, SHA-256 val
 | Base wording | Yes, 48 | Yes, 44 | Yes, 47 | Captured linked edition accepted. |
 | Customer information sheet | Yes, 20 | Yes, 17 | Yes, 21 | Captured linked edition accepted. |
 | Prospectus | Yes, 53 | Yes, 59 | Yes, 56 | Applicable reference; retained in baseline. |
-| Excluded expenses | Yes, 1 | Yes, 1 | **Needs human decision, 1** | Assure heading contradicts source label. |
+| Excluded expenses | Yes, 1 | Yes, 1 | Reference only, 1 | Assure coverage uses wording clause 27 and List I. |
 | Modern-treatment schedule | Yes, 2 | Yes, 2 | Yes, 1 | Captured product-specific supporting schedule. |
 | Preventive-health schedule | Yes, 1 | Yes, 1 | No separate capture listed | Include both captured schedules; no new search. |
 | Brochure | No, 13 | No, 14 | No, 18 | Marketing material excluded from rules. |
@@ -41,13 +41,19 @@ Only one optional-cover section was found in each of the three complete raw word
 | Family Health Optima | Voluntary co-payment: 10% or 20% for the specified coverages. For entry age 61 or above, this is additional to mandatory copay; applies to every claim. | 28 (printed 27/43) | Not selected. Mandatory base copay must still be assessed. |
 | Star Health Assure | Aggregate deductible: Rs. 50,000 or Rs. 1,00,000 each policy year; discount depends on sum insured. | 25 (printed 24/46); illustration on 26 | Not selected. Do not apply this deductible to the base variant. |
 
-## Unresolved conflict
+## Assure consumables decision - approved correction
 
-**Star Health Assure excluded-expenses sheet: `needs_human_decision`.** The existing rendered-page review records the visible heading on physical page 1 as:
+There is no unresolved conflict or `needs_human_decision` for Assure. Wording clause 27
+(physical PDF page 20, printed page 19) makes List I items payable when there is an admissible
+inpatient or day-care claim. Its own List I (physical PDF page 44, printed page 43) is headed
+"Items for which coverage is available in the policy". These wording passages are executable evidence.
 
-> Items for which coverage is available in the policy
-
-The source download labels it excluded expenses, and the corresponding Comprehensive and Optima headings say coverage is **not** available. Preserve the sheet and this conflict as metadata; use none of it as executable evidence. Checkpoint approval can leave this conflict unresolved.
+The separate one-page sheet remains reference only and cannot support rules or replace the wording list.
+All 68 numbered items were compared with wording List I using the captured PDF tables, then checked
+visually. No item-content differences were found after normalizing case, whitespace and punctuation.
+There are formatting/capitalization differences, a different title, and a different column break
+(the wording's left column ends at 35; the sheet's at 34). Preserve this comparison in the later
+rule review sheet; it does not change the reference-only boundary.
 
 ## Edition decision
 
@@ -116,7 +122,7 @@ UIN: `SHAHLIP26048V032526`. Variant: **Base policy without optional covers**.
 | `base_wording` | [Policy_Star_Health_Assure_Insurance_Policy_V_9_c53663e68a.pdf](https://d28c6jni2fmamz.cloudfront.net/Policy_Star_Health_Assure_Insurance_Policy_V_9_c53663e68a.pdf) | 47 | `applicable` | Accept captured linked current edition under the brief. |
 | `customer_information_sheet` | [CIS_Star_Health_Assure_Insurance_Policy_V_2_380ce4ce6b.pdf](https://d28c6jni2fmamz.cloudfront.net/CIS_Star_Health_Assure_Insurance_Policy_V_2_380ce4ce6b.pdf) | 21 | `applicable` | Accept captured linked current edition under the brief. |
 | `prospectus` | [Prospectus_Star_Health_Assure_Insurance_Policy_V_3_9b8479dfdd.pdf](https://d28c6jni2fmamz.cloudfront.net/Prospectus_Star_Health_Assure_Insurance_Policy_V_3_9b8479dfdd.pdf) | 56 | `applicable` | Accept captured linked current edition under the brief. Retain applicable reference and unchanged baseline processing. |
-| `excluded_expenses` | [Health_Assure_List_of_Excluded_Expenses_9be58ee6be.pdf](https://d28c6jni2fmamz.cloudfront.net/Health_Assure_List_of_Excluded_Expenses_9be58ee6be.pdf) | 1 | `needs_human_decision` | Heading says coverage is available; conflicts with excluded-expenses label. Excluded from executable evidence. |
+| `excluded_expenses` | [Health_Assure_List_of_Excluded_Expenses_9be58ee6be.pdf](https://d28c6jni2fmamz.cloudfront.net/Health_Assure_List_of_Excluded_Expenses_9be58ee6be.pdf) | 1 | `applicable`, reference only | Wording clause 27 and its own List I establish consumables coverage. Separate sheet retained only as reference. |
 | `modern_treatment_schedule` | [Modern_Treatment_Star_Health_Assure_Insurance_Policy_7746fe52d9.pdf](https://d28c6jni2fmamz.cloudfront.net/Modern_Treatment_Star_Health_Assure_Insurance_Policy_7746fe52d9.pdf) | 1 | `applicable` | Captured product-specific supporting schedule; accepted under the brief. |
 | `brochure` | [Brochure_Star_Health_Assure_Insurance_Policy_V_5_Web_8153c42b87.pdf](https://d28c6jni2fmamz.cloudfront.net/Brochure_Star_Health_Assure_Insurance_Policy_V_5_Web_8153c42b87.pdf) | 18 | `not_applicable` | Marketing material; not rule evidence. |
 | `proposal_form` | [Proposal_Form_0b4f1c4c9c.pdf](https://d28c6jni2fmamz.cloudfront.net/Proposal_Form_0b4f1c4c9c.pdf) | 2 | `not_applicable` | Underwriting form; manifest schema does not require it for eligibility. |
@@ -134,11 +140,11 @@ Integrity/provenance (each URL above is the original captured official URL):
 ## Verification and saved work
 
 - All 23 document associations (22 distinct local objects) passed SHA-256 and physical-page-count verification. No listed object was missing; no re-fetch was needed.
-- Read existing capture, audit, edition-page and option-lead records. Only the three captured wordings were newly text-inspected for optional covers, using `pdftotext -raw` with page breaks; their option pages were visually checked. The Assure conflict is carried from the existing rendered-page review.
+- Read existing capture, audit, edition-page and option-lead records. Only the three captured wordings were newly text-inspected for optional covers, using `pdftotext -raw` with page breaks; their option pages were visually checked. The subsequent approved correction was verified against wording clause 27, wording List I and the separate sheet; all 68 item descriptions match after presentation normalization.
 - Experiment commit: `635ed34` (`research: save uncommitted experiment runners and notes`) on `research/comparative-programme-20260925`. All 14 modified plus 51 untracked files were committed byte-for-byte unchanged, verified against their pre-test SHA-256 hashes.
 - Tests: 21 changed/new experiment test files, 73 cases: **71 passed, 2 skipped**. The skipped isolated-database tests are `test_experiments.py:348` and `:368`; `COVERGUIDE_RESEARCH_TEST_STATE` was not configured. No failures. These results and skips are in the commit body.
 - Disk available: about 17 GB at this checkpoint, above the 3 GB stop threshold.
-- No app, manifest-schema, ingestion, migration, runtime/database or publication changes have been made. The app remains on its existing release. This is not Checkpoint 2's extracted-rule review.
+- The above checks were the Checkpoint 1 baseline. Implementation after approval is documented in `docs/star-three-plan-local.md`. This is not Checkpoint 2's extracted-rule review.
 
 ## Source records
 
@@ -148,4 +154,4 @@ Integrity/provenance (each URL above is the original captured official URL):
 - `research/pilots/star/pilot-option-leads-2026-09-29.json`
 - `backend/apps/adviser_v2/manifest.py` (read only, proposal-role requirement)
 
-Awaiting the user's Checkpoint 1 answer before isolated runtime, manifest version 2, ingestion or migration implementation.
+Checkpoint 1 is approved. Continue implementation and independent validation; wait at Checkpoint 2 before publication.

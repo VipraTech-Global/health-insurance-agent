@@ -37,7 +37,13 @@ def _release_report(
     full_report: dict[str, Any],
     requested_count: int,
 ) -> dict[str, Any]:
+    if manifest.get("schema_version") == 2:
+        if requested_count != THREE_PRODUCT_DEMO_COUNT:
+            raise ValueError("A three-product manifest requires the explicit three-product demo.")
+        return full_report
     if requested_count == FIVE_PRODUCT_COUNT:
+        if len(manifest["products"]) != FIVE_PRODUCT_COUNT:
+            raise ValueError("A three-product manifest requires the explicit three-product demo.")
         return full_report
     if requested_count != THREE_PRODUCT_DEMO_COUNT:
         raise ValueError("Only five-product releases or the three-product demo are supported.")
@@ -116,7 +122,7 @@ def build_release(
         "label": release_label,
         "incomplete_comparison": True,
         "demo_subset": comparison_product_count == THREE_PRODUCT_DEMO_COUNT,
-        "catalogue_product_count": FIVE_PRODUCT_COUNT,
+        "catalogue_product_count": len(manifest["products"]),
         "comparison_product_count": comparison_product_count,
         "products": [
             {
@@ -193,6 +199,8 @@ def publish_release(release_id: uuid.UUID | str) -> KnowledgeRelease:
         raise ValueError("The exact captured manifest for this release is unavailable.")
     manifest = load_captured_manifest(manifest_path)
     expected_count = comparison_product_count(release)
+    if release.readiness.get("catalogue_product_count") != len(manifest["products"]):
+        raise ValueError("Release catalogue count differs from its captured manifest.")
     report = _release_report(
         manifest,
         validate_five_product_manifest(manifest_path),
