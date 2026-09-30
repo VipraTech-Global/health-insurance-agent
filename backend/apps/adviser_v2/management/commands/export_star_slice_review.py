@@ -137,6 +137,8 @@ class Command(BaseCommand):
             lines.extend(
                 [
                     f"Validation job: `{validation.id}` ({validation.state}). **{supported}/13 supported; {unresolved}/13 unresolved.**",
+                    "Prospectus used for: " + (", ".join(artifact.get("prospectus_criteria", [])) or "none") + ".",
+                    f"Timeout calls across retained and resumed processing: {artifact.get('timeout_call_count', 'unavailable')}.",
                     "",
                 ]
             )

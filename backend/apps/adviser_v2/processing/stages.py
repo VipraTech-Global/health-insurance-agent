@@ -61,6 +61,7 @@ from .criterion_evidence import (
     criterion_for_key,
     criterion_instruction,
     criterion_rule_problems,
+    extraction_payload,
     request_bytes_with_headroom,
 )
 from .manifest_v2 import (
@@ -1361,13 +1362,14 @@ def _run_extraction_batch(
     criterion: Criterion | None = None,
     max_attempts: int = RULE_BATCH_MAX_ATTEMPTS,
     prospectus_supplement: Callable[[], str] | None = None,
+    correction_context: str = "",
 ) -> PolicyRuleExtractionV1:
     variant_name = _selected_variant_name(policy_version)
     previous: PolicyRuleExtractionV1 | None = None
     targets: list[str] = []
     for attempt_number in range(1, max_attempts + 1):
         _renew_rule_lease(job)
-        retry_context = ""
+        retry_context = correction_context
         if targets:
             retry_context = (
                 "This is targeted retry "
@@ -1874,7 +1876,9 @@ def _get_or_create_policy_rule_revision(
 @transaction.atomic
 def _validate_policy_rules(job: ProcessingJob) -> dict[str, Any]:
     policy_version = _policy_version(job)
-    extraction = PolicyRuleExtractionV1.model_validate(read_artifact(_ancestor(job, "extract")))
+    extraction = PolicyRuleExtractionV1.model_validate(
+        extraction_payload(read_artifact(_ancestor(job, "extract")))
+    )
     review = PolicyRuleReviewV1.model_validate(parent_artifact(job))
     issues: list[dict[str, Any]] = []
     reviewed_categories = set(review.inventory_categories)

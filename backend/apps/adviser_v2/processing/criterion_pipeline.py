@@ -4,22 +4,27 @@ from __future__ import annotations
 
 import hashlib
 import json
+import logging
 import time
 from typing import Any
 
 from apps.adviser.ai import RelayFailure
 
 from ..contracts import validate_contract
-from ..models import PolicyRule, PolicyRuleEvidence, PolicyRuleLink, ProcessingJob
+from ..models import ModelAttempt, PolicyRule, PolicyRuleEvidence, PolicyRuleLink, ProcessingJob
 from ..rule_validation import rule_link_references, rule_semantic_problems
 from ..schemas import PolicyRuleExtractionV1, PolicyRuleReviewV1, ReviewedPolicyRule
 from .artifacts import read_artifact
+from .criterion_attempts import TRANSPORT_FAILURES, extract_criterion, new_criterion_state
 from .criterion_evidence import (
     CRITERIA,
     PROCESSING_VERSION,
+    PROGRESS_KEY,
+    RETRY_PROTOCOL,
     Criterion,
     criterion_for_key,
     criterion_rule_problems,
+    extraction_payload,
     has_copay_value,
     no_copay_body,
 )
@@ -30,6 +35,7 @@ from .manifest_v2 import raw_bundle_passages
 CRITERION_FAILURES = {
     "provider_timeout",
     "provider_transport",
+    "provider_unavailable",
     "invalid_structured_output",
     "incomplete_response",
     "malformed_response",
@@ -41,14 +47,37 @@ def _encoded(passages: list[dict[str, Any]]) -> str:
     return json.dumps(passages, ensure_ascii=False, separators=(",", ":"))
 
 
-def _unknown(policy_id: str, criterion: Criterion, reason: str) -> PolicyRuleExtractionV1:
-    return PolicyRuleExtractionV1(
-        schema_version=1,
-        policy_version_id=policy_id,
-        rules=[],
-        omitted_inventory_categories=[criterion.category],
-        material_issues=[f"{criterion.category}: {criterion.key}: {reason}"],
+def _progress(job: ProcessingJob, policy_id: str, core: list[dict[str, Any]]) -> dict[str, Any]:
+    digest = hashlib.sha256(_encoded(core).encode()).hexdigest()
+    prior = (
+        ProcessingJob.objects.filter(
+            source_capture=job.source_capture,
+            stage="extract",
+            state__in=("cancelled", "failed", "blocked", "succeeded"),
+            result_storage_key__isnull=False,
+        )
+        .exclude(pk=job.pk)
+        .order_by("-created_at")
     )
+    for previous in prior:
+        progress = read_artifact(previous).get(PROGRESS_KEY)
+        if progress is None:
+            continue
+        if (
+            progress.get("protocol") != RETRY_PROTOCOL
+            or progress.get("policy_version_id") != policy_id
+            or progress.get("core_evidence_sha256") != digest
+        ):
+            raise ValueError(
+                "Retained extraction progress differs from the approved source or retry protocol."
+            )
+        return progress
+    return {
+        "protocol": RETRY_PROTOCOL,
+        "policy_version_id": policy_id,
+        "core_evidence_sha256": digest,
+        "criteria": {},
+    }
 
 
 def run_criterion_extraction(job: ProcessingJob) -> dict[str, Any]:
@@ -57,53 +86,85 @@ def run_criterion_extraction(job: ProcessingJob) -> dict[str, Any]:
     version = stages._policy_version(job)
     core = raw_bundle_passages(version)
     complete: list[dict[str, Any]] | None = None
-    core_text = _encoded(core)
+    progress = _progress(job, str(version.id), core)
     deadline = time.monotonic() + stages.RULE_STAGE_TIMEOUT_SECONDS
     results = []
+
+    def checkpoint() -> None:
+        from ..pipeline import _finish_job
+
+        _finish_job(
+            job,
+            job.lease_token,
+            state="running",
+            result={PROGRESS_KEY: progress},
+            issues=job.issues,
+            expected_erasure_generation=None,
+        )
+
+    def supplement() -> list[dict[str, Any]]:
+        nonlocal complete
+        if complete is None:
+            complete = raw_bundle_passages(version, include_prospectus=True)
+        return complete
+
     for criterion in CRITERIA:
-        supplied = core
+        state = progress["criteria"].setdefault(criterion.key, new_criterion_state())
 
-        def supplement() -> str:
-            nonlocal complete, supplied
-            if complete is None:
-                complete = raw_bundle_passages(version, include_prospectus=True)
-            supplied = complete
-            return _encoded(complete)
+        def invoke(
+            supplied: list[dict[str, Any]],
+            feedback: str,
+            criterion: Criterion = criterion,
+            state: dict[str, Any] = state,
+        ) -> PolicyRuleExtractionV1:
+            before = set(
+                ModelAttempt.objects.filter(processing_job=job).values_list("id", flat=True)
+            )
+            logging.getLogger(__name__).info(
+                "Version-2 evidence %s: %s documents, %s pages, prospectus=%s, roles=%s",
+                criterion.key,
+                len({p["document_key"] for p in supplied}),
+                len(supplied),
+                state["prospectus_used"],
+                sorted({p["document_role"] for p in supplied}),
+            )
+            try:
+                return stages._run_extraction_batch(
+                    job=job,
+                    policy_version=version,
+                    encoded_passages=_encoded(supplied),
+                    categories=(criterion.category,),
+                    evidence_batch_label="1/1",
+                    deadline=deadline,
+                    criterion=criterion,
+                    max_attempts=1,
+                    correction_context=feedback,
+                )
+            finally:
+                state["attempt_ids"].extend(
+                    str(pk)
+                    for pk in ModelAttempt.objects.filter(processing_job=job)
+                    .exclude(id__in=before)
+                    .order_by("started_at")
+                    .values_list("id", flat=True)
+                )
 
-        try:
-            result = stages._run_extraction_batch(
-                job=job,
-                policy_version=version,
-                encoded_passages=core_text,
-                categories=(criterion.category,),
-                evidence_batch_label="1/1",
-                deadline=deadline,
-                criterion=criterion,
-                max_attempts=2,
-                prospectus_supplement=supplement,
-            )
-        except RelayFailure as exc:
-            if exc.code not in CRITERION_FAILURES:
-                raise
-            result = _unknown(
-                str(version.id),
-                criterion,
-                f"Extraction did not yield a valid response after at most one corrective retry: {exc.code}.",
-            )
-        except ValueError as exc:
-            # Includes an intact request exceeding the reserved-headroom bound.
-            result = _unknown(
-                str(version.id), criterion, f"Extraction input/output validation failed: {exc}"
-            )
-        if result.policy_version_id != str(version.id):
-            result = _unknown(
-                str(version.id), criterion, "Extraction returned another policy-version identity."
-            )
+        result = extract_criterion(
+            policy_id=str(version.id),
+            criterion=criterion,
+            core=core,
+            supplement=supplement,
+            state=state,
+            invoke=invoke,
+            checkpoint=checkpoint,
+        )
+        supplied = supplement() if state["result_prospectus_used"] else core
         rules = []
         reasons = list(result.material_issues)
         seen = set()
         for rule in result.rules:
             problems = criterion_rule_problems(rule, criterion, supplied)
+            problems.extend(stages._rule_table_targets(rule))
             if rule.rule_key in seen:
                 problems.append("Duplicate rule key.")
             seen.add(rule.rule_key)
@@ -131,16 +192,19 @@ def run_criterion_extraction(job: ProcessingJob) -> dict[str, Any]:
             ],
         )
         results.append(((criterion.category,), result))
-    return stages._combine_extraction_batches(str(version.id), results).model_dump(mode="json")
+    return {
+        **stages._combine_extraction_batches(str(version.id), results).model_dump(mode="json"),
+        PROGRESS_KEY: progress,
+    }
 
 
 def run_criterion_review(job: ProcessingJob) -> dict[str, Any]:
     from . import stages
 
     version = stages._policy_version(job)
-    extraction = PolicyRuleExtractionV1.model_validate(
-        read_artifact(stages._ancestor(job, "extract"))
-    )
+    extraction_artifact = read_artifact(stages._ancestor(job, "extract"))
+    extraction = PolicyRuleExtractionV1.model_validate(extraction_payload(extraction_artifact))
+    progress = extraction_artifact[PROGRESS_KEY]
     core = raw_bundle_passages(version)
     core_ids = {item["evidence_span_id"] for item in core}
     complete: list[dict[str, Any]] | None = None
@@ -155,26 +219,29 @@ def run_criterion_review(job: ProcessingJob) -> dict[str, Any]:
             for rule in candidates
             for pk in [*rule.evidence_span_ids, *rule.body.get("source_span_ids", [])]
         }
-        unresolved_core = any(
-            criterion.key + ":" in reason for reason in extraction.material_issues
-        )
         supplied = core
-        if not candidates or unresolved_core or not ids.issubset(core_ids):
+        if progress["criteria"][criterion.key]["prospectus_used"] or not ids.issubset(core_ids):
             if complete is None:
                 complete = raw_bundle_passages(version, include_prospectus=True)
             supplied = complete
         try:
-            result = stages._run_review_batch(
-                job=job,
-                policy_version=version,
-                encoded_passages=_encoded(supplied),
-                categories=(criterion.category,),
-                candidates=candidates,
-                evidence_batch_label="1/1",
-                deadline=deadline,
-                criterion=criterion,
-                max_attempts=1,
-            )
+            for transport_attempt in range(3):
+                try:
+                    result = stages._run_review_batch(
+                        job=job,
+                        policy_version=version,
+                        encoded_passages=_encoded(supplied),
+                        categories=(criterion.category,),
+                        candidates=candidates,
+                        evidence_batch_label="1/1",
+                        deadline=deadline,
+                        criterion=criterion,
+                        max_attempts=1,
+                    )
+                    break
+                except RelayFailure as exc:
+                    if exc.code not in TRANSPORT_FAILURES or transport_attempt == 2:
+                        raise
             problems = stages._review_batch_targets(
                 str(version.id), (criterion.category,), result, candidates
             )
@@ -279,9 +346,8 @@ def validated_criteria(
 def finalize_criterion_validation(job: ProcessingJob, artifact: dict[str, Any]) -> dict[str, Any]:
     from . import stages
 
-    extraction = PolicyRuleExtractionV1.model_validate(
-        read_artifact(stages._ancestor(job, "extract"))
-    )
+    extraction_artifact = read_artifact(stages._ancestor(job, "extract"))
+    extraction = PolicyRuleExtractionV1.model_validate(extraction_payload(extraction_artifact))
     review = PolicyRuleReviewV1.model_validate(read_artifact(job.parent_job))
     rules = list(
         PolicyRule.objects.filter(id__in=artifact["verified_rule_ids"], review_status="verified")
@@ -293,6 +359,21 @@ def finalize_criterion_validation(job: ProcessingJob, artifact: dict[str, Any]) 
         criteria=statuses,
         criterion_count=13,
         unresolved_criterion_count=unknown_count,
+        extraction_retry_protocol=RETRY_PROTOCOL,
+        prospectus_criteria=[
+            key
+            for key, value in extraction_artifact[PROGRESS_KEY]["criteria"].items()
+            if value["prospectus_used"]
+        ],
+        prospectus_reasons={
+            key: value["prospectus_reason"]
+            for key, value in extraction_artifact[PROGRESS_KEY]["criteria"].items()
+            if value["prospectus_used"]
+        },
+        timeout_call_count=ModelAttempt.objects.filter(
+            processing_job__source_capture=job.source_capture,
+            status="timeout",
+        ).count(),
         budget={
             "status": "unavailable",
             "reason": "No approved premium table or quote is available for this base variant.",
