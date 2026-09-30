@@ -4,10 +4,12 @@ from __future__ import annotations
 
 import hashlib
 import json
+import logging
 import re
 import time
 import uuid
 from collections import Counter, defaultdict
+from collections.abc import Callable
 from datetime import timedelta
 from typing import Any
 
@@ -54,6 +56,21 @@ from ..schemas import (
 )
 from ..storage import read_private
 from .artifacts import parent_artifact, read_artifact, source_bytes
+from .criterion_evidence import (
+    Criterion,
+    criterion_for_key,
+    criterion_instruction,
+    criterion_rule_problems,
+    request_bytes_with_headroom,
+)
+from .manifest_v2 import (
+    is_v2_policy,
+    manifest_product,
+    preserve_native_document,
+    raw_bundle_passages,
+    read_raw_document,
+    reconcile_raw_document,
+)
 from .readers import (
     DependencyUnavailable,
     classify_bytes,
@@ -569,6 +586,8 @@ def run_classify(job: ProcessingJob) -> dict[str, Any]:
 
 
 def run_read(job: ProcessingJob) -> dict[str, Any]:
+    if manifest_product(job.source_capture) is not None:
+        return read_raw_document(job)
     classification = parent_artifact(job)
     payload = source_bytes(job)
     if classification["media_type"] == "text/html":
@@ -627,6 +646,8 @@ def run_read(job: ProcessingJob) -> dict[str, Any]:
 
 
 def run_ocr(job: ProcessingJob) -> dict[str, Any]:
+    if manifest_product(job.source_capture) is not None:
+        return preserve_native_document(job)
     read = parent_artifact(job)
     pages = read["native"]["pages"]
     requested = [int(item["page_number"]) for item in pages if item["needs_ocr"]]
@@ -895,6 +916,8 @@ def _evidence_source_kwargs(job: ProcessingJob) -> dict[str, object]:
 
 
 def run_reconcile(job: ProcessingJob) -> dict[str, Any]:
+    if manifest_product(job.source_capture) is not None:
+        return reconcile_raw_document(job, reconciliation_version=RECONCILIATION_VERSION)
     read = parent_artifact(job)
     pages: list[dict[str, Any]] = read["native"]["pages"]
     ocr_pages: dict[str, str] = read.get("ocr", {}).get("pages", {})
@@ -1196,6 +1219,8 @@ def _selected_variant_name(policy_version: PolicyVersion) -> str:
 
 
 def _bundle_passages(policy_version: PolicyVersion) -> list[dict[str, Any]]:
+    if is_v2_policy(policy_version):
+        return raw_bundle_passages(policy_version, include_prospectus=True)
     memberships = {
         item.document_version_id: item
         for item in PolicyVersionDocument.objects.filter(
@@ -1333,17 +1358,20 @@ def _run_extraction_batch(
     categories: tuple[str, ...],
     evidence_batch_label: str,
     deadline: float,
+    criterion: Criterion | None = None,
+    max_attempts: int = RULE_BATCH_MAX_ATTEMPTS,
+    prospectus_supplement: Callable[[], str] | None = None,
 ) -> PolicyRuleExtractionV1:
     variant_name = _selected_variant_name(policy_version)
     previous: PolicyRuleExtractionV1 | None = None
     targets: list[str] = []
-    for attempt_number in range(1, RULE_BATCH_MAX_ATTEMPTS + 1):
+    for attempt_number in range(1, max_attempts + 1):
         _renew_rule_lease(job)
         retry_context = ""
         if targets:
             retry_context = (
                 "This is targeted retry "
-                f"{attempt_number - 1} of {RULE_BATCH_MAX_ATTEMPTS - 1}. Return a complete "
+                f"{attempt_number - 1} of {max_attempts - 1}. Return a complete "
                 "replacement for this batch, retaining correct rules while encoding every "
                 "unresolved item. "
                 + (
@@ -1402,6 +1430,8 @@ def _run_extraction_batch(
                 "content": "Approved executable rule contract: " + _rule_contract_prompt(),
             },
         ]
+        if criterion is not None:
+            messages.append({"role": "system", "content": criterion_instruction(criterion)})
         if retry_context:
             messages.append({"role": "system", "content": retry_context})
         messages.append(
@@ -1415,6 +1445,9 @@ def _run_extraction_batch(
             }
         )
         try:
+            if criterion is not None:
+                size = request_bytes_with_headroom(settings.COVERGUIDE_POLICY_EXTRACTION_MODEL, messages, PolicyRuleExtractionV1.model_json_schema())
+                logging.getLogger(__name__).info("Version-2 extraction %s: complete request %s bytes, reserved output headroom 200000 bytes", criterion.key, size)
             result = call_model(
                 model=settings.COVERGUIDE_POLICY_EXTRACTION_MODEL,
                 schema_name="policy_extraction",
@@ -1425,9 +1458,10 @@ def _run_extraction_batch(
                 reuse_successful_processing_result=True,
             )
         except RelayFailure as exc:
+            retryable = RULE_RETRYABLE_RELAY_CODES | ({"incomplete_response", "malformed_response"} if criterion is not None else set())
             if (
-                exc.code not in RULE_RETRYABLE_RELAY_CODES
-                or attempt_number >= RULE_BATCH_MAX_ATTEMPTS
+                exc.code not in retryable
+                or attempt_number >= max_attempts
             ):
                 raise
             targets = [
@@ -1435,6 +1469,15 @@ def _run_extraction_batch(
             ]
             continue
         targets = _extraction_batch_targets(str(policy_version.id), categories, result)
+        if criterion is not None:
+            for rule in result.rules:
+                targets.extend(f"{rule.rule_key}: {problem}" for problem in criterion_rule_problems(rule, criterion, json.loads(encoded_passages)))
+            if not result.rules and not result.material_issues:
+                targets.append(f"{criterion.category}: {criterion.key}: provide a source-specific reason for this unknown.")
+            if not targets and not result.rules and prospectus_supplement is not None and attempt_number < max_attempts:
+                encoded_passages = prospectus_supplement()
+                prospectus_supplement = None
+                targets.append("Core evidence was insufficient for this criterion. The complete captured applicable prospectus is now included to resolve missing definitions or tables. This is the one corrective extraction retry.")
         if not targets:
             return result
         previous = result
@@ -1481,6 +1524,10 @@ def _combine_extraction_evidence_batches(
 
 
 def run_extract(job: ProcessingJob) -> dict[str, Any]:
+    if manifest_product(job.source_capture) is not None:
+        from .criterion_pipeline import run_criterion_extraction
+
+        return run_criterion_extraction(job)
     policy_version = _policy_version(job)
     payloads = _passage_payloads(policy_version)
     deadline = time.monotonic() + RULE_STAGE_TIMEOUT_SECONDS
@@ -1513,17 +1560,19 @@ def _run_review_batch(
     candidates: tuple[ExtractedPolicyRule, ...],
     evidence_batch_label: str,
     deadline: float,
+    criterion: Criterion | None = None,
+    max_attempts: int = RULE_BATCH_MAX_ATTEMPTS,
 ) -> PolicyRuleReviewV1:
     variant_name = _selected_variant_name(policy_version)
     previous: PolicyRuleReviewV1 | None = None
     targets: list[str] = []
-    for attempt_index in range(RULE_BATCH_MAX_ATTEMPTS):
+    for attempt_index in range(max_attempts):
         _renew_rule_lease(job)
         retry_context = ""
         if previous is not None:
             retry_context = (
                 "This is targeted retry "
-                f"{attempt_index} of {RULE_BATCH_MAX_ATTEMPTS - 1}. Return a complete corrected "
+                f"{attempt_index} of {max_attempts - 1}. Return a complete corrected "
                 "independent review for this batch. Re-check every candidate against the original "
                 "passages. Your previous output: "
                 + previous.model_dump_json()
@@ -1589,6 +1638,8 @@ def _run_review_batch(
                 ),
             },
         ]
+        if criterion is not None:
+            messages.append({"role": "system", "content": criterion_instruction(criterion) + " Review every condition against the cited physical-page quotation, not merely whether its numbers appear somewhere in the document. Reject missing conditions or unsupported base-variant attribution."})
         if retry_context:
             messages.append({"role": "system", "content": retry_context})
         messages.append(
@@ -1602,6 +1653,9 @@ def _run_review_batch(
             }
         )
         try:
+            if criterion is not None:
+                size = request_bytes_with_headroom(settings.COVERGUIDE_POLICY_REVIEW_MODEL, messages, PolicyRuleReviewV1.model_json_schema())
+                logging.getLogger(__name__).info("Version-2 review %s: complete request %s bytes, reserved output headroom 200000 bytes", criterion.key, size)
             result = call_model(
                 model=settings.COVERGUIDE_POLICY_REVIEW_MODEL,
                 schema_name="policy_review",
@@ -1614,7 +1668,7 @@ def _run_review_batch(
         except RelayFailure as exc:
             if (
                 exc.code not in RULE_RETRYABLE_RELAY_CODES
-                or attempt_index + 1 >= RULE_BATCH_MAX_ATTEMPTS
+                or attempt_index + 1 >= max_attempts
             ):
                 raise
             targets = [
@@ -1704,6 +1758,10 @@ def _combine_review_evidence_batches(
 
 
 def run_independent_review(job: ProcessingJob) -> dict[str, Any]:
+    if manifest_product(job.source_capture) is not None:
+        from .criterion_pipeline import run_criterion_review
+
+        return run_criterion_review(job)
     policy_version = _policy_version(job)
     payloads = _passage_payloads(policy_version)
     extraction = PolicyRuleExtractionV1.model_validate(read_artifact(_ancestor(job, "extract")))
@@ -1772,6 +1830,7 @@ def _get_or_create_policy_rule_revision(
     rule_key: str,
     rule_type: str,
     body: dict[str, Any],
+    revalidate_derived_head: bool = False,
 ) -> PolicyRule:
     """Return the current identical head or append one immutable correction."""
 
@@ -1798,9 +1857,9 @@ def _get_or_create_policy_rule_revision(
             review_status="draft",
         )
     head = heads[0]
-    if head.review_status == "superseded":
+    if head.review_status == "superseded" and not revalidate_derived_head:
         raise ValueError("the logical rule lineage head is already marked superseded")
-    if head.rule_type == rule_type and head.body == body:
+    if head.review_status != "superseded" and head.rule_type == rule_type and head.body == body:
         return head
     return PolicyRule.objects.create(
         policy_version=policy_version,
@@ -1813,7 +1872,7 @@ def _get_or_create_policy_rule_revision(
 
 
 @transaction.atomic
-def run_validate(job: ProcessingJob) -> dict[str, Any]:
+def _validate_policy_rules(job: ProcessingJob) -> dict[str, Any]:
     policy_version = _policy_version(job)
     extraction = PolicyRuleExtractionV1.model_validate(read_artifact(_ancestor(job, "extract")))
     review = PolicyRuleReviewV1.model_validate(parent_artifact(job))
@@ -1890,7 +1949,9 @@ def run_validate(job: ProcessingJob) -> dict[str, Any]:
             table_cells=extracted.table_cells,
             table_footnote_span_ids=extracted.table_footnote_span_ids,
         )
-    allowed_span_ids = {str(item["evidence_span_id"]) for item in _bundle_passages(policy_version)}
+    bundle_passages = _bundle_passages(policy_version)
+    allowed_span_ids = {str(item["evidence_span_id"]) for item in bundle_passages}
+    v2 = manifest_product(job.source_capture) is not None
     validation_savepoint = transaction.savepoint()
     verified: list[PolicyRule] = []
     seen_keys: set[str] = set()
@@ -1917,6 +1978,15 @@ def run_validate(job: ProcessingJob) -> dict[str, Any]:
                 )
             )
             continue
+        if v2:
+            criterion = criterion_for_key(extracted.rule_key)
+            problems = (
+                criterion_rule_problems(extracted, criterion, bundle_passages)
+                if criterion is not None else ["Rule has no registered version-2 criterion."]
+            )
+            if problems:
+                issues.append(issue("unsupported_criterion_evidence", f"{extracted.rule_key}: " + "; ".join(problems), material=False, retry_instruction="Retain an unknown with its exact source/citation validation failure."))
+                continue
         try:
             body = validate_contract("RuleV1", extracted.body)
             independent_body = validate_contract("RuleV1", counterpart.body)
@@ -2325,6 +2395,16 @@ def run_validate(job: ProcessingJob) -> dict[str, Any]:
         "issues": issues,
         "index_pending": True,
     }
+
+
+@transaction.atomic
+def run_validate(job: ProcessingJob) -> dict[str, Any]:
+    artifact = _validate_policy_rules(job)
+    if manifest_product(job.source_capture) is not None:
+        from .criterion_pipeline import finalize_criterion_validation
+
+        return finalize_criterion_validation(job, artifact)
+    return artifact
 
 
 def run_index(job: ProcessingJob) -> dict[str, Any]:

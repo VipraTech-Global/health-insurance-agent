@@ -78,3 +78,24 @@ session and CSRF endpoints returned HTTP 200 through port 3021; ports 3021, 8021
 6401 bind only to loopback. All 23 associations were acquired from existing local
 objects with their SHA-256 and page counts verified; no source URL was fetched.
 Processing and release readiness are separate checks still required after ingestion.
+
+Version-2 processing now preserves complete native physical pages after the
+unchanged Comprehensive and Optima baselines demonstrated reader/citation failures.
+Each of the 13 criteria receives the complete wording, CIS and applicable schedules;
+the whole prospectus is added only for insufficient core evidence. Existing output
+contracts, configured models, independent review and deterministic rule validation
+remain in place. There is at most one corrective extraction retry per criterion.
+Quotation text, physical page, source-file hash and character offsets are checked
+before evidence is used. Derived `no_copay` preserves the validated copay conditions
+and citations, and is excluded from the 13-criterion stop denominator.
+
+Export Checkpoint 2 only after the real validation results are available:
+
+```console
+bash scripts/star_slice.sh manage export_star_slice_review data/manifests/star-three-plan-2026-09-30-captured.json
+```
+
+The command writes `output/star-three-plan-review.md` without building or publishing
+a release. It includes explicit unknown reasons, unavailable price, complete rule
+conditions and verbatim citation pages. A plan with seven unresolved criteria is
+marked STOP; that report does not authorize continued processing or publication.

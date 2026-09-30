@@ -36,6 +36,8 @@ from .models import (
 )
 from .pipeline import ADAPTER_VERSION
 from .processing.artifacts import read_artifact
+from .processing.criterion_evidence import criterion_inventory_problems
+from .processing.manifest_v2 import raw_bundle_passages
 from .processing.stages import (
     INVENTORY_CATEGORIES,
     RECONCILIATION_VERSION,
@@ -505,6 +507,13 @@ def validate_bundle(
         state="succeeded",
     ).order_by("-created_at")
     validation = validation_jobs.first()
+    if product_entry.get("manifest_schema_version") == 2:
+        latest_validation = ProcessingJob.objects.filter(
+            source_capture_id__in=capture_ids, adapter_version=ADAPTER_VERSION, stage="validate",
+        ).order_by("-created_at", "-attempt_number").first()
+        if latest_validation is not None and latest_validation.state != "succeeded":
+            blockers.append("latest_manifest_v2_validation_not_succeeded")
+            validation = None
     index_artifact: dict[str, Any] | None = None
     coverage = 0.0
     covered: set[str] = set()
@@ -525,6 +534,8 @@ def validate_bundle(
                 blockers.append("validated_rule_review_prompt_version_stale")
             if artifact.get("rule_validator_version") != RULE_VALIDATOR_VERSION:
                 blockers.append("validated_rule_validator_version_stale")
+            if product_entry.get("manifest_schema_version") == 2:
+                blockers.extend(criterion_inventory_problems(artifact))
             coverage = float(artifact.get("coverage", 0))
             covered = set(artifact.get("covered_inventory_categories", []))
             raw_rule_ids = artifact.get("verified_rule_ids")
@@ -605,6 +616,14 @@ def validate_bundle(
         policy_rule__in=rules
     ).exclude(evidence_span__source_capture_id__in=capture_ids).exists():
         blockers.append("rule_uses_non_executable_evidence")
+    raw_v2_span_ids: set[str] = set()
+    if product_entry.get("manifest_schema_version") == 2 and rules:
+        try:
+            raw_v2_span_ids = {item["evidence_span_id"] for item in raw_bundle_passages(policy_version, include_prospectus=True)}
+        except (InvalidTag, OSError, ValueError) as exc:
+            blockers.append(f"manifest_v2_raw_citation_validation_failed:{exc}")
+        if PolicyRuleEvidence.objects.filter(policy_rule__in=rules).exclude(evidence_span_id__in=raw_v2_span_ids).exists():
+            blockers.append("manifest_v2_rule_citation_outside_exact_raw_pages")
     blockers.extend(_persisted_rule_blockers(rules))
     embedding_ok, embedding_reason, qualification = qualified_embedding_status()
     current_index_version = (
@@ -634,6 +653,8 @@ def validate_bundle(
         source_capture_id__in=capture_ids,
         verification__in=VERIFIED_EVIDENCE_STATES,
     )
+    if product_entry.get("manifest_schema_version") == 2:
+        evidence = evidence.filter(id__in=raw_v2_span_ids)
     evidence_documents = set(evidence.values_list("source_capture__document_version_id", flat=True))
     expected_span_ids = {str(item) for item in evidence.values_list("id", flat=True)}
     if evidence_documents - indexed_documents:

@@ -25,10 +25,20 @@ text. Raw text preserves the printed numbers, headers and footnote. Merged cells
 still require interpretation against the complete page; raw text alone does not
 prove a rule's table association.
 
-## Correction verification in progress
+## Family Health Optima: failed before extraction
 
-A version-2-only reader has been prepared but is not yet connected to stage runners,
-so the remaining baseline commands retain their original behavior. It preserves
+The unchanged run also exited 1 before extraction or independent review. Its
+prospectus, wording and CIS were blocked at reconciliation. The prospectus has
+one `reader_text_disagreement` and two `reader_table_text_disagreement` issues;
+the wording has four table-text disagreements and two table disagreements;
+the CIS has three table-text disagreements. The three separate schedules passed.
+Figure-count warnings are retained separately and are not the reason for the block.
+
+## Version-2 correction and verification in progress
+
+A version-2-only reader is connected to the existing stage runners. The Assure
+baseline process had already loaded the unchanged implementation before this
+connection, and continues with that implementation. The corrected reader preserves
 complete `pdftotext -raw` physical pages and their character offsets, with no
 retrieval, ranking, text splitting or truncation. Exact source identity and quote
 checks precede evidence use; reference/excluded captures cannot enter the bundle.
@@ -38,9 +48,20 @@ exactly. Unmapped diamond bullets at the start of prospectus headings are retain
 at their original offsets; Optima physical page 2 and Assure physical page 3 were
 visually checked. Unmapped characters inside words and unreadable pages still fail.
 
-Nineteen focused tests pass, including a real-PDF ingestion/reconciliation path,
+The full backend suite passed 341 tests (18 missing-static-directory warnings),
+with Django check and migration drift checks passing. After adding the final
+publication-threshold and wrong-source-file citation checks, 28 focused processing
+and release tests passed. Coverage includes a real-PDF ingestion/reconciliation path,
 full-page inclusion, reference exclusion, quote/page/hash/offset tampering,
-number/unit mismatches and conditional copay derivation. These component checks
-do not establish extraction or independent-review success.
+number/unit mismatches, conditional copay derivation and exactly 13 criteria.
+Ruff and `git diff --check` passed. These component checks do not establish
+extraction or independent-review success.
 
-Family Health Optima and Assure baseline results remain pending.
+The corrected Comprehensive run is in progress. Its first sum-insured model call
+returned HTTP 408; the single permitted retry returned an exact-identity Sol
+response. Core requests measured about 280 KB, with 200 KB reserved under the
+existing application byte bound; the provider reported roughly 73,000 input
+tokens. No source text is truncated. These are candidate extraction outputs,
+not independently validated benefit findings.
+
+Assure's unchanged baseline result remains pending. No release is published.

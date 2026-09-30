@@ -26,6 +26,8 @@ from .models import (
     SourceCapture,
 )
 from .processing.artifacts import write_artifact
+from .processing.criterion_evidence import PROCESSING_VERSION
+from .processing.manifest_v2 import manifest_product
 from .processing.readers import DependencyUnavailable, issue
 from .processing.stages import (
     MAX_MODEL_PASSAGE_CHARACTERS,
@@ -137,6 +139,8 @@ def enqueue_stage(
         "parent_result_sha256": parent_job.result_storage_sha256 if parent_job else None,
         "retry_instruction": retry_instruction,
     }
+    if manifest_product(source_capture) is not None:
+        input_data["manifest_processing_version"] = PROCESSING_VERSION
     if stage in {"extract", "independent_review", "validate"}:
         input_data["rule_prompt_version"] = RULE_PROMPT_VERSION
         input_data["comparison_variants"] = _rule_scope_identity(source_capture)
