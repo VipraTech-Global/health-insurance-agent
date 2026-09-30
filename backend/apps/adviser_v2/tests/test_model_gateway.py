@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+import runpy
+from pathlib import Path
 from typing import Any
 
-from django.conf import settings
+import pytest
 from django.utils import timezone
 
 from apps.adviser_v2.crypto import commitment
@@ -25,12 +27,16 @@ from apps.adviser_v2.storage import store_model_result
 from apps.adviser_v2.tests.test_pipeline import public_html_capture
 
 
-def test_v2_model_roles_are_exact_and_exclude_astra() -> None:
+def test_v2_model_roles_are_exact_and_exclude_astra(monkeypatch: pytest.MonkeyPatch) -> None:
+    # Assert the shipped defaults independently of approved operator overrides.
+    monkeypatch.delenv("COVERGUIDE_CUSTOMER_INTERPRETATION_MODEL", raising=False)
+    monkeypatch.delenv("COVERGUIDE_COMPARISON_MODEL", raising=False)
+    defaults = runpy.run_path(str(Path(__file__).resolve().parents[3] / "config/settings.py"))
     assignments = {
-        "fact_interpretation": settings.COVERGUIDE_CUSTOMER_INTERPRETATION_MODEL,
-        "policy_extraction": settings.COVERGUIDE_POLICY_EXTRACTION_MODEL,
-        "policy_review": settings.COVERGUIDE_POLICY_REVIEW_MODEL,
-        "comparison_answer": settings.COVERGUIDE_COMPARISON_MODEL,
+        "fact_interpretation": defaults["COVERGUIDE_CUSTOMER_INTERPRETATION_MODEL"],
+        "policy_extraction": defaults["COVERGUIDE_POLICY_EXTRACTION_MODEL"],
+        "policy_review": defaults["COVERGUIDE_POLICY_REVIEW_MODEL"],
+        "comparison_answer": defaults["COVERGUIDE_COMPARISON_MODEL"],
     }
 
     assert assignments == {

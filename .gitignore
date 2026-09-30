@@ -1,4 +1,5 @@
 .venv/
+.venv
 __pycache__/
 *.py[cod]
 .pytest_cache/
@@ -7,6 +8,7 @@ __pycache__/
 .coverage
 htmlcov/
 .env
+.env.star-slice
 frontend/node_modules/
 frontend/.next/
 *.tsbuildinfo
@@ -16,7 +18,8 @@ data/v2/
 data/v2-closeout/
 data/reports/*
 !data/reports/corpus-coverage.json
-data/manifests/
+data/manifests/*
+!data/manifests/star-three-plan-2026-09-30.json
 !data/source-blobs/.gitkeep
 !data/extractions/.gitkeep
 staticfiles/

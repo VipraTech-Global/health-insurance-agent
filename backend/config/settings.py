@@ -71,6 +71,7 @@ DATABASES = {
         "HOST": os.environ.get("POSTGRES_HOST", "127.0.0.1"),
         "PORT": os.environ.get("POSTGRES_PORT", "55449"),
         "CONN_MAX_AGE": 0,
+        "TEST": {"NAME": os.environ.get("POSTGRES_TEST_DB")},
         "OPTIONS": {"pool": {"min_size": 1, "max_size": 8, "timeout": 5}},
     }
 }
@@ -191,6 +192,7 @@ COVERGUIDE_MANIFEST_ROOT = Path(
 COVERGUIDE_REPORT_ROOT = Path(
     os.environ.get("COVERGUIDE_REPORT_ROOT", BASE_DIR.parent / "data" / "reports")
 )
+COVERGUIDE_LOCAL_OBJECT_ROOT = os.environ.get("COVERGUIDE_LOCAL_OBJECT_ROOT", "")
 COVERGUIDE_CUSTOMER_INTERPRETATION_MODEL = os.environ.get(
     "COVERGUIDE_CUSTOMER_INTERPRETATION_MODEL", "gpt-5.6-luna"
 )
