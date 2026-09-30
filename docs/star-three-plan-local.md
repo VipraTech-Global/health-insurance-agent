@@ -99,3 +99,11 @@ The command writes `output/star-three-plan-review.md` without building or publis
 a release. It includes explicit unknown reasons, unavailable price, complete rule
 conditions and verbatim citation pages. A plan with seven unresolved criteria is
 marked STOP; that report does not authorize continued processing or publication.
+
+Latest processing-code verification on 2026-09-30: all 344 backend tests passed
+(18 missing-static-directory warnings); Ruff and diff checks passed. The review
+formatter was exercised against 85 retained candidate rule bodies without changing
+or promoting their status. A pending-only preview under the isolated report
+directory confirmed that unprocessed criteria are not presented as validated
+unknowns. Real extraction and independent validation remain separate from these
+checks and must finish before Checkpoint 2.

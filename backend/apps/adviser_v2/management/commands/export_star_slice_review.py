@@ -37,11 +37,40 @@ def shown(value: object) -> str:
         number = Decimal(str(value["value"]))
         if value.get("unit") == "ratio":
             return f"{number * 100:g}%"
+        if value.get("unit") == "money":
+            return f"{value.get('currency', '')} {number:,f}".strip()
         return f"{value.get('currency', '')} {number:g} {value['unit']}".strip()
+    if value.get("state") in {"not_applicable", "unknown"}:
+        return f"{value['state'].replace('_', ' ').capitalize()}: {value.get('reason', '')}"
     if value.get("kind") in {"text", "code", "boolean"}:
         return str(value["value"])
     if value.get("node") == "input":
-        return str(value["key"])
+        return str(value["key"]).replace("_", " ") + " (input)"
+    if value.get("node") == "table_lookup":
+        return f"Table `{value['table_key']}`; see the validated cells below"
+    return json.dumps(value, ensure_ascii=False, sort_keys=True)
+
+
+def condition(value: dict[str, Any]) -> str:
+    node = value.get("node")
+    if node == "constant":
+        return {
+            "true": "Applies within the stated scope",
+            "false": "Does not apply",
+            "unknown": "Applicability is unresolved",
+        }[value["value"]]
+    if node == "present":
+        return str(value["input_key"]).replace("_", " ") + " must be provided"
+    if node == "not":
+        return "NOT (" + condition(value["argument"]) + ")"
+    if node in {"all", "any"}:
+        separator = " AND " if node == "all" else " OR "
+        return separator.join("(" + condition(item) + ")" for item in value["arguments"])
+    if node == "compare":
+        operator = {"eq": "=", "ne": "!=", "gt": ">", "gte": ">=", "lt": "<", "lte": "<="}
+        return f"{shown(value['left'])} {operator[value['operator']]} {shown(value['right'])}"
+    if node == "membership":
+        return shown(value["item"]) + " is one of: " + ", ".join(map(shown, value["members"]))
     return json.dumps(value, ensure_ascii=False, sort_keys=True)
 
 
@@ -85,6 +114,7 @@ class Command(BaseCommand):
                 summary.append(
                     {
                         "product": product["product_key"],
+                        "name": product["name"],
                         "state": "pending",
                         "supported": 0,
                         "unresolved": None,
@@ -120,6 +150,7 @@ class Command(BaseCommand):
             summary.append(
                 {
                     "product": product["product_key"],
+                    "name": product["name"],
                     "state": validation.state,
                     "supported": supported,
                     "unresolved": unresolved,
@@ -148,6 +179,7 @@ class Command(BaseCommand):
                 for rule_id in item["rule_ids"]:
                     rule = rules[rule_id]
                     lines.extend([f"Rule: `{rule.rule_key}` (`{rule.id}`).", ""])
+                    lines.extend([f"Condition: {condition(rule.body['applies_when'])}.", ""])
                     for effect in rule.body["effects"]:
                         amount = effect.get(
                             "value",
@@ -161,6 +193,15 @@ class Command(BaseCommand):
                         lines.extend(
                             [
                                 f"Value — `{effect.get('target_key', rule.rule_type)}`: {shown(amount)}.",
+                                "",
+                            ]
+                        )
+                        scope = effect.get("scope", {})
+                        lines.extend(
+                            [
+                                "Scope: "
+                                + json.dumps(scope, ensure_ascii=False, sort_keys=True)
+                                + ".",
                                 "",
                             ]
                         )
@@ -223,6 +264,22 @@ class Command(BaseCommand):
                     "",
                 ]
             )
+        overview = [
+            "## Validation summary",
+            "",
+            "| Plan | Supported source criteria | Unresolved source criteria | Price |",
+            "|---|---:|---:|---|",
+            *[
+                f"| {item['name']} | {item['supported']}/13 | "
+                + ("Pending" if item["unresolved"] is None else f"{item['unresolved']}/13")
+                + " | Unavailable |"
+                for item in summary
+            ],
+            "",
+            "Derived `no_copay` and price are outside the 13-criterion denominator.",
+            "",
+        ]
+        lines[7:7] = overview
         lines.extend(
             [
                 "## Approved document decisions and remaining scope limits",
