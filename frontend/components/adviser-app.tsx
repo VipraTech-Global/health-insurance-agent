@@ -105,6 +105,7 @@ export function AdviserApp({ email, onLogout }: { email: string; onLogout: () =>
   const [active, setActive] = useState<Conversation | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
   const [profile, setProfile] = useState<Profile | null>(null);
+  const [loadedConversationId, setLoadedConversationId] = useState<string | null>(null);
   const [comparisons, setComparisons] = useState<Record<string, Comparison>>({});
   const [catalogue, setCatalogue] = useState<Catalogue | null>(null);
   const [tab, setTab] = useState<"chat" | "catalogue">("chat");
@@ -118,6 +119,7 @@ export function AdviserApp({ email, onLogout }: { email: string; onLogout: () =>
   const [profileEdit, setProfileEdit] = useState<ProfileEdit | null>(null);
   const [busy, setBusy] = useState(false);
   const controller = useRef<AbortController | null>(null);
+  const activeConversationId = useRef<string | null>(null);
 
   const loadConversation = useCallback(async (conversationId: string) => {
     const [loadedMessages, loadedProfile] = await Promise.all([
@@ -130,9 +132,11 @@ export function AdviserApp({ email, onLogout }: { email: string; onLogout: () =>
     const loadedComparisons = await Promise.all(
       comparisonIds.map(async (id) => [id, await api<Comparison>(`/api/v2/comparisons/${id}/`)] as const),
     );
+    if (activeConversationId.current !== conversationId) return;
     setMessages(loadedMessages);
     setProfile(loadedProfile);
     setComparisons(Object.fromEntries(loadedComparisons));
+    setLoadedConversationId(conversationId);
   }, []);
 
   const refreshCatalogue = useCallback(async () => {
@@ -162,6 +166,7 @@ export function AdviserApp({ email, onLogout }: { email: string; onLogout: () =>
         const decoder = new TextDecoder();
         const parser = createParser({
           onEvent(event: EventSourceMessage) {
+            if (aborter.signal.aborted || activeConversationId.current !== conversationId) return;
             const sequence = Number(event.id);
             if (Number.isFinite(sequence)) afterSequence = Math.max(afterSequence, sequence);
             const payload = JSON.parse(event.data) as Record<string, unknown>;
@@ -201,6 +206,7 @@ export function AdviserApp({ email, onLogout }: { email: string; onLogout: () =>
       if (terminal) {
         localStorage.removeItem(storageKey);
         await loadConversation(conversationId);
+        if (activeConversationId.current !== conversationId) return;
         await refreshCatalogue();
         setProgress("");
         setActiveTurn(null);
@@ -230,6 +236,11 @@ export function AdviserApp({ email, onLogout }: { email: string; onLogout: () =>
     // A pending stream belongs to its conversation. Clear its UI state when
     // moving to another conversation; the saved turn remains reconnectable.
     controller.current?.abort();
+    activeConversationId.current = active?.id ?? null;
+    setLoadedConversationId(null);
+    setMessages([]);
+    setProfile(null);
+    setComparisons({});
     setActiveTurn(null);
     setProgress("");
     setElapsedSeconds(0);
@@ -278,7 +289,7 @@ export function AdviserApp({ email, onLogout }: { email: string; onLogout: () =>
 
   async function sendMessage(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (!active || activeTurn) return;
+    if (!active || activeTurn || loadedConversationId !== active.id || !profile) return;
     const form = event.currentTarget;
     const text = new FormData(form).get("message")?.toString().trim();
     if (!text) return;
@@ -478,7 +489,7 @@ export function AdviserApp({ email, onLogout }: { email: string; onLogout: () =>
                 {progress && <div className="processing"><i />{progressLabels[progress] || progress}{elapsedSeconds >= 3 && ` (${elapsedSeconds}s)`}{activeTurn && <button onClick={stopTurn}>Cancel</button>}</div>}
                 <form className="composer" onSubmit={sendMessage}>
                   <textarea name="message" rows={2} placeholder="Ask a policy question or describe who needs cover…" aria-label="Message CoverGuide" />
-                  <div><span>Facts, requirements and uncertainty are saved with their source message.</span><button className="send" disabled={!!activeTurn}>Send →</button></div>
+                  <div><span>Facts, requirements and uncertainty are saved with their source message.</span><button className="send" disabled={!!activeTurn || loadedConversationId !== active.id || !profile}>Send →</button></div>
                 </form>
               </section>
               <aside className="profile-panel">
