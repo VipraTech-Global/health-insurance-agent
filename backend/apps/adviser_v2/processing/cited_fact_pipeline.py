@@ -16,6 +16,7 @@ from pathlib import Path
 from typing import Any
 
 from django.conf import settings
+from pydantic import ValidationError
 
 from apps.adviser.ai import RelayFailure
 
@@ -32,6 +33,7 @@ from .cited_facts import (
     fact_carrier,
     fact_instruction,
     fact_problems,
+    recover_fact_encoding,
     review_disposition,
 )
 from .clause_citations import store_clause
@@ -66,6 +68,18 @@ def _progress(job: ProcessingJob, policy_id: str, core: list[dict[str, Any]]) ->
         if progress and progress.get("protocol") == FACT_PROTOCOL:
             if progress["policy_version_id"] != policy_id or progress["core_evidence_sha256"] != digest:
                 raise ValueError("Retained cited facts do not match this exact source bundle.")
+            for criterion in CRITERIA:
+                state = progress["criteria"].get(criterion.key, {})
+                if state.get("last_error") != "invalid_structured_output" or state.get("review_complete"):
+                    continue
+                for diagnostics in reversed(state.get("schema_diagnostics", [])):
+                    fact = recover_fact_encoding(criterion, diagnostics)
+                    if fact is not None:
+                        recovered = PolicyRuleExtractionV1(schema_version=1, policy_version_id=policy_id,
+                            rules=[fact_carrier(criterion, fact)], material_issues=[], omitted_inventory_categories=[])
+                        state.update(result=recovered.model_dump(mode="json"), complete=True, last_error=None)
+                        state.setdefault("encoding_notes", []).append("rule not executable: intact fact recovered from retained rejected wrapper; no extra extraction call or retry-budget reset.")
+                        break
             return progress
         if prior_validation is None and old.stage == "validate":
             prior_validation = old
@@ -150,6 +164,20 @@ def run_criterion_extraction(job: ProcessingJob) -> dict[str, Any]:
                     remaining_seconds=stages._remaining_rule_seconds(deadline), reuse_successful_processing_result=True,
                     reasoning_effort=settings.COVERGUIDE_POLICY_EXTRACTION_REASONING_EFFORT,
                     max_output_tokens=settings.COVERGUIDE_POLICY_EXTRACTION_MAX_OUTPUT_TOKENS)
+            except RelayFailure as exc:
+                if isinstance(exc.__cause__, ValidationError):
+                    # Public policy output only. Retain the exact failed response
+                    # locally for diagnosis rather than losing all schema evidence.
+                    diagnostics = exc.__cause__.errors(include_url=False, include_context=False)
+                    state.setdefault("schema_diagnostics", []).append(diagnostics)
+                    log.warning("Cited-fact schema failure %s: %s", criterion.key,
+                        [{"loc": e["loc"], "type": e["type"], "message": e["msg"][:500]} for e in diagnostics])
+                    fact = recover_fact_encoding(criterion, diagnostics)
+                    if fact is not None:
+                        state.setdefault("encoding_notes", []).append("rule not executable: model wrapper failed RuleV1; intact cited fact retained for exact quotation checks and independent source review.")
+                        return PolicyRuleExtractionV1(schema_version=1, policy_version_id=str(version.id),
+                            rules=[fact_carrier(criterion, fact)], omitted_inventory_categories=[], material_issues=[])
+                raise
             finally:
                 state["attempt_ids"].extend(str(pk) for pk in ModelAttempt.objects.filter(processing_job=job).exclude(id__in=before).values_list("id", flat=True))
 
@@ -256,6 +284,7 @@ def validate_facts(job: ProcessingJob) -> dict[str, Any]:
             "rule_status": "executable" if state.get("reused_validation_id") else "rule not executable",
             "rule_reasons": [] if state.get("reused_validation_id") else [
                 "The descriptive fact does not establish an executable encoding; prior verified partial rules remain separate.",
+                *state.get("encoding_notes", []),
                 *old.get("unknown_reasons", []),
             ],
             "reused_validation_id": state.get("reused_validation_id"),

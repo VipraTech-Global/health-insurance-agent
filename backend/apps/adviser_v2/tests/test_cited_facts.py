@@ -10,6 +10,7 @@ from apps.adviser_v2.processing.cited_facts import (
     clause_offsets,
     fact_carrier,
     fact_problems,
+    recover_fact_encoding,
     review_disposition,
 )
 from apps.adviser_v2.processing.clause_citations import clause_rectangles
@@ -125,3 +126,16 @@ def test_fact_review_does_not_mutate_model_outputs():
     before = deepcopy(review.model_dump())
     assert not review_disposition(review, result, criterion)[0]
     assert review.model_dump() == before
+
+
+def test_intact_fact_survives_invalid_rule_wrapper_without_repairing_source():
+    criterion, result, pages = sample()
+    body = deepcopy(result.rules[0].body)
+    body["scope"] = body["effects"][0].pop("scope")
+    diagnostics = [{"loc": ["rules", 0, "body"], "input": json.dumps(body)}]
+    fact = recover_fact_encoding(criterion, diagnostics)
+    assert fact is not None
+    result.rules[0] = fact_carrier(criterion, fact)
+    assert fact_problems(POLICY_ID, criterion, result, pages) == []
+    assert recover_fact_encoding(criterion, [{"loc": ["policy_version_id"], "input": body}]) is None
+    assert recover_fact_encoding(criterion, [{"loc": ["rules", 0, "body"], "input": "broken JSON"}]) is None

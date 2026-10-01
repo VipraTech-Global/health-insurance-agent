@@ -166,6 +166,10 @@ def review_disposition(
 
 def fact_instruction(criterion: Criterion) -> str:
     shape = json.dumps(CitedFact.model_json_schema(), separators=(",", ":"))
+    template = fact_carrier(criterion, CitedFact(
+        value="REPLACE with the complete plain-English value", value_kind="category" if criterion.key == "room_category" else "text",
+        conditions=[], citations=[Clause(page_span_id="00000000-0000-4000-8000-000000000000", quote="REPLACE with a short exact clause")], quantities=[], notes=[],
+    )).body
     return (
         f"Criterion {criterion.key}: {criterion.instruction} "
         f"Return ONE rule keyed {criterion.category}.definition.{criterion.key}_cited_fact, "
@@ -173,7 +177,7 @@ def fact_instruction(criterion: Criterion) -> str:
         f"Its one effect is definition, target_key {criterion.key}, term_key {FACT_TERM}, "
         "value {node:literal,value:{kind:text,value:JSON_STRING}}. JSON_STRING is the cited fact "
         "matching this schema: " + shape + ". "
-        "Use applies_when {node:constant,value:true}, inputs [], mandatory_rule_keys [], unresolved [], "
+        "The RuleV1 body MUST contain schema_version:1. Use applies_when {node:constant,value:true}, inputs [], mandatory_rule_keys [], unresolved [], "
         "The constant predicate value is the STRING \"true\", not a JSON boolean. "
         "rounding {mode:none,scale:0,authority_span_ids:[]}, table null, table_cells [], "
         "table_footnote_span_ids []. source_span_ids and evidence_span_ids are exactly the cited page IDs. "
@@ -192,7 +196,31 @@ def fact_instruction(criterion: Criterion) -> str:
         f"use no rules and a material_issues entry '{criterion.category}: {criterion.key}: <reason>'. "
         "Use needs_prospectus: in that reason only if the supplied wording/CIS/schedules lack a definition "
         "or table the prospectus could supply. Do not request it for technical encoding or customer inputs."
+        " EXACT BODY TEMPLATE (replace the placeholder text and page IDs; keep structure; scope belongs "
+        "INSIDE the definition effect, never at body root). Serialize body as a JSON string, and its "
+        "literal text value as a JSON string containing the fact. Use valid JSON escaping at both levels: "
+        + json.dumps(template, ensure_ascii=False)
     )
+
+
+def recover_fact_encoding(criterion: Criterion, diagnostics: list[dict[str, Any]]) -> CitedFact | None:
+    """Recover an intact fact from a rejected executable wrapper, never repair quotes.
+
+    This does not verify a fact or accept an executable rule. Exact quotations,
+    quantities, identity and independent source review remain required. Only an
+    intact JSON body containing an intact fact can be projected this way.
+    """
+    if not diagnostics or any(tuple(e.get("loc", ())) != ("rules", 0, "body") for e in diagnostics):
+        return None
+    try:
+        raw = diagnostics[0]["input"]
+        body = json.loads(raw) if isinstance(raw, str) else raw
+        effects = body["effects"]
+        if len(effects) != 1 or effects[0].get("term_key") != FACT_TERM:
+            return None
+        return CitedFact.model_validate_json(effects[0]["value"]["value"]["value"])
+    except (ValueError, KeyError, TypeError):
+        return None
 
 
 FACT_SYSTEM = (
