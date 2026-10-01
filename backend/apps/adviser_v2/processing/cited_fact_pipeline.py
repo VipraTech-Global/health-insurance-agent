@@ -29,6 +29,7 @@ from .cited_facts import (
     FACT_SYSTEM,
     REVIEW_SYSTEM,
     CitedFact,
+    anchor_transcribed_quotes,
     carrier_fact,
     fact_carrier,
     fact_instruction,
@@ -70,9 +71,8 @@ def _progress(job: ProcessingJob, policy_id: str, core: list[dict[str, Any]]) ->
                 raise ValueError("Retained cited facts do not match this exact source bundle.")
             for criterion in CRITERIA:
                 state = progress["criteria"].get(criterion.key, {})
-                if state.get("last_error") != "invalid_structured_output" or state.get("review_complete"):
-                    continue
-                for diagnostics in reversed(state.get("schema_diagnostics", [])):
+                diagnostics_sets = state.get("schema_diagnostics", []) if state.get("last_error") == "invalid_structured_output" and not state.get("review") else []
+                for diagnostics in reversed(diagnostics_sets):
                     fact = recover_fact_encoding(criterion, diagnostics)
                     if fact is not None:
                         recovered = PolicyRuleExtractionV1(schema_version=1, policy_version_id=policy_id,
@@ -80,6 +80,17 @@ def _progress(job: ProcessingJob, policy_id: str, core: list[dict[str, Any]]) ->
                         state.update(result=recovered.model_dump(mode="json"), complete=True, last_error=None)
                         state.setdefault("encoding_notes", []).append("rule not executable: intact fact recovered from retained rejected wrapper; no extra extraction call or retry-budget reset.")
                         break
+                if not state.get("result") or state.get("review") or state.get("reused_validation_id") or state.get("review_technical_failure"):
+                    continue
+                pages = raw_bundle_passages(stages_version(job), include_prospectus=True) if state["result_prospectus_used"] else core
+                retained = PolicyRuleExtractionV1.model_validate(state["result"])
+                anchored, changes = anchor_transcribed_quotes(criterion, retained, pages)
+                state.setdefault("quote_transcriptions", []).extend(changes)
+                if anchored.rules and not fact_problems(policy_id, criterion, anchored, pages):
+                    # A source fact which never reached review can now reach it,
+                    # using the already recorded extraction calls and budgets.
+                    state.update(result=anchored.model_dump(mode="json"), last_error=None, complete=True)
+                    state.pop("review_complete", None)
             return progress
         if prior_validation is None and old.stage == "validate":
             prior_validation = old
@@ -114,6 +125,12 @@ def _progress(job: ProcessingJob, policy_id: str, core: list[dict[str, Any]]) ->
                 rule_ids=old_status["rule_ids"], review_blockers=[], review_notes=["Reused accepted extraction and independent review; quotations narrowed to exact clauses."], review_complete=True)
             progress["criteria"][criterion.key] = state
     return progress
+
+
+def stages_version(job: ProcessingJob) -> Any:
+    from .stages import _policy_version
+
+    return _policy_version(job)
 
 
 def _messages(version: Any, passages: list[dict[str, Any]], criterion: Any, *, candidate: Any = None, feedback: str = "") -> list[dict[str, str]]:
@@ -159,11 +176,14 @@ def run_criterion_extraction(job: ProcessingJob) -> dict[str, Any]:
             stages._renew_rule_lease(job)
             state.pop("review_complete", None)
             try:
-                return call_model(model=settings.COVERGUIDE_POLICY_EXTRACTION_MODEL, schema_name="policy_extraction",
+                returned = call_model(model=settings.COVERGUIDE_POLICY_EXTRACTION_MODEL, schema_name="policy_extraction",
                     output_type=PolicyRuleExtractionV1, messages=messages, processing_job=job,
                     remaining_seconds=stages._remaining_rule_seconds(deadline), reuse_successful_processing_result=True,
                     reasoning_effort=settings.COVERGUIDE_POLICY_EXTRACTION_REASONING_EFFORT,
                     max_output_tokens=settings.COVERGUIDE_POLICY_EXTRACTION_MAX_OUTPUT_TOKENS)
+                anchored, changes = anchor_transcribed_quotes(criterion, returned, pages)
+                state.setdefault("quote_transcriptions", []).extend(changes)
+                return anchored
             except RelayFailure as exc:
                 if isinstance(exc.__cause__, ValidationError):
                     # Public policy output only. Retain the exact failed response
@@ -175,8 +195,11 @@ def run_criterion_extraction(job: ProcessingJob) -> dict[str, Any]:
                     fact = recover_fact_encoding(criterion, diagnostics)
                     if fact is not None:
                         state.setdefault("encoding_notes", []).append("rule not executable: model wrapper failed RuleV1; intact cited fact retained for exact quotation checks and independent source review.")
-                        return PolicyRuleExtractionV1(schema_version=1, policy_version_id=str(version.id),
+                        recovered = PolicyRuleExtractionV1(schema_version=1, policy_version_id=str(version.id),
                             rules=[fact_carrier(criterion, fact)], omitted_inventory_categories=[], material_issues=[])
+                        anchored, changes = anchor_transcribed_quotes(criterion, recovered, pages)
+                        state.setdefault("quote_transcriptions", []).extend(changes)
+                        return anchored
                 raise
             finally:
                 state["attempt_ids"].extend(str(pk) for pk in ModelAttempt.objects.filter(processing_job=job).exclude(id__in=before).values_list("id", flat=True))

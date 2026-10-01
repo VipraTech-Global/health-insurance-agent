@@ -7,6 +7,7 @@ have independent dispositions, and exact quotations become their own EvidenceSpa
 from __future__ import annotations
 
 import json
+import re
 from decimal import Decimal
 from typing import Any, Literal
 
@@ -43,7 +44,7 @@ class Quantity(ClosedFact):
 
 
 class CitedFact(ClosedFact):
-    value: str = Field(min_length=1, max_length=2500)
+    value: str = Field(min_length=1, max_length=10000)
     value_kind: Literal["text", "category"]
     conditions: list[Condition]
     citations: list[Clause] = Field(min_length=1, max_length=24)
@@ -90,6 +91,42 @@ def clause_offsets(clause: Clause, text: str) -> tuple[int, int]:
         if start < 0:
             raise ValueError("Quotation does not occur word for word on its cited raw page.")
     return start, start + len(clause.quote)
+
+
+def anchor_transcribed_quotes(
+    criterion: Criterion, result: PolicyRuleExtractionV1, passages: list[dict[str, Any]],
+) -> tuple[PolicyRuleExtractionV1, list[dict[str, Any]]]:
+    """Restore original line wrapping before exact validation; change no words.
+
+    ModelAttempt retains the untouched model output. The projected candidate uses
+    the original raw substring. Punctuation, spelling, word boundaries and case
+    must all match; this never repairs a wrong phrase, page, section or number.
+    """
+    if len(result.rules) != 1:
+        return result, []
+    try:
+        fact = carrier_fact(result.rules[0])
+    except ValueError:
+        return result, []
+    pages = {p["evidence_span_id"]: p["passage"] for p in passages}
+    changes = []
+    for index, clause in enumerate(fact.citations):
+        text = pages.get(clause.page_span_id, "")
+        if clause.quote in text:
+            continue
+        pattern = r"\s+".join(re.escape(word) for word in clause.quote.split())
+        matches = list(re.finditer(pattern, text))
+        if len(matches) <= clause.occurrence:
+            continue
+        original = matches[clause.occurrence].group()
+        if original.split() != clause.quote.split():
+            raise ValueError("Whitespace anchoring changed a source word.")
+        changes.append({"citation_index": index, "page_span_id": clause.page_span_id,
+            "model_quote": clause.quote, "raw_quote": original})
+        clause.quote = original
+    if not changes:
+        return result, []
+    return result.model_copy(update={"rules": [fact_carrier(criterion, fact)]}), changes
 
 
 def fact_problems(
