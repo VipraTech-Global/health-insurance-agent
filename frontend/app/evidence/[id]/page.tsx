@@ -27,7 +27,7 @@ export default function EvidencePage() {
     return () => { active = false; };
   }, [id]);
   return <main className="workspace">
-    <p>Source review · unpublished policy evidence</p>
+    <p>Policy source review</p>
     {error ? <p className="error">{error}</p> : citation ? <CitationViewer citation={citation} onClose={() => window.history.back()} /> : <p>Loading citation…</p>}
   </main>;
 }

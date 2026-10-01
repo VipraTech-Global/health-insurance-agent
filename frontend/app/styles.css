@@ -40,7 +40,7 @@ input:focus, textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px 
 .link-button { border: 0; background: none; color: var(--green); padding: 18px 0; text-align: left; }
 .error { color: #a93636; font-size: 13px; margin: 0; }
 .source-drawer { position: fixed; inset: 0 0 0 auto; z-index: 20; width: min(680px, 100vw); background: white; box-shadow: -20px 0 50px #17231f22; padding: 20px; overflow: auto; }
-.source-drawer header { display: flex; justify-content: space-between; align-items: center; }
+.source-drawer header { display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 2; background: white; padding: 8px 0; }
 .source-drawer header button { border: 0; background: var(--paper); border-radius: 50%; width: 34px; height: 34px; font-size: 22px; }
 .source-drawer blockquote { margin: 18px 0; padding: 14px; background: #f2f6f1; border-left: 3px solid var(--green); font-size: 13px; line-height: 1.5; }
 .pdf-page { position: relative; width: max-content; box-shadow: 0 3px 15px #17231f22; }
