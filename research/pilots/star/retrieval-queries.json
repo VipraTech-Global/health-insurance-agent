@@ -1,0 +1,318 @@
+{
+  "version": 1,
+  "frozen_before_measurement": true,
+  "queries": [
+    {
+      "plan": "star-comprehensive",
+      "policy_version_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "criterion": "sum_insured",
+      "fixed": "Available new-purchase sums insured and their selection conditions; distinguish renewal-only choices.",
+      "customer": "What cover amounts can I choose when I buy this policy?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-comprehensive",
+      "policy_version_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "criterion": "room_category",
+      "fixed": "Permitted room category and any room/ICU limit or proportionate-deduction condition.",
+      "customer": "What hospital room can I use, and what happens if I choose a higher category?",
+      "table_heavy": true
+    },
+    {
+      "plan": "star-comprehensive",
+      "policy_version_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "criterion": "copay",
+      "fixed": "Mandatory base copayment, including entry-age conditions. Voluntary copayment is not selected. Do not infer zero from silence.",
+      "customer": "Will I need to pay a share of a hospital claim, and does entry age affect that?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-comprehensive",
+      "policy_version_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "criterion": "deductible",
+      "fixed": "Base deductible. Optional aggregate deductible is not selected. Cite explicit support for zero or not applicable.",
+      "customer": "Is there an amount I must pay myself before the base policy starts paying?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-comprehensive",
+      "policy_version_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "criterion": "ped_waiting_period",
+      "fixed": "Base pre-existing-disease waiting period and applicable continuity/credit conditions; no optional buyback.",
+      "customer": "How long do I wait for a health condition I already have, including credit from an earlier policy?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-comprehensive",
+      "policy_version_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "criterion": "initial_specific_waiting_periods",
+      "fixed": "Both initial and specified-disease/procedure waiting periods, with accident exceptions, scope and credit conditions.",
+      "customer": "What waiting periods apply after joining and for specific treatments, and are accidents treated differently?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-comprehensive",
+      "policy_version_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "criterion": "maternity",
+      "fixed": "Maternity cover or exclusion, waiting period, monetary limits, eligibility and event-count conditions.",
+      "customer": "Does this base policy cover delivery expenses, and what limits and conditions apply?",
+      "table_heavy": true
+    },
+    {
+      "plan": "star-comprehensive",
+      "policy_version_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "criterion": "newborn",
+      "fixed": "Newborn cover, start/end age, limits, parent/claim/continuity conditions and relevant exclusions.",
+      "customer": "When does cover for a newborn start and what conditions or limits apply?",
+      "table_heavy": true
+    },
+    {
+      "plan": "star-comprehensive",
+      "policy_version_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "criterion": "restoration",
+      "fixed": "Restoration amount, frequency, exhaustion trigger, same/different illness and subsequent-claim conditions.",
+      "customer": "If I use up my cover, how is it restored and can I use it again for the same illness?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-comprehensive",
+      "policy_version_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "criterion": "family_floater",
+      "fixed": "Whether floater cover is available and its relationships, member limits and dependent-child conditions.",
+      "customer": "Which family members can share this cover and how many adults or children can join?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-comprehensive",
+      "policy_version_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "criterion": "portability",
+      "fixed": "Portability rights, credit for prior coverage and application timing/conditions. Do not promise acceptance.",
+      "customer": "Can I transfer my existing health policy and keep waiting-period credit, and when should I apply?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-comprehensive",
+      "policy_version_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "criterion": "geography",
+      "fixed": "Territory of operative cover and any stated territorial exception; premium zones alone are not coverage.",
+      "customer": "Where can I receive covered treatment, including any cover outside India?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-comprehensive",
+      "policy_version_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "criterion": "eligibility",
+      "fixed": "Adult/child entry ages, renewal distinctions, relationships and underwriting discretion; age alone must not imply acceptance.",
+      "customer": "What are the entry ages and family relationship conditions, and how does renewal differ?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-family-health-optima",
+      "policy_version_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "criterion": "sum_insured",
+      "fixed": "Available new-purchase sums insured and their selection conditions; distinguish renewal-only choices.",
+      "customer": "What cover amounts can I choose when I buy this policy?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-family-health-optima",
+      "policy_version_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "criterion": "room_category",
+      "fixed": "Permitted room category and any room/ICU limit or proportionate-deduction condition.",
+      "customer": "What hospital room can I use, and what happens if I choose a higher category?",
+      "table_heavy": true
+    },
+    {
+      "plan": "star-family-health-optima",
+      "policy_version_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "criterion": "copay",
+      "fixed": "Mandatory base copayment, including entry-age conditions. Voluntary copayment is not selected. Do not infer zero from silence.",
+      "customer": "Will I need to pay a share of a hospital claim, and does entry age affect that?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-family-health-optima",
+      "policy_version_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "criterion": "deductible",
+      "fixed": "Base deductible. Optional aggregate deductible is not selected. Cite explicit support for zero or not applicable.",
+      "customer": "Is there an amount I must pay myself before the base policy starts paying?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-family-health-optima",
+      "policy_version_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "criterion": "ped_waiting_period",
+      "fixed": "Base pre-existing-disease waiting period and applicable continuity/credit conditions; no optional buyback.",
+      "customer": "How long do I wait for a health condition I already have, including credit from an earlier policy?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-family-health-optima",
+      "policy_version_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "criterion": "initial_specific_waiting_periods",
+      "fixed": "Both initial and specified-disease/procedure waiting periods, with accident exceptions, scope and credit conditions.",
+      "customer": "What waiting periods apply after joining and for specific treatments, and are accidents treated differently?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-family-health-optima",
+      "policy_version_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "criterion": "maternity",
+      "fixed": "Maternity cover or exclusion, waiting period, monetary limits, eligibility and event-count conditions.",
+      "customer": "Does this base policy cover delivery expenses, and what limits and conditions apply?",
+      "table_heavy": true
+    },
+    {
+      "plan": "star-family-health-optima",
+      "policy_version_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "criterion": "newborn",
+      "fixed": "Newborn cover, start/end age, limits, parent/claim/continuity conditions and relevant exclusions.",
+      "customer": "When does cover for a newborn start and what conditions or limits apply?",
+      "table_heavy": true
+    },
+    {
+      "plan": "star-family-health-optima",
+      "policy_version_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "criterion": "restoration",
+      "fixed": "Restoration amount, frequency, exhaustion trigger, same/different illness and subsequent-claim conditions.",
+      "customer": "If I use up my cover, how is it restored and can I use it again for the same illness?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-family-health-optima",
+      "policy_version_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "criterion": "family_floater",
+      "fixed": "Whether floater cover is available and its relationships, member limits and dependent-child conditions.",
+      "customer": "Which family members can share this cover and how many adults or children can join?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-family-health-optima",
+      "policy_version_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "criterion": "portability",
+      "fixed": "Portability rights, credit for prior coverage and application timing/conditions. Do not promise acceptance.",
+      "customer": "Can I transfer my existing health policy and keep waiting-period credit, and when should I apply?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-family-health-optima",
+      "policy_version_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "criterion": "geography",
+      "fixed": "Territory of operative cover and any stated territorial exception; premium zones alone are not coverage.",
+      "customer": "Where can I receive covered treatment, including any cover outside India?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-family-health-optima",
+      "policy_version_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "criterion": "eligibility",
+      "fixed": "Adult/child entry ages, renewal distinctions, relationships and underwriting discretion; age alone must not imply acceptance.",
+      "customer": "What are the entry ages and family relationship conditions, and how does renewal differ?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-health-assure",
+      "policy_version_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "criterion": "sum_insured",
+      "fixed": "Available new-purchase sums insured and their selection conditions; distinguish renewal-only choices.",
+      "customer": "What cover amounts can I choose when I buy this policy?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-health-assure",
+      "policy_version_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "criterion": "room_category",
+      "fixed": "Permitted room category and any room/ICU limit or proportionate-deduction condition.",
+      "customer": "What hospital room can I use, and what happens if I choose a higher category?",
+      "table_heavy": true
+    },
+    {
+      "plan": "star-health-assure",
+      "policy_version_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "criterion": "copay",
+      "fixed": "Mandatory base copayment, including entry-age conditions. Voluntary copayment is not selected. Do not infer zero from silence.",
+      "customer": "Will I need to pay a share of a hospital claim, and does entry age affect that?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-health-assure",
+      "policy_version_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "criterion": "deductible",
+      "fixed": "Base deductible. Optional aggregate deductible is not selected. Cite explicit support for zero or not applicable.",
+      "customer": "Is there an amount I must pay myself before the base policy starts paying?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-health-assure",
+      "policy_version_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "criterion": "ped_waiting_period",
+      "fixed": "Base pre-existing-disease waiting period and applicable continuity/credit conditions; no optional buyback.",
+      "customer": "How long do I wait for a health condition I already have, including credit from an earlier policy?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-health-assure",
+      "policy_version_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "criterion": "initial_specific_waiting_periods",
+      "fixed": "Both initial and specified-disease/procedure waiting periods, with accident exceptions, scope and credit conditions.",
+      "customer": "What waiting periods apply after joining and for specific treatments, and are accidents treated differently?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-health-assure",
+      "policy_version_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "criterion": "maternity",
+      "fixed": "Maternity cover or exclusion, waiting period, monetary limits, eligibility and event-count conditions.",
+      "customer": "Does this base policy cover delivery expenses, and what limits and conditions apply?",
+      "table_heavy": true
+    },
+    {
+      "plan": "star-health-assure",
+      "policy_version_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "criterion": "newborn",
+      "fixed": "Newborn cover, start/end age, limits, parent/claim/continuity conditions and relevant exclusions.",
+      "customer": "When does cover for a newborn start and what conditions or limits apply?",
+      "table_heavy": true
+    },
+    {
+      "plan": "star-health-assure",
+      "policy_version_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "criterion": "restoration",
+      "fixed": "Restoration amount, frequency, exhaustion trigger, same/different illness and subsequent-claim conditions.",
+      "customer": "If I use up my cover, how is it restored and can I use it again for the same illness?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-health-assure",
+      "policy_version_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "criterion": "family_floater",
+      "fixed": "Whether floater cover is available and its relationships, member limits and dependent-child conditions.",
+      "customer": "Which family members can share this cover and how many adults or children can join?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-health-assure",
+      "policy_version_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "criterion": "portability",
+      "fixed": "Portability rights, credit for prior coverage and application timing/conditions. Do not promise acceptance.",
+      "customer": "Can I transfer my existing health policy and keep waiting-period credit, and when should I apply?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-health-assure",
+      "policy_version_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "criterion": "geography",
+      "fixed": "Territory of operative cover and any stated territorial exception; premium zones alone are not coverage.",
+      "customer": "Where can I receive covered treatment, including any cover outside India?",
+      "table_heavy": false
+    },
+    {
+      "plan": "star-health-assure",
+      "policy_version_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "criterion": "eligibility",
+      "fixed": "Adult/child entry ages, renewal distinctions, relationships and underwriting discretion; age alone must not imply acceptance.",
+      "customer": "What are the entry ages and family relationship conditions, and how does renewal differ?",
+      "table_heavy": false
+    }
+  ]
+}
