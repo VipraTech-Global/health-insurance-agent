@@ -74,6 +74,7 @@ function monthlyEmiLabel(criterion: string, comparisonValue: unknown): string | 
 function statementText(text: string, type: string): string {
   if (type !== "limitation") return text;
   return text.replace(/\bcoverage:\s*coverage_question:\s*/g, "")
+    .replace(/\bwrong_value:\s*/g, "")
     .replace(/\bneeds_prospectus:\s*/g, "Additional evidence needed: ");
 }
 
