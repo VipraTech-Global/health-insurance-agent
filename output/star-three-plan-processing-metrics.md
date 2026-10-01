@@ -6,11 +6,24 @@ Updated Checkpoint 2. All runs use the isolated `coverguide_star_slice` database
 | --- | ---: | ---: | --- |
 | Star Comprehensive Insurance Policy | 13 | 0 | eligibility, family_floater, newborn, sum_insured |
 | Family Health Optima Insurance Plan | 13 | 0 | eligibility, sum_insured |
-| Star Health Assure Insurance Policy | 12 | 1 | eligibility, sum_insured |
+| Star Health Assure Insurance Policy | 13 | 0 | eligibility, sum_insured |
 
 Rule encoding is reported separately from source support. Budget is unavailable; derived `no_copay` is outside the 13 criteria.
 
-The remaining unknown is Assure's PED waiting period: the retained quotations do not match wording physical page 27 word for word after the corrective attempt. The raw text contains fused words that the model separated. Exact-match validation remains in place.
+Final count: **39/39 supported source facts**, with no unresolved source criteria. Assure PED states 30 months of continuous coverage for a 3-year policy term and 36 months for 1-year and 2-year terms, measured from inception of the first policy with the insurer (wording physical page 27, Code-Excl 01 A).
+
+## Assure PED whitespace fix
+
+Quote matching now removes all whitespace for comparison and makes no other character normalization. The match maps back to original raw-page offsets; the stored/displayed quote and PDF highlighting use that original substring. Case, punctuation, ligatures and non-whitespace control characters must match. Tests cover `Insuredtheexclusionshallapplyafresh`, repeated occurrences, mapped spans, whole-page rejection and non-whitespace differences.
+
+Only Assure PED received a fresh extraction and independent review. It passed on the first call, using wording/CIS/schedules without a prospectus supplement, with no corrective retry or timeout. All 38 previously accepted facts, their progress records and reviews were preserved. Previous PED attempts remain archived.
+
+| New call | Wall time | Input tokens | Cached input | Output tokens | Reasoning tokens |
+| --- | ---: | ---: | ---: | ---: | --- |
+| PED extraction | 41.267 s | 62191 | 60160 | 1754 | Not recorded |
+| Independent review | 12.347 s | 62103 | 0 | 571 | Not recorded |
+
+Extraction attempt: `ee8b7ec4-385a-4b12-878e-4871985b57d5`; independent review: `e0bbba29-b325-4715-ae7d-c471d8be5e4a`; final validation: `e3bbe276-4496-430c-af6a-560ef1c3670f`.
 
 ## Timing and cache observation
 
@@ -30,10 +43,10 @@ The current runs process one plan at a time. Prior runs used up to three concurr
 
 ## Attempts and retained evidence
 
-All retained calls: 185; status counts: cancelled 3, schema_error 13, succeeded 168, timeout 1.
-Since the table-fix rerun: 76 calls, 0 timeouts. Historical timeouts: 1.
-Successful extract calls since the table fix: 34, median 46.451 seconds.
-Successful independent_review calls since the table fix: 38, median 12.926 seconds.
+All retained calls: 187; status counts: cancelled 3, schema_error 13, succeeded 170, timeout 1.
+Since the table-fix rerun: 78 calls, 0 timeouts. Historical timeouts: 1.
+Successful extract calls since the table fix: 35, median 46.379 seconds.
+Successful independent_review calls since the table fix: 39, median 12.881 seconds.
 
 The two original Comprehensive sum-insured prompt failures are archived and excluded from the fresh first-call/corrective-call budget. The approved six-criterion rerun preserves all seven previously accepted facts and their existing reviews. Transport errors have a separate two-retry allowance. No model output, source PDF or raw text was overwritten.
 
@@ -43,11 +56,10 @@ Per-call timing, input/cache/output/reasoning usage, statuses and attempt IDs: `
 
 ## Verification
 
-- Backend: 402 tests passed; 18 existing missing-static-directory warnings.
+- Backend: 411 tests passed; 18 existing missing-static-directory warnings. Focused quotation/pipeline tests: 80 passed.
 - Ruff, Django checks and migration check passed.
-- Frontend lint, typecheck and build passed.
-- Clause audit passed for 231 distinct clause spans: exact raw page text, physical page, hash, character span and stored highlight rectangles.
-- The seven previously accepted Comprehensive facts retain their values, conditions, citations, attempt IDs and independent reviews.
-- PDF viewer verified with a [portability clause](playwright/star-portability-clause.png) and a [maternity table row](playwright/star-maternity-table-row.png); both highlight the cited text on the physical page shown.
+- Frontend lint, typecheck and build passed at the preceding checkpoint; no frontend files changed in this fix.
+- Clause audit passed for 236 distinct spans across 68 physical document pages: exact stored raw text, physical page, hash, character span and stored highlight rectangles.
+- The [Assure PED citation screenshot](playwright/star-assure-ped-whitespace-clause.png) shows the original enhancement clause highlighted on physical page 27. The adjacent term-dependent 30/36-month clauses are visible. The browser check used the existing synthetic local account.
 - Isolated database releases: 0. API response schemas and model qualifications were unchanged.
-- Full comparison and synthetic-profile UI verification await publication approval; they were not run at this checkpoint.
+- Step 6 and publication remain unstarted. Full comparison and synthetic-profile UI verification were not run.

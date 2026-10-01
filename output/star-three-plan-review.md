@@ -12,7 +12,7 @@ Physical PDF pages are used throughout. Character offsets refer to preserved `pd
 |---|---:|---:|---|
 | Star Comprehensive Insurance Policy | 13/13 | 0/13 | Unavailable |
 | Family Health Optima Insurance Plan | 13/13 | 0/13 | Unavailable |
-| Star Health Assure Insurance Policy | 12/13 | 1/13 | Unavailable |
+| Star Health Assure Insurance Policy | 13/13 | 0/13 | Unavailable |
 
 Derived `no_copay` and price are outside the 13-criterion denominator.
 
@@ -2878,7 +2878,7 @@ Option to choose Voluntary Co-payment
 
 UIN: `SHAHLIP26048V032526`.
 
-Validation job: `12c472d3-ea57-4b44-9044-95f51e1c1ecc` (succeeded). **12/13 supported; 1/13 unresolved.**
+Validation job: `e3bbe276-4496-430c-af6a-560ef1c3670f` (succeeded). **13/13 supported; 0/13 unresolved.**
 Prospectus used for: eligibility, sum_insured.
 Prospectus gaps reported but not supplemented: none. See the criterion's unknown reasons below.
 Timeout calls across retained and resumed processing: 0.
@@ -3219,15 +3219,100 @@ Aggregate basis)
 
 ### ped_waiting_period
 
-Status: **unknown**.
+Status: **supported**.
 
-Unknown reason: Quote 3, star-health-assure-base-wording, physical page 27: Quotation does not occur word for word on its cited raw page.
+Value: Under the selected base policy without optional covers, treatment of a pre-existing disease and its direct complications is excluded for 30 months of continuous coverage for a 3-year policy term, and 36 months of continuous coverage for 1-year and 2-year policy terms, measured from inception of the first policy with the insurer. On sum-insured enhancement, the exclusion applies afresh to the increased portion. Portability credit reduces the waiting period to the extent of prior continuous coverage. After the applicable waiting period, the pre-existing disease must have been declared at application and accepted by the insurer.
 
-Unknown reason: Quote 4, star-health-assure-base-wording, physical page 27: Quotation does not occur word for word on its cited raw page.
+Condition: The 30-month period applies when the policy term is 3 years. (quotes 1).
+
+Condition: The 36-month period applies when the policy term is 1 year or 2 years. (quotes 2).
+
+Condition: For an enhanced Sum Insured, the exclusion applies afresh only to the extent of the increase. (quotes 3).
+
+Condition: Where coverage is continuous without a break under applicable IRDAI portability norms, prior coverage reduces the waiting period to that extent. (quotes 4).
+
+Condition: Coverage after 30 months for a 3-year term requires the pre-existing disease to have been declared at application and accepted by the insurer. (quotes 5).
+
+Condition: Coverage after 36 months for a 1-year or 2-year term requires the pre-existing disease to have been declared at application and accepted by the insurer. (quotes 6).
+
+Note: The selected variant is the base policy without optional covers; no optional waiting-period buyback is applied.
+
+Note: Coverage after the applicable waiting period remains subject to declaration at application and insurer acceptance.
+
+Note: rule_not_executable: Independent fact agreement did not include a rule body.
+
+Note: note: coverage after the applicable waiting period is subject to declaration at application and insurer acceptance.
 
 Executable-rule status: **rule not executable**.
 
 Rule encoding record (does not determine fact support): The descriptive fact does not establish an executable encoding; prior verified partial rules remain separate.
+
+Quote 1: [star-health-assure-base-wording, physical page 27](http://127.0.0.1:3021/evidence/a678e8ea-6d1b-4be1-ada2-b9cdbda03ab7); characters [1430, 1692).
+
+```text
+Applicable for 3 year Policy Term:
+Expenses related to the treatment of a
+pre-existing Disease (PED) and its direct
+complications shall be excluded until
+the expiry of 30 months of continuous
+coverage after the date of inception
+of the first policy with insurer.
+```
+
+Quote 2: [star-health-assure-base-wording, physical page 27](http://127.0.0.1:3021/evidence/8c37a252-269d-45d9-b932-45c166276a2a); characters [1693, 1965).
+
+```text
+Applicable for 1 year and 2 year
+Policy Term: Expenses related to the
+treatment of a pre-existing Disease
+(PED) and its direct complications
+shall be excluded until the expiry of
+36 months of continuous coverage
+after the date of inception of the first
+policy with insurer
+```
+
+Quote 3: [star-health-assure-base-wording, physical page 27](http://127.0.0.1:3021/evidence/355f3efa-2f28-405d-baa5-7545ff99dc77); characters [1970, 2074).
+
+```text
+In case of enhancement of Sum
+Insuredtheexclusionshallapplyafresh
+to the extent of Sum Insured increase.
+```
+
+Quote 4: [star-health-assure-base-wording, physical page 27](http://127.0.0.1:3021/evidence/a89aef2a-49c9-4e59-9dc0-db40a2914413); characters [2080, 2300).
+
+```text
+If the Insured Person is continuously
+covered without any break as
+defined under the applicable norms
+on portability stipulated by IRDAI,
+then waiting period for the same
+would be reduced to the extent of
+prior coverage.
+```
+
+Quote 5: [star-health-assure-base-wording, physical page 27](http://127.0.0.1:3021/evidence/d1f7f01f-c5dd-49b0-b567-a6ede6b22e2f); characters [2306, 2517).
+
+```text
+Applicable for 3 year Policy Term :
+Coverage under the policy after the
+expiry of 30 months for any pre-
+existing disease is subject to the
+same being declared at the time of
+application and accepted by Insurer.
+```
+
+Quote 6: [star-health-assure-base-wording, physical page 27](http://127.0.0.1:3021/evidence/539e1776-7c3f-460e-b314-d8808a2f4f71); characters [2518, 2731).
+
+```text
+Applicablefor1yearand2yearPolicy
+Term: Coverage under the policy
+after the expiry of 36 months for any
+pre-existing disease is subject to the
+same being declared at the time of
+application and accepted by Insurer.
+```
 
 ### initial_specific_waiting_periods
 
