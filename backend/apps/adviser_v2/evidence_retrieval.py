@@ -52,6 +52,7 @@ class EvidencePacket:
     budget: int
     omitted_chunks: int
     method: str
+    unavailable_reason: str | None = None
 
     def payload(self) -> dict[str, Any]:
         return asdict(self)
@@ -205,10 +206,21 @@ def pack(policy_id: str, ranked: list[RawChunk], *, budget: int, method: str) ->
     )
 
 
-def retrieve_plan(query: str, policy_id: str, *, budget: int = 16000) -> EvidencePacket:
+def retrieve_plan(query: str, policy_id: str, *, budget: int = 16000, turn=None) -> EvidencePacket:
     from django.conf import settings
 
+    from apps.adviser.ai import RelayFailure
+
     method = settings.COVERGUIDE_EVIDENCE_RETRIEVAL
+    if method == "pageindex":
+        from .pageindex_evidence import rank_pages
+        try:
+            version = PolicyVersion.objects.get(pk=policy_id)
+            pages = raw_bundle_passages(version, include_prospectus=True)
+            return pack(policy_id, rank_pages(query, policy_id, pages, turn=turn), budget=budget, method=method)
+        except (ValueError, OSError, RelayFailure) as exc:
+            return EvidencePacket(policy_id, (), 0, budget, 0, method,
+                "Original source evidence could not be retrieved: " + str(exc))
     if method != "bm25":
         raise ValueError(f"Unsupported policy-evidence retrieval setting: {method}")
     return pack(policy_id, BM25(plan_chunks(policy_id)).rank(query), budget=budget, method=method)

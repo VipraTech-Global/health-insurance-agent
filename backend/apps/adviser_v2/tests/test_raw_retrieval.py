@@ -81,7 +81,8 @@ def test_budget_keeps_whole_chunks_and_reports_every_omission():
         )
 
 
-def test_bm25_never_checks_dense_qualification(monkeypatch):
+def test_bm25_never_checks_dense_qualification(monkeypatch, settings):
+    settings.COVERGUIDE_EVIDENCE_RETRIEVAL = "bm25"
     monkeypatch.setattr(
         "apps.adviser_v2.embedding.qualified_embedding_status",
         lambda: pytest.fail("BM25 called dense qualification"),

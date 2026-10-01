@@ -552,7 +552,7 @@ def process_turn(turn_id: uuid.UUID) -> None:
         prepared_release = release.readiness.get('fact_release_version') == FACT_RELEASE_VERSION
         retrieve = not is_clarifying and (not prepared_release or needs_source_retrieval(
             turn.input_message.content, interpretation.intent))
-        retrieval = retrieve_policy_context(turn.input_message.content, release) if retrieve else None
+        retrieval = retrieve_policy_context(turn.input_message.content, release, turn=turn) if retrieve else None
         source_answers = None
         with transaction.atomic():
             _lock_active_turn(turn.id, token)

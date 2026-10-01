@@ -211,7 +211,7 @@ def retrieve_hybrid_context(
     )
 
 
-def retrieve_policy_context(query_text: str, release: KnowledgeRelease, *, limit: int = 24) -> PolicyRetrievalContext:
+def retrieve_policy_context(query_text: str, release: KnowledgeRelease, *, limit: int = 24, turn=None) -> PolicyRetrievalContext:
     """Prepared releases search each exact applicable bundle with equal budgets."""
     from django.conf import settings
 
@@ -221,6 +221,7 @@ def retrieve_policy_context(query_text: str, release: KnowledgeRelease, *, limit
         knowledge_release=release).values_list('policy_version_id', flat=True)})
     if not policy_ids:
         return retrieve_hybrid_context(query_text, release, limit=limit)
-    packets = tuple(retrieve_plan(query_text, p, budget=settings.COVERGUIDE_EVIDENCE_TOKEN_BUDGET)
+    packets = tuple(retrieve_plan(query_text, p, budget=settings.COVERGUIDE_EVIDENCE_TOKEN_BUDGET,
+        **({"turn": turn} if turn is not None else {}))
         for p in policy_ids)
     return PolicyRetrievalContext(chunks=(), rule_ids=(), packets=packets)

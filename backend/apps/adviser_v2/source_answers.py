@@ -147,6 +147,9 @@ def _relay(turn, *, model, schema_name, output_type, messages, effort):
 
 def answer_question(turn, question: str, profile: dict, packet: EvidencePacket) -> SourceAnswer:
     criterion = question_criterion(question)
+    if packet.unavailable_reason or not packet.chunks:
+        return SourceAnswer(packet, criterion, None, None, None,
+            packet.unavailable_reason or "No applicable original evidence fit the source packet.")
     pages = packet_pages(packet)
     failure = "The retrieved evidence is incomplete for this question."
     packet_data = packet.payload()
