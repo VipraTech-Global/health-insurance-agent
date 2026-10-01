@@ -315,6 +315,13 @@ def quoted_quantities(quote: str) -> dict[str, set[Decimal]]:
     for word, number in (("once", 1), ("twice", 2), ("thrice", 3)):
         if re.search(rf"\b{word}\b", text):
             quantities["count"].add(Decimal(number))
+    # Printed plan-composition cells use abbreviations whose meaning must also
+    # be quoted. For separate quotes, the fact validator combines them only
+    # inside an explicitly checked same-page table region.
+    for abbreviation, label in (("a", "adult"), ("c", "child")):
+        if re.search(rf"\b{abbreviation}\s*[-–=:]\s*{label}\b", text):
+            for match in re.finditer(rf"(?<!\w)(\d+)\s*{abbreviation}\b", text):
+                quantities["count"].add(Decimal(match[1]))
     if re.search(r"\b(?:nil|zero|not applicable)\b|\bno\s+(?:co-?payment|deductible)\b", text):
         quantities["ratio"].add(Decimal(0))
         quantities["money"].add(Decimal(0))

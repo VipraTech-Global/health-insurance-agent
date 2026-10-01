@@ -17,7 +17,7 @@ from ..schemas import ExtractedPolicyRule, PolicyRuleExtractionV1, PolicyRuleRev
 from .criterion_evidence import Criterion, criterion_for_key, quoted_quantities
 
 FACT_PROTOCOL = "coverguide-manifest-v2-cited-facts/1"
-FACT_PROMPT_REVISION = "table-clauses-and-secondary-statements/2"
+FACT_PROMPT_REVISION = "table-clauses-and-secondary-statements/3"
 FACT_TERM = "comparison_cited_fact_v1"
 MATERIAL_REASONS = {"wrong_value", "wrong_section", "missing_material_condition", "wrong_variant"}
 NOTE_REASONS = {"underwriting", "other_terms", "day_boundary", "rule_not_executable", "note"}

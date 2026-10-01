@@ -404,3 +404,22 @@ def test_our_old_wrapper_exception_does_not_consume_a_corrective_attempt():
     resume_pipeline_failure(counted_model_failure)
     assert counted_model_failure['complete']
     assert 'pipeline_failure_resumed' not in counted_model_failure
+
+
+def test_family_table_counts_need_the_exact_abbreviation_legend():
+    from apps.adviser_v2.processing.criterion_evidence import quoted_quantities
+
+    assert quoted_quantities('2A+3C')['count'] == set()
+    assert quoted_quantities('2A+3C A-Adult | C-Child')['count'] == {2, 3}
+    criterion, result, pages = sample('family_floater')
+    fact = CitedFact(value='Two adults and three children.', value_kind='text', conditions=[], notes=[],
+        citations=[Clause(page_span_id=PAGE_ID, quote='2A+3C'), Clause(page_span_id=PAGE_ID, quote='A-Adult | C-Child')],
+        table_regions=[{'citation_indexes': [0, 1], 'label_indexes': [1]}],
+        quantities=[{'value': '2', 'unit': 'count', 'citation_indexes': [0, 1]},
+                    {'value': '3', 'unit': 'count', 'citation_indexes': [0, 1]}])
+    result.rules = [fact_carrier(criterion, fact)]
+    pages[0]['passage'] = 'Plan type\n2A+3C\nA-Adult | C-Child\nOther terms'
+    assert not fact_problems(POLICY_ID, criterion, result, pages)
+    fact.table_regions = []
+    result.rules = [fact_carrier(criterion, fact)]
+    assert fact_problems(POLICY_ID, criterion, result, pages)
