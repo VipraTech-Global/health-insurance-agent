@@ -16,6 +16,7 @@ from ..rule_validation import rule_link_references, rule_semantic_problems
 from ..schemas import PolicyRuleExtractionV1, PolicyRuleReviewV1, ReviewedPolicyRule
 from .artifacts import read_artifact
 from .criterion_attempts import TRANSPORT_FAILURES, extract_criterion, new_criterion_state
+from .criterion_corrections import request_review_correction
 from .criterion_evidence import (
     CRITERIA,
     PROCESSING_VERSION,
@@ -52,7 +53,7 @@ def _progress(job: ProcessingJob, policy_id: str, core: list[dict[str, Any]]) ->
     prior = (
         ProcessingJob.objects.filter(
             source_capture=job.source_capture,
-            stage="extract",
+            stage__in=("extract", "independent_review"),
             state__in=("cancelled", "failed", "blocked", "succeeded"),
             result_storage_key__isnull=False,
         )
@@ -261,6 +262,7 @@ def run_criterion_review(job: ProcessingJob) -> dict[str, Any]:
                 problems.append("Independent missing-rule inventory is outside this criterion.")
             if problems:
                 raise ValueError("; ".join(problems))
+            request_review_correction(criterion, progress["criteria"][criterion.key], result)
         except (RelayFailure, ValueError) as exc:
             if isinstance(exc, RelayFailure) and exc.code not in CRITERION_FAILURES:
                 raise
@@ -281,7 +283,10 @@ def run_criterion_review(job: ProcessingJob) -> dict[str, Any]:
                 missing_rules=[],
             )
         results.append(((criterion.category,), result))
-    return stages._combine_review_batches(str(version.id), results).model_dump(mode="json")
+    return {
+        **stages._combine_review_batches(str(version.id), results).model_dump(mode="json"),
+        PROGRESS_KEY: progress,
+    }
 
 
 def validated_criteria(
@@ -348,7 +353,7 @@ def finalize_criterion_validation(job: ProcessingJob, artifact: dict[str, Any]) 
 
     extraction_artifact = read_artifact(stages._ancestor(job, "extract"))
     extraction = PolicyRuleExtractionV1.model_validate(extraction_payload(extraction_artifact))
-    review = PolicyRuleReviewV1.model_validate(read_artifact(job.parent_job))
+    review = PolicyRuleReviewV1.model_validate(extraction_payload(read_artifact(job.parent_job)))
     rules = list(
         PolicyRule.objects.filter(id__in=artifact["verified_rule_ids"], review_status="verified")
     )

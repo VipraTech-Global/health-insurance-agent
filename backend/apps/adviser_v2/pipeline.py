@@ -477,6 +477,21 @@ def _process_claimed_job(
         )
         raise
     next_stage = NEXT_STAGE.get(completed.stage)
+    if completed.stage == "independent_review" and manifest_product(completed.source_capture) is not None:
+        from .processing.criterion_corrections import has_remaining_correction
+        from .processing.criterion_evidence import PROGRESS_KEY
+
+        if has_remaining_correction(result[PROGRESS_KEY]):
+            extraction = completed.parent_job
+            assert extraction is not None and extraction.stage == "extract"
+            enqueue_stage(
+                stage="extract",
+                parent_job=extraction.parent_job,
+                attempt_number=min(extraction.attempt_number + 1, 3),
+                retry_instruction=f"Use only remaining criterion corrections from independent review {completed.id}.",
+                **_source_arguments(completed),
+            )
+            return
     if next_stage:
         enqueue_stage(
             stage=next_stage,

@@ -127,5 +127,9 @@ output tokens, and explicit generation options. Missing provider metrics remain
 null. Existing usage storage and model-response contracts are unchanged; reasoning
 counts and generation settings are in the call log. Retained response commitments
 include generation options, so differing options cannot share an exact-response cache.
+An independent source-review failure can use a criterion's correction only when
+it has not already been spent. Completed criteria and exact successful reviews are
+retained. The final deterministic validation runs after those remaining corrections;
+it uses the same rule, dependency, citation and seven-unresolved-criteria checks.
 The remaining plans run sequentially; the review records observed timing rather than
 attributing a difference to one cause when prompt ordering and effort both changed.

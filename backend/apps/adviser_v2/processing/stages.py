@@ -1899,7 +1899,7 @@ def _validate_policy_rules(job: ProcessingJob) -> dict[str, Any]:
     extraction = PolicyRuleExtractionV1.model_validate(
         extraction_payload(read_artifact(_ancestor(job, "extract")))
     )
-    review = PolicyRuleReviewV1.model_validate(parent_artifact(job))
+    review = PolicyRuleReviewV1.model_validate(extraction_payload(parent_artifact(job)))
     issues: list[dict[str, Any]] = []
     reviewed_categories = set(review.inventory_categories)
     unknown_categories = reviewed_categories - INVENTORY_CATEGORIES
