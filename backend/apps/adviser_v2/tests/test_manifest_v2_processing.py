@@ -339,9 +339,9 @@ def test_v2_retry_is_bounded_and_keeps_complete_core_plus_needed_prospectus(monk
         prospectus_supplement=lambda: json.dumps(whole),
     )
     assert result.rules == [] and len(requests) == 2
-    assert all(core[0]["passage"] in request[-1]["content"] for request in requests)
-    assert "Complete applicable prospectus" not in requests[0][-1]["content"]
-    assert "Complete applicable prospectus" in requests[1][-1]["content"]
+    assert all(core[0]["passage"] in request[2]["content"] for request in requests)
+    assert "Complete applicable prospectus" not in requests[0][2]["content"]
+    assert "Complete applicable prospectus" in requests[1][2]["content"]
 
 
 def test_thirteen_criteria_count_excludes_derived_no_copay_and_budget():

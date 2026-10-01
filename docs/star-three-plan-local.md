@@ -107,3 +107,25 @@ or promoting their status. A pending-only preview under the isolated report
 directory confirmed that unprocessed criteria are not presented as validated
 unknowns. Real extraction and independent validation remain separate from these
 checks and must finish before Checkpoint 2.
+
+
+## Remaining criterion calls (2026-10-01)
+
+Completed responses are retained per criterion. Transport errors have two separate
+retries and never consume the single validation correction. The prospectus is
+supplied only after an explicit missing definition, table or other core-evidence gap.
+
+Version-2 extraction and review place their static instructions and complete bundle
+before criterion instructions, candidates and correction context. Extraction uses
+`COVERGUIDE_POLICY_EXTRACTION_REASONING_EFFORT` (default `low`) and
+`COVERGUIDE_POLICY_EXTRACTION_MAX_OUTPUT_TOKENS` (default `8192`). Independent
+review uses `high` effort. Other pipelines keep their existing generation defaults.
+The output ceiling includes reasoning tokens; incomplete output still fails validation.
+
+Each actual call logs its attempt ID, wall time, input, cached input, reasoning and
+output tokens, and explicit generation options. Missing provider metrics remain
+null. Existing usage storage and model-response contracts are unchanged; reasoning
+counts and generation settings are in the call log. Retained response commitments
+include generation options, so differing options cannot share an exact-response cache.
+The remaining plans run sequentially; the review records observed timing rather than
+attributing a difference to one cause when prompt ordering and effort both changed.

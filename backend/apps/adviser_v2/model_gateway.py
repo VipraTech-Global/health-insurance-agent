@@ -5,6 +5,7 @@ from __future__ import annotations
 import asyncio
 import hashlib
 import json
+import logging
 import time
 import uuid
 from collections.abc import Sequence
@@ -293,6 +294,8 @@ def call_model[OutputT: BaseModel](
     turn: Turn | None = None,
     processing_job: ProcessingJob | None = None,
     reuse_successful_processing_result: bool = False,
+    reasoning_effort: str | None = None,
+    max_output_tokens: int | None = None,
 ) -> OutputT:
     if (turn is None) == (processing_job is None):
         raise ValueError("Exactly one turn or processing job is required.")
@@ -342,6 +345,13 @@ def call_model[OutputT: BaseModel](
         "schema_sha256": qualification.schema_sha256,
         "messages": list(messages),
     }
+    generation_options = {}
+    if reasoning_effort is not None:
+        generation_options["reasoning_effort"] = reasoning_effort
+    if max_output_tokens is not None:
+        generation_options["max_output_tokens"] = max_output_tokens
+    if generation_options:
+        request_data["generation_options"] = generation_options
     request_commitment = commitment(request_data)
     if reuse_successful_processing_result:
         if processing_job is None:
@@ -409,10 +419,48 @@ def call_model[OutputT: BaseModel](
     )
     began = time.monotonic()
 
+    adapter: StrictRelayAdapter | None = None
+
+    def measured_usage() -> dict:
+        reported = adapter.usage if adapter is not None else {}
+        return {
+            **unavailable_usage,
+            **{
+                key: reported.get(key)
+                for key in (
+                    "input_tokens",
+                    "cached_input_tokens",
+                    "output_tokens",
+                )
+            },
+            "latency_ms": round((time.monotonic() - began) * 1000),
+            "usage_source": "provider_reported" if reported else "unavailable",
+        }
+
+    def log_usage(status: str, usage: dict) -> None:
+        logging.getLogger(__name__).info(
+            "Model call attempt=%s stage=%s model=%s status=%s metrics=%s",
+            attempt.id,
+            schema_name,
+            model,
+            status,
+            json.dumps(
+                {
+                    **usage,
+                    "reasoning_tokens": adapter.usage.get("reasoning_tokens") if adapter else None,
+                    **generation_options,
+                },
+                sort_keys=True,
+            ),
+        )
+
     async def invoke() -> tuple[OutputT, StrictRelayAdapter]:
+        nonlocal adapter
         async with httpx.AsyncClient(trust_env=False) as client:
             adapter = StrictRelayAdapter(relay_route, client, provider.api_key)
-            result = await adapter.generate(list(messages), remaining_seconds, output_type)
+            result = await adapter.generate(
+                list(messages), remaining_seconds, output_type, **generation_options
+            )
             return result, adapter
 
     try:
@@ -440,19 +488,12 @@ def call_model[OutputT: BaseModel](
             "model_identity_mismatch": "identity_error",
         }.get(exc.code, "indeterminate")
         attempt.error_code = exc.code
-        attempt.usage = {
-            **unavailable_usage,
-            "latency_ms": round((time.monotonic() - began) * 1000),
-        }
+        attempt.usage = measured_usage()
+        log_usage(exc.code, attempt.usage)
         attempt.save(update_fields=["completed_at", "status", "error_code", "usage"])
         raise
-    usage = {
-        "input_tokens": adapter.usage.get("input_tokens"),
-        "output_tokens": adapter.usage.get("output_tokens"),
-        "cached_input_tokens": adapter.usage.get("cached_input_tokens"),
-        "latency_ms": round((time.monotonic() - began) * 1000),
-        "usage_source": "provider_reported" if adapter.usage else "unavailable",
-    }
+    usage = measured_usage()
+    log_usage("succeeded", usage)
     with transaction.atomic():
         if owner_id is not None:
             owner = User.objects.select_for_update().get(pk=owner_id)

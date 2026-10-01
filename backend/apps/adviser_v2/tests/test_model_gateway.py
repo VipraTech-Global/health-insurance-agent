@@ -195,3 +195,69 @@ def test_offline_processing_reuses_an_exact_successful_response(db: None, monkey
 
     assert observed == output
     assert ModelAttempt.objects.filter(processing_job=job).count() == 1
+
+    # Different generation options must not reuse a response from another request.
+    async def changed_generate(adapter, messages, remaining_seconds, output_type, **options):
+        assert options == {"reasoning_effort": "low", "max_output_tokens": 8192}
+        adapter.reported_model = "gpt-5.6-sol"
+        adapter.usage = {
+            "input_tokens": 500,
+            "cached_input_tokens": 384,
+            "reasoning_tokens": 12,
+            "output_tokens": 40,
+        }
+        return output
+
+    monkeypatch.setattr(
+        "apps.adviser_v2.model_gateway.StrictRelayAdapter.generate", changed_generate
+    )
+    assert (
+        call_model(
+            model="gpt-5.6-sol",
+            schema_name="policy_extraction",
+            output_type=PolicyRuleExtractionV1,
+            messages=messages,
+            remaining_seconds=60,
+            processing_job=job,
+            reuse_successful_processing_result=True,
+            reasoning_effort="low",
+            max_output_tokens=8192,
+        )
+        == output
+    )
+    changed = ModelAttempt.objects.filter(processing_job=job).latest("started_at")
+    assert changed.id != attempt.id
+    assert changed.request_commitment != attempt.request_commitment
+    assert changed.usage["cached_input_tokens"] == 384
+    from apps.adviser_v2.contracts import validate_contract
+
+    validate_contract("UsageV1", changed.usage)
+
+    async def incomplete(adapter, *args, **options):
+        from apps.adviser.ai import RelayFailure
+
+        adapter.usage = {
+            "input_tokens": 500,
+            "cached_input_tokens": 384,
+            "reasoning_tokens": 12,
+            "output_tokens": 40,
+        }
+        raise RelayFailure("incomplete_response", "The selected model did not finish its answer.")
+
+    monkeypatch.setattr("apps.adviser_v2.model_gateway.StrictRelayAdapter.generate", incomplete)
+    from apps.adviser.ai import RelayFailure
+
+    with pytest.raises(RelayFailure):
+        call_model(
+            model="gpt-5.6-sol",
+            schema_name="policy_extraction",
+            output_type=PolicyRuleExtractionV1,
+            messages=messages,
+            remaining_seconds=60,
+            processing_job=job,
+        )
+    failed = ModelAttempt.objects.filter(processing_job=job).latest("started_at")
+    assert failed.error_code == "incomplete_response"
+    assert failed.usage["output_tokens"] == 40
+    assert failed.usage["cached_input_tokens"] == 384
+    validate_contract("UsageV1", failed.usage)

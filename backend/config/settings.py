@@ -198,6 +198,13 @@ COVERGUIDE_CUSTOMER_INTERPRETATION_MODEL = os.environ.get(
 )
 COVERGUIDE_POLICY_EXTRACTION_MODEL = "gpt-5.6-sol"
 COVERGUIDE_POLICY_REVIEW_MODEL = "gpt-5.6-terra"
+# Applied only to manifest-v2 criterion extraction; other routes keep their defaults.
+COVERGUIDE_POLICY_EXTRACTION_REASONING_EFFORT = os.environ.get(
+    "COVERGUIDE_POLICY_EXTRACTION_REASONING_EFFORT", "low"
+)
+COVERGUIDE_POLICY_EXTRACTION_MAX_OUTPUT_TOKENS = int(
+    os.environ.get("COVERGUIDE_POLICY_EXTRACTION_MAX_OUTPUT_TOKENS", "8192")
+)
 COVERGUIDE_COMPARISON_MODEL = os.environ.get("COVERGUIDE_COMPARISON_MODEL", "gpt-5.6-sol")
 # Optional OmniRoute override for the two interactive roles only: ``omniroute:<requested id>``,
 # which must appear in OMNIROUTE_MODELS. Empty keeps the relay model above.

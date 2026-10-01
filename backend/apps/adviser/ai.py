@@ -151,6 +151,9 @@ class StrictRelayAdapter:
         canonical_messages: list[dict[str, str]],
         remaining_deadline: float,
         output_type: type[T],
+        *,
+        reasoning_effort: str | None = None,
+        max_output_tokens: int | None = None,
     ) -> T:
         if remaining_deadline <= 0:
             raise RelayFailure("deadline_exceeded", "The turn deadline has expired.")
@@ -180,6 +183,14 @@ class StrictRelayAdapter:
                 }
             },
         }
+        if reasoning_effort is not None:
+            if reasoning_effort not in {"low", "medium", "high"}:
+                raise RelayFailure("invalid_generation_options", "Unsupported reasoning effort.")
+            payload["reasoning"] = {"effort": reasoning_effort}
+        if max_output_tokens is not None:
+            if type(max_output_tokens) is not int or max_output_tokens <= 0:
+                raise RelayFailure("invalid_generation_options", "Invalid output token limit.")
+            payload["max_output_tokens"] = max_output_tokens
         try:
             async with asyncio.timeout(min(self.route.timeout_seconds, remaining_deadline)):
                 async with self.client.stream(
@@ -240,10 +251,6 @@ class StrictRelayAdapter:
                 "model_identity_mismatch", "The relay did not confirm the exact selected model."
             )
         self.reported_model = expected_model
-        if envelope.get("status") != "completed" or envelope.get("error"):
-            raise RelayFailure(
-                "incomplete_response", "The selected model did not finish its answer."
-            )
         usage = envelope.get("usage", {})
         if isinstance(usage, dict):
             self.usage = {
@@ -251,6 +258,18 @@ class StrictRelayAdapter:
                 for key in ("input_tokens", "output_tokens", "total_tokens")
                 if type(usage.get(key)) is int and usage[key] >= 0
             }
+            for detail_key, token_key, saved_key in (
+                ("input_tokens_details", "cached_tokens", "cached_input_tokens"),
+                ("output_tokens_details", "reasoning_tokens", "reasoning_tokens"),
+            ):
+                details = usage.get(detail_key)
+                value = details.get(token_key) if isinstance(details, dict) else None
+                if type(value) is int and value >= 0:
+                    self.usage[saved_key] = value
+        if envelope.get("status") != "completed" or envelope.get("error"):
+            raise RelayFailure(
+                "incomplete_response", "The selected model did not finish its answer."
+            )
         try:
             contents = [
                 part["text"]

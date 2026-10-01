@@ -1351,6 +1351,19 @@ def _previous_extraction_batch(
     return previous, attempt_count
 
 
+def _shared_evidence_first(messages: list[dict[str, str]]) -> list[dict[str, str]]:
+    """Keep version-2's full per-plan prefix byte-identical across criteria."""
+    contract = next(
+        index for index, message in enumerate(messages)
+        if message["content"].startswith("Approved executable rule contract: ")
+    )
+    assert messages[-1]["role"] == "user"
+    return [
+        messages[0], messages[contract], messages[-1],
+        *[message for index, message in enumerate(messages[:-1]) if index not in {0, contract}],
+    ]
+
+
 def _run_extraction_batch(
     *,
     job: ProcessingJob,
@@ -1448,6 +1461,7 @@ def _run_extraction_batch(
         )
         try:
             if criterion is not None:
+                messages = _shared_evidence_first(messages)
                 size = request_bytes_with_headroom(settings.COVERGUIDE_POLICY_EXTRACTION_MODEL, messages, PolicyRuleExtractionV1.model_json_schema())
                 logging.getLogger(__name__).info("Version-2 extraction %s: complete request %s bytes, reserved output headroom 200000 bytes", criterion.key, size)
             result = call_model(
@@ -1458,6 +1472,9 @@ def _run_extraction_batch(
                 remaining_seconds=_remaining_rule_seconds(deadline),
                 processing_job=job,
                 reuse_successful_processing_result=True,
+                **({"reasoning_effort": settings.COVERGUIDE_POLICY_EXTRACTION_REASONING_EFFORT,
+                    "max_output_tokens": settings.COVERGUIDE_POLICY_EXTRACTION_MAX_OUTPUT_TOKENS}
+                   if criterion is not None else {}),
             )
         except RelayFailure as exc:
             retryable = RULE_RETRYABLE_RELAY_CODES | ({"incomplete_response", "malformed_response"} if criterion is not None else set())
@@ -1656,6 +1673,7 @@ def _run_review_batch(
         )
         try:
             if criterion is not None:
+                messages = _shared_evidence_first(messages)
                 size = request_bytes_with_headroom(settings.COVERGUIDE_POLICY_REVIEW_MODEL, messages, PolicyRuleReviewV1.model_json_schema())
                 logging.getLogger(__name__).info("Version-2 review %s: complete request %s bytes, reserved output headroom 200000 bytes", criterion.key, size)
             result = call_model(
@@ -1666,6 +1684,8 @@ def _run_review_batch(
                 remaining_seconds=_remaining_rule_seconds(deadline),
                 processing_job=job,
                 reuse_successful_processing_result=True,
+                **({"reasoning_effort": "high"}
+                   if criterion is not None else {}),
             )
         except RelayFailure as exc:
             if (
