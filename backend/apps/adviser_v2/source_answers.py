@@ -206,7 +206,7 @@ def answer_question(turn, question: str, profile: dict, packet: EvidencePacket) 
                 {
                     "role": "system",
                     "content": REVIEW_SYSTEM
-                    + " Review only the bounded packet. Do not demand unrelated benefits. Reject any personal computed outcome. Check every number against the quoted clause; missing quantity entries are a material error.",
+                    + " Review only the bounded packet. Do not demand unrelated benefits. Reject any personal computed outcome. Check every measured amount, percentage, duration and count against the quoted clause; missing quantity entries for these are a material error. Statute years, clause numbers and policy identifiers require exact quoted support, but are identifiers rather than measured quantities.",
                 },
                 {"role": "system", "content": evidence},
                 {
