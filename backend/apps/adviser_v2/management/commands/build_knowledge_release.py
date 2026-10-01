@@ -27,6 +27,8 @@ class Command(BaseCommand):
 
     def handle(self, *args: Any, **options: Any) -> None:
         try:
+            from apps.adviser_v2.prepared_facts import prepare_fact_indexes
+            prepare_fact_indexes(options["manifest"].resolve())
             release, report = build_release(
                 options["manifest"].resolve(),
                 comparison_product_count=3 if options["three_product_demo"] else 5,

@@ -166,7 +166,13 @@ def enqueue_stage(
     if stage == "validate":
         input_data["rule_validator_version"] = RULE_VALIDATOR_VERSION
     if stage == "index":
-        input_data["embedding"] = _embedding_scope_identity()
+        from .processing.artifacts import read_artifact
+        from .processing.cited_facts import FACT_PROTOCOL
+        if parent_job and read_artifact(parent_job).get("manifest_processing_version") == FACT_PROTOCOL:
+            from .evidence_retrieval import RAW_INDEX_VERSION
+            input_data["raw_index"] = RAW_INDEX_VERSION
+        else:
+            input_data["embedding"] = _embedding_scope_identity()
     if stage == "reconcile":
         input_data["reconciliation_version"] = RECONCILIATION_VERSION
     input_commitment = commitment(input_data)

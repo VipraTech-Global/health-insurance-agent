@@ -13,6 +13,7 @@ from apps.adviser.ai import RelayFailure
 from ..model_gateway import qualified_route
 from ..models import (
     KnowledgeChannel,
+    KnowledgeReleaseFact,
     KnowledgeReleaseRule,
     PolicyVersion,
     PolicyVersionDocument,
@@ -80,6 +81,7 @@ def catalogue_readiness(channel_name: str = "live") -> dict[str, Any]:
     rule_counts: dict[object, int] = defaultdict(int)
     category_readiness: dict[str, dict[str, Any]] = {}
     if release is not None:
+        published_rule_product_ids.update(KnowledgeReleaseFact.objects.filter(knowledge_release=release).values_list('policy_version__product_id', flat=True))
         rows = (
             KnowledgeReleaseRule.objects.filter(knowledge_release=release)
             .values("policy_rule__policy_version__product_id")

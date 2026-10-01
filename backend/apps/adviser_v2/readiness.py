@@ -515,6 +515,11 @@ def validate_bundle(
             blockers.append("latest_manifest_v2_validation_not_succeeded")
             validation = None
     index_artifact: dict[str, Any] | None = None
+    if product_entry.get("manifest_schema_version") == 2 and validation is not None:
+        from .processing.cited_facts import FACT_PROTOCOL
+        if read_artifact(validation).get("manifest_processing_version") == FACT_PROTOCOL:
+            from .prepared_facts import fact_product_report
+            return fact_product_report(policy_version, validation, blockers, warnings, runtime=include_runtime_gates)
     coverage = 0.0
     covered: set[str] = set()
     validated_rule_ids: set[uuid.UUID] = set()

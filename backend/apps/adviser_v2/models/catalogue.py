@@ -260,6 +260,25 @@ class KnowledgeReleaseRule(ApprovedModel):
         ]
 
 
+class KnowledgeReleaseFact(ApprovedModel):
+    """Immutable descriptive source fact; never an executable policy rule."""
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    knowledge_release = models.ForeignKey('KnowledgeRelease', on_delete=models.PROTECT)
+    policy_version = models.ForeignKey('PolicyVersion', on_delete=models.PROTECT)
+    validation_job = models.ForeignKey('ProcessingJob', on_delete=models.PROTECT)
+    validation_sha256 = models.CharField(max_length=64)
+    criterion = models.CharField(max_length=80)
+    fact = models.JSONField()
+    fact_sha256 = models.CharField(max_length=64)
+
+    class Meta:
+        db_table = 'adviser_v2_knowledge_release_fact'
+        constraints = [
+            models.UniqueConstraint(fields=['knowledge_release', 'policy_version', 'criterion'], name='v2_release_fact_criterion_uq'),
+        ]
+
+
 class KnowledgeChannel(ApprovedModel):
     'Selects the current published knowledge release for one application environment.'
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)

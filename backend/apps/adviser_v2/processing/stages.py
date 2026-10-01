@@ -2442,6 +2442,10 @@ def run_index(job: ProcessingJob) -> dict[str, Any]:
     policy_version = _policy_version(job)
     validation_job = _ancestor(job, "validate")
     artifact = read_artifact(validation_job)
+    from .cited_facts import FACT_PROTOCOL
+    if artifact.get("manifest_processing_version") == FACT_PROTOCOL:
+        from ..prepared_facts import run_fact_index
+        return run_fact_index(job)
     if artifact.get("policy_version_id") != str(policy_version.id):
         raise ValueError("Index stage validation artifact belongs to another policy version.")
     if artifact.get("rule_prompt_version") != RULE_PROMPT_VERSION:

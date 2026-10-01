@@ -5,6 +5,7 @@ cd -- "$(dirname -- "$0")/.."
 set -a
 source .env.star-slice
 set +a
+if [[ -d .venv-star ]]; then export UV_PROJECT_ENVIRONMENT="$PWD/.venv-star"; fi
 if [[ "$POSTGRES_DB" != coverguide_star_slice || "$POSTGRES_TEST_DB" != test_coverguide_star_slice || "$REDIS_URL" != redis://127.0.0.1:6401/0 ]]; then
   echo 'Star slice database/test database/broker isolation check failed.' >&2
   exit 1
