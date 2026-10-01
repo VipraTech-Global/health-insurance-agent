@@ -1,0 +1,95 @@
+{
+  "id": "comprehensive-secondary-only-2026-10-01",
+  "policy_version_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+  "criteria": {
+    "maternity": {
+      "source_fact_sha256": "e498f2087ffba09cdca5c3e0ef0b99e1f7d26d041e8dd99e75b7adb6f32b0e69",
+      "value_sentence_indexes": [
+        0,
+        2,
+        3,
+        4,
+        7,
+        8
+      ],
+      "condition_indexes": [
+        0,
+        2,
+        3,
+        5,
+        6,
+        7
+      ],
+      "quantity_indexes": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "citation_indexes": [
+        0,
+        3,
+        4,
+        5,
+        6,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "reason": "Newborn and vaccination statements belong to the separate newborn criterion; delivery limits, lifetime event limit, continuous waiting period, self/spouse conditions and exclusions remain."
+    },
+    "sum_insured": {
+      "source_fact_sha256": "7b3ad761486eab43397aa7e89d17510f856d318c1e761b006e9facddd7b69e74",
+      "value_sentence_indexes": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "condition_indexes": [
+        0,
+        1,
+        2
+      ],
+      "quantity_indexes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "citation_indexes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "reason": "Detailed secondary waiting-period recital removed; every offered sum insured, entry condition, renewal-only revision and increased-portion waiting-period condition remains in the core value with exact quotes. The separate waiting-period criteria retain their own cited facts."
+    }
+  }
+}

@@ -41,11 +41,13 @@ from .cited_facts import (
 from .clause_citations import store_clause
 from .criterion_attempts import TRANSPORT_FAILURES, extract_criterion, new_criterion_state
 from .criterion_evidence import CRITERIA, PROGRESS_KEY, request_bytes_with_headroom
+from .fact_projection import primary_projection
 from .manifest_v2 import raw_bundle_passages
 
 log = logging.getLogger(__name__)
 SEED = Path(__file__).resolve().parents[4] / "data/manifests/star-three-plan-retained-facts.json"
 RERUN = SEED.with_name("star-comprehensive-table-fact-rerun.json")
+PROJECTIONS = SEED.with_name("star-comprehensive-secondary-projections.json")
 
 
 def resume_pipeline_failure(state: dict[str, Any]) -> None:
@@ -143,6 +145,22 @@ def _progress(job: ProcessingJob, policy_id: str, core: list[dict[str, Any]]) ->
                     state.pop("review_complete", None)
             if RERUN.exists():
                 apply_approved_rerun(progress, json.loads(RERUN.read_text()))
+            if PROJECTIONS.exists():
+                projection = json.loads(PROJECTIONS.read_text())
+                if projection['policy_version_id'] == policy_id:
+                    for criterion in CRITERIA:
+                        if criterion.key not in projection['criteria']:
+                            continue
+                        state = progress['criteria'][criterion.key]
+                        if state.get('secondary_projection_id') == projection['id']:
+                            continue
+                        original = PolicyRuleExtractionV1.model_validate(state['result'])
+                        narrowed = primary_projection(carrier_fact(original.rules[0]), projection['criteria'][criterion.key])
+                        state['before_secondary_projection'] = {k: v for k, v in state.items()}
+                        state.update(result=original.model_copy(update={'rules': [fact_carrier(criterion, narrowed)]}).model_dump(mode='json'),
+                            secondary_projection_id=projection['id'], complete=True, last_error=None)
+                        for key in ('review', 'reviewed_result', 'review_complete', 'review_blockers', 'review_notes'):
+                            state.pop(key, None)
             return progress
         if prior_validation is None and old.stage == "validate":
             prior_validation = old

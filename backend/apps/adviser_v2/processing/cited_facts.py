@@ -17,7 +17,7 @@ from ..schemas import ExtractedPolicyRule, PolicyRuleExtractionV1, PolicyRuleRev
 from .criterion_evidence import Criterion, criterion_for_key, quoted_quantities
 
 FACT_PROTOCOL = "coverguide-manifest-v2-cited-facts/1"
-FACT_PROMPT_REVISION = "table-clauses-and-secondary-statements/3"
+FACT_PROMPT_REVISION = "table-clauses-and-secondary-statements/4"
 FACT_TERM = "comparison_cited_fact_v1"
 MATERIAL_REASONS = {"wrong_value", "wrong_section", "missing_material_condition", "wrong_variant"}
 NOTE_REASONS = {"underwriting", "other_terms", "day_boundary", "rule_not_executable", "note"}
@@ -329,6 +329,8 @@ def fact_instruction(criterion: Criterion) -> str:
         "not unknowns. Continuous coverage and entry age ARE material conditions. All optional covers are "
         "unselected. Keep the core value concise. Peripheral assertions (e.g. grace-period coverage) "
         "belong ONLY in secondary_statements, never in value or core conditions; omit them when unnecessary. "
+        "Cover ONLY the requested criterion: newborn/vaccination assertions are secondary to maternity, "
+        "and detailed waiting-period recitals are secondary to sum-insured purchase choices. "
         "Do not copy a whole disease list: summarize the specified waiting period and material exceptions. "
         "Keep the complete inner fact JSON below 9500 characters (the text carrier has a hard 10000 limit). "
         "Do not duplicate a full prose value in conditions. Do not author prices or no_copay. "

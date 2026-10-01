@@ -423,3 +423,26 @@ def test_family_table_counts_need_the_exact_abbreviation_legend():
     fact.table_regions = []
     result.rules = [fact_carrier(criterion, fact)]
     assert fact_problems(POLICY_ID, criterion, result, pages)
+
+
+def test_secondary_projection_only_deletes_complete_retained_assertions():
+    from apps.adviser_v2.processing.cited_facts import carrier_fact
+    from apps.adviser_v2.processing.fact_projection import fact_digest, primary_projection
+
+    criterion, result, pages = sample('maternity')
+    fact = carrier_fact(result.rules[0])
+    fact.value = 'Delivery has a stated limit. Newborn coverage is also discussed.'
+    selection = {'source_fact_sha256': fact_digest(fact), 'value_sentence_indexes': [0],
+        'condition_indexes': [], 'quantity_indexes': [0], 'citation_indexes': [0],
+        'reason': 'Keep newborn statements in the separate criterion.'}
+    projected = primary_projection(fact, selection)
+    assert projected.value == 'Delivery has a stated limit.'
+    assert projected.citations == fact.citations
+    assert projected.quantities == fact.quantities
+    assert fact.value.endswith('Newborn coverage is also discussed.')
+    with pytest.raises(ValueError, match='complete core'):
+        primary_projection(fact, {**selection, 'value_sentence_indexes': []})
+    with pytest.raises(ValueError, match='differs'):
+        primary_projection(fact, {**selection, 'source_fact_sha256': 'wrong'})
+    with pytest.raises(ValueError, match='original quotation'):
+        primary_projection(fact, {**selection, 'citation_indexes': []})
