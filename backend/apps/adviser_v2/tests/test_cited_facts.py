@@ -490,24 +490,61 @@ def test_table_cell_uses_its_exact_currency_heading_and_indian_value():
     assert fact_problems(POLICY_ID, criterion, result, pages)
 
 
-def test_pdf_controls_and_ligatures_restore_raw_source_without_changing_words():
+def test_stripped_assure_ped_spaces_map_back_to_original_clause_span():
     criterion, result, pages = sample()
     from apps.adviser_v2.processing.cited_facts import carrier_fact
 
     fact = carrier_fact(result.rules[0])
-    fact.citations[0].quote = 'B. A benefit for three dependent children.'
+    fact.citations[0].quote = 'In case of enhancement of Sum Insured the exclusion shall apply afresh to the extent of Sum Insured increase.'
+    fact.quantities = []
     result.rules = [fact_carrier(criterion, fact)]
-    pages[0]['passage'] = 'Header\nB.\t\x07\nA beneﬁt for three dependent children.\nFooter'
+    raw_clause = 'In case of enhancement of Sum\nInsuredtheexclusionshallapplyafresh\nto the extent of Sum Insured increase.'
+    pages[0]['passage'] = 'Header\nB.\t\x07' + raw_clause + '\nFooter'
+    start, end = clause_offsets(fact.citations[0], pages[0]['passage'])
+    assert (start, end) == (len('Header\nB.\t\x07'), len('Header\nB.\t\x07') + len(raw_clause))
     anchored, changes = anchor_transcribed_quotes(criterion, result, pages)
     assert len(changes) == 1
-    assert carrier_fact(anchored.rules[0]).citations[0].quote == 'B.\t\x07\nA beneﬁt for three dependent children.'
+    assert carrier_fact(anchored.rules[0]).citations[0].quote == raw_clause
+    assert pages[0]['passage'][start:end] == raw_clause
+    assert changes[0]['model_quote'] == fact.citations[0].quote
     assert not fact_problems(POLICY_ID, criterion, anchored, pages)
-    pages[0]['passage'] = pages[0]['passage'].replace('three dependent', 'threedependent')
+    assert carrier_fact(result.rules[0]).citations[0].quote == fact.citations[0].quote
+
+
+@pytest.mark.parametrize('raw, quoted', [
+    ('beneﬁt', 'benefit'), ('Benefit', 'benefit'), ('30 months', '36 months'),
+    ('B.\x07Clause', 'B.Clause'), ('day–care', 'day-care'), ('Clause.', 'Clause,'),
+    ('e\u0301', 'é'), ('zero\u200bwidth', 'zerowidth'),
+])
+def test_quote_matching_never_normalizes_non_whitespace(raw, quoted):
+    criterion, result, pages = sample()
+    from apps.adviser_v2.processing.cited_facts import carrier_fact
+
+    fact = carrier_fact(result.rules[0])
+    fact.citations[0].quote = quoted
+    result.rules = [fact_carrier(criterion, fact)]
+    pages[0]['passage'] = 'Header\n' + raw + '\nFooter'
+    with pytest.raises(ValueError, match='ignoring whitespace only'):
+        clause_offsets(fact.citations[0], pages[0]['passage'])
     unchanged, changes = anchor_transcribed_quotes(criterion, result, pages)
     assert not changes
     assert fact_problems(POLICY_ID, criterion, unchanged, pages)
-    from apps.adviser_v2.processing.criterion_evidence import quoted_quantities
-    assert quoted_quantities('Payable from Day 1 of birth.')['day'] == {1}
+
+
+def test_whitespace_only_matching_preserves_occurrences_and_rejects_whole_pages():
+    text = 'Header\nInsuredtheexclusion\nInsured \t the\nexclusion\u00a0\nFooter'
+    clause = Clause(page_span_id=PAGE_ID, quote='Insured the exclusion', occurrence=1)
+    start, end = clause_offsets(clause, text)
+    assert text[start:end] == 'Insured \t the\nexclusion'
+    assert start == text.index('Insured \t')
+    all_whitespace = Clause(page_span_id=PAGE_ID, quote=' \t\n\r\v\f\u00a0\u2028')
+    with pytest.raises(ValueError, match='entire page'):
+        clause_offsets(all_whitespace, text)
+    with pytest.raises(ValueError, match='entire page'):
+        clause_offsets(Clause(page_span_id=PAGE_ID, quote=''.join(text.split())), text)
+    with pytest.raises(ValueError, match='entire page'):
+        clause_offsets(Clause(page_span_id=PAGE_ID, quote='Insuredtheexclusion'),
+            'Header\nInsured' + ' ' * 700 + 'theexclusion\nFooter')
 
 
 def test_ratio_fraction_is_the_same_source_number_without_executing_a_formula():

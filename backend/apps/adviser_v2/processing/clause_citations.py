@@ -57,6 +57,7 @@ def clause_rectangles(chars: tuple[dict[str, Any], ...], quote: str, occurrence:
 
 def store_clause(clause: Clause, passage: dict[str, Any]) -> EvidenceSpan:
     start, end = clause_offsets(clause, passage["passage"])
+    raw_quote = passage["passage"][start:end]
     source = EvidenceSpan.objects.select_related("page__original_file", "source_capture").get(pk=clause.page_span_id)
     if source.quote != passage["passage"] or source.page is None:
         raise ValueError("Clause parent is not its intact original raw page.")
@@ -65,8 +66,8 @@ def store_clause(clause: Clause, passage: dict[str, Any]) -> EvidenceSpan:
     # Reject ambiguity caused by repeated PDF text rather than highlighting an
     # arbitrary occurrence. Raw and visual occurrence indexes must agree.
     folded_prefix = _normalized(passage["passage"][:start])
-    visual_occurrence = folded_prefix.count(_normalized(clause.quote))
-    boxes = clause_rectangles(chars, clause.quote, visual_occurrence)
+    visual_occurrence = folded_prefix.count(_normalized(raw_quote))
+    boxes = clause_rectangles(chars, raw_quote, visual_occurrence)
     anchor = {
         "page": passage["physical_page"], "start": start, "end": end,
         "page_text_sha256": hashlib.sha256(passage["passage"].encode()).hexdigest(),
@@ -79,9 +80,9 @@ def store_clause(clause: Clause, passage: dict[str, Any]) -> EvidenceSpan:
     }
     span, _created = EvidenceSpan.objects.get_or_create(
         source_capture=source.source_capture, page=source.page,
-        section_label=f"manifest-v2-clause-{start}-{end}-{hashlib.sha256(clause.quote.encode()).hexdigest()[:16]}",
+        section_label=f"manifest-v2-clause-{start}-{end}-{hashlib.sha256(raw_quote.encode()).hexdigest()[:16]}",
         defaults={
-            "quote": clause.quote, "method": "native_text", "verification": "reviewed",
+            "quote": raw_quote, "method": "native_text", "verification": "reviewed",
             "locator": locator,
             "context": {"span_ids": [str(source.id)], "notes": [
                 ANCHOR_PREFIX + json.dumps(anchor, sort_keys=True),

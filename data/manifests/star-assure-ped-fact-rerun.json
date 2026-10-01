@@ -1,0 +1,12 @@
+{
+  "id": "user-approved-assure-ped-whitespace-only-2026-10-01",
+  "policy_version_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+  "core_evidence_sha256": "c5b932da215ea739c17316aa64e858f17f18770f96d9ca702bbd1c0fe9e00cc8",
+  "baseline_validation_job_id": "12c472d3-ea57-4b44-9044-95f51e1c1ecc",
+  "reason": "User authorized only Assure PED after fixing our whitespace-sensitive quotation check. Preserve all twelve accepted facts and previous PED attempts; give PED one fresh first call and at most one corrective retry, with independent review.",
+  "criteria": {
+    "ped_waiting_period": {
+      "instruction": "Read wording physical page 27, Code-Excl 01 A. The core fact must state 30 months continuous coverage for a 3-year policy term and 36 months continuous coverage for 1-year and 2-year terms, from first inception with the insurer. Preserve the material conditions on increased sum insured, portability and declared PED from the same section. Quote only short clauses from the raw page, starting after bullet/control markers unless quoting them exactly. Whitespace alone may differ: 'Insuredtheexclusionshallapplyafresh' matches 'Insured the exclusion shall apply afresh'. Every other character must be identical; do not normalize case, punctuation, ligatures or non-whitespace controls. Do not add a secondary grace-period statement. Verify the complete core fact independently against the supplied source."
+    }
+  }
+}

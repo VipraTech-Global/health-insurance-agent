@@ -7,7 +7,6 @@ have independent dispositions, and exact quotations become their own EvidenceSpa
 from __future__ import annotations
 
 import json
-import re
 from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field
@@ -16,7 +15,7 @@ from ..schemas import ExtractedPolicyRule, PolicyRuleExtractionV1, PolicyRuleRev
 from .criterion_evidence import Criterion, criterion_for_key, normalized_quantity, quoted_quantities
 
 FACT_PROTOCOL = "coverguide-manifest-v2-cited-facts/1"
-FACT_PROMPT_REVISION = "table-clauses-and-secondary-statements/9"
+FACT_PROMPT_REVISION = "whitespace-only-clause-matching/10"
 FACT_TERM = "comparison_cited_fact_v1"
 MATERIAL_REASONS = {"wrong_value", "wrong_section", "missing_material_condition", "wrong_variant"}
 NOTE_REASONS = {"underwriting", "other_terms", "day_boundary", "rule_not_executable", "note"}
@@ -97,15 +96,21 @@ def carrier_fact(rule: ExtractedPolicyRule) -> CitedFact:
 
 
 def clause_offsets(clause: Clause, text: str) -> tuple[int, int]:
-    """Exact bytes decoded as raw Unicode text; never normalize the actual quote."""
-    if not clause.quote.strip() or clause.quote == text or len(clause.quote.split()) > 120:
+    """Ignore only whitespace and map the match back to original raw characters."""
+    positions = [i for i, char in enumerate(text) if not char.isspace()]
+    source = "".join(text[i] for i in positions)
+    target = "".join(char for char in clause.quote if not char.isspace())
+    if not target or target == source or len(clause.quote.split()) > 120:
         raise ValueError("Quote must be a short sentence/clause, not an entire page.")
-    start = -1
+    match = -1
     for _ in range(clause.occurrence + 1):
-        start = text.find(clause.quote, start + 1)
-        if start < 0:
-            raise ValueError("Quotation does not occur word for word on its cited raw page.")
-    return start, start + len(clause.quote)
+        match = source.find(target, match + 1)
+        if match < 0:
+            raise ValueError("Quotation does not occur word for word on its cited raw page when ignoring whitespace only.")
+    start, end = positions[match], positions[match + len(target) - 1] + 1
+    if end - start > 700 or len(text[start:end].split()) > 120:
+        raise ValueError("Quote must be a short sentence/clause, not an entire page.")
+    return start, end
 
 
 def table_region_problems(fact: CitedFact, pages: dict[str, str]) -> list[str]:
@@ -133,12 +138,11 @@ def table_region_problems(fact: CitedFact, pages: dict[str, str]) -> list[str]:
 def anchor_transcribed_quotes(
     criterion: Criterion, result: PolicyRuleExtractionV1, passages: list[dict[str, Any]],
 ) -> tuple[PolicyRuleExtractionV1, list[dict[str, Any]]]:
-    """Restore original PDF formatting before exact validation; change no words.
+    """Restore the raw substring after whitespace-only comparison.
 
     ModelAttempt retains the untouched model output. The projected candidate uses
-    the original raw substring. PDF control separators and printed ligatures
-    (such as fi/ﬁ) may differ in transcription. Punctuation, spelling, word
-    boundaries and case must match; never repair a phrase, page, section or number.
+    the original raw substring. All non-whitespace characters must be identical:
+    no punctuation, case, ligature or non-whitespace control normalization.
     """
     if len(result.rules) != 1:
         return result, []
@@ -150,19 +154,13 @@ def anchor_transcribed_quotes(
     changes = []
     for index, clause in enumerate(fact.citations):
         text = pages.get(clause.page_span_id, "")
-        if clause.quote in text:
+        try:
+            start, end = clause_offsets(clause, text)
+        except ValueError:
             continue
-        ligatures = str.maketrans({"ﬀ": "ff", "ﬁ": "fi", "ﬂ": "fl", "ﬃ": "ffi", "ﬄ": "ffl", "ﬅ": "st", "ﬆ": "st"})
-        tokens = list(re.finditer(r"[^\s\x00-\x1f]+", text))
-        expected = [word.translate(ligatures) for word in re.findall(r"[^\s\x00-\x1f]+", clause.quote)]
-        actual = [token.group().translate(ligatures) for token in tokens]
-        matches = [(tokens[i].start(), tokens[i + len(expected) - 1].end())
-            for i in range(len(tokens) - len(expected) + 1)
-            if expected and actual[i:i + len(expected)] == expected]
-        if len(matches) <= clause.occurrence:
-            continue
-        start, end = matches[clause.occurrence]
         original = text[start:end]
+        if original == clause.quote:
+            continue
         changes.append({"citation_index": index, "page_span_id": clause.page_span_id,
             "model_quote": clause.quote, "raw_quote": original})
         clause.quote = original
@@ -322,7 +320,10 @@ def fact_instruction(criterion: Criterion) -> str:
         "This is a descriptive text carrier, not an executable rule. The human value MUST include "
         "every material condition, exception, table band and selection distinction. Also list material "
         "conditions separately with indexes into citations. Each quote MUST be a SHORT exact clause "
-        "copied from the raw page, retaining newlines and punctuation; maximum 700 characters/120 words "
+        "copied from the raw page; whitespace alone may differ and is mapped back to the original span. "
+        "All other characters (including punctuation, case, ligatures and non-whitespace controls) "
+        "must be identical. Start after a bullet/control marker when it is not part of the clause. "
+        "Maximum 700 characters/120 words "
         "per quote. Use several short quotes for separate conditions, not one page. NEVER rewrite a table "
         "as a quoted sentence. Quote cells/rows and headings/row labels separately, exactly as printed, "
         "and group their citation_indexes in table_regions with label_indexes identifying the headings. "
