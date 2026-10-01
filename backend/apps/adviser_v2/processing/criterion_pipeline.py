@@ -23,6 +23,7 @@ from .criterion_evidence import (
     PROGRESS_KEY,
     RETRY_PROTOCOL,
     Criterion,
+    criterion_for_issue,
     criterion_for_key,
     criterion_rule_problems,
     extraction_payload,
@@ -303,7 +304,11 @@ def validated_criteria(
             rule for rule in extraction.rules if criterion_for_key(rule.rule_key) == criterion
         ]
         supported = [by_key[rule.rule_key] for rule in candidates if rule.rule_key in by_key]
-        reasons = [reason for reason in extraction.material_issues if criterion.key + ":" in reason]
+        reasons = [
+            reason
+            for reason in extraction.material_issues
+            if criterion_for_issue(reason) == criterion
+        ]
         for candidate in candidates:
             if candidate.rule_key in by_key:
                 continue

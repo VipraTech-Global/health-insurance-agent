@@ -363,6 +363,28 @@ def test_thirteen_criteria_count_excludes_derived_no_copay_and_budget():
     assert all(item["unknown_reasons"] for item in statuses if item["status"] == "unknown")
 
 
+def test_issue_attribution_does_not_match_a_different_criterion_inside_a_rule_key():
+    from apps.adviser_v2.processing.criterion_pipeline import validated_criteria
+
+    rule = SimpleNamespace(
+        id=uuid.uuid4(), rule_key="sum_insured_choices.definition.sum_insured_choice"
+    )
+    reason = "maternity_and_newborn: maternity: maternity_and_newborn.limit.maternity_by_sum_insured: invalid table namespace"
+    statuses = validated_criteria(
+        SimpleNamespace(rules=[rule], material_issues=[reason]),
+        SimpleNamespace(reviews=[], missing_rules=[]),
+        [rule],
+        [],
+    )
+    assert (
+        next(item for item in statuses if item["criterion"] == "sum_insured")["status"]
+        == "supported"
+    )
+    assert next(item for item in statuses if item["criterion"] == "maternity")[
+        "unknown_reasons"
+    ] == [reason]
+
+
 @pytest.mark.parametrize("unknown_count", [6, 7])
 def test_publication_blocks_at_seven_unresolved_source_criteria(unknown_count):
     rule_id = str(uuid.uuid4())

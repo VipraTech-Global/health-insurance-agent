@@ -211,6 +211,13 @@ def criterion_for_key(rule_key: str) -> Criterion | None:
     )
 
 
+def criterion_for_issue(reason: str) -> Criterion | None:
+    return next(
+        (item for item in CRITERIA if reason.startswith(f"{item.category}: {item.key}:")),
+        None,
+    )
+
+
 def extraction_payload(artifact: dict[str, Any]) -> dict[str, Any]:
     """Internal progress metadata is separate from the unchanged model response contract."""
     result = dict(artifact)

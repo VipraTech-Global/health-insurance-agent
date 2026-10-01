@@ -18,7 +18,7 @@ from apps.adviser_v2.models import (
     ProcessingJob,
 )
 from apps.adviser_v2.processing.artifacts import read_artifact
-from apps.adviser_v2.processing.criterion_evidence import PROCESSING_VERSION
+from apps.adviser_v2.processing.criterion_evidence import PROCESSING_VERSION, criterion_for_issue
 from apps.adviser_v2.processing.manifest_v2 import raw_bundle_passages
 from apps.adviser_v2.readiness import load_captured_manifest
 
@@ -90,6 +90,7 @@ class Command(BaseCommand):
             "",
             "Selected variant: **Base policy without optional covers**. Prices and budget remain unavailable.",
             "This file reports validated source rules, their conditions and exact quotations. It does not rank or choose a policy.",
+            "An unresolved criterion means the current extraction, review or rule validation is incomplete; it does not establish that the policy excludes the benefit.",
             f"Captured manifest SHA-256: `{manifest['manifest_sha256']}`.",
             "Physical PDF pages are used throughout. Character offsets refer to preserved `pdftotext -raw` text and are end-exclusive.",
             "",
@@ -132,6 +133,13 @@ class Command(BaseCommand):
                 for item in raw_bundle_passages(version, include_prospectus=True)
             }
             criteria = artifact["criteria"]
+            # Older artifacts matched criterion names inside another rule's key.
+            # Keep their validation status intact while showing only relevant labels.
+            for item in criteria:
+                item["unknown_reasons"] = [
+                    reason for reason in item["unknown_reasons"]
+                    if (owner := criterion_for_issue(reason)) is None or owner.key == item["criterion"]
+                ]
             supported = sum(item["status"] == "supported" for item in criteria)
             unresolved = artifact["unresolved_criterion_count"]
             prospectus_used = artifact.get("prospectus_criteria", [])
@@ -280,16 +288,19 @@ class Command(BaseCommand):
             "| Plan | Supported source criteria | Unresolved source criteria | Price |",
             "|---|---:|---:|---|",
             *[
-                f"| {item['name']} | {item['supported']}/13 | "
+                f"| {item['name']} | "
+                + ("Pending" if item["unresolved"] is None else f"{item['supported']}/13")
+                + " | "
                 + ("Pending" if item["unresolved"] is None else f"{item['unresolved']}/13")
                 + " | Unavailable |"
                 for item in summary
             ],
             "",
             "Derived `no_copay` and price are outside the 13-criterion denominator.",
+            *(["Processing stopped at the seven-unresolved-criteria guard. Other pending plans retain their completed calls but have not reached final validation."] if any((item["unresolved"] or 0) >= 7 for item in summary) else []),
             "",
         ]
-        lines[7:7] = overview
+        lines[8:8] = overview
         lines.extend(
             [
                 "## Approved document decisions and remaining scope limits",
