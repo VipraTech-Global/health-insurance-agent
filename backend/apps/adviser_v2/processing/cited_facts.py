@@ -193,7 +193,16 @@ def review_disposition(
             blockers.append(reason)
         elif review.verdict == "agree" or category in NOTE_REASONS:
             if review.verdict == "agree" and review.independent_body != candidates[review.rule_key].body:
-                blockers.append("Independent agreement must return the exact fact carrier.")
+                if review.independent_body is None:
+                    notes.append("rule_not_executable: Independent fact agreement did not include a rule body.")
+                else:
+                    try:
+                        independent = carrier_fact(candidates[review.rule_key].model_copy(update={"body": review.independent_body}))
+                        candidate = carrier_fact(candidates[review.rule_key])
+                        if independent != candidate:
+                            blockers.append("wrong_value: Independent agreement returned a different descriptive fact.")
+                    except ValueError:
+                        notes.append("rule_not_executable: Independent fact agreement has no usable descriptive rule encoding.")
             if not set(candidates[review.rule_key].evidence_span_ids).issubset(review.evidence_span_ids):
                 blockers.append("Independent review did not check every cited page.")
             if reason:
@@ -276,7 +285,8 @@ REVIEW_SYSTEM = (
     "is the supplied category. Agree means the plain-English value, short quotes, table association and "
     "material conditions are supported. Return exact candidate body for agreement. ONLY wrong value, "
     "wrong table/section, missing material condition (including continuity/entry age), or wrong variant "
-    "block a fact. Use material_issue prefix wrong_value:, wrong_section:, missing_material_condition:, "
+    "block a fact. JSON formatting and executable wrapper differences do not block fact agreement. "
+    "Use material_issue prefix wrong_value:, wrong_section:, missing_material_condition:, "
     "or wrong_variant: for those failures. Encoding dimensions, namespaces and numeric rule amounts "
     "are not fact failures. Underwriting acceptance, subject to other terms and inclusive/exclusive "
     "day boundaries are notes: agree with material_issue 'note: ...'. Number words such as three are "

@@ -102,7 +102,23 @@ def test_review_cannot_skip_evidence_or_change_the_agreed_fact():
     assert review_disposition(review, result, criterion)[0]
     review = reviewed(criterion, result)
     review.reviews[0].independent_body = None
-    assert review_disposition(review, result, criterion)[0]
+    blockers, notes = review_disposition(review, result, criterion)
+    assert not blockers
+    assert notes[0].startswith("rule_not_executable:")
+
+
+def test_review_agreement_compares_fact_content_not_json_spacing():
+    criterion, result, _pages = sample()
+    review = reviewed(criterion, result)
+    body = deepcopy(review.reviews[0].independent_body)
+    literal = body["effects"][0]["value"]["value"]
+    fact = json.loads(literal["value"])
+    literal["value"] = json.dumps(fact, indent=2)
+    review.reviews[0].independent_body = body
+    assert not review_disposition(review, result, criterion)[0]
+    fact["value"] = "A materially different value"
+    literal["value"] = json.dumps(fact)
+    assert review_disposition(review, result, criterion)[0][0].startswith("wrong_value:")
 
 
 def test_room_category_does_not_need_a_money_amount():

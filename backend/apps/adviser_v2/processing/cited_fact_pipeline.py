@@ -71,6 +71,12 @@ def _progress(job: ProcessingJob, policy_id: str, core: list[dict[str, Any]]) ->
                 raise ValueError("Retained cited facts do not match this exact source bundle.")
             for criterion in CRITERIA:
                 state = progress["criteria"].get(criterion.key, {})
+                if state.get("review"):
+                    blockers, notes = review_disposition(PolicyRuleReviewV1.model_validate(state["review"]),
+                        PolicyRuleExtractionV1.model_validate(state["result"]), criterion)
+                    state.update(review_blockers=blockers, review_notes=notes)
+                    if not blockers:
+                        state.update(complete=True, last_error=None)
                 diagnostics_sets = state.get("schema_diagnostics", []) if state.get("last_error") == "invalid_structured_output" and not state.get("review") else []
                 for diagnostics in reversed(diagnostics_sets):
                     fact = recover_fact_encoding(criterion, diagnostics)
