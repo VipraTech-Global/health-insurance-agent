@@ -56,6 +56,15 @@ def test_number_words_and_exact_clause_offsets():
         clause_offsets(Clause(page_span_id=PAGE_ID, quote=text), text)
 
 
+def test_frequency_words_have_numeric_support():
+    from decimal import Decimal
+
+    from apps.adviser_v2.processing.criterion_evidence import quoted_quantities
+
+    assert quoted_quantities("Restored once during the policy period.")["count"] == {Decimal(1)}
+    assert quoted_quantities("A maximum of three dependent children.")["count"] == {Decimal(3)}
+
+
 def test_line_wrapping_restores_raw_substring_but_never_changes_words():
     criterion, result, pages = sample()
     pages[0]["passage"] = pages[0]["passage"].replace("three dependent", "three\ndependent")

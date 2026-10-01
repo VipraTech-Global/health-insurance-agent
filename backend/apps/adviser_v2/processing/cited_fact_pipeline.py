@@ -77,7 +77,8 @@ def _progress(job: ProcessingJob, policy_id: str, core: list[dict[str, Any]]) ->
                     if fact is not None:
                         recovered = PolicyRuleExtractionV1(schema_version=1, policy_version_id=policy_id,
                             rules=[fact_carrier(criterion, fact)], material_issues=[], omitted_inventory_categories=[])
-                        state.update(result=recovered.model_dump(mode="json"), complete=True, last_error=None)
+                        state.update(result=recovered.model_dump(mode="json"), complete=True, last_error=None,
+                            result_prospectus_used=state["prospectus_used"])
                         state.setdefault("encoding_notes", []).append("rule not executable: intact fact recovered from retained rejected wrapper; no extra extraction call or retry-budget reset.")
                         break
                 if not state.get("result") or state.get("review") or state.get("reused_validation_id") or state.get("review_technical_failure"):

@@ -310,6 +310,9 @@ def quoted_quantities(quote: str) -> dict[str, set[Decimal]]:
         text,
     ):
         quantities["count"].add(_decimal(match[1]))
+    for word, number in (("once", 1), ("twice", 2), ("thrice", 3)):
+        if re.search(rf"\b{word}\b", text):
+            quantities["count"].add(Decimal(number))
     if re.search(r"\b(?:nil|zero|not applicable)\b|\bno\s+(?:co-?payment|deductible)\b", text):
         quantities["ratio"].add(Decimal(0))
         quantities["money"].add(Decimal(0))

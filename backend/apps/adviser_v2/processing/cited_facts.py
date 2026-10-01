@@ -149,11 +149,15 @@ def fact_problems(
         cited = {c.page_span_id for c in fact.citations}
         if cited != set(rule.evidence_span_ids) or cited != set(rule.body["source_span_ids"]):
             problems.append("Carrier page IDs must exactly match the fact's quotation pages.")
-        for clause in fact.citations:
+        for index, clause in enumerate(fact.citations):
             if clause.page_span_id not in pages:
                 problems.append("A clause cites evidence outside the supplied executable bundle.")
             else:
-                clause_offsets(clause, pages[clause.page_span_id])
+                try:
+                    clause_offsets(clause, pages[clause.page_span_id])
+                except ValueError as exc:
+                    source = next(p for p in passages if p["evidence_span_id"] == clause.page_span_id)
+                    problems.append(f"Quote {index + 1}, {source.get('document_key', clause.page_span_id)}, physical page {source.get('physical_page', 'unspecified')}: {exc}")
         for assertion in [*fact.conditions, *fact.quantities]:
             if any(type(i) is not int or not 0 <= i < len(fact.citations) for i in assertion.citation_indexes):
                 problems.append("Every condition and quantity needs valid clause citation indexes.")
