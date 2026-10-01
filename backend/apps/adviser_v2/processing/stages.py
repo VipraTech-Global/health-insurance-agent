@@ -1544,7 +1544,7 @@ def _combine_extraction_evidence_batches(
 
 def run_extract(job: ProcessingJob) -> dict[str, Any]:
     if manifest_product(job.source_capture) is not None:
-        from .criterion_pipeline import run_criterion_extraction
+        from .cited_fact_pipeline import run_criterion_extraction
 
         return run_criterion_extraction(job)
     policy_version = _policy_version(job)
@@ -1781,7 +1781,7 @@ def _combine_review_evidence_batches(
 
 def run_independent_review(job: ProcessingJob) -> dict[str, Any]:
     if manifest_product(job.source_capture) is not None:
-        from .criterion_pipeline import run_criterion_review
+        from .cited_fact_pipeline import run_criterion_review
 
         return run_criterion_review(job)
     policy_version = _policy_version(job)
@@ -2423,6 +2423,13 @@ def _validate_policy_rules(job: ProcessingJob) -> dict[str, Any]:
 
 @transaction.atomic
 def run_validate(job: ProcessingJob) -> dict[str, Any]:
+    if manifest_product(job.source_capture) is not None:
+        from .cited_fact_pipeline import validate_facts
+        from .cited_facts import FACT_PROTOCOL
+        from .criterion_evidence import PROGRESS_KEY
+
+        if read_artifact(job.parent_job).get(PROGRESS_KEY, {}).get("protocol") == FACT_PROTOCOL:
+            return validate_facts(job)
     artifact = _validate_policy_rules(job)
     if manifest_product(job.source_capture) is not None:
         from .criterion_pipeline import finalize_criterion_validation

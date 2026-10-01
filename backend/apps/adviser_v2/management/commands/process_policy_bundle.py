@@ -248,6 +248,13 @@ class Command(BaseCommand):
         )
         if latest_validation is None or latest_validation.state != "succeeded":
             raise self._stage_failure("validate", latest_validation)
+        from apps.adviser_v2.processing.artifacts import read_artifact
+
+        if read_artifact(latest_validation).get("review_checkpoint_only"):
+            self.stdout.write(self.style.SUCCESS(
+                f"Policy bundle {policy_version.id} reached the cited-fact review checkpoint; not indexed or published."
+            ))
+            return
         latest_index = (
             ProcessingJob.objects.filter(
                 source_capture=base_capture,

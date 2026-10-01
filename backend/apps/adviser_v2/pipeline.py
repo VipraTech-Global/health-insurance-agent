@@ -142,6 +142,9 @@ def enqueue_stage(
     if manifest_product(source_capture) is not None:
         input_data["manifest_processing_version"] = PROCESSING_VERSION
         if stage in {"extract", "independent_review", "validate"}:
+            from .processing.cited_facts import FACT_PROTOCOL
+
+            input_data["cited_fact_protocol"] = FACT_PROTOCOL
             input_data["manifest_extraction_retry_protocol"] = RETRY_PROTOCOL
     if stage in {"extract", "independent_review", "validate"}:
         input_data["rule_prompt_version"] = RULE_PROMPT_VERSION
@@ -477,6 +480,8 @@ def _process_claimed_job(
         )
         raise
     next_stage = NEXT_STAGE.get(completed.stage)
+    if completed.stage == "validate" and result.get("review_checkpoint_only"):
+        return
     if completed.stage == "independent_review" and manifest_product(completed.source_capture) is not None:
         from .processing.criterion_corrections import has_remaining_correction
         from .processing.criterion_evidence import PROGRESS_KEY

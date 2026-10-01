@@ -306,7 +306,7 @@ def quoted_quantities(quote: str) -> dict[str, set[Decimal]]:
     quantities["month"].update(value * 12 for value in quantities["year"])
     quantities["year"].update(value / 12 for value in quantities["month"])
     for match in re.finditer(
-        rf"({_NUMBER})\s*(?:times?|occasions?|claims?|children|adults?|members?|deliveries|delivery)\b",
+        rf"({_NUMBER})\s*(?:(?:dependent|insured|dependent insured)\s+)?(?:times?|occasions?|claims?|children|adults?|members?|deliveries|delivery)\b",
         text,
     ):
         quantities["count"].add(_decimal(match[1]))

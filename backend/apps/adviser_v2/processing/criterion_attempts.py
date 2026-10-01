@@ -66,6 +66,7 @@ def extract_criterion(
     state: dict[str, Any],
     invoke: Callable[[list[dict[str, Any]], str], PolicyRuleExtractionV1],
     checkpoint: Callable[[], None],
+    validate: Callable[..., list[str]] | None = None,
 ) -> PolicyRuleExtractionV1:
     """Resume retained responses, allowing two transport retries and one correction.
 
@@ -88,7 +89,7 @@ def extract_criterion(
         )
         previous_pages = supplement() if state["result_prospectus_used"] else core
         problems = (
-            extraction_problems(policy_id, criterion, result, previous_pages) if result else []
+            (validate or extraction_problems)(policy_id, criterion, result, previous_pages) if result else []
         )
         missing_core = (
             [reason for reason in result.material_issues if "needs_prospectus:" in reason]

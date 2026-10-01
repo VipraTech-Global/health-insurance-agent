@@ -1,0 +1,96 @@
+{
+  "policy_version_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+  "validation_job_id": "bd953f59-9135-4a59-a63a-10c695acdb47",
+  "criteria": {
+    "deductible": {
+      "value_kind": "text",
+      "conditions": [],
+      "quantities": [],
+      "notes": [],
+      "value": "Base-policy deductible: NIL.",
+      "citations": [
+        {
+          "page_span_id": "e12bc2fb-0918-44e3-9170-f74085362c0d",
+          "quote": "iii) \u0007Deductible\n(It is a\nspecified\namount: up\nto which an\ninsurance\ncompany\nwill not pay\nany claim,\nand which\nwill be\ndeducted\nfrom total\nclaim\namount\n(if claim\namount\nis more\nthan the\nspecified\namount)\nNIL -",
+          "occurrence": 0
+        }
+      ]
+    },
+    "portability": {
+      "value_kind": "text",
+      "conditions": [
+        {
+          "text": "The application concerns the entire policy and all covered family members, if any; apply 30–60 days before renewal.",
+          "citation_indexes": [
+            0
+          ]
+        },
+        {
+          "text": "Transfer is of credits gained under the previous policy, to the extent of sum insured.",
+          "citation_indexes": [
+            1
+          ]
+        }
+      ],
+      "quantities": [
+        {
+          "value": "30",
+          "unit": "day",
+          "citation_indexes": [
+            0
+          ]
+        },
+        {
+          "value": "60",
+          "unit": "day",
+          "citation_indexes": [
+            0
+          ]
+        }
+      ],
+      "notes": [
+        "Application rights and credit transfer do not guarantee underwriting acceptance. Inclusive/exclusive day boundaries are a note."
+      ],
+      "value": "Apply to port the entire policy with all covered family members 30–60 days before renewal. Credits transfer to the extent of the previous sum insured, including no-claim bonus, specific and PED waiting periods, and moratorium.",
+      "citations": [
+        {
+          "page_span_id": "6d8cc600-33aa-45a8-9af0-82466a4f5939",
+          "quote": "The Policyholder has the choice to port his / her policy from one\nInsurer to another by applying to such Insurer to port the entire\npolicy along with all the members of the family, if any, at least\n30 days before, but not earlier than 60 days from the policy\nrenewal date as per IRDAI guidelines related to portability.",
+          "occurrence": 0
+        },
+        {
+          "page_span_id": "6d8cc600-33aa-45a8-9af0-82466a4f5939",
+          "quote": "The Policyholder is entitled to transfer the credits gained to\nthe extent of the Sum Insured, No Claim Bonus, Specific\nWaiting Periods, Waiting period for Pre-Existing Diseases,\nMoratorium period etc. from the existing Insurer to the\nAcquiring Insurer in the previous policy.",
+          "occurrence": 0
+        }
+      ]
+    },
+    "geography": {
+      "value_kind": "text",
+      "conditions": [
+        {
+          "text": "Worldwide scope applies to the personal-accident section, not to the health-treatment territory.",
+          "citation_indexes": [
+            0,
+            1
+          ]
+        }
+      ],
+      "quantities": [],
+      "notes": [],
+      "value": "Health treatments must be taken in India. The personal-accident section has worldwide scope.",
+      "citations": [
+        {
+          "page_span_id": "7740dd5a-4799-425e-91bd-72d3edc93283",
+          "quote": "Territorial Limit: All treatments under this\npolicy shall have to be taken in India.",
+          "occurrence": 0
+        },
+        {
+          "page_span_id": "4f6fefbe-0340-4aaf-9b4b-40169ccca324",
+          "quote": "Geographical Scope: The cover under\nthis Section applies World Wide.",
+          "occurrence": 0
+        }
+      ]
+    }
+  }
+}
