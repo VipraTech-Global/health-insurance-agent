@@ -75,6 +75,8 @@ function statementText(text: string, type: string): string {
   if (type !== "limitation") return text;
   return text.replace(/\bcoverage:\s*coverage_question:\s*/g, "")
     .replace(/\bwrong_value:\s*/g, "")
+    .replace(/\bmissing_material_condition:\s*/g, "A required condition was missing: ")
+    .replace("The source citation did not validate: Secondary omission must identify existing secondary statement indexes.", "Independent review could not identify which supporting statement to omit.")
     .replace(/\bneeds_prospectus:\s*/g, "Additional evidence needed: ");
 }
 
