@@ -109,7 +109,7 @@ class ComparisonStatement(ApprovedModel):
     text = EncryptedTextField()
     statement_type = models.CharField(max_length=17, choices=[('customer_context', 'customer_context'), ('eligibility', 'eligibility'), ('requirement_match', 'requirement_match'), ('benefit', 'benefit'), ('restriction', 'restriction'), ('price', 'price'), ('provider', 'provider'), ('calculation', 'calculation'), ('limitation', 'limitation'), ('next_step', 'next_step')])
     critical = models.BooleanField(default=True)
-    support_status = models.CharField(max_length=26, choices=[('supported', 'supported'), ('partly_supported', 'partly_supported'), ('unsupported', 'unsupported'), ('customer_profile_supported', 'customer_profile_supported')], default='unverified')
+    support_status = models.CharField(max_length=26, choices=[('supported', 'supported'), ('partly_supported', 'partly_supported'), ('unsupported', 'unsupported'), ('customer_profile_supported', 'customer_profile_supported'), ('unknown', 'unknown')], default='unverified')
 
     class Meta:
         db_table = 'adviser_v2_comparison_statement'

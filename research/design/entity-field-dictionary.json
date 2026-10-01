@@ -7904,9 +7904,9 @@
           "required": true,
           "default": "unverified",
           "purpose": "Whether this statement has adequate support",
-          "validation": "supported,partly_supported,unsupported,customer_profile_supported",
+          "validation": "supported,partly_supported,unsupported,customer_profile_supported,unknown",
           "units": null,
-          "allowed_values": "supported,partly_supported,unsupported,customer_profile_supported",
+          "allowed_values": "supported,partly_supported,unsupported,customer_profile_supported,unknown",
           "example": "No authentic field value established in reviewed evidence; synthetic examples only in worked-examples.md.",
           "basis": [
             "DEC-01",

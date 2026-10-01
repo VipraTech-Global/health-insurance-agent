@@ -71,6 +71,12 @@ function monthlyEmiLabel(criterion: string, comparisonValue: unknown): string | 
   return [item.currency, monthly].filter(Boolean).join(" ") + "/month";
 }
 
+function statementText(text: string, type: string): string {
+  if (type !== "limitation") return text;
+  return text.replace(/\bcoverage:\s*coverage_question:\s*/g, "")
+    .replace(/\bneeds_prospectus:\s*/g, "Additional evidence needed: ");
+}
+
 function citationView(citation: ComparisonCitation): CitationView {
   const locator = objectValue(citation.locator);
   const rawBox = locator?.kind === "pdf_region" ? locator.bbox : null;
@@ -144,15 +150,16 @@ export function AdviserApp({ email, onLogout }: { email: string; onLogout: () =>
   }, []);
 
   const followTurn = useCallback(async (conversationId: string, accepted: TurnAccepted) => {
+    const storageKey = `coverguide-v2-turn:${conversationId}`;
+    const running = { id: accepted.turn_id, eventUrl: accepted.event_url, state: "queued" };
+    localStorage.setItem(storageKey, JSON.stringify(running));
+    if (activeConversationId.current !== conversationId) return;
     controller.current?.abort();
     const aborter = new AbortController();
     controller.current = aborter;
-    const storageKey = `coverguide-v2-turn:${conversationId}`;
-    const running = { id: accepted.turn_id, eventUrl: accepted.event_url, state: "queued" };
     setActiveTurn(running);
     setRetryableTurnId(null);
     setProgress("queued");
-    localStorage.setItem(storageKey, JSON.stringify(running));
     let afterSequence = 0;
     let terminal = false;
     try {
@@ -208,6 +215,7 @@ export function AdviserApp({ email, onLogout }: { email: string; onLogout: () =>
         await loadConversation(conversationId);
         if (activeConversationId.current !== conversationId) return;
         await refreshCatalogue();
+        if (activeConversationId.current !== conversationId) return;
         setProgress("");
         setActiveTurn(null);
       }
@@ -549,7 +557,7 @@ function ComparisonPanel({ comparison, onCitation }: { comparison: Comparison; o
       <div className="product-evidence-section"><b>Policy evidence</b>{product.evidence.length ? <div className="claim-sources">{product.evidence.map((source, index) => <button type="button" className="citation-button" key={`${source.id}-${index}`} onClick={() => onCitation(citationView(source))}>Evidence {index + 1} · p.{source.page ?? "–"}</button>)}</div> : <p>No cited product statement is available.</p>}</div>
       </>}
     </section>)}</div> : null}
-    <div className="comparison-statements">{comparison.statements.map((statement) => <div key={statement.id} className={statement.critical ? "critical-statement" : ""}><p>{statement.text}</p>{statement.citations.length ? <div className="claim-sources">{statement.citations.map((source, index) => <button type="button" className="citation-button" key={source.id} onClick={() => onCitation(citationView(source))}>Source {index + 1} · p.{source.page ?? "–"}</button>)}</div> : null}</div>)}</div>
+    <div className="comparison-statements">{comparison.statements.map((statement) => <div key={statement.id} className={statement.critical ? "critical-statement" : ""}><p>{statementText(statement.text, statement.statement_type)}</p>{statement.citations.length ? <div className="claim-sources">{statement.citations.map((source, index) => <button type="button" className="citation-button" key={source.id} onClick={() => onCitation(citationView(source))}>Source {index + 1} · p.{source.page ?? "–"}</button>)}</div> : null}</div>)}</div>
   </div>;
 }
 
