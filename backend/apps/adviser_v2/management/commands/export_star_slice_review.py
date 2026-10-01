@@ -134,10 +134,18 @@ class Command(BaseCommand):
             criteria = artifact["criteria"]
             supported = sum(item["status"] == "supported" for item in criteria)
             unresolved = artifact["unresolved_criterion_count"]
+            prospectus_used = artifact.get("prospectus_criteria", [])
+            prospectus_gaps = [
+                item["criterion"]
+                for item in criteria
+                if item["criterion"] not in prospectus_used
+                and any("needs_prospectus:" in reason for reason in item["unknown_reasons"])
+            ]
             lines.extend(
                 [
                     f"Validation job: `{validation.id}` ({validation.state}). **{supported}/13 supported; {unresolved}/13 unresolved.**",
-                    "Prospectus used for: " + (", ".join(artifact.get("prospectus_criteria", [])) or "none") + ".",
+                    "Prospectus used for: " + (", ".join(prospectus_used) or "none") + ".",
+                    "Prospectus gaps reported but not supplemented: " + (", ".join(prospectus_gaps) or "none") + ". See the criterion's unknown reasons below.",
                     f"Timeout calls across retained and resumed processing: {artifact.get('timeout_call_count', 'unavailable')}.",
                     "",
                 ]
