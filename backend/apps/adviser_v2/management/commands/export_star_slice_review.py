@@ -18,6 +18,7 @@ from apps.adviser_v2.models import (
     ProcessingJob,
 )
 from apps.adviser_v2.processing.artifacts import read_artifact
+from apps.adviser_v2.processing.cited_facts import FACT_PROTOCOL
 from apps.adviser_v2.processing.criterion_evidence import PROCESSING_VERSION, criterion_for_issue
 from apps.adviser_v2.processing.manifest_v2 import raw_bundle_passages
 from apps.adviser_v2.readiness import load_captured_manifest
@@ -86,11 +87,11 @@ class Command(BaseCommand):
         if manifest["schema_version"] != 2:
             raise CommandError("This review requires the approved three-plan version-2 manifest.")
         lines = [
-            "# Star three-plan rule review — Checkpoint 2",
+            "# Star three-plan cited-fact review — Checkpoint 2",
             "",
             "Selected variant: **Base policy without optional covers**. Prices and budget remain unavailable.",
-            "This file reports validated source rules, their conditions and exact quotations. It does not rank or choose a policy.",
-            "An unresolved criterion means the current extraction, review or rule validation is incomplete; it does not establish that the policy excludes the benefit.",
+            "Comparison support means a source-reviewed plain-English fact with short exact clause quotations. Executable-rule status is separate. No release has been published.",
+            "An unknown criterion means source support or independent fact review remains incomplete; a rule encoding failure alone does not make the cell unknown.",
             f"Captured manifest SHA-256: `{manifest['manifest_sha256']}`.",
             "Physical PDF pages are used throughout. Character offsets refer to preserved `pdftotext -raw` text and are end-exclusive.",
             "",
@@ -123,7 +124,7 @@ class Command(BaseCommand):
                 )
                 continue
             artifact = read_artifact(validation)
-            if artifact.get("manifest_processing_version") != PROCESSING_VERSION:
+            if artifact.get("manifest_processing_version") not in {PROCESSING_VERSION, FACT_PROTOCOL}:
                 raise CommandError(
                     "A validation artifact lacks the current version-2 criterion/citation checks."
                 )
@@ -194,6 +195,31 @@ class Command(BaseCommand):
                 lines.extend([f"### {item['criterion']}", "", f"Status: **{item['status']}**.", ""])
                 for reason in item["unknown_reasons"]:
                     lines.extend([f"Unknown reason: {reason}", ""])
+                if "citations" in item:
+                    if item.get("value"):
+                        lines.extend([f"Value: {item['value']}", ""])
+                    for clause_condition in item.get("conditions", []):
+                        numbers = ", ".join(str(i + 1) for i in clause_condition["citation_indexes"])
+                        lines.extend([f"Condition: {clause_condition['text']} (quotes {numbers}).", ""])
+                    for note in item.get("notes", []):
+                        lines.extend([f"Note: {note}", ""])
+                    lines.extend([f"Executable-rule status: **{item['rule_status']}**.", ""])
+                    for reason in item.get("rule_reasons", []):
+                        lines.extend([f"Rule encoding record (does not determine fact support): {reason}", ""])
+                    if item.get("rule_ids"):
+                        lines.extend(["Retained verified rule IDs (partial encodings may not cover the complete fact): " + ", ".join(f"`{pk}`" for pk in item["rule_ids"]) + ".", ""])
+                    for number, citation in enumerate(item["citations"], 1):
+                        from apps.adviser_v2.processing.manifest_v2 import ANCHOR_PREFIX
+
+                        anchor = json.loads(next(note.removeprefix(ANCHOR_PREFIX) for note in citation["context"]["notes"] if note.startswith(ANCHOR_PREFIX)))
+                        page = source_pages[citation["context"]["span_ids"][0]]
+                        if page["passage"][anchor["start"]:anchor["end"]] != citation["quote"]:
+                            raise CommandError("Stored fact quotation no longer matches the original raw page.")
+                        lines.extend([
+                            f"Quote {number}: [{citation['document_key']}, physical page {citation['page']}](http://127.0.0.1:3021/evidence/{citation['evidence_span_id']}); characters [{anchor['start']}, {anchor['end']}).",
+                            "", fenced(citation["quote"]), "",
+                        ])
+                    continue
                 for rule_id in item["rule_ids"]:
                     rule = rules[rule_id]
                     lines.extend([f"Rule: `{rule.rule_key}` (`{rule.id}`).", ""])
