@@ -98,6 +98,8 @@ class Command(BaseCommand):
         ]
         summary = []
         citations: dict[str, dict[str, Any]] = {}
+        clause_ids: set[str] = set()
+        clause_pages: set[tuple[str, int]] = set()
         for product in manifest["products"]:
             lines.extend([f"## {product['name']}", "", f"UIN: `{product['uin']}`.", ""])
             base = next(d for d in product["documents"] if d["role"] == "base_wording")
@@ -205,6 +207,9 @@ class Command(BaseCommand):
                         lines.extend([f"Note: {note}", ""])
                     lines.extend([f"Executable-rule status: **{item['rule_status']}**.", ""])
                     for reason in item.get("rule_reasons", []):
+                        owner = criterion_for_issue(reason)
+                        if owner is not None and owner.key != item["criterion"]:
+                            continue
                         lines.extend([f"Rule encoding record (does not determine fact support): {reason}", ""])
                     if item.get("rule_ids"):
                         lines.extend(["Retained verified rule IDs (partial encodings may not cover the complete fact): " + ", ".join(f"`{pk}`" for pk in item["rule_ids"]) + ".", ""])
@@ -215,6 +220,8 @@ class Command(BaseCommand):
                         page = source_pages[citation["context"]["span_ids"][0]]
                         if page["passage"][anchor["start"]:anchor["end"]] != citation["quote"]:
                             raise CommandError("Stored fact quotation no longer matches the original raw page.")
+                        clause_ids.add(citation["evidence_span_id"])
+                        clause_pages.add((citation["document_version_id"], citation["page"]))
                         lines.extend([
                             f"Quote {number}: [{citation['document_key']}, physical page {citation['page']}](http://127.0.0.1:3021/evidence/{citation['evidence_span_id']}); characters [{anchor['start']}, {anchor['end']}).",
                             "", fenced(citation["quote"]), "",
@@ -335,12 +342,12 @@ class Command(BaseCommand):
                 "Comprehensive's captured 2025 document codes versus its 2026 UIN remain the accepted edition mismatch.",
                 "Assure consumables use wording clause 27 (physical page 20, printed page 19) and the wording's List I (physical page 44, printed page 43). This approved document decision is separate from the 13 extracted criteria above.",
                 "The separate Assure expense sheet remains reference only. Its 68 item descriptions match wording List I after case, whitespace and punctuation normalization. Differences are the title, presentation and column break (wording left column ends at item 35; separate sheet at 34). It cannot support executable rules.",
-                "Brochures and proposal forms remain excluded. Prospectuses remain applicable; a criterion prompt adds the complete prospectus only when core evidence is insufficient or a cited definition/table requires it.",
-                "",
-                "## Verbatim citation pages",
+                "Brochures and proposal forms remain excluded. Prospectuses remain applicable. Sum insured and eligibility include the complete prospectus on their first call; other criteria add it only when the core evidence lacks the needed definition, table or material information.",
                 "",
             ]
         )
+        if citations:
+            lines.extend(["## Legacy verbatim citation pages", ""])
         for span_id, page in sorted(
             citations.items(), key=lambda pair: (pair[1]["document_key"], pair[1]["physical_page"])
         ):
@@ -363,7 +370,8 @@ class Command(BaseCommand):
                 {
                     "path": str(output.resolve()),
                     "products": summary,
-                    "citation_pages": len(citations),
+                    "citation_pages": len(clause_pages | {(p["document_version_id"], p["physical_page"]) for p in citations.values()}),
+                    "clause_citations": len(clause_ids),
                 },
                 indent=2,
             )
