@@ -508,3 +508,41 @@ def test_pdf_controls_and_ligatures_restore_raw_source_without_changing_words():
     assert fact_problems(POLICY_ID, criterion, unchanged, pages)
     from apps.adviser_v2.processing.criterion_evidence import quoted_quantities
     assert quoted_quantities('Payable from Day 1 of birth.')['day'] == {1}
+
+
+def test_ratio_fraction_is_the_same_source_number_without_executing_a_formula():
+    from decimal import Decimal
+
+    from apps.adviser_v2.processing.criterion_evidence import normalized_quantity
+
+    assert normalized_quantity('50/100', 'ratio') == Decimal('0.5')
+    assert normalized_quantity('20%', 'ratio') == Decimal('0.2')
+    assert normalized_quantity('Rs.2,00,000/-', 'money') == 200000
+    with pytest.raises(ArithmeticError):
+        normalized_quantity('50/0', 'ratio')
+    with pytest.raises(ArithmeticError):
+        normalized_quantity('min(100, SI)', 'money')
+
+
+def test_valid_retained_response_can_survive_a_malformed_correction(monkeypatch):
+    from types import SimpleNamespace
+    from unittest.mock import MagicMock
+
+    from apps.adviser_v2.processing import cited_fact_pipeline as pipeline
+    from apps.adviser_v2.processing.criterion_attempts import new_criterion_state
+
+    criterion, candidate, pages = sample()
+    attempt = SimpleNamespace(id=PAGE_ID, owner_id=None, response_storage_key='stored', response_storage_sha256='hash')
+    model = MagicMock()
+    model.objects.filter.return_value.order_by.return_value = [attempt]
+    monkeypatch.setattr(pipeline, 'ModelAttempt', model)
+    monkeypatch.setattr(pipeline, 'read_private', lambda *_a: candidate.model_dump_json().encode())
+    state = new_criterion_state()
+    state.update(validation_attempts=2, attempt_ids=[PAGE_ID], last_error='invalid_structured_output', complete=True)
+    assert pipeline.reuse_valid_retained_attempt(SimpleNamespace(source_capture='exact-capture'), state, criterion, POLICY_ID, pages)
+    assert state['validation_attempts'] == 2
+    assert state['attempt_ids'] == [PAGE_ID]
+    assert state['restored_source_valid_attempt_id'] == PAGE_ID
+    assert not state.get('review_complete')
+    state.update(last_error='invalid_structured_output', review={'verdict': 'disagree'})
+    assert not pipeline.reuse_valid_retained_attempt(SimpleNamespace(source_capture='exact-capture'), state, criterion, POLICY_ID, pages)

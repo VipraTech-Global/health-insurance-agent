@@ -8,16 +8,15 @@ from __future__ import annotations
 
 import json
 import re
-from decimal import Decimal
 from typing import Any, Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
 from ..schemas import ExtractedPolicyRule, PolicyRuleExtractionV1, PolicyRuleReviewV1
-from .criterion_evidence import Criterion, criterion_for_key, quoted_quantities
+from .criterion_evidence import Criterion, criterion_for_key, normalized_quantity, quoted_quantities
 
 FACT_PROTOCOL = "coverguide-manifest-v2-cited-facts/1"
-FACT_PROMPT_REVISION = "table-clauses-and-secondary-statements/8"
+FACT_PROMPT_REVISION = "table-clauses-and-secondary-statements/9"
 FACT_TERM = "comparison_cited_fact_v1"
 MATERIAL_REASONS = {"wrong_value", "wrong_section", "missing_material_condition", "wrong_variant"}
 NOTE_REASONS = {"underwriting", "other_terms", "day_boundary", "rule_not_executable", "note"}
@@ -223,10 +222,7 @@ def fact_problems(
                             indexes = list(dict.fromkeys([*region.label_indexes, *assertion.citation_indexes]))
                             joined = " ".join(fact.citations[i].quote for i in indexes)
                             supported.update(quoted_quantities(joined)[assertion.unit])
-                normalized = assertion.value.replace(",", "").strip()
-                if assertion.unit == "money":
-                    normalized = re.sub(r"^(?:Rs\.?|INR|₹)\s*", "", normalized, flags=re.I).removesuffix("/-").strip()
-                if Decimal(normalized) not in supported:
+                if normalized_quantity(assertion.value, assertion.unit) not in supported:
                     problems.append(f"{assertion.value} {assertion.unit} lacks quoted numeric support (digits or words).")
         if criterion.key == "room_category" and fact.value_kind != "category":
             problems.append("Room category must use value_kind category; it is not a monetary amount.")

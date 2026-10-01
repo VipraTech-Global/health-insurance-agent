@@ -11,7 +11,7 @@ import hashlib
 import json
 import logging
 import time
-from decimal import Decimal
+import uuid
 from pathlib import Path
 from typing import Any
 
@@ -23,6 +23,7 @@ from apps.adviser.ai import RelayFailure
 from ..model_gateway import call_model
 from ..models import ModelAttempt, PolicyRule, ProcessingJob
 from ..schemas import PolicyRuleExtractionV1, PolicyRuleReviewV1
+from ..storage import read_private
 from .artifacts import read_artifact
 from .cited_facts import (
     FACT_PROTOCOL,
@@ -40,7 +41,12 @@ from .cited_facts import (
 )
 from .clause_citations import store_clause
 from .criterion_attempts import TRANSPORT_FAILURES, extract_criterion, new_criterion_state
-from .criterion_evidence import CRITERIA, PROGRESS_KEY, request_bytes_with_headroom
+from .criterion_evidence import (
+    CRITERIA,
+    PROGRESS_KEY,
+    normalized_quantity,
+    request_bytes_with_headroom,
+)
 from .fact_projection import primary_projection
 from .manifest_v2 import raw_bundle_passages
 
@@ -63,6 +69,34 @@ def resume_pipeline_failure(state: dict[str, Any]) -> None:
         state["pipeline_failure_resumed"] = {"reason": "Local carrier reconstruction exception; no validated response or corrective attempt was consumed.", "prior_result": state["result"]}
         state.update(complete=False, result=None, last_error=None)
         state.pop("review_complete", None)
+
+
+def reuse_valid_retained_attempt(job: ProcessingJob, state: dict[str, Any], criterion: Any,
+                                policy_id: str, pages: list[dict[str, Any]]) -> bool:
+    """A malformed correction must not discard an earlier now-source-valid response.
+
+    Never override a material independent review, reset budgets, or make a model
+    call. Only this criterion's existing successful calls in this exact capture
+    are eligible, and the recovered candidate still requires independent review.
+    """
+    if state.get('last_error') != 'invalid_structured_output' or state.get('review'):
+        return False
+    attempts = ModelAttempt.objects.filter(pk__in=state['attempt_ids'],
+        processing_job__source_capture=job.source_capture, qualification__schema_name='policy_extraction',
+        status='succeeded', response_storage_key__isnull=False).order_by('-created_at')
+    for attempt in attempts:
+        payload = read_private(attempt.owner_id or uuid.UUID(int=0), f'model-result-{attempt.id}',
+            attempt.response_storage_key, attempt.response_storage_sha256)
+        candidate = PolicyRuleExtractionV1.model_validate_json(payload)
+        candidate, changes = anchor_transcribed_quotes(criterion, candidate, pages)
+        if not candidate.rules or fact_problems(policy_id, criterion, candidate, pages):
+            continue
+        state.update(result=candidate.model_dump(mode='json'), last_error=None, complete=True,
+            restored_source_valid_attempt_id=str(attempt.id))
+        state.setdefault('quote_transcriptions', []).extend(changes)
+        state.pop('review_complete', None)
+        return True
+    return False
 
 
 def apply_approved_rerun(progress: dict[str, Any], authorization: dict[str, Any]) -> None:
@@ -137,6 +171,9 @@ def _progress(job: ProcessingJob, policy_id: str, core: list[dict[str, Any]]) ->
                             result_prospectus_used=state["prospectus_used"])
                         state.setdefault("encoding_notes", []).append("rule not executable: intact fact recovered from retained rejected wrapper; no extra extraction call or retry-budget reset.")
                         break
+                if state.get('last_error') == 'invalid_structured_output' and not state.get('review'):
+                    pages = raw_bundle_passages(stages_version(job), include_prospectus=True) if state['result_prospectus_used'] else core
+                    reuse_valid_retained_attempt(job, state, criterion, policy_id, pages)
                 if not state.get("result") or state.get("review") or state.get("reused_validation_id") or state.get("review_technical_failure"):
                     continue
                 pages = raw_bundle_passages(stages_version(job), include_prospectus=True) if state["result_prospectus_used"] else core
@@ -420,7 +457,7 @@ def validate_facts(job: ProcessingJob) -> dict[str, Any]:
         PROGRESS_KEY: progress,
     }
     copay = next(row for row in statuses if row["criterion"] == "copay")
-    rates = sorted({Decimal(q["value"]) for q in copay["quantities"] if q["unit"] == "ratio"})
+    rates = sorted({normalized_quantity(q["value"], "ratio") for q in copay["quantities"] if q["unit"] == "ratio"})
     artifact["no_copay"] = {
         "status": "derived" if copay["status"] == "supported" and rates else "unknown",
         "value": ("No copay where the quoted zero rate applies. " if rates == [0] else "No copay is not unconditional. ") + copay["value"] if copay["status"] == "supported" and rates else None,

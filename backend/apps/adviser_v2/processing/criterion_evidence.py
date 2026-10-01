@@ -281,6 +281,20 @@ def _decimal(value: str) -> Decimal:
     return Decimal(_WORDS[value] if value in _WORDS else value.replace(",", ""))
 
 
+def normalized_quantity(value: str, unit: str) -> Decimal:
+    """Equivalent printed scalar formats, never arbitrary expressions or formulas."""
+    value = value.replace(",", "").strip().casefold()
+    if unit == "money":
+        value = re.sub(r"^(?:rs\.?|inr|₹)\s*", "", value).removesuffix("/-").strip()
+    if unit == "ratio":
+        if value.endswith("%"):
+            return _decimal(value[:-1].strip()) / 100
+        if re.fullmatch(r"\d+(?:\.\d+)?/\d+(?:\.\d+)?", value):
+            numerator, denominator = value.split("/")
+            return Decimal(numerator) / Decimal(denominator)
+    return _decimal(value)
+
+
 def quoted_quantities(quote: str) -> dict[str, set[Decimal]]:
     """Normalize printed units without changing a quotation or inventing conversions."""
     text = " ".join(quote.casefold().split())
