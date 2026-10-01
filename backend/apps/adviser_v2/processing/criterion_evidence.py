@@ -304,6 +304,8 @@ def quoted_quantities(quote: str) -> dict[str, set[Decimal]]:
     for match in re.finditer(rf"({_NUMBER})\s*(?:%|percent|per cent)", text):
         quantities["ratio"].add(_decimal(match[1]) / 100)
     for unit in ("day", "month", "year", "hour"):
+        for match in re.finditer(rf"\b{unit}\s*({_NUMBER})(?!\w)", text):
+            quantities[unit].add(_decimal(match[1]))
         for match in re.finditer(
             rf"({_NUMBER})(?:\s*(?:-|–|to|and)\s*({_NUMBER}))?(?:st|nd|rd|th)?\s*{unit}s?\b", text
         ):

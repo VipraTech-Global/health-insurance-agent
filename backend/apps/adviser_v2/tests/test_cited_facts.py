@@ -471,3 +471,40 @@ def test_ordinal_days_written_rupees_and_counts_in_number():
     assert quoted_quantities('Dependent children not exceeding three in number.')['count'] == {3}
     assert quoted_quantities('Family size of 2A (covering Self and Spouse).')['count'] == {2}
     assert quoted_quantities('Exclusion no. 3 (Code Excl 03) does not apply.')['day'] == set()
+
+
+def test_table_cell_uses_its_exact_currency_heading_and_indian_value():
+    criterion, result, pages = sample('newborn')
+    fact = CitedFact(value='Newborn limit Rs.2 lakh.', value_kind='text', conditions=[], notes=[],
+        citations=[Clause(page_span_id=PAGE_ID, quote='Limit Per Policy\nPeriod (Rs.)'), Clause(page_span_id=PAGE_ID, quote='5/7.5/10/15/20/25 2,00,000')],
+        table_regions=[{'citation_indexes': [0, 1], 'label_indexes': [0]}],
+        quantities=[{'value': '2,00,000', 'unit': 'money', 'citation_indexes': [1]}])
+    result.rules = [fact_carrier(criterion, fact)]
+    pages[0]['passage'] = 'Header\nLimit Per Policy\nPeriod (Rs.)\n5/7.5/10/15/20/25 2,00,000\nFooter'
+    assert not fact_problems(POLICY_ID, criterion, result, pages)
+    fact.quantities[0].value = 'Rs.2,00,000/-'
+    result.rules = [fact_carrier(criterion, fact)]
+    assert not fact_problems(POLICY_ID, criterion, result, pages)
+    fact.quantities[0].value = '4,00,000'
+    result.rules = [fact_carrier(criterion, fact)]
+    assert fact_problems(POLICY_ID, criterion, result, pages)
+
+
+def test_pdf_controls_and_ligatures_restore_raw_source_without_changing_words():
+    criterion, result, pages = sample()
+    from apps.adviser_v2.processing.cited_facts import carrier_fact
+
+    fact = carrier_fact(result.rules[0])
+    fact.citations[0].quote = 'B. A benefit for three dependent children.'
+    result.rules = [fact_carrier(criterion, fact)]
+    pages[0]['passage'] = 'Header\nB.\t\x07\nA beneﬁt for three dependent children.\nFooter'
+    anchored, changes = anchor_transcribed_quotes(criterion, result, pages)
+    assert len(changes) == 1
+    assert carrier_fact(anchored.rules[0]).citations[0].quote == 'B.\t\x07\nA beneﬁt for three dependent children.'
+    assert not fact_problems(POLICY_ID, criterion, anchored, pages)
+    pages[0]['passage'] = pages[0]['passage'].replace('three dependent', 'threedependent')
+    unchanged, changes = anchor_transcribed_quotes(criterion, result, pages)
+    assert not changes
+    assert fact_problems(POLICY_ID, criterion, unchanged, pages)
+    from apps.adviser_v2.processing.criterion_evidence import quoted_quantities
+    assert quoted_quantities('Payable from Day 1 of birth.')['day'] == {1}

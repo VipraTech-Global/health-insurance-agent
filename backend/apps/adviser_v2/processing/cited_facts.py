@@ -17,7 +17,7 @@ from ..schemas import ExtractedPolicyRule, PolicyRuleExtractionV1, PolicyRuleRev
 from .criterion_evidence import Criterion, criterion_for_key, quoted_quantities
 
 FACT_PROTOCOL = "coverguide-manifest-v2-cited-facts/1"
-FACT_PROMPT_REVISION = "table-clauses-and-secondary-statements/7"
+FACT_PROMPT_REVISION = "table-clauses-and-secondary-statements/8"
 FACT_TERM = "comparison_cited_fact_v1"
 MATERIAL_REASONS = {"wrong_value", "wrong_section", "missing_material_condition", "wrong_variant"}
 NOTE_REASONS = {"underwriting", "other_terms", "day_boundary", "rule_not_executable", "note"}
@@ -134,11 +134,12 @@ def table_region_problems(fact: CitedFact, pages: dict[str, str]) -> list[str]:
 def anchor_transcribed_quotes(
     criterion: Criterion, result: PolicyRuleExtractionV1, passages: list[dict[str, Any]],
 ) -> tuple[PolicyRuleExtractionV1, list[dict[str, Any]]]:
-    """Restore original line wrapping before exact validation; change no words.
+    """Restore original PDF formatting before exact validation; change no words.
 
     ModelAttempt retains the untouched model output. The projected candidate uses
-    the original raw substring. Punctuation, spelling, word boundaries and case
-    must all match; this never repairs a wrong phrase, page, section or number.
+    the original raw substring. PDF control separators and printed ligatures
+    (such as fi/ﬁ) may differ in transcription. Punctuation, spelling, word
+    boundaries and case must match; never repair a phrase, page, section or number.
     """
     if len(result.rules) != 1:
         return result, []
@@ -152,13 +153,17 @@ def anchor_transcribed_quotes(
         text = pages.get(clause.page_span_id, "")
         if clause.quote in text:
             continue
-        pattern = r"\s+".join(re.escape(word) for word in clause.quote.split())
-        matches = list(re.finditer(pattern, text))
+        ligatures = str.maketrans({"ﬀ": "ff", "ﬁ": "fi", "ﬂ": "fl", "ﬃ": "ffi", "ﬄ": "ffl", "ﬅ": "st", "ﬆ": "st"})
+        tokens = list(re.finditer(r"[^\s\x00-\x1f]+", text))
+        expected = [word.translate(ligatures) for word in re.findall(r"[^\s\x00-\x1f]+", clause.quote)]
+        actual = [token.group().translate(ligatures) for token in tokens]
+        matches = [(tokens[i].start(), tokens[i + len(expected) - 1].end())
+            for i in range(len(tokens) - len(expected) + 1)
+            if expected and actual[i:i + len(expected)] == expected]
         if len(matches) <= clause.occurrence:
             continue
-        original = matches[clause.occurrence].group()
-        if original.split() != clause.quote.split():
-            raise ValueError("Whitespace anchoring changed a source word.")
+        start, end = matches[clause.occurrence]
+        original = text[start:end]
         changes.append({"citation_index": index, "page_span_id": clause.page_span_id,
             "model_quote": clause.quote, "raw_quote": original})
         clause.quote = original
@@ -212,10 +217,16 @@ def fact_problems(
                 # A unit/row label may be printed separately from its table cell.
                 # Only explicitly grouped exact quotes in one validated region
                 # can share units. Independent review still checks row association.
-                if not table_problems and any(set(assertion.citation_indexes).issubset(r.citation_indexes) for r in fact.table_regions):
-                    joined = " ".join(fact.citations[i].quote for i in assertion.citation_indexes)
-                    supported.update(quoted_quantities(joined)[assertion.unit])
-                if Decimal(assertion.value) not in supported:
+                if not table_problems:
+                    for region in fact.table_regions:
+                        if set(assertion.citation_indexes).issubset(region.citation_indexes):
+                            indexes = list(dict.fromkeys([*region.label_indexes, *assertion.citation_indexes]))
+                            joined = " ".join(fact.citations[i].quote for i in indexes)
+                            supported.update(quoted_quantities(joined)[assertion.unit])
+                normalized = assertion.value.replace(",", "").strip()
+                if assertion.unit == "money":
+                    normalized = re.sub(r"^(?:Rs\.?|INR|₹)\s*", "", normalized, flags=re.I).removesuffix("/-").strip()
+                if Decimal(normalized) not in supported:
                     problems.append(f"{assertion.value} {assertion.unit} lacks quoted numeric support (digits or words).")
         if criterion.key == "room_category" and fact.value_kind != "category":
             problems.append("Room category must use value_kind category; it is not a monetary amount.")
