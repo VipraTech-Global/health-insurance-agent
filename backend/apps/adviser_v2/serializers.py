@@ -211,6 +211,21 @@ class ProductRestrictionSerializer(serializers.Serializer[dict[str, Any]]):
     citations = ComparisonCitationSerializer(many=True)
 
 
+class PreparedConditionSerializer(serializers.Serializer[dict[str, Any]]):
+    text = serializers.CharField()
+    citation_indexes = serializers.ListField(child=serializers.IntegerField())
+
+
+class PreparedFactSerializer(serializers.Serializer[dict[str, Any]]):
+    criterion = serializers.CharField()
+    status = serializers.CharField()
+    value = serializers.CharField(allow_null=True)
+    conditions = PreparedConditionSerializer(many=True)
+    rule_status = serializers.CharField()
+    unknown_reasons = serializers.ListField(child=serializers.CharField())
+    citations = ComparisonCitationSerializer(many=True)
+
+
 class ComparedProductSerializer(serializers.Serializer[dict[str, Any]]):
     id = serializers.UUIDField()
     product_variant_id = serializers.UUIDField()
@@ -221,6 +236,7 @@ class ComparedProductSerializer(serializers.Serializer[dict[str, Any]]):
     evaluated_selection = serializers.JSONField()
     quote_id = serializers.UUIDField(allow_null=True)
     criteria = RequirementMatchSerializer(many=True)
+    prepared_facts = PreparedFactSerializer(many=True)
     evidence_gaps = EvidenceGapSerializer(many=True)
     restrictions = ProductRestrictionSerializer(many=True)
     evidence = ComparisonCitationSerializer(many=True)

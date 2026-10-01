@@ -419,6 +419,7 @@ export interface components {
             /** Format: uuid */
             quote_id: string | null;
             criteria: components["schemas"]["RequirementMatch"][];
+            prepared_facts: components["schemas"]["PreparedFact"][];
             evidence_gaps: components["schemas"]["EvidenceGap"][];
             restrictions: components["schemas"]["ProductRestriction"][];
             evidence: components["schemas"]["ComparisonCitation"][];
@@ -584,6 +585,19 @@ export interface components {
             requirements?: {
                 [key: string]: unknown;
             }[];
+        };
+        PreparedCondition: {
+            text: string;
+            citation_indexes: number[];
+        };
+        PreparedFact: {
+            criterion: string;
+            status: string;
+            value: string | null;
+            conditions: components["schemas"]["PreparedCondition"][];
+            rule_status: string;
+            unknown_reasons: string[];
+            citations: components["schemas"]["ComparisonCitation"][];
         };
         ProductRestriction: {
             /** Format: uuid */

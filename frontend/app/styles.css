@@ -212,3 +212,19 @@ input:focus, textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px 
 .product-inventory dt { color: var(--muted); font-size: 8px; }
 .product-inventory dd { margin: 4px 0 0; font-weight: 800; }
 .product-inventory article > small { color: var(--muted); text-transform: capitalize; }
+
+.prepared-fact { border-top: 1px solid var(--line); padding: 12px 0; font-size: 12px; line-height: 1.6; }
+.prepared-fact h5 { margin: 0 0 6px; text-transform: capitalize; font-size: 13px; }
+.prepared-fact p { margin: 6px 0; }
+.prepared-fact ul { padding-left: 18px; }
+.prepared-fact summary { cursor: pointer; font-weight: 600; }
+.fact-context { font-size: 12px; line-height: 1.5; color: #50605a; }
+.fact-unknown { color: #815c20; }
+.messages:has(.prepared-facts) { padding-left: 24px; padding-right: 24px; }
+.message.assistant:has(.comparison-detail) { max-width: none; }
+.message .prepared-fact p, .message .prepared-fact li { font-size: 13px; }
+@media (min-width: 1600px) {
+  .compared-product-grid:has(.prepared-facts) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .compared-product:has(.prepared-facts) { display: grid; grid-template-rows: subgrid; grid-row: span 18; }
+  .prepared-facts { display: contents; }
+}

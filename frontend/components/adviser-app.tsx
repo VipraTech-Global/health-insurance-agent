@@ -81,7 +81,9 @@ function citationView(citation: ComparisonCitation): CitationView {
     documentVersionId: citation.document_version_id,
     page: citation.page,
     quote: citation.quote,
-    label: citation.section_label || `Policy evidence · page ${citation.page ?? "unknown"}`,
+    label: citation.section_label?.startsWith("manifest-v2-")
+      ? `Policy document · physical page ${citation.page ?? "unknown"}`
+      : citation.section_label || `Policy evidence · page ${citation.page ?? "unknown"}`,
     bbox,
     evidenceSpanId: citation.evidence_span_id,
   };
@@ -514,12 +516,27 @@ function ComparisonPanel({ comparison, onCitation }: { comparison: Comparison; o
     {showProducts ? <div className="compared-product-grid">{comparison.products.map((product) => <section key={product.id} className="compared-product">
       <div className="product-identity"><div><h4>{product.product}</h4><p>{product.insurer}</p></div><span>{product.variant}</span></div>
       <code>{product.uin || "UIN not verified"}</code>
+      {product.prepared_facts.length ? <>
+        <p className="fact-context">Base policy · Optional covers unselected</p>
+        <p className="fact-context">Policy facts and conditions. Personal eligibility and claim outcomes have not been calculated.</p>
+        <div className="prepared-facts" aria-label={`${product.product} reviewed facts`}>
+          {product.prepared_facts.map((fact) => <section className="prepared-fact" key={fact.criterion} data-criterion={fact.criterion}>
+            <h5>{fact.criterion.replaceAll("_", " ")}</h5>
+            <p>{fact.value || "Unknown"}</p>
+            {fact.conditions.length ? <details><summary>Conditions ({fact.conditions.length})</summary><ul>{fact.conditions.map((condition, index) => <li key={index}>{condition.text}</li>)}</ul></details> : null}
+            {fact.unknown_reasons.map((reason, index) => <p className="fact-unknown" key={index}>Unknown: {reason}</p>)}
+            <div className="claim-sources">{fact.citations.map((source, index) => <button type="button" className="citation-button" title={source.quote} key={`${source.id}-${index}`} onClick={() => onCitation(citationView(source))}>Clause {index + 1} · p.{source.page ?? "–"}</button>)}</div>
+          </section>)}
+          <section className="prepared-fact"><h5>Price</h5><p>Unavailable — no approved premium quote.</p></section>
+        </div>
+      </> : <>
       <div className="criterion-matrix" role="table" aria-label={`${product.product} criteria`}>
         {product.criteria.map((criterion) => <div key={criterion.id} className={`criterion-row match-${criterion.outcome}`} role="row"><span role="cell">{criterion.criterion.replaceAll("_", " ")}</span><b role="cell">{criterion.outcome.replaceAll("_", " ")}</b>{criterion.comparison_value != null ? <em role="cell">{displayValue(criterion.comparison_value)}</em> : null}{monthlyEmiLabel(criterion.criterion, criterion.comparison_value) ? <em className="derived-emi" role="cell">≈ {monthlyEmiLabel(criterion.criterion, criterion.comparison_value)} (derived, not an insurer-published rate)</em> : null}</div>)}
       </div>
       <div className="product-evidence-section"><b>Evidence gaps and unknowns</b>{product.evidence_gaps.length ? <ul>{product.evidence_gaps.map((gap) => <li key={`${gap.requirement_id}-${gap.criterion}`}>{gap.criterion.replaceAll("_", " ")} · {gap.outcome.replaceAll("_", " ")}</li>)}</ul> : <p>None identified for the shared criteria.</p>}</div>
       <div className="product-evidence-section"><b>Applicable restrictions</b>{product.restrictions.length ? product.restrictions.map((restriction) => <div key={restriction.statement_id} className="restriction"><p>{restriction.text}</p><div className="claim-sources">{restriction.citations.map((source, index) => <button type="button" className="citation-button" key={source.id} onClick={() => onCitation(citationView(source))}>Restriction source {index + 1} · p.{source.page ?? "–"}</button>)}</div></div>) : <p>No applicable restriction was established from the published evidence.</p>}</div>
       <div className="product-evidence-section"><b>Policy evidence</b>{product.evidence.length ? <div className="claim-sources">{product.evidence.map((source, index) => <button type="button" className="citation-button" key={`${source.id}-${index}`} onClick={() => onCitation(citationView(source))}>Evidence {index + 1} · p.{source.page ?? "–"}</button>)}</div> : <p>No cited product statement is available.</p>}</div>
+      </>}
     </section>)}</div> : null}
     <div className="comparison-statements">{comparison.statements.map((statement) => <div key={statement.id} className={statement.critical ? "critical-statement" : ""}><p>{statement.text}</p>{statement.citations.length ? <div className="claim-sources">{statement.citations.map((source, index) => <button type="button" className="citation-button" key={source.id} onClick={() => onCitation(citationView(source))}>Source {index + 1} · p.{source.page ?? "–"}</button>)}</div> : null}</div>)}</div>
   </div>;
@@ -532,5 +549,5 @@ function ProfileEditDialog({ edit, busy, onSubmit, onClose }: { edit: ProfileEdi
 }
 
 function CataloguePanel({ catalogue }: { catalogue: Catalogue | null }) {
-  return <section className="coverage"><p className="eyebrow">PUBLISHED KNOWLEDGE RELEASE</p><h1>What CoverGuide can safely compare</h1><p className="lede">A product becomes available after its exact identity, agreed supported rules, evidence, embeddings and publication gate pass. Uncovered categories remain unknown.</p>{catalogue && <div className="catalogue-limit">{catalogue.comparison_label}</div>}<div className={`release-status ${catalogue?.ready ? "ready" : "blocked"}`}><strong>{catalogue?.ready ? "Development alpha published" : "Not ready for live advice"}</strong><span>{catalogue?.release ? `${catalogue.release.label.replaceAll("_", " ")} · Release ${catalogue.release.number} · ${new Date(catalogue.release.published_at || "").toLocaleString()}` : catalogue?.blocking_reason || "No release is published."}</span></div><div className="product-inventory">{catalogue?.products.map((product) => <article key={product.id}><div><span className={product.included_in_current_release ? "status-dot ready" : "status-dot"} /><div><h3>{product.name}</h3><p>{product.insurer}</p></div></div><code>{product.uin || "UIN not verified"}</code><dl><div><dt>Documents</dt><dd>{product.document_count}</dd></div><div><dt>Verified rules</dt><dd>{product.rule_count}</dd></div><div><dt>Material issues</dt><dd>{product.unresolved_material_jobs}</dd></div></dl><div className="category-summary"><b>Covered</b><span>{product.covered_inventory_categories.join(", ") || "None yet"}</span><b>Unknown</b><span>{product.missing_inventory_categories.join(", ") || "None"}</span></div><small>{product.included_in_current_release ? "included in demo" : product.publication_status.replaceAll("_", " ")}</small></article>)}</div>{!catalogue && <p>Loading readiness…</p>}</section>;
+  return <section className="coverage"><p className="eyebrow">PUBLISHED KNOWLEDGE RELEASE</p><h1>What CoverGuide can safely compare</h1><p className="lede">A product becomes available after its identity, documents, reviewed facts or rules, and publication checks pass. Uncovered questions remain unknown.</p>{catalogue && <div className="catalogue-limit">{catalogue.comparison_label}</div>}<div className={`release-status ${catalogue?.ready ? "ready" : "blocked"}`}><strong>{catalogue?.ready ? "Development alpha published" : "Not ready for live advice"}</strong><span>{catalogue?.release ? `${catalogue.release.label.replaceAll("_", " ")} · Release ${catalogue.release.number} · ${new Date(catalogue.release.published_at || "").toLocaleString()}` : catalogue?.blocking_reason || "No release is published."}</span></div><div className="product-inventory">{catalogue?.products.map((product) => <article key={product.id}><div><span className={product.included_in_current_release ? "status-dot ready" : "status-dot"} /><div><h3>{product.name}</h3><p>{product.insurer}</p></div></div><code>{product.uin || "UIN not verified"}</code><dl><div><dt>Documents</dt><dd>{product.document_count}</dd></div><div><dt>Verified rules</dt><dd>{product.rule_count}</dd></div><div><dt>Material issues</dt><dd>{product.unresolved_material_jobs}</dd></div></dl><div className="category-summary"><b>Covered</b><span>{product.covered_inventory_categories.join(", ") || "None yet"}</span><b>Unknown</b><span>{product.missing_inventory_categories.join(", ") || "None"}</span></div><small>{product.included_in_current_release ? "included in demo" : product.publication_status.replaceAll("_", " ")}</small></article>)}</div>{!catalogue && <p>Loading readiness…</p>}</section>;
 }

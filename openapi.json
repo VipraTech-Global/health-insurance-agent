@@ -663,6 +663,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RequirementMatch'
+        prepared_facts:
+          type: array
+          items:
+            $ref: '#/components/schemas/PreparedFact'
         evidence_gaps:
           type: array
           items:
@@ -682,6 +686,7 @@ components:
       - evidence_gaps
       - id
       - insurer
+      - prepared_facts
       - product
       - product_variant_id
       - quote_id
@@ -1092,6 +1097,50 @@ components:
           items:
             type: object
             additionalProperties: {}
+    PreparedCondition:
+      type: object
+      properties:
+        text:
+          type: string
+        citation_indexes:
+          type: array
+          items:
+            type: integer
+      required:
+      - citation_indexes
+      - text
+    PreparedFact:
+      type: object
+      properties:
+        criterion:
+          type: string
+        status:
+          type: string
+        value:
+          type: string
+          nullable: true
+        conditions:
+          type: array
+          items:
+            $ref: '#/components/schemas/PreparedCondition'
+        rule_status:
+          type: string
+        unknown_reasons:
+          type: array
+          items:
+            type: string
+        citations:
+          type: array
+          items:
+            $ref: '#/components/schemas/ComparisonCitation'
+      required:
+      - citations
+      - conditions
+      - criterion
+      - rule_status
+      - status
+      - unknown_reasons
+      - value
     ProductRestriction:
       type: object
       properties:
