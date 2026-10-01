@@ -583,3 +583,12 @@ def test_valid_retained_response_can_survive_a_malformed_correction(monkeypatch)
     assert not state.get('review_complete')
     state.update(last_error='invalid_structured_output', review={'verdict': 'disagree'})
     assert not pipeline.reuse_valid_retained_attempt(SimpleNamespace(source_capture='exact-capture'), state, criterion, POLICY_ID, pages)
+
+
+def test_ayush_bed_counts_have_exact_numeric_support():
+    from decimal import Decimal
+
+    from apps.adviser_v2.processing.criterion_evidence import quoted_quantities
+    assert quoted_quantities("Having at least 5 in-patient beds;")["count"] == {Decimal(5)}
+    assert quoted_quantities("Having at least five inpatient beds;")["count"] == {Decimal(5)}
+    assert not quoted_quantities("Rs. 5000 per day")["count"]

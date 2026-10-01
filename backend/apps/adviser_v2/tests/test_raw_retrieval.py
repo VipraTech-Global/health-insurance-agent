@@ -211,3 +211,44 @@ def test_unlisted_numeric_claim_in_answer_prose_is_rejected(monkeypatch):
     answer = replace(answer, extraction=candidate, reviewed_extraction=candidate,
         review=reviewed(answer.criterion, candidate))
     assert 'unsupported money' in '; '.join(source_problems(answer))
+
+
+def test_relay_timeouts_retry_separately_from_validation(monkeypatch):
+    from datetime import timedelta
+
+    from django.utils import timezone
+
+    from apps.adviser.ai import RelayFailure
+    from apps.adviser_v2.source_answers import _relay
+
+    _, result, _ = sample()
+    attempts = []
+    def call(**kwargs):
+        attempts.append(kwargs)
+        if len(attempts) < 3:
+            raise RelayFailure('provider_timeout', 'HTTP 408')
+        return result
+    monkeypatch.setattr('apps.adviser_v2.source_answers.call_model', call)
+    monkeypatch.setattr('apps.adviser_v2.source_answers.request_bytes_with_headroom', lambda *args: None)
+    turn = SimpleNamespace(deadline=timezone.now()+timedelta(seconds=900))
+    actual = _relay(turn, model='test', schema_name='policy_extraction', output_type=type(result), messages=[], effort='low')
+    assert actual == result
+    assert len(attempts) == 3
+
+
+def test_invalid_source_answer_gets_only_one_corrective_attempt(monkeypatch):
+    from apps.adviser_v2.source_answers import answer_question
+    expected = source_fixture(monkeypatch)
+    invalid = expected.extraction.model_copy(deep=True)
+    fact = carrier_fact(invalid.rules[0])
+    fact.citations[0].quote = 'A sentence absent from the source.'
+    invalid.rules = [fact_carrier(expected.criterion, fact)]
+    attempts = []
+    def relay(*args, **kwargs):
+        attempts.append(kwargs)
+        return invalid
+    monkeypatch.setattr('apps.adviser_v2.source_answers._relay', relay)
+    answer = answer_question(None, 'How many children?', {}, expected.packet)
+    assert answer.extraction is None
+    assert 'after validation' in answer.unknown_reason
+    assert len(attempts) == 2
