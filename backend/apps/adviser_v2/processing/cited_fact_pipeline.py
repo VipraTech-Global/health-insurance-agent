@@ -48,6 +48,22 @@ SEED = Path(__file__).resolve().parents[4] / "data/manifests/star-three-plan-ret
 RERUN = SEED.with_name("star-comprehensive-table-fact-rerun.json")
 
 
+def resume_pipeline_failure(state: dict[str, Any]) -> None:
+    """Resume the old wrapper-recovery exception, which never validated a response.
+
+    The old handler turned its own ValueError into a completed unknown before
+    incrementing the response counter. Schema/model failures already counted by
+    extract_criterion are deliberately outside this narrowly identified repair.
+    """
+    reasons = (state.get("result") or {}).get("material_issues", [])
+    if (state.get("complete") and state.get("validation_attempts") == 0
+            and state.get("schema_diagnostics") and not state.get("pipeline_failure_resumed")
+            and any("Complete extraction request validation failed:" in r for r in reasons)):
+        state["pipeline_failure_resumed"] = {"reason": "Local carrier reconstruction exception; no validated response or corrective attempt was consumed.", "prior_result": state["result"]}
+        state.update(complete=False, result=None, last_error=None)
+        state.pop("review_complete", None)
+
+
 def apply_approved_rerun(progress: dict[str, Any], authorization: dict[str, Any]) -> None:
     """Apply an exact, one-time operator rerun, preserving the complete earlier audit."""
     if authorization.get("policy_version_id") != progress["policy_version_id"]:
@@ -94,6 +110,7 @@ def _progress(job: ProcessingJob, policy_id: str, core: list[dict[str, Any]]) ->
                 raise ValueError("Retained cited facts do not match this exact source bundle.")
             for criterion in CRITERIA:
                 state = progress["criteria"].get(criterion.key, {})
+                resume_pipeline_failure(state)
                 if state.get("review"):
                     blockers, notes = review_disposition(PolicyRuleReviewV1.model_validate(state["review"]),
                         PolicyRuleExtractionV1.model_validate(state.get("reviewed_result", state["result"])), criterion)

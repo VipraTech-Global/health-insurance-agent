@@ -385,3 +385,22 @@ def test_long_v2_error_is_retained_in_artifact_but_issue_summary_fits_contract()
     validate_contract('ProcessingIssuesV1', issues)
     assert 'Full diagnostic retained' in issues[0]['description']
     assert len(result['material_issues'][0]) == 20000
+
+
+def test_our_old_wrapper_exception_does_not_consume_a_corrective_attempt():
+    from apps.adviser_v2.processing.cited_fact_pipeline import resume_pipeline_failure
+    from apps.adviser_v2.processing.criterion_attempts import new_criterion_state, unknown_result
+
+    state = new_criterion_state()
+    state.update(complete=True, schema_diagnostics=[{'retained': 'public response'}],
+        result=unknown_result(POLICY_ID, CRITERIA[0], 'Complete extraction request validation failed: local wrapper error').model_dump(mode='json'))
+    before = deepcopy(state)
+    resume_pipeline_failure(state)
+    assert not state['complete'] and state['result'] is None
+    assert state['validation_attempts'] == 0
+    assert state['pipeline_failure_resumed']['prior_result'] == before['result']
+    counted_model_failure = deepcopy(before)
+    counted_model_failure['validation_attempts'] = 2
+    resume_pipeline_failure(counted_model_failure)
+    assert counted_model_failure['complete']
+    assert 'pipeline_failure_resumed' not in counted_model_failure
