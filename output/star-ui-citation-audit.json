@@ -1,0 +1,307 @@
+{
+  "cells_checked": 39,
+  "method": "Real UI first clause link of each prepared cell; exact quote and physical-page API identity plus visible PDF highlight. All 273 citation associations separately verified during release validation.",
+  "plans": [
+    {
+      "plan": "Family Health Optima Insurance Plan",
+      "checked": [
+        {
+          "criterion": "sum_insured",
+          "id": "4cdeb468-5249-42de-aa54-dc13ba6c118c",
+          "document": "f8fc34fe-5566-4ada-aeae-8ae9a2c993ca",
+          "page": 2,
+          "highlights": 2
+        },
+        {
+          "criterion": "room_category",
+          "id": "81da7282-60bc-4c8c-928b-712730445f15",
+          "document": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
+          "page": 10,
+          "highlights": 15
+        },
+        {
+          "criterion": "copay",
+          "id": "c7fb3038-22b6-4113-84b5-570da19031c8",
+          "document": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
+          "page": 21,
+          "highlights": 8
+        },
+        {
+          "criterion": "deductible",
+          "id": "ed10e2bd-8ebd-46fe-bafe-8685372e8012",
+          "document": "c67d0e84-f42b-4706-bf12-f7c987e99698",
+          "page": 12,
+          "highlights": 21
+        },
+        {
+          "criterion": "ped_waiting_period",
+          "id": "e6d9dd21-63cd-4b32-aa6a-bf16099d376d",
+          "document": "c67d0e84-f42b-4706-bf12-f7c987e99698",
+          "page": 8,
+          "highlights": 5
+        },
+        {
+          "criterion": "initial_specific_waiting_periods",
+          "id": "9abcb9f3-de4a-46a4-a146-26fbfd5d6e3c",
+          "document": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
+          "page": 28,
+          "highlights": 3
+        },
+        {
+          "criterion": "maternity",
+          "id": "75d26eff-45a4-41a5-a6e5-0dcad1da45e3",
+          "document": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
+          "page": 31,
+          "highlights": 6
+        },
+        {
+          "criterion": "newborn",
+          "id": "71cb07cd-9a5e-40e3-a262-0c063cc1ec0c",
+          "document": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
+          "page": 6,
+          "highlights": 3
+        },
+        {
+          "criterion": "restoration",
+          "id": "b3739119-b9cb-4b94-a890-54f59e6b480f",
+          "document": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
+          "page": 9,
+          "highlights": 3
+        },
+        {
+          "criterion": "family_floater",
+          "id": "90c25a6c-c8b0-4a1d-b166-137ad7e47de9",
+          "document": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
+          "page": 8,
+          "highlights": 3
+        },
+        {
+          "criterion": "portability",
+          "id": "dcc71f0e-afeb-4c8e-beff-fd923e1ed724",
+          "document": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
+          "page": 7,
+          "highlights": 7
+        },
+        {
+          "criterion": "geography",
+          "id": "06979d97-53f4-4973-ae15-9181667313da",
+          "document": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
+          "page": 9,
+          "highlights": 8
+        },
+        {
+          "criterion": "eligibility",
+          "id": "d47d86dc-b52d-4944-b803-fe26df370071",
+          "document": "f8fc34fe-5566-4ada-aeae-8ae9a2c993ca",
+          "page": 2,
+          "highlights": 4
+        }
+      ]
+    },
+    {
+      "plan": "Star Comprehensive Insurance Policy",
+      "checked": [
+        {
+          "criterion": "sum_insured",
+          "id": "af251711-a9dc-45a2-8098-9faa0233a91a",
+          "document": "508d71cc-ab6b-4ca3-8a61-6302cd2f038a",
+          "page": 2,
+          "highlights": 3
+        },
+        {
+          "criterion": "room_category",
+          "id": "c0bd8f0a-195c-4616-8a9a-a8cc63d5f0de",
+          "document": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+          "page": 9,
+          "highlights": 4
+        },
+        {
+          "criterion": "copay",
+          "id": "c668c3fd-87ef-4ae1-a52b-453f43d78004",
+          "document": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+          "page": 39,
+          "highlights": 5
+        },
+        {
+          "criterion": "deductible",
+          "id": "de1d8245-e3e0-4b18-96f1-4bcf01f16583",
+          "document": "2c5b514b-e6f0-400a-b1dd-5cc2d400521f",
+          "page": 13,
+          "highlights": 25
+        },
+        {
+          "criterion": "ped_waiting_period",
+          "id": "4a60f92f-185c-4aaa-b562-c7105b8393d3",
+          "document": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+          "page": 31,
+          "highlights": 8
+        },
+        {
+          "criterion": "initial_specific_waiting_periods",
+          "id": "ef5054a6-c796-480b-b4db-55ea9b22117b",
+          "document": "2c5b514b-e6f0-400a-b1dd-5cc2d400521f",
+          "page": 8,
+          "highlights": 5
+        },
+        {
+          "criterion": "maternity",
+          "id": "6b284f3f-bb61-4c0e-b7f8-8f2e290a7741",
+          "document": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+          "page": 13,
+          "highlights": 9
+        },
+        {
+          "criterion": "newborn",
+          "id": "f697f3a1-c6de-415c-8c19-78428a8da3c5",
+          "document": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+          "page": 6,
+          "highlights": 3
+        },
+        {
+          "criterion": "restoration",
+          "id": "400e7955-2d2c-4501-91e6-b2cdbb8f1e8a",
+          "document": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+          "page": 13,
+          "highlights": 6
+        },
+        {
+          "criterion": "family_floater",
+          "id": "8f2dea70-a925-4447-8a5d-f3f6d47abf16",
+          "document": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+          "page": 7,
+          "highlights": 6
+        },
+        {
+          "criterion": "portability",
+          "id": "b0e56bdc-fc1b-4c2d-8d11-28b0ea9dd885",
+          "document": "2c5b514b-e6f0-400a-b1dd-5cc2d400521f",
+          "page": 17,
+          "highlights": 5
+        },
+        {
+          "criterion": "geography",
+          "id": "1de6b428-3e4f-4dd2-bd98-34ab62097aca",
+          "document": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+          "page": 44,
+          "highlights": 2
+        },
+        {
+          "criterion": "eligibility",
+          "id": "af251711-a9dc-45a2-8098-9faa0233a91a",
+          "document": "508d71cc-ab6b-4ca3-8a61-6302cd2f038a",
+          "page": 2,
+          "highlights": 3
+        }
+      ]
+    },
+    {
+      "plan": "Star Health Assure Insurance Policy",
+      "checked": [
+        {
+          "criterion": "sum_insured",
+          "id": "a2d03ebe-d995-4a18-a1d2-7a15c8bcb8a8",
+          "document": "760d7cca-92f9-4d80-b62f-54894202ed4e",
+          "page": 3,
+          "highlights": 1
+        },
+        {
+          "criterion": "room_category",
+          "id": "e843f1b4-7df6-489d-9d40-2bf495e3e44c",
+          "document": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+          "page": 9,
+          "highlights": 4
+        },
+        {
+          "criterion": "copay",
+          "id": "26486fc4-14c6-499d-9ae4-2a95d171b717",
+          "document": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+          "page": 20,
+          "highlights": 3
+        },
+        {
+          "criterion": "deductible",
+          "id": "1175f699-2a72-4624-9380-028a8652f143",
+          "document": "08860337-cd44-4603-8b70-b662eaf2f8d7",
+          "page": 14,
+          "highlights": 4
+        },
+        {
+          "criterion": "ped_waiting_period",
+          "id": "a678e8ea-6d1b-4be1-ada2-b9cdbda03ab7",
+          "document": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+          "page": 27,
+          "highlights": 8
+        },
+        {
+          "criterion": "initial_specific_waiting_periods",
+          "id": "8e38456e-d9ca-4a6b-9688-ed90b84208fb",
+          "document": "08860337-cd44-4603-8b70-b662eaf2f8d7",
+          "page": 8,
+          "highlights": 5
+        },
+        {
+          "criterion": "maternity",
+          "id": "a83a5dc1-b61d-4b9a-adde-f43c8ee42660",
+          "document": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+          "page": 14,
+          "highlights": 5
+        },
+        {
+          "criterion": "newborn",
+          "id": "2bf98336-da84-44a3-8a8e-2c5d79b044a8",
+          "document": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+          "page": 6,
+          "highlights": 3
+        },
+        {
+          "criterion": "restoration",
+          "id": "a31d66e0-5630-4fdd-bac4-c2c21cfa9c24",
+          "document": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+          "page": 13,
+          "highlights": 4
+        },
+        {
+          "criterion": "family_floater",
+          "id": "284535f8-90eb-47b8-9450-a4c2c10e85c9",
+          "document": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+          "page": 8,
+          "highlights": 6
+        },
+        {
+          "criterion": "portability",
+          "id": "75f1bc46-8e3f-4182-99cd-5ce7efb29b25",
+          "document": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+          "page": 7,
+          "highlights": 7
+        },
+        {
+          "criterion": "geography",
+          "id": "12d92a98-e9af-4be8-8781-7a6ee965ac34",
+          "document": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+          "page": 39,
+          "highlights": 3
+        },
+        {
+          "criterion": "eligibility",
+          "id": "27c0babc-f1a1-451f-83cd-9b851c1d3c6e",
+          "document": "760d7cca-92f9-4d80-b62f-54894202ed4e",
+          "page": 2,
+          "highlights": 3
+        }
+      ]
+    }
+  ],
+  "additional_browser_checks": {
+    "profile_loading": {
+      "method": "Hold the profile GET in Playwright, then release it. No model or source response was replaced.",
+      "send_disabled_during_load": true,
+      "send_enabled_after_matching_profile": true
+    },
+    "unknown_reasons": {
+      "specific_evidence_gaps_visible": true,
+      "internal_coverage_question_and_needs_prospectus_markers_hidden": true
+    },
+    "citation_header": "Policy document \u00b7 physical page 2",
+    "citation_header_screenshot": "output/screenshots/star-opened-citation.png"
+  }
+}

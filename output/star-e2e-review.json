@@ -1,0 +1,3136 @@
+{
+  "checked_at": "2026-10-01T19:35:49.721184+00:00",
+  "database": "coverguide_star_slice",
+  "retrieval_method_at_audit": "bm25",
+  "release_id": "3c1737d7-d755-4ec4-8352-028b81c52cc4",
+  "release_state": "published",
+  "prepared_facts": 39,
+  "executable_rule_records": 5,
+  "distinct_native_anchors_checked": 285,
+  "profiles": [
+    {
+      "profile": "adult_individual",
+      "conversation_id": "69cf4164-9ff1-4879-afb2-dec46c3106d8",
+      "comparison_id": "0c7c2f70-f66a-433a-aa5d-f2da89fdb9c7",
+      "final_turn_id": "3ea82b68-04e7-48be-8856-de393809929d",
+      "final_question": "For each of the three base policies, what road ambulance cover is provided and what conditions or limits apply? No optional covers are selected.",
+      "profile_snapshot": {
+        "id": "d365003b-8e9f-4ae0-90d2-f7be534d74e9",
+        "revision": 8,
+        "created_at": "2026-10-01 18:46:21.941310+00:00",
+        "people": [
+          {
+            "id": "d6de85fd-7fea-4d99-b71d-205c12bf4e0e",
+            "display_name": "Self"
+          }
+        ],
+        "facts": [
+          {
+            "id": "1660f2ed-3895-44d6-b3d0-badee2da9d97",
+            "logical_key": "fbb91d7f-79e3-4713-919e-d1b952cfa504",
+            "fact_type": "age",
+            "value": {
+              "kind": "quantity",
+              "unit": "year",
+              "state": "known",
+              "value": "32"
+            },
+            "status": "reported",
+            "subject_person_id": "d6de85fd-7fea-4d99-b71d-205c12bf4e0e"
+          },
+          {
+            "id": "74f2773e-fc13-4308-8195-1809d3a2ab90",
+            "logical_key": "25a74f2a-730e-46c2-ba8b-2bc602227ed8",
+            "fact_type": "intended_insured",
+            "value": {
+              "kind": "boolean",
+              "state": "known",
+              "value": true
+            },
+            "status": "reported",
+            "subject_person_id": "d6de85fd-7fea-4d99-b71d-205c12bf4e0e"
+          },
+          {
+            "id": "5b09263f-1a39-4209-959b-ba818dfa2f4e",
+            "logical_key": "607f6d8b-5881-4742-9d02-454af926dfce",
+            "fact_type": "purchase_for",
+            "value": {
+              "kind": "text",
+              "state": "known",
+              "value": "individual cover"
+            },
+            "status": "reported",
+            "subject_person_id": null
+          },
+          {
+            "id": "52e17a7d-caa9-4d6f-a742-5c21aa417051",
+            "logical_key": "dc18b14d-f170-43ee-8443-62535a0e47a0",
+            "fact_type": "city",
+            "value": {
+              "state": "unknown",
+              "reason": "not provided"
+            },
+            "status": "reported",
+            "subject_person_id": null
+          },
+          {
+            "id": "2f533ecb-11f5-420f-be69-0b50b03e44b4",
+            "logical_key": "520dffed-66fd-4267-8899-04fa8b823113",
+            "fact_type": "budget",
+            "value": {
+              "state": "unknown",
+              "reason": "not provided"
+            },
+            "status": "reported",
+            "subject_person_id": null
+          }
+        ],
+        "requirements": [
+          {
+            "id": "8202f325-b85d-41cb-8861-0f14b5a089f0",
+            "logical_key": "568d1e8e-5619-4f4a-85bc-13b9b4d8b847",
+            "criterion": "sum_insured",
+            "operator": "equals",
+            "target_value": {
+              "kind": "quantity",
+              "unit": "money",
+              "state": "known",
+              "value": "1000000",
+              "currency": "INR"
+            },
+            "priority": "preferred",
+            "scope": "entire_purchase",
+            "status": "reported",
+            "subject_person_id": null
+          },
+          {
+            "id": "b3a3bdf4-8e99-4eb3-bf2c-0506da608be2",
+            "logical_key": "ae72934f-a715-4e2a-a1a0-e9e800efd1e2",
+            "criterion": "pre_existing_disease_wait",
+            "operator": "is_available",
+            "target_value": null,
+            "priority": "informational",
+            "scope": "entire_purchase",
+            "status": "reported",
+            "subject_person_id": null
+          }
+        ]
+      },
+      "products": [
+        {
+          "product": "Family Health Optima Insurance Plan",
+          "prepared_supported": 13,
+          "non_executable_facts": 13,
+          "quote": "unavailable",
+          "selected_options": [],
+          "source_answer": {
+            "id": "b0601e64-85d8-4bee-a249-44d13f317219",
+            "ordinal": 1,
+            "text": "Family Health Optima Insurance Plan: Road ambulance expenses are payable up to INR 750 per hospitalization and INR 1,500 per policy period, subject to an admissible hospitalization claim. Covered transport includes a private ambulance when medically needed to reach hospital, hospital-to-hospital transfer for a higher level of medical treatment, or transport home in the same city when ambulance use is certified by a medical practitioner. The hospitalization claim must be admissible. Transport home must be within the same city and ambulance use must be certified by a medical practitioner.",
+            "statement_type": "benefit",
+            "critical": true,
+            "support_status": "supported",
+            "comparison_assessment_id": "1cab93d9-1245-4b10-8fd2-6044411ef975",
+            "citations": [
+              {
+                "id": "bc21d4ae-35ce-4059-92e6-aa2c28077ec3",
+                "evidence_span_id": "e34a1ca6-76aa-4951-a087-fea53b1d68ee",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Subject to an admissible\nhospitalization claim, road ambulance\nexpenses up to Rs.750/- per hospitalization\nand up to Rs.1,500/- per Policy Period shall\nbe payable for the following:",
+                "section_label": "manifest-v2-clause-864-1045-d0c0032fad9fcce4",
+                "page": 12,
+                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
+                "locator": {
+                  "bbox": [
+                    62.3622,
+                    384.62829999999997,
+                    287.82955389999995,
+                    455.64379999999994
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
+                  "physical_page": 12,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "ace4e3d5-2c0f-4172-a0bc-52275489d32c",
+                "evidence_span_id": "438a8870-eda1-46b5-911d-f54036827518",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "for transportation of the Insured Person\nby private ambulance service to go to\nhospital when this is needed for medical\nreasons",
+                "section_label": "manifest-v2-clause-1051-1178-c1b8514b1c524519",
+                "page": 12,
+                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
+                "locator": {
+                  "bbox": [
+                    82.197798,
+                    465.31699999999995,
+                    287.80550200000005,
+                    521.3285999999999
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
+                  "physical_page": 12,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "7c620704-1b5a-4ea7-9319-36d96b483865",
+                "evidence_span_id": "ced7a3a5-f53a-4d70-8bed-625be3723a68",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "for transportation of the Insured Person\nby private ambulance service from one\nhospital to another hospital for better\nmedical treatment",
+                "section_label": "manifest-v2-clause-1188-1324-0da46570f6c0d5ec",
+                "page": 12,
+                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
+                "locator": {
+                  "bbox": [
+                    82.2047,
+                    551.6749,
+                    287.8161663000001,
+                    607.6867
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
+                  "physical_page": 12,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "082a662d-88fc-4e9e-a99e-ffa2f34bbc9f",
+                "evidence_span_id": "2ad2d9cc-2da7-4bf2-9070-abf679405c7b",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "for transportation of the Insured Person\nfrom the hospital where treatment is\ntaken to their place of residence (if it is\nin same city) provided the requirement\nof an ambulance to the residence is\ncertified by the medical practitioner",
+                "section_label": "manifest-v2-clause-1335-1569-8bd140b54e08d8b7",
+                "page": 12,
+                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
+                "locator": {
+                  "bbox": [
+                    82.2047,
+                    638.0328999999999,
+                    287.8161663000001,
+                    725.0534
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
+                  "physical_page": 12,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "product": "Star Comprehensive Insurance Policy",
+          "prepared_supported": 13,
+          "non_executable_facts": 10,
+          "quote": "unavailable",
+          "selected_options": [],
+          "source_answer": {
+            "id": "66f81b15-7eaa-4647-b0c1-b2ed74f74e77",
+            "ordinal": 2,
+            "text": "Star Comprehensive Insurance Policy: Road ambulance expenses cover medically needed private-ambulance transport to a hospital, private-ambulance transfer between hospitals for further medical treatment, and transport from the treating hospital to the insured person\u2019s residence in the same city. The road ambulance expense is payable subject to an admissible hospitalization claim. Transport from the treating hospital to the residence must be within the same city, and a medical practitioner must certify the need for an ambulance.",
+            "statement_type": "benefit",
+            "critical": true,
+            "support_status": "supported",
+            "comparison_assessment_id": "5a74061c-db6e-4798-8fc7-3b88ff1989a0",
+            "citations": [
+              {
+                "id": "bd494cc9-8bdb-45f3-a99c-059ad3fb44f0",
+                "evidence_span_id": "ce604457-f8b6-4178-90de-ce53ad962dc0",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Road Ambulance: Subject to an admissible\nhospitalization claim, road ambulance\nexpenses incurred for the following are\npayable :-",
+                "section_label": "manifest-v2-clause-800-929-72bb1e4b29ecd873",
+                "page": 11,
+                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+                "locator": {
+                  "bbox": [
+                    65.5197,
+                    433.7327,
+                    287.87690000000003,
+                    489.9378
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+                  "physical_page": 11,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "3796b30d-0c49-4f28-9f63-7edba87bb9de",
+                "evidence_span_id": "15d087ee-9c67-4fae-9ed1-6baae3fa2006",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "for transportation of the Insured\nPerson by private ambulance\nservice to go to hospital when this is\nneeded for medical reasons",
+                "section_label": "manifest-v2-clause-935-1062-db0bb98787894994",
+                "page": 11,
+                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+                "locator": {
+                  "bbox": [
+                    88.51679999999999,
+                    502.58709999999996,
+                    287.7297,
+                    559.0232
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+                  "physical_page": 11,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "c0e54ebc-8abb-4bd4-ad17-612bdb106877",
+                "evidence_span_id": "dde0f2d8-8b8a-4318-8c9d-9e6653d35f77",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "for transportation of the Insured\nPerson by private ambulance service\nfrom one hospital to another hospital\nfor better medical treatment",
+                "section_label": "manifest-v2-clause-1072-1208-fdd23f8e2a619f0d",
+                "page": 11,
+                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+                "locator": {
+                  "bbox": [
+                    87.5158,
+                    589.6524999999999,
+                    287.73069999999996,
+                    646.0886
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+                  "physical_page": 11,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "efe59dba-768d-4004-9202-3a6d0f16cef3",
+                "evidence_span_id": "7c552049-a382-4a31-9ce2-8ab1e5ea717f",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "for transportation of the Insured\nPerson from the hospital where\ntreatment is taken to their place\nof residence (if it is in same city)\nprovided the requirement of an\nambulance to the residence is\ncertified by the medical practitioner.",
+                "section_label": "manifest-v2-clause-1219-1454-cfb51abf307febdf",
+                "page": 11,
+                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+                "locator": {
+                  "bbox": [
+                    87.874,
+                    682.3872,
+                    287.73300000000006,
+                    784.2594
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+                  "physical_page": 11,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "product": "Star Health Assure Insurance Policy",
+          "prepared_supported": 13,
+          "non_executable_facts": 13,
+          "quote": "unavailable",
+          "selected_options": [],
+          "source_answer": {
+            "id": "6cbc4cd2-d2ef-43f0-a7de-55c3aba04416",
+            "ordinal": 3,
+            "text": "Star Health Assure Insurance Policy: Road ambulance expenses are payable at actual cost, subject to an admissible hospitalization claim. Covered transport is by private ambulance to a hospital when medically needed; between hospitals for a higher level of medical treatment; or from the treating hospital to the residence in the same city when ambulance transport home is certified by a medical practitioner. A hospitalization claim must be admissible. Transport to a hospital must be by private ambulance and needed for medical reasons. Inter-hospital transport must be for a higher level of medical treatment. Transport home must be from the treating hospital, within the same city, and certified as requiring an ambulance by a medical practitioner.",
+            "statement_type": "benefit",
+            "critical": true,
+            "support_status": "supported",
+            "comparison_assessment_id": "4847a672-283f-45e2-b418-99af25e0010f",
+            "citations": [
+              {
+                "id": "31a99924-303f-473e-b160-ea69da33ce52",
+                "evidence_span_id": "bfa55e37-fe8d-4e68-8b4f-369d41a99f48",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Road Ambulance: Subject to an admissible\nhospitalization claim, road ambulance\nexpenses incurred for the following are\npayable:",
+                "section_label": "manifest-v2-clause-2696-2823-442a251c6c0de924",
+                "page": 10,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    330.2362,
+                    632.9258,
+                    552.2483318000001,
+                    692.7351
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 10,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "6cb1cd98-bcb2-424c-890c-98b0917b06f7",
+                "evidence_span_id": "93f5350f-4d2b-4259-a7df-5db0d7708566",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "for transportation of the Insured Person\nby private ambulance service to go\nto hospital when this is needed for\nmedical reasons",
+                "section_label": "manifest-v2-clause-2829-2956-636a7a0ac051ad32",
+                "page": 10,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    352.9134,
+                    705.1746,
+                    552.0683999999999,
+                    765.2149
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 10,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "1e7a3990-6a47-47f6-878d-01833b1a94b3",
+                "evidence_span_id": "5e2f80cc-959f-4a66-b25e-9c039c0983ee",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "for transportation of the Insured Person\nby private ambulance service from one\nhospital to another hospital for better\nmedical treatment",
+                "section_label": "manifest-v2-clause-170-306-0da46570f6c0d5ec",
+                "page": 11,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    85.0394,
+                    104.63740000000007,
+                    287.82433399999996,
+                    163.64240000000007
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 11,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "59e07db8-87e8-4541-83db-ff64e309ae8a",
+                "evidence_span_id": "b419474d-a05f-4f7c-ad1a-cac080382213",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "for transportation of the Insured Person\nfrom the hospital where treatment is\ntaken to their place of residence (if it is\nin same city) provided the requirement\nof an ambulance to the residence is\ncertified by the medical practitioner.",
+                "section_label": "manifest-v2-clause-317-552-e21a8ceb0f29731b",
+                "page": 11,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    85.03304,
+                    195.97590000000002,
+                    287.813698,
+                    286.9809
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 11,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "376870f2-0d22-45be-a83d-01f2abadb0a6",
+                "evidence_span_id": "b781f294-85d7-464e-a01a-92adda2a1b86",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "S.No Sum Insured (INR)",
+                "section_label": "manifest-v2-clause-185-207-2a98f6326ed8de8c",
+                "page": 46,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    44.0314,
+                    122.27740000000006,
+                    146.5994,
+                    130.27740000000006
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 46,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "9b32f032-3532-44c3-9761-81dcb33aeddb",
+                "evidence_span_id": "7b7134fa-d550-419a-a6ea-f93311172e99",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "8 Road Ambulance Actuals",
+                "section_label": "manifest-v2-clause-672-696-be38833b08f582b7",
+                "page": 46,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    50.007399999999905,
+                    389.0214,
+                    370.7353999999999,
+                    397.0214
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 46,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "distinct_native_anchors_checked": 250,
+      "turns": [
+        {
+          "id": "32b55df9-7c94-4ab7-9b0d-a51a33e9e6c6",
+          "state": "completed",
+          "error": null
+        },
+        {
+          "id": "e09d44b2-35ee-4969-8451-140513c3d27e",
+          "state": "completed",
+          "error": null
+        },
+        {
+          "id": "18b803d6-43bb-4d05-a2ef-ef6aab7a89ec",
+          "state": "completed",
+          "error": null
+        },
+        {
+          "id": "9bc048ea-9cb1-42db-8320-283c97745f6a",
+          "state": "failed",
+          "error": "turn_processing_failed"
+        },
+        {
+          "id": "08ac20f6-d223-4e56-8cd6-aa96672c278f",
+          "state": "completed",
+          "error": null
+        },
+        {
+          "id": "66e5f945-278c-4dc5-b9df-a4cd1914bfb9",
+          "state": "failed",
+          "error": "unsupported_answer"
+        },
+        {
+          "id": "3ea82b68-04e7-48be-8856-de393809929d",
+          "state": "completed",
+          "error": null
+        }
+      ],
+      "model_attempts": [
+        {
+          "id": "7d414c60-dfae-4a2d-9c43-9def853c3ed2",
+          "turn_id": "32b55df9-7c94-4ab7-9b0d-a51a33e9e6c6",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 32327,
+            "input_tokens": 2118,
+            "usage_source": "provider_reported",
+            "output_tokens": 1536,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "31878c67-16b9-48cd-84bb-184865593ac7",
+          "turn_id": "e09d44b2-35ee-4969-8451-140513c3d27e",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 21079,
+            "input_tokens": 3041,
+            "usage_source": "provider_reported",
+            "output_tokens": 1075,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "899dc609-156f-490e-b12d-d52a40c9b703",
+          "turn_id": "18b803d6-43bb-4d05-a2ef-ef6aab7a89ec",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 20306,
+            "input_tokens": 3158,
+            "usage_source": "provider_reported",
+            "output_tokens": 707,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "1142defb-e561-4f29-b40a-8870a6282333",
+          "turn_id": "9bc048ea-9cb1-42db-8320-283c97745f6a",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 18153,
+            "input_tokens": 3337,
+            "usage_source": "provider_reported",
+            "output_tokens": 913,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "f11f0ec0-929b-4c7c-950b-834da5085e41",
+          "turn_id": "08ac20f6-d223-4e56-8cd6-aa96672c278f",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 11414,
+            "input_tokens": 3334,
+            "usage_source": "provider_reported",
+            "output_tokens": 537,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "30a096b6-ca39-46ec-830e-978d80e8bee2",
+          "turn_id": "08ac20f6-d223-4e56-8cd6-aa96672c278f",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 9316,
+            "input_tokens": 25229,
+            "usage_source": "provider_reported",
+            "output_tokens": 172,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "ccc6be9d-ed4d-4db6-8e5b-78e09c4ad110",
+          "turn_id": "08ac20f6-d223-4e56-8cd6-aa96672c278f",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 5828,
+            "input_tokens": 25041,
+            "usage_source": "provider_reported",
+            "output_tokens": 185,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "2b9733f1-2396-4763-b2f4-ece16f4462bb",
+          "turn_id": "08ac20f6-d223-4e56-8cd6-aa96672c278f",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 13524,
+            "input_tokens": 25128,
+            "usage_source": "provider_reported",
+            "output_tokens": 198,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "20b08fdb-ec46-4af0-baf8-2ef63764137e",
+          "turn_id": "66e5f945-278c-4dc5-b9df-a4cd1914bfb9",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 10863,
+            "input_tokens": 3713,
+            "usage_source": "provider_reported",
+            "output_tokens": 505,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "085969a7-43c7-4308-a73f-70ff0137107e",
+          "turn_id": "66e5f945-278c-4dc5-b9df-a4cd1914bfb9",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 23650,
+            "input_tokens": 25266,
+            "usage_source": "provider_reported",
+            "output_tokens": 1179,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "4f148ce8-6230-43fe-bef9-35978f9029e5",
+          "turn_id": "66e5f945-278c-4dc5-b9df-a4cd1914bfb9",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 4594,
+            "input_tokens": 23805,
+            "usage_source": "provider_reported",
+            "output_tokens": 153,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "6c84312d-9879-4649-bd86-c2d052cb9023",
+          "turn_id": "66e5f945-278c-4dc5-b9df-a4cd1914bfb9",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 19482,
+            "input_tokens": 25078,
+            "usage_source": "provider_reported",
+            "output_tokens": 967,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "fb63289e-05cd-4ed0-858b-1829f1bdb333",
+          "turn_id": "66e5f945-278c-4dc5-b9df-a4cd1914bfb9",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 7598,
+            "input_tokens": 23630,
+            "usage_source": "provider_reported",
+            "output_tokens": 279,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "bd858b41-26b3-4342-bd28-c34cc3692403",
+          "turn_id": "66e5f945-278c-4dc5-b9df-a4cd1914bfb9",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 20639,
+            "input_tokens": 25165,
+            "usage_source": "provider_reported",
+            "output_tokens": 1021,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "82125bca-04c8-4195-bfc9-92e3d74031bb",
+          "turn_id": "66e5f945-278c-4dc5-b9df-a4cd1914bfb9",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 7114,
+            "input_tokens": 23696,
+            "usage_source": "provider_reported",
+            "output_tokens": 278,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "e8385996-3a67-4e9c-bffe-05b2a394ccd5",
+          "turn_id": "3ea82b68-04e7-48be-8856-de393809929d",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 10521,
+            "input_tokens": 3717,
+            "usage_source": "provider_reported",
+            "output_tokens": 486,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "396b42f0-e038-43cd-9685-a42a2b43e14b",
+          "turn_id": "3ea82b68-04e7-48be-8856-de393809929d",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 22767,
+            "input_tokens": 25323,
+            "usage_source": "provider_reported",
+            "output_tokens": 1020,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "e0828c1f-5022-43b6-b024-24d13f1c36c5",
+          "turn_id": "3ea82b68-04e7-48be-8856-de393809929d",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 6596,
+            "input_tokens": 23785,
+            "usage_source": "provider_reported",
+            "output_tokens": 205,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "07ba61e5-bff1-4820-a121-ee11922027ff",
+          "turn_id": "3ea82b68-04e7-48be-8856-de393809929d",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 19936,
+            "input_tokens": 25135,
+            "usage_source": "provider_reported",
+            "output_tokens": 992,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "801f8790-de12-492e-81f1-51ffa8c8179c",
+          "turn_id": "3ea82b68-04e7-48be-8856-de393809929d",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 9805,
+            "input_tokens": 23603,
+            "usage_source": "provider_reported",
+            "output_tokens": 426,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "0a72254b-07a2-4132-9367-1bcd32ba43ea",
+          "turn_id": "3ea82b68-04e7-48be-8856-de393809929d",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 22660,
+            "input_tokens": 25205,
+            "usage_source": "provider_reported",
+            "output_tokens": 1005,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "2d65fc3d-4614-490b-baf2-f5f8b4c96e48",
+          "turn_id": "3ea82b68-04e7-48be-8856-de393809929d",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 5580,
+            "input_tokens": 23546,
+            "usage_source": "provider_reported",
+            "output_tokens": 224,
+            "cached_input_tokens": 22272
+          },
+          "error": null
+        },
+        {
+          "id": "bb26904d-f6f5-4d28-99b0-85886ddb2e66",
+          "turn_id": "3ea82b68-04e7-48be-8856-de393809929d",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 24816,
+            "input_tokens": 25222,
+            "usage_source": "provider_reported",
+            "output_tokens": 1268,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "051750f9-fea7-4ad4-a0f9-e255466123ac",
+          "turn_id": "3ea82b68-04e7-48be-8856-de393809929d",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 6377,
+            "input_tokens": 23877,
+            "usage_source": "provider_reported",
+            "output_tokens": 255,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        }
+      ],
+      "attempt_status_counts": {
+        "succeeded": 24
+      }
+    },
+    {
+      "profile": "family_with_child",
+      "conversation_id": "b9e800a7-3812-4498-8ede-d59eaae6c191",
+      "comparison_id": "07c04f2f-6939-4c7c-9139-dc280c80612d",
+      "final_turn_id": "8e8bb5c2-8658-4563-a7b9-b2f4fe8b201d",
+      "final_question": "For each of the three base policies, what AYUSH inpatient treatment is covered, and what hospital, treatment and payment conditions apply? No optional covers are selected. City and premium budget remain unknown.",
+      "profile_snapshot": {
+        "id": "814daacb-6722-4bc7-a0b6-51073e73fdb4",
+        "revision": 6,
+        "created_at": "2026-10-01 19:07:54.106006+00:00",
+        "people": [
+          {
+            "id": "6ca7227a-4f5b-405a-a891-b321b2f1cf1b",
+            "display_name": "Self"
+          },
+          {
+            "id": "8bf7c3c9-5151-4cf7-957d-a736c19a7410",
+            "display_name": "Child"
+          },
+          {
+            "id": "a0065691-9e18-4555-874e-443971b6a40d",
+            "display_name": "Spouse"
+          }
+        ],
+        "facts": [
+          {
+            "id": "143bbb4b-efcf-42cf-aa2f-cb0513d4a04c",
+            "logical_key": "d583a629-6553-4bcc-9136-7fa21571ff55",
+            "fact_type": "age",
+            "value": {
+              "kind": "quantity",
+              "unit": "year",
+              "state": "known",
+              "value": "38"
+            },
+            "status": "reported",
+            "subject_person_id": "6ca7227a-4f5b-405a-a891-b321b2f1cf1b"
+          },
+          {
+            "id": "7ccdcac8-33bb-418c-ba15-67d82e993685",
+            "logical_key": "25713800-c12f-437f-914b-4521f6f82d40",
+            "fact_type": "age",
+            "value": {
+              "kind": "quantity",
+              "unit": "year",
+              "state": "known",
+              "value": "35"
+            },
+            "status": "reported",
+            "subject_person_id": "a0065691-9e18-4555-874e-443971b6a40d"
+          },
+          {
+            "id": "fed96cb4-aa14-4360-80d3-bf7a7efee19c",
+            "logical_key": "8dc8acca-a856-4be7-8704-2aade6341078",
+            "fact_type": "age",
+            "value": {
+              "kind": "quantity",
+              "unit": "year",
+              "state": "known",
+              "value": "4"
+            },
+            "status": "reported",
+            "subject_person_id": "8bf7c3c9-5151-4cf7-957d-a736c19a7410"
+          },
+          {
+            "id": "17863062-7bfc-4466-ae5b-dfbe3a0b4f43",
+            "logical_key": "2583924c-c47d-481a-bad5-960d3cf99c1d",
+            "fact_type": "intended_insured",
+            "value": {
+              "kind": "boolean",
+              "state": "known",
+              "value": true
+            },
+            "status": "reported",
+            "subject_person_id": "6ca7227a-4f5b-405a-a891-b321b2f1cf1b"
+          },
+          {
+            "id": "d1e82ad8-c881-4c69-a9dd-fcd3d09a55e8",
+            "logical_key": "69622010-0b37-43dd-b951-a89848bfa5cc",
+            "fact_type": "intended_insured",
+            "value": {
+              "kind": "boolean",
+              "state": "known",
+              "value": true
+            },
+            "status": "reported",
+            "subject_person_id": "a0065691-9e18-4555-874e-443971b6a40d"
+          },
+          {
+            "id": "39bd6831-2f36-49a2-9634-4603ce6f4441",
+            "logical_key": "c9f063ac-eed9-4a03-a333-32450f475e2e",
+            "fact_type": "intended_insured",
+            "value": {
+              "kind": "boolean",
+              "state": "known",
+              "value": true
+            },
+            "status": "reported",
+            "subject_person_id": "8bf7c3c9-5151-4cf7-957d-a736c19a7410"
+          },
+          {
+            "id": "593ed614-8bdf-496c-b7a6-09e9b90e08ff",
+            "logical_key": "24768cc4-e182-4763-9158-8e3551c6fa48",
+            "fact_type": "sum_insured",
+            "value": {
+              "kind": "quantity",
+              "unit": "money",
+              "state": "known",
+              "value": "2000000",
+              "currency": "INR"
+            },
+            "status": "reported",
+            "subject_person_id": null
+          },
+          {
+            "id": "dd2b7e23-ae62-4a4e-9746-f40a1588f6c2",
+            "logical_key": "1aa5b887-fecd-4cfa-b4b8-d1249a5be089",
+            "fact_type": "city",
+            "value": {
+              "state": "unknown",
+              "reason": "not provided"
+            },
+            "status": "reported",
+            "subject_person_id": null
+          },
+          {
+            "id": "955d1fb4-b65c-4ac5-abff-279ea3b65b76",
+            "logical_key": "d3b9e96a-1cab-4955-8f37-1adc59e11c91",
+            "fact_type": "budget",
+            "value": {
+              "state": "unknown",
+              "reason": "not provided"
+            },
+            "status": "reported",
+            "subject_person_id": null
+          }
+        ],
+        "requirements": [
+          {
+            "id": "1d0d1401-c571-4904-a504-1acde13af4b2",
+            "logical_key": "1345d70d-7778-475b-8d91-4c2d1e6391aa",
+            "criterion": "maternity",
+            "operator": "is_available",
+            "target_value": null,
+            "priority": "informational",
+            "scope": "entire_purchase",
+            "status": "reported",
+            "subject_person_id": null
+          },
+          {
+            "id": "3c3ef123-060f-4226-b185-390c868ce4bd",
+            "logical_key": "0d5409b7-b67a-4c1f-bede-322e4d346f66",
+            "criterion": "room_category",
+            "operator": "is_available",
+            "target_value": null,
+            "priority": "informational",
+            "scope": "entire_purchase",
+            "status": "reported",
+            "subject_person_id": null
+          }
+        ]
+      },
+      "products": [
+        {
+          "product": "Family Health Optima Insurance Plan",
+          "prepared_supported": 13,
+          "non_executable_facts": 13,
+          "quote": "unavailable",
+          "selected_options": [],
+          "source_answer": {
+            "id": "d373e906-4797-4e1c-beeb-f2442de95125",
+            "ordinal": 1,
+            "text": "Family Health Optima Insurance Plan: AYUSH inpatient hospitalization expenses for treatment under Ayurveda, Unani, Siddha and Homeopathy are payable up to the Sum Insured in an AYUSH Hospital. Yoga and Naturopathy claims require prior company approval. An AYUSH Hospital may be a government AYUSH hospital, a recognized teaching hospital, or a registered standalone/co-located inpatient facility supervised by a qualified registered AYUSH practitioner and meeting the stated facility criteria. Treatment must occur as inpatient hospitalization in an AYUSH Hospital. Yoga and Naturopathy claims require prior company approval. A standalone or co-located AYUSH hospital must be registered where applicable and supervised by a qualified registered AYUSH practitioner. That facility must have at least 5 inpatient beds, a qualified AYUSH practitioner in charge around the clock, required therapy sections or an equipped operation theatre, and accessible daily patient records.",
+            "statement_type": "benefit",
+            "critical": true,
+            "support_status": "supported",
+            "comparison_assessment_id": "21e49978-433a-474f-a682-0906c876bba5",
+            "citations": [
+              {
+                "id": "a8b49c5f-9204-4021-9ceb-680d68bb1b84",
+                "evidence_span_id": "b5a3edd0-1ba1-4990-be0f-fe0309cc7d96",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Inpatient Hospitalizations Expenses incurred on treatment under\nAyurveda, Unani, Siddha and Homeopathy systems of medicines in a AYUSH Hospital is\npayable up to the Sum Insured.",
+                "section_label": "manifest-v2-clause-314-491-cae2e531734c9d82",
+                "page": 6,
+                "document_version_id": "f8fc34fe-5566-4ada-aeae-8ae9a2c993ca",
+                "locator": {
+                  "bbox": [
+                    62.0236,
+                    104.99180000000001,
+                    537.4106000000003,
+                    150.1327
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "abe38283100d6402e1ac22929bb94c23bb53994bef7a378196e48900cd4da025",
+                  "physical_page": 6,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "6279a511-e55e-4ef9-b5c6-42dda897b8ee",
+                "evidence_span_id": "152c873d-b7ed-4547-973a-0c31f9af4c43",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Claims under Yoga and Naturopathy system of treatment will be payable subject\nto prior approval from the company.",
+                "section_label": "manifest-v2-clause-498-611-6db529506c715e3b",
+                "page": 6,
+                "document_version_id": "f8fc34fe-5566-4ada-aeae-8ae9a2c993ca",
+                "locator": {
+                  "bbox": [
+                    61.8661,
+                    166.12440000000004,
+                    540.0793000000001,
+                    194.19489999999996
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "abe38283100d6402e1ac22929bb94c23bb53994bef7a378196e48900cd4da025",
+                  "physical_page": 6,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "e1070178-3f07-43b2-a67f-d42e0440488b",
+                "evidence_span_id": "5cf9867b-e5f5-499a-83c6-60ee1314ee4b",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Central or State Government AYUSH Hospital;",
+                "section_label": "manifest-v2-clause-1768-1811-b4160a3b7d0a4246",
+                "page": 2,
+                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
+                "locator": {
+                  "bbox": [
+                    326.88821079999997,
+                    523.9252999999999,
+                    552.9565779999998,
+                    534.9252999999999
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
+                  "physical_page": 2,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "2fcde09d-7841-476a-b619-051fc22627f6",
+                "evidence_span_id": "5274ab0b-07e5-4222-82ae-53d96d9f9d7a",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Teaching hospital attached to AYUSH College\nrecognized by the Central Government/Central\nCouncil of Indian Medicine/Central Council\nfor Homeopathy;",
+                "section_label": "manifest-v2-clause-1820-1967-3212e2e6d0b929fc",
+                "page": 2,
+                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
+                "locator": {
+                  "bbox": [
+                    326.877075,
+                    568.3027,
+                    553.0003749999998,
+                    630.985
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
+                  "physical_page": 2,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "5b7bfa00-7a2a-477d-a4f6-c958b0ef01d6",
+                "evidence_span_id": "08ee3515-cedf-4823-8eca-606624c6aec6",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "AYUSH Hospital, standalone or co-\nlocated with in-patient healthcare facility\nof any recognized system of medicine,\nregistered with the local authorities,\nwherever applicable, and is under the\nsupervision of a quali\ufb01ed registered\nAYUSH Medical Practitioner",
+                "section_label": "manifest-v2-clause-1978-2234-bc91d959763473f5",
+                "page": 2,
+                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
+                "locator": {
+                  "bbox": [
+                    326.8819,
+                    647.133,
+                    552.7669,
+                    761.489
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
+                  "physical_page": 2,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "fe93e564-eb30-4bb0-af84-ab0cc74a7ac2",
+                "evidence_span_id": "b2e5a24c-9b40-474e-b8b1-07abe6e01f98",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Having at least 5 in-patient beds;",
+                "section_label": "manifest-v2-clause-167-201-8c5bc142f8f29b01",
+                "page": 3,
+                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
+                "locator": {
+                  "bbox": [
+                    82.7731,
+                    103.78700000000003,
+                    266.5061,
+                    114.78700000000003
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
+                  "physical_page": 3,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "5e29809e-3e52-4759-919a-e73d0dcbace3",
+                "evidence_span_id": "591c9b66-99bb-4901-8cb2-8216d2253403",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Having quali\ufb01ed AYUSH Medical\nPractitioner in charge round the clock;",
+                "section_label": "manifest-v2-clause-207-276-19348471f0b62a29",
+                "page": 3,
+                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
+                "locator": {
+                  "bbox": [
+                    82.7717,
+                    129.94500000000005,
+                    287.71410000000003,
+                    157.18470000000002
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
+                  "physical_page": 3,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "7698d56e-3f35-4560-b5f2-215b58d485cb",
+                "evidence_span_id": "38d70bc6-ac6d-4a0f-88bf-4a5a54025f28",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Having dedicated AYUSH therapy sections\nas required and/or has equipped operation\ntheatre where surgical procedures are\nto be carried out;",
+                "section_label": "manifest-v2-clause-281-419-defe7e567b36c43f",
+                "page": 3,
+                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
+                "locator": {
+                  "bbox": [
+                    82.76884079999999,
+                    172.3442,
+                    287.89905340000007,
+                    232.0566
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
+                  "physical_page": 3,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "dabfb585-6f59-4027-bc4e-4c3e001191c9",
+                "evidence_span_id": "b119539f-1635-4ea4-ad3c-997182025303",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Maintaining daily records of the\npatients and making them accessible\ntotheinsurancecompany\u2019sauthorized\nrepresentative.",
+                "section_label": "manifest-v2-clause-425-543-c2b53c142f25ff62",
+                "page": 3,
+                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
+                "locator": {
+                  "bbox": [
+                    82.7717,
+                    247.21460000000002,
+                    287.76770000000005,
+                    306.9226
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
+                  "physical_page": 3,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "product": "Star Comprehensive Insurance Policy",
+          "prepared_supported": 13,
+          "non_executable_facts": 10,
+          "quote": "unavailable",
+          "selected_options": [],
+          "source_answer": {
+            "id": "dd57165b-8df9-46d3-9616-8708da2d8d3f",
+            "ordinal": 2,
+            "text": "Star Comprehensive Insurance Policy: AYUSH inpatient hospitalization under Ayurveda, Yoga and Naturopathy, Unani, Siddha and Homeopathy is payable up to the policy Sum Insured. Treatment must be in an AYUSH Hospital. Yoga and Naturopathy claims require prior company approval. An AYUSH Hospital may be a government AYUSH hospital; a recognized AYUSH teaching hospital; or a registered standalone/co-located AYUSH hospital supervised by a qualified registered AYUSH practitioner and satisfying the listed bed, staffing, therapy/operating-theatre and record requirements. Treatment must be inpatient hospitalization in an AYUSH Hospital. Yoga and Naturopathy claims require prior company approval. The applicable hospital must fall within an enumerated AYUSH Hospital category; the third category must meet all listed criteria.",
+            "statement_type": "benefit",
+            "critical": true,
+            "support_status": "supported",
+            "comparison_assessment_id": "e7c0f301-f8c4-4bc6-8f36-d8d14ba6bb7b",
+            "citations": [
+              {
+                "id": "1e04578d-fb3b-40c4-9963-8a0888f08b1a",
+                "evidence_span_id": "6a20bbde-7e0b-483a-b198-48b329897c92",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Medical expenses\nfor Inpatient Hospitalization incurred\non treatment under Ayurveda, Yoga\nand Naturopathy, Unani, Siddha and\nHomeopathy systems of medicines in a\nAYUSH Hospital is payable up to the Sum\nInsured.",
+                "section_label": "manifest-v2-clause-3000-3210-aec4058200c106cb",
+                "page": 9,
+                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+                "locator": {
+                  "bbox": [
+                    330.5591,
+                    624.6299,
+                    552.7701000000001,
+                    729.1423
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+                  "physical_page": 9,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "c6a6377e-10ed-44d6-b122-ea76d5d6cadf",
+                "evidence_span_id": "64af1a7f-3779-4a47-ad0e-c8089a5cc9ba",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Claims under Yoga and Naturopathy\nsystem of treatment will be payable subject\nto prior approval from the company",
+                "section_label": "manifest-v2-clause-3217-3329-764f9d367f88ffa0",
+                "page": 9,
+                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+                "locator": {
+                  "bbox": [
+                    330.2362,
+                    739.3969999999999,
+                    552.7492710000002,
+                    781.5678
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+                  "physical_page": 9,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "21f6e596-c471-4bcc-87e3-76e8c8b31f86",
+                "evidence_span_id": "fdebbf7a-c89b-4ab0-8bbc-cca76fd99e73",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "AYUSH Treatment refers\nto the medical and / or hospitalization\ntreatments given under Ayurveda, Yoga and\nNaturopathy, Unani, Siddha and Homeopathy\nsystems.",
+                "section_label": "manifest-v2-clause-563-718-e42b2d57ae55a797",
+                "page": 3,
+                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+                "locator": {
+                  "bbox": [
+                    42.5197,
+                    294.17100000000005,
+                    287.74269999999996,
+                    366.6192
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+                  "physical_page": 3,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "0bda7194-34f7-44f1-9e6c-026633b72a10",
+                "evidence_span_id": "ec8a9f94-df0c-40d5-a893-4b0c2afc3109",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Central or State Government AYUSH\nHospital; or",
+                "section_label": "manifest-v2-clause-1883-1929-7b5cd11e658d8848",
+                "page": 2,
+                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+                "locator": {
+                  "bbox": [
+                    329.9134,
+                    542.6570999999999,
+                    553.11,
+                    569.1265999999999
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+                  "physical_page": 2,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "fada7463-41d4-4191-a54d-246667dedab8",
+                "evidence_span_id": "95e6aa34-0bdd-4ba1-8734-b10e03755b58",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Teaching hospital attached to AYUSH\nCollege recognized by the Central\nGovernment/Central Council of\nIndian Medicine/Central Council for\nHomeopathy; or",
+                "section_label": "manifest-v2-clause-1936-2086-917032a1ee7d9baf",
+                "page": 2,
+                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+                "locator": {
+                  "bbox": [
+                    329.9134,
+                    579.2653,
+                    553.1144,
+                    652.143
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+                  "physical_page": 2,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "8eac1885-0f27-4b9f-b594-3c26a5721001",
+                "evidence_span_id": "1a39a02a-d901-4a6a-8914-04d3b118af9f",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "AYUSH Hospital, standalone or co-\nlocated with in-patient healthcare facility\nof any recognized system of medicine,\nregistered with the local authorities,\nwherever applicable",
+                "section_label": "manifest-v2-clause-2094-2268-7b7e8ada31ba3abc",
+                "page": 2,
+                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+                "locator": {
+                  "bbox": [
+                    329.9134,
+                    662.2818,
+                    553.1254,
+                    735.1595
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+                  "physical_page": 2,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "7dee4af4-b23b-47b4-8ab0-2d38e90711f5",
+                "evidence_span_id": "8e9944ca-84cd-4a72-a4a3-09440e61dd77",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Having at least 5 in-patient beds;",
+                "section_label": "manifest-v2-clause-168-202-8c5bc142f8f29b01",
+                "page": 3,
+                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+                "locator": {
+                  "bbox": [
+                    64.5197,
+                    102.51139999999998,
+                    248.2527,
+                    113.51139999999998
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+                  "physical_page": 3,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "3ed23f64-db96-4ae3-8762-fe1d2c3a2427",
+                "evidence_span_id": "ab5c77df-3ab0-4b01-87ac-a2a710c6ac5c",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Having qualified AYUSH Medical Practitioner\nin charge round the clock;",
+                "section_label": "manifest-v2-clause-208-278-dc22653a6cc2cd1f",
+                "page": 3,
+                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+                "locator": {
+                  "bbox": [
+                    64.51695,
+                    123.54269999999997,
+                    287.87525,
+                    149.90480000000002
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+                  "physical_page": 3,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "425d0a5a-681b-419f-9ec2-fccf093cff77",
+                "evidence_span_id": "97a9afb6-7131-4bcf-a8be-8870a05863b5",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Having dedicated AYUSH therapy Sections\nasrequiredand/orhasequippedoperation\ntheatre where surgical procedures are to\nbe carried out;",
+                "section_label": "manifest-v2-clause-284-417-832ad39c3dd56ad7",
+                "page": 3,
+                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+                "locator": {
+                  "bbox": [
+                    65.1969,
+                    159.9361,
+                    287.73790000000014,
+                    217.0222
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+                  "physical_page": 3,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "b3e33642-4369-498f-b229-bb38398d4a63",
+                "evidence_span_id": "eaca5240-405c-4c0d-9770-ebb30b69dd39",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Maintaining daily records of the\npatients and making them accessible\nto the insurance company\u2019s authorized\nrepresentative.",
+                "section_label": "manifest-v2-clause-423-545-20a23a915c310ecd",
+                "page": 3,
+                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+                "locator": {
+                  "bbox": [
+                    65.1969,
+                    227.05359999999996,
+                    287.7317,
+                    284.13970000000006
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+                  "physical_page": 3,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "product": "Star Health Assure Insurance Policy",
+          "prepared_supported": 13,
+          "non_executable_facts": 13,
+          "quote": "unavailable",
+          "selected_options": [],
+          "source_answer": {
+            "id": "e14cf107-a908-4676-a444-d381fb5b2ea0",
+            "ordinal": 3,
+            "text": "Star Health Assure Insurance Policy: Retrieved evidence incomplete: coverage: coverage_question: needs_prospectus: supplied excerpts state that inpatient Ayurveda, Unani, Siddha and Homeopathy treatment is payable up to the Sum Insured in an AYUSH Hospital, and that Yoga and Naturopathy claims require prior company approval, but they do not include the AYUSH Hospital definition needed to report every requested hospital condition. Because the retrieval packet omits pages, those conditions cannot be inferred.",
+            "statement_type": "limitation",
+            "critical": false,
+            "support_status": "unknown",
+            "comparison_assessment_id": "bd43e8ed-a128-4697-b670-b1ea7b15147c",
+            "citations": []
+          }
+        }
+      ],
+      "distinct_native_anchors_checked": 255,
+      "turns": [
+        {
+          "id": "cb9b7896-a013-4302-a8eb-a42da92293f4",
+          "state": "completed",
+          "error": null
+        },
+        {
+          "id": "569f941f-4e50-45e3-b0da-a43ffdcf5b65",
+          "state": "completed",
+          "error": null
+        },
+        {
+          "id": "7f258421-99c1-4369-b611-d7bc56791785",
+          "state": "completed",
+          "error": null
+        },
+        {
+          "id": "26a5557d-4b2e-4a0a-b0ff-4edd77e3d393",
+          "state": "completed",
+          "error": null
+        },
+        {
+          "id": "8e8bb5c2-8658-4563-a7b9-b2f4fe8b201d",
+          "state": "completed",
+          "error": null
+        }
+      ],
+      "model_attempts": [
+        {
+          "id": "df626b64-63db-47a1-ab30-9a1d21383490",
+          "turn_id": "cb9b7896-a013-4302-a8eb-a42da92293f4",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 50350,
+            "input_tokens": 2133,
+            "usage_source": "provider_reported",
+            "output_tokens": 2556,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "177b4ecb-5593-434a-81e3-e578435512dd",
+          "turn_id": "569f941f-4e50-45e3-b0da-a43ffdcf5b65",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 12657,
+            "input_tokens": 3575,
+            "usage_source": "provider_reported",
+            "output_tokens": 612,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "50ea8f80-2fd2-41b4-a05d-b6abd0e14698",
+          "turn_id": "7f258421-99c1-4369-b611-d7bc56791785",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 17612,
+            "input_tokens": 3769,
+            "usage_source": "provider_reported",
+            "output_tokens": 847,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "e5805b3b-6175-4be4-b9ae-f99fa52802f5",
+          "turn_id": "26a5557d-4b2e-4a0a-b0ff-4edd77e3d393",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 20781,
+            "input_tokens": 3895,
+            "usage_source": "provider_reported",
+            "output_tokens": 1067,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "0e622c3e-c9dd-4971-aefe-c944c54986a8",
+          "turn_id": "26a5557d-4b2e-4a0a-b0ff-4edd77e3d393",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 23332,
+            "input_tokens": 25594,
+            "usage_source": "provider_reported",
+            "output_tokens": 1192,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "4d631086-63b2-442b-a2ea-17508ddeaebf",
+          "turn_id": "26a5557d-4b2e-4a0a-b0ff-4edd77e3d393",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 21666,
+            "input_tokens": 25642,
+            "usage_source": "provider_reported",
+            "output_tokens": 1100,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "d091d6d2-f952-4cde-8dda-f61cb9e8e96c",
+          "turn_id": "26a5557d-4b2e-4a0a-b0ff-4edd77e3d393",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 24051,
+            "input_tokens": 25410,
+            "usage_source": "provider_reported",
+            "output_tokens": 1204,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "c0de9d6a-dafe-4fd2-ba93-029313f71067",
+          "turn_id": "26a5557d-4b2e-4a0a-b0ff-4edd77e3d393",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 37559,
+            "input_tokens": 25456,
+            "usage_source": "provider_reported",
+            "output_tokens": 1124,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "263857be-1fc1-491f-99eb-9914e3670f96",
+          "turn_id": "26a5557d-4b2e-4a0a-b0ff-4edd77e3d393",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 30401,
+            "input_tokens": 25914,
+            "usage_source": "provider_reported",
+            "output_tokens": 1554,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "34f41d7c-d2f6-4e35-9efb-13ef61b16f01",
+          "turn_id": "26a5557d-4b2e-4a0a-b0ff-4edd77e3d393",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 29870,
+            "input_tokens": 25938,
+            "usage_source": "provider_reported",
+            "output_tokens": 1500,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "8d1df55b-160f-4b87-af65-c1194706c2f8",
+          "turn_id": "8e8bb5c2-8658-4563-a7b9-b2f4fe8b201d",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 21439,
+            "input_tokens": 4270,
+            "usage_source": "provider_reported",
+            "output_tokens": 1043,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "560311b3-36a5-458d-964b-b21512be3952",
+          "turn_id": "8e8bb5c2-8658-4563-a7b9-b2f4fe8b201d",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 33598,
+            "input_tokens": 25658,
+            "usage_source": "provider_reported",
+            "output_tokens": 1700,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "54bee0a7-b893-435d-8f4d-3037ab236fd3",
+          "turn_id": "8e8bb5c2-8658-4563-a7b9-b2f4fe8b201d",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 9797,
+            "input_tokens": 23952,
+            "usage_source": "provider_reported",
+            "output_tokens": 415,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "534964a4-1e5e-4660-8a37-4d8a12133ca4",
+          "turn_id": "8e8bb5c2-8658-4563-a7b9-b2f4fe8b201d",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 32805,
+            "input_tokens": 25439,
+            "usage_source": "provider_reported",
+            "output_tokens": 1683,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "c93c4f8d-7e4d-4ba1-817f-01410a44ea3f",
+          "turn_id": "8e8bb5c2-8658-4563-a7b9-b2f4fe8b201d",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 11009,
+            "input_tokens": 23823,
+            "usage_source": "provider_reported",
+            "output_tokens": 495,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "e39f9db3-a073-4696-a305-bb08a4395b0c",
+          "turn_id": "8e8bb5c2-8658-4563-a7b9-b2f4fe8b201d",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 11325,
+            "input_tokens": 25904,
+            "usage_source": "provider_reported",
+            "output_tokens": 470,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        }
+      ],
+      "attempt_status_counts": {
+        "succeeded": 16
+      }
+    },
+    {
+      "profile": "older_parent",
+      "conversation_id": "faec1aa4-ed1b-4dab-9309-0b553234378c",
+      "comparison_id": "007aa67d-1d60-47ce-ab41-a0d9fb7fc8f1",
+      "final_turn_id": "52381a5b-8cb8-4f00-9a4d-23c5c534c6f6",
+      "final_question": "For each of the three base policies, what organ-donor expenses are covered, and what conditions, limits and exclusions apply? No optional covers are selected.",
+      "profile_snapshot": {
+        "id": "fade701e-be7d-4630-b5d6-fed551121a3a",
+        "revision": 5,
+        "created_at": "2026-10-01 19:18:10.807759+00:00",
+        "people": [
+          {
+            "id": "f8378fc0-65f6-4270-a04c-e35488d92c96",
+            "display_name": "Parent"
+          }
+        ],
+        "facts": [
+          {
+            "id": "ec378a16-5ec1-4ae8-9a47-fc418d8515e1",
+            "logical_key": "d6f1f24f-5473-48ba-8e57-9dbc7c760bb6",
+            "fact_type": "intended_insured",
+            "value": {
+              "kind": "boolean",
+              "state": "known",
+              "value": true
+            },
+            "status": "reported",
+            "subject_person_id": "f8378fc0-65f6-4270-a04c-e35488d92c96"
+          },
+          {
+            "id": "be4a40c5-bd58-4d26-af32-7a4f4527dba1",
+            "logical_key": "c28c7bba-f7a1-4170-aaa8-5aabd3f86c66",
+            "fact_type": "relationship",
+            "value": {
+              "kind": "text",
+              "state": "known",
+              "value": "parent"
+            },
+            "status": "reported",
+            "subject_person_id": "f8378fc0-65f6-4270-a04c-e35488d92c96"
+          },
+          {
+            "id": "565a3b7b-92ca-4304-9e5e-5f4a062a5b35",
+            "logical_key": "2c8589d6-96d5-4736-a712-40e632b358b7",
+            "fact_type": "age",
+            "value": {
+              "kind": "quantity",
+              "unit": "year",
+              "state": "known",
+              "value": "68"
+            },
+            "status": "reported",
+            "subject_person_id": "f8378fc0-65f6-4270-a04c-e35488d92c96"
+          },
+          {
+            "id": "30bf47fc-6284-4e31-9e3c-c22fc3f08b7e",
+            "logical_key": "2858b35e-87c5-4b66-a3ee-15c45cd42993",
+            "fact_type": "city",
+            "value": {
+              "state": "unknown",
+              "reason": "not provided"
+            },
+            "status": "confirmed",
+            "subject_person_id": null
+          },
+          {
+            "id": "175ed000-6ce3-4223-a0bf-3e72001f52b8",
+            "logical_key": "c23635a6-0a0c-4aca-958e-074777123dda",
+            "fact_type": "budget",
+            "value": {
+              "state": "unknown",
+              "reason": "not provided"
+            },
+            "status": "reported",
+            "subject_person_id": null
+          }
+        ],
+        "requirements": [
+          {
+            "id": "5121674f-2c34-4a9d-bd37-4f60cdc7dabf",
+            "logical_key": "9fbadeae-0e2f-4316-8ab6-573341a82546",
+            "criterion": "sum_insured",
+            "operator": "equals",
+            "target_value": {
+              "kind": "quantity",
+              "unit": "money",
+              "state": "known",
+              "value": "500000",
+              "currency": "INR"
+            },
+            "priority": "preferred",
+            "scope": "entire_purchase",
+            "status": "reported",
+            "subject_person_id": null
+          },
+          {
+            "id": "7096b7c4-f257-49d8-ae8c-80b22fbe82e7",
+            "logical_key": "14416b86-bd1e-413b-a19f-1ca608e82f79",
+            "criterion": "pre_existing_disease_wait",
+            "operator": "is_available",
+            "target_value": null,
+            "priority": "informational",
+            "scope": "entire_purchase",
+            "status": "reported",
+            "subject_person_id": null
+          }
+        ]
+      },
+      "products": [
+        {
+          "product": "Family Health Optima Insurance Plan",
+          "prepared_supported": 13,
+          "non_executable_facts": 13,
+          "quote": "unavailable",
+          "selected_options": [],
+          "source_answer": {
+            "id": "bc4b0dfa-ac11-4fa6-9f22-9c50e1ca61ba",
+            "ordinal": 1,
+            "text": "Family Health Optima Insurance Plan: Organ-donor expenses are covered for organ transplantation where the insured person is the recipient. The transplantation claim must be payable, and cover is subject to available Sum Insured. Donor screening expenses and the donor's post-donation complications are excluded. The limit is 10% of the Sum Insured or INR 100,000, whichever is less. The insured person must be the organ recipient. The transplantation claim must be payable and sufficient Sum Insured must remain available. Donor screening expenses and post-donation complications of the donor are not payable.",
+            "statement_type": "benefit",
+            "critical": true,
+            "support_status": "supported",
+            "comparison_assessment_id": "8952d1a4-be89-4ec1-8246-91e00540c5b6",
+            "citations": [
+              {
+                "id": "cbf102b6-92a8-4620-bf11-688221f2a693",
+                "evidence_span_id": "8c0a08ff-a1ab-4f78-a255-d2081930d7d5",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Organ Donor Expenses for organ\ntransplantation where the Insured Person\nis the recipient are payable provided\nthe claim for transplantation is payable\nand subject to the availability of the\nSum Insured.",
+                "section_label": "manifest-v2-clause-418-620-fb1a17327acf66aa",
+                "page": 13,
+                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
+                "locator": {
+                  "bbox": [
+                    62.517700000000005,
+                    347.5667,
+                    287.7317,
+                    438.6907000000001
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
+                  "physical_page": 13,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "43c45ced-95e3-441b-a8cb-9636f039ee11",
+                "evidence_span_id": "5431ff1d-b4c3-44a5-a7ff-54de2d5c7db0",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Donor screening expenses\nand post-donation complications of\nthe donor are not payable.",
+                "section_label": "manifest-v2-clause-621-707-222606187f7565c9",
+                "page": 13,
+                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
+                "locator": {
+                  "bbox": [
+                    62.517700000000005,
+                    427.6907000000001,
+                    287.70970000000005,
+                    470.83270000000016
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
+                  "physical_page": 13,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "9c758470-be76-4ed5-bbd1-c769b02c9ea4",
+                "evidence_span_id": "f599c94b-086f-48e3-a603-93f10c339f45",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "This cover is\nsubject to a limit of 10% of the Sum Insured\nor Rupees One lakh, whichever is less.",
+                "section_label": "manifest-v2-clause-708-805-b5e0bebe50f27015",
+                "page": 13,
+                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
+                "locator": {
+                  "bbox": [
+                    62.517700000000005,
+                    459.83270000000016,
+                    287.7207000000001,
+                    502.9747000000002
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
+                  "physical_page": 13,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "product": "Star Comprehensive Insurance Policy",
+          "prepared_supported": 13,
+          "non_executable_facts": 10,
+          "quote": "unavailable",
+          "selected_options": [],
+          "source_answer": {
+            "id": "0f4be82a-057c-4933-bad4-1d0ee8265c5d",
+            "ordinal": 2,
+            "text": "Star Comprehensive Insurance Policy: Covers the donor\u2019s inpatient hospitalization expenses for organ transplantation to the insured recipient when the transplantation claim is payable. Donor expenses for complications requiring redo surgery or ICU admission are also covered. The limit is additional to the Limit of Coverage, up to the Basic Sum Insured, and may be used only by the donor. A 10% co-payment applies under Section II.9 when entry age is 61 years or above, except where entry occurred before age 61 and renewal continued without a break. The transplant must satisfy the Transplantation of Human Organs Act of 1994 and amendments. Treatment must be in India. The transplantation claim must be payable. The additional limit may be used by the donor, not the insured. The stated co-payment applies to Section II.9, subject to the continuous-renewal exception.",
+            "statement_type": "benefit",
+            "critical": true,
+            "support_status": "supported",
+            "comparison_assessment_id": "81422ec6-c902-4ecb-a363-2c96c1f574e2",
+            "citations": [
+              {
+                "id": "a54bad4a-bc3b-49d4-9233-a8e3f00599a4",
+                "evidence_span_id": "375bf77a-8cbc-478f-b7f5-c26342c81321",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "In-patient\nhospitalization expenses incurred for\norgan transplantation from the Donor to\nthe Recipient Insured Person are payable\nprovided the claim for transplantation is\npayable.",
+                "section_label": "manifest-v2-clause-2110-2290-1d8363f5286f6d43",
+                "page": 11,
+                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+                "locator": {
+                  "bbox": [
+                    329.5591,
+                    359.28299999999996,
+                    552.783,
+                    447.64519999999993
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+                  "physical_page": 11,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "43994e93-56a7-4ef2-b4d7-a94033e11bad",
+                "evidence_span_id": "890082cb-bc2c-459e-b0f3-849fa8cee39a",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "The coverage limit under this Section is\nover and above the Limit of Coverage\nand up to the Basic Sum Insured. This\nadditional Sum Insured can be utilized\nby the Donor and not by the Insured.",
+                "section_label": "manifest-v2-clause-2435-2626-76da53299b329cd1",
+                "page": 11,
+                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+                "locator": {
+                  "bbox": [
+                    330.2362,
+                    507.03889999999996,
+                    552.7607,
+                    580.1596999999999
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+                  "physical_page": 11,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "cdbdb308-1aab-4eb2-b208-d8ab182c38f9",
+                "evidence_span_id": "3d3cb455-7cc7-4aac-9adb-c5018a615cdf",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "This policy is subject to\nco-payment of 10% of each and every\nclaim amount for fresh as well as renewal\npolicies for Insured Persons whose age\nat the time of entry is 61 years and above.",
+                "section_label": "manifest-v2-clause-585-771-a3238e0bd56ddb62",
+                "page": 39,
+                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+                "locator": {
+                  "bbox": [
+                    65.1969,
+                    281.91610000000003,
+                    287.7434,
+                    353.7734
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+                  "physical_page": 39,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "fb438867-52a4-47da-94fd-c071dedc95b6",
+                "evidence_span_id": "c9030eae-ba4a-4bf1-935b-f0174afc9d57",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "This co-payment will not apply for those\ninsured persons who have entered\nthe policy before attaining 61 years of\nage and renew the policy continuously\nwithout any break.",
+                "section_label": "manifest-v2-clause-772-942-326e7762928969a9",
+                "page": 39,
+                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+                "locator": {
+                  "bbox": [
+                    65.1969,
+                    357.98769999999996,
+                    287.717,
+                    429.84489999999994
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+                  "physical_page": 39,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "956e6ef6-a134-4c5b-b5eb-9f122a54e805",
+                "evidence_span_id": "9c682f5e-f557-4648-a0b4-be43dec3a3ee",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "This co-payment is\napplicable for Sections II.1, II.2, II.3, II.4, II.5,\nII.6, II.7, II.8, II.9, II.10, II.11, II.15 and II.25.",
+                "section_label": "manifest-v2-clause-943-1070-4736ef1ad6e138ae",
+                "page": 39,
+                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+                "locator": {
+                  "bbox": [
+                    65.1969,
+                    418.84489999999994,
+                    287.7170000000001,
+                    460.2736
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+                  "physical_page": 39,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "803620ad-5fe7-4a53-a25e-acf961e80e19",
+                "evidence_span_id": "a12842ee-c6be-4966-b99c-304bbf5874db",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Organ transplant on the Insured Person\nshall satisfy the requirements of the\nTransplantation of Human Organs Act of\n1994 and any amendments thereto.",
+                "section_label": "manifest-v2-clause-164-312-887e0f8d85ef6274",
+                "page": 39,
+                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+                "locator": {
+                  "bbox": [
+                    42.5197,
+                    103.22000000000003,
+                    287.7262000000001,
+                    159.86300000000006
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+                  "physical_page": 39,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "e7d08248-c95f-48f7-a396-501d41f221e6",
+                "evidence_span_id": "332af2e7-3541-456b-aa11-ee637ec66d60",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "All treatments under this\npolicy shall have to be taken in India.",
+                "section_label": "manifest-v2-clause-1277-1342-85c35fe479ad6d3b",
+                "page": 44,
+                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+                "locator": {
+                  "bbox": [
+                    65.1969,
+                    605.0783,
+                    287.70920000000007,
+                    630.0783
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+                  "physical_page": 44,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "product": "Star Health Assure Insurance Policy",
+          "prepared_supported": 13,
+          "non_executable_facts": 13,
+          "quote": "unavailable",
+          "selected_options": [],
+          "source_answer": {
+            "id": "c39b144f-b827-4f25-94a3-cc2fa2830a30",
+            "ordinal": 3,
+            "text": "Star Health Assure Insurance Policy: In-patient hospitalization expenses for transplanting an organ from the donor to the insured recipient are payable when the recipient's transplantation claim is payable. These organ-donor expenses form part of the Sum Insured. Donor expenses arising from complications that require redo surgery or ICU admission are covered in addition to the Sum Insured, up to the Sum Insured; this additional amount may be used only by the donor. The recipient insured person's transplantation claim must be payable. The additional Sum Insured for complications can be used by the donor, not the insured recipient.",
+            "statement_type": "benefit",
+            "critical": true,
+            "support_status": "supported",
+            "comparison_assessment_id": "ce90e11c-7aa0-41b4-ba8d-b6792a36df3d",
+            "citations": [
+              {
+                "id": "a1ed868a-879e-432b-9d0f-398776a97134",
+                "evidence_span_id": "0d3a4535-79eb-4acc-a68b-564d7de725bc",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "In patient\nhospitalization expenses incurred for\norgan transplantation from the Donor to\nthe Recipient Insured Person are payable\nprovided the claim for transplantation is\npayable.",
+                "section_label": "manifest-v2-clause-1446-1626-d208b78b2a03f1e3",
+                "page": 11,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    65.203,
+                    104.68309999999997,
+                    552.0519999999999,
+                    783.2071
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 11,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "960564e6-6e2d-4323-952d-bb11a039013d",
+                "evidence_span_id": "66b3b1e1-526d-46a3-a652-e6761160d47c",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "9 Organ Donor Expenses",
+                "section_label": "manifest-v2-clause-1964-1986-7eb0e1d5a2da0249",
+                "page": 26,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    318.24199999999985,
+                    662.3722000000001,
+                    450.63199999999983,
+                    672.3722000000001
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 26,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "ee8b58ac-bef3-4807-bef1-a59d15609463",
+                "evidence_span_id": "51a22de1-3494-420e-95a0-44c1a64d9054",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Forming Part of\nSum Insured",
+                "section_label": "manifest-v2-clause-1936-1963-9845edf976e51622",
+                "page": 26,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    466.36199999999985,
+                    625.2022000000001,
+                    542.4019999999998,
+                    649.2022000000001
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 26,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "abcbf643-5421-450a-a939-e2c076ef2472",
+                "evidence_span_id": "805252b0-49a4-4549-8f49-6ff41a5ca399",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "In addition, the expenses incurred\nby the Donor, (if any) for the complications\nthat necessitate a Redo Surgery / ICU\nadmission will be covered.",
+                "section_label": "manifest-v2-clause-1627-1771-ba6587a30341afbb",
+                "page": 11,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    330.2362,
+                    121.99369999999999,
+                    552.1502,
+                    185.06439999999998
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 11,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "70af8149-36d4-448e-bd85-8b4f3b6c7d81",
+                "evidence_span_id": "f539f591-f872-4532-af28-c41343f5eed1",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "The coverage limit under this benefit is over\nand above the Limit of Coverage and up\nto the Sum Insured.",
+                "section_label": "manifest-v2-clause-1772-1876-f167b61c2420e7f9",
+                "page": 11,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    330.2362,
+                    198.50570000000005,
+                    552.0632655999999,
+                    244.2199999999999
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 11,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "0b78c5fe-0149-43d4-b718-db42db2043f4",
+                "evidence_span_id": "1efff705-68e9-45a8-b881-f1fce2dabe2f",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "This additional Sum\nInsured can be utilized by the Donor and\nnot by the Insured.",
+                "section_label": "manifest-v2-clause-1877-1957-0d0de8f01938502b",
+                "page": 11,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    330.2362,
+                    233.4509999999999,
+                    552.0512,
+                    279.1669999999998
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 11,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "distinct_native_anchors_checked": 250,
+      "turns": [
+        {
+          "id": "9237952e-725f-4459-a582-aa0822ff3b4f",
+          "state": "completed",
+          "error": null
+        },
+        {
+          "id": "0b8c720e-7ae8-4d86-a62f-292102cb3f20",
+          "state": "completed",
+          "error": null
+        },
+        {
+          "id": "6119a182-c78a-4872-acbe-d619877456aa",
+          "state": "completed",
+          "error": null
+        },
+        {
+          "id": "52381a5b-8cb8-4f00-9a4d-23c5c534c6f6",
+          "state": "completed",
+          "error": null
+        }
+      ],
+      "model_attempts": [
+        {
+          "id": "9c8403df-432c-41ab-8ca4-4bab908c2a9e",
+          "turn_id": "9237952e-725f-4459-a582-aa0822ff3b4f",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 60789,
+            "input_tokens": 2108,
+            "usage_source": "provider_reported",
+            "output_tokens": 3273,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "be013453-e47d-487a-9323-a4a1935b45cd",
+          "turn_id": "0b8c720e-7ae8-4d86-a62f-292102cb3f20",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 26051,
+            "input_tokens": 3047,
+            "usage_source": "provider_reported",
+            "output_tokens": 1353,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "a3ada6ce-d47e-4867-8c34-dc5f580b8f7f",
+          "turn_id": "6119a182-c78a-4872-acbe-d619877456aa",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 26487,
+            "input_tokens": 3182,
+            "usage_source": "provider_reported",
+            "output_tokens": 1355,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "4798dcc5-e739-4aa9-84a4-b41c4cf7e7db",
+          "turn_id": "6119a182-c78a-4872-acbe-d619877456aa",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 21010,
+            "input_tokens": 25211,
+            "usage_source": "provider_reported",
+            "output_tokens": 1034,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "2cbab49c-bffc-4db7-b121-e73f41f0489e",
+          "turn_id": "6119a182-c78a-4872-acbe-d619877456aa",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 6568,
+            "input_tokens": 23497,
+            "usage_source": "provider_reported",
+            "output_tokens": 252,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "c0755e02-03c8-4b26-b597-9066dd00b50c",
+          "turn_id": "6119a182-c78a-4872-acbe-d619877456aa",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 36427,
+            "input_tokens": 25086,
+            "usage_source": "provider_reported",
+            "output_tokens": 1779,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "43a65c04-f461-4876-bb2f-247a87879e8e",
+          "turn_id": "6119a182-c78a-4872-acbe-d619877456aa",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 28406,
+            "input_tokens": 25098,
+            "usage_source": "provider_reported",
+            "output_tokens": 1475,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "0133d26f-17cf-4d9e-9eb6-06ef5cccca5f",
+          "turn_id": "6119a182-c78a-4872-acbe-d619877456aa",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 27257,
+            "input_tokens": 25449,
+            "usage_source": "provider_reported",
+            "output_tokens": 1288,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "f3990602-427b-4311-b063-e379aa7a8ec4",
+          "turn_id": "6119a182-c78a-4872-acbe-d619877456aa",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 13890,
+            "input_tokens": 23841,
+            "usage_source": "provider_reported",
+            "output_tokens": 663,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "cce4966c-ea2a-41e3-b99a-66c36e9ab0ed",
+          "turn_id": "52381a5b-8cb8-4f00-9a4d-23c5c534c6f6",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 12812,
+            "input_tokens": 3648,
+            "usage_source": "provider_reported",
+            "output_tokens": 604,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "941106b9-d937-4d9f-90c7-d0974287004b",
+          "turn_id": "52381a5b-8cb8-4f00-9a4d-23c5c534c6f6",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 21255,
+            "input_tokens": 25311,
+            "usage_source": "provider_reported",
+            "output_tokens": 981,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "5799a156-474f-483a-b4d8-20ea0b6e21d0",
+          "turn_id": "52381a5b-8cb8-4f00-9a4d-23c5c534c6f6",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 6734,
+            "input_tokens": 23561,
+            "usage_source": "provider_reported",
+            "output_tokens": 186,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "f71969cf-ecdb-4a78-8c30-ae1ae3b79d50",
+          "turn_id": "52381a5b-8cb8-4f00-9a4d-23c5c534c6f6",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 32727,
+            "input_tokens": 25061,
+            "usage_source": "provider_reported",
+            "output_tokens": 1689,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "d07c173b-a232-46b1-afd8-2ee00873f8b1",
+          "turn_id": "52381a5b-8cb8-4f00-9a4d-23c5c534c6f6",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 8037,
+            "input_tokens": 23793,
+            "usage_source": "provider_reported",
+            "output_tokens": 305,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "342fc0a3-c459-4987-b8e8-f5c512bcf84a",
+          "turn_id": "52381a5b-8cb8-4f00-9a4d-23c5c534c6f6",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 40086,
+            "input_tokens": 25551,
+            "usage_source": "provider_reported",
+            "output_tokens": 2102,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "2bf622ef-1f96-4e09-b881-8883baee73fe",
+          "turn_id": "52381a5b-8cb8-4f00-9a4d-23c5c534c6f6",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 27678,
+            "input_tokens": 25560,
+            "usage_source": "provider_reported",
+            "output_tokens": 1429,
+            "cached_input_tokens": 25344
+          },
+          "error": null
+        },
+        {
+          "id": "4be2ae03-7e45-4a72-8163-c900622dd8f6",
+          "turn_id": "52381a5b-8cb8-4f00-9a4d-23c5c534c6f6",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 9492,
+            "input_tokens": 24014,
+            "usage_source": "provider_reported",
+            "output_tokens": 415,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        }
+      ],
+      "attempt_status_counts": {
+        "succeeded": 17
+      }
+    },
+    {
+      "profile": "mixed_age_family",
+      "conversation_id": "e1b62144-2193-43cb-a516-2d3cf0adce31",
+      "comparison_id": "f0dfcffd-e475-4e07-a4b8-e370a18e159a",
+      "final_turn_id": "e03b0029-58b2-4b09-a1f8-41b4b2903916",
+      "final_question": "My premium budget is unknown. For each of the three base policies, are consumables or non-medical expenses covered during an admissible inpatient or day-care claim? Explain the covered list and material conditions or exclusions. No optional covers are selected.",
+      "profile_snapshot": {
+        "id": "b10c90ac-3ea6-46eb-9eb5-53bfb9c424cc",
+        "revision": 5,
+        "created_at": "2026-10-01 19:26:02.830885+00:00",
+        "people": [
+          {
+            "id": "e31455be-10cf-499e-aef6-bed2bbc42d3b",
+            "display_name": "Dependent"
+          },
+          {
+            "id": "ec85663d-5b85-4724-bb9e-4b16b4e04985",
+            "display_name": "Self"
+          },
+          {
+            "id": "a6309fd9-86a3-468a-9945-6f5f3d16c02e",
+            "display_name": "Spouse"
+          }
+        ],
+        "facts": [
+          {
+            "id": "3c3b2f73-537f-4bff-8b6b-7915a9171b99",
+            "logical_key": "f653fa0e-650f-428a-bac7-2741545142d5",
+            "fact_type": "age",
+            "value": {
+              "kind": "quantity",
+              "unit": "year",
+              "state": "known",
+              "value": "61"
+            },
+            "status": "reported",
+            "subject_person_id": "ec85663d-5b85-4724-bb9e-4b16b4e04985"
+          },
+          {
+            "id": "153bfbd7-91a1-4378-a3bd-0b6d94610436",
+            "logical_key": "305e2c39-d710-4a29-a702-155bacded366",
+            "fact_type": "relationship",
+            "value": {
+              "kind": "text",
+              "state": "known",
+              "value": "self"
+            },
+            "status": "reported",
+            "subject_person_id": "ec85663d-5b85-4724-bb9e-4b16b4e04985"
+          },
+          {
+            "id": "a9ff08f4-dd07-4f87-b9e1-46646248ada5",
+            "logical_key": "8f01871d-cd63-4067-955f-fc11cf7ba6f6",
+            "fact_type": "age",
+            "value": {
+              "kind": "quantity",
+              "unit": "year",
+              "state": "known",
+              "value": "59"
+            },
+            "status": "reported",
+            "subject_person_id": "a6309fd9-86a3-468a-9945-6f5f3d16c02e"
+          },
+          {
+            "id": "a7fbd06c-bc4d-42c3-a9de-73c24dba4953",
+            "logical_key": "4c4bc04a-6ec6-4790-8ccb-f6f982d64c57",
+            "fact_type": "relationship",
+            "value": {
+              "kind": "text",
+              "state": "known",
+              "value": "spouse"
+            },
+            "status": "reported",
+            "subject_person_id": "a6309fd9-86a3-468a-9945-6f5f3d16c02e"
+          },
+          {
+            "id": "fe7dd2be-61ac-4327-8bc2-8cc63c021599",
+            "logical_key": "0bc513ba-4a3a-46df-9a03-49da3c15e732",
+            "fact_type": "age",
+            "value": {
+              "kind": "quantity",
+              "unit": "year",
+              "state": "known",
+              "value": "22"
+            },
+            "status": "reported",
+            "subject_person_id": "e31455be-10cf-499e-aef6-bed2bbc42d3b"
+          },
+          {
+            "id": "cd624134-83f4-42f7-8d95-4f42ed29415d",
+            "logical_key": "727e8d7b-6ba5-4117-8545-f4c6f6f31f51",
+            "fact_type": "relationship",
+            "value": {
+              "kind": "text",
+              "state": "known",
+              "value": "dependent child"
+            },
+            "status": "reported",
+            "subject_person_id": "e31455be-10cf-499e-aef6-bed2bbc42d3b"
+          },
+          {
+            "id": "6b4d4ecb-03eb-46bf-a113-8f1039580837",
+            "logical_key": "40e79cfb-97bf-4c03-9540-0523e78de112",
+            "fact_type": "intended_insured",
+            "value": {
+              "kind": "boolean",
+              "state": "known",
+              "value": true
+            },
+            "status": "reported",
+            "subject_person_id": "ec85663d-5b85-4724-bb9e-4b16b4e04985"
+          },
+          {
+            "id": "4542cdc4-3ba2-4b66-bbc8-d8cda640e15a",
+            "logical_key": "8fe8a298-6d80-421e-b455-dddd7bd7da96",
+            "fact_type": "intended_insured",
+            "value": {
+              "kind": "boolean",
+              "state": "known",
+              "value": true
+            },
+            "status": "reported",
+            "subject_person_id": "a6309fd9-86a3-468a-9945-6f5f3d16c02e"
+          },
+          {
+            "id": "7008c676-aa82-4b68-9e87-58e8d28412f7",
+            "logical_key": "a8c80e47-f8e8-47db-9d04-9dbd2da897fc",
+            "fact_type": "intended_insured",
+            "value": {
+              "kind": "boolean",
+              "state": "known",
+              "value": true
+            },
+            "status": "reported",
+            "subject_person_id": "e31455be-10cf-499e-aef6-bed2bbc42d3b"
+          },
+          {
+            "id": "53554d28-a105-4caf-a6a4-a10616bcf9ca",
+            "logical_key": "e5f6733f-73a7-4282-b26e-4c1884c6c4a8",
+            "fact_type": "sum_insured",
+            "value": {
+              "kind": "quantity",
+              "unit": "money",
+              "state": "known",
+              "value": "5000000",
+              "currency": "INR"
+            },
+            "status": "reported",
+            "subject_person_id": null
+          },
+          {
+            "id": "722d1d5d-1985-4382-884a-616279e4360b",
+            "logical_key": "c6e10ad7-fa83-4147-847a-9d425fd03294",
+            "fact_type": "city",
+            "value": {
+              "state": "unknown",
+              "reason": "not provided"
+            },
+            "status": "reported",
+            "subject_person_id": null
+          },
+          {
+            "id": "486ac95c-5458-4225-8869-29e821260802",
+            "logical_key": "e1d920e8-c603-46f5-b3a3-39c1771c8a39",
+            "fact_type": "budget",
+            "value": {
+              "state": "unknown",
+              "reason": "not provided"
+            },
+            "status": "reported",
+            "subject_person_id": null
+          }
+        ],
+        "requirements": []
+      },
+      "products": [
+        {
+          "product": "Family Health Optima Insurance Plan",
+          "prepared_supported": 13,
+          "non_executable_facts": 13,
+          "quote": "unavailable",
+          "selected_options": [],
+          "source_answer": {
+            "id": "e104b7b3-0476-4bbf-86b4-b96d45206085",
+            "ordinal": 2,
+            "text": "Family Health Optima Insurance Plan: Retrieved evidence incomplete: coverage: coverage_question: The supplied bounded packet does not establish whether consumables or non-medical expenses are covered during an admissible inpatient or day-care claim. It only states that pharmacy and consumables are excluded from \u201cAssociated Medical Expenses\u201d and are not subject to proportionate deduction; this does not itself establish payment coverage or provide the covered-item list and exclusions. needs_prospectus: relevant coverage wording or consumables/non-medical-expenses schedule is required.",
+            "statement_type": "limitation",
+            "critical": false,
+            "support_status": "unknown",
+            "comparison_assessment_id": "d6f80590-0ad0-4985-ae4c-1b71af831a87",
+            "citations": []
+          }
+        },
+        {
+          "product": "Star Comprehensive Insurance Policy",
+          "prepared_supported": 13,
+          "non_executable_facts": 10,
+          "quote": "unavailable",
+          "selected_options": [],
+          "source_answer": {
+            "id": "3a2b508d-0c7f-40c6-8f1d-64c794d48e78",
+            "ordinal": 3,
+            "text": "Star Comprehensive Insurance Policy: Retrieved evidence incomplete: coverage: coverage_question: The supplied bounded packet does not contain an explicit base-policy benefit, exclusion, or covered-item list establishing whether consumables or non-medical expenses are payable during an admissible inpatient or day-care claim. The wording only states that pharmacy, consumables, implants, medical devices, diagnostics and ICU charges are outside \u201cAssociated Medical Expenses\u201d for proportionate-deduction purposes; that does not establish coverage or non-coverage. Omitted pages cannot support an absence inference. needs_prospectus: complete relevant benefit and exclusion provisions are required.",
+            "statement_type": "limitation",
+            "critical": false,
+            "support_status": "unknown",
+            "comparison_assessment_id": "5c9d5ea7-cf85-4122-b389-925669ffcb3d",
+            "citations": []
+          }
+        },
+        {
+          "product": "Star Health Assure Insurance Policy",
+          "prepared_supported": 13,
+          "non_executable_facts": 13,
+          "quote": "unavailable",
+          "selected_options": [],
+          "source_answer": {
+            "id": "0a9a92a6-0d53-4b90-89c0-fc84d8ef5906",
+            "ordinal": 1,
+            "text": "Star Health Assure Insurance Policy: The base policy covers the non-medical items (consumables) identified in List I when there is an admissible inpatient or day-care claim. The supplied packet does not reproduce List I, so the individual covered items cannot be enumerated here. Dietary supplements and non-prescription substances are excluded unless prescribed by a medical practitioner as part of a hospitalization claim or day-care procedure. No optional cover is required for this stated base coverage. The underlying inpatient or day-care claim must be admissible. Only items listed in policy List I become payable. Dietary supplements and substances purchasable without prescription are excluded unless prescribed by a medical practitioner as part of a hospitalization claim or day-care procedure.",
+            "statement_type": "benefit",
+            "critical": true,
+            "support_status": "supported",
+            "comparison_assessment_id": "ce4d0d2e-4a3e-45a3-9030-5834a66ec052",
+            "citations": [
+              {
+                "id": "1c3ec270-7df2-4b87-8a37-890a3f5d7033",
+                "evidence_span_id": "1df14b6a-b882-4f59-8f66-f618f7300512",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "If there is an admissible\nclaim under inpatient / day care of the\npolicy, then Items as per List I will become\npayable.",
+                "section_label": "manifest-v2-clause-374-493-27e8c94670036c6b",
+                "page": 20,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    65.5197,
+                    211.59040000000027,
+                    287.7317,
+                    272.5389
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 20,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "5837cb7b-856e-414c-8f39-02387c0d1a69",
+                "evidence_span_id": "791452dc-e599-42bb-8093-8bbefb41b911",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Dietary supplements and substances that can be\npurchased without prescription, including but not\nlimited to Vitamins, minerals and organic substances\nunless prescribed by a medical practitioner as part of\nhospitalization claim or day care procedure",
+                "section_label": "manifest-v2-clause-1152-1400-2c9a9256d2839dfb",
+                "page": 6,
+                "document_version_id": "08860337-cd44-4603-8b70-b662eaf2f8d7",
+                "locator": {
+                  "bbox": [
+                    178.09039999999982,
+                    687.0591000000001,
+                    493.8299999999997,
+                    758.0751000000001
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "9b577e1226bbfde552575bedf8e0b74edf792a2db5c788b008196d99f23d5f2e",
+                  "physical_page": 6,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "distinct_native_anchors_checked": 238,
+      "turns": [
+        {
+          "id": "3b34ed6a-f3e9-48a8-8cec-58f0daa32f29",
+          "state": "completed",
+          "error": null
+        },
+        {
+          "id": "4542727b-d835-4f2f-bafa-9e43e2ac5ead",
+          "state": "completed",
+          "error": null
+        },
+        {
+          "id": "c7da84cc-3af9-4e6b-afc5-01959a52e85e",
+          "state": "completed",
+          "error": null
+        },
+        {
+          "id": "e03b0029-58b2-4b09-a1f8-41b4b2903916",
+          "state": "completed",
+          "error": null
+        }
+      ],
+      "model_attempts": [
+        {
+          "id": "c1d6df1a-1558-4077-b99b-1416a08b2aae",
+          "turn_id": "3b34ed6a-f3e9-48a8-8cec-58f0daa32f29",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 61389,
+            "input_tokens": 2133,
+            "usage_source": "provider_reported",
+            "output_tokens": 3305,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "a8889851-1ea6-4ff0-a56b-d3378bfb14df",
+          "turn_id": "4542727b-d835-4f2f-bafa-9e43e2ac5ead",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 12378,
+            "input_tokens": 3762,
+            "usage_source": "provider_reported",
+            "output_tokens": 588,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "816f0ea5-2bf5-4650-89e7-0de9f1d954bf",
+          "turn_id": "c7da84cc-3af9-4e6b-afc5-01959a52e85e",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 13215,
+            "input_tokens": 3960,
+            "usage_source": "provider_reported",
+            "output_tokens": 602,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "e03dc2c0-d14c-4df2-94cc-4771afe00978",
+          "turn_id": "e03b0029-58b2-4b09-a1f8-41b4b2903916",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 22889,
+            "input_tokens": 4097,
+            "usage_source": "provider_reported",
+            "output_tokens": 1150,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "6da69283-b450-4d65-8a08-4140b6dcef06",
+          "turn_id": "e03b0029-58b2-4b09-a1f8-41b4b2903916",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 12424,
+            "input_tokens": 26075,
+            "usage_source": "provider_reported",
+            "output_tokens": 270,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "de849746-5f7b-4086-a3ae-9fa653a7d492",
+          "turn_id": "e03b0029-58b2-4b09-a1f8-41b4b2903916",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 26322,
+            "input_tokens": 25822,
+            "usage_source": "provider_reported",
+            "output_tokens": 1322,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "5a06cf96-d3e3-4559-92fb-c21cd6e66284",
+          "turn_id": "e03b0029-58b2-4b09-a1f8-41b4b2903916",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 18418,
+            "input_tokens": 23648,
+            "usage_source": "provider_reported",
+            "output_tokens": 788,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "24ab98ef-a7c3-41b0-abc2-b9348d517c85",
+          "turn_id": "e03b0029-58b2-4b09-a1f8-41b4b2903916",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 9517,
+            "input_tokens": 25841,
+            "usage_source": "provider_reported",
+            "output_tokens": 359,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "f1abaa09-db66-4543-be4b-472c58f4b676",
+          "turn_id": "e03b0029-58b2-4b09-a1f8-41b4b2903916",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 18300,
+            "input_tokens": 26149,
+            "usage_source": "provider_reported",
+            "output_tokens": 863,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        },
+        {
+          "id": "baa91e4b-2d35-4cd2-b30f-3268da9047ad",
+          "turn_id": "e03b0029-58b2-4b09-a1f8-41b4b2903916",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 7842,
+            "input_tokens": 23754,
+            "usage_source": "provider_reported",
+            "output_tokens": 313,
+            "cached_input_tokens": 0
+          },
+          "error": null
+        }
+      ],
+      "attempt_status_counts": {
+        "succeeded": 10
+      }
+    }
+  ],
+  "ui_cell_citation_audit": "output/star-ui-citation-audit.json"
+}
