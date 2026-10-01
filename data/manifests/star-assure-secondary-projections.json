@@ -1,0 +1,63 @@
+{
+  "id": "assure-secondary-only-2026-10-01",
+  "policy_version_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+  "criteria": {
+    "eligibility": {
+      "source_fact_sha256": "5e8d231ddbceabea76f5f36e3452350fc983f86dfb539169eb7ee15afb46f195",
+      "value_sentence_indexes": [
+        0,
+        1,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "condition_indexes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "quantity_indexes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "citation_indexes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "reason": "Remove the secondary sentence that incorrectly narrows pediatric documentation and central medical-underwriting requirements to young children. The individual entry age and the source-stated general documentation requirement remain explicitly in condition 3 and its exact quotation; all other eligibility conditions and underwriting notes are retained."
+    }
+  }
+}
