@@ -267,11 +267,11 @@ def criterion_inventory_problems(artifact: dict[str, Any]) -> list[str]:
     return list(dict.fromkeys(problems))
 
 
-_NUMBER = r"(?:\d[\d,]*(?:\.\d+)?|zero|one|two|three|four|five|six|seven|eight|nine|ten|twelve|sixteen|eighteen|twenty|thirty|sixty|ninety)"
+_NUMBER = r"(?:\d[\d,]*(?:\.\d+)?|zero|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)"
 _WORDS = dict(
     zip(
-        "zero one two three four five six seven eight nine ten twelve sixteen eighteen twenty thirty sixty ninety".split(),
-        (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 16, 18, 20, 30, 60, 90),
+        "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty thirty forty fifty sixty seventy eighty ninety".split(),
+        (*range(21), 30, 40, 50, 60, 70, 80, 90),
         strict=True,
     )
 )
@@ -284,6 +284,11 @@ def _decimal(value: str) -> Decimal:
 def quoted_quantities(quote: str) -> dict[str, set[Decimal]]:
     """Normalize printed units without changing a quotation or inventing conversions."""
     text = " ".join(quote.casefold().split())
+    # Normalize an explicitly printed scale before collecting numbers, so
+    # "Rupees Fifty thousand" supports 50000 rather than an unscaled 50.
+    scales = {"hundred": 100, "thousand": 1000, "lakh": 100000, "lac": 100000, "crore": 10000000}
+    text = re.sub(rf"(?<!\w)({_NUMBER})\s*(hundred|thousand|lakh|lac|crore)s?\b",
+        lambda match: str(_decimal(match[1]) * scales[match[2]]), text)
     quantities: dict[str, set[Decimal]] = {
         unit: set() for unit in ("money", "ratio", "day", "month", "year", "hour", "count")
     }
@@ -300,7 +305,7 @@ def quoted_quantities(quote: str) -> dict[str, set[Decimal]]:
         quantities["ratio"].add(_decimal(match[1]) / 100)
     for unit in ("day", "month", "year", "hour"):
         for match in re.finditer(
-            rf"({_NUMBER})(?:\s*(?:-|–|to|and)\s*({_NUMBER}))?\s*{unit}s?\b", text
+            rf"({_NUMBER})(?:\s*(?:-|–|to|and)\s*({_NUMBER}))?(?:st|nd|rd|th)?\s*{unit}s?\b", text
         ):
             quantities[unit].add(_decimal(match[1]))
             if match[2]:
@@ -315,6 +320,8 @@ def quoted_quantities(quote: str) -> dict[str, set[Decimal]]:
     for word, number in (("once", 1), ("twice", 2), ("thrice", 3)):
         if re.search(rf"\b{word}\b", text):
             quantities["count"].add(Decimal(number))
+    for match in re.finditer(rf"({_NUMBER})\s+in number\b|family size of\s+({_NUMBER})\s*a\b", text):
+        quantities["count"].add(_decimal(match[1] or match[2]))
     # Printed plan-composition cells use abbreviations whose meaning must also
     # be quoted. For separate quotes, the fact validator combines them only
     # inside an explicitly checked same-page table region.

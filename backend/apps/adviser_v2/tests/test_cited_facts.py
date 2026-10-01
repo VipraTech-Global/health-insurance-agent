@@ -458,3 +458,16 @@ def test_review_prompt_does_not_also_request_an_extraction_response(monkeypatch)
     assert 'independent_body null' in messages[0]['content']
     assert 'PolicyRuleReviewV1' in messages[2]['content']
     assert 'EXACT BODY TEMPLATE' not in messages[2]['content']
+
+
+def test_ordinal_days_written_rupees_and_counts_in_number():
+    from apps.adviser_v2.processing.criterion_evidence import quoted_quantities
+
+    source = 'From the 16th day, a limit of Rupees Fifty thousand.'
+    amounts = quoted_quantities(source)
+    assert amounts['day'] == {16}
+    assert 50000 in amounts['money']
+    assert 50 not in amounts['money']
+    assert quoted_quantities('Dependent children not exceeding three in number.')['count'] == {3}
+    assert quoted_quantities('Family size of 2A (covering Self and Spouse).')['count'] == {2}
+    assert quoted_quantities('Exclusion no. 3 (Code Excl 03) does not apply.')['day'] == set()
