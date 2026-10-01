@@ -337,5 +337,5 @@ def needs_source_retrieval(question: str, intent: str) -> bool:
         return True
     if intent != "coverage_question":
         return False
-    prepared = r"sum insured|room|co.?pay|deductible|pre.?existing|PED\b|waiting|maternity|newborn|restor|family|floater|portab|geograph|eligib|entry age"
+    prepared = r"sum insured|room|co.?pay|deductible|pre.?existing|PED\b|waiting|maternity|newborn|restor|family size|family composition|floater|portab|geograph|eligib|entry age"
     return re.search(prepared, question, re.IGNORECASE) is None

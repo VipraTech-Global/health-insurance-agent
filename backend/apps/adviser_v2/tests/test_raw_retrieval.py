@@ -120,6 +120,8 @@ def test_release_retrieval_passes_only_question_and_equal_budget_per_plan(monkey
         ("What room category is allowed?", "coverage_question", False),
         ("Is AYUSH covered?", "coverage_question", True),
         ("How about ambulance cover for this family?", "coverage_question", True),
+        ("Does my family have psychiatric treatment cover?", "coverage_question", True),
+        ("What family size does the floater allow?", "coverage_question", False),
         ("Does it cover something else?", "coverage_question", True),
     ],
 )
