@@ -83,6 +83,7 @@ function citationView(citation: ComparisonCitation): CitationView {
     quote: citation.quote,
     label: citation.section_label || `Policy evidence · page ${citation.page ?? "unknown"}`,
     bbox,
+    evidenceSpanId: citation.evidence_span_id,
   };
 }
 

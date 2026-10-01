@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { api } from "../lib/api";
 
 export type CitationView = {
   documentVersionId: string | null;
@@ -8,7 +9,18 @@ export type CitationView = {
   quote: string;
   label: string;
   bbox: [number, number, number, number] | null;
+  evidenceSpanId?: string;
 };
+
+function clauseBoxes(context: { notes?: unknown[] }): [number, number, number, number][] | null {
+  const encoded = context.notes?.find((note): note is string => typeof note === "string" && note.startsWith("clause_rectangles:"));
+  if (!encoded) return null;
+  const boxes: unknown = JSON.parse(encoded.slice("clause_rectangles:".length));
+  if (!Array.isArray(boxes) || !boxes.length || boxes.some(box => !Array.isArray(box) || box.length !== 4 || !box.every(Number.isFinite))) {
+    throw new Error("The clause highlight coordinates are invalid.");
+  }
+  return boxes as [number, number, number, number][];
+}
 
 export function CitationViewer({ citation, onClose }: { citation: CitationView; onClose: () => void }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -23,6 +35,14 @@ export function CitationViewer({ citation, onClose }: { citation: CitationView; 
     let renderTask: { cancel: () => void; promise: Promise<void> } | undefined;
     void (async () => {
       try {
+        let boxes = citation.bbox ? [citation.bbox] : [];
+        if (citation.evidenceSpanId) {
+          const evidence = await api<{ quote: string; page: number; document_version_id: string; context: { notes?: unknown[] } }>(`/api/v2/evidence/${citation.evidenceSpanId}/`);
+          if (evidence.quote !== citation.quote || evidence.page !== pageNumber || evidence.document_version_id !== documentVersionId) {
+            throw new Error("The citation does not match its stored source.");
+          }
+          boxes = clauseBoxes(evidence.context) ?? boxes;
+        }
         const pdfjs = await import("pdfjs-dist");
         pdfjs.GlobalWorkerOptions.workerSrc = new URL(
           "pdfjs-dist/build/pdf.worker.min.mjs",
@@ -33,7 +53,9 @@ export function CitationViewer({ citation, onClose }: { citation: CitationView; 
         ).promise;
         const page = await pdfDocument.getPage(pageNumber);
         if (cancelled || !canvasRef.current || !overlayRef.current) return;
-        const viewport = page.getViewport({ scale: 1.35 });
+        const drawerWidth = canvasRef.current.closest(".source-drawer")?.clientWidth ?? 680;
+        const scale = Math.min(1.35, (drawerWidth - 40) / page.getViewport({ scale: 1 }).width);
+        const viewport = page.getViewport({ scale });
         const pixelRatio = window.devicePixelRatio || 1;
         const canvas = canvasRef.current;
         canvas.width = Math.floor(viewport.width * pixelRatio);
@@ -48,8 +70,8 @@ export function CitationViewer({ citation, onClose }: { citation: CitationView; 
         const overlay = overlayRef.current;
         overlay.style.width = `${viewport.width}px`;
         overlay.style.height = `${viewport.height}px`;
-        if (citation.bbox) {
-          const [x0, top, x1, bottom] = citation.bbox;
+        const marks = boxes.map(box => {
+          const [x0, top, x1, bottom] = box;
           const pdfHeight = Math.abs(page.view[3] - page.view[1]);
           const [left, renderedBottom, right, renderedTop] = viewport.convertToViewportRectangle([
             x0,
@@ -63,10 +85,10 @@ export function CitationViewer({ citation, onClose }: { citation: CitationView; 
           mark.style.top = `${Math.min(renderedTop, renderedBottom)}px`;
           mark.style.width = `${Math.abs(right - left)}px`;
           mark.style.height = `${Math.abs(renderedBottom - renderedTop)}px`;
-          overlay.replaceChildren(mark);
-        } else {
-          overlay.replaceChildren();
-        }
+          return mark;
+        });
+        overlay.replaceChildren(...marks);
+        marks[0]?.scrollIntoView({ block: "center", inline: "nearest" });
       } catch (caught) {
         if (!cancelled) setError(caught instanceof Error ? caught.message : "Could not open source");
       }
