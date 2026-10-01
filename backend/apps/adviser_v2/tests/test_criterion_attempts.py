@@ -104,6 +104,18 @@ def test_retained_response_reuses_completed_work(monkeypatch):
     assert calls == []
 
 
+def test_source_quote_failure_uses_only_the_remaining_correction(monkeypatch):
+    _, state, _, _ = run_sequence(monkeypatch, ["supported"])
+    state.update(
+        complete=False, last_error="Quoted applicability includes II.25; the candidate omits it."
+    )
+    _, corrected, calls, _ = run_sequence(monkeypatch, ["corrected scope"], state)
+    assert len(calls) == 1
+    assert "II.25" in calls[0][1]
+    assert corrected["validation_attempts"] == 2
+    assert corrected["complete"] and corrected["last_error"] is None
+
+
 def test_old_timeout_does_not_take_remaining_correction(monkeypatch):
     state = module.new_criterion_state()
     state.update(
