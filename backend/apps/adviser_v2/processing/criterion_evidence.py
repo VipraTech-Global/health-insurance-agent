@@ -288,6 +288,8 @@ def quoted_quantities(quote: str) -> dict[str, set[Decimal]]:
         unit: set() for unit in ("money", "ratio", "day", "month", "year", "hour", "count")
     }
     numbers = {_decimal(match.group()) for match in re.finditer(rf"(?<!\w){_NUMBER}(?!\w)", text)}
+    for match in re.finditer(r"(?<!\w)(\d[\d,]*(?:\.\d+)?)\s*/-", text):
+        quantities["money"].add(_decimal(match[1]))
     if re.search(r"\brs\.?|\brupees\b|\binr\b|₹", text):
         quantities["money"].update(numbers)
         for match in re.finditer(rf"({_NUMBER})\s*(lakh|lac|crore)s?\b", text):

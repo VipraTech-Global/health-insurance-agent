@@ -1,0 +1,35 @@
+{
+  "id": "user-approved-comprehensive-six-table-facts-2026-10-01",
+  "policy_version_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+  "core_evidence_sha256": "642a36b8f24fbd02604868920675f5fb2dd1a31aec4bb4ef18096adc8c8f76eb",
+  "baseline_validation_job_id": "8b7ddada-a4e4-4faa-b82e-612d69729be7",
+  "reason": "User accepted seven facts and authorized only six affected criteria after pipeline/prompt fixes. Prior attempts and reviews remain archived; each affected criterion has a fresh first call and at most one corrective retry.",
+  "criteria": {
+    "sum_insured": {
+      "instruction": "Use short exact source clauses. Table cells/rows and labels may be quoted separately from the same table region; never rewrite them into quoted prose.",
+      "include_prospectus": true,
+      "prospectus_reason": "User-required fresh first call with prospectus; prior missing-field prompt failures are pipeline bugs, not corrective attempts.",
+      "pipeline_bug_attempt_ids": [
+        "979be342-13c7-4a64-bce0-62f4be49addd",
+        "f6718db3-42e6-47b9-84d5-fcff555cf0c3"
+      ]
+    },
+    "ped_waiting_period": {
+      "instruction": "Keep the core PED fact: 36 months continuous coverage, longer waiting period applies on overlap, and relevant increased-sum-insured/portability conditions. Omit the peripheral grace-period sentence or place it only in secondary_statements with its own conditions; a defect in that secondary statement must not invalidate the core."
+    },
+    "maternity": {
+      "instruction": "Use short exact source clauses. Table cells/rows and labels may be quoted separately from the same table region; never rewrite them into quoted prose."
+    },
+    "newborn": {
+      "instruction": "Use separate exact table cells/rows and labels. Check the Sum Insured Options on prospectus physical page 3: 5L, 7.5L, 10L, 15L, 20L, 25L, 50L, 75L, 1Cr. There is no offered choice strictly between 25L and 50L. Do not call that interval a coverage gap. Independently verify these options and cite their exact source wording.",
+      "include_prospectus": true,
+      "prospectus_reason": "Resolve the previously alleged 25–50 lakh table gap against actual offered sum-insured choices."
+    },
+    "family_floater": {
+      "instruction": "Use short exact source clauses. Table cells/rows and labels may be quoted separately from the same table region; never rewrite them into quoted prose."
+    },
+    "eligibility": {
+      "instruction": "Use short exact source clauses. Table cells/rows and labels may be quoted separately from the same table region; never rewrite them into quoted prose."
+    }
+  }
+}

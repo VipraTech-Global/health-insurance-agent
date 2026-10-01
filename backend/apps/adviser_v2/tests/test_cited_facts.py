@@ -280,3 +280,108 @@ def test_genuine_source_unknown_does_not_trigger_an_extraction_correction(monkey
     assert state["complete"]
     assert state["validation_attempts"] == 1
     assert "No available-purchase choices" in state["review_blockers"][0]
+
+
+def test_indian_table_cells_and_separate_labels_keep_exact_quotes():
+    from apps.adviser_v2.processing.criterion_evidence import quoted_quantities
+
+    criterion, result, pages = sample('maternity')
+    labels = 'Normal\nDelivery\nRs.'
+    row = '5,00,000/- 15,000/- 20,000/- 1,00,000/-'
+    fact = CitedFact(value='At Rs.5 lakh sum insured, normal delivery has a Rs.15,000 limit.',
+        value_kind='text', conditions=[], notes=[],
+        citations=[Clause(page_span_id=PAGE_ID, quote=labels), Clause(page_span_id=PAGE_ID, quote=row)],
+        table_regions=[{'citation_indexes': [0, 1], 'label_indexes': [0]}],
+        quantities=[{'value': '15000', 'unit': 'money', 'citation_indexes': [0, 1]}])
+    result.rules = [fact_carrier(criterion, fact)]
+    pages[0]['passage'] = 'Delivery table\n' + labels + '\n' + row + '\nOther terms'
+    assert not fact_problems(POLICY_ID, criterion, result, pages)
+    assert 15000 in quoted_quantities('15,000/-')['money']
+    assert 15000 in quoted_quantities('Rs.15,000')['money']
+    assert 15000 not in quoted_quantities('15,000')['money']
+    # Rewriting the row is never allowed, even when the amount is correct.
+    fact.citations[1].quote = 'Normal delivery Rs.15,000 for Rs.5,00,000 sum insured'
+    result.rules = [fact_carrier(criterion, fact)]
+    assert fact_problems(POLICY_ID, criterion, result, pages)
+
+
+def test_table_units_cannot_be_borrowed_from_other_pages_or_distant_sections():
+    criterion, result, pages = sample('maternity')
+    fact = CitedFact(value='Limit Rs.15000', value_kind='text', conditions=[], notes=[],
+        citations=[Clause(page_span_id=PAGE_ID, quote='Limit Rs.'), Clause(page_span_id=PAGE_ID, quote='15,000')],
+        table_regions=[{'citation_indexes': [0, 1], 'label_indexes': [0]}],
+        quantities=[{'value': '15000', 'unit': 'money', 'citation_indexes': [0, 1]}])
+    result.rules = [fact_carrier(criterion, fact)]
+    pages[0]['passage'] = 'Header Limit Rs.\n15,000 Footer'
+    assert not fact_problems(POLICY_ID, criterion, result, pages)
+    pages[0]['passage'] = 'Limit Rs.' + 'x' * 3500 + '15,000'
+    assert 'local table region' in ' '.join(fact_problems(POLICY_ID, criterion, result, pages))
+    fact.citations[1].page_span_id = '33333333-3333-4333-8333-333333333333'
+    pages.append({'evidence_span_id': fact.citations[1].page_span_id, 'passage': 'Header 15,000 Footer'})
+    result.rules = [fact_carrier(criterion, fact)]
+    assert 'different pages' in ' '.join(fact_problems(POLICY_ID, criterion, result, pages))
+
+
+def test_secondary_condition_failure_drops_only_that_statement():
+    from apps.adviser_v2.processing.cited_facts import carrier_fact, omit_secondary_statements
+
+    criterion, result, _pages = sample('ped_waiting_period')
+    fact = carrier_fact(result.rules[0])
+    fact.value = '36 months continuous coverage; the longer waiting period applies on overlap.'
+    data = fact.model_dump()
+    data['secondary_statements'] = [
+        {'text': 'There is no coverage during grace periods.', 'citation_indexes': [0], 'conditions': []}
+    ]
+    fact = CitedFact.model_validate(data)
+    result.rules = [fact_carrier(criterion, fact)]
+    review = reviewed(criterion, result, reason='drop_secondary: {"indexes":[0],"reason":"Missing instalment exception"}')
+    assert not review_disposition(review, result, criterion)[0]
+    projected = carrier_fact(omit_secondary_statements(review, result, criterion).rules[0])
+    assert projected.value == fact.value
+    assert not projected.secondary_statements
+    assert 'omitted' in projected.notes[0]
+    assert carrier_fact(result.rules[0]).secondary_statements  # Audit output untouched.
+    review.reviews[0].material_issue = 'drop_secondary: {"indexes":[3]}'
+    assert review_disposition(review, result, criterion)[0]
+    review.reviews[0].material_issue = 'missing_material_condition: no continuity condition on core wait'
+    assert review_disposition(review, result, criterion)[0]
+
+
+def test_approved_rerun_resets_only_six_and_archives_pipeline_bug_attempts():
+    from apps.adviser_v2.processing.cited_fact_pipeline import apply_approved_rerun
+    from apps.adviser_v2.processing.criterion_attempts import new_criterion_state
+
+    progress = {'policy_version_id': POLICY_ID, 'core_evidence_sha256': 'hash', 'criteria': {}}
+    for c in CRITERIA:
+        state = new_criterion_state()
+        state.update(complete=True, validation_attempts=2, attempt_ids=['old-first', 'old-correction'])
+        progress['criteria'][c.key] = state
+    before = deepcopy(progress)
+    affected = ['sum_insured', 'ped_waiting_period', 'maternity', 'newborn', 'family_floater', 'eligibility']
+    authorization = {'id': 'user-approved', 'policy_version_id': POLICY_ID, 'core_evidence_sha256': 'hash',
+        'criteria': {k: {'instruction': 'Fix table quotes'} for k in affected}}
+    authorization['criteria']['sum_insured'].update(include_prospectus=True, pipeline_bug_attempt_ids=['old-first'])
+    apply_approved_rerun(progress, authorization)
+    for key, state in progress['criteria'].items():
+        if key in affected:
+            assert state['validation_attempts'] == 0
+            assert state['prior_runs'][0] == before['criteria'][key]
+        else:
+            assert state == before['criteria'][key]
+    assert progress['criteria']['sum_insured']['prospectus_used']
+    assert progress['criteria']['sum_insured']['excluded_pipeline_bug_attempt_ids'] == ['old-first']
+    once = deepcopy(progress)
+    apply_approved_rerun(progress, authorization)
+    assert progress == once
+
+
+def test_long_v2_error_is_retained_in_artifact_but_issue_summary_fits_contract():
+    from apps.adviser_v2.contracts import validate_contract
+    from apps.adviser_v2.pipeline import _material_issues
+    from apps.adviser_v2.processing.criterion_evidence import PROGRESS_KEY
+
+    result = {'material_issues': ['A' * 20000], PROGRESS_KEY: {'protocol': 'cited-fact'}}
+    issues = _material_issues(result, 'extract')
+    validate_contract('ProcessingIssuesV1', issues)
+    assert 'Full diagnostic retained' in issues[0]['description']
+    assert len(result['material_issues'][0]) == 20000

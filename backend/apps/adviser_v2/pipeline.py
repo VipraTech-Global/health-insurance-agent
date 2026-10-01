@@ -142,9 +142,10 @@ def enqueue_stage(
     if manifest_product(source_capture) is not None:
         input_data["manifest_processing_version"] = PROCESSING_VERSION
         if stage in {"extract", "independent_review", "validate"}:
-            from .processing.cited_facts import FACT_PROTOCOL
+            from .processing.cited_facts import FACT_PROMPT_REVISION, FACT_PROTOCOL
 
             input_data["cited_fact_protocol"] = FACT_PROTOCOL
+            input_data["cited_fact_prompt_revision"] = FACT_PROMPT_REVISION
             input_data["manifest_extraction_retry_protocol"] = RETRY_PROTOCOL
     if stage in {"extract", "independent_review", "validate"}:
         input_data["rule_prompt_version"] = RULE_PROMPT_VERSION
@@ -356,7 +357,9 @@ def _material_issues(result: dict[str, Any], stage: str) -> list[dict[str, Any]]
             issues.append(
                 issue(
                     "extraction_material_issue",
-                    str(description),
+                    (str(description)[:1800] + " [Full diagnostic retained in the processing artifact.]"
+                     if result.get("manifest_v2_progress", {}).get("protocol") and len(str(description)) > 1900
+                     else str(description)),
                     material=False,
                     retry_instruction="Keep this category unknown until supported evidence agrees.",
                 )

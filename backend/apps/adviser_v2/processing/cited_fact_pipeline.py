@@ -34,6 +34,7 @@ from .cited_facts import (
     fact_carrier,
     fact_instruction,
     fact_problems,
+    omit_secondary_statements,
     recover_fact_encoding,
     review_disposition,
 )
@@ -44,6 +45,28 @@ from .manifest_v2 import raw_bundle_passages
 
 log = logging.getLogger(__name__)
 SEED = Path(__file__).resolve().parents[4] / "data/manifests/star-three-plan-retained-facts.json"
+RERUN = SEED.with_name("star-comprehensive-table-fact-rerun.json")
+
+
+def apply_approved_rerun(progress: dict[str, Any], authorization: dict[str, Any]) -> None:
+    """Apply an exact, one-time operator rerun, preserving the complete earlier audit."""
+    if authorization.get("policy_version_id") != progress["policy_version_id"]:
+        return
+    if authorization["id"] in progress.get("applied_reruns", []):
+        return
+    if authorization["core_evidence_sha256"] != progress["core_evidence_sha256"]:
+        raise ValueError("Approved rerun evidence has changed.")
+    for key, instructions in authorization["criteria"].items():
+        old = progress["criteria"][key]
+        state = new_criterion_state()
+        state.update(prior_runs=[*old.get("prior_runs", []), {k: v for k, v in old.items() if k != "prior_runs"}],
+            rerun_authorization=authorization["id"],
+            operator_instruction=instructions["instruction"],
+            excluded_pipeline_bug_attempt_ids=instructions.get("pipeline_bug_attempt_ids", []),
+            prospectus_used=instructions.get("include_prospectus", old["prospectus_used"]),
+            prospectus_reason=instructions.get("prospectus_reason", old["prospectus_reason"]))
+        progress["criteria"][key] = state
+    progress.setdefault("applied_reruns", []).append(authorization["id"])
 
 
 def _encoded(value: Any) -> str:
@@ -73,7 +96,7 @@ def _progress(job: ProcessingJob, policy_id: str, core: list[dict[str, Any]]) ->
                 state = progress["criteria"].get(criterion.key, {})
                 if state.get("review"):
                     blockers, notes = review_disposition(PolicyRuleReviewV1.model_validate(state["review"]),
-                        PolicyRuleExtractionV1.model_validate(state["result"]), criterion)
+                        PolicyRuleExtractionV1.model_validate(state.get("reviewed_result", state["result"])), criterion)
                     state.update(review_blockers=blockers, review_notes=notes)
                     if not blockers:
                         state.update(complete=True, last_error=None)
@@ -81,8 +104,11 @@ def _progress(job: ProcessingJob, policy_id: str, core: list[dict[str, Any]]) ->
                 for diagnostics in reversed(diagnostics_sets):
                     fact = recover_fact_encoding(criterion, diagnostics)
                     if fact is not None:
-                        recovered = PolicyRuleExtractionV1(schema_version=1, policy_version_id=policy_id,
-                            rules=[fact_carrier(criterion, fact)], material_issues=[], omitted_inventory_categories=[])
+                        try:
+                            recovered = PolicyRuleExtractionV1(schema_version=1, policy_version_id=policy_id,
+                                rules=[fact_carrier(criterion, fact)], material_issues=[], omitted_inventory_categories=[])
+                        except ValueError:
+                            continue
                         state.update(result=recovered.model_dump(mode="json"), complete=True, last_error=None,
                             result_prospectus_used=state["prospectus_used"])
                         state.setdefault("encoding_notes", []).append("rule not executable: intact fact recovered from retained rejected wrapper; no extra extraction call or retry-budget reset.")
@@ -98,6 +124,8 @@ def _progress(job: ProcessingJob, policy_id: str, core: list[dict[str, Any]]) ->
                     # using the already recorded extraction calls and budgets.
                     state.update(result=anchored.model_dump(mode="json"), last_error=None, complete=True)
                     state.pop("review_complete", None)
+            if RERUN.exists():
+                apply_approved_rerun(progress, json.loads(RERUN.read_text()))
             return progress
         if prior_validation is None and old.stage == "validate":
             prior_validation = old
@@ -177,7 +205,7 @@ def run_criterion_extraction(job: ProcessingJob) -> dict[str, Any]:
 
         def invoke(pages: list[dict[str, Any]], feedback: str, criterion: Any = criterion, state: dict[str, Any] = state) -> PolicyRuleExtractionV1:
             before = set(ModelAttempt.objects.filter(processing_job=job).values_list("id", flat=True))
-            messages = _messages(version, pages, criterion, feedback=feedback)
+            messages = _messages(version, pages, criterion, feedback=" ".join(filter(None, [state.get("operator_instruction"), feedback])))
             size = request_bytes_with_headroom(settings.COVERGUIDE_POLICY_EXTRACTION_MODEL, messages, PolicyRuleExtractionV1.model_json_schema())
             log.info("Cited-fact extraction %s: %s bytes, %s full pages, prospectus=%s", criterion.key, size, len(pages), state["prospectus_used"])
             stages._renew_rule_lease(job)
@@ -202,8 +230,13 @@ def run_criterion_extraction(job: ProcessingJob) -> dict[str, Any]:
                     fact = recover_fact_encoding(criterion, diagnostics)
                     if fact is not None:
                         state.setdefault("encoding_notes", []).append("rule not executable: model wrapper failed RuleV1; intact cited fact retained for exact quotation checks and independent source review.")
-                        recovered = PolicyRuleExtractionV1(schema_version=1, policy_version_id=str(version.id),
-                            rules=[fact_carrier(criterion, fact)], omitted_inventory_categories=[], material_issues=[])
+                        try:
+                            recovered = PolicyRuleExtractionV1(schema_version=1, policy_version_id=str(version.id),
+                                rules=[fact_carrier(criterion, fact)], omitted_inventory_categories=[], material_issues=[])
+                        except ValueError:
+                            # The intact fact itself may exceed the existing carrier
+                            # limit. Preserve diagnostics and use the bounded correction.
+                            raise exc from None
                         anchored, changes = anchor_transcribed_quotes(criterion, recovered, pages)
                         state.setdefault("quote_transcriptions", []).extend(changes)
                         return anchored
@@ -254,6 +287,10 @@ def run_criterion_review(job: ProcessingJob) -> dict[str, Any]:
                             reasoning_effort="high")
                         state["review"] = review.model_dump(mode="json")
                         blockers, notes = review_disposition(review, extraction, criterion)
+                        if not blockers:
+                            state["reviewed_result"] = extraction.model_dump(mode="json")
+                            projected = omit_secondary_statements(review, extraction, criterion)
+                            state["result"] = projected.model_dump(mode="json")
                         break
                     except RelayFailure as exc:
                         if exc.code not in TRANSPORT_FAILURES or transport_attempt == 2:
@@ -306,8 +343,9 @@ def validate_facts(job: ProcessingJob) -> dict[str, Any]:
         rule_ids = old.get("rule_ids", [])
         statuses.append({
             "criterion": criterion.key, "status": "supported" if fact and not reasons else "unknown",
-            "value": fact.value if fact else None, "value_kind": fact.value_kind if fact else None,
-            "conditions": [c.model_dump() for c in fact.conditions] if fact else [],
+            "value": " ".join([fact.value, *(s.text for s in fact.secondary_statements)]) if fact else None, "value_kind": fact.value_kind if fact else None,
+            "conditions": [c.model_dump() for c in [*fact.conditions, *(c for s in fact.secondary_statements for c in s.conditions)]] if fact else [],
+            "table_regions": [r.model_dump() for r in fact.table_regions] if fact else [],
             "quantities": [q.model_dump() for q in fact.quantities] if fact else [],
             "notes": [*(fact.notes if fact else []), *state.get("review_notes", [])],
             "citations": citations, "unknown_reasons": list(dict.fromkeys(reasons)), "rule_ids": rule_ids,
