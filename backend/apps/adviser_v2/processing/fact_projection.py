@@ -52,5 +52,6 @@ def primary_projection(fact: CitedFact, selection: dict[str, Any]) -> CitedFact:
         conditions=[references(c) for c in selected(fact.conditions, 'condition_indexes')],
         quantities=[references(q) for q in selected(fact.quantities, 'quantity_indexes')],
         table_regions=regions, secondary_statements=[],
-        notes=[*fact.notes, 'Secondary statements omitted from this criterion: ' + selection['reason']],
+        notes=[*(selected(fact.notes, 'note_indexes') if 'note_indexes' in selection else fact.notes),
+            'Secondary statements omitted from this criterion: ' + selection['reason']],
     )

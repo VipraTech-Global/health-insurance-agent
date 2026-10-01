@@ -47,7 +47,6 @@ from .manifest_v2 import raw_bundle_passages
 log = logging.getLogger(__name__)
 SEED = Path(__file__).resolve().parents[4] / "data/manifests/star-three-plan-retained-facts.json"
 RERUN = SEED.with_name("star-comprehensive-table-fact-rerun.json")
-PROJECTIONS = SEED.with_name("star-comprehensive-secondary-projections.json")
 
 
 def resume_pipeline_failure(state: dict[str, Any]) -> None:
@@ -151,8 +150,8 @@ def _progress(job: ProcessingJob, policy_id: str, core: list[dict[str, Any]]) ->
                     state.pop("review_complete", None)
             if RERUN.exists():
                 apply_approved_rerun(progress, json.loads(RERUN.read_text()))
-            if PROJECTIONS.exists():
-                projection = json.loads(PROJECTIONS.read_text())
+            for projection_path in sorted(SEED.parent.glob("star-*-secondary-projections.json")):
+                projection = json.loads(projection_path.read_text())
                 if projection['policy_version_id'] == policy_id:
                     for criterion in CRITERIA:
                         if criterion.key not in projection['criteria']:

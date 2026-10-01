@@ -1,0 +1,76 @@
+{
+  "id": "optima-secondary-only-2026-10-01",
+  "policy_version_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+  "criteria": {
+    "maternity": {
+      "source_fact_sha256": "d85ab5acabf16303d456683497c3106adad3e41125cd25dc7f90dbb3cdbf25da",
+      "value_sentence_indexes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "condition_indexes": [
+        0,
+        1
+      ],
+      "quantity_indexes": [],
+      "citation_indexes": [
+        0,
+        1
+      ],
+      "note_indexes": [],
+      "reason": "Keep maternity exclusion and its ectopic-pregnancy/accidental-miscarriage exceptions; newborn and assisted reproduction are separate benefits, whose secondary recital is omitted."
+    },
+    "geography": {
+      "source_fact_sha256": "df19b8103cd00a5fa4f0a7bd1d065f2f0a24e141fba3540fffc4805299493ff7",
+      "value_sentence_indexes": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "condition_indexes": [
+        0,
+        1,
+        2
+      ],
+      "quantity_indexes": [],
+      "citation_indexes": [
+        0,
+        1,
+        2
+      ],
+      "note_indexes": [],
+      "reason": "Omit the secondary premium-zone interpretation; retain the independently supported India-only cover and air-ambulance territory condition."
+    },
+    "ped_waiting_period": {
+      "source_fact_sha256": "63ca011d2943848aa8f98b8a970169e5dcc5e4936ba9370634a0ef9b610c6f2b",
+      "value_sentence_indexes": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        6
+      ],
+      "condition_indexes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "quantity_indexes": [
+        0
+      ],
+      "citation_indexes": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "note_indexes": [],
+      "reason": "Omit the secondary grace-period coverage sentence; retain the 36-month continuous-coverage PED core and increased-sum-insured, portability and acceptance conditions."
+    }
+  }
+}
