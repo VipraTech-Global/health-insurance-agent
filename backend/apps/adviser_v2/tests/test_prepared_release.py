@@ -189,3 +189,23 @@ def test_fact_release_cannot_execute_a_descriptive_fact(status):
     ):
         KnowledgeReleaseRule.objects.create(knowledge_release=release, policy_rule=rule)
         publish(release)
+
+
+@pytest.mark.django_db
+def test_prepared_facts_include_every_plan_without_computed_personal_outcomes():
+    from types import SimpleNamespace
+
+    from apps.adviser_v2.models import ProductVariant
+    from apps.adviser_v2.rule_engine import evaluate_release
+
+    release, span = prepared_fixture()
+    for version in PolicyVersion.objects.all():
+        ProductVariant.objects.create(policy_version=version, name='Base',
+            choices={'other_selectors': []}, availability=version.applicability, identity_evidence=span)
+    requirement = SimpleNamespace(id=uuid.uuid4(), criterion='copay', operator='equals',
+        priority='mandatory', scope='entire_purchase', subject_person_id=None, status='reported',
+        target_value={'state': 'known', 'kind': 'quantity', 'value': '0', 'unit': 'ratio'})
+    products = evaluate_release(release, [], [requirement])
+    assert len(products) == 3
+    assert all(not p.rules for p in products)
+    assert all(p.matches[0].outcome == 'unknown' and p.matches[0].comparison_value is None for p in products)

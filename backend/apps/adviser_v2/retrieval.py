@@ -32,6 +32,7 @@ RRF_CONSTANT = 60
 class PolicyRetrievalContext:
     chunks: tuple[PolicySearchChunk, ...]
     rule_ids: tuple[uuid.UUID, ...]
+    packets: tuple = ()
 
 
 def _reciprocal_rank_fusion(
@@ -135,7 +136,7 @@ def policy_chunks(
     )
 
 
-def retrieve_policy_context(
+def retrieve_hybrid_context(
     query_text: str,
     release: KnowledgeRelease,
     *,
@@ -208,3 +209,18 @@ def retrieve_policy_context(
         chunks=tuple(chunks),
         rule_ids=_linked_release_rule_ids(release_rule_ids, seed_rule_ids),
     )
+
+
+def retrieve_policy_context(query_text: str, release: KnowledgeRelease, *, limit: int = 24) -> PolicyRetrievalContext:
+    """Prepared releases search each exact applicable bundle with equal budgets."""
+    from django.conf import settings
+
+    from .evidence_retrieval import retrieve_plan
+    from .models import KnowledgeReleaseFact
+    policy_ids = sorted({str(p) for p in KnowledgeReleaseFact.objects.filter(
+        knowledge_release=release).values_list('policy_version_id', flat=True)})
+    if not policy_ids:
+        return retrieve_hybrid_context(query_text, release, limit=limit)
+    packets = tuple(retrieve_plan(query_text, p, budget=settings.COVERGUIDE_EVIDENCE_TOKEN_BUDGET)
+        for p in policy_ids)
+    return PolicyRetrievalContext(chunks=(), rule_ids=(), packets=packets)

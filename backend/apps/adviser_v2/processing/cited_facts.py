@@ -12,7 +12,7 @@ from typing import Any, Literal
 from pydantic import BaseModel, ConfigDict, Field
 
 from ..schemas import ExtractedPolicyRule, PolicyRuleExtractionV1, PolicyRuleReviewV1
-from .criterion_evidence import Criterion, criterion_for_key, normalized_quantity, quoted_quantities
+from .criterion_evidence import Criterion, normalized_quantity, quoted_quantities
 
 FACT_PROTOCOL = "coverguide-manifest-v2-cited-facts/1"
 FACT_PROMPT_REVISION = "whitespace-only-clause-matching/10"
@@ -181,7 +181,8 @@ def fact_problems(
     if len(result.rules) != 1:
         return [*problems, "Return exactly one complete cited fact for the criterion."]
     rule = result.rules[0]
-    if criterion_for_key(rule.rule_key) != criterion or rule.inventory_category != criterion.category:
+    if (rule.rule_key != f"{criterion.category}.definition.{criterion.key}_cited_fact"
+            or rule.inventory_category != criterion.category):
         problems.append("The fact belongs to a different criterion.")
     try:
         fact = carrier_fact(rule)

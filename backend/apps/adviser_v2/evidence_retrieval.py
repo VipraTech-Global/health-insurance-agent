@@ -206,4 +206,9 @@ def pack(policy_id: str, ranked: list[RawChunk], *, budget: int, method: str) ->
 
 
 def retrieve_plan(query: str, policy_id: str, *, budget: int = 16000) -> EvidencePacket:
-    return pack(policy_id, BM25(plan_chunks(policy_id)).rank(query), budget=budget, method="bm25")
+    from django.conf import settings
+
+    method = settings.COVERGUIDE_EVIDENCE_RETRIEVAL
+    if method != "bm25":
+        raise ValueError(f"Unsupported policy-evidence retrieval setting: {method}")
+    return pack(policy_id, BM25(plan_chunks(policy_id)).rank(query), budget=budget, method=method)

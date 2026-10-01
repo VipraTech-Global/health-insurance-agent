@@ -547,19 +547,13 @@ def process_turn(turn_id: uuid.UUID) -> None:
         clarification_question = interpretation.clarification_question or (
             CORE_FACT_QUESTIONS[missing_core_fact] if missing_core_fact else None
         )
-        retrieval = (
-            None
-            if is_clarifying
-            else retrieve_policy_context(
-                "\n".join(
-                    [
-                        turn.input_message.content,
-                        json.dumps(profile, default=str, ensure_ascii=False),
-                    ]
-                ),
-                release,
-            )
-        )
+        from .prepared_facts import FACT_RELEASE_VERSION
+        from .source_answers import answer_question, needs_source_retrieval, source_draft
+        prepared_release = release.readiness.get('fact_release_version') == FACT_RELEASE_VERSION
+        retrieve = not is_clarifying and (not prepared_release or needs_source_retrieval(
+            turn.input_message.content, interpretation.intent))
+        retrieval = retrieve_policy_context(turn.input_message.content, release) if retrieve else None
+        source_answers = None
         with transaction.atomic():
             _lock_active_turn(turn.id, token)
             prepared = prepare_comparison(
@@ -573,6 +567,10 @@ def process_turn(turn_id: uuid.UUID) -> None:
         decision_context = model_context(prepared, retrieval, profile=profile)
         if is_clarifying:
             draft = clarification_draft(clarification_question or "Please clarify.", prepared)
+        elif prepared_release:
+            source_answers = tuple(answer_question(turn, turn.input_message.content, profile, packet)
+                for packet in retrieval.packets) if retrieval else ()
+            draft = source_draft(prepared, source_answers)
         else:
             with transaction.atomic():
                 _lock_active_turn(turn.id, token)
@@ -603,6 +601,7 @@ def process_turn(turn_id: uuid.UUID) -> None:
                 expected_release_id=release_id,
                 expected_channel_generation=channel_generation,
                 expected_erasure_generation=erasure_generation,
+                source_answers=source_answers,
             )
             index_message(adviser_message)
             _publish_terminal_event(
