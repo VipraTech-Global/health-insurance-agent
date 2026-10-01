@@ -35,6 +35,10 @@ messages = list(
 )
 rows = []
 all_checked = set()
+search_log = Path(settings.COVERGUIDE_REPORT_ROOT) / "pageindex-live-calls.jsonl"
+search_calls = (
+    [json.loads(line) for line in search_log.read_text().splitlines()] if search_log.exists() else []
+)
 for seed in seeds:
     first = next(
         m for m in messages if m.content.startswith("Synthetic profile " + seed["id"] + ":")
@@ -151,6 +155,12 @@ for seed in seeds:
     all_checked.update(checked)
     turns = list(Turn.objects.filter(conversation=first.conversation).order_by("created_at"))
     attempts = list(ModelAttempt.objects.filter(turn__in=turns).order_by("created_at"))
+    final_searches = [c for c in search_calls if c["turn_id"] == str(comparison.turn_id)]
+    if settings.COVERGUIDE_EVIDENCE_RETRIEVAL == "pageindex":
+        completed_searches = [c for c in final_searches if c["status"] == "completed"]
+        expected_plans = {str(a.product_variant.policy_version_id) for a in assessments.values()}
+        assert {c["policy_version_id"] for c in completed_searches} == expected_plans
+        assert len(completed_searches) == 3
     rows.append(
         {
             "profile": seed["id"],
@@ -158,6 +168,18 @@ for seed in seeds:
             "comparison_id": str(comparison.id),
             "final_turn_id": str(comparison.turn_id),
             "final_question": comparison.turn.input_message.content,
+            "final_turn_wall_seconds": round(
+                (comparison.turn.updated_at - comparison.turn.created_at).total_seconds(), 3
+            ),
+            "pageindex_search_calls": final_searches,
+            "earlier_unknown_statements": list(
+                ComparisonStatement.objects.filter(
+                    comparison__turn__conversation=first.conversation,
+                    support_status="unknown",
+                )
+                .exclude(comparison=comparison)
+                .values("comparison_id", "comparison__turn_id", "text")
+            ),
             "profile_snapshot": profile,
             "products": products,
             "distinct_native_anchors_checked": len(checked),
@@ -170,6 +192,9 @@ for seed in seeds:
                     "status": a.status,
                     "usage": a.usage,
                     "error": a.error_code,
+                    "wall_ms": round((a.completed_at - a.started_at).total_seconds() * 1000)
+                    if a.completed_at
+                    else None,
                 }
                 for a in attempts
             ],
@@ -189,6 +214,21 @@ report = {
         knowledge_release=release
     ).count(),
     "distinct_native_anchors_checked": len(all_checked),
+    "pageindex_live_cost_including_superseded_runs": {
+        "calls": len(search_calls),
+        "failures": sum(c["status"] != "completed" for c in search_calls),
+        "wall_ms_sum": sum(c["wall_ms"] for c in search_calls),
+        "input_tokens": sum(c.get("usage", {}).get("input_tokens", 0) for c in search_calls),
+        "cached_input_tokens": sum(
+            c.get("usage", {}).get("input_tokens_details", {}).get("cached_tokens", 0)
+            for c in search_calls
+        ),
+        "output_tokens": sum(c.get("usage", {}).get("output_tokens", 0) for c in search_calls),
+        "reasoning_tokens": sum(
+            c.get("usage", {}).get("output_tokens_details", {}).get("reasoning_tokens", 0)
+            for c in search_calls
+        ),
+    },
     "profiles": rows,
     "ui_cell_citation_audit": "output/star-ui-citation-audit.json",
 }

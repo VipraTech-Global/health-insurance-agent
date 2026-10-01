@@ -1,0 +1,51 @@
+{
+  "method": "pageindex",
+  "final_profiles": [
+    {
+      "profile": "adult_individual",
+      "cells": 39,
+      "prices": 3,
+      "citations": 15,
+      "unknowns": 0,
+      "readableReasons": true
+    },
+    {
+      "profile": "family_with_child",
+      "cells": 39,
+      "prices": 3,
+      "citations": 20,
+      "unknowns": 1,
+      "readableReasons": true
+    },
+    {
+      "profile": "older_parent",
+      "cells": 39,
+      "prices": 3,
+      "citations": 7,
+      "unknowns": 2,
+      "readableReasons": true
+    },
+    {
+      "profile": "mixed_age_family",
+      "cells": 39,
+      "prices": 3,
+      "citations": 8,
+      "unknowns": 2,
+      "readableReasons": true
+    }
+  ],
+  "sum_supported_source_answers": 7,
+  "sum_unknown_source_answers": 5,
+  "comparison_column_widths_px": [
+    411.328125,
+    411.328125,
+    411.34375
+  ],
+  "assure_list_i_citation": {
+    "physical_page": 44,
+    "quote": "LIST I - Items for which coverage is available in the policy",
+    "visible_highlight_rectangles": 1,
+    "screenshot": "output/screenshots/star-consumables-citation.png"
+  },
+  "all_prepared_cell_clicks": "output/star-ui-citation-audit.json"
+}

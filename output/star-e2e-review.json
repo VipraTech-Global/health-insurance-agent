@@ -1,23 +1,264 @@
 {
-  "checked_at": "2026-10-01T19:35:49.721184+00:00",
+  "checked_at": "2026-10-01T20:47:12.282546+00:00",
   "database": "coverguide_star_slice",
-  "retrieval_method_at_audit": "bm25",
+  "retrieval_method_at_audit": "pageindex",
   "release_id": "3c1737d7-d755-4ec4-8352-028b81c52cc4",
   "release_state": "published",
   "prepared_facts": 39,
   "executable_rule_records": 5,
   "distinct_native_anchors_checked": 285,
+  "pageindex_live_cost_including_superseded_runs": {
+    "calls": 15,
+    "failures": 0,
+    "wall_ms_sum": 189216,
+    "input_tokens": 1119604,
+    "cached_input_tokens": 857856,
+    "output_tokens": 7820,
+    "reasoning_tokens": 4850
+  },
   "profiles": [
     {
       "profile": "adult_individual",
       "conversation_id": "69cf4164-9ff1-4879-afb2-dec46c3106d8",
-      "comparison_id": "0c7c2f70-f66a-433a-aa5d-f2da89fdb9c7",
-      "final_turn_id": "3ea82b68-04e7-48be-8856-de393809929d",
+      "comparison_id": "fa603e77-2437-4575-9d9d-590b3973cbf0",
+      "final_turn_id": "dd1f0f9a-9616-4eb7-9ff6-2d0c721e5012",
       "final_question": "For each of the three base policies, what road ambulance cover is provided and what conditions or limits apply? No optional covers are selected.",
+      "final_turn_wall_seconds": 545.02,
+      "pageindex_search_calls": [
+        {
+          "stage": "pageindex_search",
+          "policy_version_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+          "turn_id": "dd1f0f9a-9616-4eb7-9ff6-2d0c721e5012",
+          "model": "gpt-5.6-sol",
+          "retry": 0,
+          "status": "completed",
+          "reasoning_effort": "low",
+          "max_output_tokens": 8192,
+          "usage": {
+            "attribution": {
+              "items": {
+                "msg_009dd4c0f186f38b016abec5e4259087d082abb08aeb4ef36d": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 74072,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 74072,
+                      "input_tokens": 74187,
+                      "output_tokens": 0
+                    }
+                  ],
+                  "input_tokens": 74187,
+                  "output_tokens": 0
+                },
+                "rs_009dd4c0f186f38b016abec5e5663487d08ee8af6444e95914": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 2,
+                  "output_tokens": 516
+                },
+                "msg_009dd4c0f186f38b016abec5eeb84087d0a4c17de5807bf042": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "input_tokens": 0,
+                      "output_tokens": 156
+                    }
+                  ],
+                  "input_tokens": 0,
+                  "output_tokens": 156
+                }
+              },
+              "request_fields": {
+                "tools": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 296,
+                  "input_tokens": 296,
+                  "output_tokens": 0
+                }
+              }
+            },
+            "input_tokens": 74485,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 74368
+            },
+            "output_tokens": 672,
+            "output_tokens_details": {
+              "reasoning_tokens": 516
+            },
+            "total_tokens": 75157
+          },
+          "wall_ms": 15441
+        },
+        {
+          "stage": "pageindex_search",
+          "policy_version_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+          "turn_id": "dd1f0f9a-9616-4eb7-9ff6-2d0c721e5012",
+          "model": "gpt-5.6-sol",
+          "retry": 0,
+          "status": "completed",
+          "reasoning_effort": "low",
+          "max_output_tokens": 8192,
+          "usage": {
+            "attribution": {
+              "items": {
+                "msg_093621dac42b4567016abec5f37b5487d0a743accbba429c4e": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 64472,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 64472,
+                      "input_tokens": 64609,
+                      "output_tokens": 0
+                    }
+                  ],
+                  "input_tokens": 64609,
+                  "output_tokens": 0
+                },
+                "rs_093621dac42b4567016abec5f7dd3887d095e2a32697700078": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 2,
+                  "output_tokens": 200
+                },
+                "msg_093621dac42b4567016abec5fab7f087d0a098c9f2eabe40dc": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "input_tokens": 0,
+                      "output_tokens": 94
+                    }
+                  ],
+                  "input_tokens": 0,
+                  "output_tokens": 94
+                }
+              },
+              "request_fields": {
+                "tools": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 296,
+                  "input_tokens": 296,
+                  "output_tokens": 0
+                }
+              }
+            },
+            "input_tokens": 64907,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 64768
+            },
+            "output_tokens": 294,
+            "output_tokens_details": {
+              "reasoning_tokens": 200
+            },
+            "total_tokens": 65201
+          },
+          "wall_ms": 9040
+        },
+        {
+          "stage": "pageindex_search",
+          "policy_version_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+          "turn_id": "dd1f0f9a-9616-4eb7-9ff6-2d0c721e5012",
+          "model": "gpt-5.6-sol",
+          "retry": 0,
+          "status": "completed",
+          "reasoning_effort": "low",
+          "max_output_tokens": 8192,
+          "usage": {
+            "attribution": {
+              "items": {
+                "msg_04867a6619d274c7016abec5fd301487d092df788bd2b479b5": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 84056,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 84056,
+                      "input_tokens": 84208,
+                      "output_tokens": 0
+                    }
+                  ],
+                  "input_tokens": 84208,
+                  "output_tokens": 0
+                },
+                "rs_04867a6619d274c7016abec5fec18887d0863d6bfd7433b5bd": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 2,
+                  "output_tokens": 377
+                },
+                "msg_04867a6619d274c7016abec605dfd887d0b833c2c6101041c9": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "input_tokens": 0,
+                      "output_tokens": 137
+                    }
+                  ],
+                  "input_tokens": 0,
+                  "output_tokens": 137
+                }
+              },
+              "request_fields": {
+                "tools": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 296,
+                  "input_tokens": 296,
+                  "output_tokens": 0
+                }
+              }
+            },
+            "input_tokens": 84506,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 84352
+            },
+            "output_tokens": 514,
+            "output_tokens_details": {
+              "reasoning_tokens": 377
+            },
+            "total_tokens": 85020
+          },
+          "wall_ms": 12219
+        }
+      ],
+      "earlier_unknown_statements": [
+        {
+          "comparison_id": "dc5a611c-733b-4379-bf64-9e57e3fa89fe",
+          "comparison__turn_id": "08ac20f6-d223-4e56-8cd6-aa96672c278f",
+          "text": "Family Health Optima Insurance Plan: Retrieved evidence incomplete: coverage: coverage_question: The supplied bounded evidence identifies road-ambulance cover only for Family Health Optima Insurance Plan; the other two base policies are not identified or supported, so a three-policy comparison cannot be completed without inferring from omitted material."
+        },
+        {
+          "comparison_id": "dc5a611c-733b-4379-bf64-9e57e3fa89fe",
+          "comparison__turn_id": "08ac20f6-d223-4e56-8cd6-aa96672c278f",
+          "text": "Star Comprehensive Insurance Policy: Retrieved evidence incomplete: coverage: coverage_question: The supplied evidence identifies and defines road ambulance cover only for Star Comprehensive Insurance Policy; the other two base policies required for the three-policy comparison are not identified or supplied, so a complete source-grounded comparison cannot be produced without inferring from omitted documents."
+        },
+        {
+          "comparison_id": "dc5a611c-733b-4379-bf64-9e57e3fa89fe",
+          "comparison__turn_id": "08ac20f6-d223-4e56-8cd6-aa96672c278f",
+          "text": "Star Health Assure Insurance Policy: Retrieved evidence incomplete: coverage: coverage_question: The bounded retrieval packet identifies and supplies road-ambulance terms for only Star Health Assure Insurance Policy; the other two base policies are not identified or evidenced, so a source-grounded three-policy comparison cannot be completed without inferring from omitted material."
+        },
+        {
+          "comparison_id": "f85c2996-856b-4231-83d1-4745f091de58",
+          "comparison__turn_id": "9c83c0bd-0d45-4bf8-95e1-74bea76a773a",
+          "text": "Family Health Optima Insurance Plan: Retrieved evidence incomplete after validation: wrong_value: The inter-hospital transport condition is for \"better medical treatment,\" not specifically a \"higher level\" of medical treatment."
+        }
+      ],
       "profile_snapshot": {
-        "id": "d365003b-8e9f-4ae0-90d2-f7be534d74e9",
-        "revision": 8,
-        "created_at": "2026-10-01 18:46:21.941310+00:00",
+        "id": "ed63636c-014c-4386-a6a7-e2977e756e6c",
+        "revision": 10,
+        "created_at": "2026-10-01 20:43:13.635483+00:00",
         "people": [
           {
             "id": "d6de85fd-7fea-4d99-b71d-205c12bf4e0e",
@@ -124,27 +365,27 @@
           "quote": "unavailable",
           "selected_options": [],
           "source_answer": {
-            "id": "b0601e64-85d8-4bee-a249-44d13f317219",
+            "id": "15b50d50-ebf0-468a-a9e3-802b4c399e8d",
             "ordinal": 1,
-            "text": "Family Health Optima Insurance Plan: Road ambulance expenses are payable up to INR 750 per hospitalization and INR 1,500 per policy period, subject to an admissible hospitalization claim. Covered transport includes a private ambulance when medically needed to reach hospital, hospital-to-hospital transfer for a higher level of medical treatment, or transport home in the same city when ambulance use is certified by a medical practitioner. The hospitalization claim must be admissible. Transport home must be within the same city and ambulance use must be certified by a medical practitioner.",
+            "text": "Family Health Optima Insurance Plan: Road ambulance expenses are covered up to INR 750 per hospitalization and INR 1,500 per Policy Period, subject to an admissible hospitalization claim. Covered transport is by private ambulance to hospital when medically needed, between hospitals for improved medical treatment, or from the treating hospital to the insured person\u2019s residence in the same city when certified by the medical practitioner. A hospitalization claim must be admissible. Travel home must be within the same city and the ambulance requirement must be medically certified.",
             "statement_type": "benefit",
             "critical": true,
             "support_status": "supported",
-            "comparison_assessment_id": "1cab93d9-1245-4b10-8fd2-6044411ef975",
+            "comparison_assessment_id": "22fe5ac8-beda-4b6e-a4e3-cef08fc661e9",
             "citations": [
               {
-                "id": "bc21d4ae-35ce-4059-92e6-aa2c28077ec3",
-                "evidence_span_id": "e34a1ca6-76aa-4951-a087-fea53b1d68ee",
+                "id": "20f055a0-281b-4eaa-bd49-e102397b284f",
+                "evidence_span_id": "ebc0cf32-96f4-40ca-be65-aa014b49b875",
                 "policy_rule_id": null,
                 "role": "supports",
-                "quote": "Subject to an admissible\nhospitalization claim, road ambulance\nexpenses up to Rs.750/- per hospitalization\nand up to Rs.1,500/- per Policy Period shall\nbe payable for the following:",
-                "section_label": "manifest-v2-clause-864-1045-d0c0032fad9fcce4",
+                "quote": "Road ambulance: Subject to an admissible\nhospitalization claim, road ambulance\nexpenses up to Rs.750/- per hospitalization\nand up to Rs.1,500/- per Policy Period shall\nbe payable for the following:",
+                "section_label": "manifest-v2-clause-848-1045-a1edd37897f6167a",
                 "page": 12,
                 "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
                 "locator": {
                   "bbox": [
                     62.3622,
-                    384.62829999999997,
+                    384.8593,
                     287.82955389999995,
                     455.64379999999994
                   ],
@@ -158,7 +399,7 @@
                 }
               },
               {
-                "id": "ace4e3d5-2c0f-4172-a0bc-52275489d32c",
+                "id": "8e85b369-3515-4686-9e09-81ff743307b4",
                 "evidence_span_id": "438a8870-eda1-46b5-911d-f54036827518",
                 "policy_rule_id": null,
                 "role": "supports",
@@ -183,7 +424,7 @@
                 }
               },
               {
-                "id": "7c620704-1b5a-4ea7-9319-36d96b483865",
+                "id": "6791f1b6-b0e1-4dcc-8675-b8ed0249bb11",
                 "evidence_span_id": "ced7a3a5-f53a-4d70-8bed-625be3723a68",
                 "policy_rule_id": null,
                 "role": "supports",
@@ -208,7 +449,7 @@
                 }
               },
               {
-                "id": "082a662d-88fc-4e9e-a99e-ffa2f34bbc9f",
+                "id": "b1eec841-5d2f-45b9-a538-240b05f0a0ee",
                 "evidence_span_id": "2ad2d9cc-2da7-4bf2-9070-abf679405c7b",
                 "policy_rule_id": null,
                 "role": "supports",
@@ -242,27 +483,27 @@
           "quote": "unavailable",
           "selected_options": [],
           "source_answer": {
-            "id": "66f81b15-7eaa-4647-b0c1-b2ed74f74e77",
+            "id": "0cd5f697-fad8-4dd7-b8b6-138cb9013f16",
             "ordinal": 2,
-            "text": "Star Comprehensive Insurance Policy: Road ambulance expenses cover medically needed private-ambulance transport to a hospital, private-ambulance transfer between hospitals for further medical treatment, and transport from the treating hospital to the insured person\u2019s residence in the same city. The road ambulance expense is payable subject to an admissible hospitalization claim. Transport from the treating hospital to the residence must be within the same city, and a medical practitioner must certify the need for an ambulance.",
+            "text": "Star Comprehensive Insurance Policy: Road ambulance expenses are payable, subject to an admissible hospitalization claim, for medically needed private-ambulance transport to a hospital; private-ambulance transfer between hospitals for improved medical treatment; or transport from the treating hospital to the insured person\u2019s residence in the same city when ambulance transport home is certified by the medical practitioner. The hospitalization claim must be admissible. Transport to a hospital must be by private ambulance and medically needed. Transfer between hospitals must be by private ambulance for improved medical treatment. Transport home must be from the treating hospital, the residence must be in the same city, and the medical practitioner must certify the need for an ambulance to the residence.",
             "statement_type": "benefit",
             "critical": true,
             "support_status": "supported",
-            "comparison_assessment_id": "5a74061c-db6e-4798-8fc7-3b88ff1989a0",
+            "comparison_assessment_id": "0c301377-b792-4bf2-a1d2-491085d83e87",
             "citations": [
               {
-                "id": "bd494cc9-8bdb-45f3-a99c-059ad3fb44f0",
-                "evidence_span_id": "ce604457-f8b6-4178-90de-ce53ad962dc0",
+                "id": "ec9e7079-32d9-4650-9cc9-2284e24f6187",
+                "evidence_span_id": "f07f8ea8-f043-4500-acfe-080ef24f7205",
                 "policy_rule_id": null,
                 "role": "supports",
-                "quote": "Road Ambulance: Subject to an admissible\nhospitalization claim, road ambulance\nexpenses incurred for the following are\npayable :-",
-                "section_label": "manifest-v2-clause-800-929-72bb1e4b29ecd873",
+                "quote": "Subject to an admissible\nhospitalization claim, road ambulance\nexpenses incurred for the following are\npayable :-",
+                "section_label": "manifest-v2-clause-816-929-0593ed333299fd9f",
                 "page": 11,
                 "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
                 "locator": {
                   "bbox": [
                     65.5197,
-                    433.7327,
+                    433.50169999999997,
                     287.87690000000003,
                     489.9378
                   ],
@@ -276,7 +517,7 @@
                 }
               },
               {
-                "id": "3796b30d-0c49-4f28-9f63-7edba87bb9de",
+                "id": "da7fd379-c128-4db2-8655-eaf9be8ac811",
                 "evidence_span_id": "15d087ee-9c67-4fae-9ed1-6baae3fa2006",
                 "policy_rule_id": null,
                 "role": "supports",
@@ -301,7 +542,7 @@
                 }
               },
               {
-                "id": "c0e54ebc-8abb-4bd4-ad17-612bdb106877",
+                "id": "f7c74153-a5c1-49b9-8237-5e7d398b5081",
                 "evidence_span_id": "dde0f2d8-8b8a-4318-8c9d-9e6653d35f77",
                 "policy_rule_id": null,
                 "role": "supports",
@@ -326,7 +567,7 @@
                 }
               },
               {
-                "id": "efe59dba-768d-4004-9202-3a6d0f16cef3",
+                "id": "edd88395-1ccb-43b2-bc18-eec03bec0e9d",
                 "evidence_span_id": "7c552049-a382-4a31-9ce2-8ab1e5ea717f",
                 "policy_rule_id": null,
                 "role": "supports",
@@ -360,16 +601,66 @@
           "quote": "unavailable",
           "selected_options": [],
           "source_answer": {
-            "id": "6cbc4cd2-d2ef-43f0-a7de-55c3aba04416",
+            "id": "ed7cf7a7-09c2-45a0-8867-5214d8fbcb9e",
             "ordinal": 3,
-            "text": "Star Health Assure Insurance Policy: Road ambulance expenses are payable at actual cost, subject to an admissible hospitalization claim. Covered transport is by private ambulance to a hospital when medically needed; between hospitals for a higher level of medical treatment; or from the treating hospital to the residence in the same city when ambulance transport home is certified by a medical practitioner. A hospitalization claim must be admissible. Transport to a hospital must be by private ambulance and needed for medical reasons. Inter-hospital transport must be for a higher level of medical treatment. Transport home must be from the treating hospital, within the same city, and certified as requiring an ambulance by a medical practitioner.",
+            "text": "Star Health Assure Insurance Policy: Road ambulance expenses are covered at actuals, forming part of the Sum Insured, subject to an admissible hospitalization claim. Covered transport is by private ambulance to a hospital when medically needed, between hospitals for improved medical treatment, or from the treating hospital to the residence when it is in the same city and ambulance need is medically certified. An admissible hospitalization claim is required. Transport to hospital must be by private ambulance and needed for medical reasons. Inter-hospital transport must be by private ambulance for improved medical treatment. Transport home is limited to the same city and requires certification by the medical practitioner that an ambulance is required. The benefit forms part of the Sum Insured.",
             "statement_type": "benefit",
             "critical": true,
             "support_status": "supported",
-            "comparison_assessment_id": "4847a672-283f-45e2-b418-99af25e0010f",
+            "comparison_assessment_id": "68590b7d-7bf6-424b-908c-ad53dcd8e3d0",
             "citations": [
               {
-                "id": "31a99924-303f-473e-b160-ea69da33ce52",
+                "id": "6944b2b4-2a8b-48ba-ac81-2fb8e54ccccf",
+                "evidence_span_id": "9125ba94-c694-43c9-8482-8fdff90e47e5",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "S.No Sum Insured (INR) 5 lakhs 7.5 lakhs 10 Lakhs 15 Lakhs 20 Lakhs 25 Lakhs 50 Lakhs 75 Lakhs 1 Crore 2 Crore",
+                "section_label": "manifest-v2-clause-185-295-323da231eee5d574",
+                "page": 46,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    44.0314,
+                    122.27740000000006,
+                    544.8474,
+                    130.27740000000006
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 46,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "8de7b9a8-d0db-43c4-af4e-a0ff4d1b296f",
+                "evidence_span_id": "7b7134fa-d550-419a-a6ea-f93311172e99",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "8 Road Ambulance Actuals",
+                "section_label": "manifest-v2-clause-672-696-be38833b08f582b7",
+                "page": 46,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    50.007399999999905,
+                    389.0214,
+                    370.7353999999999,
+                    397.0214
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 46,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "b262ab01-eb59-44be-a733-932f56afeddd",
                 "evidence_span_id": "bfa55e37-fe8d-4e68-8b4f-369d41a99f48",
                 "policy_rule_id": null,
                 "role": "supports",
@@ -394,7 +685,7 @@
                 }
               },
               {
-                "id": "6cb1cd98-bcb2-424c-890c-98b0917b06f7",
+                "id": "55534599-db9d-4d49-aefb-1096d615c27d",
                 "evidence_span_id": "93f5350f-4d2b-4259-a7df-5db0d7708566",
                 "policy_rule_id": null,
                 "role": "supports",
@@ -419,7 +710,7 @@
                 }
               },
               {
-                "id": "1e7a3990-6a47-47f6-878d-01833b1a94b3",
+                "id": "9bf7d139-a941-49bf-b6b7-33d70dc55c61",
                 "evidence_span_id": "5e2f80cc-959f-4a66-b25e-9c039c0983ee",
                 "policy_rule_id": null,
                 "role": "supports",
@@ -444,7 +735,7 @@
                 }
               },
               {
-                "id": "59e07db8-87e8-4541-83db-ff64e309ae8a",
+                "id": "a1e3165e-6e88-4388-beea-a49678eddaab",
                 "evidence_span_id": "b419474d-a05f-4f7c-ad1a-cac080382213",
                 "policy_rule_id": null,
                 "role": "supports",
@@ -469,50 +760,25 @@
                 }
               },
               {
-                "id": "376870f2-0d22-45be-a83d-01f2abadb0a6",
-                "evidence_span_id": "b781f294-85d7-464e-a01a-92adda2a1b86",
+                "id": "3f96da59-68b8-4915-8be0-1de840ef0ddb",
+                "evidence_span_id": "df82bec9-62e8-45d3-b6d2-4bbc3c13afaa",
                 "policy_rule_id": null,
                 "role": "supports",
-                "quote": "S.No Sum Insured (INR)",
-                "section_label": "manifest-v2-clause-185-207-2a98f6326ed8de8c",
-                "page": 46,
+                "quote": "7 Road Ambulance\nForming Part of\nSum Insured",
+                "section_label": "manifest-v2-clause-1875-1919-3eee4fe287592cbb",
+                "page": 26,
                 "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
                 "locator": {
                   "bbox": [
-                    44.0314,
-                    122.27740000000006,
-                    146.5994,
-                    130.27740000000006
+                    318.67199999999985,
+                    595.0322000000001,
+                    542.4119999999998,
+                    619.0322000000001
                   ],
                   "kind": "pdf_region",
                   "rotation": 0,
                   "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
-                  "physical_page": 46,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              },
-              {
-                "id": "9b32f032-3532-44c3-9761-81dcb33aeddb",
-                "evidence_span_id": "7b7134fa-d550-419a-a6ea-f93311172e99",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "8 Road Ambulance Actuals",
-                "section_label": "manifest-v2-clause-672-696-be38833b08f582b7",
-                "page": 46,
-                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
-                "locator": {
-                  "bbox": [
-                    50.007399999999905,
-                    389.0214,
-                    370.7353999999999,
-                    397.0214
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
-                  "physical_page": 46,
+                  "physical_page": 26,
                   "schema_version": 1,
                   "coordinate_space": "unrotated_pdf_points",
                   "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
@@ -522,7 +788,7 @@
           }
         }
       ],
-      "distinct_native_anchors_checked": 250,
+      "distinct_native_anchors_checked": 251,
       "turns": [
         {
           "id": "32b55df9-7c94-4ab7-9b0d-a51a33e9e6c6",
@@ -558,6 +824,16 @@
           "id": "3ea82b68-04e7-48be-8856-de393809929d",
           "state": "completed",
           "error": null
+        },
+        {
+          "id": "9c83c0bd-0d45-4bf8-95e1-74bea76a773a",
+          "state": "completed",
+          "error": null
+        },
+        {
+          "id": "dd1f0f9a-9616-4eb7-9ff6-2d0c721e5012",
+          "state": "completed",
+          "error": null
         }
       ],
       "model_attempts": [
@@ -573,7 +849,8 @@
             "output_tokens": 1536,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 32469
         },
         {
           "id": "31878c67-16b9-48cd-84bb-184865593ac7",
@@ -587,7 +864,8 @@
             "output_tokens": 1075,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 21087
         },
         {
           "id": "899dc609-156f-490e-b12d-d52a40c9b703",
@@ -601,7 +879,8 @@
             "output_tokens": 707,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 20315
         },
         {
           "id": "1142defb-e561-4f29-b40a-8870a6282333",
@@ -615,7 +894,8 @@
             "output_tokens": 913,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 18161
         },
         {
           "id": "f11f0ec0-929b-4c7c-950b-834da5085e41",
@@ -629,7 +909,8 @@
             "output_tokens": 537,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 11443
         },
         {
           "id": "30a096b6-ca39-46ec-830e-978d80e8bee2",
@@ -643,7 +924,8 @@
             "output_tokens": 172,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 9405
         },
         {
           "id": "ccc6be9d-ed4d-4db6-8e5b-78e09c4ad110",
@@ -657,7 +939,8 @@
             "output_tokens": 185,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 9712
         },
         {
           "id": "2b9733f1-2396-4763-b2f4-ece16f4462bb",
@@ -671,7 +954,8 @@
             "output_tokens": 198,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 13544
         },
         {
           "id": "20b08fdb-ec46-4af0-baf8-2ef63764137e",
@@ -685,7 +969,8 @@
             "output_tokens": 505,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 10888
         },
         {
           "id": "085969a7-43c7-4308-a73f-70ff0137107e",
@@ -699,7 +984,8 @@
             "output_tokens": 1179,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 23659
         },
         {
           "id": "4f148ce8-6230-43fe-bef9-35978f9029e5",
@@ -713,7 +999,8 @@
             "output_tokens": 153,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 5077
         },
         {
           "id": "6c84312d-9879-4649-bd86-c2d052cb9023",
@@ -727,7 +1014,8 @@
             "output_tokens": 967,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 19486
         },
         {
           "id": "fb63289e-05cd-4ed0-858b-1829f1bdb333",
@@ -741,7 +1029,8 @@
             "output_tokens": 279,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 7625
         },
         {
           "id": "bd858b41-26b3-4342-bd28-c34cc3692403",
@@ -755,7 +1044,8 @@
             "output_tokens": 1021,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 20644
         },
         {
           "id": "82125bca-04c8-4195-bfc9-92e3d74031bb",
@@ -769,7 +1059,8 @@
             "output_tokens": 278,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 7123
         },
         {
           "id": "e8385996-3a67-4e9c-bffe-05b2a394ccd5",
@@ -783,7 +1074,8 @@
             "output_tokens": 486,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 10531
         },
         {
           "id": "396b42f0-e038-43cd-9685-a42a2b43e14b",
@@ -797,7 +1089,8 @@
             "output_tokens": 1020,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 22773
         },
         {
           "id": "e0828c1f-5022-43b6-b024-24d13f1c36c5",
@@ -811,7 +1104,8 @@
             "output_tokens": 205,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 6600
         },
         {
           "id": "07ba61e5-bff1-4820-a121-ee11922027ff",
@@ -825,7 +1119,8 @@
             "output_tokens": 992,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 19977
         },
         {
           "id": "801f8790-de12-492e-81f1-51ffa8c8179c",
@@ -839,7 +1134,8 @@
             "output_tokens": 426,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 9825
         },
         {
           "id": "0a72254b-07a2-4132-9367-1bcd32ba43ea",
@@ -853,7 +1149,8 @@
             "output_tokens": 1005,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 22688
         },
         {
           "id": "2d65fc3d-4614-490b-baf2-f5f8b4c96e48",
@@ -867,7 +1164,8 @@
             "output_tokens": 224,
             "cached_input_tokens": 22272
           },
-          "error": null
+          "error": null,
+          "wall_ms": 5584
         },
         {
           "id": "bb26904d-f6f5-4d28-99b0-85886ddb2e66",
@@ -881,7 +1179,8 @@
             "output_tokens": 1268,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 24845
         },
         {
           "id": "051750f9-fea7-4ad4-a0f9-e255466123ac",
@@ -895,23 +1194,526 @@
             "output_tokens": 255,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 6384
+        },
+        {
+          "id": "345ba3c0-f7b5-4b2e-982e-7d0b46ad588e",
+          "turn_id": "9c83c0bd-0d45-4bf8-95e1-74bea76a773a",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 11769,
+            "input_tokens": 4231,
+            "usage_source": "provider_reported",
+            "output_tokens": 524,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 11777
+        },
+        {
+          "id": "1cbcb777-77af-406c-aeae-f3f106995a8b",
+          "turn_id": "9c83c0bd-0d45-4bf8-95e1-74bea76a773a",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 23634,
+            "input_tokens": 8748,
+            "usage_source": "provider_reported",
+            "output_tokens": 1198,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 23639
+        },
+        {
+          "id": "58c42107-ebea-44a1-825b-810ad4172b2d",
+          "turn_id": "9c83c0bd-0d45-4bf8-95e1-74bea76a773a",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 8757,
+            "input_tokens": 7193,
+            "usage_source": "provider_reported",
+            "output_tokens": 390,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 8762
+        },
+        {
+          "id": "2bb34835-b665-4179-a1e6-8e2a5b44bbe2",
+          "turn_id": "9c83c0bd-0d45-4bf8-95e1-74bea76a773a",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 21144,
+            "input_tokens": 8778,
+            "usage_source": "provider_reported",
+            "output_tokens": 997,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 21149
+        },
+        {
+          "id": "beffd974-bdf4-4b88-aca6-b9ec3c43ed7b",
+          "turn_id": "9c83c0bd-0d45-4bf8-95e1-74bea76a773a",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 7432,
+            "input_tokens": 7211,
+            "usage_source": "provider_reported",
+            "output_tokens": 312,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 7436
+        },
+        {
+          "id": "cefdfdc9-576e-48d2-8004-6e40604adde9",
+          "turn_id": "9c83c0bd-0d45-4bf8-95e1-74bea76a773a",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 18931,
+            "input_tokens": 7985,
+            "usage_source": "provider_reported",
+            "output_tokens": 950,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 18935
+        },
+        {
+          "id": "6ba62788-54f0-4f66-80be-93b40d14d26a",
+          "turn_id": "9c83c0bd-0d45-4bf8-95e1-74bea76a773a",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 10879,
+            "input_tokens": 6417,
+            "usage_source": "provider_reported",
+            "output_tokens": 503,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 10884
+        },
+        {
+          "id": "8c937d15-d99d-4c48-a836-af791107c90b",
+          "turn_id": "9c83c0bd-0d45-4bf8-95e1-74bea76a773a",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 24827,
+            "input_tokens": 8785,
+            "usage_source": "provider_reported",
+            "output_tokens": 1274,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 25504
+        },
+        {
+          "id": "d7512ac2-100f-4c0e-912a-571f00537a56",
+          "turn_id": "9c83c0bd-0d45-4bf8-95e1-74bea76a773a",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 8007,
+            "input_tokens": 7323,
+            "usage_source": "provider_reported",
+            "output_tokens": 328,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 8033
+        },
+        {
+          "id": "d98b0a0e-4216-4cbc-bd57-80656a25124c",
+          "turn_id": "dd1f0f9a-9616-4eb7-9ff6-2d0c721e5012",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 17055,
+            "input_tokens": 4725,
+            "usage_source": "provider_reported",
+            "output_tokens": 844,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 17062
+        },
+        {
+          "id": "1564a6f7-95eb-4363-ba3d-a2f3dd3c098b",
+          "turn_id": "dd1f0f9a-9616-4eb7-9ff6-2d0c721e5012",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 20494,
+            "input_tokens": 12528,
+            "usage_source": "provider_reported",
+            "output_tokens": 955,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 20499
+        },
+        {
+          "id": "17b7f5e2-a5a4-4661-bf1e-c35383a06238",
+          "turn_id": "dd1f0f9a-9616-4eb7-9ff6-2d0c721e5012",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 6332,
+            "input_tokens": 10892,
+            "usage_source": "provider_reported",
+            "output_tokens": 223,
+            "cached_input_tokens": 5888
+          },
+          "error": null,
+          "wall_ms": 6339
+        },
+        {
+          "id": "e7551a45-d538-4bf2-8abc-0e626b1259b3",
+          "turn_id": "dd1f0f9a-9616-4eb7-9ff6-2d0c721e5012",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 20779,
+            "input_tokens": 8002,
+            "usage_source": "provider_reported",
+            "output_tokens": 1017,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 20785
+        },
+        {
+          "id": "e52a009d-252c-4d99-a8cb-b7878bcf3f35",
+          "turn_id": "dd1f0f9a-9616-4eb7-9ff6-2d0c721e5012",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 5447,
+            "input_tokens": 6380,
+            "usage_source": "provider_reported",
+            "output_tokens": 211,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 5473
+        },
+        {
+          "id": "179ed311-1b36-4bdf-96d8-d5ebcbd895e6",
+          "turn_id": "dd1f0f9a-9616-4eb7-9ff6-2d0c721e5012",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 28006,
+            "input_tokens": 10579,
+            "usage_source": "provider_reported",
+            "output_tokens": 1426,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 28011
+        },
+        {
+          "id": "a95ff354-c9d2-42ca-9c1b-a88ad4021f99",
+          "turn_id": "dd1f0f9a-9616-4eb7-9ff6-2d0c721e5012",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 12754,
+            "input_tokens": 9169,
+            "usage_source": "provider_reported",
+            "output_tokens": 611,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 12759
+        },
+        {
+          "id": "1ae63247-0834-4b21-ae36-035921ab46fc",
+          "turn_id": "dd1f0f9a-9616-4eb7-9ff6-2d0c721e5012",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 28699,
+            "input_tokens": 10618,
+            "usage_source": "provider_reported",
+            "output_tokens": 1479,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 28707
+        },
+        {
+          "id": "7814dc22-e642-48c7-9955-47ef6cfaa7ea",
+          "turn_id": "dd1f0f9a-9616-4eb7-9ff6-2d0c721e5012",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 10529,
+            "input_tokens": 9301,
+            "usage_source": "provider_reported",
+            "output_tokens": 373,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 10535
         }
       ],
       "attempt_status_counts": {
-        "succeeded": 24
+        "succeeded": 42
       }
     },
     {
       "profile": "family_with_child",
       "conversation_id": "b9e800a7-3812-4498-8ede-d59eaae6c191",
-      "comparison_id": "07c04f2f-6939-4c7c-9139-dc280c80612d",
-      "final_turn_id": "8e8bb5c2-8658-4563-a7b9-b2f4fe8b201d",
+      "comparison_id": "4081391d-2253-4aaa-83d0-28559e13125b",
+      "final_turn_id": "c56e556b-2632-4e57-8cd0-261cfaf72a22",
       "final_question": "For each of the three base policies, what AYUSH inpatient treatment is covered, and what hospital, treatment and payment conditions apply? No optional covers are selected. City and premium budget remain unknown.",
+      "final_turn_wall_seconds": 210.564,
+      "pageindex_search_calls": [
+        {
+          "stage": "pageindex_search",
+          "policy_version_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+          "turn_id": "c56e556b-2632-4e57-8cd0-261cfaf72a22",
+          "model": "gpt-5.6-sol",
+          "retry": 0,
+          "status": "completed",
+          "reasoning_effort": "low",
+          "max_output_tokens": 8192,
+          "usage": {
+            "attribution": {
+              "items": {
+                "msg_02707cf238f06ca5016abec1e6c4f487d08ce2b3b8ee6d7ac8": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 73944,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 73944,
+                      "input_tokens": 74199,
+                      "output_tokens": 0
+                    }
+                  ],
+                  "input_tokens": 74199,
+                  "output_tokens": 0
+                },
+                "rs_02707cf238f06ca5016abec1e7a9f487d089109174f30d27fd": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 2,
+                  "output_tokens": 361
+                },
+                "msg_02707cf238f06ca5016abec1ee362087d0a8944bcb1f866d04": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "input_tokens": 0,
+                      "output_tokens": 351
+                    }
+                  ],
+                  "input_tokens": 0,
+                  "output_tokens": 351
+                }
+              },
+              "request_fields": {
+                "tools": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 296,
+                  "input_tokens": 296,
+                  "output_tokens": 0
+                }
+              }
+            },
+            "input_tokens": 74497,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 74240
+            },
+            "output_tokens": 712,
+            "output_tokens_details": {
+              "reasoning_tokens": 361
+            },
+            "total_tokens": 75209
+          },
+          "wall_ms": 14914
+        },
+        {
+          "stage": "pageindex_search",
+          "policy_version_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+          "turn_id": "c56e556b-2632-4e57-8cd0-261cfaf72a22",
+          "model": "gpt-5.6-sol",
+          "retry": 0,
+          "status": "completed",
+          "reasoning_effort": "low",
+          "max_output_tokens": 8192,
+          "usage": {
+            "attribution": {
+              "items": {
+                "msg_0aaa5f5ed2ca1320016abec1f6bd1887d0b8fc42d0ed87cf72": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "input_tokens": 64621,
+                      "output_tokens": 0
+                    }
+                  ],
+                  "input_tokens": 64621,
+                  "output_tokens": 0
+                },
+                "rs_0aaa5f5ed2ca1320016abec1f92f0487d0a4899ea4879a951b": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 2,
+                  "output_tokens": 308
+                },
+                "msg_0aaa5f5ed2ca1320016abec200104087d08601106e12848bd2": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "input_tokens": 0,
+                      "output_tokens": 241
+                    }
+                  ],
+                  "input_tokens": 0,
+                  "output_tokens": 241
+                }
+              },
+              "request_fields": {
+                "tools": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 296,
+                  "output_tokens": 0
+                }
+              }
+            },
+            "input_tokens": 64919,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 549,
+            "output_tokens_details": {
+              "reasoning_tokens": 308
+            },
+            "total_tokens": 65468
+          },
+          "wall_ms": 13934
+        },
+        {
+          "stage": "pageindex_search",
+          "policy_version_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+          "turn_id": "c56e556b-2632-4e57-8cd0-261cfaf72a22",
+          "model": "gpt-5.6-sol",
+          "retry": 0,
+          "status": "completed",
+          "reasoning_effort": "low",
+          "max_output_tokens": 8192,
+          "usage": {
+            "attribution": {
+              "items": {
+                "msg_0eb840cb6d8f5177016abec204ebe487d08defd8dad9bd8756": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 84056,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 84056,
+                      "input_tokens": 84220,
+                      "output_tokens": 0
+                    }
+                  ],
+                  "input_tokens": 84220,
+                  "output_tokens": 0
+                },
+                "rs_0eb840cb6d8f5177016abec20614d887d0a50aa4d3f5cf6884": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 2,
+                  "output_tokens": 516
+                },
+                "msg_0eb840cb6d8f5177016abec20f29f487d097dee4f5663cefe7": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "input_tokens": 0,
+                      "output_tokens": 287
+                    }
+                  ],
+                  "input_tokens": 0,
+                  "output_tokens": 287
+                }
+              },
+              "request_fields": {
+                "tools": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 296,
+                  "input_tokens": 296,
+                  "output_tokens": 0
+                }
+              }
+            },
+            "input_tokens": 84518,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 84352
+            },
+            "output_tokens": 803,
+            "output_tokens_details": {
+              "reasoning_tokens": 516
+            },
+            "total_tokens": 85321
+          },
+          "wall_ms": 17241
+        }
+      ],
+      "earlier_unknown_statements": [
+        {
+          "comparison_id": "1ee23119-1cd0-40f0-96a7-e79afb51206f",
+          "comparison__turn_id": "26a5557d-4b2e-4a0a-b0ff-4edd77e3d393",
+          "text": "Family Health Optima Insurance Plan: Retrieved evidence incomplete after validation: 5 count lacks quoted numeric support (digits or words)."
+        },
+        {
+          "comparison_id": "1ee23119-1cd0-40f0-96a7-e79afb51206f",
+          "comparison__turn_id": "26a5557d-4b2e-4a0a-b0ff-4edd77e3d393",
+          "text": "Star Comprehensive Insurance Policy: Retrieved evidence incomplete after validation: Quote 2, star-comprehensive-base-wording, physical page 3: Quotation does not occur word for word on its cited raw page when ignoring whitespace only.; 5 count lacks quoted numeric support (digits or words)."
+        },
+        {
+          "comparison_id": "1ee23119-1cd0-40f0-96a7-e79afb51206f",
+          "comparison__turn_id": "26a5557d-4b2e-4a0a-b0ff-4edd77e3d393",
+          "text": "Star Health Assure Insurance Policy: Retrieved evidence incomplete after validation: Quote 2, star-health-assure-base-wording, physical page 2: Quotation does not occur word for word on its cited raw page when ignoring whitespace only.; Quote 3, star-health-assure-base-wording, physical page 3: Quotation does not occur word for word on its cited raw page when ignoring whitespace only.; 5 count lacks quoted numeric support (digits or words)."
+        },
+        {
+          "comparison_id": "07c04f2f-6939-4c7c-9139-dc280c80612d",
+          "comparison__turn_id": "8e8bb5c2-8658-4563-a7b9-b2f4fe8b201d",
+          "text": "Star Health Assure Insurance Policy: Retrieved evidence incomplete: coverage: coverage_question: needs_prospectus: supplied excerpts state that inpatient Ayurveda, Unani, Siddha and Homeopathy treatment is payable up to the Sum Insured in an AYUSH Hospital, and that Yoga and Naturopathy claims require prior company approval, but they do not include the AYUSH Hospital definition needed to report every requested hospital condition. Because the retrieval packet omits pages, those conditions cannot be inferred."
+        }
+      ],
       "profile_snapshot": {
-        "id": "814daacb-6722-4bc7-a0b6-51073e73fdb4",
-        "revision": 6,
-        "created_at": "2026-10-01 19:07:54.106006+00:00",
+        "id": "07c5fed3-d7ce-41ce-be56-fd9a552ffed4",
+        "revision": 7,
+        "created_at": "2026-10-01 20:26:13.080549+00:00",
         "people": [
           {
             "id": "6ca7227a-4f5b-405a-a891-b321b2f1cf1b",
@@ -1017,7 +1819,7 @@
             "subject_person_id": null
           },
           {
-            "id": "dd2b7e23-ae62-4a4e-9746-f40a1588f6c2",
+            "id": "e4fe1e5b-39ca-46c8-b7b7-7e4ddacf83d0",
             "logical_key": "1aa5b887-fecd-4cfa-b4b8-d1249a5be089",
             "fact_type": "city",
             "value": {
@@ -1028,7 +1830,7 @@
             "subject_person_id": null
           },
           {
-            "id": "955d1fb4-b65c-4ac5-abff-279ea3b65b76",
+            "id": "7e7be22f-58b4-4ad4-89eb-74c96b9d2d65",
             "logical_key": "d3b9e96a-1cab-4955-8f37-1adc59e11c91",
             "fact_type": "budget",
             "value": {
@@ -1072,240 +1874,14 @@
           "quote": "unavailable",
           "selected_options": [],
           "source_answer": {
-            "id": "d373e906-4797-4e1c-beeb-f2442de95125",
-            "ordinal": 1,
-            "text": "Family Health Optima Insurance Plan: AYUSH inpatient hospitalization expenses for treatment under Ayurveda, Unani, Siddha and Homeopathy are payable up to the Sum Insured in an AYUSH Hospital. Yoga and Naturopathy claims require prior company approval. An AYUSH Hospital may be a government AYUSH hospital, a recognized teaching hospital, or a registered standalone/co-located inpatient facility supervised by a qualified registered AYUSH practitioner and meeting the stated facility criteria. Treatment must occur as inpatient hospitalization in an AYUSH Hospital. Yoga and Naturopathy claims require prior company approval. A standalone or co-located AYUSH hospital must be registered where applicable and supervised by a qualified registered AYUSH practitioner. That facility must have at least 5 inpatient beds, a qualified AYUSH practitioner in charge around the clock, required therapy sections or an equipped operation theatre, and accessible daily patient records.",
-            "statement_type": "benefit",
-            "critical": true,
-            "support_status": "supported",
-            "comparison_assessment_id": "21e49978-433a-474f-a682-0906c876bba5",
-            "citations": [
-              {
-                "id": "a8b49c5f-9204-4021-9ceb-680d68bb1b84",
-                "evidence_span_id": "b5a3edd0-1ba1-4990-be0f-fe0309cc7d96",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "Inpatient Hospitalizations Expenses incurred on treatment under\nAyurveda, Unani, Siddha and Homeopathy systems of medicines in a AYUSH Hospital is\npayable up to the Sum Insured.",
-                "section_label": "manifest-v2-clause-314-491-cae2e531734c9d82",
-                "page": 6,
-                "document_version_id": "f8fc34fe-5566-4ada-aeae-8ae9a2c993ca",
-                "locator": {
-                  "bbox": [
-                    62.0236,
-                    104.99180000000001,
-                    537.4106000000003,
-                    150.1327
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "abe38283100d6402e1ac22929bb94c23bb53994bef7a378196e48900cd4da025",
-                  "physical_page": 6,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              },
-              {
-                "id": "6279a511-e55e-4ef9-b5c6-42dda897b8ee",
-                "evidence_span_id": "152c873d-b7ed-4547-973a-0c31f9af4c43",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "Claims under Yoga and Naturopathy system of treatment will be payable subject\nto prior approval from the company.",
-                "section_label": "manifest-v2-clause-498-611-6db529506c715e3b",
-                "page": 6,
-                "document_version_id": "f8fc34fe-5566-4ada-aeae-8ae9a2c993ca",
-                "locator": {
-                  "bbox": [
-                    61.8661,
-                    166.12440000000004,
-                    540.0793000000001,
-                    194.19489999999996
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "abe38283100d6402e1ac22929bb94c23bb53994bef7a378196e48900cd4da025",
-                  "physical_page": 6,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              },
-              {
-                "id": "e1070178-3f07-43b2-a67f-d42e0440488b",
-                "evidence_span_id": "5cf9867b-e5f5-499a-83c6-60ee1314ee4b",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "Central or State Government AYUSH Hospital;",
-                "section_label": "manifest-v2-clause-1768-1811-b4160a3b7d0a4246",
-                "page": 2,
-                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
-                "locator": {
-                  "bbox": [
-                    326.88821079999997,
-                    523.9252999999999,
-                    552.9565779999998,
-                    534.9252999999999
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
-                  "physical_page": 2,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              },
-              {
-                "id": "2fcde09d-7841-476a-b619-051fc22627f6",
-                "evidence_span_id": "5274ab0b-07e5-4222-82ae-53d96d9f9d7a",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "Teaching hospital attached to AYUSH College\nrecognized by the Central Government/Central\nCouncil of Indian Medicine/Central Council\nfor Homeopathy;",
-                "section_label": "manifest-v2-clause-1820-1967-3212e2e6d0b929fc",
-                "page": 2,
-                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
-                "locator": {
-                  "bbox": [
-                    326.877075,
-                    568.3027,
-                    553.0003749999998,
-                    630.985
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
-                  "physical_page": 2,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              },
-              {
-                "id": "5b7bfa00-7a2a-477d-a4f6-c958b0ef01d6",
-                "evidence_span_id": "08ee3515-cedf-4823-8eca-606624c6aec6",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "AYUSH Hospital, standalone or co-\nlocated with in-patient healthcare facility\nof any recognized system of medicine,\nregistered with the local authorities,\nwherever applicable, and is under the\nsupervision of a quali\ufb01ed registered\nAYUSH Medical Practitioner",
-                "section_label": "manifest-v2-clause-1978-2234-bc91d959763473f5",
-                "page": 2,
-                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
-                "locator": {
-                  "bbox": [
-                    326.8819,
-                    647.133,
-                    552.7669,
-                    761.489
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
-                  "physical_page": 2,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              },
-              {
-                "id": "fe93e564-eb30-4bb0-af84-ab0cc74a7ac2",
-                "evidence_span_id": "b2e5a24c-9b40-474e-b8b1-07abe6e01f98",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "Having at least 5 in-patient beds;",
-                "section_label": "manifest-v2-clause-167-201-8c5bc142f8f29b01",
-                "page": 3,
-                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
-                "locator": {
-                  "bbox": [
-                    82.7731,
-                    103.78700000000003,
-                    266.5061,
-                    114.78700000000003
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
-                  "physical_page": 3,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              },
-              {
-                "id": "5e29809e-3e52-4759-919a-e73d0dcbace3",
-                "evidence_span_id": "591c9b66-99bb-4901-8cb2-8216d2253403",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "Having quali\ufb01ed AYUSH Medical\nPractitioner in charge round the clock;",
-                "section_label": "manifest-v2-clause-207-276-19348471f0b62a29",
-                "page": 3,
-                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
-                "locator": {
-                  "bbox": [
-                    82.7717,
-                    129.94500000000005,
-                    287.71410000000003,
-                    157.18470000000002
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
-                  "physical_page": 3,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              },
-              {
-                "id": "7698d56e-3f35-4560-b5f2-215b58d485cb",
-                "evidence_span_id": "38d70bc6-ac6d-4a0f-88bf-4a5a54025f28",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "Having dedicated AYUSH therapy sections\nas required and/or has equipped operation\ntheatre where surgical procedures are\nto be carried out;",
-                "section_label": "manifest-v2-clause-281-419-defe7e567b36c43f",
-                "page": 3,
-                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
-                "locator": {
-                  "bbox": [
-                    82.76884079999999,
-                    172.3442,
-                    287.89905340000007,
-                    232.0566
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
-                  "physical_page": 3,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              },
-              {
-                "id": "dabfb585-6f59-4027-bc4e-4c3e001191c9",
-                "evidence_span_id": "b119539f-1635-4ea4-ad3c-997182025303",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "Maintaining daily records of the\npatients and making them accessible\ntotheinsurancecompany\u2019sauthorized\nrepresentative.",
-                "section_label": "manifest-v2-clause-425-543-c2b53c142f25ff62",
-                "page": 3,
-                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
-                "locator": {
-                  "bbox": [
-                    82.7717,
-                    247.21460000000002,
-                    287.76770000000005,
-                    306.9226
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
-                  "physical_page": 3,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              }
-            ]
+            "id": "7fc90cd3-2072-4e88-8cb1-4a1ab71b0793",
+            "ordinal": 3,
+            "text": "Family Health Optima Insurance Plan: Retrieved evidence incomplete: coverage: coverage_question: The supplied packet includes AYUSH inpatient coverage and payment wording, but the AYUSH Hospital definition ends with \u201cmust comply with all the following criterion:\u201d and omits the continuation containing those criteria. The requested hospital conditions therefore cannot be completely stated from this bounded packet.",
+            "statement_type": "limitation",
+            "critical": false,
+            "support_status": "unknown",
+            "comparison_assessment_id": "f8617a90-689f-40b2-a2a3-3cc48ea57e76",
+            "citations": []
           }
         },
         {
@@ -1315,16 +1891,16 @@
           "quote": "unavailable",
           "selected_options": [],
           "source_answer": {
-            "id": "dd57165b-8df9-46d3-9616-8708da2d8d3f",
-            "ordinal": 2,
-            "text": "Star Comprehensive Insurance Policy: AYUSH inpatient hospitalization under Ayurveda, Yoga and Naturopathy, Unani, Siddha and Homeopathy is payable up to the policy Sum Insured. Treatment must be in an AYUSH Hospital. Yoga and Naturopathy claims require prior company approval. An AYUSH Hospital may be a government AYUSH hospital; a recognized AYUSH teaching hospital; or a registered standalone/co-located AYUSH hospital supervised by a qualified registered AYUSH practitioner and satisfying the listed bed, staffing, therapy/operating-theatre and record requirements. Treatment must be inpatient hospitalization in an AYUSH Hospital. Yoga and Naturopathy claims require prior company approval. The applicable hospital must fall within an enumerated AYUSH Hospital category; the third category must meet all listed criteria.",
+            "id": "84d7bf11-f91b-4695-9907-53096fbbce85",
+            "ordinal": 1,
+            "text": "Star Comprehensive Insurance Policy: The base policy pays inpatient medical expenses for treatment under Ayurveda, Yoga and Naturopathy, Unani, Siddha and Homeopathy in an AYUSH Hospital, up to the Sum Insured. Yoga and Naturopathy claims require prior company approval. The facility must meet the stated AYUSH Hospital definition. Treatment must be inpatient hospitalization in an AYUSH Hospital. Payment is limited to the Sum Insured and remains subject to policy terms, conditions, exclusions and definitions. Yoga and Naturopathy claims require prior company approval. An AYUSH Hospital must be one of the listed facility types; a standalone or co-located facility must satisfy each stated criterion.",
             "statement_type": "benefit",
             "critical": true,
             "support_status": "supported",
-            "comparison_assessment_id": "e7c0f301-f8c4-4bc6-8f36-d8d14ba6bb7b",
+            "comparison_assessment_id": "49cea651-1ff8-495b-947a-1d8396ecccda",
             "citations": [
               {
-                "id": "1e04578d-fb3b-40c4-9963-8a0888f08b1a",
+                "id": "af55cd0d-bbca-49a4-9fb3-cb8225ff3012",
                 "evidence_span_id": "6a20bbde-7e0b-483a-b198-48b329897c92",
                 "policy_rule_id": null,
                 "role": "supports",
@@ -1349,7 +1925,32 @@
                 }
               },
               {
-                "id": "c6a6377e-10ed-44d6-b122-ea76d5d6cadf",
+                "id": "d9c0575f-caac-46f0-aa3b-f20712d40541",
+                "evidence_span_id": "cd57f17f-a7d6-4e13-9943-632643ee1858",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "subject\nto the terms, conditions, exclusions and\ndefinitions contained herein",
+                "section_label": "manifest-v2-clause-679-756-a6837c8e5755124b",
+                "page": 9,
+                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
+                "locator": {
+                  "bbox": [
+                    42.5197,
+                    341.6036,
+                    287.72069999999997,
+                    383.11889999999994
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+                  "physical_page": 9,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "ad0b4040-461d-4e1e-a1ba-d19b3e116f06",
                 "evidence_span_id": "64af1a7f-3779-4a47-ad0e-c8089a5cc9ba",
                 "policy_rule_id": null,
                 "role": "supports",
@@ -1374,32 +1975,7 @@
                 }
               },
               {
-                "id": "21f6e596-c471-4bcc-87e3-76e8c8b31f86",
-                "evidence_span_id": "fdebbf7a-c89b-4ab0-8bbc-cca76fd99e73",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "AYUSH Treatment refers\nto the medical and / or hospitalization\ntreatments given under Ayurveda, Yoga and\nNaturopathy, Unani, Siddha and Homeopathy\nsystems.",
-                "section_label": "manifest-v2-clause-563-718-e42b2d57ae55a797",
-                "page": 3,
-                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
-                "locator": {
-                  "bbox": [
-                    42.5197,
-                    294.17100000000005,
-                    287.74269999999996,
-                    366.6192
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
-                  "physical_page": 3,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              },
-              {
-                "id": "0bda7194-34f7-44f1-9e6c-026633b72a10",
+                "id": "350f2ece-2122-412a-8819-5b6995486fb5",
                 "evidence_span_id": "ec8a9f94-df0c-40d5-a893-4b0c2afc3109",
                 "policy_rule_id": null,
                 "role": "supports",
@@ -1424,7 +2000,7 @@
                 }
               },
               {
-                "id": "fada7463-41d4-4191-a54d-246667dedab8",
+                "id": "46251027-fae6-498a-9b60-e72741bfb552",
                 "evidence_span_id": "95e6aa34-0bdd-4ba1-8734-b10e03755b58",
                 "policy_rule_id": null,
                 "role": "supports",
@@ -1449,12 +2025,12 @@
                 }
               },
               {
-                "id": "8eac1885-0f27-4b9f-b594-3c26a5721001",
-                "evidence_span_id": "1a39a02a-d901-4a6a-8914-04d3b118af9f",
+                "id": "013d05e5-757e-4a3b-a27a-51bf0f720747",
+                "evidence_span_id": "9cf043fb-4a11-4866-8aa8-695a47ec95fa",
                 "policy_rule_id": null,
                 "role": "supports",
-                "quote": "AYUSH Hospital, standalone or co-\nlocated with in-patient healthcare facility\nof any recognized system of medicine,\nregistered with the local authorities,\nwherever applicable",
-                "section_label": "manifest-v2-clause-2094-2268-7b7e8ada31ba3abc",
+                "quote": "AYUSH Hospital, standalone or co-\nlocated with in-patient healthcare facility\nof any recognized system of medicine,\nregistered with the local authorities,\nwherever applicable, and is under the\nsupervision of a qualified registered\nAYUSH Medical Practitioner and must\ncomply with all the following criterion:",
+                "section_label": "manifest-v2-clause-2094-2401-041fa0d1c550b5df",
                 "page": 2,
                 "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
                 "locator": {
@@ -1462,7 +2038,7 @@
                     329.9134,
                     662.2818,
                     553.1254,
-                    735.1595
+                    781.5678
                   ],
                   "kind": "pdf_region",
                   "rotation": 0,
@@ -1474,7 +2050,7 @@
                 }
               },
               {
-                "id": "7dee4af4-b23b-47b4-8ab0-2d38e90711f5",
+                "id": "b049ff12-8947-4332-aac6-c91fc75e949b",
                 "evidence_span_id": "8e9944ca-84cd-4a72-a4a3-09440e61dd77",
                 "policy_rule_id": null,
                 "role": "supports",
@@ -1499,7 +2075,7 @@
                 }
               },
               {
-                "id": "3ed23f64-db96-4ae3-8762-fe1d2c3a2427",
+                "id": "5238fe54-715b-4176-abaf-be83cb6fb5bd",
                 "evidence_span_id": "ab5c77df-3ab0-4b01-87ac-a2a710c6ac5c",
                 "policy_rule_id": null,
                 "role": "supports",
@@ -1524,7 +2100,7 @@
                 }
               },
               {
-                "id": "425d0a5a-681b-419f-9ec2-fccf093cff77",
+                "id": "dcbba980-e9df-4907-ae66-0f78591ea758",
                 "evidence_span_id": "97a9afb6-7131-4bcf-a8be-8870a05863b5",
                 "policy_rule_id": null,
                 "role": "supports",
@@ -1549,7 +2125,7 @@
                 }
               },
               {
-                "id": "b3e33642-4369-498f-b229-bb38398d4a63",
+                "id": "972bf4ec-6c10-43cd-b6b4-ab202bdc3638",
                 "evidence_span_id": "eaca5240-405c-4c0d-9770-ebb30b69dd39",
                 "policy_rule_id": null,
                 "role": "supports",
@@ -1583,14 +2159,265 @@
           "quote": "unavailable",
           "selected_options": [],
           "source_answer": {
-            "id": "e14cf107-a908-4676-a444-d381fb5b2ea0",
-            "ordinal": 3,
-            "text": "Star Health Assure Insurance Policy: Retrieved evidence incomplete: coverage: coverage_question: needs_prospectus: supplied excerpts state that inpatient Ayurveda, Unani, Siddha and Homeopathy treatment is payable up to the Sum Insured in an AYUSH Hospital, and that Yoga and Naturopathy claims require prior company approval, but they do not include the AYUSH Hospital definition needed to report every requested hospital condition. Because the retrieval packet omits pages, those conditions cannot be inferred.",
-            "statement_type": "limitation",
-            "critical": false,
-            "support_status": "unknown",
-            "comparison_assessment_id": "bd43e8ed-a128-4697-b670-b1ea7b15147c",
-            "citations": []
+            "id": "acbf085a-8ee4-4acd-aabc-63c7f4b487af",
+            "ordinal": 2,
+            "text": "Star Health Assure Insurance Policy: Covers inpatient Ayurveda, Unani, Siddha and Homeopathy treatment in an AYUSH Hospital, payable at actuals up to the Sum Insured. Yoga and Naturopathy claims require prior company approval. An AYUSH Hospital may be a government AYUSH hospital, a recognized AYUSH teaching hospital, or a registered standalone/co-located facility supervised by a qualified registered AYUSH Medical Practitioner and meeting the stated facility criteria. Treatment must be inpatient hospitalization in an AYUSH Hospital. Yoga and Naturopathy claims require prior company approval. A standalone or co-located AYUSH Hospital must meet each stated criterion.",
+            "statement_type": "benefit",
+            "critical": true,
+            "support_status": "supported",
+            "comparison_assessment_id": "55d693f6-9754-4841-8ac2-27b4df4a1fd3",
+            "citations": [
+              {
+                "id": "fb49da11-e695-4820-b6c7-729d84a832e1",
+                "evidence_span_id": "7c56610d-2a5e-4859-823f-82a59d26ae74",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Medical expenses\nfor Inpatient Hospitalization incurred on\ntreatment under Ayurveda, Unani, Siddha\nand Homeopathy systems of medicines\nin a AYUSH Hospital is payable up to the\nSum Insured.",
+                "section_label": "manifest-v2-clause-1308-1496-ebda39e50c3d785f",
+                "page": 10,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    65.17489999999998,
+                    628.8712999999999,
+                    287.7049,
+                    728.4213
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 10,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "b9e212af-496f-4e9f-a073-07ec1128e4a6",
+                "evidence_span_id": "73c9466c-3b2a-4335-ba14-245f02b62b49",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Claims under Yoga and Naturopathy\nsystem of treatment will be payable subject\nto prior approval from the company.",
+                "section_label": "manifest-v2-clause-1503-1616-9a4274d558cf3124",
+                "page": 10,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    65.1969,
+                    735.1465,
+                    287.73161279999994,
+                    781.5678
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 10,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "410b43f0-24b5-4727-9f05-27eae291a397",
+                "evidence_span_id": "f98c5777-e074-472b-a09b-6c9fa642ec27",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Central or State Government AYUSH\nHospital;or",
+                "section_label": "manifest-v2-clause-2229-2274-7aba8aa48de0b852",
+                "page": 2,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    330.2411,
+                    494.41039999999987,
+                    552.0560999999999,
+                    521.6133999999998
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 2,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "4837ef59-a70f-4db0-a5a1-6c15647fa05f",
+                "evidence_span_id": "02fbfd18-b7a7-4e98-8e25-6f54e7390dd3",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Teaching hospital attached to AYUSH College\nrecognized by the Central Government/\nCentral Council of Indian Medicine/Central\nCouncil for Homeopathy;or",
+                "section_label": "manifest-v2-clause-2280-2430-5ad428d52862a2bf",
+                "page": 2,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    330.2362,
+                    531.0444,
+                    552.4299107999998,
+                    590.6374
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 2,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "abded7ef-2161-4425-95f2-1e7cb2b62a4d",
+                "evidence_span_id": "8fa28e4a-a846-43c5-be5c-1fe50c2407f9",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Having at least 5 in-patient beds;",
+                "section_label": "manifest-v2-clause-2748-2782-8c5bc142f8f29b01",
+                "page": 2,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    352.9182,
+                    733.9198,
+                    536.6512,
+                    744.9198
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 2,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "a6f3ef04-3ce9-4031-853c-231ba1d33cfb",
+                "evidence_span_id": "956c5741-2d7b-42d6-bc1d-4f0dcbc8c6e7",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Having qualified AYUSH Medical\nPractitioner in charge round the clock;",
+                "section_label": "manifest-v2-clause-2788-2858-fdd51fb565919e60",
+                "page": 2,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    352.9134,
+                    754.3688,
+                    552.1237238,
+                    781.5679
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 2,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "f5915657-90df-451b-9d1f-41dd796a18f3",
+                "evidence_span_id": "fa0db9c0-8de1-4605-8507-15dc703d3305",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Having dedicated AYUSH therapy\nsections as required and/or has\nequipped operation theatre where\nsurgical procedures are to be carried\nout;",
+                "section_label": "manifest-v2-clause-168-306-e17a294d201837fb",
+                "page": 3,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    87.874,
+                    104.63740000000007,
+                    287.7929000000001,
+                    185.24020000000007
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 3,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "71e87bc2-ab98-42fc-a60e-f92e20e8d92b",
+                "evidence_span_id": "2051bb25-450f-43ff-95fd-23d7042fa243",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Maintaining daily records of the\npatients and making them accessible\nto the insurance company\u2019s authorized\nrepresentative.",
+                "section_label": "manifest-v2-clause-312-434-20a23a915c310ecd",
+                "page": 3,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    87.874,
+                    191.64220000000012,
+                    287.788,
+                    254.84299999999996
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 3,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "1129074b-8efc-406b-915a-7f76cbfff75b",
+                "evidence_span_id": "7decdada-1c06-42bf-ab9b-a99d7063bc2d",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "AYUSH Treatment",
+                "section_label": "manifest-v2-clause-488-503-585ac13f5fb3a68c",
+                "page": 46,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    77.30339999999993,
+                    247.0454000000001,
+                    146.95939999999993,
+                    255.0454000000001
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 46,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "ea27bb1d-95a3-4717-bd4d-0bd38ea5dbc9",
+                "evidence_span_id": "49f17ef3-fab7-44ce-b2a1-c4c045d5f604",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Actuals",
+                "section_label": "manifest-v2-clause-448-455-fca912a0bfee43d8",
+                "page": 46,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    340.9033999999999,
+                    192.19740000000013,
+                    370.7353999999999,
+                    200.19740000000013
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 46,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              }
+            ]
           }
         }
       ],
@@ -1620,6 +2447,11 @@
           "id": "8e8bb5c2-8658-4563-a7b9-b2f4fe8b201d",
           "state": "completed",
           "error": null
+        },
+        {
+          "id": "c56e556b-2632-4e57-8cd0-261cfaf72a22",
+          "state": "completed",
+          "error": null
         }
       ],
       "model_attempts": [
@@ -1635,7 +2467,8 @@
             "output_tokens": 2556,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 50378
         },
         {
           "id": "177b4ecb-5593-434a-81e3-e578435512dd",
@@ -1649,7 +2482,8 @@
             "output_tokens": 612,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 12663
         },
         {
           "id": "50ea8f80-2fd2-41b4-a05d-b6abd0e14698",
@@ -1663,7 +2497,8 @@
             "output_tokens": 847,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 17621
         },
         {
           "id": "e5805b3b-6175-4be4-b9ae-f99fa52802f5",
@@ -1677,7 +2512,8 @@
             "output_tokens": 1067,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 20787
         },
         {
           "id": "0e622c3e-c9dd-4971-aefe-c944c54986a8",
@@ -1691,7 +2527,8 @@
             "output_tokens": 1192,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 23337
         },
         {
           "id": "4d631086-63b2-442b-a2ea-17508ddeaebf",
@@ -1705,7 +2542,8 @@
             "output_tokens": 1100,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 21671
         },
         {
           "id": "d091d6d2-f952-4cde-8dda-f61cb9e8e96c",
@@ -1719,7 +2557,8 @@
             "output_tokens": 1204,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 24068
         },
         {
           "id": "c0de9d6a-dafe-4fd2-ba93-029313f71067",
@@ -1733,7 +2572,8 @@
             "output_tokens": 1124,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 37592
         },
         {
           "id": "263857be-1fc1-491f-99eb-9914e3670f96",
@@ -1747,7 +2587,8 @@
             "output_tokens": 1554,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 30430
         },
         {
           "id": "34f41d7c-d2f6-4e35-9efb-13ef61b16f01",
@@ -1761,7 +2602,8 @@
             "output_tokens": 1500,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 29875
         },
         {
           "id": "8d1df55b-160f-4b87-af65-c1194706c2f8",
@@ -1775,7 +2617,8 @@
             "output_tokens": 1043,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 21449
         },
         {
           "id": "560311b3-36a5-458d-964b-b21512be3952",
@@ -1789,7 +2632,8 @@
             "output_tokens": 1700,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 33629
         },
         {
           "id": "54bee0a7-b893-435d-8f4d-3037ab236fd3",
@@ -1803,7 +2647,8 @@
             "output_tokens": 415,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 9806
         },
         {
           "id": "534964a4-1e5e-4660-8a37-4d8a12133ca4",
@@ -1817,7 +2662,8 @@
             "output_tokens": 1683,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 32810
         },
         {
           "id": "c93c4f8d-7e4d-4ba1-817f-01410a44ea3f",
@@ -1831,7 +2677,8 @@
             "output_tokens": 495,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 11014
         },
         {
           "id": "e39f9db3-a073-4696-a305-bb08a4395b0c",
@@ -1845,23 +2692,346 @@
             "output_tokens": 470,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 11331
+        },
+        {
+          "id": "16105600-4534-4bb6-8f33-8fd1c1a0993a",
+          "turn_id": "c56e556b-2632-4e57-8cd0-261cfaf72a22",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 15772,
+            "input_tokens": 4899,
+            "usage_source": "provider_reported",
+            "output_tokens": 779,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 15778
+        },
+        {
+          "id": "77cc3dba-0e8f-4e94-8a52-16b5282cb38c",
+          "turn_id": "c56e556b-2632-4e57-8cd0-261cfaf72a22",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 7452,
+            "input_tokens": 16802,
+            "usage_source": "provider_reported",
+            "output_tokens": 314,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 7458
+        },
+        {
+          "id": "1e0fb90f-23ea-4b0d-b10a-a88132e85275",
+          "turn_id": "c56e556b-2632-4e57-8cd0-261cfaf72a22",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 35662,
+            "input_tokens": 24502,
+            "usage_source": "provider_reported",
+            "output_tokens": 1321,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 35668
+        },
+        {
+          "id": "2c3b8784-d06c-4942-9d1d-8bec860ccba4",
+          "turn_id": "c56e556b-2632-4e57-8cd0-261cfaf72a22",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 32734,
+            "input_tokens": 24512,
+            "usage_source": "provider_reported",
+            "output_tokens": 1661,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 32755
+        },
+        {
+          "id": "156ebe5f-82dc-4ad6-8133-3c248b8315cc",
+          "turn_id": "c56e556b-2632-4e57-8cd0-261cfaf72a22",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 8792,
+            "input_tokens": 22865,
+            "usage_source": "provider_reported",
+            "output_tokens": 355,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 8798
+        },
+        {
+          "id": "b0966ae7-fdf8-418a-8e22-d7d4ad6b3998",
+          "turn_id": "c56e556b-2632-4e57-8cd0-261cfaf72a22",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 30800,
+            "input_tokens": 19768,
+            "usage_source": "provider_reported",
+            "output_tokens": 1600,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 30805
+        },
+        {
+          "id": "3c36e70d-b4b0-45f3-a079-7fa7897017bc",
+          "turn_id": "c56e556b-2632-4e57-8cd0-261cfaf72a22",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 19764,
+            "input_tokens": 18021,
+            "usage_source": "provider_reported",
+            "output_tokens": 967,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 19774
         }
       ],
       "attempt_status_counts": {
-        "succeeded": 16
+        "succeeded": 23
       }
     },
     {
       "profile": "older_parent",
       "conversation_id": "faec1aa4-ed1b-4dab-9309-0b553234378c",
-      "comparison_id": "007aa67d-1d60-47ce-ab41-a0d9fb7fc8f1",
-      "final_turn_id": "52381a5b-8cb8-4f00-9a4d-23c5c534c6f6",
+      "comparison_id": "e36407aa-a8ad-4eeb-aed3-5db5572b2b37",
+      "final_turn_id": "9cbcb763-8424-407b-becc-c7616c1ea1cc",
       "final_question": "For each of the three base policies, what organ-donor expenses are covered, and what conditions, limits and exclusions apply? No optional covers are selected.",
+      "final_turn_wall_seconds": 312.616,
+      "pageindex_search_calls": [
+        {
+          "stage": "pageindex_search",
+          "policy_version_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+          "turn_id": "9cbcb763-8424-407b-becc-c7616c1ea1cc",
+          "model": "gpt-5.6-sol",
+          "retry": 0,
+          "status": "completed",
+          "reasoning_effort": "low",
+          "max_output_tokens": 8192,
+          "usage": {
+            "attribution": {
+              "items": {
+                "msg_0e5f51070763d835016abec2e0eb3887d0890373dbd8d36796": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 73944,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 73944,
+                      "input_tokens": 74191,
+                      "output_tokens": 0
+                    }
+                  ],
+                  "input_tokens": 74191,
+                  "output_tokens": 0
+                },
+                "rs_0e5f51070763d835016abec2e1d55487d0bdebdb24f646445c": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 2,
+                  "output_tokens": 256
+                },
+                "msg_0e5f51070763d835016abec2e67c2887d0aac16b9127ea80f9": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "input_tokens": 0,
+                      "output_tokens": 152
+                    }
+                  ],
+                  "input_tokens": 0,
+                  "output_tokens": 152
+                }
+              },
+              "request_fields": {
+                "tools": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 296,
+                  "input_tokens": 296,
+                  "output_tokens": 0
+                }
+              }
+            },
+            "input_tokens": 74489,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 74240
+            },
+            "output_tokens": 408,
+            "output_tokens_details": {
+              "reasoning_tokens": 256
+            },
+            "total_tokens": 74897
+          },
+          "wall_ms": 9645
+        },
+        {
+          "stage": "pageindex_search",
+          "policy_version_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+          "turn_id": "9cbcb763-8424-407b-becc-c7616c1ea1cc",
+          "model": "gpt-5.6-sol",
+          "retry": 0,
+          "status": "completed",
+          "reasoning_effort": "low",
+          "max_output_tokens": 8192,
+          "usage": {
+            "attribution": {
+              "items": {
+                "msg_0186b8df6a84f4db016abec2eb575887d0855d53d193a12348": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "input_tokens": 64613,
+                      "output_tokens": 0
+                    }
+                  ],
+                  "input_tokens": 64613,
+                  "output_tokens": 0
+                },
+                "rs_0186b8df6a84f4db016abec2ecaf7887d09ffff0aa992f5326": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 2,
+                  "output_tokens": 392
+                },
+                "msg_0186b8df6a84f4db016abec2f3c34487d09c0a041f838ffdfb": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "input_tokens": 0,
+                      "output_tokens": 126
+                    }
+                  ],
+                  "input_tokens": 0,
+                  "output_tokens": 126
+                }
+              },
+              "request_fields": {
+                "tools": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 296,
+                  "output_tokens": 0
+                }
+              }
+            },
+            "input_tokens": 64911,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 518,
+            "output_tokens_details": {
+              "reasoning_tokens": 392
+            },
+            "total_tokens": 65429
+          },
+          "wall_ms": 11722
+        },
+        {
+          "stage": "pageindex_search",
+          "policy_version_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+          "turn_id": "9cbcb763-8424-407b-becc-c7616c1ea1cc",
+          "model": "gpt-5.6-sol",
+          "retry": 0,
+          "status": "completed",
+          "reasoning_effort": "low",
+          "max_output_tokens": 8192,
+          "usage": {
+            "attribution": {
+              "items": {
+                "msg_09a5be9206df9743016abec2f792e487d0bdf4ad496758249c": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 84056,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 84056,
+                      "input_tokens": 84212,
+                      "output_tokens": 0
+                    }
+                  ],
+                  "input_tokens": 84212,
+                  "output_tokens": 0
+                },
+                "rs_09a5be9206df9743016abec2f9233487d0a445dde2418405cc": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 2,
+                  "output_tokens": 350
+                },
+                "msg_09a5be9206df9743016abec2ff769087d0b4333d6ede56b1c0": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "input_tokens": 0,
+                      "output_tokens": 266
+                    }
+                  ],
+                  "input_tokens": 0,
+                  "output_tokens": 266
+                }
+              },
+              "request_fields": {
+                "tools": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 296,
+                  "input_tokens": 296,
+                  "output_tokens": 0
+                }
+              }
+            },
+            "input_tokens": 84510,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 84352
+            },
+            "output_tokens": 616,
+            "output_tokens_details": {
+              "reasoning_tokens": 350
+            },
+            "total_tokens": 85126
+          },
+          "wall_ms": 13780
+        }
+      ],
+      "earlier_unknown_statements": [
+        {
+          "comparison_id": "1aef6e65-e53d-4ea2-98e1-a00ab2f3d9df",
+          "comparison__turn_id": "6119a182-c78a-4872-acbe-d619877456aa",
+          "text": "Star Comprehensive Insurance Policy: Retrieved evidence incomplete after validation: 1994 year lacks quoted numeric support (digits or words)."
+        }
+      ],
       "profile_snapshot": {
-        "id": "fade701e-be7d-4630-b5d6-fed551121a3a",
-        "revision": 5,
-        "created_at": "2026-10-01 19:18:10.807759+00:00",
+        "id": "2951bbab-d7e3-43da-b6cb-bcf874d10171",
+        "revision": 6,
+        "created_at": "2026-10-01 20:30:23.292670+00:00",
         "people": [
           {
             "id": "f8378fc0-65f6-4270-a04c-e35488d92c96",
@@ -1968,90 +3138,14 @@
           "quote": "unavailable",
           "selected_options": [],
           "source_answer": {
-            "id": "bc4b0dfa-ac11-4fa6-9f22-9c50e1ca61ba",
-            "ordinal": 1,
-            "text": "Family Health Optima Insurance Plan: Organ-donor expenses are covered for organ transplantation where the insured person is the recipient. The transplantation claim must be payable, and cover is subject to available Sum Insured. Donor screening expenses and the donor's post-donation complications are excluded. The limit is 10% of the Sum Insured or INR 100,000, whichever is less. The insured person must be the organ recipient. The transplantation claim must be payable and sufficient Sum Insured must remain available. Donor screening expenses and post-donation complications of the donor are not payable.",
-            "statement_type": "benefit",
-            "critical": true,
-            "support_status": "supported",
-            "comparison_assessment_id": "8952d1a4-be89-4ec1-8246-91e00540c5b6",
-            "citations": [
-              {
-                "id": "cbf102b6-92a8-4620-bf11-688221f2a693",
-                "evidence_span_id": "8c0a08ff-a1ab-4f78-a255-d2081930d7d5",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "Organ Donor Expenses for organ\ntransplantation where the Insured Person\nis the recipient are payable provided\nthe claim for transplantation is payable\nand subject to the availability of the\nSum Insured.",
-                "section_label": "manifest-v2-clause-418-620-fb1a17327acf66aa",
-                "page": 13,
-                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
-                "locator": {
-                  "bbox": [
-                    62.517700000000005,
-                    347.5667,
-                    287.7317,
-                    438.6907000000001
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
-                  "physical_page": 13,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              },
-              {
-                "id": "43c45ced-95e3-441b-a8cb-9636f039ee11",
-                "evidence_span_id": "5431ff1d-b4c3-44a5-a7ff-54de2d5c7db0",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "Donor screening expenses\nand post-donation complications of\nthe donor are not payable.",
-                "section_label": "manifest-v2-clause-621-707-222606187f7565c9",
-                "page": 13,
-                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
-                "locator": {
-                  "bbox": [
-                    62.517700000000005,
-                    427.6907000000001,
-                    287.70970000000005,
-                    470.83270000000016
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
-                  "physical_page": 13,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              },
-              {
-                "id": "9c758470-be76-4ed5-bbd1-c769b02c9ea4",
-                "evidence_span_id": "f599c94b-086f-48e3-a603-93f10c339f45",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "This cover is\nsubject to a limit of 10% of the Sum Insured\nor Rupees One lakh, whichever is less.",
-                "section_label": "manifest-v2-clause-708-805-b5e0bebe50f27015",
-                "page": 13,
-                "document_version_id": "2dff4b6c-52b2-4e4d-a65e-b1b5748fd0af",
-                "locator": {
-                  "bbox": [
-                    62.517700000000005,
-                    459.83270000000016,
-                    287.7207000000001,
-                    502.9747000000002
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
-                  "physical_page": 13,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              }
-            ]
+            "id": "a5943d70-54b7-4a25-89e0-b40c693d4be5",
+            "ordinal": 2,
+            "text": "Family Health Optima Insurance Plan: Retrieved evidence incomplete after validation: The source citation did not validate: Secondary omission must identify existing secondary statement indexes.",
+            "statement_type": "limitation",
+            "critical": false,
+            "support_status": "unknown",
+            "comparison_assessment_id": "a590ae02-30f9-47c4-b3ab-ffefd1f74b77",
+            "citations": []
           }
         },
         {
@@ -2061,190 +3155,14 @@
           "quote": "unavailable",
           "selected_options": [],
           "source_answer": {
-            "id": "0f4be82a-057c-4933-bad4-1d0ee8265c5d",
-            "ordinal": 2,
-            "text": "Star Comprehensive Insurance Policy: Covers the donor\u2019s inpatient hospitalization expenses for organ transplantation to the insured recipient when the transplantation claim is payable. Donor expenses for complications requiring redo surgery or ICU admission are also covered. The limit is additional to the Limit of Coverage, up to the Basic Sum Insured, and may be used only by the donor. A 10% co-payment applies under Section II.9 when entry age is 61 years or above, except where entry occurred before age 61 and renewal continued without a break. The transplant must satisfy the Transplantation of Human Organs Act of 1994 and amendments. Treatment must be in India. The transplantation claim must be payable. The additional limit may be used by the donor, not the insured. The stated co-payment applies to Section II.9, subject to the continuous-renewal exception.",
-            "statement_type": "benefit",
-            "critical": true,
-            "support_status": "supported",
-            "comparison_assessment_id": "81422ec6-c902-4ecb-a363-2c96c1f574e2",
-            "citations": [
-              {
-                "id": "a54bad4a-bc3b-49d4-9233-a8e3f00599a4",
-                "evidence_span_id": "375bf77a-8cbc-478f-b7f5-c26342c81321",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "In-patient\nhospitalization expenses incurred for\norgan transplantation from the Donor to\nthe Recipient Insured Person are payable\nprovided the claim for transplantation is\npayable.",
-                "section_label": "manifest-v2-clause-2110-2290-1d8363f5286f6d43",
-                "page": 11,
-                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
-                "locator": {
-                  "bbox": [
-                    329.5591,
-                    359.28299999999996,
-                    552.783,
-                    447.64519999999993
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
-                  "physical_page": 11,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              },
-              {
-                "id": "43994e93-56a7-4ef2-b4d7-a94033e11bad",
-                "evidence_span_id": "890082cb-bc2c-459e-b0f3-849fa8cee39a",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "The coverage limit under this Section is\nover and above the Limit of Coverage\nand up to the Basic Sum Insured. This\nadditional Sum Insured can be utilized\nby the Donor and not by the Insured.",
-                "section_label": "manifest-v2-clause-2435-2626-76da53299b329cd1",
-                "page": 11,
-                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
-                "locator": {
-                  "bbox": [
-                    330.2362,
-                    507.03889999999996,
-                    552.7607,
-                    580.1596999999999
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
-                  "physical_page": 11,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              },
-              {
-                "id": "cdbdb308-1aab-4eb2-b208-d8ab182c38f9",
-                "evidence_span_id": "3d3cb455-7cc7-4aac-9adb-c5018a615cdf",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "This policy is subject to\nco-payment of 10% of each and every\nclaim amount for fresh as well as renewal\npolicies for Insured Persons whose age\nat the time of entry is 61 years and above.",
-                "section_label": "manifest-v2-clause-585-771-a3238e0bd56ddb62",
-                "page": 39,
-                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
-                "locator": {
-                  "bbox": [
-                    65.1969,
-                    281.91610000000003,
-                    287.7434,
-                    353.7734
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
-                  "physical_page": 39,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              },
-              {
-                "id": "fb438867-52a4-47da-94fd-c071dedc95b6",
-                "evidence_span_id": "c9030eae-ba4a-4bf1-935b-f0174afc9d57",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "This co-payment will not apply for those\ninsured persons who have entered\nthe policy before attaining 61 years of\nage and renew the policy continuously\nwithout any break.",
-                "section_label": "manifest-v2-clause-772-942-326e7762928969a9",
-                "page": 39,
-                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
-                "locator": {
-                  "bbox": [
-                    65.1969,
-                    357.98769999999996,
-                    287.717,
-                    429.84489999999994
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
-                  "physical_page": 39,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              },
-              {
-                "id": "956e6ef6-a134-4c5b-b5eb-9f122a54e805",
-                "evidence_span_id": "9c682f5e-f557-4648-a0b4-be43dec3a3ee",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "This co-payment is\napplicable for Sections II.1, II.2, II.3, II.4, II.5,\nII.6, II.7, II.8, II.9, II.10, II.11, II.15 and II.25.",
-                "section_label": "manifest-v2-clause-943-1070-4736ef1ad6e138ae",
-                "page": 39,
-                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
-                "locator": {
-                  "bbox": [
-                    65.1969,
-                    418.84489999999994,
-                    287.7170000000001,
-                    460.2736
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
-                  "physical_page": 39,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              },
-              {
-                "id": "803620ad-5fe7-4a53-a25e-acf961e80e19",
-                "evidence_span_id": "a12842ee-c6be-4966-b99c-304bbf5874db",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "Organ transplant on the Insured Person\nshall satisfy the requirements of the\nTransplantation of Human Organs Act of\n1994 and any amendments thereto.",
-                "section_label": "manifest-v2-clause-164-312-887e0f8d85ef6274",
-                "page": 39,
-                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
-                "locator": {
-                  "bbox": [
-                    42.5197,
-                    103.22000000000003,
-                    287.7262000000001,
-                    159.86300000000006
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
-                  "physical_page": 39,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              },
-              {
-                "id": "e7d08248-c95f-48f7-a396-501d41f221e6",
-                "evidence_span_id": "332af2e7-3541-456b-aa11-ee637ec66d60",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "All treatments under this\npolicy shall have to be taken in India.",
-                "section_label": "manifest-v2-clause-1277-1342-85c35fe479ad6d3b",
-                "page": 44,
-                "document_version_id": "3bfc3ec4-5cea-491b-98a2-0caea0d09ed5",
-                "locator": {
-                  "bbox": [
-                    65.1969,
-                    605.0783,
-                    287.70920000000007,
-                    630.0783
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
-                  "physical_page": 44,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              }
-            ]
+            "id": "4e54bb07-9c4d-4f66-bb2e-b30f1286eabf",
+            "ordinal": 3,
+            "text": "Star Comprehensive Insurance Policy: Retrieved evidence incomplete after validation: missing_material_condition: The specified-disease/procedure exclusion for transplants and related surgeries lasts until expiry of 24 months of continuous coverage after inception of the first policy with the insurer; the cited fact does not state the continuous-coverage/first-policy-inception requirement. The source also provides that prior continuous portability coverage reduces the waiting period to the extent of prior coverage.",
+            "statement_type": "limitation",
+            "critical": false,
+            "support_status": "unknown",
+            "comparison_assessment_id": "cccc82e4-3d93-4c8f-9c6f-7e545d97e9ac",
+            "citations": []
           }
         },
         {
@@ -2254,16 +3172,16 @@
           "quote": "unavailable",
           "selected_options": [],
           "source_answer": {
-            "id": "c39b144f-b827-4f25-94a3-cc2fa2830a30",
-            "ordinal": 3,
-            "text": "Star Health Assure Insurance Policy: In-patient hospitalization expenses for transplanting an organ from the donor to the insured recipient are payable when the recipient's transplantation claim is payable. These organ-donor expenses form part of the Sum Insured. Donor expenses arising from complications that require redo surgery or ICU admission are covered in addition to the Sum Insured, up to the Sum Insured; this additional amount may be used only by the donor. The recipient insured person's transplantation claim must be payable. The additional Sum Insured for complications can be used by the donor, not the insured recipient.",
+            "id": "a7e9084d-1e10-49c8-89f3-dc9216ceeb87",
+            "ordinal": 1,
+            "text": "Star Health Assure Insurance Policy: In-patient hospitalization expenses for organ transplantation from the donor to the insured recipient are payable when the transplantation claim is payable. Donor expenses for complications requiring redo surgery or ICU admission are also covered. Organ-donor expenses form part of the Sum Insured; the additional amount for those donor complications is above the Limit of Coverage, up to the Sum Insured, and may be used only by the donor. Transplants and related surgeries have a specified-procedure waiting period. The transplantation claim must be payable. The additional amount applies to donor complications requiring redo surgery or ICU admission and may be used only by the donor. All transplant types and related surgeries are excluded until 24 months of continuous coverage have expired; this waiting-period exclusion does not apply to accident claims.",
             "statement_type": "benefit",
             "critical": true,
             "support_status": "supported",
-            "comparison_assessment_id": "ce90e11c-7aa0-41b4-ba8d-b6792a36df3d",
+            "comparison_assessment_id": "2efd6a9b-1717-4c76-a1eb-8b0d01a8baf8",
             "citations": [
               {
-                "id": "a1ed868a-879e-432b-9d0f-398776a97134",
+                "id": "ea555314-1c46-4599-a3ee-8c6a47880a2f",
                 "evidence_span_id": "0d3a4535-79eb-4acc-a68b-564d7de725bc",
                 "policy_rule_id": null,
                 "role": "supports",
@@ -2288,57 +3206,7 @@
                 }
               },
               {
-                "id": "960564e6-6e2d-4323-952d-bb11a039013d",
-                "evidence_span_id": "66b3b1e1-526d-46a3-a652-e6761160d47c",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "9 Organ Donor Expenses",
-                "section_label": "manifest-v2-clause-1964-1986-7eb0e1d5a2da0249",
-                "page": 26,
-                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
-                "locator": {
-                  "bbox": [
-                    318.24199999999985,
-                    662.3722000000001,
-                    450.63199999999983,
-                    672.3722000000001
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
-                  "physical_page": 26,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              },
-              {
-                "id": "ee8b58ac-bef3-4807-bef1-a59d15609463",
-                "evidence_span_id": "51a22de1-3494-420e-95a0-44c1a64d9054",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "Forming Part of\nSum Insured",
-                "section_label": "manifest-v2-clause-1936-1963-9845edf976e51622",
-                "page": 26,
-                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
-                "locator": {
-                  "bbox": [
-                    466.36199999999985,
-                    625.2022000000001,
-                    542.4019999999998,
-                    649.2022000000001
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
-                  "physical_page": 26,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              },
-              {
-                "id": "abcbf643-5421-450a-a939-e2c076ef2472",
+                "id": "adc07618-ce4e-4232-957c-71566239bc99",
                 "evidence_span_id": "805252b0-49a4-4549-8f49-6ff41a5ca399",
                 "policy_rule_id": null,
                 "role": "supports",
@@ -2363,32 +3231,7 @@
                 }
               },
               {
-                "id": "70af8149-36d4-448e-bd85-8b4f3b6c7d81",
-                "evidence_span_id": "f539f591-f872-4532-af28-c41343f5eed1",
-                "policy_rule_id": null,
-                "role": "supports",
-                "quote": "The coverage limit under this benefit is over\nand above the Limit of Coverage and up\nto the Sum Insured.",
-                "section_label": "manifest-v2-clause-1772-1876-f167b61c2420e7f9",
-                "page": 11,
-                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
-                "locator": {
-                  "bbox": [
-                    330.2362,
-                    198.50570000000005,
-                    552.0632655999999,
-                    244.2199999999999
-                  ],
-                  "kind": "pdf_region",
-                  "rotation": 0,
-                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
-                  "physical_page": 11,
-                  "schema_version": 1,
-                  "coordinate_space": "unrotated_pdf_points",
-                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
-                }
-              },
-              {
-                "id": "0b78c5fe-0149-43d4-b718-db42db2043f4",
+                "id": "a4206c21-6ee3-4466-a072-0aebb71c0734",
                 "evidence_span_id": "1efff705-68e9-45a8-b881-f1fce2dabe2f",
                 "policy_rule_id": null,
                 "role": "supports",
@@ -2411,12 +3254,112 @@
                   "coordinate_space": "unrotated_pdf_points",
                   "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
                 }
+              },
+              {
+                "id": "00f3bd00-37db-493f-8aff-81355a7bd699",
+                "evidence_span_id": "aa750764-798e-4495-b9f7-83fb94022cd3",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Organ Donor Expenses\nForming Part of\nSum Insured",
+                "section_label": "manifest-v2-clause-1966-2014-6175b7196d9a68ad",
+                "page": 26,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    337.86199999999985,
+                    655.3722000000001,
+                    542.4019999999998,
+                    679.3722000000001
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 26,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "0a25d04b-3584-490d-ad54-b1a2a22b3e3b",
+                "evidence_span_id": "fd66a852-cc3c-46e4-9aaf-529ecb0f216c",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "All types of transplant and related\nsurgeries.",
+                "section_label": "manifest-v2-clause-393-439-8d80805b8df3ab15",
+                "page": 29,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    110.5197,
+                    240.89549999999997,
+                    287.82375,
+                    269.1337
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 29,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "e000d16e-8c95-41de-a84d-f1b45d457b59",
+                "evidence_span_id": "46f09b62-57d5-49b6-b04b-0428941bc64b",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "Expenses related to the treatment\nof the listed Conditions, surgeries/\ntreatments shall be excluded until\nthe expiry of 24 months of continuous\ncoverage after the date of inception\nof the first policy with us.",
+                "section_label": "manifest-v2-clause-229-438-e44ff990b9f037c3",
+                "page": 28,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    87.88369999999996,
+                    146.43740000000003,
+                    287.7537000000002,
+                    244.22739999999976
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 28,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "5cc58782-49ac-4c40-939f-e1bcafd15a31",
+                "evidence_span_id": "49ad4c03-2300-4662-9584-23f501b17218",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "This exclusion\nshall not be applicable for claims\narising due to an accident.",
+                "section_label": "manifest-v2-clause-439-516-d0cae8cd091b7a08",
+                "page": 28,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    87.87269999999998,
+                    233.22739999999976,
+                    287.7317000000001,
+                    278.94339999999966
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 28,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
               }
             ]
           }
         }
       ],
-      "distinct_native_anchors_checked": 250,
+      "distinct_native_anchors_checked": 243,
       "turns": [
         {
           "id": "9237952e-725f-4459-a582-aa0822ff3b4f",
@@ -2437,6 +3380,11 @@
           "id": "52381a5b-8cb8-4f00-9a4d-23c5c534c6f6",
           "state": "completed",
           "error": null
+        },
+        {
+          "id": "9cbcb763-8424-407b-becc-c7616c1ea1cc",
+          "state": "completed",
+          "error": null
         }
       ],
       "model_attempts": [
@@ -2452,7 +3400,8 @@
             "output_tokens": 3273,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 60795
         },
         {
           "id": "be013453-e47d-487a-9323-a4a1935b45cd",
@@ -2466,7 +3415,8 @@
             "output_tokens": 1353,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 26057
         },
         {
           "id": "a3ada6ce-d47e-4867-8c34-dc5f580b8f7f",
@@ -2480,7 +3430,8 @@
             "output_tokens": 1355,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 26494
         },
         {
           "id": "4798dcc5-e739-4aa9-84a4-b41c4cf7e7db",
@@ -2494,7 +3445,8 @@
             "output_tokens": 1034,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 21016
         },
         {
           "id": "2cbab49c-bffc-4db7-b121-e73f41f0489e",
@@ -2508,7 +3460,8 @@
             "output_tokens": 252,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 6573
         },
         {
           "id": "c0755e02-03c8-4b26-b597-9066dd00b50c",
@@ -2522,7 +3475,8 @@
             "output_tokens": 1779,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 36433
         },
         {
           "id": "43a65c04-f461-4876-bb2f-247a87879e8e",
@@ -2536,7 +3490,8 @@
             "output_tokens": 1475,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 28427
         },
         {
           "id": "0133d26f-17cf-4d9e-9eb6-06ef5cccca5f",
@@ -2550,7 +3505,8 @@
             "output_tokens": 1288,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 27267
         },
         {
           "id": "f3990602-427b-4311-b063-e379aa7a8ec4",
@@ -2564,7 +3520,8 @@
             "output_tokens": 663,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 13895
         },
         {
           "id": "cce4966c-ea2a-41e3-b99a-66c36e9ab0ed",
@@ -2578,7 +3535,8 @@
             "output_tokens": 604,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 12819
         },
         {
           "id": "941106b9-d937-4d9f-90c7-d0974287004b",
@@ -2592,7 +3550,8 @@
             "output_tokens": 981,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 21265
         },
         {
           "id": "5799a156-474f-483a-b4d8-20ea0b6e21d0",
@@ -2606,7 +3565,8 @@
             "output_tokens": 186,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 6739
         },
         {
           "id": "f71969cf-ecdb-4a78-8c30-ae1ae3b79d50",
@@ -2620,7 +3580,8 @@
             "output_tokens": 1689,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 32732
         },
         {
           "id": "d07c173b-a232-46b1-afd8-2ee00873f8b1",
@@ -2634,7 +3595,8 @@
             "output_tokens": 305,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 8043
         },
         {
           "id": "342fc0a3-c459-4987-b8e8-f5c512bcf84a",
@@ -2648,7 +3610,8 @@
             "output_tokens": 2102,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 40092
         },
         {
           "id": "2bf622ef-1f96-4e09-b881-8883baee73fe",
@@ -2662,7 +3625,8 @@
             "output_tokens": 1429,
             "cached_input_tokens": 25344
           },
-          "error": null
+          "error": null,
+          "wall_ms": 27683
         },
         {
           "id": "4be2ae03-7e45-4a72-8163-c900622dd8f6",
@@ -2676,23 +3640,396 @@
             "output_tokens": 415,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 9501
+        },
+        {
+          "id": "1c0acab2-c881-43a7-93a9-973e01972e9f",
+          "turn_id": "9cbcb763-8424-407b-becc-c7616c1ea1cc",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 23290,
+            "input_tokens": 4241,
+            "usage_source": "provider_reported",
+            "output_tokens": 1144,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 23296
+        },
+        {
+          "id": "d5ffd071-a6f5-4a5f-80e0-822f2066cc8b",
+          "turn_id": "9cbcb763-8424-407b-becc-c7616c1ea1cc",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 26400,
+            "input_tokens": 10689,
+            "usage_source": "provider_reported",
+            "output_tokens": 1324,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 26407
+        },
+        {
+          "id": "8d1e0b3b-da4d-41f7-ba10-29d05b863ab2",
+          "turn_id": "9cbcb763-8424-407b-becc-c7616c1ea1cc",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 31436,
+            "input_tokens": 10698,
+            "usage_source": "provider_reported",
+            "output_tokens": 1644,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 31442
+        },
+        {
+          "id": "4247185c-510d-4150-be61-f5590aab2379",
+          "turn_id": "9cbcb763-8424-407b-becc-c7616c1ea1cc",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 28054,
+            "input_tokens": 9241,
+            "usage_source": "provider_reported",
+            "output_tokens": 1398,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 28059
+        },
+        {
+          "id": "80c2e646-0f7d-438f-b445-47c5da3977b5",
+          "turn_id": "9cbcb763-8424-407b-becc-c7616c1ea1cc",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 36715,
+            "input_tokens": 19518,
+            "usage_source": "provider_reported",
+            "output_tokens": 1674,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 36723
+        },
+        {
+          "id": "4dfe697b-fa09-4bc1-a5ee-4e38f7ddc19a",
+          "turn_id": "9cbcb763-8424-407b-becc-c7616c1ea1cc",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 20400,
+            "input_tokens": 18427,
+            "usage_source": "provider_reported",
+            "output_tokens": 1023,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 20406
+        },
+        {
+          "id": "192bcb4d-1646-4e6f-96ed-1d84c4f4fb2f",
+          "turn_id": "9cbcb763-8424-407b-becc-c7616c1ea1cc",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 29561,
+            "input_tokens": 19576,
+            "usage_source": "provider_reported",
+            "output_tokens": 1502,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 29586
+        },
+        {
+          "id": "c5f5088b-1cc4-404b-9120-d4a38a553414",
+          "turn_id": "9cbcb763-8424-407b-becc-c7616c1ea1cc",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 28669,
+            "input_tokens": 18401,
+            "usage_source": "provider_reported",
+            "output_tokens": 1409,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 28674
+        },
+        {
+          "id": "ece7bd95-11f6-4981-b219-38caf4eb9562",
+          "turn_id": "9cbcb763-8424-407b-becc-c7616c1ea1cc",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 31049,
+            "input_tokens": 21358,
+            "usage_source": "provider_reported",
+            "output_tokens": 1587,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 31056
+        },
+        {
+          "id": "6436bbb3-417c-4ad2-bcf9-03ba98cac7f7",
+          "turn_id": "9cbcb763-8424-407b-becc-c7616c1ea1cc",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 11793,
+            "input_tokens": 20080,
+            "usage_source": "provider_reported",
+            "output_tokens": 537,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 11800
         }
       ],
       "attempt_status_counts": {
-        "succeeded": 17
+        "succeeded": 27
       }
     },
     {
       "profile": "mixed_age_family",
       "conversation_id": "e1b62144-2193-43cb-a516-2d3cf0adce31",
-      "comparison_id": "f0dfcffd-e475-4e07-a4b8-e370a18e159a",
-      "final_turn_id": "e03b0029-58b2-4b09-a1f8-41b4b2903916",
+      "comparison_id": "1b7d99b4-a9b1-4dea-a386-8d5267bdb1fb",
+      "final_turn_id": "d5411f5a-0f2e-4d23-aefb-9a7142751a0d",
       "final_question": "My premium budget is unknown. For each of the three base policies, are consumables or non-medical expenses covered during an admissible inpatient or day-care claim? Explain the covered list and material conditions or exclusions. No optional covers are selected.",
+      "final_turn_wall_seconds": 362.529,
+      "pageindex_search_calls": [
+        {
+          "stage": "pageindex_search",
+          "policy_version_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+          "turn_id": "d5411f5a-0f2e-4d23-aefb-9a7142751a0d",
+          "model": "gpt-5.6-sol",
+          "retry": 0,
+          "status": "completed",
+          "reasoning_effort": "low",
+          "max_output_tokens": 8192,
+          "usage": {
+            "attribution": {
+              "items": {
+                "msg_034de48bbd24579e016abec47cfe9887d08b5ba5a934a5accb": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 73944,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 73944,
+                      "input_tokens": 74209,
+                      "output_tokens": 0
+                    }
+                  ],
+                  "input_tokens": 74209,
+                  "output_tokens": 0
+                },
+                "rs_034de48bbd24579e016abec480159087d09d8edccd508579d4": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 2,
+                  "output_tokens": 154
+                },
+                "msg_034de48bbd24579e016abec4835b5487d083fb30452c2aca75": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "input_tokens": 0,
+                      "output_tokens": 312
+                    }
+                  ],
+                  "input_tokens": 0,
+                  "output_tokens": 312
+                }
+              },
+              "request_fields": {
+                "tools": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 296,
+                  "input_tokens": 296,
+                  "output_tokens": 0
+                }
+              }
+            },
+            "input_tokens": 74507,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 74240
+            },
+            "output_tokens": 466,
+            "output_tokens_details": {
+              "reasoning_tokens": 154
+            },
+            "total_tokens": 74973
+          },
+          "wall_ms": 12743
+        },
+        {
+          "stage": "pageindex_search",
+          "policy_version_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+          "turn_id": "d5411f5a-0f2e-4d23-aefb-9a7142751a0d",
+          "model": "gpt-5.6-sol",
+          "retry": 0,
+          "status": "completed",
+          "reasoning_effort": "low",
+          "max_output_tokens": 8192,
+          "usage": {
+            "attribution": {
+              "items": {
+                "msg_017254eab9e87c8d016abec48a936887d098c07d1e349d7e89": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "input_tokens": 64631,
+                      "output_tokens": 0
+                    }
+                  ],
+                  "input_tokens": 64631,
+                  "output_tokens": 0
+                },
+                "rs_017254eab9e87c8d016abec48c283087d0a4a87bebf784e186": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 2,
+                  "output_tokens": 249
+                },
+                "msg_017254eab9e87c8d016abec490a99887d089c8256851653208": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "input_tokens": 0,
+                      "output_tokens": 209
+                    }
+                  ],
+                  "input_tokens": 0,
+                  "output_tokens": 209
+                }
+              },
+              "request_fields": {
+                "tools": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 296,
+                  "output_tokens": 0
+                }
+              }
+            },
+            "input_tokens": 64929,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0
+            },
+            "output_tokens": 458,
+            "output_tokens_details": {
+              "reasoning_tokens": 249
+            },
+            "total_tokens": 65387
+          },
+          "wall_ms": 11785
+        },
+        {
+          "stage": "pageindex_search",
+          "policy_version_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+          "turn_id": "d5411f5a-0f2e-4d23-aefb-9a7142751a0d",
+          "model": "gpt-5.6-sol",
+          "retry": 0,
+          "status": "completed",
+          "reasoning_effort": "low",
+          "max_output_tokens": 8192,
+          "usage": {
+            "attribution": {
+              "items": {
+                "msg_0e335a6132131bb5016abec496f17487d0afb4a5f3091b3e5c": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 84056,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 84056,
+                      "input_tokens": 84230,
+                      "output_tokens": 0
+                    }
+                  ],
+                  "input_tokens": 84230,
+                  "output_tokens": 0
+                },
+                "rs_0e335a6132131bb5016abec4981bc887d0ab11003ef212ddde": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 2,
+                  "output_tokens": 343
+                },
+                "msg_0e335a6132131bb5016abec49e96e087d09e5fce9849da5d59": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "content": [
+                    {
+                      "cache_write_tokens": 0,
+                      "cached_tokens": 0,
+                      "input_tokens": 0,
+                      "output_tokens": 339
+                    }
+                  ],
+                  "input_tokens": 0,
+                  "output_tokens": 339
+                }
+              },
+              "request_fields": {
+                "tools": {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 296,
+                  "input_tokens": 296,
+                  "output_tokens": 0
+                }
+              }
+            },
+            "input_tokens": 84528,
+            "input_tokens_details": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 84352
+            },
+            "output_tokens": 682,
+            "output_tokens_details": {
+              "reasoning_tokens": 343
+            },
+            "total_tokens": 85210
+          },
+          "wall_ms": 15713
+        }
+      ],
+      "earlier_unknown_statements": [
+        {
+          "comparison_id": "f0dfcffd-e475-4e07-a4b8-e370a18e159a",
+          "comparison__turn_id": "e03b0029-58b2-4b09-a1f8-41b4b2903916",
+          "text": "Family Health Optima Insurance Plan: Retrieved evidence incomplete: coverage: coverage_question: The supplied bounded packet does not establish whether consumables or non-medical expenses are covered during an admissible inpatient or day-care claim. It only states that pharmacy and consumables are excluded from \u201cAssociated Medical Expenses\u201d and are not subject to proportionate deduction; this does not itself establish payment coverage or provide the covered-item list and exclusions. needs_prospectus: relevant coverage wording or consumables/non-medical-expenses schedule is required."
+        },
+        {
+          "comparison_id": "f0dfcffd-e475-4e07-a4b8-e370a18e159a",
+          "comparison__turn_id": "e03b0029-58b2-4b09-a1f8-41b4b2903916",
+          "text": "Star Comprehensive Insurance Policy: Retrieved evidence incomplete: coverage: coverage_question: The supplied bounded packet does not contain an explicit base-policy benefit, exclusion, or covered-item list establishing whether consumables or non-medical expenses are payable during an admissible inpatient or day-care claim. The wording only states that pharmacy, consumables, implants, medical devices, diagnostics and ICU charges are outside \u201cAssociated Medical Expenses\u201d for proportionate-deduction purposes; that does not establish coverage or non-coverage. Omitted pages cannot support an absence inference. needs_prospectus: complete relevant benefit and exclusion provisions are required."
+        }
+      ],
       "profile_snapshot": {
-        "id": "b10c90ac-3ea6-46eb-9eb5-53bfb9c424cc",
-        "revision": 5,
-        "created_at": "2026-10-01 19:26:02.830885+00:00",
+        "id": "7ebf2ce7-89ee-4af9-950e-86d8d5a7e871",
+        "revision": 6,
+        "created_at": "2026-10-01 20:37:14.973376+00:00",
         "people": [
           {
             "id": "e31455be-10cf-499e-aef6-bed2bbc42d3b",
@@ -2845,7 +4182,7 @@
             "subject_person_id": null
           },
           {
-            "id": "486ac95c-5458-4225-8869-29e821260802",
+            "id": "b58e48a1-6d08-4e2e-be79-152e057238f1",
             "logical_key": "e1d920e8-c603-46f5-b3a3-39c1771c8a39",
             "fact_type": "budget",
             "value": {
@@ -2866,13 +4203,13 @@
           "quote": "unavailable",
           "selected_options": [],
           "source_answer": {
-            "id": "e104b7b3-0476-4bbf-86b4-b96d45206085",
+            "id": "b0a40d30-cef4-403c-9d06-072c5a7147d2",
             "ordinal": 2,
-            "text": "Family Health Optima Insurance Plan: Retrieved evidence incomplete: coverage: coverage_question: The supplied bounded packet does not establish whether consumables or non-medical expenses are covered during an admissible inpatient or day-care claim. It only states that pharmacy and consumables are excluded from \u201cAssociated Medical Expenses\u201d and are not subject to proportionate deduction; this does not itself establish payment coverage or provide the covered-item list and exclusions. needs_prospectus: relevant coverage wording or consumables/non-medical-expenses schedule is required.",
+            "text": "Family Health Optima Insurance Plan: Retrieved evidence incomplete after validation: wrong_value: The cited subsumed-cost list includes \u201cINFUSION PUMP\u2014 COST,\u201d but the base wording expressly excludes the cost of an infusion pump as an aid. The fact therefore cannot present infusion-pump cost as part of the covered treatment-cost list without a limiting distinction.",
             "statement_type": "limitation",
             "critical": false,
             "support_status": "unknown",
-            "comparison_assessment_id": "d6f80590-0ad0-4985-ae4c-1b71af831a87",
+            "comparison_assessment_id": "28bb2e5a-c249-4dd8-bdd9-5b5f69722467",
             "citations": []
           }
         },
@@ -2883,13 +4220,13 @@
           "quote": "unavailable",
           "selected_options": [],
           "source_answer": {
-            "id": "3a2b508d-0c7f-40c6-8f1d-64c794d48e78",
+            "id": "6eeddd7f-299f-49b3-94c6-ddad02f5b3cb",
             "ordinal": 3,
-            "text": "Star Comprehensive Insurance Policy: Retrieved evidence incomplete: coverage: coverage_question: The supplied bounded packet does not contain an explicit base-policy benefit, exclusion, or covered-item list establishing whether consumables or non-medical expenses are payable during an admissible inpatient or day-care claim. The wording only states that pharmacy, consumables, implants, medical devices, diagnostics and ICU charges are outside \u201cAssociated Medical Expenses\u201d for proportionate-deduction purposes; that does not establish coverage or non-coverage. Omitted pages cannot support an absence inference. needs_prospectus: complete relevant benefit and exclusion provisions are required.",
+            "text": "Star Comprehensive Insurance Policy: Retrieved evidence incomplete after validation: missing_material_condition: The day-care statement omits that this cover is expressly applicable only for Sections II.3, II.4, II.9, II.14, II.15 and II.25, and the day-care expenses are subject to the Sum Insured specified in the Policy Schedule.",
             "statement_type": "limitation",
             "critical": false,
             "support_status": "unknown",
-            "comparison_assessment_id": "5c9d5ea7-cf85-4122-b389-925669ffcb3d",
+            "comparison_assessment_id": "f2cabbf5-813b-4383-9bca-ea0b3254ce43",
             "citations": []
           }
         },
@@ -2900,16 +4237,16 @@
           "quote": "unavailable",
           "selected_options": [],
           "source_answer": {
-            "id": "0a9a92a6-0d53-4b90-89c0-fc84d8ef5906",
+            "id": "af605189-5082-4645-8f43-e07a27c4c47c",
             "ordinal": 1,
-            "text": "Star Health Assure Insurance Policy: The base policy covers the non-medical items (consumables) identified in List I when there is an admissible inpatient or day-care claim. The supplied packet does not reproduce List I, so the individual covered items cannot be enumerated here. Dietary supplements and non-prescription substances are excluded unless prescribed by a medical practitioner as part of a hospitalization claim or day-care procedure. No optional cover is required for this stated base coverage. The underlying inpatient or day-care claim must be admissible. Only items listed in policy List I become payable. Dietary supplements and substances purchasable without prescription are excluded unless prescribed by a medical practitioner as part of a hospitalization claim or day-care procedure.",
+            "text": "Star Health Assure Insurance Policy: The base policy covers non-medical items (consumables) specified in List I when there is an admissible inpatient or day-care claim. List I includes items such as ambulance, gloves and oxygen mask. Items assigned to Lists II, III and IV are to be subsumed into room charges, procedure charges or treatment costs, respectively, rather than treated as separately payable consumables. A claim must be admissible under inpatient or day-care coverage, and only items specified in List I become payable. Lists II, III and IV identify items subsumed into the corresponding room, procedure or treatment costs.",
             "statement_type": "benefit",
             "critical": true,
             "support_status": "supported",
-            "comparison_assessment_id": "ce4d0d2e-4a3e-45a3-9030-5834a66ec052",
+            "comparison_assessment_id": "e9e95caf-0311-4f83-8337-d2629b8d2204",
             "citations": [
               {
-                "id": "1c3ec270-7df2-4b87-8a37-890a3f5d7033",
+                "id": "3cc7cabf-fa06-4576-b73c-9b16516dd7bd",
                 "evidence_span_id": "1df14b6a-b882-4f59-8f66-f618f7300512",
                 "policy_rule_id": null,
                 "role": "supports",
@@ -2934,25 +4271,175 @@
                 }
               },
               {
-                "id": "5837cb7b-856e-414c-8f39-02387c0d1a69",
-                "evidence_span_id": "791452dc-e599-42bb-8093-8bbefb41b911",
+                "id": "6b5dbd45-fc88-435e-8ef3-35bc690351c4",
+                "evidence_span_id": "e29a33cf-1c94-47e0-85d8-0c036babe2b5",
                 "policy_rule_id": null,
                 "role": "supports",
-                "quote": "Dietary supplements and substances that can be\npurchased without prescription, including but not\nlimited to Vitamins, minerals and organic substances\nunless prescribed by a medical practitioner as part of\nhospitalization claim or day care procedure",
-                "section_label": "manifest-v2-clause-1152-1400-2c9a9256d2839dfb",
-                "page": 6,
-                "document_version_id": "08860337-cd44-4603-8b70-b662eaf2f8d7",
+                "quote": "LIST I - Items for which coverage is available in the policy",
+                "section_label": "manifest-v2-clause-1854-1914-c209d44884c2905c",
+                "page": 44,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
                 "locator": {
                   "bbox": [
-                    178.09039999999982,
-                    687.0591000000001,
-                    493.8299999999997,
-                    758.0751000000001
+                    157.4144,
+                    103.45400000000006,
+                    436.90589999999986,
+                    112.80799999999999
                   ],
                   "kind": "pdf_region",
                   "rotation": 0,
-                  "blob_sha256": "9b577e1226bbfde552575bedf8e0b74edf792a2db5c788b008196d99f23d5f2e",
-                  "physical_page": 6,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 44,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "af64dcfd-14ba-4638-847f-88e63dac3526",
+                "evidence_span_id": "cd1f5c34-c256-49ea-a0e4-fa987e8413d0",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "GLOVES",
+                "section_label": "manifest-v2-clause-717-723-900bc64b74321885",
+                "page": 44,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    340.0985,
+                    530.5766000000001,
+                    370.27450000000005,
+                    538.5766000000001
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 44,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "ccc468c8-ea7b-4188-9e22-2907439c5cd7",
+                "evidence_span_id": "0f6bc49e-6212-4079-bbc0-057901b6b0b0",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "OXYGEN MASK",
+                "section_label": "manifest-v2-clause-866-877-d455e86d61addaf9",
+                "page": 44,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    340.09849999999994,
+                    635.9286,
+                    395.88249999999994,
+                    643.9286
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 44,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "b8090226-398a-4ea5-a514-89a5b6dcc227",
+                "evidence_span_id": "f37a8ab6-9e57-45cd-96ca-c04394996df8",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "AMBULANCE",
+                "section_label": "manifest-v2-clause-459-468-4bb69f60d6ca5a0f",
+                "page": 44,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    340.1106,
+                    386.95039999999995,
+                    387.4466,
+                    394.95039999999995
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 44,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "e4be2b90-bb9a-4fde-a9dd-a7cc8b064475",
+                "evidence_span_id": "08e33da8-1fd2-42e6-acf3-aed08f876fa2",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "LIST II - Items that are to be subsumed into\nRoom Charges",
+                "section_label": "manifest-v2-clause-1492-1549-4060e420c2fadd15",
+                "page": 45,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    75.58640000000003,
+                    103.49079999999947,
+                    254.64809999999997,
+                    121.45410000000004
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 45,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "9c8eef15-1966-467e-b94b-711b1cb50ad1",
+                "evidence_span_id": "19d4a397-ca59-40d6-bf40-b69522874a75",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "LIST III - Items that are to be subsumed into\nProcedure Charges",
+                "section_label": "manifest-v2-clause-1550-1613-f50daead378d8704",
+                "page": 45,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    343.1675,
+                    103.45400000000006,
+                    517.1486,
+                    121.45400000000006
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 45,
+                  "schema_version": 1,
+                  "coordinate_space": "unrotated_pdf_points",
+                  "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
+                }
+              },
+              {
+                "id": "6b026cbb-fa04-47d5-a740-e87c9a9a23c7",
+                "evidence_span_id": "e2dfb8af-1cec-4686-9c09-2b3c83ff3ec8",
+                "policy_rule_id": null,
+                "role": "supports",
+                "quote": "LIST IV - Items that are to be subsumed into\ncosts of treatment",
+                "section_label": "manifest-v2-clause-1614-1677-0adf39ec1591923f",
+                "page": 45,
+                "document_version_id": "591cfc4c-d416-404e-bbd1-21a8619960c2",
+                "locator": {
+                  "bbox": [
+                    349.5166,
+                    469.1260000000001,
+                    524.9713,
+                    487.12330000000003
+                  ],
+                  "kind": "pdf_region",
+                  "rotation": 0,
+                  "blob_sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+                  "physical_page": 45,
                   "schema_version": 1,
                   "coordinate_space": "unrotated_pdf_points",
                   "resolver_version": "coverguide-manifest-v2-pdftotext-raw/1"
@@ -2962,7 +4449,7 @@
           }
         }
       ],
-      "distinct_native_anchors_checked": 238,
+      "distinct_native_anchors_checked": 244,
       "turns": [
         {
           "id": "3b34ed6a-f3e9-48a8-8cec-58f0daa32f29",
@@ -2983,6 +4470,11 @@
           "id": "e03b0029-58b2-4b09-a1f8-41b4b2903916",
           "state": "completed",
           "error": null
+        },
+        {
+          "id": "d5411f5a-0f2e-4d23-aefb-9a7142751a0d",
+          "state": "completed",
+          "error": null
         }
       ],
       "model_attempts": [
@@ -2998,7 +4490,8 @@
             "output_tokens": 3305,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 61397
         },
         {
           "id": "a8889851-1ea6-4ff0-a56b-d3378bfb14df",
@@ -3012,7 +4505,8 @@
             "output_tokens": 588,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 12407
         },
         {
           "id": "816f0ea5-2bf5-4650-89e7-0de9f1d954bf",
@@ -3026,7 +4520,8 @@
             "output_tokens": 602,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 13221
         },
         {
           "id": "e03dc2c0-d14c-4df2-94cc-4771afe00978",
@@ -3040,7 +4535,8 @@
             "output_tokens": 1150,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 22897
         },
         {
           "id": "6da69283-b450-4d65-8a08-4140b6dcef06",
@@ -3054,7 +4550,8 @@
             "output_tokens": 270,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 12429
         },
         {
           "id": "de849746-5f7b-4086-a3ae-9fa653a7d492",
@@ -3068,7 +4565,8 @@
             "output_tokens": 1322,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 26329
         },
         {
           "id": "5a06cf96-d3e3-4559-92fb-c21cd6e66284",
@@ -3082,7 +4580,8 @@
             "output_tokens": 788,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 18445
         },
         {
           "id": "24ab98ef-a7c3-41b0-abc2-b9348d517c85",
@@ -3096,7 +4595,8 @@
             "output_tokens": 359,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 9522
         },
         {
           "id": "f1abaa09-db66-4543-be4b-472c58f4b676",
@@ -3110,7 +4610,8 @@
             "output_tokens": 863,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 18308
         },
         {
           "id": "baa91e4b-2d35-4cd2-b30f-3268da9047ad",
@@ -3124,11 +4625,192 @@
             "output_tokens": 313,
             "cached_input_tokens": 0
           },
-          "error": null
+          "error": null,
+          "wall_ms": 7849
+        },
+        {
+          "id": "84ca1834-373c-4ea0-9dc3-6690125aaf89",
+          "turn_id": "d5411f5a-0f2e-4d23-aefb-9a7142751a0d",
+          "stage": "fact_interpretation",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 20748,
+            "input_tokens": 4670,
+            "usage_source": "provider_reported",
+            "output_tokens": 1048,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 20756
+        },
+        {
+          "id": "f94a6a0b-f08d-41a2-b839-32d0eeb3355c",
+          "turn_id": "d5411f5a-0f2e-4d23-aefb-9a7142751a0d",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 32669,
+            "input_tokens": 13273,
+            "usage_source": "provider_reported",
+            "output_tokens": 1700,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 32693
+        },
+        {
+          "id": "1971e877-da8b-4924-a3da-32d3c9507ef6",
+          "turn_id": "d5411f5a-0f2e-4d23-aefb-9a7142751a0d",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 31167,
+            "input_tokens": 11453,
+            "usage_source": "provider_reported",
+            "output_tokens": 1632,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 31172
+        },
+        {
+          "id": "96e21203-0134-436a-b3c0-a342bc846ab0",
+          "turn_id": "d5411f5a-0f2e-4d23-aefb-9a7142751a0d",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 25442,
+            "input_tokens": 13292,
+            "usage_source": "provider_reported",
+            "output_tokens": 1299,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 25452
+        },
+        {
+          "id": "be15daac-a4f3-42b1-9a9c-8b5abdc06069",
+          "turn_id": "d5411f5a-0f2e-4d23-aefb-9a7142751a0d",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 22652,
+            "input_tokens": 11003,
+            "usage_source": "provider_reported",
+            "output_tokens": 1123,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 22657
+        },
+        {
+          "id": "d3d1c720-1cbc-416a-a10b-474f2061a6b1",
+          "turn_id": "d5411f5a-0f2e-4d23-aefb-9a7142751a0d",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 31446,
+            "input_tokens": 11429,
+            "usage_source": "provider_reported",
+            "output_tokens": 1571,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 31464
+        },
+        {
+          "id": "54cb1849-a941-4949-b56a-3602a322abb5",
+          "turn_id": "d5411f5a-0f2e-4d23-aefb-9a7142751a0d",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 23135,
+            "input_tokens": 9421,
+            "usage_source": "provider_reported",
+            "output_tokens": 1166,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 23157
+        },
+        {
+          "id": "b46e46c6-176e-4d94-a89c-4f82e4fb021b",
+          "turn_id": "d5411f5a-0f2e-4d23-aefb-9a7142751a0d",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 34058,
+            "input_tokens": 11448,
+            "usage_source": "provider_reported",
+            "output_tokens": 1547,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 34086
+        },
+        {
+          "id": "3f9e5ddd-97b9-4c04-a8b1-8efa8985af46",
+          "turn_id": "d5411f5a-0f2e-4d23-aefb-9a7142751a0d",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 20587,
+            "input_tokens": 9259,
+            "usage_source": "provider_reported",
+            "output_tokens": 985,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 20592
+        },
+        {
+          "id": "c4f32409-634d-4c0a-a8e7-a953f9765ca6",
+          "turn_id": "d5411f5a-0f2e-4d23-aefb-9a7142751a0d",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 23722,
+            "input_tokens": 17191,
+            "usage_source": "provider_reported",
+            "output_tokens": 1174,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 23727
+        },
+        {
+          "id": "fa35d7f7-0ea4-407a-8ae5-96a189dbb3da",
+          "turn_id": "d5411f5a-0f2e-4d23-aefb-9a7142751a0d",
+          "stage": "policy_extraction",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 30324,
+            "input_tokens": 17202,
+            "usage_source": "provider_reported",
+            "output_tokens": 1496,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 30329
+        },
+        {
+          "id": "da399c46-ba4b-4824-b4d8-c998bb0ab3b0",
+          "turn_id": "d5411f5a-0f2e-4d23-aefb-9a7142751a0d",
+          "stage": "policy_review",
+          "status": "succeeded",
+          "usage": {
+            "latency_ms": 11515,
+            "input_tokens": 15036,
+            "usage_source": "provider_reported",
+            "output_tokens": 494,
+            "cached_input_tokens": 0
+          },
+          "error": null,
+          "wall_ms": 11537
         }
       ],
       "attempt_status_counts": {
-        "succeeded": 10
+        "succeeded": 22
       }
     }
   ],
