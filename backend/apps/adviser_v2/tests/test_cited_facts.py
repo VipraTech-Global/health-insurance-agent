@@ -56,6 +56,22 @@ def test_number_words_and_exact_clause_offsets():
         clause_offsets(Clause(page_span_id=PAGE_ID, quote=text), text)
 
 
+def test_statute_year_is_a_cited_identifier_not_a_waiting_duration():
+    from apps.adviser_v2.processing.cited_facts import Quantity, carrier_fact
+
+    criterion, result, pages = sample()
+    fact = carrier_fact(result.rules[0])
+    fact.value = "The organ donation must comply with the Transplantation of Human Organs Act 1994."
+    fact.citations[0].quote = fact.value
+    fact.quantities = []
+    pages[0]["passage"] = "Header\n" + fact.value + "\nOther terms."
+    result.rules = [fact_carrier(criterion, fact)]
+    assert fact_problems(POLICY_ID, criterion, result, pages) == []
+    fact.quantities = [Quantity(value="1994", unit="year", citation_indexes=[0])]
+    result.rules = [fact_carrier(criterion, fact)]
+    assert "1994 year lacks" in "; ".join(fact_problems(POLICY_ID, criterion, result, pages))
+
+
 def test_frequency_words_have_numeric_support():
     from decimal import Decimal
 
