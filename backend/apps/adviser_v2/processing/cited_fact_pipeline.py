@@ -113,6 +113,12 @@ def _progress(job: ProcessingJob, policy_id: str, core: list[dict[str, Any]]) ->
             for criterion in CRITERIA:
                 state = progress["criteria"].get(criterion.key, {})
                 resume_pipeline_failure(state)
+                if (state.get('review_technical_failure') and not state.get('review_encoding_retry_used')
+                        and state.get('review_blockers') == ['Independent fact review failed: invalid_structured_output.']):
+                    state['prior_review_encoding_failure'] = state['review_blockers']
+                    state['review_encoding_retry_used'] = True
+                    state.pop('review_complete', None)
+                    state.pop('review_technical_failure', None)
                 if state.get("review"):
                     blockers, notes = review_disposition(PolicyRuleReviewV1.model_validate(state["review"]),
                         PolicyRuleExtractionV1.model_validate(state.get("reviewed_result", state["result"])), criterion)
@@ -209,7 +215,13 @@ def _messages(version: Any, passages: list[dict[str, Any]], criterion: Any, *, c
     result = [
         {"role": "system", "content": REVIEW_SYSTEM if candidate is not None else FACT_SYSTEM},
         {"role": "user", "content": f"Policy version {version.id}, UIN {version.uin}. Selected variant: {_selected_variant_name(version)}. Complete raw bundle: " + _encoded(passages)},
-        {"role": "system", "content": fact_instruction(criterion)},
+        {"role": "system", "content": (
+            f"Criterion {criterion.key}: {criterion.instruction} Review only this criterion's core value "
+            "and material conditions. Peripheral statements belong to secondary_statements and may "
+            "be omitted using the review protocol; conditions of the core value must remain. "
+            "Return PolicyRuleReviewV1 with independent_body null, not an extraction response."
+            if candidate is not None else fact_instruction(criterion)
+        )},
     ]
     if candidate is not None:
         result.append({"role": "user", "content": "Review this candidate against the full bundle: " + candidate.model_dump_json()})
@@ -335,6 +347,9 @@ def run_criterion_review(job: ProcessingJob) -> dict[str, Any]:
             except RelayFailure as exc:
                 if exc.code not in CRITERION_FAILURES:
                     raise
+                if isinstance(exc.__cause__, ValidationError):
+                    state.setdefault('review_schema_diagnostics', []).append(
+                        exc.__cause__.errors(include_url=False, include_context=False))
                 blockers = [f"Independent fact review failed: {exc.code}."]
                 state["review_technical_failure"] = True
         state.update(review_blockers=blockers, review_notes=notes, review_complete=True)

@@ -446,3 +446,15 @@ def test_secondary_projection_only_deletes_complete_retained_assertions():
         primary_projection(fact, {**selection, 'source_fact_sha256': 'wrong'})
     with pytest.raises(ValueError, match='original quotation'):
         primary_projection(fact, {**selection, 'citation_indexes': []})
+
+
+def test_review_prompt_does_not_also_request_an_extraction_response(monkeypatch):
+    from types import SimpleNamespace
+
+    monkeypatch.setattr('apps.adviser_v2.processing.stages._selected_variant_name', lambda _v: 'base')
+    criterion, result, pages = sample()
+    messages = _messages(SimpleNamespace(id=POLICY_ID, uin='test'), pages, criterion, candidate=result)
+    assert 'Return ONE rule' not in messages[2]['content']
+    assert 'independent_body null' in messages[0]['content']
+    assert 'PolicyRuleReviewV1' in messages[2]['content']
+    assert 'EXACT BODY TEMPLATE' not in messages[2]['content']

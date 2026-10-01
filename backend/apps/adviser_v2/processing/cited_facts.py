@@ -17,7 +17,7 @@ from ..schemas import ExtractedPolicyRule, PolicyRuleExtractionV1, PolicyRuleRev
 from .criterion_evidence import Criterion, criterion_for_key, quoted_quantities
 
 FACT_PROTOCOL = "coverguide-manifest-v2-cited-facts/1"
-FACT_PROMPT_REVISION = "table-clauses-and-secondary-statements/4"
+FACT_PROMPT_REVISION = "table-clauses-and-secondary-statements/5"
 FACT_TERM = "comparison_cited_fact_v1"
 MATERIAL_REASONS = {"wrong_value", "wrong_section", "missing_material_condition", "wrong_variant"}
 NOTE_REASONS = {"underwriting", "other_terms", "day_boundary", "rule_not_executable", "note"}
@@ -376,7 +376,8 @@ REVIEW_SYSTEM = (
     f"Protocol {FACT_PROTOCOL}. Independently review the descriptive cited fact against the COMPLETE "
     "raw source. Return PolicyRuleReviewV1. Review each carrier key exactly once; inventory_categories "
     "is the supplied category. Agree means the plain-English value, short quotes, table association and "
-    "material conditions are supported. Return exact candidate body for agreement. ONLY wrong value, "
+    "material conditions are supported. Return independent_body null: this is independent SOURCE review, "
+    "not executable-rule authoring. Do not echo or re-encode the candidate body. ONLY wrong value, "
     "wrong table/section, missing material condition (including continuity/entry age), or wrong variant "
     "block a fact. JSON formatting and executable wrapper differences do not block fact agreement. "
     "Use material_issue prefix wrong_value:, wrong_section:, missing_material_condition:, "
@@ -385,7 +386,7 @@ REVIEW_SYSTEM = (
     "day boundaries are notes: agree with material_issue 'note: ...'. Number words such as three are "
     "valid. Use missing_rules [] and describe omitted material facts in the existing review. Do not "
     "block the core for a missing condition on a secondary statement. If the core is supported, agree "
-    "with the unchanged candidate body and material_issue 'drop_secondary: {\"indexes\":[0],\"reason\":\"...\"}' "
+    "with independent_body null and material_issue 'drop_secondary: {\"indexes\":[0],\"reason\":\"...\"}' "
     "to remove only those secondary_statements. Material conditions of the core still block. "
     "Separate exact table cell/row and label quotes are valid when they belong to the same source table; "
     "check their association against the full page. Rs. and /- denote rupees. Check actual offered "
