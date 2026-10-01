@@ -258,3 +258,25 @@ def test_supported_facts_do_not_require_executable_rule_ids_and_stop_before_inde
     blocked = pipeline.validate_facts(SimpleNamespace(parent_job=None, source_capture=None))
     assert blocked["unresolved_criterion_count"] == 7
     assert blocked["issues"][0]["code"] == "criterion_stop_threshold"
+
+
+def test_genuine_source_unknown_does_not_trigger_an_extraction_correction(monkeypatch):
+    from types import SimpleNamespace
+
+    from apps.adviser_v2.processing import cited_fact_pipeline as pipeline
+    from apps.adviser_v2.processing.criterion_attempts import new_criterion_state, unknown_result
+    from apps.adviser_v2.processing.criterion_evidence import PROGRESS_KEY
+
+    progress = {"criteria": {c.key: {"review_complete": True} for c in CRITERIA}}
+    state = new_criterion_state()
+    state.update(complete=True, validation_attempts=1,
+        result=unknown_result(POLICY_ID, CRITERIA[0], "No available-purchase choices are stated.").model_dump(mode="json"))
+    progress["criteria"]["sum_insured"] = state
+    monkeypatch.setattr(pipeline, "read_artifact", lambda _j: {PROGRESS_KEY: progress})
+    monkeypatch.setattr(pipeline, "raw_bundle_passages", lambda _v: [])
+    monkeypatch.setattr(pipeline, "_checkpoint", lambda *_a: None)
+    monkeypatch.setattr("apps.adviser_v2.processing.stages._policy_version", lambda _j: SimpleNamespace(id=POLICY_ID))
+    pipeline.run_criterion_review(SimpleNamespace(parent_job=None))
+    assert state["complete"]
+    assert state["validation_attempts"] == 1
+    assert "No available-purchase choices" in state["review_blockers"][0]

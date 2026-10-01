@@ -266,7 +266,7 @@ def run_criterion_review(job: ProcessingJob) -> dict[str, Any]:
                 blockers = [f"Independent fact review failed: {exc.code}."]
                 state["review_technical_failure"] = True
         state.update(review_blockers=blockers, review_notes=notes, review_complete=True)
-        if blockers and state["validation_attempts"] < 2 and not state.get("review_technical_failure") and state["transport_failures"] <= 2:
+        if blockers and extraction.rules and state["validation_attempts"] < 2 and not state.get("review_technical_failure") and state["transport_failures"] <= 2:
             state.update(complete=False, last_error="Independent fact validation: " + "; ".join(blockers))
             if "needs_prospectus:" in state["last_error"]:
                 state.update(prospectus_used=True, prospectus_reason=state["last_error"])
