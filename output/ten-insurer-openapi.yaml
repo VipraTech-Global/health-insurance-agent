@@ -176,6 +176,38 @@ paths:
               schema:
                 $ref: '#/components/schemas/ObjectOutput'
           description: ''
+  /api/v2/demo/prices/{index_id}/citation/:
+    post:
+      operationId: v2_demo_prices_citation_create
+      parameters:
+      - in: path
+        name: index_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - v2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CardCitationInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CardCitationInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CardCitationInput'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectOutput'
+          description: ''
   /api/v2/demo/questions/:
     post:
       operationId: v2_demo_questions_create

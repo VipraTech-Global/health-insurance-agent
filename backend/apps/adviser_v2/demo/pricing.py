@@ -14,6 +14,10 @@ class TableCell:
     column: int
     text: str
     citation: Citation
+    # Inclusive physical grid bounds, populated by the source extractor for
+    # merged cells. Never supplied by a model.
+    row_end: int | None = None
+    column_end: int | None = None
 
 
 @dataclass(frozen=True)
@@ -41,12 +45,20 @@ def validate_price(price: PrintedPrice, cells: dict[str, TableCell], required_ax
         return False
     for name, identifier in price.axis_cells.items():
         label = cells.get(identifier)
-        if (label is None or label.id == value.id or label.table_id != value.table_id or label.text != price.axes[name]
-                or (label.row != value.row and label.column != value.column)):
+        if label is None or label.id == value.id or label.table_id != value.table_id or label.text != price.axes[name]:
+            return False
+        row_end = label.row if label.row_end is None else label.row_end
+        column_end = label.column if label.column_end is None else label.column_end
+        if row_end < label.row or column_end < label.column:
+            return False
+        row_label = label.row <= value.row <= row_end and column_end < value.column
+        column_label = label.column <= value.column <= column_end and row_end < value.row
+        if not (row_label or column_label):
             return False
     for identifier in price.heading_cells:
         label = cells.get(identifier)
-        if label is None or label.table_id != value.table_id or label.row >= value.row:
+        if (label is None or label.table_id != value.table_id
+                or (label.row if label.row_end is None else label.row_end) >= value.row):
             return False
     return True
 

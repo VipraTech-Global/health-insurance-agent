@@ -109,6 +109,10 @@ def physical_cells(bundle, document, page_number, pdf=None):
 
 def parse_chart(bundle: dict, root: Path, relay=None) -> dict:
     relay = relay or Relay.configured()
+    from .annual_charts import SOURCE_SHA, parse_annual_chart
+    annual = next((d for d in bundle['documents'] if d['sha256'] == SOURCE_SHA), None)
+    if annual:
+        return parse_annual_chart(bundle, annual, root, relay)
     directory = root / 'charts' / bundle['index_id']
     accepted, all_cells, failures, models = [], {}, [], set()
     # Charts may be included in a prospectus or brochure. Titles/summary maps are
@@ -150,6 +154,8 @@ def parse_chart(bundle: dict, root: Path, relay=None) -> dict:
                         continue
                 models.add(saved['model'])
                 all_cells.update(cells)
+                if not saved['prices']:
+                    failures.append({'table': table_id, 'reason': 'Parser could not establish every required printed axis.'})
                 for payload in saved['prices']:
                     price = PrintedPrice(**{**payload, 'heading_cells': tuple(payload['heading_cells'])})
                     if validate_price(price, cells, AXES):

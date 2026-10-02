@@ -33,3 +33,16 @@ def card_anchor(card: dict, bundle: dict, citation: Citation) -> dict:
         'document_sha256': section.document_sha256, 'page_id': source.page_id,
         'page': source.page, 'start': source.start + start, 'end': source.start + end,
         'quote': source.text[start:end], 'method': source.method, 'role': section.role}
+
+
+def price_anchor(chart: dict, bundle: dict, plan_id: str, citation: Citation) -> dict:
+    from .charts import load_prices
+    from .pricing import validate_price
+    prices, cells = load_prices(chart)
+    if not prices or any(not validate_price(price, cells, set(chart['required_axes'])) for price in prices):
+        raise ValueError('This chart has no fully validated printed prices.')
+    published = {key for price in prices for key in
+                 [price.value_cell, *price.axis_cells.values(), *price.heading_cells]}
+    if citation not in [cells[key].citation for key in published]:
+        raise ValueError('The quotation is not in a validated printed price.')
+    return card_anchor({'plan_id': plan_id, 'citations': [citation.model_dump()]}, bundle, citation)

@@ -23,7 +23,7 @@ from rest_framework.views import APIView
 from ..models import DemoPlanAnswer, DemoPlanIndex, DemoQuestion, DemoRelease, DemoSession
 from .acquisition import INSURERS
 from .charts import load_prices
-from .citations import card_anchor
+from .citations import card_anchor, price_anchor
 from .contracts import Citation, PlanCard, PremiumResult, Profile
 from .highlighting import _normalized, clause_rectangles
 from .matching import all_fits
@@ -225,6 +225,26 @@ class Price(APIView):
         # Unparsed published charts are distinct from a known absence of a chart.
         status = "invalid_chart" if any(d.get("role") == "premium_chart" for d in bundle.get("documents", [])) else "source_unavailable"
         return Response(PremiumResult(status=status, amount_printed=None, missing_axes=[], citations=[]).model_dump())
+
+
+class PriceCitation(APIView):
+    @extend_schema(request=CardCitationInput, responses=ObjectOutput)
+    def post(self, request, index_id):
+        index = get_object_or_404(DemoPlanIndex, pk=index_id, revoked_at__isnull=True)
+        incoming = CardCitationInput(data=request.data)
+        incoming.is_valid(raise_exception=True)
+        path = Path(settings.COVERGUIDE_REPORT_ROOT) / 'ten-insurer/premiums' / (index.id + '.json')
+        if not path.exists():
+            raise ValidationError('No validated chart is available for this plan edition.')
+        chart = json.loads(path.read_text())
+        if chart['index_id'] != index.id:
+            raise ValidationError('Chart identity differs from the pinned plan index.')
+        bundle = bundle_for(index)
+        try:
+            anchor = price_anchor(chart, bundle, index.plan_key, Citation.model_validate(incoming.validated_data['citation']))
+        except ValueError as exc:
+            raise ValidationError(str(exc)) from exc
+        return render_anchor(index.id, anchor, bundle)
 
 
 class Document(APIView):
