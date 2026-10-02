@@ -49,3 +49,10 @@ Work in progress. No new bake-off has run and no ten-insurer release has been pu
 - Offline cards retrieve five small field groups through the winning method to avoid a single oversized response. Only explicit new-business rupee lists are compiled; conditional or renewal-only amounts remain quoted text. Complex family/basis rules remain unresolved until executable support exists.
 
 - Before scored calls, the navigation serializer was changed to emit each document description and shared node summary once, retaining every selectable section ID, title path and physical range. Split pieces no longer repeat the same generated prose. Evidence/index text is unchanged; both arms use this identical navigation map.
+
+## 2026-10-02 — frozen run and browser recovery
+
+- Protocol v2 scored calls started from commit `bc48709`, input fingerprint `db24172e69e7da37cda1aa7e8d2b46e94f67e8aa39b133bcf25cfed69a731a21`. The 13 slots and 260 answer cases per arm remain fixed, including five unavailable flagship slots. New recoveries enter only the application catalogue after winner selection.
+- Playwright-rendered official download registers and in-page fetch recovered PDFs that plain HTTP clients could not obtain. Browser viewer HTML, even with a `.pdf` filename, is rejected. Bytes are validated and stored once by SHA-256, initially as unreviewed candidates.
+- A separate post-run diagnostic counts failed attempts whose only reported problem is extractive/paraphrase support, final unanswered cases with that sole failure, and discarded split-pair attempts separately. It does not alter the frozen validators, prompts, scoring or pair files.
+- Niva's publicly linked premium PDF contains an internal-training/final-version-pending disclaimer. Retain it as reference-only; it cannot produce customer prices without an applicable final chart.
