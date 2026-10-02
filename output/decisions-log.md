@@ -44,3 +44,6 @@ Work in progress. No new bake-off has run and no ten-insurer release has been pu
 - Physical table regions retain row/column cell positions and exact original-text citations. Table answers must cite the value and each selected axis separately; a label from another row or column fails validation. Ambiguous source cells are not admitted.
 - The 16,000-token packet limit includes serialized evidence and citation metadata. Oversized tables/sections are omitted explicitly, without truncating source clauses. The same builder applies to H and P.
 - Thirty focused contract, evidence and evaluation tests passed, including table axes, missing labels, isolated numbers and serialized packet accounting. Model/call/token audit scope now records each method/question pair, including split attempts.
+
+- The expanded full suite passed: 522 tests, 19 warnings. Ruff, Django checks, migration drift checks, frontend lint/typecheck and production build passed. These checks precede the scored calls and do not establish answer correctness.
+- Offline cards retrieve five small field groups through the winning method to avoid a single oversized response. Only explicit new-business rupee lists are compiled; conditional or renewal-only amounts remain quoted text. Complex family/basis rules remain unresolved until executable support exists.
