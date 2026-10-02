@@ -160,3 +160,26 @@ def test_api_ownership_selection_and_coverage(v2_client, v2_user, demo, monkeypa
     v2_client.force_login(outsider)
     assert v2_client.get(f"/api/v2/demo/questions/{response.json()['id']}/").status_code == 404
     assert len(v2_client.get("/api/v2/demo/coverage/").json()["insurers"]) == 10
+
+
+def test_abandoned_question_recovers_without_repeating_completed_plans(v2_user, demo, monkeypatch):
+    import uuid
+    from datetime import timedelta
+    _, session, rows = demo
+    question = submit(v2_user, session.id, 'Q', [r.plan_key for r in rows[:2]])
+    finished = question.answers.first()
+    publish_progress(finished.id, 'not_found', {'status': 'not_found', 'models': ['gpt-5.6-luna']})
+    old_token = uuid.uuid4()
+    DemoQuestion.objects.filter(pk=question.id).update(state='running', execution_token=old_token,
+                                                      heartbeat_at=timezone.now() - timedelta(minutes=6))
+    calls = []
+    def fake(bundle, text, *, method, progress):
+        calls.append(bundle['policy_version_id'])
+        progress('searching')
+        return {'status': 'not_found', 'models': ['gpt-5.6-luna']}
+    monkeypatch.setattr('apps.adviser_v2.demo.services.answer_plan', fake)
+    run_question(question.id)
+    question.refresh_from_db()
+    assert question.state == 'completed' and len(calls) == 1
+    assert question.execution_token != old_token
+    assert not publish_progress(finished.id, 'answered', {'models': []}, execution_token=old_token)

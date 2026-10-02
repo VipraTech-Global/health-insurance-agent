@@ -75,6 +75,8 @@ class DemoQuestion(models.Model):
     cancelled_at = models.DateTimeField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     completed_at = models.DateTimeField(null=True, blank=True)
+    execution_token = models.UUIDField(null=True, editable=False)
+    heartbeat_at = models.DateTimeField(null=True, editable=False)
 
 
 class DemoPlanAnswer(models.Model):

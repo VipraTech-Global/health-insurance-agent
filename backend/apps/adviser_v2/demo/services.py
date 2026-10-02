@@ -3,11 +3,14 @@
 from __future__ import annotations
 
 import json
+import threading
 import uuid
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import timedelta
 from pathlib import Path
 
 from django.db import close_old_connections, transaction
+from django.db.models import Q
 from django.utils import timezone
 
 from apps.accounts.models import User
@@ -84,7 +87,7 @@ def usable(question: DemoQuestion) -> bool:
 
 
 @transaction.atomic
-def publish_progress(answer_id, stage: str, value=None) -> bool:
+def publish_progress(answer_id, stage: str, value=None, *, execution_token=None) -> bool:
     # Same owner-first locking order as profile changes and account erasure.
     row = DemoPlanAnswer.objects.select_related("question__session__owner", "index").filter(pk=answer_id).first()
     if row is None:
@@ -92,6 +95,8 @@ def publish_progress(answer_id, stage: str, value=None) -> bool:
     User.objects.select_for_update().get(pk=row.question.session.owner_id)
     row = DemoPlanAnswer.objects.select_for_update().select_related("question__session__owner", "index").filter(pk=answer_id).first()
     if row is None or not usable(row.question) or row.index.revoked_at:
+        return False
+    if execution_token is not None and row.question.execution_token != execution_token:
         return False
     row.state = stage
     if value is not None:
@@ -106,32 +111,54 @@ def run_question(question_id) -> None:
     question = DemoQuestion.objects.select_related("session__owner", "release").filter(pk=question_id).first()
     if question is None or not usable(question):
         return
-    # Claim once. A duplicate queue delivery cannot duplicate the relay chains.
-    if not DemoQuestion.objects.filter(pk=question_id, state="queued").update(state="running"):
+    # Claim queued work or an abandoned lease. Old workers cannot publish after
+    # recovery changes the execution token, including after erasure/cancellation.
+    token = uuid.uuid4()
+    stale = timezone.now() - timedelta(minutes=5)
+    claimable = Q(state="queued") | (Q(state="running") & (Q(heartbeat_at__lt=stale) | Q(heartbeat_at__isnull=True)))
+    if not DemoQuestion.objects.filter(claimable, pk=question_id).update(
+            state="running", execution_token=token, heartbeat_at=timezone.now()):
         return
     text = decrypted(question.input_ciphertext, question.id)["question"]
-    rows = list(question.answers.select_related("index"))
+    rows = list(question.answers.select_related("index").filter(result_ciphertext__isnull=True))
+    stop = threading.Event()
+
+    def heartbeat():
+        close_old_connections()
+        try:
+            while not stop.wait(20):
+                if not DemoQuestion.objects.filter(pk=question_id, execution_token=token, state="running").update(heartbeat_at=timezone.now()):
+                    return
+        finally:
+            close_old_connections()
+
+    pulse = threading.Thread(target=heartbeat, daemon=True)
+    pulse.start()
 
     def plan(row):
         close_old_connections()
         try:
             def progress(stage):
-                if not publish_progress(row.id, stage):
+                if not publish_progress(row.id, stage, execution_token=token):
                     raise InterruptedError("Question cancelled, superseded, erased or source revoked.")
 
             value = answer_plan(bundle_for(row.index), text, method=question.release.method, progress=progress)
-            publish_progress(row.id, value["status"], value)
+            publish_progress(row.id, value["status"], value, execution_token=token)
         except InterruptedError:
             return
         except (ValueError, OSError) as exc:
-            publish_progress(row.id, "temporarily_unavailable", {"status": "temporarily_unavailable", "reason": str(exc), "models": []})
+            publish_progress(row.id, "temporarily_unavailable", {"status": "temporarily_unavailable", "reason": str(exc), "models": []}, execution_token=token)
         finally:
             close_old_connections()
 
-    with ThreadPoolExecutor(max_workers=min(5, len(rows))) as executor:
-        for job in as_completed([executor.submit(plan, row) for row in rows]):
-            job.result()
-    DemoQuestion.objects.filter(pk=question_id, state="running").update(state="completed", completed_at=timezone.now())
+    try:
+        with ThreadPoolExecutor(max_workers=max(1, min(5, len(rows)))) as executor:
+            for job in as_completed([executor.submit(plan, row) for row in rows]):
+                job.result()
+        DemoQuestion.objects.filter(pk=question_id, state="running", execution_token=token).update(state="completed", completed_at=timezone.now())
+    finally:
+        stop.set()
+        pulse.join(timeout=5)
 
 
 def question_payload(question: DemoQuestion) -> dict:

@@ -77,9 +77,18 @@ def evaluate(card: PlanCard, profile: Profile) -> FitResult:
         other.append(FitReason(field=need, status="unresolved",
             explanation="See the quoted benefit and its conditions in chat." if field and field.citations else "Not stated; ask in chat.",
             citations=field.citations if field else []))
-    if profile.typed_needs:
+    for need in profile.normalized_needs:
+        field = getattr(card, need.field, None) if need.mapped else None
+        other.append(FitReason(field=need.field, status="unresolved",
+            explanation=(f"{need.original_text} — see the quoted benefit and conditions in chat."
+                         if field and field.citations else f"{need.original_text} — can't check this automatically; ask in chat."),
+            citations=field.citations if field else []))
+    if profile.typed_needs and not profile.normalized_needs:
         other.append(FitReason(field="typed_needs", status="unresolved",
             explanation="Can't check this automatically; ask in chat.", citations=[]))
+    if profile.annual_budget is not None:
+        other.append(FitReason(field="budget", status="unresolved",
+            explanation="Budget needs an exact indicative premium from the official chart; it is separate from hard-limit matching.", citations=[]))
     status = "doesnt_fit" if any(r.status == "doesnt_fit" for r in hard) else (
         "unresolved" if any(r.status == "unresolved" for r in hard) else "fits")
     return FitResult(plan_id=card.plan_id, index_version=card.index_version, status=status,

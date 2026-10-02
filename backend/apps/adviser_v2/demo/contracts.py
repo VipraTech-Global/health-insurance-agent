@@ -36,7 +36,7 @@ class Answer(Closed):
 
 
 class Need(Closed):
-    original_text: str = Field(max_length=1000)
+    original_text: str = Field(max_length=2000)
     person_id: str | None
     field: Literal["maternity", "opd", "copay", "room_limit", "ped_waiting", "budget", "other"]
     mapped: bool
@@ -65,6 +65,8 @@ class Profile(Closed):
     needs: list[str] = Field(default_factory=list, max_length=20)
     typed_needs: str = Field(default="", max_length=2000)
     annual_budget: int | None = Field(default=None, ge=1)
+    normalized_needs: list[Need] = Field(default_factory=list, max_length=21)
+    needs_model: str | None = None
 
 
 class CardField(Closed):
@@ -94,6 +96,11 @@ class FamilyRule(Closed):
     citations: list[Citation] = Field(min_length=1)
 
 
+class NamedCardField(Closed):
+    field: str
+    value: CardField
+
+
 class PlanCard(Closed):
     schema_version: Literal[1] = 1
     plan_id: str
@@ -114,6 +121,7 @@ class PlanCard(Closed):
     ped_waiting: CardField
     maternity: CardField
     opd: CardField
+    common_needs: list[NamedCardField] = Field(default_factory=list)
 
 
 class FitReason(Closed):
@@ -134,9 +142,10 @@ class FitResult(Closed):
 
 class PremiumResult(Closed):
     schema_version: Literal[1] = 1
-    status: Literal["available", "unpublished", "missing_details", "no_exact_combination", "invalid_chart"]
+    status: Literal["available", "unpublished", "source_unavailable", "missing_details", "no_exact_combination", "invalid_chart"]
     amount_printed: str | None
     missing_axes: list[str]
     citations: list[Citation]
+    axis_options: dict[str, list[str]] = Field(default_factory=dict)
     label: str = "Indicative annual premium from the official chart, excluding tax"
     caveat: str = "The insurer's final premium may differ. No tax, discount or loading has been calculated."
