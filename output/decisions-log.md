@@ -100,3 +100,9 @@ Recovered plans can now proceed to tables, exact vectors and cards as soon as al
 ## 2026-10-03 — Measured application timing, initial release
 
 Initial H-only release 0ca1cbae-e717-4842-bed0-17584067e371 contains seven available plans plus five unavailable placeholders. Three-plan p50/p95: 50,397/72,460 ms (n=3). Five-plan p50/p95: 75,169/93,859 ms (n=3). All include queue time during background work. Scoped relay calls: 63; queue p50/p95 618/2,647 ms. Peak relay concurrency observed since start: six. These small-sample observations do not establish a speed improvement. The cross-process cap test now uses an explicit start barrier and waits for six admissions instead of assuming cold-start processes overlap within 180 ms.
+
+## 2026-10-03 — Browser stream and physical table reuse
+
+The browser's EventSource sends Accept: text/event-stream. DRF rejected that header before reaching the stream generator; add an explicit event renderer and retain JSON error rendering. A regression test and a real three-plan browser question now verify streamed completion. A citation click displayed physical PDF page 8 with the exact PED clause highlighted (printed page 7), preserving the physical/printed distinction.
+
+Cache physical table grids once per PDF hash/page/extractor version under a process lock, then bind cells separately to each variant's immutable source sections. This avoids repeating PDF table extraction for shared Niva variant documents. Identity mismatches fail visibly. The typed-needs prompt now requests complete original phrases, including person references; the existing guard still exposes any omitted input as unmapped. Focused checks: 20 tests passed and Ruff passed. Frozen bake-off sources/results remain unchanged.

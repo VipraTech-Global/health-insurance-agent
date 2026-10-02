@@ -16,6 +16,7 @@ from pydantic import ValidationError as ContractError
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 from rest_framework.permissions import AllowAny
+from rest_framework.renderers import JSONRenderer
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -168,7 +169,13 @@ class Cancel(APIView):
         return Response({"schema_version": 1, "id": str(pk), "state": "cancelled"})
 
 
+class EventStreamRenderer(JSONRenderer):
+    media_type = 'text/event-stream'
+    format = 'event-stream'
+
+
 class Events(APIView):
+    renderer_classes = [JSONRenderer, EventStreamRenderer]
     @extend_schema(responses={(200, "text/event-stream"): str})
     def get(self, request, pk):
         get_object_or_404(DemoQuestion, pk=pk, session__owner=request.user)

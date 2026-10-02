@@ -108,3 +108,37 @@ def test_published_card_citation_preserves_original_offsets_and_rejects_foreign_
         card_anchor(value, bundle, quote.model_copy(update={'quote': '10 lakh'}))
     with pytest.raises(ValueError, match='edition'):
         card_anchor({**value, 'plan_id': 'other'}, bundle, quote)
+
+
+def test_physical_grid_cache_reuses_pdf_work_but_binds_each_plans_citations(tmp_path, settings):
+    from dataclasses import replace
+    from types import SimpleNamespace
+    from unittest.mock import Mock
+
+    from apps.adviser_v2.demo.charts import physical_cells, physical_grids
+    from apps.adviser_v2.tests.test_demo_contracts import packet
+
+    settings.COVERGUIDE_REPORT_ROOT = str(tmp_path)
+    table = Mock()
+    table.extract.return_value = [['Cover is 5 lakh for 30 days.']]
+    page = Mock()
+    page.find_tables.return_value = [table]
+    pdf = SimpleNamespace(pages=[page])
+    document = {'sha256': 'a'*64}
+    original = packet('Cover is 5 lakh for 30 days.').sections[0]
+    def bundle(section):
+        return {'pages': [{'document_sha256': document['sha256'], 'physical_page': 1,
+                          'evidence_span_id': 'p'}], 'sections': [section.payload()]}
+    first = physical_cells(bundle(original), document, 1, pdf)
+    second = physical_cells(bundle(replace(original, id='second-plan-section', plan_id='other')),
+                            document, 1, pdf)
+    page.find_tables.assert_called_once()
+    assert next(iter(first[0].values())).citation.section_id == 's'
+    assert next(iter(second[0].values())).citation.section_id == 'second-plan-section'
+    import json
+    cache = next(tmp_path.rglob('*.json'))
+    cached = json.loads(cache.read_text())
+    cached['pdfplumber'] = 'obsolete'
+    cache.write_text(json.dumps(cached))
+    with pytest.raises(ValueError, match='identity'):
+        physical_grids(document, 1, pdf)

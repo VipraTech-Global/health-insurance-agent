@@ -5,12 +5,14 @@ axes remain invalid. There is no amount interpolation or inferred tax treatment.
 """
 from __future__ import annotations
 
+import fcntl
 import json
 from contextlib import nullcontext
 from dataclasses import asdict
 from pathlib import Path
 
 import pdfplumber
+from django.conf import settings
 from pydantic import Field
 
 from .contracts import Citation, Closed
@@ -61,28 +63,47 @@ def source_citation(sources, page_id, text):
     return matches[0] if len(matches) == 1 else None
 
 
+def physical_grids(document, page_number, pdf):
+    """Extract a physical page grid once, then bind it to each plan's sections."""
+    root = Path(settings.COVERGUIDE_REPORT_ROOT) / 'ten-insurer/physical-grids'
+    root.mkdir(parents=True, exist_ok=True)
+    path = root / f"{document['sha256']}-{page_number}.json"
+    with path.with_suffix('.lock').open('a') as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        if path.exists():
+            saved = json.loads(path.read_text())
+            if (saved.get('version') != 'pdfplumber-grid/1'
+                    or saved.get('pdf_sha256') != document['sha256']
+                    or saved.get('page') != page_number
+                    or saved.get('pdfplumber') != pdfplumber.__version__):
+                raise ValueError('Physical table cache identity differs.')
+            return saved['grids']
+        with (nullcontext(pdf) if pdf is not None else pdfplumber.open(document['path'])) as opened:
+            grids = [table.extract() for table in opened.pages[page_number-1].find_tables()]
+        atomic_json(path, {'version': 'pdfplumber-grid/1', 'pdf_sha256': document['sha256'],
+            'page': page_number, 'pdfplumber': pdfplumber.__version__, 'grids': grids})
+        return grids
+
+
 def physical_cells(bundle, document, page_number, pdf=None):
     raw = next(p for p in bundle['pages'] if p['document_sha256'] == document['sha256'] and p['physical_page'] == page_number)
     sources = [(s.id, [p for p in s.segments if p.page_id == raw['evidence_span_id']])
                for s in (Section.from_payload(payload) for payload in bundle['sections'])]
     sources = [(key, segments) for key, segments in sources if segments]
-    with (nullcontext(pdf) if pdf is not None else pdfplumber.open(document['path'])) as pdf:
-        page = pdf.pages[page_number - 1]
-        result = []
-        for n, table in enumerate(page.find_tables()):
-            table_id = f"{document['sha256']}:{page_number}:{n}"
-            grid = table.extract()
-            cells = {}
-            for r, row in enumerate(grid):
-                for c, text in enumerate(row):
-                    if not text or len(text) > 1600:
-                        continue
-                    citation = source_citation(sources, raw['evidence_span_id'], text)
-                    if citation:
-                        key = f'{table_id}:{r}:{c}'
-                        cells[key] = TableCell(key, table_id, r, c, text, citation)
-            if cells:
-                result.append(cells)
+    result = []
+    for n, grid in enumerate(physical_grids(document, page_number, pdf)):
+        table_id = f"{document['sha256']}:{page_number}:{n}"
+        cells = {}
+        for r, row in enumerate(grid):
+            for c, text in enumerate(row):
+                if not text or len(text) > 1600:
+                    continue
+                citation = source_citation(sources, raw['evidence_span_id'], text)
+                if citation:
+                    key = f'{table_id}:{r}:{c}'
+                    cells[key] = TableCell(key, table_id, r, c, text, citation)
+        if cells:
+            result.append(cells)
     return result
 
 

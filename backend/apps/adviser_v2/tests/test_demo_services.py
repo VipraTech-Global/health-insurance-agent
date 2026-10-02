@@ -62,6 +62,16 @@ def test_selection_pins_release_and_indexes_and_inputs_are_encrypted(v2_user, de
     assert question.release_id == release.id and question.answers.count() == 3
 
 
+def test_browser_event_stream_accept_header_receives_progress(v2_user, v2_client, demo):
+    _, session, rows = demo
+    question = submit(v2_user, session.id, 'What is covered?', [r.plan_key for r in rows[:2]])
+    DemoQuestion.objects.filter(pk=question.pk).update(state='completed')
+    response = v2_client.get(f'/api/v2/demo/questions/{question.id}/events/', HTTP_ACCEPT='text/event-stream')
+    assert response.status_code == 200 and response['Content-Type'] == 'text/event-stream'
+    payload = b''.join(response.streaming_content).decode()
+    assert payload.startswith('data: ') and '"state": "completed"' in payload
+
+
 def test_cancel_revision_and_revocation_block_late_publication(v2_user, demo):
     _, session, rows = demo
     question = submit(v2_user, session.id, "Q", [r.plan_key for r in rows[:2]])
