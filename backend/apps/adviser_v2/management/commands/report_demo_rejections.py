@@ -15,7 +15,8 @@ class Command(BaseCommand):
         root = Path(settings.COVERGUIDE_REPORT_ROOT) / 'ten-insurer/bakeoff-v2'
         if not (root / 'result.json').exists():
             raise CommandError('Wait for the frozen bake-off to finish; no partial outcome inspection.')
-        rows = [json.loads(p.read_text()) for p in sorted((root / 'pairs').glob('*.json'))]
+        outcome = json.loads((root / 'result.json').read_text())
+        rows = [json.loads(p.read_text()) for p in sorted((root / outcome.get('pairs_directory', 'pairs')).glob('*.json'))]
         value = summarize_rejections(rows)
         atomic_json(root / 'paraphrase-rejections.json', value)
         atomic_json(Path(settings.BASE_DIR).parent / 'output/paraphrase-rejections.json', value)

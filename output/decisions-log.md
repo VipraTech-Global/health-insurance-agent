@@ -56,3 +56,9 @@ Work in progress. No new bake-off has run and no ten-insurer release has been pu
 - Playwright-rendered official download registers and in-page fetch recovered PDFs that plain HTTP clients could not obtain. Browser viewer HTML, even with a `.pdf` filename, is rejected. Bytes are validated and stored once by SHA-256, initially as unreviewed candidates.
 - A separate post-run diagnostic counts failed attempts whose only reported problem is extractive/paraphrase support, final unanswered cases with that sole failure, and discarded split-pair attempts separately. It does not alter the frozen validators, prompts, scoring or pair files.
 - Niva's publicly linked premium PDF contains an internal-training/final-version-pending disclaimer. Retain it as reference-only; it cannot produce customer prices without an applicable final chart.
+
+## Frozen-run execution correction — before winner calculation
+
+The runner saved 337 complete pairs and 34 archived retry attempts, then stopped on Tata restoration. The source selector correctly rejected unknown section IDs, but `answer_plan` returned that failure without a model list. The pair runner misclassified the missing label as a model transition. Relay records retain the requested and observed model, including these rejected selections.
+
+A separate accounting command, committed before calculating a winner, uniformly chooses the earliest saved same-model attempt using those call records. Failed selections count as failures; later successes cannot replace them. Actual mixed-model attempts remain inadmissible. All original pair/attempt files remain unchanged, and the accounted rows, provenance and hashes are stored separately. No scored AI calls, source documents, navigation maps, prompts, validators, packet settings, scoring formula or winner rule are changed. This is an execution/accounting repair, not a new retrieval arm or a protocol-tuning run. Extra retry calls and rejected drafts remain reportable.
