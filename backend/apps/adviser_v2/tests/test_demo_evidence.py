@@ -107,3 +107,23 @@ def test_split_model_pair_is_invalid():
     assert paired_models_match({"models": ["claude-sonnet-5"]}, {"models": ["claude-sonnet-5"]})
     assert not paired_models_match({"models": ["gpt-5.6-luna"]}, {"models": ["claude-sonnet-5"]})
     assert not paired_models_match({"models": []}, {"models": []})
+
+
+def test_failed_map_resume_uses_recorded_fallback_without_repeating_ai(tmp_path, monkeypatch):
+    from apps.adviser_v2.demo.mapping import build_corpus
+    called = []
+    monkeypatch.setattr('apps.adviser_v2.demo.mapping.configure_sdk', lambda: (None, None))
+    def failure(*args):
+        called.append(1)
+        raise RuntimeError('Invalid ordered map')
+    monkeypatch.setattr('apps.adviser_v2.demo.mapping.build_document', failure)
+    original = pages()
+    for p in original:
+        p['document_version_id'] = 'd'
+    corpus = {'plans': [{'policy_version_id': 'p', 'pages': original,
+                        'documents': [{'document_version_id': 'd', 'sha256': 'source'}]}]}
+    first = build_corpus(corpus, tmp_path)
+    second = build_corpus(corpus, tmp_path)
+    assert len(called) == 1
+    assert first['plans'][0]['sections'] == second['plans'][0]['sections']
+    assert first['plans'][0]['document_status'][0]['status'] == 'fallback'

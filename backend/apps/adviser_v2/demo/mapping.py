@@ -144,7 +144,7 @@ def build_corpus(corpus: dict, root: Path, *, workers: int = 4) -> dict:
     maps, failures = {}, {}
     failed_path = root / "map-failures.json"
     failed_cache = json.loads(failed_path.read_text()) if failed_path.exists() else {}
-    for sha, (doc, pages) in docs.items():
+    for sha, (_doc, pages) in docs.items():
         identity = digest([sha, [p["passage"] for p in pages], SDK_REVISION, MAP_SETTINGS, PROCESSING_VERSION])
         if failed_cache.get(sha, {}).get("identity") == identity:
             failures[sha] = failed_cache[sha]["failure"]
