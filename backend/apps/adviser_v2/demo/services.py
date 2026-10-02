@@ -21,6 +21,7 @@ from .answers import answer_plan
 from .contracts import PlanCard, Profile
 from .evidence import digest
 from .matching import validate_selection
+from .relay import AUDIT_CONTEXT
 
 
 def encrypted(value: dict, identity) -> bytes:
@@ -121,13 +122,16 @@ def run_question(question_id) -> None:
         return
     text = decrypted(question.input_ciphertext, question.id)["question"]
     rows = list(question.answers.select_related("index").filter(result_ciphertext__isnull=True))
+    close_old_connections()
     stop = threading.Event()
 
     def heartbeat():
         close_old_connections()
         try:
             while not stop.wait(20):
-                if not DemoQuestion.objects.filter(pk=question_id, execution_token=token, state="running").update(heartbeat_at=timezone.now()):
+                alive = DemoQuestion.objects.filter(pk=question_id, execution_token=token, state="running").update(heartbeat_at=timezone.now())
+                close_old_connections()
+                if not alive:
                     return
         finally:
             close_old_connections()
@@ -137,9 +141,13 @@ def run_question(question_id) -> None:
 
     def plan(row):
         close_old_connections()
+        audit_token = AUDIT_CONTEXT.set({'question_id': str(question.id), 'answer_id': str(row.id),
+                                        'index_version': row.index_id, 'method': question.release.method})
         try:
             def progress(stage):
-                if not publish_progress(row.id, stage, execution_token=token):
+                accepted = publish_progress(row.id, stage, execution_token=token)
+                close_old_connections()
+                if not accepted:
                     raise InterruptedError("Question cancelled, superseded, erased or source revoked.")
 
             value = answer_plan(bundle_for(row.index), text, method=question.release.method, progress=progress)
@@ -149,6 +157,7 @@ def run_question(question_id) -> None:
         except (ValueError, OSError) as exc:
             publish_progress(row.id, "temporarily_unavailable", {"status": "temporarily_unavailable", "reason": str(exc), "models": []}, execution_token=token)
         finally:
+            AUDIT_CONTEXT.reset(audit_token)
             close_old_connections()
 
     try:

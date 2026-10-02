@@ -28,6 +28,7 @@ class Command(BaseCommand):
         outcome = json.loads(outcome_file.read_text())
         method = outcome['winner']
         rows = list(DemoPlanIndex.objects.order_by('plan_key', '-created_at').distinct('plan_key'))
+        close_old_connections()
 
         def build(row):
             close_old_connections()
@@ -37,6 +38,7 @@ class Command(BaseCommand):
                     return row.name + ': documents unavailable'
                 if row.demorelease_set.exists():
                     return row.name + ': already pinned in a release; preserved'
+                close_old_connections()  # Do not hold a pool slot while child field jobs run.
                 path = root / 'cards' / (row.id + '.json')
                 bundle = bundle_for(row)
                 if path.exists():
@@ -45,7 +47,7 @@ class Command(BaseCommand):
                         raise ValueError('Card cache uses a different retrieval method.')
                     card = PlanCard.model_validate(saved['card'])
                 else:
-                    card, audit = build_card(bundle, card, method)
+                    card, audit = build_card(bundle, card, method, cache_root=root / 'card-groups')
                     atomic_json(path, {'method': method, 'card': card.model_dump(), 'audit': audit})
                 row.card = card.model_dump()
                 row.coverage = {**row.coverage, 'card_status': card.status}
@@ -57,6 +59,16 @@ class Command(BaseCommand):
                 close_old_connections()
 
         with ThreadPoolExecutor(max_workers=4) as pool:
-            for future in as_completed([pool.submit(build, row) for row in rows]):
-                self.stdout.write(future.result())
+            jobs = {pool.submit(build, row): row for row in rows}
+            failed = []
+            for future in as_completed(jobs):
+                try:
+                    self.stdout.write(future.result())
+                except Exception as exc:
+                    # A failed plan must not discard completed work for other insurers.
+                    failed.append({'index': jobs[future].id, 'reason': str(exc)})
+                    self.stderr.write(jobs[future].name + ': pending: ' + str(exc))
                 self.stdout.flush()
+            atomic_json(root / 'card-failures.json', failed)
+            if failed:
+                raise CommandError(f'{len(failed)} cards remain pending; completed groups are cached.')

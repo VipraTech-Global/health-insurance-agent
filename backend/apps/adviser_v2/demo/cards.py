@@ -9,6 +9,7 @@ import json
 import re
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict
+from pathlib import Path
 from typing import Literal
 
 from django.db import close_old_connections
@@ -16,7 +17,8 @@ from pydantic import Field
 
 from .answers import ANSWER_PROMPT
 from .contracts import AgeRule, Answer, CardField, Closed, PlanCard, Statement
-from .relay import Relay
+from .evidence import atomic_json, digest
+from .relay import InvalidOutput, Relay, RelayUnavailable
 from .search import search
 from .validation import validate
 
@@ -121,7 +123,7 @@ def sum_insured_field(source: FieldSource | None) -> CardField:
     return field
 
 
-def build_card(bundle: dict, original: PlanCard, method: str, relay=None) -> tuple[PlanCard, dict]:
+def build_card(bundle: dict, original: PlanCard, method: str, relay=None, cache_root: Path | None = None) -> tuple[PlanCard, dict]:
     relay = relay or Relay.configured()
     # Small independent field groups prevent a 25-field response from exhausting
     # its output budget and retrieve clauses omitted by one broad query.
@@ -129,7 +131,21 @@ def build_card(bundle: dict, original: PlanCard, method: str, relay=None) -> tup
     def group(fields):
         close_old_connections()
         try:
-            return extract_fields(bundle, original, method, fields, relay)
+            cache = cache_root / (digest({'index': original.index_version, 'method': method,
+                'fields': fields, 'prompt': ANSWER_PROMPT, 'schema': CardSources.model_json_schema()}) + '.json') if cache_root else None
+            if cache and cache.exists():
+                saved = json.loads(cache.read_text())
+                return {name: FieldSource.model_validate(value) for name, value in saved['accepted'].items()}, saved['audit']
+            try:
+                accepted, audit = extract_fields(bundle, original, method, fields, relay)
+            except RelayUnavailable:
+                # A transport/quota pause is resumable, not a missing policy fact.
+                raise
+            except (InvalidOutput, ValueError) as exc:
+                accepted, audit = {}, {'fields': fields, 'models': [], 'attempts': [], 'failure': str(exc)}
+            if cache:
+                atomic_json(cache, {'accepted': {name: value.model_dump() for name, value in accepted.items()}, 'audit': audit})
+            return accepted, audit
         finally:
             close_old_connections()
 

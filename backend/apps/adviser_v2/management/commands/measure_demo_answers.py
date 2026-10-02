@@ -61,7 +61,8 @@ class Command(BaseCommand):
                 self.stdout.flush()
         ended = time.time()
         records = [json.loads(line) for line in (root / 'relay-calls.jsonl').read_text().splitlines()]
-        measured = [r for r in records if started <= r.get('started_at', 0) <= ended and r['priority'] == 'live']
+        question_ids = {r['question_id'] for r in observations}
+        measured = [r for r in records if (r.get('scope') or {}).get('question_id') in question_ids]
         metrics = Relay.configured().state.redis.hgetall(Relay.configured().state.key('metrics'))
         output = {'method': release.method, 'samples': observations,
             'question_times': {str(n): percentiles([r['total_ms'] for r in observations if r['plans']==n]) for n in (3,5)},
