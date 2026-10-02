@@ -220,8 +220,8 @@ def test_relay_timeouts_retry_separately_from_validation(monkeypatch):
     from datetime import timedelta
 
     from django.utils import timezone
+    from research_workspace.legacy_relay import RelayFailure
 
-    from apps.adviser.ai import RelayFailure
     from apps.adviser_v2.source_answers import _relay
 
     _, result, _ = sample()

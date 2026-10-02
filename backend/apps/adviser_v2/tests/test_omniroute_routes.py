@@ -7,9 +7,9 @@ import httpx
 import pytest
 from django.core.management import call_command
 from django.core.management.base import CommandError
+from research_workspace.legacy_relay import RelayFailure
 
 from apps.accounts.models import User
-from apps.adviser.ai import RelayFailure
 from apps.adviser_v2.model_gateway import call_model, qualified_route, schema_sha256
 from apps.adviser_v2.models import ModelAttempt, ModelQualification, ModelRoute, ProcessingJob
 from apps.adviser_v2.qualification_suite import expected_qualification_hashes

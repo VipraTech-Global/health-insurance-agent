@@ -37,42 +37,4 @@ def add_native_view_contracts(
                 operation["requestBody"] = request_body
             paths[route][method] = operation
 
-    paths["/api/v1/conversations/{conversation_id}/turns/"] = {
-        "get": {
-            "operationId": "conversation_turn_list",
-            "tags": ["turns"],
-            "parameters": [
-                {
-                    "name": "conversation_id",
-                    "in": "path",
-                    "required": True,
-                    "schema": {"type": "string", "format": "uuid"},
-                }
-            ],
-            "responses": json_response,
-        },
-        "post": {
-            "operationId": "conversation_turn_stream",
-            "tags": ["turns"],
-            "parameters": [
-                {
-                    "name": "conversation_id",
-                    "in": "path",
-                    "required": True,
-                    "schema": {"type": "string", "format": "uuid"},
-                }
-            ],
-            "requestBody": mutation_request,
-            "responses": {
-                "200": {
-                    "description": "SSE stream of accepted, progress, and one terminal event",
-                    "content": {
-                        "text/event-stream": {
-                            "schema": {"type": "string"},
-                        }
-                    },
-                }
-            },
-        },
-    }
     return result

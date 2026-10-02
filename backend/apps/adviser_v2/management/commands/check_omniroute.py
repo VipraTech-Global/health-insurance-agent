@@ -10,8 +10,11 @@ from typing import Any
 import httpx
 from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
-
-from apps.adviser.providers import omniroute_models, omniroute_problems, provider_config
+from research_workspace.legacy_providers import (
+    omniroute_models,
+    omniroute_problems,
+    provider_config,
+)
 
 
 class Command(BaseCommand):

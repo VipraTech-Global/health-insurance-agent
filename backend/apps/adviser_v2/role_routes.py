@@ -12,9 +12,8 @@ import json
 from dataclasses import dataclass
 
 from django.conf import settings
-
-from apps.adviser.ai import RelayFailure
-from apps.adviser.providers import omniroute_models, provider_config
+from research_workspace.legacy_providers import omniroute_models, provider_config
+from research_workspace.legacy_relay import RelayFailure
 
 RELAY_ENDPOINT_PROFILE = "shared-job-in-loopback-relay"
 OMNIROUTE_ENDPOINT_PROFILE = "omniroute-loopback"

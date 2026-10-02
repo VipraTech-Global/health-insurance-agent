@@ -3,8 +3,8 @@ from __future__ import annotations
 from typing import Any
 
 import pytest
+from research_workspace.legacy_relay import RelayFailure
 
-from apps.adviser.ai import RelayFailure
 from apps.adviser_v2.management.commands import qualify_v2_models
 from apps.adviser_v2.management.commands.qualify_v2_models import SuiteResult
 from apps.adviser_v2.qualification_suite import COMPARISON_CASES, INTERPRETATION_CASES

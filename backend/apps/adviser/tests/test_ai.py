@@ -4,8 +4,7 @@ from dataclasses import replace
 
 import httpx
 import pytest
-
-from apps.adviser.ai import (
+from research_workspace.legacy_relay import (
     MAX_RESPONSE_BYTES,
     InterviewDraft,
     RelayFailure,

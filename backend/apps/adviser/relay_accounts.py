@@ -14,8 +14,8 @@ from pathlib import Path
 from typing import IO
 
 from django.conf import settings
+from research_workspace.legacy_relay import RelayFailure
 
-from .ai import RelayFailure
 from .relay_management import (
     MANAGED_PROVIDERS,
     RelayCredential,

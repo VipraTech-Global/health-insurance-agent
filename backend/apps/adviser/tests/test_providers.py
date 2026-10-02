@@ -1,8 +1,11 @@
 import pytest
 from django.core.checks import run_checks
-
-from apps.adviser.ai import RelayFailure
-from apps.adviser.providers import omniroute_models, omniroute_problems, provider_config
+from research_workspace.legacy_providers import (
+    omniroute_models,
+    omniroute_problems,
+    provider_config,
+)
+from research_workspace.legacy_relay import RelayFailure
 
 
 @pytest.fixture

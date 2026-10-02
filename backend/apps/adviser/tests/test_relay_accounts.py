@@ -2,9 +2,9 @@ import json
 from dataclasses import replace
 
 import pytest
+from research_workspace.legacy_relay import RelayFailure
 
 from apps.adviser import relay_accounts as accounts
-from apps.adviser.ai import RelayFailure
 from apps.adviser.relay_management import RelayCredential, RelayOAuthStart
 
 

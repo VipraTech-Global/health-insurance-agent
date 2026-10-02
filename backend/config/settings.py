@@ -134,33 +134,13 @@ SPECTACULAR_SETTINGS = {
     "SERVE_INCLUDE_SCHEMA": False,
     "POSTPROCESSING_HOOKS": [
         "drf_spectacular.hooks.postprocess_schema_enums",
-        "apps.adviser.schema.add_native_view_contracts",
+        "apps.accounts.schema.add_native_view_contracts",
     ],
 }
 
 # Server-only configuration. Both applications deliberately share account-operation locks.
 AI_RELAY_BASE_URL = os.environ.get("AI_RELAY_BASE_URL", "http://127.0.0.1:8317")
 AI_RELAY_API_KEY = os.environ.get("AI_RELAY_API_KEY", "")
-AI_RELAY_MANAGEMENT_KEY = os.environ.get("AI_RELAY_MANAGEMENT_KEY", "")
-AI_RELAY_STATE_DIR = Path(
-    os.environ.get("AI_RELAY_STATE_DIR", "~/.local/state/job-in/relay-accounts")
-).expanduser()
-# Optional OmniRoute gateway (self-hosted, loopback only). Off unless explicitly enabled and the
-# operator confirms request logging is disabled on the gateway key. ``OMNIROUTE_MODELS`` is a comma
-# list of ``requested-id=expected-reported-id`` pairs, e.g. ``gemini/x=x``.
-OMNIROUTE_ENABLED = os.environ.get("OMNIROUTE_ENABLED", "0") == "1"
-OMNIROUTE_BASE_URL = os.environ.get("OMNIROUTE_BASE_URL", "http://127.0.0.1:20128")
-OMNIROUTE_API_KEY = os.environ.get("OMNIROUTE_API_KEY", "")
-OMNIROUTE_LOGGING_DISABLED_CONFIRMED = (
-    os.environ.get("OMNIROUTE_LOGGING_DISABLED_CONFIRMED", "0") == "1"
-)
-OMNIROUTE_MODELS = os.environ.get("OMNIROUTE_MODELS", "")
-# Explicit local-only acceptance for sending real pilot conversation data through an upstream
-# provider. It is rejected outside DEBUG even when every gateway transport check passes.
-COVERGUIDE_LOCAL_OMNIROUTE_PILOT_ACK = (
-    os.environ.get("COVERGUIDE_LOCAL_OMNIROUTE_PILOT_ACK", "0") == "1"
-)
-AI_TURN_TIMEOUT_SECONDS = int(os.environ.get("AI_TURN_TIMEOUT_SECONDS", "240"))
 
 # CoverGuide v2 server-only privacy and frozen-corpus settings. Key-ring entries use
 # ``key-id:base64url-encoded-32-byte-key`` and are ordered newest first. DEBUG derives
@@ -175,25 +155,6 @@ COVERGUIDE_REPORT_ROOT = Path(
     os.environ.get("COVERGUIDE_REPORT_ROOT", BASE_DIR.parent / "data" / "reports")
 )
 COVERGUIDE_LOCAL_OBJECT_ROOT = os.environ.get("COVERGUIDE_LOCAL_OBJECT_ROOT", "")
-COVERGUIDE_CUSTOMER_INTERPRETATION_MODEL = os.environ.get(
-    "COVERGUIDE_CUSTOMER_INTERPRETATION_MODEL", "gpt-5.6-luna"
-)
-COVERGUIDE_POLICY_EXTRACTION_MODEL = "gpt-5.6-sol"
-COVERGUIDE_POLICY_REVIEW_MODEL = "gpt-5.6-terra"
-# Applied only to manifest-v2 criterion extraction; other routes keep their defaults.
-COVERGUIDE_POLICY_EXTRACTION_REASONING_EFFORT = os.environ.get(
-    "COVERGUIDE_POLICY_EXTRACTION_REASONING_EFFORT", "low"
-)
-COVERGUIDE_POLICY_EXTRACTION_MAX_OUTPUT_TOKENS = int(
-    os.environ.get("COVERGUIDE_POLICY_EXTRACTION_MAX_OUTPUT_TOKENS", "8192")
-)
-COVERGUIDE_COMPARISON_MODEL = os.environ.get("COVERGUIDE_COMPARISON_MODEL", "gpt-5.6-sol")
-# Optional OmniRoute override for the two interactive roles only: ``omniroute:<requested id>``,
-# which must appear in OMNIROUTE_MODELS. Empty keeps the relay model above.
-COVERGUIDE_CUSTOMER_INTERPRETATION_ROUTE = os.environ.get(
-    "COVERGUIDE_CUSTOMER_INTERPRETATION_ROUTE", ""
-)
-COVERGUIDE_COMPARISON_ROUTE = os.environ.get("COVERGUIDE_COMPARISON_ROUTE", "")
 COVERGUIDE_EMBEDDING_DIMENSIONS = 1024
 COVERGUIDE_EMBEDDING_MODEL_PATH = os.environ.get("COVERGUIDE_EMBEDDING_MODEL_PATH", "")
 COVERGUIDE_EMBEDDING_QUALIFICATION_PATH = os.environ.get(
@@ -202,9 +163,3 @@ COVERGUIDE_EMBEDDING_QUALIFICATION_PATH = os.environ.get(
 COVERGUIDE_DOCLING_ARTIFACTS_PATH = os.environ.get("COVERGUIDE_DOCLING_ARTIFACTS_PATH", "")
 COVERGUIDE_TESSERACT_PATH = os.environ.get("COVERGUIDE_TESSERACT_PATH", "")
 
-# Measured local raw-evidence path; it never needs a dense qualification for BM25.
-COVERGUIDE_EVIDENCE_RETRIEVAL = os.environ.get("COVERGUIDE_EVIDENCE_RETRIEVAL", "pageindex")
-COVERGUIDE_EVIDENCE_TOKEN_BUDGET = int(os.environ.get("COVERGUIDE_EVIDENCE_TOKEN_BUDGET", "16000"))
-COVERGUIDE_PAGEINDEX_TREE_ROOT = Path(os.environ.get(
-    "COVERGUIDE_PAGEINDEX_TREE_ROOT", str(COVERGUIDE_REPORT_ROOT / "retrieval-benchmark" / "pageindex-trees")
-))

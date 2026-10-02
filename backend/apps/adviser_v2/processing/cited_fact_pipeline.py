@@ -17,8 +17,7 @@ from typing import Any
 
 from django.conf import settings
 from pydantic import ValidationError
-
-from apps.adviser.ai import RelayFailure
+from research_workspace.legacy_relay import RelayFailure
 
 from ..model_gateway import call_model
 from ..models import ModelAttempt, PolicyRule, ProcessingJob

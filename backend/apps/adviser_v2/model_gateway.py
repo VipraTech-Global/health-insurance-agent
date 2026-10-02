@@ -16,10 +16,10 @@ from django.db import transaction
 from django.db.models import Max
 from django.utils import timezone
 from pydantic import BaseModel
+from research_workspace.legacy_providers import provider_config
+from research_workspace.legacy_relay import RelayFailure, RelayRoute, StrictRelayAdapter
 
 from apps.accounts.models import User
-from apps.adviser.ai import RelayFailure, RelayRoute, StrictRelayAdapter
-from apps.adviser.providers import provider_config
 
 from .crypto import commitment, commitment_matches
 from .errors import AccountErased

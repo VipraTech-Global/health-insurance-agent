@@ -16,11 +16,16 @@ from django.http import HttpRequest, HttpResponse, JsonResponse, StreamingHttpRe
 from django.utils import timezone
 from django.utils.dateparse import parse_datetime
 from django.views.decorators.http import require_http_methods
+from research_workspace.legacy_providers import provider_config
+from research_workspace.legacy_relay import (
+    InterviewDraft,
+    RelayFailure,
+    StrictRelayAdapter,
+    StructuredAnswerDraft,
+)
 
-from .ai import InterviewDraft, RelayFailure, StrictRelayAdapter, StructuredAnswerDraft
 from .ai_turns import attempt_active, fail_turn, finish_call, prepare_turn, publish_ai_answer
 from .models import Turn, TurnAttempt
-from .providers import provider_config
 from .relay_accounts import active_account_identity
 from .serializers import TurnSerializer
 from .services import (

@@ -12,8 +12,7 @@ from typing import Any
 
 from django.conf import settings
 from django.utils import timezone
-
-from apps.adviser.ai import RelayFailure
+from research_workspace.legacy_relay import RelayFailure
 
 from .evidence_retrieval import EvidencePacket
 from .model_gateway import call_model

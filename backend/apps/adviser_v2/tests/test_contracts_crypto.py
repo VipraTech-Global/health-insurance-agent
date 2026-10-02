@@ -3,9 +3,9 @@ from __future__ import annotations
 import pytest
 from django.core.exceptions import ValidationError
 from django.db import connection
+from research_workspace.legacy_relay import validate_strict_schema
 
 from apps.accounts.models import User
-from apps.adviser.ai import validate_strict_schema
 from apps.adviser_v2.contracts import (
     contract_document,
     contract_schema_document,

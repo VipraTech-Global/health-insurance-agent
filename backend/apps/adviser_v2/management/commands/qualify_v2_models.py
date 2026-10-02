@@ -14,9 +14,8 @@ from typing import Any
 import httpx
 from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
-
-from apps.adviser.ai import RelayFailure, RelayRoute, StrictRelayAdapter
-from apps.adviser.providers import omniroute_models, provider_config
+from research_workspace.legacy_providers import omniroute_models, provider_config
+from research_workspace.legacy_relay import RelayFailure, RelayRoute, StrictRelayAdapter
 
 from ...contracts import validate_contract
 from ...engine import _comparison_contract_guidance, _interpretation_contract_guidance

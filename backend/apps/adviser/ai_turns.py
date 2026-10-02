@@ -9,8 +9,13 @@ from typing import Any
 
 from django.db import transaction
 from django.utils import timezone
+from research_workspace.legacy_relay import (
+    InterviewDraft,
+    RelayFailure,
+    RelayRoute,
+    StructuredAnswerDraft,
+)
 
-from .ai import InterviewDraft, RelayFailure, RelayRoute, StructuredAnswerDraft
 from .corpus import lock_corpus_publication
 from .models import (
     AnswerArtifact,

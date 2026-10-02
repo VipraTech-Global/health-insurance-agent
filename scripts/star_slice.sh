@@ -15,7 +15,7 @@ if [[ $# -gt 0 ]]; then shift; fi
 case "$action" in
   manage) exec uv run --no-sync python backend/manage.py "$@" ;;
   check) exec uv run --no-sync python backend/manage.py check "$@" ;;
-  test) exec uv run --no-sync pytest --reuse-db "$@" ;;
+  test) exec env DJANGO_SETTINGS_MODULE=research_workspace.test_settings uv run --no-sync pytest --reuse-db "$@" ;;
   web) exec uv run --no-sync python backend/manage.py runserver 127.0.0.1:8021 --noreload ;;
   worker) exec env PYTHONPATH=backend uv run --no-sync celery -A config worker --loglevel=INFO --hostname=star-slice@%h --concurrency=1 --queues=conversation ;;
   beat) exec env PYTHONPATH=backend uv run --no-sync celery -A config beat --schedule="$DATA_ROOT/star-slice-beat" ;;

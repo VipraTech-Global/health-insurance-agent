@@ -11,8 +11,7 @@ from django.conf import settings
 from django.db import IntegrityError, transaction
 from django.db.models import Max
 from django.utils import timezone
-
-from apps.adviser.ai import RelayFailure
+from research_workspace.legacy_relay import RelayFailure
 
 from ..crypto import commitment, commitment_matches
 from ..model_gateway import copy_turn_routes, pin_turn_routes

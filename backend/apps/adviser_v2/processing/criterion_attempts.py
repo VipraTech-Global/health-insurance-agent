@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections.abc import Callable
 from typing import Any
 
-from apps.adviser.ai import RelayFailure
+from research_workspace.legacy_relay import RelayFailure
 
 from ..schemas import PolicyRuleExtractionV1
 from .criterion_evidence import Criterion, criterion_rule_problems

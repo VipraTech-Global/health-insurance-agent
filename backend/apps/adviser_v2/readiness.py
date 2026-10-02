@@ -9,8 +9,7 @@ from typing import Any
 
 from cryptography.exceptions import InvalidTag
 from django.conf import settings
-
-from apps.adviser.ai import RelayFailure
+from research_workspace.legacy_relay import RelayFailure
 
 from .embedding import policy_index_version, qualified_embedding_status
 from .manifest import (

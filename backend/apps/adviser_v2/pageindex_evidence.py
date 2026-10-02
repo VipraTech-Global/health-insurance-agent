@@ -18,9 +18,8 @@ from pathlib import Path
 import httpx
 from django.conf import settings
 from django.utils import timezone
-
-from apps.adviser.ai import loopback_url
-from apps.adviser.providers import provider_config
+from research_workspace.legacy_providers import provider_config
+from research_workspace.legacy_relay import loopback_url
 
 from .evidence_retrieval import RawChunk, token_count
 from .model_gateway import qualified_route

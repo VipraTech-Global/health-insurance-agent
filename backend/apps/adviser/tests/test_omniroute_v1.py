@@ -1,8 +1,8 @@
 import pytest
 from django.test import Client
+from research_workspace.legacy_relay import RelayFailure
 
 from apps.adviser import relay_routes
-from apps.adviser.ai import RelayFailure
 from apps.adviser.models import AIPreference, ModelCallAttempt, RouteConfiguration
 from apps.adviser.relay_routes import (
     choose_model,

@@ -208,8 +208,7 @@ def pack(policy_id: str, ranked: list[RawChunk], *, budget: int, method: str) ->
 
 def retrieve_plan(query: str, policy_id: str, *, budget: int = 16000, turn=None) -> EvidencePacket:
     from django.conf import settings
-
-    from apps.adviser.ai import RelayFailure
+    from research_workspace.legacy_relay import RelayFailure
 
     method = settings.COVERGUIDE_EVIDENCE_RETRIEVAL
     if method == "pageindex":

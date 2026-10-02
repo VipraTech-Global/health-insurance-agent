@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from django.conf import settings
 from django.core.checks import Error, register
 
-from .ai import RelayFailure, loopback_url
+from research_workspace.legacy_relay import RelayFailure, loopback_url
 
 OMNIROUTE_MODEL_ID = re.compile(r"[A-Za-z0-9][A-Za-z0-9._:/-]{0,159}")
 

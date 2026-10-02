@@ -4,9 +4,9 @@ from datetime import timedelta
 import pytest
 from django.db import DatabaseError, transaction
 from django.utils import timezone
+from research_workspace.legacy_relay import InterviewDraft, RelayFailure
 
 from apps.accounts.models import User
-from apps.adviser.ai import InterviewDraft, RelayFailure
 from apps.adviser.ai_turns import prepare_turn, publish_ai_answer
 from apps.adviser.models import (
     AnswerArtifact,

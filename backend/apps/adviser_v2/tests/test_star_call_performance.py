@@ -6,8 +6,8 @@ from types import SimpleNamespace
 
 import httpx
 import pytest
+from research_workspace.legacy_relay import RelayFailure, StrictRelayAdapter
 
-from apps.adviser.ai import RelayFailure, StrictRelayAdapter
 from apps.adviser.tests.test_ai import envelope, route
 from apps.adviser_v2.processing import stages
 from apps.adviser_v2.processing.criterion_evidence import CRITERIA
@@ -35,7 +35,7 @@ async def test_generation_options_and_usage_survive_incomplete_output(status):
             ),
         )
 
-    from apps.adviser.ai import StructuredAnswerDraft
+    from research_workspace.legacy_relay import StructuredAnswerDraft
 
     async with httpx.AsyncClient(transport=httpx.MockTransport(handler)) as client:
         adapter = StrictRelayAdapter(route(), client, "secret")

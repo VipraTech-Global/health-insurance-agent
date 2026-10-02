@@ -8,7 +8,7 @@ import logging
 import time
 from typing import Any
 
-from apps.adviser.ai import RelayFailure
+from research_workspace.legacy_relay import RelayFailure
 
 from ..contracts import validate_contract
 from ..models import ModelAttempt, PolicyRule, PolicyRuleEvidence, PolicyRuleLink, ProcessingJob

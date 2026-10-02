@@ -12,8 +12,8 @@ from asgiref.sync import async_to_sync
 from django.conf import settings
 from django.db import connection, transaction
 from pydantic import BaseModel
-
-from .ai import (
+from research_workspace.legacy_providers import omniroute_models, provider_config
+from research_workspace.legacy_relay import (
     InterviewDraft,
     RelayFailure,
     RelayRoute,
@@ -21,8 +21,8 @@ from .ai import (
     StructuredAnswerDraft,
     loopback_url,
 )
+
 from .models import AIPreference, ModelCallAttempt, RouteConfiguration, RouteQualification
-from .providers import omniroute_models, provider_config
 
 INITIAL_MODELS = ("gpt-6-astra", "gpt-5.6-sol", "gpt-5.6-terra", "gpt-5.6-luna")
 

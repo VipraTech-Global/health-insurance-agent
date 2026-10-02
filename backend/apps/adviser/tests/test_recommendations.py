@@ -1,6 +1,6 @@
 from decimal import Decimal
 
-from apps.adviser.recommendations import (
+from research_workspace.legacy_recommendations import (
     Candidate,
     CandidateOutcome,
     Truth,

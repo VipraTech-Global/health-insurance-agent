@@ -18,8 +18,7 @@ from django.contrib.postgres.search import SearchVector
 from django.db import connection, transaction
 from django.db.models import Value
 from django.utils import timezone
-
-from apps.adviser.ai import RelayFailure
+from research_workspace.legacy_relay import RelayFailure
 
 from ..contracts import contract_schema_document, validate_contract
 from ..embedding import embed_texts, policy_index_version, qualified_embedding_status

@@ -11,9 +11,9 @@ from typing import Any
 from django.conf import settings
 from django.db import connection, transaction
 from django.utils import timezone
+from research_workspace.legacy_relay import RelayFailure
 
 from apps.accounts.models import User
-from apps.adviser.ai import RelayFailure
 
 from .errors import (
     AccountErased,

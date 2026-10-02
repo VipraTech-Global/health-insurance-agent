@@ -4,14 +4,14 @@ from typing import Any
 
 from django.contrib.auth.models import AnonymousUser
 from drf_spectacular.utils import extend_schema
+from research_workspace.legacy_providers import OMNIROUTE_MODEL_ID
+from research_workspace.legacy_relay import RelayFailure
 from rest_framework import serializers
 from rest_framework.permissions import IsAdminUser
 from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .ai import RelayFailure
-from .providers import OMNIROUTE_MODEL_ID
 from .relay_accounts import (
     RelayAccountError,
     cancel_account_login,

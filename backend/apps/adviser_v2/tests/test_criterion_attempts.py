@@ -1,8 +1,8 @@
 from copy import deepcopy
 
 import pytest
+from research_workspace.legacy_relay import RelayFailure
 
-from apps.adviser.ai import RelayFailure
 from apps.adviser_v2.processing import criterion_attempts as module
 from apps.adviser_v2.processing.criterion_evidence import (
     CRITERIA,

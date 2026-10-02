@@ -7,8 +7,7 @@ from urllib.parse import urlsplit, urlunsplit
 
 import httpx
 from django.conf import settings
-
-from .ai import loopback_url as _loopback_api_url
+from research_workspace.legacy_relay import loopback_url as _loopback_api_url
 
 MANAGED_PROVIDERS = frozenset({"codex"})
 MAX_MANAGEMENT_RESPONSE_BYTES = 262_144

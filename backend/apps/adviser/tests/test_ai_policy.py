@@ -2,8 +2,8 @@ import uuid
 
 import pytest
 from django.utils import timezone
+from research_workspace.legacy_relay import RelayFailure, StructuredAnswerDraft
 
-from apps.adviser.ai import RelayFailure, StructuredAnswerDraft
 from apps.adviser.ai_turns import prepare_turn, publish_ai_answer
 from apps.adviser.models import (
     AnswerArtifact,
