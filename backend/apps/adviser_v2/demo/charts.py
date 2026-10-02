@@ -19,7 +19,7 @@ from .pricing import PrintedPrice, TableCell, validate_price
 from .relay import InvalidOutput, Relay, RelayUnavailable
 from .validation import fold, locate
 
-AXES = {'age', 'sum_insured', 'variant', 'zone', 'composition', 'term', 'coverage_basis'}
+AXES = {'age', 'sum_insured', 'variant', 'zone', 'composition', 'term', 'coverage_basis', 'tax_basis'}
 
 
 class Axes(Closed):
@@ -30,6 +30,7 @@ class Axes(Closed):
     composition: str
     term: str
     coverage_basis: str
+    tax_basis: str
 
 
 class PriceRow(Closed):
@@ -114,11 +115,12 @@ def parse_chart(bundle: dict, root: Path, relay=None) -> dict:
                         result = relay.call(instructions=(
                             'Label exact printed premium cells and their axes using the supplied physical grid. '
                             'Return each amount only if ALL axes age, sum_insured, variant, zone, composition, term, '
-                            'coverage_basis are explicit in supplied cells. axes values must equal their original cell text. '
+                            'coverage_basis, tax_basis are explicit in supplied cells. axes values must equal their original cell text. '
+                            'Only annual, explicitly tax-excluded premiums qualify for this display. '
                             'Use existing cell IDs. Every axis label must be in the value cell row or column. Include '
                             'all necessary table headings. Keep printed anomalies unchanged. Do not derive defaults, '
                             'calculate amounts, tax, loadings or discounts. Skip ambiguous or incomplete tables.'),
-                            messages=messages, schema=ChartLabels.model_json_schema(), stage='premium_chart', max_tokens=8192)
+                            messages=messages, schema=ChartLabels.model_json_schema(), stage='premium_chart', max_tokens=8192, timeout=1800)
                         draft = ChartLabels.model_validate(result.value)
                         saved = {'model': result.model, 'call_ids': result.call_ids, 'prices': draft.model_dump()['prices']}
                         atomic_json(path, saved)

@@ -101,7 +101,8 @@ def search(*, bundle: dict, question: str, method: str, relay: Relay, priority: 
     result = relay.call(instructions=SELECT_PROMPT,
         messages=[{"role": "user", "content": json.dumps(navigation_map(bundle), ensure_ascii=False)},
                   {"role": "user", "content": json.dumps({"candidate_ids": candidates, "question": question}, ensure_ascii=False)}],
-        schema=SELECT_SCHEMA, stage="section_selection", priority=priority, max_tokens=2048, expected_model=expected_model)
+        schema=SELECT_SCHEMA, stage="section_selection", priority=priority, max_tokens=2048, expected_model=expected_model,
+        timeout=1800 if priority == 'background' else 240)
     by_id = {s.id: s for s in sections}
     ids = result.value["section_ids"]
     if any(key not in by_id for key in ids):

@@ -15,7 +15,7 @@ from apps.adviser_v2.demo.contracts import (
 )
 from apps.adviser_v2.demo.evidence import Packet, Section, Segment
 from apps.adviser_v2.demo.matching import all_fits, evaluate, validate_selection
-from apps.adviser_v2.demo.pricing import PrintedPrice, TableCell, lookup
+from apps.adviser_v2.demo.pricing import PrintedPrice, TableCell, lookup, validate_price
 from apps.adviser_v2.demo.validation import locate, validate
 
 
@@ -129,6 +129,18 @@ def test_family_restrictions_and_unmapped_need_visible():
     result = evaluate(card(), p)
     assert result.status == "doesnt_fit"
     assert "Can't check" in result.other_needs[0].explanation
+
+
+def test_annual_tax_excluded_price_label_requires_printed_support():
+    cells = {key: TableCell(key, 'table', row, col, text, citation(text)) for key, row, col, text in [
+        ('amount', 2, 2, '10,000'), ('term', 2, 0, 'Annual premium'),
+        ('tax', 2, 1, 'Excluding applicable taxes'), ('header', 0, 2, 'Premium in Rs.')]}
+    price = PrintedPrice('amount', {'term': 'Annual premium', 'tax_basis': 'Excluding applicable taxes'},
+        {'term': 'term', 'tax_basis': 'tax'}, ('header',))
+    assert validate_price(price, cells, {'term', 'tax_basis'})
+    for term, tax in [('2 years', 'Excluding applicable taxes'), ('Annual premium', 'Gross premium')]:
+        changed = {**cells, 'term': replace(cells['term'], text=term), 'tax': replace(cells['tax'], text=tax)}
+        assert not validate_price(replace(price, axes={'term': term, 'tax_basis': tax}), changed, {'term', 'tax_basis'})
 
 
 def price_data():

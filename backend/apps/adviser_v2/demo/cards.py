@@ -9,6 +9,7 @@ import json
 import re
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict
+from decimal import Decimal
 from pathlib import Path
 from typing import Literal
 
@@ -16,7 +17,7 @@ from django.db import close_old_connections
 from pydantic import Field
 
 from .answers import ANSWER_PROMPT
-from .contracts import AgeRule, Answer, CardField, Closed, PlanCard, Statement
+from .contracts import AgeRule, Answer, CardField, Closed, FamilyRule, PlanCard, Statement
 from .evidence import atomic_json, digest
 from .relay import InvalidOutput, Relay, RelayUnavailable
 from .search import search
@@ -26,6 +27,7 @@ FIELDS = ('entry_age', 'renewal_age', 'family', 'sum_insured', 'geography', 'cop
           'room_limit', 'ped_waiting', 'maternity', 'opd', 'icu', 'specified_waiting', 'newborn',
           'deductible', 'restoration', 'no_claim_bonus', 'pre_post', 'day_care', 'road_ambulance',
           'air_ambulance', 'ayush', 'organ_donor', 'home_care', 'health_check', 'cataract')
+PROJECTION_VERSION = 2
 
 
 class FieldSource(Closed):
@@ -52,9 +54,21 @@ def projected_field(source: FieldSource | None) -> CardField:
 def entry_rules(source: FieldSource | None) -> list[AgeRule]:
     if not source or source.status != 'answered':
         return []
+    rules = []
+    adults = ('self', 'spouse', 'parent', 'parent_in_law')
     for statement in source.statements:
+        if statement.conditions or statement.restrictions:
+            continue
         for citation in statement.citations:
-            raw = ' '.join(citation.quote.split())
+            raw = ' '.join(citation.quote.split()).lstrip('▪• ')
+            adult = re.fullmatch(r'The minimum entry age for an adult is (\d+) years and there is no limit on maximum entry age\.', raw, re.I)
+            child = re.fullmatch(r'The minimum entry age for a dependent child \(i\.e\. natural or legally adopted\) is (\d+) days and maximum entry age is (\d+) years\.', raw, re.I)
+            if adult and 0 < int(adult[1]) < 120:
+                rules.extend(AgeRule(relationship=relation, minimum_days=int(adult[1])*365,
+                    maximum_days=None, maximum_unbounded=True, citations=[citation]) for relation in adults)
+            elif child and 0 < int(child[2]) < 120:
+                rules.append(AgeRule(relationship='child', minimum_days=int(child[1]),
+                    maximum_days=(int(child[2])+1)*365-1, citations=[citation]))
             pattern = r'(?:Any person|Persons?|Adults?)\s+(?:aged\s+)?between\s+(\d+)\s+years\s+and\s+(\d+)\s+years\s+(?:can take|can apply|are eligible)'
             match = re.search(pattern, raw, re.I)
             if match and not statement.conditions and not statement.restrictions:
@@ -63,7 +77,27 @@ def entry_rules(source: FieldSource | None) -> list[AgeRule]:
                     # Completed years: an upper age of 65 includes the 65th year.
                     return [AgeRule(relationship='self', minimum_days=minimum * 365,
                         maximum_days=(maximum + 1) * 365 - 1, citations=[citation])]
-    return []
+    # Conflicting supported ranges remain unresolved instead of choosing one.
+    return rules
+
+
+def family_rule(source: FieldSource | None) -> FamilyRule | None:
+    if not source or source.status != 'answered':
+        return None
+    for statement in source.statements:
+        if statement.conditions or statement.restrictions:
+            continue
+        for citation in statement.citations:
+            raw = ' '.join(citation.quote.split()).lstrip('▪• ')
+            pattern = (r'In a family floater Policy, a maximum of (\d+) adults and a maximum of (\d+) '
+                r'dependent children can be included in a single Policy\. The (\d+) adults can be a '
+                r'combination of self, spouse, parents and parents-?\s*in-law\.')
+            match = re.fullmatch(pattern, raw, re.I)
+            if match and match[1] == match[3] and 1 <= int(match[1]) <= 12 and int(match[2]) <= 12:
+                return FamilyRule(allowed_relationships=['self', 'spouse', 'parent', 'parent_in_law', 'child'],
+                    maximum_adults=int(match[1]), maximum_children=int(match[2]),
+                    children_must_be_dependent=True, citations=[citation])
+    return None
 
 
 def extract_fields(bundle: dict, original: PlanCard, method: str, fields: tuple[str, ...], relay):
@@ -80,7 +114,7 @@ def extract_fields(bundle: dict, original: PlanCard, method: str, fields: tuple[
     attempts, accepted, models = [], {}, {found.model}
     for correction in range(2):
         result = relay.call(instructions=ANSWER_PROMPT + ' Return the requested fields contract instead of a single answer.',
-            messages=messages, schema=CardSources.model_json_schema(), stage='plan_card', max_tokens=8192)
+            messages=messages, schema=CardSources.model_json_schema(), stage='plan_card', max_tokens=8192, timeout=1800)
         models.add(result.model)
         sources = CardSources.model_validate(result.value)
         names = [f.field for f in sources.fields]
@@ -120,6 +154,12 @@ def sum_insured_field(source: FieldSource | None) -> CardField:
                 if numbers and all(n > 0 for n in numbers):
                     return field.model_copy(update={'numbers': sorted(set(numbers)), 'exhaustive': True,
                                                      'citations': [citation]})
+            lakhs = re.fullmatch(r'Sum Insured options? \(in Rs\.\)\s*((?:\d+(?:\.\d+)?/)*\d+(?:\.\d+)?)\s+Lacs', raw, re.I)
+            if lakhs:
+                numbers = [Decimal(n)*100000 for n in lakhs[1].split('/')]
+                if all(n > 0 and n == int(n) for n in numbers):
+                    return field.model_copy(update={'numbers': sorted({int(n) for n in numbers}),
+                        'exhaustive': True, 'citations': [citation]})
     return field
 
 
@@ -158,8 +198,19 @@ def build_card(bundle: dict, original: PlanCard, method: str, relay=None, cache_
     updates['sum_insured'] = sum_insured_field(accepted.get('sum_insured'))
     # Complex or basis-dependent rules remain unresolved until a supported
     # executable projection exists; source quotations are still shown in full.
-    updates.update(entry_ages=entry_rules(accepted.get('entry_age')), renewal_ages=[], family_rule=None,
+    updates.update(entry_ages=entry_rules(accepted.get('entry_age')), renewal_ages=[], family_rule=family_rule(accepted.get('family')),
                    model=models[-1] if len(models) == 1 else None, status='partial',
                    common_needs=[{'field': name, 'value': projected_field(accepted.get(name)).model_dump()} for name in FIELDS])
     card = PlanCard.model_validate({**original.model_dump(), **updates})
-    return card, {'method': method, 'models': models, 'groups': [audit for _, audit in results]}
+    return card, {'method': method, 'models': models, 'groups': [audit for _, audit in results], 'projection_version': PROJECTION_VERSION}
+
+
+def reproject_card(card: PlanCard, audit: dict) -> PlanCard:
+    """Upgrade only unpinned typed projections, without new extraction calls."""
+    accepted = {}
+    for group in audit.get('groups', []):
+        for attempt in group.get('attempts', []):
+            if all(attempt['validation'].get('checks', [])) and len(attempt['validation'].get('checks', [])) == 6:
+                accepted[attempt['field']] = FieldSource.model_validate(attempt['source'])
+    return card.model_copy(update={'entry_ages': entry_rules(accepted.get('entry_age')),
+        'family_rule': family_rule(accepted.get('family')), 'sum_insured': sum_insured_field(accepted.get('sum_insured'))})

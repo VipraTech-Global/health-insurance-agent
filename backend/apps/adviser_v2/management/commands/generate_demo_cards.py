@@ -6,7 +6,7 @@ from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
 from django.db import close_old_connections
 
-from apps.adviser_v2.demo.cards import build_card
+from apps.adviser_v2.demo.cards import PROJECTION_VERSION, build_card, reproject_card
 from apps.adviser_v2.demo.charts import parse_chart
 from apps.adviser_v2.demo.contracts import PlanCard
 from apps.adviser_v2.demo.evidence import atomic_json
@@ -46,6 +46,11 @@ class Command(BaseCommand):
                     if saved['method'] != method:
                         raise ValueError('Card cache uses a different retrieval method.')
                     card = PlanCard.model_validate(saved['card'])
+                    if saved['audit'].get('projection_version') != PROJECTION_VERSION:
+                        card = reproject_card(card, saved['audit'])
+                        saved['card'] = card.model_dump()
+                        saved['audit']['projection_version'] = PROJECTION_VERSION
+                        atomic_json(path, saved)
                 else:
                     card, audit = build_card(bundle, card, method, cache_root=root / 'card-groups')
                     atomic_json(path, {'method': method, 'card': card.model_dump(), 'audit': audit})

@@ -29,6 +29,13 @@ class PrintedPrice:
 def validate_price(price: PrintedPrice, cells: dict[str, TableCell], required_axes: set[str]) -> bool:
     if set(price.axes) != required_axes or set(price.axis_cells) != required_axes:
         return False
+    if 'tax_basis' in required_axes:
+        # The customer label promises an annual amount excluding tax. Never make
+        # that promise from a chart labelled only "gross premium" or from defaults.
+        annual = re.fullmatch(r'\s*(?:annual(?: premium)?|1 year|one year|12 months)\s*', price.axes.get('term', ''), re.I)
+        tax = re.search(r'\b(?:excluding|excludes|exclusive of)\s+(?:all\s+)?(?:applicable\s+)?(?:tax(?:es)?|GST)\b', price.axes['tax_basis'], re.I)
+        if not annual or not tax:
+            return False
     value = cells.get(price.value_cell)
     if value is None or not price.heading_cells or not re.fullmatch(r"\s*(?:Rs\.?\s*|₹\s*)?-?\d[\d,.]*(?:/-)?\s*", value.text):
         return False
