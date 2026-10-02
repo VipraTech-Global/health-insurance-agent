@@ -9,6 +9,8 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 import pdfplumber
+from pdfminer.pdfexceptions import PDFException
+from pdfplumber.utils.exceptions import PdfminerException
 
 from .acquisition import document_role
 
@@ -57,5 +59,5 @@ def import_candidate(value: dict, root: Path) -> dict:
             path.write_bytes(payload)
         return {**row, 'status': 'acquired_unreviewed', 'sha256': sha, 'path': str(path),
                 'physical_pages': count, 'bytes': len(payload)}
-    except (ValueError, KeyError, OSError) as exc:
+    except (ValueError, KeyError, OSError, PDFException, PdfminerException) as exc:
         return {**row, 'status': 'unavailable', 'reason': str(exc)}

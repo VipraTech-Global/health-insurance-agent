@@ -22,6 +22,29 @@ def test_official_pdf_cannot_be_imported_with_unverified_origin(tmp_path):
     assert result['reason'] == 'Unverified official source host.'
 
 
+def test_corrupt_pdf_is_retained_as_unavailable_instead_of_stopping_queue(tmp_path):
+    row = {'insurer_id': 'icici', 'url': 'https://www.icicilombard.com/elevate.pdf',
+           'source_url': 'https://www.icicilombard.com/downloads', 'label': 'Policy wordings',
+           'status': 200, 'data': 'data:application/pdf;base64,' + base64.b64encode(b'%PDF-1.7\ninvalid').decode()}
+    assert import_candidate(row, tmp_path)['status'] == 'unavailable'
+
+
+def test_inventory_preserves_uncertainty_and_excludes_administrative_items():
+    from apps.adviser_v2.demo.catalogue import register_rows, scope
+
+    assert scope('New India Floater Mediclaim')[0] == 'review_pending'
+    assert scope('Group Health', 'ABC HLGP')[0] == 'excluded'
+    assert scope('Claims')[0] == 'excluded'
+    source = {'source_url': 'https://www.icicilombard.com/downloads', 'source_sha256': 'sha', 'retrieved_at': 'now'}
+    rows = register_rows('icici', '<li>Elevate <a href="/elevate.pdf">Download PDF</a></li>'
+                        '<li>Group Health <a href="/group.pdf">Download PDF</a></li>', source)
+    assert len(rows) == 2
+    assert rows[0]['name'] == 'Elevate'
+    assert rows[0]['edition_status'] == 'unresolved'
+    assert rows[0]['documents'][0]['role'] == 'base_wording'
+    assert rows[1]['scope'] == 'excluded'
+
+
 def test_only_paraphrase_failures_are_counted_separately():
     check = {'checks': [True, True, True, False, True, True], 'problems': [PARAPHRASE], 'rejected_wrong_plan': 0}
     assert paraphrase_only(check)
