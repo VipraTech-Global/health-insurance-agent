@@ -1,0 +1,361 @@
+{
+  "accepted_prices": 3564,
+  "omitted_prices": 36,
+  "models": [
+    "gpt-5.6-luna"
+  ],
+  "failures": [
+    {
+      "page": 44,
+      "reason": "Printed cell does not map to a complete original source section.",
+      "row": 21
+    },
+    {
+      "page": 48,
+      "reason": "Printed cell does not map to a complete original source section.",
+      "row": 21
+    },
+    {
+      "page": 50,
+      "reason": "Printed cell does not map to a complete original source section.",
+      "row": 21
+    },
+    {
+      "page": 52,
+      "reason": "Printed cell does not map to a complete original source section.",
+      "row": 21
+    }
+  ],
+  "axes": [
+    "age",
+    "composition",
+    "sum_insured",
+    "tax_basis",
+    "term",
+    "zone"
+  ],
+  "source_sha256": "0404693147bd5202e28e39bfdb8fcc87f78e7ee6aa6a6f1032f63cbec63698e1",
+  "scope": "Exact printed choices for this prospectus edition. No automatic profile-to-age/zone mapping or quotation.",
+  "layout_calls": [
+    {
+      "physical_page": 43,
+      "attempts": [
+        {
+          "call_ids": [
+            "7b39be00-1360-49d4-856a-f7e15020cdd5"
+          ],
+          "layout": {
+            "age_column": 1,
+            "composition_column": 0,
+            "first_amount_column": 2,
+            "heading_row": 1,
+            "last_amount_column": 10,
+            "recognized": true,
+            "sum_insured_row": 1
+          },
+          "model": "gpt-5.6-luna"
+        },
+        {
+          "call_ids": [
+            "f289523a-eb06-4470-ae73-7f606f27abcd"
+          ],
+          "layout": {
+            "age_column": 1,
+            "composition_column": 0,
+            "first_amount_column": 2,
+            "heading_row": 0,
+            "last_amount_column": 10,
+            "recognized": true,
+            "sum_insured_row": 1
+          },
+          "model": "gpt-5.6-luna"
+        }
+      ]
+    },
+    {
+      "physical_page": 44,
+      "attempts": [
+        {
+          "call_ids": [
+            "a8dedf31-3d93-4edf-800a-9b63c2b54e20"
+          ],
+          "layout": {
+            "age_column": 1,
+            "composition_column": 0,
+            "first_amount_column": 2,
+            "heading_row": 1,
+            "last_amount_column": 10,
+            "recognized": true,
+            "sum_insured_row": 1
+          },
+          "model": "gpt-5.6-luna"
+        },
+        {
+          "call_ids": [
+            "b983d931-faec-4d1b-a087-40e5d03f4222"
+          ],
+          "layout": {
+            "age_column": 1,
+            "composition_column": 0,
+            "first_amount_column": 2,
+            "heading_row": 0,
+            "last_amount_column": 10,
+            "recognized": true,
+            "sum_insured_row": 1
+          },
+          "model": "gpt-5.6-luna"
+        }
+      ]
+    },
+    {
+      "physical_page": 45,
+      "attempts": [
+        {
+          "call_ids": [
+            "34c4d28b-4ab8-4f40-afef-c64f37a90afd"
+          ],
+          "layout": {
+            "age_column": 1,
+            "composition_column": 0,
+            "first_amount_column": 2,
+            "heading_row": 1,
+            "last_amount_column": 10,
+            "recognized": true,
+            "sum_insured_row": 1
+          },
+          "model": "gpt-5.6-luna"
+        },
+        {
+          "call_ids": [
+            "edeb0557-e493-40ff-bf00-5b76c2462ad6"
+          ],
+          "layout": {
+            "age_column": 1,
+            "composition_column": 0,
+            "first_amount_column": 2,
+            "heading_row": 0,
+            "last_amount_column": 10,
+            "recognized": true,
+            "sum_insured_row": 1
+          },
+          "model": "gpt-5.6-luna"
+        }
+      ]
+    },
+    {
+      "physical_page": 46,
+      "attempts": [
+        {
+          "call_ids": [
+            "d046a08f-f4ae-4dfd-8389-bf3bf5356286"
+          ],
+          "layout": {
+            "age_column": 1,
+            "composition_column": 0,
+            "first_amount_column": 2,
+            "heading_row": 1,
+            "last_amount_column": 10,
+            "recognized": true,
+            "sum_insured_row": 1
+          },
+          "model": "gpt-5.6-luna"
+        },
+        {
+          "call_ids": [
+            "7ebfe8f1-a393-4fef-ace2-58a4c68e07cc"
+          ],
+          "layout": {
+            "age_column": 1,
+            "composition_column": 0,
+            "first_amount_column": 2,
+            "heading_row": 0,
+            "last_amount_column": 10,
+            "recognized": true,
+            "sum_insured_row": 1
+          },
+          "model": "gpt-5.6-luna"
+        }
+      ]
+    },
+    {
+      "physical_page": 47,
+      "attempts": [
+        {
+          "call_ids": [
+            "d92927c6-13af-43b6-8cec-517674b179cd"
+          ],
+          "layout": {
+            "age_column": 1,
+            "composition_column": 0,
+            "first_amount_column": 2,
+            "heading_row": 1,
+            "last_amount_column": 10,
+            "recognized": true,
+            "sum_insured_row": 1
+          },
+          "model": "gpt-5.6-luna"
+        },
+        {
+          "call_ids": [
+            "518cde2e-7a70-4dbb-bdfa-a8efb141038c"
+          ],
+          "layout": {
+            "age_column": 1,
+            "composition_column": 0,
+            "first_amount_column": 2,
+            "heading_row": 0,
+            "last_amount_column": 10,
+            "recognized": true,
+            "sum_insured_row": 1
+          },
+          "model": "gpt-5.6-luna"
+        }
+      ]
+    },
+    {
+      "physical_page": 48,
+      "attempts": [
+        {
+          "call_ids": [
+            "f1a2402a-2177-4180-b4e2-81f20110a39e"
+          ],
+          "layout": {
+            "age_column": 1,
+            "composition_column": 0,
+            "first_amount_column": 2,
+            "heading_row": 1,
+            "last_amount_column": 10,
+            "recognized": true,
+            "sum_insured_row": 1
+          },
+          "model": "gpt-5.6-luna"
+        },
+        {
+          "call_ids": [
+            "33fd3361-efe4-4d5f-a19d-df8190e188d9"
+          ],
+          "layout": {
+            "age_column": 1,
+            "composition_column": 0,
+            "first_amount_column": 2,
+            "heading_row": 0,
+            "last_amount_column": 10,
+            "recognized": true,
+            "sum_insured_row": 1
+          },
+          "model": "gpt-5.6-luna"
+        }
+      ]
+    },
+    {
+      "physical_page": 49,
+      "attempts": [
+        {
+          "call_ids": [
+            "e48e7b41-9388-4dbb-b62d-e4e28c8a648c"
+          ],
+          "layout": {
+            "age_column": 1,
+            "composition_column": 0,
+            "first_amount_column": 2,
+            "heading_row": 1,
+            "last_amount_column": 10,
+            "recognized": true,
+            "sum_insured_row": 1
+          },
+          "model": "gpt-5.6-luna"
+        },
+        {
+          "call_ids": [
+            "306ecc67-b08c-479f-b7cd-e17eacd96c1a"
+          ],
+          "layout": {
+            "age_column": 1,
+            "composition_column": 0,
+            "first_amount_column": 2,
+            "heading_row": 0,
+            "last_amount_column": 10,
+            "recognized": true,
+            "sum_insured_row": 1
+          },
+          "model": "gpt-5.6-luna"
+        }
+      ]
+    },
+    {
+      "physical_page": 50,
+      "attempts": [
+        {
+          "call_ids": [
+            "5164973f-36c9-4bb8-8dc0-9ba8206e8e70"
+          ],
+          "layout": {
+            "age_column": 1,
+            "composition_column": 0,
+            "first_amount_column": 2,
+            "heading_row": 0,
+            "last_amount_column": 10,
+            "recognized": true,
+            "sum_insured_row": 1
+          },
+          "model": "gpt-5.6-luna"
+        }
+      ]
+    },
+    {
+      "physical_page": 51,
+      "attempts": [
+        {
+          "call_ids": [
+            "03235520-d4c4-4da5-ab5b-9567f2b359ca"
+          ],
+          "layout": {
+            "age_column": 1,
+            "composition_column": 0,
+            "first_amount_column": 2,
+            "heading_row": 0,
+            "last_amount_column": 10,
+            "recognized": true,
+            "sum_insured_row": 1
+          },
+          "model": "gpt-5.6-luna"
+        }
+      ]
+    },
+    {
+      "physical_page": 52,
+      "attempts": [
+        {
+          "call_ids": [
+            "38721c19-88d4-469c-86df-415997132129"
+          ],
+          "layout": {
+            "age_column": 1,
+            "composition_column": 0,
+            "first_amount_column": 2,
+            "heading_row": 1,
+            "last_amount_column": 10,
+            "recognized": true,
+            "sum_insured_row": 1
+          },
+          "model": "gpt-5.6-luna"
+        },
+        {
+          "call_ids": [
+            "8429e455-e5dd-4138-a823-0fd1cd277799"
+          ],
+          "layout": {
+            "age_column": 1,
+            "composition_column": 0,
+            "first_amount_column": 2,
+            "heading_row": 0,
+            "last_amount_column": 10,
+            "recognized": true,
+            "sum_insured_row": 1
+          },
+          "model": "gpt-5.6-luna"
+        }
+      ]
+    }
+  ]
+}
