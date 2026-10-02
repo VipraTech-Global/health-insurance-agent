@@ -11,4 +11,3 @@ urlpatterns = [
 ]
 if settings.COVERGUIDE_V2_ENABLED:
     urlpatterns.insert(2, path("api/v2/demo/", include("apps.adviser_v2.demo.urls")))
-    urlpatterns.insert(2, path("api/v2/", include("apps.adviser_v2.urls")))

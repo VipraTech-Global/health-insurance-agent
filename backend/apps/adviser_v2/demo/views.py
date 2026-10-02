@@ -19,10 +19,10 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from ..models import DemoPlanAnswer, DemoPlanIndex, DemoQuestion, DemoRelease, DemoSession
-from ..processing.clause_citations import _normalized, clause_rectangles
 from .acquisition import INSURERS
 from .charts import load_prices
 from .contracts import PlanCard, PremiumResult, Profile
+from .highlighting import _normalized, clause_rectangles
 from .matching import all_fits
 from .needs import normalize
 from .pricing import lookup

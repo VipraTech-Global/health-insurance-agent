@@ -72,3 +72,15 @@ Paraphrase alone caused 8 final unanswered H cases and 7 P cases, with 27 and 24
 The source-section audit has **two** fallbacks: HDFC's `c882c2b1…` map has crossing sibling ranges; Manipal's `c6b8580e…` map did not complete. Earlier progress notes counted only the mapping-call failure and missed HDFC's later section-bound validation fallback. The frozen report uses the actual two fallback documents.
 
 H is now the sole application search path. BM25 and the resident BGE-M3 CPU worker remain. P and byte-identical frozen sources are retained under `research/ten-insurer/`; no runtime fallback exists. Idle old Star worker/beat processes were stopped after verifying zero active work, leaving the demo worker and recovery loop.
+
+## 2026-10-03 — Retire legacy runtime entry points, preserve regression data
+
+The local server now mounts only authentication/account controls and the retrieval-demo API. Celery discovers only demo tasks; legacy v1/v2 beat schedules and the v1 provider-registration hook are removed. Historical API tests use an explicit research URL configuration. Historical models, migrations, evidence and account-erasure graph remain because removing their tables would destroy protected facts or private-data erasure coverage. Error handling, source tokenization/BM25, highlighting, quantity checks and BGE artifact qualification now live outside the legacy runtime modules. Removed the old adviser frontend, obsolete evidence route and three unused frontend dependencies. No protected model files were touched. Validation: 532 backend tests passed; frontend lint, typecheck and production build passed.
+
+## 2026-10-03 — Release database connections during queued AI work
+
+Parent card jobs and live question heartbeats/progress updates were holding connections while nested jobs waited for the shared relay. Release those connections before waiting; retain transaction ownership when inside an atomic block. Add question/index scope to relay metrics so application latency reports exclude unrelated live work. The full suite above covers these changes.
+
+## 2026-10-03 — Resume partial cards without blocking other insurers
+
+A PageIndex selector can return an out-of-map section ID. Keep the strict scope check, record the field-group failure, and leave unsupported fields not stated. Persist completed card groups and continue other plan jobs; transport/quota failures remain pending and resumable. No alternative retrieval method is used. This changes only post-bake-off card processing, not frozen scores.

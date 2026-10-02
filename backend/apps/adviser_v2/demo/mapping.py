@@ -16,7 +16,6 @@ import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
-from ..evidence_retrieval import token_count
 from .evidence import (
     MAP_SETTINGS,
     PROCESSING_VERSION,
@@ -26,6 +25,7 @@ from .evidence import (
     digest,
 )
 from .relay import ADAPTER_VERSION, InvalidOutput, Relay, RelayUnavailable
+from .text import token_count
 
 SDK_REVISION = "6d23caf416858f2ca136840305d1f479a86f6ef7"
 SDK_DEFAULT = Path("/home/akhilesh/Projects/coverguide-research-20260925/.local/pageindex-star/vendor")

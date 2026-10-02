@@ -10,10 +10,10 @@ import httpx
 from django.db import close_old_connections, connection
 from pgvector.django import CosineDistance
 
-from ..evidence_retrieval import BM25, RawChunk, token_count
 from ..models import DemoSectionVector
 from .evidence import Section, pack_sections
 from .relay import Relay
+from .text import BM25, LexicalDocument
 
 SELECT_SCHEMA = {"type": "object", "properties": {"section_ids": {
     "type": "array", "items": {"type": "string"}, "maxItems": 40}},
@@ -40,7 +40,7 @@ def embed(texts: list[str], *, priority: str) -> list[list[float]]:
 
 
 def fusion(sections: list[Section], question: str, *, index_id: str, priority: str) -> list[str]:
-    chunks = [RawChunk(s.id, s.plan_id, s.document_id, s.index_text, token_count(s.index_text), ()) for s in sections]
+    chunks = [LexicalDocument(s.id, s.index_text) for s in sections]
     lexical = [c.id for c in BM25(chunks).rank(question)[:20]]
     vector = embed([question], priority=priority)[0]
     rows = list(DemoSectionVector.objects.filter(index_id=index_id, section_id__in=[s.id for s in sections])

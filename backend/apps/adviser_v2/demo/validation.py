@@ -9,9 +9,9 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 
-from ..processing.criterion_evidence import quoted_quantities
 from .contracts import Answer, Citation, SupportedText
 from .evidence import Packet
+from .quantities import quoted_quantities
 
 VALIDATOR_VERSION = "demo-six-checks/1"
 NEUTRAL = re.compile(r"\b(?:best|better|recommend(?:ed|ation)?|cheapest|buy|purchase|choose|rank(?:ed|ing)?)\b", re.I)

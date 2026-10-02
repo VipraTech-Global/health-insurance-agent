@@ -21,7 +21,7 @@ class Resident:
         import onnxruntime as ort
         from tokenizers import Tokenizer
 
-        from ..embedding import embedding_paths, qualified_embedding_status
+        from .embedding_artifact import embedding_paths, qualified_embedding_status
 
         qualified, reason, _ = qualified_embedding_status()
         if not qualified:

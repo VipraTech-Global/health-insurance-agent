@@ -17,6 +17,8 @@ from apps.adviser_v2.models import CustomerUploadedDocument, EvidenceSpan, Messa
 from apps.adviser_v2.services.customer import append_turn_event
 from apps.adviser_v2.views import _ranged_response
 
+pytestmark = pytest.mark.urls("research_workspace.legacy_urls")
+
 
 def csrf(client: Client) -> str:
     return client.cookies["csrftoken"].value

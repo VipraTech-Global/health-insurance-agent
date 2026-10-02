@@ -8,8 +8,8 @@ import re
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
-from ..evidence_retrieval import token_count, tokenizer
 from .relay import MODELS
+from .text import token_count, tokenizer
 
 PROCESSING_VERSION = "pageindex-sections/1"
 MAP_SETTINGS = {"node_summaries": True, "document_description": True,

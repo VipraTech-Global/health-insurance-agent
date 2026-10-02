@@ -108,27 +108,9 @@ CELERY_RESULT_BACKEND = None
 CELERY_TASK_IGNORE_RESULT = True
 CELERY_TASK_ACKS_LATE = True
 CELERY_WORKER_PREFETCH_MULTIPLIER = 1
-CELERY_BEAT_SCHEDULE = {
-    "reconcile-abandoned-turns": {
-        "task": "apps.adviser.tasks.reconcile_abandoned_turns",
-        "schedule": 30.0,
-    }
-}
-if COVERGUIDE_V2_ENABLED:
-    CELERY_BEAT_SCHEDULE.update(
-        {
-            "dispatch-v2-outbox": {
-                "task": "adviser_v2.dispatch_outbox",
-                "schedule": 5.0,
-                "options": {"queue": "conversation"},
-            },
-            "recover-v2-expired-work": {
-                "task": "adviser_v2.recover_expired_work",
-                "schedule": 30.0,
-                "options": {"queue": "conversation"},
-            },
-        }
-    )
+# Question recovery runs in the dedicated demo recovery process.
+CELERY_BEAT_SCHEDULE = {}
+
 REDIS_URL = os.environ.get("REDIS_URL", "redis://127.0.0.1:6398/8")
 CACHES = {
     "default": {
@@ -142,7 +124,7 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": ["rest_framework.authentication.SessionAuthentication"],
     "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.IsAuthenticated"],
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
-    "EXCEPTION_HANDLER": "apps.adviser.errors.api_exception_handler",
+    "EXCEPTION_HANDLER": "config.errors.api_exception_handler",
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.CursorPagination",
     "PAGE_SIZE": 20,
 }

@@ -12,19 +12,16 @@
     "generate:api": "openapi-typescript ../openapi.json -o lib/api-schema.ts"
   },
   "dependencies": {
-    "@tanstack/react-query": "5.87.4",
-    "eventsource-parser": "3.0.6",
     "next": "16.3.4",
-    "openapi-fetch": "0.15.0",
     "pdfjs-dist": "5.4.149",
     "react": "19.2.0",
     "react-dom": "19.2.0"
   },
   "devDependencies": {
+    "@playwright/test": "1.63.0",
     "@types/node": "24.5.2",
     "@types/react": "19.1.13",
     "@types/react-dom": "19.1.9",
-    "@playwright/test": "1.63.0",
     "eslint": "9.35.0",
     "eslint-config-next": "16.3.4",
     "openapi-typescript": "7.9.1",
