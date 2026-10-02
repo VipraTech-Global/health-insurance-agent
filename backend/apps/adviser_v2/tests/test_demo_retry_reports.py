@@ -86,3 +86,9 @@ def test_only_paraphrase_failures_are_counted_separately():
     assert report['H']['paraphrase_only_attempts'] == report['P']['paraphrase_only_attempts'] == 1
     assert report['H']['split_pair_paraphrase_only_attempts'] == 1
     assert report['H']['case_ids'] == ['case']
+    rows.append({'job': {'kind': 'star', 'id': 'reference-query'}, 'arms': {'H': arm, 'P': arm}})
+    complete = summarize_rejections(rows)
+    assert complete['arms']['H']['answer_cases'] == 2
+    assert complete['star_query_arms']['H']['query_cases'] == 1
+    assert complete['all_query_arms']['H']['query_cases'] == 3
+    assert complete['all_query_arms']['H']['final_unanswered_only_paraphrase'] == 2

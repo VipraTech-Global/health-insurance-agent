@@ -10247,6 +10247,8 @@ Omitted section IDs: [].
 
 Only the complete-quotation/paraphrase-support failure was reported in these counts. This does not establish semantic correctness.
 
+These counts cover the 260 answer-sheet cases per arm. The additional 78 Star reference queries per arm evaluated retrieval packets only and generated no answer drafts; including those queries therefore does not change these rejection counts. The JSON report records both scopes explicitly.
+
 | Arm | Rejected drafts in scored attempts | Final unanswered cases | Extra discarded-runner drafts |
 |---|---:|---:|---:|
 | H | 27 | 8 | 3 |

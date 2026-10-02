@@ -113,7 +113,7 @@ class Coverage(APIView):
                                                and r['status'] == 'acquired_unreviewed'}),
                 "register_entries": inventory.get(key, {}).get('register_entries'),
                 "catalogue_complete": False} for key, name, url in sorted(INSURERS, key=lambda r: r[1])],
-            "plans": [{"id": r.plan_key, "name": r.name, "insurer": r.insurer, "uin": r.uin,
+            "plans": [{"id": r.plan_key, "name": r.name, "variant": r.variant, "insurer": r.insurer, "uin": r.uin,
                        "edition": r.edition, "index_version": r.id, "models": r.models_used,
                        "revoked": bool(r.revoked_at), **r.coverage} for r in rows]})
 
