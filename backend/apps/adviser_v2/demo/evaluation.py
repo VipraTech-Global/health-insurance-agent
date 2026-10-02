@@ -65,7 +65,7 @@ def make_jobs(plans: list[dict], queries: list[dict], slots: list[dict]) -> list
 def freeze_run(root: Path, plans: list[dict], queries: list[dict], slots: list[dict], repository: Path) -> str:
     directory = Path(__file__).parent
     files = ['answers.py', 'search.py', 'evidence.py', 'validation.py', 'contracts.py', 'bakeoff.py',
-             'relay.py', 'evaluation.py', 'vectors.py', 'charts.py']
+             'relay.py', 'evaluation.py', 'vectors.py']
     sources = {name: hashlib.sha256((directory / name).read_bytes()).hexdigest() for name in files}
     fingerprint = freeze(root, {'bundles': plans, 'queries': queries, 'slots': slots,
         'source_hashes': sources, 'questions': [list(q) for q in QUESTIONS],
