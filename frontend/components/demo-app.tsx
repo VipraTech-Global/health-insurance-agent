@@ -59,12 +59,14 @@ export function DemoApp({ onSignedOut }: { onSignedOut: () => Promise<void> }) {
 
   async function findPlans() {
     await perform(async () => {
-      const data = await api<{ session_id: string; results: Fit[] }>("/api/v2/demo/fit/", { method: "POST", body: JSON.stringify({
+      const data = await api<{ session_id: string; results: Fit[]; plans: Card[]; release_id: string | null }>("/api/v2/demo/fit/", { method: "POST", body: JSON.stringify({
         ...(sessionId ? { session_id: sessionId } : {}),
         profile: { schema_version: 1, revision: 1, people: people.map(p => ({ id: p.id, relationship: p.relationship,
           age_days: p.age === "" ? null : Math.round(Number(p.age) * (p.ageUnit === "days" ? 1 : 365)), dependent: p.relationship === "child" ? p.dependent : null })),
           city: city || null, zone: null, sum_insured: sumInsured ? Number(sumInsured) : null, plan_type: planType,
           needs, typed_needs: typedNeeds, annual_budget: budget ? Number(budget) : null } }) });
+      setCards([...data.plans].sort((a,b) => a.insurer.localeCompare(b.insurer) || a.name.localeCompare(b.name) || a.variant.localeCompare(b.variant)));
+      setRelease(data.release_id); setSelected(old => old.filter(id => data.plans.some(plan => plan.plan_id === id)));
       setSessionId(data.session_id); setFits(data.results); setQuestion(null); events.current?.close(); setScreen("fits");
     });
   }

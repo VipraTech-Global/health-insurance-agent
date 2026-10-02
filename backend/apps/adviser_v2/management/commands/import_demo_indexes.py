@@ -69,7 +69,10 @@ class Command(BaseCommand):
                         if existing.text_sha256 != text_hash:
                             raise CommandError("Section embedding source changed.")
                         continue
-                    reusable = DemoSectionVector.objects.filter(section_id=section.id, text_sha256=text_hash).first()
+                    # Variant section IDs differ even when title path and source
+                    # text are identical. The dedicated table uses the one pinned
+                    # BGE-M3 artifact, so reuse by exact embedding-input hash.
+                    reusable = DemoSectionVector.objects.filter(text_sha256=text_hash).first()
                     cached_path = root / "vectors" / (text_hash + ".json")
                     if reusable:
                         vector = reusable.embedding
@@ -81,6 +84,9 @@ class Command(BaseCommand):
                         vector = cached["vector"]
                     else:
                         vector = embed([section.index_text], priority="background")[0]
+                        atomic_json(cached_path, {"model": "BAAI/bge-m3",
+                            "revision": "5617a9f61b028005a4858fdac845db406aefb181",
+                            "text_sha256": text_hash, "vector": vector})
                     DemoSectionVector.objects.create(index=index, section_id=section.id,
                                                      embedding=vector, text_sha256=text_hash)
             self.stdout.write(f"{name}: {len(plan['sections'])} sections; index {key}; new={created}")

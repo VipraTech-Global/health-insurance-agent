@@ -118,3 +118,11 @@ The official Tata active/withdrawn register records 15 current individual-health
 Moved the previous v2 processing/review pipeline, FTS/dense/raw/PageIndex retrieval modes, embedding wiring, prepared-fact answer engine and model gateway into `research_workspace/legacy_v2`. Moved 15 old management commands into a research-only command app. Their regression tests use the new imports and research settings; the normal app exposes none of the retired processing/provider qualification commands. Optional Docling and ONNX-building dependencies now belong to the research dependency group. No installed packages or shared model files were deleted.
 
 Post-move verification: 541 tests passed; Django checks and migration checks passed. The isolated application database still contains 39 stored facts, 22 rules and 1,585 evidence spans. The 236-span frozen reference snapshot and protocol-v2 scored source archive were not modified. Authentication, account erasure and historical model/migration compatibility remain in the application.
+
+## 2026-10-03 — Shared vectors and atomic fit-list catalogue updates
+
+Variant indexes now reuse embeddings by exact title-path-plus-source-text hash, independent of plan-specific section IDs, and save new vectors to the shared artifact cache. A two-variant database test verifies one embedding execution with separately bound section identities. The dedicated vector table and cache use the same pinned BGE-M3 artifact.
+
+Fit responses now return the cards and release ID used for that evaluation. The browser updates the catalogue and fit groups together, so a release published while the page is open cannot leave new matching rows hidden behind stale cards. Running questions retain their existing immutable index pins. Focused checks: 12 service/API tests passed; frontend lint, typecheck and build passed.
+
+A further Playwright retry of Star's official product register returned HTTP 403 Access Denied. Preserve that failure and the earlier register snapshot as historical evidence; do not promote its old entries to a verified complete current catalogue.

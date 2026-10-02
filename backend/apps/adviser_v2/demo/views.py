@@ -133,9 +133,11 @@ class Fit(APIView):
             session = save_profile(request.user, profile, incoming.validated_data.get("session_id"))
         except (ContractError, ValueError, DemoSession.DoesNotExist) as exc:
             raise ValidationError("Profile could not be accepted: " + str(exc)) from exc
-        _, rows = indexes()
+        release, rows = indexes()
         cards = [PlanCard.model_validate(row.card) for row in rows if row.card and row.revoked_at is None]
         return Response({"schema_version": 1, "session_id": str(session.id), "revision": session.profile_revision,
+                         "release_id": str(release.id) if release else None,
+                         "plans": [card.model_dump() for card in cards],
                          "normalized_needs": [n.model_dump() for n in profile.normalized_needs],
                          "needs_model": profile.needs_model,
                          "results": [r.model_dump() for r in all_fits(cards, profile)]})

@@ -172,6 +172,22 @@ def test_api_ownership_selection_and_coverage(v2_client, v2_user, demo, monkeypa
     assert len(v2_client.get("/api/v2/demo/coverage/").json()["insurers"]) == 10
 
 
+def test_fit_returns_the_same_release_cards_as_its_complete_results(v2_client, demo):
+    release, session, rows = demo
+    release.active = False
+    release.save(update_fields=['active'])
+    newer = DemoRelease.objects.create(method='H', manifest_sha256='c'*64, bakeoff={}, active=True)
+    newer.indexes.set(rows[-2:])
+    response = v2_client.post('/api/v2/demo/fit/',
+        data=json.dumps({'session_id': str(session.id), 'profile': profile().model_dump()}),
+        content_type='application/json', HTTP_X_CSRFTOKEN=v2_client.cookies['csrftoken'].value)
+    assert response.status_code == 200
+    value = response.json()
+    assert value['release_id'] == str(newer.id)
+    assert {p['plan_id'] for p in value['plans']} == {r['plan_id'] for r in value['results']} == {
+        r.plan_key for r in rows[-2:]}
+
+
 def test_abandoned_question_recovers_without_repeating_completed_plans(v2_user, demo, monkeypatch):
     import uuid
     from datetime import timedelta
@@ -213,3 +229,32 @@ def test_release_refuses_partially_imported_or_changed_vectors(demo):
     vector.save(update_fields=['text_sha256'])
     with pytest.raises(CommandError, match='changed'):
         require_complete_vectors(rows[0], bundle)
+
+
+def test_variant_indexes_embed_identical_source_input_only_once(tmp_path, monkeypatch):
+    import uuid
+    from dataclasses import replace
+
+    from django.core.management import call_command
+
+    from apps.adviser_v2.models import DemoSectionVector
+    from apps.adviser_v2.tests.test_demo_contracts import packet
+    calls = []
+    def fake_embed(texts, *, priority):
+        calls.extend(texts)
+        assert priority == 'background'
+        return [[0.1]*1024]
+    monkeypatch.setattr('apps.adviser_v2.management.commands.import_demo_indexes.embed', fake_embed)
+    source = packet('A shared physical source clause for variant indexing.').sections[0]
+    plans = []
+    for variant in ('A', 'B'):
+        identifier = str(uuid.uuid4())
+        section = replace(source, id='section-'+variant, plan_id=identifier)
+        plans.append({'policy_version_id': identifier, 'name': 'Shared source', 'insurer': 'Test',
+            'plan_type': 'medical_indemnity', 'variant': variant, 'sections': [section.payload()],
+            'documents': [], 'pages': [], 'document_status': []})
+    (tmp_path/'sections.json').write_text(json.dumps({'plans': plans}))
+    call_command('import_demo_indexes', source_root=tmp_path, embed=True)
+    assert len(calls) == 1
+    assert DemoSectionVector.objects.count() == 2
+    assert len(list((tmp_path/'vectors').glob('*.json'))) == 1
