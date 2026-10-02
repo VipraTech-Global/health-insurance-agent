@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { api } from "../lib/api";
 
 export type CitationView = {
   documentVersionId: string | null;
@@ -9,20 +8,9 @@ export type CitationView = {
   quote: string;
   label: string;
   bbox: [number, number, number, number] | null;
-  evidenceSpanId?: string;
-  pdfUrl?: string;
+  pdfUrl: string;
   boxes?: [number, number, number, number][];
 };
-
-function clauseBoxes(context: { notes?: unknown[] }): [number, number, number, number][] | null {
-  const encoded = context.notes?.find((note): note is string => typeof note === "string" && note.startsWith("clause_rectangles:"));
-  if (!encoded) return null;
-  const boxes: unknown = JSON.parse(encoded.slice("clause_rectangles:".length));
-  if (!Array.isArray(boxes) || !boxes.length || boxes.some(box => !Array.isArray(box) || box.length !== 4 || !box.every(Number.isFinite))) {
-    throw new Error("The clause highlight coordinates are invalid.");
-  }
-  return boxes as [number, number, number, number][];
-}
 
 export function CitationViewer({ citation, onClose }: { citation: CitationView; onClose: () => void }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -37,21 +25,14 @@ export function CitationViewer({ citation, onClose }: { citation: CitationView; 
     let renderTask: { cancel: () => void; promise: Promise<void> } | undefined;
     void (async () => {
       try {
-        let boxes = citation.boxes ?? (citation.bbox ? [citation.bbox] : []);
-        if (citation.evidenceSpanId) {
-          const evidence = await api<{ quote: string; page: number; document_version_id: string; context: { notes?: unknown[] } }>(`/api/v2/evidence/${citation.evidenceSpanId}/`);
-          if (evidence.quote !== citation.quote || evidence.page !== pageNumber || evidence.document_version_id !== documentVersionId) {
-            throw new Error("The citation does not match its stored source.");
-          }
-          boxes = clauseBoxes(evidence.context) ?? boxes;
-        }
+        const boxes = citation.boxes ?? (citation.bbox ? [citation.bbox] : []);
         const pdfjs = await import("pdfjs-dist");
         pdfjs.GlobalWorkerOptions.workerSrc = new URL(
           "pdfjs-dist/build/pdf.worker.min.mjs",
           import.meta.url,
         ).toString();
         const pdfDocument = await pdfjs.getDocument(
-          citation.pdfUrl ?? `/api/v2/documents/${documentVersionId}/file/`,
+          citation.pdfUrl,
         ).promise;
         const page = await pdfDocument.getPage(pageNumber);
         if (cancelled || !canvasRef.current || !overlayRef.current) return;

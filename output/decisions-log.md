@@ -84,3 +84,19 @@ Parent card jobs and live question heartbeats/progress updates were holding conn
 ## 2026-10-03 — Resume partial cards without blocking other insurers
 
 A PageIndex selector can return an out-of-map section ID. Keep the strict scope check, record the field-group failure, and leave unsupported fields not stated. Persist completed card groups and continue other plan jobs; transport/quota failures remain pending and resumable. No alternative retrieval method is used. This changes only post-bake-off card processing, not frozen scores.
+
+## 2026-10-03 — Typed cards and tax-label safeguards
+
+Compile additional exact, validated adult/child entry-age clauses, an explicit floater-composition clause and decimal lakh sum-insured lists. Complex conditional rules remain unresolved; no renewal age is used as an entry age. Existing unpinned cards can reproject accepted clauses without new AI calls. Premium labels now require printed annual and tax-exclusion evidence, as well as all row/column axes. Unqualified gross-premium figures are not shown. Background card calls may wait up to 30 minutes under the same shared limiter; live deadlines remain bounded. This is operational/card work after the bake-off; frozen extractive answer checks and results are unchanged.
+
+## 2026-10-03 — Preserve data while retiring HNSW and legacy helpers
+
+Migration 0020 is guarded to coverguide_star_slice and test_coverguide_star_slice and removes only the two legacy HNSW indexes. Historical source/fact/customer tables remain intact for regression and erasure. Moved legacy relay/provider helpers and recommendation implementation into the research workspace; the live demo uses its dedicated two-model shared relay. Moved the necessary auth schema hook to accounts and removed the obsolete conversation schema path. No shared embedding artifacts were removed.
+
+## 2026-10-03 — Complete-bundle handoff and broader acquisition
+
+Recovered plans can now proceed to tables, exact vectors and cards as soon as all their document maps finish (including recorded fallbacks), without waiting for the slowest insurer. Accepted maps are reused, not rebuilt. A separate resumable global acquisition queue downloaded the eligible official register links; fetched files remain unreviewed and cannot alter the frozen evaluation or enter executable app evidence without edition admission. Raw PDF text is shared by hash while per-bundle document identity is rebound on reads.
+
+## 2026-10-03 — Measured application timing, initial release
+
+Initial H-only release 0ca1cbae-e717-4842-bed0-17584067e371 contains seven available plans plus five unavailable placeholders. Three-plan p50/p95: 50,397/72,460 ms (n=3). Five-plan p50/p95: 75,169/93,859 ms (n=3). All include queue time during background work. Scoped relay calls: 63; queue p50/p95 618/2,647 ms. Peak relay concurrency observed since start: six. These small-sample observations do not establish a speed improvement. The cross-process cap test now uses an explicit start barrier and waits for six admissions instead of assuming cold-start processes overlap within 180 ms.

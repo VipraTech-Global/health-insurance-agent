@@ -14,8 +14,8 @@ export COVERGUIDE_RELAY_CONCURRENCY=6
 state_root="${COVERGUIDE_REPORT_ROOT}/ten-insurer/stack"
 mkdir -p "$state_root"
 action="${1:-start}"
-if [[ "$action" != start && "$action" != health ]]; then
-  echo 'Usage: bash scripts/demo_stack.sh [start|health]' >&2
+if [[ "$action" != start && "$action" != restart && "$action" != health ]]; then
+  echo 'Usage: bash scripts/demo_stack.sh [start|restart|health]' >&2
   exit 2
 fi
 # Read-only checks happen before starting task-owned processes.
@@ -26,9 +26,47 @@ launch() {
   setsid nohup "$@" > "$state_root/$service.log" 2>&1 < /dev/null &
   echo "$!" > "$state_root/$service.pid"
 }
+if [[ "$action" == restart ]]; then
+  # Stop only this checkout's API/frontend/worker/recovery process trees. The
+  # resident embeddings worker and shared database, Redis and relay keep running.
+  uv run --no-sync python - "$state_root" "$PWD" <<'PY'
+import os
+import signal
+import sys
+import time
+from pathlib import Path
+root, checkout = map(Path, sys.argv[1:])
+for service in ('api', 'frontend', 'worker', 'recovery'):
+    record = root / (service + '.pid')
+    if not record.exists():
+        continue
+    pid = int(record.read_text())
+    process = Path('/proc') / str(pid)
+    if not process.exists():
+        record.unlink()
+        continue
+    if (process / 'cwd').resolve() not in {checkout, checkout / 'frontend'}:
+        raise SystemExit('Refusing to stop a process outside this checkout: ' + service)
+    descendants = [pid]
+    for parent in descendants:
+        for task in (Path('/proc') / str(parent) / 'task').glob('*/children'):
+            descendants.extend(int(child) for child in task.read_text().split() if int(child) not in descendants)
+    for target in reversed(descendants):
+        try:
+            os.kill(target, signal.SIGTERM)
+        except ProcessLookupError:
+            pass
+    for _ in range(50):
+        if not process.exists():
+            break
+        time.sleep(.1)
+    record.unlink()
+PY
+  action=start
+fi
 if [[ "$action" == start ]]; then
   if ! uv run --no-sync python -c 'import json; from pathlib import Path; p=Path("frontend/.next/routes-manifest.json"); assert p.exists(); data=json.loads(p.read_text()); assert "http://127.0.0.1:8021/api/" in json.dumps(data.get("rewrites",{}))' 2>/dev/null; then
-    (cd frontend && npm run build)
+    (cd frontend && COVERGUIDE_BACKEND_URL=http://127.0.0.1:8021 npm run build)
   fi
   if ! curl -fsS http://127.0.0.1:8021/api/v1/auth/session/ > /dev/null; then
     launch api bash scripts/star_slice.sh web
@@ -39,8 +77,7 @@ if [[ "$action" == start ]]; then
   launch worker env PYTHONPATH=backend uv run --no-sync celery -A config worker --loglevel=INFO --hostname=ten-insurer-demo@%h --concurrency=2 --queues=demo_live
   launch recovery bash scripts/star_slice.sh manage recover_demo_questions --loop
 fi
-method="$(uv run --no-sync python backend/manage.py shell -c 'from apps.adviser_v2.models import DemoRelease; print(DemoRelease.objects.filter(active=True).values_list("method",flat=True).first() or "pending")' | tail -1)"
-if [[ "$method" != P && "$action" == start ]] && ! curl -fsS http://127.0.0.1:8022/health > /dev/null; then
+if [[ "$action" == start ]] && ! curl -fsS http://127.0.0.1:8022/health > /dev/null; then
   launch embeddings bash scripts/star_slice.sh manage serve_demo_embeddings
 fi
 for attempt in $(seq 1 20); do
@@ -49,7 +86,7 @@ for attempt in $(seq 1 20); do
 done
 curl -fsS http://127.0.0.1:8021/api/v2/demo/health/ > /dev/null
 curl -fsS http://127.0.0.1:3021/demo > /dev/null
-if [[ "$method" != P ]]; then curl -fsS http://127.0.0.1:8022/health; fi
+curl -fsS http://127.0.0.1:8022/health
 worker_ready=false
 for attempt in $(seq 1 6); do
   if PYTHONPATH=backend uv run --no-sync celery -A config inspect ping --destination="ten-insurer-demo@$(hostname)" --timeout=5 > "$state_root/worker-health.log" 2>&1; then

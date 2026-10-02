@@ -7,6 +7,7 @@ from pathlib import Path
 
 import pdfplumber
 from django.conf import settings
+from django.db import close_old_connections
 from django.http import FileResponse, StreamingHttpResponse
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
@@ -21,7 +22,8 @@ from rest_framework.views import APIView
 from ..models import DemoPlanAnswer, DemoPlanIndex, DemoQuestion, DemoRelease, DemoSession
 from .acquisition import INSURERS
 from .charts import load_prices
-from .contracts import PlanCard, PremiumResult, Profile
+from .citations import card_anchor
+from .contracts import Citation, PlanCard, PremiumResult, Profile
 from .highlighting import _normalized, clause_rectangles
 from .matching import all_fits
 from .needs import normalize
@@ -52,6 +54,24 @@ class QuestionInput(serializers.Serializer):
     session_id = serializers.UUIDField()
     question = serializers.CharField(max_length=3000)
     plan_ids = serializers.ListField(child=serializers.CharField(max_length=160), min_length=2, max_length=5)
+
+
+class CardCitationInput(serializers.Serializer):
+    citation = serializers.JSONField()
+
+
+class CardCitation(APIView):
+    @extend_schema(request=CardCitationInput, responses=ObjectOutput)
+    def post(self, request, index_id):
+        index = get_object_or_404(DemoPlanIndex, pk=index_id, revoked_at__isnull=True)
+        incoming = CardCitationInput(data=request.data)
+        incoming.is_valid(raise_exception=True)
+        bundle = bundle_for(index)
+        try:
+            anchor = card_anchor(index.card, bundle, Citation.model_validate(incoming.validated_data['citation']))
+        except ValueError as exc:
+            raise ValidationError(str(exc)) from exc
+        return render_anchor(index.id, anchor, bundle)
 
 
 def indexes():
@@ -162,6 +182,7 @@ class Events(APIView):
                     yield 'event: cancelled\ndata: {"state":"cancelled"}\n\n'
                     return
                 payload = question_payload(question)
+                close_old_connections()  # Streaming waits must not reserve a SQL pool slot.
                 encoded = json.dumps(payload)
                 if encoded != previous:
                     yield "data: " + encoded + "\n\n"
@@ -229,23 +250,27 @@ class CitationDetail(APIView):
             raise ValidationError("Unknown citation.")
         anchor = anchors[position]
         bundle = bundle_for(row.index)
-        doc = next(d for d in bundle["documents"] if d["sha256"] == anchor["document_sha256"])
-        raw_page = next(p for p in bundle["pages"] if p["evidence_span_id"] == anchor["page_id"])
-        raw = raw_page["passage"]
-        if raw[anchor["start"]:anchor["end"]] != anchor["quote"]:
-            raise ValidationError("Citation offsets no longer match the original source.")
-        path = Path(doc["path"])
-        if hashlib.sha256(path.read_bytes()).hexdigest() != anchor["document_sha256"]:
-            raise ValidationError("Document integrity check failed.")
-        if anchor["method"] == "ocr":
-            boxes = [word["bbox"] for word in raw_page.get("ocr_words", [])
-                     if word["start"] < anchor["end"] and word["end"] > anchor["start"]]
-            if not boxes:
-                raise ValidationError("The OCR source has no preserved highlight geometry.")
-        else:
-            boxes = native_boxes(path, anchor, raw)
-        return Response({**anchor, "boxes": boxes,
-                         "pdf_url": f"/api/v2/demo/documents/{row.index_id}/{anchor['document_sha256']}/"})
+        return render_anchor(row.index_id, anchor, bundle)
+
+
+def render_anchor(index_id, anchor, bundle):
+    doc = next(d for d in bundle["documents"] if d["sha256"] == anchor["document_sha256"])
+    raw_page = next(p for p in bundle["pages"] if p["evidence_span_id"] == anchor["page_id"])
+    raw = raw_page["passage"]
+    if raw[anchor["start"]:anchor["end"]] != anchor["quote"]:
+        raise ValidationError("Citation offsets no longer match the original source.")
+    path = Path(doc["path"])
+    if hashlib.sha256(path.read_bytes()).hexdigest() != anchor["document_sha256"]:
+        raise ValidationError("Document integrity check failed.")
+    if anchor["method"] == "ocr":
+        boxes = [word["bbox"] for word in raw_page.get("ocr_words", [])
+                 if word["start"] < anchor["end"] and word["end"] > anchor["start"]]
+        if not boxes:
+            raise ValidationError("The OCR source has no preserved highlight geometry.")
+    else:
+        boxes = native_boxes(path, anchor, raw)
+    return Response({**anchor, "boxes": boxes,
+                     "pdf_url": f"/api/v2/demo/documents/{index_id}/{anchor['document_sha256']}/"})
 
 
 def native_boxes(path, anchor, raw):

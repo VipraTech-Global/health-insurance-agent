@@ -22,9 +22,9 @@ export function AuthPanel({ onSuccess }: { onSuccess: () => void }) {
   return <main className="auth-shell">
     <section className="auth-story">
       <p className="eyebrow">LOCAL PILOT · EVIDENCE FIRST</p>
-      <h1>Insurance advice you can trace back to the page.</h1>
+      <h1>Health cover clauses you can trace back to the page.</h1>
       <p>Build a profile, compare documented fit, and open the exact source behind every material claim.</p>
-      <div className="trust-row"><span>Reviewed sources</span><span>Exact citations</span><span>Honest unknowns</span></div>
+      <div className="trust-row"><span>Official documents</span><span>Exact citations</span><span>Honest unknowns</span></div>
     </section>
     <section className="auth-card">
       <div className="mark">CG</div>

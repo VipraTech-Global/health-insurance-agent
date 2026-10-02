@@ -5,10 +5,11 @@ import { api } from "@/lib/api";
 import { CitationViewer, type CitationView } from "./citation-viewer";
 
 type Card = { plan_id: string; index_version: string; insurer: string; name: string; variant: string; plan_type: string; status: string };
-type Reason = { field: string; status: string; explanation: string; citations: { quote: string }[] };
+type SourceQuote = { section_id: string; page_id: string; quote: string; occurrence: number };
+type Reason = { field: string; status: string; explanation: string; citations: SourceQuote[] };
 type Fit = { plan_id: string; status: string; hard_limits: Reason[]; other_needs: Reason[] };
 type Anchor = { quote: string; page: number; method: string; role: string; document_id: string; boxes: [number, number, number, number][]; pdf_url: string };
-type PlanResult = { id: string; plan_id: string; index_version: string; name: string; plan_type: string; state: string; model: string; result?: { status: string; message?: string; reason?: string; answer?: { statements: { text: string; conditions: { text: string }[]; restrictions: { text: string }[] }[] }; validation?: { anchors: Anchor[] }; omissions?: string[] } | null };
+type PlanResult = { id: string; plan_id: string; index_version: string; name: string; variant: string; insurer: string; plan_type: string; state: string; model: string; result?: { status: string; message?: string; reason?: string; answer?: { statements: { text: string; conditions: { text: string }[]; restrictions: { text: string }[] }[] }; validation?: { anchors: Anchor[] }; omissions?: string[] } | null };
 type Question = { id: string; state: string; plans: PlanResult[] };
 type Price = { status: string; amount_printed: string | null; label: string; caveat: string; missing_axes: string[]; axis_options: Record<string, string[]>; citations: { quote: string }[] };
 type Coverage = { selection_basis: string; method: string | null; insurers: { id: string; name: string; discovery_status: string; candidate_document_count: number; browser_recovered_pdfs: number; register_entries: number | null; catalogue_complete: boolean }[]; plans: { id: string; name: string; insurer: string; documents: number; pages: number; sections: number; map_fallbacks: number; models: string[]; status: string }[] };
@@ -96,6 +97,14 @@ export function DemoApp({ onSignedOut }: { onSignedOut: () => Promise<void> }) {
     });
   }
 
+  async function openCardCitation(card: Card, source: SourceQuote) {
+    await perform(async () => {
+      const anchor = await api<Anchor>(`/api/v2/demo/cards/${card.index_version}/citation/`, { method: "POST", body: JSON.stringify({ citation: source }) });
+      setCitation({ documentVersionId: anchor.document_id, page: anchor.page, quote: anchor.quote,
+        label: `${card.name} · ${card.variant} · page ${anchor.page}`, bbox: null, boxes: anchor.boxes, pdfUrl: anchor.pdf_url });
+    });
+  }
+
   async function showCoverage() {
     setScreen("coverage");
     await perform(async () => setCoverage(await api<Coverage>("/api/v2/demo/coverage/")));
@@ -126,7 +135,7 @@ export function DemoApp({ onSignedOut }: { onSignedOut: () => Promise<void> }) {
         <span><small>{card.insurer}</small><strong>{card.name}</strong><span>{card.variant} · {types.find(t => t.value === card.plan_type)?.label ?? card.plan_type}</span></span></label>
       <p className={`demo-status ${fit?.status ?? "unresolved"}`}>{statusLabel[fit?.status ?? card.status] ?? card.status}</p>
       {fit && <details><summary>Documented reasons and missing information</summary>
-        {[...fit.hard_limits, ...fit.other_needs].map((r, i) => <div className="demo-reason" key={i}><p>{r.explanation}</p>{r.citations.map((c, j) => <blockquote key={j}>{c.quote}</blockquote>)}</div>)}
+        {[...fit.hard_limits, ...fit.other_needs].map((r, i) => <div className="demo-reason" key={i}><p>{r.explanation}</p>{r.citations.map((c, j) => <button className="demo-citation" key={j} onClick={() => void openCardCitation(card, c)}><q>{c.quote}</q><span>Open source ↗</span></button>)}</div>)}
       </details>}
     </article>;
   }
@@ -170,8 +179,8 @@ export function DemoApp({ onSignedOut }: { onSignedOut: () => Promise<void> }) {
         {!sessionId && <p>Add your family details first.</p>}
         {question && !["completed", "cancelled"].includes(question.state) && <button onClick={() => void perform(async () => { await api(`/api/v2/demo/questions/${question.id}/cancel/`, { method: "POST" }); events.current?.close(); setQuestion({ ...question, state: "cancelled", plans: [] }); })}>Cancel question</button>}
         {question && <button onClick={() => void perform(async () => setQuestion(await api(`/api/v2/demo/questions/${question.id}/`)))}>Refresh answer</button>}
-        <div className="demo-comparison" style={{ gridTemplateColumns: `repeat(${Math.max(1, selected.length)}, minmax(280px, 1fr))` }}>{(question?.plans ?? selectedCards.map(c => ({ id: c.plan_id, plan_id: c.plan_id, index_version: c.index_version, name: c.name, plan_type: c.plan_type, state: "Ready for a question", model: "", result: null }))).map(plan => <article className="demo-answer" key={plan.plan_id}>
-          <header><small>{types.find(t => t.value === plan.plan_type)?.label}</small><h2>{plan.name}</h2><span>{plan.state.replaceAll("_", " ")}</span></header>
+        <div className="demo-comparison" style={{ gridTemplateColumns: `repeat(${Math.max(1, selected.length)}, minmax(280px, 1fr))` }}>{(question?.plans ?? selectedCards.map(c => ({ id: c.plan_id, plan_id: c.plan_id, index_version: c.index_version, name: c.name, variant: c.variant, insurer: c.insurer, plan_type: c.plan_type, state: "Ready for a question", model: "", result: null }))).map(plan => <article className="demo-answer" key={plan.plan_id}>
+          <header><small>{plan.insurer} · {types.find(t => t.value === plan.plan_type)?.label}</small><h2>{plan.name}</h2><p>{plan.variant}</p><span>{plan.state.replaceAll("_", " ")}</span></header>
           {plan.result?.answer?.statements.map((s, i) => <div key={i}><p className="demo-answer-text">{s.text}</p>{s.conditions.length > 0 && <details open><summary>Conditions</summary>{s.conditions.map((c, j) => <p key={j}>{c.text}</p>)}</details>}{s.restrictions.map((r, j) => <p className="demo-notice" key={j}>{r.text}</p>)}</div>)}
           {plan.result?.message && <p>{plan.result.message}</p>}{plan.result?.reason && <details><summary>Why this answer is limited</summary><p>{plan.result.reason}</p></details>}
           {plan.result?.validation?.anchors.map((a, i) => <button className="demo-citation" key={i} onClick={() => void openCitation(plan, i)}><q>{a.quote}</q><span>Page {a.page} ↗ {a.role === "brochure" ? " · from the brochure" : ""}{a.method !== "native_text" ? " · OCR" : ""}</span></button>)}
@@ -187,6 +196,6 @@ export function DemoApp({ onSignedOut }: { onSignedOut: () => Promise<void> }) {
     </main>
     {screen !== "start" && screen !== "coverage" && <aside className="demo-selection"><span>{selected.length} of 5 selected · same plan type</span><button onClick={() => setSelected([])}>Clear</button><button className="demo-primary" disabled={selected.length < 2} onClick={() => setScreen("chat")}>Compare selected plans →</button></aside>}
     <footer className="demo-footer">Local demonstration · Neutral document comparison · AI answers pass code checks, not expert review · Indicative premiums exclude tax · Policy terms, underwriting and insurer decisions apply.</footer>
-    {citation && <CitationViewer citation={citation} onClose={() => setCitation(null)} />}
+    {citation && <CitationViewer key={`${citation.documentVersionId}:${citation.page}:${citation.quote}`} citation={citation} onClose={() => setCitation(null)} />}
   </div>;
 }

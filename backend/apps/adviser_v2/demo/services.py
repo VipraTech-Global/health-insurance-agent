@@ -181,7 +181,8 @@ def question_payload(question: DemoQuestion) -> dict:
             result.pop("packet", None)  # Source packets stay server-side; selected exact quotes are returned.
             result.pop("attempts", None)  # Rejected candidate wording must never be displayed.
         plans.append({"id": str(row.id), "plan_id": row.index.plan_key, "index_version": row.index_id,
-                      "name": row.index.name, "plan_type": row.index.plan_type,
+                      "name": row.index.name, "variant": row.index.variant, "insurer": row.index.insurer,
+                      "plan_type": row.index.plan_type,
                       "state": "source_revoked" if row.index.revoked_at else row.state,
                       "model": row.model, "result": result})
     return {"schema_version": 1, "id": str(question.id), "state": question.state, "plans": plans}

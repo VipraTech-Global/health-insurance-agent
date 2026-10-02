@@ -141,12 +141,25 @@ def test_pinned_pair_cannot_cross_switch(state, tmp_path):
     assert state.model() == SONNET
 
 
-def _process_slot(url, prefix, priority, delay):
+def _process_slot(url, prefix, priority, delay, gated=False):
     state = SharedRelayState(redis.Redis.from_url(url, decode_responses=True), prefix=prefix)
+    if gated:
+        state.redis.incr(state.key('test-ready'))
+        deadline = time.monotonic() + 30
+        while not state.redis.get(state.key('test-start')):
+            if time.monotonic() > deadline:
+                raise TimeoutError('The parent did not open the test start barrier.')
+            time.sleep(.01)
     with state.slot(priority, deadline=time.monotonic() + 15):
         count = state.redis.incr(state.key("test-inflight"))
         state.redis.rpush(state.key("test-counts"), count)
         model = state.model()
+        if gated:
+            deadline = time.monotonic() + 15
+            while int(state.redis.hget(state.key('metrics'), 'peak') or 0) < 6:
+                if time.monotonic() > deadline:
+                    raise TimeoutError('Six processes could not acquire shared slots.')
+                time.sleep(.01)
         time.sleep(delay)
         state.redis.decr(state.key("test-inflight"))
     return model
@@ -155,8 +168,13 @@ def _process_slot(url, prefix, priority, delay):
 def test_cross_process_cap_holds_across_shared_switch(state):
     context = multiprocessing.get_context("spawn")
     with context.Pool(8) as pool:
-        jobs = [pool.apply_async(_process_slot, ("redis://127.0.0.1:6401/0", state.prefix, "live", .18)) for _ in range(16)]
+        jobs = [pool.apply_async(_process_slot, ("redis://127.0.0.1:6401/0", state.prefix, "live", .18, True)) for _ in range(16)]
+        deadline = time.monotonic() + 30
+        while int(state.redis.get(state.key('test-ready')) or 0) < 8:
+            assert time.monotonic() < deadline, 'Spawned processes did not reach the barrier.'
+            time.sleep(.01)
         state.trip(LUNA, limited())
+        state.redis.set(state.key('test-start'), '1')
         models = [job.get(timeout=20) for job in jobs]
     assert set(models) == {SONNET}
     assert max(map(int, state.redis.lrange(state.key("test-counts"), 0, -1))) <= 6
