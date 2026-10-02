@@ -10,7 +10,7 @@ from django.contrib.postgres.indexes import GinIndex
 from django.contrib.postgres.search import SearchVectorField
 from django.db import models
 from django.db.models import F, Q
-from pgvector.django import HnswIndex, VectorField
+from pgvector.django import VectorField
 
 from ..fields import EncryptedCharField, EncryptedTextField, ValidatedJSONField
 from .base import ApprovedModel, default_accepted_selection
@@ -129,7 +129,6 @@ class ConversationMessageChunk(ApprovedModel):
         ]
         indexes = [
             GinIndex(fields=['lexical_vector'], name='v2_conversation_messa_d5d39113'),
-            HnswIndex(fields=['embedding'], name='v2_conversation_messa_92df564e', m=16, ef_construction=64, opclasses=['vector_cosine_ops']),
         ]
 
 

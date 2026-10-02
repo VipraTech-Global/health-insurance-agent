@@ -8,7 +8,7 @@ from django.contrib.postgres.indexes import GinIndex
 from django.contrib.postgres.search import SearchVectorField
 from django.db import models
 from django.db.models import F, Q
-from pgvector.django import HnswIndex, VectorField
+from pgvector.django import VectorField
 
 from ..fields import ValidatedJSONField
 from .base import ApprovedModel
@@ -314,7 +314,6 @@ class PolicySearchChunk(ApprovedModel):
         ]
         indexes = [
             GinIndex(fields=['lexical_vector'], name='v2_policy_search_chunk_ix_1'),
-            HnswIndex(fields=['embedding'], name='v2_policy_search_chunk_ix_2', m=16, ef_construction=64, opclasses=['vector_cosine_ops']),
         ]
 
 
