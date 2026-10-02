@@ -1,4 +1,4 @@
-# Frozen two-method protocol, version 1
+# Frozen two-method protocol, version 2
 
 This protocol is committed before scored calls. A run additionally freezes content hashes of its document roster, raw pages, maps, sections, reference memberships, queries, prompts, schemas, validators, packet settings and this protocol. A changed input creates a different run; it cannot resume the original run.
 
@@ -19,10 +19,10 @@ Star uses the existing 39 stored fact cells and their fixed/customer questions (
 
 The answer sheet contains twenty questions for each of thirteen evaluation slots (260 cases): room rent, ICU, PED waiting, specified-disease waiting, maternity, newborn, co-pay, deductible, restoration, no-claim bonus, pre/post hospitalisation, day care, road ambulance, air ambulance, AYUSH, organ donor, domiciliary/home care, health check-up, OPD and cataract. Missing/unavailable cases remain visible and count as unanswered. Repeated Star flagship slots retain their fixed weight and are disclosed.
 
-Score = complete Star cells + (passed answer cases / 260 * 39). Answered means all six deterministic checks passed, not expert verified. Any wrong-plan quotation attempt disqualifies its arm, including rejected attempts. If both arms qualify, P wins when absolute score difference <=2; otherwise higher score wins. If neither qualifies, there is no admissible winner and live answering remains disabled.
+Score = complete Star cells + (passed answer cases / 260 * 39). Answered means all six deterministic checks passed, not expert verified. Only wrong-plan quotations **shown to the customer after passing all six checks** disqualify an arm. Attempts rejected by the code checks are counted and reported separately and do not disqualify: the check did its job. If both arms qualify, P wins when absolute score difference <=2; otherwise higher score wins. If only one qualifies, it wins. If both are disqualified, the higher score still wins (an exact tie goes to P); the report explicitly states both disqualifications. Live answering is never disabled because of the bake-off result. These rules are the user's explicit decision before any scored call, overriding version 1 and the supplied plan.
 
 ## Fairness and persistence
 
-For each question, H and P must use the same model for selection and answering. A Redis model change that splits a pair invalidates the pair; retain the attempts for audit and rerun both on the now-active model. Include both successful and rejected attempts in wrong-plan accounting. Do not drop evidence of disqualification on retry. Record per-call requested/observed model, queue/model/total time, tokens including cached/reasoning, transport retries and JSON retries. Maps include all contributing model identities and remain reusable under matching cache metadata.
+For each question, H and P must use the same model for selection and answering. A Redis model change that splits a pair invalidates the pair; retain the attempts for audit and rerun both on the now-active model. Keep displayed and rejected wrong-plan counts separate. Preserve both across retries; only displayed wrong-plan quotations enter disqualification accounting. Record per-call requested/observed model, queue/model/total time, tokens including cached/reasoning, transport retries and JSON retries. Maps include all contributing model identities and remain reusable under matching cache metadata.
 
 Run independent jobs concurrently and persist terminal results atomically. No new methods or tuning after results. Report table-heavy room/ICU/maternity/newborn/cataract cases separately. Freeze the winner as the sole live search method; move the loser to research and ingest the remaining catalogue with the winner's required indexes only.
