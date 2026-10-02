@@ -22,6 +22,8 @@ ANSWER_PROMPT = (
     "Never invent missing evidence or infer an exclusion from silence. If the packet does not establish an answer, "
     "return status not_found and an empty statements array. Do not give personal eligibility or claim calculations. "
     "Do not rank plans or give purchase direction. Model output is locally checked; there is no AI reviewer."
+    " For table answers cite separate exact labels and cells from the same supplied table region; supply table "
+    "support with its value cell, row labels and column labels. Never quote an orphan number or mix axes."
 )
 
 

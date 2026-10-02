@@ -7,6 +7,7 @@ the operator. JSON/schema repair is independent of downstream evidence correctio
 from __future__ import annotations
 
 import contextlib
+import contextvars
 import hashlib
 import json
 import logging
@@ -34,6 +35,7 @@ ENDPOINT = "http://127.0.0.1:8317/v1/responses"
 PROBE_INTERVAL = 1800
 ADAPTER_VERSION = "subscription-responses/1"
 LOG = logging.getLogger(__name__)
+AUDIT_CONTEXT = contextvars.ContextVar("demo_relay_audit", default=None)
 
 
 class RelayUnavailable(RuntimeError):
@@ -312,6 +314,7 @@ class Relay:
                   "queue_ms": 0, "model_ms": 0, "usage": {}, "observed_model": None,
                   "started_at": self.state.now(), "transport_retry": transport_retry,
                   "json_retry": json_retry}
+        record["scope"] = AUDIT_CONTEXT.get()
         started = time.monotonic()
         try:
             with self.state.slot(priority, deadline=deadline) as queue_time:

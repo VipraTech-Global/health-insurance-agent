@@ -81,4 +81,4 @@ def search(*, bundle: dict, question: str, method: str, relay: Relay, priority: 
     if any(key not in by_id for key in ids):
         raise ValueError("PageIndex selected a section outside this plan's immutable map.")
     ranked = [by_id[key] for key in dict.fromkeys([*ids, *candidates])]
-    return SearchResult(pack_sections(plan_id, ranked), result.model, result.call_ids)
+    return SearchResult(pack_sections(plan_id, ranked, tables=bundle.get("tables", [])), result.model, result.call_ids)

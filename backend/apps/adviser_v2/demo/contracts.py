@@ -23,9 +23,17 @@ class SupportedText(Closed):
     citations: list[Citation] = Field(min_length=1, max_length=12)
 
 
+class TableSupport(Closed):
+    region_id: str
+    value_cell_id: str
+    row_label_ids: list[str] = Field(min_length=1)
+    column_label_ids: list[str] = Field(min_length=1)
+
+
 class Statement(SupportedText):
     conditions: list[SupportedText] = Field(default_factory=list, max_length=12)
     restrictions: list[SupportedText] = Field(default_factory=list, max_length=12)
+    table: TableSupport | None = None
 
 
 class Answer(Closed):

@@ -85,11 +85,12 @@ class Packet:
     omitted_ids: tuple[str, ...]
     tokens: int
     budget: int = 16000
+    tables: tuple[dict, ...] = ()
 
     def evidence(self) -> dict:
         # No navigation object is accepted or merged by this function.
         return {"plan_id": self.plan_id, "sections": [s.payload() for s in self.sections],
-                "omitted_ids": list(self.omitted_ids), "tokens": self.tokens}
+                "omitted_ids": list(self.omitted_ids), "tokens": self.tokens, "tables": list(self.tables)}
 
 
 def cache_matches(saved: dict, *, pdf_sha: str, raw_sha: str, sdk_revision: str) -> bool:
@@ -237,7 +238,7 @@ def build_sections(*, plan_id: str, document: dict, pages: list[dict], saved_map
     return sections, navigation, reason
 
 
-def pack_sections(plan_id: str, ranked: list[Section], *, budget: int = 16000) -> Packet:
+def pack_sections(plan_id: str, ranked: list[Section], *, budget: int = 16000, tables: list[dict] | None = None) -> Packet:
     if not 1 <= budget <= 16000:
         raise ValueError("Packet budget must be 1..16000.")
     selected, omitted, seen, used = [], [], set(), 0
@@ -247,13 +248,35 @@ def pack_sections(plan_id: str, ranked: list[Section], *, budget: int = 16000) -
         if section.id in seen:
             continue
         seen.add(section.id)
-        cost = token_count(section.text)
+        cost = token_count(json.dumps(section.payload(), ensure_ascii=False))
         if used + cost <= budget:
             selected.append(section)
             used += cost
         else:
             omitted.append(section.id)
-    return Packet(plan_id, tuple(selected), tuple(omitted), used, budget)
+    regions = []
+    selected_ids = {s.id for s in selected}
+    for table in tables or []:
+        cells = {k: c for k, c in table["cells"].items() if c["citation"]["section_id"] in selected_ids}
+        if cells:
+            candidate = {**table, "cells": cells}
+            cost = token_count(json.dumps(candidate, ensure_ascii=False))
+            if used + cost <= budget:
+                regions.append(candidate)
+                used += cost
+            else:
+                omitted.append("table:" + table["id"])
+    # Include wrapper and omission metadata in the actual packet budget.
+    while selected:
+        packet = Packet(plan_id, tuple(selected), tuple(omitted), used, budget, tuple(regions))
+        actual = token_count(json.dumps(packet.evidence(), ensure_ascii=False))
+        if actual <= budget:
+            return Packet(plan_id, tuple(selected), tuple(omitted), actual, budget, tuple(regions))
+        if regions:
+            omitted.append("table:" + regions.pop()["id"])
+        else:
+            omitted.append(selected.pop().id)
+    return Packet(plan_id, (), tuple(omitted), 0, budget)
 
 
 def reference_covered(reference: dict, packet: Packet) -> bool:

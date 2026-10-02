@@ -37,3 +37,10 @@ Work in progress. No new bake-off has run and no ten-insurer release has been pu
 - Full pytest completed with 513 passed and 19 warnings; three additional card/chart projection tests passed afterward. The expanded relay suite, including inner PageIndex JSON repair, passed all 18 tests. These are implementation checks, not a completed application answer sheet.
 - PageIndex's outer structured wrapper can contain malformed task-requested JSON. Inner JSON is now locally validated before caching, with the same single JSON repair allowance. Valid completed maps remain reusable; malformed cached internal responses are retained as `.invalid-json` artifacts rather than reused as successes. Transport failures remain pending; deterministic failed maps receive recorded fallback sections.
 - Completed-document embeddings now overlap mapping of other documents via a shared source-text cache. Full maps are not rebuilt when other documents finish. The one-command stack probe succeeded for API, frontend, demo worker, database, Redis, relay and the resident BGE worker.
+
+## Before the scored run — table evidence and packet accounting
+
+- All 33 admitted physical PDFs finished processing: 32 accepted maps and one Manipal Protect benefit-illustration fallback. Its original text uses the prescribed 1,024-token / 128-overlap pieces. No scored call has run.
+- Physical table regions retain row/column cell positions and exact original-text citations. Table answers must cite the value and each selected axis separately; a label from another row or column fails validation. Ambiguous source cells are not admitted.
+- The 16,000-token packet limit includes serialized evidence and citation metadata. Oversized tables/sections are omitted explicitly, without truncating source clauses. The same builder applies to H and P.
+- Thirty focused contract, evidence and evaluation tests passed, including table axes, missing labels, isolated numbers and serialized packet accounting. Model/call/token audit scope now records each method/question pair, including split attempts.

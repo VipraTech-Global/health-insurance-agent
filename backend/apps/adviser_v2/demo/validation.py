@@ -60,6 +60,8 @@ def validate(answer: Answer, packet: Packet, *, variant: str = "Default", known_
         wrong += 1
         fail(0, "Wrong-plan answer identity.")
     sections = {s.id: s for s in packet.sections}
+    tables = {t['id']: t for t in packet.tables}
+    table_quotes = set()
 
     def citation(c: Citation) -> str | None:
         nonlocal wrong
@@ -85,7 +87,8 @@ def validate(answer: Answer, packet: Packet, *, variant: str = "Default", known_
         if (following and RESTRICTIONS.match(following)
                 or (following and re.match(r"(?:if|when|unless|where|and only|but)\b", following, re.I))):
             fail(2, "A material condition immediately following the quotation was omitted.")
-        if following and c.quote.rstrip()[-1] not in ".;:!?" and not tail.startswith(("\n", "\r")):
+        is_table_cell = (c.section_id, c.page_id, fold(c.quote)) in table_quotes
+        if following and not is_table_cell and c.quote.rstrip()[-1] not in ".;:!?" and not tail.startswith(("\n", "\r")):
             fail(2, "The quotation stops inside an original clause; include its remaining conditions.")
         anchors.append({"section_id": section.id, "document_id": section.document_id,
             "document_sha256": section.document_sha256, "page_id": source.page_id,
@@ -118,6 +121,29 @@ def validate(answer: Answer, packet: Packet, *, variant: str = "Default", known_
     if not answer.statements:
         fail(3, "An answered result needs a substantive statement.")
     for statement in answer.statements:
+        table_quotes.clear()
+        if statement.table:
+            support = statement.table
+            region = tables.get(support.region_id)
+            cells = region.get('cells', {}) if region else {}
+            value = cells.get(support.value_cell_id)
+            ids = [support.value_cell_id, *support.row_label_ids, *support.column_label_ids]
+            if value is None or any(key not in cells for key in ids):
+                fail(1, 'Table support is outside the supplied original table region.')
+            else:
+                if any(cells[key]['row'] != value['row'] or cells[key]['column'] >= value['column'] for key in support.row_label_ids):
+                    fail(1, 'A table row label does not align with its value cell.')
+                if any(cells[key]['column'] != value['column'] or cells[key]['row'] >= value['row'] for key in support.column_label_ids):
+                    fail(1, 'A table column label does not align with its value cell.')
+                cited = {(c.section_id, c.page_id, fold(c.quote)) for c in statement.citations}
+                for key in ids:
+                    original = cells[key]['citation']
+                    identity = (original['section_id'], original['page_id'], fold(original['quote']))
+                    if identity not in cited:
+                        fail(3, 'Every selected table label and value requires its separate exact citation.')
+                    table_quotes.add(identity)
+        elif re.fullmatch(r'\s*(?:(?:Rs\.?|₹)\s*)?\d[\d,.]*\s*(?:(?:lakh|crore|days?|months?|years?|%)\s*)?[.;]?\s*', statement.text, re.I):
+            fail(3, 'An isolated value needs its benefit label and printed table axes.')
         quote_texts = supported(statement, 3)
         for condition in statement.conditions:
             supported(condition, 2)

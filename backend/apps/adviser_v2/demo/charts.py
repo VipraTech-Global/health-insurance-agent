@@ -6,6 +6,7 @@ axes remain invalid. There is no amount interpolation or inferred tax treatment.
 from __future__ import annotations
 
 import json
+from contextlib import nullcontext
 from dataclasses import asdict
 from pathlib import Path
 
@@ -46,25 +47,25 @@ def cell_payload(cell):
     return {**asdict(cell), 'citation': cell.citation.model_dump()}
 
 
-def source_citation(bundle, page_id, text):
+def source_citation(sources, page_id, text):
     matches = []
-    for payload in bundle['sections']:
-        section = Section.from_payload(payload)
-        for segment in section.segments:
-            if segment.page_id != page_id:
-                continue
+    for section_id, segments in sources:
+        for segment in segments:
             try:
                 locate(segment.text, text)
             except ValueError:
                 continue
             if fold(segment.text).count(fold(text)) == 1:
-                matches.append(Citation(section_id=section.id, page_id=page_id, quote=text))
+                matches.append(Citation(section_id=section_id, page_id=page_id, quote=text))
     return matches[0] if len(matches) == 1 else None
 
 
-def physical_cells(bundle, document, page_number):
+def physical_cells(bundle, document, page_number, pdf=None):
     raw = next(p for p in bundle['pages'] if p['document_sha256'] == document['sha256'] and p['physical_page'] == page_number)
-    with pdfplumber.open(document['path']) as pdf:
+    sources = [(s.id, [p for p in s.segments if p.page_id == raw['evidence_span_id']])
+               for s in (Section.from_payload(payload) for payload in bundle['sections'])]
+    sources = [(key, segments) for key, segments in sources if segments]
+    with (nullcontext(pdf) if pdf is not None else pdfplumber.open(document['path'])) as pdf:
         page = pdf.pages[page_number - 1]
         result = []
         for n, table in enumerate(page.find_tables()):
@@ -75,7 +76,7 @@ def physical_cells(bundle, document, page_number):
                 for c, text in enumerate(row):
                     if not text or len(text) > 1600:
                         continue
-                    citation = source_citation(bundle, raw['evidence_span_id'], text)
+                    citation = source_citation(sources, raw['evidence_span_id'], text)
                     if citation:
                         key = f'{table_id}:{r}:{c}'
                         cells[key] = TableCell(key, table_id, r, c, text, citation)

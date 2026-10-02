@@ -149,3 +149,18 @@ def test_pageindex_transport_retry_is_not_a_negative_title_check(tmp_path, monke
     finally:
         CONTEXT.reset(token)
     assert result == '{"answer":"yes"}' and len(calls) == 2 and not errors
+
+
+def test_packet_budget_counts_serialized_metadata_and_tables():
+    import json
+
+    from apps.adviser_v2.evidence_retrieval import token_count
+    pieces, _, _ = sections()
+    cells = {str(n): {'row': n, 'column': 1, 'citation': {
+        'section_id': pieces[0].id, 'page_id': 'p1', 'quote': 'Original page 1.'}}
+        for n in range(100)}
+    packet = pack_sections('p', pieces, budget=750, tables=[{'id': 'large', 'cells': cells}])
+    assert packet.sections
+    assert 'table:large' in packet.omitted_ids
+    assert token_count(json.dumps(packet.evidence(), ensure_ascii=False)) <= 750
+    assert 'NAV_' not in str(packet.evidence())

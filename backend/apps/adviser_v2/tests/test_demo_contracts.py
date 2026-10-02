@@ -157,3 +157,37 @@ def test_similar_variant_names_do_not_accept_a_different_variant():
     raw = 'Cover applies only to Optima Secure+.'
     checked = validate(answer(raw), packet(raw), variant='Optima Secure', known_variants=('Optima Secure', 'Optima Secure+'))
     assert not checked.checks[4]
+
+
+def table_answer():
+    from apps.adviser_v2.demo.contracts import TableSupport
+    raw = 'Benefit     Gold     Silver\nRoom rent   5 lakh   3 lakh\nICU         8 lakh   4 lakh'
+    base = packet(raw)
+    data = [('benefit', 1, 0, 'Room rent'), ('gold', 0, 1, 'Gold'),
+            ('silver', 0, 2, 'Silver'), ('amount', 1, 1, '5 lakh'), ('icu', 2, 0, 'ICU')]
+    cells = {key: {'row': row, 'column': col, 'citation': citation(text).model_dump()}
+             for key, row, col, text in data}
+    original = replace(base, tables=({'id': 'region', 'cells': cells},))
+    draft = Answer(plan_id='plan', status='answered', statements=[Statement(
+        text='Room rent Gold 5 lakh', citations=[citation(s) for s in ['Room rent', 'Gold', '5 lakh']],
+        table=TableSupport(region_id='region', value_cell_id='amount',
+                           row_label_ids=['benefit'], column_label_ids=['gold']))])
+    return original, draft
+
+
+def test_table_answer_requires_separate_exact_cells_on_correct_axes():
+    original, draft = table_answer()
+    checked = validate(draft, original)
+    assert checked.passed and len(checked.anchors) == 3
+    draft.statements[0].table.row_label_ids = ['icu']
+    assert not validate(draft, original).checks[1]
+    draft.statements[0].table.row_label_ids = ['benefit']
+    draft.statements[0].table.column_label_ids = ['silver']
+    assert not validate(draft, original).checks[1]
+
+
+def test_table_answer_missing_label_and_orphan_amount_rejected():
+    original, draft = table_answer()
+    draft.statements[0].citations.pop(1)
+    assert not validate(draft, original).checks[3]
+    assert not validate(answer('5 lakh'), packet('5 lakh')).checks[3]
