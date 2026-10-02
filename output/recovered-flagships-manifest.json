@@ -11,7 +11,7 @@
       "variants": [
         "MAX"
       ],
-      "edition": "Current Activ One MAX download tab; prior Nov 2023\u2013June 2026 wording is separately labelled. Current wording, prospectus, CIS, brochure and chart share the new UIN.",
+      "edition": "Current MAX register edition; older Nov 2023\u2013June 2026 wording is listed separately",
       "plan_type": "medical_indemnity",
       "documents": [
         {
@@ -119,7 +119,8 @@
           "evidence_use": "executable",
           "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
         }
-      ]
+      ],
+      "edition_basis": "Current Activ One MAX download tab; prior Nov 2023\u2013June 2026 wording is separately labelled. Current wording, prospectus, CIS, brochure and chart share the new UIN."
     },
     {
       "insurer_id": "care",
@@ -130,7 +131,7 @@
       "variants": [
         "Default"
       ],
-      "edition": "Official wording register explicitly labels effective 29 April 2026. Current CIS, prospectus and brochure share that wording UIN; add-on UINs in the brochure are optional and not selected.",
+      "edition": "Wording effective 29 April 2026; current CIS and prospectus share the UIN",
       "plan_type": "medical_indemnity",
       "documents": [
         {
@@ -219,7 +220,8 @@
           "evidence_use": "executable",
           "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
         }
-      ]
+      ],
+      "edition_basis": "Official wording register explicitly labels effective 29 April 2026. Current CIS, prospectus and brochure share that wording UIN; add-on UINs in the brochure are optional and not selected."
     },
     {
       "insurer_id": "niva",
@@ -233,7 +235,7 @@
         "Elite",
         "Select"
       ],
-      "edition": "Current ReAssure 3.0 product page and rendered download register associate the wording, prospectus, CIS and both limited/unlimited brochures. Variant and sum-insured restrictions remain explicit.",
+      "edition": "Current ReAssure 3.0 register; limited/unlimited and Classic/Select/Elite/Black scopes",
       "plan_type": "medical_indemnity",
       "documents": [
         {
@@ -362,7 +364,8 @@
           "evidence_use": "executable",
           "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
         }
-      ]
+      ],
+      "edition_basis": "Current ReAssure 3.0 product page and rendered download register associate the wording, prospectus, CIS and both limited/unlimited brochures. Variant and sum-insured restrictions remain explicit."
     },
     {
       "insurer_id": "icici",
@@ -373,7 +376,7 @@
       "variants": [
         "Default"
       ],
-      "edition": "Current product page UIN matches wording, prospectus and CIS from the rendered Health Insurance download categories. Separate HER brochure is not selected.",
+      "edition": "Current Elevate register edition; separate HER brochure excluded",
       "plan_type": "medical_indemnity",
       "documents": [
         {
@@ -479,7 +482,8 @@
           "evidence_use": "executable",
           "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
         }
-      ]
+      ],
+      "edition_basis": "Current product page UIN matches wording, prospectus and CIS from the rendered Health Insurance download categories. Separate HER brochure is not selected."
     },
     {
       "insurer_id": "newindia",
@@ -491,7 +495,7 @@
         "Basic",
         "Uplift"
       ],
-      "edition": "Rendered public wwwtr product register lists version 10 and Basic/Uplift. Linked wording and updated prospectus match; old brochure and premium chart do not. Undated CIS lacks UIN and remains reference-only.",
+      "edition": "Version 10 Basic/Uplift; version 8 brochure and version 9 premium chart reference-only",
       "plan_type": "medical_indemnity",
       "documents": [
         {
@@ -618,7 +622,8 @@
           "evidence_use": "reference_only",
           "review_reason": "Current UIN absent or mismatched; current edition applicability is unresolved."
         }
-      ]
+      ],
+      "edition_basis": "Rendered public wwwtr product register lists version 10 and Basic/Uplift. Linked wording and updated prospectus match; old brochure and premium chart do not. Undated CIS lacks UIN and remains reference-only."
     }
   ],
   "frozen_slots_unchanged": true

@@ -16,9 +16,10 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument('--loop', action='store_true')
+        parser.add_argument('--source-root', type=Path)
 
     def handle(self, **options):
-        root = Path(settings.COVERGUIDE_REPORT_ROOT) / 'ten-insurer'
+        root = options['source_root'] or Path(settings.COVERGUIDE_REPORT_ROOT) / 'ten-insurer'
         corpus = json.loads((root / 'corpus.json').read_text())
         count = 0
         while True:
