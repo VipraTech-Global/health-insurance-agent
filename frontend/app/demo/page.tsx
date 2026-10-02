@@ -16,5 +16,5 @@ export default function DemoPage() {
   if (error) return <main className="demo-shell"><p role="alert">{error}</p></main>;
   if (!session) return <main className="demo-shell">Loading CoverGuide…</main>;
   if (!session.authenticated) return <AuthPanel onSuccess={refresh} />;
-  return <DemoApp />;
+  return <DemoApp onSignedOut={refresh} />;
 }

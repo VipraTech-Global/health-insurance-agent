@@ -78,11 +78,19 @@ class Coverage(APIView):
         register = root / "discovery/register.json"
         discovery = json.loads(register.read_text()) if register.exists() else []
         found = {r["insurer_id"]: r for r in discovery}
+        recovered_file = root / 'retry-flagship-candidates.json'
+        recovered = json.loads(recovered_file.read_text()) if recovered_file.exists() else []
+        inventory_file = root / 'catalogue-inventory.json'
+        inventory = json.loads(inventory_file.read_text()) if inventory_file.exists() else {'insurers': []}
+        inventory = {r['insurer_id']: r for r in inventory['insurers']}
         return Response({"schema_version": 1, "selection_basis": "demo_sample",
             "release_id": str(release.id) if release else None, "method": release.method if release else None,
             "insurers": [{"id": key, "name": name, "source_url": url,
                 "discovery_status": found.get(key, {}).get("status", "pending"),
                 "candidate_document_count": len(found.get(key, {}).get("documents", [])),
+                "browser_recovered_pdfs": len({r['sha256'] for r in recovered if r['insurer_id'] == key
+                                               and r['status'] == 'acquired_unreviewed'}),
+                "register_entries": inventory.get(key, {}).get('register_entries'),
                 "catalogue_complete": False} for key, name, url in sorted(INSURERS, key=lambda r: r[1])],
             "plans": [{"id": r.plan_key, "name": r.name, "insurer": r.insurer, "uin": r.uin,
                        "edition": r.edition, "index_version": r.id, "models": r.models_used,

@@ -11,11 +11,11 @@ type Anchor = { quote: string; page: number; method: string; role: string; docum
 type PlanResult = { id: string; plan_id: string; index_version: string; name: string; plan_type: string; state: string; model: string; result?: { status: string; message?: string; reason?: string; answer?: { statements: { text: string; conditions: { text: string }[]; restrictions: { text: string }[] }[] }; validation?: { anchors: Anchor[] }; omissions?: string[] } | null };
 type Question = { id: string; state: string; plans: PlanResult[] };
 type Price = { status: string; amount_printed: string | null; label: string; caveat: string; missing_axes: string[]; axis_options: Record<string, string[]>; citations: { quote: string }[] };
-type Coverage = { selection_basis: string; method: string | null; insurers: { id: string; name: string; discovery_status: string; candidate_document_count: number; catalogue_complete: boolean }[]; plans: { id: string; name: string; insurer: string; documents: number; pages: number; sections: number; map_fallbacks: number; models: string[]; status: string }[] };
+type Coverage = { selection_basis: string; method: string | null; insurers: { id: string; name: string; discovery_status: string; candidate_document_count: number; browser_recovered_pdfs: number; register_entries: number | null; catalogue_complete: boolean }[]; plans: { id: string; name: string; insurer: string; documents: number; pages: number; sections: number; map_fallbacks: number; models: string[]; status: string }[] };
 const types = [{ value: "medical_indemnity", label: "Hospital expense cover" }, { value: "top_up", label: "Top-up" }, { value: "super_top_up", label: "Super top-up" }, { value: "critical_illness", label: "Critical illness" }, { value: "fixed_benefit", label: "Fixed benefit" }];
 const statusLabel: Record<string, string> = { fits: "Fits documented limits", doesnt_fit: "Doesn’t fit documented limits", unresolved: "Unresolved", ready: "Ready", partial: "Partial documents / facts", documents_unavailable: "Documents unavailable" };
 
-export function DemoApp() {
+export function DemoApp({ onSignedOut }: { onSignedOut: () => Promise<void> }) {
   const [screen, setScreen] = useState("start");
   const [cards, setCards] = useState<Card[]>([]);
   const [release, setRelease] = useState<string | null>(null);
@@ -38,6 +38,7 @@ export function DemoApp() {
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
   const [insurer, setInsurer] = useState("");
+  const [confirmErasure, setConfirmErasure] = useState(false);
   const events = useRef<EventSource | null>(null);
 
   useEffect(() => { window.scrollTo(0, 0); }, [screen]);
@@ -136,9 +137,11 @@ export function DemoApp() {
       <button key={key} aria-current={screen === key ? "page" : undefined} onClick={() => setScreen(key)}>{label}</button>)}
       <button aria-current={screen === "prices" ? "page" : undefined} onClick={() => void showPrices()}>Prices</button>
       <button aria-current={screen === "coverage" ? "page" : undefined} onClick={() => void showCoverage()}>Source coverage</button></nav>
+    <div className="demo-account"><button onClick={() => setScreen("account")}>Account</button><button disabled={busy} onClick={() => void perform(async () => { await api("/api/v1/auth/logout/", { method: "POST" }); events.current?.close(); await onSignedOut(); })}>Sign out</button></div>
     {error && <p className="demo-error" role="alert">{error}</p>}
     {!release && <p className="demo-notice">Source preparation is in progress. No new comparison release has been published yet.</p>}
     <main>
+      {screen === "account" && <section><h1>Your local account.</h1><p>Delete this account to erase its saved profiles and answers. Running answers will be cancelled.</p><label><input type="checkbox" checked={confirmErasure} onChange={e => setConfirmErasure(e.target.checked)} /> I understand this permanently deletes my local account and saved demo data.</label><p><button disabled={!confirmErasure || busy} onClick={() => void perform(async () => { await api("/api/v1/account/", { method: "DELETE" }); events.current?.close(); await onSignedOut(); })}>Delete account and saved data</button></p></section>}
       {screen === "start" && <section className="demo-start"><div><p className="eyebrow">START WITH YOUR NEEDS</p><h1>A clearer view of your health cover.</h1><p>Enter your family details. See every plan against documented limits, then compare the clauses that matter to you.</p><p className="demo-muted">This local demo uses synthetic profiles. A fit result does not promise underwriting acceptance or claim payment.</p></div>
         <form onSubmit={e => { e.preventDefault(); void findPlans(); }} className="demo-form">
           <h2>Who needs cover?</h2>{people.map((p, i) => <div className="demo-person" key={p.id}>
@@ -178,7 +181,7 @@ export function DemoApp() {
       </section>}
       {screen === "prices" && <section><p className="eyebrow">PRINTED CHARTS ONLY</p><h1>Indicative prices.</h1><p>A price is shown only when every published chart axis matches. We do not calculate tax, discounts or loadings.</p><div className="demo-card-grid">{selectedCards.map(c => { const price = prices[c.plan_id]; return <article className="demo-plan" key={c.plan_id}><h2>{c.name}</h2><p>{price?.label}</p><strong>{price?.amount_printed ?? ({ unpublished: "Price not published", source_unavailable: "Official price source is unavailable or not yet confirmed", invalid_chart: "Chart could not be validated", missing_details: "More details needed", no_exact_combination: "No exact chart combination" }[price?.status ?? ""] ?? "Checking…")}</strong><p>{price?.caveat}</p>{price && Object.keys(price.axis_options ?? {}).length > 0 && <fieldset><legend>Match the printed chart details</legend>{Object.entries(price.axis_options).map(([axis, options]) => <label key={axis}>{axis.replaceAll("_", " ")}<select value={priceAxes[c.plan_id]?.[axis] ?? ""} onChange={e => setPriceAxes(old => ({ ...old, [c.plan_id]: { ...old[c.plan_id], [axis]: e.target.value } }))}><option value="">Select printed value</option>{options.map(value => <option key={value} value={value}>{value}</option>)}</select></label>)}<button disabled={busy} onClick={() => void lookupPrice(c)}>Check exact combination</button></fieldset>}{price?.citations?.length ? <details><summary>Printed chart evidence</summary>{price.citations.map((item, n) => <blockquote key={n}>{item.quote}</blockquote>)}</details> : null}</article>; })}</div>{!selected.length && <p>Select plans in the full picker to inspect their price availability.</p>}</section>}
       {screen === "coverage" && <section><p className="eyebrow">WHAT THIS DEMO CAN SHOW</p><h1>Source coverage.</h1><p>Ten-insurer demo sample; no top-ten ranking is claimed. Candidate links are not current-plan counts. Retrieved documents may still have unresolved edition applicability.</p>
-        <div className="demo-table-wrap"><table><thead><tr><th>Insurer</th><th>Source acquisition</th><th>Candidate PDF links</th><th>Current catalogue</th></tr></thead><tbody>{coverage?.insurers.map(i => <tr key={i.id}><th>{i.name}</th><td>{i.discovery_status.replaceAll("_", " ")}</td><td>{i.candidate_document_count}</td><td>{i.catalogue_complete ? "Complete" : "Incomplete"}</td></tr>)}</tbody></table></div>
+        <div className="demo-table-wrap"><table><thead><tr><th>Insurer</th><th>Source acquisition</th><th>Candidate PDF links</th><th>Browser-recovered PDFs</th><th>Register entries (unverified)</th><th>Current catalogue</th></tr></thead><tbody>{coverage?.insurers.map(i => <tr key={i.id}><th>{i.name}</th><td>{i.discovery_status.replaceAll("_", " ")}</td><td>{i.candidate_document_count}</td><td>{i.browser_recovered_pdfs}</td><td>{i.register_entries ?? "Unknown"}</td><td>{i.catalogue_complete ? "Complete" : "Incomplete"}</td></tr>)}</tbody></table></div>
         <h2>Processed plan editions</h2><div className="demo-table-wrap"><table><thead><tr><th>Plan</th><th>PDFs</th><th>Pages</th><th>Sections</th><th>Map fallbacks</th><th>Models</th><th>Status</th></tr></thead><tbody>{coverage?.plans.map(p => <tr key={p.id}><th>{p.name}</th><td>{p.documents}</td><td>{p.pages}</td><td>{p.sections}</td><td>{p.map_fallbacks}</td><td>{p.models.join(", ")}</td><td>{p.status}</td></tr>)}</tbody></table></div>
       </section>}
     </main>

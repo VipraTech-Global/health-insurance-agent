@@ -72,13 +72,14 @@ def evaluate(card: PlanCard, profile: Profile) -> FitResult:
     if card.status != "ready":
         add("documents", "unresolved", "The applicable document bundle or facts card is incomplete.")
     other = []
+    common = {item.field: item.value for item in card.common_needs}
     for need in profile.needs:
-        field = getattr(card, need, None)
+        field = getattr(card, need, None) or common.get(need)
         other.append(FitReason(field=need, status="unresolved",
             explanation="See the quoted benefit and its conditions in chat." if field and field.citations else "Not stated; ask in chat.",
             citations=field.citations if field else []))
     for need in profile.normalized_needs:
-        field = getattr(card, need.field, None) if need.mapped else None
+        field = (getattr(card, need.field, None) or common.get(need.field)) if need.mapped else None
         other.append(FitReason(field=need.field, status="unresolved",
             explanation=(f"{need.original_text} — see the quoted benefit and conditions in chat."
                          if field and field.citations else f"{need.original_text} — can't check this automatically; ask in chat."),
