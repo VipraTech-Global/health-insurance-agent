@@ -37,3 +37,13 @@ def test_card_and_chart_schemas_are_closed_and_cells_serialize_exactly():
     assert json.loads(json.dumps(cell_payload(cell)))['citation']['quote'] == '1,005'
     with pytest.raises(ValueError):
         ChartLabels.model_validate({'prices': [{'value_cell': 'c', 'axes': {}, 'axis_cells': {}, 'heading_cells': []}]})
+
+
+def test_sum_insured_projection_requires_explicit_new_business_amount_list():
+    from apps.adviser_v2.demo.cards import sum_insured_field
+    field = sum_insured_field(source('Sum Insured Options: Rs.5,00,000/-, Rs.10,00,000/- and Rs.25,00,000/-', 'sum_insured'))
+    assert field.numbers == [500000, 1000000, 2500000] and field.exhaustive
+    for text in ['Maternity is limited to Rs.5,00,000/-',
+                 'Sum Insured Options: Rs.1,00,000/- available only for renewals',
+                 'Sum Insured Options: Rs.5,00,000/- only for ages under 65']:
+        assert not sum_insured_field(source(text, 'sum_insured')).numbers

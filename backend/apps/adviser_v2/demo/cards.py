@@ -7,9 +7,11 @@ from __future__ import annotations
 
 import json
 import re
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict
 from typing import Literal
 
+from django.db import close_old_connections
 from pydantic import Field
 
 from .answers import ANSWER_PROMPT
@@ -62,26 +64,28 @@ def entry_rules(source: FieldSource | None) -> list[AgeRule]:
     return []
 
 
-def build_card(bundle: dict, original: PlanCard, method: str, relay=None) -> tuple[PlanCard, dict]:
-    relay = relay or Relay.configured()
-    query = ('Find the documented new-application entry ages and separate renewal ages, family relationships and '
-             'composition, sum-insured choices, purchase geography (not treatment territory), co-pay, room limits, '
-             'waiting periods and all the listed common benefits: ' + ', '.join(FIELDS) + '. Include conditions and variant restrictions.')
+def extract_fields(bundle: dict, original: PlanCard, method: str, fields: tuple[str, ...], relay):
+    query = ('Find complete original clauses for these fields: ' + ', '.join(fields) +
+             '. Distinguish new-application entry from renewal ages, and floater from individual basis. '
+             'For family, include every permitted relationship and composition restriction. '
+             'For sum insured, include all new-business choices and any age/variant restrictions. '
+             'Geography means purchase eligibility, not treatment territory. Include all conditions.')
     found = search(bundle=bundle, question=query, method=method, relay=relay, priority='background')
     packet = found.packet
     messages = [{'role': 'user', 'content': json.dumps(packet.evidence(), ensure_ascii=False)},
-        {'role': 'user', 'content': json.dumps({'fields': FIELDS, 'selected_variant': original.variant,
-                                              'task': 'Extract exact cited clauses per field; not_found for missing fields.'})}]
-    attempts, accepted, model = [], {}, found.model
+        {'role': 'user', 'content': json.dumps({'fields': fields, 'selected_variant': original.variant,
+            'task': 'Extract exact cited clauses for every requested field; not_found for missing fields.'})}]
+    attempts, accepted, models = [], {}, {found.model}
     for correction in range(2):
         result = relay.call(instructions=ANSWER_PROMPT + ' Return the requested fields contract instead of a single answer.',
             messages=messages, schema=CardSources.model_json_schema(), stage='plan_card', max_tokens=8192)
-        model = result.model
+        models.add(result.model)
         sources = CardSources.model_validate(result.value)
-        if len({f.field for f in sources.fields}) != len(sources.fields):
-            problems = ['Duplicate field names.']
+        names = [f.field for f in sources.fields]
+        problems = []
+        if len(set(names)) != len(names) or set(names) != set(fields):
+            problems.append('Return each requested field exactly once and no other fields.')
         else:
-            problems = []
             for source in sources.fields:
                 checked = validate(Answer(plan_id=original.plan_id, status=source.status, statements=source.statements), packet,
                                    variant=original.variant, known_variants=tuple(bundle.get('variants', [])))
@@ -95,13 +99,51 @@ def build_card(bundle: dict, original: PlanCard, method: str, relay=None) -> tup
             break
         messages.extend([{'role': 'assistant', 'content': sources.model_dump_json()},
                          {'role': 'user', 'content': 'Correct once: ' + json.dumps(problems)}])
+    return accepted, {'fields': fields, 'models': sorted(models), 'attempts': attempts,
+                     'omissions': list(packet.omitted_ids), 'packet': packet.evidence()}
+
+
+def sum_insured_field(source: FieldSource | None) -> CardField:
+    field = projected_field(source)
+    if source is None or field.conditions:
+        return field
+    for statement in source.statements:
+        for citation in statement.citations:
+            # Only a labelled list of rupee amounts is executable. Benefit limits,
+            # renewal-only choices, ranges and mixed age/variant clauses stay text.
+            raw = ' '.join(citation.quote.split())
+            match = re.fullmatch(r'Sum Insured Options?:\s*((?:Rs\.?\s*[\d,]+/-[\s,]*(?:and\s*)?)+)[.;]?', raw, re.I)
+            if match:
+                numbers = [int(n.replace(',', '')) for n in re.findall(r'Rs\.?\s*([\d,]+)/-', match[1], re.I)]
+                if numbers and all(n > 0 for n in numbers):
+                    return field.model_copy(update={'numbers': sorted(set(numbers)), 'exhaustive': True,
+                                                     'citations': [citation]})
+    return field
+
+
+def build_card(bundle: dict, original: PlanCard, method: str, relay=None) -> tuple[PlanCard, dict]:
+    relay = relay or Relay.configured()
+    # Small independent field groups prevent a 25-field response from exhausting
+    # its output budget and retrieve clauses omitted by one broad query.
+    groups = [FIELDS[n:n + 5] for n in range(0, len(FIELDS), 5)]
+    def group(fields):
+        close_old_connections()
+        try:
+            return extract_fields(bundle, original, method, fields, relay)
+        finally:
+            close_old_connections()
+
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        results = list(pool.map(group, groups))
+    accepted = {name: value for fields, _ in results for name, value in fields.items()}
+    models = sorted({model for _, audit in results for model in audit['models']})
     updates = {name: projected_field(accepted.get(name)) for name in
-               ('sum_insured', 'geography', 'copay', 'room_limit', 'ped_waiting', 'maternity', 'opd')}
-    # Amount lists and geography remain non-executable unless explicitly compiled.
-    # Retaining a quotation is not permission to guess a normalized value.
+               ('geography', 'copay', 'room_limit', 'ped_waiting', 'maternity', 'opd')}
+    updates['sum_insured'] = sum_insured_field(accepted.get('sum_insured'))
+    # Complex or basis-dependent rules remain unresolved until a supported
+    # executable projection exists; source quotations are still shown in full.
     updates.update(entry_ages=entry_rules(accepted.get('entry_age')), renewal_ages=[], family_rule=None,
-                   model=model, status='partial', common_needs=[{'field': name,
-                       'value': projected_field(accepted.get(name)).model_dump()} for name in FIELDS])
+                   model=models[-1] if len(models) == 1 else None, status='partial',
+                   common_needs=[{'field': name, 'value': projected_field(accepted.get(name)).model_dump()} for name in FIELDS])
     card = PlanCard.model_validate({**original.model_dump(), **updates})
-    return card, {'method': method, 'models': sorted({model, found.model}), 'attempts': attempts,
-                  'omissions': list(packet.omitted_ids), 'packet': packet.evidence()}
+    return card, {'method': method, 'models': models, 'groups': [audit for _, audit in results]}
