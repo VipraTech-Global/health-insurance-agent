@@ -47,3 +47,5 @@ Work in progress. No new bake-off has run and no ten-insurer release has been pu
 
 - The expanded full suite passed: 522 tests, 19 warnings. Ruff, Django checks, migration drift checks, frontend lint/typecheck and production build passed. These checks precede the scored calls and do not establish answer correctness.
 - Offline cards retrieve five small field groups through the winning method to avoid a single oversized response. Only explicit new-business rupee lists are compiled; conditional or renewal-only amounts remain quoted text. Complex family/basis rules remain unresolved until executable support exists.
+
+- Before scored calls, the navigation serializer was changed to emit each document description and shared node summary once, retaining every selectable section ID, title path and physical range. Split pieces no longer repeat the same generated prose. Evidence/index text is unchanged; both arms use this identical navigation map.

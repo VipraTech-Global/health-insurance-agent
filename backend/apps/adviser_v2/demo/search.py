@@ -60,6 +60,29 @@ class SearchResult:
     call_ids: tuple[str, ...]
 
 
+def navigation_map(bundle: dict) -> dict:
+    """Serialize every navigation node while avoiding repeated document prose.
+
+    Split pieces share a generated summary; the source-only Section type remains
+    unchanged. Every selectable section ID and physical range is retained.
+    """
+    section_documents = {s['id']: s['document_id'] for s in bundle['sections']}
+    documents, groups = {}, {}
+    for node in bundle['navigation']:
+        document = section_documents[node['section_id']]
+        description = node['description']
+        if document in documents and documents[document] != description:
+            raise ValueError('Navigation document descriptions disagree.')
+        documents[document] = description
+        key = (document, tuple(node['title_path']), node['summary'], node['fallback'])
+        if key not in groups:
+            groups[key] = {'document_id': document, 'title_path': node['title_path'],
+                           'summary': node['summary'], 'fallback': node['fallback'], 'sections': []}
+        groups[key]['sections'].append({'section_id': node['section_id'], 'pages': node['pages']})
+    return {'documents': [{'document_id': key, 'description': value} for key, value in documents.items()],
+            'nodes': list(groups.values())}
+
+
 def search(*, bundle: dict, question: str, method: str, relay: Relay, priority: str = "live",
            expected_model: str | None = None) -> SearchResult:
     if method not in {"H", "P"}:
@@ -73,7 +96,7 @@ def search(*, bundle: dict, question: str, method: str, relay: Relay, priority: 
     candidates = fusion(sections, question, index_id=bundle["index_id"], priority=priority) if method == "H" else []
     # Stable map first; the candidate list and question change independently.
     result = relay.call(instructions=SELECT_PROMPT,
-        messages=[{"role": "user", "content": json.dumps(bundle["navigation"], ensure_ascii=False)},
+        messages=[{"role": "user", "content": json.dumps(navigation_map(bundle), ensure_ascii=False)},
                   {"role": "user", "content": json.dumps({"candidate_ids": candidates, "question": question}, ensure_ascii=False)}],
         schema=SELECT_SCHEMA, stage="section_selection", priority=priority, max_tokens=2048, expected_model=expected_model)
     by_id = {s.id: s for s in sections}

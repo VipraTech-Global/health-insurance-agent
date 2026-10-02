@@ -164,3 +164,15 @@ def test_packet_budget_counts_serialized_metadata_and_tables():
     assert 'table:large' in packet.omitted_ids
     assert token_count(json.dumps(packet.evidence(), ensure_ascii=False)) <= 750
     assert 'NAV_' not in str(packet.evidence())
+
+
+def test_navigation_serialization_preserves_all_ids_without_repeated_description():
+    import json
+
+    from apps.adviser_v2.demo.search import navigation_map
+    pieces, nodes, _ = sections()
+    serialized = navigation_map({'sections': [s.payload() for s in pieces], 'navigation': nodes})
+    assert {s['section_id'] for n in serialized['nodes'] for s in n['sections']} == {s.id for s in pieces}
+    assert json.dumps(serialized).count('NAV_DESCRIPTION_SECRET') == 1
+    assert 'NAV_SUMMARY_SECRET' in str(serialized)
+    assert 'NAV_' not in str(pack_sections('p', pieces).evidence())
