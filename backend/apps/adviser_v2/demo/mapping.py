@@ -202,6 +202,12 @@ def build_corpus(corpus: dict, root: Path, *, workers: int = 4) -> dict:
                     [sha, [p["passage"] for p in pages], SDK_REVISION, MAP_SETTINGS, PROCESSING_VERSION])}
                 atomic_json(failed_path, failed_cache)
             atomic_json(root / "map-progress.json", {"completed": sorted(maps), "failures": failures, "total": len(docs)})
+    output = assemble_sections(corpus, maps, failures)
+    atomic_json(root / "sections.json", output)
+    return output
+
+
+def assemble_sections(corpus: dict, maps: dict, failures: dict) -> dict:
     output = {"processing_version": PROCESSING_VERSION, "plans": [], "failures": failures}
     for plan in corpus["plans"]:
         sections, navigation, statuses = [], [], []
@@ -217,5 +223,4 @@ def build_corpus(corpus: dict, root: Path, *, workers: int = 4) -> dict:
             statuses.append({"sha256": doc["sha256"], "status": "fallback" if reason else "mapped", "reason": reason})
         output["plans"].append({**plan, "sections": sections, "navigation": navigation, "document_status": statuses})
     output["sha256"] = digest(output)
-    atomic_json(root / "sections.json", output)
     return output

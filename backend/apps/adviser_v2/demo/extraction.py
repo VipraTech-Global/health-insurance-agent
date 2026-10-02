@@ -5,6 +5,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import io
+import os
 import subprocess
 import tempfile
 import uuid
@@ -26,7 +27,10 @@ def extract(document: dict, root: Path) -> list[dict]:
         value = json.loads(saved.read_text())
         if value["pdf_sha256"] != document["sha256"] or value["version"] != "poppler-raw-ocr/1":
             raise ValueError("Raw source cache is incompatible.")
-        return value["pages"]
+        # Physical text is cached by PDF bytes, while document membership belongs
+        # to this particular edition bundle. Never reuse another bundle's IDs.
+        return [{**page, 'document_key': document['document_key'],
+                 'document_version_id': document['document_version_id']} for page in value['pages']]
     result = subprocess.run(["pdftotext", "-raw", str(path), "-"], capture_output=True, check=True, timeout=120)
     original_pages = result.stdout.decode("utf-8").split("\f")
     pages, offset = [], 0
@@ -41,7 +45,7 @@ def extract(document: dict, root: Path) -> list[dict]:
                     prefix = Path(work) / "page"
                     subprocess.run(["pdftoppm", "-f", str(number), "-l", str(number), "-singlefile",
                         "-r", "180", "-png", str(path), str(prefix)], check=True, capture_output=True, timeout=90)
-                    ocr = subprocess.run(["tesseract", str(prefix) + ".png", "stdout", "tsv"],
+                    ocr = subprocess.run([os.getenv('COVERGUIDE_TESSERACT_PATH') or 'tesseract', str(prefix) + ".png", "stdout", "tsv"],
                                          capture_output=True, text=True, check=True, timeout=120)
                     rows = list(csv.DictReader(io.StringIO(ocr.stdout), delimiter="\t"))
                     page_row = next(row for row in rows if row["level"] == "1")

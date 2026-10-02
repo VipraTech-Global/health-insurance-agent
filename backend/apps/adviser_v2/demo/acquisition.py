@@ -18,6 +18,8 @@ from urllib.parse import unquote, urljoin, urlparse
 
 import httpx
 import pdfplumber
+from pdfminer.pdfexceptions import PDFException
+from pdfplumber.utils.exceptions import PdfminerException
 
 from .evidence import atomic_json, digest
 
@@ -70,7 +72,7 @@ class Links(HTMLParser):
 
 def document_role(label: str) -> str:
     text = unquote(label).casefold()
-    if EXCLUDED.search(text):
+    if EXCLUDED.search(text) or re.search(r'(?:^|[-_/ ])(?:digital[-_ ]?)?(?:pf|claimform)\.pdf(?:\?|$)', text):
         return "excluded"
     if re.search(r"premium|rate[-_ ]?(?:chart|table)|pricing", text):
         return "premium_chart"
@@ -162,7 +164,7 @@ def acquire(document: dict, root: Path) -> dict:
             path.write_bytes(payload)
         return {**row, "status": "acquired_unreviewed", "sha256": sha,
                 "path": str(path), "physical_pages": count, "bytes": len(payload)}
-    except (httpx.HTTPError, ValueError, OSError) as exc:
+    except (httpx.HTTPError, ValueError, OSError, PDFException, PdfminerException) as exc:
         return {**row, "status": "unavailable", "reason": type(exc).__name__}
 
 

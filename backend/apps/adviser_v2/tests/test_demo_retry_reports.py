@@ -29,6 +29,25 @@ def test_corrupt_pdf_is_retained_as_unavailable_instead_of_stopping_queue(tmp_pa
     assert import_candidate(row, tmp_path)['status'] == 'unavailable'
 
 
+def test_raw_cache_reuses_physical_text_but_not_another_bundles_document_identity(tmp_path):
+    import hashlib
+    import json
+
+    from apps.adviser_v2.demo.extraction import extract
+    payload = b'%PDF-1.7\ncached original'
+    sha = hashlib.sha256(payload).hexdigest()
+    pdf = tmp_path / 'source.pdf'
+    pdf.write_bytes(payload)
+    (tmp_path/'raw').mkdir()
+    saved = {'pdf_sha256': sha, 'version': 'poppler-raw-ocr/1', 'pages': [
+        {'document_key': 'old-key', 'document_version_id': 'old-id', 'passage': 'Exact original text', 'physical_page': 1}]}
+    path = tmp_path/'raw'/f'{sha}.json'
+    path.write_text(json.dumps(saved))
+    pages = extract({'path': str(pdf), 'sha256': sha, 'document_key': 'new-key', 'document_version_id': 'new-id'}, tmp_path)
+    assert pages[0]['document_version_id'] == 'new-id' and pages[0]['passage'] == 'Exact original text'
+    assert json.loads(path.read_text()) == saved
+
+
 def test_inventory_preserves_uncertainty_and_excludes_administrative_items():
     from apps.adviser_v2.demo.catalogue import register_rows, scope
 
