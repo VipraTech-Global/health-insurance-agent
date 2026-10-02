@@ -214,3 +214,16 @@ def test_unrecognised_429_warns_after_thirty_minutes_without_switch(state, monke
     assert state.model() == LUNA
     state.clear_429(LUNA)
     assert state.redis.get(state.key("luna-429-since")) is None
+
+
+def test_nested_pageindex_json_uses_one_json_repair(state, tmp_path):
+    calls = []
+    def post(*args, **kwargs):
+        calls.append(kwargs['json'])
+        value = {'response': '{"valid": true}' if len(calls) == 2 else '{"valid":'}
+        return reply(LUNA, json.dumps(value))
+    schema = {'type': 'object', 'properties': {'response': {'type': 'string'}}, 'required': ['response'], 'additionalProperties': False}
+    value = Relay(state, 'test', tmp_path, post=post).call(instructions='Return nested JSON.',
+        messages=[{'role': 'user', 'content': 'Task'}], schema=schema, stage='pageindex_internal',
+        value_validator=lambda result: json.loads(result['response']))
+    assert len(calls) == 2 and json.loads(value.value['response']) == {'valid': True}

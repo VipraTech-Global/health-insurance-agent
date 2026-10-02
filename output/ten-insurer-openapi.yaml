@@ -1,0 +1,1809 @@
+openapi: 3.0.3
+info:
+  title: Health Insurance Adviser API
+  version: 1.0.0
+paths:
+  /api/v2/catalogue/:
+    get:
+      operationId: v2_catalogue_readiness
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CatalogueReadiness'
+          description: ''
+  /api/v2/comparisons/{id}/:
+    get:
+      operationId: v2_comparison_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ComparisonDetail'
+          description: ''
+  /api/v2/conversations/:
+    get:
+      operationId: v2_conversation_list
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConversationPage'
+          description: ''
+    post:
+      operationId: v2_conversation_create
+      tags:
+      - v2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/V2Conversation'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/V2Conversation'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/V2Conversation'
+      security:
+      - cookieAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V2Conversation'
+          description: ''
+  /api/v2/conversations/{conversation_id}/uploads/:
+    post:
+      operationId: v2_customer_upload
+      parameters:
+      - in: path
+        name: conversation_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Upload'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Upload'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Upload'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '202':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UploadAccepted'
+          description: ''
+  /api/v2/conversations/{id}/:
+    get:
+      operationId: v2_conversation_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V2Conversation'
+          description: ''
+  /api/v2/conversations/{id}/messages/:
+    get:
+      operationId: v2_message_list
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessagePage'
+          description: ''
+    post:
+      operationId: v2_message_submit
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MessageSubmission'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MessageSubmission'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MessageSubmission'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '202':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TurnAccepted'
+          description: ''
+  /api/v2/conversations/{id}/profile/:
+    get:
+      operationId: v2_profile_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CurrentProfile'
+          description: ''
+    patch:
+      operationId: v2_profile_correct
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedProfileCorrection'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedProfileCorrection'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedProfileCorrection'
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CurrentProfile'
+          description: ''
+  /api/v2/demo/catalogue/:
+    get:
+      operationId: v2_demo_catalogue_retrieve
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectOutput'
+          description: ''
+  /api/v2/demo/citations/{answer_id}/{position}/:
+    get:
+      operationId: v2_demo_citations_retrieve
+      parameters:
+      - in: path
+        name: answer_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      - in: path
+        name: position
+        schema:
+          type: integer
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectOutput'
+          description: ''
+  /api/v2/demo/coverage/:
+    get:
+      operationId: v2_demo_coverage_retrieve
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectOutput'
+          description: ''
+  /api/v2/demo/documents/{index_id}/{sha}/:
+    get:
+      operationId: v2_demo_documents_retrieve
+      parameters:
+      - in: path
+        name: index_id
+        schema:
+          type: string
+        required: true
+      - in: path
+        name: sha
+        schema:
+          type: string
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+          description: ''
+  /api/v2/demo/fit/:
+    post:
+      operationId: v2_demo_fit_create
+      tags:
+      - v2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProfileInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ProfileInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProfileInput'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectOutput'
+          description: ''
+  /api/v2/demo/health/:
+    get:
+      operationId: v2_demo_health_retrieve
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectOutput'
+          description: ''
+  /api/v2/demo/prices/{index_id}/:
+    get:
+      operationId: v2_demo_prices_retrieve
+      parameters:
+      - in: path
+        name: index_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectOutput'
+          description: ''
+  /api/v2/demo/questions/:
+    post:
+      operationId: v2_demo_questions_create
+      tags:
+      - v2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuestionInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/QuestionInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/QuestionInput'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectOutput'
+          description: ''
+  /api/v2/demo/questions/{id}/:
+    get:
+      operationId: v2_demo_questions_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectOutput'
+          description: ''
+  /api/v2/demo/questions/{id}/cancel/:
+    post:
+      operationId: v2_demo_questions_cancel_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectOutput'
+          description: ''
+  /api/v2/demo/questions/{id}/events/:
+    get:
+      operationId: v2_demo_questions_events_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            text/event-stream:
+              schema:
+                type: string
+          description: ''
+  /api/v2/documents/{id}/file/:
+    get:
+      operationId: v2_document_file_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+          description: ''
+  /api/v2/evidence/{id}/:
+    get:
+      operationId: v2_evidence_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EvidenceDetail'
+          description: ''
+  /api/v2/knowledge/readiness/:
+    get:
+      operationId: v2_knowledge_readiness
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CatalogueReadiness'
+          description: ''
+  /api/v2/turns/{id}/:
+    get:
+      operationId: v2_turn_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V2Turn'
+          description: ''
+  /api/v2/turns/{id}/cancel/:
+    post:
+      operationId: v2_turn_cancel
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V2Turn'
+          description: ''
+  /api/v2/turns/{id}/events/:
+    get:
+      operationId: v2_turn_events
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          description: Durable SSE events
+  /api/v2/turns/{id}/retry/:
+    post:
+      operationId: v2_turn_retry
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '202':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TurnAccepted'
+          description: ''
+  /api/v2/uploads/{id}/file/:
+    get:
+      operationId: v2_customer_upload_file_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+          description: ''
+  /api/v1/auth/csrf/:
+    get:
+      operationId: csrf_state
+      tags:
+      - auth
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v1/auth/register/:
+    post:
+      operationId: auth_register
+      tags:
+      - auth
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: true
+  /api/v1/auth/login/:
+    post:
+      operationId: auth_login
+      tags:
+      - auth
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: true
+  /api/v1/auth/logout/:
+    post:
+      operationId: auth_logout
+      tags:
+      - auth
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v1/auth/session/:
+    get:
+      operationId: auth_session
+      tags:
+      - auth
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v1/auth/password/:
+    post:
+      operationId: auth_password_change
+      tags:
+      - auth
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: true
+  /api/v1/account/:
+    delete:
+      operationId: account_delete
+      tags:
+      - auth
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v1/conversations/{conversation_id}/turns/:
+    get:
+      operationId: conversation_turn_list
+      tags:
+      - turns
+      parameters:
+      - name: conversation_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+    post:
+      operationId: conversation_turn_stream
+      tags:
+      - turns
+      parameters:
+      - name: conversation_id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: true
+      responses:
+        '200':
+          description: SSE stream of accepted, progress, and one terminal event
+          content:
+            text/event-stream:
+              schema:
+                type: string
+components:
+  schemas:
+    CatalogueProduct:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        insurer:
+          type: string
+        uin:
+          type: string
+          nullable: true
+        version_id:
+          type: string
+          format: uuid
+          nullable: true
+        publication_status:
+          type: string
+        document_count:
+          type: integer
+        required_documents:
+          type: integer
+        rule_count:
+          type: integer
+        covered_inventory_categories:
+          type: array
+          items:
+            type: string
+        missing_inventory_categories:
+          type: array
+          items:
+            type: string
+        unresolved_material_jobs:
+          type: integer
+        included_in_current_release:
+          type: boolean
+      required:
+      - covered_inventory_categories
+      - document_count
+      - id
+      - included_in_current_release
+      - insurer
+      - missing_inventory_categories
+      - name
+      - publication_status
+      - required_documents
+      - rule_count
+      - uin
+      - unresolved_material_jobs
+      - version_id
+    CatalogueReadiness:
+      type: object
+      properties:
+        catalogue_limit:
+          type: integer
+        comparison_label:
+          type: string
+        warning:
+          type: string
+        channel:
+          type: string
+        generation:
+          type: integer
+        release:
+          allOf:
+          - $ref: '#/components/schemas/KnowledgeRelease'
+          nullable: true
+        ready:
+          type: boolean
+        incomplete_comparison:
+          type: boolean
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/CatalogueProduct'
+        interactive_routes:
+          type: array
+          items:
+            $ref: '#/components/schemas/InteractiveRouteStatus'
+        blocking_reason:
+          type: string
+          nullable: true
+      required:
+      - blocking_reason
+      - catalogue_limit
+      - channel
+      - comparison_label
+      - generation
+      - incomplete_comparison
+      - interactive_routes
+      - products
+      - ready
+      - release
+      - warning
+    ComparedProduct:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        product_variant_id:
+          type: string
+          format: uuid
+        product:
+          type: string
+        insurer:
+          type: string
+        uin:
+          type: string
+          nullable: true
+        variant:
+          type: string
+        evaluated_selection: {}
+        quote_id:
+          type: string
+          format: uuid
+          nullable: true
+        criteria:
+          type: array
+          items:
+            $ref: '#/components/schemas/RequirementMatch'
+        prepared_facts:
+          type: array
+          items:
+            $ref: '#/components/schemas/PreparedFact'
+        evidence_gaps:
+          type: array
+          items:
+            $ref: '#/components/schemas/EvidenceGap'
+        restrictions:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductRestriction'
+        evidence:
+          type: array
+          items:
+            $ref: '#/components/schemas/ComparisonCitation'
+      required:
+      - criteria
+      - evaluated_selection
+      - evidence
+      - evidence_gaps
+      - id
+      - insurer
+      - prepared_facts
+      - product
+      - product_variant_id
+      - quote_id
+      - restrictions
+      - uin
+      - variant
+    ComparisonCitation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        evidence_span_id:
+          type: string
+          format: uuid
+        policy_rule_id:
+          type: string
+          format: uuid
+          nullable: true
+        role:
+          type: string
+        quote:
+          type: string
+        section_label:
+          type: string
+          nullable: true
+        page:
+          type: integer
+          nullable: true
+        document_version_id:
+          type: string
+          format: uuid
+          nullable: true
+        locator: {}
+      required:
+      - document_version_id
+      - evidence_span_id
+      - id
+      - locator
+      - page
+      - policy_rule_id
+      - quote
+      - role
+      - section_label
+    ComparisonDetail:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        turn_id:
+          type: string
+          format: uuid
+        outcome:
+          type: string
+        profile_revision:
+          type: integer
+        knowledge_release_id:
+          type: string
+          format: uuid
+        catalogue_limit:
+          type: integer
+        comparison_label:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        products:
+          type: array
+          items:
+            $ref: '#/components/schemas/ComparedProduct'
+        information_needs:
+          type: array
+          items:
+            $ref: '#/components/schemas/InformationNeed'
+        statements:
+          type: array
+          items:
+            $ref: '#/components/schemas/ComparisonStatement'
+      required:
+      - catalogue_limit
+      - comparison_label
+      - created_at
+      - id
+      - information_needs
+      - knowledge_release_id
+      - outcome
+      - products
+      - profile_revision
+      - statements
+      - turn_id
+    ComparisonStatement:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        ordinal:
+          type: integer
+        text:
+          type: string
+        statement_type:
+          type: string
+        critical:
+          type: boolean
+        support_status:
+          type: string
+        comparison_assessment_id:
+          type: string
+          format: uuid
+          nullable: true
+        citations:
+          type: array
+          items:
+            $ref: '#/components/schemas/ComparisonCitation'
+      required:
+      - citations
+      - comparison_assessment_id
+      - critical
+      - id
+      - ordinal
+      - statement_type
+      - support_status
+      - text
+    ConversationPage:
+      type: object
+      properties:
+        next:
+          type: string
+          format: uri
+          nullable: true
+        previous:
+          type: string
+          format: uri
+          nullable: true
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/V2Conversation'
+      required:
+      - next
+      - previous
+      - results
+    CurrentProfile:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        revision:
+          type: integer
+        created_at:
+          type: string
+          format: date-time
+        people:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProfilePerson'
+        facts:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProfileFact'
+        requirements:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProfileRequirement'
+      required:
+      - created_at
+      - facts
+      - id
+      - people
+      - requirements
+      - revision
+    EvidenceDetail:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        document_version_id:
+          type: string
+          format: uuid
+          nullable: true
+        customer_upload_id:
+          type: string
+          format: uuid
+          nullable: true
+        page:
+          type: integer
+          nullable: true
+        section_label:
+          type: string
+          nullable: true
+        quote:
+          type: string
+        context: {}
+        verification:
+          type: string
+        locator: {}
+      required:
+      - context
+      - customer_upload_id
+      - document_version_id
+      - id
+      - locator
+      - page
+      - quote
+      - section_label
+      - verification
+    EvidenceGap:
+      type: object
+      properties:
+        requirement_id:
+          type: string
+          format: uuid
+        criterion:
+          type: string
+        outcome:
+          $ref: '#/components/schemas/OutcomeEnum'
+      required:
+      - criterion
+      - outcome
+      - requirement_id
+    InformationNeed:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        need_kind:
+          type: string
+        information_key:
+          type: string
+        reason:
+          type: string
+        priority:
+          type: string
+        status:
+          type: string
+      required:
+      - id
+      - information_key
+      - need_kind
+      - priority
+      - reason
+      - status
+    InteractiveRouteStatus:
+      type: object
+      properties:
+        role:
+          type: string
+        qualified:
+          type: boolean
+        error_code:
+          type: string
+          nullable: true
+        requested_model:
+          type: string
+        expected_model:
+          type: string
+          nullable: true
+        endpoint_profile:
+          type: string
+          nullable: true
+        adapter_version:
+          type: string
+          nullable: true
+        route_key:
+          type: string
+          nullable: true
+        configuration_sha256:
+          type: string
+          nullable: true
+        schema_sha256:
+          type: string
+          nullable: true
+        qualification_id:
+          type: string
+          format: uuid
+          nullable: true
+      required:
+      - adapter_version
+      - configuration_sha256
+      - endpoint_profile
+      - error_code
+      - expected_model
+      - qualification_id
+      - qualified
+      - requested_model
+      - role
+      - route_key
+      - schema_sha256
+    KindEnum:
+      enum:
+      - offer
+      - quote
+      - policy_schedule
+      - endorsement
+      - member_certificate
+      - other
+      type: string
+      description: |-
+        * `offer` - offer
+        * `quote` - quote
+        * `policy_schedule` - policy_schedule
+        * `endorsement` - endorsement
+        * `member_certificate` - member_certificate
+        * `other` - other
+    KnowledgeRelease:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        number:
+          type: integer
+        state:
+          type: string
+        label:
+          type: string
+        published_at:
+          type: string
+          format: date-time
+          nullable: true
+        manifest_sha256:
+          type: string
+      required:
+      - id
+      - label
+      - manifest_sha256
+      - number
+      - published_at
+      - state
+    MessagePage:
+      type: object
+      properties:
+        next:
+          type: string
+          format: uri
+          nullable: true
+        previous:
+          type: string
+          format: uri
+          nullable: true
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/V2Message'
+      required:
+      - next
+      - previous
+      - results
+    MessageSubmission:
+      type: object
+      properties:
+        request_id:
+          type: string
+          format: uuid
+        text:
+          type: string
+          maxLength: 20000
+          minLength: 1
+        expected_profile_revision:
+          type: integer
+          minimum: 1
+      required:
+      - request_id
+      - text
+    ObjectOutput:
+      type: object
+      properties:
+        schema_version:
+          type: integer
+          default: 1
+        data: {}
+    OriginEnum:
+      enum:
+      - text
+      - voice_transcription
+      - document_import
+      - system
+      - migration
+      type: string
+      description: |-
+        * `text` - text
+        * `voice_transcription` - voice_transcription
+        * `document_import` - document_import
+        * `system` - system
+        * `migration` - migration
+    OutcomeEnum:
+      enum:
+      - unknown
+      - partly_meets
+      type: string
+      description: |-
+        * `unknown` - unknown
+        * `partly_meets` - partly_meets
+    PatchedProfileCorrection:
+      type: object
+      properties:
+        expected_revision:
+          type: integer
+          minimum: 1
+        correction_text:
+          type: string
+          maxLength: 20000
+          minLength: 1
+        facts:
+          type: array
+          items:
+            type: object
+            additionalProperties: {}
+        requirements:
+          type: array
+          items:
+            type: object
+            additionalProperties: {}
+    PreparedCondition:
+      type: object
+      properties:
+        text:
+          type: string
+        citation_indexes:
+          type: array
+          items:
+            type: integer
+      required:
+      - citation_indexes
+      - text
+    PreparedFact:
+      type: object
+      properties:
+        criterion:
+          type: string
+        status:
+          type: string
+        value:
+          type: string
+          nullable: true
+        conditions:
+          type: array
+          items:
+            $ref: '#/components/schemas/PreparedCondition'
+        rule_status:
+          type: string
+        unknown_reasons:
+          type: array
+          items:
+            type: string
+        citations:
+          type: array
+          items:
+            $ref: '#/components/schemas/ComparisonCitation'
+      required:
+      - citations
+      - conditions
+      - criterion
+      - rule_status
+      - status
+      - unknown_reasons
+      - value
+    ProductRestriction:
+      type: object
+      properties:
+        statement_id:
+          type: string
+          format: uuid
+        text:
+          type: string
+        citations:
+          type: array
+          items:
+            $ref: '#/components/schemas/ComparisonCitation'
+      required:
+      - citations
+      - statement_id
+      - text
+    ProfileFact:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        logical_key:
+          type: string
+          format: uuid
+        fact_type:
+          type: string
+        value: {}
+        status:
+          type: string
+        subject_person_id:
+          type: string
+          format: uuid
+          nullable: true
+      required:
+      - fact_type
+      - id
+      - logical_key
+      - status
+      - subject_person_id
+      - value
+    ProfileInput:
+      type: object
+      properties:
+        session_id:
+          type: string
+          format: uuid
+        profile: {}
+      required:
+      - profile
+    ProfilePerson:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        display_name:
+          type: string
+      required:
+      - display_name
+      - id
+    ProfileRequirement:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        logical_key:
+          type: string
+          format: uuid
+        criterion:
+          type: string
+        operator:
+          type: string
+        target_value:
+          nullable: true
+        priority:
+          type: string
+        scope:
+          type: string
+        status:
+          type: string
+        subject_person_id:
+          type: string
+          format: uuid
+          nullable: true
+      required:
+      - criterion
+      - id
+      - logical_key
+      - operator
+      - priority
+      - scope
+      - status
+      - subject_person_id
+      - target_value
+    QuestionInput:
+      type: object
+      properties:
+        session_id:
+          type: string
+          format: uuid
+        question:
+          type: string
+          maxLength: 3000
+        plan_ids:
+          type: array
+          items:
+            type: string
+            maxLength: 160
+          maxItems: 5
+          minItems: 2
+      required:
+      - plan_ids
+      - question
+      - session_id
+    RequirementMatch:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        requirement_id:
+          type: string
+          format: uuid
+        criterion:
+          type: string
+        priority:
+          type: string
+        outcome:
+          type: string
+        comparison_value:
+          nullable: true
+      required:
+      - comparison_value
+      - criterion
+      - id
+      - outcome
+      - priority
+      - requirement_id
+    StateEnum:
+      enum:
+      - queued
+      - running
+      - cancel_requested
+      - cancelled
+      - completed
+      - failed
+      - stale
+      type: string
+      description: |-
+        * `queued` - queued
+        * `running` - running
+        * `cancel_requested` - cancel_requested
+        * `cancelled` - cancelled
+        * `completed` - completed
+        * `failed` - failed
+        * `stale` - stale
+    StatusEnum:
+      enum:
+      - open
+      - archived
+      - deleting
+      - deleted
+      type: string
+      description: |-
+        * `open` - open
+        * `archived` - archived
+        * `deleting` - deleting
+        * `deleted` - deleted
+    TurnAccepted:
+      type: object
+      properties:
+        message_id:
+          type: string
+          format: uuid
+        turn_id:
+          type: string
+          format: uuid
+        event_url:
+          type: string
+        created:
+          type: boolean
+      required:
+      - event_url
+      - message_id
+      - turn_id
+    TurnRouteBinding:
+      type: object
+      properties:
+        role:
+          $ref: '#/components/schemas/TurnRouteBindingRoleEnum'
+        route_id:
+          type: string
+          format: uuid
+          readOnly: true
+        qualification_id:
+          type: string
+          format: uuid
+          readOnly: true
+        requested_model:
+          type: string
+          maxLength: 160
+        expected_model:
+          type: string
+          maxLength: 160
+        observed_model:
+          type: string
+          maxLength: 160
+        endpoint_profile:
+          type: string
+          maxLength: 120
+        adapter_version:
+          type: string
+          maxLength: 120
+        route_configuration_sha256:
+          type: string
+          maxLength: 64
+        schema_sha256:
+          type: string
+          maxLength: 64
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - adapter_version
+      - created_at
+      - endpoint_profile
+      - expected_model
+      - observed_model
+      - qualification_id
+      - requested_model
+      - role
+      - route_configuration_sha256
+      - route_id
+      - schema_sha256
+    TurnRouteBindingRoleEnum:
+      enum:
+      - fact_interpretation
+      - comparison_answer
+      type: string
+      description: |-
+        * `fact_interpretation` - fact_interpretation
+        * `comparison_answer` - comparison_answer
+    Upload:
+      type: object
+      properties:
+        file:
+          type: string
+          format: uri
+        kind:
+          $ref: '#/components/schemas/KindEnum'
+        source_message_id:
+          type: string
+          format: uuid
+      required:
+      - file
+      - kind
+    UploadAccepted:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        job_id:
+          type: string
+          format: uuid
+        kind:
+          type: string
+        review_status:
+          type: string
+      required:
+      - id
+      - job_id
+      - kind
+      - review_status
+    V2Conversation:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        title:
+          type: string
+          maxLength: 200
+        status:
+          allOf:
+          - $ref: '#/components/schemas/StatusEnum'
+          readOnly: true
+        preferred_language:
+          type: string
+          nullable: true
+          maxLength: 35
+        profile_revision:
+          type: integer
+          readOnly: true
+          nullable: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - created_at
+      - id
+      - profile_revision
+      - status
+      - updated_at
+    V2Message:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        sequence:
+          type: integer
+          maximum: 9223372036854775807
+          minimum: -9223372036854775808
+          format: int64
+        role:
+          $ref: '#/components/schemas/V2MessageRoleEnum'
+        content:
+          type: string
+        origin:
+          $ref: '#/components/schemas/OriginEnum'
+        submitted_at:
+          type: string
+          format: date-time
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        comparison_id:
+          type: string
+          format: uuid
+          readOnly: true
+          nullable: true
+      required:
+      - comparison_id
+      - content
+      - created_at
+      - id
+      - origin
+      - role
+      - sequence
+      - submitted_at
+    V2MessageRoleEnum:
+      enum:
+      - customer
+      - adviser
+      - system
+      type: string
+      description: |-
+        * `customer` - customer
+        * `adviser` - adviser
+        * `system` - system
+    V2Turn:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          readOnly: true
+        request_id:
+          type: string
+          format: uuid
+        conversation_id:
+          type: string
+          format: uuid
+          readOnly: true
+        input_message_id:
+          type: string
+          format: uuid
+          readOnly: true
+        starting_profile_revision:
+          type: integer
+          readOnly: true
+          nullable: true
+        state:
+          $ref: '#/components/schemas/StateEnum'
+        deadline:
+          type: string
+          format: date-time
+        cancelled_at:
+          type: string
+          format: date-time
+          nullable: true
+        error_code:
+          type: string
+          nullable: true
+          maxLength: 100
+        route_commitment:
+          type: string
+          readOnly: true
+        route_bindings:
+          type: array
+          items:
+            $ref: '#/components/schemas/TurnRouteBinding'
+          readOnly: true
+        created_at:
+          type: string
+          format: date-time
+          readOnly: true
+        updated_at:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+      - conversation_id
+      - created_at
+      - deadline
+      - id
+      - input_message_id
+      - request_id
+      - route_bindings
+      - route_commitment
+      - starting_profile_revision
+      - updated_at
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

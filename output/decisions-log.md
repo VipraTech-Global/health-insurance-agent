@@ -17,3 +17,23 @@ Before any scored call, the user changed disqualification to count only wrong-pl
 ## Implementation status
 
 Work in progress. No new bake-off has run and no ten-insurer release has been published.
+
+## 2026-10-02 — implemented processing and validation choices
+
+- The relay checks both `error.code` and `error.type`. Continuous Luna 429s without a recognized quota switch emit a critical operator warning after 30 minutes; the warning is shared and rate-limited in Redis. Ordinary throttles still do not trigger model switching.
+- Policy statements are extractive: deterministic checks reject unsupported paraphrases because lexical overlap cannot establish semantic entailment. This is deliberately conservative; passing code checks is not an expert correctness review.
+- Official source discovery is separate from admission to executable evidence. The sample has seven admitted plan bundles so far (the preserved Star three and four additional flagships); five other insurer flagships remain unavailable or lack confirmed current-edition files. Source links are not counted as plans. ICICI's current product page lists a newer UIN than the older PDF found in search, so that PDF has not been admitted.
+- Original Star reference integrity is snapshotted: 39 facts, 236 distinct spans and 273 criterion memberships. Physical files and accepted maps are reused; role metadata changes do not require new model calls. Matching-section vectors are reused only with identical source hashes.
+- Missing premium documents are `source_unavailable`, not `unpublished`; absence from our bundle does not prove the insurer publishes no chart.
+- A failed or abandoned question retains its immutable release/index pins. Recovery skips completed plan results; execution tokens prevent an old worker from publishing after a replacement claims its lease.
+
+## Verification notes during implementation
+
+- Focused relay/needs/contract checks: 32 passed. Evaluation and encrypted-session checks: 10 passed before adding crash recovery; the expanded session/contract/needs run then passed 23 tests.
+- Physical first-page inspection confirms HDFC `HDFHLIP26058V082526`, Tata AIG `TATHLIP26052V052526`, Bajaj `BAJHLIP26074V022526` with EDGE+ Plan 9, and Manipal `MCIHLIP26036V022526` with Protect/Advantage and June 2025 wording. This records identity checks, not review of every clause.
+- The existing full BGE-M3 artifact passes its pinned qualification check. No shared model files were changed. One resident CPU worker performs embeddings.
+- Browser smoke testing caught a frontend build made without the isolated backend URL. Rebuilds must set `COVERGUIDE_BACKEND_URL=http://127.0.0.1:8021`; a runtime-only environment value does not rewrite Next's compiled proxy routes.
+
+- Full pytest completed with 513 passed and 19 warnings; three additional card/chart projection tests passed afterward. The expanded relay suite, including inner PageIndex JSON repair, passed all 18 tests. These are implementation checks, not a completed application answer sheet.
+- PageIndex's outer structured wrapper can contain malformed task-requested JSON. Inner JSON is now locally validated before caching, with the same single JSON repair allowance. Valid completed maps remain reusable; malformed cached internal responses are retained as `.invalid-json` artifacts rather than reused as successes. Transport failures remain pending; deterministic failed maps receive recorded fallback sections.
+- Completed-document embeddings now overlap mapping of other documents via a shared source-text cache. Full maps are not rebuilt when other documents finish. The one-command stack probe succeeded for API, frontend, demo worker, database, Redis, relay and the resident BGE worker.

@@ -41,3 +41,6 @@ backend/celerybeat-schedule*
 
 # Private combined scenario set; supply locally, never publish (see research/README.md).
 /research/seeds/scenarios.txt
+
+# Local browser automation state and synthetic session traces.
+/.playwright-cli/

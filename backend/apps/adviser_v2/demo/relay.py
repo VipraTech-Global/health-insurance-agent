@@ -382,7 +382,8 @@ class Relay:
 
     def call(self, *, instructions: str, messages: list[dict], schema: dict,
              stage: str, priority: str = "background", max_tokens: int = 4096,
-             timeout: float = 240, expected_model: str | None = None) -> RelayResult:
+             timeout: float = 240, expected_model: str | None = None,
+             value_validator: Callable | None = None) -> RelayResult:
         if not isinstance(messages, list) or not all(isinstance(m, dict) for m in messages):
             raise TypeError("Responses input must be a message list.")
         if expected_model is not None and expected_model not in MODELS:
@@ -454,11 +455,14 @@ class Relay:
                 validator.validate(value)
                 if not isinstance(value, dict):
                     raise InvalidOutput("The output must be an object.")
-            except (json.JSONDecodeError, jsonschema.ValidationError, TypeError, AttributeError) as exc:
+                if value_validator is not None:
+                    value_validator(value)
+            except (ValueError, jsonschema.ValidationError, TypeError, AttributeError) as exc:
                 if repair is not None:
                     raise InvalidOutput("Relay JSON/schema validation failed after one repair.") from None
                 # No provider output or policy text in the repair error or logs.
-                repair = "Invalid JSON." if isinstance(exc, json.JSONDecodeError) else "JSON does not match the required schema."
+                repair = ("Invalid JSON, including any task-requested JSON inside the response string."
+                          if isinstance(exc, json.JSONDecodeError) else "JSON does not match the required schema.")
                 continue
             self.state.redis.delete(retry_key)
             return RelayResult(value, model, tuple(call_ids), totals)

@@ -69,7 +69,17 @@ class Command(BaseCommand):
                             raise CommandError("Section embedding source changed.")
                         continue
                     reusable = DemoSectionVector.objects.filter(section_id=section.id, text_sha256=text_hash).first()
-                    vector = reusable.embedding if reusable else embed([section.index_text], priority="background")[0]
+                    cached_path = root / "vectors" / (text_hash + ".json")
+                    if reusable:
+                        vector = reusable.embedding
+                    elif cached_path.exists():
+                        cached = json.loads(cached_path.read_text())
+                        if (cached["text_sha256"] != text_hash or cached["model"] != "BAAI/bge-m3"
+                                or cached["revision"] != "5617a9f61b028005a4858fdac845db406aefb181"):
+                            raise CommandError("Staged vector cache identity differs.")
+                        vector = cached["vector"]
+                    else:
+                        vector = embed([section.index_text], priority="background")[0]
                     DemoSectionVector.objects.create(index=index, section_id=section.id,
                                                      embedding=vector, text_sha256=text_hash)
             self.stdout.write(f"{name}: {len(plan['sections'])} sections; index {key}; new={created}")

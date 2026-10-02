@@ -1,5 +1,6 @@
 """Exact printed chart lookup. No interpolation, tax, discounts or loading math."""
 
+import re
 from dataclasses import dataclass
 
 from .contracts import Citation, PremiumResult
@@ -29,11 +30,11 @@ def validate_price(price: PrintedPrice, cells: dict[str, TableCell], required_ax
     if set(price.axes) != required_axes or set(price.axis_cells) != required_axes:
         return False
     value = cells.get(price.value_cell)
-    if value is None or not price.heading_cells:
+    if value is None or not price.heading_cells or not re.fullmatch(r"\s*(?:Rs\.?\s*|₹\s*)?-?\d[\d,.]*(?:/-)?\s*", value.text):
         return False
     for name, identifier in price.axis_cells.items():
         label = cells.get(identifier)
-        if (label is None or label.table_id != value.table_id or label.text != price.axes[name]
+        if (label is None or label.id == value.id or label.table_id != value.table_id or label.text != price.axes[name]
                 or (label.row != value.row and label.column != value.column)):
             return False
     for identifier in price.heading_cells:

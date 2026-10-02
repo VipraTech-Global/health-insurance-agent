@@ -89,7 +89,12 @@ def run_job(job: dict, bundle: dict | None, root: Path) -> dict:
             relay.probe_due(deadline=time.monotonic() + 240)
             model = relay.state.model()
         if model is None:
-            raise RelayUnavailable('Both subscriptions are limited; resume this same frozen run after a probe/reset.')
+            while model is None:
+                atomic_json(root / 'paused' / (job['id'] + '.json'),
+                            {'reason': 'Both subscriptions limited; waiting for shared reset/probe.'})
+                time.sleep(30)
+                relay.probe_due(deadline=time.monotonic() + 60)
+                model = relay.state.model()
 
         def arm(method, model=model):
             close_old_connections()
