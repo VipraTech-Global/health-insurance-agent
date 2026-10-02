@@ -7,8 +7,7 @@ from types import SimpleNamespace
 import numpy as np
 import pytest
 from pydantic import ValidationError
-
-from apps.adviser_v2.embedding import (
+from research_workspace.legacy_v2.embedding import (
     BGE_DIMENSIONS,
     BGE_MODEL_REVISION,
     BGE_SOURCE_BASE_URL,
@@ -21,6 +20,7 @@ from apps.adviser_v2.embedding import (
     _qualified_embedding_status_cached,
     policy_index_version,
 )
+
 from scripts.prepare_bge_m3 import (
     QuantizationProfile,
     SourceArtifact,

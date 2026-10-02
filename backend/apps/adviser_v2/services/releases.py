@@ -137,7 +137,11 @@ def build_release(
             for product in report["products"]
         ],
     }
-    from ..prepared_facts import FACT_RELEASE_VERSION, digest, verify_fact_artifact
+    from research_workspace.legacy_v2.prepared_facts import (
+        FACT_RELEASE_VERSION,
+        digest,
+        verify_fact_artifact,
+    )
     prepared = all(p.get('fact_release_version') == FACT_RELEASE_VERSION for p in report['products'])
     if prepared:
         readiness['fact_release_version'] = FACT_RELEASE_VERSION
@@ -229,8 +233,8 @@ def publish_release(release_id: uuid.UUID | str) -> KnowledgeRelease:
     policy_version_ids = list(
         memberships.values_list("policy_rule__policy_version_id", flat=True).distinct()
     )
-    from ..prepared_facts import FACT_RELEASE_VERSION, digest
-    from ..processing.artifacts import read_artifact
+    from research_workspace.legacy_v2.prepared_facts import FACT_RELEASE_VERSION, digest
+    from research_workspace.legacy_v2.processing.artifacts import read_artifact
     if release.readiness.get('fact_release_version') == FACT_RELEASE_VERSION:
         facts = list(KnowledgeReleaseFact.objects.filter(knowledge_release=release))
         expected = {p['policy_version_id']: p for p in report['products']}

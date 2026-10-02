@@ -759,11 +759,13 @@ dev = [
     { name = "types-jsonschema" },
 ]
 documents = [
-    { name = "docling" },
     { name = "numpy" },
-    { name = "onnx" },
     { name = "onnxruntime" },
     { name = "tokenizers" },
+]
+research-documents = [
+    { name = "docling" },
+    { name = "onnx" },
 ]
 
 [package.metadata]
@@ -800,11 +802,13 @@ dev = [
     { name = "types-jsonschema", specifier = ">=4.26.0.20260518" },
 ]
 documents = [
-    { name = "docling", specifier = "==2.126.0" },
     { name = "numpy", specifier = "==2.5.3" },
-    { name = "onnx", specifier = "==1.22.0" },
     { name = "onnxruntime", specifier = "==1.30.0" },
     { name = "tokenizers", specifier = "==0.23.2" },
+]
+research-documents = [
+    { name = "docling", specifier = "==2.126.0" },
+    { name = "onnx", specifier = "==1.22.0" },
 ]
 
 [[package]]

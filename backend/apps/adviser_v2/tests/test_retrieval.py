@@ -7,8 +7,13 @@ from typing import Any, cast
 import pytest
 from django.contrib.postgres.search import SearchVector
 from django.db.models import Value
+from research_workspace.legacy_v2.embedding import (
+    BGE_DIMENSIONS,
+    BgeM3QualificationV1,
+    policy_index_version,
+)
+from research_workspace.legacy_v2.retrieval import _reciprocal_rank_fusion, retrieve_policy_context
 
-from apps.adviser_v2.embedding import BGE_DIMENSIONS, BgeM3QualificationV1, policy_index_version
 from apps.adviser_v2.models import (
     EvidenceSpan,
     KnowledgeRelease,
@@ -21,7 +26,6 @@ from apps.adviser_v2.models import (
     PolicyVersionDocument,
     Product,
 )
-from apps.adviser_v2.retrieval import _reciprocal_rank_fusion, retrieve_policy_context
 from apps.adviser_v2.tests.test_pipeline import public_html_capture
 
 
@@ -197,11 +201,11 @@ def test_policy_retrieval_fuses_search_and_expands_reviewed_dependencies(
             chunk_sha256=digest,
         )
     monkeypatch.setattr(
-        "apps.adviser_v2.retrieval.qualified_embedding_status",
+        "research_workspace.legacy_v2.retrieval.qualified_embedding_status",
         lambda: (True, "qualified", qualification),
     )
     monkeypatch.setattr(
-        "apps.adviser_v2.retrieval.embed_texts",
+        "research_workspace.legacy_v2.retrieval.embed_texts",
         lambda _texts: [first_vector],
     )
 

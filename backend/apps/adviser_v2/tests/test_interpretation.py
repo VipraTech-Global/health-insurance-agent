@@ -4,10 +4,10 @@ import uuid
 
 import pytest
 from django.utils import timezone
+from research_workspace.legacy_v2.engine import _interpretation_contract_guidance
 
 from apps.accounts.models import User
 from apps.adviser_v2.crypto import commitment
-from apps.adviser_v2.engine import _interpretation_contract_guidance
 from apps.adviser_v2.errors import PinnedStateChanged
 from apps.adviser_v2.models import (
     AdviceRequest,

@@ -6,14 +6,14 @@ from typing import Any
 
 import pytest
 from django.utils import timezone
-
-from apps.adviser_v2.crypto import commitment
-from apps.adviser_v2.model_gateway import (
+from research_workspace.legacy_v2.model_gateway import (
     call_model,
     qualified_route,
     route_timeout_seconds,
     schema_sha256,
 )
+
+from apps.adviser_v2.crypto import commitment
 from apps.adviser_v2.models import (
     ModelAttempt,
     ModelQualification,
@@ -182,7 +182,7 @@ def test_offline_processing_reuses_an_exact_successful_response(db: None, monkey
         raise AssertionError("An exact successful processing response must not call the relay.")
 
     monkeypatch.setattr(
-        "apps.adviser_v2.model_gateway.StrictRelayAdapter.generate",
+        "research_workspace.legacy_v2.model_gateway.StrictRelayAdapter.generate",
         unexpected_generate,
     )
 
@@ -212,7 +212,7 @@ def test_offline_processing_reuses_an_exact_successful_response(db: None, monkey
         return output
 
     monkeypatch.setattr(
-        "apps.adviser_v2.model_gateway.StrictRelayAdapter.generate", changed_generate
+        "research_workspace.legacy_v2.model_gateway.StrictRelayAdapter.generate", changed_generate
     )
     assert (
         call_model(
@@ -247,7 +247,7 @@ def test_offline_processing_reuses_an_exact_successful_response(db: None, monkey
         }
         raise RelayFailure("incomplete_response", "The selected model did not finish its answer.")
 
-    monkeypatch.setattr("apps.adviser_v2.model_gateway.StrictRelayAdapter.generate", incomplete)
+    monkeypatch.setattr("research_workspace.legacy_v2.model_gateway.StrictRelayAdapter.generate", incomplete)
     from research_workspace.legacy_relay import RelayFailure
 
     with pytest.raises(RelayFailure):

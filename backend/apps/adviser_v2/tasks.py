@@ -5,9 +5,9 @@ from __future__ import annotations
 import uuid
 
 from celery import shared_task
+from research_workspace.legacy_v2.engine import process_turn
 
 from .demo.tasks import demo_question as demo_question
-from .engine import process_turn
 
 
 @shared_task(  # type: ignore[misc]
@@ -21,7 +21,7 @@ def process_adviser_turn(turn_id: str) -> None:
     ignore_result=True, name="adviser_v2.process_document_job", queue="documents"
 )
 def process_document_job(job_id: str) -> None:
-    from .pipeline import process_job
+    from research_workspace.legacy_v2.pipeline import process_job
 
     process_job(uuid.UUID(job_id))
 

@@ -1,10 +1,14 @@
 from copy import deepcopy
 
 import pytest
+from research_workspace.legacy_v2.processing.criterion_attempts import new_criterion_state
+from research_workspace.legacy_v2.processing.criterion_corrections import request_review_correction
+from research_workspace.legacy_v2.processing.criterion_evidence import (
+    CRITERIA,
+    PROGRESS_KEY,
+    extraction_payload,
+)
 
-from apps.adviser_v2.processing.criterion_attempts import new_criterion_state
-from apps.adviser_v2.processing.criterion_corrections import request_review_correction
-from apps.adviser_v2.processing.criterion_evidence import CRITERIA, PROGRESS_KEY, extraction_payload
 from apps.adviser_v2.schemas import PolicyRuleReviewV1, ReviewedPolicyRule
 
 
@@ -56,10 +60,11 @@ def test_independent_source_failure_cannot_expand_either_retry_budget(
 def test_review_schedules_only_unspent_v2_corrections_before_validation(
     monkeypatch, v2, correction, next_stage
 ):
-    from apps.adviser_v2 import pipeline
+    from research_workspace.legacy_v2 import pipeline
+    from research_workspace.legacy_v2.processing.artifacts import read_artifact
+    from research_workspace.legacy_v2.processing.criterion_evidence import RETRY_PROTOCOL
+
     from apps.adviser_v2.models import ProcessingJob
-    from apps.adviser_v2.processing.artifacts import read_artifact
-    from apps.adviser_v2.processing.criterion_evidence import RETRY_PROTOCOL
     from apps.adviser_v2.tests.test_pipeline import public_html_capture
 
     capture = public_html_capture()

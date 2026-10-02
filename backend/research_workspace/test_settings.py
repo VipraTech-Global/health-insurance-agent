@@ -4,7 +4,9 @@ import os
 from pathlib import Path
 
 from config.settings import *  # noqa: F403
-from config.settings import COVERGUIDE_REPORT_ROOT
+from config.settings import COVERGUIDE_REPORT_ROOT, INSTALLED_APPS
+
+INSTALLED_APPS = [*INSTALLED_APPS, "research_workspace"]
 
 AI_RELAY_MANAGEMENT_KEY = os.environ.get("AI_RELAY_MANAGEMENT_KEY", "")
 AI_RELAY_STATE_DIR = Path(

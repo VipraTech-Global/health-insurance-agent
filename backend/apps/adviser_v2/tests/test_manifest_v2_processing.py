@@ -9,8 +9,7 @@ from types import SimpleNamespace
 
 import pytest
 from django.core.management import call_command
-
-from apps.adviser_v2.processing.criterion_evidence import (
+from research_workspace.legacy_v2.processing.criterion_evidence import (
     CRITERIA,
     PROCESSING_VERSION,
     criterion_inventory_problems,
@@ -19,13 +18,14 @@ from apps.adviser_v2.processing.criterion_evidence import (
     quantity_support_problems,
     request_bytes_with_headroom,
 )
-from apps.adviser_v2.processing.manifest_v2 import (
+from research_workspace.legacy_v2.processing.manifest_v2 import (
     ANCHOR_PREFIX,
     executable_entry,
     manifest_product,
     raw_pdf_pages,
     validate_raw_quote,
 )
+
 from apps.adviser_v2.tests.test_star_manifest import local_fixture, pdf_bytes, star_manifest
 
 
@@ -239,14 +239,15 @@ def test_no_copay_derivation_preserves_conditions_and_does_not_infer_zero_elsewh
 def test_complete_raw_bundle_keeps_all_pages_and_excludes_reference_sources(
     tmp_path, settings, monkeypatch
 ):
-    from apps.adviser_v2.models import PolicyVersion
-    from apps.adviser_v2.processing.manifest_v2 import (
+    from research_workspace.legacy_v2.processing.manifest_v2 import (
         preserve_native_document,
         raw_bundle_passages,
         read_raw_document,
         reconcile_raw_document,
     )
-    from apps.adviser_v2.processing.stages import RECONCILIATION_VERSION, STAGE_RUNNERS
+    from research_workspace.legacy_v2.processing.stages import RECONCILIATION_VERSION, STAGE_RUNNERS
+
+    from apps.adviser_v2.models import PolicyVersion
 
     value, objects = local_fixture(tmp_path)
     for product in value["products"]:
@@ -296,7 +297,8 @@ def test_request_budget_rejects_whole_input_without_truncation():
 
 
 def test_v2_retry_is_bounded_and_keeps_complete_core_plus_needed_prospectus(monkeypatch):
-    from apps.adviser_v2.processing import stages
+    from research_workspace.legacy_v2.processing import stages
+
     from apps.adviser_v2.schemas import PolicyRuleExtractionV1
 
     criterion = CRITERIA[0]
@@ -345,7 +347,7 @@ def test_v2_retry_is_bounded_and_keeps_complete_core_plus_needed_prospectus(monk
 
 
 def test_thirteen_criteria_count_excludes_derived_no_copay_and_budget():
-    from apps.adviser_v2.processing.criterion_pipeline import validated_criteria
+    from research_workspace.legacy_v2.processing.criterion_pipeline import validated_criteria
 
     rules = [
         SimpleNamespace(id=uuid.uuid4(), rule_key=f"{c.category}.definition.{c.key}_supported")
@@ -364,7 +366,7 @@ def test_thirteen_criteria_count_excludes_derived_no_copay_and_budget():
 
 
 def test_issue_attribution_does_not_match_a_different_criterion_inside_a_rule_key():
-    from apps.adviser_v2.processing.criterion_pipeline import validated_criteria
+    from research_workspace.legacy_v2.processing.criterion_pipeline import validated_criteria
 
     rule = SimpleNamespace(
         id=uuid.uuid4(), rule_key="sum_insured_choices.definition.sum_insured_choice"

@@ -8,8 +8,8 @@ from typing import Any
 from django.conf import settings
 from django.db.models import Count
 from research_workspace.legacy_relay import RelayFailure
+from research_workspace.legacy_v2.model_gateway import qualified_route
 
-from ..model_gateway import qualified_route
 from ..models import (
     KnowledgeChannel,
     KnowledgeReleaseFact,

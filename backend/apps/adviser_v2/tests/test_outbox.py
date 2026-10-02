@@ -7,9 +7,10 @@ from unittest.mock import patch
 import pytest
 from django.db import transaction
 from django.utils import timezone
+from research_workspace.legacy_v2.engine import _lock_active_turn, _terminal
+from research_workspace.legacy_v2.pipeline import enqueue_stage
 
 from apps.accounts.models import User
-from apps.adviser_v2.engine import _lock_active_turn, _terminal
 from apps.adviser_v2.errors import TurnCancellationRequested, TurnLeaseLost
 from apps.adviser_v2.models import (
     AuditEvent,
@@ -20,7 +21,6 @@ from apps.adviser_v2.models import (
     Turn,
     TurnEvent,
 )
-from apps.adviser_v2.pipeline import enqueue_stage
 from apps.adviser_v2.services.customer import create_conversation, submit_message
 from apps.adviser_v2.services.outbox import dispatch_pending_outbox, recover_expired_work
 

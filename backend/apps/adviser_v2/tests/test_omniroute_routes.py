@@ -8,9 +8,9 @@ import pytest
 from django.core.management import call_command
 from django.core.management.base import CommandError
 from research_workspace.legacy_relay import RelayFailure
+from research_workspace.legacy_v2.model_gateway import call_model, qualified_route, schema_sha256
 
 from apps.accounts.models import User
-from apps.adviser_v2.model_gateway import call_model, qualified_route, schema_sha256
 from apps.adviser_v2.models import ModelAttempt, ModelQualification, ModelRoute, ProcessingJob
 from apps.adviser_v2.qualification_suite import expected_qualification_hashes
 from apps.adviser_v2.readiness import _model_gate
@@ -88,7 +88,7 @@ def draft_envelope(model: str = REPORTED) -> dict[str, Any]:
 def patch_transport(monkeypatch: Any, handler: Any) -> None:
     real = httpx.AsyncClient
     monkeypatch.setattr(
-        "apps.adviser_v2.model_gateway.httpx.AsyncClient",
+        "research_workspace.legacy_v2.model_gateway.httpx.AsyncClient",
         lambda **kw: real(transport=httpx.MockTransport(handler), **kw),
     )
 
@@ -329,7 +329,7 @@ def test_check_omniroute_reports_missing_models_and_is_quiet_when_present(
 
     def install(ids: list[str]) -> None:
         monkeypatch.setattr(
-            "apps.adviser_v2.management.commands.check_omniroute.httpx.Client",
+            "research_workspace.management.commands.check_omniroute.httpx.Client",
             lambda **kw: real(
                 transport=httpx.MockTransport(
                     lambda request: httpx.Response(200, json={"data": [{"id": i} for i in ids]})

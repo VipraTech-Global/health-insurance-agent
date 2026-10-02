@@ -6,14 +6,14 @@ from copy import deepcopy
 import pytest
 from django.utils import timezone
 from pydantic import ValidationError
-
-from apps.adviser_v2.management.commands.ingest_curated_manifest import Command
-from apps.adviser_v2.manifest import ALL_DOCUMENT_ROLES, CuratedManifest, is_complete_pdf
-from apps.adviser_v2.models import AuditEvent, DiscoveryRun, Insurer
-from apps.adviser_v2.processing.identity import (
+from research_workspace.legacy_v2.processing.identity import (
     reconcile_capture_identity,
     verify_observed_identity,
 )
+from research_workspace.management.commands.ingest_curated_manifest import Command
+
+from apps.adviser_v2.manifest import ALL_DOCUMENT_ROLES, CuratedManifest, is_complete_pdf
+from apps.adviser_v2.models import AuditEvent, DiscoveryRun, Insurer
 from apps.adviser_v2.readiness import _document_identity_blockers, role_inventory_blockers
 
 

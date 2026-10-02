@@ -7,9 +7,9 @@ import pytest
 from django.db import DatabaseError, transaction
 from django.utils import timezone
 from research_workspace.legacy_relay import RelayFailure
+from research_workspace.legacy_v2.model_gateway import route_for_binding
 
 from apps.accounts.models import User
-from apps.adviser_v2.model_gateway import route_for_binding
 from apps.adviser_v2.models import Message, ModelRoute, Turn, TurnRouteBinding
 from apps.adviser_v2.schemas import CustomerInterpretationV1
 from apps.adviser_v2.services.customer import create_conversation, retry_turn, submit_message

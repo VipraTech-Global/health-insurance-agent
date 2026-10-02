@@ -12,6 +12,7 @@ from typing import Any
 from django.db import transaction
 from django.db.models import Max
 from django.utils import timezone
+from research_workspace.legacy_v2.retrieval import PolicyRetrievalContext
 
 from apps.accounts.models import User
 
@@ -37,7 +38,6 @@ from ..models import (
     Turn,
 )
 from ..release_scope import comparison_product_count
-from ..retrieval import PolicyRetrievalContext
 from ..rule_engine import (
     PolicyComparisonResult,
     Truth,
@@ -872,7 +872,7 @@ def publish_draft(
     if source_answers is None:
         validate_comparison_draft(draft, context, supplied_context)
     else:
-        from ..source_answers import source_draft
+        from research_workspace.legacy_v2.source_answers import source_draft
         expected = source_draft(context, source_answers)
         if draft != expected or any(_ENDORSEMENT_LANGUAGE.search(s.text) for s in draft.statements):
             raise UnsupportedComparisonError("Source answer differs from independently validated facts.")
@@ -903,7 +903,7 @@ def publish_draft(
             )
     unknown_text = []
     if source_answers is not None:
-        from ..source_answers import source_unknowns
+        from research_workspace.legacy_v2.source_answers import source_unknowns
         for ordinal, (assessment, reason) in enumerate(source_unknowns(context, source_answers), len(draft.statements)+1):
             text = assessment.product_variant.policy_version.product.name + ': ' + reason
             ComparisonStatement.objects.create(owner_id=turn.owner_id, comparison=context.comparison,

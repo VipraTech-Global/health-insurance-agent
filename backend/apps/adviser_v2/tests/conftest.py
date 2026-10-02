@@ -4,10 +4,10 @@ from pathlib import Path
 
 import pytest
 from django.test import Client
+from research_workspace.legacy_v2.model_gateway import schema_sha256
 
 from apps.accounts.models import User
 from apps.adviser_v2.crypto import commitment_key_ring, encryption_key_ring
-from apps.adviser_v2.model_gateway import schema_sha256
 from apps.adviser_v2.models import ModelQualification, ModelRoute
 from apps.adviser_v2.qualification_suite import expected_qualification_hashes
 from apps.adviser_v2.role_routes import configured_route

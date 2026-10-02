@@ -10,15 +10,27 @@ from typing import Any
 from cryptography.exceptions import InvalidTag
 from django.conf import settings
 from research_workspace.legacy_relay import RelayFailure
+from research_workspace.legacy_v2.embedding import policy_index_version, qualified_embedding_status
+from research_workspace.legacy_v2.model_gateway import qualified_route
+from research_workspace.legacy_v2.pipeline import ADAPTER_VERSION
+from research_workspace.legacy_v2.processing.artifacts import read_artifact
+from research_workspace.legacy_v2.processing.criterion_evidence import criterion_inventory_problems
+from research_workspace.legacy_v2.processing.manifest_v2 import raw_bundle_passages
+from research_workspace.legacy_v2.processing.stages import (
+    INVENTORY_CATEGORIES,
+    RECONCILIATION_VERSION,
+    RULE_PROMPT_VERSION,
+    RULE_REVIEW_PROMPT_VERSION,
+    RULE_VALIDATOR_VERSION,
+    _table_rule_problems,
+)
 
-from .embedding import policy_index_version, qualified_embedding_status
 from .manifest import (
     ALL_DOCUMENT_ROLES,
     POLICY_MEMBERSHIP_ROLE_BY_DOCUMENT_ROLE,
     CuratedManifestV2,
     ManifestProductV2,
 )
-from .model_gateway import qualified_route
 from .models import (
     DocumentPage,
     EvidenceSpan,
@@ -32,18 +44,6 @@ from .models import (
     PolicyVersionDocument,
     ProcessingJob,
     SourceCapture,
-)
-from .pipeline import ADAPTER_VERSION
-from .processing.artifacts import read_artifact
-from .processing.criterion_evidence import criterion_inventory_problems
-from .processing.manifest_v2 import raw_bundle_passages
-from .processing.stages import (
-    INVENTORY_CATEGORIES,
-    RECONCILIATION_VERSION,
-    RULE_PROMPT_VERSION,
-    RULE_REVIEW_PROMPT_VERSION,
-    RULE_VALIDATOR_VERSION,
-    _table_rule_problems,
 )
 from .role_routes import ROLE_SETTINGS, configured_route
 from .rule_validation import (
@@ -515,9 +515,9 @@ def validate_bundle(
             validation = None
     index_artifact: dict[str, Any] | None = None
     if product_entry.get("manifest_schema_version") == 2 and validation is not None:
-        from .processing.cited_facts import FACT_PROTOCOL
+        from research_workspace.legacy_v2.processing.cited_facts import FACT_PROTOCOL
         if read_artifact(validation).get("manifest_processing_version") == FACT_PROTOCOL:
-            from .prepared_facts import fact_product_report
+            from research_workspace.legacy_v2.prepared_facts import fact_product_report
             return fact_product_report(policy_version, validation, blockers, warnings, runtime=include_runtime_gates)
     coverage = 0.0
     covered: set[str] = set()

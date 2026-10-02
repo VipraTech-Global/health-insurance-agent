@@ -2,9 +2,8 @@ from copy import deepcopy
 
 import pytest
 from research_workspace.legacy_relay import RelayFailure
-
-from apps.adviser_v2.processing import criterion_attempts as module
-from apps.adviser_v2.processing.criterion_evidence import (
+from research_workspace.legacy_v2.processing import criterion_attempts as module
+from research_workspace.legacy_v2.processing.criterion_evidence import (
     CRITERIA,
     PROGRESS_KEY,
     RETRY_PROTOCOL,

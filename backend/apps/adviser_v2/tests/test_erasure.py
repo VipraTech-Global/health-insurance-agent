@@ -7,6 +7,7 @@ import pytest
 from django.test import Client
 from django.urls import reverse
 from django.utils import timezone
+from research_workspace.legacy_v2.retrieval import index_message
 
 from apps.accounts.models import User
 from apps.adviser_v2.crypto import commitment
@@ -17,7 +18,6 @@ from apps.adviser_v2.models import (
     Message,
     OriginalFile,
 )
-from apps.adviser_v2.retrieval import index_message
 from apps.adviser_v2.services.customer import create_conversation
 from apps.adviser_v2.services.erasure import ERASED_TEXT
 from apps.adviser_v2.storage import store_private

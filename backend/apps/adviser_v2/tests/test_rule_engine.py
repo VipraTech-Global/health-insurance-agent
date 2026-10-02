@@ -7,6 +7,7 @@ from types import SimpleNamespace
 from typing import Any, cast
 
 import pytest
+from research_workspace.legacy_v2.processing.stages import _table_rule_problems
 
 from apps.adviser_v2.contracts import RuleV1, TableSelectorsV1
 from apps.adviser_v2.models import (
@@ -22,7 +23,6 @@ from apps.adviser_v2.models import (
     Product,
     ProductVariant,
 )
-from apps.adviser_v2.processing.stages import _table_rule_problems
 from apps.adviser_v2.rule_engine import (
     Scalar,
     Truth,

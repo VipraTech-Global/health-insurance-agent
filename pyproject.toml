@@ -36,11 +36,13 @@ dev = [
   "types-jsonschema>=4.26.0.20260518",
 ]
 documents = [
-  "docling==2.126.0",
   "numpy==2.5.3",
-  "onnx==1.22.0",
   "onnxruntime==1.30.0",
   "tokenizers==0.23.2",
+]
+research-documents = [
+  "docling==2.126.0",
+  "onnx==1.22.0",
 ]
 
 [tool.pytest.ini_options]

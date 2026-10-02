@@ -12,9 +12,9 @@ from django.db import IntegrityError, transaction
 from django.db.models import Max
 from django.utils import timezone
 from research_workspace.legacy_relay import RelayFailure
+from research_workspace.legacy_v2.model_gateway import copy_turn_routes, pin_turn_routes
 
 from ..crypto import commitment, commitment_matches
-from ..model_gateway import copy_turn_routes, pin_turn_routes
 from ..models import (
     Conversation,
     CustomerProfileRevision,

@@ -16,6 +16,7 @@ from django.http import HttpResponse, StreamingHttpResponse
 from django.shortcuts import get_object_or_404
 from drf_spectacular.types import OpenApiTypes
 from drf_spectacular.utils import OpenApiResponse, extend_schema
+from research_workspace.legacy_v2.pipeline import enqueue_stage
 from rest_framework import status
 from rest_framework.pagination import CursorPagination
 from rest_framework.request import Request
@@ -33,7 +34,6 @@ from .models import (
     SourceCapture,
     Turn,
 )
-from .pipeline import enqueue_stage
 from .selectors.catalogue import catalogue_readiness
 from .selectors.comparisons import comparison_payload
 from .selectors.customer import (

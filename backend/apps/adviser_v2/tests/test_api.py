@@ -10,9 +10,9 @@ import pytest
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import Client, RequestFactory
 from django.utils import timezone
+from research_workspace.legacy_v2.engine import _execution_times
 
 from apps.accounts.models import User
-from apps.adviser_v2.engine import _execution_times
 from apps.adviser_v2.models import CustomerUploadedDocument, EvidenceSpan, Message, Outbox, Turn
 from apps.adviser_v2.services.customer import append_turn_event
 from apps.adviser_v2.views import _ranged_response

@@ -10,10 +10,10 @@ from pathlib import Path
 from typing import Any, cast
 
 from django.db import transaction
+from research_workspace.legacy_v2.engine import process_turn
 
 from apps.accounts.models import User
 
-from .engine import process_turn
 from .models import (
     Comparison,
     Conversation,

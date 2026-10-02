@@ -4,8 +4,7 @@ from types import SimpleNamespace
 from unittest.mock import MagicMock
 
 import pytest
-
-from apps.adviser_v2.evidence_retrieval import (
+from research_workspace.legacy_v2.evidence_retrieval import (
     BM25,
     RawChunk,
     pack,
@@ -13,13 +12,14 @@ from apps.adviser_v2.evidence_retrieval import (
     retrieve_plan,
     token_count,
 )
-from apps.adviser_v2.processing.cited_facts import carrier_fact, fact_carrier
-from apps.adviser_v2.source_answers import (
+from research_workspace.legacy_v2.processing.cited_facts import carrier_fact, fact_carrier
+from research_workspace.legacy_v2.source_answers import (
     SourceAnswer,
     needs_source_retrieval,
     question_criterion,
     source_problems,
 )
+
 from apps.adviser_v2.tests.test_cited_facts import PAGE_ID, POLICY_ID, reviewed, sample
 
 
@@ -84,17 +84,17 @@ def test_budget_keeps_whole_chunks_and_reports_every_omission():
 def test_bm25_never_checks_dense_qualification(monkeypatch, settings):
     settings.COVERGUIDE_EVIDENCE_RETRIEVAL = "bm25"
     monkeypatch.setattr(
-        "apps.adviser_v2.embedding.qualified_embedding_status",
+        "research_workspace.legacy_v2.embedding.qualified_embedding_status",
         lambda: pytest.fail("BM25 called dense qualification"),
     )
     monkeypatch.setattr(
-        "apps.adviser_v2.evidence_retrieval.plan_chunks", lambda p: [chunk(p, "ambulance cover", p)]
+        "research_workspace.legacy_v2.evidence_retrieval.plan_chunks", lambda p: [chunk(p, "ambulance cover", p)]
     )
     assert retrieve_plan("ambulance", POLICY_ID).chunks
 
 
 def test_release_retrieval_passes_only_question_and_equal_budget_per_plan(monkeypatch, settings):
-    from apps.adviser_v2.retrieval import retrieve_policy_context
+    from research_workspace.legacy_v2.retrieval import retrieve_policy_context
 
     query = MagicMock()
     query.values_list.return_value = ["one", "two", "three"]
@@ -107,7 +107,7 @@ def test_release_retrieval_passes_only_question_and_equal_budget_per_plan(monkey
         calls.append((question, policy, budget))
         return pack(policy, [], budget=budget, method="bm25")
 
-    monkeypatch.setattr("apps.adviser_v2.evidence_retrieval.retrieve_plan", search)
+    monkeypatch.setattr("research_workspace.legacy_v2.evidence_retrieval.retrieve_plan", search)
     settings.COVERGUIDE_EVIDENCE_TOKEN_BUDGET = 16000
     result = retrieve_policy_context("Is ambulance covered?", SimpleNamespace(id="release"))
     assert len(result.packets) == 3
@@ -142,7 +142,7 @@ def source_fixture(monkeypatch):
         segments=({"page_span_id": PAGE_ID, "start": start, "end": end},),
     )
     packet = pack(POLICY_ID, [c], budget=16000, method="bm25")
-    monkeypatch.setattr("apps.adviser_v2.source_answers.packet_pages", lambda packet: pages)
+    monkeypatch.setattr("research_workspace.legacy_v2.source_answers.packet_pages", lambda packet: pages)
     return SourceAnswer(packet, criterion, result, result, review, None)
 
 
@@ -171,7 +171,7 @@ def test_free_answer_serializes_profile_dates_without_polluting_retrieval(monkey
     import json
     from datetime import datetime
 
-    from apps.adviser_v2.source_answers import answer_question
+    from research_workspace.legacy_v2.source_answers import answer_question
 
     expected = source_fixture(monkeypatch)
     calls = []
@@ -180,8 +180,8 @@ def test_free_answer_serializes_profile_dates_without_polluting_retrieval(monkey
         calls.append(kwargs)
         return expected.extraction if len(calls) == 1 else expected.review
 
-    monkeypatch.setattr("apps.adviser_v2.source_answers._relay", relay)
-    monkeypatch.setattr("apps.adviser_v2.source_answers._source_statement", lambda *args: {})
+    monkeypatch.setattr("research_workspace.legacy_v2.source_answers._relay", relay)
+    monkeypatch.setattr("research_workspace.legacy_v2.source_answers._source_statement", lambda *args: {})
     answer = answer_question(
         None,
         "How many children?",
@@ -221,8 +221,7 @@ def test_relay_timeouts_retry_separately_from_validation(monkeypatch):
 
     from django.utils import timezone
     from research_workspace.legacy_relay import RelayFailure
-
-    from apps.adviser_v2.source_answers import _relay
+    from research_workspace.legacy_v2.source_answers import _relay
 
     _, result, _ = sample()
     attempts = []
@@ -231,8 +230,8 @@ def test_relay_timeouts_retry_separately_from_validation(monkeypatch):
         if len(attempts) < 3:
             raise RelayFailure('provider_timeout', 'HTTP 408')
         return result
-    monkeypatch.setattr('apps.adviser_v2.source_answers.call_model', call)
-    monkeypatch.setattr('apps.adviser_v2.source_answers.request_bytes_with_headroom', lambda *args: None)
+    monkeypatch.setattr('research_workspace.legacy_v2.source_answers.call_model', call)
+    monkeypatch.setattr('research_workspace.legacy_v2.source_answers.request_bytes_with_headroom', lambda *args: None)
     turn = SimpleNamespace(deadline=timezone.now()+timedelta(seconds=900))
     actual = _relay(turn, model='test', schema_name='policy_extraction', output_type=type(result), messages=[], effort='low')
     assert actual == result
@@ -240,7 +239,7 @@ def test_relay_timeouts_retry_separately_from_validation(monkeypatch):
 
 
 def test_invalid_source_answer_gets_only_one_corrective_attempt(monkeypatch):
-    from apps.adviser_v2.source_answers import answer_question
+    from research_workspace.legacy_v2.source_answers import answer_question
     expected = source_fixture(monkeypatch)
     invalid = expected.extraction.model_copy(deep=True)
     fact = carrier_fact(invalid.rules[0])
@@ -250,7 +249,7 @@ def test_invalid_source_answer_gets_only_one_corrective_attempt(monkeypatch):
     def relay(*args, **kwargs):
         attempts.append(kwargs)
         return invalid
-    monkeypatch.setattr('apps.adviser_v2.source_answers._relay', relay)
+    monkeypatch.setattr('research_workspace.legacy_v2.source_answers._relay', relay)
     answer = answer_question(None, 'How many children?', {}, expected.packet)
     assert answer.extraction is None
     assert 'after validation' in answer.unknown_reason

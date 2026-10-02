@@ -5,9 +5,8 @@ from types import SimpleNamespace
 
 import httpx
 import pytest
-
-from apps.adviser_v2.evidence_retrieval import pack
-from apps.adviser_v2.pageindex_evidence import (
+from research_workspace.legacy_v2.evidence_retrieval import pack
+from research_workspace.legacy_v2.pageindex_evidence import (
     SDK_REVISION,
     PageIndexFailure,
     original_page_ranking,
@@ -16,7 +15,7 @@ from apps.adviser_v2.pageindex_evidence import (
     selected_nodes,
     tree_nodes,
 )
-from apps.adviser_v2.source_answers import answer_question
+from research_workspace.legacy_v2.source_answers import answer_question
 
 
 def tree_fixture(tmp_path):
@@ -106,7 +105,7 @@ def test_unavailable_tree_keeps_a_specific_unknown_without_an_answer_call(monkey
         unavailable_reason="The verified tree is missing.",
     )
     monkeypatch.setattr(
-        "apps.adviser_v2.source_answers._relay",
+        "research_workspace.legacy_v2.source_answers._relay",
         lambda *a, **k: pytest.fail("Unverifiable retrieval reached inference"),
     )
     answer = answer_question(None, "Is AYUSH covered?", {}, packet)
@@ -121,10 +120,10 @@ def test_pageindex_transport_retry_keeps_route_checks_and_token_usage(
     settings.COVERGUIDE_POLICY_EXTRACTION_MODEL = "gpt-5.6-sol"
     checked = []
     monkeypatch.setattr(
-        "apps.adviser_v2.pageindex_evidence.qualified_route", lambda *a: checked.append(a)
+        "research_workspace.legacy_v2.pageindex_evidence.qualified_route", lambda *a: checked.append(a)
     )
     monkeypatch.setattr(
-        "apps.adviser_v2.pageindex_evidence.provider_config",
+        "research_workspace.legacy_v2.pageindex_evidence.provider_config",
         lambda *a: SimpleNamespace(base_url="http://127.0.0.1:8317", api_key="synthetic"),
     )
     calls = []
@@ -146,7 +145,7 @@ def test_pageindex_transport_retry_keeps_route_checks_and_token_usage(
             },
         )
 
-    monkeypatch.setattr("apps.adviser_v2.pageindex_evidence.httpx.post", post)
+    monkeypatch.setattr("research_workspace.legacy_v2.pageindex_evidence.httpx.post", post)
     nodes = [{"id": "doc:0001"}]
     assert relay_nodes("Question", nodes, "own-plan") == ["doc:0001"]
     assert len(checked) == 1 and len(calls) == 3
@@ -179,13 +178,13 @@ def test_invalid_relay_output_is_an_explicit_retrieval_failure(
 ):
     settings.COVERGUIDE_REPORT_ROOT = tmp_path
     settings.COVERGUIDE_POLICY_EXTRACTION_MODEL = "gpt-5.6-sol"
-    monkeypatch.setattr("apps.adviser_v2.pageindex_evidence.qualified_route", lambda *a: None)
+    monkeypatch.setattr("research_workspace.legacy_v2.pageindex_evidence.qualified_route", lambda *a: None)
     monkeypatch.setattr(
-        "apps.adviser_v2.pageindex_evidence.provider_config",
+        "research_workspace.legacy_v2.pageindex_evidence.provider_config",
         lambda *a: SimpleNamespace(base_url="http://127.0.0.1:8317", api_key="synthetic"),
     )
     monkeypatch.setattr(
-        "apps.adviser_v2.pageindex_evidence.httpx.post",
+        "research_workspace.legacy_v2.pageindex_evidence.httpx.post",
         lambda url, **kwargs: httpx.Response(
             200, request=httpx.Request("POST", url), json=response_data
         ),
@@ -203,9 +202,9 @@ def test_unqualified_route_cannot_call_pageindex(monkeypatch, settings):
     def reject(*args):
         raise ValueError("Unqualified route")
 
-    monkeypatch.setattr("apps.adviser_v2.pageindex_evidence.qualified_route", reject)
+    monkeypatch.setattr("research_workspace.legacy_v2.pageindex_evidence.qualified_route", reject)
     monkeypatch.setattr(
-        "apps.adviser_v2.pageindex_evidence.httpx.post",
+        "research_workspace.legacy_v2.pageindex_evidence.httpx.post",
         lambda *a, **k: pytest.fail("Unqualified route reached the relay"),
     )
     with pytest.raises(ValueError, match="Unqualified"):

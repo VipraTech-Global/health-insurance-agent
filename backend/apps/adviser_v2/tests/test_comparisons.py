@@ -5,9 +5,9 @@ from types import SimpleNamespace
 from typing import Any, cast
 
 import pytest
+from research_workspace.legacy_v2.engine import _comparison_contract_guidance, _comparison_messages
 
 from apps.accounts.models import User
-from apps.adviser_v2.engine import _comparison_contract_guidance, _comparison_messages
 from apps.adviser_v2.errors import UnsupportedComparisonError
 from apps.adviser_v2.schemas import ComparisonDraftV1
 from apps.adviser_v2.services.comparisons import (

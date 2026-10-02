@@ -2,9 +2,8 @@ import json
 from copy import deepcopy
 
 import pytest
-
-from apps.adviser_v2.processing.cited_fact_pipeline import _messages
-from apps.adviser_v2.processing.cited_facts import (
+from research_workspace.legacy_v2.processing.cited_fact_pipeline import _messages
+from research_workspace.legacy_v2.processing.cited_facts import (
     CitedFact,
     Clause,
     anchor_transcribed_quotes,
@@ -14,8 +13,9 @@ from apps.adviser_v2.processing.cited_facts import (
     recover_fact_encoding,
     review_disposition,
 )
-from apps.adviser_v2.processing.clause_citations import clause_rectangles
-from apps.adviser_v2.processing.criterion_evidence import CRITERIA
+from research_workspace.legacy_v2.processing.clause_citations import clause_rectangles
+from research_workspace.legacy_v2.processing.criterion_evidence import CRITERIA
+
 from apps.adviser_v2.schemas import PolicyRuleExtractionV1, PolicyRuleReviewV1, ReviewedPolicyRule
 
 PAGE_ID = "11111111-1111-4111-8111-111111111111"
@@ -57,7 +57,7 @@ def test_number_words_and_exact_clause_offsets():
 
 
 def test_statute_year_is_a_cited_identifier_not_a_waiting_duration():
-    from apps.adviser_v2.processing.cited_facts import Quantity, carrier_fact
+    from research_workspace.legacy_v2.processing.cited_facts import Quantity, carrier_fact
 
     criterion, result, pages = sample()
     fact = carrier_fact(result.rules[0])
@@ -75,7 +75,7 @@ def test_statute_year_is_a_cited_identifier_not_a_waiting_duration():
 def test_frequency_words_have_numeric_support():
     from decimal import Decimal
 
-    from apps.adviser_v2.processing.criterion_evidence import quoted_quantities
+    from research_workspace.legacy_v2.processing.criterion_evidence import quoted_quantities
 
     assert quoted_quantities("Restored once during the policy period.")["count"] == {Decimal(1)}
     assert quoted_quantities("A maximum of three dependent children.")["count"] == {Decimal(3)}
@@ -159,7 +159,7 @@ def test_wrong_page_and_unsupported_number_are_rejected():
 def test_fact_prompts_keep_bundle_prefix_identical(monkeypatch):
     from types import SimpleNamespace
 
-    monkeypatch.setattr("apps.adviser_v2.processing.stages._selected_variant_name", lambda _v: "base")
+    monkeypatch.setattr("research_workspace.legacy_v2.processing.stages._selected_variant_name", lambda _v: "base")
     version = SimpleNamespace(id=POLICY_ID, uin="test")
     _, result, pages = sample()
     for candidate in (None, result):
@@ -202,9 +202,9 @@ def test_live_orchestration_reuses_accepted_criteria_and_forces_only_required_pr
     from types import SimpleNamespace
     from unittest.mock import MagicMock
 
-    from apps.adviser_v2.processing import cited_fact_pipeline as pipeline
-    from apps.adviser_v2.processing.criterion_attempts import new_criterion_state
-    from apps.adviser_v2.processing.criterion_evidence import PROGRESS_KEY
+    from research_workspace.legacy_v2.processing import cited_fact_pipeline as pipeline
+    from research_workspace.legacy_v2.processing.criterion_attempts import new_criterion_state
+    from research_workspace.legacy_v2.processing.criterion_evidence import PROGRESS_KEY
 
     version = SimpleNamespace(id=POLICY_ID, uin="test")
     _criterion, _result, core = sample()
@@ -220,9 +220,9 @@ def test_live_orchestration_reuses_accepted_criteria_and_forces_only_required_pr
     monkeypatch.setattr(pipeline, "_checkpoint", lambda *_a: None)
     monkeypatch.setattr(pipeline, "ModelAttempt", MagicMock())
     monkeypatch.setattr(pipeline, "raw_bundle_passages", lambda _v, include_prospectus=False: full if include_prospectus else core)
-    monkeypatch.setattr("apps.adviser_v2.processing.stages._policy_version", lambda _j: version)
-    monkeypatch.setattr("apps.adviser_v2.processing.stages._selected_variant_name", lambda _v: "base")
-    monkeypatch.setattr("apps.adviser_v2.processing.stages._renew_rule_lease", lambda _j: None)
+    monkeypatch.setattr("research_workspace.legacy_v2.processing.stages._policy_version", lambda _j: version)
+    monkeypatch.setattr("research_workspace.legacy_v2.processing.stages._selected_variant_name", lambda _v: "base")
+    monkeypatch.setattr("research_workspace.legacy_v2.processing.stages._renew_rule_lease", lambda _j: None)
     calls = []
 
     def invoke(**kwargs):
@@ -241,8 +241,8 @@ def test_live_orchestration_reuses_accepted_criteria_and_forces_only_required_pr
 def test_supported_facts_do_not_require_executable_rule_ids_and_stop_before_indexing(monkeypatch):
     from types import SimpleNamespace
 
-    from apps.adviser_v2.processing import cited_fact_pipeline as pipeline
-    from apps.adviser_v2.processing.criterion_evidence import PROGRESS_KEY
+    from research_workspace.legacy_v2.processing import cited_fact_pipeline as pipeline
+    from research_workspace.legacy_v2.processing.criterion_evidence import PROGRESS_KEY
 
     _criterion, _result, pages = sample()
     pages[0].update(document_key="wording", document_version_id="document")
@@ -255,7 +255,7 @@ def test_supported_facts_do_not_require_executable_rule_ids_and_stop_before_inde
         }
     monkeypatch.setattr(pipeline, "read_artifact", lambda _j: {PROGRESS_KEY: progress})
     monkeypatch.setattr(pipeline, "raw_bundle_passages", lambda *_a, **_kw: pages)
-    monkeypatch.setattr("apps.adviser_v2.processing.stages._policy_version", lambda _j: SimpleNamespace(id=POLICY_ID))
+    monkeypatch.setattr("research_workspace.legacy_v2.processing.stages._policy_version", lambda _j: SimpleNamespace(id=POLICY_ID))
     monkeypatch.setattr(pipeline, "store_clause", lambda c, _p: SimpleNamespace(
         id=PAGE_ID, page=SimpleNamespace(page_number=1), quote=c.quote, context={}, locator={}))
     from unittest.mock import MagicMock
@@ -279,9 +279,12 @@ def test_supported_facts_do_not_require_executable_rule_ids_and_stop_before_inde
 def test_genuine_source_unknown_does_not_trigger_an_extraction_correction(monkeypatch):
     from types import SimpleNamespace
 
-    from apps.adviser_v2.processing import cited_fact_pipeline as pipeline
-    from apps.adviser_v2.processing.criterion_attempts import new_criterion_state, unknown_result
-    from apps.adviser_v2.processing.criterion_evidence import PROGRESS_KEY
+    from research_workspace.legacy_v2.processing import cited_fact_pipeline as pipeline
+    from research_workspace.legacy_v2.processing.criterion_attempts import (
+        new_criterion_state,
+        unknown_result,
+    )
+    from research_workspace.legacy_v2.processing.criterion_evidence import PROGRESS_KEY
 
     progress = {"criteria": {c.key: {"review_complete": True} for c in CRITERIA}}
     state = new_criterion_state()
@@ -291,7 +294,7 @@ def test_genuine_source_unknown_does_not_trigger_an_extraction_correction(monkey
     monkeypatch.setattr(pipeline, "read_artifact", lambda _j: {PROGRESS_KEY: progress})
     monkeypatch.setattr(pipeline, "raw_bundle_passages", lambda _v: [])
     monkeypatch.setattr(pipeline, "_checkpoint", lambda *_a: None)
-    monkeypatch.setattr("apps.adviser_v2.processing.stages._policy_version", lambda _j: SimpleNamespace(id=POLICY_ID))
+    monkeypatch.setattr("research_workspace.legacy_v2.processing.stages._policy_version", lambda _j: SimpleNamespace(id=POLICY_ID))
     pipeline.run_criterion_review(SimpleNamespace(parent_job=None))
     assert state["complete"]
     assert state["validation_attempts"] == 1
@@ -299,7 +302,7 @@ def test_genuine_source_unknown_does_not_trigger_an_extraction_correction(monkey
 
 
 def test_indian_table_cells_and_separate_labels_keep_exact_quotes():
-    from apps.adviser_v2.processing.criterion_evidence import quoted_quantities
+    from research_workspace.legacy_v2.processing.criterion_evidence import quoted_quantities
 
     criterion, result, pages = sample('maternity')
     labels = 'Normal\nDelivery\nRs.'
@@ -339,7 +342,10 @@ def test_table_units_cannot_be_borrowed_from_other_pages_or_distant_sections():
 
 
 def test_secondary_condition_failure_drops_only_that_statement():
-    from apps.adviser_v2.processing.cited_facts import carrier_fact, omit_secondary_statements
+    from research_workspace.legacy_v2.processing.cited_facts import (
+        carrier_fact,
+        omit_secondary_statements,
+    )
 
     criterion, result, _pages = sample('ped_waiting_period')
     fact = carrier_fact(result.rules[0])
@@ -364,8 +370,8 @@ def test_secondary_condition_failure_drops_only_that_statement():
 
 
 def test_approved_rerun_resets_only_six_and_archives_pipeline_bug_attempts():
-    from apps.adviser_v2.processing.cited_fact_pipeline import apply_approved_rerun
-    from apps.adviser_v2.processing.criterion_attempts import new_criterion_state
+    from research_workspace.legacy_v2.processing.cited_fact_pipeline import apply_approved_rerun
+    from research_workspace.legacy_v2.processing.criterion_attempts import new_criterion_state
 
     progress = {'policy_version_id': POLICY_ID, 'core_evidence_sha256': 'hash', 'criteria': {}}
     for c in CRITERIA:
@@ -392,9 +398,10 @@ def test_approved_rerun_resets_only_six_and_archives_pipeline_bug_attempts():
 
 
 def test_long_v2_error_is_retained_in_artifact_but_issue_summary_fits_contract():
+    from research_workspace.legacy_v2.pipeline import _material_issues
+    from research_workspace.legacy_v2.processing.criterion_evidence import PROGRESS_KEY
+
     from apps.adviser_v2.contracts import validate_contract
-    from apps.adviser_v2.pipeline import _material_issues
-    from apps.adviser_v2.processing.criterion_evidence import PROGRESS_KEY
 
     result = {'material_issues': ['A' * 20000], PROGRESS_KEY: {'protocol': 'cited-fact'}}
     issues = _material_issues(result, 'extract')
@@ -404,8 +411,11 @@ def test_long_v2_error_is_retained_in_artifact_but_issue_summary_fits_contract()
 
 
 def test_our_old_wrapper_exception_does_not_consume_a_corrective_attempt():
-    from apps.adviser_v2.processing.cited_fact_pipeline import resume_pipeline_failure
-    from apps.adviser_v2.processing.criterion_attempts import new_criterion_state, unknown_result
+    from research_workspace.legacy_v2.processing.cited_fact_pipeline import resume_pipeline_failure
+    from research_workspace.legacy_v2.processing.criterion_attempts import (
+        new_criterion_state,
+        unknown_result,
+    )
 
     state = new_criterion_state()
     state.update(complete=True, schema_diagnostics=[{'retained': 'public response'}],
@@ -423,7 +433,7 @@ def test_our_old_wrapper_exception_does_not_consume_a_corrective_attempt():
 
 
 def test_family_table_counts_need_the_exact_abbreviation_legend():
-    from apps.adviser_v2.processing.criterion_evidence import quoted_quantities
+    from research_workspace.legacy_v2.processing.criterion_evidence import quoted_quantities
 
     assert quoted_quantities('2A+3C')['count'] == set()
     assert quoted_quantities('2A+3C A-Adult | C-Child')['count'] == {2, 3}
@@ -442,8 +452,11 @@ def test_family_table_counts_need_the_exact_abbreviation_legend():
 
 
 def test_secondary_projection_only_deletes_complete_retained_assertions():
-    from apps.adviser_v2.processing.cited_facts import carrier_fact
-    from apps.adviser_v2.processing.fact_projection import fact_digest, primary_projection
+    from research_workspace.legacy_v2.processing.cited_facts import carrier_fact
+    from research_workspace.legacy_v2.processing.fact_projection import (
+        fact_digest,
+        primary_projection,
+    )
 
     criterion, result, pages = sample('maternity')
     fact = carrier_fact(result.rules[0])
@@ -467,7 +480,7 @@ def test_secondary_projection_only_deletes_complete_retained_assertions():
 def test_review_prompt_does_not_also_request_an_extraction_response(monkeypatch):
     from types import SimpleNamespace
 
-    monkeypatch.setattr('apps.adviser_v2.processing.stages._selected_variant_name', lambda _v: 'base')
+    monkeypatch.setattr('research_workspace.legacy_v2.processing.stages._selected_variant_name', lambda _v: 'base')
     criterion, result, pages = sample()
     messages = _messages(SimpleNamespace(id=POLICY_ID, uin='test'), pages, criterion, candidate=result)
     assert 'Return ONE rule' not in messages[2]['content']
@@ -477,7 +490,7 @@ def test_review_prompt_does_not_also_request_an_extraction_response(monkeypatch)
 
 
 def test_ordinal_days_written_rupees_and_counts_in_number():
-    from apps.adviser_v2.processing.criterion_evidence import quoted_quantities
+    from research_workspace.legacy_v2.processing.criterion_evidence import quoted_quantities
 
     source = 'From the 16th day, a limit of Rupees Fifty thousand.'
     amounts = quoted_quantities(source)
@@ -508,7 +521,7 @@ def test_table_cell_uses_its_exact_currency_heading_and_indian_value():
 
 def test_stripped_assure_ped_spaces_map_back_to_original_clause_span():
     criterion, result, pages = sample()
-    from apps.adviser_v2.processing.cited_facts import carrier_fact
+    from research_workspace.legacy_v2.processing.cited_facts import carrier_fact
 
     fact = carrier_fact(result.rules[0])
     fact.citations[0].quote = 'In case of enhancement of Sum Insured the exclusion shall apply afresh to the extent of Sum Insured increase.'
@@ -534,7 +547,7 @@ def test_stripped_assure_ped_spaces_map_back_to_original_clause_span():
 ])
 def test_quote_matching_never_normalizes_non_whitespace(raw, quoted):
     criterion, result, pages = sample()
-    from apps.adviser_v2.processing.cited_facts import carrier_fact
+    from research_workspace.legacy_v2.processing.cited_facts import carrier_fact
 
     fact = carrier_fact(result.rules[0])
     fact.citations[0].quote = quoted
@@ -566,7 +579,7 @@ def test_whitespace_only_matching_preserves_occurrences_and_rejects_whole_pages(
 def test_ratio_fraction_is_the_same_source_number_without_executing_a_formula():
     from decimal import Decimal
 
-    from apps.adviser_v2.processing.criterion_evidence import normalized_quantity
+    from research_workspace.legacy_v2.processing.criterion_evidence import normalized_quantity
 
     assert normalized_quantity('50/100', 'ratio') == Decimal('0.5')
     assert normalized_quantity('20%', 'ratio') == Decimal('0.2')
@@ -581,8 +594,8 @@ def test_valid_retained_response_can_survive_a_malformed_correction(monkeypatch)
     from types import SimpleNamespace
     from unittest.mock import MagicMock
 
-    from apps.adviser_v2.processing import cited_fact_pipeline as pipeline
-    from apps.adviser_v2.processing.criterion_attempts import new_criterion_state
+    from research_workspace.legacy_v2.processing import cited_fact_pipeline as pipeline
+    from research_workspace.legacy_v2.processing.criterion_attempts import new_criterion_state
 
     criterion, candidate, pages = sample()
     attempt = SimpleNamespace(id=PAGE_ID, owner_id=None, response_storage_key='stored', response_storage_sha256='hash')
@@ -604,7 +617,7 @@ def test_valid_retained_response_can_survive_a_malformed_correction(monkeypatch)
 def test_ayush_bed_counts_have_exact_numeric_support():
     from decimal import Decimal
 
-    from apps.adviser_v2.processing.criterion_evidence import quoted_quantities
+    from research_workspace.legacy_v2.processing.criterion_evidence import quoted_quantities
     assert quoted_quantities("Having at least 5 in-patient beds;")["count"] == {Decimal(5)}
     assert quoted_quantities("Having at least five inpatient beds;")["count"] == {Decimal(5)}
     assert not quoted_quantities("Rs. 5000 per day")["count"]

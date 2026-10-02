@@ -9,30 +9,8 @@ from typing import Any, cast
 import pytest
 from django.db import DatabaseError, transaction
 from django.utils import timezone
-
-from apps.adviser_v2 import pipeline as pipeline_module
-from apps.adviser_v2.models import (
-    AuditEvent,
-    DiscoveryRun,
-    DocumentPage,
-    DocumentSeries,
-    DocumentVersion,
-    EvidenceSpan,
-    Insurer,
-    OriginalFile,
-    Outbox,
-    PolicyRule,
-    PolicyRuleEvidence,
-    PolicySearchChunk,
-    PolicyVersion,
-    PolicyVersionDocument,
-    ProcessingJob,
-    Product,
-    ProductVariant,
-    SourceCapture,
-    SourceURL,
-)
-from apps.adviser_v2.pipeline import (
+from research_workspace.legacy_v2 import pipeline as pipeline_module
+from research_workspace.legacy_v2.pipeline import (
     ADAPTER_VERSION,
     MAX_READ_PROCESSING_LEASE,
     NEXT_STAGE,
@@ -45,7 +23,7 @@ from apps.adviser_v2.pipeline import (
     enqueue_stage,
     process_job,
 )
-from apps.adviser_v2.processing.adjudication import (
+from research_workspace.legacy_v2.processing.adjudication import (
     _reader_text,
     adjudicate_classification,
     adjudicate_reconciliation,
@@ -53,9 +31,9 @@ from apps.adviser_v2.processing.adjudication import (
     validate_manual_transcriptions,
     validate_page_selections,
 )
-from apps.adviser_v2.processing.artifacts import read_artifact, write_artifact
-from apps.adviser_v2.processing.readers import _table_text, classify_bytes
-from apps.adviser_v2.processing.stages import (
+from research_workspace.legacy_v2.processing.artifacts import read_artifact, write_artifact
+from research_workspace.legacy_v2.processing.readers import _table_text, classify_bytes
+from research_workspace.legacy_v2.processing.stages import (
     INVENTORY_CATEGORIES,
     INVENTORY_CATEGORY_BATCHES,
     RECONCILIATION_VERSION,
@@ -82,6 +60,28 @@ from apps.adviser_v2.processing.stages import (
     _span_groups,
     index_policy_version,
     run_index,
+)
+
+from apps.adviser_v2.models import (
+    AuditEvent,
+    DiscoveryRun,
+    DocumentPage,
+    DocumentSeries,
+    DocumentVersion,
+    EvidenceSpan,
+    Insurer,
+    OriginalFile,
+    Outbox,
+    PolicyRule,
+    PolicyRuleEvidence,
+    PolicySearchChunk,
+    PolicyVersion,
+    PolicyVersionDocument,
+    ProcessingJob,
+    Product,
+    ProductVariant,
+    SourceCapture,
+    SourceURL,
 )
 from apps.adviser_v2.schemas import PolicyRuleExtractionV1, PolicyRuleReviewV1
 from apps.adviser_v2.storage import store_public
@@ -1003,9 +1003,9 @@ def test_evidence_batches_preserve_every_exact_passage_without_oversize_payloads
 ) -> None:
     passages = [{"evidence_span_id": f"span-{index}", "passage": "x" * 80} for index in range(4)]
     monkeypatch.setattr(
-        "apps.adviser_v2.processing.stages._bundle_passages", lambda _policy: passages
+        "research_workspace.legacy_v2.processing.stages._bundle_passages", lambda _policy: passages
     )
-    monkeypatch.setattr("apps.adviser_v2.processing.stages.MAX_MODEL_PASSAGE_CHARACTERS", 180)
+    monkeypatch.setattr("research_workspace.legacy_v2.processing.stages.MAX_MODEL_PASSAGE_CHARACTERS", 180)
 
     payloads = _passage_payloads(cast(PolicyVersion, SimpleNamespace()))
 
@@ -1070,17 +1070,17 @@ def test_index_stage_pins_validation_and_embedding_artifacts(
         "verified_rule_ids": rule_ids,
         "issues": [],
     }
-    monkeypatch.setattr("apps.adviser_v2.processing.stages._policy_version", lambda _job: policy)
+    monkeypatch.setattr("research_workspace.legacy_v2.processing.stages._policy_version", lambda _job: policy)
     monkeypatch.setattr(
-        "apps.adviser_v2.processing.stages.read_artifact",
+        "research_workspace.legacy_v2.processing.stages.read_artifact",
         lambda _job: validation_artifact,
     )
     monkeypatch.setattr(
-        "apps.adviser_v2.processing.stages.index_policy_version",
+        "research_workspace.legacy_v2.processing.stages.index_policy_version",
         lambda _policy: (2, 5, "bge-index/1:abc"),
     )
     monkeypatch.setattr(
-        "apps.adviser_v2.processing.stages.PolicyRule.objects.filter",
+        "research_workspace.legacy_v2.processing.stages.PolicyRule.objects.filter",
         lambda **_kwargs: SimpleNamespace(count=lambda: len(rule_ids)),
     )
 
@@ -1143,9 +1143,9 @@ def test_index_stage_rejects_an_artifact_omitting_a_current_verified_rule(
         "verified_rule_ids": [str(included.id)],
         "issues": [],
     }
-    monkeypatch.setattr("apps.adviser_v2.processing.stages._policy_version", lambda _job: policy)
+    monkeypatch.setattr("research_workspace.legacy_v2.processing.stages._policy_version", lambda _job: policy)
     monkeypatch.setattr(
-        "apps.adviser_v2.processing.stages.read_artifact",
+        "research_workspace.legacy_v2.processing.stages.read_artifact",
         lambda _job: validation_artifact,
     )
 
@@ -1173,15 +1173,15 @@ def test_policy_index_is_idempotent_and_merges_duplicate_passage_evidence(
         {"evidence_span_id": str(second_span.id), "passage": "Same exact clause."},
     ]
     monkeypatch.setattr(
-        "apps.adviser_v2.processing.stages.qualified_embedding_status",
+        "research_workspace.legacy_v2.processing.stages.qualified_embedding_status",
         lambda: (True, "qualified", SimpleNamespace()),
     )
     monkeypatch.setattr(
-        "apps.adviser_v2.processing.stages.policy_index_version",
+        "research_workspace.legacy_v2.processing.stages.policy_index_version",
         lambda _qualification: "test-index/1",
     )
     monkeypatch.setattr(
-        "apps.adviser_v2.processing.stages._bundle_passages",
+        "research_workspace.legacy_v2.processing.stages._bundle_passages",
         lambda _policy: passages,
     )
     embedded: list[list[str]] = []
@@ -1190,7 +1190,7 @@ def test_policy_index_is_idempotent_and_merges_duplicate_passage_evidence(
         embedded.append(texts)
         return [[0.0] * 1024 for _text in texts]
 
-    monkeypatch.setattr("apps.adviser_v2.processing.stages.embed_texts", embed_once)
+    monkeypatch.setattr("research_workspace.legacy_v2.processing.stages.embed_texts", embed_once)
 
     first_result = index_policy_version(policy)
     second_result = index_policy_version(policy)
@@ -1205,7 +1205,7 @@ def test_policy_index_is_idempotent_and_merges_duplicate_passage_evidence(
         chunk_sha256="f" * 64,
     )
     monkeypatch.setattr(
-        "apps.adviser_v2.processing.stages._bundle_passages",
+        "research_workspace.legacy_v2.processing.stages._bundle_passages",
         lambda _policy: passages[:1],
     )
     refreshed_result = index_policy_version(policy)

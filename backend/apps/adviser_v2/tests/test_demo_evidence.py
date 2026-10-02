@@ -154,7 +154,7 @@ def test_pageindex_transport_retry_is_not_a_negative_title_check(tmp_path, monke
 def test_packet_budget_counts_serialized_metadata_and_tables():
     import json
 
-    from apps.adviser_v2.evidence_retrieval import token_count
+    from research_workspace.legacy_v2.evidence_retrieval import token_count
     pieces, _, _ = sections()
     cells = {str(n): {'row': n, 'column': 1, 'citation': {
         'section_id': pieces[0].id, 'page_id': 'p1', 'quote': 'Original page 1.'}}

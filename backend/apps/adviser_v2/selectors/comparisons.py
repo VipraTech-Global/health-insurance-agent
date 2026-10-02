@@ -104,7 +104,7 @@ def comparison_payload(owner_id: uuid.UUID, comparison_id: uuid.UUID) -> dict[st
         if assessment_id in statements_by_assessment:
             statements_by_assessment[assessment_id].append(statement)
     product_count = comparison_product_count(comparison.knowledge_release)
-    from ..prepared_facts import display_fact, facts_for_release
+    from research_workspace.legacy_v2.prepared_facts import display_fact, facts_for_release
     prepared = facts_for_release(comparison.knowledge_release)
     return {
         "id": str(comparison.id),

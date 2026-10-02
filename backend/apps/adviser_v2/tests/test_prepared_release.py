@@ -3,6 +3,12 @@ import uuid
 import pytest
 from django.db import DatabaseError, connection, transaction
 from django.utils import timezone
+from research_workspace.legacy_v2.prepared_facts import (
+    FACT_RELEASE_VERSION,
+    digest,
+    facts_for_release,
+)
+from research_workspace.legacy_v2.processing.criterion_evidence import CRITERIA
 
 from apps.adviser_v2.models import (
     EvidenceSpan,
@@ -16,8 +22,6 @@ from apps.adviser_v2.models import (
     ProcessingJob,
     Product,
 )
-from apps.adviser_v2.prepared_facts import FACT_RELEASE_VERSION, digest, facts_for_release
-from apps.adviser_v2.processing.criterion_evidence import CRITERIA
 from apps.adviser_v2.tests.test_pipeline import public_html_capture
 from apps.adviser_v2.tests.test_releases import _rule_body
 

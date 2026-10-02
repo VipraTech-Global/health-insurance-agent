@@ -7,10 +7,10 @@ from types import SimpleNamespace
 import httpx
 import pytest
 from research_workspace.legacy_relay import RelayFailure, StrictRelayAdapter
+from research_workspace.legacy_v2.processing import stages
+from research_workspace.legacy_v2.processing.criterion_evidence import CRITERIA
 
 from apps.adviser.tests.test_ai import envelope, route
-from apps.adviser_v2.processing import stages
-from apps.adviser_v2.processing.criterion_evidence import CRITERIA
 from apps.adviser_v2.schemas import PolicyRuleExtractionV1, PolicyRuleReviewV1
 
 
