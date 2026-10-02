@@ -1,0 +1,541 @@
+{
+  "protocol_version": 2,
+  "frozen_sha256": "db24172e69e7da37cda1aa7e8d2b46e94f67e8aa39b133bcf25cfed69a731a21",
+  "source_commit": "bc48709c503684b750137e64477e67816e036c81",
+  "source_hashes": {
+    "answers.py": "061d873313600793d7095e1f9dbe78adac5e86512473e7965f8f40688059a1a4",
+    "bakeoff.py": "ed081aa949f36be5e670b05beff73ec9adcd1accd1e4f1abb6d9bc1b04ba528f",
+    "contracts.py": "8a94cf4a615459f8f6be91f3d6a93cf6512c380346956cdd056e1a58457a25fc",
+    "evaluation.py": "1e1fbf7371543f6c3336b64045ad919163b8fba70e0c58c3d69ef17530c84717",
+    "evidence.py": "85f80124ac21cc11aba1da28560ede528fba291094fd3141d892aa47f280974e",
+    "relay.py": "9fa7148a5ad41be9dd8d58aaad0074e3d7238f95244dfa6f6eab94f5bdc8347e",
+    "search.py": "4dd32948eac0699278ab05d11e41be91875a804fc6f2af31ac6c02a52ebb518e",
+    "validation.py": "7c95bd91cc25c98511c2e333b55e0a6ba7e2c4f7d0e017f5e4010f8fe989316b",
+    "vectors.py": "5badce0c947c434aa6be6b9a5d1d067cbaedb81ae8709f1f16ef86f0fc52a03e"
+  },
+  "slots": [
+    {
+      "id": "existing-star-comprehensive",
+      "name": "star-comprehensive",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9"
+    },
+    {
+      "id": "existing-star-family-health-optima",
+      "name": "star-family-health-optima",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa"
+    },
+    {
+      "id": "existing-star-health-assure",
+      "name": "star-health-assure",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6"
+    },
+    {
+      "id": "flagship-star",
+      "insurer": "Star Health",
+      "name": "Star Comprehensive",
+      "note": "Repeated Star Comprehensive slot; physical PDFs deduplicated and fixed evaluation weighting retained.",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9"
+    },
+    {
+      "id": "flagship-care",
+      "insurer": "Care Health Insurance",
+      "name": "Care Supreme",
+      "plan_id": null,
+      "unavailable_reason": "Current official flagship documents could not be acquired and edition applicability remains unresolved."
+    },
+    {
+      "id": "flagship-niva",
+      "insurer": "Niva Bupa",
+      "name": "ReAssure 3.0",
+      "plan_id": null,
+      "unavailable_reason": "Official PDF endpoints returned non-PDF/CAPTCHA responses; source files unavailable."
+    },
+    {
+      "id": "flagship-hdfc",
+      "insurer": "HDFC ERGO",
+      "name": "my: Optima Secure",
+      "plan_id": "41d22e29-4b26-58bd-b215-f43f4bba4aed"
+    },
+    {
+      "id": "flagship-icici",
+      "insurer": "ICICI Lombard",
+      "name": "Elevate",
+      "plan_id": null,
+      "unavailable_reason": "Current product page UIN ICIHLIP27057V062627 differs from the older located wording; no current applicable PDF acquired."
+    },
+    {
+      "id": "flagship-aditya",
+      "insurer": "Aditya Birla Health Insurance",
+      "name": "Activ One MAX",
+      "plan_id": null,
+      "unavailable_reason": "Current official flagship documents could not be acquired and edition applicability remains unresolved."
+    },
+    {
+      "id": "flagship-bajaj",
+      "insurer": "Bajaj General Insurance",
+      "name": "My Health Care Plan EDGE+ (Plan 9)",
+      "plan_id": "7a1311d9-3b42-530e-812f-b14fa0f0c407"
+    },
+    {
+      "id": "flagship-newindia",
+      "insurer": "New India Assurance",
+      "name": "New India Floater Mediclaim",
+      "plan_id": null,
+      "unavailable_reason": "Current official flagship documents could not be acquired and edition applicability remains unresolved."
+    },
+    {
+      "id": "flagship-tata",
+      "insurer": "Tata AIG",
+      "name": "TATA AIG MediCare Premier",
+      "plan_id": "7881d468-4450-50af-bad6-a0e6b7e4be27"
+    },
+    {
+      "id": "flagship-manipal",
+      "insurer": "ManipalCigna",
+      "name": "ProHealth Prime — Protect",
+      "plan_id": "a8277a04-b286-598a-93a4-1cd3e4b7c8aa"
+    }
+  ],
+  "reference_integrity": {
+    "criterion_memberships": 273,
+    "distinct_reference_spans": 236,
+    "facts": 39,
+    "facts_sha256": "9fedcb224d58ba6f61cadbc917181b6fecf9ccd5cbf5d3b2ef336a1a7cbdc248",
+    "references_sha256": "5252fdac60ef3ed2d231db5dbdc2eb235e98881d38157e6b636210211530d8b2"
+  },
+  "plans": [
+    {
+      "key": "star-comprehensive",
+      "index_id": "b73adfed52477bc6c7a6b8821224ab8b62f421b334a1656c15d007b4ea82fe3b",
+      "sections": 120,
+      "tables": 89,
+      "documents": [
+        {
+          "sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+          "role": "base_wording",
+          "url": null,
+          "edition": null
+        },
+        {
+          "sha256": "afe91f7446ed4dfc6090d3ce746386cf182ab5b094c9c6ae1b5af81a1375e665",
+          "role": "customer_information_sheet",
+          "url": null,
+          "edition": null
+        },
+        {
+          "sha256": "ae1e4a9fec23d65f8f983e22b9b76b6c8601baa9dcd2a0dc7b35530607b0f0b8",
+          "role": "referenced_schedule",
+          "url": null,
+          "edition": null
+        },
+        {
+          "sha256": "a167e20343d2dfbecf51bebcd64ac0fde4e3ba35431f27490fe94ca6cfadc480",
+          "role": "referenced_schedule",
+          "url": null,
+          "edition": null
+        },
+        {
+          "sha256": "c7f4ceb7fb7d3ee02937d107c96f81859b3ecab5c045fbf63aa312bb07770358",
+          "role": "referenced_schedule",
+          "url": null,
+          "edition": null
+        },
+        {
+          "sha256": "0404693147bd5202e28e39bfdb8fcc87f78e7ee6aa6a6f1032f63cbec63698e1",
+          "role": "prospectus",
+          "url": null,
+          "edition": null
+        }
+      ],
+      "map_status": [
+        {
+          "reason": null,
+          "sha256": "b1dbe8fb78646f75566d47c32b7ebfa27c4071941c8f548224c461ee35a8021f",
+          "status": "mapped"
+        },
+        {
+          "reason": null,
+          "sha256": "afe91f7446ed4dfc6090d3ce746386cf182ab5b094c9c6ae1b5af81a1375e665",
+          "status": "mapped"
+        },
+        {
+          "reason": null,
+          "sha256": "ae1e4a9fec23d65f8f983e22b9b76b6c8601baa9dcd2a0dc7b35530607b0f0b8",
+          "status": "mapped"
+        },
+        {
+          "reason": null,
+          "sha256": "a167e20343d2dfbecf51bebcd64ac0fde4e3ba35431f27490fe94ca6cfadc480",
+          "status": "mapped"
+        },
+        {
+          "reason": null,
+          "sha256": "c7f4ceb7fb7d3ee02937d107c96f81859b3ecab5c045fbf63aa312bb07770358",
+          "status": "mapped"
+        },
+        {
+          "reason": null,
+          "sha256": "0404693147bd5202e28e39bfdb8fcc87f78e7ee6aa6a6f1032f63cbec63698e1",
+          "status": "mapped"
+        }
+      ]
+    },
+    {
+      "key": "star-family-health-optima",
+      "index_id": "9d78506c9659fb01bbada2250bd95928051ecec86ee9b053bf7131b98199dcb6",
+      "sections": 137,
+      "tables": 86,
+      "documents": [
+        {
+          "sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
+          "role": "base_wording",
+          "url": null,
+          "edition": null
+        },
+        {
+          "sha256": "5527cb614c86736ca494d8ce97cce70abeca12ef861c425bbf011627dbc8ae35",
+          "role": "customer_information_sheet",
+          "url": null,
+          "edition": null
+        },
+        {
+          "sha256": "1def1773a1a07694531572b226a8ecbd1faefaec2e348d5e191cd32633e4c9b4",
+          "role": "referenced_schedule",
+          "url": null,
+          "edition": null
+        },
+        {
+          "sha256": "066c9150d12c1df1f1fa04c326bd273afd3f78639c705195c5923e9293019c11",
+          "role": "referenced_schedule",
+          "url": null,
+          "edition": null
+        },
+        {
+          "sha256": "667646c6e403db44541256481b8cf26f13ee23369206c0125bb4b7f8063b09a9",
+          "role": "referenced_schedule",
+          "url": null,
+          "edition": null
+        },
+        {
+          "sha256": "abe38283100d6402e1ac22929bb94c23bb53994bef7a378196e48900cd4da025",
+          "role": "prospectus",
+          "url": null,
+          "edition": null
+        }
+      ],
+      "map_status": [
+        {
+          "reason": null,
+          "sha256": "033d6a9576c73efc25aae29c20e97a0cc89d43e43896269a4ed64d663798a54c",
+          "status": "mapped"
+        },
+        {
+          "reason": null,
+          "sha256": "5527cb614c86736ca494d8ce97cce70abeca12ef861c425bbf011627dbc8ae35",
+          "status": "mapped"
+        },
+        {
+          "reason": null,
+          "sha256": "1def1773a1a07694531572b226a8ecbd1faefaec2e348d5e191cd32633e4c9b4",
+          "status": "mapped"
+        },
+        {
+          "reason": null,
+          "sha256": "066c9150d12c1df1f1fa04c326bd273afd3f78639c705195c5923e9293019c11",
+          "status": "mapped"
+        },
+        {
+          "reason": null,
+          "sha256": "667646c6e403db44541256481b8cf26f13ee23369206c0125bb4b7f8063b09a9",
+          "status": "mapped"
+        },
+        {
+          "reason": null,
+          "sha256": "abe38283100d6402e1ac22929bb94c23bb53994bef7a378196e48900cd4da025",
+          "status": "mapped"
+        }
+      ]
+    },
+    {
+      "key": "star-health-assure",
+      "index_id": "8c11d64846ff4c58d082889426d67303089d97f29137bbcb3a672deb575aaeae",
+      "sections": 133,
+      "tables": 102,
+      "documents": [
+        {
+          "sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+          "role": "base_wording",
+          "url": null,
+          "edition": null
+        },
+        {
+          "sha256": "9b577e1226bbfde552575bedf8e0b74edf792a2db5c788b008196d99f23d5f2e",
+          "role": "customer_information_sheet",
+          "url": null,
+          "edition": null
+        },
+        {
+          "sha256": "4e199d99893cb7966344788f6994137c4d09a7aa8c59aff6439c6e2036ec0667",
+          "role": "referenced_schedule",
+          "url": null,
+          "edition": null
+        },
+        {
+          "sha256": "91a761206899caafe957f0c874d75c1b05b9e0b53601d2f57761309a9b0899be",
+          "role": "prospectus",
+          "url": null,
+          "edition": null
+        }
+      ],
+      "map_status": [
+        {
+          "reason": null,
+          "sha256": "e0f774a84f3bfd7ab952119d3c57e107ed8c993909a80e50f225f81aeadb146a",
+          "status": "mapped"
+        },
+        {
+          "reason": null,
+          "sha256": "9b577e1226bbfde552575bedf8e0b74edf792a2db5c788b008196d99f23d5f2e",
+          "status": "mapped"
+        },
+        {
+          "reason": null,
+          "sha256": "4e199d99893cb7966344788f6994137c4d09a7aa8c59aff6439c6e2036ec0667",
+          "status": "mapped"
+        },
+        {
+          "reason": null,
+          "sha256": "91a761206899caafe957f0c874d75c1b05b9e0b53601d2f57761309a9b0899be",
+          "status": "mapped"
+        }
+      ]
+    },
+    {
+      "key": "hdfc-optima-secure",
+      "index_id": "5838902b2fa2926a87f05d879bbe118322b568dda8d745b7bdbdba8fbdc9bb26",
+      "sections": 314,
+      "tables": 333,
+      "documents": [
+        {
+          "sha256": "195eb0499db969c6789472e7f87ef1c72da110e2a8c7761ecb5add378fe964c1",
+          "role": "base_wording",
+          "url": "https://customer-portal-assets.hdfcergo.com/documents/PolicyWordings_myOptimaSecure-76673175551.pdf",
+          "edition": "Official wording register: periods starting 2026-04-02 onwards; current paired prospectus"
+        },
+        {
+          "sha256": "c882c2b1bd9bb25d02e47f1d1e59996bf7058ddb7016b773262eda9e5caf4726",
+          "role": "prospectus",
+          "url": "https://customer-portal-assets.hdfcergo.com//documents/Prospectus_myOptimaSecure-676203564982.pdf",
+          "edition": "Official wording register: periods starting 2026-04-02 onwards; current paired prospectus"
+        }
+      ],
+      "map_status": [
+        {
+          "reason": null,
+          "sha256": "195eb0499db969c6789472e7f87ef1c72da110e2a8c7761ecb5add378fe964c1",
+          "status": "mapped"
+        },
+        {
+          "reason": "Map sibling ranges cross.",
+          "sha256": "c882c2b1bd9bb25d02e47f1d1e59996bf7058ddb7016b773262eda9e5caf4726",
+          "status": "fallback"
+        }
+      ]
+    },
+    {
+      "key": "tata-medicare-premier",
+      "index_id": "a3d46b4b1b944d90f3199288dfaee2fe33ac00337b8d607d9fc4b53db1a68d7a",
+      "sections": 92,
+      "tables": 128,
+      "documents": [
+        {
+          "sha256": "392feaeeb26cb9ec7f6addc3ed764291d9c9f16bf6c70f466d9f92f85db78960",
+          "role": "base_wording",
+          "url": "https://www.tataaig.com/s3/tata_aig_medicare_premier_policy_wordings_781aa2fd94.pdf",
+          "edition": "2025 revision, new policies 2025-04-29 onwards; current downloads register and revision notice"
+        },
+        {
+          "sha256": "673c37dbe7d93d2269019cb92b761b5deacd903c3fb7249251584876eb92768b",
+          "role": "customer_information_sheet",
+          "url": "https://www.tataaig.com/s3/TATA_AIG_Medicare_Premier_Customer_information_Sheet_2e2c10e8d0.pdf",
+          "edition": "2025 revision, new policies 2025-04-29 onwards; current downloads register and revision notice"
+        },
+        {
+          "sha256": "4ed850042fd895c33a6c950e0888d4433de79a8d9169cee52674466c5442df3f",
+          "role": "prospectus",
+          "url": "https://www.tataaig.com/s3/03_medicare_premier_prospectus_b93b6fc6df.pdf",
+          "edition": "2025 revision, new policies 2025-04-29 onwards; current downloads register and revision notice"
+        },
+        {
+          "sha256": "449bdd6b7191eb16bdde34eba6c9d4bfec309d34b875e18e8506768e18c70bde",
+          "role": "brochure",
+          "url": "https://www.tataaig.com/s3/medicare_premier_brochure_ab0b8e7691.pdf",
+          "edition": "2025 revision, new policies 2025-04-29 onwards; current downloads register and revision notice"
+        }
+      ],
+      "map_status": [
+        {
+          "reason": null,
+          "sha256": "392feaeeb26cb9ec7f6addc3ed764291d9c9f16bf6c70f466d9f92f85db78960",
+          "status": "mapped"
+        },
+        {
+          "reason": null,
+          "sha256": "673c37dbe7d93d2269019cb92b761b5deacd903c3fb7249251584876eb92768b",
+          "status": "mapped"
+        },
+        {
+          "reason": null,
+          "sha256": "4ed850042fd895c33a6c950e0888d4433de79a8d9169cee52674466c5442df3f",
+          "status": "mapped"
+        },
+        {
+          "reason": null,
+          "sha256": "449bdd6b7191eb16bdde34eba6c9d4bfec309d34b875e18e8506768e18c70bde",
+          "status": "mapped"
+        }
+      ]
+    },
+    {
+      "key": "bajaj-mhcp-edge",
+      "index_id": "4f4d515b147c495db0930828f63f057fda58b207fa7595aa92ebff9422e9a076",
+      "sections": 135,
+      "tables": 101,
+      "documents": [
+        {
+          "sha256": "5e988f3df94fb27b1ab317aaea91540ee0c227c0f51605a57994088d8c973554",
+          "role": "customer_information_sheet",
+          "url": "https://www.bajajgeneralinsurance.com/download-documents/health-insurance/mhcp_edge_plus/MHCP_EDGE%2b_CIS.pdf",
+          "edition": "Current official EDGE+ downloads group; Plan 9 identified in prospectus; SMART rider unselected"
+        },
+        {
+          "sha256": "0c06eb9f18f1928b6a12309f0194ded08a94b20fbcb577eab85ff9cd00373fc1",
+          "role": "prospectus",
+          "url": "https://www.bajajgeneralinsurance.com/download-documents/health-insurance/mhcp_edge_plus/MHCP_EDGE%2b_Prospectus.pdf",
+          "edition": "Current official EDGE+ downloads group; Plan 9 identified in prospectus; SMART rider unselected"
+        },
+        {
+          "sha256": "5d814e56e1564a728eff0ab985bdf3d048587a04213cbeef1856fe2fa46086a7",
+          "role": "base_wording",
+          "url": "https://www.bajajgeneralinsurance.com/download-documents/health-insurance/mhcp_edge_plus/MHCP_EDGE%2b_Policy%20Wordings.pdf",
+          "edition": "Current official EDGE+ downloads group; Plan 9 identified in prospectus; SMART rider unselected"
+        },
+        {
+          "sha256": "8f41d9d4aa29ce067e2c9e5122ca2f006588e86ff34075a85065e9bcb09fb328",
+          "role": "premium_chart",
+          "url": "https://www.bajajgeneralinsurance.com/download-documents/health-insurance/mhcp_edge_plus/MHCP_EDGE%2b_%20Rate_Chart.pdf",
+          "edition": "Current official EDGE+ downloads group; Plan 9 identified in prospectus; SMART rider unselected"
+        },
+        {
+          "sha256": "1bc8982cdced936b99ef54e19a4f17b3f1458a5c535015bc8e3fd95cc1d4d461",
+          "role": "brochure",
+          "url": "https://www.bajajgeneralinsurance.com/download-documents/health-insurance/mhcp_edge_plus/MHCPEDGEBROCHURE.pdf",
+          "edition": "Current official EDGE+ downloads group; Plan 9 identified in prospectus; SMART rider unselected"
+        }
+      ],
+      "map_status": [
+        {
+          "reason": null,
+          "sha256": "5e988f3df94fb27b1ab317aaea91540ee0c227c0f51605a57994088d8c973554",
+          "status": "mapped"
+        },
+        {
+          "reason": null,
+          "sha256": "0c06eb9f18f1928b6a12309f0194ded08a94b20fbcb577eab85ff9cd00373fc1",
+          "status": "mapped"
+        },
+        {
+          "reason": null,
+          "sha256": "5d814e56e1564a728eff0ab985bdf3d048587a04213cbeef1856fe2fa46086a7",
+          "status": "mapped"
+        },
+        {
+          "reason": null,
+          "sha256": "8f41d9d4aa29ce067e2c9e5122ca2f006588e86ff34075a85065e9bcb09fb328",
+          "status": "mapped"
+        },
+        {
+          "reason": null,
+          "sha256": "1bc8982cdced936b99ef54e19a4f17b3f1458a5c535015bc8e3fd95cc1d4d461",
+          "status": "mapped"
+        }
+      ]
+    },
+    {
+      "key": "manipal-prohealth-prime-protect",
+      "index_id": "ec334626a373c2fa74e1a3e687b4e77fb4c6a139c6465e189170506504607384",
+      "sections": 165,
+      "tables": 87,
+      "documents": [
+        {
+          "sha256": "667c64813a3c4b8829dedd409576f51af2773b866803acf276c74095a7a2c7f7",
+          "role": "base_wording",
+          "url": "https://www.manipalcigna.com/documents/20124/0/ProHealthPrime-P-A-Plan-TnC/905c099a-ee3d-f7c6-8ffe-eee279f954b8?t=28",
+          "edition": "June 2025 wording with current Protect CIS, P&A prospectus and benefit-illustration annexures"
+        },
+        {
+          "sha256": "b31bf0ab2bea48b226fe9102f83d51b64c0fa26d113e596ebe715c291964b187",
+          "role": "customer_information_sheet",
+          "url": "https://www.manipalcigna.com/documents/20124/0/ProHealthPrime-Protect-CIS/17471e25-9ad3-0953-4e21-effdb848c56b?t=28",
+          "edition": "June 2025 wording with current Protect CIS, P&A prospectus and benefit-illustration annexures"
+        },
+        {
+          "sha256": "85e5751873724c367f18d2d9801ee058ca5d35bb3102227d3554b91bd6645cda",
+          "role": "prospectus",
+          "url": "https://www.manipalcigna.com/documents/20124/0/ProHealthPrime-Rider-P-A-Plan-Prospectus/bad30bd2-2394-7a8d-4072-8d73b2b7b3fa?t=28",
+          "edition": "June 2025 wording with current Protect CIS, P&A prospectus and benefit-illustration annexures"
+        },
+        {
+          "sha256": "4741f2fec2ef4017d063cb3e1b3b9b9753debf26fb6db860f7ca00702c75a086",
+          "role": "brochure",
+          "url": "https://www.manipalcigna.com/documents/20124/0/ProHealthPrime-P-A-Onepager-Phase2/dcc83a3e-2acb-5242-2aa8-2665e6e330d9?t=28",
+          "edition": "June 2025 wording with current Protect CIS, P&A prospectus and benefit-illustration annexures"
+        },
+        {
+          "sha256": "c6b8580eeda997d6cf5936e98c53671865998a465ef932cb97cab7b3658d7835",
+          "role": "customer_information_sheet",
+          "url": "https://www.manipalcigna.com/documents/20124/0/ProHealthPrime-Annexure-to-CIS-BenefitIllustration/b2fa3196-9609-76aa-7bb4-15d697ef699b?t=28",
+          "edition": "June 2025 wording with current Protect CIS, P&A prospectus and benefit-illustration annexures"
+        },
+        {
+          "sha256": "82fece393d1377be415838f292aaa31a22a7ba06ae05a3924f84f28ced6618a0",
+          "role": "prospectus",
+          "url": "https://www.manipalcigna.com/documents/20124/0/ProHealthPrime-Annex-Prospectus-BI_Protect- Advantage/ad1532d0-d708-a994-f2ea-475de8cb293b?t=28",
+          "edition": "June 2025 wording with current Protect CIS, P&A prospectus and benefit-illustration annexures"
+        }
+      ],
+      "map_status": [
+        {
+          "reason": null,
+          "sha256": "667c64813a3c4b8829dedd409576f51af2773b866803acf276c74095a7a2c7f7",
+          "status": "mapped"
+        },
+        {
+          "reason": null,
+          "sha256": "b31bf0ab2bea48b226fe9102f83d51b64c0fa26d113e596ebe715c291964b187",
+          "status": "mapped"
+        },
+        {
+          "reason": null,
+          "sha256": "85e5751873724c367f18d2d9801ee058ca5d35bb3102227d3554b91bd6645cda",
+          "status": "mapped"
+        },
+        {
+          "reason": null,
+          "sha256": "4741f2fec2ef4017d063cb3e1b3b9b9753debf26fb6db860f7ca00702c75a086",
+          "status": "mapped"
+        },
+        {
+          "reason": "No completed map.",
+          "sha256": "c6b8580eeda997d6cf5936e98c53671865998a465ef932cb97cab7b3658d7835",
+          "status": "fallback"
+        },
+        {
+          "reason": null,
+          "sha256": "82fece393d1377be415838f292aaa31a22a7ba06ae05a3924f84f28ced6618a0",
+          "status": "mapped"
+        }
+      ]
+    }
+  ]
+}
