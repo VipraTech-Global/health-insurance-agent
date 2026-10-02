@@ -127,3 +127,25 @@ def test_failed_map_resume_uses_recorded_fallback_without_repeating_ai(tmp_path,
     assert len(called) == 1
     assert first['plans'][0]['sections'] == second['plans'][0]['sections']
     assert first['plans'][0]['document_status'][0]['status'] == 'fallback'
+
+
+def test_pageindex_transport_retry_is_not_a_negative_title_check(tmp_path, monkeypatch):
+    from types import SimpleNamespace
+
+    from apps.adviser_v2.demo.mapping import CONTEXT, internal_call
+    from apps.adviser_v2.demo.relay import RelayUnavailable
+    calls = []
+    def call(**kwargs):
+        calls.append(kwargs)
+        if len(calls) == 1:
+            raise RelayUnavailable('temporary transport failure')
+        return SimpleNamespace(value={'response': '{"answer":"yes"}'}, model='gpt-5.6-luna', call_ids=['call'])
+    relay = SimpleNamespace(state=SimpleNamespace(model=lambda: 'gpt-5.6-luna'), call=call)
+    errors = []
+    token = CONTEXT.set((relay, tmp_path, set(), errors))
+    monkeypatch.setattr('apps.adviser_v2.demo.mapping.time.sleep', lambda _: None)
+    try:
+        result = internal_call('ignored', 'Directly return the final JSON structure.')
+    finally:
+        CONTEXT.reset(token)
+    assert result == '{"answer":"yes"}' and len(calls) == 2 and not errors
