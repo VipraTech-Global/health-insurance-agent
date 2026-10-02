@@ -13,8 +13,11 @@ from apps.adviser_v2.demo.evidence import atomic_json, digest
 class Command(BaseCommand):
     help = 'Preserve original table coordinates and exact source cells before freezing scored packets.'
 
+    def add_arguments(self, parser):
+        parser.add_argument('--source-root', type=Path)
+
     def handle(self, **options):
-        root = Path(settings.COVERGUIDE_REPORT_ROOT) / 'ten-insurer'
+        root = options['source_root'] or Path(settings.COVERGUIDE_REPORT_ROOT) / 'ten-insurer'
         corpus = json.loads((root / 'sections.json').read_text())
         def plan_tables(plan):
             regions = []

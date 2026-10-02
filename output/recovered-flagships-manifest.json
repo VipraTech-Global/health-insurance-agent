@@ -1,0 +1,625 @@
+{
+  "schema_version": 1,
+  "scope": "application_only_after_frozen_bakeoff",
+  "products": [
+    {
+      "insurer_id": "aditya",
+      "insurer": "Aditya Birla Health Insurance",
+      "name": "Activ One MAX",
+      "key": "aditya-activ-one-max",
+      "uin": "ADIHLIP27048V022627",
+      "variants": [
+        "MAX"
+      ],
+      "edition": "Current Activ One MAX download tab; prior Nov 2023\u2013June 2026 wording is separately labelled. Current wording, prospectus, CIS, brochure and chart share the new UIN.",
+      "plan_type": "medical_indemnity",
+      "documents": [
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "current_official_association",
+          "bytes": 570626,
+          "edition": "Current Activ One MAX download tab; prior Nov 2023\u2013June 2026 wording is separately labelled. Current wording, prospectus, CIS, brochure and chart share the new UIN.",
+          "insurer_id": "aditya",
+          "label": "Customer Information Sheet",
+          "physical_pages": 7,
+          "retrieved_at": "2026-10-02T17:31:07.622778+00:00",
+          "role": "customer_information_sheet",
+          "sha256": "8d70eebcd690123003dad335810617598f7c2b31135e0ecc09155bb400f4d1bc",
+          "source_url": "https://www.adityabirlahealthinsurance.com/health-insurance/downloads",
+          "uin": "ADIHLIP27048V022627",
+          "url": "https://www.adityabirlahealthinsurance.com/assets/pdf/ActivOneDocs/ActivOneMAX/ProductInformation/CustomerInformationSheet.pdf",
+          "insurer": "Aditya Birla Health Insurance",
+          "observed_uins": [
+            "ADIHLIP27048V022627"
+          ],
+          "evidence_use": "executable",
+          "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
+        },
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "current_official_association",
+          "bytes": 1547048,
+          "edition": "Current Activ One MAX download tab; prior Nov 2023\u2013June 2026 wording is separately labelled. Current wording, prospectus, CIS, brochure and chart share the new UIN.",
+          "insurer_id": "aditya",
+          "label": "Policy Document",
+          "physical_pages": 56,
+          "retrieved_at": "2026-10-02T17:31:07.650783+00:00",
+          "role": "base_wording",
+          "sha256": "73ff738922e11968a2776f1c827edc159beb7456a58e720fbdb7657b45568066",
+          "source_url": "https://www.adityabirlahealthinsurance.com/health-insurance/downloads",
+          "uin": "ADIHLIP27048V022627",
+          "url": "https://www.adityabirlahealthinsurance.com/assets/pdf/ActivOneDocs/ActivOneMAX/ProductInformation/PolicyDocument.pdf",
+          "insurer": "Aditya Birla Health Insurance",
+          "observed_uins": [
+            "ADIHLIP27048V022627"
+          ],
+          "evidence_use": "executable",
+          "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
+        },
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "current_official_association",
+          "bytes": 2765016,
+          "edition": "Current Activ One MAX download tab; prior Nov 2023\u2013June 2026 wording is separately labelled. Current wording, prospectus, CIS, brochure and chart share the new UIN.",
+          "insurer_id": "aditya",
+          "label": "Brochure",
+          "physical_pages": 2,
+          "retrieved_at": "2026-10-02T17:31:07.745351+00:00",
+          "role": "brochure",
+          "sha256": "85cdd5a54cc5d7bda369332eeb4987540d7d29c491a3ce5a3fb80c2a0aff8372",
+          "source_url": "https://www.adityabirlahealthinsurance.com/health-insurance/downloads",
+          "uin": "ADIHLIP27048V022627",
+          "url": "https://www.adityabirlahealthinsurance.com/assets/pdf/ActivOneDocs/ActivOneMAX/ProductInformation/Brochure.pdf",
+          "insurer": "Aditya Birla Health Insurance",
+          "observed_uins": [
+            "ADIHLIP27048V022627"
+          ],
+          "evidence_use": "executable",
+          "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
+        },
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "current_official_association",
+          "bytes": 1034152,
+          "edition": "Current Activ One MAX download tab; prior Nov 2023\u2013June 2026 wording is separately labelled. Current wording, prospectus, CIS, brochure and chart share the new UIN.",
+          "insurer_id": "aditya",
+          "label": "Prospectus",
+          "physical_pages": 30,
+          "retrieved_at": "2026-10-02T17:31:07.779727+00:00",
+          "role": "prospectus",
+          "sha256": "e5ec13d0a9f6541138fde66f590c34a9d23482a90a53a9a7367d11ac1a5aec9c",
+          "source_url": "https://www.adityabirlahealthinsurance.com/health-insurance/downloads",
+          "uin": "ADIHLIP27048V022627",
+          "url": "https://www.adityabirlahealthinsurance.com/assets/pdf/ActivOneDocs/ActivOneMAX/ProductInformation/Prospectus.pdf",
+          "insurer": "Aditya Birla Health Insurance",
+          "observed_uins": [
+            "ADIHLIP27048V022627"
+          ],
+          "evidence_use": "executable",
+          "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
+        },
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "current_official_association",
+          "bytes": 513354,
+          "edition": "Current Activ One MAX download tab; prior Nov 2023\u2013June 2026 wording is separately labelled. Current wording, prospectus, CIS, brochure and chart share the new UIN.",
+          "insurer_id": "aditya",
+          "label": "Activ One MAX - Rate Chart",
+          "physical_pages": 18,
+          "retrieved_at": "2026-10-02T17:31:07.838402+00:00",
+          "role": "premium_chart",
+          "sha256": "c89db4a1e02d87d3d3f09609ceb1042c9868200489b4f1be1bc725e424ed6e25",
+          "source_url": "https://www.adityabirlahealthinsurance.com/health-insurance/downloads",
+          "uin": "ADIHLIP27048V022627",
+          "url": "https://www.adityabirlahealthinsurance.com/assets/pdf/ActivOneDocs/ActivOneMAX/ProductInformation/RateChart.pdf",
+          "insurer": "Aditya Birla Health Insurance",
+          "observed_uins": [
+            "ADIHLIP27048V022627"
+          ],
+          "evidence_use": "executable",
+          "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
+        }
+      ]
+    },
+    {
+      "insurer_id": "care",
+      "insurer": "Care Health Insurance",
+      "name": "Care Supreme",
+      "key": "care-supreme",
+      "uin": "CHIHLIP27061V032627",
+      "variants": [
+        "Default"
+      ],
+      "edition": "Official wording register explicitly labels effective 29 April 2026. Current CIS, prospectus and brochure share that wording UIN; add-on UINs in the brochure are optional and not selected.",
+      "plan_type": "medical_indemnity",
+      "documents": [
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "current_official_association",
+          "bytes": 2223313,
+          "edition": "Official wording register explicitly labels effective 29 April 2026. Current CIS, prospectus and brochure share that wording UIN; add-on UINs in the brochure are optional and not selected.",
+          "insurer_id": "care",
+          "label": "Policy wording effective 29 April 2026",
+          "physical_pages": 83,
+          "retrieved_at": "2026-10-02T17:31:07.888133+00:00",
+          "role": "base_wording",
+          "sha256": "1f7647762f6c9654de6b4e28fbcb9e5f612c19c9c8756883f809176e539e01b6",
+          "source_url": "https://www.careinsurance.com/other-downloads.html",
+          "uin": "CHIHLIP27061V032627",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---policy-terms-%26-conditions-%28effective-from-29-april-2026%29.pdf",
+          "insurer": "Care Health Insurance",
+          "observed_uins": [
+            "CHIHLIP27061V032627"
+          ],
+          "evidence_use": "executable",
+          "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
+        },
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "current_official_association",
+          "bytes": 1975697,
+          "edition": "Official wording register explicitly labels effective 29 April 2026. Current CIS, prospectus and brochure share that wording UIN; add-on UINs in the brochure are optional and not selected.",
+          "insurer_id": "care",
+          "label": "Customer Information Sheet",
+          "physical_pages": 17,
+          "retrieved_at": "2026-10-02T17:31:08.096393+00:00",
+          "role": "customer_information_sheet",
+          "sha256": "0ee0258712855b181e9cb2d5b8a8b570dca270ef4c17d8620d2189ef63656dd7",
+          "source_url": "https://www.careinsurance.com/other-downloads.html",
+          "uin": "CHIHLIP27061V032627",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---customer-information-sheet.pdf",
+          "insurer": "Care Health Insurance",
+          "observed_uins": [
+            "CHIHLIP27061V032627"
+          ],
+          "evidence_use": "executable",
+          "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
+        },
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "current_official_association",
+          "bytes": 415034,
+          "edition": "Official wording register explicitly labels effective 29 April 2026. Current CIS, prospectus and brochure share that wording UIN; add-on UINs in the brochure are optional and not selected.",
+          "insurer_id": "care",
+          "label": "Prospectus",
+          "physical_pages": 39,
+          "retrieved_at": "2026-10-02T17:31:08.165724+00:00",
+          "role": "prospectus",
+          "sha256": "b827030031d9efdc448781069f04e30c0e13c37e962f98031cfa6e046a40d90b",
+          "source_url": "https://www.careinsurance.com/other-downloads.html",
+          "uin": "CHIHLIP27061V032627",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---prospectus-cum-sales-literature.pdf",
+          "insurer": "Care Health Insurance",
+          "observed_uins": [
+            "CHIHLIP27061V032627"
+          ],
+          "evidence_use": "executable",
+          "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
+        },
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "current_official_association",
+          "bytes": 1672639,
+          "edition": "Official wording register explicitly labels effective 29 April 2026. Current CIS, prospectus and brochure share that wording UIN; add-on UINs in the brochure are optional and not selected.",
+          "insurer_id": "care",
+          "label": "Brochure",
+          "physical_pages": 4,
+          "retrieved_at": "2026-10-02T17:31:08.271456+00:00",
+          "role": "brochure",
+          "sha256": "32ba87044cf98f1a7b446b24024c6fb3b8738fcb1f7ccd6bf34a78a9ab2cdf5b",
+          "source_url": "https://www.careinsurance.com/other-downloads.html",
+          "uin": "CHIHLIP27061V032627",
+          "url": "https://cms.careinsurance.com/cms/public/uploads/download_center/care-supreme---brochure.pdf",
+          "insurer": "Care Health Insurance",
+          "observed_uins": [
+            "CHIHLIA23060V012223",
+            "CHIHLIA27059V022627",
+            "CHIHLIP27061V032627"
+          ],
+          "evidence_use": "executable",
+          "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
+        }
+      ]
+    },
+    {
+      "insurer_id": "niva",
+      "insurer": "Niva Bupa",
+      "name": "ReAssure 3.0",
+      "key": "niva-reassure-3",
+      "uin": "NBHHLIP26047V012526",
+      "variants": [
+        "Black",
+        "Classic",
+        "Elite",
+        "Select"
+      ],
+      "edition": "Current ReAssure 3.0 product page and rendered download register associate the wording, prospectus, CIS and both limited/unlimited brochures. Variant and sum-insured restrictions remain explicit.",
+      "plan_type": "medical_indemnity",
+      "documents": [
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "current_official_association",
+          "bytes": 322481,
+          "edition": "Current ReAssure 3.0 product page and rendered download register associate the wording, prospectus, CIS and both limited/unlimited brochures. Variant and sum-insured restrictions remain explicit.",
+          "insurer_id": "niva",
+          "label": "ReAssure 3.0 Policy Wording",
+          "physical_pages": 62,
+          "retrieved_at": "2026-10-02T17:31:09.349941+00:00",
+          "role": "base_wording",
+          "sha256": "e33a168ae932ad5be6a2b376232f366947b9f942826b61e1a6efd22162a0e505",
+          "source_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+          "uin": "NBHHLIP26047V012526",
+          "url": "https://transactions.nivabupa.com/pages/doc/policy_wording/ReAssure30_Policy_Wordings.pdf?v=1.5",
+          "insurer": "Niva Bupa",
+          "observed_uins": [
+            "NBHHLIP26047V012526"
+          ],
+          "evidence_use": "executable",
+          "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
+        },
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "current_official_association",
+          "bytes": 235937,
+          "edition": "Current ReAssure 3.0 product page and rendered download register associate the wording, prospectus, CIS and both limited/unlimited brochures. Variant and sum-insured restrictions remain explicit.",
+          "insurer_id": "niva",
+          "label": "ReAssure 3.0 Prospectus",
+          "physical_pages": 63,
+          "retrieved_at": "2026-10-02T17:31:09.473377+00:00",
+          "role": "prospectus",
+          "sha256": "95cde57fc755b024a80610b8d4b61d59f593c8ff0f8990ac387a6a5efd498d3b",
+          "source_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+          "uin": "NBHHLIP26047V012526",
+          "url": "https://transactions.nivabupa.com/pages/doc/prospectus/ReAssure30_Prospectus.pdf?v=1.2",
+          "insurer": "Niva Bupa",
+          "observed_uins": [
+            "NBHHLIP26047V012526"
+          ],
+          "evidence_use": "executable",
+          "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
+        },
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "current_official_association",
+          "bytes": 5483081,
+          "edition": "Current ReAssure 3.0 product page and rendered download register associate the wording, prospectus, CIS and both limited/unlimited brochures. Variant and sum-insured restrictions remain explicit.",
+          "insurer_id": "niva",
+          "label": "ReAssure 3.0 Unlimited Single Sheeter",
+          "physical_pages": 2,
+          "retrieved_at": "2026-10-02T17:31:09.582157+00:00",
+          "role": "brochure",
+          "sha256": "b885027f157c375d9374f9c89d7fdc0ac6e6c2fee8794dae276bf052da187c9c",
+          "source_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+          "uin": "NBHHLIP26047V012526",
+          "url": "https://transactions.nivabupa.com/pages/doc/brochure/Reassure30_SS_Unlimited.pdf?v=1.2",
+          "insurer": "Niva Bupa",
+          "observed_uins": [
+            "NBHHLIP26047V012526"
+          ],
+          "evidence_use": "executable",
+          "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
+        },
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "current_official_association",
+          "bytes": 3734037,
+          "edition": "Current ReAssure 3.0 product page and rendered download register associate the wording, prospectus, CIS and both limited/unlimited brochures. Variant and sum-insured restrictions remain explicit.",
+          "insurer_id": "niva",
+          "label": "ReAssure 3.0 Limited Single Sheeter",
+          "physical_pages": 2,
+          "retrieved_at": "2026-10-02T17:31:09.645501+00:00",
+          "role": "brochure",
+          "sha256": "35c06bdf3578bb839b48d29db5d672d24ce91fc786deff70f4d15158902a6771",
+          "source_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+          "uin": "NBHHLIP26047V012526",
+          "url": "https://transactions.nivabupa.com/pages/doc/brochure/Reassure30_SS_Limited.pdf?v=1.2",
+          "insurer": "Niva Bupa",
+          "observed_uins": [
+            "NBHHLIP26047V012526"
+          ],
+          "evidence_use": "executable",
+          "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
+        },
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "unresolved",
+          "bytes": 3854735,
+          "edition": "Current ReAssure 3.0 product page and rendered download register associate the wording, prospectus, CIS and both limited/unlimited brochures. Variant and sum-insured restrictions remain explicit.",
+          "insurer_id": "niva",
+          "label": "ReAssure 3.0",
+          "physical_pages": 102,
+          "retrieved_at": "2026-10-02T17:31:09.681176+00:00",
+          "role": "premium_chart",
+          "sha256": "1a41cd628b0a3573588ac1af022ee2503313fd5f9c07f4c8bc36b63bf9ed8ef5",
+          "source_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+          "uin": null,
+          "url": "https://transactions.nivabupa.com/pages/doc/premium_chart/ReAssure-3.0_2.pdf?v=1.0",
+          "insurer": "Niva Bupa",
+          "observed_uins": [
+            "NBHHLIP26047V012526"
+          ],
+          "evidence_use": "reference_only",
+          "review_reason": "Document states internal training use and final external version pending."
+        },
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "current_official_association",
+          "bytes": 286084,
+          "edition": "Current ReAssure 3.0 product page and rendered download register associate the wording, prospectus, CIS and both limited/unlimited brochures. Variant and sum-insured restrictions remain explicit.",
+          "insurer_id": "niva",
+          "label": "ReAssure 3.0",
+          "physical_pages": 13,
+          "retrieved_at": "2026-10-02T17:31:09.980930+00:00",
+          "role": "customer_information_sheet",
+          "sha256": "d4489adf7863810fe5f8029c2a7e74e0ae1106f00bc5b0b1a14f3ee921bb8f9a",
+          "source_url": "https://transactions.nivabupa.com/pages/downloads.aspx",
+          "uin": "NBHHLIP26047V012526",
+          "url": "https://transactions.nivabupa.com/pages/doc/Customer-Information/CIS_ReAssure-3-0.pdf",
+          "insurer": "Niva Bupa",
+          "observed_uins": [
+            "NBHHLIP26047V012526"
+          ],
+          "evidence_use": "executable",
+          "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
+        }
+      ]
+    },
+    {
+      "insurer_id": "icici",
+      "insurer": "ICICI Lombard",
+      "name": "Elevate",
+      "key": "icici-elevate",
+      "uin": "ICIHLIP27057V062627",
+      "variants": [
+        "Default"
+      ],
+      "edition": "Current product page UIN matches wording, prospectus and CIS from the rendered Health Insurance download categories. Separate HER brochure is not selected.",
+      "plan_type": "medical_indemnity",
+      "documents": [
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "unresolved",
+          "bytes": 6339348,
+          "edition": "Current product page UIN matches wording, prospectus and CIS from the rendered Health Insurance download categories. Separate HER brochure is not selected.",
+          "insurer_id": "icici",
+          "label": "Elevate Brochure",
+          "physical_pages": 16,
+          "retrieved_at": "2026-10-02T17:31:08.452016+00:00",
+          "role": "brochure",
+          "sha256": "340d3ede7ce2f9c6126ca85156e99fa1170c1447b6e097837eebc5694168d79c",
+          "source_url": "https://www.icicilombard.com/downloads",
+          "uin": null,
+          "url": "https://www.icicilombard.com/docs/default-source/default-document-library/elevate-brochure_final_4-6-24.pdf",
+          "insurer": "ICICI Lombard",
+          "observed_uins": [],
+          "evidence_use": "reference_only",
+          "review_reason": "Current UIN absent or mismatched; current edition applicability is unresolved."
+        },
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "unresolved",
+          "bytes": 4202094,
+          "edition": "Current product page UIN matches wording, prospectus and CIS from the rendered Health Insurance download categories. Separate HER brochure is not selected.",
+          "insurer_id": "icici",
+          "label": "Elevate Brochure",
+          "physical_pages": 14,
+          "retrieved_at": "2026-10-02T17:31:08.538502+00:00",
+          "role": "brochure",
+          "sha256": "2c459955346b0aea01cf183879c798be1b034f1be24ff15143072c36c9202d96",
+          "source_url": "https://www.icicilombard.com/downloads",
+          "uin": null,
+          "url": "https://www.icicilombard.com/docs/default-source/default-document-library/elevate-her-brochure-(2).pdf",
+          "insurer": "ICICI Lombard",
+          "observed_uins": [
+            "ICIHLIP27057V062627"
+          ],
+          "evidence_use": "reference_only",
+          "review_reason": "Separate HER variant; outside this selected Elevate bundle."
+        },
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "current_official_association",
+          "bytes": 587893,
+          "edition": "Current product page UIN matches wording, prospectus and CIS from the rendered Health Insurance download categories. Separate HER brochure is not selected.",
+          "insurer_id": "icici",
+          "label": "Elevate CIS",
+          "physical_pages": 16,
+          "retrieved_at": "2026-10-02T17:31:08.616108+00:00",
+          "role": "customer_information_sheet",
+          "sha256": "8d9e3d1b342e8296b703ba2943ae2b10d315b266f1c4976c173e87b397a67fc8",
+          "source_url": "https://www.icicilombard.com/downloads",
+          "uin": "ICIHLIP27057V062627",
+          "url": "https://www.icicilombard.com/docs/default-source/default-document-library/elevate-cis8c0007ff45fd68ff8a0df0055f9cca66.pdf",
+          "insurer": "ICICI Lombard",
+          "observed_uins": [
+            "ICIHLIP27057V062627"
+          ],
+          "evidence_use": "executable",
+          "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
+        },
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "current_official_association",
+          "bytes": 952231,
+          "edition": "Current product page UIN matches wording, prospectus and CIS from the rendered Health Insurance download categories. Separate HER brochure is not selected.",
+          "insurer_id": "icici",
+          "label": "Elevate Prospectus",
+          "physical_pages": 70,
+          "retrieved_at": "2026-10-02T17:31:08.655274+00:00",
+          "role": "prospectus",
+          "sha256": "65ae80475d55cc230112c7d560af14e7b77ad3cf470ce51e3ccc1121bda4cd46",
+          "source_url": "https://www.icicilombard.com/downloads",
+          "uin": "ICIHLIP27057V062627",
+          "url": "https://www.icicilombard.com/docs/default-source/default-document-library/elevate-prospectus_.pdf",
+          "insurer": "ICICI Lombard",
+          "observed_uins": [
+            "ICIHLIP27057V062627"
+          ],
+          "evidence_use": "executable",
+          "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
+        },
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "current_official_association",
+          "bytes": 1851088,
+          "edition": "Current product page UIN matches wording, prospectus and CIS from the rendered Health Insurance download categories. Separate HER brochure is not selected.",
+          "insurer_id": "icici",
+          "label": "Elevate Policy Wordings",
+          "physical_pages": 111,
+          "retrieved_at": "2026-10-02T17:31:08.752353+00:00",
+          "role": "base_wording",
+          "sha256": "c11b19f743f2dd5d05be21c38290148ab5c4c38e415336f0085e77bf739659a8",
+          "source_url": "https://www.icicilombard.com/downloads",
+          "uin": "ICIHLIP27057V062627",
+          "url": "https://www.icicilombard.com/docs/default-source/default-document-library/elevate.pdf",
+          "insurer": "ICICI Lombard",
+          "observed_uins": [
+            "ICIHLIP27057V062627"
+          ],
+          "evidence_use": "executable",
+          "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
+        }
+      ]
+    },
+    {
+      "insurer_id": "newindia",
+      "insurer": "New India Assurance",
+      "name": "New India Floater Mediclaim",
+      "key": "newindia-floater",
+      "uin": "NIAHLIP25039V102425",
+      "variants": [
+        "Basic",
+        "Uplift"
+      ],
+      "edition": "Rendered public wwwtr product register lists version 10 and Basic/Uplift. Linked wording and updated prospectus match; old brochure and premium chart do not. Undated CIS lacks UIN and remains reference-only.",
+      "plan_type": "medical_indemnity",
+      "documents": [
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "unresolved",
+          "bytes": 349714,
+          "edition": "Rendered public wwwtr product register lists version 10 and Basic/Uplift. Linked wording and updated prospectus match; old brochure and premium chart do not. Undated CIS lacks UIN and remains reference-only.",
+          "insurer_id": "newindia",
+          "label": "Customer Information Sheet ( PDF , English )",
+          "physical_pages": 5,
+          "retrieved_at": "2026-10-02T17:31:09.048949+00:00",
+          "role": "customer_information_sheet",
+          "sha256": "6908c83ec7d9ef8bccea1f5c4aa74689bd07b76cfea1994e1e7113c41652fb7f",
+          "source_url": "https://wwwtr.newindia.co.in/health-insurance/new-india-assurance-floater-mediclaim-policy",
+          "uin": null,
+          "url": "https://wwwtr.newindia.co.in/assets/docs/know-more/health/floater-mediclaim-policy/Customer%20information%20sheet%20_%20New%20India%20Floater%20Mediclaim%20Policy.pdf",
+          "insurer": "New India Assurance",
+          "observed_uins": [],
+          "evidence_use": "reference_only",
+          "review_reason": "Current UIN absent or mismatched; current edition applicability is unresolved."
+        },
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "current_official_association",
+          "bytes": 2106183,
+          "edition": "Rendered public wwwtr product register lists version 10 and Basic/Uplift. Linked wording and updated prospectus match; old brochure and premium chart do not. Undated CIS lacks UIN and remains reference-only.",
+          "insurer_id": "newindia",
+          "label": "New India Floater Mediclaim - Uplift Plan Brochure ( PDF , English )",
+          "physical_pages": 2,
+          "retrieved_at": "2026-10-02T17:31:09.060604+00:00",
+          "role": "brochure",
+          "sha256": "0ebd0c9cc8bb548fde29e2ca3a7cd0cbdeaa9e25e9e175bd162717ab07d83e4b",
+          "source_url": "https://wwwtr.newindia.co.in/health-insurance/new-india-assurance-floater-mediclaim-policy",
+          "uin": "NIAHLIP25039V102425",
+          "url": "https://wwwtr.newindia.co.in/assets/docs/know-more/health/floater-mediclaim-policy/New%20India%20Folater%20Mediclaim%20-%203%20fold%20New%20Matter%20wi_260722_153623.pdf",
+          "insurer": "New India Assurance",
+          "observed_uins": [
+            "NIAHLIP25039V102425"
+          ],
+          "evidence_use": "executable",
+          "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
+        },
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "unresolved",
+          "bytes": 556750,
+          "edition": "Rendered public wwwtr product register lists version 10 and Basic/Uplift. Linked wording and updated prospectus match; old brochure and premium chart do not. Undated CIS lacks UIN and remains reference-only.",
+          "insurer_id": "newindia",
+          "label": "Policy Brochure ( PDF , English )",
+          "physical_pages": 2,
+          "retrieved_at": "2026-10-02T17:31:09.088934+00:00",
+          "role": "brochure",
+          "sha256": "8bf0a712d34bdd0d5ed69bbb4bd3d82d8105e9c0a8cd8c7782a539ea7a0adea5",
+          "source_url": "https://wwwtr.newindia.co.in/health-insurance/new-india-assurance-floater-mediclaim-policy",
+          "uin": null,
+          "url": "https://wwwtr.newindia.co.in/assets/docs/know-more/health/floater-mediclaim-policy/1%20Floter%20Mediclaim%20Pamphlet.pdf",
+          "insurer": "New India Assurance",
+          "observed_uins": [
+            "NIAHLIP25039V082425"
+          ],
+          "evidence_use": "reference_only",
+          "review_reason": "Current UIN absent or mismatched; current edition applicability is unresolved."
+        },
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "current_official_association",
+          "bytes": 887352,
+          "edition": "Rendered public wwwtr product register lists version 10 and Basic/Uplift. Linked wording and updated prospectus match; old brochure and premium chart do not. Undated CIS lacks UIN and remains reference-only.",
+          "insurer_id": "newindia",
+          "label": "Prospectus ( PDF , English )",
+          "physical_pages": 28,
+          "retrieved_at": "2026-10-02T17:31:09.096512+00:00",
+          "role": "prospectus",
+          "sha256": "d762d4ae27aa48f37119c411a49a8c8333b74534b5390c954f4a9bf7ad381cdf",
+          "source_url": "https://wwwtr.newindia.co.in/health-insurance/new-india-assurance-floater-mediclaim-policy",
+          "uin": "NIAHLIP25039V102425",
+          "url": "https://wwwtr.newindia.co.in/assets/docs/know-more/health/floater-mediclaim-policy/Prospectus%20New%20India%20Floater%20Mediclaim%20Updated.pdf",
+          "insurer": "New India Assurance",
+          "observed_uins": [
+            "NIAHLIP25039V102425"
+          ],
+          "evidence_use": "executable",
+          "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
+        },
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "current_official_association",
+          "bytes": 1342223,
+          "edition": "Rendered public wwwtr product register lists version 10 and Basic/Uplift. Linked wording and updated prospectus match; old brochure and premium chart do not. Undated CIS lacks UIN and remains reference-only.",
+          "insurer_id": "newindia",
+          "label": "Policy Clause New India Floater Mediclaim Policy ( PDF , English )",
+          "physical_pages": 55,
+          "retrieved_at": "2026-10-02T17:31:09.142607+00:00",
+          "role": "base_wording",
+          "sha256": "a38f41381dab04026f8e352aa1cad2ff3a82e99f46f5787109265bb04d18f3bd",
+          "source_url": "https://wwwtr.newindia.co.in/health-insurance/new-india-assurance-floater-mediclaim-policy",
+          "uin": "NIAHLIP25039V102425",
+          "url": "https://wwwtr.newindia.co.in/assets/docs/know-more/health/floater-mediclaim-policy/Policy%20Clause%20New%20India%20Floater%20Mediclaim.pdf",
+          "insurer": "New India Assurance",
+          "observed_uins": [
+            "NIAHLIP25039V102425"
+          ],
+          "evidence_use": "executable",
+          "review_reason": "Current official product/download association and matching product identity; first wording page inspected."
+        },
+        {
+          "acquisition": "rendered_browser_fetch",
+          "applicability": "unresolved",
+          "bytes": 645429,
+          "edition": "Rendered public wwwtr product register lists version 10 and Basic/Uplift. Linked wording and updated prospectus match; old brochure and premium chart do not. Undated CIS lacks UIN and remains reference-only.",
+          "insurer_id": "newindia",
+          "label": "Premium Chart ( PDF , English )",
+          "physical_pages": 6,
+          "retrieved_at": "2026-10-02T17:31:09.234079+00:00",
+          "role": "premium_chart",
+          "sha256": "a442218ddf13541cea2f0923804b1949c2f18520f3567812ac7ae46a2a18e623",
+          "source_url": "https://wwwtr.newindia.co.in/health-insurance/new-india-assurance-floater-mediclaim-policy",
+          "uin": null,
+          "url": "https://wwwtr.newindia.co.in/assets/docs/know-more/health/floater-mediclaim-policy/Premium_chartNew_India_Floater_mediclaim_policy.pdf",
+          "insurer": "New India Assurance",
+          "observed_uins": [
+            "NIAHLIP25039V092425"
+          ],
+          "evidence_use": "reference_only",
+          "review_reason": "Current UIN absent or mismatched; current edition applicability is unresolved."
+        }
+      ]
+    }
+  ],
+  "frozen_slots_unchanged": true
+}

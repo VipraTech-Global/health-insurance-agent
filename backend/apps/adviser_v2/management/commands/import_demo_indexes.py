@@ -15,9 +15,10 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument("--embed", action="store_true")
+        parser.add_argument("--source-root", type=Path)
 
     def handle(self, **options):
-        root = Path(settings.COVERGUIDE_REPORT_ROOT) / "ten-insurer"
+        root = options["source_root"] or Path(settings.COVERGUIDE_REPORT_ROOT) / "ten-insurer"
         source = root / "sections.json"
         if not source.exists():
             raise CommandError("Map/section processing has not completed.")

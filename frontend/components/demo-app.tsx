@@ -10,7 +10,7 @@ type Fit = { plan_id: string; status: string; hard_limits: Reason[]; other_needs
 type Anchor = { quote: string; page: number; method: string; role: string; document_id: string; boxes: [number, number, number, number][]; pdf_url: string };
 type PlanResult = { id: string; plan_id: string; index_version: string; name: string; plan_type: string; state: string; model: string; result?: { status: string; message?: string; reason?: string; answer?: { statements: { text: string; conditions: { text: string }[]; restrictions: { text: string }[] }[] }; validation?: { anchors: Anchor[] }; omissions?: string[] } | null };
 type Question = { id: string; state: string; plans: PlanResult[] };
-type Price = { status: string; amount_printed: string | null; label: string; caveat: string; missing_axes: string[] };
+type Price = { status: string; amount_printed: string | null; label: string; caveat: string; missing_axes: string[]; axis_options: Record<string, string[]>; citations: { quote: string }[] };
 type Coverage = { selection_basis: string; method: string | null; insurers: { id: string; name: string; discovery_status: string; candidate_document_count: number; catalogue_complete: boolean }[]; plans: { id: string; name: string; insurer: string; documents: number; pages: number; sections: number; map_fallbacks: number; models: string[]; status: string }[] };
 const types = [{ value: "medical_indemnity", label: "Hospital expense cover" }, { value: "top_up", label: "Top-up" }, { value: "super_top_up", label: "Super top-up" }, { value: "critical_illness", label: "Critical illness" }, { value: "fixed_benefit", label: "Fixed benefit" }];
 const statusLabel: Record<string, string> = { fits: "Fits documented limits", doesnt_fit: "Doesn’t fit documented limits", unresolved: "Unresolved", ready: "Ready", partial: "Partial documents / facts", documents_unavailable: "Documents unavailable" };
@@ -33,6 +33,7 @@ export function DemoApp() {
   const [question, setQuestion] = useState<Question | null>(null);
   const [coverage, setCoverage] = useState<Coverage | null>(null);
   const [prices, setPrices] = useState<Record<string, Price>>({});
+  const [priceAxes, setPriceAxes] = useState<Record<string, Record<string, string>>>({});
   const [citation, setCitation] = useState<CitationView | null>(null);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
@@ -108,6 +109,14 @@ export function DemoApp() {
     });
   }
 
+  async function lookupPrice(card: Card) {
+    await perform(async () => {
+      const query = new URLSearchParams(priceAxes[card.plan_id] ?? {});
+      const value = await api<Price>(`/api/v2/demo/prices/${card.index_version}/?${query}`);
+      setPrices(old => ({ ...old, [card.plan_id]: value }));
+    });
+  }
+
   const selectedCards = cards.filter(c => selected.includes(c.plan_id));
   const displayCards = cards.filter(c => (!insurer || c.insurer === insurer));
   function planCard(card: Card, fit?: Fit) {
@@ -167,7 +176,7 @@ export function DemoApp() {
           {plan.model && <small className="demo-muted">Answer model: {plan.model}</small>}
         </article>)}</div>
       </section>}
-      {screen === "prices" && <section><p className="eyebrow">PRINTED CHARTS ONLY</p><h1>Indicative prices.</h1><p>A price is shown only when every published chart axis matches. We do not calculate tax, discounts or loadings.</p><div className="demo-card-grid">{selectedCards.map(c => { const price = prices[c.plan_id]; return <article className="demo-plan" key={c.plan_id}><h2>{c.name}</h2><p>{price?.label}</p><strong>{price?.amount_printed ?? ({ unpublished: "Price not published", source_unavailable: "Official price source is unavailable or not yet confirmed", invalid_chart: "Chart could not be validated", missing_details: "More details needed", no_exact_combination: "No exact chart combination" }[price?.status ?? ""] ?? "Checking…")}</strong><p>{price?.caveat}</p></article>; })}</div>{!selected.length && <p>Select plans in the full picker to inspect their price availability.</p>}</section>}
+      {screen === "prices" && <section><p className="eyebrow">PRINTED CHARTS ONLY</p><h1>Indicative prices.</h1><p>A price is shown only when every published chart axis matches. We do not calculate tax, discounts or loadings.</p><div className="demo-card-grid">{selectedCards.map(c => { const price = prices[c.plan_id]; return <article className="demo-plan" key={c.plan_id}><h2>{c.name}</h2><p>{price?.label}</p><strong>{price?.amount_printed ?? ({ unpublished: "Price not published", source_unavailable: "Official price source is unavailable or not yet confirmed", invalid_chart: "Chart could not be validated", missing_details: "More details needed", no_exact_combination: "No exact chart combination" }[price?.status ?? ""] ?? "Checking…")}</strong><p>{price?.caveat}</p>{price && Object.keys(price.axis_options ?? {}).length > 0 && <fieldset><legend>Match the printed chart details</legend>{Object.entries(price.axis_options).map(([axis, options]) => <label key={axis}>{axis.replaceAll("_", " ")}<select value={priceAxes[c.plan_id]?.[axis] ?? ""} onChange={e => setPriceAxes(old => ({ ...old, [c.plan_id]: { ...old[c.plan_id], [axis]: e.target.value } }))}><option value="">Select printed value</option>{options.map(value => <option key={value} value={value}>{value}</option>)}</select></label>)}<button disabled={busy} onClick={() => void lookupPrice(c)}>Check exact combination</button></fieldset>}{price?.citations?.length ? <details><summary>Printed chart evidence</summary>{price.citations.map((item, n) => <blockquote key={n}>{item.quote}</blockquote>)}</details> : null}</article>; })}</div>{!selected.length && <p>Select plans in the full picker to inspect their price availability.</p>}</section>}
       {screen === "coverage" && <section><p className="eyebrow">WHAT THIS DEMO CAN SHOW</p><h1>Source coverage.</h1><p>Ten-insurer demo sample; no top-ten ranking is claimed. Candidate links are not current-plan counts. Retrieved documents may still have unresolved edition applicability.</p>
         <div className="demo-table-wrap"><table><thead><tr><th>Insurer</th><th>Source acquisition</th><th>Candidate PDF links</th><th>Current catalogue</th></tr></thead><tbody>{coverage?.insurers.map(i => <tr key={i.id}><th>{i.name}</th><td>{i.discovery_status.replaceAll("_", " ")}</td><td>{i.candidate_document_count}</td><td>{i.catalogue_complete ? "Complete" : "Incomplete"}</td></tr>)}</tbody></table></div>
         <h2>Processed plan editions</h2><div className="demo-table-wrap"><table><thead><tr><th>Plan</th><th>PDFs</th><th>Pages</th><th>Sections</th><th>Map fallbacks</th><th>Models</th><th>Status</th></tr></thead><tbody>{coverage?.plans.map(p => <tr key={p.id}><th>{p.name}</th><td>{p.documents}</td><td>{p.pages}</td><td>{p.sections}</td><td>{p.map_fallbacks}</td><td>{p.models.join(", ")}</td><td>{p.status}</td></tr>)}</tbody></table></div>

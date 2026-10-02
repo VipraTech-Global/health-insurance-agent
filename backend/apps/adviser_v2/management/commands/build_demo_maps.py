@@ -17,12 +17,13 @@ class Command(BaseCommand):
         parser.add_argument("--corpus", type=Path)
         parser.add_argument("--workers", type=int, default=4)
         parser.add_argument("--resume-pending", action="store_true")
+        parser.add_argument("--output-root", type=Path)
 
     def handle(self, **options):
         root = Path(settings.COVERGUIDE_REPORT_ROOT)
         corpus = options["corpus"] or root / "retrieval-benchmark/corpus.json"
         while True:
-            result = build_corpus(json.loads(corpus.read_text()), root / "ten-insurer", workers=options["workers"])
+            result = build_corpus(json.loads(corpus.read_text()), options["output_root"] or root / "ten-insurer", workers=options["workers"])
             self.stdout.write(json.dumps({"plans": len(result["plans"]), "failures": result["failures"]}))
             self.stdout.flush()
             if not options["resume_pending"] or not any(f["status"] == "pending" for f in result["failures"].values()):
