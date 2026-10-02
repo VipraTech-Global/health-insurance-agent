@@ -1,0 +1,360 @@
+### Open tabs
+- 0: [Buy Elevate Health Insurance Plan Online](https://www.icicilombard.com/health-insurance/elevate-health-policy/)
+- 1: (current) [Downloads](https://www.icicilombard.com/downloads)
+### Page
+- Page URL: https://www.icicilombard.com/downloads
+- Page Title: Downloads
+- Console: 0 errors, 7 warnings
+### Snapshot
+```yaml
+- generic [ref=e3]:
+  - banner [ref=e5]:
+    - generic [ref=e9]:
+      - list [ref=e10]:
+        - listitem [ref=e11]:
+          - link "1800 2666(Available 24 x 7)" [ref=e12] [cursor=pointer]:
+            - /url: tel:1800 2666
+        - listitem [ref=e13]:
+          - link "Call Back" [ref=e14] [cursor=pointer]:
+            - /url: javascript:void(0)
+        - listitem [ref=e16]:
+          - link "Live Chat" [ref=e17] [cursor=pointer]:
+            - /url: javascript:;
+      - list [ref=e19]:
+        - listitem [ref=e20]:
+          - link "Help" [ref=e21] [cursor=pointer]:
+            - /url: javascript:void(0)
+        - listitem [ref=e22]:
+          - link "Info Centre" [ref=e23] [cursor=pointer]:
+            - /url: javascript:void(0)
+        - listitem [ref=e24]:
+          - link "Investor Relations" [ref=e25] [cursor=pointer]:
+            - /url: /investor-relations
+        - listitem [ref=e26]:
+          - link "Become an advisor" [ref=e27] [cursor=pointer]:
+            - /url: javascript:void(0)
+        - listitem [ref=e28]:
+          - list [ref=e30]:
+            - listitem [ref=e31]:
+              - link "Login" [ref=e32] [cursor=pointer]:
+                - /url: javascript:void(0)
+    - generic [ref=e36]:
+      - link [ref=e38] [cursor=pointer]:
+        - /url: /
+        - img "ICICI Lombard Logo" [ref=e39]
+      - generic [ref=e40]:
+        - link:
+          - /url: javascript:void(0)
+        - list [ref=e43]:
+          - listitem [ref=e44]:
+            - link "Motor Insurance" [ref=e45] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=e46]:
+            - link "Health Insurance" [ref=e47] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=e48]:
+            - link "Travel Insurance" [ref=e49] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=e50]:
+            - link "SME Insurance" [ref=e51] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=e52]:
+            - link "Corporate Insurance" [ref=e53] [cursor=pointer]:
+              - /url: javascript:void
+          - listitem [ref=e54]:
+            - link "Other Insurance" [ref=e55] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=e56]:
+            - link "Renewals" [ref=e57] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=e58]:
+            - link "Claims" [ref=e59] [cursor=pointer]:
+              - /url: javascript:void(0)
+  - generic [ref=e60]:
+    - heading "Download" [level=2] [ref=e64]
+    - generic [ref=e67]:
+      - heading "Please select product & category & click on go to fetch desired data" [level=2] [ref=e68]
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - generic [ref=e71]: Select
+          - link "Motor Insurance" [ref=e73] [cursor=pointer]:
+            - /url: "#"
+        - generic [ref=e74]:
+          - generic [ref=e75]: Select
+          - link "Claims" [ref=e77] [cursor=pointer]:
+            - /url: "#"
+        - generic:
+          - generic: Select language
+          - generic:
+            - link "English":
+              - /url: "#"
+        - link "Go" [ref=e78] [cursor=pointer]:
+          - /url: javascript:void(0);
+      - list [ref=e80]:
+        - listitem [ref=e81]:
+          - generic [ref=e82]: Claim Form
+          - link [ref=e85] [cursor=pointer]:
+            - /url: /docs/default-source/default-document-library/claims-form8c0007ff45fd68ff8a0df0055f853edc.pdf
+        - listitem [ref=e87]:
+          - generic [ref=e88]: Motor Personal Accident Claim Form
+          - link [ref=e91] [cursor=pointer]:
+            - /url: /docs/default-source/default-document-library/3005-motor-claim-form-perq---16022023---perq-21022023.pdf
+        - listitem [ref=e93]:
+          - generic [ref=e94]: Motor Extended Warranty Insurance Claim Form
+          - link [ref=e97] [cursor=pointer]:
+            - /url: /docs/default-source/default-document-library/20241129002-motor-extended-warranty-insurance-claim-forms-rev-2.pdf
+        - listitem [ref=e99]:
+          - generic [ref=e100]: Total Recall contamination (Brand Protection) Liability Insurance-Commercial
+          - link [ref=e103] [cursor=pointer]:
+            - /url: /docs/default-source/default-document-library/38-prospectus---total-recall-contamination-(brand-protection)-liability-insurance---commercial.pdf
+        - listitem [ref=e105]:
+          - generic [ref=e106]: Vehicle Buy Back Insurance Policy
+          - link [ref=e109] [cursor=pointer]:
+            - /url: /docs/default-source/default-document-library/vehicle-buy-back-insurance-policy---claim-form.pdf
+  - generic [ref=e111] [cursor=pointer]
+  - contentinfo [ref=e113]:
+    - generic [ref=e114]:
+      - generic [ref=e115]:
+        - heading "ICICI Lombard General Insurance Company Limited," [level=5] [ref=e116]
+        - paragraph [ref=e117]: ICICI Lombard House, 414, Veer Savarkar Marg, Near Siddhi Vinayak Temple, Prabhadevi, Mumbai - 400025.
+        - generic [ref=e118]:
+          - paragraph [ref=e119]: Reg. No.115
+          - paragraph [ref=e120]: Email-customersupport@icicilombard.com
+          - paragraph [ref=e121]: Fax no - 022 61961323
+          - paragraph [ref=e122]: Contact - 1800 2666 (Available 24 x 7)
+      - generic [ref=e123]:
+        - list [ref=e124]:
+          - listitem [ref=e125]:
+            - link "Facebook" [ref=e126] [cursor=pointer]:
+              - /url: https://www.facebook.com/ICICILombard
+          - listitem [ref=e127]:
+            - link "Instagram" [ref=e128] [cursor=pointer]:
+              - /url: https://www.instagram.com/icicilombardofficial
+          - listitem [ref=e129]:
+            - link "Twitter" [ref=e130] [cursor=pointer]:
+              - /url: https://twitter.com/ICICILombard
+          - listitem [ref=e131]:
+            - link "YouTube" [ref=e132] [cursor=pointer]:
+              - /url: https://www.youtube.com/user/ICICILombardLtd
+          - listitem [ref=e133]:
+            - link "LinkedIn" [ref=e134] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/icici-lombard?trk=tyah
+        - generic [ref=e136]:
+          - generic [ref=e137]: IL TakeCare App
+          - generic [ref=e138] [cursor=pointer]:
+            - img "play store" [ref=e140]
+            - img "app store" [ref=e142]
+      - generic [ref=e143]:
+        - list [ref=e146] [cursor=pointer]:
+          - listitem [ref=e147]: Products
+          - listitem [ref=e148]: Services
+          - listitem [ref=e149]: Legal
+          - listitem [ref=e150]: About Us
+          - listitem [ref=e151]: Others
+        - generic [ref=e153]:
+          - list [ref=e155]:
+            - listitem [ref=e156]:
+              - link "Motor Insurance" [ref=e157] [cursor=pointer]:
+                - /url: /motor-insurance
+            - listitem [ref=e158]:
+              - link "Car Insurance" [ref=e159] [cursor=pointer]:
+                - /url: /motor-insurance/car-insurance
+            - listitem [ref=e160]:
+              - link "Extended Warranty (Car)" [ref=e161] [cursor=pointer]:
+                - /url: /motor-insurance/extended-warranty
+            - listitem [ref=e162]:
+              - link "Two Wheeler Insurance" [ref=e163] [cursor=pointer]:
+                - /url: /motor-insurance/two-wheeler-insurance
+            - listitem [ref=e164]:
+              - link "Health Insurance" [ref=e165] [cursor=pointer]:
+                - /url: /health-insurance
+            - listitem [ref=e166]:
+              - link "Travel Insurance" [ref=e167] [cursor=pointer]:
+                - /url: /travel-insurance
+            - listitem [ref=e168]:
+              - link "NRI Insurance Services" [ref=e169] [cursor=pointer]:
+                - /url: /nri-insurance
+            - listitem [ref=e170]:
+              - link "Business Insurance" [ref=e171] [cursor=pointer]:
+                - /url: /business-insurance
+            - listitem [ref=e172]:
+              - link "Rural Insurance" [ref=e173] [cursor=pointer]:
+                - /url: /rural-insurance
+            - listitem [ref=e174]:
+              - link "Cyber Insurance" [ref=e175] [cursor=pointer]:
+                - /url: /cyber-insurance
+            - listitem [ref=e176]:
+              - link "ICICI Bharat Griha Raksha Policy" [ref=e177] [cursor=pointer]:
+                - /url: /home-insurance/bharat-griha-raksha-policy
+          - list [ref=e179]:
+            - listitem [ref=e180]:
+              - link "Customer Support" [ref=e181] [cursor=pointer]:
+                - /url: /customer-support
+            - listitem [ref=e182]:
+              - link "Citizen Charter" [ref=e183] [cursor=pointer]:
+                - /url: /docs/default-source/default-document-library/reviewed_citizen-charter_final.pdf
+            - listitem [ref=e184]:
+              - link "Retrieve Quote" [ref=e185] [cursor=pointer]:
+                - /url: /manage-your-policy/search-quote
+            - listitem [ref=e186]:
+              - link "Unclaimed Amount" [ref=e187] [cursor=pointer]:
+                - /url: https://ilhc.icicilombard.com/Home/UnclaimedAmount
+            - listitem [ref=e188]:
+              - link "Intimate PA claim" [ref=e189] [cursor=pointer]:
+                - /url: https://ilhc.icicilombard.com/Customer/ClaimIntimationOnlineTracking
+            - listitem [ref=e190]:
+              - link "Renew Your Policy" [ref=e191] [cursor=pointer]:
+                - /url: /renew-policy
+            - listitem [ref=e192]:
+              - link "Portability" [ref=e193] [cursor=pointer]:
+                - /url: /health-insurance/health-policy-portability
+            - listitem [ref=e194]:
+              - link "EIA" [ref=e195] [cursor=pointer]:
+                - /url: /electronic-insurance-account
+            - listitem [ref=e196]:
+              - link "Online Dispute Resolution Portal for Investors" [ref=e197] [cursor=pointer]:
+                - /url: https://smartodr.in/login
+            - listitem [ref=e198]:
+              - link "SME Endorsements" [ref=e199] [cursor=pointer]:
+                - /url: /business-insurance/marine-insurance-endorsement
+          - list [ref=e201]:
+            - listitem [ref=e202]:
+              - link "Privacy Policy" [ref=e203] [cursor=pointer]:
+                - /url: /legal/privacy-policy
+            - listitem [ref=e204]:
+              - link "Insure App Privacy Policy" [ref=e205] [cursor=pointer]:
+                - /url: /legal/privacy-policy-mobile-app
+            - listitem [ref=e206]:
+              - link "Product Withdrawal" [ref=e207] [cursor=pointer]:
+                - /url: /legal/products-withdrawn
+            - listitem [ref=e208]:
+              - link "Do Not Call Registry" [ref=e209] [cursor=pointer]:
+                - /url: /legal/do-not-call-registry
+            - listitem [ref=e210]:
+              - link "General Terms & Conditions" [ref=e211] [cursor=pointer]:
+                - /url: /legal/terms
+            - listitem [ref=e212]:
+              - link "Disclaimer" [ref=e213] [cursor=pointer]:
+                - /url: /disclaimer
+            - listitem [ref=e214]:
+              - link "Insurance Ombudsman" [ref=e215] [cursor=pointer]:
+                - /url: https://www.cioins.co.in/Ombudsman
+            - listitem [ref=e216]:
+              - link "Stewardship Policy" [ref=e217] [cursor=pointer]:
+                - /url: /docs/default-source/other-documents/stewardship_policy.pdf
+            - listitem [ref=e218]:
+              - link "Disclosure under Stewardship Policy" [ref=e219] [cursor=pointer]:
+                - /url: /legal/disclosure-under-stewardship-policy
+            - listitem [ref=e220]:
+              - link "Policy for Policyholder’s Interest Protection & Grievance Redressal" [ref=e221] [cursor=pointer]:
+                - /url: /docs/default-source/default-document-library/policy-for-protection-of-policyholder.pdf
+            - listitem [ref=e222]:
+              - link "Advisory to Customer and Channel Partners" [ref=e223] [cursor=pointer]:
+                - /url: /docs/default-source/default-document-library/ilgic-advisory-to-client-and-channel-partners-v3.pdf
+            - listitem [ref=e224]:
+              - link "ICICI Lombard Product List" [ref=e225] [cursor=pointer]:
+                - /url: /docs/default-source/downloads/website-list-of-products.pdf
+            - listitem [ref=e226]:
+              - link "GRO Details of Active Branches" [ref=e227] [cursor=pointer]:
+                - /url: /docs/default-source/policy-wordings-product-brochure/final-gro-mapping.pdf
+            - listitem [ref=e228]:
+              - link "Motor Third Party claims - Statewise nodal officer details" [ref=e229] [cursor=pointer]:
+                - /url: /docs/default-source/default-document-library/motor-third-party-claims--statewise-nodal-officer-details.pdf
+            - listitem [ref=e230]:
+              - link "Whistle Blower Policy" [ref=e231] [cursor=pointer]:
+                - /url: /docs/default-source/shareholding-pattern/whistle-blower-policy.pdf
+          - list [ref=e233]:
+            - listitem [ref=e234]:
+              - link "Overview" [ref=e235] [cursor=pointer]:
+                - /url: /about-us
+            - listitem [ref=e236]:
+              - link "Promoters" [ref=e237] [cursor=pointer]:
+                - /url: /about-us/promoters
+            - listitem [ref=e238]:
+              - link "CSR" [ref=e239] [cursor=pointer]:
+                - /url: /corporate-social-responsibility
+            - listitem [ref=e240]:
+              - link "Risk Management" [ref=e241] [cursor=pointer]:
+                - /url: /india-risk-management
+            - listitem [ref=e242]:
+              - link "Public Disclosures" [ref=e243] [cursor=pointer]:
+                - /url: /about-us/public-disclosure
+            - listitem [ref=e244]:
+              - link "Disclosure of Performance Parameters" [ref=e245] [cursor=pointer]:
+                - /url: /about-us/performance-parameters-policy-disclosure
+            - listitem [ref=e246]:
+              - link "Awards and Recognitions" [ref=e247] [cursor=pointer]:
+                - /url: /about-us/awards
+            - listitem [ref=e248]:
+              - link "Investor Relations" [ref=e249] [cursor=pointer]:
+                - /url: /investor-relations
+            - listitem [ref=e250]:
+              - link "Media" [ref=e251] [cursor=pointer]:
+                - /url: /about-us/media-coverage
+          - list [ref=e253]:
+            - listitem [ref=e254]:
+              - link "Agents’ Portal" [ref=e255] [cursor=pointer]:
+                - /url: /business-insurance/become-insurance-agent
+            - listitem [ref=e256]:
+              - link "Corporate Login" [ref=e257] [cursor=pointer]:
+                - /url: https://corporate.icicilombard.com/
+            - listitem [ref=e258]:
+              - link "Suspended Agents" [ref=e259] [cursor=pointer]:
+                - /url: /docs/default-source/other-documents/suspended_agents.pdf
+            - listitem [ref=e260]:
+              - link "BAGI Blacklisted Agents" [ref=e261] [cursor=pointer]:
+                - /url: /docs/default-source/default-document-library/bharti-axa-blacklisted-agent.pdf
+            - listitem [ref=e262]:
+              - link "Distribution Channels" [ref=e263] [cursor=pointer]:
+                - /url: /distribution-channel
+            - listitem [ref=e264]:
+              - link "Pradhan Mantri Suraksha Bima Yojna" [ref=e265] [cursor=pointer]:
+                - /url: https://ilhc.icicilombard.com/coi/coicertificate
+            - listitem [ref=e266]:
+              - link "Hospital Empanelment Criteria" [ref=e267] [cursor=pointer]:
+                - /url: /docs/default-source/default-document-library/1010586_26102022170853_hospital_empanelment_criteria.pdf
+            - listitem [ref=e268]:
+              - link "Account Aggregator" [ref=e269] [cursor=pointer]:
+                - /url: /account-aggregator
+            - listitem [ref=e270]:
+              - link "International Business (IIO)" [ref=e271] [cursor=pointer]:
+                - /url: /gift-city
+            - listitem [ref=e272]:
+              - link "Sitemap" [ref=e273] [cursor=pointer]:
+                - /url: /sitemap
+            - listitem [ref=e274]:
+              - link "Become an Agent (SME)" [ref=e275] [cursor=pointer]:
+                - /url: /business-insurance/become-insurance-agent
+            - listitem [ref=e276]:
+              - link "List of Agents (SME)" [ref=e277] [cursor=pointer]:
+                - /url: /business-insurance/assetsSME/pdf/Agent_Data.pdf
+            - listitem [ref=e278]:
+              - link "Data on Health Claim Service Indicators" [ref=e279] [cursor=pointer]:
+                - /url: /health-claim-service-indicators
+            - listitem [ref=e280]:
+              - link "IRDAI List of Blacklisted Agents" [ref=e281] [cursor=pointer]:
+                - /url: https://irdai.gov.in/list-of-black-listed-agents
+      - list [ref=e285] [cursor=pointer]:
+        - listitem [ref=e286]: Info Center
+        - listitem [ref=e287]: Renewal
+        - listitem [ref=e288]: Claim
+        - listitem [ref=e289]: Help
+        - listitem [ref=e290]: Customer Reviews
+      - list [ref=e294] [cursor=pointer]:
+        - listitem [ref=e295]: Car Insurance
+        - listitem [ref=e296]: Two Wheeler Insurance
+        - listitem [ref=e297]: Health Insurance
+        - listitem [ref=e298]: Travel Insurance
+        - listitem [ref=e299]: SME Insurance
+      - generic [ref=e300]:
+        - paragraph [ref=e301]: ICICI Lombard General Insurance Company Ltd. is one of the leading private sector general insurance company in India offering insurance coverage for motor, health, travel, home, student travel and more. Policies can be purchased and renewed online as well. Immediate issuance of policy copy online.
+        - paragraph [ref=e302]: "ICICI trade logo displayed above belongs to ICICI Bank and is used by ICICI Lombard GIC Ltd. under license and Lombard logo belongs to ICICI Lombard GIC Ltd. Insurance is the subject matter of the solicitation. The advertisement contains only an indication of cover offered. For more details on risk factors, terms, conditions and exclusions, please read the sales brochure carefully before concluding a sale. CIN: L67200MH2000PLC129408"
+        - generic [ref=e303]:
+          - generic [ref=e304]:
+            - img "entrust" [ref=e306]
+            - img "digicert" [ref=e308]
+            - link [ref=e310] [cursor=pointer]:
+              - /url: https://bimabharosa.irdai.gov.in/Home/Home
+              - img "bima_bharosa" [ref=e311]
+          - generic [ref=e312]: Group Companies
+```

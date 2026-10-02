@@ -126,3 +126,24 @@ Variant indexes now reuse embeddings by exact title-path-plus-source-text hash, 
 Fit responses now return the cards and release ID used for that evaluation. The browser updates the catalogue and fit groups together, so a release published while the page is open cannot leave new matching rows hidden behind stale cards. Running questions retain their existing immutable index pins. Focused checks: 12 service/API tests passed; frontend lint, typecheck and build passed.
 
 A further Playwright retry of Star's official product register returned HTTP 403 Access Denied. Preserve that failure and the earlier register snapshot as historical evidence; do not promote its old entries to a verified complete current catalogue.
+
+## 2026-10-03 — Recovered release and four-profile browser verification
+
+Published H-only release `7ec7f75e-8af4-4479-bc62-180ac8fb034f`: 16 variants across 12 products and ten insurers, backed by 53 physical PDFs and 1,795 physical pages. Eight distinct documents use recorded fallback sections (two in the frozen corpus, six in the app-only recoveries). The frozen inputs, protocol text and nine archived scored source files retain their original hashes. No recovered document entered the frozen evaluation.
+
+Playwright exercised all four synthetic profiles on this release: A/C/D show 16 unresolved plans; B shows 15 unresolved and one age-limit failure. All groups remain visible and ordered by insurer, with no ranking. The complete typed phrase “my parent needs OPD cover” mapped once to the parent and OPD, without losing words. A five-plan selection from the full picker successfully streamed cited PED answers for all five recovered flagships. Native citations were visually checked against their highlighted PDF clauses. Desktop columns now fit all five plans at 1,440 pixels; mobile keeps horizontal scrolling. Variant labels distinguish repeated product names in coverage and prices.
+
+The first premium pass found zero fully validated prices: six invalid-chart variants and ten variants without an applicable available price source. The chart-layout audit below supersedes that first-pass count. The broader current retail catalogue and complete executable fact cards remain unfinished; acquired candidate files are not automatically admitted.
+
+
+## 2026-10-03 — Printed annual chart layout and source-linked prices
+
+The first parser required a separate cell for every fixed axis, including a literal variant label even for an edition without named variants. That rejected Star Comprehensive's published rates. Visually inspected physical page 44 of prospectus SHA `0404693147bd5202e28e39bfdb8fcc87f78e7ee6aa6a6f1032f63cbec63698e1`: annual term, excluded tax and zone share a merged title; family composition spans ten age rows. Added an adapter restricted to that exact prospectus hash. Luna labels the physical layout; code checks its coordinates, complete source rows, composition span and every printed axis. The parser preserves source anomalies and performs no premium arithmetic.
+
+Ten layout calls and eight bounded title-row corrections, all Luna, produced 3,564 exact printed combinations. Four rows (36 combinations) cross original evidence-section boundaries and remain omitted with reasons. Other price statuses: five charts not validated, ten without an applicable available source. The UI is an explicit manual chart lookup, separate from the family profile; it does not infer the insurer's age or zone rules. Price citations use the same physical-page highlight viewer and reject evidence outside accepted chart cells. This is still not an insurer quotation.
+
+## 2026-10-03 — Completed winning application acceptance
+
+The complete fresh H-only application run finished all 86 jobs: 260 answer-sheet cases plus 78 Star reference queries. Outcomes: 140 answered, 120 not found; table-heavy cases 23 answered and 42 not found. Twelve of 39 Star cells contain every required reference span in both the fixed and customer-style packets. This measures packet completeness, not expert-verified answer correctness. The recovered flagships are included only in this application run; frozen bake-off hashes, unavailable denominator slots and scores are unchanged.
+
+All four synthetic profile UI runs, five-plan streaming, desktop/mobile scrolling and native citation highlights were exercised. Final backend checks: 547 tests passed (21 warnings), Ruff, Django checks, migration checks and validated OpenAPI generation passed. Frontend lint, typecheck and production build passed. Historical facts/rules/evidence, erasure and immutable release pins remain intact. No push or off-machine publication occurred.

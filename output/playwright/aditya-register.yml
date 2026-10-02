@@ -1,0 +1,444 @@
+- generic [ref=f8e2]:
+  - generic:
+    - banner [ref=f8e3]:
+      - generic [ref=f8e4]:
+        - generic [ref=f8e5]:
+          - link "ABC Home" [ref=f8e7] [cursor=pointer]:
+            - /url: https://www.adityabirlacapital.com/?lob=true
+            - text: ABC Home
+            - emphasis [ref=f8e10]
+          - link "ABC Solutions" [ref=f8e14] [cursor=pointer]:
+            - /url: ""
+            - text: ABC Solutions
+            - emphasis [ref=f8e15]
+          - link "1800-270-7000" [ref=f8e18] [cursor=pointer]:
+            - /url: tel:18002707000
+        - generic [ref=f8e20]:
+          - link [ref=f8e21] [cursor=pointer]:
+            - /url: /
+          - generic [ref=f8e23]:
+            - list [ref=f8e25]:
+              - listitem [ref=f8e26]:
+                - link "Products" [ref=f8e27] [cursor=pointer]:
+                  - /url: javascript:void(0)
+              - listitem [ref=f8e28]:
+                - link "Health Corner" [ref=f8e29] [cursor=pointer]:
+                  - /url: ""
+              - listitem [ref=f8e30]:
+                - link "Claims" [ref=f8e31] [cursor=pointer]:
+                  - /url: ""
+              - listitem [ref=f8e32]:
+                - link "Hospital Network" [ref=f8e33] [cursor=pointer]:
+                  - /url: /locate-care/hospital-listing
+              - listitem [ref=f8e34]:
+                - generic [ref=f8e35] [cursor=pointer]: Quick Quote
+              - listitem [ref=f8e36]:
+                - link "Customer Support" [ref=f8e37] [cursor=pointer]:
+                  - /url: ""
+              - listitem [ref=f8e38]:
+                - link "Become an Advisor" [ref=f8e39] [cursor=pointer]:
+                  - /url: /become-a-health-insurance-advisor?utm_source=website&utm_medium=masthead&utm_campaign=website_masthead
+            - list [ref=f8e41]:
+              - listitem [ref=f8e42]:
+                - link [ref=f8e43] [cursor=pointer]:
+                  - /url: ""
+              - listitem [ref=f8e45]:
+                - link "ENG" [ref=f8e46] [cursor=pointer]:
+                  - /url: ""
+              - listitem [ref=f8e49]:
+                - link "Login" [ref=f8e50] [cursor=pointer]:
+                  - /url: /login
+              - listitem [ref=f8e51]:
+                - generic [ref=f8e52] [cursor=pointer]: Renew
+        - paragraph [ref=f8e54]: Aditya Birla Health Insurance Co. Limited
+    - text: 
+  - generic:
+    - generic [ref=f8e954]:
+      - generic [ref=f8e955]:
+        - generic [ref=f8e956]: Welcome to ABHI Support Centre
+        - generic [ref=f8e957]: Let’s help you find the support you need.
+      - combobox "What can we help you with?" [ref=f8e964]
+    - generic [ref=f8e969]:
+      - list [ref=f8e970]:
+        - listitem [ref=f8e971]:
+          - link "Support Home" [ref=f8e972] [cursor=pointer]:
+            - /url: "#tab_SupportHome"
+        - listitem [ref=f8e973]:
+          - link "Download Center" [ref=f8e974]:
+            - /url: "#tab_DownloadCenter"
+        - listitem [ref=f8e975]:
+          - link "FAQs" [ref=f8e976] [cursor=pointer]:
+            - /url: "#tab_Faq"
+      - generic [ref=f8e979]:
+        - list [ref=f8e981]:
+          - listitem [ref=f8e982]:
+            - link "Activ One" [ref=f8e983] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e984]:
+            - link "Active Travel" [ref=f8e985] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e986]:
+            - link "Activ Yuva" [ref=f8e987] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e988]:
+            - link "ABHI Protect Add-on" [ref=f8e989] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e990]:
+            - link "Activ Assure" [ref=f8e991] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e992]:
+            - link "Activ Care" [ref=f8e993] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e994]:
+            - link "Activ Fit" [ref=f8e995] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e996]:
+            - link "Activ Health" [ref=f8e997] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e998]:
+            - link "Activ Secure" [ref=f8e999] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1000]:
+            - link "Antyodaya Shramik Suraksha Yojana" [ref=f8e1001] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1002]:
+            - link "Arogya Sanjeevani" [ref=f8e1003] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1004]:
+            - link "Claims Public Disclosures" [ref=f8e1005] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1006]:
+            - link "Corona Kavach Policy" [ref=f8e1007] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1008]:
+            - link "Corona Rakshak" [ref=f8e1009] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1010]:
+            - link "Disclosure of Key Performance and Financial Parameters" [ref=f8e1011] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1012]:
+            - link "Ekam Suraksha" [ref=f8e1013] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1014]:
+            - link "Global Health Secure" [ref=f8e1015] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1016]:
+            - link "Group Activ Health" [ref=f8e1017] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1018]:
+            - link "Group Activ Health Plus" [ref=f8e1019] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1020]:
+            - link "Group Activ Secure" [ref=f8e1021] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1022]:
+            - link "Group Activ Secure Plus" [ref=f8e1023] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1024]:
+            - link "Group Arogya Sanjeevani" [ref=f8e1025] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1026]:
+            - link "Group Protect" [ref=f8e1027] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1028]:
+            - link "Group Protect Plus" [ref=f8e1029] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1030]:
+            - link "Group Travel Protect" [ref=f8e1031] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1032]:
+            - link "GroupActivTravel" [ref=f8e1033] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1034]:
+            - link "GroupAssureCOVID-19" [ref=f8e1035] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1036]:
+            - link "Health Add ons" [ref=f8e1037] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1038]:
+            - link "Health Booster" [ref=f8e1039] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1040]:
+            - link "Health Enhance Riders" [ref=f8e1041] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1042]:
+            - link "HLTH Meter" [ref=f8e1043] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1044]:
+            - link "HLTH METER+" [ref=f8e1045] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1046]:
+            - link "Hospital network" [ref=f8e1047] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1048]:
+            - link "Miscellaneous" [ref=f8e1049] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1050]:
+            - link "OPD Add-on" [ref=f8e1051] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1052]:
+            - link "Public Disclosures" [ref=f8e1053] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1054]:
+            - link "Saral Suraksha Bima" [ref=f8e1055] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1056]:
+            - link "Super Health Plus Top up" [ref=f8e1057] [cursor=pointer]:
+              - /url: javascript:void(0)
+          - listitem [ref=f8e1058]:
+            - link "Xtend+" [ref=f8e1059] [cursor=pointer]:
+              - /url: javascript:void(0)
+        - generic [ref=f8e1060]:
+          - list [ref=f8e1062]:
+            - listitem [ref=f8e1063] [cursor=pointer]: Activ One NXT
+            - listitem [ref=f8e1064] [cursor=pointer]: Activ One MAX
+            - listitem [ref=f8e1065] [cursor=pointer]: Activ One VYTL
+            - listitem [ref=f8e1066] [cursor=pointer]: Activ One MAX+
+            - listitem [ref=f8e1067] [cursor=pointer]: Activ One SAVR
+            - listitem [ref=f8e1068] [cursor=pointer]: Activ One VIP
+            - listitem [ref=f8e1069] [cursor=pointer]: Activ One VIP+
+          - generic [ref=f8e1070]:
+            - generic [ref=f8e1072]:
+              - heading "Product Information" [level=2] [ref=f8e1073] [cursor=pointer]
+              - generic "Product Information Customer Information Sheet img Policy Document img Brochure img Prospectus img Activ One MAX - Rate Chart img Policy Wording - Nov'23 to June'26 img" [ref=f8e1105]:
+                - generic [ref=f8e1076]:
+                  - link [ref=f8e1107] [cursor=pointer]:
+                    - /url: assets/pdf/ActivOneDocs/ActivOneMAX/ProductInformation/CustomerInformationSheet.pdf
+                    - text: Customer Information Sheet
+                    - img "img" [ref=f8e1108]
+                  - link [active] [ref=f8e1110] [cursor=pointer]:
+                    - /url: assets/pdf/ActivOneDocs/ActivOneMAX/ProductInformation/PolicyDocument.pdf
+                    - text: Policy Document
+                    - img "img" [ref=f8e1111]
+                  - link [ref=f8e1113] [cursor=pointer]:
+                    - /url: assets/pdf/ActivOneDocs/ActivOneMAX/ProductInformation/Brochure.pdf
+                    - text: Brochure
+                    - img "img" [ref=f8e1114]
+                  - link [ref=f8e1116] [cursor=pointer]:
+                    - /url: assets/pdf/ActivOneDocs/ActivOneMAX/ProductInformation/Prospectus.pdf
+                    - text: Prospectus
+                    - img "img" [ref=f8e1117]
+                  - link [ref=f8e1119] [cursor=pointer]:
+                    - /url: assets/pdf/ActivOneDocs/ActivOneMAX/ProductInformation/RateChart.pdf
+                    - text: Activ One MAX - Rate Chart
+                    - img "img" [ref=f8e1120]
+                  - link [ref=f8e1122] [cursor=pointer]:
+                    - /url: assets/pdf/ActivOneDocs/ActivOneMAX/ProductInformation/Policy-wording-nov23tojune26.pdf
+                    - text: Policy Wording - Nov'23 to June'26
+                    - img "img" [ref=f8e1123]
+            - heading "Claims Documents" [level=2] [ref=f8e1097] [cursor=pointer]
+            - heading "Anexure" [level=2] [ref=f8e1100] [cursor=pointer]
+            - heading "All Forms & Others" [level=2] [ref=f8e1103] [cursor=pointer]
+    - text: 
+  - generic [ref=f8e760]:
+    - contentinfo [ref=f8e761]:
+      - generic [ref=f8e762]:
+        - generic [ref=f8e763]:
+          - link [ref=f8e765] [cursor=pointer]:
+            - /url: ""
+          - list [ref=f8e768]:
+            - listitem [ref=f8e769]:
+              - link [ref=f8e770] [cursor=pointer]:
+                - /url: https://www.facebook.com/abhealthinsurance
+            - listitem [ref=f8e772]:
+              - link [ref=f8e773] [cursor=pointer]:
+                - /url: https://twitter.com/abhealthin
+            - listitem [ref=f8e775]:
+              - link [ref=f8e776] [cursor=pointer]:
+                - /url: https://www.instagram.com/abchealthinsurance/
+            - listitem [ref=f8e778]:
+              - link [ref=f8e779] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/aditya-birla-health/
+            - listitem [ref=f8e781]:
+              - link [ref=f8e782] [cursor=pointer]:
+                - /url: https://youtube.com/c/AdityaBirlaHealthInsurance
+            - listitem [ref=f8e784]:
+              - generic [ref=f8e785] [cursor=pointer]
+          - generic [ref=f8e787]:
+            - generic [ref=f8e788]: Get Started With our Activ Health App
+            - link [ref=f8e789] [cursor=pointer]:
+              - /url: https://adityabirlahealthinsurancetest.page.link/7hBY
+              - button "Download Now" [ref=f8e790]
+        - generic [ref=f8e791]:
+          - tablist [ref=f8e792]:
+            - tab "Health & Wellness plans" [ref=f8e793] [cursor=pointer]
+            - tab "Large payout plans" [ref=f8e794] [cursor=pointer]
+            - tab "Articles" [ref=f8e795] [cursor=pointer]
+            - tab "Health Services" [ref=f8e796] [cursor=pointer]
+          - generic [ref=f8e797]:
+            - tabpanel "Health & Wellness plans" [ref=f8e798]:
+              - list [ref=f8e800]:
+                - listitem [ref=f8e801]:
+                  - link "Health Insurance For Chronic Condition" [ref=f8e802] [cursor=pointer]:
+                    - /url: /health-insurance/active-health-enhanced-insurance
+                - listitem [ref=f8e803]:
+                  - link "Activ Health Platinum Essential" [ref=f8e804] [cursor=pointer]:
+                    - /url: /health-insurance/active-health-essential-insurance
+                - listitem [ref=f8e805]:
+                  - link "Aditya Birla Activ Assure Diamond Plan" [ref=f8e806] [cursor=pointer]:
+                    - /url: /health-insurance/activ-assure-diamond
+                - listitem [ref=f8e807]:
+                  - link "Health Insurance For Senior Citizen" [ref=f8e808] [cursor=pointer]:
+                    - /url: /health-insurance/activ-assure-classic
+                - listitem [ref=f8e809]:
+                  - link "Global Health Secure" [ref=f8e810] [cursor=pointer]:
+                    - /url: /health-insurance/corporate-health-insurance
+                - listitem [ref=f8e811]:
+                  - link "Group Health Insurance" [ref=f8e812] [cursor=pointer]:
+                    - /url: /health-insurance/corporate-health-insurance
+                - listitem [ref=f8e813]:
+                  - link "Health Insurance Plans" [ref=f8e814] [cursor=pointer]:
+                    - /url: /health-insurance
+                - listitem [ref=f8e815]:
+                  - link "Health Insurance for Diabetes" [ref=f8e816] [cursor=pointer]:
+                    - /url: /health-insurance/diabetes
+                - listitem [ref=f8e817]:
+                  - link "Health Insurance for High BP" [ref=f8e818] [cursor=pointer]:
+                    - /url: /health-insurance/high-blood-pressure
+                - listitem [ref=f8e819]:
+                  - link "Health Insurance for High Cholesterol" [ref=f8e820] [cursor=pointer]:
+                    - /url: /health-insurance/high-cholesterol
+                - listitem [ref=f8e821]:
+                  - link "Health Insurance for Asthma" [ref=f8e822] [cursor=pointer]:
+                    - /url: /health-insurance/health-insurance-asthma
+                - listitem [ref=f8e823]:
+                  - link "Individual Health Insurance" [ref=f8e824] [cursor=pointer]:
+                    - /url: /health-insurance/individual-health-insurance
+                - listitem [ref=f8e825]:
+                  - link "Health insurance claim" [ref=f8e826] [cursor=pointer]:
+                    - /url: /health-insurance/reimbursement-claims
+                - listitem [ref=f8e827]:
+                  - link "Employer health insurance" [ref=f8e828] [cursor=pointer]:
+                    - /url: /health-insurance/corporate-health-insurance
+                - listitem [ref=f8e829]:
+                  - link "Health care for young adults" [ref=f8e830] [cursor=pointer]:
+                    - /url: /health-insurance/activ-fit
+                - listitem [ref=f8e831]:
+                  - link "Super topup health insurance" [ref=f8e832] [cursor=pointer]:
+                    - /url: /health-insurance/activ-assure-diamond-super-health-topup
+                - listitem [ref=f8e833]:
+                  - link "Health Insurance For Family" [ref=f8e834] [cursor=pointer]:
+                    - /url: /health-insurance/family-health-insurance
+                - listitem [ref=f8e835]:
+                  - link "Hospital cash insurance" [ref=f8e836] [cursor=pointer]:
+                    - /url: /health-insurance/hospital-cash
+                - listitem [ref=f8e837]:
+                  - link "Health insurance with OPD cover" [ref=f8e838] [cursor=pointer]:
+                    - /url: /health-insurance/cashless-opd
+                - listitem [ref=f8e839]:
+                  - link "Ayush treatment" [ref=f8e840] [cursor=pointer]:
+                    - /url: /health-insurance/ayush-treatment
+                - listitem [ref=f8e841]:
+                  - link "Corona virus health insurance" [ref=f8e842] [cursor=pointer]:
+                    - /url: /health-insurance/coronavirus-covid19
+            - tablist [ref=f8e843]:
+              - tab "Legal" [ref=f8e844] [cursor=pointer]
+              - tab "Quick Links" [ref=f8e845] [cursor=pointer]
+              - tab "Quick Services" [ref=f8e846] [cursor=pointer]
+              - tab "Others" [ref=f8e847] [cursor=pointer]
+            - tablist [ref=f8e848]:
+              - tab "Public Disclosure" [ref=f8e849] [cursor=pointer]
+      - paragraph [ref=f8e854]:
+        - text: "Aditya Birla Health Insurance Co. Limited. IRDAI Reg.153. CIN No. U66000MH2015PLC263677. Registered Office Address: 9th Floor, Tower 1, One World Centre, Jupiter Mills Compound, 841, Senapati Bapat Marg, Elphinstone Road, Mumbai 400013. Email:"
+        - link "care.healthinsurance@adityabirlacapital.com" [ref=f8e855] [cursor=pointer]:
+          - /url: mailto:care.healthinsurance@adityabirlacapital.com
+        - text: ", Website:"
+        - link "www.adityabirlahealthinsurance.com" [ref=f8e856] [cursor=pointer]:
+          - /url: https://www.adityabirlahealthinsurance.com/
+        - text: ", Telephone:"
+        - link "1800 270 7000" [ref=f8e857] [cursor=pointer]:
+          - /url: tel:1800-270-7000
+        - text: ". Trademark/Logo Aditya Birla Capital is owned by Aditya Birla Management Corporation Private Limited and Trademark/logo HealthReturnsTM, Healthy Heart ScoreTM and Active DayzTM are owned by Momentum Group Ltd (MGL) (Formerly known as Momentum Metropolitan Life Limited). These trademark/Logos are being used by Aditya Birla Health Insurance Co. Limited under licensed user agreement(s). For more details on risk factors, terms and conditions please read policy wordings carefully before concluding a sale. Product and Product UIN: Activ One, ADIHLIP24097V012324. Activ Health, ADIHLIP24102V052324. Ekam Suraksha, ADIHLIP23203V012223. Activ Assure, ADIHLIP24175V052324. Activ Fit, ADIHLIP22008V012223. OPD Add-on, ADIHLIA22212V012122. ABHI Protect Add-on, ADIHLIA22218V012122. Health Add-ons, ADIHLIA22177V012122. Saral Suraksha Bima, ADIPAIP21628V012021. Activ Care, ADIHLIP21062V022021. Super Health Plus Top up, ADIHLIP21061V022021. Global Health Secure, ADIHLIP21069V022021. Arogya Sanjeevani Policy, ADIHLIP20170V011920. Corona Kavach Policy, ADIHLIP21080V012021. Corona Rakshak Policy, ADIHLIP21136V012021. Activ Secure, ADIHLIP18076V011718. Aditya Birla Health Insurance Co. Ltd, Antyodaya Shramik Suraksha Yojana, ADIPAGP24071V012324. Group Active Secure, ADIHLGP23155V032223. Group Travel Protect, ADITGBP23002V012223. Group Activ Health, ADIHLGP22190V032122. Group Protect, ADIHLGP22023V032122. Group Activ Travel, ADITGBP21600V032021. Group Activ Health_Additional S.I. for Pandemic and epidemic Rider, ADIHLAP21589V012021. Group Activ Health_Super Reload Rider, ADIHLAP21588V012021. Group Activ Health_Tele OPD Consultation Rider, ADIHLAP21590V012021. Group Activ Health_Super No Claim Bonus Rider, ADIHLAP21591V012021. Group Assure COVID-19, ADIHLGP21055V012021. Group Arogya Sanjeevani Policy, ADIHLGP21229V012021. Health Booster, ADIHLIA25035V012425. HLTH Meter, ADIHLIA24176V012324. For more details on risk factor, terms and conditions please refer policy wordings and prospectus before concluding a sale. Premium may vary as per plan opted and underwriting norms. Tax benefits are subject to changes in tax laws. 0% GST is appliable for individual & family floater health insurance policies. Category of Certificate: Health Insurance. Validity of Certificate of Registration: In Force. Claim Settlement Ratio pertains to FY 24 – 25. Quick claim processing depends upon the receipt of complete set of documents by the claimant. The amount of HealthReturns™ are indicative. Each Insured Person would be tracked separately and shall earn HealthReturns™ based on individual performance as per grid of Healthy Heart Score™ and Active Dayz™."
+      - generic [ref=f8e859]:
+        - button "Our Subsidiaries" [ref=f8e861] [cursor=pointer]
+        - list [ref=f8e865]:
+          - listitem [ref=f8e866]:
+            - link "Aditya Birla Housing Finance Limited" [ref=f8e867] [cursor=pointer]:
+              - /url: https://homefinance.adityabirlacapital.com/
+          - listitem [ref=f8e868]:
+            - link "Aditya Birla Money Limited" [ref=f8e869] [cursor=pointer]:
+              - /url: https://stocksandsecurities.adityabirlacapital.com/
+          - listitem [ref=f8e870]:
+            - link "Aditya Birla Health Insurance Company Limited" [ref=f8e871] [cursor=pointer]:
+              - /url: https://www.adityabirlahealthinsurance.com/
+          - listitem [ref=f8e872]:
+            - link "Aditya Birla Sun Life Pension Management Limited" [ref=f8e873] [cursor=pointer]:
+              - /url: https://pensionfund.adityabirlacapital.com/
+          - listitem [ref=f8e874]:
+            - link "Aditya Birla Wellness Private Limited" [ref=f8e875] [cursor=pointer]:
+              - /url: https://www.adityabirlacapital.com/multiply-wellness/#!/home
+          - listitem [ref=f8e876]:
+            - link "Aditya Birla Sun Life Mutual Fund" [ref=f8e877] [cursor=pointer]:
+              - /url: https://mutualfund.adityabirlacapital.com/
+          - listitem [ref=f8e878]:
+            - link "Aditya Birla Sun Life Insurance Company Limited" [ref=f8e879] [cursor=pointer]:
+              - /url: https://lifeinsurance.adityabirlacapital.com/
+      - generic [ref=f8e880]:
+        - generic [ref=f8e881]:
+          - link [ref=f8e882] [cursor=pointer]:
+            - /url: ""
+          - generic [ref=f8e888]:
+            - paragraph [ref=f8e889]: Toll Free Number
+            - link "1800 270 7000" [ref=f8e890] [cursor=pointer]:
+              - /url: tel:18002707000
+        - generic [ref=f8e892]:
+          - tablist [ref=f8e893]:
+            - tab "COMPANY" [selected] [ref=f8e894] [cursor=pointer]
+            - tab "SOLUTIONS" [ref=f8e895] [cursor=pointer]
+            - tab "TOOLS & RESOURCES" [ref=f8e896] [cursor=pointer]
+            - tab "USEFUL LINKS" [ref=f8e897] [cursor=pointer]
+          - tabpanel "COMPANY" [ref=f8e899]:
+            - list [ref=f8e901]:
+              - listitem [ref=f8e902]:
+                - link "About Us" [ref=f8e903] [cursor=pointer]:
+                  - /url: https://www.adityabirlacapital.com/about-us
+              - listitem [ref=f8e904]:
+                - link "Locate Us" [ref=f8e905] [cursor=pointer]:
+                  - /url: https://www.adityabirlacapital.com/branch-locator
+              - listitem [ref=f8e906]:
+                - link "Press and Media" [ref=f8e907] [cursor=pointer]:
+                  - /url: https://www.adityabirlacapital.com/press-and-media
+              - listitem [ref=f8e908]:
+                - link "CSR and Sustainability" [ref=f8e909] [cursor=pointer]:
+                  - /url: https://www.adityabirlacapital.com/about-us/csr-and-sustainability
+              - listitem [ref=f8e910]:
+                - link "Investor Relations" [ref=f8e911] [cursor=pointer]:
+                  - /url: https://www.adityabirlacapital.com/investor-relations
+              - listitem [ref=f8e912]:
+                - link "Careers" [ref=f8e913] [cursor=pointer]:
+                  - /url: https://www.adityabirlacapital.com/careers
+        - generic [ref=f8e914]:
+          - paragraph [ref=f8e916]: Download ABCD
+          - list [ref=f8e917]:
+            - listitem [ref=f8e918]:
+              - link "Playstore" [ref=f8e919] [cursor=pointer]:
+                - /url: https://abcone.onelink.me/SV5g/5ahb9a2y
+            - listitem [ref=f8e921]:
+              - link "Appstore" [ref=f8e922] [cursor=pointer]:
+                - /url: https://abcone.onelink.me/SV5g/5ahb9a2y
+      - button "BEWARE OF SPURIOUS / FRAUD PHONE CALLS!" [expanded] [ref=f8e927] [cursor=pointer]
+      - generic [ref=f8e928]:
+        - paragraph [ref=f8e930]: © 2025, Aditya Birla Capital Ltd. All Rights Reserved.
+        - list [ref=f8e932]:
+          - listitem [ref=f8e933]:
+            - link [ref=f8e934] [cursor=pointer]:
+              - /url: https://www.facebook.com/AdityaBirlaCapital/
+          - listitem [ref=f8e936]:
+            - link [ref=f8e937] [cursor=pointer]:
+              - /url: https://twitter.com/abcapital
+          - listitem [ref=f8e939]:
+            - link [ref=f8e940] [cursor=pointer]:
+              - /url: https://www.instagram.com/adityabirlacapital/
+          - listitem [ref=f8e942]:
+            - link [ref=f8e943] [cursor=pointer]:
+              - /url: https://www.linkedin.com/company/aditya-birla-capital
+          - listitem [ref=f8e945]:
+            - link [ref=f8e946] [cursor=pointer]:
+              - /url: https://www.youtube.com/channel/UCSki2tX_5kadIdz3m8Q4Fvg/
+    - text: ★ ★ ★ ★ ★ ★ ★ ★ ★ ★  
+  - img "Bima Bharosa" [ref=f8e950] [cursor=pointer]
+  - img [ref=f8e952] [cursor=pointer]
+  - generic [ref=f8e1124] [cursor=pointer]:
+    - text: Not sure which policy suits you best? Click here, and we'll help you find the perfect plan!
+    - generic [ref=f8e1126]: 
+  - text: 

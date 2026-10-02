@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "release_id": "7ec7f75e-8af4-4479-bc62-180ac8fb034f",
+  "method": "H",
+  "entry_point": "http://127.0.0.1:3021/demo",
+  "driver": "Playwright CLI, real browser form and picker interactions",
+  "profiles": [
+    {
+      "id": "A",
+      "people": "self 35, spouse 33, dependent child 8",
+      "city": "Pune",
+      "sum_insured": 1000000,
+      "needs": [
+        "room_limit"
+      ],
+      "visible_plans": 16,
+      "fits": 0,
+      "unresolved": 16,
+      "doesnt_fit": 0,
+      "screenshot": "playwright/demo-profile-a-fit.png"
+    },
+    {
+      "id": "B",
+      "people": "self 70, spouse 67",
+      "city": "Pune",
+      "sum_insured": 1000000,
+      "needs": [],
+      "visible_plans": 16,
+      "fits": 0,
+      "unresolved": 15,
+      "doesnt_fit": 1,
+      "screenshot": "playwright/demo-profile-b-fit.png"
+    },
+    {
+      "id": "C",
+      "people": "self 29, spouse 28",
+      "city": "Pune",
+      "sum_insured": 1000000,
+      "needs": [
+        "maternity"
+      ],
+      "visible_plans": 16,
+      "fits": 0,
+      "unresolved": 16,
+      "doesnt_fit": 0,
+      "screenshot": "playwright/demo-profile-c-fit.png"
+    },
+    {
+      "id": "D",
+      "people": "self 45, spouse 43, dependent child 12, parent 72",
+      "city": "Pune",
+      "sum_insured": 1000000,
+      "typed_need": "my parent needs OPD cover",
+      "normalized_need": {
+        "original_text": "my parent needs OPD cover",
+        "field": "opd",
+        "affected_relationship": "parent",
+        "mapped": true,
+        "model": "gpt-5.6-luna"
+      },
+      "visible_plans": 16,
+      "fits": 0,
+      "unresolved": 16,
+      "doesnt_fit": 0,
+      "screenshot": "playwright/demo-profile-d-fit.png"
+    }
+  ],
+  "selection": "Five recovered flagship editions selected from the full picker, independent of fit grouping.",
+  "limitation": "No profile established every hard limit. The cards remain partial; the UI does not promote missing rules to a fit. This verifies behavior, not insurance eligibility.",
+  "premium": {
+    "plan": "Star Comprehensive Insurance Policy",
+    "source_physical_page": 44,
+    "manual_axes": {
+      "age": "18-35",
+      "composition": "2A+1C",
+      "sum_insured": "10,00,000",
+      "term": "1 year",
+      "tax_basis": "Excluding Tax",
+      "zone": "Zone A"
+    },
+    "amount_printed": "25,799",
+    "source_highlights": 1,
+    "screen": "playwright/demo-price.png",
+    "citation_screen": "playwright/demo-price-citation.png",
+    "note": "Manual printed-chart lookup, not an inferred quote for a family profile."
+  },
+  "screens": {
+    "start": "playwright/demo-start.png",
+    "picker": "playwright/demo-picker.png",
+    "desktop": "playwright/demo-desktop-five-recovered.png",
+    "mobile": "playwright/demo-mobile-comparison.png",
+    "mobile_scrolled": "playwright/demo-mobile-scrolled.png",
+    "clause_citation": "playwright/demo-citation-recovered.png",
+    "coverage": "playwright/demo-coverage.png"
+  }
+}
