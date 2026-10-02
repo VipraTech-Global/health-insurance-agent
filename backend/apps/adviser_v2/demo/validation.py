@@ -125,8 +125,9 @@ def validate(answer: Answer, packet: Packet, *, variant: str = "Default", known_
             supported(restriction, 4)
         attached = " ".join(c.text for c in [*statement.conditions, *statement.restrictions])
         for quote in quote_texts:
-            mentioned = {name for name in known_variants if re.search(r"(?<!\w)" + re.escape(name) + r"(?!\w)", quote, re.I)}
-            if mentioned and variant not in mentioned:
+            names = "|".join(re.escape(name) for name in sorted(known_variants, key=len, reverse=True))
+            mentioned = {match.casefold() for match in re.findall(r"(?<!\w)(?:" + names + r")(?!\w)", quote, re.I)} if names else set()
+            if mentioned and variant.casefold() not in mentioned:
                 fail(4, "Quoted benefit is restricted to a different named variant.")
             if RESTRICTIONS.search(quote) and fold(quote) not in fold(statement.text + " " + attached):
                 fail(4, "A quoted variant, optional-cover or sum-insured restriction was omitted.")

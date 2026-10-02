@@ -21,8 +21,11 @@ class Resident:
         import onnxruntime as ort
         from tokenizers import Tokenizer
 
-        from ..embedding import embedding_paths
+        from ..embedding import embedding_paths, qualified_embedding_status
 
+        qualified, reason, _ = qualified_embedding_status()
+        if not qualified:
+            raise ValueError("BGE-M3 artifact identity/qualification failed: " + reason)
         model, _, tokenizer, _, _ = embedding_paths()
         self.np = np
         self.tokenizer = Tokenizer.from_file(str(tokenizer))

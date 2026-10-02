@@ -305,10 +305,13 @@ class Relay:
             os.close(fd)
 
     def _request(self, model: str, payload: dict, *, stage: str, priority: str,
-                 deadline: float, pinned: bool = False, probe: bool = False) -> tuple[dict, dict]:
+                 deadline: float, pinned: bool = False, probe: bool = False,
+                 transport_retry: int = 0, json_retry: int = 0) -> tuple[dict, dict]:
         record = {"call_id": str(uuid.uuid4()), "stage": stage, "model": model,
                   "adapter": ADAPTER_VERSION, "priority": priority, "status": "failed",
-                  "queue_ms": 0, "model_ms": 0, "usage": {}, "observed_model": None}
+                  "queue_ms": 0, "model_ms": 0, "usage": {}, "observed_model": None,
+                  "started_at": self.state.now(), "transport_retry": transport_retry,
+                  "json_retry": json_retry}
         started = time.monotonic()
         try:
             with self.state.slot(priority, deadline=deadline) as queue_time:
@@ -420,7 +423,8 @@ class Relay:
                 "text": {"format": {"type": "json_schema", "name": "demo_output", "strict": True, "schema": schema}}}
             try:
                 body, record = self._request(model, payload, stage=stage, priority=priority,
-                                             deadline=deadline, pinned=bool(expected_model))
+                                             deadline=deadline, pinned=bool(expected_model),
+                                             transport_retry=transport_retries, json_retry=int(repair is not None))
                 call_ids.append(record["call_id"])
                 totals = body.get("usage", {})
             except ModelChanged:

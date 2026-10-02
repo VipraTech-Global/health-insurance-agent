@@ -151,3 +151,9 @@ def test_premium_needs_all_axes_and_never_interpolates():
     # The same label exists, but on the wrong row and column: this is not support.
     cells["age"] = replace(cells["age"], row=3, column=0)
     assert lookup(**args, selected=price.axes).status == "invalid_chart"
+
+
+def test_similar_variant_names_do_not_accept_a_different_variant():
+    raw = 'Cover applies only to Optima Secure+.'
+    checked = validate(answer(raw), packet(raw), variant='Optima Secure', known_variants=('Optima Secure', 'Optima Secure+'))
+    assert not checked.checks[4]

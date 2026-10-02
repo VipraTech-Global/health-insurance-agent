@@ -35,10 +35,15 @@ def answer_plan(bundle: dict, question: str, *, method: str, priority: str = "li
               "answer": None, "validation": None, "attempts": attempts, "models": models,
               "method": method, "validator": VALIDATOR_VERSION, "omissions": []}
     try:
+        if bundle.get("availability") == "documents_unavailable":
+            result.update(status="documents_unavailable", message="This plan's current documents are unavailable.",
+                          reason=bundle.get("unavailable_reason"))
+            return result
         progress("searching")
         retrieved = search(bundle=bundle, question=question, method=method, relay=relay,
                            priority=priority, expected_model=expected_model)
         models.append(retrieved.model)
+        result["search_call_ids"] = retrieved.call_ids
         packet = retrieved.packet
         result["packet"] = packet.evidence()
         result["omissions"] = list(packet.omitted_ids)
@@ -69,7 +74,8 @@ def answer_plan(bundle: dict, question: str, *, method: str, priority: str = "li
                     {"role": "user", "content": "Correct these deterministic evidence failures once: " + json.dumps(checked.problems)}])
         result.update(status="not_found", message="Not found in this plan's documents.",
                       validation=asdict(checked), reason="Evidence checks did not pass after one correction.")
-    except ModelChanged:
+    except ModelChanged as exc:
+        exc.partial_result = result
         raise  # Paired research jobs must rerun both arms, never score this half-pair.
     except (RelayUnavailable, InvalidOutput, httpx.HTTPError) as exc:
         result.update(status="temporarily_unavailable", message="Temporarily unavailable.", reason=str(exc))
