@@ -6,6 +6,7 @@ import uuid
 
 from celery import shared_task
 
+from .demo.tasks import demo_question as demo_question
 from .engine import process_turn
 
 

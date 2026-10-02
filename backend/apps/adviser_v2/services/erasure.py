@@ -37,6 +37,7 @@ from ..models import (
     CustomerStatement,
     CustomerUploadedDocument,
     DeletionRequest,
+    DemoSession,
     EvidenceSpan,
     InformationNeed,
     Message,
@@ -70,6 +71,7 @@ STORE_NAMES = (
 def has_v2_private_data(owner_id: uuid.UUID) -> bool:
     return (
         Conversation.objects.filter(owner_id=owner_id).exists()
+        or DemoSession.objects.filter(owner_id=owner_id).exists()
         or OriginalFile.objects.filter(owner_id=owner_id).exists()
         or Person.objects.filter(owner_id=owner_id).exists()
     )
@@ -270,6 +272,10 @@ def _erase_private_evidence(owner_id: uuid.UUID) -> int:
 
 def _erase_relational_content(owner_id: uuid.UUID) -> int:
     affected = 0
+    # Cascades through encrypted demo questions/results. Late workers hold the same
+    # owner lock and cannot recreate erased rows or publish stale responses.
+    deleted, _ = DemoSession.objects.filter(owner_id=owner_id).delete()
+    affected += deleted
 
     def remove(querysets: Iterable[object]) -> None:
         nonlocal affected
