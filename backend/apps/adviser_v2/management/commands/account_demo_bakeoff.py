@@ -20,7 +20,7 @@ class Command(BaseCommand):
         inputs = frozen['inputs']
         if digest({'protocol_version': 2, 'inputs': inputs}) != frozen['sha256']:
             raise CommandError('Frozen inputs failed their identity check.')
-        source = Path(settings.BASE_DIR) / 'apps/adviser_v2/demo'
+        source = repository / 'research/ten-insurer/protocol-v2-frozen-runtime'
         for name, sha in inputs['source_hashes'].items():
             if hashlib.sha256((source / name).read_bytes()).hexdigest() != sha:
                 raise CommandError('Frozen source changed: ' + name)

@@ -62,3 +62,13 @@ Work in progress. No new bake-off has run and no ten-insurer release has been pu
 The runner saved 337 complete pairs and 34 archived retry attempts, then stopped on Tata restoration. The source selector correctly rejected unknown section IDs, but `answer_plan` returned that failure without a model list. The pair runner misclassified the missing label as a model transition. Relay records retain the requested and observed model, including these rejected selections.
 
 A separate accounting command, committed before calculating a winner, uniformly chooses the earliest saved same-model attempt using those call records. Failed selections count as failures; later successes cannot replace them. Actual mixed-model attempts remain inadmissible. All original pair/attempt files remain unchanged, and the accounted rows, provenance and hashes are stored separately. No scored AI calls, source documents, navigation maps, prompts, validators, packet settings, scoring formula or winner rule are changed. This is an execution/accounting repair, not a new retrieval arm or a protocol-tuning run. Extra retry calls and rejected drafts remain reportable.
+
+## Frozen winner and measured answer outcomes
+
+H wins under protocol v2: 11/39 complete Star cells plus 89/260 accepted answers gives 24.35; P has 9/39 plus 70/260, giving 19.50. Each arm retains 100 unavailable answer cases. No accepted/displayed wrong-plan quotation was found. All scored AI calls used Luna; there were no actual model-split pairs. The runner-label correction discarded 33 extra attempts across 15 jobs without replacing first-attempt failures with later successes.
+
+Paraphrase alone caused 8 final unanswered H cases and 7 P cases, with 27 and 24 rejected drafts respectively in the scored attempts. Extra discarded-runner drafts are reported separately (3 H, 7 P). This is a syntactic rejection classification, not proof that a paraphrase was semantically correct.
+
+The source-section audit has **two** fallbacks: HDFC's `c882c2b1…` map has crossing sibling ranges; Manipal's `c6b8580e…` map did not complete. Earlier progress notes counted only the mapping-call failure and missed HDFC's later section-bound validation fallback. The frozen report uses the actual two fallback documents.
+
+H is now the sole application search path. BM25 and the resident BGE-M3 CPU worker remain. P and byte-identical frozen sources are retained under `research/ten-insurer/`; no runtime fallback exists. Idle old Star worker/beat processes were stopped after verifying zero active work, leaving the demo worker and recovery loop.

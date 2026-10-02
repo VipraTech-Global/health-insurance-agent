@@ -1,0 +1,68 @@
+{
+  "accounting_version": "earliest-call-proven-pair/1",
+  "arms": [
+    {
+      "answered": 89,
+      "complete_cells": 11,
+      "displayed_wrong_plan": 0,
+      "disqualified": false,
+      "method": "H",
+      "rejected_wrong_plan": 24,
+      "score": 24.35,
+      "unavailable": 100
+    },
+    {
+      "answered": 70,
+      "complete_cells": 9,
+      "displayed_wrong_plan": 0,
+      "disqualified": false,
+      "method": "P",
+      "rejected_wrong_plan": 10,
+      "score": 19.5,
+      "unavailable": 100
+    }
+  ],
+  "both_disqualified": false,
+  "denominators": {
+    "answer_cases": 260,
+    "slots": 13,
+    "star_cells": 39
+  },
+  "discarded_runner_attempts": 33,
+  "frozen_sha256": "db24172e69e7da37cda1aa7e8d2b46e94f67e8aa39b133bcf25cfed69a731a21",
+  "live_enabled": true,
+  "map_fallbacks": 2,
+  "model_cases": {
+    "H": {
+      "gpt-5.6-luna": 160,
+      "no_model_call": 100
+    },
+    "P": {
+      "gpt-5.6-luna": 160,
+      "no_model_call": 100
+    }
+  },
+  "pairs_directory": "accounted-pairs",
+  "protocol_version": 2,
+  "reason": "Higher eligible score.",
+  "reference_spans": 236,
+  "runner_retried_pairs": 15,
+  "selector_rejections": {
+    "H": 3,
+    "P": 15
+  },
+  "split_pairs": 0,
+  "unique_span_recall": {
+    "H": {
+      "both": 160,
+      "customer": 192,
+      "fixed": 183
+    },
+    "P": {
+      "both": 134,
+      "customer": 154,
+      "fixed": 146
+    }
+  },
+  "winner": "H"
+}

@@ -1,4 +1,4 @@
-"""The frozen winning hybrid method; no alternative live retrieval path."""
+"""The two frozen research arms share sections, navigation, packets and relay."""
 
 from __future__ import annotations
 
@@ -7,7 +7,6 @@ from collections import Counter
 from dataclasses import dataclass
 
 import httpx
-from django.db import close_old_connections, connection
 from pgvector.django import CosineDistance
 
 from ..evidence_retrieval import BM25, RawChunk, token_count
@@ -45,8 +44,6 @@ def fusion(sections: list[Section], question: str, *, index_id: str, priority: s
     vector = embed([question], priority=priority)[0]
     rows = list(DemoSectionVector.objects.filter(index_id=index_id, section_id__in=[s.id for s in sections])
                 .annotate(distance=CosineDistance("embedding", vector)).order_by("distance", "section_id")[:20])
-    if not connection.in_atomic_block:
-        close_old_connections()  # Release SQL capacity before waiting for the relay.
     if not rows:
         raise ValueError("Hybrid section vectors are unavailable for this immutable plan index.")
     scores = Counter()
@@ -88,15 +85,15 @@ def navigation_map(bundle: dict) -> dict:
 
 def search(*, bundle: dict, question: str, method: str, relay: Relay, priority: str = "live",
            expected_model: str | None = None) -> SearchResult:
-    if method != "H":
-        raise ValueError("Only the frozen hybrid winner is available in the application.")
+    if method not in {"H", "P"}:
+        raise ValueError("The release must specify its sole winning method.")
     if not question.strip() or len(question) > 3000:
         raise ValueError("A bounded customer question is required.")
     sections = [Section.from_payload(s) for s in bundle["sections"]]
     plan_id = bundle["policy_version_id"]
     if any(s.plan_id != plan_id for s in sections):
         raise ValueError("Wrong-plan section in immutable bundle.")
-    candidates = fusion(sections, question, index_id=bundle["index_id"], priority=priority)
+    candidates = fusion(sections, question, index_id=bundle["index_id"], priority=priority) if method == "H" else []
     # Stable map first; the candidate list and question change independently.
     result = relay.call(instructions=SELECT_PROMPT,
         messages=[{"role": "user", "content": json.dumps(navigation_map(bundle), ensure_ascii=False)},
