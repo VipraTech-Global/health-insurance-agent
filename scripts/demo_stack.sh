@@ -86,7 +86,19 @@ for attempt in $(seq 1 20); do
 done
 curl -fsS http://127.0.0.1:8021/api/v2/demo/health/ > /dev/null
 curl -fsS http://127.0.0.1:3021/demo > /dev/null
-curl -fsS http://127.0.0.1:8022/health
+embedding_ready=false
+for attempt in $(seq 1 90); do
+  if curl -fsS http://127.0.0.1:8022/health > "$state_root/embedding-health.json" 2>/dev/null; then
+    embedding_ready=true
+    break
+  fi
+  sleep 1
+done
+if [[ "$embedding_ready" != true ]]; then
+  echo 'Resident BGE-M3 worker did not become healthy; inspect the embeddings log.' >&2
+  exit 1
+fi
+cat "$state_root/embedding-health.json"
 worker_ready=false
 for attempt in $(seq 1 6); do
   if PYTHONPATH=backend uv run --no-sync celery -A config inspect ping --destination="ten-insurer-demo@$(hostname)" --timeout=5 > "$state_root/worker-health.log" 2>&1; then

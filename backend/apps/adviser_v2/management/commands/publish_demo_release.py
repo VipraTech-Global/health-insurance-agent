@@ -5,9 +5,16 @@ from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
 from django.db import transaction
 
-from apps.adviser_v2.demo.evidence import digest
+from apps.adviser_v2.demo.evidence import Section, digest
 from apps.adviser_v2.demo.services import bundle_for
-from apps.adviser_v2.models import DemoPlanIndex, DemoRelease
+from apps.adviser_v2.models import DemoPlanIndex, DemoRelease, DemoSectionVector
+
+
+def require_complete_vectors(row, bundle):
+    expected = {s.id: digest(s.index_text) for s in map(Section.from_payload, bundle['sections'])}
+    actual = dict(DemoSectionVector.objects.filter(index=row).values_list('section_id', 'text_sha256'))
+    if expected != actual:
+        raise CommandError('Source embeddings are incomplete or changed: ' + row.name)
 
 
 class Command(BaseCommand):
@@ -25,7 +32,9 @@ class Command(BaseCommand):
             raise CommandError('No valid protocol-v2 winner.')
         rows = list(DemoPlanIndex.objects.filter(revoked_at__isnull=True).order_by('plan_key', '-created_at').distinct('plan_key'))
         for row in rows:
-            bundle_for(row)
+            bundle = bundle_for(row)
+            if outcome['winner'] == 'H':
+                require_complete_vectors(row, bundle)
             if row.card['status'] != 'documents_unavailable' and not (root / 'cards' / (row.id + '.json')).exists():
                 raise CommandError('Offline card generation is pending: ' + row.name)
         fingerprint = digest({'indexes': [(r.id, digest(r.card)) for r in rows], 'outcome': outcome})

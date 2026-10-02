@@ -193,3 +193,23 @@ def test_abandoned_question_recovers_without_repeating_completed_plans(v2_user, 
     assert question.state == 'completed' and len(calls) == 1
     assert question.execution_token != old_token
     assert not publish_progress(finished.id, 'answered', {'models': []}, execution_token=old_token)
+
+
+def test_release_refuses_partially_imported_or_changed_vectors(demo):
+    from django.core.management.base import CommandError
+
+    from apps.adviser_v2.management.commands.publish_demo_release import require_complete_vectors
+    from apps.adviser_v2.models import DemoSectionVector
+    from apps.adviser_v2.tests.test_demo_contracts import packet
+    _, _, rows = demo
+    section = packet('Exact original text.').sections[0]
+    bundle = {'sections': [section.payload()]}
+    with pytest.raises(CommandError, match='incomplete'):
+        require_complete_vectors(rows[0], bundle)
+    vector = DemoSectionVector.objects.create(index=rows[0], section_id=section.id,
+        text_sha256=digest(section.index_text), embedding=[0.0]*1024)
+    require_complete_vectors(rows[0], bundle)
+    vector.text_sha256 = 'f'*64
+    vector.save(update_fields=['text_sha256'])
+    with pytest.raises(CommandError, match='changed'):
+        require_complete_vectors(rows[0], bundle)
