@@ -5,9 +5,11 @@ import hashlib
 import json
 import subprocess
 import time
+from collections import Counter
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
+import httpx
 from django.db import close_old_connections
 
 from .answers import answer_plan
@@ -119,7 +121,7 @@ def run_job(job: dict, bundle: dict | None, root: Path) -> dict:
                         'covered': [ref['id'] for ref in references if reference_covered(ref, found.packet)]}
             except ModelChanged as exc:
                 return {**getattr(exc, 'partial_result', {}), 'status': 'model_changed', 'models': [model]}
-            except (RelayUnavailable, ValueError) as exc:
+            except (RelayUnavailable, ValueError, httpx.HTTPError) as exc:
                 return {'status': 'temporarily_unavailable', 'models': [model], 'reason': str(exc), 'covered': []}
             finally:
                 AUDIT_CONTEXT.reset(audit_token)
@@ -168,6 +170,10 @@ def score_rows(rows: list[dict], queries: list[dict], plans: list[dict]) -> dict
     outcome = winner(*scores)
     references = {ref['id'] for p in plans for refs in p['references'].values() for ref in refs}
     outcome['reference_spans'] = len(references)
+    outcome['split_pairs'] = sum(bool(r['split_attempts']) for r in rows)
+    outcome['model_cases'] = {method: dict(Counter(
+        ','.join(sorted(set(r['arms'][method].get('models', [])))) or 'no_model_call'
+        for r in rows if r['job']['kind'] == 'answer')) for method in ('H', 'P')}
     outcome['unique_span_recall'] = {}
     for method in ('H', 'P'):
         found = {style: set().union(*(set(r['arms'][method].get('covered', [])) for r in rows
@@ -184,6 +190,7 @@ def write_report(root: Path, repository: Path, rows: list[dict], outcome: dict, 
     lines = ['# Search bake-off — protocol v2', '', f"Winner: **{outcome['winner']}**. {outcome['reason']}",
              '', f"Map fallbacks: {outcome['map_fallbacks']}. Unique reference spans: {outcome['reference_spans']}.",
              f"Unique-span recall (fixed/customer/both): {outcome['unique_span_recall']}.",
+             f"Answer cases by model: {outcome['model_cases']}. Split model pairs rerun: {outcome['split_pairs']}.",
              '', 'Answered means all six deterministic checks passed; it is not expert-verified correctness.',
              'Only displayed wrong-plan quotations disqualify. Rejected attempts are reported separately.', '',
              '| Arm | Complete Star cells /39 | Answered /260 | Score | Displayed wrong-plan | Rejected wrong-plan | Unavailable |',
