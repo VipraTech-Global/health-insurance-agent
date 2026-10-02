@@ -22,7 +22,7 @@ export function DemoApp() {
   const [fits, setFits] = useState<Fit[]>([]);
   const [selected, setSelected] = useState<string[]>([]);
   const [sessionId, setSessionId] = useState("");
-  const [people, setPeople] = useState([{ id: "person-1", relationship: "self", age: "35", dependent: false }]);
+  const [people, setPeople] = useState([{ id: "person-1", relationship: "self", age: "35", ageUnit: "years", dependent: false }]);
   const [city, setCity] = useState("Pune");
   const [sumInsured, setSumInsured] = useState("1000000");
   const [planType, setPlanType] = useState("medical_indemnity");
@@ -38,6 +38,8 @@ export function DemoApp() {
   const [busy, setBusy] = useState(false);
   const [insurer, setInsurer] = useState("");
   const events = useRef<EventSource | null>(null);
+
+  useEffect(() => { window.scrollTo(0, 0); }, [screen]);
 
   useEffect(() => {
     void api<{ plans: Card[]; release_id: string | null }>("/api/v2/demo/catalogue/")
@@ -57,7 +59,7 @@ export function DemoApp() {
       const data = await api<{ session_id: string; results: Fit[] }>("/api/v2/demo/fit/", { method: "POST", body: JSON.stringify({
         ...(sessionId ? { session_id: sessionId } : {}),
         profile: { schema_version: 1, revision: 1, people: people.map(p => ({ id: p.id, relationship: p.relationship,
-          age_days: p.age === "" ? null : Math.round(Number(p.age) * 365), dependent: p.relationship === "child" ? p.dependent : null })),
+          age_days: p.age === "" ? null : Math.round(Number(p.age) * (p.ageUnit === "days" ? 1 : 365)), dependent: p.relationship === "child" ? p.dependent : null })),
           city: city || null, zone: null, sum_insured: sumInsured ? Number(sumInsured) : null, plan_type: planType,
           needs, typed_needs: typedNeeds, annual_budget: budget ? Number(budget) : null } }) });
       setSessionId(data.session_id); setFits(data.results); setQuestion(null); events.current?.close(); setScreen("fits");
@@ -132,11 +134,12 @@ export function DemoApp() {
         <form onSubmit={e => { e.preventDefault(); void findPlans(); }} className="demo-form">
           <h2>Who needs cover?</h2>{people.map((p, i) => <div className="demo-person" key={p.id}>
             <label>Relationship<select value={p.relationship} onChange={e => setPeople(people.map((v, n) => n === i ? { ...v, relationship: e.target.value } : v))}>{["self", "spouse", "child", "parent", "parent_in_law", "other"].map(r => <option key={r} value={r}>{r.replaceAll("_", " ")}</option>)}</select></label>
-            <label>Age in years<input type="number" min="0" max="120" step="0.01" value={p.age} onChange={e => setPeople(people.map((v, n) => n === i ? { ...v, age: e.target.value } : v))} /></label>
+            <label>Age<input type="number" min="0" max={p.ageUnit === "days" ? "43800" : "120"} step="1" value={p.age} onChange={e => setPeople(people.map((v, n) => n === i ? { ...v, age: e.target.value } : v))} /></label>
+            <label>Age unit<select value={p.ageUnit} onChange={e => setPeople(people.map((v, n) => n === i ? { ...v, ageUnit: e.target.value } : v))}><option value="years">Completed years</option><option value="days">Days (for young children)</option></select></label>
             {p.relationship === "child" && <label><input type="checkbox" checked={p.dependent} onChange={e => setPeople(people.map((v, n) => n === i ? { ...v, dependent: e.target.checked } : v))} /> Financially dependent</label>}
             {i > 0 && <button type="button" onClick={() => setPeople(people.filter((_, n) => n !== i))}>Remove</button>}
           </div>)}
-          <button type="button" disabled={people.length >= 12} onClick={() => setPeople([...people, { id: crypto.randomUUID(), relationship: "child", age: "8", dependent: true }])}>+ Add family member</button>
+          <button type="button" disabled={people.length >= 12} onClick={() => setPeople([...people, { id: crypto.randomUUID(), relationship: "child", age: "8", ageUnit: "years", dependent: true }])}>+ Add family member</button>
           <div className="demo-two"><label>City<input value={city} onChange={e => setCity(e.target.value)} /></label><label>Sum insured (₹)<input type="number" min="1" value={sumInsured} onChange={e => setSumInsured(e.target.value)} /></label></div>
           <label>Plan type<select value={planType} onChange={e => setPlanType(e.target.value)}>{types.map(t => <option key={t.value} value={t.value}>{t.label}</option>)}</select></label>
           <fieldset><legend>Other needs</legend><div className="demo-needs">{["maternity", "opd", "copay", "room_limit", "ped_waiting"].map(n => <label key={n}><input type="checkbox" checked={needs.includes(n)} onChange={() => setNeeds(needs.includes(n) ? needs.filter(v => v !== n) : [...needs, n])} />{n.replaceAll("_", " ")}</label>)}</div></fieldset>
