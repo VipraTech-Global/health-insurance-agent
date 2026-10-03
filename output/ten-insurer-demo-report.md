@@ -101,7 +101,18 @@ Answers passed code checks only and are not expert-verified. Answer coverage reg
 
 ### Independent answer correctness
 
-_To be supplied separately by the user. No grade or estimate is recorded here._
+Graded independently by an agent reviewer against the source PDFs (not an insurance-expert review), per plan-answer (260 cases + 78 Star probes = 338):
+
+| Grade | Preserved final run | `section16-a-20261004-scope-final` |
+|---|---:|---:|
+| Answered | 256 | 233 |
+| Correct | 188 (73% of answered) | 199 (85%) |
+| Partial | 37 | 30 |
+| Wrong | 23 | 4 |
+| Irrelevant | 8 | 0 |
+| Not found although the documents answer it | 65 | 96 |
+
+Scope labels removed most add-on and variant leakage. Remaining wrong answers: Star Comprehensive geography (Personal Accident "World Wide" scope instead of the India-only treatment clause), Tata deductible (adjacent CIS row amounts read as deductibles), Care health check (optional benefit unlabelled) and Manipal no-claim bonus (renewal discount instead of the in-built cumulative bonus). Stricter checks also rejected 52 previously correct answers; Activ One MAX returns no answers in this run.
 
 [Decisions and progress record](decisions-log.md) · [ten-minute guided script](demo-script.md).
 
