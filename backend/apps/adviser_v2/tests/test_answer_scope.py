@@ -291,3 +291,21 @@ def test_packet_reserves_selected_variant_table_axes_without_neighbour_values():
     assert set(result.tables[0]["cells"]) == {"label", "gold", "yes"}
     assert result.tokens <= 16000
     assert "not exhaustive" in result.tables[0]["projection"]
+
+
+def test_optional_discount_is_not_mislabelled_as_extra_premium():
+    raw = "Optional co-payment: choose 20% co-payment for a 10% premium discount."
+    b, p, s = fixture(raw)
+    a, _ = scoped(b, p, s, raw, "optional, extra premium", question="What co-pay applies?")
+    assert a.coverage_scope == "optional premium adjustment"
+
+
+def test_expansion_rebudgets_when_preserved_omissions_are_large():
+    from dataclasses import replace
+
+    from apps.adviser_v2.demo.answer_retrieval import expanded_packet
+
+    b, p, s = fixture("Room rent is covered. " * 900)
+    p = replace(p, omitted_ids=tuple("f" * 60 + str(n) for n in range(550)))
+    result = expanded_packet(p, p)
+    assert result.tokens <= 16000 and len(result.omitted_ids) >= 550

@@ -88,6 +88,9 @@ def answer_plan(
         return value
 
     def finish(partial=False):
+        if accepted and all(s.coverage_scope != "base" for s in accepted):
+            partial = True
+            result["reason"] = "optional_only_base_unverified"
         answer = Answer(plan_id=packet.plan_id, status="answered", statements=accepted[:8])
         verification = checked(answer, packet)
         if not verification.passed:

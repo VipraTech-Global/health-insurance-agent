@@ -33,7 +33,9 @@ class TableSupport(Closed):
 
 
 class Statement(SupportedText):
-    coverage_scope: Literal["base", "optional, extra premium"] = "base"
+    coverage_scope: Literal["base", "optional, extra premium", "optional premium adjustment"] = (
+        "base"
+    )
     scope_product: str | None = None
     scope_variant: str | None = None
     heading: Literal["Policy excerpt", "Table excerpts"] = "Policy excerpt"

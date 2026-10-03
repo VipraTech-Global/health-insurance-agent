@@ -36,6 +36,13 @@ def indexed(text):
         for m in re.finditer(r"(?m)^[ \t]*[•➢][ \t]+[A-Z][A-Za-z /-]{2,70}[ \t]*$", text)
         if not re.search(r"\b(?:if|unless|only|not|except|subject|provided)\b", m[0], re.I)
     )
+    headings.update(
+        m.start()
+        for m in re.finditer(
+            r"(?mi)^[ \t]*(?:(?:\d+|[ivx]+)[.)][ \t\x07]*)?(?:Sub[ -]?limits|Pre[ -]?existing diseases|Co[ -]?payment|Deductible|Room (?:category|eligibility|rent criteria))(?:[ \t]*:?[^\n]{0,70})?$",
+            text,
+        )
+    )
     boilerplate = list(BOILERPLATE.finditer(text))
     edges = {p for m in boilerplate for p in (m.start(), m.end())}
     return (

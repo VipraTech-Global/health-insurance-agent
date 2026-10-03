@@ -280,6 +280,14 @@ class ScopeIndex:
             raise ScopeViolation(
                 "A definition alone does not establish this plan's cover or limit."
             )
+        if (
+            not statement.table
+            and len(statement.text.split()) <= 7
+            and not re.search(
+                r"\d|covered|excluded|payable|available|unlimited|no limit", statement.text, re.I
+            )
+        ):
+            raise ScopeViolation("A heading alone does not establish substantive cover.")
         topics = question_topic(question)
         if topics and not any(re.search(TOPICS[k], raw, re.I) for k in topics) and not unit.table:
             raise ScopeViolation(
@@ -381,7 +389,11 @@ class ScopeIndex:
             raise ScopeViolation("Optional scope has no original-source support.")
         return statement.model_copy(
             update={
-                "coverage_scope": unit.coverage_scope,
+                "coverage_scope": (
+                    "optional premium adjustment"
+                    if required_optional and re.search(r"discount", statement.text, re.I)
+                    else unit.coverage_scope
+                ),
                 "scope_product": self.product,
                 "scope_variant": self.variant,
             }

@@ -38,24 +38,27 @@ def expanded_packet(first, second):
     # Preserve the second H result order, then retain earlier independent source
     # sections. No additional lexical/vector scoring or insurer ranking is used.
     tables = {t["id"]: t for p in (second, first) for t in p.tables}
-    packet = pack_sections(
-        second.plan_id,
-        [*second.sections, *first.sections],
-        budget=14000,
-        tables=list(tables.values()),
-    )
-    included = {s.id for s in packet.sections} | {"table:" + t["id"] for t in packet.tables}
-    omitted = tuple(
-        dict.fromkeys(
-            x for p in (first, second, packet) for x in p.omitted_ids if x not in included
+    budget = 14000
+    while True:
+        packet = pack_sections(
+            second.plan_id,
+            [*second.sections, *first.sections],
+            budget=budget,
+            tables=list(tables.values()),
         )
-    )
-    packet = replace(packet, budget=16000, omitted_ids=omitted)
-    actual = token_count(json.dumps(packet.evidence(), ensure_ascii=False))
-    if actual > 16000:
-        # Omission metadata is evidence-budget material too. Preserve the audit
-        # and fail closed if the bounded union cannot represent it.
-        from .assembly import EvidenceInsufficient
+        included = {s.id for s in packet.sections} | {"table:" + t["id"] for t in packet.tables}
+        omitted = tuple(
+            dict.fromkeys(
+                x for p in (first, second, packet) for x in p.omitted_ids if x not in included
+            )
+        )
+        packet = replace(packet, budget=16000, omitted_ids=omitted)
+        actual = token_count(json.dumps(packet.evidence(), ensure_ascii=False))
+        if actual <= 16000:
+            return replace(packet, tokens=actual)
+        next_budget = budget - (actual - 16000) - 100
+        if next_budget < 1:
+            from .assembly import EvidenceInsufficient
 
-        raise EvidenceInsufficient("Expanded packet and omission audit exceed 16000 tokens.")
-    return replace(packet, tokens=actual)
+            raise EvidenceInsufficient("Expanded packet omission audit alone exceeds 16000 tokens.")
+        budget = next_budget
