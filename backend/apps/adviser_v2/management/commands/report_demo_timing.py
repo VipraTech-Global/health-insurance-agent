@@ -5,6 +5,7 @@ import math
 from collections import Counter
 from pathlib import Path
 
+import redis
 from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
 
@@ -92,9 +93,12 @@ class Command(BaseCommand):
         ]
         events = sorted([(a, 1) for a, b in intervals] + [(b, -1) for a, b in intervals])
         active = peak = 0
-        for _, delta in events:
+        above_cap_ms = []
+        for position, (at, delta) in enumerate(events):
             active += delta
             peak = max(peak, active)
+            if active > 6 and position + 1 < len(events):
+                above_cap_ms.append(round((events[position + 1][0] - at) * 1000, 3))
         first = min(q.created_at.timestamp() for q in questions.values())
         last = max(q.completed_at.timestamp() for q in questions.values())
         answer_rows = [r for row in rows for r in row["results"]]
@@ -114,12 +118,16 @@ class Command(BaseCommand):
             "models": dict(Counter(r["model"] for r in calls)),
             "call_statuses": dict(Counter(r["status"] for r in calls)),
             "relay_peak_from_recorded_intervals": peak,
+            "reconstructed_above_cap_spans_ms": above_cap_ms,
+            "shared_limiter_metrics_at_report": redis.Redis.from_url(
+                settings.REDIS_URL, decode_responses=True
+            ).hgetall("coverguide:demo:relay:v1:metrics"),
             "completed_calls_per_minute": round(
                 sum(r["status"] == "completed" for r in calls) / (last - first) * 60, 3
             ),
             "plan_answers_per_minute": round(len(answer_rows) / (last - first) * 60, 3),
             "samples": samples,
-            "note": "Application elapsed time includes queueing under four concurrent jobs. Relay intervals use millisecond-rounded audit times. This is not an idle-system speed claim.",
+            "note": "Application elapsed time includes queueing under four concurrent jobs. Reconstructed intervals combine a Redis timestamp taken before local queue measurement with rounded durations, so they are not exact dispatch intervals. Shared limiter metrics are cumulative, not cohort-specific. This is not an idle-system speed claim.",
         }
         target = (
             Path(settings.BASE_DIR).parent / "output" / ("section16-timings-" + run_id + ".json")
