@@ -26,7 +26,8 @@ def test_original_offsets_artifacts_and_repeated_quotes():
     assert text[a:b] == 'air-\nconditioned' and a > 0
     a,b = locate(text, 'softhyphen')
     assert text[a:b] == 'soft\u00adhyphen'
-    for other in ['airconditioned', 'air–conditioned']:
+    assert locate(text, 'airconditioned') == (0, len('air-\nconditioned'))
+    for other in ['air–conditioned']:
         with pytest.raises(QuoteMismatch):
             locate(text, other)
     with pytest.raises(QuoteMismatch):
@@ -79,3 +80,47 @@ def test_following_nonprefix_qualification_is_kept_until_next_heading():
     statement, _ = assemble(unit('ICU and stents are covered.'), PacketLabels(packet), packet, [s])
     assert 'notified price' in statement.text
     assert 'Other benefits' not in statement.text
+
+
+def test_table_labels_cannot_resolve_a_foreign_region_or_cell():
+    from apps.adviser_v2.demo.contracts import DraftTable
+    s = source('Room Gold 5 lakh.')
+    packet = Packet('plan', (s,), (), 100)
+    draft = unit('Room Gold 5 lakh.')
+    draft.table = DraftTable(table='T9', value='C1', rows=['C2'], columns=['C3'])
+    with pytest.raises(UnknownLabel):
+        assemble(draft, PacketLabels(packet), packet, [s])
+
+
+def test_context_budget_overflow_rejects_whole_benefit():
+    from apps.adviser_v2.demo.assembly import EvidenceInsufficient
+    first = source('Room expenses are covered subject to')
+    second = source(' '.join(['additional conditions']*1000) + '.', page='p2', start=len(first.text)+1, identity='s2')
+    packet = Packet('plan', (first,), (), 100, budget=200)
+    with pytest.raises(EvidenceInsufficient, match='budget'):
+        assemble(unit('Room expenses are covered'), PacketLabels(packet), packet, [first, second])
+
+
+@pytest.mark.parametrize('kind,expected', [('empty','not_found'), ('transport','temporarily_unavailable'), ('model','temporarily_unavailable')])
+def test_no_units_distinguishes_evidence_from_operational_failures(monkeypatch, kind, expected):
+    from apps.adviser_v2.demo.relay import InvalidOutput
+    s = source('Original source.')
+    packet = Packet('plan', (s,), (), 100)
+    monkeypatch.setattr('apps.adviser_v2.demo.answers.search', lambda **kw: SimpleNamespace(packet=packet, model='gpt-5.6-luna', call_ids=[]))
+    def call(**kwargs):
+        if kind == 'transport':
+            raise RelayUnavailable('offline')
+        if kind == 'model':
+            raise InvalidOutput('invalid JSON after one repair')
+        return SimpleNamespace(value={'schema_version':2,'status':'not_found','units':[]}, model='gpt-5.6-luna', call_ids=[])
+    r = answer_plan({'policy_version_id':'plan','index_id':'index','sections':[s.payload()]}, 'Cover?', method='H', relay=SimpleNamespace(call=call))
+    assert r['status'] == expected
+    assert r['answer'] is None
+    assert r['message'] == ('Not found in this plan’s documents.' if kind == 'empty' else 'Temporarily unavailable — try again')
+
+
+def test_wrapped_numbered_heading_stops_unrelated_benefits():
+    s = source('1.\t\x07In-patient Treatment: Room charges are covered. With regard to rooms, only AC rooms apply.\n2.\t\x07\nDay Care Treatment: Other cover applies.')
+    packet = Packet('plan', (s,), (), 100)
+    statement, _ = assemble(unit('Room charges are covered.'), PacketLabels(packet), packet, [s])
+    assert 'only AC rooms' in statement.text and 'Day Care' not in statement.text

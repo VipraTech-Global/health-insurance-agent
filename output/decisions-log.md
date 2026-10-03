@@ -159,3 +159,7 @@ Use P/T/C packet-local draft labels and S navigation labels; model output cannot
 ### Section 16 A — diagnostic run invalidated after PDF spot-check
 
 Run `section16-a-20261003-01` was stopped and its synthetic pending questions cancelled after a physical-PDF check showed a following “With regard…” stent restriction was omitted from an ICU/list excerpt. Preserve its files as diagnostics, not acceptance. Context completion now retains subsequent normative sentences up to a numbered heading; regression coverage includes this observed failure. An FHO prospectus anchor also failed exact PDF geometry resolution; original offsets remain intact and the highlight failure is reported explicitly.
+
+### Section 16 A — printed boundaries and retained-evidence validation
+
+Run `section16-a-20261003-02` is diagnostic and incomplete. Agent PDF checks found overbroad excerpts crossing wrapped numbered headings and unrelated illustrations. Recognize source title-case/numbered headings including PDF control/newline artifacts, preserve explicit letter-to-letter discretionary line-wrap hyphens with original offsets, and revalidate all retained units before admitting additional context (table metadata must not disappear under the budget). Tests cover the observed heading boundary, failed corrections, operational versus evidence outcomes, local table labels and context overflow. All nine frozen scored-source hashes still match.

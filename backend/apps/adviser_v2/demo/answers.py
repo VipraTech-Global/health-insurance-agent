@@ -96,6 +96,13 @@ def answer_plan(bundle: dict, question: str, *, method: str, priority: str = 'li
                     if not checked.passed:
                         raise EvidenceInsufficient('; '.join(checked.problems))
                     if statement.model_dump() not in [s.model_dump() for s in accepted]:
+                        if len(accepted) >= 8:
+                            raise EvidenceInsufficient('Answer unit limit reached; extra units were not displayed.')
+                        combined = validate(Answer(plan_id=packet.plan_id, status='answered', statements=[*accepted, statement]),
+                                            extended, variant=bundle.get('variant', 'Default'),
+                                            known_variants=tuple(bundle.get('variants', [])))
+                        if not combined.passed:
+                            raise EvidenceInsufficient('Context addition would invalidate retained evidence: ' + '; '.join(combined.problems))
                         accepted.append(statement)
                         packet = extended
                         passed += 1

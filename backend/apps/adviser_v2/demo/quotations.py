@@ -6,24 +6,28 @@ class QuoteMismatch(ValueError):
     pass
 
 
-def normalized(text: str) -> tuple[str, list[int]]:
+def normalized(text: str, *, dewrap: bool = False) -> tuple[str, list[int]]:
     # Preserve lexical hyphens. A printed line-wrap may insert whitespace after
     # the hyphen (air-\nconditioned); soft hyphens are explicitly discretionary.
-    positions = [i for i, char in enumerate(text) if not char.isspace() and char != '\u00ad']
+    discretionary = {m.start() + 1 for m in re.finditer(r'[A-Za-z]-[ \t]*\n[ \t]*(?=[A-Za-z])', text)} if dewrap else set()
+    positions = [i for i, char in enumerate(text) if not char.isspace() and char != '\u00ad' and i not in discretionary]
     return ''.join(text[i] for i in positions), positions
 
 
 def locate(text: str, quote: str, occurrence: int = 0) -> tuple[int, int]:
-    original, positions = normalized(text)
-    target, _ = normalized(quote)
-    if not target or occurrence < 0:
+    if not normalized(quote)[0] or occurrence < 0:
         raise QuoteMismatch('An exact quote cannot be empty.')
-    start = -1
-    for _ in range(occurrence + 1):
-        start = original.find(target, start + 1)
-        if start < 0:
-            raise QuoteMismatch('Quotation does not match original wording and punctuation.')
-    return positions[start], positions[start + len(target) - 1] + 1
+    for dewrap in (False, True):
+        original, positions = normalized(text, dewrap=dewrap)
+        target, _ = normalized(quote, dewrap=dewrap)
+        start = -1
+        for _ in range(occurrence + 1):
+            start = original.find(target, start + 1)
+            if start < 0:
+                break
+        if start >= 0:
+            return positions[start], positions[start + len(target) - 1] + 1
+    raise QuoteMismatch('Quotation does not match original wording and punctuation.')
 
 
 def clause_bounds(text: str, start: int, end: int) -> tuple[int, int]:
@@ -35,7 +39,12 @@ def clause_bounds(text: str, start: int, end: int) -> tuple[int, int]:
     """
     sentence_ends = [m.end() for m in re.finditer(r'(?<=[.!?])\s+(?=[A-Z])|\n[ \t]*\n', text)
                      if not re.search(r'(?:\b[A-Z]|\b\d+)\.$', text[:m.start()])]
-    headings = [m.end() for m in re.finditer(r'\n(?=\d+\.[\t\x07 ]+[A-Z])', text)]
+    headings = [m.end() for m in re.finditer(
+        r'\n[ \t]*(?=(?:\d+\.[\s\x07]*[A-Z]|\d+\.\d+(?:\.\d+)*[ \t]+[A-Z]|\([ivx]+\)[ \t]*Benefit:))', text)]
+    # Printed title-case headings are source boundaries, unlike ordinary wrapped
+    # prose. Require at least two title words to avoid one-word wrapped lines.
+    headings.extend(m.start() for m in re.finditer(
+        r'(?m)^[ \t]*[A-Z][A-Za-z/-]*(?:[ \t]+(?:[A-Z][A-Za-z/-]*|of|and|for|in|the|to|under)){1,9}:?[ \t]*$', text))
     boundaries = sorted(set([0, *sentence_ends, *headings, len(text)]))
     left = max(b for b in boundaries if b <= start)
     right = min(b for b in boundaries if b >= end)
