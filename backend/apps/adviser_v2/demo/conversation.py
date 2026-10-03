@@ -60,6 +60,7 @@ INTERPRET_PROMPT = (
     "yes I need it responding to a requirement question is affirmative=true and must_have. Retain unsupported needs under their original text. "
     "If the customer chooses narrowing before answering a pending policy question, set narrow_first=true. "
     "No preference is not medical_indemnity: use no_preference=true. Do not infer a type. Explicit skip is skip=true. "
+    "An explicit request to skip optional health details uses skip_health_details=true, even before that question is asked; it does not skip the current family question. "
     "Only an explicit request to remove someone from cover sets removed_people to existing person IDs. "
     "Only explicit corrections set correction=true. Ambiguities identify one ambiguous_field and do not overwrite facts. "
     "Choose selected_plans/restored_plans only from supplied exact plan IDs when the customer names them. Never select a subset yourself. "
@@ -150,6 +151,18 @@ def interpret(text, state, cards, relay=None):
         max_tokens=4096,
     )
     changes = ProposedChanges.model_validate(result.value)
+    # A named future health skip is independent of the currently pending field.
+    # Require explicit customer wording rather than relying on model inference.
+    health_skip = re.search(
+        r"\bskip (?:the )?(?:optional )?(?:health (?:details|information)|pre-existing conditions)\b",
+        text,
+        re.I,
+    )
+    if health_skip and re.search(r"\b(?:not|never|don't|do not)\s*$", text[: health_skip.start()], re.I):
+        health_skip = None
+    changes.skip_health_details = bool(health_skip)
+    if health_skip and state.pending and state.pending.field != "health_details":
+        changes.skip = False
     # Strength requires customer language; model confidence is not consent.
     for need in changes.requirements:
 
@@ -325,6 +338,8 @@ def merge(state, changes):
         state.stage, state.pending, state.stop_reason = "stopped", None, "customer_stopped"
         state.message = "Understood. Guided questions have stopped."
         return None
+    if changes.skip_health_details:
+        state.skipped.append("health_details")
     if changes.skip and pending:
         if pending.template == "narrow":
             state.narrowing_asked.append(pending.field)

@@ -84,6 +84,7 @@ class ProposedChanges(Closed):
     ambiguous_field: str | None = None
     ambiguity: str | None = None
     skip: bool = False
+    skip_health_details: bool = False
     stop: bool = False
     affirmative: bool | None = None
     no_preference: bool = False

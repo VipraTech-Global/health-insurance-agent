@@ -334,3 +334,33 @@ def test_model_cannot_promote_matters_to_must_have_without_customer_strength():
         "Maternity cover is a nice-to-have.", complete(), cards(), relay=Interpreter()
     )
     assert changes.requirements[0].strength == "nice_to_have"
+
+
+def test_volunteered_health_skip_does_not_skip_pending_family_or_repeat_health():
+    class Reply:
+        def call(self, **kwargs):
+            return SimpleNamespace(
+                value=ProposedChanges(skip=True).model_dump(), model="gpt-5.6-luna"
+            )
+
+    state = next_question(ChatState(), cards(), relay=NoCalls())
+    changes, _ = interpret(
+        "Cover me. I prefer to skip the optional health details.", state, cards(), relay=Reply()
+    )
+    assert changes.skip_health_details and not changes.skip
+    state = transition(state, changes, cards(), relay=NoCalls())
+    assert "health_details" in state.skipped
+    assert "people" not in state.skipped
+    assert state.pending.field == "people"
+
+
+@pytest.mark.parametrize("reply", ["I have health details", "Do not skip health details"])
+def test_health_skip_requires_affirmative_customer_words(reply):
+    class Reply:
+        def call(self, **kwargs):
+            return SimpleNamespace(
+                value=ProposedChanges(skip_health_details=True).model_dump(), model="gpt-5.6-luna"
+            )
+
+    changes, _ = interpret(reply, ChatState(), cards(), relay=Reply())
+    assert not changes.skip_health_details
