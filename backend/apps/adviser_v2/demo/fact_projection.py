@@ -268,9 +268,18 @@ def _project(field, statements, variant):
     if field == "geography":
         return [r for s in statements for r in purchase_geography(s, variant)]
     if field == "family":
-        return legacy_project(field, statements, variant) or [
+        rules = legacy_project(field, statements, variant) or [
             r for s in statements for r in family_rule(s, variant)
         ]
+        for rule in rules:
+            raw = " ".join(" ".join(c["quote"].split()) for c in rule["citations"])
+            if re.search(
+                r"relationship between the Insureds will always have to be Primary Insured and their Spouse",
+                raw,
+                re.I,
+            ):
+                rule["primary_spouse_pair_only"] = True
+        return rules
     if field == "entry_age":
         from .fact_age_projection import project_ages
 

@@ -70,6 +70,7 @@ class FactRule(Closed):
     relationship: Literal["adult", "child", "person"] | None = None
     geography_basis: Literal["residence", "nationwide_premium_zones"] | None = None
     unlimited_choice: bool = False
+    primary_spouse_pair_only: bool = False
     maximum_members: int | None = Field(default=None, ge=1, le=20)
     choices: list[int] = Field(default_factory=list)
     exhaustive: bool = False

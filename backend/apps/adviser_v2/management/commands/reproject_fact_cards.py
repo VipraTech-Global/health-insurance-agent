@@ -46,6 +46,7 @@ class Command(BaseCommand):
         manifest = {
             "retained_source_manifests": retained_manifests,
             "schema_version": 9,
+            "runner_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
             "source_manifest": json.loads((source / "manifest.json").read_text()),
             "fit_projection_sha256": hashlib.sha256(
                 code.with_name("fact_fit_projection.py").read_bytes()
@@ -135,6 +136,19 @@ class Command(BaseCommand):
                                 sources.append(candidate)
                 from apps.adviser_v2.demo.fact_packet_recovery import recover
 
+                # Repeated retained audit wrappers may point to exactly the
+                # same answer and packet. Revalidate each distinct source once.
+                sources = list(
+                    {
+                        digest(
+                            {
+                                k: source_result.get(k)
+                                for k in ("index_version", "status", "answer", "packet")
+                            }
+                        ): source_result
+                        for source_result in sources
+                    }.values()
+                )
                 recovered = []
                 for source_result in sources:
                     recovered.extend(recover(source_result, field, bundle))

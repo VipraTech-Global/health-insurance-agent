@@ -149,6 +149,12 @@ def grounded(rule):
             and all(numeric(v, "months") for v in rule.get("waiting_months", []))
         )
     if kind == "family":
+        if rule.get("primary_spouse_pair_only") and not re.search(
+            r"relationship between the Insureds will always have to be Primary Insured and their Spouse",
+            raw,
+            re.I,
+        ):
+            return False
         roles = {
             "self": r"\bself\b|\bInsured;|\bYou and your immediate family",
             "spouse": r"\bspouse\b",

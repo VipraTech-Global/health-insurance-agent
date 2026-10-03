@@ -324,3 +324,20 @@ def test_child_entry_bound_allows_parenthetical_definition_without_changing_numb
         "Default",
     )
     assert len(rules) == 1 and rules[0]["minimum"] == 91 and rules[0]["maximum"] == 25
+
+
+def test_primary_spouse_pair_constraint_does_not_guess_parent_relationships():
+    s = statement(
+        "Family Floater: maximum 2 adults and 4 children; self, spouse, children and parents. The relationship between the Insureds will always have to be Primary Insured and their Spouse."
+    )
+    rules = project("family", [s], "Default")
+    assert rules[0]["primary_spouse_pair_only"]
+    profile = IncompleteProfile(
+        coverage_basis="floater",
+        people=[
+            ChatPerson(id="p1", relationship="parent", age=60),
+            ChatPerson(id="p2", relationship="parent", age=58),
+        ],
+    )
+    result = hard_limits({"variant": "Default", "executable_rules": rules}, profile, [])
+    assert next(r for r in result if r["field"] == "family")["status"] == "unresolved"

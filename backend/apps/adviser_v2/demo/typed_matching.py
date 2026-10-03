@@ -223,6 +223,14 @@ def hard_limits(card, profile, existing):
             incomplete = (unknown_relationship and not rule.get("exhaustive")) or bool(
                 rule.get("dependent_children") and any(p.dependent is None for p in children)
             )
+            if rule.get("primary_spouse_pair_only"):
+                adult_roles = sorted(
+                    p.relationship for p in profile.people if p.relationship != "child"
+                )
+                if adult_roles not in (["self"], ["self", "spouse"]):
+                    # Parent relationships are relative to the customer, not
+                    # necessarily the primary insured. Do not infer their pairing.
+                    incomplete = True
             if rule.get("maximum_children") is None and len(children) > 1:
                 incomplete = True
             if rule.get("maximum_adults") is None and rule.get("maximum_members") is None:
