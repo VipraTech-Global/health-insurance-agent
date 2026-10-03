@@ -309,3 +309,47 @@ def test_expansion_rebudgets_when_preserved_omissions_are_large():
     p = replace(p, omitted_ids=tuple("f" * 60 + str(n) for n in range(550)))
     result = expanded_packet(p, p)
     assert result.tokens <= 16000 and len(result.omitted_ids) >= 550
+
+
+def test_failed_governing_condition_rejects_whole_benefit_but_retains_independent_unit(monkeypatch):
+    b, p, scope = fixture("Room rent is covered. OPD is covered.")
+    monkeypatch.setattr(
+        "apps.adviser_v2.demo.answers.search",
+        lambda **kw: SimpleNamespace(packet=p, model="gpt-5.6-luna", call_ids=[]),
+    )
+    units = [
+        {"coverage_scope": "base", "benefit": [{"passage": "P1", "quote": q}]}
+        for q in [
+            "Room rent is covered.",
+            "If room category is breached, a deduction applies.",
+            "OPD is covered.",
+        ]
+    ]
+    values = iter(
+        [
+            {"schema_version": 3, "status": "answered", "units": units},
+            {"schema_version": 3, "status": "not_found", "units": []},
+        ]
+    )
+    relay = SimpleNamespace(
+        call=lambda **kw: SimpleNamespace(value=next(values), model="gpt-5.6-luna", call_ids=[])
+    )
+    result = answer_plan(b, "What room and OPD cover applies?", method="H", relay=relay)
+    assert result["completeness"] == "partial"
+    assert [u["text"] for u in result["answer"]["statements"]] == ["OPD is covered."]
+
+
+def test_standalone_condition_stays_unmatched_for_rejection():
+    from apps.adviser_v2.demo.answer_units import conditional_unit, governing_units
+
+    unit = ScopedDraftUnit(
+        coverage_scope="base",
+        benefit=[{"passage": "P1", "quote": "If room category is breached, a deduction applies."}],
+    )
+    assert conditional_unit(governing_units([unit])[0])
+
+
+def test_product_named_like_its_variant_still_rejects_foreign_owner():
+    b, p, scope = fixture("Product Name: Beta Cover\nOPD is covered.", variant="Alpha Cover")
+    with pytest.raises(ScopeViolation, match="another product"):
+        scoped(b, p, scope, "OPD is covered.")

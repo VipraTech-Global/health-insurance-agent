@@ -10,6 +10,7 @@ from pydantic import ValidationError
 from .answer_packet import scoped_packet
 from .answer_retrieval import EXPANSION_VERSION, expanded_packet, expanded_question
 from .answer_scope import SCOPE_VERSION, ScopedLabels, ScopeViolation, scope_for
+from .answer_units import conditional_unit, governing_units
 from .assembly import EvidenceInsufficient, UnknownLabel, assemble
 from .contracts import Answer, ScopedAnswerDraft
 from .evidence import Section
@@ -195,8 +196,10 @@ def answer_plan(
                 ):
                     raise InvalidOutput("Answer status and units disagree.")
                 failed, unit_checks, passed = [], [], 0
-                for number, unit in enumerate(draft.units, 1):
+                for number, unit in enumerate(governing_units(draft.units), 1):
                     try:
+                        if conditional_unit(unit):
+                            raise ScopeViolation("A standalone condition does not constitute a benefit answer.")
                         statement, extended = assemble(unit, labels, packet, source_sections)
                         statement = scope.check(unit, labels, statement, question)
                         verification = checked(

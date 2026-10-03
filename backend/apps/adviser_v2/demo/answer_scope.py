@@ -310,7 +310,9 @@ class ScopeIndex:
         for context in contexts:
             owner = context.get("printed_product_owner")
             selected_tokens = set(re.findall(r"[a-z0-9]+", canon(self.product))) - {"my"}
-            selected_tokens -= set(re.findall(r"[a-z0-9]+", canon(self.variant)))
+            selected_tokens = (
+                selected_tokens - set(re.findall(r"[a-z0-9]+", canon(self.variant)))
+            ) or selected_tokens
             owner_tokens = set(re.findall(r"[a-z0-9]+", canon(owner or "")))
             if (
                 owner
