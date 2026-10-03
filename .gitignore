@@ -44,3 +44,19 @@ backend/celerybeat-schedule*
 
 # Local browser automation state and synthetic session traces.
 /.playwright-cli/
+
+# Section 16 task-created local diagnostics; delivery artifacts are tracked separately.
+/output/section16-pdf-checks/
+/output/section16-cards-archive/
+/output/section16-assembly-profile*.prof
+/output/section16-card-before.json
+/output/section16-quotations-before-optimization.py
+/output/section16-openapi-a.yaml
+/output/section16-smoke.json
+/output/section16-timings-section16-a-20261004-scope-smoke3.json
+/output/section16-profiles-section16-20261003-delivery.json
+/output/section16-profiles-section16-20261003-final-verified.json
+/output/section16-profiles-section16-20261003-final.json
+/output/section16-profiles-section16-20261003-grounded.json
+/output/section16-profiles-section16-20261003-verified.json
+/output/playwright/section16-*.png

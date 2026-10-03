@@ -1,0 +1,623 @@
+openapi: 3.0.3
+info:
+  title: Health Insurance Adviser API
+  version: 1.0.0
+paths:
+  /api/v2/demo/cards/{index_id}/citation/:
+    post:
+      operationId: v2_demo_cards_citation_create
+      parameters:
+      - in: path
+        name: index_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - v2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CardCitationInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CardCitationInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CardCitationInput'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectOutput'
+          description: ''
+  /api/v2/demo/catalogue/:
+    get:
+      operationId: v2_demo_catalogue_retrieve
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectOutput'
+          description: ''
+  /api/v2/demo/citations/{answer_id}/{position}/:
+    get:
+      operationId: v2_demo_citations_retrieve
+      parameters:
+      - in: path
+        name: answer_id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      - in: path
+        name: position
+        schema:
+          type: integer
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectOutput'
+          description: ''
+  /api/v2/demo/conversations/:
+    post:
+      operationId: demo_start_conversation
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatOutput'
+          description: ''
+  /api/v2/demo/conversations/{id}/:
+    get:
+      operationId: v2_demo_conversations_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatOutput'
+          description: ''
+    post:
+      operationId: demo_commit_chat_turn
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TurnInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/TurnInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/TurnInput'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatOutput'
+          description: ''
+  /api/v2/demo/coverage/:
+    get:
+      operationId: v2_demo_coverage_retrieve
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectOutput'
+          description: ''
+  /api/v2/demo/documents/{index_id}/{sha}/:
+    get:
+      operationId: v2_demo_documents_retrieve
+      parameters:
+      - in: path
+        name: index_id
+        schema:
+          type: string
+        required: true
+      - in: path
+        name: sha
+        schema:
+          type: string
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+          description: ''
+  /api/v2/demo/fact-cards/{card_id}/citation/:
+    post:
+      operationId: v2_demo_fact_cards_citation_create
+      parameters:
+      - in: path
+        name: card_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - v2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CardCitationInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CardCitationInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CardCitationInput'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectOutput'
+          description: ''
+  /api/v2/demo/fact-prices/{card_id}/citation/:
+    post:
+      operationId: v2_demo_fact_prices_citation_create
+      parameters:
+      - in: path
+        name: card_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - v2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CardCitationInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CardCitationInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CardCitationInput'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectOutput'
+          description: ''
+  /api/v2/demo/fit/:
+    post:
+      operationId: v2_demo_fit_create
+      tags:
+      - v2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProfileInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/ProfileInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/ProfileInput'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectOutput'
+          description: ''
+  /api/v2/demo/health/:
+    get:
+      operationId: v2_demo_health_retrieve
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      - {}
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectOutput'
+          description: ''
+  /api/v2/demo/prices/{index_id}/:
+    get:
+      operationId: v2_demo_prices_retrieve
+      parameters:
+      - in: path
+        name: index_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectOutput'
+          description: ''
+  /api/v2/demo/prices/{index_id}/citation/:
+    post:
+      operationId: v2_demo_prices_citation_create
+      parameters:
+      - in: path
+        name: index_id
+        schema:
+          type: string
+        required: true
+      tags:
+      - v2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CardCitationInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/CardCitationInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CardCitationInput'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectOutput'
+          description: ''
+  /api/v2/demo/questions/:
+    post:
+      operationId: v2_demo_questions_create
+      tags:
+      - v2
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QuestionInput'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/QuestionInput'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/QuestionInput'
+        required: true
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectOutput'
+          description: ''
+  /api/v2/demo/questions/{id}/:
+    get:
+      operationId: v2_demo_questions_retrieve
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectOutput'
+          description: ''
+  /api/v2/demo/questions/{id}/cancel/:
+    post:
+      operationId: v2_demo_questions_cancel_create
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectOutput'
+          description: ''
+  /api/v2/demo/questions/{id}/events/:
+    get:
+      operationId: v2_demo_questions_events_retrieve
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - event-stream
+          - json
+      - in: path
+        name: id
+        schema:
+          type: string
+          format: uuid
+        required: true
+      tags:
+      - v2
+      security:
+      - cookieAuth: []
+      responses:
+        '200':
+          content:
+            text/event-stream:
+              schema:
+                type: string
+          description: ''
+  /api/v1/auth/csrf/:
+    get:
+      operationId: csrf_state
+      tags:
+      - auth
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v1/auth/register/:
+    post:
+      operationId: auth_register
+      tags:
+      - auth
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: true
+  /api/v1/auth/login/:
+    post:
+      operationId: auth_login
+      tags:
+      - auth
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: true
+  /api/v1/auth/logout/:
+    post:
+      operationId: auth_logout
+      tags:
+      - auth
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v1/auth/session/:
+    get:
+      operationId: auth_session
+      tags:
+      - auth
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/v1/auth/password/:
+    post:
+      operationId: auth_password_change
+      tags:
+      - auth
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: true
+  /api/v1/account/:
+    delete:
+      operationId: account_delete
+      tags:
+      - auth
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  schemas:
+    CardCitationInput:
+      type: object
+      properties:
+        citation: {}
+      required:
+      - citation
+    ChatOutput:
+      type: object
+      properties:
+        schema_version:
+          type: integer
+          default: 2
+        id:
+          type: string
+          format: uuid
+        state: {}
+        cards: {}
+        release_id:
+          type: string
+          format: uuid
+      required:
+      - cards
+      - id
+      - release_id
+      - state
+    ObjectOutput:
+      type: object
+      properties:
+        schema_version:
+          type: integer
+          default: 1
+        data: {}
+    ProfileInput:
+      type: object
+      properties:
+        session_id:
+          type: string
+          format: uuid
+        profile: {}
+      required:
+      - profile
+    QuestionInput:
+      type: object
+      properties:
+        session_id:
+          type: string
+          format: uuid
+        question:
+          type: string
+          maxLength: 3000
+        plan_ids:
+          type: array
+          items:
+            type: string
+            maxLength: 160
+          maxItems: 5
+          minItems: 2
+      required:
+      - plan_ids
+      - question
+      - session_id
+    TurnInput:
+      type: object
+      properties:
+        request_id:
+          type: string
+          format: uuid
+        revision:
+          type: integer
+          minimum: 0
+        text:
+          type: string
+          maxLength: 3000
+      required:
+      - request_id
+      - revision
+      - text
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

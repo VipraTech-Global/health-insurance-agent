@@ -1,0 +1,34 @@
+{
+  "schema_version": 2,
+  "backend": {
+    "pytest_passed": 710,
+    "warnings": 21,
+    "seconds": 49.11,
+    "ruff": "passed repository-wide",
+    "django": "passed",
+    "migration_drift": "none",
+    "openapi": "passed with --validate"
+  },
+  "frontend": {
+    "lint": "passed",
+    "typecheck": "passed",
+    "build": "passed"
+  },
+  "runtime": {
+    "local_restart": "completed",
+    "health": "healthy",
+    "shared_relay_restarted": false,
+    "health_log": "102 objects imported automatically (use -v 2 for details).\n\nDatabase, Redis and authorized relay models: healthy\n{\"model\":\"BAAI/bge-m3\",\"resident\":true}Demo worker: healthy\nLocal demo: http://127.0.0.1:3021/demo\n"
+  },
+  "frozen_bakeoff": "unchanged, not rerun",
+  "reference_directory_read": false,
+  "profile_run": "section16-20261003-profile-fit-final",
+  "answer_run": "section16-a-20261004-scope-final",
+  "known_limits": [
+    "Code checks and agent spot-checks are not expert correctness verification",
+    "Applicable missing evidence remains unresolved",
+    "Answer coverage declined with stricter scope validation",
+    "Approximate concurrency reconstruction differs at three short boundaries from Redis admission peak six"
+  ],
+  "disk_free_gib": 11.68
+}

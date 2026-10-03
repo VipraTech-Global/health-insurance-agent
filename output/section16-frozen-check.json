@@ -1,0 +1,19 @@
+{
+  "checks_against_frozen_commit": {
+    "answers.py": true,
+    "bakeoff.py": true,
+    "contracts.py": true,
+    "evaluation.py": true,
+    "evidence.py": true,
+    "relay.py": true,
+    "search.py": true,
+    "validation.py": true,
+    "vectors.py": true
+  },
+  "all_match": true,
+  "frozen_input_digest_matches": true,
+  "source_commit": "bc48709c503684b750137e64477e67816e036c81",
+  "bakeoff_rerun": false,
+  "note": "Historical source hashes were checked against the frozen git commit, not against the intentionally changed application answer code.",
+  "frozen_input_sha256": "db24172e69e7da37cda1aa7e8d2b46e94f67e8aa39b133bcf25cfed69a731a21"
+}
