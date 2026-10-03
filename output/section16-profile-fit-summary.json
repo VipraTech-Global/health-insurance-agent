@@ -1,0 +1,50 @@
+{
+  "run_id": "section16-20261003-profile-fit-final",
+  "release_id": "921e3721-d584-4a59-a7e5-132eb25076a2",
+  "profiles": [
+    {
+      "profile": "A",
+      "counts": {
+        "doesnt_fit": 12,
+        "fits": 2,
+        "unresolved": 2
+      },
+      "questions": 10,
+      "stop": "no_supported_question",
+      "seconds": 48.444
+    },
+    {
+      "profile": "B",
+      "counts": {
+        "doesnt_fit": 5,
+        "fits": 8,
+        "unresolved": 3
+      },
+      "questions": 11,
+      "stop": "no_supported_question",
+      "seconds": 49.371
+    },
+    {
+      "profile": "C",
+      "counts": {
+        "doesnt_fit": 12,
+        "fits": 2,
+        "unresolved": 2
+      },
+      "questions": 7,
+      "stop": "no_supported_question",
+      "seconds": 40.824
+    },
+    {
+      "profile": "D",
+      "counts": {
+        "doesnt_fit": 10,
+        "fits": 0,
+        "unresolved": 6
+      },
+      "questions": 9,
+      "stop": "no_supported_question",
+      "seconds": 47.649
+    }
+  ]
+}
