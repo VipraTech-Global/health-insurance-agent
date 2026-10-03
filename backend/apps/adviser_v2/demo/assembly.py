@@ -98,7 +98,7 @@ def assemble(unit, labels: PacketLabels, packet: Packet, all_sections: list[Sect
                                      'end': p.start + hi - p.document_start})
                     required.append(s)
                 cursor = hi
-        if cursor < right or not citations:
+        if (cursor < right and document_source(section, all_sections)[cursor:right].strip()) or not citations:
             raise EvidenceInsufficient('Complete governing clause cannot be resolved.')
         return citations
 
