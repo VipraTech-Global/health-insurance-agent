@@ -7,6 +7,7 @@ from dataclasses import asdict
 import httpx
 from pydantic import ValidationError
 
+from .answer_packet import scoped_packet
 from .answer_retrieval import EXPANSION_VERSION, expanded_packet, expanded_question
 from .answer_scope import SCOPE_VERSION, ScopedLabels, ScopeViolation, scope_for
 from .assembly import EvidenceInsufficient, UnknownLabel, assemble
@@ -131,9 +132,10 @@ def answer_plan(
             )
             models.append(retrieved.model)
             result.setdefault("search_call_ids", []).extend(retrieved.call_ids)
-            packet = (
+            candidate = (
                 retrieved.packet if initial is None else expanded_packet(initial, retrieved.packet)
             )
+            packet = scoped_packet(candidate, scope, question)
             if initial is None:
                 initial = packet
             result["retrieval_attempts"].append(

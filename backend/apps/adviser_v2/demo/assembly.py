@@ -3,7 +3,7 @@
 import json
 from dataclasses import replace
 
-from .card_clauses import clause_bounds, without_boilerplate
+from .answer_clauses import clause_bounds, without_boilerplate
 from .contracts import Citation, Statement, SupportedText, TableSupport
 from .evidence import Packet, Section, pack_sections, reference_covered
 from .quotations import locate, normalized

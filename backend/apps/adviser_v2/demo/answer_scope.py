@@ -133,6 +133,7 @@ class ScopeIndex:
                     " ".join(c["text"].split())
                     for c in headers
                     if c["column"] > 0
+                    and c["row"] == 0
                     and not re.search(
                         r"\d|%|insured|waiting|period|benefit|section|plan[s]?\b|coverage|limit",
                         c["text"],
@@ -144,7 +145,7 @@ class ScopeIndex:
         for table in bundle.get("tables", []):
             headers = [c for c in table["cells"].values() if c["row"] <= 2]
             entities = {v for v in self.names if any(canon(c["text"]) == canon(v) for c in headers)}
-            if len(entities) > 1:
+            if len(entities) > 1 or (entities and len(bundle.get("variants", [])) > 1):
                 self.matrices[table["id"]] = {
                     "names": sorted(entities),
                     "topics": [
@@ -266,6 +267,19 @@ class ScopeIndex:
                 main.append(ref.quote)
             contexts.append(self.context(section, segment, ref.quote, ref.occurrence))
         raw = " ".join(main)
+        if (
+            re.search(r"\bmeans\b|\brefers to\b", raw, re.I)
+            and not re.search(
+                r"\b(?:we|company|policy|insurer)\b.{0,100}\b(?:cover|pay|indemnif)|\bcovered\b|\bnot covered\b",
+                raw,
+                re.I | re.S,
+            )
+            and not re.search(r"meaning|define|definition|what does .* mean", question, re.I)
+            and not unit.table
+        ):
+            raise ScopeViolation(
+                "A definition alone does not establish this plan's cover or limit."
+            )
         topics = question_topic(question)
         if topics and not any(re.search(TOPICS[k], raw, re.I) for k in topics) and not unit.table:
             raise ScopeViolation(

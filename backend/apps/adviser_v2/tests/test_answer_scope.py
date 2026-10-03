@@ -253,3 +253,41 @@ def test_invisible_pdf_layout_marker_is_offset_preserving():
     raw = "1.\t\x07In-patient Treatment: Room charges are covered."
     a, b = locate(raw, "1. In-patient Treatment: Room charges are covered.")
     assert raw[a:b] == raw
+
+
+def test_definition_alone_is_not_an_answer_about_plan_limits():
+    b, p, s = fixture(
+        "Room Rent means the amount charged by a Hospital towards Room and Boarding expenses."
+    )
+    with pytest.raises(ScopeViolation, match="definition alone"):
+        scoped(b, p, s, p.sections[0].text, question="What room limits apply?")
+    assert scoped(b, p, s, p.sections[0].text, question="What does Room Rent mean?")
+
+
+def test_bullet_benefit_heading_stops_preceding_illness_list():
+    b, p, s = fixture(
+        "iv. Treatment of all diseases.\n• Pre-existing diseases\nPED is excluded for 36 months.\n"
+    )
+    statement, _ = scoped(b, p, s, "Pre-existing diseases", question="What PED wait applies?")
+    assert "Treatment of all" not in statement.text
+    assert "36 months" in statement.text
+
+
+def test_packet_reserves_selected_variant_table_axes_without_neighbour_values():
+    from apps.adviser_v2.demo.answer_packet import scoped_packet
+
+    raw = "OPD Gold Silver Covered Not Available"
+    cite = {"section_id": "s1", "page_id": "p1", "quote": "OPD", "occurrence": 0}
+    cells = {"label": {"text": "OPD", "row": 3, "column": 0, "citation": cite}}
+    for key, text, row, col in [
+        ("gold", "Gold", 0, 1),
+        ("silver", "Silver", 0, 2),
+        ("yes", "Covered", 3, 1),
+        ("no", "Not Available", 3, 2),
+    ]:
+        cells[key] = {"text": text, "row": row, "column": col, "citation": {**cite, "quote": text}}
+    b, p, scope = fixture(raw, tables=[{"id": "t", "cells": cells}])
+    result = scoped_packet(p, scope, "What OPD cover applies?")
+    assert set(result.tables[0]["cells"]) == {"label", "gold", "yes"}
+    assert result.tokens <= 16000
+    assert "not exhaustive" in result.tables[0]["projection"]
