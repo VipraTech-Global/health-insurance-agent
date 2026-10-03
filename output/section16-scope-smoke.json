@@ -1,0 +1,358 @@
+{
+  "answer_cases": 25,
+  "complete_reference_cells": 0,
+  "final_not_found_reasons": {
+    "all_units_rejected_after_second_h_packet": 5,
+    "no_substantive_evidence_after_second_h_packet": 1
+  },
+  "manifest": "/home/akhilesh/.local/state/coverguide-star-slice/reports/ten-insurer/application-acceptance/section16-a-20261004-scope-smoke6/manifest.json",
+  "method": "H",
+  "note": "Fresh application-service execution, not a rerun or adjustment of the frozen bake-off score.",
+  "outcomes": {
+    "full_answer": 13,
+    "not_found": 6,
+    "partial_answer": 6
+  },
+  "reference_cells": 0,
+  "rejection_reasons_overlapping": {
+    "copying_error": 17,
+    "incomplete_context_or_validation": 2,
+    "scope_or_topic": 22
+  },
+  "release_id": "921e3721-d584-4a59-a7e5-132eb25076a2",
+  "run_id": "section16-a-20261004-scope-smoke6",
+  "table_heavy": {
+    "full_answer": 4,
+    "not_found": 5,
+    "partial_answer": 4
+  },
+  "agent_spot_checks": [
+    {
+      "case": "answer-room_rent-0",
+      "plan": "Family Health Optima Insurance Plan",
+      "physical_page": 9,
+      "image": "output/section16-pdf-checks/scope-smoke6/01.png",
+      "geometry": [
+        {
+          "page": 9,
+          "boxes": 18,
+          "status": "resolved"
+        },
+        {
+          "page": 9,
+          "boxes": 11,
+          "status": "resolved"
+        },
+        {
+          "page": 10,
+          "boxes": 11,
+          "status": "resolved"
+        },
+        {
+          "page": 10,
+          "boxes": 20,
+          "status": "resolved"
+        }
+      ]
+    },
+    {
+      "case": "answer-room_rent-0",
+      "plan": "Star Comprehensive Insurance Policy",
+      "physical_page": 9,
+      "image": "output/section16-pdf-checks/scope-smoke6/02.png",
+      "geometry": [
+        {
+          "page": 9,
+          "boxes": 32,
+          "status": "resolved"
+        },
+        {
+          "page": 10,
+          "boxes": 17,
+          "status": "resolved"
+        },
+        {
+          "page": 9,
+          "boxes": 21,
+          "status": "resolved"
+        },
+        {
+          "page": 8,
+          "boxes": 12,
+          "status": "resolved"
+        }
+      ]
+    },
+    {
+      "case": "answer-room_rent-1",
+      "plan": "Care Supreme",
+      "physical_page": 26,
+      "image": "output/section16-pdf-checks/scope-smoke6/03.png",
+      "geometry": [
+        {
+          "page": 26,
+          "boxes": 7,
+          "status": "resolved"
+        }
+      ]
+    },
+    {
+      "case": "answer-room_rent-1",
+      "plan": "Elevate",
+      "physical_page": 57,
+      "image": "output/section16-pdf-checks/scope-smoke6/04.png",
+      "geometry": [
+        {
+          "page": 57,
+          "boxes": 9,
+          "status": "resolved"
+        },
+        {
+          "page": 57,
+          "boxes": 5,
+          "status": "resolved"
+        },
+        {
+          "page": 57,
+          "boxes": 4,
+          "status": "resolved"
+        },
+        {
+          "page": 57,
+          "boxes": 2,
+          "status": "resolved"
+        }
+      ]
+    },
+    {
+      "case": "answer-room_rent-2",
+      "plan": "My Health Care Plan EDGE+ (Plan 9)",
+      "physical_page": 70,
+      "image": "output/section16-pdf-checks/scope-smoke6/05.png",
+      "geometry": [
+        {
+          "page": 70,
+          "boxes": 7,
+          "status": "resolved"
+        },
+        {
+          "page": 10,
+          "boxes": 9,
+          "status": "resolved"
+        },
+        {
+          "page": 10,
+          "boxes": 5,
+          "status": "resolved"
+        },
+        {
+          "page": 10,
+          "boxes": 25,
+          "status": "resolved"
+        },
+        {
+          "page": 10,
+          "boxes": 25,
+          "status": "resolved"
+        },
+        {
+          "page": 71,
+          "boxes": 9,
+          "status": "resolved"
+        }
+      ]
+    },
+    {
+      "case": "answer-ped-0",
+      "plan": "Star Comprehensive Insurance Policy",
+      "physical_page": 30,
+      "image": "output/section16-pdf-checks/scope-smoke6/06.png",
+      "geometry": [
+        {
+          "page": 30,
+          "boxes": 11,
+          "status": "resolved"
+        },
+        {
+          "page": 30,
+          "boxes": 17,
+          "status": "resolved"
+        },
+        {
+          "page": 30,
+          "boxes": 5,
+          "status": "resolved"
+        },
+        {
+          "page": 30,
+          "boxes": 10,
+          "status": "resolved"
+        },
+        {
+          "page": 30,
+          "boxes": 3,
+          "status": "resolved"
+        },
+        {
+          "page": 30,
+          "boxes": 17,
+          "status": "resolved"
+        },
+        {
+          "page": 31,
+          "boxes": 25,
+          "status": "resolved"
+        },
+        {
+          "page": 31,
+          "boxes": 16,
+          "status": "resolved"
+        },
+        {
+          "page": 31,
+          "boxes": 16,
+          "status": "resolved"
+        }
+      ]
+    },
+    {
+      "case": "answer-ped-0",
+      "plan": "Family Health Optima Insurance Plan",
+      "physical_page": 8,
+      "image": "output/section16-pdf-checks/scope-smoke6/07.png",
+      "geometry": [
+        {
+          "page": 8,
+          "boxes": 9,
+          "status": "resolved"
+        },
+        {
+          "page": 8,
+          "boxes": 14,
+          "status": "resolved"
+        },
+        {
+          "page": 8,
+          "boxes": 12,
+          "status": "resolved"
+        },
+        {
+          "page": 8,
+          "boxes": 8,
+          "status": "resolved"
+        }
+      ]
+    },
+    {
+      "case": "answer-ped-0",
+      "plan": "Star Health Assure Insurance Policy",
+      "physical_page": 10,
+      "image": "output/section16-pdf-checks/scope-smoke6/08.png",
+      "geometry": [
+        {
+          "page": 10,
+          "boxes": 23,
+          "status": "resolved"
+        },
+        {
+          "page": 10,
+          "boxes": 15,
+          "status": "resolved"
+        },
+        {
+          "page": 10,
+          "boxes": 6,
+          "status": "resolved"
+        },
+        {
+          "page": 10,
+          "boxes": 10,
+          "status": "resolved"
+        }
+      ]
+    },
+    {
+      "case": "answer-restoration-0",
+      "plan": "Family Health Optima Insurance Plan",
+      "physical_page": 14,
+      "image": "output/section16-pdf-checks/scope-smoke6/09.png",
+      "geometry": [
+        {
+          "page": 14,
+          "boxes": 7,
+          "status": "resolved"
+        },
+        {
+          "page": 14,
+          "boxes": 8,
+          "status": "resolved"
+        },
+        {
+          "page": 14,
+          "boxes": 3,
+          "status": "resolved"
+        },
+        {
+          "page": 14,
+          "boxes": 23,
+          "status": "resolved"
+        },
+        {
+          "page": 14,
+          "boxes": 18,
+          "status": "resolved"
+        },
+        {
+          "page": 16,
+          "boxes": 10,
+          "status": "resolved"
+        },
+        {
+          "page": 16,
+          "boxes": 5,
+          "status": "resolved"
+        },
+        {
+          "page": 16,
+          "boxes": 18,
+          "status": "resolved"
+        },
+        {
+          "page": 16,
+          "boxes": 14,
+          "status": "resolved"
+        }
+      ]
+    },
+    {
+      "case": "answer-restoration-0",
+      "plan": "Star Comprehensive Insurance Policy",
+      "physical_page": 13,
+      "image": "output/section16-pdf-checks/scope-smoke6/10.png",
+      "geometry": [
+        {
+          "page": 13,
+          "boxes": 7,
+          "status": "resolved"
+        },
+        {
+          "page": 13,
+          "boxes": 20,
+          "status": "resolved"
+        },
+        {
+          "page": 13,
+          "boxes": 15,
+          "status": "resolved"
+        },
+        {
+          "page": 13,
+          "boxes": 15,
+          "status": "resolved"
+        }
+      ]
+    }
+  ],
+  "expert_verified": false,
+  "gate": "No operational failures, all displayed units passed six checks, and ten agent PDF spot-checks found no remaining base/optional scope mismatch in the checked excerpts. Incomplete answers and rejected evidence remain reported."
+}
