@@ -1,0 +1,251 @@
+"""Create new immutable projection versions without repeating validated AI calls."""
+
+import hashlib
+import json
+from pathlib import Path
+
+from django.conf import settings
+from django.core.management.base import BaseCommand, CommandError
+from pydantic import ValidationError
+
+from apps.adviser_v2.demo.contracts import Answer, CardField, Statement
+from apps.adviser_v2.demo.evidence import Packet, Section, atomic_json, digest
+from apps.adviser_v2.demo.fact_projection import clauses, project
+from apps.adviser_v2.demo.fact_rule_contracts import FactRule
+from apps.adviser_v2.demo.services import bundle_for
+from apps.adviser_v2.demo.validation import validate
+from apps.adviser_v2.models import DemoFactCard
+
+
+class Command(BaseCommand):
+    help = __doc__
+
+    def add_arguments(self, parser):
+        parser.add_argument("--source-run", required=True)
+        parser.add_argument("--run-id", required=True)
+
+    def handle(self, **options):
+        if settings.DATABASES["default"]["NAME"] != "coverguide_star_slice":
+            raise CommandError("Isolated local cards only.")
+        root = Path(settings.COVERGUIDE_REPORT_ROOT) / "ten-insurer/fact-card-runs"
+        source = root / options["source_run"]
+        target = root / options["run_id"]
+        state = json.loads((source / "progress.json").read_text())
+        code = Path(__file__).resolve().parents[2] / "demo/fact_projection.py"
+        manifest = {
+            "schema_version": 8,
+            "source_manifest": json.loads((source / "manifest.json").read_text()),
+            "projection_sha256": hashlib.sha256(code.read_bytes()).hexdigest(),
+            "parser_sha256": hashlib.sha256(
+                code.with_name("fact_rules_v6.py").read_bytes()
+            ).hexdigest(),
+            "list_projection_sha256": hashlib.sha256(
+                code.with_name("fact_list_projection.py").read_bytes()
+            ).hexdigest(),
+            "grounding_sha256": hashlib.sha256(
+                code.with_name("fact_rule_grounding.py").read_bytes()
+            ).hexdigest(),
+            "governing_sha256": hashlib.sha256(
+                code.with_name("fact_governing.py").read_bytes()
+            ).hexdigest(),
+            "age_projection_sha256": hashlib.sha256(
+                code.with_name("fact_age_projection.py").read_bytes()
+            ).hexdigest(),
+            "table_projection_sha256": hashlib.sha256(
+                code.with_name("fact_table_projection.py").read_bytes()
+            ).hexdigest(),
+            "rule_schema_sha256": hashlib.sha256(
+                code.with_name("fact_rule_contracts.py").read_bytes()
+            ).hexdigest(),
+            "run_id": options["run_id"],
+        }
+        if (target / "manifest.json").exists() and json.loads(
+            (target / "manifest.json").read_text()
+        ) != manifest:
+            raise CommandError("Projection code changed; create a fresh versioned run.")
+        atomic_json(target / "manifest.json", manifest)
+        completed = []
+        for item in state["completed"]:
+            old = DemoFactCard.objects.select_related("index").get(pk=item["id"])
+            audit = json.loads(Path(old.audit_path).read_text())
+            bundle = bundle_for(old.index)
+            card = {k: v for k, v in old.card.items() if k != "card_version"}
+            quoted = {}
+            rules = []
+            optional = {}
+            statuses = {}
+            projection_omissions = {}
+            for field, result in audit["fields"].items():
+                sources = [result]
+                previous_result = audit["provenance"].get(field, {}).get("source_result")
+                if previous_result and previous_result.get("index_version") == old.index_id:
+                    sources.append(previous_result)
+                base, extra = [], []
+                for source_result in sources:
+                    if source_result["status"] != "answered":
+                        continue
+                    source_base, source_extra, _ = clauses(source_result, field, bundle)
+                    for statement in source_base:
+                        if not statement.get("variant_axis_verified") and not statement.get(
+                            "complete_options"
+                        ):
+                            data = source_result["packet"]
+                            packet = Packet(
+                                old.index.plan_key,
+                                tuple(Section.from_payload(s) for s in data["sections"]),
+                                tuple(data.get("omitted_ids", [])),
+                                data["tokens"],
+                                tables=tuple(data.get("tables", [])),
+                            )
+                            candidate = Statement.model_validate(
+                                {k: v for k, v in statement.items() if k in Statement.model_fields}
+                            )
+                            check = validate(
+                                Answer(
+                                    plan_id=packet.plan_id,
+                                    status="answered",
+                                    statements=[candidate],
+                                ),
+                                packet,
+                                variant=old.index.variant,
+                                known_variants=tuple(bundle.get("variants", [])),
+                            )
+                            source_result.setdefault("projection_validation", []).append(
+                                {
+                                    "checks": list(check.checks),
+                                    "passed": check.passed,
+                                    "problems": check.problems,
+                                }
+                            )
+                            if not check.passed:
+                                source_result.setdefault("projection_omissions", []).append(
+                                    "Trimmed governing unit rejected: " + "; ".join(check.problems)
+                                )
+                                continue
+                        if statement not in base:
+                            base.append(statement)
+                    for statement in source_extra:
+                        if statement not in extra:
+                            extra.append(statement)
+                stated = bool(base)
+                value = CardField(
+                    state="stated" if stated else "not_stated",
+                    labels=[s["text"] for s in base],
+                    citations=[c for s in base for c in s["citations"]],
+                    conditions=[c for s in base for c in [*s["conditions"], *s["restrictions"]]],
+                ).model_dump()
+                quoted[field] = value
+                projected = project(field, base, card["variant"])
+                checked = []
+                projection_omissions[field] = list(result.get("projection_omissions", []))
+                if base and not projected:
+                    projection_omissions[field].append(
+                        "No bounded field-specific rule passed the value, unit, applicability and completeness gates."
+                    )
+                for rule in projected:
+                    if rule.get("restricted_scope"):
+                        projection_omissions[field].append(
+                            "The printed condition is outside supported executable checks."
+                        )
+                        continue
+                    try:
+                        checked.append(FactRule.model_validate(rule).model_dump(exclude_none=True))
+                    except ValidationError as exc:
+                        projection_omissions[field].append(str(exc))
+                projected = checked
+                coverage_values = {r["value"] for r in projected if r["kind"] == "coverage"}
+                if len(coverage_values) > 1:
+                    projected = [r for r in projected if r["kind"] != "coverage"]
+                    coverage_values = set()
+                    projection_omissions[field].append(
+                        "Contradictory coverage values remain unresolved."
+                    )
+                rules.extend(projected)
+                statuses[field] = (
+                    "not covered"
+                    if coverage_values == {"not_covered"}
+                    else "stated"
+                    if stated
+                    else "not stated"
+                )
+                optional[field] = (
+                    {"status": "optional, extra premium", "statements": extra} if extra else None
+                )
+                if field in {
+                    "sum_insured",
+                    "geography",
+                    "copay",
+                    "room_limit",
+                    "ped_waiting",
+                    "maternity",
+                    "opd",
+                }:
+                    card[field] = value
+            card.update(
+                card_schema_version=8,
+                quoted_fields=quoted,
+                executable_rules=rules,
+                optional_covers=optional,
+                field_statuses=statuses,
+                projection_omissions=projection_omissions,
+                field_coverage={
+                    f: v["state"] == "stated" and bool(v["citations"]) for f, v in quoted.items()
+                },
+                rule_coverage={
+                    f: (
+                        any(r["field"] == f for r in rules)
+                        if f == "entry_age"
+                        else sum(r["field"] == f for r in rules) == 1
+                    )
+                    for f in quoted
+                },
+                common_needs=[{"field": f, "value": v} for f, v in quoted.items()],
+            )
+            identity = digest({"card": card, "source_version": old.id, "manifest": manifest})
+            card["card_version"] = identity
+            path = target / "cards" / (identity + ".json")
+            atomic_json(
+                path,
+                {
+                    "card": card,
+                    "fields": audit["fields"],
+                    "provenance": audit["provenance"],
+                    "source_card_version": old.id,
+                },
+            )
+            DemoFactCard.objects.get_or_create(
+                id=identity, defaults={"index": old.index, "card": card, "audit_path": str(path)}
+            )
+            completed.append(
+                {
+                    **item,
+                    "id": identity,
+                    "quoted": sum(card["field_coverage"].values()),
+                    "executable": sum(card["rule_coverage"].values()),
+                }
+            )
+        atomic_json(
+            target / "progress.json", {"completed": completed, "failures": state["failures"]}
+        )
+        if (source / "priority.json").exists():
+            priority = {
+                r["index"] for r in json.loads((source / "priority.json").read_text())["cards"]
+            }
+            atomic_json(
+                target / "priority.json",
+                {
+                    "cards": [r for r in completed if r["index"] in priority],
+                    "failures": state["failures"],
+                },
+            )
+        if (source / "complete.json").exists():
+            atomic_json(target / "complete.json", {"cards": completed, "manifest": manifest})
+        self.stdout.write(
+            json.dumps(
+                {
+                    "cards": len(completed),
+                    "quoted": sum(c["quoted"] for c in completed),
+                    "executable": sum(c["executable"] for c in completed),
+                }
+            )
+        )

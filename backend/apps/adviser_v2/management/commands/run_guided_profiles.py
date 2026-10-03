@@ -36,6 +36,37 @@ PROFILES = {
 }
 
 
+def turn_groups(data):
+    """Retain the complete check trail at every committed profile revision."""
+    cards = {c["plan_id"]: c for c in data["cards"]}
+    return {
+        group: [
+            {
+                **item,
+                "policy_version_id": item["plan_id"],
+                "variant": cards[item["plan_id"]]["variant"],
+                "insurer": cards[item["plan_id"]]["insurer"],
+                "name": cards[item["plan_id"]]["name"],
+                "card_version": cards[item["plan_id"]].get("card_version"),
+                "deciding_checks": [
+                    r
+                    for r in item["hard_limits"]
+                    if r["status"]
+                    == (
+                        "doesnt_fit"
+                        if group == "doesnt_fit"
+                        else "unresolved"
+                        if group == "unresolved"
+                        else "fits"
+                    )
+                ],
+            }
+            for item in items
+        ]
+        for group, items in data["state"]["fit_groups"].items()
+    }
+
+
 class Command(BaseCommand):
     help = __doc__
 
@@ -65,9 +96,9 @@ class Command(BaseCommand):
         )
         results = []
         for name, spec in PROFILES.items():
+            started = time.monotonic()
             data = start(user, release_id=release.id)
             turns = []
-            started = time.monotonic()
             initial = data["state"]
             turns.append(
                 {
@@ -76,7 +107,8 @@ class Command(BaseCommand):
                     "assistant": initial["message"],
                     "stage": initial["stage"],
                     "counts": {k: len(v) for k, v in initial["fit_groups"].items()},
-                    "elapsed_ms": 0,
+                    "elapsed_ms": round((time.monotonic() - started) * 1000),
+                    "groups": turn_groups(data),
                     "questions_asked": 1,
                     "pending": initial["pending"],
                 }
@@ -127,6 +159,7 @@ class Command(BaseCommand):
                         "counts": {k: len(v) for k, v in state["fit_groups"].items()},
                         "elapsed_ms": round((time.monotonic() - tick) * 1000),
                         "service_elapsed_ms": state["turns"][-1]["elapsed_ms"],
+                        "groups": turn_groups(data),
                         "questions_asked": state["question_count"] - before,
                         "pending": state["pending"],
                         "model": state["turns"][-1]["model"],

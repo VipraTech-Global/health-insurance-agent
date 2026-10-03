@@ -69,6 +69,16 @@ def age_result(person, rule):
 
 def hard_limits(card, profile, existing):
     reasons = {r["field"]: r for r in existing}
+    # Immutable typed cards must not fall back to superseded legacy projections.
+    # A quoted field with no executable rule cannot supply an exclusion.
+    for field in ("family", "sum_insured", "plan_type", "coverage_basis"):
+        if field in reasons:
+            reasons[field] = {
+                "field": field,
+                "status": "unresolved",
+                "explanation": "Applicable executable evidence has not been established.",
+                "citations": [],
+            }
 
     def record(field, status, explanation, rules):
         reasons[field] = {
@@ -108,7 +118,13 @@ def hard_limits(card, profile, existing):
     rules = eligible_rules(card, "coverage_basis")
     if profile.coverage_basis:
         status = (
-            ("fits" if profile.coverage_basis in rules[0]["value"].split("|") else "doesnt_fit")
+            (
+                "fits"
+                if profile.coverage_basis in rules[0]["value"].split("|")
+                else "doesnt_fit"
+                if rules[0].get("exhaustive")
+                else "unresolved"
+            )
             if len(rules) == 1
             else "unresolved"
         )
@@ -141,15 +157,20 @@ def hard_limits(card, profile, existing):
         rule = rules[0]
         children = [p for p in profile.people if p.relationship == "child"]
         invalid = (
-            any(p.relationship not in rule["relationships"] for p in profile.people)
-            or len(children) > rule["maximum_children"]
+            len(children) > rule["maximum_children"]
             or len(profile.people) - len(children) > rule["maximum_adults"]
         )
         invalid |= bool(
             rule.get("dependent_children") and any(p.dependent is False for p in children)
         )
-        incomplete = bool(
-            rule.get("dependent_children") and any(p.dependent is None for p in children)
+        unknown_relationship = any(
+            p.relationship not in rule["relationships"] for p in profile.people
+        )
+        invalid |= unknown_relationship and bool(rule.get("exhaustive"))
+        incomplete = (
+            unknown_relationship
+            and not rule.get("exhaustive")
+            or bool(rule.get("dependent_children") and any(p.dependent is None for p in children))
         )
         status = "doesnt_fit" if invalid else "unresolved" if incomplete else "fits"
         record(

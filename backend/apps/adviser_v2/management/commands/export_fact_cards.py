@@ -10,6 +10,26 @@ from apps.adviser_v2.demo.evidence import atomic_json
 from apps.adviser_v2.demo.services import bundle_for
 from apps.adviser_v2.models import DemoFactCard
 
+REQUESTED = (
+    "entry_age",
+    "renewal_age",
+    "sum_insured",
+    "plan_type",
+    "family",
+    "geography",
+    "copay",
+    "room_limit",
+    "ped_waiting",
+    "specified_waiting",
+    "maternity",
+    "newborn",
+    "opd",
+    "restoration",
+    "no_claim_bonus",
+    "deductible",
+    "ayush",
+)
+
 
 class Command(BaseCommand):
     help = __doc__
@@ -116,6 +136,12 @@ class Command(BaseCommand):
                 "fields": fields,
                 "quoted_field_coverage": card["field_coverage"],
                 "executable_rule_coverage": card["rule_coverage"],
+                "requested_field_coverage": {
+                    "fields": list(REQUESTED),
+                    "quoted": sum(card["field_coverage"][f] for f in REQUESTED),
+                    "executable": sum(card["rule_coverage"][f] for f in REQUESTED),
+                    "total": len(REQUESTED),
+                },
                 "coverage_counts": {
                     "quoted": sum(card["field_coverage"].values()),
                     "executable": sum(card["rule_coverage"].values()),
@@ -147,13 +173,13 @@ class Command(BaseCommand):
             "",
             f"Run: `{options['run_id']}`. Q = quoted base evidence; E = supported executable field. Not stated is not filled. Optional covers are separate and never satisfy a base requirement.",
             "",
-            "| Plan / variant | Quoted | Executable | Card version |",
-            "|---|---:|---:|---|",
+            "| Plan / variant | Quoted / 28 | Executable / 28 | Requested Q / 17 | Requested E / 17 | Card version |",
+            "|---|---:|---:|---:|---:|---|",
         ]
         for c in ordered:
             counts = c["coverage_counts"]
             lines.append(
-                f"| {c['insurer']} — {c['name']} / {c['variant']} | {counts['quoted']}/{counts['total']} | {counts['executable']}/{counts['total']} | `{c['card_version']}` |"
+                f"| {c['insurer']} — {c['name']} / {c['variant']} | {counts['quoted']}/{counts['total']} | {counts['executable']}/{counts['total']} | {c['requested_field_coverage']['quoted']}/17 | {c['requested_field_coverage']['executable']}/17 | `{c['card_version']}` |"
             )
         for c in ordered:
             lines.extend(
