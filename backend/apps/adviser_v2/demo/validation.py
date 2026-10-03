@@ -12,27 +12,15 @@ from dataclasses import dataclass
 from .contracts import Answer, Citation, SupportedText
 from .evidence import Packet
 from .quantities import quoted_quantities
+from .quotations import locate, normalized
 
-VALIDATOR_VERSION = "demo-six-checks/1"
+VALIDATOR_VERSION = "demo-six-checks/2"
 NEUTRAL = re.compile(r"\b(?:best|better|recommend(?:ed|ation)?|cheapest|buy|purchase|choose|rank(?:ed|ing)?)\b", re.I)
 RESTRICTIONS = re.compile(r"\b(?:optional|variant|add[- ]on|rider|sum insured|subject to|provided that|only if|except|excluding)\b", re.I)
 
 
 def fold(text: str) -> str:
-    return "".join(char for char in text if not char.isspace())
-
-
-def locate(text: str, quote: str, occurrence: int = 0) -> tuple[int, int]:
-    positions = [i for i, char in enumerate(text) if not char.isspace()]
-    original, target = "".join(text[i] for i in positions), fold(quote)
-    if not target or occurrence < 0:
-        raise ValueError("An exact quote cannot be empty.")
-    start = -1
-    for _ in range(occurrence + 1):
-        start = original.find(target, start + 1)
-        if start < 0:
-            raise ValueError("Quotation is not exact under whitespace-only normalization.")
-    return positions[start], positions[start + len(target) - 1] + 1
+    return normalized(text)[0]
 
 
 @dataclass(frozen=True)
@@ -62,6 +50,7 @@ def validate(answer: Answer, packet: Packet, *, variant: str = "Default", known_
     sections = {s.id: s for s in packet.sections}
     tables = {t['id']: t for t in packet.tables}
     table_quotes = set()
+    unit_spans = {}
 
     def citation(c: Citation) -> str | None:
         nonlocal wrong
@@ -81,14 +70,19 @@ def validate(answer: Answer, packet: Packet, *, variant: str = "Default", known_
             fail(0, str(exc))
             return None
         tail = source.text[b:]
+        next_start = b + len(tail) - len(tail.lstrip())
+        continuation_present = any(lo <= next_start < hi for lo, hi in unit_spans.get((c.section_id, c.page_id), []))
         # Do not allow a model to turn a conditional clause into an unconditional
         # benefit by stopping immediately before its qualification.
         following = tail.lstrip()
-        if (following and RESTRICTIONS.match(following)
+        if not continuation_present and (following and RESTRICTIONS.match(following)
                 or (following and re.match(r"(?:if|when|unless|where|and only|but)\b", following, re.I))):
             fail(2, "A material condition immediately following the quotation was omitted.")
         is_table_cell = (c.section_id, c.page_id, fold(c.quote)) in table_quotes
-        if following and not is_table_cell and c.quote.rstrip()[-1] not in ".;:!?" and not tail.startswith(("\n", "\r")):
+        preceding = source.text[:a].rstrip()
+        if not is_table_cell and preceding and re.search(r"\b(?:not|no|unless|excluding|except|subject to)\s*$", preceding, re.I):
+            fail(2, "A preceding governing qualification or negation was omitted.")
+        if following and not continuation_present and not is_table_cell and c.quote.rstrip()[-1] not in ".;:!?" and not tail.startswith(("\n", "\r")):
             fail(2, "The quotation stops inside an original clause; include its remaining conditions.")
         anchors.append({"section_id": section.id, "document_id": section.document_id,
             "document_sha256": section.document_sha256, "page_id": source.page_id,
@@ -121,7 +115,19 @@ def validate(answer: Answer, packet: Packet, *, variant: str = "Default", known_
     if not answer.statements:
         fail(3, "An answered result needs a substantive statement.")
     for statement in answer.statements:
+        if re.match(r"^\s*(?:subject to|provided that|only if|unless)\b", statement.text, re.I) and not re.search(r"\b(?:cover|benefit|pay|indemnif|reimburse)", statement.text, re.I):
+            fail(3, "A standalone condition does not answer a benefit question.")
         table_quotes.clear()
+        unit_spans.clear()
+        for item in [statement, *statement.conditions, *statement.restrictions]:
+            for c in item.citations:
+                section = sections.get(c.section_id)
+                for seg in section.segments if section else ():
+                    if seg.page_id == c.page_id:
+                        try:
+                            unit_spans.setdefault((c.section_id, c.page_id), []).append(locate(seg.text, c.quote, c.occurrence))
+                        except ValueError:
+                            pass  # The citation check below reports this exact failure.
         if statement.table:
             support = statement.table
             region = tables.get(support.region_id)
@@ -159,7 +165,7 @@ def validate(answer: Answer, packet: Packet, *, variant: str = "Default", known_
                 fail(4, "A quoted variant, optional-cover or sum-insured restriction was omitted.")
         # Quoted wording is kept unchanged, including contextual words like 'better
         # treatment'. There is no generated recommendation prose in this contract.
-        if NEUTRAL.search(statement.text) and not any(fold(statement.text) == fold(q) for q in quote_texts):
+        if NEUTRAL.search(statement.text) and fold(statement.text) != fold(" ".join(quote_texts)) and not any(fold(statement.text) == fold(q) for q in quote_texts):
             fail(5, "Generated ranking or purchase direction is not allowed.")
         if re.search(r"\b(?:you are eligible|your claim (?:is|will)|you will receive)\b", statement.text, re.I):
             fail(3, "Personal eligibility and claim calculations need an executable rule.")

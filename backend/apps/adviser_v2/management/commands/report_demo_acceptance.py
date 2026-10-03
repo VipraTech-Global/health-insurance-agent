@@ -14,11 +14,14 @@ from apps.adviser_v2.models import DemoRelease
 class Command(BaseCommand):
     help = __doc__
 
+    def add_arguments(self, parser):
+        parser.add_argument("--run-id", required=True)
+
     def handle(self, **options):
         if settings.DATABASES['default']['NAME'] != 'coverguide_star_slice':
             raise CommandError('Report only the isolated application execution.')
         release = DemoRelease.objects.get(active=True)
-        root = Path(settings.COVERGUIDE_REPORT_ROOT) / 'ten-insurer/application-acceptance' / str(release.id)
+        root = Path(settings.COVERGUIDE_REPORT_ROOT) / 'ten-insurer/application-acceptance' / options['run_id']
         if not (root / 'summary.json').exists():
             raise CommandError('The full application acceptance run has not finished.')
         summary = json.loads((root / 'summary.json').read_text())
@@ -33,7 +36,7 @@ class Command(BaseCommand):
             cells[(value['plan_id'], row['job']['criterion'])][row['job']['style']] = {
                 'complete': bool(value['required']) and set(value['required']) <= set(value['covered']),
                 'required': value['required'], 'covered': value['covered'],
-                'missing': sorted(set(value['required']) - set(value['covered']))}
+                'displayed': value.get('displayed', []), 'missing': sorted(set(value['required']) - set(value['covered']))}
         details = {**summary, 'models': dict(Counter(model for _, r in cases for model in set(r['models']))),
             'table_heavy': dict(Counter(r['status'] for row, r in cases if row['job']['table_heavy'])),
             'reference_details': [{'plan_id': plan, 'criterion': criterion, 'queries': queries,
@@ -61,11 +64,11 @@ class Command(BaseCommand):
                     lines.append('')
             if value['omissions']:
                 lines.extend(['Omitted section IDs: ' + ', '.join(f'`{key}`' for key in value['omissions']), ''])
-        lines.extend(['## All 39 Star reference cells', '', '| Plan | Criterion | Fixed packet | Customer packet | Complete |',
-                      '|---|---|---|---|---|'])
+        lines.extend(['## All 39 Star reference cells', '', '| Plan | Criterion | Fixed packet | Customer packet | Fixed displayed | Customer displayed | Complete packet | ',
+                      '|---|---|---|---|---|---|---|'])
         for cell in details['reference_details']:
             query = cell['queries']
             counts = {style: f"{len(value['covered'])}/{len(value['required'])}" for style, value in query.items()}
-            lines.append(f"| {cell['plan_id']} | {cell['criterion']} | {counts['fixed']} | {counts['customer']} | {cell['complete']} |")
+            lines.append(f"| {cell['plan_id']} | {cell['criterion']} | {counts['fixed']} | {counts['customer']} | {len(query['fixed']['displayed'])} | {len(query['customer']['displayed'])} | {cell['complete']} |")
         (repository / 'output/application-answer-sheet.md').write_text('\n'.join(lines) + '\n')
         self.stdout.write(json.dumps({key: value for key, value in details.items() if key != 'reference_details'}))

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 from collections import Counter
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 
 import httpx
 from django.db import close_old_connections, connection
@@ -12,7 +12,7 @@ from pgvector.django import CosineDistance
 
 from ..models import DemoSectionVector
 from .evidence import Section, pack_sections
-from .relay import Relay
+from .relay import InvalidOutput, Relay, RelayUnavailable
 from .text import BM25, LexicalDocument
 
 SELECT_SCHEMA = {"type": "object", "properties": {"section_ids": {
@@ -35,7 +35,7 @@ def embed(texts: list[str], *, priority: str) -> list[list[float]]:
     response.raise_for_status()
     vectors = response.json()["vectors"]
     if len(vectors) != len(texts) or any(len(v) != 1024 for v in vectors):
-        raise ValueError("Embedding worker returned an incompatible result.")
+        raise RelayUnavailable("Embedding worker returned an incompatible result.")
     return vectors
 
 
@@ -48,7 +48,7 @@ def fusion(sections: list[Section], question: str, *, index_id: str, priority: s
     if not connection.in_atomic_block:
         close_old_connections()  # Release SQL capacity before waiting for the relay.
     if not rows:
-        raise ValueError("Hybrid section vectors are unavailable for this immutable plan index.")
+        raise RelayUnavailable("Hybrid section vectors are unavailable for this immutable plan index.")
     scores = Counter()
     for ranking in (lexical, [r.section_id for r in rows]):
         for rank, key in enumerate(ranking, 1):
@@ -97,15 +97,24 @@ def search(*, bundle: dict, question: str, method: str, relay: Relay, priority: 
     if any(s.plan_id != plan_id for s in sections):
         raise ValueError("Wrong-plan section in immutable bundle.")
     candidates = fusion(sections, question, index_id=bundle["index_id"], priority=priority)
+    aliases = {s.id: f'S{n}' for n, s in enumerate(sections, 1)}
+    identities = {alias: key for key, alias in aliases.items()}
+    navigation = navigation_map(bundle)
+    for node in navigation['nodes']:
+        for item in node['sections']:
+            item['section_id'] = aliases[item['section_id']]
     # Stable map first; the candidate list and question change independently.
     result = relay.call(instructions=SELECT_PROMPT,
-        messages=[{"role": "user", "content": json.dumps(navigation_map(bundle), ensure_ascii=False)},
-                  {"role": "user", "content": json.dumps({"candidate_ids": candidates, "question": question}, ensure_ascii=False)}],
+        messages=[{"role": "user", "content": json.dumps(navigation, ensure_ascii=False)},
+                  {"role": "user", "content": json.dumps({"candidate_ids": [aliases[key] for key in candidates], "question": question}, ensure_ascii=False)}],
         schema=SELECT_SCHEMA, stage="section_selection", priority=priority, max_tokens=2048, expected_model=expected_model,
         timeout=1800 if priority == 'background' else 240)
     by_id = {s.id: s for s in sections}
-    ids = result.value["section_ids"]
-    if any(key not in by_id for key in ids):
-        raise ValueError("PageIndex selected a section outside this plan's immutable map.")
+    labels = result.value["section_ids"]
+    if any(key not in identities for key in labels):
+        raise InvalidOutput("PageIndex selected an unknown local section label.")
+    ids = [identities[key] for key in labels]
     ranked = [by_id[key] for key in dict.fromkeys([*ids, *candidates])]
-    return SearchResult(pack_sections(plan_id, ranked, tables=bundle.get("tables", [])), result.model, result.call_ids)
+    # Reserve 4000 tokens for deterministic governing-clause completion. H rankings are unchanged.
+    packet = pack_sections(plan_id, ranked, budget=12000, tables=bundle.get("tables", []))
+    return SearchResult(replace(packet, budget=16000), result.model, result.call_ids)

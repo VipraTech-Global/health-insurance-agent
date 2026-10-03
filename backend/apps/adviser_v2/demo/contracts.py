@@ -14,13 +14,13 @@ class Closed(BaseModel):
 class Citation(Closed):
     section_id: str
     page_id: str
-    quote: str = Field(min_length=1, max_length=1600)
+    quote: str = Field(min_length=1, max_length=64000)
     occurrence: int = Field(ge=0, default=0)
 
 
 class SupportedText(Closed):
-    text: str = Field(min_length=1, max_length=2000)
-    citations: list[Citation] = Field(min_length=1, max_length=12)
+    text: str = Field(min_length=1, max_length=64000)
+    citations: list[Citation] = Field(min_length=1, max_length=64)
 
 
 class TableSupport(Closed):
@@ -31,6 +31,8 @@ class TableSupport(Closed):
 
 
 class Statement(SupportedText):
+    heading: Literal["Policy excerpt", "Table excerpts"] = "Policy excerpt"
+    excerpts: list[str] = Field(default_factory=list)
     conditions: list[SupportedText] = Field(default_factory=list, max_length=12)
     restrictions: list[SupportedText] = Field(default_factory=list, max_length=12)
     table: TableSupport | None = None
@@ -41,6 +43,32 @@ class Answer(Closed):
     plan_id: str
     status: Literal["answered", "not_found"]
     statements: list[Statement] = Field(max_length=8)
+
+
+class DraftQuote(Closed):
+    passage: str = Field(pattern=r"^P[1-9][0-9]*$")
+    quote: str = Field(min_length=1, max_length=1600)
+    occurrence: int = Field(default=0, ge=0)
+
+
+class DraftTable(Closed):
+    table: str = Field(pattern=r"^T[1-9][0-9]*$")
+    value: str
+    rows: list[str] = Field(min_length=1)
+    columns: list[str] = Field(min_length=1)
+
+
+class DraftUnit(Closed):
+    benefit: list[DraftQuote] = Field(min_length=1, max_length=12)
+    conditions: list[DraftQuote] = Field(default_factory=list, max_length=12)
+    restrictions: list[DraftQuote] = Field(default_factory=list, max_length=12)
+    table: DraftTable | None = None
+
+
+class AnswerDraft(Closed):
+    schema_version: Literal[2] = 2
+    status: Literal["answered", "not_found"]
+    units: list[DraftUnit] = Field(max_length=8)
 
 
 class Need(Closed):
