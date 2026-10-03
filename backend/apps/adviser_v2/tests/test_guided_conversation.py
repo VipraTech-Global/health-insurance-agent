@@ -264,3 +264,73 @@ def test_explicit_person_removal_is_a_chat_correction_and_skip_does_not_remove()
         state, ProposedChanges(removed_people=["parent"], correction=True), cards()
     )
     assert [p.id for p in corrected.profile.people] == ["me"]
+
+
+def test_cover_type_detail_does_not_answer_needs_and_registry_alias_is_supported():
+    from apps.adviser_v2.demo.conversation import merge
+
+    state = complete()
+    state.answered = []
+    question(state, "cover_need")
+    merge(
+        state,
+        ProposedChanges(
+            plan_type="medical_indemnity",
+            coverage_basis="floater",
+            requirements=[
+                Requirement(
+                    field="hospital_expenses",
+                    original_text="Hospital expenses",
+                    strength="must_have",
+                )
+            ],
+        ),
+    )
+    assert not state.profile.requirements and "needs" not in state.answered
+    state.pending = None
+    next_question(state, cards(), relay=NoCalls())
+    assert state.pending.field == "needs"
+    merge(
+        state,
+        ProposedChanges(
+            requirements=[
+                Requirement(
+                    field="maternity coverage",
+                    original_text="Maternity cover is a must-have",
+                    strength="must_have",
+                )
+            ]
+        ),
+    )
+    assert state.profile.requirements[0].field == "maternity"
+
+
+def test_model_cannot_promote_matters_to_must_have_without_customer_strength():
+    class Interpreter:
+        def call(self, **kwargs):
+            assert "needs_registry" in kwargs["messages"][0]["content"]
+            return SimpleNamespace(
+                model="gpt-5.6-luna",
+                value=ProposedChanges(
+                    requirements=[
+                        Requirement(
+                            field="maternity",
+                            original_text="Maternity cover is a must-have.",
+                            strength="must_have"
+                        )
+                    ]
+                ).model_dump(),
+            )
+
+    changes, _ = interpret(
+        "Maternity cover matters to me.", complete(), cards(), relay=Interpreter()
+    )
+    assert changes.requirements[0].strength == "unclassified"
+    changes, _ = interpret(
+        "Maternity cover is a must-have.", complete(), cards(), relay=Interpreter()
+    )
+    assert changes.requirements[0].strength == "must_have"
+    changes, _ = interpret(
+        "Maternity cover is a nice-to-have.", complete(), cards(), relay=Interpreter()
+    )
+    assert changes.requirements[0].strength == "nice_to_have"

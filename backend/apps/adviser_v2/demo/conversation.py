@@ -50,7 +50,12 @@ INTERPRET_PROMPT = (
     "Extract ALL unambiguous details, including later-stage details, without guessing. Use people IDs already provided; "
     "new people need stable relationship-based IDs. Ages retain printed years/months/days. Amounts are rupees (1 lakh=100000). "
     "Distinguish product type from individual/floater basis, and purchase city from premium zone or treatment territory. "
+    "For an expressed benefit requirement such as maternity, newborn, OPD, restoration or AYUSH, use value=covered unless the customer supplies a specific supported limit. "
     "For explicit upper limits use requirement value at_most:N:unit (months, percent or rupees). No co-pay means at_most:0:percent; no deductible means at_most:0:rupees. A specific room category uses room:single_private, room:single_standard, room:twin_sharing, room:shared or room:suite. Never guess a threshold. "
+    "Requirements use exactly these field IDs: maternity, newborn, opd, room_limit, copay, ped_waiting, specified_waiting, deductible, restoration, no_claim_bonus, ayush; use other for an unsupported need. "
+    "Requirement strength is unclassified unless explicitly must-have/required/need or nice-to-have/optional/prefer. Saying a benefit matters does not establish must-have. "
+    "Product type, hospital-expense indemnity and individual/floater basis are Stage 1 details, not additional requirements. "
+    "Use no_preference only for an explicit statement of no preference or uncertainty, never for omitted information. "
     "A policy QUESTION NEVER creates a requirement. Keep it in policy_question. Requirements need explicit customer preference; "
     "yes I need it responding to a requirement question is affirmative=true and must_have. Retain unsupported needs under their original text. "
     "If the customer chooses narrowing before answering a pending policy question, set narrow_first=true. "
@@ -120,6 +125,7 @@ def interpret(text, state, cards, relay=None):
                 "content": json.dumps(
                     {
                         "reply": text,
+                        "needs_registry": LABELS,
                         "profile": state.profile.model_dump(),
                         "pending": state.pending.model_dump() if state.pending else None,
                         "selected_plans": state.selected_plans,
@@ -144,6 +150,41 @@ def interpret(text, state, cards, relay=None):
         max_tokens=4096,
     )
     changes = ProposedChanges.model_validate(result.value)
+    # Strength requires customer language; model confidence is not consent.
+    for need in changes.requirements:
+
+        def strength_cues(value):
+            return (
+                bool(
+                    re.search(
+                        r"must[ -]?have|\bmust\b|\brequire(?:d)?\b|\bneed(?:s)?\b|essential|non.negotiable",
+                        value,
+                        re.I,
+                    )
+                ),
+                bool(
+                    re.search(
+                        r"nice[ -]?to[ -]?have|optional|prefer|would like|if possible", value, re.I
+                    )
+                ),
+            )
+
+        original = " ".join(need.original_text.casefold().split())
+        customer = " ".join(text.casefold().split())
+        must, nice = strength_cues(original if original and original in customer else "")
+        if not must and not nice:
+            must, nice = strength_cues(text)
+        need.strength = (
+            "must_have"
+            if must and not nice
+            else "nice_to_have"
+            if nice and not must
+            else "unclassified"
+        )
+    if changes.no_preference and not re.search(
+        r"no preference|not sure|unsure|don.t know|any (?:type|kind)|no particular", text, re.I
+    ):
+        changes.no_preference = False
     if changes.correction and not re.search(
         r"\b(?:actually|correct|correction|change|instead|rather|sorry|now|withdraw|remove|no longer)\b",
         text,
@@ -335,7 +376,49 @@ def merge(state, changes):
     # A question cannot be interpreted as a new requirement, even if the model
     # also emitted a preference. Existing requirements remain unchanged.
     if not changes.policy_question:
+        accepted_need = False
+        aliases = {
+            "maternity_cover": "maternity",
+            "maternity_coverage": "maternity",
+            "newborn_cover": "newborn",
+            "newborn_coverage": "newborn",
+            "outpatient": "opd",
+            "outpatient_cover": "opd",
+            "opd_cover": "opd",
+            "room_rent": "room_limit",
+            "room_limits": "room_limit",
+            "room_rent_limit": "room_limit",
+            "co_pay": "copay",
+            "co_payment": "copay",
+            "ped": "ped_waiting",
+            "pre_existing_disease_waiting_period": "ped_waiting",
+            "specified_waiting_period": "specified_waiting",
+            "restoration_cover": "restoration",
+            "ncb": "no_claim_bonus",
+            "no_claim_bonus_cover": "no_claim_bonus",
+        }
+        detail_fields = {
+            "plan_type",
+            "coverage_basis",
+            "medical_indemnity",
+            "hospital_expenses",
+            "hospital_expense_cover",
+            "hospitalization",
+            "hospitalisation",
+            "hospital_cover",
+            "hospitalization_cover",
+        }
         for need in changes.requirements:
+            key = re.sub(r"[^a-z0-9]+", "_", need.field.casefold()).strip("_")
+            if (
+                key in detail_fields
+                or re.fullmatch(
+                    r"(?:medical_)?(?:hospital(?:ization|isation|_expenses?)?|indemnity)(?:_cover(?:age)?)?",
+                    key,
+                )
+            ) and (changes.plan_type is not None or changes.coverage_basis is not None):
+                continue
+            need.field = aliases.get(key, key)
             if need.field not in FIELDS:
                 need.field = (
                     "unsupported:"
@@ -349,6 +432,7 @@ def merge(state, changes):
                 ),
                 None,
             )
+            accepted_need = True
             if old:
                 if need.strength != "unclassified" and (
                     old.strength == "unclassified" or changes.correction
@@ -358,7 +442,7 @@ def merge(state, changes):
                     old.value = need.value
             else:
                 facts.requirements.append(need)
-        if changes.requirements:
+        if accepted_need:
             state.answered.append("needs")
     if pending and pending.template in {"strength", "narrow"} and changes.affirmative is not None:
         need = next((r for r in facts.requirements if r.field == pending.field), None)
@@ -536,7 +620,7 @@ def next_question(state, cards, *, relay=None, ambiguity=None):
         prefix = f"{choice['count']} of the {choice['remaining']} remaining plans state a no-claim bonus increase of at least {amount} percent, subject to their quoted caps and conditions."
     else:
         _, amount, unit = choice["value"].split(":")
-        prefix = f"{choice['count']} of the {choice['remaining']} remaining plans have a supported {LABELS[choice['field']]} of at most {amount} {unit}."
+        prefix = f"{choice['count']} of the {choice['remaining']} remaining plans have {LABELS[choice['field']]} of at most {amount} {unit}."
     if choice.get("conditions"):
         prefix += " The quoted conditions still apply."
     if choice["known"] < choice["remaining"]:

@@ -113,13 +113,19 @@ class Command(BaseCommand):
                     "pending": initial["pending"],
                 }
             )
+            needs_sent = False
             for n in range(20):
                 state = data["state"]
                 pending = state["pending"]
                 field = pending["field"] if pending else ""
-                if state["stage"] == "narrowing" and state["stop_reason"]:
+                if state["stage"] == "narrowing" and state["stop_reason"] and needs_sent:
                     break
-                if field == "people":
+                if state["stage"] == "narrowing" and not needs_sent:
+                    # Supply the same profile needs through chat even if a
+                    # volunteered earlier preference skipped the open prompt.
+                    message = spec["needs"]
+                    needs_sent = True
+                elif field == "people":
                     message = spec["people"]
                 elif field == "city":
                     message = "Pune"
@@ -133,6 +139,7 @@ class Command(BaseCommand):
                     message = "Skip"
                 elif field == "needs":
                     message = spec["needs"]
+                    needs_sent = True
                 elif pending["template"] == "strength":
                     message = spec["strength"].get(field, "Nice-to-have")
                 elif pending["template"] == "narrow":
@@ -180,6 +187,17 @@ class Command(BaseCommand):
                     "stop_reason": data["state"]["stop_reason"],
                     "total_ms": round((time.monotonic() - started) * 1000),
                     "final_profile": data["state"]["profile"],
+                    "intended_needs": spec["strength"],
+                    "needs_delivered": needs_sent,
+                    "needs_classified_as_intended": all(
+                        any(
+                            r["field"] == field
+                            and r["strength"]
+                            == ("must_have" if strength == "Must-have" else "nice_to_have")
+                            for r in data["state"]["profile"]["requirements"]
+                        )
+                        for field, strength in spec["strength"].items()
+                    ),
                     "fit_groups": data["state"]["fit_groups"],
                     "card_versions": [c.get("card_version") for c in data["cards"]],
                 }
