@@ -4,7 +4,9 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
-PlanType = Literal["medical_indemnity", "top_up", "super_top_up", "critical_illness", "fixed_benefit", "unresolved"]
+PlanType = Literal[
+    "medical_indemnity", "top_up", "super_top_up", "critical_illness", "fixed_benefit", "unresolved"
+]
 
 
 class Closed(BaseModel):
@@ -31,6 +33,9 @@ class TableSupport(Closed):
 
 
 class Statement(SupportedText):
+    coverage_scope: Literal["base", "optional, extra premium"] = "base"
+    scope_product: str | None = None
+    scope_variant: str | None = None
     heading: Literal["Policy excerpt", "Table excerpts"] = "Policy excerpt"
     excerpts: list[str] = Field(default_factory=list)
     conditions: list[SupportedText] = Field(default_factory=list, max_length=12)
@@ -69,6 +74,16 @@ class AnswerDraft(Closed):
     schema_version: Literal[2] = 2
     status: Literal["answered", "not_found"]
     units: list[DraftUnit] = Field(max_length=8)
+
+
+class ScopedDraftUnit(DraftUnit):
+    coverage_scope: Literal["base", "optional, extra premium"]
+
+
+class ScopedAnswerDraft(Closed):
+    schema_version: Literal[3] = 3
+    status: Literal["answered", "not_found"]
+    units: list[ScopedDraftUnit] = Field(max_length=8)
 
 
 class Need(Closed):
@@ -178,10 +193,19 @@ class FitResult(Closed):
 
 class PremiumResult(Closed):
     schema_version: Literal[1] = 1
-    status: Literal["available", "unpublished", "source_unavailable", "missing_details", "no_exact_combination", "invalid_chart"]
+    status: Literal[
+        "available",
+        "unpublished",
+        "source_unavailable",
+        "missing_details",
+        "no_exact_combination",
+        "invalid_chart",
+    ]
     amount_printed: str | None
     missing_axes: list[str]
     citations: list[Citation]
     axis_options: dict[str, list[str]] = Field(default_factory=dict)
     label: str = "Indicative annual premium from the official chart, excluding tax"
-    caveat: str = "The insurer's final premium may differ. No tax, discount or loading has been calculated."
+    caveat: str = (
+        "The insurer's final premium may differ. No tax, discount or loading has been calculated."
+    )

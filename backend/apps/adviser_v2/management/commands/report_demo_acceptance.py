@@ -18,56 +18,135 @@ class Command(BaseCommand):
         parser.add_argument("--run-id", required=True)
 
     def handle(self, **options):
-        if settings.DATABASES['default']['NAME'] != 'coverguide_star_slice':
-            raise CommandError('Report only the isolated application execution.')
-        root = Path(settings.COVERGUIDE_REPORT_ROOT) / 'ten-insurer/application-acceptance' / options['run_id']
-        if not (root / 'summary.json').exists():
-            raise CommandError('The full application acceptance run has not finished.')
-        summary = json.loads((root / 'summary.json').read_text())
-        release = DemoRelease.objects.get(pk=summary['release_id'])
-        state = json.loads((root / 'state.json').read_text())
-        rows = [json.loads((root / 'results' / (job['id'] + '.json')).read_text()) for job in state['jobs']]
-        cases = [(row, result) for row in rows if row['job']['kind'] == 'answer' for result in row['results']]
-        references = [(row, result) for row in rows if row['job']['kind'] == 'star' for result in row['results']]
+        if settings.DATABASES["default"]["NAME"] != "coverguide_star_slice":
+            raise CommandError("Report only the isolated application execution.")
+        root = (
+            Path(settings.COVERGUIDE_REPORT_ROOT)
+            / "ten-insurer/application-acceptance"
+            / options["run_id"]
+        )
+        if not (root / "summary.json").exists():
+            raise CommandError("The full application acceptance run has not finished.")
+        summary = json.loads((root / "summary.json").read_text())
+        release = DemoRelease.objects.get(pk=summary["release_id"])
+        state = json.loads((root / "state.json").read_text())
+        rows = [
+            json.loads((root / "results" / (job["id"] + ".json")).read_text())
+            for job in state["jobs"]
+        ]
+        cases = [
+            (row, result)
+            for row in rows
+            if row["job"]["kind"] == "answer"
+            for result in row["results"]
+        ]
+        references = [
+            (row, result)
+            for row in rows
+            if row["job"]["kind"] == "star"
+            for result in row["results"]
+        ]
         if len(cases) != 260 or len(references) != 78:
-            raise CommandError('Application denominator or reference queries changed.')
+            raise CommandError("Application denominator or reference queries changed.")
         cells = defaultdict(dict)
         for row, value in references:
-            cells[(value['plan_id'], row['job']['criterion'])][row['job']['style']] = {
-                'complete': bool(value['required']) and set(value['required']) <= set(value['covered']),
-                'required': value['required'], 'covered': value['covered'],
-                'displayed': value.get('displayed', []), 'missing': sorted(set(value['required']) - set(value['covered']))}
-        details = {**summary, 'models': dict(Counter(model for _, r in cases for model in set(r['models']))),
-            'reference_details': [{'plan_id': plan, 'criterion': criterion, 'queries': queries,
-                'complete': all(queries.get(style, {}).get('complete', False) for style in ('fixed', 'customer'))}
-                for (plan, criterion), queries in sorted(cells.items())]}
+            cells[(value["plan_id"], row["job"]["criterion"])][row["job"]["style"]] = {
+                "complete": bool(value["required"])
+                and set(value["required"]) <= set(value["covered"]),
+                "required": value["required"],
+                "covered": value["covered"],
+                "displayed": value.get("displayed", []),
+                "missing": sorted(set(value["required"]) - set(value["covered"])),
+            }
+        details = {
+            **summary,
+            "models": dict(Counter(model for _, r in cases for model in set(r["models"]))),
+            "reference_details": [
+                {
+                    "plan_id": plan,
+                    "criterion": criterion,
+                    "queries": queries,
+                    "complete": all(
+                        queries.get(style, {}).get("complete", False)
+                        for style in ("fixed", "customer")
+                    ),
+                }
+                for (plan, criterion), queries in sorted(cells.items())
+            ],
+        }
         repository = Path(settings.BASE_DIR).parent
-        atomic_json(repository / 'output/application-acceptance.json', details)
-        lines = ['# Winning application answer sheet', '', f'Release: `{release.id}`. Method: {release.method}.', '',
-            'Fresh execution through the application service. The five recovered flagships are included here. '
-            'These results do not change the frozen bake-off or its unavailable slots.', '',
+        atomic_json(
+            repository / ("output/application-acceptance-" + options["run_id"] + ".json"), details
+        )
+        lines = [
+            "# Winning application answer sheet",
+            "",
+            f"Release: `{release.id}`. Method: {release.method}.",
+            "",
+            "Fresh execution through the application service. The five recovered flagships are included here. "
+            "These results do not change the frozen bake-off or its unavailable slots.",
+            "",
             f"Answer outcomes / 260: `{summary['outcomes']}`. Complete Star reference cells: "
-            f"{summary['complete_reference_cells']}/39, requiring both fixed and customer query packets to contain every reference span.", '',
-            f"Table-heavy answer outcomes: `{details['table_heavy']}`. Model usage by answer case: `{details['models']}`.", '',
-            'An answered result passed six code checks; this is not expert-verified correctness. '
-            'The reference comparison measures packet coverage, not answer completeness.', '']
+            f"{summary['complete_reference_cells']}/39, requiring both fixed and customer query packets to contain every reference span.",
+            "",
+            f"Table-heavy answer outcomes: `{details['table_heavy']}`. Model usage by answer case: `{details['models']}`.",
+            "",
+            "An answered result passed six code checks; this is not expert-verified correctness. "
+            "The reference comparison measures packet coverage, not answer completeness.",
+            "",
+        ]
         for row, value in cases:
-            lines.extend([f"## {row['job']['id']} — {value['name']}", '', row['job']['question'], '',
-                f"Status: **{value['status']}**. Models: {', '.join(value['models']) or 'No successful model call'}. "
-                f"Elapsed including queue: {value['total_ms']} ms. Omitted sections: {len(value['omissions'])}.", '',
-                f"Index: `{value['index_version']}`. Validation: `{value['validation']}`.", ''])
-            answer = value.get('answer') or {}
-            for statement in answer.get('statements', []):
-                for item in [statement, *statement.get('conditions', []), *statement.get('restrictions', [])]:
-                    lines.append('> ' + item['text'].replace('\n', '\n> '))
-                    lines.append('')
-            if value['omissions']:
-                lines.extend(['Omitted section IDs: ' + ', '.join(f'`{key}`' for key in value['omissions']), ''])
-        lines.extend(['## All 39 Star reference cells', '', '| Plan | Criterion | Fixed packet | Customer packet | Fixed displayed | Customer displayed | Complete packet | ',
-                      '|---|---|---|---|---|---|---|'])
-        for cell in details['reference_details']:
-            query = cell['queries']
-            counts = {style: f"{len(value['covered'])}/{len(value['required'])}" for style, value in query.items()}
-            lines.append(f"| {cell['plan_id']} | {cell['criterion']} | {counts['fixed']} | {counts['customer']} | {len(query['fixed']['displayed'])} | {len(query['customer']['displayed'])} | {cell['complete']} |")
-        (repository / 'output/application-answer-sheet.md').write_text('\n'.join(lines) + '\n')
-        self.stdout.write(json.dumps({key: value for key, value in details.items() if key != 'reference_details'}))
+            lines.extend(
+                [
+                    f"## {row['job']['id']} — {value['name']}",
+                    "",
+                    row["job"]["question"],
+                    "",
+                    f"Status: **{value['status']}**. Models: {', '.join(value['models']) or 'No successful model call'}. "
+                    f"Elapsed including queue: {value['total_ms']} ms. Omitted sections: {len(value['omissions'])}.",
+                    "",
+                    f"Index: `{value['index_version']}`. Validation: `{value['validation']}`.",
+                    "",
+                ]
+            )
+            answer = value.get("answer") or {}
+            for statement in answer.get("statements", []):
+                lines.extend(["Scope: **" + statement.get("coverage_scope", "base") + "**.", ""])
+                for item in [
+                    statement,
+                    *statement.get("conditions", []),
+                    *statement.get("restrictions", []),
+                ]:
+                    lines.append("> " + item["text"].replace("\n", "\n> "))
+                    lines.append("")
+            if value["omissions"]:
+                lines.extend(
+                    [
+                        "Omitted section IDs: "
+                        + ", ".join(f"`{key}`" for key in value["omissions"]),
+                        "",
+                    ]
+                )
+        lines.extend(
+            [
+                "## All 39 Star reference cells",
+                "",
+                "| Plan | Criterion | Fixed packet | Customer packet | Fixed displayed | Customer displayed | Complete packet | ",
+                "|---|---|---|---|---|---|---|",
+            ]
+        )
+        for cell in details["reference_details"]:
+            query = cell["queries"]
+            counts = {
+                style: f"{len(value['covered'])}/{len(value['required'])}"
+                for style, value in query.items()
+            }
+            lines.append(
+                f"| {cell['plan_id']} | {cell['criterion']} | {counts['fixed']} | {counts['customer']} | {len(query['fixed']['displayed'])} | {len(query['customer']['displayed'])} | {cell['complete']} |"
+            )
+        (repository / ("output/application-answer-sheet-" + options["run_id"] + ".md")).write_text(
+            "\n".join(lines) + "\n"
+        )
+        self.stdout.write(
+            json.dumps({key: value for key, value in details.items() if key != "reference_details"})
+        )
