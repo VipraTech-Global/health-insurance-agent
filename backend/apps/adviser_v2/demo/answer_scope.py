@@ -76,6 +76,21 @@ def optional_cover(text):
     return False
 
 
+def is_optional_heading(match):
+    title = match["title"].strip(" \t\x07➢•")
+    if not OPTIONAL.search(title) or len(title.split()) > 14:
+        return False
+    # Sentences, FAQs, table-column headings and payment conditions are not
+    # parent section headings. Numbered optional/rider titles may wrap.
+    if re.search(r"\b(?:will|shall|payment|premium|insured|if|claim|not|exclusion)\b", title, re.I):
+        return False
+    if match["number"]:
+        return bool(re.search(r"^(?:optional|riders?\b)|\brider(?:[ :(-]|$)", title, re.I))
+    return bool(
+        re.fullmatch(r"(?:Optional (?:Covers?|Benefits)|Riders?|Add[ -]?on Covers?)", title, re.I)
+    )
+
+
 class ScopeIndex:
     def __init__(self, bundle):
         self.product = bundle.get("name", "Selected plan")
@@ -90,7 +105,7 @@ class ScopeIndex:
                 self.documents[key] = raw
                 self.headings[key] = list(
                     re.finditer(
-                        r"(?m)^[ \t]*(?:(?P<number>(?:[A-Z]\.)?\d+(?:\.\d+)*|[A-Z])[.)]?[ \t]+)?(?P<title>[^\n]{2,150})$",
+                        r"(?m)^[ \t]*(?:(?P<number>(?:[A-Z]\.)?\d+(?:\.\d+)*|[A-Z])(?=[.)\s])[.)]?[ \t\x07]*)?(?P<title>[^\n]{2,150})$",
                         raw,
                     )
                 )
@@ -140,8 +155,7 @@ class ScopeIndex:
                 }
         self.heading_starts = {k: [m.start() for m in v] for k, v in self.headings.items()}
         self.optional_headings = {
-            k: [m for m in v if OPTIONAL.search(m["title"]) and len(m["title"].split()) <= 14]
-            for k, v in self.headings.items()
+            k: [m for m in v if is_optional_heading(m)] for k, v in self.headings.items()
         }
         self.table_map = {t["id"]: t for t in bundle.get("tables", [])}
         self.roles = {s.document_id: s.role for s in self.sections.values()}
@@ -166,15 +180,13 @@ class ScopeIndex:
             if heading.start() > start:
                 continue
             title = heading["title"].strip()
-            if not OPTIONAL.search(title) or len(title.split()) > 14:
-                continue
             if re.search(r"(?:except|unless|excluding|not covered|not available)", title, re.I):
                 continue
             number = heading["number"]
             if not number:
                 later = raw[heading.end() : start]
                 if re.search(
-                    r"(?mi)^\s*(?:Base|Standard|General) (?:Covers|Benefits|Exclusions|Conditions)\b",
+                    r"(?mi)^\s*(?:(?:Base|Standard|General) (?:Covers|Benefits|Exclusions|Conditions)|Sub ?Limits|Waiting Periods?|Exclusions)\b",
                     later,
                 ):
                     continue
@@ -276,6 +288,7 @@ class ScopeIndex:
         for context in contexts:
             owner = context.get("printed_product_owner")
             selected_tokens = set(re.findall(r"[a-z0-9]+", canon(self.product))) - {"my"}
+            selected_tokens -= set(re.findall(r"[a-z0-9]+", canon(self.variant)))
             owner_tokens = set(re.findall(r"[a-z0-9]+", canon(owner or "")))
             if (
                 owner
@@ -375,6 +388,10 @@ class ScopedLabels(PacketLabels):
             section, segment = self.passages[p["label"]]
             p["source_role"] = section.role
             p["scope"] = self.scope.context(section, segment, segment.text)
+            if OPTIONAL.search(segment.text) and not p["scope"]["scope_headings"]:
+                p["scope"]["coverage_scope"] = (
+                    "mixed passage; resolve each selected clause separately"
+                )
         for t in result["tables"]:
             t["scope"] = self.scope.table_scope(self.tables[t["label"]])
         return result
@@ -385,8 +402,6 @@ def closes_scope(root, other):
     if len(right) > len(left):
         return False
     if left[0].isalpha() != right[0].isalpha():
-        return False
-    if left[0].isdecimal() and right[0].isdecimal() and int(right[0]) < int(left[0]):
         return False
     return right != left and (len(right) == 1 or right[:-1] == left[: len(right) - 1])
 

@@ -30,7 +30,7 @@ ANSWER_PROMPT = (
     "Drop another product or variant's benefits. Keep optional cover separately labelled even when it answers the question. "
     "Each unit is a substantive benefit with ALL required conditions and restrictions; a standalone condition is not an answer. "
     "Select short exact governing quotations using local P1... labels, with zero-based occurrence. Include the benefit's "
-    "heading in the selected quote so its field is clear. PED and specified-disease waits are different; a co-payment is not a deductible. "
+    "heading as a separate exact quote when needed to identify its field. Prefer short exact anchors to copying long sections; code completes governing clauses. Never insert punctuation between a heading and its body. PED and specified-disease waits are different; a co-payment is not a deductible. "
     "Do not supply document/page/section/plan identities or answer prose. Code resolves them and displays original excerpts separately. "
     "Keep preceding qualifications, negation, following conditions, list introductions and footnotes. Silence is not exclusion. "
     "For tables use T1... and C1... cells with value, rows and columns, plus benefit passages and governing conditions. "

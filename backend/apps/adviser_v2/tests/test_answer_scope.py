@@ -226,3 +226,30 @@ def test_shared_illustration_is_not_selected_variant_availability_proof():
     p = replace(p, sections=(cis,))
     with pytest.raises(ScopeViolation, match="Shared wording"):
         scoped(b, p, scope, cis.text)
+
+
+@pytest.mark.parametrize(
+    "earlier",
+    [
+        "Cover): On payment of additional premium the Insured Person",
+        "S. No. Optional Benefits",
+        "What are the optional covers available?",
+    ],
+)
+def test_mentions_and_table_headers_do_not_make_later_base_benefits_optional(earlier):
+    b, p, s = fixture(earlier + "\nSub Limits\nRoom Eligibility No limit.")
+    answer, _ = scoped(b, p, s, "Room Eligibility No limit.", question="What room limit applies?")
+    assert answer.coverage_scope == "base"
+
+
+def test_product_owner_can_omit_selected_variant_but_not_change_product():
+    b, p, s = fixture("Product Name: Alpha Cover\nOPD is covered.", name="Alpha Cover Gold")
+    assert scoped(b, p, s, "OPD is covered.")[0].coverage_scope == "base"
+
+
+def test_invisible_pdf_layout_marker_is_offset_preserving():
+    from apps.adviser_v2.demo.quotations import locate
+
+    raw = "1.\t\x07In-patient Treatment: Room charges are covered."
+    a, b = locate(raw, "1. In-patient Treatment: Room charges are covered.")
+    assert raw[a:b] == raw

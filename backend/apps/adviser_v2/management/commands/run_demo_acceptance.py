@@ -115,6 +115,7 @@ class Command(BaseCommand):
                     "answer_scope",
                     "answer_retrieval",
                     "assembly",
+                    "card_clauses",
                     "contracts",
                     "evidence",
                     "evaluation",
