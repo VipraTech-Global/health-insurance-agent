@@ -34,6 +34,10 @@ def price_step(state, cards):
         if hashlib.sha256(path.read_bytes()).hexdigest() != card["pricing_sha256"]:
             raise ValueError("Pinned pricing artifact changed.")
     prices, cells = load_prices(chart)
+    options = {a: sorted({p.axes[a] for p in prices}) for a in chart["required_axes"]}
+    state.price_axes = {
+        k: v for k, v in state.price_axes.items() if k in options and v in options[k]
+    }
     result = lookup(
         prices=prices,
         cells=cells,

@@ -106,7 +106,11 @@ def start(owner, *, release_id=None):
     owner = User.objects.select_for_update().get(pk=owner.pk)
     if not owner.is_active or owner.deleted_at:
         raise ValueError("This account is unavailable.")
-    release = DemoRelease.objects.get(pk=release_id) if release_id else DemoRelease.objects.get(active=True)
+    release = (
+        DemoRelease.objects.get(pk=release_id)
+        if release_id
+        else DemoRelease.objects.get(active=True)
+    )
     session = DemoSession(id=uuid.uuid4(), owner=owner)
     state = ChatState()
     cards = release_cards(release)
@@ -208,7 +212,13 @@ def commit_turn(owner, conversation_id, *, request_id, revision, text, relay=Non
     cards = release_cards(conversation.release)
     before = state.profile.model_dump()
     model = None
-    token = AUDIT_CONTEXT.set({"conversation_id":str(conversation.id),"revision":revision+1,"request_id":str(request_id)})
+    token = AUDIT_CONTEXT.set(
+        {
+            "conversation_id": str(conversation.id),
+            "revision": revision + 1,
+            "request_id": str(request_id),
+        }
+    )
     try:
         changes, model = interpret(text, state, cards, relay=relay)
         allowed = {c["plan_id"] for c in cards}
@@ -236,7 +246,11 @@ def commit_turn(owner, conversation_id, *, request_id, revision, text, relay=Non
         DemoQuestion.objects.filter(session=session).exclude(
             state__in=["completed", "cancelled"]
         ).update(state="cancelled", cancelled_at=timezone.now())
-    q = submit_policy(owner, conversation, state, cards) if state.policy_question else None
+    q = (
+        submit_policy(owner, conversation, state, cards)
+        if state.policy_question and not state.policy_deferred
+        else None
+    )
     if state.price_plan and state.stage != "stopped":
         from .chat_prices import price_step
 

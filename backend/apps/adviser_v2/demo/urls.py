@@ -1,8 +1,12 @@
 from django.urls import path
 
-from . import views
+from . import chat_views, fact_views, views
 
 urlpatterns = [
+    path("conversations/", chat_views.Conversations.as_view()),
+    path("conversations/<uuid:pk>/", chat_views.ConversationDetail.as_view()),
+    path("fact-cards/<str:card_id>/citation/", fact_views.FactCitation.as_view()),
+    path("fact-prices/<str:card_id>/citation/", fact_views.FactPriceCitation.as_view()),
     path("health/", views.Health.as_view()),
     path("catalogue/", views.Catalogue.as_view()),
     path("coverage/", views.Coverage.as_view()),

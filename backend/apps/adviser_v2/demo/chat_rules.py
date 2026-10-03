@@ -1,5 +1,6 @@
 """Neutral chat evaluation and deterministic insurer-independent question choice."""
 
+import re
 from itertools import combinations
 
 from .contracts import PersonInput, PlanCard, Profile
@@ -34,7 +35,32 @@ def requirement_result(card, need, profile=None):
             status = {"covered": "fits", "not_covered": "doesnt_fit"}.get(
                 rule["value"], "unresolved"
             )
-        elif rule["kind"] == "maximum" and need.value.startswith("at_most:"):
+        elif rule["kind"] == "bonus" and need.value == "covered":
+            status = "fits" if float(rule["value"]) > 0 else "unresolved"
+        elif rule["kind"] == "room" and need.value.startswith("room:"):
+            requested = need.value.split(":", 1)[1]
+            category = rule["value"]
+            order = {
+                "shared": 0,
+                "twin_sharing": 1,
+                "single_standard": 2,
+                "single_private": 3,
+                "suite": 4,
+            }
+            if category == requested or category == "any_room":
+                status = "fits"
+            elif category in order and requested in order and order[category] < order[requested]:
+                status = "doesnt_fit"
+            elif category == "any_room_except_suite" and requested == "suite":
+                status = "doesnt_fit"
+        elif rule["kind"] == "bonus" and re.fullmatch(
+            r"bonus_at_least:\d+(?:\.\d+)?:percent", need.value
+        ):
+            requested = float(need.value.split(":")[1])
+            status = "fits" if float(rule["value"]) >= requested else "doesnt_fit"
+        elif rule["kind"] == "maximum" and re.fullmatch(
+            r"at_most:\d+(?:\.\d+)?:[a-z_]+", need.value
+        ):
             _, requested, unit = need.value.split(":")
             if unit == rule.get("unit"):
                 status = "fits" if float(rule["value"]) <= float(requested) else "doesnt_fit"
@@ -183,7 +209,7 @@ def differentiator(cards, groups, suppressed, profile=None):
             if card["plan_id"] not in remaining:
                 continue
             rule = source_rule(card, field, profile=profile)
-            if rule and rule["kind"] in {"coverage", "maximum"}:
+            if rule and rule["kind"] in {"coverage", "maximum", "bonus", "room"}:
                 values.append((card, rule))
         if len({(r["kind"], r.get("unit")) for _, r in values}) > 1:
             continue
@@ -204,6 +230,14 @@ def differentiator(cards, groups, suppressed, profile=None):
         minimum = min(float(r["value"]) for _, r in values)
         proposed = f"at_most:{minimum:g}:{rule['unit']}"
         count = sum(float(r["value"]) <= minimum for _, r in values)
+    elif all(r["kind"] == "room" for _, r in values):
+        category = sorted(r["value"] for _, r in values)[0]
+        proposed = "room:" + category
+        count = sum(r["value"] == category for _, r in values)
+    elif all(r["kind"] == "bonus" for _, r in values):
+        amount = max(float(r["value"]) for _, r in values)
+        proposed = f"bonus_at_least:{amount:g}:percent"
+        count = sum(float(r["value"]) >= amount for _, r in values)
     else:
         return None
     return {
@@ -214,4 +248,5 @@ def differentiator(cards, groups, suppressed, profile=None):
         "known": len(values),
         "source_indexes": sorted({c["index_version"] for c, _ in values}),
         "quotes": [q for _, r in values for q in r["citations"]],
+        "conditions": list(dict.fromkeys(c for _, r in values for c in r.get("conditions", []))),
     }

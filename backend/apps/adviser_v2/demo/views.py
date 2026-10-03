@@ -85,9 +85,10 @@ class Catalogue(APIView):
     @extend_schema(responses=ObjectOutput)
     def get(self, request):
         release, rows = indexes()
+        from .chat_services import release_cards
         return Response({"schema_version": 1, "release_id": str(release.id) if release else None,
             "method": release.method if release else None,
-            "plans": [row.card for row in sorted(rows, key=lambda r: (r.insurer.casefold(), r.name.casefold(), r.variant.casefold(), r.plan_key)) if row.card],
+            "plans": release_cards(release) if release else [r.card for r in rows if r.card],
             "disclaimer": "Local demonstration. Not a recommendation. Document checks do not establish underwriting acceptance or claim payment. AI answers have not been reviewed by an insurance expert."})
 
 
@@ -99,6 +100,7 @@ class Coverage(APIView):
         register = root / "discovery/register.json"
         discovery = json.loads(register.read_text()) if register.exists() else []
         found = {r["insurer_id"]: r for r in discovery}
+        versions = {r.index_id: r for r in release.fact_cards.all()} if release else {}
         recovered_file = root / 'retry-flagship-candidates.json'
         recovered = json.loads(recovered_file.read_text()) if recovered_file.exists() else []
         inventory_file = root / 'catalogue-inventory.json'
@@ -115,7 +117,10 @@ class Coverage(APIView):
                 "catalogue_complete": False} for key, name, url in sorted(INSURERS, key=lambda r: r[1])],
             "plans": [{"id": r.plan_key, "name": r.name, "variant": r.variant, "insurer": r.insurer, "uin": r.uin,
                        "edition": r.edition, "index_version": r.id, "models": r.models_used,
-                       "revoked": bool(r.revoked_at), **r.coverage} for r in rows]})
+                       "revoked": bool(r.revoked_at), **r.coverage,
+                       "card_version": versions[r.id].id if r.id in versions else None,
+                       "field_coverage": versions[r.id].card["field_coverage"] if r.id in versions else {},
+                       "rule_coverage": versions[r.id].card["rule_coverage"] if r.id in versions else {}} for r in rows]})
 
 
 class Fit(APIView):

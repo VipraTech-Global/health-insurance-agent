@@ -1,12 +1,13 @@
 """Three-stage chat orchestration. Code chooses questions; documents decide fits."""
 
+import hashlib
 import json
 import re
 import uuid
 
 from .chat_rules import differentiator, fit_groups, remaining_ids
 from .contracts import Closed
-from .conversation_contracts import ChatState, ProposedChanges, QuestionIntent, Requirement
+from .conversation_contracts import FIELDS, ChatState, ProposedChanges, QuestionIntent, Requirement
 from .relay import InvalidOutput, Relay, RelayUnavailable
 
 LABELS = {
@@ -49,13 +50,16 @@ INTERPRET_PROMPT = (
     "Extract ALL unambiguous details, including later-stage details, without guessing. Use people IDs already provided; "
     "new people need stable relationship-based IDs. Ages retain printed years/months/days. Amounts are rupees (1 lakh=100000). "
     "Distinguish product type from individual/floater basis, and purchase city from premium zone or treatment territory. "
+    "For explicit upper limits use requirement value at_most:N:unit (months, percent or rupees). No co-pay means at_most:0:percent; no deductible means at_most:0:rupees. A specific room category uses room:single_private, room:single_standard, room:twin_sharing, room:shared or room:suite. Never guess a threshold. "
     "A policy QUESTION NEVER creates a requirement. Keep it in policy_question. Requirements need explicit customer preference; "
     "yes I need it responding to a requirement question is affirmative=true and must_have. Retain unsupported needs under their original text. "
+    "If the customer chooses narrowing before answering a pending policy question, set narrow_first=true. "
     "No preference is not medical_indemnity: use no_preference=true. Do not infer a type. Explicit skip is skip=true. "
+    "Only an explicit request to remove someone from cover sets removed_people to existing person IDs. "
     "Only explicit corrections set correction=true. Ambiguities identify one ambiguous_field and do not overwrite facts. "
     "Choose selected_plans/restored_plans only from supplied exact plan IDs when the customer names them. Never select a subset yourself. "
     "withdrawn_requirements requires an explicit withdrawal, not skip. Stop requests set stop=true. "
-    "Price choices are exact printed strings for one axis; never infer axes, tax, discounts or loadings. "
+    "Extract all explicitly provided printed price axes into the price_axes list of axis/value objects. Price choices are exact printed strings for one axis; never infer axes, tax, discounts or loadings. "
     "Return the complete structured contract with null/empty unchanged fields. Do not generate conversational questions."
 )
 
@@ -92,6 +96,8 @@ def interpret(text, state, cards, relay=None):
         "done",
     }:
         return ProposedChanges(stop=True), None
+    if plain in {"narrow first", "narrow down first", "help me narrow"}:
+        return ProposedChanges(narrow_first=True), None
     if plain in {"skip", "skip this", "prefer not to say"}:
         return ProposedChanges(skip=True), None
     if (
@@ -160,10 +166,40 @@ def question(
     relay=None,
 ):
     name = LABELS.get(need or field, "this requirement")
+    if template == "strength" and (need or field) not in LABELS:
+        expressed = next(
+            (r for r in state.profile.requirements if r.field == (need or field)), None
+        )
+        if expressed:
+            name = (
+                "your stated need “" + expressed.original_text.replace("?", ".").strip()[:160] + "”"
+            )
+    known_person = next((p for p in state.profile.people if p.id == person), None)
+    person_label = "this person"
+    if known_person:
+        peers = [p for p in state.profile.people if p.relationship == known_person.relationship]
+        person_label = "your " + known_person.relationship.replace("_", " ")
+        if known_person.relationship == "self":
+            person_label = "the person marked as yourself"
+        if len(peers) > 1:
+            person_label += " " + str(peers.index(known_person) + 1)
+    field_label = {
+        "people": "who needs cover",
+        "city": "your city",
+        "sum_insured": "the sum insured",
+        "annual_budget": "your annual budget",
+        "plan_type": "the type of cover",
+        "coverage_basis": "the coverage basis",
+        "existing_cover": "your existing cover",
+        "health_details": "the optional health detail",
+        "selection": "your plan selection",
+    }.get(field, LABELS.get(field, "that detail"))
+    if field and field.startswith("age:"):
+        field_label = "the age for one person"
     params = {
-        "person": person or "this person",
+        "person": person_label,
         "need": name,
-        "field": field.replace("_", " ") if field else "that detail",
+        "field": field_label,
         "axis": field.removeprefix("price:").replace("_", " ") if field else "axis",
     }
     text = TEMPLATES[template].format(**params)
@@ -256,6 +292,8 @@ def merge(state, changes):
         else:
             state.skipped.append(pending.field)
         state.answered.append(pending.field)
+    if changes.correction:
+        facts.people = [p for p in facts.people if p.id not in changes.removed_people]
     by_id = {p.id: p for p in facts.people}
     for person in changes.people:
         previous = by_id.get(person.id)
@@ -298,6 +336,11 @@ def merge(state, changes):
     # also emitted a preference. Existing requirements remain unchanged.
     if not changes.policy_question:
         for need in changes.requirements:
+            if need.field not in FIELDS:
+                need.field = (
+                    "unsupported:"
+                    + hashlib.sha256(need.original_text.casefold().encode()).hexdigest()[:12]
+                )
             old = next(
                 (
                     r
@@ -336,7 +379,10 @@ def merge(state, changes):
         facts.requirements = [
             r for r in facts.requirements if r.field not in changes.withdrawn_requirements
         ]
+    if changes.narrow_first:
+        state.policy_deferred = True
     if changes.policy_question:
+        state.policy_deferred = False
         state.policy_question = changes.policy_question
         state.interrupted = pending
     if changes.selected_plans:
@@ -345,7 +391,11 @@ def merge(state, changes):
     if changes.insurer_filter is not None:
         state.insurer_filter = changes.insurer_filter or None
     if changes.price_plan:
+        if changes.price_plan != state.price_plan:
+            state.price_axes = {}
+            state.price = None
         state.price_plan = changes.price_plan
+    state.price_axes.update({choice.axis: choice.value for choice in changes.price_axes})
     if changes.price_axis and changes.price_value:
         state.price_axes[changes.price_axis] = changes.price_value
     state.answered = list(dict.fromkeys(state.answered))
@@ -384,7 +434,8 @@ def next_question(state, cards, *, relay=None, ambiguity=None):
                 "plan_type",
                 prefix="The selected plans need a compatible cover type for comparison.",
             )
-    if state.policy_question:
+    if state.policy_question and (not state.policy_deferred or len(remaining) <= 5):
+        state.policy_deferred = False
         selected = state.selected_plans or sorted(remaining)
         if len(selected) > 5 or not selected:
             return question(
@@ -437,6 +488,7 @@ def next_question(state, cards, *, relay=None, ambiguity=None):
         state.stop_reason = "two_or_three_remain"
         types = {c["plan_type"] for c in cards if c["plan_id"] in remaining}
         if len(types) != 1 or "unresolved" in types:
+            state.stop_reason = None
             return question(
                 state,
                 "mixed",
@@ -445,7 +497,7 @@ def next_question(state, cards, *, relay=None, ambiguity=None):
             )
         state.selected_plans = sorted(remaining)
         prefix = (
-            f"Based on what you’ve told me, these {fits} plans fit your details"
+            f"Based on what you’ve told me, these {fits} plans fit your details."
             if not uncertain
             else f"{fits} plans fit your details and {uncertain} remain uncertain."
         )
@@ -476,9 +528,17 @@ def next_question(state, cards, *, relay=None, ambiguity=None):
     state.stop_reason = None
     if choice["value"] == "covered":
         prefix = f"{choice['count']} of the {choice['remaining']} remaining plans have supported cover for {LABELS[choice['field']]}."
+    elif choice["value"].startswith("room:"):
+        category = choice["value"].split(":", 1)[1].replace("_", " ")
+        prefix = f"{choice['count']} of the {choice['remaining']} remaining plans have the documented room limit: {category}."
+    elif choice["value"].startswith("bonus_at_least:"):
+        amount = choice["value"].split(":")[1]
+        prefix = f"{choice['count']} of the {choice['remaining']} remaining plans state a no-claim bonus increase of at least {amount} percent, subject to their quoted caps and conditions."
     else:
         _, amount, unit = choice["value"].split(":")
         prefix = f"{choice['count']} of the {choice['remaining']} remaining plans have a supported {LABELS[choice['field']]} of at most {amount} {unit}."
+    if choice.get("conditions"):
+        prefix += " The quoted conditions still apply."
     if choice["known"] < choice["remaining"]:
         prefix += " Plans with uncertain evidence will remain."
     return question(

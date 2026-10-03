@@ -9,6 +9,7 @@ def eligible_rules(card, field):
         and r.get("citations")
         and r.get("scope", "base") == "base"
         and r.get("supported", True)
+        and not r.get("restricted_scope")
         and r.get("variant") in (None, card["variant"])
     ]
 
@@ -134,7 +135,9 @@ def hard_limits(card, profile, existing):
             rules,
         )
     rules = eligible_rules(card, "family")
-    if len(rules) == 1:
+    if len(rules) == 1 and (
+        not rules[0].get("coverage_basis") or rules[0]["coverage_basis"] == profile.coverage_basis
+    ):
         rule = rules[0]
         children = [p for p in profile.people if p.relationship == "child"]
         invalid = (

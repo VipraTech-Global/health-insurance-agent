@@ -213,3 +213,54 @@ def test_chips_submit_exact_visible_text_without_ai():
     assert changes.selected_plans == ["0"] and model is None
     changes, _ = interpret("Stop", state, source, NoCalls())
     assert changes.stop
+
+
+def test_policy_narrow_first_retains_question_and_multiple_unsupported_needs():
+    state = next_question(ChatState(), cards(6))
+    state = transition(state, ProposedChanges(policy_question="What is covered?"), cards(6))
+    state = transition(state, ProposedChanges(narrow_first=True), cards(6))
+    assert state.policy_question == "What is covered?" and state.policy_deferred
+    assert state.pending.field == "people"
+    state = transition(
+        state,
+        ProposedChanges(
+            requirements=[
+                Requirement(
+                    field="other", original_text="Nutrition consultation", strength="must_have"
+                ),
+                Requirement(field="other", original_text="Gym membership", strength="nice_to_have"),
+            ]
+        ),
+        cards(6),
+    )
+    assert len(state.profile.requirements) == 2
+    assert len({r.field for r in state.profile.requirements}) == 2
+
+
+def test_partial_card_does_not_make_an_independently_complete_profile_unresolved():
+    source = cards(1)
+    source[0]["status"] = "partial"
+    assert len(fit_groups(source, complete().profile)["fits"]) == 1
+
+
+def test_question_labels_cannot_turn_one_field_into_a_compound_request():
+    state = ChatState(
+        profile=IncompleteProfile(people=[ChatPerson(id="age and city?", relationship="child")])
+    )
+    state = next_question(state, cards())
+    assert state.pending.text == "What is the age of your child?"
+    assert state.pending.person_id == "age and city?"
+    state.pending = None
+    state = next_question(state, cards(), ambiguity="age and city?")
+    assert state.pending.text == "Could you clarify that detail?"
+
+
+def test_explicit_person_removal_is_a_chat_correction_and_skip_does_not_remove():
+    state = complete()
+    state.profile.people.append(ChatPerson(id="parent", relationship="parent", age=72))
+    unchanged = transition(state, ProposedChanges(removed_people=["parent"]), cards())
+    assert len(unchanged.profile.people) == 2
+    corrected = transition(
+        state, ProposedChanges(removed_people=["parent"], correction=True), cards()
+    )
+    assert [p.id for p in corrected.profile.people] == ["me"]

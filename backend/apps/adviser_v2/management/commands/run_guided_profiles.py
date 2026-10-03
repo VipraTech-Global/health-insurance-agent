@@ -1,0 +1,163 @@
+"""Synthetic A–D journeys: every customer change enters through a chat turn."""
+
+import time
+import uuid
+from pathlib import Path
+
+from django.conf import settings
+from django.core.management.base import BaseCommand, CommandError
+
+from apps.accounts.models import User
+from apps.adviser_v2.demo.chat_services import commit_turn, start
+from apps.adviser_v2.demo.evidence import atomic_json
+from apps.adviser_v2.models import DemoRelease
+
+PROFILES = {
+    "A": {
+        "people": "Myself, age 35, my spouse age 33, and our dependent child age 8. We live in Pune.",
+        "needs": "Room limits and maternity cover matter to me.",
+        "strength": {"room_limit": "Nice-to-have", "maternity": "Must-have"},
+    },
+    "B": {
+        "people": "Myself age 70 and my spouse age 67. We live in Pune.",
+        "needs": "Low co-pay is a nice-to-have.",
+        "strength": {"copay": "Nice-to-have"},
+    },
+    "C": {
+        "people": "Myself age 29 and my spouse age 28. We live in Pune.",
+        "needs": "Maternity cover is a must-have.",
+        "strength": {"maternity": "Must-have"},
+    },
+    "D": {
+        "people": "Myself age 45, my spouse age 43, our dependent child age 12, and my parent age 72. We live in Pune.",
+        "needs": "My parent needs OPD cover; that is a must-have.",
+        "strength": {"opd": "Must-have"},
+    },
+}
+
+
+class Command(BaseCommand):
+    help = __doc__
+
+    def add_arguments(self, parser):
+        parser.add_argument("--run-id", required=True)
+        parser.add_argument("--release-id")
+
+    def handle(self, **options):
+        if settings.DATABASES["default"]["NAME"] != "coverguide_star_slice":
+            raise CommandError("Local synthetic profiles only.")
+        release = (
+            DemoRelease.objects.get(pk=options["release_id"])
+            if options["release_id"]
+            else DemoRelease.objects.get(active=True)
+        )
+        if not release.fact_cards.exists():
+            raise CommandError("Publish the priority immutable-card release first.")
+        output = (
+            Path(settings.BASE_DIR).parent
+            / "output"
+            / ("section16-profiles-" + options["run_id"] + ".json")
+        )
+        if output.exists():
+            raise CommandError("Use a fresh run ID; do not overwrite measured conversations.")
+        user, _ = User.objects.get_or_create(
+            email="section16-profiles@example.invalid", defaults={"is_active": True}
+        )
+        results = []
+        for name, spec in PROFILES.items():
+            data = start(user, release_id=release.id)
+            turns = []
+            started = time.monotonic()
+            initial = data["state"]
+            turns.append(
+                {
+                    "turn": 0,
+                    "customer": None,
+                    "assistant": initial["message"],
+                    "stage": initial["stage"],
+                    "counts": {k: len(v) for k, v in initial["fit_groups"].items()},
+                    "elapsed_ms": 0,
+                    "questions_asked": 1,
+                    "pending": initial["pending"],
+                }
+            )
+            for n in range(20):
+                state = data["state"]
+                pending = state["pending"]
+                field = pending["field"] if pending else ""
+                if state["stage"] == "narrowing" and state["stop_reason"]:
+                    break
+                if field == "people":
+                    message = spec["people"]
+                elif field == "city":
+                    message = "Pune"
+                elif field == "sum_insured":
+                    message = "10 lakh rupees sum insured."
+                elif field == "annual_budget":
+                    message = "My annual premium budget is 60000 rupees."
+                elif field in {"plan_type", "cover_need"}:
+                    message = "I want medical indemnity cover for hospital expenses, on a family floater basis."
+                elif field == "health_details":
+                    message = "Skip"
+                elif field == "needs":
+                    message = spec["needs"]
+                elif pending["template"] == "strength":
+                    message = spec["strength"].get(field, "Nice-to-have")
+                elif pending["template"] == "narrow":
+                    message = "Skip"
+                else:
+                    message = "Skip"
+                before = state["question_count"]
+                tick = time.monotonic()
+                data = commit_turn(
+                    user,
+                    data["id"],
+                    request_id=uuid.uuid4(),
+                    revision=state["revision"],
+                    text=message,
+                    dispatch=False,
+                )
+                state = data["state"]
+                turns.append(
+                    {
+                        "turn": n + 1,
+                        "customer": message,
+                        "assistant": state["message"],
+                        "stage": state["stage"],
+                        "counts": {k: len(v) for k, v in state["fit_groups"].items()},
+                        "elapsed_ms": round((time.monotonic() - tick) * 1000),
+                        "service_elapsed_ms": state["turns"][-1]["elapsed_ms"],
+                        "questions_asked": state["question_count"] - before,
+                        "pending": state["pending"],
+                        "model": state["turns"][-1]["model"],
+                        "stop_reason": state["stop_reason"],
+                    }
+                )
+                self.stdout.write(
+                    f"{name} turn {n + 1}: {state['stage']} {turns[-1]['counts']} {turns[-1]['elapsed_ms']} ms"
+                )
+                self.stdout.flush()
+            results.append(
+                {
+                    "profile": name,
+                    "conversation_id": data["id"],
+                    "release_id": data["release_id"],
+                    "turns": turns,
+                    "total_question_count": data["state"]["question_count"],
+                    "stop_reason": data["state"]["stop_reason"],
+                    "total_ms": round((time.monotonic() - started) * 1000),
+                    "final_profile": data["state"]["profile"],
+                    "fit_groups": data["state"]["fit_groups"],
+                    "card_versions": [c.get("card_version") for c in data["cards"]],
+                }
+            )
+            atomic_json(
+                output,
+                {
+                    "schema_version": 2,
+                    "synthetic": True,
+                    "run_id": options["run_id"],
+                    "profiles": results,
+                },
+            )
+        self.stdout.write(str(output))

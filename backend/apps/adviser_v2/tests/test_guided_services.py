@@ -134,3 +134,74 @@ def test_stage1_fixed_question_after_model_interprets_all_supplied_details(v2_us
     )
     assert result["state"]["pending"]["field"] == "health_details" and relay.calls == 1
     assert result["state"]["turns"][0]["elapsed_ms"] >= 0
+
+
+def test_concurrent_duplicate_turns_are_serialized_and_interpreted_once(v2_user, demo):  # noqa: F811
+    from concurrent.futures import ThreadPoolExecutor
+    from threading import Barrier
+
+    from django.db import close_old_connections
+
+    data = start(v2_user)
+    key = uuid.uuid4()
+    relay = Reply(city="Pune")
+    barrier = Barrier(2)
+
+    def submit_duplicate():
+        close_old_connections()
+        try:
+            barrier.wait(timeout=5)
+            return commit_turn(
+                v2_user,
+                data["id"],
+                request_id=key,
+                revision=0,
+                text="Pune",
+                relay=relay,
+                dispatch=False,
+            )
+        finally:
+            close_old_connections()
+
+    with ThreadPoolExecutor(max_workers=2) as pool:
+        responses = list(pool.map(lambda _: submit_duplicate(), range(2)))
+    assert responses[0] == responses[1]
+    assert relay.calls == 1
+    assert DemoChatTurn.objects.filter(conversation_id=data["id"]).count() == 1
+
+
+def test_stop_cancels_pending_policy_chains_and_rejects_stale_results(v2_user, demo):  # noqa: F811
+    from apps.adviser_v2.demo.services import publish_progress
+    from apps.adviser_v2.models import DemoQuestion
+
+    data = start(v2_user)
+    relay = Reply(
+        policy_question="What is covered?", selected_plans=[r.plan_key for r in demo[2][:2]]
+    )
+    response = commit_turn(
+        v2_user,
+        data["id"],
+        request_id=uuid.uuid4(),
+        revision=0,
+        text="Policy question",
+        relay=relay,
+        dispatch=False,
+    )
+    q = DemoQuestion.objects.get(pk=response["state"]["question_id"])
+    answer = q.answers.first()
+    with pytest.raises(StaleTurn):
+        commit_turn(
+            v2_user,
+            data["id"],
+            request_id=uuid.uuid4(),
+            revision=1,
+            text="Pune",
+            relay=relay,
+            dispatch=False,
+        )
+    stopped = commit_turn(
+        v2_user, data["id"], request_id=uuid.uuid4(), revision=1, text="Stop", dispatch=False
+    )
+    q.refresh_from_db()
+    assert q.state == "cancelled" and stopped["state"]["pending"] is None
+    assert not publish_progress(answer.id, "answered", {"models": [], "status": "answered"})

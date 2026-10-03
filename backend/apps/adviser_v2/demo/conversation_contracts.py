@@ -63,6 +63,11 @@ class QuestionIntent(Closed):
     proposed_value: str | None = None
 
 
+class PriceChoice(Closed):
+    axis: str
+    value: str
+
+
 class ProposedChanges(Closed):
     schema_version: Literal[2] = 2
     people: list[ChatPerson] = Field(default_factory=list, max_length=12)
@@ -74,6 +79,7 @@ class ProposedChanges(Closed):
     existing_cover: str | None = None
     health_details: str | None = None
     requirements: list[Requirement] = Field(default_factory=list, max_length=20)
+    removed_people: list[str] = Field(default_factory=list, max_length=12)
     correction: bool = False
     ambiguous_field: str | None = None
     ambiguity: str | None = None
@@ -82,6 +88,7 @@ class ProposedChanges(Closed):
     affirmative: bool | None = None
     no_preference: bool = False
     no_more_needs: bool = False
+    narrow_first: bool = False
     policy_question: str | None = None
     selected_plans: list[str] = Field(default_factory=list, max_length=5)
     restored_plans: list[str] = Field(default_factory=list, max_length=5)
@@ -90,6 +97,7 @@ class ProposedChanges(Closed):
     price_plan: str | None = None
     price_axis: str | None = None
     price_value: str | None = None
+    price_axes: list[PriceChoice] = Field(default_factory=list, max_length=12)
 
 
 class ChatState(Closed):
@@ -106,6 +114,7 @@ class ChatState(Closed):
     selected_plans: list[str] = Field(default_factory=list)
     restored_plans: list[str] = Field(default_factory=list)
     policy_question: str | None = None
+    policy_deferred: bool = False
     insurer_filter: str | None = None
     question_count: int = 0
     stop_reason: str | None = None
