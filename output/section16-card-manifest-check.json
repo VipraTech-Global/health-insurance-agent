@@ -1,0 +1,29 @@
+{
+  "field-recheck": {
+    "card_answers.py": true,
+    "card_assembly.py": true,
+    "card_clauses.py": true,
+    "fact_cards_v3.py": true,
+    "fact_rules_v6.py": true,
+    "search.py": true,
+    "validation.py": true
+  },
+  "basis-recheck": {
+    "card_answers.py": true,
+    "card_assembly.py": true,
+    "card_clauses.py": true,
+    "fact_cards_v3.py": true,
+    "fact_rules_v6.py": true,
+    "search.py": true,
+    "validation.py": true
+  },
+  "axes-recheck": {
+    "card_answers.py": true,
+    "card_assembly.py": true,
+    "card_clauses.py": true,
+    "fact_cards_v3.py": true,
+    "fact_rules_v6.py": true,
+    "search.py": true,
+    "validation.py": true
+  }
+}
