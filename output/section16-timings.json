@@ -1,0 +1,156 @@
+{
+  "measured_relay_calls": 59,
+  "method": "H",
+  "note": "Observed local timings include queue time and competing background work; no unmeasured speedup is claimed.",
+  "question_times": {
+    "3": {
+      "n": 3,
+      "p50_ms": 27378,
+      "p95_ms": 34052
+    },
+    "5": {
+      "n": 3,
+      "p50_ms": 69303,
+      "p95_ms": 69646
+    }
+  },
+  "queue_times": {
+    "n": 59,
+    "p50_ms": 2692,
+    "p95_ms": 23486
+  },
+  "relay_peak_since_start": 6,
+  "samples": [
+    {
+      "per_plan_ms": [
+        32173,
+        18110,
+        33951
+      ],
+      "plans": 3,
+      "question_id": "e13a8852-9984-4ce7-8140-89f6630f4772",
+      "sample": 0,
+      "statuses": [
+        "answered",
+        "answered",
+        "answered"
+      ],
+      "total_ms": 34052
+    },
+    {
+      "per_plan_ms": [
+        24546,
+        17733,
+        24555
+      ],
+      "plans": 3,
+      "question_id": "68d94faf-4e18-4203-a134-4eb9538fddad",
+      "sample": 1,
+      "statuses": [
+        "answered",
+        "answered",
+        "answered"
+      ],
+      "total_ms": 24774
+    },
+    {
+      "per_plan_ms": [
+        18357,
+        27161,
+        12157
+      ],
+      "plans": 3,
+      "question_id": "0cb30e91-3c5a-42fc-9274-3b16dee783d5",
+      "sample": 2,
+      "statuses": [
+        "answered",
+        "not_found",
+        "answered"
+      ],
+      "total_ms": 27378
+    },
+    {
+      "per_plan_ms": [
+        41659,
+        29616,
+        69074,
+        42855,
+        66672
+      ],
+      "plans": 5,
+      "question_id": "c2a2fcb8-99d2-46e8-b959-b1fcf3ec6025",
+      "sample": 0,
+      "statuses": [
+        "answered",
+        "answered",
+        "not_found",
+        "answered",
+        "answered"
+      ],
+      "total_ms": 69303
+    },
+    {
+      "per_plan_ms": [
+        41211,
+        69125,
+        51777,
+        51270,
+        47525
+      ],
+      "plans": 5,
+      "question_id": "d8f0469a-933f-413f-bcef-053e83f071ac",
+      "sample": 1,
+      "statuses": [
+        "answered",
+        "answered",
+        "not_found",
+        "not_found",
+        "answered"
+      ],
+      "total_ms": 69646
+    },
+    {
+      "per_plan_ms": [
+        29898,
+        49415,
+        18917,
+        38331,
+        38684
+      ],
+      "plans": 5,
+      "question_id": "999482f0-f109-487e-97f6-cf12d298e841",
+      "sample": 2,
+      "statuses": [
+        "answered",
+        "answered",
+        "answered",
+        "not_found",
+        "answered"
+      ],
+      "total_ms": 49826
+    }
+  ],
+  "successful_calls_per_minute": 12.838202984699832,
+  "measured_calls_estimated_peak": 5,
+  "overlapping_five_plan_chains": [
+    {
+      "question_id": "c2a2fcb8-99d2-46e8-b959-b1fcf3ec6025",
+      "first_call_start_spread_ms": 296,
+      "plan_chains": 5
+    },
+    {
+      "question_id": "d8f0469a-933f-413f-bcef-053e83f071ac",
+      "first_call_start_spread_ms": 267,
+      "plan_chains": 5
+    },
+    {
+      "question_id": "999482f0-f109-487e-97f6-cf12d298e841",
+      "first_call_start_spread_ms": 279,
+      "plan_chains": 5
+    }
+  ],
+  "models": [
+    "gpt-5.6-luna"
+  ],
+  "concurrency_note": "Reconstructed model-request intervals from millisecond-rounded audit timings, excluding queue time. Shared six-slot cap also verified by cross-process tests."
+}

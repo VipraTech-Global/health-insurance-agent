@@ -195,3 +195,21 @@ Claude is independently preparing reference cards for seven plans. Do not read o
 ### Section 16 smoke gate — 25 fresh cases
 
 `section16-smoke25-20261003-01`: 18 full, 2 partial, 5 not found; zero operational failures. Covers the three Star plans and all ten insurers, including 13 table-heavy cases. Agent inspected ten rendered answer-source pages and resolved every stored anchor in those ten cases. Room limits/variant axes, optional co-pay, OPD's specific-condition scope and PED buy-back conditions remain quoted. No copying, number/axis or missing-highlight defect was found in this sample; source excerpts can still be verbose and include neighboring clauses. This is a bounded agent smoke check, not expert verification or proof of complete semantic coverage. Proceed with one final full application run on the same answer paths; no bake-off rerun.
+
+### Section 16 B — independent comparison requires replacement cards
+
+User findings invalidate the initial field-status/projection approach: optional maternity/OPD cover was counted as stated base evidence; preventive vouchers were conflated with OPD; PED queries missed baseline waits; full-section quotation completion impeded bounded projections. Treat the first card batch as superseded diagnostics, preserve its immutable versions, and generate new versions. Keep optional add-ons/riders separate as optional, extra premium; they cannot satisfy requirements. Revise field queries across every plan, constrain quotation assembly to governing clauses, and confirm typed numbers/keywords against exact original spans. Re-export per-plan/per-field quoted and executable coverage. Do not read the independent reference-card directory.
+
+The HDFC and Bajaj PED omissions in run `section16-a-20261003-04` both ended as `all_units_rejected`: the initial draft and single correction each failed exact quotation copying. Part B then reused those absence results instead of asking a targeted fact-field query. The replacement pipeline does not reuse those field outcomes: it asks for Standard Exclusions / Code Excl01 and distinguishes baseline waits from optional reductions. All 28 fields are regenerated across existing variants, with the flagship/Star priority batch first. Independent reference-card contents remain unread.
+
+
+## Section 16 A — fresh application run section16-a-20261003-final
+
+Baseline: 140/260 answered; 23/65 table-heavy answered; 12/39 complete Star packets.
+
+Fresh measured results: `{"answer_cases": 260, "complete_reference_cells": 13, "final_not_found_reasons": {"all_units_rejected": 55, "no_substantive_evidence": 11}, "manifest": "/home/akhilesh/.local/state/coverguide-star-slice/reports/ten-insurer/application-acceptance/section16-a-20261003-final/manifest.json", "method": "H", "note": "Fresh application-service execution, not a rerun or adjustment of the frozen bake-off score.", "outcomes": {"full_answer": 175, "not_found": 66, "partial_answer": 14, "temporarily_unavailable": 5}, "reference_cells": 39, "rejection_reasons_overlapping": {"copying_error": 162, "incomplete_context_or_validation": 28}, "release_id": "7ec7f75e-8af4-4479-bc62-180ac8fb034f", "run_id": "section16-a-20261003-final", "table_heavy": {"full_answer": 38, "not_found": 23, "partial_answer": 4}}`.
+Outcomes are mutually exclusive; rejection reasons overlap. Packet coverage is not displayed evidence or expert verification.
+
+### Section 16 final answer spot-check and PDF geometry
+
+Ten final-run answers were agent-checked against rendered PDFs (five table-heavy, five other/repeated evaluation slots). One native-character highlight failed because the source used U+2010 while the PDF glyph extractor returned an ASCII hyphen. Add that explicit geometry-only mapping; exact quotation acceptance remains unchanged, and minus signs/punctuation are not dropped. All selected anchors now resolve. The spot-check still finds verbose neighboring clauses and three cataract answers that establish waiting conditions rather than a monetary limit. “Full” means all proposed units passed; it is not proof of exhaustive semantic coverage. Details are in `section16-pdf-spot-checks.md`; Part B cards were not manually spot-checked.
