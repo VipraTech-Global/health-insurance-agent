@@ -167,3 +167,31 @@ Run `section16-a-20261003-02` is diagnostic and incomplete. Agent PDF checks fou
 ### Section 16 A — remove repeated prefix scans before full acceptance
 
 Diagnostic run `section16-a-20261003-03` was interrupted after profiling showed 26.8 seconds in repeated regular-expression scans during a six-unit local replay. Replace the terminal enumeration check with an equivalent bounded backward scan, cache immutable document boundaries, and reuse each packet's reconstructed source documents. A 5,009-example equivalence test covers Unicode word/digit boundaries and long numeric tokens. No diagnostic run results are reused in the fresh acceptance run. This isolated profiling result is not a claim about application latency.
+
+## Section 16 — parallel execution and smoke gate clarification
+
+User steering: leave the current full run running; build C's independent conversation modules/contracts/templates/tests alongside it without changing its execution paths. Profile local validation, use cached normalized source/offset indexes, and record per-answer before/after validation time. Before any further full run, execute and agent-spot-check a 25-case sample spanning tables, Star and several insurers; aim for one further full run only. Generate the flagship/Star card set before remaining variants; background AI work continues under the same relay cap and live priority. Stage 1/2 phrasing remains fixed and call-free. No new user checkpoint is required between parts.
+
+
+## Section 16 A — fresh application run section16-a-20261003-04
+
+Baseline: 140/260 answered; 23/65 table-heavy answered; 12/39 complete Star packets.
+
+Fresh measured results: `{"answer_cases": 260, "complete_reference_cells": 12, "final_not_found_reasons": {"all_units_rejected": 52, "no_substantive_evidence": 13}, "manifest": "/home/akhilesh/.local/state/coverguide-star-slice/reports/ten-insurer/application-acceptance/section16-a-20261003-04/manifest.json", "method": "H", "note": "Fresh application-service execution, not a rerun or adjustment of the frozen bake-off score.", "outcomes": {"full_answer": 177, "not_found": 65, "partial_answer": 18}, "reference_cells": 39, "rejection_reasons_overlapping": {"copying_error": 159, "incomplete_context_or_validation": 25}, "release_id": "7ec7f75e-8af4-4479-bc62-180ac8fb034f", "run_id": "section16-a-20261003-04", "table_heavy": {"full_answer": 40, "not_found": 21, "partial_answer": 4}}`.
+Outcomes are mutually exclusive; rejection reasons overlap. Packet coverage is not displayed evidence or expert verification.
+
+
+### Section 16 local validation cache measurement
+
+{"run_id": "section16-a-20261003-04", "measurement": "Local six-check validation replay; cold cache per answer; no model or queue time", "samples": 264, "identical_results": true, "uncached_ms": {"p50": 19.0875, "p95": 57.991, "total": 6313.93}, "cached_ms": {"p50": 13.538, "p95": 47.041, "total": 4554.386}}
+
+Cached exact normalized text and immutable offset maps preserve every validation result. These are local validation timings, not end-to-end answer latency.
+
+### Section 16 B — independent reference-card split
+
+Claude is independently preparing reference cards for seven plans. Do not read or wait for `/home/akhilesh/Projects/health-insurance-agent/output/reference-cards/`; do not manually accuracy-spot-check implementation fact cards. Continue A → B → C → D. Export each implementation card to `output/section16-cards/<plan_id>.json`, including immutable version/index, field values, typed rules, original quotes with document and physical page identities, and stated / not covered / not stated status. Existing Part A answer/PDF checks are separate from this reference-card comparison.
+
+
+### Section 16 smoke gate — 25 fresh cases
+
+`section16-smoke25-20261003-01`: 18 full, 2 partial, 5 not found; zero operational failures. Covers the three Star plans and all ten insurers, including 13 table-heavy cases. Agent inspected ten rendered answer-source pages and resolved every stored anchor in those ten cases. Room limits/variant axes, optional co-pay, OPD's specific-condition scope and PED buy-back conditions remain quoted. No copying, number/axis or missing-highlight defect was found in this sample; source excerpts can still be verbose and include neighboring clauses. This is a bounded agent smoke check, not expert verification or proof of complete semantic coverage. Proceed with one final full application run on the same answer paths; no bake-off rerun.

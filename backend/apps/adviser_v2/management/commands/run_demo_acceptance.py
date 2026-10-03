@@ -28,6 +28,7 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument('--workers', type=int, default=2)
         parser.add_argument('--run-id', required=True)
+        parser.add_argument('--smoke25', action='store_true')
 
     def handle(self, **options):
         if settings.DATABASES['default']['NAME'] != 'coverguide_star_slice':
@@ -63,6 +64,9 @@ class Command(BaseCommand):
             jobs.append({'id': f'star-{criterion}-{style}', 'kind': 'star', 'question': question,
                          'criterion': criterion, 'style': style,
                          'slots': [{'id': q['policy_version_id'], 'plan_id': q['policy_version_id']} for q in queries]})
+        if options['smoke25']:
+            sample = {'answer-room_rent-0','answer-room_rent-1','answer-room_rent-2','answer-copay-0','answer-ped-0','answer-restoration-0','answer-opd-0'}
+            jobs = [j for j in jobs if j['id'] in sample]
         run_id = options['run_id']
         if not run_id.replace('-', '').replace('_', '').isalnum():
             raise CommandError('Use an alphanumeric run ID with hyphens/underscores.')
@@ -70,7 +74,7 @@ class Command(BaseCommand):
         code = Path(__file__).parents[2] / 'demo'
         manifest = {'run_id': run_id, 'release_id': str(release.id), 'method': release.method,
             'indexes': sorted(release.indexes.values_list('id', flat=True)),
-            'source_hashes': {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in code.glob('*.py')},
+            'source_hashes': {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in code.glob('*.py') if p.stem in {'answers','assembly','contracts','evidence','evaluation','search','validation','quotations','relay','services','needs','embeddings','bakeoff'}},
             'packet_tokens': 16000, 'initial_packet_tokens': 12000, 'draft_schema': 2, 'jobs_hash': digest(jobs)}
         manifest_file = directory / 'manifest.json'
         if manifest_file.exists() and json.loads(manifest_file.read_text()) != manifest:
@@ -149,7 +153,8 @@ class Command(BaseCommand):
                 self.stdout.write(f'{len(rows)}/{len(jobs)} {rows[-1]["job"]["id"]}')
                 self.stdout.flush()
         cases = [r for row in rows if row['job']['kind'] == 'answer' for r in row['results']]
-        if len(cases) != 260:
+        denominator = 25 if options['smoke25'] else 260
+        if len(cases) != denominator:
             raise CommandError('Application answer-sheet denominator changed.')
         cells = defaultdict(dict)
         for row in rows:
@@ -157,7 +162,7 @@ class Command(BaseCommand):
                 for value in row['results']:
                     cells[(value['plan_id'], row['job']['criterion'])][row['job']['style']] = (
                         bool(value['required']) and set(value['required']) <= set(value['covered']))
-        summary = {'run_id': run_id, 'manifest': str(manifest_file), 'release_id': str(release.id), 'method': release.method, 'answer_cases': 260,
+        summary = {'run_id': run_id, 'manifest': str(manifest_file), 'release_id': str(release.id), 'method': release.method, 'answer_cases': denominator,
             'outcomes': dict(Counter(r['completeness'] + '_answer' if r['status'] == 'answered' else r['status'] for r in cases)),
             'table_heavy': dict(Counter(r['completeness'] + '_answer' if r['status'] == 'answered' else r['status'] for row in rows if row['job']['kind'] == 'answer' and row['job']['table_heavy'] for r in row['results'])),
             'rejection_reasons_overlapping': dict(Counter(p['category'] for r in cases for p in r['rejections'])),
@@ -165,6 +170,9 @@ class Command(BaseCommand):
             'complete_reference_cells': sum(v.get('fixed', False) and v.get('customer', False) for v in cells.values()),
             'note': 'Fresh application-service execution, not a rerun or adjustment of the frozen bake-off score.'}
         atomic_json(directory / 'summary.json', summary)
+        if options['smoke25']:
+            self.stdout.write(json.dumps(summary))
+            return
         atomic_json(Path(settings.BASE_DIR).parent / 'output/application-acceptance.json', summary)
         # Required immediate progress record: written before any subsequent card work.
         log = Path(settings.BASE_DIR).parent / 'output/decisions-log.md'

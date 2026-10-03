@@ -1,0 +1,1602 @@
+{
+  "run_id": "section16-a-20261003-04",
+  "measurement": "Local six-check validation replay; cold cache per answer; no model or queue time",
+  "samples": 264,
+  "identical_results": true,
+  "per_answer": [
+    {
+      "case": "answer-air_ambulance-0",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 45.411,
+      "cached_ms": 19.554
+    },
+    {
+      "case": "answer-air_ambulance-0",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 30.584,
+      "cached_ms": 19.677
+    },
+    {
+      "case": "answer-air_ambulance-1",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 26.694,
+      "cached_ms": 11.646
+    },
+    {
+      "case": "answer-air_ambulance-1",
+      "plan_id": "41d22e29-4b26-58bd-b215-f43f4bba4aed",
+      "uncached_ms": 23.739,
+      "cached_ms": 16.836
+    },
+    {
+      "case": "answer-air_ambulance-1",
+      "plan_id": "60784909-c819-5e30-90ca-ea23af206cc9",
+      "uncached_ms": 21.375,
+      "cached_ms": 17.378
+    },
+    {
+      "case": "answer-air_ambulance-1",
+      "plan_id": "8fb823e5-a0bb-585d-bf95-4c099d0e1bed",
+      "uncached_ms": 44.689,
+      "cached_ms": 32.964
+    },
+    {
+      "case": "answer-air_ambulance-1",
+      "plan_id": "3936417c-5afe-59bc-9158-3c04e86b58cc",
+      "uncached_ms": 19.198,
+      "cached_ms": 11.471
+    },
+    {
+      "case": "answer-air_ambulance-2",
+      "plan_id": "7881d468-4450-50af-bad6-a0e6b7e4be27",
+      "uncached_ms": 9.069,
+      "cached_ms": 7.004
+    },
+    {
+      "case": "answer-air_ambulance-2",
+      "plan_id": "7a1311d9-3b42-530e-812f-b14fa0f0c407",
+      "uncached_ms": 12.576,
+      "cached_ms": 8.835
+    },
+    {
+      "case": "answer-ayush-0",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 9.279,
+      "cached_ms": 8.634
+    },
+    {
+      "case": "answer-ayush-0",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 15.545,
+      "cached_ms": 10.555
+    },
+    {
+      "case": "answer-ayush-1",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 22.563,
+      "cached_ms": 14.749
+    },
+    {
+      "case": "answer-ayush-1",
+      "plan_id": "8fb823e5-a0bb-585d-bf95-4c099d0e1bed",
+      "uncached_ms": 26.674,
+      "cached_ms": 19.219
+    },
+    {
+      "case": "answer-ayush-1",
+      "plan_id": "41d22e29-4b26-58bd-b215-f43f4bba4aed",
+      "uncached_ms": 45.084,
+      "cached_ms": 29.993
+    },
+    {
+      "case": "answer-ayush-2",
+      "plan_id": "7a1311d9-3b42-530e-812f-b14fa0f0c407",
+      "uncached_ms": 26.787,
+      "cached_ms": 17.946
+    },
+    {
+      "case": "answer-ayush-2",
+      "plan_id": "72274a95-56ad-5597-a584-e239e4314938",
+      "uncached_ms": 11.26,
+      "cached_ms": 9.477
+    },
+    {
+      "case": "answer-ayush-2",
+      "plan_id": "a8277a04-b286-598a-93a4-1cd3e4b7c8aa",
+      "uncached_ms": 20.755,
+      "cached_ms": 13.465
+    },
+    {
+      "case": "answer-cataract-0",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 34.876,
+      "cached_ms": 23.514
+    },
+    {
+      "case": "answer-cataract-0",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 23.72,
+      "cached_ms": 19.36
+    },
+    {
+      "case": "answer-cataract-0",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 23.331,
+      "cached_ms": 15.899
+    },
+    {
+      "case": "answer-cataract-1",
+      "plan_id": "41d22e29-4b26-58bd-b215-f43f4bba4aed",
+      "uncached_ms": 16.743,
+      "cached_ms": 12.133
+    },
+    {
+      "case": "answer-cataract-1",
+      "plan_id": "3936417c-5afe-59bc-9158-3c04e86b58cc",
+      "uncached_ms": 22.36,
+      "cached_ms": 16.744
+    },
+    {
+      "case": "answer-cataract-2",
+      "plan_id": "a8277a04-b286-598a-93a4-1cd3e4b7c8aa",
+      "uncached_ms": 9.831,
+      "cached_ms": 6.727
+    },
+    {
+      "case": "answer-cataract-2",
+      "plan_id": "075a539e-25e4-58f2-8e48-d5c862a5124b",
+      "uncached_ms": 14.358,
+      "cached_ms": 10.131
+    },
+    {
+      "case": "answer-copay-0",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 7.332,
+      "cached_ms": 4.973
+    },
+    {
+      "case": "answer-copay-0",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 16.262,
+      "cached_ms": 13.023
+    },
+    {
+      "case": "answer-copay-1",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 8.32,
+      "cached_ms": 5.642
+    },
+    {
+      "case": "answer-copay-1",
+      "plan_id": "41d22e29-4b26-58bd-b215-f43f4bba4aed",
+      "uncached_ms": 6.915,
+      "cached_ms": 5.375
+    },
+    {
+      "case": "answer-copay-1",
+      "plan_id": "60784909-c819-5e30-90ca-ea23af206cc9",
+      "uncached_ms": 37.904,
+      "cached_ms": 22.894
+    },
+    {
+      "case": "answer-copay-1",
+      "plan_id": "8fb823e5-a0bb-585d-bf95-4c099d0e1bed",
+      "uncached_ms": 14.526,
+      "cached_ms": 12.576
+    },
+    {
+      "case": "answer-copay-1",
+      "plan_id": "3936417c-5afe-59bc-9158-3c04e86b58cc",
+      "uncached_ms": 35.005,
+      "cached_ms": 32.714
+    },
+    {
+      "case": "answer-copay-2",
+      "plan_id": "a8277a04-b286-598a-93a4-1cd3e4b7c8aa",
+      "uncached_ms": 9.934,
+      "cached_ms": 7.554
+    },
+    {
+      "case": "answer-copay-2",
+      "plan_id": "7a1311d9-3b42-530e-812f-b14fa0f0c407",
+      "uncached_ms": 17.446,
+      "cached_ms": 12.342
+    },
+    {
+      "case": "answer-copay-2",
+      "plan_id": "075a539e-25e4-58f2-8e48-d5c862a5124b",
+      "uncached_ms": 14.773,
+      "cached_ms": 12.437
+    },
+    {
+      "case": "answer-copay-2",
+      "plan_id": "72274a95-56ad-5597-a584-e239e4314938",
+      "uncached_ms": 20.55,
+      "cached_ms": 13.562
+    },
+    {
+      "case": "answer-day_care-1",
+      "plan_id": "60784909-c819-5e30-90ca-ea23af206cc9",
+      "uncached_ms": 49.834,
+      "cached_ms": 42.939
+    },
+    {
+      "case": "answer-day_care-1",
+      "plan_id": "8fb823e5-a0bb-585d-bf95-4c099d0e1bed",
+      "uncached_ms": 40.961,
+      "cached_ms": 28.611
+    },
+    {
+      "case": "answer-day_care-1",
+      "plan_id": "3936417c-5afe-59bc-9158-3c04e86b58cc",
+      "uncached_ms": 25.472,
+      "cached_ms": 19.951
+    },
+    {
+      "case": "answer-day_care-2",
+      "plan_id": "7881d468-4450-50af-bad6-a0e6b7e4be27",
+      "uncached_ms": 23.022,
+      "cached_ms": 20.339
+    },
+    {
+      "case": "answer-day_care-2",
+      "plan_id": "a8277a04-b286-598a-93a4-1cd3e4b7c8aa",
+      "uncached_ms": 40.827,
+      "cached_ms": 27.2
+    },
+    {
+      "case": "answer-deductible-0",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 4.101,
+      "cached_ms": 3.247
+    },
+    {
+      "case": "answer-deductible-0",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 3.155,
+      "cached_ms": 2.098
+    },
+    {
+      "case": "answer-deductible-1",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 3.926,
+      "cached_ms": 3.239
+    },
+    {
+      "case": "answer-deductible-1",
+      "plan_id": "8fb823e5-a0bb-585d-bf95-4c099d0e1bed",
+      "uncached_ms": 20.541,
+      "cached_ms": 15.231
+    },
+    {
+      "case": "answer-deductible-1",
+      "plan_id": "60784909-c819-5e30-90ca-ea23af206cc9",
+      "uncached_ms": 24.853,
+      "cached_ms": 17.676
+    },
+    {
+      "case": "answer-deductible-1",
+      "plan_id": "41d22e29-4b26-58bd-b215-f43f4bba4aed",
+      "uncached_ms": 29.701,
+      "cached_ms": 24.516
+    },
+    {
+      "case": "answer-deductible-1",
+      "plan_id": "3936417c-5afe-59bc-9158-3c04e86b58cc",
+      "uncached_ms": 11.088,
+      "cached_ms": 8.364
+    },
+    {
+      "case": "answer-deductible-2",
+      "plan_id": "7a1311d9-3b42-530e-812f-b14fa0f0c407",
+      "uncached_ms": 11.002,
+      "cached_ms": 8.531
+    },
+    {
+      "case": "answer-deductible-2",
+      "plan_id": "7881d468-4450-50af-bad6-a0e6b7e4be27",
+      "uncached_ms": 8.29,
+      "cached_ms": 7.302
+    },
+    {
+      "case": "answer-health_check-0",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 46.558,
+      "cached_ms": 23.658
+    },
+    {
+      "case": "answer-health_check-0",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 22.126,
+      "cached_ms": 22.424
+    },
+    {
+      "case": "answer-health_check-0",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 30.256,
+      "cached_ms": 14.58
+    },
+    {
+      "case": "answer-health_check-1",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 21.652,
+      "cached_ms": 20.846
+    },
+    {
+      "case": "answer-health_check-1",
+      "plan_id": "41d22e29-4b26-58bd-b215-f43f4bba4aed",
+      "uncached_ms": 43.257,
+      "cached_ms": 32.1
+    },
+    {
+      "case": "answer-health_check-1",
+      "plan_id": "60784909-c819-5e30-90ca-ea23af206cc9",
+      "uncached_ms": 11.327,
+      "cached_ms": 7.458
+    },
+    {
+      "case": "answer-health_check-1",
+      "plan_id": "8fb823e5-a0bb-585d-bf95-4c099d0e1bed",
+      "uncached_ms": 28.811,
+      "cached_ms": 20.077
+    },
+    {
+      "case": "answer-health_check-1",
+      "plan_id": "3936417c-5afe-59bc-9158-3c04e86b58cc",
+      "uncached_ms": 21.809,
+      "cached_ms": 15.4
+    },
+    {
+      "case": "answer-health_check-2",
+      "plan_id": "a8277a04-b286-598a-93a4-1cd3e4b7c8aa",
+      "uncached_ms": 28.786,
+      "cached_ms": 19.114
+    },
+    {
+      "case": "answer-health_check-2",
+      "plan_id": "7881d468-4450-50af-bad6-a0e6b7e4be27",
+      "uncached_ms": 57.819,
+      "cached_ms": 56.531
+    },
+    {
+      "case": "answer-health_check-2",
+      "plan_id": "7a1311d9-3b42-530e-812f-b14fa0f0c407",
+      "uncached_ms": 94.871,
+      "cached_ms": 81.874
+    },
+    {
+      "case": "answer-health_check-2",
+      "plan_id": "075a539e-25e4-58f2-8e48-d5c862a5124b",
+      "uncached_ms": 23.64,
+      "cached_ms": 20.192
+    },
+    {
+      "case": "answer-health_check-2",
+      "plan_id": "72274a95-56ad-5597-a584-e239e4314938",
+      "uncached_ms": 15.077,
+      "cached_ms": 10.451
+    },
+    {
+      "case": "answer-home_care-0",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 13.881,
+      "cached_ms": 8.966
+    },
+    {
+      "case": "answer-home_care-0",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 19.279,
+      "cached_ms": 12.618
+    },
+    {
+      "case": "answer-home_care-0",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 34.243,
+      "cached_ms": 21.279
+    },
+    {
+      "case": "answer-home_care-1",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 6.957,
+      "cached_ms": 5.005
+    },
+    {
+      "case": "answer-home_care-1",
+      "plan_id": "8fb823e5-a0bb-585d-bf95-4c099d0e1bed",
+      "uncached_ms": 12.698,
+      "cached_ms": 10.098
+    },
+    {
+      "case": "answer-home_care-1",
+      "plan_id": "60784909-c819-5e30-90ca-ea23af206cc9",
+      "uncached_ms": 34.911,
+      "cached_ms": 24.829
+    },
+    {
+      "case": "answer-home_care-1",
+      "plan_id": "41d22e29-4b26-58bd-b215-f43f4bba4aed",
+      "uncached_ms": 15.436,
+      "cached_ms": 10.1
+    },
+    {
+      "case": "answer-home_care-1",
+      "plan_id": "3936417c-5afe-59bc-9158-3c04e86b58cc",
+      "uncached_ms": 29.122,
+      "cached_ms": 22.441
+    },
+    {
+      "case": "answer-home_care-2",
+      "plan_id": "075a539e-25e4-58f2-8e48-d5c862a5124b",
+      "uncached_ms": 21.562,
+      "cached_ms": 24.342
+    },
+    {
+      "case": "answer-home_care-2",
+      "plan_id": "7a1311d9-3b42-530e-812f-b14fa0f0c407",
+      "uncached_ms": 12.986,
+      "cached_ms": 7.253
+    },
+    {
+      "case": "answer-home_care-2",
+      "plan_id": "7881d468-4450-50af-bad6-a0e6b7e4be27",
+      "uncached_ms": 107.759,
+      "cached_ms": 55.358
+    },
+    {
+      "case": "answer-home_care-2",
+      "plan_id": "a8277a04-b286-598a-93a4-1cd3e4b7c8aa",
+      "uncached_ms": 33.394,
+      "cached_ms": 19.594
+    },
+    {
+      "case": "answer-icu-0",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 14.283,
+      "cached_ms": 10.979
+    },
+    {
+      "case": "answer-icu-0",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 20.233,
+      "cached_ms": 19.469
+    },
+    {
+      "case": "answer-icu-1",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 20.439,
+      "cached_ms": 10.13
+    },
+    {
+      "case": "answer-icu-1",
+      "plan_id": "8fb823e5-a0bb-585d-bf95-4c099d0e1bed",
+      "uncached_ms": 13.251,
+      "cached_ms": 8.498
+    },
+    {
+      "case": "answer-icu-1",
+      "plan_id": "41d22e29-4b26-58bd-b215-f43f4bba4aed",
+      "uncached_ms": 19.794,
+      "cached_ms": 17.52
+    },
+    {
+      "case": "answer-icu-1",
+      "plan_id": "3936417c-5afe-59bc-9158-3c04e86b58cc",
+      "uncached_ms": 24.867,
+      "cached_ms": 13.711
+    },
+    {
+      "case": "answer-icu-2",
+      "plan_id": "7a1311d9-3b42-530e-812f-b14fa0f0c407",
+      "uncached_ms": 21.533,
+      "cached_ms": 17.532
+    },
+    {
+      "case": "answer-icu-2",
+      "plan_id": "a8277a04-b286-598a-93a4-1cd3e4b7c8aa",
+      "uncached_ms": 37.234,
+      "cached_ms": 15.723
+    },
+    {
+      "case": "answer-maternity-0",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 90.975,
+      "cached_ms": 58.021
+    },
+    {
+      "case": "answer-maternity-0",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 6.302,
+      "cached_ms": 5.413
+    },
+    {
+      "case": "answer-maternity-1",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 39.767,
+      "cached_ms": 21.661
+    },
+    {
+      "case": "answer-maternity-1",
+      "plan_id": "8fb823e5-a0bb-585d-bf95-4c099d0e1bed",
+      "uncached_ms": 4.583,
+      "cached_ms": 2.801
+    },
+    {
+      "case": "answer-maternity-1",
+      "plan_id": "60784909-c819-5e30-90ca-ea23af206cc9",
+      "uncached_ms": 36.828,
+      "cached_ms": 28.187
+    },
+    {
+      "case": "answer-maternity-1",
+      "plan_id": "41d22e29-4b26-58bd-b215-f43f4bba4aed",
+      "uncached_ms": 10.862,
+      "cached_ms": 8.39
+    },
+    {
+      "case": "answer-maternity-1",
+      "plan_id": "3936417c-5afe-59bc-9158-3c04e86b58cc",
+      "uncached_ms": 42.845,
+      "cached_ms": 33.439
+    },
+    {
+      "case": "answer-maternity-2",
+      "plan_id": "7a1311d9-3b42-530e-812f-b14fa0f0c407",
+      "uncached_ms": 28.71,
+      "cached_ms": 22.679
+    },
+    {
+      "case": "answer-maternity-2",
+      "plan_id": "72274a95-56ad-5597-a584-e239e4314938",
+      "uncached_ms": 1.594,
+      "cached_ms": 0.686
+    },
+    {
+      "case": "answer-maternity-2",
+      "plan_id": "7881d468-4450-50af-bad6-a0e6b7e4be27",
+      "uncached_ms": 30.687,
+      "cached_ms": 22.669
+    },
+    {
+      "case": "answer-maternity-2",
+      "plan_id": "a8277a04-b286-598a-93a4-1cd3e4b7c8aa",
+      "uncached_ms": 4.163,
+      "cached_ms": 3.288
+    },
+    {
+      "case": "answer-newborn-0",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 11.376,
+      "cached_ms": 8.188
+    },
+    {
+      "case": "answer-newborn-0",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 13.598,
+      "cached_ms": 10.809
+    },
+    {
+      "case": "answer-newborn-1",
+      "plan_id": "8fb823e5-a0bb-585d-bf95-4c099d0e1bed",
+      "uncached_ms": 16.195,
+      "cached_ms": 6.937
+    },
+    {
+      "case": "answer-newborn-1",
+      "plan_id": "3936417c-5afe-59bc-9158-3c04e86b58cc",
+      "uncached_ms": 21.917,
+      "cached_ms": 15.66
+    },
+    {
+      "case": "answer-newborn-2",
+      "plan_id": "a8277a04-b286-598a-93a4-1cd3e4b7c8aa",
+      "uncached_ms": 34.859,
+      "cached_ms": 26.886
+    },
+    {
+      "case": "answer-newborn-2",
+      "plan_id": "7881d468-4450-50af-bad6-a0e6b7e4be27",
+      "uncached_ms": 23.236,
+      "cached_ms": 22.262
+    },
+    {
+      "case": "answer-newborn-2",
+      "plan_id": "075a539e-25e4-58f2-8e48-d5c862a5124b",
+      "uncached_ms": 32.275,
+      "cached_ms": 23.241
+    },
+    {
+      "case": "answer-newborn-2",
+      "plan_id": "72274a95-56ad-5597-a584-e239e4314938",
+      "uncached_ms": 32.673,
+      "cached_ms": 22.344
+    },
+    {
+      "case": "answer-no_claim_bonus-0",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 35.519,
+      "cached_ms": 26.561
+    },
+    {
+      "case": "answer-no_claim_bonus-0",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 9.826,
+      "cached_ms": 6.458
+    },
+    {
+      "case": "answer-no_claim_bonus-1",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 3.319,
+      "cached_ms": 2.657
+    },
+    {
+      "case": "answer-no_claim_bonus-1",
+      "plan_id": "8fb823e5-a0bb-585d-bf95-4c099d0e1bed",
+      "uncached_ms": 11.008,
+      "cached_ms": 11.416
+    },
+    {
+      "case": "answer-no_claim_bonus-1",
+      "plan_id": "41d22e29-4b26-58bd-b215-f43f4bba4aed",
+      "uncached_ms": 45.305,
+      "cached_ms": 20.795
+    },
+    {
+      "case": "answer-no_claim_bonus-1",
+      "plan_id": "3936417c-5afe-59bc-9158-3c04e86b58cc",
+      "uncached_ms": 24.87,
+      "cached_ms": 18.732
+    },
+    {
+      "case": "answer-no_claim_bonus-2",
+      "plan_id": "7a1311d9-3b42-530e-812f-b14fa0f0c407",
+      "uncached_ms": 39.742,
+      "cached_ms": 23.842
+    },
+    {
+      "case": "answer-no_claim_bonus-2",
+      "plan_id": "7881d468-4450-50af-bad6-a0e6b7e4be27",
+      "uncached_ms": 31.166,
+      "cached_ms": 21.262
+    },
+    {
+      "case": "answer-no_claim_bonus-2",
+      "plan_id": "a8277a04-b286-598a-93a4-1cd3e4b7c8aa",
+      "uncached_ms": 14.396,
+      "cached_ms": 7.275
+    },
+    {
+      "case": "answer-opd-0",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 55.146,
+      "cached_ms": 41.724
+    },
+    {
+      "case": "answer-opd-0",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 14.885,
+      "cached_ms": 9.208
+    },
+    {
+      "case": "answer-opd-1",
+      "plan_id": "8fb823e5-a0bb-585d-bf95-4c099d0e1bed",
+      "uncached_ms": 26.303,
+      "cached_ms": 15.536
+    },
+    {
+      "case": "answer-opd-1",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 57.991,
+      "cached_ms": 48.36
+    },
+    {
+      "case": "answer-opd-1",
+      "plan_id": "60784909-c819-5e30-90ca-ea23af206cc9",
+      "uncached_ms": 47.561,
+      "cached_ms": 43.639
+    },
+    {
+      "case": "answer-opd-1",
+      "plan_id": "41d22e29-4b26-58bd-b215-f43f4bba4aed",
+      "uncached_ms": 1.983,
+      "cached_ms": 1.244
+    },
+    {
+      "case": "answer-opd-1",
+      "plan_id": "3936417c-5afe-59bc-9158-3c04e86b58cc",
+      "uncached_ms": 84.265,
+      "cached_ms": 52.618
+    },
+    {
+      "case": "answer-opd-2",
+      "plan_id": "075a539e-25e4-58f2-8e48-d5c862a5124b",
+      "uncached_ms": 11.07,
+      "cached_ms": 9.253
+    },
+    {
+      "case": "answer-opd-2",
+      "plan_id": "7a1311d9-3b42-530e-812f-b14fa0f0c407",
+      "uncached_ms": 116.258,
+      "cached_ms": 99.12
+    },
+    {
+      "case": "answer-opd-2",
+      "plan_id": "7881d468-4450-50af-bad6-a0e6b7e4be27",
+      "uncached_ms": 29.836,
+      "cached_ms": 13.176
+    },
+    {
+      "case": "answer-opd-2",
+      "plan_id": "a8277a04-b286-598a-93a4-1cd3e4b7c8aa",
+      "uncached_ms": 16.946,
+      "cached_ms": 9.425
+    },
+    {
+      "case": "answer-organ_donor-0",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 10.221,
+      "cached_ms": 9.001
+    },
+    {
+      "case": "answer-organ_donor-0",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 9.014,
+      "cached_ms": 8.439
+    },
+    {
+      "case": "answer-organ_donor-1",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 6.802,
+      "cached_ms": 4.038
+    },
+    {
+      "case": "answer-organ_donor-1",
+      "plan_id": "41d22e29-4b26-58bd-b215-f43f4bba4aed",
+      "uncached_ms": 20.743,
+      "cached_ms": 15.191
+    },
+    {
+      "case": "answer-organ_donor-1",
+      "plan_id": "60784909-c819-5e30-90ca-ea23af206cc9",
+      "uncached_ms": 14.496,
+      "cached_ms": 13.514
+    },
+    {
+      "case": "answer-organ_donor-1",
+      "plan_id": "8fb823e5-a0bb-585d-bf95-4c099d0e1bed",
+      "uncached_ms": 18.422,
+      "cached_ms": 13.64
+    },
+    {
+      "case": "answer-organ_donor-1",
+      "plan_id": "3936417c-5afe-59bc-9158-3c04e86b58cc",
+      "uncached_ms": 12.332,
+      "cached_ms": 9.722
+    },
+    {
+      "case": "answer-organ_donor-2",
+      "plan_id": "a8277a04-b286-598a-93a4-1cd3e4b7c8aa",
+      "uncached_ms": 25.076,
+      "cached_ms": 16.766
+    },
+    {
+      "case": "answer-organ_donor-2",
+      "plan_id": "7881d468-4450-50af-bad6-a0e6b7e4be27",
+      "uncached_ms": 6.29,
+      "cached_ms": 3.258
+    },
+    {
+      "case": "answer-organ_donor-2",
+      "plan_id": "7a1311d9-3b42-530e-812f-b14fa0f0c407",
+      "uncached_ms": 11.591,
+      "cached_ms": 5.541
+    },
+    {
+      "case": "answer-organ_donor-2",
+      "plan_id": "075a539e-25e4-58f2-8e48-d5c862a5124b",
+      "uncached_ms": 10.457,
+      "cached_ms": 6.424
+    },
+    {
+      "case": "answer-organ_donor-2",
+      "plan_id": "72274a95-56ad-5597-a584-e239e4314938",
+      "uncached_ms": 6.632,
+      "cached_ms": 5.581
+    },
+    {
+      "case": "answer-ped-0",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 18.217,
+      "cached_ms": 13.002
+    },
+    {
+      "case": "answer-ped-0",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 13.709,
+      "cached_ms": 10.856
+    },
+    {
+      "case": "answer-ped-0",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 26.02,
+      "cached_ms": 20.304
+    },
+    {
+      "case": "answer-ped-1",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 37.258,
+      "cached_ms": 33.63
+    },
+    {
+      "case": "answer-ped-1",
+      "plan_id": "60784909-c819-5e30-90ca-ea23af206cc9",
+      "uncached_ms": 29.214,
+      "cached_ms": 20.205
+    },
+    {
+      "case": "answer-ped-1",
+      "plan_id": "3936417c-5afe-59bc-9158-3c04e86b58cc",
+      "uncached_ms": 7.831,
+      "cached_ms": 5.202
+    },
+    {
+      "case": "answer-ped-2",
+      "plan_id": "075a539e-25e4-58f2-8e48-d5c862a5124b",
+      "uncached_ms": 18.346,
+      "cached_ms": 16.121
+    },
+    {
+      "case": "answer-ped-2",
+      "plan_id": "72274a95-56ad-5597-a584-e239e4314938",
+      "uncached_ms": 8.334,
+      "cached_ms": 4.701
+    },
+    {
+      "case": "answer-ped-2",
+      "plan_id": "7881d468-4450-50af-bad6-a0e6b7e4be27",
+      "uncached_ms": 7.974,
+      "cached_ms": 4.372
+    },
+    {
+      "case": "answer-ped-2",
+      "plan_id": "a8277a04-b286-598a-93a4-1cd3e4b7c8aa",
+      "uncached_ms": 12.741,
+      "cached_ms": 7.734
+    },
+    {
+      "case": "answer-pre_post-0",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 16.616,
+      "cached_ms": 13.056
+    },
+    {
+      "case": "answer-pre_post-1",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 13.363,
+      "cached_ms": 8.998
+    },
+    {
+      "case": "answer-pre_post-1",
+      "plan_id": "41d22e29-4b26-58bd-b215-f43f4bba4aed",
+      "uncached_ms": 26.025,
+      "cached_ms": 13.325
+    },
+    {
+      "case": "answer-pre_post-1",
+      "plan_id": "60784909-c819-5e30-90ca-ea23af206cc9",
+      "uncached_ms": 12.476,
+      "cached_ms": 11.036
+    },
+    {
+      "case": "answer-pre_post-1",
+      "plan_id": "8fb823e5-a0bb-585d-bf95-4c099d0e1bed",
+      "uncached_ms": 16.451,
+      "cached_ms": 14.196
+    },
+    {
+      "case": "answer-pre_post-1",
+      "plan_id": "3936417c-5afe-59bc-9158-3c04e86b58cc",
+      "uncached_ms": 13.036,
+      "cached_ms": 8.948
+    },
+    {
+      "case": "answer-pre_post-2",
+      "plan_id": "7881d468-4450-50af-bad6-a0e6b7e4be27",
+      "uncached_ms": 35.871,
+      "cached_ms": 35.386
+    },
+    {
+      "case": "answer-pre_post-2",
+      "plan_id": "075a539e-25e4-58f2-8e48-d5c862a5124b",
+      "uncached_ms": 30.517,
+      "cached_ms": 16.8
+    },
+    {
+      "case": "answer-pre_post-2",
+      "plan_id": "72274a95-56ad-5597-a584-e239e4314938",
+      "uncached_ms": 9.682,
+      "cached_ms": 5.875
+    },
+    {
+      "case": "answer-restoration-0",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 11.126,
+      "cached_ms": 7.81
+    },
+    {
+      "case": "answer-restoration-0",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 14.789,
+      "cached_ms": 8.876
+    },
+    {
+      "case": "answer-restoration-0",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 41.921,
+      "cached_ms": 32.09
+    },
+    {
+      "case": "answer-restoration-1",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 7.932,
+      "cached_ms": 5.306
+    },
+    {
+      "case": "answer-restoration-1",
+      "plan_id": "41d22e29-4b26-58bd-b215-f43f4bba4aed",
+      "uncached_ms": 16.426,
+      "cached_ms": 12.883
+    },
+    {
+      "case": "answer-restoration-1",
+      "plan_id": "60784909-c819-5e30-90ca-ea23af206cc9",
+      "uncached_ms": 31.722,
+      "cached_ms": 24.699
+    },
+    {
+      "case": "answer-restoration-1",
+      "plan_id": "8fb823e5-a0bb-585d-bf95-4c099d0e1bed",
+      "uncached_ms": 17.531,
+      "cached_ms": 12.141
+    },
+    {
+      "case": "answer-restoration-1",
+      "plan_id": "3936417c-5afe-59bc-9158-3c04e86b58cc",
+      "uncached_ms": 21.208,
+      "cached_ms": 15.204
+    },
+    {
+      "case": "answer-restoration-2",
+      "plan_id": "a8277a04-b286-598a-93a4-1cd3e4b7c8aa",
+      "uncached_ms": 34.71,
+      "cached_ms": 23.362
+    },
+    {
+      "case": "answer-restoration-2",
+      "plan_id": "7881d468-4450-50af-bad6-a0e6b7e4be27",
+      "uncached_ms": 41.78,
+      "cached_ms": 30.367
+    },
+    {
+      "case": "answer-restoration-2",
+      "plan_id": "7a1311d9-3b42-530e-812f-b14fa0f0c407",
+      "uncached_ms": 54.051,
+      "cached_ms": 55.984
+    },
+    {
+      "case": "answer-restoration-2",
+      "plan_id": "72274a95-56ad-5597-a584-e239e4314938",
+      "uncached_ms": 6.31,
+      "cached_ms": 4.413
+    },
+    {
+      "case": "answer-road_ambulance-0",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 6.957,
+      "cached_ms": 4.408
+    },
+    {
+      "case": "answer-road_ambulance-0",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 4.966,
+      "cached_ms": 3.531
+    },
+    {
+      "case": "answer-road_ambulance-1",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 4.484,
+      "cached_ms": 3.771
+    },
+    {
+      "case": "answer-road_ambulance-1",
+      "plan_id": "8fb823e5-a0bb-585d-bf95-4c099d0e1bed",
+      "uncached_ms": 19.051,
+      "cached_ms": 11.851
+    },
+    {
+      "case": "answer-road_ambulance-1",
+      "plan_id": "60784909-c819-5e30-90ca-ea23af206cc9",
+      "uncached_ms": 5.378,
+      "cached_ms": 3.91
+    },
+    {
+      "case": "answer-road_ambulance-1",
+      "plan_id": "41d22e29-4b26-58bd-b215-f43f4bba4aed",
+      "uncached_ms": 3.728,
+      "cached_ms": 2.858
+    },
+    {
+      "case": "answer-road_ambulance-1",
+      "plan_id": "3936417c-5afe-59bc-9158-3c04e86b58cc",
+      "uncached_ms": 16.969,
+      "cached_ms": 11.719
+    },
+    {
+      "case": "answer-road_ambulance-2",
+      "plan_id": "a8277a04-b286-598a-93a4-1cd3e4b7c8aa",
+      "uncached_ms": 35.112,
+      "cached_ms": 25.482
+    },
+    {
+      "case": "answer-road_ambulance-2",
+      "plan_id": "7881d468-4450-50af-bad6-a0e6b7e4be27",
+      "uncached_ms": 13.365,
+      "cached_ms": 10.157
+    },
+    {
+      "case": "answer-road_ambulance-2",
+      "plan_id": "7a1311d9-3b42-530e-812f-b14fa0f0c407",
+      "uncached_ms": 6.983,
+      "cached_ms": 4.413
+    },
+    {
+      "case": "answer-road_ambulance-2",
+      "plan_id": "075a539e-25e4-58f2-8e48-d5c862a5124b",
+      "uncached_ms": 8.531,
+      "cached_ms": 6.173
+    },
+    {
+      "case": "answer-room_rent-0",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 25.257,
+      "cached_ms": 13.314
+    },
+    {
+      "case": "answer-room_rent-0",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 10.627,
+      "cached_ms": 8.531
+    },
+    {
+      "case": "answer-room_rent-1",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 19.694,
+      "cached_ms": 14.257
+    },
+    {
+      "case": "answer-room_rent-1",
+      "plan_id": "41d22e29-4b26-58bd-b215-f43f4bba4aed",
+      "uncached_ms": 37.072,
+      "cached_ms": 25.629
+    },
+    {
+      "case": "answer-room_rent-1",
+      "plan_id": "60784909-c819-5e30-90ca-ea23af206cc9",
+      "uncached_ms": 12.029,
+      "cached_ms": 8.052
+    },
+    {
+      "case": "answer-room_rent-1",
+      "plan_id": "8fb823e5-a0bb-585d-bf95-4c099d0e1bed",
+      "uncached_ms": 18.984,
+      "cached_ms": 13.7
+    },
+    {
+      "case": "answer-room_rent-1",
+      "plan_id": "3936417c-5afe-59bc-9158-3c04e86b58cc",
+      "uncached_ms": 24.076,
+      "cached_ms": 15.567
+    },
+    {
+      "case": "answer-room_rent-2",
+      "plan_id": "7a1311d9-3b42-530e-812f-b14fa0f0c407",
+      "uncached_ms": 27.083,
+      "cached_ms": 20.149
+    },
+    {
+      "case": "answer-room_rent-2",
+      "plan_id": "7881d468-4450-50af-bad6-a0e6b7e4be27",
+      "uncached_ms": 13.75,
+      "cached_ms": 13.392
+    },
+    {
+      "case": "answer-room_rent-2",
+      "plan_id": "a8277a04-b286-598a-93a4-1cd3e4b7c8aa",
+      "uncached_ms": 27.011,
+      "cached_ms": 17.178
+    },
+    {
+      "case": "answer-specified_waiting-0",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 44.887,
+      "cached_ms": 34.953
+    },
+    {
+      "case": "answer-specified_waiting-0",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 17.966,
+      "cached_ms": 14.846
+    },
+    {
+      "case": "answer-specified_waiting-1",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 60.982,
+      "cached_ms": 51.739
+    },
+    {
+      "case": "answer-specified_waiting-1",
+      "plan_id": "41d22e29-4b26-58bd-b215-f43f4bba4aed",
+      "uncached_ms": 24.997,
+      "cached_ms": 25.182
+    },
+    {
+      "case": "answer-specified_waiting-1",
+      "plan_id": "3936417c-5afe-59bc-9158-3c04e86b58cc",
+      "uncached_ms": 34.877,
+      "cached_ms": 19.208
+    },
+    {
+      "case": "answer-specified_waiting-2",
+      "plan_id": "075a539e-25e4-58f2-8e48-d5c862a5124b",
+      "uncached_ms": 17.056,
+      "cached_ms": 11.88
+    },
+    {
+      "case": "answer-specified_waiting-2",
+      "plan_id": "7a1311d9-3b42-530e-812f-b14fa0f0c407",
+      "uncached_ms": 21.101,
+      "cached_ms": 14.276
+    },
+    {
+      "case": "answer-specified_waiting-2",
+      "plan_id": "72274a95-56ad-5597-a584-e239e4314938",
+      "uncached_ms": 19.124,
+      "cached_ms": 15.774
+    },
+    {
+      "case": "answer-specified_waiting-2",
+      "plan_id": "7881d468-4450-50af-bad6-a0e6b7e4be27",
+      "uncached_ms": 13.352,
+      "cached_ms": 8.669
+    },
+    {
+      "case": "answer-specified_waiting-2",
+      "plan_id": "a8277a04-b286-598a-93a4-1cd3e4b7c8aa",
+      "uncached_ms": 57.342,
+      "cached_ms": 36.553
+    },
+    {
+      "case": "star-copay-customer",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 7.158,
+      "cached_ms": 6.929
+    },
+    {
+      "case": "star-copay-customer",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 6.957,
+      "cached_ms": 4.635
+    },
+    {
+      "case": "star-copay-customer",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 4.747,
+      "cached_ms": 3.283
+    },
+    {
+      "case": "star-copay-fixed",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 16.039,
+      "cached_ms": 8.442
+    },
+    {
+      "case": "star-copay-fixed",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 7.625,
+      "cached_ms": 5.049
+    },
+    {
+      "case": "star-copay-fixed",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 4.243,
+      "cached_ms": 2.817
+    },
+    {
+      "case": "star-deductible-customer",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 1.284,
+      "cached_ms": 0.872
+    },
+    {
+      "case": "star-deductible-customer",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 3.425,
+      "cached_ms": 2.638
+    },
+    {
+      "case": "star-deductible-customer",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 17.87,
+      "cached_ms": 13.606
+    },
+    {
+      "case": "star-deductible-fixed",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 4.021,
+      "cached_ms": 2.663
+    },
+    {
+      "case": "star-deductible-fixed",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 2.012,
+      "cached_ms": 1.529
+    },
+    {
+      "case": "star-eligibility-customer",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 71.347,
+      "cached_ms": 59.94
+    },
+    {
+      "case": "star-eligibility-customer",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 12.286,
+      "cached_ms": 9.707
+    },
+    {
+      "case": "star-eligibility-customer",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 35.637,
+      "cached_ms": 17.863
+    },
+    {
+      "case": "star-eligibility-fixed",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 53.129,
+      "cached_ms": 43.84
+    },
+    {
+      "case": "star-eligibility-fixed",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 74.21,
+      "cached_ms": 55.327
+    },
+    {
+      "case": "star-eligibility-fixed",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 43.277,
+      "cached_ms": 32.326
+    },
+    {
+      "case": "star-family_floater-customer",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 16.62,
+      "cached_ms": 15.716
+    },
+    {
+      "case": "star-family_floater-fixed",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 38.782,
+      "cached_ms": 19.323
+    },
+    {
+      "case": "star-family_floater-fixed",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 13.154,
+      "cached_ms": 12.479
+    },
+    {
+      "case": "star-geography-customer",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 50.476,
+      "cached_ms": 36.302
+    },
+    {
+      "case": "star-geography-customer",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 25.415,
+      "cached_ms": 19.364
+    },
+    {
+      "case": "star-geography-customer",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 39.574,
+      "cached_ms": 28.509
+    },
+    {
+      "case": "star-geography-fixed",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 9.459,
+      "cached_ms": 9.366
+    },
+    {
+      "case": "star-geography-fixed",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 15.198,
+      "cached_ms": 7.121
+    },
+    {
+      "case": "star-geography-fixed",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 1.169,
+      "cached_ms": 0.741
+    },
+    {
+      "case": "star-initial_specific_waiting_periods-customer",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 76.643,
+      "cached_ms": 47.041
+    },
+    {
+      "case": "star-initial_specific_waiting_periods-customer",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 38.089,
+      "cached_ms": 24.861
+    },
+    {
+      "case": "star-initial_specific_waiting_periods-customer",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 84.298,
+      "cached_ms": 52.473
+    },
+    {
+      "case": "star-initial_specific_waiting_periods-fixed",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 35.742,
+      "cached_ms": 26.864
+    },
+    {
+      "case": "star-initial_specific_waiting_periods-fixed",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 42.389,
+      "cached_ms": 33.999
+    },
+    {
+      "case": "star-maternity-customer",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 19.918,
+      "cached_ms": 16.481
+    },
+    {
+      "case": "star-maternity-customer",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 11.269,
+      "cached_ms": 8.77
+    },
+    {
+      "case": "star-maternity-fixed",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 50.077,
+      "cached_ms": 37.754
+    },
+    {
+      "case": "star-maternity-fixed",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 27.562,
+      "cached_ms": 19.249
+    },
+    {
+      "case": "star-maternity-fixed",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 21.184,
+      "cached_ms": 17.592
+    },
+    {
+      "case": "star-newborn-customer",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 72.106,
+      "cached_ms": 37.721
+    },
+    {
+      "case": "star-newborn-customer",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 17.988,
+      "cached_ms": 12.062
+    },
+    {
+      "case": "star-newborn-customer",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 33.072,
+      "cached_ms": 21.343
+    },
+    {
+      "case": "star-newborn-fixed",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 62.753,
+      "cached_ms": 51.518
+    },
+    {
+      "case": "star-newborn-fixed",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 25.741,
+      "cached_ms": 20.238
+    },
+    {
+      "case": "star-newborn-fixed",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 18.439,
+      "cached_ms": 13.172
+    },
+    {
+      "case": "star-ped_waiting_period-customer",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 20.725,
+      "cached_ms": 15.463
+    },
+    {
+      "case": "star-ped_waiting_period-customer",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 11.151,
+      "cached_ms": 7.768
+    },
+    {
+      "case": "star-ped_waiting_period-customer",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 29.032,
+      "cached_ms": 21.786
+    },
+    {
+      "case": "star-ped_waiting_period-fixed",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 48.37,
+      "cached_ms": 43.389
+    },
+    {
+      "case": "star-ped_waiting_period-fixed",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 9.575,
+      "cached_ms": 6.365
+    },
+    {
+      "case": "star-ped_waiting_period-fixed",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 20.473,
+      "cached_ms": 15.182
+    },
+    {
+      "case": "star-portability-customer",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 4.564,
+      "cached_ms": 2.949
+    },
+    {
+      "case": "star-portability-customer",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 13.724,
+      "cached_ms": 10.519
+    },
+    {
+      "case": "star-portability-fixed",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 12.618,
+      "cached_ms": 9.365
+    },
+    {
+      "case": "star-portability-fixed",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 10.811,
+      "cached_ms": 7.963
+    },
+    {
+      "case": "star-portability-fixed",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 10.357,
+      "cached_ms": 7.576
+    },
+    {
+      "case": "star-restoration-customer",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 6.032,
+      "cached_ms": 4.63
+    },
+    {
+      "case": "star-restoration-customer",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 12.984,
+      "cached_ms": 7.591
+    },
+    {
+      "case": "star-restoration-customer",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 14.008,
+      "cached_ms": 11.112
+    },
+    {
+      "case": "star-restoration-fixed",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 7.648,
+      "cached_ms": 4.847
+    },
+    {
+      "case": "star-restoration-fixed",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 12.466,
+      "cached_ms": 6.932
+    },
+    {
+      "case": "star-restoration-fixed",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 60.397,
+      "cached_ms": 44.486
+    },
+    {
+      "case": "star-room_category-customer",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 16.806,
+      "cached_ms": 10.578
+    },
+    {
+      "case": "star-room_category-customer",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 22.733,
+      "cached_ms": 15.654
+    },
+    {
+      "case": "star-room_category-customer",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 12.158,
+      "cached_ms": 10.423
+    },
+    {
+      "case": "star-room_category-fixed",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 29.922,
+      "cached_ms": 16.172
+    },
+    {
+      "case": "star-room_category-fixed",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 0.971,
+      "cached_ms": 0.538
+    },
+    {
+      "case": "star-sum_insured-customer",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 13.183,
+      "cached_ms": 11.481
+    },
+    {
+      "case": "star-sum_insured-customer",
+      "plan_id": "103010f8-d59f-422f-a46f-9444b2ec35fa",
+      "uncached_ms": 11.305,
+      "cached_ms": 11.012
+    },
+    {
+      "case": "star-sum_insured-customer",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 16.314,
+      "cached_ms": 10.849
+    },
+    {
+      "case": "star-sum_insured-fixed",
+      "plan_id": "647a3382-516a-4653-852b-6d242e9fccf9",
+      "uncached_ms": 35.931,
+      "cached_ms": 33.229
+    },
+    {
+      "case": "star-sum_insured-fixed",
+      "plan_id": "b80edf12-8332-4090-9b2a-31c4e8cf8da6",
+      "uncached_ms": 16.302,
+      "cached_ms": 13.624
+    }
+  ],
+  "uncached_ms": {
+    "p50": 19.0875,
+    "p95": 57.991,
+    "total": 6313.93
+  },
+  "cached_ms": {
+    "p50": 13.538,
+    "p95": 47.041,
+    "total": 4554.386
+  }
+}

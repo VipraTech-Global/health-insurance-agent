@@ -20,11 +20,11 @@ class Command(BaseCommand):
     def handle(self, **options):
         if settings.DATABASES['default']['NAME'] != 'coverguide_star_slice':
             raise CommandError('Report only the isolated application execution.')
-        release = DemoRelease.objects.get(active=True)
         root = Path(settings.COVERGUIDE_REPORT_ROOT) / 'ten-insurer/application-acceptance' / options['run_id']
         if not (root / 'summary.json').exists():
             raise CommandError('The full application acceptance run has not finished.')
         summary = json.loads((root / 'summary.json').read_text())
+        release = DemoRelease.objects.get(pk=summary['release_id'])
         state = json.loads((root / 'state.json').read_text())
         rows = [json.loads((root / 'results' / (job['id'] + '.json')).read_text()) for job in state['jobs']]
         cases = [(row, result) for row in rows if row['job']['kind'] == 'answer' for result in row['results']]
@@ -38,7 +38,6 @@ class Command(BaseCommand):
                 'required': value['required'], 'covered': value['covered'],
                 'displayed': value.get('displayed', []), 'missing': sorted(set(value['required']) - set(value['covered']))}
         details = {**summary, 'models': dict(Counter(model for _, r in cases for model in set(r['models']))),
-            'table_heavy': dict(Counter(r['status'] for row, r in cases if row['job']['table_heavy'])),
             'reference_details': [{'plan_id': plan, 'criterion': criterion, 'queries': queries,
                 'complete': all(queries.get(style, {}).get('complete', False) for style in ('fixed', 'customer'))}
                 for (plan, criterion), queries in sorted(cells.items())]}

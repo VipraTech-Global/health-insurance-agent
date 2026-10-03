@@ -7,12 +7,13 @@ class QuoteMismatch(ValueError):
     pass
 
 
-def normalized(text: str, *, dewrap: bool = False) -> tuple[str, list[int]]:
+@lru_cache(maxsize=128)
+def normalized(text: str, *, dewrap: bool = False) -> tuple[str, tuple[int, ...]]:
     # Preserve lexical hyphens. A printed line-wrap may insert whitespace after
     # the hyphen (air-\nconditioned); soft hyphens are explicitly discretionary.
     discretionary = {m.start() + 1 for m in re.finditer(r'[A-Za-z]-[ \t]*\n[ \t]*(?=[A-Za-z])', text)} if dewrap else set()
     positions = [i for i, char in enumerate(text) if not char.isspace() and char != '\u00ad' and i not in discretionary]
-    return ''.join(text[i] for i in positions), positions
+    return ''.join(text[i] for i in positions), tuple(positions)
 
 
 def locate(text: str, quote: str, occurrence: int = 0) -> tuple[int, int]:
