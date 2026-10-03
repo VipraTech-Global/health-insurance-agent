@@ -163,3 +163,7 @@ Run `section16-a-20261003-01` was stopped and its synthetic pending questions ca
 ### Section 16 A — printed boundaries and retained-evidence validation
 
 Run `section16-a-20261003-02` is diagnostic and incomplete. Agent PDF checks found overbroad excerpts crossing wrapped numbered headings and unrelated illustrations. Recognize source title-case/numbered headings including PDF control/newline artifacts, preserve explicit letter-to-letter discretionary line-wrap hyphens with original offsets, and revalidate all retained units before admitting additional context (table metadata must not disappear under the budget). Tests cover the observed heading boundary, failed corrections, operational versus evidence outcomes, local table labels and context overflow. All nine frozen scored-source hashes still match.
+
+### Section 16 A — remove repeated prefix scans before full acceptance
+
+Diagnostic run `section16-a-20261003-03` was interrupted after profiling showed 26.8 seconds in repeated regular-expression scans during a six-unit local replay. Replace the terminal enumeration check with an equivalent bounded backward scan, cache immutable document boundaries, and reuse each packet's reconstructed source documents. A 5,009-example equivalence test covers Unicode word/digit boundaries and long numeric tokens. No diagnostic run results are reused in the fresh acceptance run. This isolated profiling result is not a claim about application latency.

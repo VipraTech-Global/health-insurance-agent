@@ -124,3 +124,16 @@ def test_wrapped_numbered_heading_stops_unrelated_benefits():
     packet = Packet('plan', (s,), (), 100)
     statement, _ = assemble(unit('Room charges are covered.'), PacketLabels(packet), packet, [s])
     assert 'only AC rooms' in statement.text and 'Day Care' not in statement.text
+
+
+def test_enumeration_end_optimization_matches_original_regex():
+    import random
+    import re
+
+    from apps.adviser_v2.demo.quotations import enumeration_end
+    rng = random.Random(16)
+    alphabet = ' ABCxyz0123456789_é½١\n\t.-'
+    examples = ['Mr.', '1.', 'III.', 'A.', 'ABC123.', '9'*500+'.', 'a'+'9'*500+'.', '١٢.', '½.']
+    examples.extend(''.join(rng.choices(alphabet, k=rng.randrange(1,100)))+'.' for _ in range(5000))
+    for text in examples:
+        assert enumeration_end(text, len(text)) == bool(re.search(r'(?:\b[A-Z]|\b\d+)\.$', text))

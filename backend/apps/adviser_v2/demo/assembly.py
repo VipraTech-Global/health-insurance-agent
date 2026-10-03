@@ -20,6 +20,7 @@ class UnknownLabel(EvidenceInsufficient):
 
 class PacketLabels:
     def __init__(self, packet: Packet):
+        self.documents = {}
         self.passages = {f'P{n}': (section, segment) for n, (section, segment) in enumerate(
             ((s, p) for s in packet.sections for p in s.segments), 1)}
         self.tables = {f'T{n}': table for n, table in enumerate(packet.tables, 1)}
@@ -71,7 +72,10 @@ def assemble(unit, labels: PacketLabels, packet: Packet, all_sections: list[Sect
         a, b = locate(segment.text, ref.quote, ref.occurrence)
         left, right = segment.document_start + a, segment.document_start + b
         if complete:
-            source = document_source(section, all_sections)
+            key = (section.plan_id, section.document_id, section.document_sha256)
+            if key not in labels.documents:
+                labels.documents[key] = document_source(section, all_sections)
+            source = labels.documents[key]
             left, right = clause_bounds(source, left, right)
         citations = []
         cursor = left

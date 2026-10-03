@@ -1,5 +1,6 @@
 """Exact PDF-artifact matching with offsets back into the unchanged source."""
 import re
+from functools import lru_cache
 
 
 class QuoteMismatch(ValueError):
@@ -37,15 +38,7 @@ def clause_bounds(text: str, start: int, end: int) -> tuple[int, int]:
     adjacent qualification sentences rather than allowing a cropped exception.
     Ambiguous section boundaries are handled by the caller, never guessed.
     """
-    sentence_ends = [m.end() for m in re.finditer(r'(?<=[.!?])\s+(?=[A-Z])|\n[ \t]*\n', text)
-                     if not re.search(r'(?:\b[A-Z]|\b\d+)\.$', text[:m.start()])]
-    headings = [m.end() for m in re.finditer(
-        r'\n[ \t]*(?=(?:\d+\.[\s\x07]*[A-Z]|\d+\.\d+(?:\.\d+)*[ \t]+[A-Z]|\([ivx]+\)[ \t]*Benefit:))', text)]
-    # Printed title-case headings are source boundaries, unlike ordinary wrapped
-    # prose. Require at least two title words to avoid one-word wrapped lines.
-    headings.extend(m.start() for m in re.finditer(
-        r'(?m)^[ \t]*[A-Z][A-Za-z/-]*(?:[ \t]+(?:[A-Z][A-Za-z/-]*|of|and|for|in|the|to|under)){1,9}:?[ \t]*$', text))
-    boundaries = sorted(set([0, *sentence_ends, *headings, len(text)]))
+    boundaries, headings = boundaries_for(text)
     left = max(b for b in boundaries if b <= start)
     right = min(b for b in boundaries if b >= end)
     # An exception/qualification immediately preceding the selected sentence is
@@ -71,3 +64,28 @@ def clause_bounds(text: str, start: int, end: int) -> tuple[int, int]:
             break
         right = after
     return left, right
+
+
+def enumeration_end(text: str, end: int) -> bool:
+    """Equivalent to the anchored enumeration regex, without scanning its prefix."""
+    if end < 2 or text[end-1] != '.':
+        return False
+    start = end-2
+    while start >= 0 and (text[start].isalnum() or text[start] == '_'):
+        start -= 1
+    token = text[start+1:end-1]
+    return bool(token) and (token.isdecimal() or len(token) == 1 and 'A' <= token <= 'Z')
+
+
+@lru_cache(maxsize=64)
+def boundaries_for(text: str):
+    sentence_ends = [m.end() for m in re.finditer(r'(?<=[.!?])\s+(?=[A-Z])|\n[ \t]*\n', text)
+                     if not enumeration_end(text, m.start())]
+    headings = [m.end() for m in re.finditer(
+        r'\n[ \t]*(?=(?:\d+\.[\s\x07]*[A-Z]|\d+\.\d+(?:\.\d+)*[ \t]+[A-Z]|\([ivx]+\)[ \t]*Benefit:))', text)]
+    # Printed title-case headings are source boundaries, unlike ordinary wrapped
+    # prose. Require at least two title words to avoid one-word wrapped lines.
+    headings.extend(m.start() for m in re.finditer(
+        r'(?m)^[ \t]*[A-Z][A-Za-z/-]*(?:[ \t]+(?:[A-Z][A-Za-z/-]*|of|and|for|in|the|to|under)){1,9}:?[ \t]*$', text))
+    boundaries = sorted(set([0, *sentence_ends, *headings, len(text)]))
+    return tuple(boundaries), frozenset(headings)
