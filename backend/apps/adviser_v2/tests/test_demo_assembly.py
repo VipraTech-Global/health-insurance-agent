@@ -68,6 +68,14 @@ def test_successful_unit_survives_failed_correction(monkeypatch):
     result = answer_plan({'policy_version_id':'plan', 'index_id':'index', 'sections':[s.payload()]}, 'Room?', method='H', relay=SimpleNamespace(call=call))
     assert result['status'] == 'answered' and result['completeness'] == 'partial'
     assert result['message'] == PARTIAL
-    assert result['answer']['statements'][0]['text'] == 'Room expenses are covered. '
+    assert result['answer']['statements'][0]['text'] == s.text
     assert result['rejections'][0]['category'] == 'copying_error'
     assert result['failure_category'] == 'operational'
+
+
+def test_following_nonprefix_qualification_is_kept_until_next_heading():
+    s = source('ICU and stents are covered. With regard to stents, we will pay only the notified price.\n2. Other benefits are covered.')
+    packet = Packet('plan', (s,), (), 100)
+    statement, _ = assemble(unit('ICU and stents are covered.'), PacketLabels(packet), packet, [s])
+    assert 'notified price' in statement.text
+    assert 'Other benefits' not in statement.text

@@ -53,9 +53,12 @@ def clause_bounds(text: str, start: int, end: int) -> tuple[int, int]:
         if introduction >= 0:
             left = max(b for b in boundaries if b <= introduction)
     while right < len(text):
+        if right in headings:
+            break
         after = min(b for b in boundaries if b > right)
         following = text[right:after]
-        if not re.match(r'\s*(?:' + qualifiers + r'|\(?[a-zivx0-9]+[.)]\s|[•*])', following, re.I):
+        if not (re.match(r'\s*(?:' + qualifiers + r'|\(?[a-zivx0-9]+[.)]\s|[•*])', following, re.I)
+                or re.search(r'\b(?:subject to|provided|with regard|will|shall|must|required|only|except|excluded|not|condition|limit)\b', following, re.I)):
             break
         right = after
     return left, right
