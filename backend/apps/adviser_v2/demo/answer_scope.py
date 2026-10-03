@@ -80,6 +80,10 @@ def is_optional_heading(match):
     title = match["title"].strip(" \t\x07➢•")
     if not OPTIONAL.search(title) or len(title.split()) > 14:
         return False
+    if re.fullmatch(
+        r"Optional (?:Packages?|Covers?|Benefits)(?:\s*\([^)]{1,100}\))?[:]?", title, re.I
+    ):
+        return True
     # Sentences, FAQs, table-column headings and payment conditions are not
     # parent section headings. Numbered optional/rider titles may wrap.
     if re.search(r"\b(?:will|shall|payment|premium|insured|if|claim|not|exclusion)\b", title, re.I):

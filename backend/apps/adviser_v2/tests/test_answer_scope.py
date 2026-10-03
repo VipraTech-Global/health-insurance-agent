@@ -353,3 +353,22 @@ def test_product_named_like_its_variant_still_rejects_foreign_owner():
     b, p, scope = fixture("Product Name: Beta Cover\nOPD is covered.", variant="Alpha Cover")
     with pytest.raises(ScopeViolation, match="another product"):
         scoped(b, p, scope, "OPD is covered.")
+
+
+@pytest.mark.parametrize(
+    "heading",
+    [
+        "Optional Packages (Applicable only if opted)",
+        "Optional Covers (Applicable only if opted)",
+        "Optional Benefits (if selected)",
+    ],
+)
+def test_optional_package_qualification_governs_named_children_across_pages(heading):
+    raw = heading + "\n1. Enhance\nRoom upgrade is covered.\f2. Freedom\nOPD is covered."
+    b, p, scope = fixture(raw)
+    with pytest.raises(ScopeViolation, match="labelled"):
+        scoped(b, p, scope, "OPD is covered.")
+    assert (
+        scoped(b, p, scope, "OPD is covered.", "optional, extra premium")[0].coverage_scope
+        == "optional, extra premium"
+    )
