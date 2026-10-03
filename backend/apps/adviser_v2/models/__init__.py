@@ -10,4 +10,6 @@ from .comparisons import *  # noqa: F403
 from .corpus import *  # noqa: F403
 from .customer import *  # noqa: F403
 from .demo import *  # noqa: F403
+from .fact_card import DemoFactCard  # noqa: F401
+from .guided_chat import *  # noqa: F403
 from .operations import *  # noqa: F403

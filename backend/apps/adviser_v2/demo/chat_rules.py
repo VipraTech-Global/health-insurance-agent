@@ -1,0 +1,217 @@
+"""Neutral chat evaluation and deterministic insurer-independent question choice."""
+
+from itertools import combinations
+
+from .contracts import PersonInput, PlanCard, Profile
+from .conversation_contracts import FIELDS
+from .matching import evaluate
+from .typed_matching import guard_applies, hard_limits
+
+
+def source_rule(card, field, person_id=None, profile=None):
+    rules = [
+        r
+        for r in card.get("executable_rules", [])
+        if r["field"] == field
+        and r.get("citations")
+        and (not r.get("conditions") or r.get("condition_mode") == "quoted")
+        and r.get("scope", "base") == "base"
+        and guard_applies(r, profile, person_id)
+        and r.get("variant") in (None, card["variant"])
+        and r.get("person_id") in (None, person_id)
+    ]
+    if len(rules) != 1:
+        return None
+    return rules[0]
+
+
+def requirement_result(card, need, profile=None):
+    rule = source_rule(card, need.field, need.person_id, profile)
+    status, quotes = "unresolved", []
+    if rule:
+        quotes = rule["citations"]
+        if rule["kind"] == "coverage" and need.value == "covered":
+            status = {"covered": "fits", "not_covered": "doesnt_fit"}.get(
+                rule["value"], "unresolved"
+            )
+        elif rule["kind"] == "maximum" and need.value.startswith("at_most:"):
+            _, requested, unit = need.value.split(":")
+            if unit == rule.get("unit"):
+                status = "fits" if float(rule["value"]) <= float(requested) else "doesnt_fit"
+    common = {f["field"]: f["value"] for f in card.get("common_needs", [])}
+    field = card.get(need.field) or common.get(need.field, {})
+    quotes = quotes or field.get("citations", [])
+    labels = {
+        "fits": "Covered for this documented check.",
+        "doesnt_fit": "The document states a conflicting limit or exclusion.",
+        "unresolved": "Cannot establish this requirement and its applicable conditions from the evidence.",
+    }
+    return {
+        "field": need.field,
+        "status": status,
+        "strength": need.strength,
+        "coverage_status": {
+            "fits": "covered",
+            "doesnt_fit": "not covered",
+            "unresolved": "can’t tell",
+        }[status],
+        "explanation": need.original_text + " — " + labels[status],
+        "citations": quotes,
+    }
+
+
+def fit_groups(cards, profile):
+    groups = {"fits": [], "unresolved": [], "doesnt_fit": []}
+    for card in sorted(
+        cards,
+        key=lambda c: (
+            c["insurer"].casefold(),
+            c["name"].casefold(),
+            c["variant"].casefold(),
+            c["plan_id"],
+        ),
+    ):
+        # Legacy projections remain supported; missing checks, rather than an
+        # overall partial-card flag, determine uncertainty.
+        old = {k: v for k, v in card.items() if k in PlanCard.model_fields}
+        old["schema_version"] = 1
+        validated = PlanCard.model_validate(old)
+        if validated.status != "documents_unavailable":
+            validated = validated.model_copy(update={"status": "ready"})
+        if profile.people:
+            p = Profile(
+                people=[
+                    PersonInput(
+                        id=p.id,
+                        relationship=p.relationship,
+                        age_days=(
+                            p.age * 365
+                            if p.age_unit == "years"
+                            else p.age
+                            if p.age_unit == "days"
+                            else None
+                        )
+                        if p.age is not None
+                        else None,
+                        dependent=p.dependent,
+                    )
+                    for p in profile.people
+                ],
+                city=profile.city,
+                sum_insured=profile.sum_insured,
+                annual_budget=profile.annual_budget,
+                zone=None,
+                plan_type=profile.plan_type,
+            )
+            result = evaluate(validated, p).model_dump()
+        else:
+            result = {
+                "plan_id": card["plan_id"],
+                "index_version": card["index_version"],
+                "status": "unresolved",
+                "hard_limits": [
+                    {
+                        "field": "people",
+                        "status": "unresolved",
+                        "explanation": "Who needs cover is not established.",
+                        "citations": [],
+                    }
+                ],
+                "other_needs": [],
+            }
+        if card.get("card_version"):
+            type_rule = source_rule(card, "plan_type")
+            for reason in result["hard_limits"]:
+                if reason["field"] == "plan_type":
+                    if type_rule:
+                        reason["citations"] = type_rule["citations"]
+                    else:
+                        reason.update(
+                            status="unresolved",
+                            explanation="Product type needs cited executable evidence.",
+                            citations=[],
+                        )
+            if profile.coverage_basis:
+                rule = source_rule(card, "coverage_basis")
+                supported = rule and profile.coverage_basis in rule["value"].split("|")
+                result["hard_limits"].append(
+                    {
+                        "field": "coverage_basis",
+                        "status": ("fits" if supported else "doesnt_fit") if rule else "unresolved",
+                        "explanation": "Coverage-basis check against the printed choices."
+                        if rule
+                        else "Coverage basis is not established.",
+                        "citations": rule["citations"] if rule else [],
+                    }
+                )
+        if card.get("card_schema_version", 0) >= 3:
+            result["hard_limits"] = hard_limits(card, profile, result["hard_limits"])
+        for need in profile.requirements:
+            reason = requirement_result(card, need, profile)
+            result["other_needs"].append(reason)
+            if need.strength == "must_have":
+                result["hard_limits"].append(reason)
+        # Never exclude from unsupported metadata or an uncited conflict.
+        for reason in result["hard_limits"]:
+            if reason["status"] == "doesnt_fit" and not reason["citations"]:
+                reason.update(
+                    status="unresolved", explanation="A cited conflict has not been established."
+                )
+        result["status"] = (
+            "doesnt_fit"
+            if any(r["status"] == "doesnt_fit" for r in result["hard_limits"])
+            else "unresolved"
+            if any(r["status"] == "unresolved" for r in result["hard_limits"])
+            else "fits"
+        )
+        groups[result["status"]].append(result)
+    return groups
+
+
+def remaining_ids(groups):
+    return {r["plan_id"] for key in ("fits", "unresolved") for r in groups[key]}
+
+
+def differentiator(cards, groups, suppressed, profile=None):
+    remaining = remaining_ids(groups)
+    candidates = []
+    for order, field in enumerate(FIELDS):
+        if field in suppressed:
+            continue
+        values = []
+        for card in cards:
+            if card["plan_id"] not in remaining:
+                continue
+            rule = source_rule(card, field, profile=profile)
+            if rule and rule["kind"] in {"coverage", "maximum"}:
+                values.append((card, rule))
+        if len({(r["kind"], r.get("unit")) for _, r in values}) > 1:
+            continue
+        score = sum(
+            (a[1]["value"], a[1].get("unit")) != (b[1]["value"], b[1].get("unit"))
+            for a, b in combinations(values, 2)
+        )
+        if score:
+            candidates.append((score, -order, field, values))
+    if not candidates:
+        return None
+    _, _, field, values = max(candidates, key=lambda c: (c[0], c[1]))
+    rule = values[0][1]
+    if all(r["kind"] == "coverage" for _, r in values):
+        proposed = "covered"
+        count = sum(r["value"] == "covered" for _, r in values)
+    elif all(r["kind"] == "maximum" and r.get("unit") == rule.get("unit") for _, r in values):
+        minimum = min(float(r["value"]) for _, r in values)
+        proposed = f"at_most:{minimum:g}:{rule['unit']}"
+        count = sum(float(r["value"]) <= minimum for _, r in values)
+    else:
+        return None
+    return {
+        "field": field,
+        "value": proposed,
+        "count": count,
+        "remaining": len(remaining),
+        "known": len(values),
+        "source_indexes": sorted({c["index_version"] for c, _ in values}),
+        "quotes": [q for _, r in values for q in r["citations"]],
+    }

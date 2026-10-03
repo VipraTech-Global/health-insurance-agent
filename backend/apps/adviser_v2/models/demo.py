@@ -49,6 +49,7 @@ class DemoRelease(models.Model):
     manifest_sha256 = models.CharField(max_length=64)
     bakeoff = models.JSONField()
     indexes = models.ManyToManyField(DemoPlanIndex)
+    fact_cards = models.ManyToManyField("DemoFactCard", blank=True)
     active = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
