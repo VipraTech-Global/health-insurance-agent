@@ -43,7 +43,7 @@ export function DemoApp({onSignedOut}:{onSignedOut:()=>Promise<void>}) {
   }
   function acceptQuestion(data:Question) {
     setQuestion(data);
-    if(["completed","cancelled"].includes(data.state)){events.current?.close();if(delayedReply.current){const reply=delayedReply.current;delayedReply.current=null;setMessages(old=>[...old,reply]);}}
+    if(["completed","cancelled"].includes(data.state)){setError("");events.current?.close();if(delayedReply.current){const reply=delayedReply.current;delayedReply.current=null;setMessages(old=>[...old,reply]);}}
   }
   async function refreshComparison(id:string) {
     try {const data=await api<Question>(`/api/v2/demo/questions/${id}/`);acceptQuestion(data);setError("");}
@@ -51,8 +51,8 @@ export function DemoApp({onSignedOut}:{onSignedOut:()=>Promise<void>}) {
   }
   function stream(id:string) {
     events.current?.close();const source=new EventSource(`/api/v2/demo/questions/${id}/events/`);events.current=source;
-    source.onmessage=event=>acceptQuestion(JSON.parse(event.data) as Question);
-    source.onerror=()=>{source.close();setError("Live updates paused. Refresh the comparison to check progress.");};
+    source.onmessage=event=>{if(events.current===source)acceptQuestion(JSON.parse(event.data) as Question);};
+    source.onerror=()=>{source.close();setError("Live updates paused. Refresh the comparison to check progress.");void api<Question>(`/api/v2/demo/questions/${id}/`).then(data=>{if(events.current===source)acceptQuestion(data);}).catch(e=>{if(events.current===source)setError(e instanceof Error?e.message:"Could not recover comparison");});};
   }
   async function send(message:string) {
     if(!chat||busy||!message.trim()||chat.state.stage==="stopped")return;
