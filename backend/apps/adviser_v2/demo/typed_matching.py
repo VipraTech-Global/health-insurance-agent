@@ -1,5 +1,7 @@
 """Execute cited bounded rules against incomplete customer details."""
 
+import re
+
 
 def eligible_rules(card, field):
     return [
@@ -71,7 +73,7 @@ def hard_limits(card, profile, existing):
     reasons = {r["field"]: r for r in existing}
     # Immutable typed cards must not fall back to superseded legacy projections.
     # A quoted field with no executable rule cannot supply an exclusion.
-    for field in ("family", "sum_insured", "plan_type", "coverage_basis"):
+    for field in ("family", "sum_insured", "plan_type", "coverage_basis", "geography"):
         if field in reasons:
             reasons[field] = {
                 "field": field,
@@ -88,6 +90,37 @@ def hard_limits(card, profile, existing):
             "citations": [q for r in rules for q in r["citations"]],
         }
 
+    rules = eligible_rules(card, "geography")
+    if rules and profile.city:
+        # Explicit Indian location labels; never assume that any arbitrary city
+        # is Indian just because the insurer offers an India-wide product.
+        city = profile.city.casefold().strip()
+        indian_city = city in {
+            "pune",
+            "mumbai",
+            "delhi",
+            "new delhi",
+            "bengaluru",
+            "bangalore",
+            "chennai",
+            "kolkata",
+            "hyderabad",
+            "ahmedabad",
+            "surat",
+            "nashik",
+            "jaipur",
+            "lucknow",
+            "kochi",
+            "ernakulam",
+            "thiruvananthapuram",
+        } or bool(re.search(r"[, ]india$", city))
+        if all(r["value"] == "india" for r in rules) and indian_city:
+            record(
+                "geography",
+                "fits",
+                "The cited purchase/residential geography covers India; premium zones do not restrict sale in this Indian city.",
+                rules,
+            )
     for person in profile.people:
         rules = [
             r
@@ -108,7 +141,7 @@ def hard_limits(card, profile, existing):
             rules,
         )
     rules = eligible_rules(card, "plan_type")
-    if len(rules) == 1 and profile.plan_type != "unresolved":
+    if rules and len({r["value"] for r in rules}) == 1 and profile.plan_type != "unresolved":
         record(
             "plan_type",
             "fits" if rules[0]["value"] == profile.plan_type else "doesnt_fit",
@@ -131,17 +164,24 @@ def hard_limits(card, profile, existing):
         record(
             "coverage_basis",
             status,
-            "Individual/floater basis is separate from product type.",
+            "Requested coverage basis checked against the cited coverage_basis rule."
+            if rules
+            else "No applicable executable coverage_basis rule has been established.",
             rules,
         )
     rules = eligible_rules(card, "sum_insured")
-    if len(rules) == 1 and profile.sum_insured is not None:
-        rule = rules[0]
+    if rules and profile.sum_insured is not None:
+        supported = any(profile.sum_insured in r["choices"] for r in rules)
+        contradicted = any(
+            r.get("exhaustive") and profile.sum_insured not in r["choices"] for r in rules
+        )
         status = (
-            "fits"
-            if profile.sum_insured in rule["choices"]
+            "unresolved"
+            if supported and contradicted
+            else "fits"
+            if supported
             else "doesnt_fit"
-            if rule.get("exhaustive")
+            if contradicted
             else "unresolved"
         )
         record(
@@ -150,33 +190,63 @@ def hard_limits(card, profile, existing):
             "Requested sum insured checked against the printed selectable choices.",
             rules,
         )
-    rules = eligible_rules(card, "family")
-    if len(rules) == 1 and (
-        not rules[0].get("coverage_basis") or rules[0]["coverage_basis"] == profile.coverage_basis
-    ):
-        rule = rules[0]
-        children = [p for p in profile.people if p.relationship == "child"]
-        invalid = (
-            len(children) > rule["maximum_children"]
-            or len(profile.people) - len(children) > rule["maximum_adults"]
-        )
-        invalid |= bool(
-            rule.get("dependent_children") and any(p.dependent is False for p in children)
-        )
-        unknown_relationship = any(
-            p.relationship not in rule["relationships"] for p in profile.people
-        )
-        invalid |= unknown_relationship and bool(rule.get("exhaustive"))
-        incomplete = (
-            unknown_relationship
-            and not rule.get("exhaustive")
-            or bool(rule.get("dependent_children") and any(p.dependent is None for p in children))
-        )
-        status = "doesnt_fit" if invalid else "unresolved" if incomplete else "fits"
+    rules = [
+        r
+        for r in eligible_rules(card, "family")
+        if not r.get("coverage_basis") or r["coverage_basis"] == profile.coverage_basis
+    ]
+    if rules:
+        outcomes = set()
+        for rule in rules:
+            children = [p for p in profile.people if p.relationship == "child"]
+            invalid = (
+                (
+                    rule.get("maximum_children") is not None
+                    and len(children) > rule["maximum_children"]
+                )
+                or (
+                    rule.get("maximum_adults") is not None
+                    and len(profile.people) - len(children) > rule["maximum_adults"]
+                )
+                or (
+                    rule.get("maximum_members") is not None
+                    and len(profile.people) > rule["maximum_members"]
+                )
+            )
+            invalid |= bool(
+                rule.get("dependent_children") and any(p.dependent is False for p in children)
+            )
+            unknown_relationship = any(
+                p.relationship not in rule["relationships"] for p in profile.people
+            )
+            invalid |= unknown_relationship and bool(rule.get("exhaustive"))
+            incomplete = (unknown_relationship and not rule.get("exhaustive")) or bool(
+                rule.get("dependent_children") and any(p.dependent is None for p in children)
+            )
+            if rule.get("maximum_children") is None and len(children) > 1:
+                incomplete = True
+            if rule.get("maximum_adults") is None and rule.get("maximum_members") is None:
+                # A named Self/Spouse combination is bounded by those singular
+                # roles; extended family needs its own printed multiplicity.
+                for relation in {
+                    p.relationship for p in profile.people if p.relationship != "child"
+                }:
+                    count = sum(p.relationship == relation for p in profile.people)
+                    limit = (
+                        1
+                        if relation in {"self", "spouse"}
+                        else rule.get("relationship_limits", {}).get(relation)
+                    )
+                    if limit is None:
+                        incomplete = True
+                    elif count > limit:
+                        invalid = True
+            outcomes.add("doesnt_fit" if invalid else "unresolved" if incomplete else "fits")
+        status = next(iter(outcomes)) if len(outcomes) == 1 else "unresolved"
         record(
             "family",
             status,
-            "Family composition checked against cited adult, child and relationship limits.",
+            "Family composition checked against every applicable cited combination; conflicting outcomes remain unresolved.",
             rules,
         )
     return list(reasons.values())

@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+import re
 from pathlib import Path
 
 from django.conf import settings
@@ -23,6 +24,7 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument("--source-run", required=True)
         parser.add_argument("--run-id", required=True)
+        parser.add_argument("--retain-run", action="append", default=[])
 
     def handle(self, **options):
         if settings.DATABASES["default"]["NAME"] != "coverguide_star_slice":
@@ -32,9 +34,25 @@ class Command(BaseCommand):
         target = root / options["run_id"]
         state = json.loads((source / "progress.json").read_text())
         code = Path(__file__).resolve().parents[2] / "demo/fact_projection.py"
+        retained = {}
+        retained_manifests = {}
+        for name in options["retain_run"]:
+            retained_manifests[name] = json.loads((root / name / "manifest.json").read_text())
+            for item in json.loads((root / name / "progress.json").read_text())["completed"]:
+                saved = DemoFactCard.objects.get(pk=item["id"])
+                retained.setdefault(saved.index_id, []).append(
+                    json.loads(Path(saved.audit_path).read_text())
+                )
         manifest = {
-            "schema_version": 8,
+            "retained_source_manifests": retained_manifests,
+            "schema_version": 9,
             "source_manifest": json.loads((source / "manifest.json").read_text()),
+            "fit_projection_sha256": hashlib.sha256(
+                code.with_name("fact_fit_projection.py").read_bytes()
+            ).hexdigest(),
+            "packet_recovery_sha256": hashlib.sha256(
+                code.with_name("fact_packet_recovery.py").read_bytes()
+            ).hexdigest(),
             "projection_sha256": hashlib.sha256(code.read_bytes()).hexdigest(),
             "parser_sha256": hashlib.sha256(
                 code.with_name("fact_rules_v6.py").read_bytes()
@@ -77,9 +95,52 @@ class Command(BaseCommand):
             projection_omissions = {}
             for field, result in audit["fields"].items():
                 sources = [result]
+                for prior in retained.get(old.index_id, []):
+                    candidate = prior["fields"].get(field)
+                    if candidate and candidate.get("index_version") == old.index_id:
+                        sources.append(candidate)
+                    previous = prior["provenance"].get(field, {}).get("source_result")
+                    if previous and previous.get("index_version") == old.index_id:
+                        sources.append(previous)
                 previous_result = audit["provenance"].get(field, {}).get("source_result")
                 if previous_result and previous_result.get("index_version") == old.index_id:
                     sources.append(previous_result)
+                # Reuse a validated governing unit from another field query only
+                # when it names this same hard check. Revalidate its complete
+                # unit below against its original pinned packet, never stitch
+                # fragments or PageIndex navigation into new evidence.
+                markers = {
+                    "plan_type": r"(?:Type of Insurance|shall indemnify|will indemnify)",
+                    "coverage_basis": r"Coverage Options|Cover Type|Type of Policy|can be issued to individual|Individual Sum [Ii]nsured|In case of Individual Policies",
+                    "family": r"[Ff]loater.{0,160}(?:[Ss]elf|[Ss]pouse|\d+\s*A\d*\s*C|\d+\s*Adults)",
+                    "sum_insured": r"Sum\s*Insured\s*Options",
+                    "geography": r"[Zz]onal pricing|[Pp]ricing [Zz]one|[Pp]remium [Pp]ayment [Zz]ones",
+                    "entry_age": r"[Ee]ntry [Aa]ge|[Ee]ligibility",
+                }
+                if field in markers:
+                    for evidence in [audit, *retained.get(old.index_id, [])]:
+                        for source_field, candidate in evidence["fields"].items():
+                            if (
+                                source_field == field
+                                or candidate.get("status") != "answered"
+                                or candidate.get("index_version") != old.index_id
+                            ):
+                                continue
+                            text = " ".join(
+                                c["quote"]
+                                for unit in candidate["answer"]["statements"]
+                                for c in unit["citations"]
+                            )
+                            if re.search(markers[field], text, re.S) and candidate not in sources:
+                                sources.append(candidate)
+                from apps.adviser_v2.demo.fact_packet_recovery import recover
+
+                recovered = []
+                for source_result in sources:
+                    recovered.extend(recover(source_result, field, bundle))
+                sources.extend(recovered)
+                if recovered:
+                    audit["provenance"].setdefault(field, {})["literal_recovery"] = recovered
                 base, extra = [], []
                 for source_result in sources:
                     if source_result["status"] != "answered":
@@ -182,7 +243,7 @@ class Command(BaseCommand):
                 }:
                     card[field] = value
             card.update(
-                card_schema_version=8,
+                card_schema_version=9,
                 quoted_fields=quoted,
                 executable_rules=rules,
                 optional_covers=optional,
@@ -191,14 +252,7 @@ class Command(BaseCommand):
                 field_coverage={
                     f: v["state"] == "stated" and bool(v["citations"]) for f, v in quoted.items()
                 },
-                rule_coverage={
-                    f: (
-                        any(r["field"] == f for r in rules)
-                        if f == "entry_age"
-                        else sum(r["field"] == f for r in rules) == 1
-                    )
-                    for f in quoted
-                },
+                rule_coverage={f: any(r["field"] == f for r in rules) for f in quoted},
                 common_needs=[{"field": f, "value": v} for f, v in quoted.items()],
             )
             identity = digest({"card": card, "source_version": old.id, "manifest": manifest})

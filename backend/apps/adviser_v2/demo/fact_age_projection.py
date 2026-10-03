@@ -14,15 +14,128 @@ def project_ages(statements, variant):
             # Explicit two-axis minimum/maximum tables are paired by the
             # printed Adult/Child labels, never by nearby numbers.
             table_raw = " ".join(cite["quote"].split())
-            low_head = re.search(r"Entry Age:\s*Minimum", table_raw, re.I)
-            high_head = re.search(r"Entry Age:\s*Maximum", table_raw, re.I)
+            from .fact_fit_projection import rule_for
+
+            for row in re.finditer(
+                r"For (Adults?|Dependent Child(?:ren)?)\s*[-–:]\s*Minimum\s*[-–:]?\s*(\d+)\s*(days?|months?|years?)\s*(?:&|and)\s*Maximum\s*[-–:]?\s*(?:Up to\s*)?(\d+)\s*(days?|months?|years?)",
+                table_raw,
+                re.I,
+            ):
+                relation = "adult" if row[1].lower().startswith("adult") else "child"
+                u1, u2 = row[3].lower().rstrip("s") + "s", row[5].lower().rstrip("s") + "s"
+                rules.append(
+                    rule_for(
+                        statement,
+                        "entry_age",
+                        "age",
+                        f"{row[2]}:{u1}:{row[4]}:{u2}",
+                        variant,
+                        row[0],
+                        minimum=int(row[2]),
+                        minimum_unit=u1,
+                        maximum=int(row[4]),
+                        maximum_unit=u2,
+                        relationship=relation,
+                        inclusive=True,
+                    )
+                )
+            for relation, label in [
+                ("adult", r"adults?"),
+                ("child", r"(?:dependent )?child(?:ren)?"),
+            ]:
+                lower = re.findall(
+                    r"minimum entry age(?: limit)?[^.]{0,100}? for "
+                    + label
+                    + r" (?:is|in this product is) (\d+)\s*(days?|months?|years?)",
+                    table_raw,
+                    re.I,
+                )
+                upper = re.findall(
+                    r"maximum entry age(?: limit| allowed)? for "
+                    + label
+                    + r"(?: in this product)? is (\d+)\s*(days?|months?|years?)",
+                    table_raw,
+                    re.I,
+                )
+                if len(set(lower)) == 1 and len(set(upper)) == 1:
+                    lo, u1 = lower[0]
+                    hi, u2 = upper[0]
+                    u1, u2 = u1.lower().rstrip("s") + "s", u2.lower().rstrip("s") + "s"
+                    rules.append(
+                        rule_for(
+                            statement,
+                            "entry_age",
+                            "age",
+                            f"{lo}:{u1}:{hi}:{u2}",
+                            variant,
+                            table_raw,
+                            minimum=int(lo),
+                            minimum_unit=u1,
+                            maximum=int(hi),
+                            maximum_unit=u2,
+                            relationship=relation,
+                            inclusive=True,
+                        )
+                    )
+            # General individual entry eligibility is distinct from the
+            # proposer age and from the following child-only floater clause.
+            general = re.search(
+                r"offered to an individual with minimum age of (\d+) years \(Proposer[^)]*\)\. Maximum entry age is up to (\d+) years",
+                table_raw,
+                re.I,
+            )
+            if general:
+                rules.append(
+                    rule_for(
+                        statement,
+                        "entry_age",
+                        "age",
+                        f"{general[1]}:years:{general[2]}:years",
+                        variant,
+                        general[0],
+                        minimum=int(general[1]),
+                        minimum_unit="years",
+                        maximum=int(general[2]),
+                        maximum_unit="years",
+                        relationship="person",
+                        inclusive=True,
+                    )
+                )
+            low_head = re.search(r"Entry Age\s*[:–-]\s*Minimum", table_raw, re.I)
+            high_head = re.search(r"Entry Age\s*[:–-]\s*Maximum", table_raw, re.I)
             if low_head and high_head and low_head.end() < high_head.start():
                 low_block = table_raw[low_head.end() : high_head.start()]
-                high_block = table_raw[high_head.end() :]
+                high_block = re.split(
+                    r"\b(?:Exit Age|Age of Proposer|Policy Term)\b",
+                    table_raw[high_head.end() :],
+                    maxsplit=1,
+                    flags=re.I,
+                )[0]
                 for relation in ("adult", "child"):
                     pattern = r"\b" + relation + r"\s*[-–:]?\s*(\d+)\s*(days?|months?|years?)"
                     lows = re.findall(pattern, low_block, re.I)
                     highs = re.findall(pattern, high_block, re.I)
+                    unlimited = re.search(
+                        r"\b" + relation + r"\s*[-–:]?\s*(?:Lifelong|No Limit)", high_block, re.I
+                    )
+                    if len(lows) == 1 and unlimited:
+                        lo, u1 = lows[0]
+                        rules.append(
+                            rule_for(
+                                statement,
+                                "entry_age",
+                                "age",
+                                f"{lo}:{u1}:unbounded",
+                                variant,
+                                table_raw,
+                                minimum=int(lo),
+                                minimum_unit=u1.lower().rstrip("s") + "s",
+                                maximum_unbounded=True,
+                                relationship=relation,
+                                inclusive=True,
+                            )
+                        )
+                        continue
                     if len(lows) != 1 or len(highs) != 1:
                         continue
                     minimum, u1 = int(lows[0][0]), lows[0][1].lower().rstrip("s") + "s"
@@ -67,7 +180,8 @@ def project_ages(statements, variant):
             # Bullet/sentence boundaries prevent mixing an adult minimum with
             # a dependent child's upper bound elsewhere in the quotation.
             chunks = re.split(
-                r"[▪•➢]|(?<=[.!?])\s+(?=[A-Z])|[;\n]\s*(?=(?:Adults?|Children)\b)", cite["quote"]
+                r"[▪•➢]|(?<=[.!?])\s+(?=[A-Z])|[;\n]\s*(?=(?:(?:Dependent )?(?:Adults?|Child(?:ren)?)|Renewal)\b)",
+                cite["quote"],
             )
             for chunk in chunks:
                 raw = " ".join(chunk.split())
@@ -89,10 +203,17 @@ def project_ages(statements, variant):
                     for v in relationships
                 }
                 if len(kinds) != 1:
-                    continue
+                    first_range = bounds.search(raw)
+                    preceding = raw[: first_range.start()] if first_range else ""
+                    subjects = re.findall(r"\b(adult|child(?:ren)?|person)s?\b", preceding, re.I)
+                    if subjects and len(set(v.lower() for v in subjects)) == 1:
+                        subject = subjects[0].lower()
+                        kinds = {"child" if subject.startswith("child") else subject}
+                    else:
+                        continue
                 relationship = kinds.pop()
                 low = re.search(
-                    r"minimum (?:entry )?age[^.;]{0,90}?(\d+)\s*(" + unit + ")", raw, re.I
+                    r"minimum (?:entry )?age[^;]{0,110}?(\d+)\s*(" + unit + ")", raw, re.I
                 )
                 high = re.search(
                     r"maximum (?:entry )?age[^.;]{0,45}?(\d+)\s*(" + unit + ")", raw, re.I
@@ -113,6 +234,13 @@ def project_ages(statements, variant):
                         )
                     )
                 else:
+                    onward = re.search(
+                        r"(?:Adults?|Persons?).{0,25}?(\d+)\s*(years?)\s*(?:onwards|and above|to (?:Lifelong|Unlimited|No Limit))",
+                        raw,
+                        re.I,
+                    )
+                    if onward and not re.search(r"renew", raw, re.I):
+                        candidates.append((int(onward[1]), onward[2], None, None, raw, True))
                     candidates.extend(
                         (int(m[1]), m[2] or m[4], int(m[3]), m[4], raw, False)
                         for m in bounds.finditer(raw)

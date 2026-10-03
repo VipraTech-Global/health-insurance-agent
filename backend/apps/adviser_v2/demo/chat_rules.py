@@ -21,9 +21,24 @@ def source_rule(card, field, person_id=None, profile=None):
         and r.get("variant") in (None, card["variant"])
         and r.get("person_id") in (None, person_id)
     ]
-    if len(rules) != 1:
-        return None
-    return rules[0]
+    if len(rules) == 1:
+        return rules[0]
+    if (
+        rules
+        and all(r["kind"] == "coverage" for r in rules)
+        and len({r["value"] for r in rules}) == 1
+    ):
+        # Multiple base clauses may state the same covered/excluded outcome.
+        # Preserve every condition and waiting period rather than discarding a
+        # passing unit or using the first quotation as the whole benefit.
+        return {
+            **rules[0],
+            "citations": [c for r in rules for c in r["citations"]],
+            "conditions": list(dict.fromkeys(c for r in rules for c in r.get("conditions", []))),
+            "waiting_months": sorted({m for r in rules for m in r.get("waiting_months", [])}),
+            "limits_rupees": sorted({m for r in rules for m in r.get("limits_rupees", [])}),
+        }
+    return None
 
 
 def requirement_result(card, need, profile=None):
@@ -51,8 +66,13 @@ def requirement_result(card, need, profile=None):
                 status = "fits"
             elif category in order and requested in order and order[category] < order[requested]:
                 status = "doesnt_fit"
-            elif category == "any_room_except_suite" and requested == "suite":
-                status = "doesnt_fit"
+            elif category in {"any_room_except_suite", "any_room_except_deluxe_suite"}:
+                if requested == "suite" or (
+                    category == "any_room_except_deluxe_suite" and requested == "deluxe"
+                ):
+                    status = "doesnt_fit"
+                elif requested in {"shared", "twin_sharing", "single_standard", "single_private"}:
+                    status = "fits"
         elif rule["kind"] == "bonus" and re.fullmatch(
             r"bonus_at_least:\d+(?:\.\d+)?:percent", need.value
         ):
@@ -72,6 +92,13 @@ def requirement_result(card, need, profile=None):
         "doesnt_fit": "The document states a conflicting limit or exclusion.",
         "unresolved": "Cannot establish this requirement and its applicable conditions from the evidence.",
     }
+    waiting = rule.get("waiting_months", []) if rule else []
+    if waiting and status == "fits":
+        labels["fits"] += (
+            " Printed waiting period: "
+            + ", ".join(str(v) + " months" for v in waiting)
+            + ". Quoted conditions and limits apply."
+        )
     return {
         "field": need.field,
         "status": status,

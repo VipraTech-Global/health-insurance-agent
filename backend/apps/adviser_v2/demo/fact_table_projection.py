@@ -75,7 +75,7 @@ def resolve_sum_grid(result, bundle, statements, *, field="sum_insured"):
         return statements
     sections = [Section.from_payload(s) for s in packet_data["sections"]]
     pages = {c["page_id"] for s in statements for c in s["citations"]}
-    if field == "opd":
+    if field in {"opd", "room_limit"}:
         pages = {p.page_id for s in sections for p in s.segments}
     recovered = []
     diagnostics = result.setdefault("table_projection_omissions", [])
@@ -138,6 +138,8 @@ def resolve_sum_grid(result, bundle, statements, *, field="sum_insured"):
                     (
                         r"(?:Base\s*)?Sum\s*Insured\s*(?:\[BSI\])?\s*\(in\s*Lakhs?\)"
                         if field == "sum_insured"
+                        else r"Room\s*(?:Type|Rent|Category)[\s\S]*"
+                        if field == "room_limit"
                         else r"(?:Out[ -]?patient(?:\s+(?:Treatment|Cover|Benefit|Expenses))?|OPD)(?:\s*\([^)]*\))?"
                     ),
                     v,
@@ -232,6 +234,8 @@ def resolve_sum_grid(result, bundle, statements, *, field="sum_insured"):
                     if not re.fullmatch(
                         r"[\d\s/.,&]+\s*(?:Lakhs?|Lacs?)"
                         if field == "sum_insured"
+                        else r"[^\n]*(?:room|sharing)[\s\S]*"
+                        if field == "room_limit"
                         else r"Not\s+(?:Available|Covered)",
                         printed,
                         re.I,

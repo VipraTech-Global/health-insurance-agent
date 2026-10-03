@@ -25,10 +25,11 @@ KEYS = {
     "twin_sharing": r"twin\s+sharing",
     "shared": r"shared|general\s+(?:ward|room)",
     "any_room": r"(?:any|all)\s+rooms?",
+    "any_room_except_deluxe_suite": r"(?:except|excluding).{0,20}deluxe.{0,12}suite",
     "any_room_except_suite": r"(?:except|excluding)\s+(?:a\s+)?suite",
     "percent_of_si": r"%\s*of\s*(?:the\s+)?sum\s*insured",
     "lifetime": r"life[ -]?time|life[ -]?long|no maximum cover ceasing age|no (?:upper|maximum) (?:renewal )?age limit",
-    "medical_indemnity": r"indemnity",
+    "medical_indemnity": r"indemnity|indemnify",
     "super_top_up": r"super[ -]?top[ -]?up",
     "top_up": r"top[ -]?up",
     "critical_illness": r"critical\s+illness",
@@ -38,7 +39,17 @@ KEYS = {
 
 def grounded(rule):
     raw = " ".join(" ".join(c["quote"].split()) for c in rule["citations"])
-    if not re.search(KEYWORDS.get(rule["field"], r"(?!)"), raw, re.I):
+    if not re.search(
+        (
+            {
+                **KEYWORDS,
+                "geography": r"India|country",
+                "plan_type": r"indemnity|indemnify|top.up|critical illness|fixed benefit",
+            }
+        ).get(rule["field"], r"(?!)"),
+        raw,
+        re.I,
+    ):
         return False
     if " ".join(rule["printed"].split()) not in raw:
         return False
@@ -78,15 +89,23 @@ def grounded(rule):
             )
         )
 
+    if kind == "geography":
+        from .fact_fit_projection import purchase_geography
+
+        return value == "india" and bool(
+            purchase_geography({"citations": rule["citations"]}, rule["variant"])
+        )
     if kind == "age":
         return (
             numeric(rule["minimum"], rule["minimum_unit"], rule["printed"])
             and numeric(rule.get("maximum"), rule.get("maximum_unit"), rule["printed"])
             and bool(
                 re.search(
-                    {"adult": r"adult", "child": r"child|children", "person": r"persons?"}[
-                        rule["relationship"]
-                    ],
+                    {
+                        "adult": r"adult",
+                        "child": r"child|children",
+                        "person": r"persons?|individual",
+                    }[rule["relationship"]],
                     rule["printed"],
                     re.I,
                 )
@@ -119,34 +138,59 @@ def grounded(rule):
         if value == "not_covered":
             return bool(
                 re.search(
-                    r"not covered|not available|not payable|excluded|maternity.{0,65}Excl\s*\d+",
+                    r"not covered|not available|not payable|not cover|exclusions?|excluded|maternity.{0,65}Excl\s*\d+",
                     raw,
                     re.I,
                 )
             )
         return (
-            bool(re.search(r"covered|payable|reimburse|indemnify|\bpay\b", raw, re.I))
+            bool(re.search(r"cover(?:ed)?|payable|reimburse|indemnify|\bpay\b", raw, re.I))
             and all(numeric(v, "rupees") for v in rule.get("limits_rupees", []))
             and all(numeric(v, "months") for v in rule.get("waiting_months", []))
         )
     if kind == "family":
-        return bool(
-            re.search(r"\b" + str(rule["maximum_adults"]) + r"\s*adults?", raw, re.I)
-            and re.search(
-                r"\b" + str(rule["maximum_children"]) + r"\s*(?:dependent )?child", raw, re.I
+        roles = {
+            "self": r"\bself\b|\bInsured;|\bYou and your immediate family",
+            "spouse": r"\bspouse\b",
+            "child": r"child|\bson\b|\bdaughter\b",
+            "parent": r"parents?\b(?![ -]*in)",
+            "parent_in_law": r"parents?[ -]*in[ -]*law",
+        }
+        compact = re.search(
+            r"\b"
+            + str(rule.get("maximum_adults"))
+            + r"\s*A\s*\+?\s*"
+            + str(rule.get("maximum_children"))
+            + r"\s*C",
+            raw,
+            re.I,
+        )
+        bounded = bool(compact) or (
+            bool(re.search(r"\b" + str(rule.get("maximum_adults")) + r"\s*adults?", raw, re.I))
+            or bool(re.search(r"\b" + str(rule.get("maximum_members")) + r"\s*members?", raw, re.I))
+            or (
+                rule.get("maximum_adults") is None
+                and rule.get("maximum_members") is None
+                and {"self", "spouse"} <= set(rule["relationships"])
             )
-        ) and all(
-            re.search(
-                {
-                    "self": "self",
-                    "spouse": "spouse",
-                    "child": "child",
-                    "parent": "parent",
-                    "parent_in_law": r"parent.{0,3}in.{0,3}law",
-                }.get(r, r"(?!)"),
-                raw,
-                re.I,
+        )
+        return (
+            bool(
+                bounded
+                and (
+                    rule.get("maximum_children") is None
+                    or compact
+                    or re.search(
+                        r"\b" + str(rule["maximum_children"]) + r"\s*(?:dependent )?child",
+                        raw,
+                        re.I,
+                    )
+                )
             )
-            for r in rule["relationships"]
+            and all(re.search(roles.get(r, r"(?!)"), raw, re.I) for r in rule["relationships"])
+            and all(
+                re.search(r"\b" + str(n) + r"\s*" + roles.get(r, r"(?!)"), raw, re.I)
+                for r, n in rule.get("relationship_limits", {}).items()
+            )
         )
     return False

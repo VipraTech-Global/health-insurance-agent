@@ -18,6 +18,7 @@ class RuleGuard(Closed):
 
 class FactRule(Closed):
     field: Literal[
+        "geography",
         "entry_age",
         "renewal_age",
         "sum_insured",
@@ -37,6 +38,7 @@ class FactRule(Closed):
         "ayush",
     ]
     kind: Literal[
+        "geography",
         "age",
         "renewal",
         "choices",
@@ -66,10 +68,14 @@ class FactRule(Closed):
     maximum_unbounded: bool = False
     inclusive: bool = True
     relationship: Literal["adult", "child", "person"] | None = None
+    geography_basis: Literal["residence", "nationwide_premium_zones"] | None = None
+    unlimited_choice: bool = False
+    maximum_members: int | None = Field(default=None, ge=1, le=20)
     choices: list[int] = Field(default_factory=list)
     exhaustive: bool = False
     maximum_adults: int | None = Field(default=None, ge=1, le=12)
     maximum_children: int | None = Field(default=None, ge=0, le=12)
+    relationship_limits: dict[str, int] = Field(default_factory=dict)
     relationships: list[str] = Field(default_factory=list)
     dependent_children: bool | None = None
     coverage_basis: Literal["individual", "floater"] | None = None
@@ -103,7 +109,12 @@ class FactRule(Closed):
         if self.kind == "choices" and (not self.choices or any(v <= 0 for v in self.choices)):
             raise ValueError("Sum-insured choices must be positive printed amounts.")
         if self.kind == "family" and (
-            self.maximum_adults is None or self.maximum_children is None or not self.relationships
+            (
+                self.maximum_adults is None
+                and self.maximum_members is None
+                and not {"self", "spouse"} <= set(self.relationships)
+            )
+            or not self.relationships
         ):
             raise ValueError("Family combinations must have explicit limits and relationships.")
         if self.kind == "coverage" and self.value not in {"covered", "not_covered"}:

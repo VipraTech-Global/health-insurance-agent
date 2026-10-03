@@ -19,20 +19,71 @@ def clauses(result, field, bundle):
     for statement in (saved.get("answer") or {}).get("statements", []):
         for citation in statement["citations"]:
             citation["quote"] = citation["quote"].strip()
+    # Field blocks are clipped before scope classification, so a preceding
+    # rider footnote or a following optional benefit does not reclassify the
+    # independently headed eligibility clause. Source scope is still checked.
+    if saved.get("answer") and field in {
+        "entry_age",
+        "coverage_basis",
+        "sum_insured",
+        "family",
+        "geography",
+    }:
+        saved["answer"]["statements"] = (
+            [governing(s, field, bundle) for s in (saved.get("answer") or {}).get("statements", [])]
+            if saved.get("answer")
+            else []
+        )
     base, optional, unrelated = classify_clauses(saved, field, bundle)
+    from .fact_fit_projection import optional_table, optional_unit
+
+    if field == "plan_type":
+        for statement in list(unrelated):
+            raw = " ".join(c["quote"] for c in statement["citations"])
+            if re.search(
+                r"(?:shall|will) indemnify.{0,180}(?:Medical Expenses|Hospitalization|Insured Person)|indemnify Medical Expenses",
+                raw,
+                re.I | re.S,
+            ):
+                unrelated.remove(statement)
+                base.append(statement)
+    if field == "opd":
+        from .fact_fit_projection import outpatient_exclusion
+
+        for statement in list(optional):
+            if outpatient_exclusion(statement):
+                optional.remove(statement)
+                base.append(statement)
     kept = []
     for statement in base:
+        if optional_unit(statement, field) or optional_table(statement, bundle):
+            optional.append(statement)
+            continue
         statement = governing(statement, field, bundle)
         if field == "coverage_basis" and not operative_basis(statement):
             unrelated.append(statement)
             continue
-        if field in {
-            "opd",
-            "newborn",
-            "restoration",
-            "no_claim_bonus",
-            "ayush",
-        } and not variant_proven(statement, bundle):
+        if (
+            field
+            in {
+                "opd",
+                "newborn",
+                "restoration",
+                "no_claim_bonus",
+                "ayush",
+                "room_limit",
+            }
+            and not variant_proven(statement, bundle)
+            and not (field == "opd" and outpatient_exclusion(statement))
+            and not (
+                field == "room_limit"
+                and re.search(
+                    r"Room\s*rent\s*limit\s*(?:shall be|is|:)\s*['\"‘’“”]?At\s*Actuals",
+                    " ".join(c["quote"] for c in statement["citations"]),
+                    re.I,
+                )
+            )
+        ):
             result.setdefault("projection_omissions", []).append(
                 "Shared benefit has no verified selected-variant column: " + field
             )
@@ -47,7 +98,11 @@ def clauses(result, field, bundle):
             unrelated.append(statement)
             continue
         if field == "sum_insured":
-            if re.search(r"preventive|health[ -]?check|reinstatement|family visit", main, re.I):
+            if re.search(
+                r"preventive|health[ -]?check|reinstatement|family visit|booster|worked example|illustrat|accumulat|carry forward",
+                main,
+                re.I,
+            ):
                 unrelated.append(statement)
                 continue
             trimmed = []
@@ -95,6 +150,10 @@ def clauses(result, field, bundle):
         from .fact_table_projection import resolve_sum_grid
 
         kept = resolve_sum_grid(result, bundle, [], field="opd") or kept
+    if field == "room_limit" and len(bundle.get("variants", [])) > 1:
+        from .fact_table_projection import resolve_sum_grid
+
+        kept = resolve_sum_grid(result, bundle, [], field="room_limit") or kept
     return kept, optional, unrelated
 
 
@@ -104,12 +163,19 @@ def selectable_sums(statement, variant):
     from decimal import Decimal
 
     main = "\n".join(c["quote"] for c in statement["citations"])
-    heading = re.search(r"sum\s*insured\s*(?:options?|choices?)\b[^\n]*\n", main, re.I)
+    if re.search(r"booster|worked example|illustrat|accumulat|carry forward", main, re.I):
+        return []
+    heading = re.search(
+        r"sum\s*insured\s*(?:(?:options?|choices?)\b|\(SI\))[^\n:]*[:\n]", main, re.I
+    )
     if heading:
         rest = main[heading.end() :]
-        end = re.search(r"\n\s*(?:[A-Z][A-Za-z ]{3,}:|What\b)", rest)
+        end = re.search(
+            r"(?:\n\s*(?:[A-Z][A-Za-z ]{3,}:|What\b)|The Sum Insured opted|\bPolicy Coverage\b)",
+            rest,
+        )
         values_text = rest[: end.start()] if end else rest
-        if re.search(r"subject to|provided|only|age|premium|limit", values_text, re.I):
+        if re.search(r"subject to|provided|only|\bage\b|premium|\blimit\b", values_text, re.I):
             return []
     elif statement.get("table") and re.search(r"sum\s*insured", main, re.I):
         numeric = [
@@ -127,14 +193,18 @@ def selectable_sums(statement, variant):
             values_text += " " + unit_heading[1]
     else:
         return []
-    if re.search(r"\b(?:to|between|from)\b|[-–]\s*\d", values_text):
+    if re.search(
+        r"up to|upto|booster|example|illustrat|\b(?:to|between|from)\b|[-–]\s*\d", values_text, re.I
+    ):
         return []
     from .fact_rule_grounding import money
 
     amounts = [v for v, _ in money(values_text)]
-    unit = r"(?:lakhs?|lacs?|crores?|Cr\.?)"
+    unit = r"(?:lakhs?|lacs?|crores?|Cr\.?|L)"
     for match in re.finditer(
-        r"(\d+(?:\.\d+)?(?:\s*[/,&]\s*\d+(?:\.\d+)?)*)\s*(" + unit + r")\b", values_text, re.I
+        r"(\d+(?:\.\d+)?(?:\s*[/,&]\s*\d+(?:\.\d+)?)*)\s*(" + unit + r")(?=\b|\d)",
+        values_text,
+        re.I,
     ):
         multiplier = 10000000 if match[2].lower().startswith("cr") else 100000
         amounts.extend(int(Decimal(n) * multiplier) for n in re.findall(r"\d+(?:\.\d+)?", match[1]))
@@ -150,6 +220,7 @@ def selectable_sums(statement, variant):
             "printed": next(c["quote"] for c in statement["citations"]),
             "choices": sorted(set(amounts)),
             "unit": "rupees",
+            "unlimited_choice": bool(re.search(r"\bunlimited\b", values_text, re.I)),
             "variant": variant,
             "scope": "base",
             "citations": [
@@ -174,6 +245,32 @@ def selectable_sums(statement, variant):
 
 
 def _project(field, statements, variant):
+    from .fact_fit_projection import base_coverage, family_rule, purchase_geography
+
+    if field == "plan_type":
+        result = legacy_project(field, statements, variant)
+        if result:
+            return result
+        from .fact_fit_projection import raw_text, rule_for
+
+        for statement in statements:
+            raw = raw_text(statement)
+            match = re.search(
+                r"(?:shall|will) indemnify.{0,180}(?:Medical Expenses|Hospitalization|Insured Person)|indemnify Medical Expenses",
+                raw,
+                re.I,
+            )
+            if match:
+                result.append(
+                    rule_for(statement, field, "type", "medical_indemnity", variant, match[0])
+                )
+        return result
+    if field == "geography":
+        return [r for s in statements for r in purchase_geography(s, variant)]
+    if field == "family":
+        return legacy_project(field, statements, variant) or [
+            r for s in statements for r in family_rule(s, variant)
+        ]
     if field == "entry_age":
         from .fact_age_projection import project_ages
 
@@ -182,12 +279,6 @@ def _project(field, statements, variant):
         rules = []
         for statement in statements:
             found = selectable_sums(statement, variant)
-            if not found and re.search(
-                r"sum\s*insured\s*(?:options?|choices?)",
-                " ".join(c["quote"] for c in statement["citations"]),
-                re.I,
-            ):
-                found = legacy_project(field, [statement], variant)
             rules.extend(found)
         return rules
     if field in {"ped_waiting", "specified_waiting"}:
@@ -243,7 +334,12 @@ def _project(field, statements, variant):
                 rule.pop("unit", None)
                 explicit.append(rule)
             else:
-                result.extend(proposed)
+                for rule in proposed:
+                    if rule["value"] in {"any_room", "any_room_except_suite"} and re.search(
+                        r"(?:except|excluding).{0,20}deluxe.{0,12}suite", raw, re.I
+                    ):
+                        rule = {**rule, "value": "any_room_except_deluxe_suite"}
+                    result.append(rule)
         return explicit or result
     if field in {"opd", "newborn", "restoration", "ayush"}:
         result = []
@@ -275,7 +371,10 @@ def _project(field, statements, variant):
                     }
                 )
             else:
-                result.extend(legacy_project(field, [statement], variant))
+                result.extend(
+                    base_coverage(statement, field, variant)
+                    or legacy_project(field, [statement], variant)
+                )
         return result
     if field == "maternity":
         result = []
@@ -305,7 +404,10 @@ def _project(field, statements, variant):
                     }
                 )
             else:
-                result.extend(legacy_project(field, [statement], variant))
+                result.extend(
+                    base_coverage(statement, field, variant)
+                    or legacy_project(field, [statement], variant)
+                )
         return result
     if field == "coverage_basis":
         rules = []
@@ -313,17 +415,9 @@ def _project(field, statements, variant):
             if not operative_basis(statement):
                 continue
             raw = " ".join(" ".join(c["quote"].split()) for c in statement["citations"])
-            match = re.search(
-                r"Sum\s*Insured\s*on\s*Individual\s*Basis.*Sum\s*Insured\s*on\s*Floater\s*Basis",
-                raw,
-                re.I,
-            )
-            if match is None:
-                match = re.search(
-                    r"(?:available|offered|issued|taken|opted|cover(?:age|ed)?|policy).{0,110}(?:individual|floater).{0,75}basis",
-                    raw,
-                    re.I,
-                )
+            from .fact_fit_projection import basis_match
+
+            match = basis_match(raw)
             if match is None:
                 continue
             values = [
@@ -360,12 +454,23 @@ def _project(field, statements, variant):
             )
         return rules
     rules = legacy_project(field, statements, variant)
+    if field == "copay":
+        for rule in rules:
+            raw = " ".join(c["quote"] for c in rule["citations"])
+            if re.search(
+                r"room categor|failure to intimate|fail to intimate|breach|category claimed",
+                raw,
+                re.I,
+            ):
+                rule["restricted_scope"] = True
     return rules
 
 
 def project(field, statements, variant):
+    from .fact_fit_projection import optional_unit
     from .fact_rule_grounding import grounded
 
+    statements = [s for s in statements if not optional_unit(s, field)]
     rules = [r for r in _project(field, statements, variant) if grounded(r)]
     if field == "coverage_basis" and len(rules) > 1:
         values = {v for rule in rules for v in rule["value"].split("|")}
@@ -382,10 +487,19 @@ def project(field, statements, variant):
             rules = [combined]
     distinct = {}
     for rule in rules:
-        key = (rule["kind"], rule["value"], rule.get("relationship"), rule.get("unit"))
+        # Never merge different conditions or applicability into a single rule.
+        import json
+
+        key = json.dumps(
+            {k: v for k, v in rule.items() if k not in {"citations", "printed", "conditions"}},
+            sort_keys=True,
+        )
         if key not in distinct:
             distinct[key] = rule
         else:
+            distinct[key]["conditions"] = list(
+                dict.fromkeys([*distinct[key].get("conditions", []), *rule.get("conditions", [])])
+            )
             for cite in rule["citations"]:
                 if cite not in distinct[key]["citations"]:
                     distinct[key]["citations"].append(cite)

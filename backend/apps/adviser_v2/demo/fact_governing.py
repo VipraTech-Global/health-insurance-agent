@@ -9,7 +9,8 @@ HEADINGS = {
     "ped_waiting": r"(?:Pre[ -]?Existing Diseases?[^\n]{0,80}|[^\n]{0,80}Excl\s*0?1\b[^\n]*)",
     "specified_waiting": r"(?:(?:Specific|Specified)[^\n]{0,80}(?:waiting|disease)[^\n]*|[^\n]{0,80}Excl\s*0?2\b[^\n]*)",
     "maternity": r"Maternity[^\n]*",
-    "sum_insured": r"(?:Base )?Sum\s*Insured\s*(?:Options|Choices)[^\n]*",
+    "sum_insured": r"(?:Base )?Sum\s*Insured\s*(?:Options?|Choices|\(SI\))[^\n]*",
+    "geography": r"(?:Zonal pricing|Premium (?:Tier|Zones)|Zone wise premium)[^\n]*",
     "room_limit": r"Room\s*(?:rent|boarding|accommodation)[^\n]*",
     "renewal_age": r"(?:Renewal|Renewability)[^\n]*",
     "deductible": r"(?:Aggregate )?Deductible[^\n]*",
@@ -40,6 +41,11 @@ def governing(statement, field, bundle):
     for cite in statement["citations"]:
         raw = cite["quote"]
         if field == "coverage_basis":
+            illustration = re.search(r"Benefit Illustration", raw, re.I)
+            if illustration and illustration.start() > 0:
+                raw_end = illustration.start()
+                cite = clip(cite, raw, 0, raw_end, bundle)
+                raw = cite["quote"]
             headers = list(
                 re.finditer(
                     r"Sum\s*Insured\s*on\s*(?:Individual|Floater)\s*Basis:\s*Limit[^\n]*(?:\nprocedure)?",
@@ -57,7 +63,7 @@ def governing(statement, field, bundle):
                 continue
         pattern = HEADINGS.get(field)
         found = (
-            re.search(r"(?mi)^[ \t]*(?:(\d+(?:\.\d+)*\.?)[ \t]+)?" + pattern, raw)
+            re.search(r"(?mi)^[ \t]*(?:((?:[A-Z]\.)?\d+(?:\.\d+)*\.?)[ \t]+)?" + pattern, raw)
             if pattern
             else None
         )
@@ -69,12 +75,36 @@ def governing(statement, field, bundle):
             if number:
                 depth = number.count(".")
                 for candidate in re.finditer(
-                    r"(?m)^[ \t]*(\d+(?:\.\d+)*\.?)\s+[A-Z][^\n]{0,100}", raw[found.end() :]
+                    r"(?m)^[ \t]*((?:[A-Z]\.)?\d+(?:\.\d+)*\.?)\s+[A-Z][^\n]{0,100}",
+                    raw[found.end() :],
                 ):
                     other = candidate[1].rstrip(".")
                     if other.count(".") == depth and other != number:
                         end = found.end() + candidate.start()
                         break
+        if field in {"entry_age", "coverage_basis", "sum_insured", "family"}:
+            starts = {
+                "entry_age": r"(?mi)^.*?(?:Min/Max Entry Age|Entry Age [–:-] Minimum|Eligibility)",
+                "coverage_basis": r"(?mi)^Policy Type\b",
+                "sum_insured": r"(?mi)^Sum Insured (?:option|Options|\(SI\))",
+                "family": r"(?mi)^Family Floater policy[-:]",
+            }
+            selected = re.search(starts[field], raw)
+            if selected:
+                start = selected.start()
+                terminator = {
+                    "entry_age": r"(?mi)^(?:Sum Insured option|Exit Age|Policy Term)",
+                    "coverage_basis": r"(?mi)^Policy Term",
+                    "sum_insured": r"(?mi)^(?:Policy Type|Zone wise premium|S\. No\.)",
+                    "family": r"(?mi)^(?:Policy Renewal|[➢•])",
+                }
+                following = re.search(terminator[field], raw[selected.end() :])
+                if following:
+                    end = selected.end() + following.start()
+        if field == "sum_insured":
+            following = re.search(r"(?mi)^Zone wise premium", raw[start:end])
+            if following:
+                end = start + following.start()
         # Do not expose unrelated addresses/preceding clauses as field quotes.
         for left, right in without_boilerplate(raw, start, end):
             citations.append(clip(cite, raw, left, right, bundle))
@@ -98,17 +128,9 @@ def operative_basis(statement):
         re.I,
     ):
         return False
-    if re.search(r"Sum\s*Insured\s*on\s*Individual\s*Basis", raw, re.I) and re.search(
-        r"Sum\s*Insured\s*on\s*Floater\s*Basis", raw, re.I
-    ):
-        return True
-    return bool(
-        re.search(
-            r"(?:available|offered|issued|taken|opted|cover(?:age|ed)?|policy).{0,110}(?:individual|floater).{0,75}basis",
-            raw,
-            re.I | re.S,
-        )
-    )
+    from .fact_fit_projection import basis_match
+
+    return basis_match(" ".join(raw.split())) is not None
 
 
 def variant_proven(statement, bundle):
