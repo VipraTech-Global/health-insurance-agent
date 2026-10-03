@@ -61,6 +61,26 @@ class Command(BaseCommand):
         details = {
             **summary,
             "models": dict(Counter(model for _, r in cases for model in set(r["models"]))),
+            "all_338_outcomes": dict(
+                Counter(
+                    r["completeness"] + "_answer" if r["status"] == "answered" else r["status"]
+                    for _, r in [*cases, *references]
+                )
+            ),
+            "star_78_outcomes": dict(
+                Counter(
+                    r["completeness"] + "_answer" if r["status"] == "answered" else r["status"]
+                    for _, r in references
+                )
+            ),
+            "rejection_cases_overlapping": dict(
+                Counter(
+                    category
+                    for _, r in cases
+                    for category in {x["category"] for x in r["rejections"]}
+                )
+            ),
+            "rejection_events_overlapping": summary["rejection_reasons_overlapping"],
             "reference_details": [
                 {
                     "plan_id": plan,
@@ -81,7 +101,7 @@ class Command(BaseCommand):
         lines = [
             "# Winning application answer sheet",
             "",
-            f"Release: `{release.id}`. Method: {release.method}.",
+            f"Run: `{options['run_id']}`. Release: `{release.id}`. Method: {release.method}.",
             "",
             "Fresh execution through the application service. The five recovered flagships are included here. "
             "These results do not change the frozen bake-off or its unavailable slots.",
@@ -90,6 +110,8 @@ class Command(BaseCommand):
             f"{summary['complete_reference_cells']}/39, requiring both fixed and customer query packets to contain every reference span.",
             "",
             f"Table-heavy answer outcomes: `{details['table_heavy']}`. Model usage by answer case: `{details['models']}`.",
+            "",
+            f"Final not-found reasons: `{summary['final_not_found_reasons']}`. Rejection events (overlap): `{details['rejection_events_overlapping']}`; affected cases (overlap): `{details['rejection_cases_overlapping']}`.",
             "",
             "An answered result passed six code checks; this is not expert-verified correctness. "
             "The reference comparison measures packet coverage, not answer completeness.",
@@ -102,8 +124,8 @@ class Command(BaseCommand):
                     "",
                     row["job"]["question"],
                     "",
-                    f"Status: **{value['status']}**. Models: {', '.join(value['models']) or 'No successful model call'}. "
-                    f"Elapsed including queue: {value['total_ms']} ms. Omitted sections: {len(value['omissions'])}.",
+                    f"Status: **{value['status']}**. Completeness: {value.get('completeness') or '—'}. Reason: {value.get('reason') or '—'}. Models: {', '.join(value['models']) or 'No successful model call'}. "
+                    f"Elapsed including queue: {value['total_ms']} ms; validation: {value.get('validation_ms')} ms. Omitted sections: {len(value['omissions'])}.",
                     "",
                     f"Index: `{value['index_version']}`. Validation: `{value['validation']}`.",
                     "",
