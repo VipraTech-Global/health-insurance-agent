@@ -445,3 +445,15 @@ def test_premium_zones_with_rest_of_india_cover_the_country():
     raw = "Premium will be charged based on the classification of the zones namely\nZon\ne 1\nMaharashtraand Gujarat\nZon\ne 2\nRest Of India"
     rules = project("geography", [statement(raw)], "Default")
     assert rules and rules[0]["value"] == "india"
+
+
+def test_an_unrequested_sum_insured_is_not_an_unconfirmed_limit():
+    rules = [{"field": "sum_insured", "choices": [500000], "citations": [{"quote": "5 lakh"}]}]
+    card = {"variant": "Default", "executable_rules": rules}
+    old = [{"field": "sum_insured", "status": "unresolved", "citations": []}]
+    me = [ChatPerson(id="self", relationship="self", age=35)]
+    assert not any(
+        r["field"] == "sum_insured" for r in hard_limits(card, IncompleteProfile(people=me), old)
+    )
+    asked = hard_limits(card, IncompleteProfile(people=me, sum_insured=500000), old)
+    assert next(r for r in asked if r["field"] == "sum_insured")["status"] == "fits"

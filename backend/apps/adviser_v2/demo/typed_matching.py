@@ -74,7 +74,10 @@ def hard_limits(card, profile, existing):
     # Immutable typed cards must not fall back to superseded legacy projections.
     # A quoted field with no executable rule cannot supply an exclusion.
     for field in ("family", "sum_insured", "plan_type", "coverage_basis", "geography"):
-        if field in reasons:
+        if field == "sum_insured" and profile.sum_insured is None:
+            # No requested amount: there is nothing to check, so it is no gap.
+            reasons.pop(field, None)
+        elif field in reasons:
             reasons[field] = {
                 "field": field,
                 "status": "unresolved",

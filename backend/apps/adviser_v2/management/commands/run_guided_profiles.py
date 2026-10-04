@@ -1,4 +1,4 @@
-"""Synthetic A–D journeys: every customer change enters through a chat turn."""
+"""Synthetic A–E journeys: every customer change enters through a chat turn."""
 
 import time
 import uuid
@@ -32,6 +32,24 @@ PROFILES = {
         "people": "Myself age 45, my spouse age 43, our dependent child age 12, and my parent age 72. We live in Pune.",
         "needs": "My parent needs OPD cover; that is a must-have.",
         "strength": {"opd": "Must-have"},
+    },
+    # A pasted demo chat: one person, a state after the city, option and
+    # glossary questions, then a request for plans in the middle of narrowing.
+    "E": {
+        "script": {
+            "people": ["just for me"],
+            "age": ["35 years"],
+            "city": ["kota, rajasthan"],
+            "sum_insured": [
+                "can you provide option in what sum insured is available and would be more suitable for me"
+            ],
+            "annual_budget": ["I don't have any budget"],
+            "needs": ["can you explain me in detail, what does these even mean?", "Skip"],
+            "health_details": ["I don't have any PED"],
+            "narrow": ["no", "no", "no. Can you suggest me plans now"],
+            "batch": ["next five", "next five", "next five"],
+        },
+        "strength": {},
     },
 }
 
@@ -113,14 +131,20 @@ class Command(BaseCommand):
                     "pending": initial["pending"],
                 }
             )
-            needs_sent = False
+            script = {k: list(v) for k, v in spec.get("script", {}).items()}
+            needs_sent = bool(script)
             for n in range(20):
                 state = data["state"]
                 pending = state["pending"]
                 field = pending["field"] if pending else ""
                 if state["stage"] == "narrowing" and state["stop_reason"] and needs_sent:
                     break
-                if state["stage"] == "narrowing" and not needs_sent:
+                if script:
+                    queue = script.get(pending["template"] if pending else "") or script.get(field)
+                    if not pending or pending["template"] == "exhausted":
+                        break
+                    message = queue.pop(0) if queue else "Skip"
+                elif state["stage"] == "narrowing" and not needs_sent:
                     # Supply the same profile needs through chat even if a
                     # volunteered earlier preference skipped the open prompt.
                     message = spec["needs"]

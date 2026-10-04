@@ -583,3 +583,99 @@ def test_only_the_india_city_answer_establishes_residence():
         cards(),
     )
     assert volunteered.profile.city == "Kota" and not volunteered.profile.resides_in_india
+
+
+def test_an_indian_state_after_the_city_keeps_india_residence():
+    state = next_question(
+        ChatState(
+            profile=IncompleteProfile(people=[ChatPerson(id="me", relationship="self", age=35)])
+        ),
+        cards(),
+        relay=NoCalls(),
+    )
+    for city in ("kota, rajasthan", "Kota, Rajasthan, India", "Noida, Uttar Pradesh"):
+        assert transition(state, ProposedChanges(city=city), cards()).profile.resides_in_india
+    for city in ("Austin, Texas", "Kota, abroad"):
+        assert not transition(state, ProposedChanges(city=city), cards()).profile.resides_in_india
+    state = transition(state, ProposedChanges(city="kota, rajasthan"), cards())
+    assert state.pending.field != "city"
+    echoed = transition(state, ProposedChanges(city="Kota, Rajasthan"), cards())
+    assert echoed.profile.resides_in_india and echoed.profile.city == "kota, rajasthan"
+
+
+def test_sum_insured_options_reply_shows_printed_range_without_advice():
+    source = cards()
+    for c, choices in zip(source, ([500000, 1000000], [2500000], [10000000]), strict=False):
+        c["executable_rules"] = [
+            {"field": "sum_insured", "choices": choices, "citations": [citation().model_dump()]}
+        ]
+    state = complete()
+    state.profile.sum_insured = state.profile.annual_budget = None
+    state = next_question(state, source)
+    assert state.pending.field == "sum_insured"
+    text = (
+        "can you provide option in what sum insured is available and would be more suitable for me"
+    )
+    changes, model = interpret(text, state, source, NoCalls())
+    assert changes.skip and model is None
+    state = transition(state, changes, source, relay=NoCalls())
+    assert state.pending.field == "annual_budget"
+    assert "from ₹5 lakh to ₹1 crore" in state.message and "suitable" not in state.message
+    assert not any("Sum insured" in line for line in state.understanding)
+
+
+def test_asking_what_the_terms_mean_explains_and_reasks_without_deferring():
+    state = complete()
+    state.answered = []
+    state = next_question(state, cards(), relay=NoCalls())
+    assert state.pending.field == "needs"
+    text = "can you explain me in detail, what does these even mean?"
+    changes, model = interpret(text, state, cards(), NoCalls())
+    assert changes.explain_terms and model is None and not changes.policy_question
+    state = transition(state, changes, cards(), relay=NoCalls())
+    assert state.pending.field == "needs" and not state.policy_question
+    assert "A co-pay is the percentage" in state.message
+    assert "kept your question" not in state.message and "didn’t quite catch" not in state.message
+    assert state.message.endswith(state.pending.text)
+
+
+def test_asking_for_plans_lists_them_in_fives_and_stops_narrowing():
+    source = cards(7)
+    for i, c in enumerate(source):
+        with_rule(c, "maternity", "covered" if i == 1 else "not_covered")
+    state = complete()
+    state.fit_groups = fit_groups(source, state.profile)
+    state = next_question(state, source)
+    assert state.pending.template == "narrow"
+    assert "1 of the 7 remaining plans has documented maternity cover." in state.message
+    changes, model = interpret("no. Can you suggest me plans now", state, source, NoCalls())
+    assert changes.show_plans and changes.affirmative is False and model is None
+    state = transition(state, changes, source, relay=NoCalls())
+    assert "not a ranking" in state.message and "Plans 1–5 of 7" in state.message
+    assert "next five" in state.message and len(state.list_queue) == 2
+    assert state.message.index("Insurer 1") < state.message.index("Insurer 5")
+    changes, _ = interpret("next five", state, source, NoCalls())
+    state = transition(state, changes, source, relay=NoCalls())
+    assert "Plans 6–7 of 7" in state.message and "last group" in state.message
+    assert "didn’t quite catch" not in state.message
+    state = transition(state, ProposedChanges(), source, relay=NoCalls())
+    assert state.pending.template == "exhausted"
+
+
+def test_summary_names_the_customer_plainly():
+    state = transition(
+        next_question(ChatState(), cards()),
+        ProposedChanges(
+            people=[
+                ChatPerson(id="self", relationship="self", age=35),
+                ChatPerson(id="spouse", relationship="spouse", age=33),
+                ChatPerson(id="child1", relationship="child", age=4),
+            ]
+        ),
+        cards(),
+    )
+    assert state.understanding[:3] == [
+        "You: 35 years",
+        "Spouse: 33 years",
+        "Child (child1): 4 years",
+    ]
