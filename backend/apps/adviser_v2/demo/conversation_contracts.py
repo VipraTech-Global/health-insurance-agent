@@ -46,6 +46,8 @@ class IncompleteProfile(Closed):
     sum_insured: int | None = Field(default=None, ge=1)
     annual_budget: int | None = Field(default=None, ge=1)
     plan_type: PlanType = "unresolved"
+    # The customer explicitly has no cover-type preference.
+    any_type: bool = False
     coverage_basis: Literal["individual", "floater"] | None = None
     existing_cover: str | None = Field(default=None, max_length=1000)
     health_details: str | None = Field(default=None, max_length=2000)
@@ -90,6 +92,7 @@ class ProposedChanges(Closed):
     no_preference: bool = False
     no_more_needs: bool = False
     narrow_first: bool = False
+    next_batch: bool = False
     policy_question: str | None = None
     selected_plans: list[str] = Field(default_factory=list, max_length=5)
     restored_plans: list[str] = Field(default_factory=list, max_length=5)
@@ -116,6 +119,9 @@ class ChatState(Closed):
     restored_plans: list[str] = Field(default_factory=list)
     policy_question: str | None = None
     policy_deferred: bool = False
+    # Code-chosen alphabetical groups of five when documents cannot narrow further.
+    batch_question: str | None = None
+    batch_queue: list[str] = Field(default_factory=list)
     insurer_filter: str | None = None
     question_count: int = 0
     stop_reason: str | None = None

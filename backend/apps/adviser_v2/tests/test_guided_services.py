@@ -132,7 +132,8 @@ def test_stage1_fixed_question_after_model_interprets_all_supplied_details(v2_us
         relay=relay,
         dispatch=False,
     )
-    assert result["state"]["pending"]["field"] == "health_details" and relay.calls == 1
+    assert result["state"]["pending"]["field"] == "needs" and relay.calls == 1
+    assert result["state"]["message"].startswith("Based on your details")
     assert result["state"]["turns"][0]["elapsed_ms"] >= 0
 
 

@@ -4,8 +4,9 @@ import hashlib
 import json
 import re
 import uuid
+from collections import Counter
 
-from .chat_rules import differentiator, fit_groups, remaining_ids
+from .chat_rules import differentiator, fit_groups, remaining_ids, single_type
 from .contracts import Closed
 from .conversation_contracts import FIELDS, ChatState, ProposedChanges, QuestionIntent, Requirement
 from .relay import InvalidOutput, Relay, RelayUnavailable
@@ -28,20 +29,21 @@ TEMPLATES = {
     "age": "What is the age of {person}?",
     "city": "Which city do you live in?",
     "sum_insured": "How much sum insured would you like?",
-    "annual_budget": "What is your annual premium budget?",
+    "annual_budget": "What is your annual premium budget? If you’re not sure, say so and I’ll show you what’s open to you first.",
     "plan_type": "Do you have a preference for the kind of cover?",
     "cover_need": "What kind of expenses would you like the cover to help with?",
     "existing_cover": "What existing cover would sit below the top-up?",
     "health_details": "Would you like to share any pre-existing conditions (optional; you can skip)?",
-    "needs": "What matters to you in this cover?",
+    "needs": "What matters most to you in this cover — for example maternity, OPD, room rent, co-pay, waiting periods or restoration?",
     "strength": "Is {need} a must-have or a nice-to-have?",
     "clarify": "Could you clarify {field}?",
-    "select": "Which plans would you like to compare (up to five), or would you prefer to narrow first?",
     "mixed": "Which type of cover would you like to compare?",
     "one": "Would you like to restore a plan or relax a requirement?",
     "zero": "Which requirement would you like to revisit?",
     "few": "What would you like to compare about these plans?",
-    "exhausted": "Would you like to select up to five plans, add a need, or ask a policy question?",
+    "exhausted": "Is there anything else that matters to you, such as a benefit or limit? You can also ask me a question about these plans.",
+    "batch": "Say “next five” for the next group, or tell me anything else that matters to you.",
+    "batch_end": "That was the last group. Is there anything else that matters to you, such as a benefit or limit?",
     "narrow": "Should I treat {need} as a must-have?",
     "price_axis": "Which printed {axis} should I use for this price lookup?",
 }
@@ -59,6 +61,8 @@ INTERPRET_PROMPT = (
     "A policy QUESTION NEVER creates a requirement. Keep it in policy_question. Requirements need explicit customer preference; "
     "yes I need it responding to a requirement question is affirmative=true and must_have. Retain unsupported needs under their original text. "
     "If the customer chooses narrowing before answering a pending policy question, set narrow_first=true. "
+    "If the customer is unsure about the detail being asked, or asks what options are available, set skip=true; that is not a policy_question. "
+    "policy_question is only a question about a policy's terms, benefits or limits. "
     "No preference is not medical_indemnity: use no_preference=true. Do not infer a type. Explicit skip is skip=true. "
     "An explicit request to skip optional health details uses skip_health_details=true, even before that question is asked; it does not skip the current family question. "
     "Only an explicit request to remove someone from cover sets removed_people to existing person IDs. "
@@ -68,6 +72,23 @@ INTERPRET_PROMPT = (
     "Extract all explicitly provided printed price axes into the price_axes list of axis/value objects. Price choices are exact printed strings for one axis; never infer axes, tax, discounts or loadings. "
     "Return the complete structured contract with null/empty unchanged fields. Do not generate conversational questions."
 )
+
+
+# The customer does not know the asked budget and gives no amount: move on.
+BUDGET_UNSURE = re.compile(
+    r"don.?t know|do not know|not sure|unsure|no idea|no (?:fixed )?budget|any budget|"
+    r"haven.?t decided|what (?:can|could|would) i get|options|show (?:me )?(?:the )?plans|"
+    r"you (?:tell|suggest)|depends",
+    re.I,
+)
+AMOUNT = re.compile(r"\d|lakh|lac|crore|thousand|hundred|\bk\b", re.I)
+GAP_LABELS = {
+    "family": "who can be covered together",
+    "geography": "where the plan can be bought",
+    "sum_insured": "the sum insured you asked for",
+    "entry_age": "entry age",
+    "documents": "the complete document set",
+}
 
 
 class Phrasing(Closed):
@@ -105,6 +126,24 @@ def interpret(text, state, cards, relay=None):
     if plain in {"narrow first", "narrow down first", "help me narrow"}:
         return ProposedChanges(narrow_first=True), None
     if plain in {"skip", "skip this", "prefer not to say"}:
+        return ProposedChanges(skip=True), None
+    if plain in {
+        "next five",
+        "next 5",
+        "next",
+        "next group",
+        "show next five",
+        "more",
+        "show more",
+    }:
+        if state.batch_queue:
+            return ProposedChanges(next_batch=True), None
+    if (
+        state.pending
+        and state.pending.field == "annual_budget"
+        and BUDGET_UNSURE.search(text)
+        and not AMOUNT.search(text)
+    ):
         return ProposedChanges(skip=True), None
     if (
         plain in {"yes", "yes, i need it", "yes i need it", "must-have", "must have"}
@@ -158,7 +197,9 @@ def interpret(text, state, cards, relay=None):
         text,
         re.I,
     )
-    if health_skip and re.search(r"\b(?:not|never|don't|do not)\s*$", text[: health_skip.start()], re.I):
+    if health_skip and re.search(
+        r"\b(?:not|never|don't|do not)\s*$", text[: health_skip.start()], re.I
+    ):
         health_skip = None
     changes.skip_health_details = bool(health_skip)
     if health_skip and state.pending and state.pending.field != "health_details":
@@ -384,8 +425,11 @@ def merge(state, changes):
             continue
         setattr(facts, field, value)
         state.answered.append(field)
-    if changes.no_preference:
+    if changes.no_preference and pending and pending.field == "annual_budget":
+        state.skipped.append("annual_budget")
+    elif changes.no_preference:
         state.answered.append("plan_type")
+        facts.any_type = True
     if changes.no_more_needs:
         state.answered.append("needs")
     # A question cannot be interpreted as a new requirement, even if the model
@@ -485,7 +529,14 @@ def merge(state, changes):
         state.policy_question = changes.policy_question
         state.interrupted = pending
     if changes.selected_plans:
+        # Only plans the customer names; the assistant never asks for a pick.
         state.selected_plans = changes.selected_plans
+        state.policy_deferred = False
+    if changes.next_batch and state.batch_queue and state.batch_question:
+        state.policy_question = state.batch_question
+        state.policy_deferred = False
+        state.selected_plans = state.batch_queue[:5]
+        state.batch_queue = state.batch_queue[5:]
     state.restored_plans = list(dict.fromkeys([*state.restored_plans, *changes.restored_plans]))
     if changes.insurer_filter is not None:
         state.insurer_filter = changes.insurer_filter or None
@@ -503,6 +554,64 @@ def merge(state, changes):
     return ambiguous
 
 
+def plural(n, word):
+    return f"{n} {word}" if n == 1 else f"{n} {word}s"
+
+
+def plan_names(cards, ids):
+    """Plan labels in the neutral insurer A–Z order of the live list."""
+    chosen = [c for c in cards if c["plan_id"] in ids]
+    chosen.sort(
+        key=lambda c: (c["insurer"].casefold(), c["name"].casefold(), c["variant"].casefold())
+    )
+    return [f"{c['insurer']} {c['name']} ({c['variant']})" for c in chosen]
+
+
+def options_summary(state, cards):
+    """What the customer's details leave open, without ranking or overclaiming fit."""
+    groups = state.fit_groups
+    fits, unsure, out = (len(groups[k]) for k in ("fits", "unresolved", "doesnt_fit"))
+    total = fits + unsure
+    if not total:
+        return ""
+    if not unsure:
+        text = f"Based on your details, {plural(fits, 'plan')} match every documented limit I could check."
+    elif not fits:
+        text = (
+            f"Based on your details, {plural(total, 'plan')} are open to you. None is ruled out, "
+            "but I couldn’t confirm every limit from the documents."
+        )
+    else:
+        text = (
+            f"Based on your details, {plural(total, 'plan')} are open to you: {fits} match every "
+            f"documented limit I checked and {unsure} couldn’t be fully confirmed."
+        )
+    gaps = Counter(
+        label
+        for result in groups["unresolved"]
+        for label in {
+            GAP_LABELS.get(r["field"].split(":")[0])
+            for r in result["hard_limits"]
+            if r["status"] == "unresolved"
+        }
+        if label
+    )
+    if gaps:
+        text += (
+            " Not confirmed from the documents: "
+            + ", ".join(g for g, _ in gaps.most_common(3))
+            + "."
+        )
+    if out:
+        text += f" {plural(out, 'plan')} {'is' if out == 1 else 'are'} excluded by a quoted limit."
+    names = plan_names(cards, remaining_ids(groups))
+    if len(names) <= 8:
+        text += " They are: " + "; ".join(names) + "."
+    else:
+        text += " All of them are in the plan list, in A–Z order (not a ranking)."
+    return text
+
+
 def next_question(state, cards, *, relay=None, ambiguity=None):
     if state.stage == "stopped":
         return state
@@ -515,6 +624,13 @@ def next_question(state, cards, *, relay=None, ambiguity=None):
             ambiguity,
             prefix="I have kept your earlier details unchanged where the reply was ambiguous.",
         )
+    note = ""
+
+    def ask(template, field=None, *, prefix="", **kw):
+        return question(
+            state, template, field, prefix=" ".join(x for x in (note, prefix) if x), **kw
+        )
+
     all_ids = {c["plan_id"] for c in cards}
     state.selected_plans = [p for p in state.selected_plans if p in all_ids]
     remaining = remaining_ids(state.fit_groups)
@@ -537,81 +653,87 @@ def next_question(state, cards, *, relay=None, ambiguity=None):
         state.policy_deferred = False
         selected = state.selected_plans or sorted(remaining)
         if len(selected) > 5 or not selected:
-            return question(
-                state, "select", "selection", prefix="I have kept your policy question."
-            )
-        types = {c["plan_type"] for c in cards if c["plan_id"] in selected}
-        if len(types) != 1 or "unresolved" in types:
-            return question(
-                state,
-                "mixed",
-                "plan_type",
-                prefix="This comparison mixes cover types or has an unestablished type.",
-            )
-        state.selected_plans = selected
-        # The service submits independent chains, then resumes this stage's next
-        # missing question. Evidence streams never ask their own questions.
+            # The customer never picks plans: hold the question for the shortlist.
+            state.policy_deferred = True
+            note = "I’ve kept your question and will answer it for your shortlist once we’ve narrowed down."
+        else:
+            types = {c["plan_type"] for c in cards if c["plan_id"] in selected}
+            if len(types) != 1 or "unresolved" in types:
+                return question(
+                    state,
+                    "mixed",
+                    "plan_type",
+                    prefix="This comparison mixes cover types or has an unestablished type.",
+                )
+            state.selected_plans = selected
+            # The service submits independent chains, then resumes this stage's next
+            # missing question. Evidence streams never ask their own questions.
     p = state.profile
     done = set(state.answered) | set(state.skipped)
     state.stage = "details"
     if not p.people and "people" not in done:
-        return question(state, "people")
+        return ask("people")
     for person in p.people:
         if person.age is None and "age:" + person.id not in done:
-            return question(state, "age", "age:" + person.id, person=person.id)
+            return ask("age", "age:" + person.id, person=person.id)
     for field in ("city", "sum_insured", "annual_budget"):
         if getattr(p, field) is None and field not in done:
-            return question(state, field)
-    if p.plan_type == "unresolved" and "plan_type" not in done:
-        return question(state, "plan_type")
-    if p.plan_type == "unresolved" and "cover_need" not in done:
-        return question(state, "cover_need")
+            return ask(field)
+    # A catalogue of one cover type leaves nothing to choose.
+    choose_type = p.plan_type == "unresolved" and not p.any_type and single_type(cards) is None
+    if choose_type and "plan_type" not in done:
+        return ask("plan_type")
+    if choose_type and "cover_need" not in done:
+        return ask("cover_need")
     if (
         p.plan_type in {"top_up", "super_top_up"}
         and p.existing_cover is None
         and "existing_cover" not in done
     ):
-        return question(state, "existing_cover")
-    if p.health_details is None and "health_details" not in done:
-        return question(state, "health_details")
+        return ask("existing_cover")
     state.stage = "requirements"
+    # Before asking what matters, show what the basic details leave open.
+    if "options_shown" not in state.answered:
+        state.answered.append("options_shown")
+        note = " ".join(x for x in (note, options_summary(state, cards)) if x)
     if not p.requirements and "needs" not in done:
-        return question(state, "needs")
+        return ask("needs")
     for need in p.requirements:
         if need.strength == "unclassified" and "strength:" + need.field not in state.skipped:
-            return question(state, "strength", need.field, need=need.field)
+            return ask("strength", need.field, need=need.field)
+    if p.health_details is None and "health_details" not in done:
+        return ask("health_details")
     state.stage = "narrowing"
     fits, uncertain = len(state.fit_groups["fits"]), len(state.fit_groups["unresolved"])
     count = fits + uncertain
-    if 2 <= count <= 3:
+    if 2 <= count <= 5:
         state.stop_reason = "two_or_three_remain"
         types = {c["plan_type"] for c in cards if c["plan_id"] in remaining}
         if len(types) != 1 or "unresolved" in types:
             state.stop_reason = None
-            return question(
-                state,
+            return ask(
                 "mixed",
                 "plan_type",
                 prefix=f"{count} plans remain across unconfirmed or different cover types.",
             )
         state.selected_plans = sorted(remaining)
         prefix = (
-            f"Based on what you’ve told me, these {fits} plans fit your details."
-            if not uncertain
-            else f"{fits} plans fit your details and {uncertain} remain uncertain."
+            f"Based on what you’ve told me, these {count} plans remain: "
+            + "; ".join(plan_names(cards, remaining))
+            + "."
         )
-        return question(state, "few", prefix=prefix)
+        if uncertain:
+            prefix += f" {uncertain} of them couldn’t be fully confirmed from the documents."
+        return ask("few", prefix=prefix)
     if count == 1:
         state.stop_reason = "one_remains"
-        return question(
-            state,
+        return ask(
             "one",
             prefix=f"One plan remains: {fits} confirmed fit and {uncertain} uncertain.",
         )
     if count == 0:
         state.stop_reason = "none_remain"
-        return question(
-            state,
+        return ask(
             "zero",
             prefix="No plans remain. The live list shows the requirements and quotations responsible for exclusions.",
         )
@@ -621,9 +743,35 @@ def next_question(state, cards, *, relay=None, ambiguity=None):
     choice = differentiator(cards, state.fit_groups, excluded, profile=state.profile)
     if choice is None:
         state.stop_reason = "no_supported_question"
-        return question(
-            state, "exhausted", prefix="I can’t narrow these further from the policy documents"
-        )
+        if state.policy_question and state.batch_question != state.policy_question:
+            # Documents cannot narrow further: answer every remaining plan in
+            # code-chosen alphabetical groups of five, disclosed as no ranking.
+            ordered = [
+                c["plan_id"]
+                for c in sorted(
+                    cards,
+                    key=lambda c: (
+                        c["insurer"].casefold(),
+                        c["name"].casefold(),
+                        c["variant"].casefold(),
+                    ),
+                )
+                if c["plan_id"] in remaining
+            ]
+            state.batch_question = state.policy_question
+            state.selected_plans, state.batch_queue = ordered[:5], ordered[5:]
+            state.policy_deferred = False
+            return ask(
+                "batch" if state.batch_queue else "batch_end",
+                prefix="I can’t narrow these further from the policy documents, so I’m answering your "
+                "question in alphabetical groups of five; this is not a ranking.",
+            )
+        if state.policy_question:
+            return ask(
+                "batch" if state.batch_queue else "batch_end",
+                prefix=f"Here is the next alphabetical group of {len(state.selected_plans)} plans.",
+            )
+        return ask("exhausted", prefix="I can’t narrow these further from the policy documents.")
     state.stop_reason = None
     if choice["value"] == "covered":
         prefix = f"{choice['count']} of the {choice['remaining']} remaining plans have supported cover for {LABELS[choice['field']]}."
@@ -640,8 +788,7 @@ def next_question(state, cards, *, relay=None, ambiguity=None):
         prefix += " The quoted conditions still apply."
     if choice["known"] < choice["remaining"]:
         prefix += " Plans with uncertain evidence will remain."
-    return question(
-        state,
+    return ask(
         "narrow",
         choice["field"],
         need=choice["field"],

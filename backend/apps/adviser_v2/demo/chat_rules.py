@@ -113,8 +113,19 @@ def requirement_result(card, need, profile=None):
     }
 
 
+def single_type(cards):
+    """The one cover type every plan in the catalogue has, if there is one."""
+    types = {c["plan_type"] for c in cards}
+    return next(iter(types)) if len(types) == 1 and "unresolved" not in types else None
+
+
 def fit_groups(cards, profile):
     groups = {"fits": [], "unresolved": [], "doesnt_fit": []}
+    # Cover type is no limit when the customer has no preference or every plan
+    # in the catalogue is the same type; a stated type is still checked.
+    any_type = profile.plan_type == "unresolved" and (
+        getattr(profile, "any_type", False) or single_type(cards) is not None
+    )
     for card in sorted(
         cards,
         key=lambda c: (
@@ -199,6 +210,8 @@ def fit_groups(cards, profile):
                 )
         if card.get("card_schema_version", 0) >= 3:
             result["hard_limits"] = hard_limits(card, profile, result["hard_limits"])
+        if any_type:
+            result["hard_limits"] = [r for r in result["hard_limits"] if r["field"] != "plan_type"]
         for need in profile.requirements:
             reason = requirement_result(card, need, profile)
             result["other_needs"].append(reason)

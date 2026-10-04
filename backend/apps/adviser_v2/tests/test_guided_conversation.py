@@ -64,12 +64,14 @@ def test_multidetail_skips_future_questions_and_fixed_stages_make_no_calls():
         cards(),
         relay=NoCalls(),
     )
-    assert state.pending.field == "health_details"
-    state = transition(state, ProposedChanges(skip=True), cards(), relay=NoCalls())
+    # The open options are shown before the first "what matters" question.
     assert state.stage == "requirements" and state.pending.template == "strength"
+    assert state.message.startswith("Based on your details")
     state = transition(state, ProposedChanges(affirmative=True), cards(), relay=NoCalls())
-    assert state.stage == "narrowing" and state.profile.requirements[0].strength == "must_have"
-    assert state.stop_reason == "no_supported_question"
+    assert state.pending.field == "health_details"
+    assert state.profile.requirements[0].strength == "must_have"
+    state = transition(state, ProposedChanges(skip=True), cards(), relay=NoCalls())
+    assert state.stage == "narrowing" and state.stop_reason == "two_or_three_remain"
 
 
 def test_ambiguity_preserves_facts_corrections_and_skip_does_not_erase():
@@ -85,15 +87,35 @@ def test_ambiguity_preserves_facts_corrections_and_skip_does_not_erase():
 
 
 def test_no_preference_does_not_assign_type_and_customer_stop_has_no_question():
+    source = cards()
+    source[0]["plan_type"] = "top_up"
     state = complete()
     state.profile.plan_type = "unresolved"
     state.answered = []
-    state = next_question(state, cards())
-    state = transition(state, ProposedChanges(no_preference=True), cards())
-    assert state.pending.field == "cover_need" and state.profile.plan_type == "unresolved"
-    state = transition(state, ProposedChanges(stop=True), cards())
+    state = next_question(state, source)
+    assert state.pending.field == "plan_type"
+    state = transition(state, ProposedChanges(no_preference=True), source)
+    assert state.pending.field != "cover_need" and state.profile.plan_type == "unresolved"
+    assert state.profile.any_type
+    assert not [
+        r
+        for group in state.fit_groups.values()
+        for result in group
+        for r in result["hard_limits"]
+        if r["field"] == "plan_type"
+    ]
+    state = transition(state, ProposedChanges(stop=True), source)
     assert state.stage == "stopped" and state.pending is None and "?" not in state.message
-    assert next_question(state, cards()).question_count == state.question_count
+    assert next_question(state, source).question_count == state.question_count
+
+
+def test_single_type_catalogue_asks_no_cover_type_and_type_is_no_limit():
+    state = complete()
+    state.profile.plan_type = "unresolved"
+    state.answered = []
+    state.fit_groups = fit_groups(cards(), state.profile)
+    state = next_question(state, cards())
+    assert state.pending.field == "needs" and len(state.fit_groups["fits"]) == 5
 
 
 def test_policy_question_is_not_requirement_and_retains_stage():
@@ -106,10 +128,13 @@ def test_policy_question_is_not_requirement_and_retains_stage():
         ),
         cards(6),
     )
-    assert state.pending.template == "select" and state.policy_question == "Is OPD covered?"
+    # More than five plans remain: the question is held, never a request to pick.
+    assert state.pending.field == "people" and state.policy_question == "Is OPD covered?"
+    assert state.policy_deferred and "kept your question" in state.message
     assert not state.profile.requirements and state.interrupted.field == "people"
     state = transition(state, ProposedChanges(selected_plans=["0", "1"]), cards(6))
-    assert state.pending.field == "people"
+    assert state.pending.field == "people" and not state.policy_deferred
+    assert state.selected_plans == ["0", "1"]
 
 
 def with_rule(c, field, value):
@@ -137,7 +162,7 @@ def test_unknown_never_excludes_nice_never_excludes_must_needs_cited_conflict():
 
 
 def test_question_selection_is_insurer_independent_and_skip_suppresses():
-    source = cards()
+    source = cards(6)
     for i, c in enumerate(source):
         for field in ("opd", "maternity"):
             if i < 4:
@@ -145,7 +170,7 @@ def test_question_selection_is_insurer_independent_and_skip_suppresses():
     state = complete()
     state.fit_groups = fit_groups(source, state.profile)
     first = differentiator(source, state.fit_groups, set())
-    assert first["field"] == "maternity" and first["known"] == 4 and first["remaining"] == 5
+    assert first["field"] == "maternity" and first["known"] == 4 and first["remaining"] == 6
     for c in source:
         c["insurer"] = "changed"
     assert differentiator(list(reversed(source)), state.fit_groups, set()) == first
@@ -183,7 +208,8 @@ def test_compound_question_gets_one_rewrite_then_fixed_template():
         (1, "one_remains"),
         (2, "two_or_three_remain"),
         (3, "two_or_three_remain"),
-        (5, "no_supported_question"),
+        (5, "two_or_three_remain"),
+        (6, "no_supported_question"),
     ],
 )
 def test_stop_conditions_and_counts(n, stop):
@@ -191,7 +217,7 @@ def test_stop_conditions_and_counts(n, stop):
     state.fit_groups = fit_groups(cards(n), state.profile)
     state = next_question(state, cards(n), relay=NoCalls())
     assert state.stop_reason == stop and state.message.count("?") == 1
-    if n in (2, 3):
+    if 2 <= n <= 5:
         assert len(state.selected_plans) == n
 
 
@@ -316,7 +342,7 @@ def test_model_cannot_promote_matters_to_must_have_without_customer_strength():
                         Requirement(
                             field="maternity",
                             original_text="Maternity cover is a must-have.",
-                            strength="must_have"
+                            strength="must_have",
                         )
                     ]
                 ).model_dump(),
@@ -364,3 +390,76 @@ def test_health_skip_requires_affirmative_customer_words(reply):
 
     changes, _ = interpret(reply, ChatState(), cards(), relay=Reply())
     assert not changes.skip_health_details
+
+
+def test_unsure_budget_is_skipped_without_ai_and_never_asked_again():
+    state = complete()
+    state.profile.annual_budget = None
+    state = next_question(state, cards())
+    assert state.pending.field == "annual_budget"
+    text = "i dont know about that, can you tell me what can i get here?"
+    changes, model = interpret(text, state, cards(), NoCalls())
+    assert changes.skip and model is None and not changes.policy_question
+    state = transition(state, changes, cards(), relay=NoCalls())
+    assert "annual_budget" in state.skipped and state.pending.field != "annual_budget"
+    assert "plans" in state.message and "Which plans would you like" not in state.message
+
+
+def test_unsure_budget_with_an_amount_is_left_to_interpretation():
+    class Amount:
+        def call(self, **kwargs):
+            return SimpleNamespace(value={"annual_budget": 20000}, model="test")
+
+    state = complete()
+    state.profile.annual_budget = None
+    state = next_question(state, cards())
+    changes, _ = interpret("not sure, maybe 20k", state, cards(), Amount())
+    assert changes.annual_budget == 20000 and not changes.skip
+
+
+def test_options_summary_never_claims_fit_when_nothing_is_confirmed():
+    source = cards(6)
+    state = complete()
+    state.answered = []
+    state.fit_groups = {
+        "fits": [],
+        "unresolved": [
+            {
+                "plan_id": c["plan_id"],
+                "hard_limits": [
+                    {"field": "family", "status": "unresolved", "citations": []},
+                    {"field": "geography", "status": "unresolved", "citations": []},
+                ],
+            }
+            for c in source
+        ],
+        "doesnt_fit": [],
+    }
+    from apps.adviser_v2.demo.conversation import options_summary
+
+    text = options_summary(state, source)
+    assert "6 plans are open to you" in text and "None is ruled out" in text
+    assert "who can be covered together" in text and "match every" not in text
+    assert text.index("Insurer 1") < text.index("Insurer 6")
+
+
+def test_unnarrowable_policy_question_is_answered_in_alphabetical_fives():
+    source = cards(7)
+    state = complete()
+    state.fit_groups = fit_groups(source, state.profile)
+    state.policy_question = "Is OPD covered?"
+    state.policy_deferred = True
+    state = next_question(state, source, relay=NoCalls())
+    first = state.selected_plans
+    assert len(first) == 5 and len(state.batch_queue) == 2 and not state.policy_deferred
+    assert "not a ranking" in state.message and "next five" in state.message
+    assert {c["insurer"] for c in source if c["plan_id"] in first} == {
+        f"Insurer {i}" for i in range(1, 6)
+    }
+    state.policy_question = None  # submitted by the service
+    changes, model = interpret("next five", state, source, NoCalls())
+    assert changes.next_batch and model is None
+    state = transition(state, changes, source, relay=NoCalls())
+    assert len(state.selected_plans) == 2 and not set(state.selected_plans) & set(first)
+    assert state.policy_question == "Is OPD covered?" and not state.batch_queue
+    assert "last group" in state.message
