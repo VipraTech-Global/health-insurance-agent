@@ -58,7 +58,7 @@ def purchase_geography(statement, variant):
         re.I,
     )
     premium = re.search(
-        r"(?:premium (?:payment |computation )?(?:zones?|tier)|zone.{0,20}premium|premium.{0,45}zone|zonal pricing|pricing zone)",
+        r"(?:premium (?:payment |computation )?(?:zones?|tier)|zone.{0,20}premium|premium.{0,60}zone|zonal pricing|pricing zone)",
         raw,
         re.I,
     )
@@ -152,27 +152,52 @@ def base_coverage(statement, field, variant):
     return [rule_for(statement, field, "coverage", value, variant, printed, waiting_months=waits)]
 
 
+# The proposer is the customer; "Proposer’s Spouse" names someone else.
+SELF = r"\bself\b|\bInsured;|\bYou and your immediate family|\bProposer\b(?!\s*[’']s)"
+WORD_NUMBERS = {
+    "one": 1,
+    "two": 2,
+    "three": 3,
+    "four": 4,
+    "five": 5,
+    "six": 6,
+    "seven": 7,
+    "eight": 8,
+    "nine": 9,
+    "ten": 10,
+}
+# A printed count: digits, or a number word bound to the noun it counts.
+COUNT = r"(\d+|" + "|".join(WORD_NUMBERS) + r")"
+
+
+def count(text):
+    return int(text) if text.isdigit() else WORD_NUMBERS[text.casefold()]
+
+
 def family_rule(statement, variant):
     raw = raw_text(statement)
-    if not re.search(r"floater", raw, re.I) or re.search(
+    # "The entire family under a Single Sum Insured" is a floater in other words.
+    if not re.search(r"floater|family under a single sum insured", raw, re.I) or re.search(
         r"illustrat|example|coverage opted|multi.individual", raw, re.I
     ):
         return []
-    adult = re.search(r"(?:maximum.{0,65}|up to\s*|upto\s*)(\d+)\s*adults?", raw, re.I)
+    adult = re.search(r"(?:maximum.{0,65}|up to\s*|upto\s*)" + COUNT + r"\s*adults?", raw, re.I)
     child = re.search(
-        r"(?:\+|and|up to|upto|maximum(?: of)?)\s*(\d+)\s*(?:dependent )?child", raw, re.I
+        r"(?:\+|and|up to|upto|maximum(?: of)?)\s*" + COUNT + r"\s*(?:dependent )?child", raw, re.I
+    ) or re.search(
+        r"\bchild(?:ren)?\s*(?:\([^)]*\)\s*)?not exceeding\s*" + COUNT + r"\b", raw, re.I
     )
-    members = re.search(r"(?:up\s*to|maximum(?: of)?)\s*(\d+)\s*members", raw, re.I)
+    members = re.search(r"(?:up\s*to|maximum(?: of)?)\s*" + COUNT + r"\s*members", raw, re.I)
     compact = re.search(r"[Ff]loater[^.]{0,70}?(\d+)\s*A\s*\+?\s*(\d+)\s*C", raw)
     if compact:
         adult_count, child_count = int(compact[1]), int(compact[2])
     else:
-        adult_count = int(adult[1]) if adult else None
-        child_count = int(child[1]) if child else None
+        adult_count = count(adult[1]) if adult else None
+        child_count = count(child[1]) if child else None
     relatives = [
         name
         for name, pattern in [
-            ("self", r"\bself\b|\bInsured;|\bYou and your immediate family"),
+            ("self", SELF),
             ("spouse", r"\bspouse\b"),
             ("child", r"\bchild|\bson\b|\bdaughter\b"),
             ("parent", r"\bparents?\b(?![ -]*in[ -]*law)"),
@@ -184,13 +209,14 @@ def family_rule(statement, variant):
         return []
     relative_limits = {}
     for relation, pattern in [
-        ("parent", r"(?:up to|upto)\s*(\d+)\s*parents?\b(?![ -]*in)"),
-        ("parent_in_law", r"(?:up to|upto)\s*(\d+)\s*parents?[ -]*in[ -]*laws?"),
+        ("parent", r"(?:up to|upto)\s*" + COUNT + r"\s*parents?\b(?![ -]*in)"),
+        ("parent_in_law", r"(?:up to|upto)\s*" + COUNT + r"\s*parents?[ -]*in[ -]*laws?"),
     ]:
         match = re.search(pattern, raw, re.I)
         if match:
-            relative_limits[relation] = int(match[1])
-    value = f"{adult_count}A{child_count}C:{members[1] if members else '-'}M:" + "|".join(relatives)
+            relative_limits[relation] = count(match[1])
+    member_count = count(members[1]) if members else None
+    value = f"{adult_count}A{child_count}C:{member_count or '-'}M:" + "|".join(relatives)
     return [
         rule_for(
             statement,
@@ -201,7 +227,7 @@ def family_rule(statement, variant):
             printed=raw,
             relationship_limits=relative_limits,
             maximum_adults=adult_count,
-            maximum_members=int(members[1]) if members else None,
+            maximum_members=member_count,
             maximum_children=child_count,
             relationships=relatives,
             dependent_children=bool(re.search(r"dependent child", raw, re.I)),
