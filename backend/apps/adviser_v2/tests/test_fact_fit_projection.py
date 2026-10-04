@@ -341,3 +341,107 @@ def test_primary_spouse_pair_constraint_does_not_guess_parent_relationships():
     )
     result = hard_limits({"variant": "Default", "executable_rules": rules}, profile, [])
     assert next(r for r in result if r["field"] == "family")["status"] == "unresolved"
+
+
+def family_status(rules, profile):
+    old = [{"field": "family", "status": "unresolved", "citations": []}]
+    result = hard_limits({"variant": "Default", "executable_rules": rules}, profile, old)
+    return next(r for r in result if r["field"] == "family")
+
+
+def test_floater_limits_confirm_but_never_exclude_without_a_stated_basis():
+    rules = project(
+        "family",
+        [statement("Floater Policy: Self, spouse and up to 3 dependent children.")],
+        "Default",
+    )
+    family = [
+        ChatPerson(id="self", relationship="self", age=35),
+        ChatPerson(id="spouse", relationship="spouse", age=33),
+        ChatPerson(id="child", relationship="child", age=8, dependent=True),
+    ]
+    assert family_status(rules, IncompleteProfile(people=family))["status"] == "fits"
+    large = family + [
+        ChatPerson(id=f"c{i}", relationship="child", age=i, dependent=True) for i in (2, 4, 6)
+    ]
+    unknown = family_status(rules, IncompleteProfile(people=large))
+    assert unknown["status"] == "unresolved" and "separate cover" in unknown["explanation"]
+    floater = IncompleteProfile(people=large, coverage_basis="floater")
+    assert family_status(rules, floater)["status"] == "doesnt_fit"
+    individual = IncompleteProfile(people=family, coverage_basis="individual")
+    assert family_status(rules, individual)["status"] == "unresolved"
+    assert family_status(rules, individual)["citations"] == []
+
+
+def test_number_words_bound_to_children_set_the_printed_limit():
+    raw = "Floater basis: a family consisting of Self, Spouse, dependent children not exceeding three, dependent Parents and Parents-in-law."
+    rules = project("family", [statement(raw)], "Default")
+    assert rules and rules[0]["maximum_children"] == 3
+    assert "not exceeding three" in rules[0]["printed"]
+    rules = project(
+        "family",
+        [statement("Floater basis: Self and Spouse; children up to three years old.")],
+        "Default",
+    )
+    assert all(r["maximum_children"] is None for r in rules)
+
+
+def test_grounding_rejects_a_number_word_not_in_the_quote():
+    from apps.adviser_v2.demo.fact_rule_grounding import grounded
+
+    raw = "Floater basis: Self, Spouse, dependent children not exceeding three."
+    rule = project("family", [statement(raw)], "Default")[0]
+    assert grounded(rule)
+    assert not grounded({**rule, "maximum_children": 4})
+
+
+def test_city_answer_to_the_india_question_establishes_residence():
+    rules = project(
+        "geography",
+        [
+            statement(
+                "Premium Payment Zones: For premium computation based on the residential address. Zone A Mumbai; Zone B Rest of India."
+            )
+        ],
+        "Default",
+    )
+    card = {"variant": "Default", "executable_rules": rules}
+    old = [{"field": "geography", "status": "unresolved", "citations": []}]
+    assert hard_limits(card, IncompleteProfile(city="Kota"), old)[0]["status"] == "unresolved"
+    resident = IncompleteProfile(city="Kota", resides_in_india=True)
+    assert hard_limits(card, resident, old)[0]["status"] == "fits"
+
+
+def test_single_sum_insured_family_list_names_the_proposer_as_self():
+    raw = (
+        "Yes. You can cover the entire family under a Single Sum Insured. The members of the family who\n"
+        "could be covered under the Policy are:\na) Proposer\nb) Proposer’s Spouse\n"
+        "c) Proposer’s Dependent Children\nd) Proposer’s Parents"
+    )
+    rules = project("family", [statement(raw)], "Default")
+    assert rules and {"self", "spouse", "child", "parent"} <= set(rules[0]["relationships"])
+    assert rules[0]["maximum_children"] is None and rules[0]["coverage_basis"] == "floater"
+    two = [
+        ChatPerson(id="self", relationship="self", age=29),
+        ChatPerson(id="spouse", relationship="spouse", age=28),
+    ]
+    assert family_status(rules, IncompleteProfile(people=two))["status"] == "fits"
+    kids = two + [
+        ChatPerson(id=f"c{i}", relationship="child", age=i, dependent=True) for i in (3, 5)
+    ]
+    assert family_status(rules, IncompleteProfile(people=kids))["status"] == "unresolved"
+    assert not project(
+        "family",
+        [
+            statement(
+                "The family under a Single Sum Insured: a) Proposer’s Spouse b) Proposer’s Children"
+            )
+        ],
+        "Default",
+    )
+
+
+def test_premium_zones_with_rest_of_india_cover_the_country():
+    raw = "Premium will be charged based on the classification of the zones namely\nZon\ne 1\nMaharashtraand Gujarat\nZon\ne 2\nRest Of India"
+    rules = project("geography", [statement(raw)], "Default")
+    assert rules and rules[0]["value"] == "india"

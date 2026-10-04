@@ -3,6 +3,7 @@
 import re
 from decimal import Decimal
 
+from .fact_fit_projection import SELF, WORD_NUMBERS
 from .fact_rules_v6 import KEYWORDS, MONEY
 
 
@@ -156,12 +157,18 @@ def grounded(rule):
         ):
             return False
         roles = {
-            "self": r"\bself\b|\bInsured;|\bYou and your immediate family",
+            "self": SELF,
             "spouse": r"\bspouse\b",
             "child": r"child|\bson\b|\bdaughter\b",
             "parent": r"parents?\b(?![ -]*in)",
             "parent_in_law": r"parents?[ -]*in[ -]*law",
         }
+
+        def n(value):
+            # The printed count, as digits or as its number word.
+            words = [w for w, v in WORD_NUMBERS.items() if v == value]
+            return "(?:" + "|".join([str(value), *words]) + ")"
+
         compact = re.search(
             r"\b"
             + str(rule.get("maximum_adults"))
@@ -172,8 +179,8 @@ def grounded(rule):
             re.I,
         )
         bounded = bool(compact) or (
-            bool(re.search(r"\b" + str(rule.get("maximum_adults")) + r"\s*adults?", raw, re.I))
-            or bool(re.search(r"\b" + str(rule.get("maximum_members")) + r"\s*members?", raw, re.I))
+            bool(re.search(r"\b" + n(rule.get("maximum_adults")) + r"\s*adults?", raw, re.I))
+            or bool(re.search(r"\b" + n(rule.get("maximum_members")) + r"\s*members?", raw, re.I))
             or (
                 rule.get("maximum_adults") is None
                 and rule.get("maximum_members") is None
@@ -187,7 +194,10 @@ def grounded(rule):
                     rule.get("maximum_children") is None
                     or compact
                     or re.search(
-                        r"\b" + str(rule["maximum_children"]) + r"\s*(?:dependent )?child",
+                        r"\b" + n(rule["maximum_children"]) + r"\s*(?:dependent )?child"
+                        r"|\bchild(?:ren)?\s*(?:\([^)]*\)\s*)?not exceeding\s*"
+                        + n(rule["maximum_children"])
+                        + r"\b",
                         raw,
                         re.I,
                     )
@@ -195,8 +205,8 @@ def grounded(rule):
             )
             and all(re.search(roles.get(r, r"(?!)"), raw, re.I) for r in rule["relationships"])
             and all(
-                re.search(r"\b" + str(n) + r"\s*" + roles.get(r, r"(?!)"), raw, re.I)
-                for r, n in rule.get("relationship_limits", {}).items()
+                re.search(r"\b" + n(limit) + r"\s*" + roles.get(r, r"(?!)"), raw, re.I)
+                for r, limit in rule.get("relationship_limits", {}).items()
             )
         )
     return False
