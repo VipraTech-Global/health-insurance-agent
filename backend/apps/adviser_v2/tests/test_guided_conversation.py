@@ -463,3 +463,66 @@ def test_unnarrowable_policy_question_is_answered_in_alphabetical_fives():
     assert len(state.selected_plans) == 2 and not set(state.selected_plans) & set(first)
     assert state.policy_question == "Is OPD covered?" and not state.batch_queue
     assert "last group" in state.message
+
+
+def test_first_person_reply_means_self_without_ai():
+    state = next_question(ChatState(), cards())
+    changes, model = interpret("i need the coveer", state, cards(), NoCalls())
+    assert model is None and [p.relationship for p in changes.people] == ["self"]
+    state = transition(state, changes, cards(), relay=NoCalls())
+    assert state.pending.field == "age:self"
+
+
+class Empty:
+    def call(self, **kwargs):
+        return SimpleNamespace(value={}, model="test")
+
+
+@pytest.mark.parametrize("text", ["me and my wife", "me, my wife and our 2 children", "not me"])
+def test_family_replies_are_left_to_interpretation(text):
+    state = next_question(ChatState(), cards())
+    _, model = interpret(text, state, cards(), Empty())
+    assert model == "test"
+
+
+def test_unparsed_reply_is_reasked_with_an_example_not_repeated():
+    state = next_question(ChatState(), cards())
+    first, count = state.message, state.question_count
+    state = transition(state, ProposedChanges(), cards(), relay=NoCalls())
+    assert state.pending.field == "people" and state.question_count == count + 1
+    assert state.message != first and "I didn’t quite catch that" in state.message
+    assert "“just me”" in state.message
+    state = transition(
+        state,
+        ProposedChanges(people=[ChatPerson(id="self", relationship="self")]),
+        cards(),
+        relay=NoCalls(),
+    )
+    state = transition(state, ProposedChanges(), cards(), relay=NoCalls())
+    assert state.pending.field == "age:self" and "for example “35”" in state.message
+    state = transition(
+        state, ProposedChanges(people=[ChatPerson(id="self", relationship="self", age=35)]), cards()
+    )
+    assert state.pending.field == "city" and "catch" not in state.message
+
+
+class SkipAll:
+    def call(self, **kwargs):
+        return SimpleNamespace(value=ProposedChanges(skip=True).model_dump(), model="test")
+
+
+def test_vague_reply_never_skips_who_is_covered():
+    state = next_question(ChatState(), cards())
+    changes, _ = interpret("hmm", state, cards(), SkipAll())
+    assert not changes.skip
+    changes, _ = interpret("skip this for now please", state, cards(), SkipAll())
+    assert changes.skip
+
+
+def test_own_age_is_asked_directly():
+    state = transition(
+        next_question(ChatState(), cards()),
+        ProposedChanges(people=[ChatPerson(id="self", relationship="self")]),
+        cards(),
+    )
+    assert state.message == "How old are you?"
