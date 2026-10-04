@@ -100,6 +100,11 @@ class ProposedChanges(Closed):
     explain_terms: bool = False
     # Asks to see the plans now instead of answering more narrowing questions.
     show_plans: bool = False
+    # Asks the assistant to pick a plan; set by code from the customer's words.
+    suggest: bool = False
+    # Asks for printed premiums across the open plans (e.g. the 3 lowest).
+    compare_prices: bool = False
+    compare_count: int | None = Field(default=None, ge=1, le=20)
     policy_question: str | None = None
     selected_plans: list[str] = Field(default_factory=list, max_length=5)
     restored_plans: list[str] = Field(default_factory=list, max_length=5)
@@ -133,6 +138,12 @@ class ChatState(Closed):
     plans_requested: bool = False
     plans_listed: bool = False
     list_queue: list[str] = Field(default_factory=list)
+    # The customer asked to pick one plan; the list says no single plan is chosen.
+    suggestion_asked: bool = False
+    # Printed-premium comparison across open plans, lowest first; never a ranking of fit.
+    compare_requested: bool = False
+    compare_count: int | None = None
+    price_comparison: dict | None = None
     insurer_filter: str | None = None
     question_count: int = 0
     stop_reason: str | None = None

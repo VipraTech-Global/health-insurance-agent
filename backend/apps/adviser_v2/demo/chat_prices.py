@@ -1,13 +1,10 @@
 """Exact printed price axes are collected one at a time through chat."""
 
-import json
 import re
-from pathlib import Path
-
-from django.conf import settings
 
 from .charts import load_prices
 from .conversation import question
+from .price_compare import load_chart
 from .pricing import lookup
 
 
@@ -16,23 +13,10 @@ def price_step(state, cards):
     if not card:
         state.price_plan = None
         return
-    root = Path(settings.COVERGUIDE_REPORT_ROOT) / "ten-insurer"
-    path = (
-        Path(card["pricing_artifact"])
-        if card.get("pricing_artifact")
-        else root / "premiums" / (card["index_version"] + ".json")
-    )
-    if not path.exists():
+    chart = load_chart(card)
+    if chart is None:
         state.price = {"status": "source_unavailable", "amount_printed": None, "citations": []}
         return
-    chart = json.loads(path.read_text())
-    if chart["index_id"] != card["index_version"]:
-        raise ValueError("Price source differs from the pinned index.")
-    if card.get("pricing_sha256"):
-        import hashlib
-
-        if hashlib.sha256(path.read_bytes()).hexdigest() != card["pricing_sha256"]:
-            raise ValueError("Pinned pricing artifact changed.")
     prices, cells = load_prices(chart)
     options = {a: sorted({p.axes[a] for p in prices}) for a in chart["required_axes"]}
     state.price_axes = {

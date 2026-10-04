@@ -16,6 +16,7 @@ from .conversation_contracts import (
     QuestionIntent,
     Requirement,
 )
+from .price_compare import compare
 from .relay import InvalidOutput, Relay, RelayUnavailable
 from .typed_matching import eligible_rules
 
@@ -115,6 +116,31 @@ SHOW_PLANS = re.compile(
     r"\blist (?:the |all )?plans\b",
     re.I,
 )
+# A request for printed premiums across the open plans, not one named plan.
+PRICE_ASK = re.compile(
+    r"\b(?:premiums?|prices?|pricing|priced|costs?|cheap(?:er|est)?|lowest|least expensive|"
+    r"affordable|how much)\b",
+    re.I,
+)
+COUNT_WORDS = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "ten": 10}
+PRICE_COUNT = re.compile(
+    r"\b(\d{1,2}|one|two|three|four|five|six|ten)\s+(?:\w+\s+){0,2}?(?:plans?|options?|policies)\b",
+    re.I,
+)
+# Asks the assistant to choose a plan for them.
+SUGGEST = re.compile(r"\b(?:suggest|recommend|pick|choose)\b|\bwhich (?:one|plan) should\b", re.I)
+DETAIL_FIELDS = {"people", "city", "sum_insured", "annual_budget", "coverage_basis"}
+
+
+def price_count(text):
+    match = PRICE_COUNT.search(text)
+    if not match:
+        return None
+    word = match[1].casefold()
+    value = int(word) if word.isdigit() else COUNT_WORDS[word]
+    return value if 1 <= value <= 20 else None
+
+
 # Benefit words that make a reply more than a bare request (left to interpretation).
 NEED_WORDS = re.compile(
     r"maternity|newborn|opd|outpatient|room|co.?pay|waiting|restoration|deductible|bonus|ayush|"
@@ -247,7 +273,7 @@ def interpret(text, state, cards, relay=None):
             return ProposedChanges(skip=True), None
     if (
         state.pending
-        and state.pending.field in {"annual_budget", "sum_insured"}
+        and state.pending.field in {"annual_budget", "sum_insured", "price_sum_insured"}
         and BUDGET_UNSURE.search(text)
         and not AMOUNT.search(text)
     ):
@@ -257,6 +283,22 @@ def interpret(text, state, cards, relay=None):
         for c in cards
         for word in (c["insurer"].casefold(), c["name"].casefold())
     )
+    price_ask = (
+        PRICE_ASK.search(text)
+        and not named_plan
+        and not NEED_WORDS.search(text)
+        and not (
+            state.pending
+            and (
+                state.pending.field in DETAIL_FIELDS
+                or state.pending.field.startswith("age:")
+                or state.pending.template == "price_axis"
+            )
+        )
+    )
+    if state.pending and price_ask:
+        # Cross-plan premium asks never become a requirement or a re-ask.
+        return ProposedChanges(compare_prices=True, compare_count=price_count(text)), None
     if (
         state.pending
         and state.pending.template in {"needs", "narrow", "strength"}
@@ -276,6 +318,7 @@ def interpret(text, state, cards, relay=None):
         declined = bool(re.match(r"\s*no\b", text, re.I)) and state.pending is not None
         return ProposedChanges(
             show_plans=True,
+            suggest=bool(SUGGEST.search(text)),
             affirmative=False
             if declined and state.pending.template in {"narrow", "strength", "health_details"}
             else None,
@@ -327,6 +370,17 @@ def interpret(text, state, cards, relay=None):
     changes = ProposedChanges.model_validate(result.value)
     if state.stage in {"requirements", "narrowing"} and SHOW_PLANS.search(text):
         changes.show_plans = True
+    changes.suggest = changes.show_plans and bool(SUGGEST.search(text))
+    if price_ask and not changes.price_plan:
+        changes.compare_prices = True
+    if changes.compare_prices:
+        changes.compare_count = changes.compare_count or price_count(text)
+        changes.policy_question = None
+        changes.requirements = [
+            r for r in changes.requirements if not PRICE_ASK.search(r.original_text)
+        ]
+    else:
+        changes.compare_count = None
     if changes.explain_terms:
         # Explaining terms answers nothing and skips nothing.
         changes.policy_question = None
@@ -713,6 +767,12 @@ def merge(state, changes):
     if changes.show_plans:
         state.plans_requested = True
         state.list_queue = []
+        state.suggestion_asked = changes.suggest
+    if changes.compare_prices:
+        state.compare_requested = True
+        state.compare_count = changes.compare_count
+        # A fresh ask may supply the sum insured that an earlier one lacked.
+        state.skipped = [f for f in state.skipped if f != "price_sum_insured"]
     state.restored_plans = list(dict.fromkeys([*state.restored_plans, *changes.restored_plans]))
     if changes.insurer_filter is not None:
         state.insurer_filter = changes.insurer_filter or None
@@ -813,7 +873,11 @@ def list_plans(state, cards, ask):
     if not queue:
         queue = ordered
         fits = len(confirmed & set(ordered))
-        prefix = (
+        if state.suggestion_asked:
+            # The assistant never picks a plan; the documents can only show fit.
+            prefix = "I don’t pick a single plan for you. "
+            state.suggestion_asked = False
+        prefix += (
             f"Here {'is' if len(ordered) == 1 else 'are'} the {plural(len(ordered), 'plan')} "
             "open to you, in A–Z order; this is not a ranking. "
             + (
@@ -930,6 +994,24 @@ def next_question(state, cards, *, relay=None, ambiguity=None):
     if "options_shown" not in state.answered:
         state.answered.append("options_shown")
         note = " ".join(x for x in (note, options_summary(state, cards)) if x)
+    if state.compare_requested:
+        if p.sum_insured is None and "price_sum_insured" not in done:
+            bounds = sum_insured_bounds(cards)
+            return ask(
+                "sum_insured",
+                "price_sum_insured",
+                prefix="Printed premiums depend on the sum insured"
+                + (f"; the plans print choices from {bounds}." if bounds else "."),
+            )
+        state.compare_requested = False
+        if p.sum_insured is None:
+            state.price_comparison = None
+            text = "I need a sum insured to look up printed premiums, so I haven’t compared them. Ask again with an amount whenever you like."
+        else:
+            state.price_comparison, text = compare(state, cards, state.compare_count)
+        note = " ".join(x for x in (note, text) if x)
+        if state.list_queue:
+            return ask("batch")
     if state.plans_requested:
         return list_plans(state, cards, ask)
     if not p.requirements and "needs" not in done:
@@ -1067,6 +1149,7 @@ def transition(state, changes, cards, *, relay=None):
         and not changes.policy_question
         and not changes.explain_terms
         and not changes.next_batch
+        and not changes.compare_prices
     ):
         # Nothing was understood: never repeat the same words; add an example.
         template = REASK.get(asked.template, "{q} You can also say “skip”.")
@@ -1088,8 +1171,8 @@ def rupees(amount):
     return f"₹{amount / 100_000:g} lakh"
 
 
-def sum_insured_range(cards):
-    """The printed sum-insured choices across the catalogue; never a recommendation."""
+def sum_insured_bounds(cards):
+    """The lowest and highest printed sum-insured choices, as text."""
     choices = [
         n
         for card in cards
@@ -1098,9 +1181,15 @@ def sum_insured_range(cards):
         # Under ₹1 lakh is a mis-read figure, not a base sum insured choice.
         if isinstance(n, int | float) and n >= 100_000
     ]
-    if not choices:
+    return f"{rupees(min(choices))} to {rupees(max(choices))}" if choices else ""
+
+
+def sum_insured_range(cards):
+    """The printed sum-insured choices across the catalogue; never a recommendation."""
+    bounds = sum_insured_bounds(cards)
+    if not bounds:
         return ""
     return (
-        f"The plans print sum insured choices from {rupees(min(choices))} to "
-        f"{rupees(max(choices))}. I haven’t applied a sum insured limit; the plan list shows each plan’s choices."
+        f"The plans print sum insured choices from {bounds}. I haven’t applied a sum insured "
+        "limit; the plan list shows each plan’s choices."
     )
