@@ -1,13 +1,13 @@
 """Source-only product, variant and optional-cover gates for displayed answers."""
 
 import re
+import unicodedata
 from bisect import bisect_right
 from collections import OrderedDict
 from threading import RLock
 
-from .assembly import EvidenceInsufficient, PacketLabels, document_source
+from .assembly import EvidenceInsufficient, PacketLabels, document_source, locate_passage
 from .evidence import Section
-from .quotations import locate
 
 SCOPE_VERSION = "original-scope/1"
 OPTIONAL = re.compile(
@@ -17,20 +17,20 @@ OPTIONAL = re.compile(
 TOPICS = {
     "icu": r"\bICU\b|intensive care",
     "day_care": r"day[ -]?care",
-    "road_ambulance": r"road ambulance",
-    "pre_post": r"pre[ -]?(?:and post[ -]?)?hospitali[sz]ation|post[ -]?hospitali[sz]ation",
-    "organ_donor": r"organ donor|donor expenses",
-    "home_care": r"domiciliary|home[ -]?care",
+    "road_ambulance": r"road ambulance|(?<!air )(?<!air-)\bambulance",
+    "pre_post": r"pre\s*-?\s*(?:and post\s*-?\s*)?hospitali[sz]ation|post\s*-?\s*hospitali[sz]ation",
+    "organ_donor": r"organ donor|donor expenses|organ transplant",
+    "home_care": r"domiciliary|home[ -]?(?:health[ -]?)?care|treatment at home",
     "ped": r"pre[ -]?existing|\bPED\b|Excl\s*0?1\b",
-    "specified_waiting": r"specified (?:disease|illness)|specific (?:disease|illness)|Excl\s*0?2\b",
+    "specified_waiting": r"specifi(?:ed|c) (?:disease|illness|waiting)|Excl\s*0?2\b",
     "deductible": r"deductible",
     "copay": r"co[ -]?pay(?:ment)?",
-    "room": r"room|boarding",
+    "room": r"room|boarding|accommodation",
     "maternity": r"maternity|delivery|deliveries|childbirth",
     "newborn": r"new[ -]?born",
-    "opd": r"out[ -]?patient|\bOPD\b",
-    "restoration": r"restor|recharg|reload|reinstate",
-    "bonus": r"bonus|no[ -]?claim",
+    "opd": r"out[ -]?patient|\bOPD\b|consultation",
+    "restoration": r"restor|recharg|reload|reinstate|\breset\b",
+    "bonus": r"bonus|no[ -]?claim|booster|super credit|carr(?:y|ies) forward",
     "ayush": r"AYUSH|Ayurveda|Unani|Siddha|Homeopath",
     "air_ambulance": r"air ambulance",
     "health_check": r"health[ -]?check|check[ -]?up",
@@ -49,6 +49,11 @@ def canon(value):
 
 def named(text, name):
     return bool(re.search(r"(?<!\w)" + re.escape(canon(name)) + r"(?![\w+])", canon(text)))
+
+
+def plain(text):
+    """Topic matching reads PDF ligatures as plain text."""
+    return unicodedata.normalize("NFKC", text)
 
 
 def question_topic(question):
@@ -139,7 +144,9 @@ class ScopeIndex:
                     if c["column"] > 0
                     and c["row"] == 0
                     and not re.search(
-                        r"\d|%|insured|waiting|period|benefit|section|plan[s]?\b|coverage|limit",
+                        r"\d|%|insured|waiting|period|benefit|section|plan[s]?\b|coverage|limit"
+                        r"|\btitle\b|clause|description|particulars|optional|covers?\b|features?"
+                        r"|\bper\b|check[ -]?up|\bs\.?\s*no\b|\bsr\b|\bname\b|options?\b",
                         c["text"],
                         re.I,
                     )
@@ -169,10 +176,9 @@ class ScopeIndex:
         }
 
     def context(self, section, segment, quote, occurrence=0):
-        a, b = locate(segment.text, quote, occurrence)
-        start = segment.document_start + a
         key = (section.document_id, section.document_sha256)
         raw = self.documents[key]
+        start, end = locate_passage(section, segment, quote, occurrence, raw)
         before = raw[max(0, start - 12000) : start]
         # An enclosing numbered optional section continues through its children,
         # and ends at the next sibling or higher-level numbered heading.
@@ -206,7 +212,7 @@ class ScopeIndex:
             optional = True
             scope_quotes.append(heading[0])
             break
-        local = segment.text[a:b]
+        local = raw[start:end]
         # Merely mentioning an optional exception in a base exclusion does not
         # convert the exclusion to an optional benefit.
         if optional_cover(local):
@@ -217,14 +223,23 @@ class ScopeIndex:
             re.I,
         )
         names = {v for v in self.names if any(named(t, v) for t in applicable)}
-        owners = [m for m in prior if any(canon(m["title"]) == canon(v) for v in self.names)]
+        owners = [
+            m
+            for m in prior
+            if any(canon(m["title"]) == canon(v) for v in self.names)
+            and not table_cell_line(raw, m)
+        ]
         if owners:
             owner = owners[-1]
-            if not owner["number"] or not any(
-                m["number"] and closes_scope(owner["number"], m["number"])
-                for m in prior
-                if m.start() > owner.start()
-            ):
+            later = [m for m in prior if m.start() > owner.start() and m["number"]]
+            # An unnumbered variant title owns only the text before the next
+            # numbered clause; a numbered one, until a sibling or parent clause.
+            closed = (
+                any(closes_scope(owner["number"], m["number"]) for m in later)
+                if owner["number"]
+                else bool(later)
+            )
+            if not closed:
                 names = {v for v in self.names if canon(owner["title"]) == canon(v)}
         product_owners = [
             m
@@ -270,7 +285,7 @@ class ScopeIndex:
             if ref in unit.benefit:
                 main.append(ref.quote)
             contexts.append(self.context(section, segment, ref.quote, ref.occurrence))
-        raw = " ".join(main)
+        raw = plain(" ".join(main))
         if (
             re.search(r"\bmeans\b|\brefers to\b", raw, re.I)
             and not re.search(
@@ -345,7 +360,7 @@ class ScopeIndex:
                 ]
                 value = table["cells"].get(support.value_cell_id)
                 matrix = self.matrices.get(table["id"])
-                axis_text = " ".join(c["text"] for c in axes)
+                axis_text = plain(" ".join(c["text"] for c in axes))
                 if topics and not any(re.search(TOPICS[k], axis_text, re.I) for k in topics):
                     raise ScopeViolation(
                         "Table axes do not identify the requested benefit or field."
@@ -427,6 +442,17 @@ class ScopedLabels(PacketLabels):
         for t in result["tables"]:
             t["scope"] = self.scope.table_scope(self.tables[t["label"]])
         return result
+
+
+def table_cell_line(raw, match):
+    """A short line between other short lines is a flattened table cell, such
+    as a variant column header, not a section title that owns later text."""
+    before = raw[: match.start()].rstrip().rsplit("\n", 1)[-1].strip()
+    after = raw[match.end() :].lstrip().split("\n", 1)[0].strip()
+    return any(
+        0 < len(line.split()) <= 2 or (len(line.split()) == 3 and not line.endswith("."))
+        for line in (before, after)
+    )
 
 
 def closes_scope(root, other):

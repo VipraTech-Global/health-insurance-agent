@@ -372,3 +372,59 @@ def test_optional_package_qualification_governs_named_children_across_pages(head
         scoped(b, p, scope, "OPD is covered.", "optional, extra premium")[0].coverage_scope
         == "optional, extra premium"
     )
+
+
+@pytest.mark.parametrize(
+    ("raw", "question"),
+    [
+        (
+            "Reset Benefit: 100% of the sum insured is reinstated once a year.",
+            "What restoration benefit applies?",
+        ),
+        ("Home Health Care is covered up to sum insured.", "Is home care treatment covered?"),
+        ("Ambulance charges are covered up to Rs. 2,000.", "Is road ambulance covered?"),
+        (
+            "Pre - hospitalization expenses for 60 days.",
+            "What pre and post hospitalisation cover applies?",
+        ),
+        (
+            "Booster benefit carries forward 100% of unutilised sum insured.",
+            "What no claim bonus applies?",
+        ),
+    ],
+)
+def test_insurer_names_for_common_fields_identify_the_requested_field(raw, question):
+    b, p, s = fixture(raw)
+    assert scoped(b, p, s, raw, question=question)[0].coverage_scope == "base"
+
+
+def test_variant_names_in_table_cells_do_not_own_following_prose():
+    b, p, s = fixture(
+        "Room Rent\nSilver\nSingle room\nTreatment\nRoom expenses are covered for all insured persons."
+    )
+    answer, _ = scoped(
+        b,
+        p,
+        s,
+        "Room expenses are covered for all insured persons.",
+        question="What room cover applies?",
+    )
+    assert answer.coverage_scope == "base"
+
+
+def test_column_headings_are_not_variant_names():
+    b, _, s = fixture(
+        "Benefits.",
+        tables=[
+            {
+                "id": "t",
+                "cells": {
+                    "1": {"text": "TITLE", "row": 0, "column": 0},
+                    "2": {"text": "Gold", "row": 0, "column": 1},
+                    "3": {"text": "Silver", "row": 0, "column": 2},
+                    "4": {"text": "Policy Clause Number", "row": 0, "column": 3},
+                },
+            }
+        ],
+    )
+    assert not {"TITLE", "Policy Clause Number"} & set(s.names)

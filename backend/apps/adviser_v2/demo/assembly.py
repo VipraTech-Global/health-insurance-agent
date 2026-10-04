@@ -6,7 +6,7 @@ from dataclasses import replace
 from .answer_clauses import clause_bounds, without_boilerplate
 from .contracts import Citation, Statement, SupportedText, TableSupport
 from .evidence import Packet, Section, pack_sections, reference_covered
-from .quotations import locate, normalized
+from .quotations import QuoteMismatch, locate, normalized
 from .text import token_count
 
 DRAFT_VERSION = "scoped-packet-labels/3"
@@ -92,6 +92,55 @@ def document_source(section, all_sections):
     return text
 
 
+def locate_passage(section, segment, quote, occurrence, source):
+    """Document offsets for a passage quote.
+
+    A printed sentence may continue across a page break. Only when the quote is
+    not inside the labelled page itself, accept its unique continuation into
+    the adjacent pages of the same original document, overlapping that page.
+    """
+    try:
+        a, b = locate(segment.text, quote, occurrence)
+        return segment.document_start + a, segment.document_start + b
+    except QuoteMismatch:
+        if occurrence:
+            raise
+    lo = max(0, segment.document_start - 1500)
+    window = source[lo : segment.document_end + 1500]
+    found = []
+    n = 0
+    while True:
+        try:
+            a, b = locate(window, quote, n)
+        except QuoteMismatch:
+            break
+        if lo + a < segment.document_end and lo + b > segment.document_start:
+            found.append((lo + a, lo + b))
+        n += 1
+    if len(found) != 1:
+        raise QuoteMismatch("Quotation does not match original wording and punctuation.")
+    return found[0]
+
+
+def table_key(ref_label, mapping, region, *, row=None, column=None):
+    """Resolve a packet cell alias, or the exact printed text of one cell."""
+    if ref_label in mapping:
+        return ref_label
+    wanted = " ".join(normalized(ref_label)[0].split()).casefold()
+    if not wanted:
+        raise UnknownLabel("Unknown packet table/cell label.")
+    matches = [
+        alias
+        for alias, key in mapping.items()
+        if normalized(region["cells"][key].get("text", ""))[0].casefold() == wanted
+        and (row is None or region["cells"][key]["row"] == row)
+        and (column is None or region["cells"][key]["column"] == column)
+    ]
+    if len(matches) != 1:
+        raise UnknownLabel("Unknown packet table/cell label.")
+    return matches[0]
+
+
 def assemble(unit, labels: PacketLabels, packet: Packet, all_sections: list[Section]):
     required = []
     contexts = []
@@ -100,13 +149,12 @@ def assemble(unit, labels: PacketLabels, packet: Packet, all_sections: list[Sect
         if ref.passage not in labels.passages:
             raise UnknownLabel("Unknown packet passage label: " + ref.passage)
         section, segment = labels.passages[ref.passage]
-        a, b = locate(segment.text, ref.quote, ref.occurrence)
-        left, right = segment.document_start + a, segment.document_start + b
+        key = (section.plan_id, section.document_id, section.document_sha256)
+        if key not in labels.documents:
+            labels.documents[key] = document_source(section, all_sections)
+        source = labels.documents[key]
+        left, right = locate_passage(section, segment, ref.quote, ref.occurrence, source)
         if complete:
-            key = (section.plan_id, section.document_id, section.document_sha256)
-            if key not in labels.documents:
-                labels.documents[key] = document_source(section, all_sections)
-            source = labels.documents[key]
             left, right = clause_bounds(source, left, right)
         citations = []
         cursor = left
@@ -163,9 +211,24 @@ def assemble(unit, labels: PacketLabels, packet: Packet, all_sections: list[Sect
         ref = unit.table
         region = labels.tables.get(ref.table)
         mapping = labels.cells.get(ref.table, {})
-        keys = [ref.value, *ref.rows, *ref.columns]
-        if region is None or any(key not in mapping for key in keys):
+        if region is None:
             raise UnknownLabel("Unknown packet table/cell label.")
+        # Models sometimes return a cell's printed text instead of its alias.
+        # Accept only an exact, unique printed cell; the value must then sit at
+        # the intersection of the resolved row and column labels.
+        rows = [table_key(k, mapping, region) for k in ref.rows]
+        columns = [table_key(k, mapping, region) for k in ref.columns]
+        if ref.value in mapping:
+            value = ref.value
+        else:
+            value = table_key(
+                ref.value,
+                mapping,
+                region,
+                row=region["cells"][mapping[rows[0]]]["row"],
+                column=region["cells"][mapping[columns[0]]]["column"],
+            )
+        ref = ref.model_copy(update={"value": value, "rows": rows, "columns": columns})
         table = TableSupport(
             region_id=region["id"],
             value_cell_id=mapping[ref.value],

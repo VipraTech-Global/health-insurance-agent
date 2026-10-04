@@ -225,3 +225,46 @@ def test_enumeration_end_optimization_matches_original_regex():
     )
     for text in examples:
         assert enumeration_end(text, len(text)) == bool(re.search(r"(?:\b[A-Z]|\b\d+)\.$", text))
+
+
+def test_pdf_ligatures_and_private_use_bullets_match_plain_quotes():
+    text = " Speciﬁc illness waiting period is 24 months."
+    a, b = locate(text, "Specific illness waiting period is 24 months.")
+    assert text[a:b] == text[2:]
+    with pytest.raises(QuoteMismatch):
+        locate(text, "Specific illness waiting period is 12 months.")
+
+
+def test_quote_continuing_across_a_page_break_resolves_to_original_offsets():
+    from apps.adviser_v2.demo.assembly import locate_passage
+
+    first = source("Room expenses are covered subject to")
+    second = source(
+        " a maximum of Rs. 5,000 per day.", page="p2", start=len(first.text) + 1, identity="s2"
+    )
+    text = first.text + "\n" + second.segments[0].text
+    quote = "covered subject to a maximum of Rs. 5,000 per day."
+    a, b = locate_passage(first, first.segments[0], quote, 0, text)
+    assert text[a:b].startswith("covered") and text[a:b].endswith("per day.")
+    with pytest.raises(QuoteMismatch):
+        locate_passage(first, first.segments[0], "a maximum of Rs. 9,000 per day.", 0, text)
+
+
+def test_table_cell_may_be_named_by_its_unique_printed_text():
+    from apps.adviser_v2.demo.assembly import table_key
+
+    region = {
+        "cells": {
+            "a": {"text": "Room rent", "row": 1, "column": 0},
+            "b": {"text": "Gold", "row": 0, "column": 1},
+            "c": {"text": "Single private room", "row": 1, "column": 1},
+            "d": {"text": "Gold", "row": 2, "column": 0},
+        }
+    }
+    mapping = {"C1": "a", "C2": "b", "C3": "c", "C4": "d"}
+    assert table_key("C3", mapping, region) == "C3"
+    assert table_key("single  private room", mapping, region) == "C3"
+    assert table_key("Gold", mapping, region, row=0) == "C2"
+    for ambiguous_or_absent in ["Gold", "Shared room"]:
+        with pytest.raises(UnknownLabel):
+            table_key(ambiguous_or_absent, mapping, region)
