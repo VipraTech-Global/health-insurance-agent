@@ -51,6 +51,26 @@ PROFILES = {
         },
         "strength": {},
     },
+    # A pasted demo chat: asked to suggest one, then for the lowest annual
+    # premiums across plans while the A–Z list was open.
+    "F": {
+        "script": {
+            "people": ["just me"],
+            "age": ["35"],
+            "city": ["kota, rajasthan"],
+            "sum_insured": ["what are the options for sum insured available?", "10 lakh"],
+            "annual_budget": ["i am not sure about the budget"],
+            "needs": ["nothing for now, can you suggest one to me"],
+            "batch": [
+                "provide 3 plans which are lowest budget annual",
+                "tell me the annual budget premium of each plan",
+                "next five",
+                "next five",
+                "next five",
+            ],
+        },
+        "strength": {},
+    },
 }
 
 
@@ -91,6 +111,7 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument("--run-id", required=True)
         parser.add_argument("--release-id")
+        parser.add_argument("--profile", action="append", choices=sorted(PROFILES))
 
     def handle(self, **options):
         if settings.DATABASES["default"]["NAME"] != "coverguide_star_slice":
@@ -114,6 +135,8 @@ class Command(BaseCommand):
         )
         results = []
         for name, spec in PROFILES.items():
+            if options["profile"] and name not in options["profile"]:
+                continue
             started = time.monotonic()
             data = start(user, release_id=release.id)
             turns = []
