@@ -96,6 +96,10 @@ class ProposedChanges(Closed):
     no_more_needs: bool = False
     narrow_first: bool = False
     next_batch: bool = False
+    # Asks what the listed benefit terms mean; not a question about any plan.
+    explain_terms: bool = False
+    # Asks to see the plans now instead of answering more narrowing questions.
+    show_plans: bool = False
     policy_question: str | None = None
     selected_plans: list[str] = Field(default_factory=list, max_length=5)
     restored_plans: list[str] = Field(default_factory=list, max_length=5)
@@ -125,6 +129,10 @@ class ChatState(Closed):
     # Code-chosen alphabetical groups of five when documents cannot narrow further.
     batch_question: str | None = None
     batch_queue: list[str] = Field(default_factory=list)
+    # Remaining plans listed on request, A–Z in groups of five; no ranking.
+    plans_requested: bool = False
+    plans_listed: bool = False
+    list_queue: list[str] = Field(default_factory=list)
     insurer_filter: str | None = None
     question_count: int = 0
     stop_reason: str | None = None

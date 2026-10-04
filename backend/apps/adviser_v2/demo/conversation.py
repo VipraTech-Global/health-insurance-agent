@@ -17,6 +17,7 @@ from .conversation_contracts import (
     Requirement,
 )
 from .relay import InvalidOutput, Relay, RelayUnavailable
+from .typed_matching import eligible_rules
 
 LABELS = {
     "maternity": "maternity cover",
@@ -86,6 +87,8 @@ INTERPRET_PROMPT = (
     "If the customer chooses narrowing before answering a pending policy question, set narrow_first=true. "
     "If the customer is unsure about the detail being asked, or asks what options are available, set skip=true; that is not a policy_question. "
     "policy_question is only a question about a policy's terms, benefits or limits. "
+    "If the customer asks what the listed benefit terms mean in general, set explain_terms=true; that is not a policy_question. "
+    "If the customer asks to see, suggest or list plans now, set show_plans=true. "
     "No preference is not medical_indemnity: use no_preference=true. Do not infer a type. Explicit skip is skip=true. "
     "An explicit request to skip optional health details uses skip_health_details=true, even before that question is asked; it does not skip the current family question. "
     "Only an explicit request to remove someone from cover sets removed_people to existing person IDs. "
@@ -97,13 +100,48 @@ INTERPRET_PROMPT = (
 )
 
 
-# The customer does not know the asked budget and gives no amount: move on.
+# The customer does not know the asked budget or sum insured, or asks what is
+# available, and gives no amount: move on.
 BUDGET_UNSURE = re.compile(
     r"don.?t know|do not know|not sure|unsure|no idea|no (?:fixed )?budget|any budget|"
-    r"haven.?t decided|what (?:can|could|would) i get|options|show (?:me )?(?:the )?plans|"
-    r"you (?:tell|suggest)|depends",
+    r"haven.?t decided|what (?:can|could|would) i get|options?\b|available|"
+    r"show (?:me )?(?:the )?plans|you (?:tell|suggest)|depends",
     re.I,
 )
+# A request to see plans now rather than answer more narrowing questions.
+SHOW_PLANS = re.compile(
+    r"\b(?:suggest|recommend)\b.*\b(?:plans?|options?|policy|policies)\b|"
+    r"\bshow (?:me )?(?:the |all |my )?(?:plans|options)\b|\bplans? now\b|"
+    r"\blist (?:the |all )?plans\b",
+    re.I,
+)
+# Benefit words that make a reply more than a bare request (left to interpretation).
+NEED_WORDS = re.compile(
+    r"maternity|newborn|opd|outpatient|room|co.?pay|waiting|restoration|deductible|bonus|ayush|"
+    r"pre.?existing|cover(?:s|ing)? for",
+    re.I,
+)
+# A request to explain the benefit terms just listed, not a question about a plan.
+EXPLAIN = re.compile(
+    r"\bwhat (?:do|does) (?:these|this|those|they|that|it|the terms?)\b.*\bmean|"
+    r"\bexplain\b|\bmeaning\b",
+    re.I,
+)
+# General meanings only; each plan's own quoted terms decide the details.
+GLOSSARY = {
+    "maternity": "Maternity cover pays hospital costs of childbirth, normal or caesarean, usually after a waiting period and up to a limit.",
+    "newborn": "Newborn cover pays for the baby's treatment from birth for a stated period.",
+    "opd": "Outpatient (OPD) cover pays for doctor visits, tests or medicines without a hospital admission.",
+    "room_limit": "A room rent limit caps the room category or daily room charge the plan pays; some plans reduce other charges if you choose a costlier room.",
+    "copay": "A co-pay is the percentage of each claim you pay yourself.",
+    "ped_waiting": "The pre-existing disease waiting period is how long you wait before illnesses you already have are covered.",
+    "specified_waiting": "The specified-disease waiting period is how long you wait before listed illnesses or surgeries, such as cataract or hernia, are covered.",
+    "deductible": "A deductible is an amount you pay before the plan starts paying.",
+    "restoration": "Restoration refills your sum insured within the year after claims use it up.",
+    "no_claim_bonus": "A no-claim bonus increases your cover for each claim-free year.",
+    "ayush": "AYUSH treatment is Ayurveda, Yoga, Unani, Siddha or Homeopathy treatment in hospital.",
+}
+GLOSSARY_NOTE = "These are general meanings; each plan’s quoted terms decide its details."
 # A first-person-only answer to "who should this cover" means the customer alone.
 SELF_ONLY = re.compile(r"\b(?:i|me|myself|my ?self|mine)\b", re.I)
 OTHER_PEOPLE = re.compile(
@@ -120,7 +158,19 @@ UNSURE = re.compile(
     r"\b(?:not sure|unsure|don.?t know|do not know|no idea|either|any|whichever)\b", re.I
 )
 # A city answer that is not in India despite the question.
-OUTSIDE_INDIA = re.compile(r"\b(?:abroad|outside india|overseas|nri)\b|,\s*(?!india\b)[a-z]", re.I)
+# A place after a comma that is not India or an Indian state/UT is treated as abroad.
+INDIAN_REGIONS = (
+    r"india|andhra pradesh|arunachal pradesh|assam|bihar|chhattisgarh|goa|gujarat|haryana|"
+    r"himachal pradesh|jharkhand|karnataka|kerala|madhya pradesh|maharashtra|manipur|"
+    r"meghalaya|mizoram|nagaland|odisha|orissa|punjab|rajasthan|sikkim|tamil nadu|telangana|"
+    r"tripura|uttar pradesh|uttarakhand|west bengal|andaman and nicobar|chandigarh|"
+    r"dadra and nagar haveli|daman and diu|delhi|new delhi|jammu and kashmir|jammu|kashmir|"
+    r"ladakh|lakshadweep|puducherry|pondicherry"
+)
+OUTSIDE_INDIA = re.compile(
+    r"\b(?:abroad|outside india|overseas|nri)\b|,\s*(?!(?:" + INDIAN_REGIONS + r")\b)[a-z]",
+    re.I,
+)
 AMOUNT = re.compile(r"\d|lakh|lac|crore|thousand|hundred|\bk\b", re.I)
 GAP_LABELS = {
     "family": "who can be covered together",
@@ -176,7 +226,7 @@ def interpret(text, state, cards, relay=None):
         "more",
         "show more",
     }:
-        if state.batch_queue:
+        if state.batch_queue or state.list_queue:
             return ProposedChanges(next_batch=True), None
     if (
         state.pending
@@ -197,11 +247,39 @@ def interpret(text, state, cards, relay=None):
             return ProposedChanges(skip=True), None
     if (
         state.pending
-        and state.pending.field == "annual_budget"
+        and state.pending.field in {"annual_budget", "sum_insured"}
         and BUDGET_UNSURE.search(text)
         and not AMOUNT.search(text)
     ):
         return ProposedChanges(skip=True), None
+    named_plan = any(
+        word in text.casefold()
+        for c in cards
+        for word in (c["insurer"].casefold(), c["name"].casefold())
+    )
+    if (
+        state.pending
+        and state.pending.template in {"needs", "narrow", "strength"}
+        and EXPLAIN.search(text)
+        and not named_plan
+        and not NEED_WORDS.search(text)
+    ):
+        return ProposedChanges(explain_terms=True), None
+    if (
+        state.stage in {"requirements", "narrowing"}
+        and SHOW_PLANS.search(text)
+        and len(text.split()) <= 8
+        and not named_plan
+        and not NEED_WORDS.search(text)
+    ):
+        # A leading "no" still declines the pending narrowing/strength question.
+        declined = bool(re.match(r"\s*no\b", text, re.I)) and state.pending is not None
+        return ProposedChanges(
+            show_plans=True,
+            affirmative=False
+            if declined and state.pending.template in {"narrow", "strength", "health_details"}
+            else None,
+        ), None
     if (
         plain in {"yes", "yes, i need it", "yes i need it", "must-have", "must have"}
         and state.pending
@@ -247,6 +325,13 @@ def interpret(text, state, cards, relay=None):
         max_tokens=4096,
     )
     changes = ProposedChanges.model_validate(result.value)
+    if state.stage in {"requirements", "narrowing"} and SHOW_PLANS.search(text):
+        changes.show_plans = True
+    if changes.explain_terms:
+        # Explaining terms answers nothing and skips nothing.
+        changes.policy_question = None
+        changes.skip = changes.no_more_needs = False
+        changes.affirmative = None
     # A named future health skip is independent of the currently pending field.
     # Require explicit customer wording rather than relying on model inference.
     health_skip = re.search(
@@ -418,9 +503,16 @@ def question(
 def summary(profile):
     lines = []
     for p in profile.people:
+        relation = p.relationship.replace("_", " ")
+        label = (
+            "You"
+            if p.relationship == "self"
+            else relation.capitalize()
+            if p.id == p.relationship
+            else f"{relation.capitalize()} ({p.id})"
+        )
         lines.append(
-            f"{p.id}: {p.relationship}, "
-            + (f"{p.age} {p.age_unit}" if p.age is not None else "age not provided")
+            f"{label}: " + (f"{p.age} {p.age_unit}" if p.age is not None else "age not provided")
         )
     for field, label in [
         ("city", "City"),
@@ -488,6 +580,9 @@ def merge(state, changes):
         if value is None or ambiguous == field:
             continue
         old = getattr(facts, field)
+        if field == "city" and old and old.casefold().strip() == value.casefold().strip():
+            # An echo of the known city on a later turn must not reset residence.
+            continue
         if old not in (None, "unresolved") and old != value and not changes.correction:
             ambiguous = field
             continue
@@ -613,6 +708,11 @@ def merge(state, changes):
         state.policy_deferred = False
         state.selected_plans = state.batch_queue[:5]
         state.batch_queue = state.batch_queue[5:]
+    elif changes.next_batch and state.list_queue:
+        state.plans_requested = True
+    if changes.show_plans:
+        state.plans_requested = True
+        state.list_queue = []
     state.restored_plans = list(dict.fromkeys([*state.restored_plans, *changes.restored_plans]))
     if changes.insurer_filter is not None:
         state.insurer_filter = changes.insurer_filter or None
@@ -686,6 +786,61 @@ def options_summary(state, cards):
     else:
         text += " All of them are in the plan list, in A–Z order (not a ranking)."
     return text
+
+
+def list_plans(state, cards, ask):
+    """The remaining plans on request, A–Z in groups of five; never a ranking."""
+    state.plans_requested = False
+    state.plans_listed = True
+    remaining = remaining_ids(state.fit_groups)
+    confirmed = {r["plan_id"] for r in state.fit_groups["fits"]}
+    ordered = [
+        c["plan_id"]
+        for c in sorted(
+            cards,
+            key=lambda c: (c["insurer"].casefold(), c["name"].casefold(), c["variant"].casefold()),
+        )
+        if c["plan_id"] in remaining
+    ]
+    if not ordered:
+        state.list_queue = []
+        return ask(
+            "zero",
+            prefix="No plans remain. The live list shows the requirements and quotations responsible for exclusions.",
+        )
+    prefix = ""
+    queue = [i for i in state.list_queue if i in remaining]
+    if not queue:
+        queue = ordered
+        fits = len(confirmed & set(ordered))
+        prefix = (
+            f"Here {'is' if len(ordered) == 1 else 'are'} the {plural(len(ordered), 'plan')} "
+            "open to you, in A–Z order; this is not a ranking. "
+            + (
+                "None could be fully confirmed against every documented limit."
+                if not fits
+                else f"All {fits} match every documented limit I could check."
+                if fits == len(ordered)
+                else f"{fits} {'matches' if fits == 1 else 'match'} every documented limit I could check; the others couldn’t be fully confirmed."
+            )
+        )
+    group, state.list_queue = queue[:5], queue[5:]
+    start = len(ordered) - len(queue) + 1
+    by_id = {c["plan_id"]: c for c in cards}
+
+    def name(card):
+        label = card["name"]
+        if not label.casefold().startswith(card["insurer"].casefold()):
+            label = f"{card['insurer']} {label}"
+        if card["variant"] != "Default" and card["variant"] not in card["name"]:
+            label += f" ({card['variant']})"
+        return label
+
+    names = [name(by_id[i]) + ("" if i in confirmed else " — not fully confirmed") for i in group]
+    end = start + len(group) - 1
+    span = f"Plan {start}" if start == end else f"Plans {start}–{end}"
+    prefix += f" {span} of {len(ordered)}: " + "; ".join(names) + "."
+    return ask("batch" if state.list_queue else "batch_end", prefix=prefix.strip())
 
 
 def next_question(state, cards, *, relay=None, ambiguity=None):
@@ -775,6 +930,8 @@ def next_question(state, cards, *, relay=None, ambiguity=None):
     if "options_shown" not in state.answered:
         state.answered.append("options_shown")
         note = " ".join(x for x in (note, options_summary(state, cards)) if x)
+    if state.plans_requested:
+        return list_plans(state, cards, ask)
     if not p.requirements and "needs" not in done:
         return ask("needs")
     for need in p.requirements:
@@ -816,6 +973,9 @@ def next_question(state, cards, *, relay=None, ambiguity=None):
             "zero",
             prefix="No plans remain. The live list shows the requirements and quotations responsible for exclusions.",
         )
+    if state.plans_listed:
+        # The customer asked for the plans; stop asking narrowing questions.
+        return ask("exhausted")
     excluded = set(state.narrowing_asked) | {
         r.field for r in p.requirements if r.strength == "must_have"
     }
@@ -852,17 +1012,19 @@ def next_question(state, cards, *, relay=None, ambiguity=None):
             )
         return ask("exhausted", prefix="I can’t narrow these further from the policy documents.")
     state.stop_reason = None
+    of = f"{choice['count']} of the {choice['remaining']} remaining plans"
+    have, state_ = ("has", "states") if choice["count"] == 1 else ("have", "state")
     if choice["value"] == "covered":
-        prefix = f"{choice['count']} of the {choice['remaining']} remaining plans have supported cover for {LABELS[choice['field']]}."
+        prefix = f"{of} {have} documented {LABELS[choice['field']]}."
     elif choice["value"].startswith("room:"):
         category = choice["value"].split(":", 1)[1].replace("_", " ")
-        prefix = f"{choice['count']} of the {choice['remaining']} remaining plans have the documented room limit: {category}."
+        prefix = f"{of} {have} the documented room limit: {category}."
     elif choice["value"].startswith("bonus_at_least:"):
         amount = choice["value"].split(":")[1]
-        prefix = f"{choice['count']} of the {choice['remaining']} remaining plans state a no-claim bonus increase of at least {amount} percent, subject to their quoted caps and conditions."
+        prefix = f"{of} {state_} a no-claim bonus increase of at least {amount} percent, subject to their quoted caps and conditions."
     else:
         _, amount, unit = choice["value"].split(":")
-        prefix = f"{choice['count']} of the {choice['remaining']} remaining plans have {LABELS[choice['field']]} of at most {amount} {unit}."
+        prefix = f"{of} {have} {LABELS[choice['field']]} of at most {amount} {unit}."
     if choice.get("conditions"):
         prefix += " The quoted conditions still apply."
     if choice["known"] < choice["remaining"]:
@@ -903,9 +1065,42 @@ def transition(state, changes, cards, *, relay=None):
         == (previous.template, previous.field, previous.person_id)
         and before == previous_profile
         and not changes.policy_question
+        and not changes.explain_terms
+        and not changes.next_batch
     ):
         # Nothing was understood: never repeat the same words; add an example.
         template = REASK.get(asked.template, "{q} You can also say “skip”.")
         asked.text = template.format(q=asked.text)
         state.message = "I didn’t quite catch that. " + asked.text
+    if changes.explain_terms and previous:
+        terms = [previous.field] if previous.field in GLOSSARY else list(GLOSSARY)
+        state.message = " ".join([*(GLOSSARY[t] for t in terms), GLOSSARY_NOTE, state.message])
+    if previous and previous.field == "sum_insured" and changes.skip:
+        note = sum_insured_range(cards)
+        if note:
+            state.message = note + " " + state.message
     return state
+
+
+def rupees(amount):
+    if amount >= 10_000_000:
+        return f"₹{amount / 10_000_000:g} crore"
+    return f"₹{amount / 100_000:g} lakh"
+
+
+def sum_insured_range(cards):
+    """The printed sum-insured choices across the catalogue; never a recommendation."""
+    choices = [
+        n
+        for card in cards
+        for rule in eligible_rules(card, "sum_insured")
+        for n in rule.get("choices") or []
+        # Under ₹1 lakh is a mis-read figure, not a base sum insured choice.
+        if isinstance(n, int | float) and n >= 100_000
+    ]
+    if not choices:
+        return ""
+    return (
+        f"The plans print sum insured choices from {rupees(min(choices))} to "
+        f"{rupees(max(choices))}. I haven’t applied a sum insured limit; the plan list shows each plan’s choices."
+    )
