@@ -103,16 +103,18 @@ Answers passed code checks only and are not expert-verified. Answer coverage reg
 
 Graded independently by an agent reviewer against the source PDFs (not an insurance-expert review), per plan-answer (260 cases + 78 Star probes = 338):
 
-| Grade | Preserved final run | `section16-a-20261004-scope-final` |
-|---|---:|---:|
-| Answered | 256 | 233 |
-| Correct | 188 (73% of answered) | 199 (85%) |
-| Partial | 37 | 30 |
-| Wrong | 23 | 4 |
-| Irrelevant | 8 | 0 |
-| Not found although the documents answer it | 65 | 96 |
+| Grade | Preserved final run | `section16-a-20261004-scope-final` | `section16-a-20261004-scope-fix` |
+|---|---:|---:|---:|
+| Answered | 256 | 233 | 243 |
+| Correct | 188 (73% of answered) | 199 (85%) | 210 (86%) |
+| Partial | 37 | 30 | 29 |
+| Wrong | 23 | 4 | 3 |
+| Irrelevant | 8 | 0 | 1 |
+| Not found although the documents answer it | 65 | 96 | 86 |
 
 Scope labels removed most add-on and variant leakage. Remaining wrong answers: Star Comprehensive geography (Personal Accident "World Wide" scope instead of the India-only treatment clause), Tata deductible (adjacent CIS row amounts read as deductibles), Care health check (optional benefit unlabelled) and Manipal no-claim bonus (renewal discount instead of the in-built cumulative bonus). Stricter checks also rejected 52 previously correct answers; Activ One MAX returns no answers in this run.
+
+`scope-fix` (glyph, page-break and table-header folding; same agent method, changed answers regraded fresh): 31 more cases answered correctly or partially (21 previously missed now correct), 9 partial answers became complete, and the Manipal no-claim-bonus answer is no longer wrong. Regressions: 14 previously correct answers now not found, 4 correct answers became partial, Star Assure sum insured now quotes revision text only (irrelevant), and Activ One MAX air ambulance quotes the optional Global Cover (wrong). Care health check and Star Comprehensive geography remain wrong. One case was temporarily unavailable. Grades: `output/reference-cards/ANSWER-SHEET-GRADING-scope-fix.json` (local, not committed).
 
 [Decisions and progress record](decisions-log.md) · [ten-minute guided script](demo-script.md).
 

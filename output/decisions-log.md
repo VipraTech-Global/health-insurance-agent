@@ -355,3 +355,11 @@ Final browser delivery: conversation `618c4123-c746-43c5-b337-d88bc3defda5` comp
 The future health-skip fix was also verified live in separate synthetic conversation `3b8a02b0-8e73-4f74-a8e9-262aa9a17cb6`: one multi-detail reply retained all family details and moved directly to requirements at question 2, without asking health details (UI time 7.5 s). This does not replace or alter A–D acceptance profiles.
 
 Final checks: **710 pytest passed**, 21 existing warnings, **49.11 s**; repository-wide Ruff, Django check, makemigrations --check, validated OpenAPI generation, frontend lint/typecheck/build all pass. The final rebuilt stack was restarted through the one command and health-checked successfully. Frozen answer-sheet/global-JSON checksums and unchanged A–D source checksum match. Deliberately ignored files are only local task diagnostics, archived exports and earlier screenshots; reviewable reports, current cards and fresh screenshots are committed. About **12 GiB** remains free. No reference directory was read, no paid API used, and nothing pushed or externally published. Independent answer correctness and rehearsed-question placeholders remain unfilled.
+
+
+## Section 16 A — fresh application run section16-a-20261004-scope-fix
+
+Baseline: 140/260 answered; 23/65 table-heavy answered; 12/39 complete Star packets.
+
+Fresh measured results: `{"answer_cases": 260, "complete_reference_cells": 12, "final_not_found_reasons": {"all_units_rejected_after_second_h_packet": 72, "no_substantive_evidence_after_second_h_packet": 12}, "manifest": "/home/akhilesh/.local/state/coverguide-star-slice/reports/ten-insurer/application-acceptance/section16-a-20261004-scope-fix/manifest.json", "method": "H", "note": "Fresh application-service execution, not a rerun or adjustment of the frozen bake-off score.", "outcomes": {"full_answer": 122, "not_found": 84, "partial_answer": 53, "temporarily_unavailable": 1}, "reference_cells": 39, "rejection_reasons_overlapping": {"copying_error": 186, "incomplete_context_or_validation": 36, "scope_or_topic": 164}, "release_id": "921e3721-d584-4a59-a7e5-132eb25076a2", "run_id": "section16-a-20261004-scope-fix", "table_heavy": {"full_answer": 20, "not_found": 31, "partial_answer": 14}}`.
+Outcomes are mutually exclusive; rejection reasons overlap. Packet coverage is not displayed evidence or expert verification.
