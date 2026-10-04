@@ -450,3 +450,14 @@ def test_person_bounds_never_cross_bullets_or_following_child_sentence():
     assert len(rules) == 1 and rules[0]["relationship"] == "person"
     raw = "Children between ages of 91 days to 5 years can be insured only under a floater. Maximum age for dependent children is 30 years."
     assert not project("entry_age", [statement(raw)], "Default")
+
+
+def test_currency_prefix_before_an_abbreviated_crore_is_not_a_rupee_choice():
+    from apps.adviser_v2.demo.fact_projection import project
+
+    raw = "Sum Insured (SI)\nINR 5L, 7.5L, 10L, 75L,\nINR 1Cr, 2Cr, 5 Cr"
+    r = project("sum_insured", [statement(raw)], "Default")[0]
+    assert r["choices"] == [500000, 750000, 1000000, 7500000, 10000000, 20000000, 50000000]
+    raw = "Sum Insured Options: Rs.5,00,000/-, Rs.10,00,000/- and Rs.1,00,00,000/-"
+    r = project("sum_insured", [statement(raw)], "Default")[0]
+    assert r["choices"] == [500000, 1000000, 10000000]
