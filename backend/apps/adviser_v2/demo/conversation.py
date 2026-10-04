@@ -34,7 +34,8 @@ LABELS = {
 TEMPLATES = {
     "people": "Who should this cover — just you, or family too (spouse, children, parents)?",
     "age": "What is the age of {person}?",
-    "city": "Which city do you live in?",
+    "city": "Which city in India do you live in?",
+    "coverage_basis": "Should everyone share one cover amount (a family floater), or would you like separate cover for each person?",
     "sum_insured": "How much sum insured would you like?",
     "annual_budget": "What is your annual premium budget? If you’re not sure, say so and I’ll show you what’s open to you first.",
     "plan_type": "Do you have a preference for the kind of cover?",
@@ -60,6 +61,7 @@ REASK = {
     "people": "Who should the policy cover? For example “just me”, “me and my wife”, or “me, my wife and our 2 children”.",
     "age": "{q} Just the number of years is fine, for example “35”.",
     "city": "{q} For example “Pune” or “Kota”.",
+    "coverage_basis": "{q} For example “one shared cover”, “separate cover for each” or “not sure”.",
     "sum_insured": "How much cover would you like — for example 5 lakh, 10 lakh or 25 lakh? You can also say “not sure”.",
     "annual_budget": "{q} For example “25,000 a year”.",
     "plan_type": "{q} For example “hospital expenses cover”, “top-up” or “no preference”.",
@@ -72,6 +74,7 @@ INTERPRET_PROMPT = (
     "A first-person reply to who needs cover (I need it, me, myself) means one person with relationship self. Use people IDs already provided; "
     "new people need stable relationship-based IDs. Ages retain printed years/months/days. Amounts are rupees (1 lakh=100000). "
     "Distinguish product type from individual/floater basis, and purchase city from premium zone or treatment territory. "
+    "If the customer says they live outside India or names a place outside India, set outside_india=true. "
     "For an expressed benefit requirement such as maternity, newborn, OPD, restoration or AYUSH, use value=covered unless the customer supplies a specific supported limit. "
     "For explicit upper limits use requirement value at_most:N:unit (months, percent or rupees). No co-pay means at_most:0:percent; no deductible means at_most:0:rupees. A specific room category uses room:single_private, room:single_standard, room:twin_sharing, room:shared or room:suite. Never guess a threshold. "
     "Requirements use exactly these field IDs: maternity, newborn, opd, room_limit, copay, ped_waiting, specified_waiting, deductible, restoration, no_claim_bonus, ayush; use other for an unsupported need. "
@@ -108,6 +111,16 @@ OTHER_PEOPLE = re.compile(
     r"father|mom|mum|dad|family|in.?laws?|brother|sister|we|us|our|not|and)\b|\d",
     re.I,
 )
+# Answers to "one shared cover, or separate cover for each person?".
+FLOATER = re.compile(
+    r"\b(?:floater|share[ds]?|sharing|one|single|together|combined|common)\b", re.I
+)
+INDIVIDUAL = re.compile(r"\b(?:separate(?:ly)?|individual(?:ly)?|each|own)\b", re.I)
+UNSURE = re.compile(
+    r"\b(?:not sure|unsure|don.?t know|do not know|no idea|either|any|whichever)\b", re.I
+)
+# A city answer that is not in India despite the question.
+OUTSIDE_INDIA = re.compile(r"\b(?:abroad|outside india|overseas|nri)\b|,\s*(?!india\b)[a-z]", re.I)
 AMOUNT = re.compile(r"\d|lakh|lac|crore|thousand|hundred|\bk\b", re.I)
 GAP_LABELS = {
     "family": "who can be covered together",
@@ -176,6 +189,12 @@ def interpret(text, state, cards, relay=None):
     ):
         # Short, single-sentence replies only; longer ones may carry more details.
         return ProposedChanges(people=[ChatPerson(id="self", relationship="self")]), None
+    if state.pending and state.pending.field == "coverage_basis":
+        floater, individual = FLOATER.search(text), INDIVIDUAL.search(text)
+        if floater and not individual or individual and not floater:
+            return ProposedChanges(coverage_basis="floater" if floater else "individual"), None
+        if UNSURE.search(text) and not (floater or individual):
+            return ProposedChanges(skip=True), None
     if (
         state.pending
         and state.pending.field == "annual_budget"
@@ -474,6 +493,14 @@ def merge(state, changes):
             continue
         setattr(facts, field, value)
         state.answered.append(field)
+        if field == "city":
+            # Only a reply to the "city in India" question establishes residence.
+            facts.resides_in_india = bool(
+                pending
+                and pending.field == "city"
+                and not changes.outside_india
+                and not OUTSIDE_INDIA.search(value)
+            )
     if changes.no_preference and pending and pending.field == "annual_budget":
         state.skipped.append("annual_budget")
     elif changes.no_preference:
@@ -728,6 +755,9 @@ def next_question(state, cards, *, relay=None, ambiguity=None):
     for field in ("city", "sum_insured", "annual_budget"):
         if getattr(p, field) is None and field not in done:
             return ask(field)
+    # Family limits differ for one shared cover versus separate cover each.
+    if len(p.people) > 1 and p.coverage_basis is None and "coverage_basis" not in done:
+        return ask("coverage_basis")
     # A catalogue of one cover type leaves nothing to choose.
     choose_type = p.plan_type == "unresolved" and not p.any_type and single_type(cards) is None
     if choose_type and "plan_type" not in done:

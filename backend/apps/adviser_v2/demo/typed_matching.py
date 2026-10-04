@@ -114,6 +114,8 @@ def hard_limits(card, profile, existing):
             "ernakulam",
             "thiruvananthapuram",
         } or bool(re.search(r"[, ]india$", city))
+        # Or the customer answered "Which city in India do you live in?".
+        indian_city = indian_city or getattr(profile, "resides_in_india", False)
         if all(r["value"] == "india" for r in rules) and indian_city:
             record(
                 "geography",
@@ -193,8 +195,15 @@ def hard_limits(card, profile, existing):
     rules = [
         r
         for r in eligible_rules(card, "family")
-        if not r.get("coverage_basis") or r["coverage_basis"] == profile.coverage_basis
+        if not r.get("coverage_basis")
+        or r["coverage_basis"] == profile.coverage_basis
+        or (r["coverage_basis"] == "floater" and profile.coverage_basis is None)
     ]
+    # With no stated basis a floater limit can confirm the family fits one shared
+    # cover, but cannot exclude a family that may buy separate cover instead.
+    provisional = profile.coverage_basis is None and any(
+        r.get("coverage_basis") == "floater" for r in rules
+    )
     if rules:
         outcomes = set()
         for rule in rules:
@@ -251,10 +260,9 @@ def hard_limits(card, profile, existing):
                         invalid = True
             outcomes.add("doesnt_fit" if invalid else "unresolved" if incomplete else "fits")
         status = next(iter(outcomes)) if len(outcomes) == 1 else "unresolved"
-        record(
-            "family",
-            status,
-            "Family composition checked against every applicable cited combination; conflicting outcomes remain unresolved.",
-            rules,
-        )
+        explanation = "Family composition checked against every applicable cited combination; conflicting outcomes remain unresolved."
+        if provisional and status == "doesnt_fit":
+            status = "unresolved"
+            explanation = "This family exceeds the cited family-floater limits; separate cover for each person has not been checked."
+        record("family", status, explanation, rules)
     return list(reasons.values())
