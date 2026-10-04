@@ -37,8 +37,8 @@ export function DemoApp({onSignedOut}:{onSignedOut:()=>Promise<void>}) {
   },[]);
 
   async function begin() {
-    setBusy(true);setError("");
-    try {const data=await api<Chat>("/api/v2/demo/conversations/",{method:"POST"});setChat(data);window.history.replaceState(null,"",`?conversation=${data.id}`);setMessages([{role:"assistant",text:data.state.message,understanding:data.state.understanding}]);setQuestion(null);events.current?.close();}
+    setBusy(true);setError("");events.current?.close();delayedReply.current=null;receipt.current=null;
+    try {const data=await api<Chat>("/api/v2/demo/conversations/",{method:"POST"});setChat(data);window.history.replaceState(null,"",`?conversation=${data.id}`);setMessages([{role:"assistant",text:data.state.message,understanding:data.state.understanding}]);setQuestion(null);setText("");setScreen("chat");}
     catch(e){setError(e instanceof Error?e.message:"Could not start chat");}finally{setBusy(false);}
   }
   function acceptQuestion(data:Question) {
@@ -82,7 +82,7 @@ export function DemoApp({onSignedOut}:{onSignedOut:()=>Promise<void>}) {
     {!chat?<section className="demo-intro"><h1>Let’s understand the cover you need</h1><p>Reply in your own words. You can share several details at once, skip a question, correct a detail, or stop at any time.</p><button className="demo-primary" disabled={busy} onClick={()=>void begin()}>Start guided chat</button></section>:<>
       <div className="demo-chat-layout">
         <main>
-          {screen==="chat"&&<section aria-label="Guided conversation"><p className="demo-status">Stage: {chat.state.stage} · Questions asked: {chat.state.question_count}</p>
+          {screen==="chat"&&<section aria-label="Guided conversation"><p className="demo-status">Stage: {chat.state.stage} · Questions asked: {chat.state.question_count} <button disabled={busy} onClick={()=>void begin()}>New conversation</button></p>
             <div className="demo-transcript" aria-live="polite">{messages.map((m,i)=><article className={`demo-message ${m.role}`} key={i}><strong>{m.role==="customer"?"You":"CoverGuide"}</strong><p>{m.text}</p>{m.understanding&&<details open><summary>Here’s what I understood</summary>{m.understanding.map((line,n)=><p key={n}>{line}</p>)}</details>}</article>)}</div>
             {answering&&<p role="status">Comparing the policy documents. The guided question will resume when the evidence is ready.</p>}{chat.state.stage!=="stopped"&&<div className="demo-chat-compose"><label htmlFor="chat-reply">Your reply</label><textarea id="chat-reply" value={text} onChange={e=>setText(e.target.value)} rows={3} placeholder="Tell me in your own words…"/><button className="demo-primary" disabled={busy||answering||!text.trim()} onClick={()=>void send(text)}>{busy?"Working…":"Send message"}</button><div className="demo-chips">{["Skip","Stop","What are the PED waiting periods?"].map(value=><button disabled={busy||(answering&&value!=="Stop")} key={value} onClick={()=>void send(value)}>{value}</button>)}</div></div>}
             {chat.state.stage==="stopped"&&<button onClick={()=>void begin()}>Start a new conversation</button>}
