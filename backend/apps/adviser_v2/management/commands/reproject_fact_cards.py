@@ -156,6 +156,7 @@ class Command(BaseCommand):
                 if recovered:
                     audit["provenance"].setdefault(field, {})["literal_recovery"] = recovered
                 base, extra = [], []
+                rejected = []
                 for source_result in sources:
                     if source_result["status"] != "answered":
                         continue
@@ -193,9 +194,13 @@ class Command(BaseCommand):
                                 }
                             )
                             if not check.passed:
-                                source_result.setdefault("projection_omissions", []).append(
-                                    "Trimmed governing unit rejected: " + "; ".join(check.problems)
+                                message = "Trimmed governing unit rejected: " + "; ".join(
+                                    check.problems
                                 )
+                                source_result.setdefault("projection_omissions", []).append(message)
+                                # Sources are de-duplicated copies; surface the
+                                # rejection on the card, not only on the copy.
+                                rejected.append(message)
                                 continue
                         if statement not in base:
                             base.append(statement)
@@ -213,6 +218,9 @@ class Command(BaseCommand):
                 projected = project(field, base, card["variant"])
                 checked = []
                 projection_omissions[field] = list(result.get("projection_omissions", []))
+                projection_omissions[field].extend(
+                    m for m in rejected if m not in projection_omissions[field]
+                )
                 if base and not projected:
                     projection_omissions[field].append(
                         "No bounded field-specific rule passed the value, unit, applicability and completeness gates."

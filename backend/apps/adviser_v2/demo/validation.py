@@ -81,13 +81,15 @@ def validate(
             fail(0, str(exc))
             return None
         tail = source.text[b:]
-        next_start = b + len(tail) - len(tail.lstrip())
+        # BEL is an invisible PDF layout marker that matching skips; treat it
+        # like whitespace when deciding where the quotation ends.
+        following = re.sub(r"^[\s\x07]+", "", tail)
+        next_start = b + len(tail) - len(following)
         continuation_present = any(
             lo <= next_start < hi for lo, hi in unit_spans.get((c.section_id, c.page_id), [])
         )
         # Do not allow a model to turn a conditional clause into an unconditional
         # benefit by stopping immediately before its qualification.
-        following = tail.lstrip()
         if not continuation_present and (
             following
             and RESTRICTIONS.match(following)
@@ -106,8 +108,8 @@ def validate(
             following
             and not continuation_present
             and not is_table_cell
-            and c.quote.rstrip()[-1] not in ".;:!?"
-            and not tail.startswith(("\n", "\r"))
+            and re.sub(r"[\s\x07]+$", "", c.quote)[-1:] not in tuple(".;:!?")
+            and not re.match(r"[ \t\x07]*[\r\n]", tail)
         ):
             fail(
                 2,

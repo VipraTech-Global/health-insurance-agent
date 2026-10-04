@@ -69,6 +69,16 @@ def test_missing_following_condition_and_restriction():
     assert not checked.checks[4]
 
 
+def test_pdf_bel_layout_marker_after_a_clause_end_is_not_a_cut_clause():
+    # Star wordings print "ii.\t\x07\n" list markers; matching skips BEL, so the
+    # located span ends before it. That is still a clause boundary.
+    text = "Cover is 5 lakh for 30 days.\nii.\t\x07\nPre-hospitalization expenses are paid."
+    quote = "Cover is 5 lakh for 30 days.\nii.\t\x07\n"
+    assert validate(answer(quote, quote), packet(text)).passed
+    cut = "Cover is 5 lakh\x07 for 30 days only within India."
+    assert not validate(answer("Cover is 5 lakh.", "Cover is 5 lakh\x07"), packet(cut)).checks[2]
+
+
 def test_neutrality_preserves_original_quotes_but_rejects_generated_direction():
     raw = "Ambulance transport for better treatment is covered."
     assert validate(answer(raw), packet(raw)).passed
