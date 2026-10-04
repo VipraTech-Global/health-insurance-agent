@@ -133,6 +133,8 @@ class Command(BaseCommand):
                     message = "10 lakh rupees sum insured."
                 elif field == "annual_budget":
                     message = "My annual premium budget is 60000 rupees."
+                elif field == "coverage_basis":
+                    message = "One shared cover for all of us, a family floater."
                 elif field in {"plan_type", "cover_need"}:
                     message = "I want medical indemnity cover for hospital expenses, on a family floater basis."
                 elif field == "health_details":

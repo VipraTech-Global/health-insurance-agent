@@ -49,6 +49,8 @@ class IncompleteProfile(Closed):
     # The customer explicitly has no cover-type preference.
     any_type: bool = False
     coverage_basis: Literal["individual", "floater"] | None = None
+    # Set only when the city answers "Which city in India do you live in?".
+    resides_in_india: bool = False
     existing_cover: str | None = Field(default=None, max_length=1000)
     health_details: str | None = Field(default=None, max_length=2000)
     requirements: list[Requirement] = Field(default_factory=list, max_length=20)
@@ -78,6 +80,7 @@ class ProposedChanges(Closed):
     annual_budget: int | None = Field(default=None, ge=1)
     plan_type: PlanType | None = None
     coverage_basis: Literal["individual", "floater"] | None = None
+    outside_india: bool = False
     existing_cover: str | None = None
     health_details: str | None = None
     requirements: list[Requirement] = Field(default_factory=list, max_length=20)

@@ -52,6 +52,7 @@ def test_multidetail_skips_future_questions_and_fixed_stages_make_no_calls():
             sum_insured=500000,
             annual_budget=30000,
             plan_type="medical_indemnity",
+            coverage_basis="floater",
             requirements=[Requirement(field="maternity", original_text="Maternity")],
         ),
         cards(),
@@ -526,3 +527,59 @@ def test_own_age_is_asked_directly():
         cards(),
     )
     assert state.message == "How old are you?"
+
+
+def test_basis_is_asked_once_for_a_family_and_parsed_without_ai():
+    family = ChatState(
+        profile=IncompleteProfile(
+            people=[
+                ChatPerson(id="self", relationship="self", age=35),
+                ChatPerson(id="spouse", relationship="spouse", age=33),
+            ],
+            city="Pune",
+            sum_insured=500000,
+            annual_budget=30000,
+        )
+    )
+    state = next_question(family, cards(), relay=NoCalls())
+    assert state.pending.field == "coverage_basis" and "family floater" in state.pending.text
+    for reply, basis in [
+        ("One shared cover", "floater"),
+        ("family floater please", "floater"),
+        ("separate cover for each", "individual"),
+    ]:
+        changes, _ = interpret(reply, state, cards(), relay=NoCalls())
+        assert changes.coverage_basis == basis
+    changes, _ = interpret("not sure", state, cards(), relay=NoCalls())
+    assert changes.skip
+    after = transition(state, changes, cards(), relay=NoCalls())
+    assert after.pending.field != "coverage_basis" and after.profile.coverage_basis is None
+    alone = complete()
+    alone.profile.plan_type = "unresolved"
+    assert next_question(alone, cards(), relay=NoCalls()).pending.field != "coverage_basis"
+
+
+def test_only_the_india_city_answer_establishes_residence():
+    state = next_question(
+        ChatState(
+            profile=IncompleteProfile(people=[ChatPerson(id="me", relationship="self", age=35)])
+        ),
+        cards(),
+        relay=NoCalls(),
+    )
+    assert (
+        state.pending.field == "city"
+        and state.pending.text == "Which city in India do you live in?"
+    )
+    assert transition(state, ProposedChanges(city="Kota"), cards()).profile.resides_in_india
+    abroad = transition(state, ProposedChanges(city="Dubai", outside_india=True), cards())
+    assert not abroad.profile.resides_in_india
+    assert not transition(
+        state, ProposedChanges(city="Austin, Texas"), cards()
+    ).profile.resides_in_india
+    volunteered = transition(
+        next_question(ChatState(), cards()),
+        ProposedChanges(people=[ChatPerson(id="me", relationship="self")], city="Kota"),
+        cards(),
+    )
+    assert volunteered.profile.city == "Kota" and not volunteered.profile.resides_in_india
