@@ -199,13 +199,13 @@ def selectable_sums(statement, variant):
         return []
     from .fact_rule_grounding import money
 
-    amounts = [v for v, _ in money(values_text)]
     unit = r"(?:lakhs?|lacs?|crores?|Cr\.?|L)"
-    for match in re.finditer(
-        r"(\d+(?:\.\d+)?(?:\s*[/,&]\s*\d+(?:\.\d+)?)*)\s*(" + unit + r")(?=\b|\d)",
-        values_text,
-        re.I,
-    ):
+    abbreviated = re.compile(
+        r"(\d+(?:\.\d+)?(?:\s*[/,&]\s*\d+(?:\.\d+)?)*)\s*(" + unit + r")(?=\b|\d)", re.I
+    )
+    # "INR 1Cr": the currency prefix must not also read the number as rupees.
+    amounts = [v for v, _ in money(abbreviated.sub(" ", values_text))]
+    for match in abbreviated.finditer(values_text):
         multiplier = 10000000 if match[2].lower().startswith("cr") else 100000
         amounts.extend(int(Decimal(n) * multiplier) for n in re.findall(r"\d+(?:\.\d+)?", match[1]))
     if not amounts or any(v <= 0 for v in amounts):
