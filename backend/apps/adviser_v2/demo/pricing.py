@@ -18,6 +18,9 @@ class TableCell:
     # merged cells. Never supplied by a model.
     row_end: int | None = None
     column_end: int | None = None
+    # A basis printed outside the grid (e.g. in the insurer's own premium
+    # illustration) that a reviewed adapter binds to the whole table.
+    outside_grid: bool = False
 
 
 @dataclass(frozen=True)
@@ -37,7 +40,7 @@ def validate_price(price: PrintedPrice, cells: dict[str, TableCell], required_ax
         # The customer label promises an annual amount excluding tax. Never make
         # that promise from a chart labelled only "gross premium" or from defaults.
         annual = re.fullmatch(r'\s*(?:annual(?: premium)?|1 year|one year|12 months)\s*', price.axes.get('term', ''), re.I)
-        tax = re.search(r'\b(?:excluding|excludes|exclusive of)\s+(?:all\s+)?(?:applicable\s+)?(?:tax(?:es)?|GST)\b', price.axes['tax_basis'], re.I)
+        tax = re.search(r'\b(?:excluding|excludes|exclusive of|excl\.)\s+(?:all\s+)?(?:applicable\s+)?(?:tax(?:es)?|GST)\b', price.axes['tax_basis'], re.I)
         if not annual or not tax:
             return False
     value = cells.get(price.value_cell)
@@ -47,6 +50,8 @@ def validate_price(price: PrintedPrice, cells: dict[str, TableCell], required_ax
         label = cells.get(identifier)
         if label is None or label.id == value.id or label.table_id != value.table_id or label.text != price.axes[name]:
             return False
+        if label.outside_grid:
+            continue
         row_end = label.row if label.row_end is None else label.row_end
         column_end = label.column if label.column_end is None else label.column_end
         if row_end < label.row or column_end < label.column:

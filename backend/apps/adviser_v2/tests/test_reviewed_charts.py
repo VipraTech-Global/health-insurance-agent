@@ -96,3 +96,70 @@ def test_a_new_card_version_pins_the_current_chart_by_content(tmp_path, settings
     chart.write_text('{"status": "parsed"}')
     with pytest.raises(ValueError, match="collision"):
         freeze_prices("index", run)
+
+
+def test_a_cell_quote_skips_a_match_straddling_a_line_break():
+    from apps.adviser_v2.demo.annual_charts import source_quote
+
+    bundle, raw = source([["1", "34"], ["44", "5"]])
+    start = raw["passage"].index("\n44") + 1
+    quote = source_quote(bundle, raw, start, start + 2)
+    # Matching ignores whitespace, so "4\n4" is an earlier match of "44".
+    assert locate(raw["passage"], quote.quote, quote.occurrence) == (start, start + 2)
+
+
+ILLUSTRATION = (
+    "17. Premium Computation Illustration Illustration 1 • Plan Name – Optima Secure "
+    "• Tenure – 1 Year | Location: Delhi (Tier 1) • All Insured persons are new buyers. "
+    "Coverage opted on individual basis covering each member of the family separately "
+    "Premium (Rs.) 15 13,836 10 2,906 10,930 38 21,758 10 4,569 17,189 57,875 45,721 "
+    "Total premium (Excl. GST) for all members of the family is Rs. 45,721."
+)
+
+
+def test_tier_chart_basis_is_cited_from_the_premium_illustration():
+    from apps.adviser_v2.demo.tier_charts import HDFC_OPTIMA_SECURE, basis
+
+    bundle, raw = source([[ILLUSTRATION]])
+    bundle["pages"] = [{**raw, "document_sha256": HDFC_OPTIMA_SECURE.sha256}]
+    _, quotes, rows = basis(bundle, HDFC_OPTIMA_SECURE)
+    assert {k: v[0] for k, v in quotes.items()} == {
+        "variant": "Optima Secure",
+        "term": "1 Year",
+        "zone": "Tier 1",
+        "coverage_basis": "individual basis",
+        "tax_basis": "Excl. GST",
+    }
+    assert quotes["tax_basis"][1].quote == "Excl. GST"
+    assert rows == [("15", "13,836", "10"), ("38", "21,758", "10")]
+
+
+def test_only_a_reviewed_outside_grid_basis_skips_the_geometry_check():
+    from apps.adviser_v2.demo.pricing import PrintedPrice, TableCell, validate_price
+    from apps.adviser_v2.tests.test_demo_contracts import citation
+
+    def cell(key, row, column, text, table="t", **kw):
+        return TableCell(key, table, row, column, text, citation(text), **kw)
+
+    cells = {
+        c.id: c
+        for c in (
+            cell("head", 0, 0, "Gross Premium - Tier 1", column_end=1),
+            cell("age", 2, 0, "35"),
+            cell("value", 2, 1, "20,972"),
+            # Printed on another page, in the insurer's illustration.
+            cell("tax", 0, 0, "Excl. GST", outside_grid=True),
+            cell("term", 0, 0, "1 Year", outside_grid=True),
+            cell("loose", 9, 9, "Excl. GST"),
+            cell("other", 0, 0, "Excl. GST", table="u", outside_grid=True),
+        )
+    }
+
+    def price(tax):
+        axes = {"age": "age", "tax_basis": tax, "term": "term"}
+        return PrintedPrice("value", {k: cells[v].text for k, v in axes.items()}, axes, ("head",))
+
+    required = {"age", "tax_basis", "term"}
+    assert validate_price(price("tax"), cells, required)
+    assert not validate_price(price("loose"), cells, required)
+    assert not validate_price(price("other"), cells, required)

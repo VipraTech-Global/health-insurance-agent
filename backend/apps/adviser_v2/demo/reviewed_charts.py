@@ -17,6 +17,7 @@ import pdfplumber
 from .annual_charts import row_cells, source_quote
 from .evidence import atomic_json
 from .pricing import PrintedPrice, validate_price
+from .tier_charts import HDFC_OPTIMA_SECURE, TierAdapter, parse_tier_chart
 from .validation import fold, locate
 
 REQUIRED_AXES = {"age", "sum_insured", "composition", "zone", "term", "tax_basis"}
@@ -60,7 +61,7 @@ STAR_ASSURE = Adapter(
     compositions=re.compile(r"Individual|[12]A(?:\+[1-3]C)?"),
     bands={"Individual": ("91days-17yrs", *ASSURE_ADULT), "*": ASSURE_ADULT},
 )
-ADAPTERS = {a.sha256: a for a in (STAR_ASSURE,)}
+ADAPTERS = {a.sha256: a for a in (STAR_ASSURE, HDFC_OPTIMA_SECURE)}
 
 
 def compile_table(bundle, raw, table, grid, table_id, adapter, place=lambda row: (0, 1)):
@@ -159,7 +160,9 @@ def compile_table(bundle, raw, table, grid, table_id, adapter, place=lambda row:
     return prices, cells, failures
 
 
-def parse_reviewed_chart(bundle: dict, document: dict, root: Path, adapter: Adapter) -> dict:
+def parse_reviewed_chart(bundle: dict, document: dict, root: Path, adapter) -> dict:
+    if isinstance(adapter, TierAdapter):
+        return parse_tier_chart(bundle, document, root, adapter)
     prices, cells, failures = [], {}, []
     pages = [p for p in bundle["pages"] if p["document_sha256"] == adapter.sha256]
     with pdfplumber.open(document["path"]) as pdf:

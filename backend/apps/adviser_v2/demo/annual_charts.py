@@ -76,8 +76,10 @@ def source_quote(bundle, raw, start, end) -> Citation:
             if (segment.page_id != raw['evidence_span_id'] or start < segment.start or end > segment.end
                     or segment.text[start-segment.start:end-segment.start] != quote):
                 continue
-            prefix = fold(segment.text[:start-segment.start])
-            occurrence = len(list(re.finditer('(?=' + re.escape(fold(quote)) + ')', prefix)))
+            # Matching ignores whitespace, so an earlier match may straddle the
+            # quote's start ("4\n44"); count every match ending by the quote's end.
+            prefix = fold(segment.text[:end-segment.start])
+            occurrence = len(list(re.finditer('(?=' + re.escape(fold(quote)) + ')', prefix))) - 1
             if locate(segment.text, quote, occurrence) == (start-segment.start, end-segment.start):
                 return Citation(section_id=section.id, page_id=segment.page_id, quote=quote, occurrence=occurrence)
     raise ValueError('Printed cell does not map to a complete original source section.')
