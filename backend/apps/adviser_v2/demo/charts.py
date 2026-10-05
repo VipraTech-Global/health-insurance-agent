@@ -110,9 +110,13 @@ def physical_cells(bundle, document, page_number, pdf=None):
 def parse_chart(bundle: dict, root: Path, relay=None) -> dict:
     relay = relay or Relay.configured()
     from .annual_charts import SOURCE_SHA, parse_annual_chart
+    from .reviewed_charts import ADAPTERS, parse_reviewed_chart
     annual = next((d for d in bundle['documents'] if d['sha256'] == SOURCE_SHA), None)
     if annual:
         return parse_annual_chart(bundle, annual, root, relay)
+    reviewed = next((d for d in bundle['documents'] if d['sha256'] in ADAPTERS), None)
+    if reviewed:
+        return parse_reviewed_chart(bundle, reviewed, root, ADAPTERS[reviewed['sha256']])
     directory = root / 'charts' / bundle['index_id']
     accepted, all_cells, failures, models = [], {}, [], set()
     # Charts may be included in a prospectus or brochure. Titles/summary maps are

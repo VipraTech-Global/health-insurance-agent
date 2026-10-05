@@ -76,19 +76,25 @@ def source_quote(bundle, raw, start, end) -> Citation:
             if (segment.page_id != raw['evidence_span_id'] or start < segment.start or end > segment.end
                     or segment.text[start-segment.start:end-segment.start] != quote):
                 continue
-            prefix = fold(segment.text[:start-segment.start])
-            occurrence = len(list(re.finditer('(?=' + re.escape(fold(quote)) + ')', prefix)))
+            # Matching ignores whitespace, so an earlier match may straddle the
+            # quote's start ("4\n44"); count every match ending by the quote's end.
+            prefix = fold(segment.text[:end-segment.start])
+            occurrence = len(list(re.finditer('(?=' + re.escape(fold(quote)) + ')', prefix))) - 1
             if locate(segment.text, quote, occurrence) == (start-segment.start, end-segment.start):
                 return Citation(section_id=section.id, page_id=segment.page_id, quote=quote, occurrence=occurrence)
     raise ValueError('Printed cell does not map to a complete original source section.')
 
 
-def row_cells(bundle, raw, table_id, row, values, first_column):
-    """A complete row must occur exactly once; repeated amounts use its offsets."""
+def row_cells(bundle, raw, table_id, row, values, first_column, occurrence=0, printed=1):
+    """A complete row must occur exactly as often as the page grids print it.
+
+    A row printed more than once (a repeated header) binds to its occurrence in
+    reading order; repeated amounts within the row use its offsets.
+    """
     joined = ' '.join(values)
-    if fold(raw['passage']).count(fold(joined)) != 1:
+    if fold(raw['passage']).count(fold(joined)) != printed:
         raise ValueError('The complete printed table row is ambiguous in original text.')
-    start, end = locate(raw['passage'], joined)
+    start, end = locate(raw['passage'], joined, occurrence)
     positions = [i for i in range(start, end) if not raw['passage'][i].isspace()]
     cells, offset = [], 0
     for column, text in enumerate(values, first_column):

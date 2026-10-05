@@ -130,6 +130,28 @@ def test_zone_comes_only_from_the_printed_list():
     assert zone_for(zones, "") is None
 
 
+def test_places_listed_with_including_belong_to_their_zone():
+    zones = parse_zones(
+        "Zone A: Delhi including Faridabad, Mumbai MMR including Thane\n"
+        "Zone C: Aligarh, Rest of NCR (including Meerut, Alwar), Raigarh(MH)\n"
+        "Zone D: Rest of India"
+    )
+    assert zone_for(zones, "New Delhi") == "Zone A"
+    assert zone_for(zones, "Faridabad") == "Zone A"
+    assert zone_for(zones, "Mumbai") == zone_for(zones, "Thane") == "Zone A"
+    assert zone_for(zones, "Meerut, Uttar Pradesh") == "Zone C"
+    # A qualified name is not widened to a same-named place elsewhere.
+    assert zone_for(zones, "Raigarh, Chhattisgarh") == "Zone D"
+
+
+def test_one_adult_matches_an_individual_plan_type(tmp_path):
+    grid = {z: {"Individual": {"18-35": ("6,054", "8,309")}} for z in GRID}
+    source = priced(cards(1), tmp_path, payload=chart(grid))
+    found = plan_price(source[0], one_adult(si=1000000))
+    assert found["amount_printed"] == "8,309"
+    assert found["axes"]["composition"] == "Individual"
+
+
 def test_age_band_containment_is_exact():
     assert band("3m-35", 35) and band("18-35", 18) and not band("18-35", 36)
     assert band("Above 75", 76) and not band("Above 75", 75)
@@ -239,3 +261,31 @@ def test_suggest_one_says_no_single_plan_is_picked():
     )
     assert state.message.startswith("I don’t pick a single plan for you.")
     assert "A–Z order; this is not a ranking" in state.message
+
+
+def test_city_tiers_and_a_rest_of_ncr_remainder():
+    zones = parse_zones(
+        "44\na. Tier 1: Delhi, Surat, Gurugram, Greater Noida.\n"
+        "b. Tier 2: Mumbai, Thane.\nc. Tier 3: Nashik, Rest of NCR, Aligarh.\n"
+        "d. Tier 4: Kolkata, Telangana.\n"
+        "e. Tier 5: Rest of Maharashtra, Rest of Uttar Pradesh, Rest of\nRajasthan.\n"
+        "f. Tier 6: Rest of India.\nNo co-payment shall apply if Insured Person ..."
+    )
+    assert zones["Tier 1"][-1] == "greater noida"
+    assert zone_for(zones, "New Delhi") == "Tier 1"
+    # NCR districts outside the named cities fall in the NCR remainder ...
+    assert zone_for(zones, "Meerut, Uttar Pradesh") == "Tier 3"
+    assert zone_for(zones, "Alwar, Rajasthan") == "Tier 3"
+    # ... and other towns of those states in their state remainder.
+    assert zone_for(zones, "Kota, Rajasthan") == "Tier 5"
+    assert zone_for(zones, "Pune, Maharashtra") == "Tier 5"
+    assert zone_for(zones, "Hyderabad, Telangana") == "Tier 4"
+    assert zone_for(zones, "Patna, Bihar") == "Tier 6"
+    assert zone_for(zones, "Kota") is None
+    # A remainder for an unknown region is never resolved.
+    other = parse_zones("Zone A: Delhi, Rest of Konkan\nZone B: Rest of India")
+    assert zone_for(other, "Delhi") == "Zone A" and zone_for(other, "Patna, Bihar") is None
+
+
+def test_an_open_ended_top_age_row():
+    assert band(">=90", 90) and band(">=90", 97) and not band(">=90", 89)

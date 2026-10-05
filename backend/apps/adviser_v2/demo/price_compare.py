@@ -54,13 +54,50 @@ STATES = (
     "uttarakhand",
     "west bengal",
 )
-ZONE_HEADER = re.compile(r"\bZone\s*[-–]?\s*([A-Z]|[0-9]{1,2}|I{1,3}|IV|V)\s*:", re.I)
+ZONE_HEADER = re.compile(r"\b(Zone|Tier)\s*[-–]?\s*([A-Z]|[0-9]{1,2}|I{1,3}|IV|V)\s*:", re.I)
 COUNTRY_REST = re.compile(
     r"^(?:rest of (?:the )?(?:india|country)|all other (?:cities|areas|places|locations))\b"
 )
+# Districts of the National Capital Region (NCR Planning Board), for printed
+# "Rest of NCR" entries. A city in an NCR state but outside this list is not in
+# that remainder; a printed remainder for any other region is never resolved.
+NCR = {
+    "delhi",
+    "new delhi",
+    "faridabad",
+    "gurugram",
+    "gurgaon",
+    "nuh",
+    "mewat",
+    "rohtak",
+    "sonipat",
+    "rewari",
+    "jhajjar",
+    "panipat",
+    "palwal",
+    "bhiwani",
+    "charkhi dadri",
+    "mahendragarh",
+    "jind",
+    "karnal",
+    "meerut",
+    "ghaziabad",
+    "gautam buddha nagar",
+    "noida",
+    "greater noida",
+    "bulandshahr",
+    "bulandshahar",
+    "baghpat",
+    "hapur",
+    "muzaffarnagar",
+    "muzaffar nagar",
+    "shamli",
+    "alwar",
+    "bharatpur",
+}
 REASONS = {
     "source_unavailable": "no premium chart in its documents",
-    "invalid_chart": "premium chart not read yet",
+    "invalid_chart": "its printed chart isn’t one I can match exactly yet",
     "no_exact_combination": "no printed premium for these details",
     "zone": "its printed zone list doesn’t place your city",
 }
@@ -86,11 +123,17 @@ def load_chart(card, root=None):
     return chart
 
 
+# A city printed under its wider name: New Delhi lies within Delhi.
+ALIASES = {"new delhi": "delhi"}
+
+
 def place(city):
     """Names the customer's place could go by, and their state when they named it."""
     text = " ".join(re.sub(r"[^a-z ]+", " ", (city or "").casefold()).split())
     state = next((s for s in STATES if re.search(rf"\b{s}\b", text)), None)
     names = [text]
+    if text in ALIASES:
+        names.append(ALIASES[text])
     if state and text != state:
         names.append(" ".join(text.replace(state, " ").split()))
     return [n for n in names if n], state
@@ -123,12 +166,17 @@ def parse_zones(text):
     zones = {}
     for i, header in enumerate(headers):
         end = headers[i + 1].start() if i + 1 < len(headers) else len(text)
-        segment = text[header.end() : end]
+        # "Delhi including Faridabad" or "Rest of NCR (including Meerut, …)"
+        # names each listed place in this zone.
+        segment = re.sub(r"\(\s*including\b([^)]*)\)", r",\1,", text[header.end() : end])
+        segment = re.sub(r"\bincluding\b", ",", segment)
+        # A lettered list ("… Greater Noida. b. Tier 2: …") ends the entry.
+        segment = re.sub(r"\.\s+[a-z]\.\s*$", "", segment.strip())
         entries = [
             e.strip(" .;").casefold()
             for e in re.split(r",|\band\b(?=\s+(?:rest of\s+)?[A-Z])", segment)
         ]
-        zones["Zone " + header[1].upper()] = [e for e in entries if e]
+        zones[header[1].title() + " " + header[2].upper()] = [e for e in entries if e]
     return zones
 
 
@@ -141,12 +189,25 @@ def zone_for(zones, city):
     def named(entry, name):
         # An entry names the place itself, not a "Rest of …" remainder.
         return not entry.startswith("rest of") and bool(
-            re.fullmatch(rf"{re.escape(name)}(?: \(.*\))?", entry)
+            re.fullmatch(rf"{re.escape(name)}(?: mmr)?(?: \(.*\))?", entry)
         )
 
     hits = set()
     for name in names:
         hits = hits or {z for z, es in zones.items() if any(named(e, name) for e in es)}
+    regions = {
+        e[len("rest of ") :]
+        for es in zones.values()
+        for e in es
+        if e.startswith("rest of ")
+        and e[len("rest of ") :] not in STATES
+        and not COUNTRY_REST.match(e)
+    }
+    if not hits and regions:
+        if regions != {"ncr"}:
+            return None
+        if any(n in NCR for n in names):
+            hits = {z for z, es in zones.items() if "rest of ncr" in es}
     if not hits and state:
         hits = {
             z
@@ -186,6 +247,9 @@ def band(label, years):
     match = re.fullmatch(r"(?:above|over|more than|>)\s*(\d+)(?:\s*years?)?", text)
     if match:
         return years > int(match[1])
+    match = re.fullmatch(r">=\s*(\d+)", text)
+    if match:
+        return years >= int(match[1])
     match = re.fullmatch(r"(?:up ?to|upto|below|<=)\s*(\d+)(?:\s*years?)?", text)
     if match:
         return years <= int(match[1])
@@ -202,7 +266,10 @@ def choose(axis, options, card, person, profile, zones):
         picks = [
             o
             for o in options
-            if re.fullmatch(r"1\s*a(?:dult)?(?:\s*\+\s*0\s*c(?:hild)?)?", o.casefold().strip())
+            # One adult: printed as 1A, or as the one-person "Individual" plan type.
+            if re.fullmatch(
+                r"1\s*a(?:dult)?(?:\s*\+\s*0\s*c(?:hild)?)?|individual", o.casefold().strip()
+            )
         ]
     elif axis == "zone":
         zone = zone_for(zones, profile.city) if zones else None
@@ -210,7 +277,7 @@ def choose(axis, options, card, person, profile, zones):
     elif axis == "term":
         picks = [o for o in options if re.fullmatch(r"1\s*(?:year|yr)s?", o.casefold().strip())]
     elif axis == "tax_basis":
-        picks = [o for o in options if re.search(r"exclud", o, re.I)]
+        picks = [o for o in options if re.search(r"\bexcl", o, re.I)]
     elif axis == "variant":
         picks = [o for o in options if o.casefold() == card["variant"].casefold()]
     elif axis == "coverage_basis":

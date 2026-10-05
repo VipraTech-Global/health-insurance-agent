@@ -29,6 +29,26 @@ QUESTIONS = {
 }
 
 
+def freeze_prices(index_id, root):
+    """Pin the index's current validated chart by content hash; {} when none.
+
+    The chart is never reinterpreted, nor may a replacement chart change an
+    old card: a new card version pins the new copy.
+    """
+    chart = Path(settings.COVERGUIDE_REPORT_ROOT) / "ten-insurer/premiums" / (index_id + ".json")
+    if not chart.exists():
+        return {}
+    raw = chart.read_bytes()
+    sha = hashlib.sha256(raw).hexdigest()
+    frozen = root / "prices" / (sha + ".json")
+    frozen.parent.mkdir(exist_ok=True)
+    if frozen.exists() and frozen.read_bytes() != raw:
+        raise ValueError("Price hash collision.")
+    if not frozen.exists():
+        frozen.write_bytes(raw)
+    return {"pricing_artifact": str(frozen), "pricing_sha256": sha}
+
+
 def build(index, root, accepted_run, questions, *, relay=None):
     from .services import bundle_for
 
@@ -123,19 +143,7 @@ def build(index, root, accepted_run, questions, *, relay=None):
         models=models,
         model=models[0] if len(models) == 1 else None,
     )
-    # The existing validated chart is copied by content hash. It is never
-    # reinterpreted, nor may a replacement index chart change an old card.
-    chart = Path(settings.COVERGUIDE_REPORT_ROOT) / "ten-insurer/premiums" / (index.id + ".json")
-    if chart.exists():
-        raw = chart.read_bytes()
-        sha = hashlib.sha256(raw).hexdigest()
-        frozen = root / "prices" / (sha + ".json")
-        frozen.parent.mkdir(exist_ok=True)
-        if frozen.exists() and frozen.read_bytes() != raw:
-            raise ValueError("Price hash collision.")
-        if not frozen.exists():
-            frozen.write_bytes(raw)
-        base.update(pricing_artifact=str(frozen), pricing_sha256=sha)
+    base.update(freeze_prices(index.id, root))
     identity = digest(
         {
             "card": base,

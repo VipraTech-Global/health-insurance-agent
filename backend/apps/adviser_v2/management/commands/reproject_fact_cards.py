@@ -11,6 +11,7 @@ from pydantic import ValidationError
 
 from apps.adviser_v2.demo.contracts import Answer, CardField, Statement
 from apps.adviser_v2.demo.evidence import Packet, Section, atomic_json, digest
+from apps.adviser_v2.demo.fact_cards_v3 import freeze_prices
 from apps.adviser_v2.demo.fact_projection import clauses, project
 from apps.adviser_v2.demo.fact_rule_contracts import FactRule
 from apps.adviser_v2.demo.services import bundle_for
@@ -25,6 +26,11 @@ class Command(BaseCommand):
         parser.add_argument("--source-run", required=True)
         parser.add_argument("--run-id", required=True)
         parser.add_argument("--retain-run", action="append", default=[])
+        parser.add_argument(
+            "--refresh-prices",
+            action="store_true",
+            help="Pin each index's current validated premium chart instead of the source card's.",
+        )
 
     def handle(self, **options):
         if settings.DATABASES["default"]["NAME"] != "coverguide_star_slice":
@@ -78,6 +84,8 @@ class Command(BaseCommand):
             ).hexdigest(),
             "run_id": options["run_id"],
         }
+        if options["refresh_prices"]:
+            manifest["refresh_prices"] = True
         if (target / "manifest.json").exists() and json.loads(
             (target / "manifest.json").read_text()
         ) != manifest:
@@ -277,6 +285,10 @@ class Command(BaseCommand):
                 rule_coverage={f: any(r["field"] == f for r in rules) for f in quoted},
                 common_needs=[{"field": f, "value": v} for f, v in quoted.items()],
             )
+            if options["refresh_prices"]:
+                for key in ("pricing_artifact", "pricing_sha256"):
+                    card.pop(key, None)
+                card.update(freeze_prices(old.index_id, target))
             identity = digest({"card": card, "source_version": old.id, "manifest": manifest})
             card["card_version"] = identity
             path = target / "cards" / (identity + ".json")
