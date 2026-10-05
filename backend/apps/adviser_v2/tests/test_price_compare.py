@@ -130,6 +130,28 @@ def test_zone_comes_only_from_the_printed_list():
     assert zone_for(zones, "") is None
 
 
+def test_places_listed_with_including_belong_to_their_zone():
+    zones = parse_zones(
+        "Zone A: Delhi including Faridabad, Mumbai MMR including Thane\n"
+        "Zone C: Aligarh, Rest of NCR (including Meerut, Alwar), Raigarh(MH)\n"
+        "Zone D: Rest of India"
+    )
+    assert zone_for(zones, "New Delhi") == "Zone A"
+    assert zone_for(zones, "Faridabad") == "Zone A"
+    assert zone_for(zones, "Mumbai") == zone_for(zones, "Thane") == "Zone A"
+    assert zone_for(zones, "Meerut, Uttar Pradesh") == "Zone C"
+    # A qualified name is not widened to a same-named place elsewhere.
+    assert zone_for(zones, "Raigarh, Chhattisgarh") == "Zone D"
+
+
+def test_one_adult_matches_an_individual_plan_type(tmp_path):
+    grid = {z: {"Individual": {"18-35": ("6,054", "8,309")}} for z in GRID}
+    source = priced(cards(1), tmp_path, payload=chart(grid))
+    found = plan_price(source[0], one_adult(si=1000000))
+    assert found["amount_printed"] == "8,309"
+    assert found["axes"]["composition"] == "Individual"
+
+
 def test_age_band_containment_is_exact():
     assert band("3m-35", 35) and band("18-35", 18) and not band("18-35", 36)
     assert band("Above 75", 76) and not band("Above 75", 75)

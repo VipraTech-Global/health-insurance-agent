@@ -60,7 +60,7 @@ COUNTRY_REST = re.compile(
 )
 REASONS = {
     "source_unavailable": "no premium chart in its documents",
-    "invalid_chart": "premium chart not read yet",
+    "invalid_chart": "its printed chart isn’t one I can match exactly yet",
     "no_exact_combination": "no printed premium for these details",
     "zone": "its printed zone list doesn’t place your city",
 }
@@ -86,11 +86,17 @@ def load_chart(card, root=None):
     return chart
 
 
+# A city printed under its wider name: New Delhi lies within Delhi.
+ALIASES = {"new delhi": "delhi"}
+
+
 def place(city):
     """Names the customer's place could go by, and their state when they named it."""
     text = " ".join(re.sub(r"[^a-z ]+", " ", (city or "").casefold()).split())
     state = next((s for s in STATES if re.search(rf"\b{s}\b", text)), None)
     names = [text]
+    if text in ALIASES:
+        names.append(ALIASES[text])
     if state and text != state:
         names.append(" ".join(text.replace(state, " ").split()))
     return [n for n in names if n], state
@@ -123,7 +129,10 @@ def parse_zones(text):
     zones = {}
     for i, header in enumerate(headers):
         end = headers[i + 1].start() if i + 1 < len(headers) else len(text)
-        segment = text[header.end() : end]
+        # "Delhi including Faridabad" or "Rest of NCR (including Meerut, …)"
+        # names each listed place in this zone.
+        segment = re.sub(r"\(\s*including\b([^)]*)\)", r",\1,", text[header.end() : end])
+        segment = re.sub(r"\bincluding\b", ",", segment)
         entries = [
             e.strip(" .;").casefold()
             for e in re.split(r",|\band\b(?=\s+(?:rest of\s+)?[A-Z])", segment)
@@ -141,7 +150,7 @@ def zone_for(zones, city):
     def named(entry, name):
         # An entry names the place itself, not a "Rest of …" remainder.
         return not entry.startswith("rest of") and bool(
-            re.fullmatch(rf"{re.escape(name)}(?: \(.*\))?", entry)
+            re.fullmatch(rf"{re.escape(name)}(?: mmr)?(?: \(.*\))?", entry)
         )
 
     hits = set()
@@ -202,7 +211,10 @@ def choose(axis, options, card, person, profile, zones):
         picks = [
             o
             for o in options
-            if re.fullmatch(r"1\s*a(?:dult)?(?:\s*\+\s*0\s*c(?:hild)?)?", o.casefold().strip())
+            # One adult: printed as 1A, or as the one-person "Individual" plan type.
+            if re.fullmatch(
+                r"1\s*a(?:dult)?(?:\s*\+\s*0\s*c(?:hild)?)?|individual", o.casefold().strip()
+            )
         ]
     elif axis == "zone":
         zone = zone_for(zones, profile.city) if zones else None
