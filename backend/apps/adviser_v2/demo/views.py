@@ -28,6 +28,7 @@ from .contracts import Citation, PlanCard, PremiumResult, Profile
 from .highlighting import _normalized, clause_rectangles
 from .matching import all_fits
 from .needs import normalize
+from .premium_sources import priced_bundle
 from .pricing import lookup
 from .services import bundle_for, decrypted, question_payload, save_profile, submit, usable
 from .tasks import demo_question
@@ -244,7 +245,7 @@ class PriceCitation(APIView):
         chart = json.loads(path.read_text())
         if chart['index_id'] != index.id:
             raise ValidationError('Chart identity differs from the pinned plan index.')
-        bundle = bundle_for(index)
+        bundle = priced_bundle(index)
         try:
             anchor = price_anchor(chart, bundle, index.plan_key, Citation.model_validate(incoming.validated_data['citation']))
         except ValueError as exc:
@@ -256,7 +257,7 @@ class Document(APIView):
     @extend_schema(responses={(200, "application/pdf"): bytes})
     def get(self, request, index_id, sha):
         index = get_object_or_404(DemoPlanIndex, pk=index_id, revoked_at__isnull=True)
-        bundle = bundle_for(index)
+        bundle = priced_bundle(index)
         docs = [d for d in bundle.get("documents", []) if d["sha256"] == sha]
         if len(docs) != 1:
             raise ValidationError("Document is outside the pinned plan edition.")

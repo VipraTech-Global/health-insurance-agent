@@ -9,7 +9,7 @@ from django.db import close_old_connections
 
 from apps.adviser_v2.demo.charts import parse_chart
 from apps.adviser_v2.demo.evidence import atomic_json
-from apps.adviser_v2.demo.services import bundle_for
+from apps.adviser_v2.demo.premium_sources import priced_bundle
 from apps.adviser_v2.models import DemoPlanIndex
 
 
@@ -35,7 +35,7 @@ class Command(BaseCommand):
         def parse(row):
             if row.card.get('status') == 'documents_unavailable':
                 return 'documents unavailable'
-            result = parse_chart(bundle_for(row), root)
+            result = parse_chart(priced_bundle(row), root)
             return f"{result['status']}; {len(result['prices'])} exact printed prices"
 
         failures = []
