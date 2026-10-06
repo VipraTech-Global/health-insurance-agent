@@ -55,6 +55,15 @@ STATES = (
     "west bengal",
 )
 ZONE_HEADER = re.compile(r"\b(Zone|Tier)\s*[-–]?\s*([A-Z]|[0-9]{1,2}|I{1,3}|IV|V)\s*:", re.I)
+# A chart's own zone table prints "Zone 1 Delhi, …" without a colon.
+LISTED_ZONE = re.compile(r"\b(Zone)\s+([0-9]{1,2})\b")
+# State names as some insurers print them.
+SPELLINGS = {
+    "gujurat": "gujarat",
+    "maharastra": "maharashtra",
+    "tamilnadu": "tamil nadu",
+    "orissa": "odisha",
+}
 COUNTRY_REST = re.compile(
     r"^(?:rest of (?:the )?(?:india|country)|all other (?:cities|areas|places|locations))\b"
 )
@@ -160,9 +169,14 @@ def zone_lists(card):
     return found
 
 
-def parse_zones(text):
+def zone_key(label):
+    """A zone label as compared across a chart and its list: "Zone: 1" is "zone 1"."""
+    return " ".join(label.replace(":", " ").split()).casefold()
+
+
+def parse_zones(text, header=ZONE_HEADER):
     text = " ".join(text.replace("\u0007", " ").split())
-    headers = list(ZONE_HEADER.finditer(text))
+    headers = list(header.finditer(text))
     zones = {}
     for i, header in enumerate(headers):
         end = headers[i + 1].start() if i + 1 < len(headers) else len(text)
@@ -176,6 +190,7 @@ def parse_zones(text):
             e.strip(" .;").casefold()
             for e in re.split(r",|\band\b(?=\s+(?:rest of\s+)?[A-Z])", segment)
         ]
+        entries = [re.sub(r"\b\w+$", lambda w: SPELLINGS.get(w[0], w[0]), e) for e in entries]
         zones[header[1].title() + " " + header[2].upper()] = [e for e in entries if e]
     return zones
 
@@ -247,9 +262,9 @@ def band(label, years):
     match = re.fullmatch(r"(?:above|over|more than|>)\s*(\d+)(?:\s*years?)?", text)
     if match:
         return years > int(match[1])
-    match = re.fullmatch(r">=\s*(\d+)", text)
+    match = re.fullmatch(r">=\s*(\d+)|(\d+)\s*\+{1,2}", text)
     if match:
-        return years >= int(match[1])
+        return years >= int(match[1] or match[2])
     match = re.fullmatch(r"(?:up ?to|upto|below|<=)\s*(\d+)(?:\s*years?)?", text)
     if match:
         return years <= int(match[1])
@@ -273,9 +288,11 @@ def choose(axis, options, card, person, profile, zones):
         ]
     elif axis == "zone":
         zone = zone_for(zones, profile.city) if zones else None
-        picks = [o for o in options if zone and o.casefold() == zone.casefold()]
+        picks = [o for o in options if zone and zone_key(o) == zone_key(zone)]
     elif axis == "term":
-        picks = [o for o in options if re.fullmatch(r"1\s*(?:year|yr)s?", o.casefold().strip())]
+        picks = [
+            o for o in options if re.fullmatch(r"(?:1|one)\s*(?:year|yr)s?", o.casefold().strip())
+        ]
     elif axis == "tax_basis":
         picks = [o for o in options if re.search(r"\bexcl", o, re.I)]
     elif axis == "variant":
@@ -297,20 +314,31 @@ def plan_price(card, profile, root=None):
         return {"status": status}
     prices, cells = load_prices(chart)
     person = profile.people[0]
-    printed_zones = {p.axes["zone"].casefold() for p in prices if "zone" in p.axes}
+    printed_zones = {zone_key(p.axes["zone"]) for p in prices if "zone" in p.axes}
     # Only a complete printed list (every zone the chart prices) may place a
     # city; a truncated quote could send a named town to a "Rest of" zone.
-    complete = [
-        (parsed, citation)
-        for parsed, citation in zone_lists(card)
-        if {z.casefold() for z in parsed} == printed_zones
+    # The card's quoted lists, then any the chart itself prints and cites.
+    lists = [(zones, citation, "card") for zones, citation in zone_lists(card)] + [
+        (parse_zones(" ".join(c["quote"] for c in z["zones"]), LISTED_ZONE), z["zones"], "chart")
+        for z in chart.get("zone_lists", [])
     ]
-    placed = {zone_for(parsed, profile.city) for parsed, _ in complete}
-    zones, zone_citation = {}, None
+    complete = [entry for entry in lists if {zone_key(z) for z in entry[0]} == printed_zones]
+    placed = {zone_for(parsed, profile.city) for parsed, _, _ in complete}
+    zones, zone_citation, zone_source = {}, None, None
     if len(placed) == 1 and None not in placed:
-        zones, zone_citation = complete[0]
+        zones, zone_citation, zone_source = complete[0]
+        if zone_source == "chart":
+            # Cite the one printed zone line that names the city.
+            (zone,) = placed
+            zone_citation = next(
+                c
+                for c in zone_citation
+                if zone_key(LISTED_ZONE.match(c["quote"])[0]) == zone_key(zone)
+            )
     # Fix the member/basis axes first so later options come from matching rows only.
-    order = ["composition", "coverage_basis", "variant", "term", "tax_basis", "sum_insured", "zone"]
+    # The plan comes last: a chart may print its name in another case on some
+    # pages ("Elite", "ELITE"), so the other axes first narrow it to one page.
+    order = ["composition", "coverage_basis", "term", "tax_basis", "sum_insured", "zone", "variant"]
     axes = sorted(
         chart["required_axes"], key=lambda a: order.index(a) if a in order else len(order)
     )
@@ -341,7 +369,11 @@ def plan_price(card, profile, root=None):
         "axes": selected,
         # Chart cells open from the premium chart; the zone list from the card.
         "citations": [c.model_dump(mode="json") for c in result.citations],
-        "zone_citations": [zone_citation] if "zone" in selected and zone_citation else [],
+        "zone_citations": [zone_citation] if "zone" in selected and zone_source == "card" else [],
+        # A zone list the chart prints opens from the chart, like its cells.
+        "chart_zone_citations": [zone_citation]
+        if "zone" in selected and zone_source == "chart"
+        else [],
     }
 
 

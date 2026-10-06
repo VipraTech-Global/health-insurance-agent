@@ -43,6 +43,8 @@ def price_anchor(chart: dict, bundle: dict, plan_id: str, citation: Citation) ->
         raise ValueError('This chart has no fully validated printed prices.')
     published = {key for price in prices for key in
                  [price.value_cell, *price.axis_cells.values(), *price.heading_cells]}
-    if citation not in [cells[key].citation for key in published]:
+    # A chart's own cited zone list places a city in its printed zones.
+    zone_lists = [Citation.model_validate(c) for z in chart.get('zone_lists', []) for c in z['zones']]
+    if citation not in [cells[key].citation for key in published] + zone_lists:
         raise ValueError('The quotation is not in a validated printed price.')
     return card_anchor({'plan_id': plan_id, 'citations': [citation.model_dump()]}, bundle, citation)

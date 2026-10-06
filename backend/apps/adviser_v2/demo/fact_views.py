@@ -12,6 +12,7 @@ from rest_framework.views import APIView
 from ..models import DemoFactCard
 from .citations import card_anchor, price_anchor
 from .contracts import Citation
+from .premium_sources import priced_bundle
 from .services import bundle_for
 from .views import CardCitationInput, ObjectOutput, render_anchor
 
@@ -50,7 +51,7 @@ class FactPriceCitation(APIView):
         chart = json.loads(path.read_text())
         if chart["index_id"] != row.index_id:
             raise ValidationError("The chart belongs to a different index version.")
-        bundle = bundle_for(row.index)
+        bundle = priced_bundle(row.index)
         try:
             anchor = price_anchor(
                 chart,
