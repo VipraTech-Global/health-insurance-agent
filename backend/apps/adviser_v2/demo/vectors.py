@@ -12,7 +12,9 @@ from django.conf import settings
 
 
 def local_token() -> str:
-    return hmac.new(settings.SECRET_KEY.encode(), b"coverguide-demo-embedding-worker", hashlib.sha256).hexdigest()
+    return hmac.new(
+        settings.SECRET_KEY.encode(), b"coverguide-demo-embedding-worker", hashlib.sha256
+    ).hexdigest()
 
 
 class Resident:
@@ -34,7 +36,9 @@ class Resident:
         options = ort.SessionOptions()
         options.intra_op_num_threads = 4
         options.inter_op_num_threads = 1
-        self.session = ort.InferenceSession(str(model), sess_options=options, providers=["CPUExecutionProvider"])
+        self.session = ort.InferenceSession(
+            str(model), sess_options=options, providers=["CPUExecutionProvider"]
+        )
         self.names = {i.name for i in self.session.get_inputs()}
         self.jobs = queue.PriorityQueue()
         self.sequence = 0
@@ -59,17 +63,30 @@ class Resident:
                 for text in texts:
                     encoded = self.tokenizer.encode_batch([text])
                     if len(encoded[0].ids) > 8192:
-                        raise ValueError("BGE-M3 input exceeds 8192 tokens; no source was truncated.")
-                    feed = {"input_ids": self.np.asarray([e.ids for e in encoded], dtype=self.np.int64),
-                            "attention_mask": self.np.asarray([e.attention_mask for e in encoded], dtype=self.np.int64),
-                            "token_type_ids": self.np.asarray([e.type_ids for e in encoded], dtype=self.np.int64)}
-                    outputs = self.session.run(None, {k: v for k, v in feed.items() if k in self.names})
+                        raise ValueError(
+                            "BGE-M3 input exceeds 8192 tokens; no source was truncated."
+                        )
+                    feed = {
+                        "input_ids": self.np.asarray([e.ids for e in encoded], dtype=self.np.int64),
+                        "attention_mask": self.np.asarray(
+                            [e.attention_mask for e in encoded], dtype=self.np.int64
+                        ),
+                        "token_type_ids": self.np.asarray(
+                            [e.type_ids for e in encoded], dtype=self.np.int64
+                        ),
+                    }
+                    outputs = self.session.run(
+                        None, {k: v for k, v in feed.items() if k in self.names}
+                    )
                     dense = outputs[0]
                     if dense.ndim == 3:
                         dense = dense[:, 0, :]
                     if dense.shape != (1, 1024):
                         raise ValueError("BGE-M3 returned the wrong vector dimensions.")
-                    dense = dense / self.np.maximum(self.np.linalg.norm(dense, axis=1, keepdims=True), self.np.finfo(self.np.float32).eps)
+                    dense = dense / self.np.maximum(
+                        self.np.linalg.norm(dense, axis=1, keepdims=True),
+                        self.np.finfo(self.np.float32).eps,
+                    )
                     vectors.append(dense[0].tolist())
                 future.set_result(vectors)
             except Exception as exc:
@@ -92,7 +109,9 @@ def serve(port=8022):
             self.wfile.write(b'{"model":"BAAI/bge-m3","resident":true}')
 
         def do_POST(self):
-            if self.path != "/embed" or not hmac.compare_digest(self.headers.get("Authorization", ""), "Bearer " + local_token()):
+            if self.path != "/embed" or not hmac.compare_digest(
+                self.headers.get("Authorization", ""), "Bearer " + local_token()
+            ):
                 self.send_error(403)
                 return
             try:
@@ -101,7 +120,11 @@ def serve(port=8022):
                     raise ValueError("Invalid request length.")
                 data = json.loads(self.rfile.read(length))
                 texts = data["texts"]
-                if not isinstance(texts, list) or not 1 <= len(texts) <= 8 or any(not isinstance(t, str) for t in texts):
+                if (
+                    not isinstance(texts, list)
+                    or not 1 <= len(texts) <= 8
+                    or any(not isinstance(t, str) for t in texts)
+                ):
                     raise ValueError("Expected one to eight text strings.")
                 if data["priority"] not in {"live", "background"}:
                     raise ValueError("Invalid priority.")

@@ -46,21 +46,28 @@ def test_interpretation_prompt_bounds_python_unicode_offsets() -> None:
 
 def test_selection_prefers_assertions_then_latency_then_gemini_35() -> None:
     model_35, model_31 = qualify_v2_models.GEMINI_REQUESTED_MODELS
-    assert qualify_v2_models._selected(
-        [result(model_35, passed=7), result(model_31)], "comparison_answer"
-    ).route.requested_model == model_31
-    assert qualify_v2_models._selected(
-        [result(model_35, p95=200), result(model_31, p95=100)], "comparison_answer"
-    ).route.requested_model == model_31
-    assert qualify_v2_models._selected(
-        [result(model_31), result(model_35)], "comparison_answer"
-    ).route.requested_model == model_35
+    assert (
+        qualify_v2_models._selected(
+            [result(model_35, passed=7), result(model_31)], "comparison_answer"
+        ).route.requested_model
+        == model_31
+    )
+    assert (
+        qualify_v2_models._selected(
+            [result(model_35, p95=200), result(model_31, p95=100)], "comparison_answer"
+        ).route.requested_model
+        == model_31
+    )
+    assert (
+        qualify_v2_models._selected(
+            [result(model_31), result(model_35)], "comparison_answer"
+        ).route.requested_model
+        == model_35
+    )
 
 
 @pytest.mark.parametrize("code", ["provider_transport", "provider_quota"])
-def test_only_no_output_transport_or_quota_failure_is_retried(
-    monkeypatch: Any, code: str
-) -> None:
+def test_only_no_output_transport_or_quota_failure_is_retried(monkeypatch: Any, code: str) -> None:
     calls: list[str] = []
     route = RoleRoute("omniroute", "gemini/test", "test")
 

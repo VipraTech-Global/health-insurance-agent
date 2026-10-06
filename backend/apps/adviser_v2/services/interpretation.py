@@ -63,14 +63,22 @@ def _canonicalize_money_unit(quantity: dict[str, object], unit: str) -> None:
     if quantity.get("state") == "known" and quantity.get("kind") == "quantity":
         # The wire contract permits currency scales in its free-form unit.
         # Convert the amount before replacing that unit, exactly once.
-        scales = {"lakh": 100000, "lac": 100000, "crore": 10000000,
-                  "thousand": 1000, "million": 1000000}
-        labels = re.findall(r"\b(lakh|lac|crore|thousand|million)s?\b",
-                            str(quantity.get("unit", "")).casefold())
+        scales = {
+            "lakh": 100000,
+            "lac": 100000,
+            "crore": 10000000,
+            "thousand": 1000,
+            "million": 1000000,
+        }
+        labels = re.findall(
+            r"\b(lakh|lac|crore|thousand|million)s?\b", str(quantity.get("unit", "")).casefold()
+        )
         if len(labels) > 1:
             raise ValueError("A money quantity has an ambiguous currency scale.")
         if labels:
-            quantity["value"] = format((Decimal(str(quantity["value"])) * scales[labels[0]]).normalize(), "f")
+            quantity["value"] = format(
+                (Decimal(str(quantity["value"])) * scales[labels[0]]).normalize(), "f"
+            )
         quantity["unit"] = unit
         quantity.setdefault("currency", "INR")
 

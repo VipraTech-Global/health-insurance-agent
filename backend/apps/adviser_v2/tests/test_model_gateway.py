@@ -27,14 +27,23 @@ from apps.adviser_v2.storage import store_model_result
 from apps.adviser_v2.tests.test_pipeline import public_html_capture
 
 
-def test_historical_model_roles_are_retained_only_in_research_settings(monkeypatch: pytest.MonkeyPatch) -> None:
+def test_historical_model_roles_are_retained_only_in_research_settings(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
     monkeypatch.delenv("COVERGUIDE_CUSTOMER_INTERPRETATION_MODEL", raising=False)
     monkeypatch.delenv("COVERGUIDE_COMPARISON_MODEL", raising=False)
     root = Path(__file__).resolve().parents[3]
-    live = runpy.run_path(str(root / 'config/settings.py'))
-    assert not any(key in live for key in ('COVERGUIDE_POLICY_REVIEW_MODEL', 'COVERGUIDE_POLICY_EXTRACTION_MODEL',
-                                         'OMNIROUTE_ENABLED', 'COVERGUIDE_EVIDENCE_RETRIEVAL'))
-    defaults = runpy.run_path(str(root / 'research_workspace/test_settings.py'))
+    live = runpy.run_path(str(root / "config/settings.py"))
+    assert not any(
+        key in live
+        for key in (
+            "COVERGUIDE_POLICY_REVIEW_MODEL",
+            "COVERGUIDE_POLICY_EXTRACTION_MODEL",
+            "OMNIROUTE_ENABLED",
+            "COVERGUIDE_EVIDENCE_RETRIEVAL",
+        )
+    )
+    defaults = runpy.run_path(str(root / "research_workspace/test_settings.py"))
     assignments = {
         "fact_interpretation": defaults["COVERGUIDE_CUSTOMER_INTERPRETATION_MODEL"],
         "policy_extraction": defaults["COVERGUIDE_POLICY_EXTRACTION_MODEL"],
@@ -247,7 +256,9 @@ def test_offline_processing_reuses_an_exact_successful_response(db: None, monkey
         }
         raise RelayFailure("incomplete_response", "The selected model did not finish its answer.")
 
-    monkeypatch.setattr("research_workspace.legacy_v2.model_gateway.StrictRelayAdapter.generate", incomplete)
+    monkeypatch.setattr(
+        "research_workspace.legacy_v2.model_gateway.StrictRelayAdapter.generate", incomplete
+    )
     from research_workspace.legacy_relay import RelayFailure
 
     with pytest.raises(RelayFailure):

@@ -25,7 +25,9 @@ from .relay import AUDIT_CONTEXT
 
 
 def encrypted(value: dict, identity) -> bytes:
-    return encrypt_bytes(json.dumps(value, ensure_ascii=False).encode(), associated_data=str(identity).encode())
+    return encrypt_bytes(
+        json.dumps(value, ensure_ascii=False).encode(), associated_data=str(identity).encode()
+    )
 
 
 def decrypted(value, identity) -> dict:
@@ -49,8 +51,9 @@ def save_profile(owner: User, profile: Profile, session_id=None) -> DemoSession:
     if session_id:
         session = DemoSession.objects.select_for_update().get(pk=session_id, owner=owner)
         session.profile_revision += 1
-        DemoQuestion.objects.filter(session=session).exclude(state__in=["completed", "cancelled"]).update(
-            state="cancelled", cancelled_at=timezone.now())
+        DemoQuestion.objects.filter(session=session).exclude(
+            state__in=["completed", "cancelled"]
+        ).update(state="cancelled", cancelled_at=timezone.now())
     else:
         session = DemoSession(id=uuid.uuid4(), owner=owner)
     profile = profile.model_copy(update={"revision": session.profile_revision})
@@ -71,30 +74,50 @@ def submit(owner: User, session_id, question: str, plan_ids: list[str]) -> DemoQ
     selected = validate_selection(cards, plan_ids)
     if not isinstance(question, str) or not 1 <= len(question.strip()) <= 3000:
         raise ValueError("Enter a question of 1–3000 characters.")
-    item = DemoQuestion(id=uuid.uuid4(), session=session, release=release,
-        profile_revision=session.profile_revision, erasure_generation=owner.erasure_generation)
+    item = DemoQuestion(
+        id=uuid.uuid4(),
+        session=session,
+        release=release,
+        profile_revision=session.profile_revision,
+        erasure_generation=owner.erasure_generation,
+    )
     item.input_ciphertext = encrypted({"question": question}, item.id)
     item.save()
     by_plan = {i.plan_key: i for i in indexes}
-    DemoPlanAnswer.objects.bulk_create([DemoPlanAnswer(question=item, index=by_plan[c.plan_id]) for c in selected])
+    DemoPlanAnswer.objects.bulk_create(
+        [DemoPlanAnswer(question=item, index=by_plan[c.plan_id]) for c in selected]
+    )
     return item
 
 
 def usable(question: DemoQuestion) -> bool:
-    return (question.state not in {"cancelled", "cancel_requested"} and question.cancelled_at is None
-            and question.session.owner.is_active and question.session.owner.deleted_at is None
-            and question.erasure_generation == question.session.owner.erasure_generation
-            and question.profile_revision == question.session.profile_revision)
+    return (
+        question.state not in {"cancelled", "cancel_requested"}
+        and question.cancelled_at is None
+        and question.session.owner.is_active
+        and question.session.owner.deleted_at is None
+        and question.erasure_generation == question.session.owner.erasure_generation
+        and question.profile_revision == question.session.profile_revision
+    )
 
 
 @transaction.atomic
 def publish_progress(answer_id, stage: str, value=None, *, execution_token=None) -> bool:
     # Same owner-first locking order as profile changes and account erasure.
-    row = DemoPlanAnswer.objects.select_related("question__session__owner", "index").filter(pk=answer_id).first()
+    row = (
+        DemoPlanAnswer.objects.select_related("question__session__owner", "index")
+        .filter(pk=answer_id)
+        .first()
+    )
     if row is None:
         return False
     User.objects.select_for_update().get(pk=row.question.session.owner_id)
-    row = DemoPlanAnswer.objects.select_for_update().select_related("question__session__owner", "index").filter(pk=answer_id).first()
+    row = (
+        DemoPlanAnswer.objects.select_for_update()
+        .select_related("question__session__owner", "index")
+        .filter(pk=answer_id)
+        .first()
+    )
     if row is None or not usable(row.question) or row.index.revoked_at:
         return False
     if execution_token is not None and row.question.execution_token != execution_token:
@@ -109,16 +132,23 @@ def publish_progress(answer_id, stage: str, value=None, *, execution_token=None)
 
 
 def run_question(question_id) -> None:
-    question = DemoQuestion.objects.select_related("session__owner", "release").filter(pk=question_id).first()
+    question = (
+        DemoQuestion.objects.select_related("session__owner", "release")
+        .filter(pk=question_id)
+        .first()
+    )
     if question is None or not usable(question):
         return
     # Claim queued work or an abandoned lease. Old workers cannot publish after
     # recovery changes the execution token, including after erasure/cancellation.
     token = uuid.uuid4()
     stale = timezone.now() - timedelta(minutes=5)
-    claimable = Q(state="queued") | (Q(state="running") & (Q(heartbeat_at__lt=stale) | Q(heartbeat_at__isnull=True)))
+    claimable = Q(state="queued") | (
+        Q(state="running") & (Q(heartbeat_at__lt=stale) | Q(heartbeat_at__isnull=True))
+    )
     if not DemoQuestion.objects.filter(claimable, pk=question_id).update(
-            state="running", execution_token=token, heartbeat_at=timezone.now()):
+        state="running", execution_token=token, heartbeat_at=timezone.now()
+    ):
         return
     text = decrypted(question.input_ciphertext, question.id)["question"]
     rows = list(question.answers.select_related("index").filter(result_ciphertext__isnull=True))
@@ -129,7 +159,9 @@ def run_question(question_id) -> None:
         close_old_connections()
         try:
             while not stop.wait(20):
-                alive = DemoQuestion.objects.filter(pk=question_id, execution_token=token, state="running").update(heartbeat_at=timezone.now())
+                alive = DemoQuestion.objects.filter(
+                    pk=question_id, execution_token=token, state="running"
+                ).update(heartbeat_at=timezone.now())
                 close_old_connections()
                 if not alive:
                     return
@@ -141,21 +173,37 @@ def run_question(question_id) -> None:
 
     def plan(row):
         close_old_connections()
-        audit_token = AUDIT_CONTEXT.set({'question_id': str(question.id), 'answer_id': str(row.id),
-                                        'index_version': row.index_id, 'method': question.release.method})
+        audit_token = AUDIT_CONTEXT.set(
+            {
+                "question_id": str(question.id),
+                "answer_id": str(row.id),
+                "index_version": row.index_id,
+                "method": question.release.method,
+            }
+        )
         try:
+
             def progress(stage):
                 accepted = publish_progress(row.id, stage, execution_token=token)
                 close_old_connections()
                 if not accepted:
-                    raise InterruptedError("Question cancelled, superseded, erased or source revoked.")
+                    raise InterruptedError(
+                        "Question cancelled, superseded, erased or source revoked."
+                    )
 
-            value = answer_plan(bundle_for(row.index), text, method=question.release.method, progress=progress)
+            value = answer_plan(
+                bundle_for(row.index), text, method=question.release.method, progress=progress
+            )
             publish_progress(row.id, value["status"], value, execution_token=token)
         except InterruptedError:
             return
         except (ValueError, OSError) as exc:
-            publish_progress(row.id, "temporarily_unavailable", {"status": "temporarily_unavailable", "reason": str(exc), "models": []}, execution_token=token)
+            publish_progress(
+                row.id,
+                "temporarily_unavailable",
+                {"status": "temporarily_unavailable", "reason": str(exc), "models": []},
+                execution_token=token,
+            )
         finally:
             AUDIT_CONTEXT.reset(audit_token)
             close_old_connections()
@@ -164,7 +212,9 @@ def run_question(question_id) -> None:
         with ThreadPoolExecutor(max_workers=max(1, min(5, len(rows)))) as executor:
             for job in as_completed([executor.submit(plan, row) for row in rows]):
                 job.result()
-        DemoQuestion.objects.filter(pk=question_id, state="running", execution_token=token).update(state="completed", completed_at=timezone.now())
+        DemoQuestion.objects.filter(pk=question_id, state="running", execution_token=token).update(
+            state="completed", completed_at=timezone.now()
+        )
     finally:
         stop.set()
         pulse.join(timeout=5)
@@ -174,15 +224,28 @@ def question_payload(question: DemoQuestion) -> dict:
     if not usable(question):
         return {"schema_version": 1, "id": str(question.id), "state": "cancelled", "plans": []}
     plans = []
-    for row in question.answers.select_related("index").order_by("index__insurer", "index__name", "index__variant"):
+    for row in question.answers.select_related("index").order_by(
+        "index__insurer", "index__name", "index__variant"
+    ):
         result = None
         if row.result_ciphertext and row.index.revoked_at is None:
             result = decrypted(row.result_ciphertext, row.id)
-            result.pop("packet", None)  # Source packets stay server-side; selected exact quotes are returned.
+            result.pop(
+                "packet", None
+            )  # Source packets stay server-side; selected exact quotes are returned.
             result.pop("attempts", None)  # Rejected candidate wording must never be displayed.
-        plans.append({"id": str(row.id), "plan_id": row.index.plan_key, "index_version": row.index_id,
-                      "name": row.index.name, "variant": row.index.variant, "insurer": row.index.insurer,
-                      "plan_type": row.index.plan_type,
-                      "state": "source_revoked" if row.index.revoked_at else row.state,
-                      "model": row.model, "result": result})
+        plans.append(
+            {
+                "id": str(row.id),
+                "plan_id": row.index.plan_key,
+                "index_version": row.index_id,
+                "name": row.index.name,
+                "variant": row.index.variant,
+                "insurer": row.index.insurer,
+                "plan_type": row.index.plan_type,
+                "state": "source_revoked" if row.index.revoked_at else row.state,
+                "model": row.model,
+                "result": result,
+            }
+        )
     return {"schema_version": 1, "id": str(question.id), "state": question.state, "plans": plans}

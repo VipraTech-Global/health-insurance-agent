@@ -9,7 +9,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("adviser_v2", "0017_source_answer_unknown_status"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
@@ -39,9 +38,7 @@ class Migration(migrations.Migration):
             ],
             options={
                 "constraints": [
-                    models.UniqueConstraint(
-                        fields=("plan_key", "id"), name="demo_plan_version_uq"
-                    )
+                    models.UniqueConstraint(fields=("plan_key", "id"), name="demo_plan_version_uq")
                 ],
             },
         ),

@@ -4,7 +4,7 @@ from importlib import import_module
 
 from django.db import migrations
 
-PREVIOUS = import_module('apps.adviser_v2.migrations.0014_three_product_catalogue').FORWARD_SQL
+PREVIOUS = import_module("apps.adviser_v2.migrations.0014_three_product_catalogue").FORWARD_SQL
 FACT_PRODUCT_CHECK = """
     IF NEW.readiness->>'fact_release_version' = 'prepared-source-facts/1' THEN
         IF NEW.release_label <> 'development_alpha_3_product' THEN
@@ -63,10 +63,13 @@ FACT_PRODUCT_CHECK = """
     END IF;
 """
 
-FORWARD = PREVIOUS.replace(
-    '    IF product_count <> required_product_count OR invalid_count > 0 THEN',
-    FACT_PRODUCT_CHECK + '\n    IF product_count <> required_product_count OR invalid_count > 0 THEN',
-) + """
+FORWARD = (
+    PREVIOUS.replace(
+        "    IF product_count <> required_product_count OR invalid_count > 0 THEN",
+        FACT_PRODUCT_CHECK
+        + "\n    IF product_count <> required_product_count OR invalid_count > 0 THEN",
+    )
+    + """
 CREATE TRIGGER adviser_v2_release_fact_mutable
 BEFORE INSERT OR UPDATE OR DELETE ON adviser_v2_knowledge_release_fact
 FOR EACH ROW EXECUTE FUNCTION adviser_v2_assert_release_rule_mutation();
@@ -86,14 +89,18 @@ CREATE TRIGGER adviser_v2_release_metadata_immutable
 BEFORE UPDATE ON adviser_v2_knowledge_release
 FOR EACH ROW EXECUTE FUNCTION adviser_v2_freeze_fact_release_metadata();
 """
+)
 
-REVERSE = """
+REVERSE = (
+    """
 DROP TRIGGER adviser_v2_release_metadata_immutable ON adviser_v2_knowledge_release;
 DROP FUNCTION adviser_v2_freeze_fact_release_metadata();
 DROP TRIGGER adviser_v2_release_fact_mutable ON adviser_v2_knowledge_release_fact;
-""" + PREVIOUS
+"""
+    + PREVIOUS
+)
 
 
 class Migration(migrations.Migration):
-    dependencies = [('adviser_v2', '0015_prepared_fact_release')]
+    dependencies = [("adviser_v2", "0015_prepared_fact_release")]
     operations = [migrations.RunSQL(FORWARD, REVERSE)]

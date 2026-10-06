@@ -1221,7 +1221,12 @@ def evaluate_release(
     for rule in rules:
         rules_by_version.setdefault(rule.policy_version_id, []).append(rule)
     from .models import KnowledgeReleaseFact
-    for version_id in KnowledgeReleaseFact.objects.filter(knowledge_release=release).values_list('policy_version_id', flat=True).distinct():
+
+    for version_id in (
+        KnowledgeReleaseFact.objects.filter(knowledge_release=release)
+        .values_list("policy_version_id", flat=True)
+        .distinct()
+    ):
         rules_by_version.setdefault(version_id, [])
     variants: list[ProductVariant] = []
     seen_products: set[uuid.UUID] = set()

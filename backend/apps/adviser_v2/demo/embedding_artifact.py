@@ -274,4 +274,3 @@ def qualified_embedding_status() -> tuple[bool, str, BgeM3QualificationV1 | None
     except OSError as exc:
         return False, f"BGE-M3 qualification is invalid: {exc}", None
     return _qualified_embedding_status_cached(fingerprint)
-

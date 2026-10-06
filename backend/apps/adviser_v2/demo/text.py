@@ -61,5 +61,3 @@ class BM25:
                     )
             scores.append((score, self.chunks[i]))
         return [c for _score, c in sorted(scores, key=lambda pair: (-pair[0], pair[1].id))]
-
-

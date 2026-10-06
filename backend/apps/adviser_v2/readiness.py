@@ -226,7 +226,15 @@ def _v2_product_input(product: dict[str, Any]) -> dict[str, Any]:
     """Revalidate retained non-executable metadata as well as executable documents."""
     value = {
         key: product[key]
-        for key in ("product_key", "insurer", "name", "uin", "variant", "role_decisions", "optional_covers")
+        for key in (
+            "product_key",
+            "insurer",
+            "name",
+            "uin",
+            "variant",
+            "role_decisions",
+            "optional_covers",
+        )
     }
     value["documents"] = [
         {
@@ -269,15 +277,17 @@ def load_captured_manifest(path: Path) -> dict[str, Any]:
         try:
             if any(item.get("manifest_schema_version") != 2 for item in products):
                 raise ValueError("Every captured product must retain its manifest version.")
-            CuratedManifestV2.model_validate({
-                "schema_version": 2,
-                "manifest_id": value["manifest_id"],
-                "freeze_date": value["freeze_date"],
-                "release_label": value["release_label"],
-                "demo_subset": value["demo_subset"],
-                "official_hosts": value["official_hosts"],
-                "products": [_v2_product_input(item) for item in products],
-            })
+            CuratedManifestV2.model_validate(
+                {
+                    "schema_version": 2,
+                    "manifest_id": value["manifest_id"],
+                    "freeze_date": value["freeze_date"],
+                    "release_label": value["release_label"],
+                    "demo_subset": value["demo_subset"],
+                    "official_hosts": value["official_hosts"],
+                    "products": [_v2_product_input(item) for item in products],
+                }
+            )
         except (KeyError, TypeError, ValueError) as exc:
             raise ValueError(f"Captured version-2 manifest is invalid: {exc}") from exc
     return value
@@ -386,8 +396,10 @@ def validate_bundle(
         ).select_related("document_version")
     }
     manifest_document_ids = {
-        str(item.get("document_version_id")) for item in documents
-        if isinstance(item, dict) and (
+        str(item.get("document_version_id"))
+        for item in documents
+        if isinstance(item, dict)
+        and (
             product_entry.get("manifest_schema_version") != 2
             or item.get("evidence_use") == "executable"
         )
@@ -507,18 +519,28 @@ def validate_bundle(
     ).order_by("-created_at")
     validation = validation_jobs.first()
     if product_entry.get("manifest_schema_version") == 2:
-        latest_validation = ProcessingJob.objects.filter(
-            source_capture_id__in=capture_ids, adapter_version=ADAPTER_VERSION, stage="validate",
-        ).order_by("-created_at", "-attempt_number").first()
+        latest_validation = (
+            ProcessingJob.objects.filter(
+                source_capture_id__in=capture_ids,
+                adapter_version=ADAPTER_VERSION,
+                stage="validate",
+            )
+            .order_by("-created_at", "-attempt_number")
+            .first()
+        )
         if latest_validation is not None and latest_validation.state != "succeeded":
             blockers.append("latest_manifest_v2_validation_not_succeeded")
             validation = None
     index_artifact: dict[str, Any] | None = None
     if product_entry.get("manifest_schema_version") == 2 and validation is not None:
         from research_workspace.legacy_v2.processing.cited_facts import FACT_PROTOCOL
+
         if read_artifact(validation).get("manifest_processing_version") == FACT_PROTOCOL:
             from research_workspace.legacy_v2.prepared_facts import fact_product_report
-            return fact_product_report(policy_version, validation, blockers, warnings, runtime=include_runtime_gates)
+
+            return fact_product_report(
+                policy_version, validation, blockers, warnings, runtime=include_runtime_gates
+            )
     coverage = 0.0
     covered: set[str] = set()
     validated_rule_ids: set[uuid.UUID] = set()
@@ -616,17 +638,27 @@ def validate_bundle(
     )
     if bad_evidence.exists():
         blockers.append("rule_evidence_not_verified")
-    if product_entry.get("manifest_schema_version") == 2 and PolicyRuleEvidence.objects.filter(
-        policy_rule__in=rules
-    ).exclude(evidence_span__source_capture_id__in=capture_ids).exists():
+    if (
+        product_entry.get("manifest_schema_version") == 2
+        and PolicyRuleEvidence.objects.filter(policy_rule__in=rules)
+        .exclude(evidence_span__source_capture_id__in=capture_ids)
+        .exists()
+    ):
         blockers.append("rule_uses_non_executable_evidence")
     raw_v2_span_ids: set[str] = set()
     if product_entry.get("manifest_schema_version") == 2 and rules:
         try:
-            raw_v2_span_ids = {item["evidence_span_id"] for item in raw_bundle_passages(policy_version, include_prospectus=True)}
+            raw_v2_span_ids = {
+                item["evidence_span_id"]
+                for item in raw_bundle_passages(policy_version, include_prospectus=True)
+            }
         except (InvalidTag, OSError, ValueError) as exc:
             blockers.append(f"manifest_v2_raw_citation_validation_failed:{exc}")
-        if PolicyRuleEvidence.objects.filter(policy_rule__in=rules).exclude(evidence_span_id__in=raw_v2_span_ids).exists():
+        if (
+            PolicyRuleEvidence.objects.filter(policy_rule__in=rules)
+            .exclude(evidence_span_id__in=raw_v2_span_ids)
+            .exists()
+        ):
             blockers.append("manifest_v2_rule_citation_outside_exact_raw_pages")
     blockers.extend(_persisted_rule_blockers(rules))
     embedding_ok, embedding_reason, qualification = qualified_embedding_status()

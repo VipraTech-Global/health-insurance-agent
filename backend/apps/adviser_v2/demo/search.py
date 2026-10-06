@@ -15,9 +15,12 @@ from .evidence import Section, pack_sections
 from .relay import InvalidOutput, Relay, RelayUnavailable
 from .text import BM25, LexicalDocument
 
-SELECT_SCHEMA = {"type": "object", "properties": {"section_ids": {
-    "type": "array", "items": {"type": "string"}, "maxItems": 40}},
-    "required": ["section_ids"], "additionalProperties": False}
+SELECT_SCHEMA = {
+    "type": "object",
+    "properties": {"section_ids": {"type": "array", "items": {"type": "string"}, "maxItems": 40}},
+    "required": ["section_ids"],
+    "additionalProperties": False,
+}
 SELECT_PROMPT = (
     "Select original source sections for one health policy edition. The following navigation map contains "
     "generated titles, summaries and descriptions: use them ONLY for navigation, never as policy evidence. "
@@ -30,8 +33,12 @@ SELECT_PROMPT = (
 def embed(texts: list[str], *, priority: str) -> list[list[float]]:
     from .vectors import local_token
 
-    response = httpx.post("http://127.0.0.1:8022/embed", headers={"Authorization": "Bearer " + local_token()},
-                          json={"texts": texts, "priority": priority}, timeout=180)
+    response = httpx.post(
+        "http://127.0.0.1:8022/embed",
+        headers={"Authorization": "Bearer " + local_token()},
+        json={"texts": texts, "priority": priority},
+        timeout=180,
+    )
     response.raise_for_status()
     vectors = response.json()["vectors"]
     if len(vectors) != len(texts) or any(len(v) != 1024 for v in vectors):
@@ -43,12 +50,17 @@ def fusion(sections: list[Section], question: str, *, index_id: str, priority: s
     chunks = [LexicalDocument(s.id, s.index_text) for s in sections]
     lexical = [c.id for c in BM25(chunks).rank(question)[:20]]
     vector = embed([question], priority=priority)[0]
-    rows = list(DemoSectionVector.objects.filter(index_id=index_id, section_id__in=[s.id for s in sections])
-                .annotate(distance=CosineDistance("embedding", vector)).order_by("distance", "section_id")[:20])
+    rows = list(
+        DemoSectionVector.objects.filter(index_id=index_id, section_id__in=[s.id for s in sections])
+        .annotate(distance=CosineDistance("embedding", vector))
+        .order_by("distance", "section_id")[:20]
+    )
     if not connection.in_atomic_block:
         close_old_connections()  # Release SQL capacity before waiting for the relay.
     if not rows:
-        raise RelayUnavailable("Hybrid section vectors are unavailable for this immutable plan index.")
+        raise RelayUnavailable(
+            "Hybrid section vectors are unavailable for this immutable plan index."
+        )
     scores = Counter()
     for ranking in (lexical, [r.section_id for r in rows]):
         for rank, key in enumerate(ranking, 1):
@@ -69,25 +81,41 @@ def navigation_map(bundle: dict) -> dict:
     Split pieces share a generated summary; the source-only Section type remains
     unchanged. Every selectable section ID and physical range is retained.
     """
-    section_documents = {s['id']: s['document_id'] for s in bundle['sections']}
+    section_documents = {s["id"]: s["document_id"] for s in bundle["sections"]}
     documents, groups = {}, {}
-    for node in bundle['navigation']:
-        document = section_documents[node['section_id']]
-        description = node['description']
+    for node in bundle["navigation"]:
+        document = section_documents[node["section_id"]]
+        description = node["description"]
         if document in documents and documents[document] != description:
-            raise ValueError('Navigation document descriptions disagree.')
+            raise ValueError("Navigation document descriptions disagree.")
         documents[document] = description
-        key = (document, tuple(node['title_path']), node['summary'], node['fallback'])
+        key = (document, tuple(node["title_path"]), node["summary"], node["fallback"])
         if key not in groups:
-            groups[key] = {'document_id': document, 'title_path': node['title_path'],
-                           'summary': node['summary'], 'fallback': node['fallback'], 'sections': []}
-        groups[key]['sections'].append({'section_id': node['section_id'], 'pages': node['pages']})
-    return {'documents': [{'document_id': key, 'description': value} for key, value in documents.items()],
-            'nodes': list(groups.values())}
+            groups[key] = {
+                "document_id": document,
+                "title_path": node["title_path"],
+                "summary": node["summary"],
+                "fallback": node["fallback"],
+                "sections": [],
+            }
+        groups[key]["sections"].append({"section_id": node["section_id"], "pages": node["pages"]})
+    return {
+        "documents": [
+            {"document_id": key, "description": value} for key, value in documents.items()
+        ],
+        "nodes": list(groups.values()),
+    }
 
 
-def search(*, bundle: dict, question: str, method: str, relay: Relay, priority: str = "live",
-           expected_model: str | None = None) -> SearchResult:
+def search(
+    *,
+    bundle: dict,
+    question: str,
+    method: str,
+    relay: Relay,
+    priority: str = "live",
+    expected_model: str | None = None,
+) -> SearchResult:
     if method != "H":
         raise ValueError("Only the frozen hybrid winner is available in the application.")
     if not question.strip() or len(question) > 3000:
@@ -97,18 +125,32 @@ def search(*, bundle: dict, question: str, method: str, relay: Relay, priority: 
     if any(s.plan_id != plan_id for s in sections):
         raise ValueError("Wrong-plan section in immutable bundle.")
     candidates = fusion(sections, question, index_id=bundle["index_id"], priority=priority)
-    aliases = {s.id: f'S{n}' for n, s in enumerate(sections, 1)}
+    aliases = {s.id: f"S{n}" for n, s in enumerate(sections, 1)}
     identities = {alias: key for key, alias in aliases.items()}
     navigation = navigation_map(bundle)
-    for node in navigation['nodes']:
-        for item in node['sections']:
-            item['section_id'] = aliases[item['section_id']]
+    for node in navigation["nodes"]:
+        for item in node["sections"]:
+            item["section_id"] = aliases[item["section_id"]]
     # Stable map first; the candidate list and question change independently.
-    result = relay.call(instructions=SELECT_PROMPT,
-        messages=[{"role": "user", "content": json.dumps(navigation, ensure_ascii=False)},
-                  {"role": "user", "content": json.dumps({"candidate_ids": [aliases[key] for key in candidates], "question": question}, ensure_ascii=False)}],
-        schema=SELECT_SCHEMA, stage="section_selection", priority=priority, max_tokens=2048, expected_model=expected_model,
-        timeout=1800 if priority == 'background' else 240)
+    result = relay.call(
+        instructions=SELECT_PROMPT,
+        messages=[
+            {"role": "user", "content": json.dumps(navigation, ensure_ascii=False)},
+            {
+                "role": "user",
+                "content": json.dumps(
+                    {"candidate_ids": [aliases[key] for key in candidates], "question": question},
+                    ensure_ascii=False,
+                ),
+            },
+        ],
+        schema=SELECT_SCHEMA,
+        stage="section_selection",
+        priority=priority,
+        max_tokens=2048,
+        expected_model=expected_model,
+        timeout=1800 if priority == "background" else 240,
+    )
     by_id = {s.id: s for s in sections}
     labels = result.value["section_ids"]
     if any(key not in identities for key in labels):

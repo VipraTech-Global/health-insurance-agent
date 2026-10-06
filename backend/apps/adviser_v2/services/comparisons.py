@@ -299,7 +299,7 @@ def prepare_comparison(
     )
     if clarification_question:
         outcome = "clarification_required"
-    elif release.readiness.get('fact_release_version') == 'prepared-source-facts/1':
+    elif release.readiness.get("fact_release_version") == "prepared-source-facts/1":
         outcome = "conditional"
     elif illustration is not None:
         outcome = "conditional"
@@ -873,9 +873,12 @@ def publish_draft(
         validate_comparison_draft(draft, context, supplied_context)
     else:
         from research_workspace.legacy_v2.source_answers import source_draft
+
         expected = source_draft(context, source_answers)
         if draft != expected or any(_ENDORSEMENT_LANGUAGE.search(s.text) for s in draft.statements):
-            raise UnsupportedComparisonError("Source answer differs from independently validated facts.")
+            raise UnsupportedComparisonError(
+                "Source answer differs from independently validated facts."
+            )
     for ordinal, item in enumerate(draft.statements, 1):
         statement = ComparisonStatement.objects.create(
             owner_id=turn.owner_id,
@@ -904,14 +907,27 @@ def publish_draft(
     unknown_text = []
     if source_answers is not None:
         from research_workspace.legacy_v2.source_answers import source_unknowns
-        for ordinal, (assessment, reason) in enumerate(source_unknowns(context, source_answers), len(draft.statements)+1):
-            text = assessment.product_variant.policy_version.product.name + ': ' + reason
-            ComparisonStatement.objects.create(owner_id=turn.owner_id, comparison=context.comparison,
-                ordinal=ordinal, comparison_assessment=assessment, text=text, statement_type='limitation',
-                critical=False, support_status='unknown')
+
+        for ordinal, (assessment, reason) in enumerate(
+            source_unknowns(context, source_answers), len(draft.statements) + 1
+        ):
+            text = assessment.product_variant.policy_version.product.name + ": " + reason
+            ComparisonStatement.objects.create(
+                owner_id=turn.owner_id,
+                comparison=context.comparison,
+                ordinal=ordinal,
+                comparison_assessment=assessment,
+                text=text,
+                statement_type="limitation",
+                critical=False,
+                support_status="unknown",
+            )
             unknown_text.append(text)
-    status_text = ("The table shows the reviewed policy facts and their conditions. Personal eligibility, claim amounts and waiting periods already served have not been calculated. Price is unavailable without an approved premium quote."
-        if source_answers is not None else _OUTCOME_TEXT[context.comparison.outcome])
+    status_text = (
+        "The table shows the reviewed policy facts and their conditions. Personal eligibility, claim amounts and waiting periods already served have not been calculated. Price is unavailable without an approved premium quote."
+        if source_answers is not None
+        else _OUTCOME_TEXT[context.comparison.outcome]
+    )
     content_parts = [COMPARISON_FRAMING, status_text]
     content_parts.extend(unknown_text)
     content_parts.extend(item.text for item in draft.statements)

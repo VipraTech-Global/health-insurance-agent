@@ -44,7 +44,9 @@ class Health(APIView):
 
     @extend_schema(responses=ObjectOutput)
     def get(self, request):
-        return Response({"schema_version": 1, "service": "coverguide-retrieval-demo", "ready": True})
+        return Response(
+            {"schema_version": 1, "service": "coverguide-retrieval-demo", "ready": True}
+        )
 
 
 class ProfileInput(serializers.Serializer):
@@ -55,7 +57,9 @@ class ProfileInput(serializers.Serializer):
 class QuestionInput(serializers.Serializer):
     session_id = serializers.UUIDField()
     question = serializers.CharField(max_length=3000)
-    plan_ids = serializers.ListField(child=serializers.CharField(max_length=160), min_length=2, max_length=5)
+    plan_ids = serializers.ListField(
+        child=serializers.CharField(max_length=160), min_length=2, max_length=5
+    )
 
 
 class CardCitationInput(serializers.Serializer):
@@ -70,7 +74,9 @@ class CardCitation(APIView):
         incoming.is_valid(raise_exception=True)
         bundle = bundle_for(index)
         try:
-            anchor = card_anchor(index.card, bundle, Citation.model_validate(incoming.validated_data['citation']))
+            anchor = card_anchor(
+                index.card, bundle, Citation.model_validate(incoming.validated_data["citation"])
+            )
         except ValueError as exc:
             raise ValidationError(str(exc)) from exc
         return render_anchor(index.id, anchor, bundle)
@@ -79,7 +85,8 @@ class CardCitation(APIView):
 def indexes():
     release = DemoRelease.objects.filter(active=True).first()
     return release, list(release.indexes.all()) if release else list(
-        DemoPlanIndex.objects.order_by("plan_key", "-created_at").distinct("plan_key"))
+        DemoPlanIndex.objects.order_by("plan_key", "-created_at").distinct("plan_key")
+    )
 
 
 class Catalogue(APIView):
@@ -87,10 +94,16 @@ class Catalogue(APIView):
     def get(self, request):
         release, rows = indexes()
         from .chat_services import release_cards
-        return Response({"schema_version": 1, "release_id": str(release.id) if release else None,
-            "method": release.method if release else None,
-            "plans": release_cards(release) if release else [r.card for r in rows if r.card],
-            "disclaimer": "Local demonstration. Not a recommendation. Document checks do not establish underwriting acceptance or claim payment. AI answers have not been reviewed by an insurance expert."})
+
+        return Response(
+            {
+                "schema_version": 1,
+                "release_id": str(release.id) if release else None,
+                "method": release.method if release else None,
+                "plans": release_cards(release) if release else [r.card for r in rows if r.card],
+                "disclaimer": "Local demonstration. Not a recommendation. Document checks do not establish underwriting acceptance or claim payment. AI answers have not been reviewed by an insurance expert.",
+            }
+        )
 
 
 class Coverage(APIView):
@@ -102,26 +115,62 @@ class Coverage(APIView):
         discovery = json.loads(register.read_text()) if register.exists() else []
         found = {r["insurer_id"]: r for r in discovery}
         versions = {r.index_id: r for r in release.fact_cards.all()} if release else {}
-        recovered_file = root / 'retry-flagship-candidates.json'
+        recovered_file = root / "retry-flagship-candidates.json"
         recovered = json.loads(recovered_file.read_text()) if recovered_file.exists() else []
-        inventory_file = root / 'catalogue-inventory.json'
-        inventory = json.loads(inventory_file.read_text()) if inventory_file.exists() else {'insurers': []}
-        inventory = {r['insurer_id']: r for r in inventory['insurers']}
-        return Response({"schema_version": 1, "selection_basis": "demo_sample",
-            "release_id": str(release.id) if release else None, "method": release.method if release else None,
-            "insurers": [{"id": key, "name": name, "source_url": url,
-                "discovery_status": found.get(key, {}).get("status", "pending"),
-                "candidate_document_count": len(found.get(key, {}).get("documents", [])),
-                "browser_recovered_pdfs": len({r['sha256'] for r in recovered if r['insurer_id'] == key
-                                               and r['status'] == 'acquired_unreviewed'}),
-                "register_entries": inventory.get(key, {}).get('register_entries'),
-                "catalogue_complete": False} for key, name, url in sorted(INSURERS, key=lambda r: r[1])],
-            "plans": [{"id": r.plan_key, "name": r.name, "variant": r.variant, "insurer": r.insurer, "uin": r.uin,
-                       "edition": r.edition, "index_version": r.id, "models": r.models_used,
-                       "revoked": bool(r.revoked_at), **r.coverage,
-                       "card_version": versions[r.id].id if r.id in versions else None,
-                       "field_coverage": versions[r.id].card["field_coverage"] if r.id in versions else {},
-                       "rule_coverage": versions[r.id].card["rule_coverage"] if r.id in versions else {}} for r in rows]})
+        inventory_file = root / "catalogue-inventory.json"
+        inventory = (
+            json.loads(inventory_file.read_text()) if inventory_file.exists() else {"insurers": []}
+        )
+        inventory = {r["insurer_id"]: r for r in inventory["insurers"]}
+        return Response(
+            {
+                "schema_version": 1,
+                "selection_basis": "demo_sample",
+                "release_id": str(release.id) if release else None,
+                "method": release.method if release else None,
+                "insurers": [
+                    {
+                        "id": key,
+                        "name": name,
+                        "source_url": url,
+                        "discovery_status": found.get(key, {}).get("status", "pending"),
+                        "candidate_document_count": len(found.get(key, {}).get("documents", [])),
+                        "browser_recovered_pdfs": len(
+                            {
+                                r["sha256"]
+                                for r in recovered
+                                if r["insurer_id"] == key and r["status"] == "acquired_unreviewed"
+                            }
+                        ),
+                        "register_entries": inventory.get(key, {}).get("register_entries"),
+                        "catalogue_complete": False,
+                    }
+                    for key, name, url in sorted(INSURERS, key=lambda r: r[1])
+                ],
+                "plans": [
+                    {
+                        "id": r.plan_key,
+                        "name": r.name,
+                        "variant": r.variant,
+                        "insurer": r.insurer,
+                        "uin": r.uin,
+                        "edition": r.edition,
+                        "index_version": r.id,
+                        "models": r.models_used,
+                        "revoked": bool(r.revoked_at),
+                        **r.coverage,
+                        "card_version": versions[r.id].id if r.id in versions else None,
+                        "field_coverage": versions[r.id].card["field_coverage"]
+                        if r.id in versions
+                        else {},
+                        "rule_coverage": versions[r.id].card["rule_coverage"]
+                        if r.id in versions
+                        else {},
+                    }
+                    for r in rows
+                ],
+            }
+        )
 
 
 class Fit(APIView):
@@ -133,20 +182,30 @@ class Fit(APIView):
             profile = Profile.model_validate(incoming.validated_data["profile"])
             previous = None
             if incoming.validated_data.get("session_id"):
-                old = DemoSession.objects.get(pk=incoming.validated_data["session_id"], owner=request.user)
+                old = DemoSession.objects.get(
+                    pk=incoming.validated_data["session_id"], owner=request.user
+                )
                 previous = decrypted(old.profile_ciphertext, old.id)
             profile = normalize(profile, previous)
             session = save_profile(request.user, profile, incoming.validated_data.get("session_id"))
         except (ContractError, ValueError, DemoSession.DoesNotExist) as exc:
             raise ValidationError("Profile could not be accepted: " + str(exc)) from exc
         release, rows = indexes()
-        cards = [PlanCard.model_validate(row.card) for row in rows if row.card and row.revoked_at is None]
-        return Response({"schema_version": 1, "session_id": str(session.id), "revision": session.profile_revision,
-                         "release_id": str(release.id) if release else None,
-                         "plans": [card.model_dump() for card in cards],
-                         "normalized_needs": [n.model_dump() for n in profile.normalized_needs],
-                         "needs_model": profile.needs_model,
-                         "results": [r.model_dump() for r in all_fits(cards, profile)]})
+        cards = [
+            PlanCard.model_validate(row.card) for row in rows if row.card and row.revoked_at is None
+        ]
+        return Response(
+            {
+                "schema_version": 1,
+                "session_id": str(session.id),
+                "revision": session.profile_revision,
+                "release_id": str(release.id) if release else None,
+                "plans": [card.model_dump() for card in cards],
+                "normalized_needs": [n.model_dump() for n in profile.normalized_needs],
+                "needs_model": profile.needs_model,
+                "results": [r.model_dump() for r in all_fits(cards, profile)],
+            }
+        )
 
 
 class Questions(APIView):
@@ -165,7 +224,11 @@ class Questions(APIView):
 class QuestionDetail(APIView):
     @extend_schema(responses=ObjectOutput)
     def get(self, request, pk):
-        question = get_object_or_404(DemoQuestion.objects.select_related("session__owner"), pk=pk, session__owner=request.user)
+        question = get_object_or_404(
+            DemoQuestion.objects.select_related("session__owner"),
+            pk=pk,
+            session__owner=request.user,
+        )
         return Response(question_payload(question))
 
 
@@ -173,17 +236,20 @@ class Cancel(APIView):
     @extend_schema(request=None, responses=ObjectOutput)
     def post(self, request, pk):
         question = get_object_or_404(DemoQuestion, pk=pk, session__owner=request.user)
-        DemoQuestion.objects.filter(pk=question.pk).update(state="cancelled", cancelled_at=timezone.now())
+        DemoQuestion.objects.filter(pk=question.pk).update(
+            state="cancelled", cancelled_at=timezone.now()
+        )
         return Response({"schema_version": 1, "id": str(pk), "state": "cancelled"})
 
 
 class EventStreamRenderer(JSONRenderer):
-    media_type = 'text/event-stream'
-    format = 'event-stream'
+    media_type = "text/event-stream"
+    format = "event-stream"
 
 
 class Events(APIView):
     renderer_classes = [JSONRenderer, EventStreamRenderer]
+
     @extend_schema(responses={(200, "text/event-stream"): str})
     def get(self, request, pk):
         get_object_or_404(DemoQuestion, pk=pk, session__owner=request.user)
@@ -192,7 +258,11 @@ class Events(APIView):
         def stream():
             previous = None
             for _ in range(600):
-                question = DemoQuestion.objects.select_related("session__owner").filter(pk=pk, session__owner_id=owner_id).first()
+                question = (
+                    DemoQuestion.objects.select_related("session__owner")
+                    .filter(pk=pk, session__owner_id=owner_id)
+                    .first()
+                )
                 if question is None:
                     yield 'event: cancelled\ndata: {"state":"cancelled"}\n\n'
                     return
@@ -205,6 +275,7 @@ class Events(APIView):
                 if payload["state"] in {"completed", "cancelled"}:
                     return
                 time.sleep(1)
+
         response = StreamingHttpResponse(stream(), content_type="text/event-stream")
         response["Cache-Control"] = "no-store"
         response["X-Accel-Buffering"] = "no"
@@ -216,21 +287,45 @@ class Price(APIView):
     def get(self, request, index_id):
         index = get_object_or_404(DemoPlanIndex, pk=index_id, revoked_at__isnull=True)
         bundle = bundle_for(index)
-        chart_path = Path(settings.COVERGUIDE_REPORT_ROOT) / "ten-insurer/premiums" / (index.id + ".json")
+        chart_path = (
+            Path(settings.COVERGUIDE_REPORT_ROOT) / "ten-insurer/premiums" / (index.id + ".json")
+        )
         if chart_path.exists():
             chart = json.loads(chart_path.read_text())
             if chart["index_id"] != index.id:
                 raise ValidationError("Chart identity differs from the pinned plan index.")
             prices, cells = load_prices(chart)
             if chart["status"] == "source_unavailable":
-                return Response(PremiumResult(status="source_unavailable", amount_printed=None, missing_axes=[], citations=[]).model_dump())
-            result = lookup(prices=prices, cells=cells, required_axes=set(chart["required_axes"]),
-                            selected=dict(request.query_params.items()), published=True)
-            result.axis_options = {axis: sorted({p.axes[axis] for p in prices}) for axis in chart["required_axes"]}
+                return Response(
+                    PremiumResult(
+                        status="source_unavailable",
+                        amount_printed=None,
+                        missing_axes=[],
+                        citations=[],
+                    ).model_dump()
+                )
+            result = lookup(
+                prices=prices,
+                cells=cells,
+                required_axes=set(chart["required_axes"]),
+                selected=dict(request.query_params.items()),
+                published=True,
+            )
+            result.axis_options = {
+                axis: sorted({p.axes[axis] for p in prices}) for axis in chart["required_axes"]
+            }
             return Response(result.model_dump())
         # Unparsed published charts are distinct from a known absence of a chart.
-        status = "invalid_chart" if any(d.get("role") == "premium_chart" for d in bundle.get("documents", [])) else "source_unavailable"
-        return Response(PremiumResult(status=status, amount_printed=None, missing_axes=[], citations=[]).model_dump())
+        status = (
+            "invalid_chart"
+            if any(d.get("role") == "premium_chart" for d in bundle.get("documents", []))
+            else "source_unavailable"
+        )
+        return Response(
+            PremiumResult(
+                status=status, amount_printed=None, missing_axes=[], citations=[]
+            ).model_dump()
+        )
 
 
 class PriceCitation(APIView):
@@ -239,15 +334,20 @@ class PriceCitation(APIView):
         index = get_object_or_404(DemoPlanIndex, pk=index_id, revoked_at__isnull=True)
         incoming = CardCitationInput(data=request.data)
         incoming.is_valid(raise_exception=True)
-        path = Path(settings.COVERGUIDE_REPORT_ROOT) / 'ten-insurer/premiums' / (index.id + '.json')
+        path = Path(settings.COVERGUIDE_REPORT_ROOT) / "ten-insurer/premiums" / (index.id + ".json")
         if not path.exists():
-            raise ValidationError('No validated chart is available for this plan edition.')
+            raise ValidationError("No validated chart is available for this plan edition.")
         chart = json.loads(path.read_text())
-        if chart['index_id'] != index.id:
-            raise ValidationError('Chart identity differs from the pinned plan index.')
+        if chart["index_id"] != index.id:
+            raise ValidationError("Chart identity differs from the pinned plan index.")
         bundle = priced_bundle(index)
         try:
-            anchor = price_anchor(chart, bundle, index.plan_key, Citation.model_validate(incoming.validated_data['citation']))
+            anchor = price_anchor(
+                chart,
+                bundle,
+                index.plan_key,
+                Citation.model_validate(incoming.validated_data["citation"]),
+            )
         except ValueError as exc:
             raise ValidationError(str(exc)) from exc
         return render_anchor(index.id, anchor, bundle)
@@ -272,13 +372,17 @@ class Document(APIView):
 class CitationDetail(APIView):
     @extend_schema(responses=ObjectOutput)
     def get(self, request, answer_id, position):
-        row = get_object_or_404(DemoPlanAnswer.objects.select_related("question__session__owner", "index"),
-                                pk=answer_id, question__session__owner=request.user, index__revoked_at__isnull=True)
+        row = get_object_or_404(
+            DemoPlanAnswer.objects.select_related("question__session__owner", "index"),
+            pk=answer_id,
+            question__session__owner=request.user,
+            index__revoked_at__isnull=True,
+        )
         if not usable(row.question) or not row.result_ciphertext:
             raise ValidationError("This answer is no longer available.")
         result = decrypted(row.result_ciphertext, row.id)
         validation = result.get("validation") or {}
-        if result.get("status") != "answered" or validation.get("checks") != [True]*6:
+        if result.get("status") != "answered" or validation.get("checks") != [True] * 6:
             raise ValidationError("No accepted citation is available.")
         anchors = validation.get("anchors", [])
         if not 0 <= position < len(anchors):
@@ -292,29 +396,41 @@ def render_anchor(index_id, anchor, bundle):
     doc = next(d for d in bundle["documents"] if d["sha256"] == anchor["document_sha256"])
     raw_page = next(p for p in bundle["pages"] if p["evidence_span_id"] == anchor["page_id"])
     raw = raw_page["passage"]
-    if raw[anchor["start"]:anchor["end"]] != anchor["quote"]:
+    if raw[anchor["start"] : anchor["end"]] != anchor["quote"]:
         raise ValidationError("Citation offsets no longer match the original source.")
     path = Path(doc["path"])
     if hashlib.sha256(path.read_bytes()).hexdigest() != anchor["document_sha256"]:
         raise ValidationError("Document integrity check failed.")
     if anchor["method"] == "ocr":
-        boxes = [word["bbox"] for word in raw_page.get("ocr_words", [])
-                 if word["start"] < anchor["end"] and word["end"] > anchor["start"]]
+        boxes = [
+            word["bbox"]
+            for word in raw_page.get("ocr_words", [])
+            if word["start"] < anchor["end"] and word["end"] > anchor["start"]
+        ]
         if not boxes:
             raise ValidationError("The OCR source has no preserved highlight geometry.")
     else:
         boxes = native_boxes(path, anchor, raw)
-    return Response({**anchor, "boxes": boxes,
-                     "pdf_url": f"/api/v2/demo/documents/{index_id}/{anchor['document_sha256']}/"})
+    return Response(
+        {
+            **anchor,
+            "boxes": boxes,
+            "pdf_url": f"/api/v2/demo/documents/{index_id}/{anchor['document_sha256']}/",
+        }
+    )
 
 
 def native_boxes(path, anchor, raw):
     with pdfplumber.open(path) as pdf:
         page = pdf.pages[anchor["page"] - 1]
-        chars = tuple({key: char[key] for key in ("text", "x0", "x1", "top", "bottom")} for char in page.chars)
-        occurrence = _normalized(raw[:anchor["start"]]).count(_normalized(anchor["quote"]))
+        chars = tuple(
+            {key: char[key] for key in ("text", "x0", "x1", "top", "bottom")} for char in page.chars
+        )
+        occurrence = _normalized(raw[: anchor["start"]]).count(_normalized(anchor["quote"]))
         try:
             boxes = clause_rectangles(chars, anchor["quote"], occurrence)
         except ValueError as exc:
-            raise ValidationError("Exact source text is available, but its highlight could not be resolved.") from exc
+            raise ValidationError(
+                "Exact source text is available, but its highlight could not be resolved."
+            ) from exc
     return boxes

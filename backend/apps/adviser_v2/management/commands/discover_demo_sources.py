@@ -15,5 +15,15 @@ class Command(BaseCommand):
         root = Path(settings.COVERGUIDE_REPORT_ROOT) / "ten-insurer/discovery"
         rows = discover_all(root)
         atomic_json(root / "register.json", rows)
-        self.stdout.write(json.dumps([{"insurer": r["insurer"], "status": r["status"],
-                                      "documents": len(r["documents"])} for r in rows]))
+        self.stdout.write(
+            json.dumps(
+                [
+                    {
+                        "insurer": r["insurer"],
+                        "status": r["status"],
+                        "documents": len(r["documents"]),
+                    }
+                    for r in rows
+                ]
+            )
+        )

@@ -678,12 +678,18 @@ def test_fact_correction_preserves_the_original_subject(v2_user: User) -> None:
     assert latest.source_statement.subject_person_id == mother.id
 
 
-@pytest.mark.parametrize(("amount", "unit", "expected"), [
-    ("10", "lakh INR", "1000000"), ("20", "INR lakhs", "2000000"),
-    ("0.5", "crore INR", "5000000"), ("15000", "INR per year", "15000"),
-])
+@pytest.mark.parametrize(
+    ("amount", "unit", "expected"),
+    [
+        ("10", "lakh INR", "1000000"),
+        ("20", "INR lakhs", "2000000"),
+        ("0.5", "crore INR", "5000000"),
+        ("15000", "INR per year", "15000"),
+    ],
+)
 def test_currency_scale_is_preserved_before_canonicalizing_units(amount, unit, expected):
     from apps.adviser_v2.services.interpretation import _canonicalize_money_unit
+
     quantity = {"state": "known", "kind": "quantity", "value": amount, "unit": unit}
     _canonicalize_money_unit(quantity, "money")
     assert quantity["value"] == expected

@@ -199,7 +199,9 @@ def answer_plan(
                 for number, unit in enumerate(governing_units(draft.units), 1):
                     try:
                         if conditional_unit(unit):
-                            raise ScopeViolation("A standalone condition does not constitute a benefit answer.")
+                            raise ScopeViolation(
+                                "A standalone condition does not constitute a benefit answer."
+                            )
                         statement, extended = assemble(unit, labels, packet, source_sections)
                         statement = scope.check(unit, labels, statement, question)
                         verification = checked(

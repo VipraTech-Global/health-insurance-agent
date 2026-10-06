@@ -27,7 +27,9 @@ class DemoPlanIndex(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        constraints = [models.UniqueConstraint(fields=["plan_key", "id"], name="demo_plan_version_uq")]
+        constraints = [
+            models.UniqueConstraint(fields=["plan_key", "id"], name="demo_plan_version_uq")
+        ]
 
 
 class DemoSectionVector(models.Model):
@@ -39,7 +41,9 @@ class DemoSectionVector(models.Model):
     text_sha256 = models.CharField(max_length=64)
 
     class Meta:
-        constraints = [models.UniqueConstraint(fields=["index", "section_id"], name="demo_section_vector_uq")]
+        constraints = [
+            models.UniqueConstraint(fields=["index", "section_id"], name="demo_section_vector_uq")
+        ]
 
 
 class DemoRelease(models.Model):
@@ -54,7 +58,11 @@ class DemoRelease(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        constraints = [models.UniqueConstraint(fields=["active"], condition=Q(active=True), name="demo_one_active_release")]
+        constraints = [
+            models.UniqueConstraint(
+                fields=["active"], condition=Q(active=True), name="demo_one_active_release"
+            )
+        ]
 
 
 class DemoSession(models.Model):
@@ -91,4 +99,6 @@ class DemoPlanAnswer(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        constraints = [models.UniqueConstraint(fields=["question", "index"], name="demo_plan_answer_uq")]
+        constraints = [
+            models.UniqueConstraint(fields=["question", "index"], name="demo_plan_answer_uq")
+        ]

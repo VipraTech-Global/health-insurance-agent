@@ -45,7 +45,6 @@ DROP FUNCTION IF EXISTS adviser_v2_assert_turn_route_binding_immutable();
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("adviser_v2", "0011_three_product_demo_release"),
     ]
@@ -137,9 +136,7 @@ class Migration(migrations.Migration):
                         name="v2_turn_route_binding_role_ck",
                     ),
                     models.CheckConstraint(
-                        condition=models.Q(
-                            ("route_configuration_sha256__regex", "^[0-9a-f]{64}$")
-                        ),
+                        condition=models.Q(("route_configuration_sha256__regex", "^[0-9a-f]{64}$")),
                         name="v2_turn_route_binding_config_ck",
                     ),
                     models.CheckConstraint(

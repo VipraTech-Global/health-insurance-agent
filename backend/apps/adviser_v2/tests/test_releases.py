@@ -264,7 +264,9 @@ def test_three_product_demo_release_publishes_only_ready_manifest_prefix(
         "blockers": [
             "product-4:policy_index_stage_missing",
             "product-5:policy_index_stage_missing",
-        ] if catalogue_size == 5 else [],
+        ]
+        if catalogue_size == 5
+        else [],
         "warnings": [],
         "products": report_products,
     }
@@ -290,12 +292,17 @@ def test_three_product_demo_release_publishes_only_ready_manifest_prefix(
             cursor.execute("SET CONSTRAINTS ALL IMMEDIATE")
     PolicyRule.objects.filter(pk=rule_ids[0]).update(review_status="verified")
     dependency = PolicyRule.objects.create(
-        policy_version=policies[0], rule_key="unpublished-dependency",
-        rule_type="eligibility", body=_rule_body(span.id), review_status="verified",
+        policy_version=policies[0],
+        rule_key="unpublished-dependency",
+        rule_type="eligibility",
+        body=_rule_body(span.id),
+        review_status="verified",
     )
     PolicyRuleEvidence.objects.create(policy_rule=dependency, evidence_span=span, role="supports")
     link = PolicyRuleLink.objects.create(
-        from_policy_rule_id=rule_ids[0], to_policy_rule=dependency, link_type="prerequisite",
+        from_policy_rule_id=rule_ids[0],
+        to_policy_rule=dependency,
+        link_type="prerequisite",
     )
     with pytest.raises(DatabaseError, match="mandatory linked-rule closure"), transaction.atomic():
         publish_release(release.id)

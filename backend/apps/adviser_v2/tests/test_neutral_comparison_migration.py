@@ -6,9 +6,7 @@ from django.db import migrations
 
 
 def test_neutral_comparison_migration_renames_storage_in_place() -> None:
-    module = importlib.import_module(
-        "apps.adviser_v2.migrations.0013_neutral_policy_comparisons"
-    )
+    module = importlib.import_module("apps.adviser_v2.migrations.0013_neutral_policy_comparisons")
     wrapper = module.Migration.operations[0]
     assert isinstance(wrapper, migrations.SeparateDatabaseAndState)
 

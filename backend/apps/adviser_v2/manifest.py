@@ -161,12 +161,18 @@ class CuratedManifest(BaseModel):
 
 
 V2_DOCUMENT_ROLES = ALL_DOCUMENT_ROLES | {
-    "excluded_expenses", "modern_treatment_schedule", "preventive_health_schedule", "brochure"
+    "excluded_expenses",
+    "modern_treatment_schedule",
+    "preventive_health_schedule",
+    "brochure",
 }
 STAR_CAPTURE_HOSTS = {"www.starhealth.in", "d28c6jni2fmamz.cloudfront.net"}
-type DocumentRoleV2 = DocumentRole | Literal[
-    "excluded_expenses", "modern_treatment_schedule", "preventive_health_schedule", "brochure"
-]
+type DocumentRoleV2 = (
+    DocumentRole
+    | Literal[
+        "excluded_expenses", "modern_treatment_schedule", "preventive_health_schedule", "brochure"
+    ]
+)
 type ApplicabilityV2 = Literal[
     "applicable", "not_applicable", "conditional", "needs_human_decision"
 ]
@@ -240,7 +246,8 @@ class ManifestProductV2(ManifestProduct):
         for cover in self.optional_covers:
             wording = keys.get(cover.wording_document_key)
             if (
-                wording is None or wording.role != "base_wording"
+                wording is None
+                or wording.role != "base_wording"
                 or cover.page_number > wording.page_count
             ):
                 raise ValueError("Optional cover must cite a physical page in this base wording.")

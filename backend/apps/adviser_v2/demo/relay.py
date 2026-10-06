@@ -89,8 +89,14 @@ def quota_error(body: object, *, now: float) -> tuple[bool, float | None]:
         except (ValueError, TypeError):
             pass
     explicit = bool(codes & {"usage_limit_reached", "weekly_limit_reached", "usage_limit_exceeded"})
-    explicit |= bool(re.search(r"(?:weekly|usage|subscription)\s+limit.{0,50}(?:reached|exhausted|exceeded)", message))
-    explicit |= bool(reset is not None and "limit" in message and ("usage" in message or "quota" in message))
+    explicit |= bool(
+        re.search(
+            r"(?:weekly|usage|subscription)\s+limit.{0,50}(?:reached|exhausted|exceeded)", message
+        )
+    )
+    explicit |= bool(
+        reset is not None and "limit" in message and ("usage" in message or "quota" in message)
+    )
     return explicit, reset
 
 
@@ -138,7 +144,9 @@ return 1
 
 
 class SharedRelayState:
-    def __init__(self, client: redis.Redis, *, prefix: str = "coverguide:demo:relay:v1", cap: int = 6):
+    def __init__(
+        self, client: redis.Redis, *, prefix: str = "coverguide:demo:relay:v1", cap: int = 6
+    ):
         if not 1 <= cap <= 6:
             raise ValueError("Relay concurrency must be between one and six.")
         self.redis, self.prefix, self.cap = client, prefix, cap
@@ -177,10 +185,15 @@ class SharedRelayState:
             reset = reset if reset is not None and reset > now else None
             state[model] = {"reset_at": reset, "probe_at": reset or now + PROBE_INTERVAL}
             self.redis.set(self.key("state"), json.dumps(state))
-            self.redis.xadd(self.key("switches"), {
-                "model": model, "at": str(now), "error": json.dumps(body["error"]),
-                "reset_at": str(reset),
-            })
+            self.redis.xadd(
+                self.key("switches"),
+                {
+                    "model": model,
+                    "at": str(now),
+                    "error": json.dumps(body["error"]),
+                    "reset_at": str(reset),
+                },
+            )
 
     def recover(self, model: str) -> None:
         with self.redis.lock(self.key("state-lock"), timeout=10, blocking_timeout=5):
@@ -208,7 +221,9 @@ class SharedRelayState:
         now = self.now()
         self.redis.set(self.key("luna-429-since"), str(now), nx=True, ex=86400)
         since = float(self.redis.get(self.key("luna-429-since")) or now)
-        if now - since >= 1800 and self.redis.set(self.key("luna-429-warning"), "1", nx=True, ex=1800):
+        if now - since >= 1800 and self.redis.set(
+            self.key("luna-429-warning"), "1", nx=True, ex=1800
+        ):
             message = (
                 "LUNA RELAY STALLED: HTTP 429 failures have persisted for over 30 minutes "
                 "without a usage-limit switch. Inspect the relay error format; an unrecognised "
@@ -276,8 +291,9 @@ def strict_schema(schema: dict) -> dict:
 
 
 class Relay:
-    def __init__(self, state: SharedRelayState, api_key: str, log_root: Path,
-                 *, post: Callable = httpx.post):
+    def __init__(
+        self, state: SharedRelayState, api_key: str, log_root: Path, *, post: Callable = httpx.post
+    ):
         if not api_key:
             raise RelayUnavailable("The local relay credential is unavailable.")
         self.state, self.api_key, self.log_root, self.post = state, api_key, log_root, post
@@ -288,32 +304,61 @@ class Relay:
 
         if settings.AI_RELAY_BASE_URL.rstrip("/") != ENDPOINT.removesuffix("/v1/responses"):
             raise RelayUnavailable("Demo calls require the authorized loopback relay.")
-        if settings.DATABASES["default"]["NAME"] not in {"coverguide_star_slice", "test_coverguide_star_slice"}:
+        if settings.DATABASES["default"]["NAME"] not in {
+            "coverguide_star_slice",
+            "test_coverguide_star_slice",
+        }:
             raise RelayUnavailable("Demo calls require the isolated database.")
         if settings.REDIS_URL != "redis://127.0.0.1:6401/0":
             raise RelayUnavailable("Demo calls require the isolated Redis.")
-        client = redis.Redis.from_url(settings.REDIS_URL, decode_responses=True,
-                                     socket_timeout=5, socket_connect_timeout=5)
-        return cls(SharedRelayState(client, cap=int(os.getenv("COVERGUIDE_RELAY_CONCURRENCY", "6"))),
-                   settings.AI_RELAY_API_KEY, Path(settings.COVERGUIDE_REPORT_ROOT) / "ten-insurer")
+        client = redis.Redis.from_url(
+            settings.REDIS_URL, decode_responses=True, socket_timeout=5, socket_connect_timeout=5
+        )
+        return cls(
+            SharedRelayState(client, cap=int(os.getenv("COVERGUIDE_RELAY_CONCURRENCY", "6"))),
+            settings.AI_RELAY_API_KEY,
+            Path(settings.COVERGUIDE_REPORT_ROOT) / "ten-insurer",
+        )
 
     def record(self, record: dict) -> None:
         self.log_root.mkdir(parents=True, exist_ok=True)
         data = (json.dumps(record, ensure_ascii=False) + "\n").encode()
-        fd = os.open(self.log_root / "relay-calls.jsonl", os.O_WRONLY | os.O_CREAT | os.O_APPEND, 0o600)
+        fd = os.open(
+            self.log_root / "relay-calls.jsonl", os.O_WRONLY | os.O_CREAT | os.O_APPEND, 0o600
+        )
         try:
             os.write(fd, data)
         finally:
             os.close(fd)
 
-    def _request(self, model: str, payload: dict, *, stage: str, priority: str,
-                 deadline: float, pinned: bool = False, probe: bool = False,
-                 transport_retry: int = 0, json_retry: int = 0) -> tuple[dict, dict]:
-        record = {"call_id": str(uuid.uuid4()), "stage": stage, "model": model,
-                  "adapter": ADAPTER_VERSION, "priority": priority, "status": "failed",
-                  "queue_ms": 0, "model_ms": 0, "usage": {}, "observed_model": None,
-                  "started_at": self.state.now(), "transport_retry": transport_retry,
-                  "json_retry": json_retry}
+    def _request(
+        self,
+        model: str,
+        payload: dict,
+        *,
+        stage: str,
+        priority: str,
+        deadline: float,
+        pinned: bool = False,
+        probe: bool = False,
+        transport_retry: int = 0,
+        json_retry: int = 0,
+    ) -> tuple[dict, dict]:
+        record = {
+            "call_id": str(uuid.uuid4()),
+            "stage": stage,
+            "model": model,
+            "adapter": ADAPTER_VERSION,
+            "priority": priority,
+            "status": "failed",
+            "queue_ms": 0,
+            "model_ms": 0,
+            "usage": {},
+            "observed_model": None,
+            "started_at": self.state.now(),
+            "transport_retry": transport_retry,
+            "json_retry": json_retry,
+        }
         record["scope"] = AUDIT_CONTEXT.get()
         started = time.monotonic()
         try:
@@ -327,9 +372,12 @@ class Relay:
                     raise RelayUnavailable("Relay call deadline expired.")
                 model_started = time.monotonic()
                 try:
-                    response = self.post(ENDPOINT, json=payload,
+                    response = self.post(
+                        ENDPOINT,
+                        json=payload,
                         headers={"Authorization": "Bearer " + self.api_key},
-                        timeout=min(180, remaining))
+                        timeout=min(180, remaining),
+                    )
                 finally:
                     record["model_ms"] = round((time.monotonic() - model_started) * 1000)
                 if len(response.content) > 2_000_000:
@@ -373,20 +421,40 @@ class Relay:
                     continue
                 self.state.defer_probe(model)
                 try:
-                    self._request(model, {"model": model, "input": [{"role": "user", "content": "OK"}],
-                        "max_output_tokens": 1, "store": False, "stream": False,
-                        "reasoning": {"effort": "low"}}, stage="quota_probe", priority="background",
-                        deadline=deadline, probe=True)
+                    self._request(
+                        model,
+                        {
+                            "model": model,
+                            "input": [{"role": "user", "content": "OK"}],
+                            "max_output_tokens": 1,
+                            "store": False,
+                            "stream": False,
+                            "reasoning": {"effort": "low"},
+                        },
+                        stage="quota_probe",
+                        priority="background",
+                        deadline=deadline,
+                        probe=True,
+                    )
                 except (ModelChanged, httpx.HTTPError, InvalidOutput, RelayUnavailable):
                     continue
                 self.state.recover(model)
         finally:
             lock.release()
 
-    def call(self, *, instructions: str, messages: list[dict], schema: dict,
-             stage: str, priority: str = "background", max_tokens: int = 4096,
-             timeout: float = 240, expected_model: str | None = None,
-             value_validator: Callable | None = None) -> RelayResult:
+    def call(
+        self,
+        *,
+        instructions: str,
+        messages: list[dict],
+        schema: dict,
+        stage: str,
+        priority: str = "background",
+        max_tokens: int = 4096,
+        timeout: float = 240,
+        expected_model: str | None = None,
+        value_validator: Callable | None = None,
+    ) -> RelayResult:
         if not isinstance(messages, list) or not all(isinstance(m, dict) for m in messages):
             raise TypeError("Responses input must be a message list.")
         if expected_model is not None and expected_model not in MODELS:
@@ -401,14 +469,18 @@ class Relay:
         repair = None
         call_ids: list[str] = []
         totals: dict[str, Any] = {}
-        request_id = hashlib.sha256(json.dumps([instructions, messages, schema, stage], sort_keys=True).encode()).hexdigest()
+        request_id = hashlib.sha256(
+            json.dumps([instructions, messages, schema, stage], sort_keys=True).encode()
+        ).hexdigest()
         retry_key = self.state.key("retry:" + request_id)
         transport_retries = 0
         switches = 0
         while time.monotonic() < deadline:
             model = self.state.model()
             if model is None:
-                raise RelayUnavailable("Both subscription models are limited; AI work is paused pending a probe/reset.")
+                raise RelayUnavailable(
+                    "Both subscription models are limited; AI work is paused pending a probe/reset."
+                )
             if expected_model and expected_model != model:
                 raise ModelChanged("Bake-off pair model changed; rerun both arms.")
             retained = json.loads(self.state.redis.get(retry_key) or "{}")
@@ -419,16 +491,43 @@ class Relay:
                 time.sleep(delay)
             inputs = list(messages)
             if repair:
-                inputs.append({"role": "user", "content": "Return valid JSON matching the schema. Local validation error: " + repair})
-            payload = {"model": model, "input": inputs,
-                "instructions": instructions + "\nReturn JSON only, matching this schema exactly:\n" + json.dumps(schema, sort_keys=True),
-                "reasoning": {"effort": "low"}, "max_output_tokens": max_tokens,
-                "stream": False, "store": False,
-                "text": {"format": {"type": "json_schema", "name": "demo_output", "strict": True, "schema": schema}}}
+                inputs.append(
+                    {
+                        "role": "user",
+                        "content": "Return valid JSON matching the schema. Local validation error: "
+                        + repair,
+                    }
+                )
+            payload = {
+                "model": model,
+                "input": inputs,
+                "instructions": instructions
+                + "\nReturn JSON only, matching this schema exactly:\n"
+                + json.dumps(schema, sort_keys=True),
+                "reasoning": {"effort": "low"},
+                "max_output_tokens": max_tokens,
+                "stream": False,
+                "store": False,
+                "text": {
+                    "format": {
+                        "type": "json_schema",
+                        "name": "demo_output",
+                        "strict": True,
+                        "schema": schema,
+                    }
+                },
+            }
             try:
-                body, record = self._request(model, payload, stage=stage, priority=priority,
-                                             deadline=deadline, pinned=bool(expected_model),
-                                             transport_retry=transport_retries, json_retry=int(repair is not None))
+                body, record = self._request(
+                    model,
+                    payload,
+                    stage=stage,
+                    priority=priority,
+                    deadline=deadline,
+                    pinned=bool(expected_model),
+                    transport_retry=transport_retries,
+                    json_retry=int(repair is not None),
+                )
                 call_ids.append(record["call_id"])
                 totals = body.get("usage", {})
             except ModelChanged:
@@ -436,7 +535,9 @@ class Relay:
                     raise
                 switches += 1
                 if switches > 4:
-                    raise RelayUnavailable("Subscription routing is changing; retry later.") from None
+                    raise RelayUnavailable(
+                        "Subscription routing is changing; retry later."
+                    ) from None
                 continue
             except (httpx.TimeoutException, httpx.NetworkError, httpx.HTTPStatusError) as exc:
                 status = exc.response.status_code if isinstance(exc, httpx.HTTPStatusError) else 0
@@ -444,16 +545,38 @@ class Relay:
                     raise RelayUnavailable(f"Relay rejected the request (HTTP {status}).") from None
                 transport_retries += 1
                 self.state.throttle()
-                header = exc.response.headers.get("Retry-After") if isinstance(exc, httpx.HTTPStatusError) else None
-                delay = max(retry_after(header, now=self.state.now()), min(30, 2**transport_retries) + random.random())
-                self.state.redis.set(retry_key, json.dumps({"attempts": retained.get("attempts", 0) + 1,
-                    "next_at": self.state.now() + delay, "status": status}), ex=86400)
+                header = (
+                    exc.response.headers.get("Retry-After")
+                    if isinstance(exc, httpx.HTTPStatusError)
+                    else None
+                )
+                delay = max(
+                    retry_after(header, now=self.state.now()),
+                    min(30, 2**transport_retries) + random.random(),
+                )
+                self.state.redis.set(
+                    retry_key,
+                    json.dumps(
+                        {
+                            "attempts": retained.get("attempts", 0) + 1,
+                            "next_at": self.state.now() + delay,
+                            "status": status,
+                        }
+                    ),
+                    ex=86400,
+                )
                 if transport_retries >= 4:
-                    raise RelayUnavailable("Relay transport is temporarily unavailable; retry state retained.") from None
+                    raise RelayUnavailable(
+                        "Relay transport is temporarily unavailable; retry state retained."
+                    ) from None
                 continue
             try:
-                output = "".join(c.get("text", "") for item in body.get("output", [])
-                    for c in item.get("content", []) if c.get("type") == "output_text")
+                output = "".join(
+                    c.get("text", "")
+                    for item in body.get("output", [])
+                    for c in item.get("content", [])
+                    if c.get("type") == "output_text"
+                )
                 value = json.loads(output)
                 validator.validate(value)
                 if not isinstance(value, dict):
@@ -462,10 +585,15 @@ class Relay:
                     value_validator(value)
             except (ValueError, jsonschema.ValidationError, TypeError, AttributeError) as exc:
                 if repair is not None:
-                    raise InvalidOutput("Relay JSON/schema validation failed after one repair.") from None
+                    raise InvalidOutput(
+                        "Relay JSON/schema validation failed after one repair."
+                    ) from None
                 # No provider output or policy text in the repair error or logs.
-                repair = ("Invalid JSON, including any task-requested JSON inside the response string."
-                          if isinstance(exc, json.JSONDecodeError) else "JSON does not match the required schema.")
+                repair = (
+                    "Invalid JSON, including any task-requested JSON inside the response string."
+                    if isinstance(exc, json.JSONDecodeError)
+                    else "JSON does not match the required schema."
+                )
                 continue
             self.state.redis.delete(retry_key)
             return RelayResult(value, model, tuple(call_ids), totals)

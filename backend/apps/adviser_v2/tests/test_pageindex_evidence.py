@@ -120,7 +120,8 @@ def test_pageindex_transport_retry_keeps_route_checks_and_token_usage(
     settings.COVERGUIDE_POLICY_EXTRACTION_MODEL = "gpt-5.6-sol"
     checked = []
     monkeypatch.setattr(
-        "research_workspace.legacy_v2.pageindex_evidence.qualified_route", lambda *a: checked.append(a)
+        "research_workspace.legacy_v2.pageindex_evidence.qualified_route",
+        lambda *a: checked.append(a),
     )
     monkeypatch.setattr(
         "research_workspace.legacy_v2.pageindex_evidence.provider_config",
@@ -178,7 +179,9 @@ def test_invalid_relay_output_is_an_explicit_retrieval_failure(
 ):
     settings.COVERGUIDE_REPORT_ROOT = tmp_path
     settings.COVERGUIDE_POLICY_EXTRACTION_MODEL = "gpt-5.6-sol"
-    monkeypatch.setattr("research_workspace.legacy_v2.pageindex_evidence.qualified_route", lambda *a: None)
+    monkeypatch.setattr(
+        "research_workspace.legacy_v2.pageindex_evidence.qualified_route", lambda *a: None
+    )
     monkeypatch.setattr(
         "research_workspace.legacy_v2.pageindex_evidence.provider_config",
         lambda *a: SimpleNamespace(base_url="http://127.0.0.1:8317", api_key="synthetic"),

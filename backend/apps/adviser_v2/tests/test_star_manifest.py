@@ -85,11 +85,18 @@ def test_approved_star_manifest_keeps_assure_sheet_reference_and_options_unselec
     assert sum(d.evidence_use == "executable" for p in manifest.products for d in p.documents) == 16
     assure = manifest.products[2]
     sheet = next(d for d in assure.documents if d.role == "excluded_expenses")
-    assert (sheet.applicability, sheet.evidence_use, sheet.required) == ("applicable", "reference", False)
+    assert (sheet.applicability, sheet.evidence_use, sheet.required) == (
+        "applicable",
+        "reference",
+        False,
+    )
     assert all(not cover.selected for p in manifest.products for cover in p.optional_covers)
 
 
-@pytest.mark.parametrize("mutation", ["selected", "wrong_page", "missing_core", "wrong_host", "wrong_count", "reference_required"])
+@pytest.mark.parametrize(
+    "mutation",
+    ["selected", "wrong_page", "missing_core", "wrong_host", "wrong_count", "reference_required"],
+)
 def test_v2_rejects_scope_and_evidence_boundary_changes(mutation):
     value = star_manifest()
     product = value["products"][0]
@@ -104,7 +111,9 @@ def test_v2_rejects_scope_and_evidence_boundary_changes(mutation):
     elif mutation == "wrong_count":
         value["products"].pop()
     else:
-        sheet = next(d for d in value["products"][2]["documents"] if d["role"] == "excluded_expenses")
+        sheet = next(
+            d for d in value["products"][2]["documents"] if d["role"] == "excluded_expenses"
+        )
         sheet["required"] = True
     with pytest.raises(ValidationError):
         CuratedManifestV2.model_validate(value)
@@ -118,12 +127,18 @@ def test_local_objects_are_verified_without_network_or_corrupt_fallback(tmp_path
         (root / entry.expected_sha256[:2] / entry.expected_sha256).write_bytes(pdf_bytes("changed"))
     elif failure == "pages":
         entry = entry.model_copy(update={"page_count": 2})
-    with httpx.Client(transport=httpx.MockTransport(lambda _: pytest.fail("Unexpected HTTP"))) as client:
+    with httpx.Client(
+        transport=httpx.MockTransport(lambda _: pytest.fail("Unexpected HTTP"))
+    ) as client:
         if failure:
             with pytest.raises(ValueError, match="SHA-256|page count"):
-                acquire_manifest_entry(entry, set(value["official_hosts"]), client, local_object_root=root)
+                acquire_manifest_entry(
+                    entry, set(value["official_hosts"]), client, local_object_root=root
+                )
         else:
-            _, metadata = acquire_manifest_entry(entry, set(value["official_hosts"]), client, local_object_root=root)
+            _, metadata = acquire_manifest_entry(
+                entry, set(value["official_hosts"]), client, local_object_root=root
+            )
             assert metadata["acquisition_method"] == "verified_local_object"
             assert metadata["http_status"] is None  # No HTTP request occurred.
             assert metadata["page_count"] == 1
@@ -135,7 +150,10 @@ def test_missing_local_object_fetches_only_its_exact_url(tmp_path, monkeypatch):
     path = root / entry.expected_sha256[:2] / entry.expected_sha256
     payload = path.read_bytes()
     path.unlink()
-    monkeypatch.setattr("apps.adviser_v2.manifest.socket.getaddrinfo", lambda *_args, **_kw: [(None, None, None, None, ("1.1.1.1", 443))])
+    monkeypatch.setattr(
+        "apps.adviser_v2.manifest.socket.getaddrinfo",
+        lambda *_args, **_kw: [(None, None, None, None, ("1.1.1.1", 443))],
+    )
     requested = []
 
     def serve(request):
@@ -143,19 +161,26 @@ def test_missing_local_object_fetches_only_its_exact_url(tmp_path, monkeypatch):
         return httpx.Response(200, content=payload, headers={"content-type": "application/pdf"})
 
     with httpx.Client(transport=httpx.MockTransport(serve)) as client:
-        _, metadata = acquire_manifest_entry(entry, set(value["official_hosts"]), client, local_object_root=root)
+        _, metadata = acquire_manifest_entry(
+            entry, set(value["official_hosts"]), client, local_object_root=root
+        )
     assert requested == [str(entry.url)]
     assert metadata["acquisition_method"] == "official_url_missing_local_object"
 
 
 @pytest.mark.django_db
-def test_ingestion_preserves_metadata_but_only_executable_bundle_members(tmp_path, settings, monkeypatch):
+def test_ingestion_preserves_metadata_but_only_executable_bundle_members(
+    tmp_path, settings, monkeypatch
+):
     value, root = local_fixture(tmp_path)
     manifest_path = tmp_path / "input.json"
     manifest_path.write_text(json.dumps(value))
     settings.COVERGUIDE_MANIFEST_ROOT = tmp_path / "manifests"
     settings.COVERGUIDE_LOCAL_OBJECT_ROOT = str(root)
-    monkeypatch.setattr("apps.adviser_v2.manifest.download_manifest_entry", lambda *_args: pytest.fail("Unexpected HTTP"))
+    monkeypatch.setattr(
+        "apps.adviser_v2.manifest.download_manifest_entry",
+        lambda *_args: pytest.fail("Unexpected HTTP"),
+    )
     call_command("ingest_curated_manifest", manifest_path)
     captured_path = settings.COVERGUIDE_MANIFEST_ROOT / f"{value['manifest_id']}-captured.json"
     captured = load_captured_manifest(captured_path)
@@ -164,9 +189,15 @@ def test_ingestion_preserves_metadata_but_only_executable_bundle_members(tmp_pat
     assert not ProcessingJob.objects.exists()
     for product in captured["products"]:
         assert role_inventory_blockers(product) == []
-        members = set(PolicyVersionDocument.objects.filter(policy_version_id=product["policy_version_id"]).values_list("document_version_id", flat=True))
+        members = set(
+            PolicyVersionDocument.objects.filter(
+                policy_version_id=product["policy_version_id"]
+            ).values_list("document_version_id", flat=True)
+        )
         for document in product["documents"]:
-            assert (document["document_version_id"] in {str(pk) for pk in members}) == (document["evidence_use"] == "executable")
+            assert (document["document_version_id"] in {str(pk) for pk in members}) == (
+                document["evidence_use"] == "executable"
+            )
     # A checksum alone cannot turn an unresolved document into executable evidence.
     damaged = deepcopy(captured)
     document = damaged["products"][2]["documents"][0]

@@ -23,9 +23,17 @@ class Command(BaseCommand):
         root = Path(settings.COVERGUIDE_REPORT_ROOT)
         corpus = options["corpus"] or root / "retrieval-benchmark/corpus.json"
         while True:
-            result = build_corpus(json.loads(corpus.read_text()), options["output_root"] or root / "ten-insurer", workers=options["workers"])
-            self.stdout.write(json.dumps({"plans": len(result["plans"]), "failures": result["failures"]}))
+            result = build_corpus(
+                json.loads(corpus.read_text()),
+                options["output_root"] or root / "ten-insurer",
+                workers=options["workers"],
+            )
+            self.stdout.write(
+                json.dumps({"plans": len(result["plans"]), "failures": result["failures"]})
+            )
             self.stdout.flush()
-            if not options["resume_pending"] or not any(f["status"] == "pending" for f in result["failures"].values()):
+            if not options["resume_pending"] or not any(
+                f["status"] == "pending" for f in result["failures"].values()
+            ):
                 return
             time.sleep(30)

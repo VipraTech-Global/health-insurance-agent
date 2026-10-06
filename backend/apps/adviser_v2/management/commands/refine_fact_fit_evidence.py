@@ -107,8 +107,10 @@ class Command(BaseCommand):
                     result = original["result"]
                     base_statements, optional_statements, _ = clauses(result, field, bundle)
                     rules = project(field, base_statements, index.variant)
-                    if field in QUERIES and requested(field, index) and (
-                        field in FORCE_FIELDS or not base_statements or not rules
+                    if (
+                        field in QUERIES
+                        and requested(field, index)
+                        and (field in FORCE_FIELDS or not base_statements or not rules)
                     ):
                         fresh = answer_card_field(
                             bundle, QUERIES[field], method="H", priority="background"

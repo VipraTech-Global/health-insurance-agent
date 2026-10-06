@@ -7,7 +7,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("adviser_v2", "0020_retire_legacy_hnsw_indexes"),
     ]

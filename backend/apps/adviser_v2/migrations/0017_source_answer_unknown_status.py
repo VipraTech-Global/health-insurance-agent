@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("adviser_v2", "0016_prepared_fact_publication_gates"),
     ]

@@ -4,12 +4,16 @@ from django.db import migrations
 
 
 def isolated_database_only(apps, schema_editor):
-    if schema_editor.connection.settings_dict['NAME'] not in {'coverguide_star_slice', 'test_coverguide_star_slice'}:
-        raise RuntimeError('Legacy index retirement is restricted to the isolated demo and its test database.')
+    if schema_editor.connection.settings_dict["NAME"] not in {
+        "coverguide_star_slice",
+        "test_coverguide_star_slice",
+    }:
+        raise RuntimeError(
+            "Legacy index retirement is restricted to the isolated demo and its test database."
+        )
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("adviser_v2", "0019_demo_question_recovery"),
     ]

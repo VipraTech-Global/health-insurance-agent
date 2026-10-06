@@ -17,22 +17,51 @@ def pages():
     rows, offset = [], 0
     for p in range(1, 5):
         text = f"Original page {p}. A policy condition ends here."
-        rows.append({"physical_page": p, "passage": text, "evidence_span_id": f"p{p}",
-                     "document_char_start": offset})
+        rows.append(
+            {
+                "physical_page": p,
+                "passage": text,
+                "evidence_span_id": f"p{p}",
+                "document_char_start": offset,
+            }
+        )
         offset += len(text) + 1
     return rows
 
 
 def tree():
-    return {"tree": {"doc_description": "NAV_DESCRIPTION_SECRET", "structure": [
-        {"node_id": "a", "title": "Policy", "summary": "NAV_SUMMARY_SECRET", "start_index": 2,
-         "end_index": 4, "nodes": [{"node_id": "b", "title": "Benefit", "summary": "NAV_CHILD_SECRET",
-                                     "start_index": 3, "end_index": 3}]}]}}
+    return {
+        "tree": {
+            "doc_description": "NAV_DESCRIPTION_SECRET",
+            "structure": [
+                {
+                    "node_id": "a",
+                    "title": "Policy",
+                    "summary": "NAV_SUMMARY_SECRET",
+                    "start_index": 2,
+                    "end_index": 4,
+                    "nodes": [
+                        {
+                            "node_id": "b",
+                            "title": "Benefit",
+                            "summary": "NAV_CHILD_SECRET",
+                            "start_index": 3,
+                            "end_index": 3,
+                        }
+                    ],
+                }
+            ],
+        }
+    }
 
 
 def sections(saved=None):
-    return build_sections(plan_id="p", document={"sha256": "x", "document_version_id": "d"},
-                          pages=pages(), saved_map=saved or tree())
+    return build_sections(
+        plan_id="p",
+        document={"sha256": "x", "document_version_id": "d"},
+        pages=pages(),
+        saved_map=saved or tree(),
+    )
 
 
 def test_summary_isolation_and_full_source_coverage():
@@ -41,7 +70,9 @@ def test_summary_isolation_and_full_source_coverage():
     assert "NAV_SUMMARY_SECRET" in str(nav) and "NAV_DESCRIPTION_SECRET" in str(nav)
     assert "NAV_" not in str(pack_sections("p", pieces).evidence())
     assert "NAV_" not in " ".join(s.index_text for s in pieces)
-    assert [(s.page, s.text) for c in pieces for s in c.segments] == [(p["physical_page"], p["passage"]) for p in pages()]
+    assert [(s.page, s.text) for c in pieces for s in c.segments] == [
+        (p["physical_page"], p["passage"]) for p in pages()
+    ]
     assert len(pieces) == 4  # front matter, parent prefix, child, parent suffix
 
 
@@ -55,8 +86,10 @@ def test_bad_map_gets_recorded_fallback():
 
 
 def test_crossing_siblings_rejected_and_shared_boundary_kept_once():
-    nodes = [{"node_id": "a", "title": "A", "summary": "a", "start_index": 1, "end_index": 3},
-             {"node_id": "b", "title": "B", "summary": "b", "start_index": 2, "end_index": 4}]
+    nodes = [
+        {"node_id": "a", "title": "A", "summary": "a", "start_index": 1, "end_index": 3},
+        {"node_id": "b", "title": "B", "summary": "b", "start_index": 2, "end_index": 4},
+    ]
     with pytest.raises(ValueError, match="cross"):
         map_ranges(nodes, 4)
     nodes[1]["start_index"] = 3
@@ -65,11 +98,19 @@ def test_crossing_siblings_rejected_and_shared_boundary_kept_once():
 
 
 def test_cache_requires_model_settings_and_source_identity():
-    saved = {"pdf_sha256": "pdf", "raw_sha256": "raw", "sdk_revision": "sdk",
-             "processing_version": PROCESSING_VERSION, "settings": MAP_SETTINGS, "models": ["claude-sonnet-5"]}
+    saved = {
+        "pdf_sha256": "pdf",
+        "raw_sha256": "raw",
+        "sdk_revision": "sdk",
+        "processing_version": PROCESSING_VERSION,
+        "settings": MAP_SETTINGS,
+        "models": ["claude-sonnet-5"],
+    }
     assert cache_matches(saved, pdf_sha="pdf", raw_sha="raw", sdk_revision="sdk")
     for field, value in [("models", ["gpt-5.6-sol"]), ("settings", {}), ("raw_sha256", "changed")]:
-        assert not cache_matches({**saved, field: value}, pdf_sha="pdf", raw_sha="raw", sdk_revision="sdk")
+        assert not cache_matches(
+            {**saved, field: value}, pdf_sha="pdf", raw_sha="raw", sdk_revision="sdk"
+        )
 
 
 def test_packet_omissions_and_plan_scope():
@@ -111,22 +152,32 @@ def test_split_model_pair_is_invalid():
 
 def test_failed_map_resume_uses_recorded_fallback_without_repeating_ai(tmp_path, monkeypatch):
     from apps.adviser_v2.demo.mapping import build_corpus
+
     called = []
-    monkeypatch.setattr('apps.adviser_v2.demo.mapping.configure_sdk', lambda: (None, None))
+    monkeypatch.setattr("apps.adviser_v2.demo.mapping.configure_sdk", lambda: (None, None))
+
     def failure(*args):
         called.append(1)
-        raise RuntimeError('Invalid ordered map')
-    monkeypatch.setattr('apps.adviser_v2.demo.mapping.build_document', failure)
+        raise RuntimeError("Invalid ordered map")
+
+    monkeypatch.setattr("apps.adviser_v2.demo.mapping.build_document", failure)
     original = pages()
     for p in original:
-        p['document_version_id'] = 'd'
-    corpus = {'plans': [{'policy_version_id': 'p', 'pages': original,
-                        'documents': [{'document_version_id': 'd', 'sha256': 'source'}]}]}
+        p["document_version_id"] = "d"
+    corpus = {
+        "plans": [
+            {
+                "policy_version_id": "p",
+                "pages": original,
+                "documents": [{"document_version_id": "d", "sha256": "source"}],
+            }
+        ]
+    }
     first = build_corpus(corpus, tmp_path)
     second = build_corpus(corpus, tmp_path)
     assert len(called) == 1
-    assert first['plans'][0]['sections'] == second['plans'][0]['sections']
-    assert first['plans'][0]['document_status'][0]['status'] == 'fallback'
+    assert first["plans"][0]["sections"] == second["plans"][0]["sections"]
+    assert first["plans"][0]["document_status"][0]["status"] == "fallback"
 
 
 def test_pageindex_transport_retry_is_not_a_negative_title_check(tmp_path, monkeypatch):
@@ -134,18 +185,23 @@ def test_pageindex_transport_retry_is_not_a_negative_title_check(tmp_path, monke
 
     from apps.adviser_v2.demo.mapping import CONTEXT, internal_call
     from apps.adviser_v2.demo.relay import RelayUnavailable
+
     calls = []
+
     def call(**kwargs):
         calls.append(kwargs)
         if len(calls) == 1:
-            raise RelayUnavailable('temporary transport failure')
-        return SimpleNamespace(value={'response': '{"answer":"yes"}'}, model='gpt-5.6-luna', call_ids=['call'])
-    relay = SimpleNamespace(state=SimpleNamespace(model=lambda: 'gpt-5.6-luna'), call=call)
+            raise RelayUnavailable("temporary transport failure")
+        return SimpleNamespace(
+            value={"response": '{"answer":"yes"}'}, model="gpt-5.6-luna", call_ids=["call"]
+        )
+
+    relay = SimpleNamespace(state=SimpleNamespace(model=lambda: "gpt-5.6-luna"), call=call)
     errors = []
     token = CONTEXT.set((relay, tmp_path, set(), errors))
-    monkeypatch.setattr('apps.adviser_v2.demo.mapping.time.sleep', lambda _: None)
+    monkeypatch.setattr("apps.adviser_v2.demo.mapping.time.sleep", lambda _: None)
     try:
-        result = internal_call('ignored', 'Directly return the final JSON structure.')
+        result = internal_call("ignored", "Directly return the final JSON structure.")
     finally:
         CONTEXT.reset(token)
     assert result == '{"answer":"yes"}' and len(calls) == 2 and not errors
@@ -155,24 +211,33 @@ def test_packet_budget_counts_serialized_metadata_and_tables():
     import json
 
     from research_workspace.legacy_v2.evidence_retrieval import token_count
+
     pieces, _, _ = sections()
-    cells = {str(n): {'row': n, 'column': 1, 'citation': {
-        'section_id': pieces[0].id, 'page_id': 'p1', 'quote': 'Original page 1.'}}
-        for n in range(100)}
-    packet = pack_sections('p', pieces, budget=750, tables=[{'id': 'large', 'cells': cells}])
+    cells = {
+        str(n): {
+            "row": n,
+            "column": 1,
+            "citation": {"section_id": pieces[0].id, "page_id": "p1", "quote": "Original page 1."},
+        }
+        for n in range(100)
+    }
+    packet = pack_sections("p", pieces, budget=750, tables=[{"id": "large", "cells": cells}])
     assert packet.sections
-    assert 'table:large' in packet.omitted_ids
+    assert "table:large" in packet.omitted_ids
     assert token_count(json.dumps(packet.evidence(), ensure_ascii=False)) <= 750
-    assert 'NAV_' not in str(packet.evidence())
+    assert "NAV_" not in str(packet.evidence())
 
 
 def test_navigation_serialization_preserves_all_ids_without_repeated_description():
     import json
 
     from apps.adviser_v2.demo.search import navigation_map
+
     pieces, nodes, _ = sections()
-    serialized = navigation_map({'sections': [s.payload() for s in pieces], 'navigation': nodes})
-    assert {s['section_id'] for n in serialized['nodes'] for s in n['sections']} == {s.id for s in pieces}
-    assert json.dumps(serialized).count('NAV_DESCRIPTION_SECRET') == 1
-    assert 'NAV_SUMMARY_SECRET' in str(serialized)
-    assert 'NAV_' not in str(pack_sections('p', pieces).evidence())
+    serialized = navigation_map({"sections": [s.payload() for s in pieces], "navigation": nodes})
+    assert {s["section_id"] for n in serialized["nodes"] for s in n["sections"]} == {
+        s.id for s in pieces
+    }
+    assert json.dumps(serialized).count("NAV_DESCRIPTION_SECRET") == 1
+    assert "NAV_SUMMARY_SECRET" in str(serialized)
+    assert "NAV_" not in str(pack_sections("p", pieces).evidence())

@@ -79,10 +79,18 @@ def winner(hybrid: Score, pageindex: Score) -> dict:
     else:
         chosen = hybrid if hybrid.score > pageindex.score else pageindex
         reason = "Higher eligible score."
-    return {"protocol_version": PROTOCOL_VERSION, "winner": chosen.method, "reason": reason,
-            "both_disqualified": hybrid.disqualified and pageindex.disqualified,
-            "live_enabled": True, "denominators": {"star_cells": 39, "answer_cases": 260, "slots": 13},
-            "arms": [{**asdict(s), "score": s.score, "disqualified": s.disqualified} for s in (hybrid, pageindex)]}
+    return {
+        "protocol_version": PROTOCOL_VERSION,
+        "winner": chosen.method,
+        "reason": reason,
+        "both_disqualified": hybrid.disqualified and pageindex.disqualified,
+        "live_enabled": True,
+        "denominators": {"star_cells": 39, "answer_cases": 260, "slots": 13},
+        "arms": [
+            {**asdict(s), "score": s.score, "disqualified": s.disqualified}
+            for s in (hybrid, pageindex)
+        ],
+    }
 
 
 def complete_cell(reference_ids: set[str], fixed: set[str], customer: set[str]) -> bool:
@@ -94,8 +102,12 @@ def complete_cell(reference_ids: set[str], fixed: set[str], customer: set[str]) 
 def paired_models_match(hybrid: dict, pageindex: dict) -> bool:
     """Both retrieval and answer must stay on one allowed model within a pair."""
     identities = set(hybrid.get("models", [])) | set(pageindex.get("models", []))
-    return (bool(hybrid.get("models")) and bool(pageindex.get("models"))
-            and len(identities) == 1 and identities <= set(MODELS))
+    return (
+        bool(hybrid.get("models"))
+        and bool(pageindex.get("models"))
+        and len(identities) == 1
+        and identities <= set(MODELS)
+    )
 
 
 def freeze(root: Path, inputs: dict) -> str:
@@ -107,5 +119,7 @@ def freeze(root: Path, inputs: dict) -> str:
         if saved["sha256"] != fingerprint or saved["inputs"] != inputs:
             raise ValueError("Frozen bake-off inputs changed; do not resume or tune this run.")
     else:
-        atomic_json(path, {"protocol_version": PROTOCOL_VERSION, "inputs": inputs, "sha256": fingerprint})
+        atomic_json(
+            path, {"protocol_version": PROTOCOL_VERSION, "inputs": inputs, "sha256": fingerprint}
+        )
     return fingerprint

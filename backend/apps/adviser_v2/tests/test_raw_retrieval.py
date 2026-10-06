@@ -88,7 +88,8 @@ def test_bm25_never_checks_dense_qualification(monkeypatch, settings):
         lambda: pytest.fail("BM25 called dense qualification"),
     )
     monkeypatch.setattr(
-        "research_workspace.legacy_v2.evidence_retrieval.plan_chunks", lambda p: [chunk(p, "ambulance cover", p)]
+        "research_workspace.legacy_v2.evidence_retrieval.plan_chunks",
+        lambda p: [chunk(p, "ambulance cover", p)],
     )
     assert retrieve_plan("ambulance", POLICY_ID).chunks
 
@@ -142,7 +143,9 @@ def source_fixture(monkeypatch):
         segments=({"page_span_id": PAGE_ID, "start": start, "end": end},),
     )
     packet = pack(POLICY_ID, [c], budget=16000, method="bm25")
-    monkeypatch.setattr("research_workspace.legacy_v2.source_answers.packet_pages", lambda packet: pages)
+    monkeypatch.setattr(
+        "research_workspace.legacy_v2.source_answers.packet_pages", lambda packet: pages
+    )
     return SourceAnswer(packet, criterion, result, result, review, None)
 
 
@@ -181,7 +184,9 @@ def test_free_answer_serializes_profile_dates_without_polluting_retrieval(monkey
         return expected.extraction if len(calls) == 1 else expected.review
 
     monkeypatch.setattr("research_workspace.legacy_v2.source_answers._relay", relay)
-    monkeypatch.setattr("research_workspace.legacy_v2.source_answers._source_statement", lambda *args: {})
+    monkeypatch.setattr(
+        "research_workspace.legacy_v2.source_answers._source_statement", lambda *args: {}
+    )
     answer = answer_question(
         None,
         "How many children?",
@@ -198,22 +203,30 @@ def test_neutral_language_is_checked_before_the_corrective_retry(monkeypatch):
     answer = source_fixture(monkeypatch)
     candidate = answer.extraction.model_copy(deep=True)
     fact = carrier_fact(candidate.rules[0])
-    fact.value = 'This is the best policy.'
+    fact.value = "This is the best policy."
     candidate.rules = [fact_carrier(answer.criterion, fact)]
-    answer = replace(answer, extraction=candidate, reviewed_extraction=candidate,
-        review=reviewed(answer.criterion, candidate))
-    assert 'Neutral wording check' in '; '.join(source_problems(answer))
+    answer = replace(
+        answer,
+        extraction=candidate,
+        reviewed_extraction=candidate,
+        review=reviewed(answer.criterion, candidate),
+    )
+    assert "Neutral wording check" in "; ".join(source_problems(answer))
 
 
 def test_unlisted_numeric_claim_in_answer_prose_is_rejected(monkeypatch):
     answer = source_fixture(monkeypatch)
     candidate = answer.extraction.model_copy(deep=True)
     fact = carrier_fact(candidate.rules[0])
-    fact.value += ' Cover is INR 5000.'
+    fact.value += " Cover is INR 5000."
     candidate.rules = [fact_carrier(answer.criterion, fact)]
-    answer = replace(answer, extraction=candidate, reviewed_extraction=candidate,
-        review=reviewed(answer.criterion, candidate))
-    assert 'unsupported money' in '; '.join(source_problems(answer))
+    answer = replace(
+        answer,
+        extraction=candidate,
+        reviewed_extraction=candidate,
+        review=reviewed(answer.criterion, candidate),
+    )
+    assert "unsupported money" in "; ".join(source_problems(answer))
 
 
 def test_relay_timeouts_retry_separately_from_validation(monkeypatch):
@@ -225,32 +238,47 @@ def test_relay_timeouts_retry_separately_from_validation(monkeypatch):
 
     _, result, _ = sample()
     attempts = []
+
     def call(**kwargs):
         attempts.append(kwargs)
         if len(attempts) < 3:
-            raise RelayFailure('provider_timeout', 'HTTP 408')
+            raise RelayFailure("provider_timeout", "HTTP 408")
         return result
-    monkeypatch.setattr('research_workspace.legacy_v2.source_answers.call_model', call)
-    monkeypatch.setattr('research_workspace.legacy_v2.source_answers.request_bytes_with_headroom', lambda *args: None)
-    turn = SimpleNamespace(deadline=timezone.now()+timedelta(seconds=900))
-    actual = _relay(turn, model='test', schema_name='policy_extraction', output_type=type(result), messages=[], effort='low')
+
+    monkeypatch.setattr("research_workspace.legacy_v2.source_answers.call_model", call)
+    monkeypatch.setattr(
+        "research_workspace.legacy_v2.source_answers.request_bytes_with_headroom",
+        lambda *args: None,
+    )
+    turn = SimpleNamespace(deadline=timezone.now() + timedelta(seconds=900))
+    actual = _relay(
+        turn,
+        model="test",
+        schema_name="policy_extraction",
+        output_type=type(result),
+        messages=[],
+        effort="low",
+    )
     assert actual == result
     assert len(attempts) == 3
 
 
 def test_invalid_source_answer_gets_only_one_corrective_attempt(monkeypatch):
     from research_workspace.legacy_v2.source_answers import answer_question
+
     expected = source_fixture(monkeypatch)
     invalid = expected.extraction.model_copy(deep=True)
     fact = carrier_fact(invalid.rules[0])
-    fact.citations[0].quote = 'A sentence absent from the source.'
+    fact.citations[0].quote = "A sentence absent from the source."
     invalid.rules = [fact_carrier(expected.criterion, fact)]
     attempts = []
+
     def relay(*args, **kwargs):
         attempts.append(kwargs)
         return invalid
-    monkeypatch.setattr('research_workspace.legacy_v2.source_answers._relay', relay)
-    answer = answer_question(None, 'How many children?', {}, expected.packet)
+
+    monkeypatch.setattr("research_workspace.legacy_v2.source_answers._relay", relay)
+    answer = answer_question(None, "How many children?", {}, expected.packet)
     assert answer.extraction is None
-    assert 'after validation' in answer.unknown_reason
+    assert "after validation" in answer.unknown_reason
     assert len(attempts) == 2

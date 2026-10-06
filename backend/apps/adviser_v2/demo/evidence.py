@@ -12,13 +12,18 @@ from .relay import MODELS
 from .text import token_count, tokenizer
 
 PROCESSING_VERSION = "pageindex-sections/1"
-MAP_SETTINGS = {"node_summaries": True, "document_description": True,
-                "max_pages": 8, "max_tokens": 4000}
+MAP_SETTINGS = {
+    "node_summaries": True,
+    "document_description": True,
+    "max_pages": 8,
+    "max_tokens": 4000,
+}
 
 
 def digest(value: object) -> str:
-    return hashlib.sha256(json.dumps(value, sort_keys=True, ensure_ascii=False,
-                                     separators=(",", ":")).encode()).hexdigest()
+    return hashlib.sha256(
+        json.dumps(value, sort_keys=True, ensure_ascii=False, separators=(",", ":")).encode()
+    ).hexdigest()
 
 
 def atomic_json(path: Path, value: object) -> None:
@@ -74,8 +79,13 @@ class Section:
 
     @classmethod
     def from_payload(cls, value: dict) -> Section:
-        return cls(**{**value, "title_path": tuple(value["title_path"]),
-                      "segments": tuple(Segment(**s) for s in value["segments"])})
+        return cls(
+            **{
+                **value,
+                "title_path": tuple(value["title_path"]),
+                "segments": tuple(Segment(**s) for s in value["segments"]),
+            }
+        )
 
 
 @dataclass(frozen=True)
@@ -89,17 +99,25 @@ class Packet:
 
     def evidence(self) -> dict:
         # No navigation object is accepted or merged by this function.
-        return {"plan_id": self.plan_id, "sections": [s.payload() for s in self.sections],
-                "omitted_ids": list(self.omitted_ids), "tokens": self.tokens, "tables": list(self.tables)}
+        return {
+            "plan_id": self.plan_id,
+            "sections": [s.payload() for s in self.sections],
+            "omitted_ids": list(self.omitted_ids),
+            "tokens": self.tokens,
+            "tables": list(self.tables),
+        }
 
 
 def cache_matches(saved: dict, *, pdf_sha: str, raw_sha: str, sdk_revision: str) -> bool:
-    return (saved.get("pdf_sha256") == pdf_sha and saved.get("raw_sha256") == raw_sha
-            and saved.get("sdk_revision") == sdk_revision
-            and saved.get("processing_version") == PROCESSING_VERSION
-            and saved.get("settings") == MAP_SETTINGS
-            and bool(saved.get("models"))
-            and all(model in MODELS for model in saved["models"]))
+    return (
+        saved.get("pdf_sha256") == pdf_sha
+        and saved.get("raw_sha256") == raw_sha
+        and saved.get("sdk_revision") == sdk_revision
+        and saved.get("processing_version") == PROCESSING_VERSION
+        and saved.get("settings") == MAP_SETTINGS
+        and bool(saved.get("models"))
+        and all(model in MODELS for model in saved["models"])
+    )
 
 
 def map_ranges(nodes: list[dict], page_count: int) -> list[tuple[int, int, tuple[str, ...], str]]:
@@ -122,7 +140,12 @@ def map_ranges(nodes: list[dict], page_count: int) -> list[tuple[int, int, tuple
                 raise ValueError("Map sibling ranges cross.")
             previous_end = b
             key, title = node["node_id"], node["title"]
-            if not isinstance(key, str) or key in identities or not isinstance(title, str) or not title:
+            if (
+                not isinstance(key, str)
+                or key in identities
+                or not isinstance(title, str)
+                or not title
+            ):
                 raise ValueError("Map node IDs/titles are invalid or duplicated.")
             if not isinstance(node.get("summary"), str):
                 raise ValueError("Map summaries are required for navigation.")
@@ -166,7 +189,12 @@ def _windows(text: str, *, fallback: bool) -> list[tuple[int, int]]:
                 break
         return result
     # Prefer source subheading / paragraph / sentence boundaries without gaps.
-    boundaries = [m.end() for m in re.finditer(r"\n\s*\n|(?<=[.!?;])\s+\n|\n(?=\s*(?:\d+[.)]|[A-Z][A-Z ]{5,})\s)", text)]
+    boundaries = [
+        m.end()
+        for m in re.finditer(
+            r"\n\s*\n|(?<=[.!?;])\s+\n|\n(?=\s*(?:\d+[.)]|[A-Z][A-Z ]{5,})\s)", text
+        )
+    ]
     result, start, first = [], 0, 0
     while start < len(text):
         while first < len(tokens) and offsets[first] < start:
@@ -174,7 +202,11 @@ def _windows(text: str, *, fallback: bool) -> list[tuple[int, int]]:
         target = offsets[min(first + 1024, len(tokens))]
         maximum = offsets[min(first + 2000, len(tokens))]
         options = [b for b in boundaries if start < b <= target]
-        end = max(options) if options else next((b for b in boundaries if target <= b <= maximum), target)
+        end = (
+            max(options)
+            if options
+            else next((b for b in boundaries if target <= b <= maximum), target)
+        )
         if end <= start:
             end = min(len(text), start + 1)
         result.append((start, end))
@@ -182,7 +214,9 @@ def _windows(text: str, *, fallback: bool) -> list[tuple[int, int]]:
     return result
 
 
-def build_sections(*, plan_id: str, document: dict, pages: list[dict], saved_map: dict | None) -> tuple[list[Section], list[dict], str | None]:
+def build_sections(
+    *, plan_id: str, document: dict, pages: list[dict], saved_map: dict | None
+) -> tuple[list[Section], list[dict], str | None]:
     pages = sorted(pages, key=lambda p: p["physical_page"])
     if [p["physical_page"] for p in pages] != list(range(1, len(pages) + 1)):
         raise ValueError("Original physical pages must be complete and ordered.")
@@ -198,7 +232,7 @@ def build_sections(*, plan_id: str, document: dict, pages: list[dict], saved_map
         ranges = [(1, len(pages), ("Original source fallback",), "")]
     sections, navigation = [], []
     for a, b, path, summary in ranges:
-        source_pages = pages[a - 1:b]
+        source_pages = pages[a - 1 : b]
         source = "\f".join(p["passage"] for p in source_pages)
         local_starts, offset = [], 0
         for page in source_pages:
@@ -207,27 +241,63 @@ def build_sections(*, plan_id: str, document: dict, pages: list[dict], saved_map
         for left, right in _windows(source, fallback=reason is not None):
             segments = []
             for page, page_start in zip(source_pages, local_starts, strict=True):
-                begin, end = max(0, left - page_start), min(len(page["passage"]), right - page_start)
+                begin, end = (
+                    max(0, left - page_start),
+                    min(len(page["passage"]), right - page_start),
+                )
                 if begin < end:
-                    segments.append(Segment(page["evidence_span_id"], page["physical_page"], begin, end,
-                        page["document_char_start"] + begin, page["document_char_start"] + end,
-                        page["passage"][begin:end], page.get("method", "native_text")))
+                    segments.append(
+                        Segment(
+                            page["evidence_span_id"],
+                            page["physical_page"],
+                            begin,
+                            end,
+                            page["document_char_start"] + begin,
+                            page["document_char_start"] + end,
+                            page["passage"][begin:end],
+                            page.get("method", "native_text"),
+                        )
+                    )
             if not segments:
                 continue
-            key = digest([PROCESSING_VERSION, plan_id, document["sha256"], path,
-                          [(s.page, s.start, s.end) for s in segments]])
-            section = Section(key, plan_id, document["document_version_id"], document["sha256"],
-                              document.get("role", "base_wording"), path, tuple(segments), bool(reason))
+            key = digest(
+                [
+                    PROCESSING_VERSION,
+                    plan_id,
+                    document["sha256"],
+                    path,
+                    [(s.page, s.start, s.end) for s in segments],
+                ]
+            )
+            section = Section(
+                key,
+                plan_id,
+                document["document_version_id"],
+                document["sha256"],
+                document.get("role", "base_wording"),
+                path,
+                tuple(segments),
+                bool(reason),
+            )
             sections.append(section)
-            navigation.append({"section_id": key, "title_path": path,
-                "pages": [segments[0].page, segments[-1].page],
-                "summary": section.text.splitlines()[0] if reason else summary,
-                "description": "" if reason else saved_map["tree"]["doc_description"],
-                "fallback": bool(reason)})
+            navigation.append(
+                {
+                    "section_id": key,
+                    "title_path": path,
+                    "pages": [segments[0].page, segments[-1].page],
+                    "summary": section.text.splitlines()[0] if reason else summary,
+                    "description": "" if reason else saved_map["tree"]["doc_description"],
+                    "fallback": bool(reason),
+                }
+            )
     # All non-whitespace source characters must be represented, including front matter.
     for page in pages:
-        spans = sorted((s.start, s.end) for c in sections for s in c.segments
-                       if s.page_id == page["evidence_span_id"])
+        spans = sorted(
+            (s.start, s.end)
+            for c in sections
+            for s in c.segments
+            if s.page_id == page["evidence_span_id"]
+        )
         cursor = 0
         for begin, end in spans:
             if begin > cursor and page["passage"][cursor:begin].strip():
@@ -238,7 +308,9 @@ def build_sections(*, plan_id: str, document: dict, pages: list[dict], saved_map
     return sections, navigation, reason
 
 
-def pack_sections(plan_id: str, ranked: list[Section], *, budget: int = 16000, tables: list[dict] | None = None) -> Packet:
+def pack_sections(
+    plan_id: str, ranked: list[Section], *, budget: int = 16000, tables: list[dict] | None = None
+) -> Packet:
     if not 1 <= budget <= 16000:
         raise ValueError("Packet budget must be 1..16000.")
     selected, omitted, seen, used = [], [], set(), 0
@@ -257,7 +329,9 @@ def pack_sections(plan_id: str, ranked: list[Section], *, budget: int = 16000, t
     regions = []
     selected_ids = {s.id for s in selected}
     for table in tables or []:
-        cells = {k: c for k, c in table["cells"].items() if c["citation"]["section_id"] in selected_ids}
+        cells = {
+            k: c for k, c in table["cells"].items() if c["citation"]["section_id"] in selected_ids
+        }
         if cells:
             candidate = {**table, "cells": cells}
             cost = token_count(json.dumps(candidate, ensure_ascii=False))
@@ -280,8 +354,12 @@ def pack_sections(plan_id: str, ranked: list[Section], *, budget: int = 16000, t
 
 
 def reference_covered(reference: dict, packet: Packet) -> bool:
-    spans = sorted((s.start, s.end) for c in packet.sections for s in c.segments
-                   if s.page_id == reference["page_span_id"])
+    spans = sorted(
+        (s.start, s.end)
+        for c in packet.sections
+        for s in c.segments
+        if s.page_id == reference["page_span_id"]
+    )
     cursor = reference["start"]
     for start, end in spans:
         if start <= cursor:

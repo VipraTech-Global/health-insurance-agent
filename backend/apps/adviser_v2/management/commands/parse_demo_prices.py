@@ -18,23 +18,27 @@ class Command(BaseCommand):
 
     def add_arguments(self, parser):
         parser.add_argument(
-            '--index-id', action='append', help='Parse only these plan indexes (repeatable).'
+            "--index-id", action="append", help="Parse only these plan indexes (repeatable)."
         )
 
     def handle(self, **options):
-        if settings.DATABASES['default']['NAME'] != 'coverguide_star_slice':
-            raise CommandError('Premium processing is restricted to the isolated demo database.')
-        root = Path(settings.COVERGUIDE_REPORT_ROOT) / 'ten-insurer'
-        rows = list(DemoPlanIndex.objects.filter(revoked_at__isnull=True).order_by('plan_key', '-created_at').distinct('plan_key'))
-        if options['index_id']:
-            rows = [row for row in rows if row.id in options['index_id']]
-            if len(rows) != len(set(options['index_id'])):
-                raise CommandError('Unknown or revoked plan index ID.')
+        if settings.DATABASES["default"]["NAME"] != "coverguide_star_slice":
+            raise CommandError("Premium processing is restricted to the isolated demo database.")
+        root = Path(settings.COVERGUIDE_REPORT_ROOT) / "ten-insurer"
+        rows = list(
+            DemoPlanIndex.objects.filter(revoked_at__isnull=True)
+            .order_by("plan_key", "-created_at")
+            .distinct("plan_key")
+        )
+        if options["index_id"]:
+            rows = [row for row in rows if row.id in options["index_id"]]
+            if len(rows) != len(set(options["index_id"])):
+                raise CommandError("Unknown or revoked plan index ID.")
         close_old_connections()
 
         def parse(row):
-            if row.card.get('status') == 'documents_unavailable':
-                return 'documents unavailable'
+            if row.card.get("status") == "documents_unavailable":
+                return "documents unavailable"
             result = parse_chart(priced_bundle(row), root)
             return f"{result['status']}; {len(result['prices'])} exact printed prices"
 
@@ -44,11 +48,13 @@ class Command(BaseCommand):
             for future in as_completed(jobs):
                 row = jobs[future]
                 try:
-                    self.stdout.write(row.name + ': ' + future.result())
+                    self.stdout.write(row.name + ": " + future.result())
                 except Exception as exc:
-                    failures.append({'index_id': row.id, 'reason': str(exc)})
-                    self.stderr.write(row.name + ': pending: ' + str(exc))
+                    failures.append({"index_id": row.id, "reason": str(exc)})
+                    self.stderr.write(row.name + ": pending: " + str(exc))
                 self.stdout.flush()
-        atomic_json(root / 'premium-failures.json', failures)
+        atomic_json(root / "premium-failures.json", failures)
         if failures:
-            raise CommandError(f'{len(failures)} price jobs remain pending; successful tables are cached.')
+            raise CommandError(
+                f"{len(failures)} price jobs remain pending; successful tables are cached."
+            )

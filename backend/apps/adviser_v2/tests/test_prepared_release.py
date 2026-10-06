@@ -204,12 +204,27 @@ def test_prepared_facts_include_every_plan_without_computed_personal_outcomes():
 
     release, span = prepared_fixture()
     for version in PolicyVersion.objects.all():
-        ProductVariant.objects.create(policy_version=version, name='Base',
-            choices={'other_selectors': []}, availability=version.applicability, identity_evidence=span)
-    requirement = SimpleNamespace(id=uuid.uuid4(), criterion='copay', operator='equals',
-        priority='mandatory', scope='entire_purchase', subject_person_id=None, status='reported',
-        target_value={'state': 'known', 'kind': 'quantity', 'value': '0', 'unit': 'ratio'})
+        ProductVariant.objects.create(
+            policy_version=version,
+            name="Base",
+            choices={"other_selectors": []},
+            availability=version.applicability,
+            identity_evidence=span,
+        )
+    requirement = SimpleNamespace(
+        id=uuid.uuid4(),
+        criterion="copay",
+        operator="equals",
+        priority="mandatory",
+        scope="entire_purchase",
+        subject_person_id=None,
+        status="reported",
+        target_value={"state": "known", "kind": "quantity", "value": "0", "unit": "ratio"},
+    )
     products = evaluate_release(release, [], [requirement])
     assert len(products) == 3
     assert all(not p.rules for p in products)
-    assert all(p.matches[0].outcome == 'unknown' and p.matches[0].comparison_value is None for p in products)
+    assert all(
+        p.matches[0].outcome == "unknown" and p.matches[0].comparison_value is None
+        for p in products
+    )

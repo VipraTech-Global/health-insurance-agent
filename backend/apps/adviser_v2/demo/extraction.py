@@ -24,14 +24,23 @@ def extract(document: dict, root: Path) -> list[dict]:
     saved = root / "raw" / (document["sha256"] + ".json")
     if saved.exists():
         import json
+
         value = json.loads(saved.read_text())
         if value["pdf_sha256"] != document["sha256"] or value["version"] != "poppler-raw-ocr/1":
             raise ValueError("Raw source cache is incompatible.")
         # Physical text is cached by PDF bytes, while document membership belongs
         # to this particular edition bundle. Never reuse another bundle's IDs.
-        return [{**page, 'document_key': document['document_key'],
-                 'document_version_id': document['document_version_id']} for page in value['pages']]
-    result = subprocess.run(["pdftotext", "-raw", str(path), "-"], capture_output=True, check=True, timeout=120)
+        return [
+            {
+                **page,
+                "document_key": document["document_key"],
+                "document_version_id": document["document_version_id"],
+            }
+            for page in value["pages"]
+        ]
+    result = subprocess.run(
+        ["pdftotext", "-raw", str(path), "-"], capture_output=True, check=True, timeout=120
+    )
     original_pages = result.stdout.decode("utf-8").split("\f")
     pages, offset = [], 0
     with pdfplumber.open(io.BytesIO(payload)) as pdf:
@@ -43,13 +52,42 @@ def extract(document: dict, root: Path) -> list[dict]:
                 method = "ocr"
                 with tempfile.TemporaryDirectory(prefix="demo-ocr-", dir=root) as work:
                     prefix = Path(work) / "page"
-                    subprocess.run(["pdftoppm", "-f", str(number), "-l", str(number), "-singlefile",
-                        "-r", "180", "-png", str(path), str(prefix)], check=True, capture_output=True, timeout=90)
-                    ocr = subprocess.run([os.getenv('COVERGUIDE_TESSERACT_PATH') or 'tesseract', str(prefix) + ".png", "stdout", "tsv"],
-                                         capture_output=True, text=True, check=True, timeout=120)
+                    subprocess.run(
+                        [
+                            "pdftoppm",
+                            "-f",
+                            str(number),
+                            "-l",
+                            str(number),
+                            "-singlefile",
+                            "-r",
+                            "180",
+                            "-png",
+                            str(path),
+                            str(prefix),
+                        ],
+                        check=True,
+                        capture_output=True,
+                        timeout=90,
+                    )
+                    ocr = subprocess.run(
+                        [
+                            os.getenv("COVERGUIDE_TESSERACT_PATH") or "tesseract",
+                            str(prefix) + ".png",
+                            "stdout",
+                            "tsv",
+                        ],
+                        capture_output=True,
+                        text=True,
+                        check=True,
+                        timeout=120,
+                    )
                     rows = list(csv.DictReader(io.StringIO(ocr.stdout), delimiter="\t"))
                     page_row = next(row for row in rows if row["level"] == "1")
-                    sx, sy = page.width / int(page_row["width"]), page.height / int(page_row["height"])
+                    sx, sy = (
+                        page.width / int(page_row["width"]),
+                        page.height / int(page_row["height"]),
+                    )
                     raw, line = "", None
                     for row in rows:
                         if row["level"] != "5" or not row["text"].strip():
@@ -60,17 +98,36 @@ def extract(document: dict, root: Path) -> list[dict]:
                         start = len(raw)
                         raw += row["text"]
                         x, y, w, h = (int(row[k]) for k in ("left", "top", "width", "height"))
-                        words.append({"start": start, "end": len(raw), "confidence": float(row["conf"]),
-                                      "bbox": [x*sx, y*sy, (x+w)*sx, (y+h)*sy]})
+                        words.append(
+                            {
+                                "start": start,
+                                "end": len(raw),
+                                "confidence": float(row["conf"]),
+                                "bbox": [x * sx, y * sy, (x + w) * sx, (y + h) * sy],
+                            }
+                        )
                         line = new_line
             if not raw.strip():
                 raise ValueError(f"No source text could be extracted on physical page {number}.")
             page_id = str(uuid.uuid5(uuid.NAMESPACE_URL, f"{document['sha256']}:raw-page:{number}"))
-            pages.append({"evidence_span_id": page_id, "physical_page": number,
-                "passage": raw, "native_text": original_pages[number-1], "document_char_start": offset,
-                "document_key": document["document_key"], "document_version_id": document["document_version_id"],
-                "document_sha256": document["sha256"], "method": method, "ocr_words": words,
-                "width": float(page.width), "height": float(page.height)})
+            pages.append(
+                {
+                    "evidence_span_id": page_id,
+                    "physical_page": number,
+                    "passage": raw,
+                    "native_text": original_pages[number - 1],
+                    "document_char_start": offset,
+                    "document_key": document["document_key"],
+                    "document_version_id": document["document_version_id"],
+                    "document_sha256": document["sha256"],
+                    "method": method,
+                    "ocr_words": words,
+                    "width": float(page.width),
+                    "height": float(page.height),
+                }
+            )
             offset += len(raw) + 1
-    atomic_json(saved, {"version": "poppler-raw-ocr/1", "pdf_sha256": document["sha256"], "pages": pages})
+    atomic_json(
+        saved, {"version": "poppler-raw-ocr/1", "pdf_sha256": document["sha256"], "pages": pages}
+    )
     return pages

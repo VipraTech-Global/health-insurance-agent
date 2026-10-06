@@ -1005,7 +1005,9 @@ def test_evidence_batches_preserve_every_exact_passage_without_oversize_payloads
     monkeypatch.setattr(
         "research_workspace.legacy_v2.processing.stages._bundle_passages", lambda _policy: passages
     )
-    monkeypatch.setattr("research_workspace.legacy_v2.processing.stages.MAX_MODEL_PASSAGE_CHARACTERS", 180)
+    monkeypatch.setattr(
+        "research_workspace.legacy_v2.processing.stages.MAX_MODEL_PASSAGE_CHARACTERS", 180
+    )
 
     payloads = _passage_payloads(cast(PolicyVersion, SimpleNamespace()))
 
@@ -1070,7 +1072,9 @@ def test_index_stage_pins_validation_and_embedding_artifacts(
         "verified_rule_ids": rule_ids,
         "issues": [],
     }
-    monkeypatch.setattr("research_workspace.legacy_v2.processing.stages._policy_version", lambda _job: policy)
+    monkeypatch.setattr(
+        "research_workspace.legacy_v2.processing.stages._policy_version", lambda _job: policy
+    )
     monkeypatch.setattr(
         "research_workspace.legacy_v2.processing.stages.read_artifact",
         lambda _job: validation_artifact,
@@ -1143,7 +1147,9 @@ def test_index_stage_rejects_an_artifact_omitting_a_current_verified_rule(
         "verified_rule_ids": [str(included.id)],
         "issues": [],
     }
-    monkeypatch.setattr("research_workspace.legacy_v2.processing.stages._policy_version", lambda _job: policy)
+    monkeypatch.setattr(
+        "research_workspace.legacy_v2.processing.stages._policy_version", lambda _job: policy
+    )
     monkeypatch.setattr(
         "research_workspace.legacy_v2.processing.stages.read_artifact",
         lambda _job: validation_artifact,
