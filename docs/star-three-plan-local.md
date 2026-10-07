@@ -1,7 +1,7 @@
 # Star three-plan local slice
 
-Branch `feat/star-three-plan-slice` in `/home/akhilesh/Projects/coverguide-star-pilot-20260927`
-contains the completed local pilot. Checkpoint 2 approved all 39 cited facts; the subsequent
+The completed local pilot is on `main` and runs from this repository
+(`bash scripts/demo_stack.sh start`, settings in the untracked `.env.star-slice`). Checkpoint 2 approved all 39 cited facts; the subsequent
 architecture brief authorized local publication and end-to-end verification without further
 checkpoints. Nothing is pushed or published outside this machine. Use synthetic profiles only.
 
