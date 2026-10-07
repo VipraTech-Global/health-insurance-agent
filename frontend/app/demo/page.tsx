@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AuthPanel } from "@/components/auth-panel";
-import { DemoApp } from "@/components/demo-app";
+import { ChatApp } from "@/components/chat-app";
 import { api } from "@/lib/api";
 
 export default function DemoPage() {
@@ -13,8 +13,8 @@ export default function DemoPage() {
     catch (e) { setError(e instanceof Error ? e.message : "Session unavailable"); }
   }
   useEffect(() => { void refresh(); }, []);
-  if (error) return <main className="demo-shell"><p role="alert">{error}</p></main>;
-  if (!session) return <main className="demo-shell">Loading CoverGuide…</main>;
+  if (error) return <main className="splash"><p role="alert">{error}</p></main>;
+  if (!session) return <main className="splash">Loading CoverGuide…</main>;
   if (!session.authenticated) return <AuthPanel onSuccess={refresh} />;
-  return <DemoApp onSignedOut={refresh} />;
+  return <ChatApp onSignedOut={refresh} />;
 }

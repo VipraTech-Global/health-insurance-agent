@@ -13,7 +13,10 @@ class DemoConversation(models.Model):
     release = models.ForeignKey("adviser_v2.DemoRelease", on_delete=models.PROTECT)
     state_ciphertext = models.BinaryField()
     revision = models.PositiveIntegerField(default=0)
+    # The customer's opening words for the history sidebar, encrypted like the state.
+    title_ciphertext = models.BinaryField(null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
 
 class DemoChatTurn(models.Model):

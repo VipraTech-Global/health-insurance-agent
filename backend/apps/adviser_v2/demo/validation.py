@@ -34,6 +34,8 @@ class CheckResult:
     problems: tuple[str, ...]
     anchors: tuple[dict, ...]
     rejected_wrong_plan: int
+    # Positions in ``anchors`` cited by each statement (its text, conditions, restrictions).
+    statement_anchors: tuple[tuple[int, ...], ...] = ()
 
     @property
     def passed(self) -> bool:
@@ -48,6 +50,7 @@ def validate(
     known_variants: tuple[str, ...] = (),
 ) -> CheckResult:
     checks, problems, anchors = [True] * 6, [], []
+    statement_anchors = []
     wrong = 0
 
     def fail(index, message):
@@ -229,11 +232,13 @@ def validate(
                     4,
                     "An unlabelled optional/add-on/rider statement cannot be shown as base cover.",
                 )
+        first = len(anchors)
         quote_texts = supported(statement, 3)
         for condition in statement.conditions:
             supported(condition, 2)
         for restriction in statement.restrictions:
             supported(restriction, 4)
+        statement_anchors.append(tuple(range(first, len(anchors))))
         attached = " ".join(c.text for c in [*statement.conditions, *statement.restrictions])
         for quote in quote_texts:
             names = "|".join(
@@ -272,4 +277,6 @@ def validate(
         for restriction in statement.restrictions:
             if restriction.text.startswith("variant=") and restriction.text != f"variant={variant}":
                 fail(4, "Wrong variant.")
-    return CheckResult(tuple(checks), tuple(problems), tuple(anchors), wrong)
+    return CheckResult(
+        tuple(checks), tuple(problems), tuple(anchors), wrong, tuple(statement_anchors)
+    )

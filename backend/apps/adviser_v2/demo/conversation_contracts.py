@@ -138,6 +138,8 @@ class ChatState(Closed):
     plans_requested: bool = False
     plans_listed: bool = False
     list_queue: list[str] = Field(default_factory=list)
+    # Plans this turn's message names (shortlist or listed page); reset every turn.
+    shown_plans: list[str] = Field(default_factory=list)
     # The customer asked to pick one plan; the list says no single plan is chosen.
     suggestion_asked: bool = False
     # Printed-premium comparison across open plans, lowest first; never a ranking of fit.

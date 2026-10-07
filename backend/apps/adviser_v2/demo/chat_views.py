@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from ..models import DemoConversation
-from .chat_services import StaleTurn, commit_turn, payload, start
+from .chat_services import StaleTurn, commit_turn, history, payload, start
 
 
 class ChatOutput(serializers.Serializer):
@@ -23,7 +23,17 @@ class TurnInput(serializers.Serializer):
     text = serializers.CharField(max_length=3000)
 
 
+class ConversationSummary(serializers.Serializer):
+    id = serializers.UUIDField()
+    title = serializers.CharField()
+    updated_at = serializers.DateTimeField()
+
+
 class Conversations(APIView):
+    @extend_schema(operation_id="demo_list_conversations", responses=ConversationSummary(many=True))
+    def get(self, request):
+        return Response(history(request.user))
+
     @extend_schema(operation_id="demo_start_conversation", request=None, responses=ChatOutput)
     def post(self, request):
         return Response(start(request.user), status=201)

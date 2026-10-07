@@ -45,6 +45,7 @@ def test_whitespace_is_only_quote_normalization_and_highlight_maps_to_original()
     assert checked.passed
     assert checked.anchors[0]["start"] == 100 + a
     assert checked.anchors[0]["quote"] == raw[a:b]
+    assert checked.statement_anchors == ((0,),)
     with pytest.raises(ValueError):
         locate("Rs. 5,000", "Rs. 5000")
 
@@ -300,6 +301,7 @@ def test_table_answer_requires_separate_exact_cells_on_correct_axes():
     original, draft = table_answer()
     checked = validate(draft, original)
     assert checked.passed and len(checked.anchors) == 3
+    assert checked.statement_anchors == ((0, 1, 2),)
     draft.statements[0].table.row_label_ids = ["icu"]
     assert not validate(draft, original).checks[1]
     draft.statements[0].table.row_label_ids = ["benefit"]

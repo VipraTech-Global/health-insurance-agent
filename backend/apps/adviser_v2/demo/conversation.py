@@ -795,7 +795,7 @@ def plural(n, word):
 
 
 def plan_names(cards, ids):
-    """Plan labels in the neutral insurer A–Z order of the live list."""
+    """Plan labels in neutral insurer A–Z order."""
     chosen = [c for c in cards if c["plan_id"] in ids]
     chosen.sort(
         key=lambda c: (c["insurer"].casefold(), c["name"].casefold(), c["variant"].casefold())
@@ -844,7 +844,7 @@ def options_summary(state, cards):
     if len(names) <= 8:
         text += " They are: " + "; ".join(names) + "."
     else:
-        text += " All of them are in the plan list, in A–Z order (not a ranking)."
+        text += " Ask me to show the plans whenever you like."
     return text
 
 
@@ -866,7 +866,7 @@ def list_plans(state, cards, ask):
         state.list_queue = []
         return ask(
             "zero",
-            prefix="No plans remain. The live list shows the requirements and quotations responsible for exclusions.",
+            prefix="No plans match everything you’ve told me. Try changing or dropping a requirement.",
         )
     prefix = ""
     queue = [i for i in state.list_queue if i in remaining]
@@ -889,6 +889,7 @@ def list_plans(state, cards, ask):
             )
         )
     group, state.list_queue = queue[:5], queue[5:]
+    state.shown_plans = list(group)
     start = len(ordered) - len(queue) + 1
     by_id = {c["plan_id"]: c for c in cards}
 
@@ -1035,6 +1036,7 @@ def next_question(state, cards, *, relay=None, ambiguity=None):
                 prefix=f"{count} plans remain across unconfirmed or different cover types.",
             )
         state.selected_plans = sorted(remaining)
+        state.shown_plans = sorted(remaining)
         prefix = (
             f"Based on what you’ve told me, these {count} plans remain: "
             + "; ".join(plan_names(cards, remaining))
@@ -1045,6 +1047,7 @@ def next_question(state, cards, *, relay=None, ambiguity=None):
         return ask("few", prefix=prefix)
     if count == 1:
         state.stop_reason = "one_remains"
+        state.shown_plans = sorted(remaining)
         return ask(
             "one",
             prefix=f"One plan remains: {fits} confirmed fit and {uncertain} uncertain.",
@@ -1053,7 +1056,7 @@ def next_question(state, cards, *, relay=None, ambiguity=None):
         state.stop_reason = "none_remain"
         return ask(
             "zero",
-            prefix="No plans remain. The live list shows the requirements and quotations responsible for exclusions.",
+            prefix="No plans match everything you’ve told me. Try changing or dropping a requirement.",
         )
     if state.plans_listed:
         # The customer asked for the plans; stop asking narrowing questions.
@@ -1190,6 +1193,5 @@ def sum_insured_range(cards):
     if not bounds:
         return ""
     return (
-        f"The plans print sum insured choices from {bounds}. I haven’t applied a sum insured "
-        "limit; the plan list shows each plan’s choices."
+        f"The plans print sum insured choices from {bounds}. I haven’t applied a sum insured limit."
     )
