@@ -106,7 +106,7 @@ NCR = {
 }
 REASONS = {
     "source_unavailable": "no premium chart in its documents",
-    "invalid_chart": "its printed chart isn’t one I can match exactly yet",
+    "invalid_chart": "its premium chart couldn’t be read reliably",
     "no_exact_combination": "no printed premium for these details",
     "zone": "its printed zone list doesn’t place your city",
 }
@@ -377,17 +377,48 @@ def plan_price(card, profile, root=None):
     }
 
 
+# Legal suffixes that make insurer names long without telling them apart.
+LEGAL_SUFFIX = re.compile(
+    r"\s+(?:and Allied\s+)?(?:Insurance\s+)?(?:Company\s+)?(?:Limited|Ltd\.?)$", re.I
+)
+
+
+def short_insurer(name):
+    return LEGAL_SUFFIX.sub("", name).strip() or name
+
+
 def label(card):
+    insurer = short_insurer(card["insurer"])
     name = card["name"]
-    if not name.casefold().startswith(card["insurer"].casefold()):
-        name = f"{card['insurer']} {name}"
+    if not name.casefold().startswith(insurer.casefold()):
+        name = f"{insurer} {name}"
     if card["variant"] != "Default" and card["variant"] not in card["name"]:
         name += f" ({card['variant']})"
     return name
 
 
-def compare(state, cards, count=None, root=None):
-    """The comparison record and its plain-language summary."""
+def premium(card, profile, root=None):
+    """One plan's printed premium amount for one adult, or None."""
+    people = profile.people
+    if (
+        not profile.sum_insured
+        or len(people) != 1
+        or people[0].age is None
+        or people[0].age_unit != "years"
+        or people[0].age < 18
+    ):
+        return None
+    try:
+        found = plan_price(card, profile, root)
+    except (KeyError, ValueError, TypeError, OSError):
+        return None
+    return found["amount"] if found["status"] == "available" else None
+
+
+def compare(state, cards, count=None, root=None, ids=None):
+    """The comparison record and a one-line summary; the rows live in the table.
+
+    ``ids`` limits the comparison to the plans just shown ("these plans")."""
     profile = state.profile
     people = profile.people
     if (
@@ -401,6 +432,8 @@ def compare(state, cards, count=None, root=None):
             "depends on how each insurer combines ages and members, which I won’t guess."
         )
     remaining = remaining_ids(state.fit_groups)
+    if ids:
+        remaining &= set(ids)
     open_cards = sorted(
         (c for c in cards if c["plan_id"] in remaining),
         key=lambda c: (c["insurer"].casefold(), c["name"].casefold(), c["variant"].casefold()),
@@ -422,8 +455,10 @@ def compare(state, cards, count=None, root=None):
             )
     rows.sort(key=lambda r: (r["amount"], r["name"].casefold()))
     shown = rows[:count] if count else rows
+    # Typed in lower case, the city reads better capitalised.
+    city = profile.city.title() if profile.city.islower() else profile.city
     basis = (
-        f"one adult aged {people[0].age} in {profile.city}, "
+        f"one adult aged {people[0].age} in {city}, "
         f"{rupees(profile.sum_insured)} sum insured, 1-year term, excluding tax"
     )
     record = {
@@ -434,38 +469,32 @@ def compare(state, cards, count=None, root=None):
         "not_found": missing,
         "note": "Printed premiums only; not a recommendation or a quotation.",
     }
+    where = "these" if ids else "the"
     if shown:
-        parts = []
-        for r in shown:
-            text = f"{r['name']} ₹{r['amount']:,}"
-            if "zone" in r["axes"]:
-                text += f" ({r['axes']['zone']})"
-            if profile.annual_budget:
-                text += (
-                    ", within your budget"
-                    if r["amount"] <= profile.annual_budget
-                    else ", above your budget"
-                )
-            parts.append(text)
-        lead = f"Printed annual premiums for {basis}, lowest first: " + "; ".join(parts) + "."
+        lead = f"Here are the printed annual premiums for {basis}, lowest first" + (
+            f" — {len(shown)} of {where} {len(open_cards)} plans."
+            if missing or record["more_priced"]
+            else "."
+        )
+        if profile.annual_budget:
+            within = sum(r["amount"] <= profile.annual_budget for r in shown)
+            lead += f" {within} of them {'is' if within == 1 else 'are'} within your budget."
         if count and len(shown) < count:
-            lead += f" Only {plural(len(rows), 'plan')} of the {len(open_cards)} open to you {'has' if len(rows) == 1 else 'have'} a printed premium I could match."
+            lead += f" Only {plural(len(rows), 'plan')} {'has' if len(rows) == 1 else 'have'} a printed premium I could match."
         elif record["more_priced"]:
             lead += f" {plural(record['more_priced'], 'more plan')} also {'has' if record['more_priced'] == 1 else 'have'} a printed premium."
-        lead += " This is the printed premium only, not a recommendation; the insurer’s quote decides the final amount."
+        if missing:
+            lead += f" {plural(len(missing), 'plan')} {'has' if len(missing) == 1 else 'have'} no printed premium I could match; the table says why."
+        lead += " The insurer’s quote decides the final amount."
     else:
         lead = (
-            f"I couldn’t find a printed annual premium for {basis} in any of the "
-            f"{plural(len(open_cards), 'plan')} open to you."
+            f"I couldn’t find a printed annual premium for {basis} in any of {where} "
+            f"{plural(len(open_cards), 'plan')}."
         )
-    groups = {}
-    for m in missing:
-        groups.setdefault(m["reason"], []).append(m["name"])
-    if groups and shown:
-        lead += f" No printed premium for the other {len(missing)}:"
-    for reason, names in groups.items():
-        lead += f" {reason[0].upper() + reason[1:]} — " + "; ".join(names) + "."
-    if "zone" in groups and not place(profile.city)[1]:
+        reasons = {m["reason"] for m in missing}
+        if len(reasons) == 1:
+            lead += f" For each, {next(iter(reasons))}."
+    if any(m["status"] == "zone" for m in missing) and not place(profile.city)[1]:
         lead += " Telling me your state too (for example “Kota, Rajasthan”) may let me place it."
     return record, lead
 

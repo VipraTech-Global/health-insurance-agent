@@ -17,8 +17,9 @@ from ..models import (
     DemoSession,
 )
 from .chat_rules import fit_groups, remaining_ids
-from .conversation import interpret, next_question, summary, transition
+from .conversation import interpret, need_label, next_question, summary, transition
 from .conversation_contracts import ChatState
+from .price_compare import premium, short_insurer
 from .relay import AUDIT_CONTEXT, InvalidOutput, Relay, RelayUnavailable
 from .services import decrypted, encrypted
 
@@ -87,6 +88,29 @@ def history(owner):
     ]
 
 
+SUGGESTIONS = {
+    "people": ["Just me", "Me and my spouse"],
+    "sum_insured": ["5 lakh", "10 lakh", "25 lakh", "Not sure", "What are the options?"],
+    "annual_budget": ["Not sure"],
+    "coverage_basis": ["One shared cover", "Separate cover each", "Not sure"],
+    "needs": ["OPD", "Maternity", "No co-pay", "Skip"],
+    "strength": ["Must-have", "Nice-to-have"],
+    "narrow": ["Yes", "No"],
+    "health_details": ["Skip"],
+    "batch": ["Show more", "Compare premiums"],
+    "which_limit": ["Room rent", "Co-pay", "Disease sub-limits"],
+    "limit_question": ["Room rent", "Co-pay", "Disease sub-limits"],
+}
+for _template in ("exhausted", "batch_end", "few", "after_price"):
+    SUGGESTIONS[_template] = ["Compare premiums", "No, that’s all"]
+
+
+def suggestions(state):
+    """Short replies the customer can tap for the pending question; never a plan choice."""
+    asked = state.pending
+    return list(SUGGESTIONS.get(asked.template, [])) if asked else []
+
+
 def turn_blocks(state, before, cards):
     """Tables to draw inside this turn's assistant message, snapshotted for history."""
     by_id = {c["plan_id"]: c for c in cards}
@@ -95,16 +119,20 @@ def turn_blocks(state, before, cards):
     }
     blocks = []
     if state.shown_plans:
+        # One column per checkable customer need, in the order they were given.
+        needs = [r for r in state.profile.requirements if not r.field.startswith("unsupported:")]
         rows = []
         for plan_id in state.shown_plans:
             card, fit = by_id.get(plan_id), fits.get(plan_id)
             if not card:
                 continue
             reasons = [*fit["hard_limits"], *fit["other_needs"]] if fit else []
+            by_field = {r["field"]: r for r in fit["other_needs"]} if fit else {}
+            amount = premium(card, state.profile)
             rows.append(
                 {
                     "plan_id": plan_id,
-                    "insurer": card["insurer"],
+                    "insurer": short_insurer(card["insurer"]),
                     "name": card["name"],
                     "variant": card["variant"],
                     "plan_type": card["plan_type"],
@@ -112,9 +140,25 @@ def turn_blocks(state, before, cards):
                     "citations": [
                         c for r in reasons if r["status"] == "fits" for c in r["citations"]
                     ],
+                    "needs": [
+                        {
+                            "field": n.field,
+                            "status": by_field.get(n.field, {}).get("status", "unresolved"),
+                            # Two quotes per cell; the source panel shows the rest.
+                            "citations": by_field.get(n.field, {}).get("citations", [])[:2],
+                        }
+                        for n in needs
+                    ],
+                    "premium": f"{amount:,}" if amount is not None else None,
                 }
             )
-        blocks.append({"type": "shortlist", "plans": rows})
+        blocks.append(
+            {
+                "type": "shortlist",
+                "needs": [{"field": n.field, "label": need_label(n)} for n in needs],
+                "plans": rows,
+            }
+        )
     if state.question_id and state.question_id != before.question_id:
         blocks.append({"type": "question", "question_id": state.question_id})
     if state.price and state.price != before.price:
@@ -177,7 +221,12 @@ def start(owner, *, release_id=None):
     state.understanding = summary(state.profile)
     next_question(state, cards)
     state.transcript.append(
-        {"role": "assistant", "text": state.message, "understanding": state.understanding}
+        {
+            "role": "assistant",
+            "text": state.message,
+            "understanding": state.understanding,
+            "suggestions": suggestions(state),
+        }
     )
     session.profile_ciphertext = encrypted(state.profile.model_dump(), session.id)
     session.save()
@@ -339,6 +388,7 @@ def commit_turn(owner, conversation_id, *, request_id, revision, text, relay=Non
                 "text": state.message,
                 "understanding": state.understanding,
                 "blocks": turn_blocks(state, prior, cards),
+                "suggestions": suggestions(state),
             },
         ]
     )

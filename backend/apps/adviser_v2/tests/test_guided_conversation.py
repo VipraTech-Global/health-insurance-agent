@@ -440,8 +440,9 @@ def test_options_summary_never_claims_fit_when_nothing_is_confirmed():
 
     text = options_summary(state, source)
     assert "6 plans are open to you" in text and "None is ruled out" in text
-    assert "who can be covered together" in text and "match every" not in text
-    assert text.index("Insurer 1") < text.index("Insurer 6")
+    assert "who can be covered on one policy" in text and "match every" not in text
+    # More than five: no names in prose, the list is shown on request.
+    assert "Insurer" not in text and "Ask me to show them" in text
 
 
 def test_unnarrowable_policy_question_is_answered_in_alphabetical_fives():
@@ -453,7 +454,7 @@ def test_unnarrowable_policy_question_is_answered_in_alphabetical_fives():
     state = next_question(state, source, relay=NoCalls())
     first = state.selected_plans
     assert len(first) == 5 and len(state.batch_queue) == 2 and not state.policy_deferred
-    assert "not a ranking" in state.message and "next five" in state.message
+    assert "not a ranking" in state.message and "see more" in state.message
     assert {c["insurer"] for c in source if c["plan_id"] in first} == {
         f"Insurer {i}" for i in range(1, 6)
     }
@@ -463,7 +464,7 @@ def test_unnarrowable_policy_question_is_answered_in_alphabetical_fives():
     state = transition(state, changes, source, relay=NoCalls())
     assert len(state.selected_plans) == 2 and not set(state.selected_plans) & set(first)
     assert state.policy_question == "Is OPD covered?" and not state.batch_queue
-    assert "last group" in state.message
+    assert "That’s every plan open to you" in state.message
 
 
 def test_first_person_reply_means_self_without_ai():
@@ -617,10 +618,12 @@ def test_sum_insured_options_reply_shows_printed_range_without_advice():
         "can you provide option in what sum insured is available and would be more suitable for me"
     )
     changes, model = interpret(text, state, source, NoCalls())
-    assert changes.skip and model is None
+    assert changes.options_asked and not changes.skip and model is None
     state = transition(state, changes, source, relay=NoCalls())
-    assert state.pending.field == "annual_budget"
+    # The choices are shown and the question stays open; nothing is recommended.
+    assert state.pending.field == "sum_insured" and "didn’t quite catch" not in state.message
     assert "from ₹5 lakh to ₹1 crore" in state.message and "suitable" not in state.message
+    assert "the most common are ₹5 lakh, ₹10 lakh, ₹25 lakh, ₹1 crore" in state.message
     assert not any("Sum insured" in line for line in state.understanding)
 
 
@@ -651,12 +654,14 @@ def test_asking_for_plans_lists_them_in_fives_and_stops_narrowing():
     changes, model = interpret("no. Can you suggest me plans now", state, source, NoCalls())
     assert changes.show_plans and changes.affirmative is False and model is None
     state = transition(state, changes, source, relay=NoCalls())
-    assert "not a ranking" in state.message and "Plans 1–5 of 7" in state.message
-    assert "next five" in state.message and len(state.list_queue) == 2
-    assert state.message.index("Insurer 1") < state.message.index("Insurer 5")
+    assert "7 plans are open to you; here are the first 5." in state.message
+    assert "isn’t a ranking" in state.message and "see more" in state.message
+    assert len(state.shown_plans) == 5 and len(state.list_queue) == 2
+    assert "Insurer" not in state.message  # names live in the table
     changes, _ = interpret("next five", state, source, NoCalls())
     state = transition(state, changes, source, relay=NoCalls())
-    assert "Plans 6–7 of 7" in state.message and "last group" in state.message
+    assert "Here are the next 2 plans." in state.message and len(state.shown_plans) == 2
+    assert "That’s every plan open to you" in state.message
     assert "didn’t quite catch" not in state.message
     state = transition(state, ProposedChanges(), source, relay=NoCalls())
     assert state.pending.template == "exhausted"

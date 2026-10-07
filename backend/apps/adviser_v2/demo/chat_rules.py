@@ -215,7 +215,8 @@ def fit_groups(cards, profile):
         for need in profile.requirements:
             reason = requirement_result(card, need, profile)
             result["other_needs"].append(reason)
-            if need.strength == "must_have":
+            # A need the documents can't be checked for never filters plans.
+            if need.strength == "must_have" and not need.field.startswith("unsupported:"):
                 result["hard_limits"].append(reason)
         # Never exclude from unsupported metadata or an uncited conflict.
         for reason in result["hard_limits"]:

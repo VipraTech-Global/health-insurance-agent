@@ -97,15 +97,15 @@ export function ChatApp({ onSignedOut }: { onSignedOut: () => Promise<void> }) {
   const answering = Boolean(chat?.state.question_id && !finished(questions[chat.state.question_id]));
   const stopped = chat?.state.stage === "stopped";
 
-  async function send() {
-    const value = text.trim();
+  async function send(picked?: string) {
+    const value = (picked ?? text).trim();
     if (!chat || busy || answering || !value || stopped) return;
     setBusy(true); setError("");
     const request = receipt.current?.text === value && receipt.current.revision === chat.state.revision
       ? receipt.current : { text: value, revision: chat.state.revision, request_id: crypto.randomUUID() };
     receipt.current = request;
     setMessages(old => [...old, { role: "customer", text: value }]);
-    setText("");
+    if (!picked) setText("");
     try {
       const data = await api<Chat>(`/api/v2/demo/conversations/${chat.id}/`, { method: "POST", body: JSON.stringify(request) });
       receipt.current = null;
@@ -115,7 +115,7 @@ export function ChatApp({ onSignedOut }: { onSignedOut: () => Promise<void> }) {
       void refreshList();
     } catch (e) {
       setMessages(old => old.slice(0, -1));
-      setText(value);
+      if (!picked) setText(value);
       setError(message(e, "Message unavailable"));
     } finally { setBusy(false); }
   }
@@ -150,7 +150,12 @@ export function ChatApp({ onSignedOut }: { onSignedOut: () => Promise<void> }) {
       <main className="chat">
         <div className="transcript" aria-live="polite">
           {!chat && !error && <p className="muted center">Starting a conversation…</p>}
-          {messages.map((m, i) => <MessageView key={i} message={m} cards={chat?.cards ?? []} questions={questions} onSource={onSource} />)}
+          {messages.map((m, i) => (
+            <MessageView
+              key={i} message={m} cards={chat?.cards ?? []} questions={questions} onSource={onSource}
+              onPick={i === messages.length - 1 && !busy && !answering && !stopped ? value => void send(value) : undefined}
+            />
+          ))}
           {busy && chat && <div className="msg assistant"><p className="muted typing">Thinking…</p></div>}
           {stopped && <div className="ended"><p>This conversation has ended.</p><button type="button" onClick={() => void begin()}>Start a new chat</button></div>}
           <div ref={bottom} />

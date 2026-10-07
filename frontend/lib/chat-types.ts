@@ -4,7 +4,13 @@ export type Anchor = { quote: string; page: number; document_id: string; boxes: 
 
 export type ShortlistBlock = {
   type: "shortlist";
-  plans: { plan_id: string; insurer: string; name: string; variant: string; plan_type: string; confirmed: boolean; citations: Quote[] }[];
+  /** The customer's checkable needs, one table column each; absent on older blocks. */
+  needs?: { field: string; label: string }[];
+  plans: {
+    plan_id: string; insurer: string; name: string; variant: string; plan_type: string; confirmed: boolean; citations: Quote[];
+    needs?: { field: string; status: "fits" | "doesnt_fit" | "unresolved"; citations: Quote[] }[];
+    premium?: string | null;
+  }[];
 };
 export type QuestionBlock = { type: "question"; question_id: string };
 export type PriceBlock = {
@@ -17,7 +23,7 @@ export type PriceComparisonBlock = {
 };
 export type Block = ShortlistBlock | QuestionBlock | PriceBlock | PriceComparisonBlock;
 
-export type Message = { role: "customer" | "assistant"; text: string; understanding?: string[]; blocks?: Block[] };
+export type Message = { role: "customer" | "assistant"; text: string; understanding?: string[]; blocks?: Block[]; suggestions?: string[] };
 
 export type Statement = {
   text: string; heading?: string; excerpts?: string[];

@@ -80,6 +80,13 @@ input:focus, textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px 
 .msg.assistant { display: grid; gap: 14px; }
 .msg .typing { animation: pulse 1.4s ease-in-out infinite; }
 @keyframes pulse { 50% { opacity: .4; } }
+.suggestions { display: flex; flex-wrap: wrap; gap: 8px; margin: 2px 0 10px; }
+.chip { padding: 7px 13px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); color: var(--green-dark); font-size: 13px; cursor: pointer; }
+.chip:hover { border-color: var(--green); background: var(--mint); }
+.chip:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+.need.fits { color: var(--green-dark); font-weight: 600; }
+.need.doesnt_fit { color: var(--amber); }
+.need.unresolved { color: var(--muted); }
 .understood { font-size: 13px; color: var(--muted); }
 .understood summary { cursor: pointer; }
 .understood p { margin: 6px 0 0; white-space: normal; }

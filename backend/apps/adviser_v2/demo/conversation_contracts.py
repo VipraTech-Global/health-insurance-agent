@@ -94,6 +94,10 @@ class ProposedChanges(Closed):
     affirmative: bool | None = None
     no_preference: bool = False
     no_more_needs: bool = False
+    # "I don't know my budget" said outside the budget question.
+    budget_unsure: bool = False
+    # A bare "must have" restating the latest need.
+    restated: bool = False
     narrow_first: bool = False
     next_batch: bool = False
     # Asks what the listed benefit terms mean; not a question about any plan.
@@ -102,6 +106,14 @@ class ProposedChanges(Closed):
     show_plans: bool = False
     # Asks the assistant to pick a plan; set by code from the customer's words.
     suggest: bool = False
+    # How many plans the customer asked to see ("top 3"); set by code.
+    list_count: int | None = Field(default=None, ge=1, le=5)
+    # Asks which choices exist for the pending detail (e.g. sum insured).
+    options_asked: bool = False
+    # Refers to the plans just shown ("these plans"); set by code.
+    about_shown: bool = False
+    # Also asks about a limit alongside another request; set by code.
+    limit_asked: bool = False
     # Asks for printed premiums across the open plans (e.g. the 3 lowest).
     compare_prices: bool = False
     compare_count: int | None = Field(default=None, ge=1, le=20)
@@ -109,7 +121,6 @@ class ProposedChanges(Closed):
     selected_plans: list[str] = Field(default_factory=list, max_length=5)
     restored_plans: list[str] = Field(default_factory=list, max_length=5)
     withdrawn_requirements: list[str] = Field(default_factory=list, max_length=20)
-    insurer_filter: str | None = None
     price_plan: str | None = None
     price_axis: str | None = None
     price_value: str | None = None
@@ -140,12 +151,27 @@ class ChatState(Closed):
     list_queue: list[str] = Field(default_factory=list)
     # Plans this turn's message names (shortlist or listed page); reset every turn.
     shown_plans: list[str] = Field(default_factory=list)
-    # The customer asked to pick one plan; the list says no single plan is chosen.
+    # The most recent plans shown, kept so "these plans" has a referent.
+    last_shown: list[str] = Field(default_factory=list)
+    # Requirements when the plans were last listed; a change lists them again.
+    listed_for: str | None = None
+    # How many plans the customer asked to see ("top 3").
+    list_count: int | None = None
+    # A vague need ("limits matter") awaiting a concrete choice.
+    vague_need: str | None = None
+    # The customer asked which choices exist for the pending detail.
+    options_asked: bool = False
+    # Ask which limit to quote after this turn's answer.
+    limit_asked: bool = False
+    # Price the plans last shown rather than every open plan.
+    compare_shown: bool = False
+    # Kept for stored states; no longer read.
     suggestion_asked: bool = False
     # Printed-premium comparison across open plans, lowest first; never a ranking of fit.
     compare_requested: bool = False
     compare_count: int | None = None
     price_comparison: dict | None = None
+    # Kept for stored states; no longer read.
     insurer_filter: str | None = None
     question_count: int = 0
     stop_reason: str | None = None

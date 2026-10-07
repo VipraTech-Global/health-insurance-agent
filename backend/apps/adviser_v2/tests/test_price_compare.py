@@ -181,11 +181,12 @@ def test_comparison_is_lowest_first_cited_and_names_unpriced_plans(tmp_path):
     state.fit_groups = fit_groups(source, state.profile)
     record, text = compare(state, source, count=3)
     assert [r["amount_printed"] for r in record["rows"]] == ["7,000", "8,334"]
-    assert text.index("₹7,000") < text.index("₹8,334")
-    assert "lowest first" in text and "not a recommendation" in text
-    assert "Only 2 plans of the 4 open to you have a printed premium" in text
-    assert "No premium chart in its documents" in text
-    assert "recommend " not in text.replace("not a recommendation", "")
+    # One lead line; the rows live only in the table.
+    assert "lowest first — 2 of the 4 plans." in text and "₹7,000" not in text
+    assert "Only 2 plans have a printed premium I could match" in text
+    assert "2 plans have no printed premium I could match; the table says why" in text
+    assert "no premium chart in its documents" in {m["reason"] for m in record["not_found"]}
+    assert "not a recommendation" in record["note"] and "recommend" not in text
     assert "best" not in text.casefold()
     names = {m["plan_id"] for m in record["not_found"]}
     assert names == {"1", "3"}
@@ -219,16 +220,18 @@ def test_premium_asks_get_a_comparison_never_a_reask(tmp_path):
     assert state.pending.field == "price_sum_insured"
     assert state.message.startswith("Printed premiums depend on the sum insured")
     state = transition(state, ProposedChanges(sum_insured=500000), source, relay=NoCalls())
-    assert "lowest first: Insurer 7 Secure Alpha I ₹8,334 (Zone B)" in state.message
+    assert "printed annual premiums" in state.message and "lowest first" in state.message
     assert state.price_comparison["rows"][0]["amount_printed"] == "8,334"
-    # The plan list is still on offer after the comparison.
-    assert state.pending.template == "batch" and "next five" in state.message
+    assert state.price_comparison["rows"][0]["name"] == "Insurer 7 Secure Alpha I"
+    # A comparison ends with its own follow-up, never the stale list prompt.
+    assert state.pending.template == "after_price" and "see more" not in state.message
     changes, _ = interpret(
         "tell me the annual budget premium of each plan", state, source, NoCalls()
     )
     assert changes.compare_prices and changes.compare_count is None
     state = transition(state, changes, source, relay=NoCalls())
-    assert "didn’t quite catch" not in state.message and "₹8,334" in state.message
+    assert "didn’t quite catch" not in state.message
+    assert state.price_comparison["rows"][0]["amount_printed"] == "8,334"
 
 
 def test_unsure_sum_insured_for_a_comparison_is_not_asked_again(tmp_path):
@@ -248,7 +251,7 @@ def test_unsure_sum_insured_for_a_comparison_is_not_asked_again(tmp_path):
     assert state.pending.field != "price_sum_insured" and not state.compare_requested
 
 
-def test_suggest_one_says_no_single_plan_is_picked():
+def test_suggest_lists_plans_by_disclosed_criteria_never_a_pick():
     source = cards(3)
     state = ChatState(
         profile=one_adult(),
@@ -259,8 +262,9 @@ def test_suggest_one_says_no_single_plan_is_picked():
     state = transition(
         state, ProposedChanges(show_plans=True, suggest=True), source, relay=NoCalls()
     )
-    assert state.message.startswith("I don’t pick a single plan for you.")
-    assert "A–Z order; this is not a ranking" in state.message
+    assert state.message.startswith("3 plans are open to you.")
+    assert "Listed A–Z by insurer; this isn’t a ranking." in state.message
+    assert "best" not in state.message.casefold() and len(state.shown_plans) == 3
 
 
 def test_city_tiers_and_a_rest_of_ncr_remainder():

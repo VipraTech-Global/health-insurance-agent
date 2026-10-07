@@ -3,8 +3,10 @@ import { AnswerTable } from "./blocks/answer-table";
 import { PriceComparisonTable, PriceTable } from "./blocks/price-table";
 import { ShortlistTable } from "./blocks/shortlist-table";
 
-export function MessageView({ message, cards, questions, onSource }: {
+export function MessageView({ message, cards, questions, onSource, onPick }: {
   message: Message; cards: Card[]; questions: Record<string, Question>; onSource: OpenSource;
+  /** Set on the latest reply only: its suggested answers can be tapped. */
+  onPick?: (text: string) => void;
 }) {
   if (message.role === "customer") return <div className="msg customer"><p>{message.text}</p></div>;
   const blocks = message.blocks ?? [];
@@ -19,6 +21,11 @@ export function MessageView({ message, cards, questions, onSource }: {
         : <PriceComparisonTable key={i} block={b} cards={cards} onSource={onSource} />,
       )}
       {!waiting && <p>{message.text}</p>}
+      {!waiting && onPick && message.suggestions && message.suggestions.length > 0 && (
+        <div className="suggestions" role="group" aria-label="Suggested replies">
+          {message.suggestions.map(s => <button type="button" key={s} className="chip" onClick={() => onPick(s)}>{s}</button>)}
+        </div>
+      )}
       {!waiting && message.understanding && message.understanding.length > 0 && (
         <details className="understood"><summary>What I’ve understood so far</summary>{message.understanding.map((line, n) => <p key={n}>{line}</p>)}</details>
       )}
