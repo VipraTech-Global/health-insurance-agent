@@ -1,5 +1,7 @@
 """Customer questions and needs answered from the engine's stored topic answers."""
 
+import hashlib
+import json
 import uuid
 
 import pytest
@@ -12,9 +14,11 @@ from apps.adviser_v2.demo.answers import DRAFT_VERSION
 from apps.adviser_v2.demo.chat_rules import requirement_result
 from apps.adviser_v2.demo.chat_services import commit_turn, start
 from apps.adviser_v2.demo.conversation_contracts import TOPIC_KEYS, Requirement
-from apps.adviser_v2.demo.services import decrypted
+from apps.adviser_v2.demo.evidence import digest
+from apps.adviser_v2.demo.services import bundle_for, decrypted
 from apps.adviser_v2.demo.validation import VALIDATOR_VERSION
-from apps.adviser_v2.models import DemoQuestion, DemoTopicAnswer
+from apps.adviser_v2.demo.views import render_anchor
+from apps.adviser_v2.models import DemoPlanIndex, DemoQuestion, DemoTopicAnswer
 from apps.adviser_v2.tests.test_demo_contracts import citation
 from apps.adviser_v2.tests.test_demo_services import demo  # noqa: F401
 from apps.adviser_v2.tests.test_guided_services import Reply
@@ -328,3 +332,275 @@ def test_a_long_card_quote_is_shown_from_its_clause_on_the_topic():
     row = {"text": table, "conditions": [], "restrictions": []}
     (excerpt,) = answer_bank.card_quotes([row], "opd")[0]["excerpts"]
     assert excerpt.startswith("… Wellconsult+(6) Choose up to 5X of total premium for OPD")
+
+
+# One brochure and one policy wording printed for every ReAssure-style variant. The
+# brochure table prints a benefit every variant shares as one cell across the variant
+# columns; the table reader files that cell under the first column, Classic.
+VARIANTS = ["Classic", "Select", "Elite", "Black"]
+BROCHURE = (
+    "Benefit Classic Select Elite Black\n"
+    "Room Type Twin Sharing Single Room Single Room Suite\n"
+    "E-Consultation Unlimited (Only Cashless)\n"
+    "C. Air Ambulance • Classic & Select Variant: NA "
+    "• Elite & Black Variant: Up to INR 5L per hospitalization\n"
+)
+WORDING = (
+    "4.1 Day Care Treatment\n"
+    "Day care treatments are covered up to the Sum Insured.\n"
+    "Day care for the Classic variant needs 2 hours of admission.\n"
+)
+PAGES = {"page-1": BROCHURE, "page-2": WORDING}
+AIR = (
+    "C. Air Ambulance • Classic & Select Variant: NA "
+    "• Elite & Black Variant: Up to INR 5L per hospitalization"
+)
+TABLE_ROWS = [
+    ["Benefit", *VARIANTS],
+    ["Room Type", "Twin Sharing", "Single Room", "Single Room", "Suite"],
+    ["E-Consultation", "Unlimited (Only Cashless)"],
+]
+
+
+def section_of(plan, page_id):
+    # Section IDs derive from each variant's own plan ID.
+    return f"{plan}:{page_id}"
+
+
+@pytest.fixture
+def family(tmp_path):
+    """Classic and Elite plan indexes of one product over the same documents."""
+    pdf = tmp_path / "reassure.pdf"
+    pdf.write_bytes(b"%PDF-1.4 shared brochure and wording")
+    sha = hashlib.sha256(pdf.read_bytes()).hexdigest()
+    indexes = {}
+    for variant in ("Classic", "Elite"):
+        plan = f"reassure-{variant.lower()}"
+        sections, cursor = [], 0
+        for n, (page_id, text) in enumerate(PAGES.items(), start=1):
+            segment = {
+                "page_id": page_id,
+                "page": n,
+                "start": 0,
+                "end": len(text),
+                "document_start": cursor,
+                "document_end": cursor + len(text),
+                "text": text,
+            }
+            sections.append(
+                {
+                    "id": section_of(plan, page_id),
+                    "plan_id": plan,
+                    "document_id": "reassure",
+                    "document_sha256": sha,
+                    "role": "base_wording",
+                    "title_path": [],
+                    "segments": [segment],
+                }
+            )
+            cursor += len(text) + 1
+        cells = {
+            f"t:{r}:{c}": {
+                "id": f"t:{r}:{c}",
+                "row": r,
+                "column": c,
+                "text": text,
+                "citation": {"section_id": section_of(plan, "page-1"), "page_id": "page-1"},
+            }
+            for r, row in enumerate(TABLE_ROWS)
+            for c, text in enumerate(row)
+        }
+        bundle = {
+            "policy_version_id": plan,
+            "name": "ReAssure 3.0",
+            "variant": variant,
+            "variants": VARIANTS,
+            "documents": [{"document_version_id": "reassure", "sha256": sha, "path": str(pdf)}],
+            "pages": [
+                {
+                    "evidence_span_id": page_id,
+                    "document_sha256": sha,
+                    "passage": text,
+                    "ocr_words": [{"start": 0, "end": len(text), "bbox": [0, 0, 1, 1]}],
+                }
+                for page_id, text in PAGES.items()
+            ],
+            "sections": sections,
+            "tables": [{"id": "t", "cells": cells}],
+            "navigation": [],
+        }
+        key = digest(bundle)
+        bundle["index_id"] = key
+        path = tmp_path / f"{key}.json"
+        path.write_text(json.dumps(bundle))
+        indexes[variant] = DemoPlanIndex.objects.create(
+            id=key,
+            plan_key=plan,
+            insurer="Niva Bupa",
+            name="ReAssure 3.0",
+            uin="NBHHLIP26047V012526",
+            variant=variant,
+            bundle_path=str(path),
+        )
+    return sha, indexes
+
+
+def quoted(index, page_id, *quotes, **extra):
+    """A base statement quoting this wording, cited to the plan's own section."""
+    return {
+        "text": "\n\n".join(quotes),
+        "excerpts": list(quotes),
+        "coverage_scope": "base",
+        "citations": [
+            {
+                "section_id": section_of(index.plan_key, page_id),
+                "page_id": page_id,
+                "quote": q,
+                "occurrence": 0,
+            }
+            for q in quotes
+        ],
+        "conditions": [],
+        "restrictions": [],
+        **extra,
+    }
+
+
+def answered(sha, index, *statements):
+    """A validated engine answer with every quote anchored in the plan's documents."""
+    anchors, mapping = [], []
+    for statement in statements:
+        mapping.append([])
+        for c in statement["citations"]:
+            start = PAGES[c["page_id"]].index(c["quote"])
+            mapping[-1].append(len(anchors))
+            anchors.append(
+                {
+                    "document_id": "reassure",
+                    "document_sha256": sha,
+                    "page": 1,
+                    "page_id": c["page_id"],
+                    "section_id": c["section_id"],
+                    "start": start,
+                    "end": start + len(c["quote"]),
+                    "quote": c["quote"],
+                    "method": "ocr",
+                    "role": "base_wording",
+                }
+            )
+    result = engine_result(index.plan_key, *statements)
+    result["validation"] = {
+        "anchors": anchors,
+        "statement_anchors": mapping,
+        "checks": [True] * 6,
+        "problems": [],
+    }
+    return result
+
+
+def merged_cell(index):
+    return quoted(
+        index,
+        "page-1",
+        "E-Consultation",
+        "Classic",
+        "Unlimited (Only Cashless)",
+        table={
+            "region_id": "t",
+            "value_cell_id": "t:2:1",
+            "row_label_ids": ["t:2:0"],
+            "column_label_ids": ["t:0:1"],
+        },
+    )
+
+
+def test_a_variant_line_gives_a_sibling_variant_its_own_entry(family):
+    sha, plans = family
+    classic, elite = plans["Classic"], plans["Elite"]
+    remember(classic, "air_ambulance", "P", answered(sha, classic, quoted(classic, "page-1", AIR)))
+    groups = answer_bank.bank_groups([classic.id, elite.id], "P")
+    assert groups[classic.id]["air_ambulance"] == "excluded"
+    assert groups[elite.id]["air_ambulance"] == "base"
+    # The answer building the bank reads each plan's own answers only.
+    assert answer_bank.lookup([elite], "air_ambulance", "P") == {}
+    shown = answer_bank.lookup([elite], "air_ambulance", "P", siblings=True)[elite.id]
+    assert shown["shared_from"] == {"index": classic.id, "variant": "Classic"}
+    assert shown["plan_id"] == shown["answer"]["plan_id"] == elite.plan_key
+    assert shown["index_version"] == elite.id
+    # Every quote opens in the Elite plan's own copy of the documents.
+    bundle = bundle_for(elite)
+    for anchor in shown["validation"]["anchors"]:
+        assert anchor["section_id"] == section_of(elite.plan_key, "page-1")
+        assert render_anchor(elite.id, anchor, bundle).data["quote"] == AIR
+    (statement,) = answer_bank.statements(shown)
+    assert statement["citations"][0]["section_id"] == section_of(elite.plan_key, "page-1")
+
+
+def test_a_benefit_cell_printed_across_every_variant_is_each_variants_own(family):
+    sha, plans = family
+    classic, elite = plans["Classic"], plans["Elite"]
+    remember(classic, "opd", "P", answered(sha, classic, merged_cell(classic)))
+    assert answer_bank.bank_groups([elite.id], "P")[elite.id]["opd"] == "base"
+    shown = answer_bank.lookup([elite], "opd", "P", siblings=True)[elite.id]
+    (statement,) = answer_bank.statements(shown)
+    # The Classic column label is not Elite's wording, so it is neither shown nor linked.
+    assert statement["excerpts"] == ["E-Consultation", "Unlimited (Only Cashless)"]
+    assert statement["text"] == "E-Consultation\n\nUnlimited (Only Cashless)"
+    assert statement["table"]["column_label_ids"] == ["t:0:3"]
+    assert statement["scope_variant"] == "Elite"
+    anchors = shown["validation"]["anchors"]
+    assert [a["quote"] for a in anchors] == ["E-Consultation", "Unlimited (Only Cashless)"]
+    assert shown["validation"]["statement_anchors"] == [[0, 1]]
+    bundle = bundle_for(elite)
+    assert [render_anchor(elite.id, a, bundle).data["quote"] for a in anchors] == [
+        "E-Consultation",
+        "Unlimited (Only Cashless)",
+    ]
+
+
+def test_a_cell_in_a_row_with_other_variants_values_stays_with_its_variant(family):
+    sha, plans = family
+    classic, elite = plans["Classic"], plans["Elite"]
+    room = quoted(
+        classic,
+        "page-1",
+        "Room Type",
+        "Classic",
+        "Twin Sharing",
+        table={
+            "region_id": "t",
+            "value_cell_id": "t:1:1",
+            "row_label_ids": ["t:1:0"],
+            "column_label_ids": ["t:0:1"],
+        },
+    )
+    remember(classic, "room_rent", "P", answered(sha, classic, room))
+    assert answer_bank.lookup([elite], "room_rent", "P", siblings=True) == {}
+    assert "room_rent" not in answer_bank.bank_groups([elite.id], "P").get(elite.id, {})
+
+
+def test_wording_naming_another_variant_is_not_borrowed(family):
+    sha, plans = family
+    classic, elite = plans["Classic"], plans["Elite"]
+    general = quoted(classic, "page-2", "Day care treatments are covered up to the Sum Insured.")
+    own = quoted(classic, "page-2", "Day care for the Classic variant needs 2 hours of admission.")
+    remember(classic, "day_care", "P", answered(sha, classic, own, general))
+    shown = answer_bank.lookup([elite], "day_care", "P", siblings=True)[elite.id]
+    # Only the wording every variant shares carries over, linked to its own quote.
+    (statement,) = answer_bank.statements(shown)
+    assert statement["text"] == "Day care treatments are covered up to the Sum Insured."
+    assert [a["quote"] for a in shown["validation"]["anchors"]] == [statement["text"]]
+    assert shown["validation"]["statement_anchors"] == [[0]]
+    remember(classic, "day_care", "P", answered(sha, classic, own))
+    assert answer_bank.lookup([elite], "day_care", "P", siblings=True) == {}
+
+
+def test_an_exclusion_code_heading_further_down_a_list_is_an_exclusion():
+    wording = (
+        "This includes: a. Any type of contraception, sterilization b. Assisted Reproduction "
+        "services including artificial insemination and advanced reproductive technologies "
+        "such as IVF, ZIFT, GIFT, ICSI c. Gestational Surrogacy d. Reversal of sterilization. "
+        "Maternity Expenses (Code-Excl18) a. Medical treatment expenses traceable to childbirth."
+    )
+    assert wording.index("Code-Excl18") > 200
+    assert answer_bank.group(engine_result("plan", says(wording)), "maternity") == "excluded"
