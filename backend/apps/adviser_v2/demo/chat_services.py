@@ -1,5 +1,6 @@
 """Serialize customer changes; keep independent plan answers parallel and pinned."""
 
+import re
 import time
 import uuid
 
@@ -16,8 +17,29 @@ from ..models import (
     DemoRelease,
     DemoSession,
 )
-from .chat_rules import fit_groups, remaining_ids
-from .conversation import interpret, need_label, next_question, summary, transition
+from .answer_bank import (
+    SYNONYMS,
+    TERMS,
+    TOPIC_LABELS,
+    TOPIC_QUESTIONS,
+    bank_groups,
+    card_quotes,
+    group,
+    lookup,
+    statements,
+)
+from .chat_rules import fit_groups, remaining_ids, topic_verdict, waiting_months
+from .conversation import (
+    GROUP_ORDER,
+    interpret,
+    join_words,
+    need_label,
+    next_question,
+    plan_name,
+    plural,
+    summary,
+    transition,
+)
 from .conversation_contracts import ChatState
 from .price_compare import premium, short_insurer
 from .relay import AUDIT_CONTEXT, InvalidOutput, Relay, RelayUnavailable
@@ -44,6 +66,7 @@ def release_cards(release):
                 family_rule=None,
                 executable_rules=[],
                 common_needs=[],
+                optional_covers={},
             )
             for field in (
                 "sum_insured",
@@ -65,6 +88,15 @@ def release_cards(release):
             c["plan_id"],
         ),
     )
+
+
+def attach_groups(cards, release):
+    """Label each card with where its validated wording puts every answered topic."""
+    ids = {i.plan_key: i.id for i in release.indexes.filter(revoked_at__isnull=True)}
+    found = bank_groups(ids.values(), release.method)
+    for card in cards:
+        card["bank_groups"] = found.get(ids.get(card["plan_id"]), {})
+    return cards
 
 
 def title_identity(conversation):
@@ -103,12 +135,23 @@ SUGGESTIONS = {
 }
 for _template in ("exhausted", "batch_end", "few", "after_price"):
     SUGGESTIONS[_template] = ["Compare premiums", "No, that’s all"]
+SUGGESTIONS["closing"] = ["Compare premiums"]
 
 
 def suggestions(state):
     """Short replies the customer can tap for the pending question; never a plan choice."""
     asked = state.pending
-    return list(SUGGESTIONS.get(asked.template, [])) if asked else []
+    chips = list(SUGGESTIONS.get(asked.template, [])) if asked else []
+    if state.question_id and state.topic_reason == "question" and state.last_topic:
+        # Follow-ups to a question answered from the stored answers.
+        extra = ["Ask exactly my question"]
+        if state.last_topic not in TERMS and "base" in state.topic_groups.values():
+            extra.insert(0, "Show the plans with it in the base cover")
+        chips = [*extra, *chips]
+    if state.question_id and state.batch_queue and state.batch_question:
+        # Offered on the turn a group of five is read, not on every turn after it.
+        chips = ["Ask the next 5", *chips]
+    return chips
 
 
 def turn_blocks(state, before, cards):
@@ -146,6 +189,16 @@ def turn_blocks(state, before, cards):
                             "status": by_field.get(n.field, {}).get("status", "unresolved"),
                             # Two quotes per cell; the source panel shows the rest.
                             "citations": by_field.get(n.field, {}).get("citations", [])[:2],
+                            # A wait shown for information reads as its months; otherwise
+                            # the label says where the wording puts it.
+                            **(
+                                {"detail": f"{months} months"}
+                                if n.value == "shown"
+                                and (months := waiting_months(card, n, state.profile)) is not None
+                                else {"detail": detail}
+                                if (detail := by_field.get(n.field, {}).get("detail"))
+                                else {}
+                            ),
                         }
                         for n in needs
                     ],
@@ -172,7 +225,7 @@ def payload(conversation, state=None):
     state = state or ChatState.model_validate(
         decrypted(conversation.state_ciphertext, conversation.id)
     )
-    cards = release_cards(conversation.release)
+    cards = attach_groups(release_cards(conversation.release), conversation.release)
     state.fit_groups = fit_groups(cards, state.profile)
     return {
         "schema_version": 2,
@@ -215,7 +268,7 @@ def start(owner, *, release_id=None):
     )
     session = DemoSession(id=uuid.uuid4(), owner=owner)
     state = ChatState()
-    cards = release_cards(release)
+    cards = attach_groups(release_cards(release), release)
     state.source_indexes = sorted({c["index_version"] for c in cards})
     state.fit_groups = fit_groups(cards, state.profile)
     state.understanding = summary(state.profile)
@@ -236,31 +289,223 @@ def start(owner, *, release_id=None):
     return payload(conversation, state)
 
 
-def submit_policy(owner, conversation, state, cards):
-    selected = state.selected_plans or sorted(remaining_ids(state.fit_groups))
-    chosen = [c for c in cards if c["plan_id"] in selected]
-    if not 1 <= len(chosen) <= 5 or len(chosen) != len(set(selected)):
-        return None
-    if len({c["plan_type"] for c in chosen}) != 1 or chosen[0]["plan_type"] == "unresolved":
-        return None
-    indexes = {i.plan_key: i for i in conversation.release.indexes.filter(revoked_at__isnull=True)}
-    if any(c["plan_id"] not in indexes for c in chosen):
-        return None
+def new_question(owner, conversation, text, verdicts=None):
+    # Answers never read the profile, so a later profile change leaves them readable.
     q = DemoQuestion(
         id=uuid.uuid4(),
         session=conversation.session,
         release=conversation.release,
         profile_revision=conversation.session.profile_revision,
         erasure_generation=owner.erasure_generation,
+        profile_bound=False,
     )
-    q.input_ciphertext = encrypted({"question": state.policy_question}, q.id)
+    asked = {"question": text}
+    if verdicts:
+        # Where each plan's fact card puts the topic, with its quotes; see topic_verdict.
+        asked["verdicts"] = verdicts
+    q.input_ciphertext = encrypted(asked, q.id)
     q.save()
+    return q
+
+
+def submit_policy(owner, conversation, state, cards):
+    selected = state.asked_plans
+    state.asked_plans = []
+    chosen = [c for c in cards if c["plan_id"] in selected]
+    if not 1 <= len(chosen) <= 5 or len(chosen) != len(set(selected)):
+        state.policy_question = None
+        return None
+    if len({c["plan_type"] for c in chosen}) != 1 or chosen[0]["plan_type"] == "unresolved":
+        return None
+    indexes = {i.plan_key: i for i in conversation.release.indexes.filter(revoked_at__isnull=True)}
+    if any(c["plan_id"] not in indexes for c in chosen):
+        return None
+    q = new_question(owner, conversation, state.policy_question)
     DemoPlanAnswer.objects.bulk_create(
         [DemoPlanAnswer(question=q, index=indexes[c["plan_id"]]) for c in chosen]
     )
     state.policy_question = None
     state.question_id = str(q.id)
     return q
+
+
+def submit_topic(owner, conversation, state, cards):
+    """Answer a whole-benefit question for the asked plans from the engine's stored answers.
+
+    The customer's question is stored as the canonical topic question, so citations,
+    erasure and live updates work as for any question. Only plans without a stored
+    answer are read live; a need or a shared illness shows stored answers only, so the
+    reply never waits."""
+    topic, reason = state.policy_topic, state.topic_reason
+    asked, state.asked_plans = state.asked_plans, []
+    # A newer table replaces a question still being read in groups of five.
+    state.batch_queue, state.batch_question = [], None
+    state.policy_question = state.policy_topic = None
+    release = conversation.release
+    indexes = {i.plan_key: i for i in release.indexes.filter(revoked_at__isnull=True)}
+    chosen = [c for c in cards if c["plan_id"] in asked and c["plan_id"] in indexes]
+    stored = lookup([indexes[c["plan_id"]] for c in chosen], topic, release.method)
+    if reason != "question":
+        chosen = [c for c in chosen if indexes[c["plan_id"]].id in stored]
+    if not chosen:
+        return None
+    # One answer per plan: a cited fact-card rule or add-on decides as it does for the
+    # plan list, then the stored answer; the table and the counts below both use it.
+    verdicts, groups = {}, {}
+    for card in chosen:
+        index = indexes[card["plan_id"]]
+        result = stored.get(index.id)
+        banked = group(result, topic, index.variant) if result else None
+        decided, quoted = topic_verdict(card, topic, banked, state.profile)
+        if quoted:
+            shown = card_quotes(quoted, topic)
+            verdicts[card["plan_id"]] = {"group": decided, "statements": shown}
+        if result:
+            groups[card["plan_id"]] = decided
+    q = new_question(owner, conversation, TOPIC_QUESTIONS[topic], verdicts)
+    rows, results = [], {}
+    for card in chosen:
+        index = indexes[card["plan_id"]]
+        row = DemoPlanAnswer(id=uuid.uuid4(), question=q, index=index)
+        result = stored.get(index.id)
+        if result:
+            row.state = result["status"]
+            row.result_ciphertext = encrypted(result, row.id)
+            row.model = (result.get("models") or [""])[-1][:80]
+            row.total_ms = result.get("total_ms", 0)
+            results[card["plan_id"]] = result
+        rows.append(row)
+    DemoPlanAnswer.objects.bulk_create(rows)
+    if len(results) == len(rows):
+        q.state, q.completed_at = "completed", timezone.now()
+        q.save(update_fields=["state", "completed_at"])
+    state.question_id = str(q.id)
+    state.last_topic = topic
+    state.topic_groups = dict(sorted(groups.items(), key=lambda item: GROUP_ORDER[item[1]]))
+    every = set(asked) == remaining_ids(state.fit_groups)
+    text = topic_reply(state, topic, reason, chosen, results, groups, every=every)
+    asked_text = state.pending.text if state.pending else ""
+    if reason != "question" and asked_text and state.message.endswith(asked_text):
+        # A need's evidence comes just before the question about it.
+        state.message = f"{state.message[: -len(asked_text)]}{text} {asked_text}"
+    else:
+        state.message = f"{text} {state.message}".strip()
+    return q
+
+
+def specific_words(topic, text):
+    """The customer's own term for a topic when it is narrower than the topic's name,
+    such as "helicopter" for air ambulance, as a pattern; else None."""
+    pattern = SYNONYMS.get(topic)
+    if not pattern:
+        return None
+    for part in top_level(pattern):
+        if re.search(part, text, re.I) and not re.search(part, TOPIC_LABELS[topic], re.I):
+            return part
+    return None
+
+
+def top_level(pattern):
+    """A pattern's top-level alternatives."""
+    parts, depth, start = [], 0, 0
+    for i, ch in enumerate(pattern):
+        if ch == "\\":
+            continue
+        if ch == "(" and (i == 0 or pattern[i - 1] != "\\"):
+            depth += 1
+        elif ch == ")" and pattern[i - 1] != "\\":
+            depth -= 1
+        elif ch == "|" and depth == 0 and pattern[i - 1] != "\\":
+            parts.append(pattern[start:i])
+            start = i + 1
+    return [*parts, pattern[start:]]
+
+
+def counted(n, one, many):
+    return f"{n} {one if n == 1 else many}"
+
+
+def topic_reply(state, topic, reason, chosen, results, groups, *, every=True):
+    """What the documents say, counted by where each plan's answer puts the topic."""
+    label = TOPIC_LABELS[topic]
+    if reason == "health":
+        return "Each plan’s own wording on pre-existing diseases is quoted in the table below."
+    counts = {g: 0 for g in GROUP_ORDER}
+    for found in groups.values():
+        counts[found] += 1
+    waiting = len(chosen) - len(results)
+    total = len(chosen)
+    if total == 1:
+        of = "Of the plan " + ("open to you" if every else "you asked about")
+    else:
+        of = f"Of the {total} plans " + ("open to you" if every else "you asked about")
+    parts = []
+    if topic in TERMS:
+        if counts["base"]:
+            parts.append(counted(counts["base"], "states", "state") + f" terms for {label}")
+        if counts["not_found"]:
+            parts.append(counted(counts["not_found"], "doesn’t state them", "don’t state them"))
+        lead = f"{of}, " + join_words(parts) + "." if parts else ""
+        if counts["addon"]:
+            lead += " " + counted(
+                counts["addon"],
+                "plan offers an optional add-on that changes them",
+                "plans offer an optional add-on that changes them",
+            )
+            lead += ", for an extra premium."
+    else:
+        if counts["base"]:
+            parts.append(
+                counted(counts["base"], "includes it", "include it") + " in the base cover"
+            )
+        if counts["addon"]:
+            parts.append(
+                counted(counts["addon"], "offers it", "offer it")
+                + " only as an optional add-on (extra premium)"
+            )
+        if counts["excluded"]:
+            parts.append(
+                counted(counts["excluded"], "says it isn’t covered", "say it isn’t covered")
+            )
+        if counts["not_found"]:
+            parts.append(counted(counts["not_found"], "doesn’t mention it", "don’t mention it"))
+        lead = f"{of}, " + join_words(parts) + "." if parts else ""
+        if reason != "need":
+            # The answer names the benefit the question was read as.
+            lead = re.sub(r"\bit\b", label, lead, count=1)
+    if reason == "need" and lead:
+        lead = f"{label[0].upper()}{label[1:]}: {lead[0].lower()}{lead[1:]}"
+    sentences = [lead] if lead else []
+    words = specific_words(topic, state.topic_original or "") if reason == "question" else None
+    if words:
+        # The customer used a narrower word than the benefit's name, such as helicopter.
+        sentences.insert(0, f"I’ve read this as a question about {label}.")
+        named, word = [], None
+        for card in chosen:
+            for statement in statements(results.get(card["plan_id"])):
+                text = " ".join(
+                    part.get("text", "") for part in [statement, *statement.get("conditions", [])]
+                )
+                if found := re.search(words, text, re.I):
+                    named.append(plan_name(card))
+                    word = word or found.group(0).lower()
+                    break
+        if named:
+            only = "Only the" if len(named) < len(results) else "The"
+            sentences.append(
+                f"{only} wording of {join_words(named)} "
+                f"{'mentions' if len(named) == 1 else 'mention'} “{word}” by name."
+            )
+    if waiting:
+        sentences.append(
+            f"I’m still reading the documents of {plural(waiting, 'plan')}; "
+            "their answers will appear in the table."
+        )
+    if counts["base"] or counts["addon"]:
+        sentences.append("Limits and conditions differ, so check each plan’s quote below.")
+    if counts["not_found"] and topic not in TERMS:
+        sentences.append("A plan that doesn’t mention it isn’t necessarily excluding it.")
+    return " ".join(sentences)
 
 
 @transaction.atomic
@@ -318,7 +563,7 @@ def commit_turn(owner, conversation_id, *, request_id, revision, text, relay=Non
         )
     if state.stage == "stopped":
         raise ValueError("Guided questions have stopped; start a new conversation to continue.")
-    cards = release_cards(conversation.release)
+    cards = attach_groups(release_cards(conversation.release), conversation.release)
     before = state.profile.model_dump()
     model = None
     token = AUDIT_CONTEXT.set(
@@ -355,11 +600,10 @@ def commit_turn(owner, conversation_id, *, request_id, revision, text, relay=Non
         DemoQuestion.objects.filter(session=session).exclude(
             state__in=["completed", "cancelled"]
         ).update(state="cancelled", cancelled_at=timezone.now())
-    q = (
-        submit_policy(owner, conversation, state, cards)
-        if state.policy_question and not state.policy_deferred
-        else None
-    )
+    q = None
+    if state.policy_question and not state.policy_deferred and state.stage != "stopped":
+        submit = submit_topic if state.policy_topic else submit_policy
+        q = submit(owner, conversation, state, cards)
     if state.price_plan and state.stage != "stopped":
         from .chat_prices import price_step
 
@@ -411,7 +655,7 @@ def commit_turn(owner, conversation_id, *, request_id, revision, text, relay=Non
     receipt.input_ciphertext = encrypted({"text": text, "revision": revision}, receipt.id)
     receipt.output_ciphertext = encrypted(result, receipt.id)
     receipt.save()
-    if q and dispatch:
+    if q and q.state == "queued" and dispatch:
         from .tasks import demo_question
 
         transaction.on_commit(

@@ -4,7 +4,7 @@ import re
 from itertools import combinations
 
 from .contracts import PersonInput, PlanCard, Profile
-from .conversation_contracts import FIELDS
+from .conversation_contracts import FIELD_TOPICS, FIELDS, TOPIC_FIELDS, TOPIC_KEYS, Requirement
 from .matching import evaluate
 from .typed_matching import guard_applies, hard_limits
 
@@ -41,12 +41,67 @@ def source_rule(card, field, person_id=None, profile=None):
     return None
 
 
+def waiting_months(card, need, profile=None):
+    """The printed waiting period for a need shown for information, if one is cited."""
+    rule = source_rule(card, need.field, need.person_id, profile)
+    if rule and rule["kind"] == "maximum" and rule.get("unit") == "months":
+        return int(float(rule["value"]))
+    return None
+
+
+def cited(rule):
+    """A cited rule's quotes as one statement, shown the way the engine's answers are."""
+    quotes = list(dict.fromkeys(c["quote"] for c in rule["citations"]))
+    quotes = [q for q in quotes if not any(q != other and q in other for other in quotes)]
+    return {
+        "heading": "Policy excerpt",
+        "text": quotes[0],
+        "excerpts": quotes,
+        "coverage_scope": "base",
+        "conditions": [],
+        "restrictions": [],
+        "citations": rule["citations"],
+    }
+
+
+def topic_verdict(card, topic, banked, profile=None):
+    """One answer per plan and topic, used by every table and count in a reply.
+
+    Decided in requirement_result's order: a cited base rule, then the engine's stored
+    answer (banked) when it puts the topic in the base cover, then an add-on the card
+    shows is sold, then the stored answer. When the card decides, its own quoted
+    statements come with the group; otherwise they are None."""
+    field = TOPIC_FIELDS.get(topic)
+    rule = source_rule(card, field, None, profile) if field else None
+    if rule and rule["kind"] == "coverage" and rule["value"] not in {"covered", "not_covered"}:
+        rule = None
+    if rule and rule["kind"] == "bonus" and float(rule["value"]) <= 0:
+        rule = None
+    sold = ((card.get("optional_covers") or {}).get(field) or {}) if field else {}
+    added = [{**s, "coverage_scope": "optional, extra premium"} for s in sold.get("statements", [])]
+    excluded = bool(rule) and rule["kind"] == "coverage" and rule["value"] == "not_covered"
+    if rule and not excluded:
+        return "base", [cited(rule)]
+    if added and (excluded or banked != "base"):
+        return "addon", added
+    if added:
+        # The base cover has part of it: the add-on that extends it is shown beside the
+        # engine's answer, and never makes the plan add-on only.
+        return "base", added
+    if rule and banked != "addon":
+        return "excluded", [cited(rule)]
+    return banked, None
+
+
 def requirement_result(card, need, profile=None):
     rule = source_rule(card, need.field, need.person_id, profile)
     status, quotes = "unresolved", []
     if rule:
         quotes = rule["citations"]
-        if rule["kind"] == "coverage" and need.value == "covered":
+        if need.value == "shown":
+            # Shown for information: a stated wait answers it; nothing conflicts.
+            status = "fits" if waiting_months(card, need, profile) is not None else "unresolved"
+        elif rule["kind"] == "coverage" and need.value == "covered":
             status = {"covered": "fits", "not_covered": "doesnt_fit"}.get(
                 rule["value"], "unresolved"
             )
@@ -84,6 +139,23 @@ def requirement_result(card, need, profile=None):
             _, requested, unit = need.value.split(":")
             if unit == rule.get("unit"):
                 status = "fits" if float(rule["value"]) <= float(requested) else "doesnt_fit"
+    detail = None
+    if need.value == "covered" and status in {"doesnt_fit", "unresolved"}:
+        topic = FIELD_TOPICS.get(need.field, need.field)
+        banked = (card.get("bank_groups") or {}).get(topic) if topic in TOPIC_KEYS else None
+        if status == "unresolved" and banked == "base":
+            # No cited rule: the engine's validated answer puts it in the base cover.
+            status = "fits"
+        elif (card.get("optional_covers") or {}).get(need.field) or banked == "addon":
+            # Sold as an optional add-on: the customer can buy it, so it never rules the
+            # plan out.
+            status, detail = "addon", "Add-on (extra premium)"
+        elif status == "unresolved" and banked == "excluded":
+            # Only a cited rule rules a plan out, since an uncited conflict never excludes.
+            status = "doesnt_fit"
+    elif need.value == "shown" and status == "unresolved":
+        banked = (card.get("bank_groups") or {}).get(FIELD_TOPICS.get(need.field, need.field))
+        detail = "See wording" if banked == "base" else None
     common = {f["field"]: f["value"] for f in card.get("common_needs", [])}
     field = card.get(need.field) or common.get(need.field, {})
     quotes = quotes or field.get("citations", [])
@@ -91,6 +163,7 @@ def requirement_result(card, need, profile=None):
         "fits": "Covered for this documented check.",
         "doesnt_fit": "The document states a conflicting limit or exclusion.",
         "unresolved": "Cannot establish this requirement and its applicable conditions from the evidence.",
+        "addon": "Available as an optional add-on for an extra premium.",
     }
     waiting = rule.get("waiting_months", []) if rule else []
     if waiting and status == "fits":
@@ -102,14 +175,18 @@ def requirement_result(card, need, profile=None):
     return {
         "field": need.field,
         "status": status,
+        # Only a cited executable rule can rule a plan out; the stored answers label it.
+        "ruled": bool(rule),
         "strength": need.strength,
         "coverage_status": {
             "fits": "covered",
             "doesnt_fit": "not covered",
             "unresolved": "can’t tell",
+            "addon": "optional add-on",
         }[status],
         "explanation": need.original_text + " — " + labels[status],
         "citations": quotes,
+        **({"detail": detail} if detail else {}),
     }
 
 
@@ -215,12 +292,14 @@ def fit_groups(cards, profile):
         for need in profile.requirements:
             reason = requirement_result(card, need, profile)
             result["other_needs"].append(reason)
-            # A need the documents can't be checked for never filters plans.
-            if need.strength == "must_have" and not need.field.startswith("unsupported:"):
+            # Only a need with cited executable rules filters plans; the rest label them.
+            if need.strength == "must_have" and need.field in FIELDS and need.value != "shown":
                 result["hard_limits"].append(reason)
         # Never exclude from unsupported metadata or an uncited conflict.
         for reason in result["hard_limits"]:
-            if reason["status"] == "doesnt_fit" and not reason["citations"]:
+            if reason["status"] == "doesnt_fit" and (
+                not reason["citations"] or reason.get("ruled") is False
+            ):
                 reason.update(
                     status="unresolved", explanation="A cited conflict has not been established."
                 )
@@ -260,34 +339,50 @@ def differentiator(cards, groups, suppressed, profile=None):
         )
         if score:
             candidates.append((score, -order, field, values))
-    if not candidates:
-        return None
-    _, _, field, values = max(candidates, key=lambda c: (c[0], c[1]))
+    # Most informative first; a question that would rule out no plan narrows nothing.
+    for _, _, field, values in sorted(candidates, key=lambda c: (c[0], c[1]), reverse=True):
+        found = proposal(values)
+        if found is None:
+            continue
+        proposed, count = found
+        need = Requirement(field=field, original_text=field, strength="must_have", value=proposed)
+        if not any(
+            (result := requirement_result(card, need, profile))["status"] == "doesnt_fit"
+            and result["citations"]
+            for card, _ in values
+        ):
+            continue
+        return {
+            "field": field,
+            "value": proposed,
+            "count": count,
+            "remaining": len(remaining),
+            "known": len(values),
+            "source_indexes": sorted({c["index_version"] for c, _ in values}),
+            "quotes": [q for _, r in values for q in r["citations"]],
+            "conditions": list(
+                dict.fromkeys(c for _, r in values for c in r.get("conditions", []))
+            ),
+        }
+    return None
+
+
+def proposal(values):
+    """The must-have a narrowing question proposes, and how many plans meet it."""
     rule = values[0][1]
     if all(r["kind"] == "coverage" for _, r in values):
-        proposed = "covered"
-        count = sum(r["value"] == "covered" for _, r in values)
-    elif all(r["kind"] == "maximum" and r.get("unit") == rule.get("unit") for _, r in values):
+        return "covered", sum(r["value"] == "covered" for _, r in values)
+    if all(r["kind"] == "maximum" and r.get("unit") == rule.get("unit") for _, r in values):
         minimum = min(float(r["value"]) for _, r in values)
-        proposed = f"at_most:{minimum:g}:{rule['unit']}"
-        count = sum(float(r["value"]) <= minimum for _, r in values)
-    elif all(r["kind"] == "room" for _, r in values):
+        return f"at_most:{minimum:g}:{rule['unit']}", sum(
+            float(r["value"]) <= minimum for _, r in values
+        )
+    if all(r["kind"] == "room" for _, r in values):
         category = sorted(r["value"] for _, r in values)[0]
-        proposed = "room:" + category
-        count = sum(r["value"] == category for _, r in values)
-    elif all(r["kind"] == "bonus" for _, r in values):
+        return "room:" + category, sum(r["value"] == category for _, r in values)
+    if all(r["kind"] == "bonus" for _, r in values):
         amount = max(float(r["value"]) for _, r in values)
-        proposed = f"bonus_at_least:{amount:g}:percent"
-        count = sum(float(r["value"]) >= amount for _, r in values)
-    else:
-        return None
-    return {
-        "field": field,
-        "value": proposed,
-        "count": count,
-        "remaining": len(remaining),
-        "known": len(values),
-        "source_indexes": sorted({c["index_version"] for c, _ in values}),
-        "quotes": [q for _, r in values for q in r["citations"]],
-        "conditions": list(dict.fromkeys(c for _, r in values for c in r.get("conditions", []))),
-    }
+        return f"bonus_at_least:{amount:g}:percent", sum(
+            float(r["value"]) >= amount for _, r in values
+        )
+    return None

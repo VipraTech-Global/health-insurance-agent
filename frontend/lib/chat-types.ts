@@ -8,7 +8,7 @@ export type ShortlistBlock = {
   needs?: { field: string; label: string }[];
   plans: {
     plan_id: string; insurer: string; name: string; variant: string; plan_type: string; confirmed: boolean; citations: Quote[];
-    needs?: { field: string; status: "fits" | "doesnt_fit" | "unresolved"; citations: Quote[] }[];
+    needs?: { field: string; status: "fits" | "doesnt_fit" | "unresolved" | "addon"; citations: Quote[]; detail?: string }[];
     premium?: string | null;
   }[];
 };
@@ -28,13 +28,21 @@ export type Message = { role: "customer" | "assistant"; text: string; understand
 export type Statement = {
   text: string; heading?: string; excerpts?: string[];
   coverage_scope?: "base" | "optional, extra premium" | "optional premium adjustment";
-  conditions: { text: string }[]; restrictions: { text: string }[];
+  conditions: { text: string; citations?: Quote[] }[]; restrictions: { text: string; citations?: Quote[] }[];
+  /** Set on statements quoted from a plan's fact card. */
+  citations?: Quote[];
 };
+/** Where a plan's validated wording puts the asked topic. */
+export type AnswerGroup = "base" | "addon" | "excluded" | "not_found";
 export type PlanAnswer = {
   id: string; plan_id: string; name: string; variant: string; insurer: string; state: string; model: string;
+  group?: AnswerGroup | null;
+  /** The fact card's own quotes, when its cited rule or add-on decides the group. */
+  card_statements?: Statement[] | null;
   result?: { status?: string; message?: string; answer?: { statements: Statement[] }; validation?: { anchors: Anchor[]; statement_anchors?: number[][] } } | null;
 };
-export type Question = { id: string; state: string; plans: PlanAnswer[] };
+/** `topic` is set when the question is one of the engine's canonical topic questions. */
+export type Question = { id: string; state: string; topic?: string | null; terms?: boolean; plans: PlanAnswer[] };
 
 export type State = { revision: number; stage: string; message: string; question_id: string | null; transcript: Message[] };
 export type Chat = { id: string; release_id: string; cards: Card[]; state: State };

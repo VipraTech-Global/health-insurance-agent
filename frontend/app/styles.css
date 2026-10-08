@@ -87,6 +87,7 @@ input:focus, textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px 
 .need.fits { color: var(--green-dark); font-weight: 600; }
 .need.doesnt_fit { color: var(--amber); }
 .need.unresolved { color: var(--muted); }
+.need.addon { color: var(--amber); }
 .understood { font-size: 13px; color: var(--muted); }
 .understood summary { cursor: pointer; }
 .understood p { margin: 6px 0 0; white-space: normal; }
@@ -123,6 +124,11 @@ input:focus, textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px 
 .answer-lines .more { border: 0; background: none; padding: 2px 0; color: var(--green); font-size: 12px; font-weight: 700; }
 .answer-lines .condition { font-size: 13px; color: var(--muted); margin-top: 4px; }
 .answer-lines .scope { display: inline-block; font-size: 11px; font-style: normal; background: #f6f2e8; color: var(--amber); padding: 2px 6px; border-radius: 4px; margin-bottom: 4px; }
+.answer-table .group-row th { background: var(--paper); font-size: 13px; font-weight: 700; padding-top: 8px; padding-bottom: 8px; }
+.answer-table .group-row .count { margin-left: 8px; font-weight: 400; color: var(--muted); font-size: 12px; }
+.answer-table tbody + tbody .group-row th { border-top: 1px solid var(--line); }
+.answer-table .missing-row td { line-height: 1.5; }
+.answer-table .missing-row small { display: block; margin-top: 4px; font-size: 12px; }
 .source-links { display: inline-flex; flex-wrap: wrap; gap: 4px; vertical-align: middle; margin: 2px 4px 0 0; }
 .source-link { min-width: 22px; height: 22px; padding: 0 6px; border: 1px solid #b9d3c5; border-radius: 999px; background: var(--mint); color: var(--green-dark); font-size: 11px; font-weight: 700; line-height: 1; }
 .source-link:hover, .source-link:focus-visible { background: var(--green); border-color: var(--green); color: white; outline: none; }
@@ -147,4 +153,5 @@ input:focus, textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px 
   .answer-table thead { display: none; }
   .answer-table tr, .answer-table tbody th, .answer-table td { display: block; }
   .answer-table tbody th { border-bottom: 0; padding-bottom: 0; }
+  .answer-table .group-row th { padding-bottom: 8px; border-bottom: 1px solid var(--line); }
 }

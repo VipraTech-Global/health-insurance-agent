@@ -6,17 +6,20 @@ import re
 import uuid
 from collections import Counter
 
-from .chat_rules import differentiator, fit_groups, remaining_ids, single_type
+from .answer_bank import TOPIC_LABELS, TOPIC_QUESTIONS, topic_for, topics_in
+from .chat_rules import differentiator, fit_groups, remaining_ids, single_type, waiting_months
 from .contracts import Closed
 from .conversation_contracts import (
-    FIELDS,
+    FIELD_TOPICS,
+    TOPIC_FIELDS,
+    TOPIC_KEYS,
     ChatPerson,
     ChatState,
     ProposedChanges,
     QuestionIntent,
     Requirement,
 )
-from .price_compare import compare, premium
+from .price_compare import compare, premium, short_insurer
 from .relay import InvalidOutput, Relay, RelayUnavailable
 from .typed_matching import eligible_rules
 
@@ -33,6 +36,14 @@ LABELS = {
     "no_claim_bonus": "the no-claim bonus",
     "ayush": "AYUSH treatment",
 }
+# Benefits checked in each plan's validated wording rather than a cited rule.
+LABELS |= {
+    TOPIC_FIELDS.get(topic, topic): label
+    for topic, label in TOPIC_LABELS.items()
+    if TOPIC_FIELDS.get(topic, topic) not in LABELS
+}
+# Need fields a customer can state: cited-rule checks plus answer-bank benefits.
+NEED_FIELDS = set(LABELS)
 TEMPLATES = {
     "people": "Who should this cover — just you, or family too (spouse, children, parents)?",
     "age": "What is the age of {person}?",
@@ -57,6 +68,7 @@ TEMPLATES = {
     "which_limit": "Which limit matters to you — room rent, co-pay, disease sub-limits or waiting periods?",
     "limit_question": "Which limit should I look up in these plans — room rent, co-pay or disease sub-limits?",
     "after_price": "Is there anything else you’d like to know about these plans?",
+    "closing": "Alright, that’s all for now. The plans and their quoted sources stay above; you can compare premiums or ask me about any plan whenever you like.",
     "narrow": "Should I treat {need} as a must-have?",
     "price_axis": "Which printed {axis} should I use for this price lookup?",
 }
@@ -83,7 +95,9 @@ INTERPRET_PROMPT = (
     "If the customer says they live outside India or names a place outside India, set outside_india=true. "
     "For an expressed benefit requirement such as maternity, newborn, OPD, restoration or AYUSH, use value=covered unless the customer supplies a specific supported limit. "
     "For explicit upper limits use requirement value at_most:N:unit (months, percent or rupees). No co-pay means at_most:0:percent; no deductible means at_most:0:rupees. A specific room category uses room:single_private, room:single_standard, room:twin_sharing, room:shared or room:suite. Never guess a threshold. "
-    "Requirements use exactly these field IDs: maternity, newborn, opd, room_limit, copay, ped_waiting, specified_waiting, deductible, restoration, no_claim_bonus, ayush; use other for an unsupported need. "
+    "Requirements use exactly these field IDs: maternity, newborn, opd, room_limit, copay, ped_waiting, specified_waiting, deductible, restoration, no_claim_bonus, ayush, "
+    "icu, pre_post, day_care, road_ambulance, air_ambulance, organ_donor, home_care, health_check, cataract; use other for an unsupported need. "
+    "An illness the customer already has and wants covered is ped_waiting, never other; also record it in health_details. "
     "Requirement strength is must_have when the customer says must-have, required, need, essential, most important or matters most; nice_to_have for nice-to-have, optional or prefer; otherwise unclassified. "
     "Product type, hospital-expense indemnity and individual/floater basis are Stage 1 details, not additional requirements. "
     "Use no_preference only for an explicit statement of no preference or uncertainty, never for omitted information. "
@@ -91,7 +105,12 @@ INTERPRET_PROMPT = (
     "yes I need it responding to a requirement question is affirmative=true and must_have. Retain unsupported needs under their original text. "
     "If the customer chooses narrowing before answering a pending policy question, set narrow_first=true. "
     "If the customer is unsure about the detail being asked, set skip=true. If they ask which choices exist for the detail being asked, set options_asked=true. Neither is a policy_question. "
-    "policy_question is only a question about a policy's terms, benefits or limits. "
+    "policy_question is only a question about a policy's terms, benefits or limits; write it with spelling corrected. "
+    "When it asks about one whole benefit, set policy_topic: room_rent, icu, ped (cover for an illness already had, such as diabetes or blood pressure), "
+    "specified_waiting, maternity, newborn, copay, deductible, restoration, no_claim_bonus, pre_post, day_care, road_ambulance, "
+    "air_ambulance (also helicopter or aeroplane transport, even misspelt), ayush, organ_donor, home_care, health_check, opd or cataract. "
+    "Use policy_topic=null for a specific treatment, amount or condition narrower than the benefit, or a question spanning several benefits. "
+    "A bare no, not needed or I don't want it in reply to a must-have question is affirmative=false with no requirement. "
     "If the customer asks what the listed benefit terms mean in general, set explain_terms=true; that is not a policy_question. "
     "If the customer asks to see, suggest or list plans, or what is open or available to them, set show_plans=true. "
     "No preference is not medical_indemnity: use no_preference=true. Do not infer a type. Explicit skip is skip=true. "
@@ -129,6 +148,7 @@ SHOW_PLANS = re.compile(
     r"\bbest (?:one|for me)\b|\btop (?:\d|one|two|three|four|five)\b",
     re.I,
 )
+WANTS_COVER = re.compile(r"\b(?:cover(?:ed|age)?|includ(?:e|ed|es)|claim)\b", re.I)
 STRENGTH_WORDS = {
     "must have": "must_have",
     "must-have": "must_have",
@@ -164,6 +184,66 @@ PRICE_COUNT = re.compile(
 # Asks the assistant to choose a plan for them.
 SUGGEST = re.compile(r"\b(?:suggest|recommend|pick|choose)\b|\bwhich (?:one|plan) should\b", re.I)
 DETAIL_FIELDS = {"people", "city", "sum_insured", "annual_budget", "coverage_basis"}
+# A reply turning down the pending must-have question, or the need itself.
+DECLINE = {
+    "no",
+    "nope",
+    "nah",
+    "no thanks",
+    "no thank you",
+    "not needed",
+    "no need",
+    "not really",
+    "not required",
+    "not necessary",
+    "not important",
+    "doesn't matter",
+    "it doesn't matter",
+    "not a must",
+    "not a must-have",
+    "not a must have",
+}
+WITHDRAW = {
+    "i don't want it",
+    "i dont want it",
+    "don't want it",
+    "i don't need it",
+    "i dont need it",
+    "don't need it",
+    "not interested",
+    "i'm not interested",
+    "remove it",
+    "drop it",
+}
+# A question the customer asks, rather than a fact or preference they state.
+TOPIC_ASK = re.compile(
+    r"^\s*(?:which|what(?:'s|s)?|does|do|is|are|can|will|would|how|any|tell me about)\b|\?\s*$",
+    re.I,
+)
+# Facts about the customer go to the interpreting model, which also records them.
+PERSONAL = re.compile(r"\b(?:i|i'm|im|i've|my|me|we|our|us)\b", re.I)
+# A shared health detail that says there is nothing to share.
+NO_HEALTH = re.compile(
+    r"^\W*(?:none|no|nil|nothing|n/?a|not applicable)\W*$|"
+    r"^\W*(?:i have |there are |there is )?no(?:ne|thing)?\b[^,.;]{0,30}"
+    r"\b(?:conditions?|illness(?:es)?|diseases?|issues?|problems?)\W*$",
+    re.I,
+)
+# Room categories as the customer would say them.
+# Ranks a stored topic answer's group: wording that includes it first.
+GROUP_ORDER = {"base": 0, "addon": 1, "excluded": 2, "not_found": 3}
+ROOM_WORDS = {
+    "actuals": "no room-rent limit",
+    "any_room": "any room",
+    "single_private": "a single private room",
+    "single_standard": "a standard single room",
+    "twin_sharing": "a twin-sharing room",
+    "shared": "a shared room",
+    "suite": "a suite",
+    "any_room_except_suite": "any room except a suite",
+    "any_room_except_deluxe_suite": "any room except a deluxe suite",
+    "percent_of_si": "room rent capped at a share of the sum insured",
+}
 
 
 def list_count(text):
@@ -282,6 +362,16 @@ def interpret(text, state, cards, relay=None):
         return ProposedChanges(narrow_first=True), None
     if plain in {"skip", "skip this", "prefer not to say"}:
         return ProposedChanges(skip=True), None
+    if plain == "ask exactly my question" and state.topic_original:
+        return ProposedChanges(policy_question=state.topic_original, exact_question=True), None
+    if plain == "show the plans with it in the base cover" and state.topic_groups:
+        return ProposedChanges(base_only=True), None
+    if (
+        plain in {"ask the next 5", "ask the next five", "ask next 5", "answer the next 5"}
+        and state.batch_queue
+        and state.batch_question
+    ):
+        return ProposedChanges(ask_next=True), None
     if (
         plain
         in {
@@ -294,7 +384,8 @@ def interpret(text, state, cards, relay=None):
             "no thanks",
         }
         and state.pending
-        and state.pending.template in {"exhausted", "batch", "batch_end", "few", "after_price"}
+        and state.pending.template
+        in {"exhausted", "batch", "batch_end", "few", "after_price", "needs", "closing"}
     ):
         return ProposedChanges(no_more_needs=True), None
     if plain in {
@@ -422,6 +513,25 @@ def interpret(text, state, cards, relay=None):
         and state.pending.template in {"strength", "narrow"}
     ):
         return ProposedChanges(affirmative=True), None
+    said = plain.replace("’", "'")
+    if state.pending and state.pending.template == "strength" and said in WITHDRAW:
+        # Not wanted at all: withdraw the need rather than keep it as nice to have.
+        return ProposedChanges(withdrawn_requirements=[state.pending.field], correction=True), None
+    if (
+        state.pending
+        and state.pending.template in {"narrow", "strength", "health_details"}
+        and (said in DECLINE or said in WITHDRAW)
+    ):
+        # A bare "no" declines the question; it never states a need.
+        return ProposedChanges(affirmative=False), None
+    if (
+        state.pending
+        and state.pending.template
+        in {"exhausted", "batch", "batch_end", "few", "after_price", "closing"}
+        and (said in DECLINE or said in WITHDRAW)
+    ):
+        # Declining after the plans are shown means nothing more is wanted.
+        return ProposedChanges(no_more_needs=True), None
     if plain in STRENGTH_WORDS and state.profile.requirements:
         # "Must have" with no strength question pending restates the latest need;
         # it never names new needs.
@@ -445,6 +555,23 @@ def interpret(text, state, cards, relay=None):
         and state.pending.template == "strength"
     ):
         return ProposedChanges(affirmative=False), None
+    topic = topic_for(text) if TOPIC_ASK.search(text) else None
+    if (
+        topic
+        and state.stage != "details"
+        and not (state.pending and state.pending.template in {"health_details", "price_axis"})
+        and len(text.split()) <= 15
+        and not named_plan
+        and not price_ask
+        and not PERSONAL.search(text)
+        and not re.search(MUST_WORDS, text, re.I)
+    ):
+        # A question about one whole benefit: answered from the engine's stored answers.
+        return ProposedChanges(
+            policy_question=" ".join(text.split()),
+            policy_topic=topic,
+            about_shown=bool(THESE.search(text)) and bool(state.last_shown),
+        ), None
     result = (relay or Relay.configured()).call(
         instructions=INTERPRET_PROMPT,
         messages=[
@@ -505,6 +632,13 @@ def interpret(text, state, cards, relay=None):
         changes.policy_question = None
         changes.skip = changes.no_more_needs = False
         changes.affirmative = None
+    # The customer's own words decide the topic; the model's choice stands only when they
+    # name none or the same one, and a long question keeps the model's null.
+    changes.policy_topic = (
+        topic_for(text, changes.policy_topic)
+        if changes.policy_question and (changes.policy_topic or len(text.split()) <= 8)
+        else None
+    )
     # A named future health skip is independent of the currently pending field.
     # Require explicit customer wording rather than relying on model inference.
     health_skip = re.search(
@@ -577,8 +711,9 @@ def question(
     sources=(),
     value=None,
     relay=None,
+    need_name=None,
 ):
-    name = LABELS.get(need or field, "this requirement")
+    name = need_name or LABELS.get(need or field, "this requirement")
     if template == "strength" and (need or field) not in LABELS:
         expressed = next(
             (r for r in state.profile.requirements if r.field == (need or field)), None
@@ -669,6 +804,8 @@ def question(
 
 def need_label(r):
     """A requirement as the customer would name it."""
+    if r.value == "shown" and r.field == "ped_waiting":
+        return "Pre-existing illness covered after"
     if r.field in LABELS:
         name = LABELS[r.field].removeprefix("the ")
         return name[0].upper() + name[1:]
@@ -708,10 +845,12 @@ def summary(profile):
     if profile.existing_cover is not None:
         lines.append(f"Existing cover: {profile.existing_cover}")
     if profile.health_details:
-        lines.append("Health details: shared (kept private)")
+        lines.append("Pre-existing condition: shared (kept private)")
     for r in profile.requirements:
         if r.field.startswith("unsupported:"):
             lines.append(f"{need_label(r)} (I can’t check this in the documents)")
+        elif r.value == "shown":
+            lines.append("Pre-existing illness cover — wanted")
         else:
             strength = {"must_have": "must-have", "nice_to_have": "nice to have"}.get(r.strength)
             lines.append(need_label(r) + (f" — {strength}" if strength else ""))
@@ -735,6 +874,7 @@ def merge(state, changes):
     if changes.skip and pending:
         if pending.template == "narrow":
             state.narrowing_asked.append(pending.field)
+            state.declined_narrowing += 1
         elif pending.template == "strength":
             state.skipped.append("strength:" + pending.field)
         else:
@@ -777,6 +917,12 @@ def merge(state, changes):
         if old not in (None, "unresolved") and old != value and not changes.correction:
             ambiguous = field
             continue
+        if field == "health_details" and NO_HEALTH.search(value):
+            # "None" answers the question and shares nothing.
+            state.answered.append(field)
+            continue
+        if field == "city" and value == value.casefold():
+            value = value.title()
         setattr(facts, field, value)
         state.answered.append(field)
         if field == "city":
@@ -817,6 +963,16 @@ def merge(state, changes):
             "restoration_cover": "restoration",
             "ncb": "no_claim_bonus",
             "no_claim_bonus_cover": "no_claim_bonus",
+            "helicopter": "air_ambulance",
+            "air_ambulance_cover": "air_ambulance",
+            "ambulance": "road_ambulance",
+            "health_checkup": "health_check",
+            "health_check_up": "health_check",
+            "health_checkups": "health_check",
+            "pre_and_post_hospitalisation": "pre_post",
+            "pre_and_post_hospitalization": "pre_post",
+            "daycare": "day_care",
+            "domiciliary": "home_care",
         }
         detail_fields = {
             "plan_type",
@@ -829,6 +985,9 @@ def merge(state, changes):
             "hospital_cover",
             "hospitalization_cover",
         }
+        declined = (
+            pending and pending.template in {"narrow", "strength"} and changes.affirmative is False
+        )
         for need in changes.requirements:
             key = re.sub(r"[^a-z0-9]+", "_", need.field.casefold()).strip("_")
             if (
@@ -840,11 +999,30 @@ def merge(state, changes):
             ) and (changes.plan_type is not None or changes.coverage_basis is not None):
                 continue
             need.field = aliases.get(key, key)
-            if need.field not in FIELDS and VAGUE_LIMIT.search(need.original_text):
+            if need.field not in NEED_FIELDS:
+                # A benefit the engine has answered for every plan, named in the customer's words.
+                named = topics_in(need.original_text)
+                if len(named) == 1:
+                    need.field = TOPIC_FIELDS.get(named[0], named[0])
+            if declined and need.field == pending.field:
+                # "No" to "treat X as a must-have?" never stores X.
+                continue
+            if (
+                need.field not in NEED_FIELDS
+                and changes.health_details
+                and WANTS_COVER.search(need.original_text)
+            ):
+                # "I'm diabetic and want it covered": an illness they already have.
+                need.field = "ped_waiting"
+            if need.field == "ped_waiting" and need.value == "covered":
+                # Shown for information, never a filter; the health text isn't kept here.
+                need.value = "shown"
+                need.original_text = "Cover for a pre-existing illness"
+            if need.field not in NEED_FIELDS and VAGUE_LIMIT.search(need.original_text):
                 # "Limits matter" names no limit: ask which one instead of storing it.
                 state.vague_need = need.original_text
                 continue
-            if need.field not in FIELDS:
+            if need.field not in NEED_FIELDS:
                 need.field = (
                     "unsupported:"
                     + hashlib.sha256(need.original_text.casefold().encode()).hexdigest()[:12]
@@ -858,6 +1036,8 @@ def merge(state, changes):
                 None,
             )
             accepted_need = True
+            if need.value == "shown" and not old:
+                state.ped_answer = True
             if old:
                 if need.strength != "unclassified" and (
                     old.strength == "unclassified" or changes.correction
@@ -867,8 +1047,21 @@ def merge(state, changes):
                     old.value = need.value
             else:
                 facts.requirements.append(need)
+                state.declined_narrowing = 0
         if accepted_need:
             state.answered.append("needs")
+    if changes.health_details and facts.health_details == changes.health_details:
+        # An illness the customer has: answer how each plan treats it.
+        if not any(r.field == "ped_waiting" for r in facts.requirements):
+            facts.requirements.append(
+                Requirement(
+                    field="ped_waiting",
+                    original_text="Cover for a pre-existing illness",
+                    value="shown",
+                )
+            )
+        state.ped_answer = True
+        state.narrowing_asked.append("ped_waiting")
     if pending and pending.template in {"strength", "narrow"} and changes.affirmative is not None:
         need = next((r for r in facts.requirements if r.field == pending.field), None)
         if changes.affirmative:
@@ -879,8 +1072,11 @@ def merge(state, changes):
                 facts.requirements.append(need)
             need.strength = "must_have"
             need.value = pending.proposed_value or need.value
+            state.declined_narrowing = 0
         elif pending.template == "strength" and need:
             need.strength = "nice_to_have"
+        elif pending.template == "narrow":
+            state.declined_narrowing += 1
         state.narrowing_asked.append(pending.field)
     if pending and pending.template == "health_details" and changes.affirmative is False:
         state.skipped.append("health_details")
@@ -888,33 +1084,67 @@ def merge(state, changes):
         facts.requirements = [
             r for r in facts.requirements if r.field not in changes.withdrawn_requirements
         ]
+        # A withdrawn need is never offered back as a narrowing question.
+        state.narrowing_asked.extend(changes.withdrawn_requirements)
+        state.declined_narrowing = 0
     if changes.narrow_first:
         state.policy_deferred = True
+    state.asked_plans = []
     if changes.policy_question:
         state.policy_deferred = False
         state.policy_question = changes.policy_question
+        state.policy_topic = changes.policy_topic
+        state.topic_reason = "question" if changes.policy_topic else None
+        if changes.policy_topic:
+            state.answered.append("topic:" + changes.policy_topic)
+        if not changes.exact_question:
+            state.topic_original = changes.policy_question
         state.interrupted = pending
+        # A new question replaces the one still being answered in groups of five.
+        state.batch_queue, state.batch_question = [], None
+        if changes.exact_question and state.last_topic:
+            # The exact wording is read for the plans the topic answer was about.
+            order = {"base": 0, "addon": 1, "excluded": 2, "not_found": 3}
+            state.asked_plans = sorted(
+                state.topic_groups, key=lambda i: order.get(state.topic_groups[i], 4)
+            )
     if changes.selected_plans:
         # Only plans the customer names; the assistant never asks for a pick.
         state.selected_plans = changes.selected_plans
+        state.asked_plans = list(changes.selected_plans)
         state.policy_deferred = False
-    if changes.next_batch and state.batch_queue and state.batch_question:
+    if (changes.ask_next or changes.next_batch and not state.list_queue) and (
+        state.batch_queue and state.batch_question
+    ):
         state.policy_question = state.batch_question
+        state.policy_topic = None
         state.policy_deferred = False
-        state.selected_plans = state.batch_queue[:5]
+        state.asked_plans = state.batch_queue[:5]
         state.batch_queue = state.batch_queue[5:]
     elif changes.next_batch and state.list_queue:
         state.plans_requested = True
+    if changes.base_only:
+        state.plans_requested = True
+        state.list_queue = []
+        state.list_only = [i for i, g in state.topic_groups.items() if g == "base"]
     if changes.show_plans:
         state.plans_requested = True
         state.list_queue = []
+        state.list_only = []
         state.list_count = changes.list_count
     if changes.budget_unsure and facts.annual_budget is None:
         state.skipped = list(dict.fromkeys([*state.skipped, "annual_budget"]))
-    if changes.no_more_needs and pending and pending.template in {"exhausted", "batch_end"}:
-        # Nothing more to add: show the plans rather than ask again.
-        state.plans_requested = True
-        state.list_queue = []
+    if changes.no_more_needs and pending:
+        listed = state.listed_for == requirement_signature(state.profile)
+        if pending.template in {"batch", "few", "after_price", "closing"} or (
+            listed and pending.template in {"exhausted", "batch_end"}
+        ):
+            # The plans are on screen and nothing more is wanted: close, never ask again.
+            state.wrapped_up = True
+        elif pending.template in {"exhausted", "batch_end"}:
+            # Nothing more to add: show the plans rather than ask again.
+            state.plans_requested = True
+            state.list_queue = []
     state.options_asked = changes.options_asked and bool(pending)
     if state.options_asked:
         state.answered = [f for f in state.answered if f != pending.field]
@@ -922,6 +1152,7 @@ def merge(state, changes):
     state.limit_asked = state.limit_asked or changes.limit_asked
     if changes.about_shown and changes.policy_question and state.last_shown:
         state.selected_plans = list(state.last_shown)[:5]
+        state.asked_plans = list(state.last_shown)
     if changes.compare_prices:
         state.compare_requested = True
         state.compare_count = changes.compare_count
@@ -1008,7 +1239,9 @@ def sort_plans(state, cards, ids):
     Must-haves confirmed in the documents come first, then the lowest printed
     premium when one can be looked up, then insurer A–Z. No insurer preference."""
     musts = [
-        r for r in state.profile.requirements if r.strength == "must_have" and r.field in FIELDS
+        r
+        for r in state.profile.requirements
+        if r.strength == "must_have" and r.field in NEED_FIELDS and r.value != "shown"
     ]
     fields = {r.field for r in musts}
     fit_by_id = {r["plan_id"]: r for k in ("fits", "unresolved") for r in state.fit_groups[k]}
@@ -1022,9 +1255,16 @@ def sort_plans(state, cards, ids):
             r["field"] in fields and r["status"] == "fits" for r in fit.get("other_needs", [])
         )
 
+    shown = [r for r in state.profile.requirements if r.value == "shown"]
+
+    def wait(card):
+        months = [waiting_months(card, r, state.profile) for r in shown]
+        return float("inf") if None in months else sum(months)
+
     chosen.sort(
         key=lambda c: (
             -met(c["plan_id"]),
+            wait(c),
             prices[c["plan_id"]] if priced and prices[c["plan_id"]] is not None else float("inf"),
             c["insurer"].casefold(),
             c["name"].casefold(),
@@ -1037,6 +1277,12 @@ def sort_plans(state, cards, ids):
     elif musts:
         joined = join_words([need_label(r).lower() for r in musts])
         parts.append(f"plans with {joined} confirmed in the documents come first")
+    if shown:
+        parts.append(
+            "then the shortest pre-existing illness wait"
+            if parts
+            else "shortest pre-existing illness wait first"
+        )
     if priced:
         parts.append("then the lowest printed premium" if parts else "lowest printed premium first")
     if parts:
@@ -1050,6 +1296,69 @@ def sort_plans(state, cards, ids):
     return [c["plan_id"] for c in chosen], criteria
 
 
+def plan_name(card):
+    """Insurer and plan name, without repeating an insurer the name already starts with."""
+    insurer = short_insurer(card["insurer"])
+    if card["name"].casefold().startswith(insurer.casefold()):
+        return card["name"]
+    return f"{insurer} {card['name']}"
+
+
+def ped_answer(state, cards):
+    """How the open plans' documents treat an illness the customer already has."""
+    need = next(r for r in state.profile.requirements if r.value == "shown")
+    remaining = remaining_ids(state.fit_groups)
+    open_cards = [c for c in cards if c["plan_id"] in remaining]
+    waits = {c["plan_id"]: waiting_months(c, need, state.profile) for c in open_cards}
+    known = [c for c in open_cards if waits[c["plan_id"]] is not None]
+    unknown = len(open_cards) - len(known)
+    parts = ["An illness you already have counts as a pre-existing disease."]
+    if known:
+        groups = Counter(waits[c["plan_id"]] for c in known)
+        phrases = []
+        for months, n in sorted(groups.items()):
+            if n <= 2 and len(groups) > 1:
+                names = [plan_name(c) for c in known if waits[c["plan_id"]] == months]
+                phrases.append(f"{months} months for {join_words(names)}")
+            else:
+                phrases.append(f"{months} months for {plural(n, 'plan')}")
+        parts.append(
+            f"In the documents of {len(known)} of the {plural(len(open_cards), 'plan')} open to "
+            "you, pre-existing diseases are covered after a waiting period: "
+            + join_words(phrases)
+            + "."
+        )
+        quoted = " ".join(
+            " ".join(
+                [q.get("quote") or q.get("text") or "" for q in rule["citations"]]
+                + list(rule.get("conditions", []))
+            )
+            for c in known
+            for rule in [r for r in c.get("executable_rules", []) if r["field"] == need.field]
+        ).casefold()
+        if "declared" in quoted and "accepted" in quoted:
+            parts.append(
+                "The documents say this applies only if you declare it when you apply and the "
+                "insurer accepts it."
+            )
+        if "enhancement of sum insured" in quoted:
+            parts.append("Raising the sum insured later restarts the wait on the extra amount.")
+    if unknown:
+        parts.append(
+            f"For the other {plural(unknown, 'plan')} the documents don’t state one waiting "
+            "period I can apply to you; that doesn’t mean they exclude it."
+        )
+    addons = [c for c in open_cards if (c.get("optional_covers") or {}).get(need.field)]
+    if addons:
+        parts.append(
+            f"{join_words([plan_name(c) for c in addons])} "
+            f"{'offers' if len(addons) == 1 else 'offer'} an optional add-on for this waiting "
+            "period, for an extra premium."
+        )
+    parts.append("The insurer’s decision and quote are final.")
+    return " ".join(parts)
+
+
 def list_plans(state, cards, ask):
     """The remaining plans on request, sorted by the customer's own criteria."""
     state.plans_requested = False
@@ -1058,6 +1367,9 @@ def list_plans(state, cards, ask):
     count = state.list_count or 5
     state.list_count = None
     remaining = remaining_ids(state.fit_groups)
+    only, state.list_only = set(state.list_only), []
+    if only and not state.list_queue:
+        remaining &= only
     if not remaining:
         state.list_queue = []
         return ask(
@@ -1108,12 +1420,6 @@ def next_question(state, cards, *, relay=None, ambiguity=None):
     all_ids = {c["plan_id"] for c in cards}
     state.selected_plans = [p for p in state.selected_plans if p in all_ids]
     remaining = remaining_ids(state.fit_groups)
-    if state.policy_question and 1 <= len(remaining) <= 5:
-        compatible = {c["plan_type"] for c in cards if c["plan_id"] in remaining}
-        if len(compatible) == 1 and "unresolved" not in compatible:
-            state.selected_plans = sorted(
-                remaining | (set(state.selected_plans) & set(state.restored_plans))
-            )
     if state.selected_plans:
         types = {c["plan_type"] for c in cards if c["plan_id"] in state.selected_plans}
         if len(types) != 1 or "unresolved" in types:
@@ -1123,26 +1429,13 @@ def next_question(state, cards, *, relay=None, ambiguity=None):
                 "plan_type",
                 prefix="The selected plans need a compatible cover type for comparison.",
             )
-    if state.policy_question and (not state.policy_deferred or len(remaining) <= 5):
-        state.policy_deferred = False
-        selected = state.selected_plans or sorted(remaining)
-        if len(selected) > 5 or not selected:
-            # The customer never picks plans: hold the question for the shortlist.
-            state.policy_deferred = True
-            note = "I’ve kept your question and will answer it for your shortlist once we’ve narrowed down."
-        else:
-            types = {c["plan_type"] for c in cards if c["plan_id"] in selected}
-            if len(types) != 1 or "unresolved" in types:
-                return question(
-                    state,
-                    "mixed",
-                    "plan_type",
-                    prefix="This comparison mixes cover types or has an unestablished type.",
-                )
-            state.selected_plans = selected
-            # The service submits independent chains, then resumes this stage's next
-            # missing question. Evidence streams never ask their own questions.
+    if state.policy_question and not state.policy_deferred:
+        # Answered now, never held for a shortlist. The service submits the question,
+        # then this stage's next missing question resumes.
+        note = route_question(state, cards, remaining)
     p = state.profile
+    if state.wrapped_up and not state.plans_requested:
+        return ask("closing")
     if state.plans_requested:
         # Asked to see plans: amounts can wait; who, ages and city cannot.
         state.skipped.extend(f for f in ("sum_insured", "annual_budget") if getattr(p, f) is None)
@@ -1211,6 +1504,11 @@ def next_question(state, cards, *, relay=None, ambiguity=None):
             return ask("limit_question")
         if state.price_comparison:
             return ask("after_price")
+    if state.ped_answer:
+        state.ped_answer = False
+        overview, state.list_queue = "", []
+        note = " ".join(x for x in (note, ped_answer(state, cards)) if x)
+        return list_plans(state, cards, ask)
     if state.plans_requested:
         return list_plans(state, cards, ask)
     if not p.requirements and "needs" not in done:
@@ -1219,6 +1517,7 @@ def next_question(state, cards, *, relay=None, ambiguity=None):
         if (
             need.strength == "unclassified"
             and not need.field.startswith("unsupported:")
+            and need.value != "shown"
             and "strength:" + need.field not in state.skipped
         ):
             return ask("strength", need.field, need=need.field)
@@ -1260,63 +1559,45 @@ def next_question(state, cards, *, relay=None, ambiguity=None):
             "zero",
             prefix="No plans match everything you’ve told me. Try changing or dropping a requirement.",
         )
-    excluded = set(state.narrowing_asked) | {
-        r.field for r in p.requirements if r.strength == "must_have"
-    }
-    choice = differentiator(cards, state.fit_groups, excluded, profile=state.profile)
+    # Never offer back a need the customer already classified, declined or withdrew.
+    excluded = set(state.narrowing_asked) | {r.field for r in p.requirements}
+    if not any(person.relationship in {"spouse", "child"} for person in p.people):
+        # Maternity and newborn cover matter for a couple or children; the customer can
+        # still raise them.
+        excluded |= {"maternity", "newborn"}
+    choice = (
+        differentiator(cards, state.fit_groups, excluded, profile=state.profile)
+        if state.declined_narrowing < 2
+        else None
+    )
     if choice is None:
         state.stop_reason = "no_supported_question"
-        if state.policy_question and state.batch_question != state.policy_question:
-            # Documents cannot narrow further: answer every remaining plan in
-            # code-chosen alphabetical groups of five, disclosed as no ranking.
-            ordered = [
-                c["plan_id"]
-                for c in sorted(
-                    cards,
-                    key=lambda c: (
-                        c["insurer"].casefold(),
-                        c["name"].casefold(),
-                        c["variant"].casefold(),
-                    ),
-                )
-                if c["plan_id"] in remaining
-            ]
-            state.batch_question = state.policy_question
-            state.selected_plans, state.batch_queue = ordered[:5], ordered[5:]
-            state.policy_deferred = False
-            return ask(
-                "batch" if state.batch_queue else "batch_end",
-                prefix="I can’t narrow these further from the policy documents, so I’m answering your "
-                "question in alphabetical groups of five; this is not a ranking.",
-            )
-        if state.policy_question:
-            return ask(
-                "batch" if state.batch_queue else "batch_end",
-                prefix=f"Here is the next alphabetical group of {len(state.selected_plans)} plans.",
-            )
         if state.listed_for != requirement_signature(p):
             # Nothing left to ask that narrows the plans: show them, sorted.
             overview = ""
+            if state.declined_narrowing >= 2:
+                note = " ".join(
+                    x
+                    for x in (
+                        note,
+                        "Those questions didn’t narrow the list, so here are the plans.",
+                    )
+                    if x
+                )
             return list_plans(state, cards, ask)
         return ask("exhausted")
     state.stop_reason = None
-    of = f"{choice['count']} of the {choice['remaining']} remaining plans"
-    have, state_ = ("has", "states") if choice["count"] == 1 else ("have", "state")
-    if choice["value"] == "covered":
-        prefix = f"{of} {have} documented {LABELS[choice['field']]}."
-    elif choice["value"].startswith("room:"):
-        category = choice["value"].split(":", 1)[1].replace("_", " ")
-        prefix = f"{of} {have} the documented room limit: {category}."
-    elif choice["value"].startswith("bonus_at_least:"):
-        amount = choice["value"].split(":")[1]
-        prefix = f"{of} {state_} a no-claim bonus increase of at least {amount} percent, subject to their quoted caps and conditions."
-    else:
-        _, amount, unit = choice["value"].split(":")
-        prefix = f"{of} {have} {LABELS[choice['field']]} of at most {amount} {unit}."
+    name = need_value(choice["field"], choice["value"])
+    count, total = choice["count"], choice["remaining"]
+    prefix = f"{count} of the {total} plans open to you {'has' if count == 1 else 'have'} {name}."
     if choice.get("conditions"):
-        prefix += " The quoted conditions still apply."
-    if choice["known"] < choice["remaining"]:
-        prefix += " Plans with uncertain evidence will remain."
+        prefix += " Each plan’s own conditions apply."
+    if choice["known"] < total:
+        unclear = total - choice["known"]
+        prefix += (
+            f" {plural(unclear, 'plan')} {'doesn’t' if unclear == 1 else 'don’t'} state this "
+            "clearly, so I’d keep them on the list."
+        )
     return ask(
         "narrow",
         choice["field"],
@@ -1325,7 +1606,51 @@ def next_question(state, cards, *, relay=None, ambiguity=None):
         sources=choice["source_indexes"],
         value=choice["value"],
         relay=relay,
+        need_name=name,
     )
+
+
+def need_value(field, value):
+    """A proposed must-have in the customer's words: "a co-pay of at most 10%"."""
+    label = LABELS.get(field, field).removeprefix("the ")
+    if value == "covered":
+        return label
+    if value.startswith("room:"):
+        return ROOM_WORDS.get(value.split(":", 1)[1], value.split(":", 1)[1].replace("_", " "))
+    if value.startswith("bonus_at_least:"):
+        return f"a no-claim bonus of at least {value.split(':')[1]}%"
+    _, amount, unit = value.split(":")
+    if float(amount) == 0 and field in {"copay", "deductible"}:
+        return "no " + label
+    amount = f"{float(amount):g}"
+    shown = {"percent": f"{amount}%", "rupees": f"₹{int(float(amount)):,}"}.get(
+        unit, f"{amount} {unit}"
+    )
+    return f"a {label} of at most {shown}"
+
+
+def route_question(state, cards, remaining):
+    """Choose the plans this turn's question is about; return a note for a slow answer.
+
+    A whole-benefit question is answered for every open plan from the engine's stored
+    answers. Any other question is read live, five plans at a time."""
+    known = {c["plan_id"] for c in cards}
+    asked = [i for i in state.asked_plans if i in known]
+    if state.policy_topic:
+        state.asked_plans = asked or sorted(remaining)
+        return ""
+    if not asked:
+        shown = [i for i in state.last_shown if i in remaining]
+        ordered, _ = sort_plans(state, cards, remaining)
+        ordered.sort(key=lambda i: GROUP_ORDER.get(state.topic_groups.get(i), 4))
+        asked = shown or ordered
+    state.asked_plans, state.batch_queue = asked[:5], asked[5:]
+    state.batch_question = state.policy_question if state.batch_queue else None
+    names = join_words(plan_names(cards, state.asked_plans))
+    note = f"I’m reading the documents of {names} for your question; this takes a minute or two."
+    if state.batch_queue:
+        note += f" Say “Ask the next 5” to have me read the other {len(state.batch_queue)}."
+    return note
 
 
 def transition(state, changes, cards, *, relay=None):
@@ -1335,8 +1660,23 @@ def transition(state, changes, cards, *, relay=None):
     previous = state.pending
     previous_profile = state.profile.model_dump()
     previous_needs = {(r.field, r.strength) for r in state.profile.requirements}
+    previous_fields = {r.field for r in state.profile.requirements}
     previous_open = remaining_ids(state.fit_groups) if previous else set()
+    state.wrapped_up = False
     ambiguity = merge(state, changes)
+    if not state.policy_question:
+        # A benefit named for the first time, or an illness shared, gets each plan's
+        # wording at once, from the engine's stored answers.
+        shown = {a.removeprefix("topic:") for a in state.answered if a.startswith("topic:")}
+        for need in state.profile.requirements:
+            topic = FIELD_TOPICS.get(need.field, need.field)
+            if need.field in previous_fields or topic not in TOPIC_KEYS or topic in shown:
+                continue
+            state.policy_question = TOPIC_QUESTIONS[topic]
+            state.policy_topic = topic
+            state.topic_reason = "health" if need.value == "shown" else "need"
+            state.answered.append("topic:" + topic)
+            break
     if previous and previous.template == "mixed" and changes.plan_type:
         state.selected_plans = [
             c["plan_id"]
@@ -1363,11 +1703,16 @@ def transition(state, changes, cards, *, relay=None):
         and not changes.show_plans
         and not changes.budget_unsure
         and not changes.restated
+        and not changes.no_more_needs
     ):
         # Nothing was understood: never repeat the same words; add an example.
         template = REASK.get(asked.template, "{q} You can also say “skip”.")
         asked.text = template.format(q=asked.text)
         state.message = "I didn’t quite catch that. " + asked.text
+    if previous and asked and previous.template == asked.template == "closing":
+        state.message = asked.text = (
+            "Alright. I’m here whenever you have a question about these plans."
+        )
     if changes.explain_terms and previous:
         terms = [previous.field] if previous.field in GLOSSARY else list(GLOSSARY)
         state.message = " ".join([*(GLOSSARY[t] for t in terms), GLOSSARY_NOTE, state.message])
@@ -1388,7 +1733,12 @@ def transition(state, changes, cards, *, relay=None):
     acknowledged = []
     new = [r for r in state.profile.requirements if (r.field, r.strength) not in previous_needs]
     for r in new:
-        if r.field.startswith("unsupported:"):
+        if r.field.startswith("unsupported:") and changes.health_details:
+            # Never repeat a turn that shared health details back into the chat record.
+            acknowledged.append(
+                "I can’t check that in the policy documents, so I won’t filter plans on it."
+            )
+        elif r.field.startswith("unsupported:"):
             acknowledged.append(
                 f"I can’t check “{r.original_text.strip()[:80]}” in the policy documents, so I "
                 "won’t filter plans on it; you can still ask me about it."
@@ -1397,7 +1747,9 @@ def transition(state, changes, cards, *, relay=None):
         names = [
             need_label(r).lower()
             for r in new
-            if r.strength == strength and not r.field.startswith("unsupported:")
+            if r.strength == strength
+            and not r.field.startswith("unsupported:")
+            and r.value != "shown"
         ]
         if names:
             plural_ = len(names) > 1

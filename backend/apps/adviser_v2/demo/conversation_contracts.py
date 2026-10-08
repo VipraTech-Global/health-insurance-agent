@@ -21,6 +21,36 @@ FIELDS = (
     "no_claim_bonus",
     "ayush",
 )
+# Benefits the answer bank holds the engine's validated answer for, per plan.
+TOPIC_KEYS = (
+    "room_rent",
+    "icu",
+    "ped",
+    "specified_waiting",
+    "maternity",
+    "newborn",
+    "copay",
+    "deductible",
+    "restoration",
+    "no_claim_bonus",
+    "pre_post",
+    "day_care",
+    "road_ambulance",
+    "air_ambulance",
+    "ayush",
+    "organ_donor",
+    "home_care",
+    "health_check",
+    "opd",
+    "cataract",
+)
+Topic = Literal[TOPIC_KEYS]
+# Chat need fields and the bank topic that answers each; other topics keep their key.
+FIELD_TOPICS = {field: field for field in FIELDS if field in TOPIC_KEYS} | {
+    "room_limit": "room_rent",
+    "ped_waiting": "ped",
+}
+TOPIC_FIELDS = {topic: field for field, topic in FIELD_TOPICS.items()}
 
 
 class ChatPerson(Closed):
@@ -118,6 +148,14 @@ class ProposedChanges(Closed):
     compare_prices: bool = False
     compare_count: int | None = Field(default=None, ge=1, le=20)
     policy_question: str | None = None
+    # The one benefit a whole-benefit question is about; null for anything narrower.
+    policy_topic: Topic | None = None
+    # Send the customer's own wording to the engine instead of the topic answer; set by code.
+    exact_question: bool = False
+    # Answer the pending question for the next five plans; set by code.
+    ask_next: bool = False
+    # List the plans whose wording puts the last topic in the base cover; set by code.
+    base_only: bool = False
     selected_plans: list[str] = Field(default_factory=list, max_length=5)
     restored_plans: list[str] = Field(default_factory=list, max_length=5)
     withdrawn_requirements: list[str] = Field(default_factory=list, max_length=20)
@@ -142,6 +180,24 @@ class ChatState(Closed):
     restored_plans: list[str] = Field(default_factory=list)
     policy_question: str | None = None
     policy_deferred: bool = False
+    # A benefit to answer from the answer bank this turn, for every open plan.
+    policy_topic: str | None = None
+    # Why it is shown: the customer's question, a need they named, or a shared illness.
+    topic_reason: Literal["question", "need", "health"] | None = None
+    # The last topic answered, the customer's own wording and where each plan put it.
+    last_topic: str | None = None
+    topic_original: str | None = Field(default=None, max_length=3000)
+    topic_groups: dict[str, str] = Field(default_factory=dict)
+    # Narrowing questions declined in a row; two stop narrowing until the needs change.
+    declined_narrowing: int = 0
+    # The customer said they need nothing more once the plans were shown; the next reply
+    # signs off instead of asking again.
+    wrapped_up: bool = False
+    # Plans this turn's question is about ("these plans", named plans, the next five);
+    # empty means every open plan.
+    asked_plans: list[str] = Field(default_factory=list)
+    # Limit the next plan list to these plans (e.g. those with a benefit in the base cover).
+    list_only: list[str] = Field(default_factory=list)
     # Code-chosen alphabetical groups of five when documents cannot narrow further.
     batch_question: str | None = None
     batch_queue: list[str] = Field(default_factory=list)
@@ -163,6 +219,8 @@ class ChatState(Closed):
     options_asked: bool = False
     # Ask which limit to quote after this turn's answer.
     limit_asked: bool = False
+    # Answer how pre-existing illness is covered before asking anything else.
+    ped_answer: bool = False
     # Price the plans last shown rather than every open plan.
     compare_shown: bool = False
     # Kept for stored states; no longer read.

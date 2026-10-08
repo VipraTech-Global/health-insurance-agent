@@ -86,6 +86,8 @@ class DemoQuestion(models.Model):
     completed_at = models.DateTimeField(null=True, blank=True)
     execution_token = models.UUIDField(null=True, editable=False)
     heartbeat_at = models.DateTimeField(null=True, editable=False)
+    # Answers never read the profile; a chat question stays readable after it changes.
+    profile_bound = models.BooleanField(default=True)
 
 
 class DemoPlanAnswer(models.Model):
@@ -101,4 +103,31 @@ class DemoPlanAnswer(models.Model):
     class Meta:
         constraints = [
             models.UniqueConstraint(fields=["question", "index"], name="demo_plan_answer_uq")
+        ]
+
+
+class DemoTopicAnswer(models.Model):
+    """The engine's validated answer to one canonical topic question for one plan index.
+
+    Holds policy wording and the canonical question only, never customer text, so
+    every conversation can reuse it instead of searching the documents again."""
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    index = models.ForeignKey(DemoPlanIndex, on_delete=models.PROTECT)
+    topic = models.CharField(max_length=40)
+    method = models.CharField(max_length=1)
+    status = models.CharField(max_length=24)
+    validator = models.CharField(max_length=80)
+    draft = models.CharField(max_length=80)
+    result_ciphertext = models.BinaryField()
+    model = models.CharField(max_length=80, blank=True)
+    total_ms = models.PositiveIntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["index", "topic", "method"], name="demo_topic_answer_uq"
+            )
         ]

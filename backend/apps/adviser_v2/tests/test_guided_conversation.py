@@ -3,6 +3,7 @@ from types import SimpleNamespace
 import pytest
 
 from apps.adviser_v2.demo.chat_rules import differentiator, fit_groups
+from apps.adviser_v2.demo.chat_services import suggestions
 from apps.adviser_v2.demo.conversation import interpret, next_question, question, transition
 from apps.adviser_v2.demo.conversation_contracts import (
     ChatPerson,
@@ -129,13 +130,20 @@ def test_policy_question_is_not_requirement_and_retains_stage():
         ),
         cards(6),
     )
-    # More than five plans remain: the question is held, never a request to pick.
+    # Answered now for the first five plans, never held; the customer never has to pick.
     assert state.pending.field == "people" and state.policy_question == "Is OPD covered?"
-    assert state.policy_deferred and "kept your question" in state.message
+    assert not state.policy_deferred and "kept your question" not in state.message
+    assert len(state.asked_plans) == 5 and len(state.batch_queue) == 1
+    assert "I’m reading the documents of" in state.message and "Ask the next 5" in state.message
     assert not state.profile.requirements and state.interrupted.field == "people"
+    # The "Ask the next 5" chip comes with the reading turn only, not every turn after.
+    state.question_id = "submitted"
+    assert "Ask the next 5" in suggestions(state)
+    later = transition(state, ProposedChanges(skip=True), cards(6))
+    assert later.batch_queue and "Ask the next 5" not in suggestions(later)
     state = transition(state, ProposedChanges(selected_plans=["0", "1"]), cards(6))
     assert state.pending.field == "people" and not state.policy_deferred
-    assert state.selected_plans == ["0", "1"]
+    assert state.selected_plans == state.asked_plans == ["0", "1"]
 
 
 def with_rule(c, field, value):
@@ -175,10 +183,12 @@ def test_question_selection_is_insurer_independent_and_skip_suppresses():
     for c in source:
         c["insurer"] = "changed"
     assert differentiator(list(reversed(source)), state.fit_groups, set()) == first
+    # One adult: maternity is never offered unless they raise it.
     state = next_question(state, source)
-    assert state.pending.field == "maternity" and "uncertain evidence will remain" in state.message
+    assert state.pending.field == "opd"
+    assert "2 plans don’t state this clearly, so I’d keep them on the list" in state.message
     state = transition(state, ProposedChanges(skip=True), source)
-    assert state.pending.field == "opd" and not state.profile.requirements
+    assert state.pending.template == "batch" and not state.profile.requirements
 
 
 def test_compound_question_gets_one_rewrite_then_fixed_template():
@@ -445,26 +455,22 @@ def test_options_summary_never_claims_fit_when_nothing_is_confirmed():
     assert "Insurer" not in text and "Ask me to show them" in text
 
 
-def test_unnarrowable_policy_question_is_answered_in_alphabetical_fives():
+def test_free_form_question_is_read_now_five_plans_at_a_time():
     source = cards(7)
     state = complete()
     state.fit_groups = fit_groups(source, state.profile)
-    state.policy_question = "Is OPD covered?"
-    state.policy_deferred = True
+    state.policy_question = "Does it pay for robotic surgery?"
     state = next_question(state, source, relay=NoCalls())
-    first = state.selected_plans
+    first = state.asked_plans
     assert len(first) == 5 and len(state.batch_queue) == 2 and not state.policy_deferred
-    assert "not a ranking" in state.message and "see more" in state.message
-    assert {c["insurer"] for c in source if c["plan_id"] in first} == {
-        f"Insurer {i}" for i in range(1, 6)
-    }
+    assert "I’m reading the documents of" in state.message and "the other 2" in state.message
     state.policy_question = None  # submitted by the service
-    changes, model = interpret("next five", state, source, NoCalls())
-    assert changes.next_batch and model is None
+    # "Next five" pages the plan list; the chip asks the question of the next plans.
+    changes, model = interpret("Ask the next 5", state, source, NoCalls())
+    assert changes.ask_next and model is None
     state = transition(state, changes, source, relay=NoCalls())
-    assert len(state.selected_plans) == 2 and not set(state.selected_plans) & set(first)
-    assert state.policy_question == "Is OPD covered?" and not state.batch_queue
-    assert "That’s every plan open to you" in state.message
+    assert len(state.asked_plans) == 2 and not set(state.asked_plans) & set(first)
+    assert state.policy_question == "Does it pay for robotic surgery?" and not state.batch_queue
 
 
 def test_first_person_reply_means_self_without_ai():
@@ -601,7 +607,7 @@ def test_an_indian_state_after_the_city_keeps_india_residence():
     state = transition(state, ProposedChanges(city="kota, rajasthan"), cards())
     assert state.pending.field != "city"
     echoed = transition(state, ProposedChanges(city="Kota, Rajasthan"), cards())
-    assert echoed.profile.resides_in_india and echoed.profile.city == "kota, rajasthan"
+    assert echoed.profile.resides_in_india and echoed.profile.city == "Kota, Rajasthan"
 
 
 def test_sum_insured_options_reply_shows_printed_range_without_advice():
@@ -645,12 +651,12 @@ def test_asking_what_the_terms_mean_explains_and_reasks_without_deferring():
 def test_asking_for_plans_lists_them_in_fives_and_stops_narrowing():
     source = cards(7)
     for i, c in enumerate(source):
-        with_rule(c, "maternity", "covered" if i == 1 else "not_covered")
+        with_rule(c, "opd", "covered" if i == 1 else "not_covered")
     state = complete()
     state.fit_groups = fit_groups(source, state.profile)
     state = next_question(state, source)
     assert state.pending.template == "narrow"
-    assert "1 of the 7 remaining plans has documented maternity cover." in state.message
+    assert "1 of the 7 plans open to you has outpatient cover." in state.message
     changes, model = interpret("no. Can you suggest me plans now", state, source, NoCalls())
     assert changes.show_plans and changes.affirmative is False and model is None
     state = transition(state, changes, source, relay=NoCalls())

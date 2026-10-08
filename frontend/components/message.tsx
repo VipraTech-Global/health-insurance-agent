@@ -15,7 +15,7 @@ export function MessageView({ message, cards, questions, onSource, onPick }: {
   return (
     <div className="msg assistant">
       {blocks.map((b, i) =>
-        b.type === "question" ? <AnswerTable key={i} question={questions[b.question_id]} onSource={onSource} />
+        b.type === "question" ? <AnswerTable key={i} question={questions[b.question_id]} cards={cards} onSource={onSource} />
         : b.type === "shortlist" ? <ShortlistTable key={i} block={b} cards={cards} onSource={onSource} />
         : b.type === "price" ? <PriceTable key={i} block={b} cards={cards} onSource={onSource} />
         : <PriceComparisonTable key={i} block={b} cards={cards} onSource={onSource} />,

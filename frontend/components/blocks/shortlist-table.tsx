@@ -1,7 +1,9 @@
 import type { Card, OpenSource, ShortlistBlock } from "@/lib/chat-types";
 import { QuoteLinks } from "../source-link";
 
-const NEED_STATUS = { fits: "Covered", doesnt_fit: "Not covered", unresolved: "Not in documents" } as const;
+const NEED_STATUS = {
+  fits: "Covered", doesnt_fit: "Not covered", unresolved: "Not found in documents", addon: "Add-on (extra premium)",
+} as const;
 
 export function ShortlistTable({ block, cards, onSource }: { block: ShortlistBlock; cards: Card[]; onSource: OpenSource }) {
   const needs = block.needs ?? [];
@@ -35,7 +37,7 @@ export function ShortlistTable({ block, cards, onSource }: { block: ShortlistBlo
                   const status = need?.status ?? "unresolved";
                   return (
                     <td key={n.field} className={`need ${status}`}>
-                      {NEED_STATUS[status]}
+                      {need?.detail ?? NEED_STATUS[status]}
                       {need && need.citations.length > 0 && <QuoteLinks card={card} quotes={need.citations} kind="cards" onSource={onSource} />}
                     </td>
                   );

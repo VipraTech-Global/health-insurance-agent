@@ -97,7 +97,10 @@ def usable(question: DemoQuestion) -> bool:
         and question.session.owner.is_active
         and question.session.owner.deleted_at is None
         and question.erasure_generation == question.session.owner.erasure_generation
-        and question.profile_revision == question.session.profile_revision
+        and (
+            not question.profile_bound
+            or question.profile_revision == question.session.profile_revision
+        )
     )
 
 
@@ -151,6 +154,9 @@ def run_question(question_id) -> None:
     ):
         return
     text = decrypted(question.input_ciphertext, question.id)["question"]
+    from .answer_bank import QUESTION_TOPICS, remember
+
+    topic = QUESTION_TOPICS.get(text)
     rows = list(question.answers.select_related("index").filter(result_ciphertext__isnull=True))
     close_old_connections()
     stop = threading.Event()
@@ -194,7 +200,10 @@ def run_question(question_id) -> None:
             value = answer_plan(
                 bundle_for(row.index), text, method=question.release.method, progress=progress
             )
-            publish_progress(row.id, value["status"], value, execution_token=token)
+            published = publish_progress(row.id, value["status"], value, execution_token=token)
+            if published and topic:
+                # A canonical topic answer depends on the wording only: keep it for reuse.
+                remember(row.index, topic, question.release.method, value)
         except InterruptedError:
             return
         except (ValueError, OSError) as exc:
@@ -223,6 +232,11 @@ def run_question(question_id) -> None:
 def question_payload(question: DemoQuestion) -> dict:
     if not usable(question):
         return {"schema_version": 1, "id": str(question.id), "state": "cancelled", "plans": []}
+    from .answer_bank import QUESTION_TOPICS, TERMS, group
+
+    asked = decrypted(question.input_ciphertext, question.id)
+    topic = QUESTION_TOPICS.get(asked["question"])
+    verdicts = asked.get("verdicts") or {}
     plans = []
     for row in question.answers.select_related("index").order_by(
         "index__insurer", "index__name", "index__variant"
@@ -234,6 +248,20 @@ def question_payload(question: DemoQuestion) -> dict:
                 "packet", None
             )  # Source packets stay server-side; selected exact quotes are returned.
             result.pop("attempts", None)  # Rejected candidate wording must never be displayed.
+        # Where the validated wording puts a topic: base, addon, excluded, not_found. An
+        # answer that couldn't be read stays ungrouped with its own message.
+        final = bool(topic and result and result.get("status") in {"answered", "not_found"})
+        found = group(result, topic, row.index.variant) if final else None
+        card = verdicts.get(row.index.plan_key)
+        if card and result:
+            # A cited fact-card rule or add-on decides, as it does for the plan list; its
+            # quotes are shown when the stored answer says otherwise or nothing, or when
+            # they are an add-on extending what the base cover has.
+            own = card["statements"]
+            extends = all(s.get("coverage_scope") == "optional, extra premium" for s in own)
+            found, card = card["group"], (own if found != card["group"] or extends else None)
+        else:
+            card = None
         plans.append(
             {
                 "id": str(row.id),
@@ -246,6 +274,18 @@ def question_payload(question: DemoQuestion) -> dict:
                 "state": "source_revoked" if row.index.revoked_at else row.state,
                 "model": row.model,
                 "result": result,
+                "group": found,
+                # Statements quoted from the plan's fact card; their sources open as card
+                # citations.
+                "card_statements": card,
             }
         )
-    return {"schema_version": 1, "id": str(question.id), "state": question.state, "plans": plans}
+    return {
+        "schema_version": 1,
+        "id": str(question.id),
+        "state": question.state,
+        "topic": topic,
+        # A term every plan states (a waiting period, a co-pay) rather than a benefit.
+        "terms": topic in TERMS,
+        "plans": plans,
+    }
