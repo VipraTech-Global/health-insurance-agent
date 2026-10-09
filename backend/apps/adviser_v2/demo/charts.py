@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import fcntl
 import json
+import re
 from contextlib import nullcontext
 from dataclasses import asdict
 from pathlib import Path
@@ -18,6 +19,7 @@ from pydantic import Field
 
 from .contracts import Citation, Closed
 from .evidence import Section, atomic_json
+from .highlighting import _normalized
 from .pricing import PrintedPrice, TableCell, validate_price
 from .relay import InvalidOutput, Relay, RelayUnavailable
 from .validation import fold, locate
@@ -73,9 +75,19 @@ def source_citation(sources, page_id, text):
     return matches[0] if len(matches) == 1 else None
 
 
-def physical_grids(document, page_number, pdf):
-    """Extract a physical page grid once, then bind it to each plan's sections."""
-    root = Path(settings.COVERGUIDE_REPORT_ROOT) / "ten-insurer/physical-grids"
+GRID_VERSIONS = {
+    1: ("pdfplumber-grid/1", "physical-grids"),
+    2: ("pdfplumber-grid/2", "physical-grids-2"),
+}
+
+
+def grid_cache(document, page_number, pdf, version):
+    """Extract a physical page grid once, then bind it to each plan's sections.
+
+    Version 2 also keeps each cell's printed rectangle (None for a merged cell);
+    version 1 files stay valid for the price charts read from them."""
+    name, directory = GRID_VERSIONS[version]
+    root = Path(settings.COVERGUIDE_REPORT_ROOT) / "ten-insurer" / directory
     root.mkdir(parents=True, exist_ok=True)
     path = root / f"{document['sha256']}-{page_number}.json"
     with path.with_suffix(".lock").open("a") as lock:
@@ -83,29 +95,87 @@ def physical_grids(document, page_number, pdf):
         if path.exists():
             saved = json.loads(path.read_text())
             if (
-                saved.get("version") != "pdfplumber-grid/1"
+                saved.get("version") != name
                 or saved.get("pdf_sha256") != document["sha256"]
                 or saved.get("page") != page_number
                 or saved.get("pdfplumber") != pdfplumber.__version__
             ):
                 raise ValueError("Physical table cache identity differs.")
-            return saved["grids"]
+            return saved
         with nullcontext(pdf) if pdf is not None else pdfplumber.open(document["path"]) as opened:
-            grids = [table.extract() for table in opened.pages[page_number - 1].find_tables()]
-        atomic_json(
-            path,
-            {
-                "version": "pdfplumber-grid/1",
+            tables = opened.pages[page_number - 1].find_tables()
+            saved = {
+                "version": name,
                 "pdf_sha256": document["sha256"],
                 "page": page_number,
                 "pdfplumber": pdfplumber.__version__,
-                "grids": grids,
-            },
+                "grids": [table.extract() for table in tables],
+            }
+            if version == 2:
+                saved["boxes"] = [
+                    [[list(cell) if cell else None for cell in row.cells] for row in table.rows]
+                    for table in tables
+                ]
+        atomic_json(path, saved)
+        return saved
+
+
+def physical_grids(document, page_number, pdf):
+    return grid_cache(document, page_number, pdf, 1)["grids"]
+
+
+def page_chars(document, page_number, pdf):
+    with nullcontext(pdf) if pdf is not None else pdfplumber.open(document["path"]) as opened:
+        return tuple(
+            {key: char[key] for key in ("text", "x0", "x1", "top", "bottom")}
+            for char in opened.pages[page_number - 1].chars
         )
-        return grids
 
 
-def physical_cells(bundle, document, page_number, pdf=None):
+def geometry_citation(bundle, raw, chars, box, text):
+    """Cite repeated cell text at the one occurrence printed inside the cell's own
+    rectangle. The occurrence is counted as the document viewer counts it, so the
+    highlight lands in this cell; anything ambiguous stays uncited."""
+    from .fact_table_projection import cell_citation
+
+    try:
+        citation = cell_citation(bundle, raw, chars, box, text)
+    except ValueError:
+        return None
+    segment = next(
+        s
+        for section in bundle["sections"]
+        if section["id"] == citation.section_id
+        for s in section["segments"]
+        if s["page_id"] == citation.page_id
+    )
+    start, end = locate(segment["text"], citation.quote, citation.occurrence)
+    start, end = segment["start"] + start, segment["start"] + end
+    passage = raw["passage"]
+    # A cell is whole printed text: "MAX" inside a "MAX+" heading is another cell.
+    if re.match(r"[\w+]", passage[end : end + 1]) or (
+        start and re.match(r"\w", passage[start - 1])
+    ):
+        return None
+    target = _normalized(citation.quote)
+    mapped = [(letter, char) for char in chars for letter in _normalized(char["text"])]
+    native = "".join(letter for letter, _ in mapped)
+    found = -1
+    for _ in range(_normalized(passage[:start]).count(target) + 1):
+        found = native.find(target, found + 1)
+        if found < 0:
+            return None
+    inside = all(
+        box[0] - 1 <= (c["x0"] + c["x1"]) / 2 <= box[2] + 1
+        and box[1] - 1 <= (c["top"] + c["bottom"]) / 2 <= box[3] + 1
+        for _, c in mapped[found : found + len(target)]
+    )
+    return citation if inside else None
+
+
+def physical_cells(bundle, document, page_number, pdf=None, *, geometry=False):
+    """Cells whose printed text occurs once on the page cite it directly. With
+    geometry, repeated text is also cited by its position inside the cell."""
     raw = next(
         p
         for p in bundle["pages"]
@@ -116,8 +186,11 @@ def physical_cells(bundle, document, page_number, pdf=None):
         for s in (Section.from_payload(payload) for payload in bundle["sections"])
     ]
     sources = [(key, segments) for key, segments in sources if segments]
+    saved = grid_cache(document, page_number, pdf, 2 if geometry else 1)
+    boxes = saved.get("boxes") or [None] * len(saved["grids"])
+    chars = None
     result = []
-    for n, grid in enumerate(physical_grids(document, page_number, pdf)):
+    for n, (grid, rectangles) in enumerate(zip(saved["grids"], boxes, strict=True)):
         table_id = f"{document['sha256']}:{page_number}:{n}"
         cells = {}
         for r, row in enumerate(grid):
@@ -125,6 +198,9 @@ def physical_cells(bundle, document, page_number, pdf=None):
                 if not text or len(text) > 1600:
                     continue
                 citation = source_citation(sources, raw["evidence_span_id"], text)
+                if citation is None and rectangles and rectangles[r][c]:
+                    chars = chars if chars is not None else page_chars(document, page_number, pdf)
+                    citation = geometry_citation(bundle, raw, chars, rectangles[r][c], text)
                 if citation:
                     key = f"{table_id}:{r}:{c}"
                     cells[key] = TableCell(key, table_id, r, c, text, citation)

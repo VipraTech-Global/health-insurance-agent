@@ -9,7 +9,7 @@ from pydantic import ValidationError
 
 from .answer_packet import scoped_packet
 from .answer_retrieval import EXPANSION_VERSION, expanded_packet, expanded_question
-from .answer_scope import SCOPE_VERSION, ScopedLabels, ScopeViolation, scope_for
+from .answer_scope import SCOPE_VERSION, ScopedLabels, ScopeViolation, canon, named, scope_for
 from .answer_units import conditional_unit, governing_units
 from .assembly import EvidenceInsufficient, UnknownLabel, assemble
 from .contracts import Answer, ScopedAnswerDraft
@@ -41,6 +41,19 @@ ANSWER_PROMPT = (
 PARTIAL = "Some parts could not be verified against the document."
 NOT_FOUND = "Not found in this plan’s documents."
 UNAVAILABLE = "Temporarily unavailable — try again"
+
+
+def known_variants(bundle, scope):
+    """Names a quotation may be restricted to: the bundle's variants plus the other
+    columns of its variant tables (Activ One MAX's "MAX+"), never the selected plan's
+    own names or a shorter part of them ("Optima" for Optima Secure)."""
+    variants = list(bundle.get("variants", []))
+    printed = {n for table in scope.matrices.values() for n in table["names"]} - set(variants)
+    own = [a for a in scope.aliases if a]
+    return (
+        *variants,
+        *sorted(n for n in printed if canon(n) not in own and not any(named(a, n) for a in own)),
+    )
 
 
 def answer_plan(
@@ -75,15 +88,18 @@ def answer_plan(
     }
     packet = None
     validation_ms = 0.0
+    variants = None
 
     def checked(answer, evidence):
-        nonlocal validation_ms
+        nonlocal validation_ms, variants
         tick = time.perf_counter()
+        if variants is None:
+            variants = known_variants(bundle, scope_for(bundle))
         value = validate(
             answer,
             evidence,
             variant=bundle.get("variant", "Default"),
-            known_variants=tuple(bundle.get("variants", [])),
+            known_variants=variants,
         )
         validation_ms += (time.perf_counter() - tick) * 1000
         return value

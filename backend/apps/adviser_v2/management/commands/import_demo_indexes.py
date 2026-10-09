@@ -16,6 +16,12 @@ class Command(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument("--embed", action="store_true")
         parser.add_argument("--source-root", type=Path)
+        parser.add_argument(
+            "--plan-key",
+            action="append",
+            default=[],
+            help="Import only these plans (policy version IDs); other plans are not read.",
+        )
 
     def handle(self, **options):
         root = options["source_root"] or Path(settings.COVERGUIDE_REPORT_ROOT) / "ten-insurer"
@@ -23,7 +29,12 @@ class Command(BaseCommand):
         if not source.exists():
             raise CommandError("Map/section processing has not completed.")
         corpus = json.loads(source.read_text())
-        for plan in corpus["plans"]:
+        selected = set(options["plan_key"])
+        plans = [p for p in corpus["plans"] if not selected or p["policy_version_id"] in selected]
+        unknown = selected - {p["policy_version_id"] for p in plans}
+        if unknown:
+            raise CommandError("Unknown plan key: " + ", ".join(sorted(unknown)))
+        for plan in plans:
             version = (
                 PolicyVersion.objects.select_related("product__insurer")
                 .filter(pk=plan["policy_version_id"])

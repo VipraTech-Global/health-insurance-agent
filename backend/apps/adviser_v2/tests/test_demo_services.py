@@ -306,6 +306,7 @@ def test_variant_indexes_embed_identical_source_input_only_once(tmp_path, monkey
     from dataclasses import replace
 
     from django.core.management import call_command
+    from django.core.management.base import CommandError
 
     from apps.adviser_v2.models import DemoSectionVector
     from apps.adviser_v2.tests.test_demo_contracts import packet
@@ -337,7 +338,19 @@ def test_variant_indexes_embed_identical_source_input_only_once(tmp_path, monkey
             }
         )
     (tmp_path / "sections.json").write_text(json.dumps({"plans": plans}))
+    call_command(
+        "import_demo_indexes",
+        source_root=tmp_path,
+        embed=True,
+        plan_key=[plans[0]["policy_version_id"]],
+    )
+    assert list(DemoPlanIndex.objects.values_list("plan_key", flat=True)) == [
+        plans[0]["policy_version_id"]
+    ]
     call_command("import_demo_indexes", source_root=tmp_path, embed=True)
     assert len(calls) == 1
     assert DemoSectionVector.objects.count() == 2
+    assert DemoPlanIndex.objects.count() == 2
     assert len(list((tmp_path / "vectors").glob("*.json"))) == 1
+    with pytest.raises(CommandError, match="Unknown plan key: missing"):
+        call_command("import_demo_indexes", source_root=tmp_path, plan_key=["missing"])

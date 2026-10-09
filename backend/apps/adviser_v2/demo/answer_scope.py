@@ -3,17 +3,26 @@
 import re
 import unicodedata
 from bisect import bisect_right
-from collections import OrderedDict
+from collections import Counter, OrderedDict
 from threading import RLock
 
-from .assembly import EvidenceInsufficient, PacketLabels, document_source, locate_passage
+from .assembly import (
+    EvidenceInsufficient,
+    PacketLabels,
+    UnknownLabel,
+    document_source,
+    locate_passage,
+)
 from .evidence import Section
+from .quotations import normalized
 
 SCOPE_VERSION = "original-scope/1"
 OPTIONAL = re.compile(
     r"\boptional\b|\badd[ -]?ons?\b|\briders?\b|\bextra premium\b|\badditional premium\b",
     re.I,
 )
+# A variant table may offer a cover for extra payment without the word "optional".
+PAY_EXTRA = re.compile(r"\bchoose to\b|\bpay\b[^.;]{0,40}\b(?:additional|extra)\b", re.I)
 TOPICS = {
     "icu": r"\bICU\b|intensive care",
     "day_care": r"day[ -]?care",
@@ -44,7 +53,8 @@ class ScopeViolation(EvidenceInsufficient):
 
 
 def canon(value):
-    return " ".join(value.split()).casefold()
+    # A heading wrapped before its "+" ("VIP +") names the same variant as "VIP+".
+    return re.sub(r"\s+\+$", "+", " ".join(value.split())).casefold()
 
 
 def named(text, name):
@@ -130,19 +140,30 @@ class ScopeIndex:
         }
         self.names.update(self.product_names)
         self.matrices = {}
+
+        def printing(cells):
+            return any(
+                named(c["text"], v) or canon(v) in canon(c["text"])
+                for c in cells
+                for v in self.names
+            )
+
         for table in bundle.get("tables", []):
             cells = list(table["cells"].values())
             headers = [c for c in cells if c["row"] <= 2 and len(c["text"].split()) <= 5]
-            if any(
-                named(c["text"], v) or canon(v) in canon(c["text"])
-                for c in headers
-                for v in self.names
-            ):
+            if printing(headers):
+                # Further variant names come only from a first row that prints a known
+                # variant; otherwise that row holds values such as "Covered". A wrapped
+                # heading's first line printed over several columns ("Optima" over each
+                # Optima column) names none of them.
+                top = [c for c in headers if c["column"] > 0 and c["row"] == 0]
+                if not printing(top):
+                    top = []
+                printed = Counter(canon(c["text"]) for c in top)
                 candidates = {
                     " ".join(c["text"].split())
-                    for c in headers
-                    if c["column"] > 0
-                    and c["row"] == 0
+                    for c in top
+                    if printed[canon(c["text"])] == 1
                     and not re.search(
                         r"\d|%|insured|waiting|period|benefit|section|plan[s]?\b|coverage|limit"
                         r"|\btitle\b|clause|description|particulars|optional|covers?\b|features?"
@@ -275,6 +296,46 @@ class ScopeIndex:
             "optional_rows_after": optional_rows,
         }
 
+    def optional_rows(self, table):
+        """Rows of a variant table that fall inside an "Optional Covers" section.
+
+        Rows below an in-table marker are optional. A table continuing on the next
+        page under the same header starts inside the section its previous page ended
+        in, down to its first heading row (one holding a single cell, such as
+        "Waiting Period").
+        """
+        counts = Counter(c["row"] for c in table["cells"].values())
+        marks = self.table_scope(table)["optional_rows_after"]
+        rows = {r for r in counts if any(r > m for m in marks)}
+        if self.continues_optional(table):
+            end = min((r for r in counts if counts[r] == 1), default=max(counts) + 1)
+            rows |= {r for r in counts if 0 < r < end}  # Row 0 repeats the header.
+        return rows
+
+    def continues_optional(self, table):
+        parts = table["id"].rsplit(":", 2)  # "<document sha>:<page>:<n-th table on page>"
+        if len(parts) != 3 or parts[2] != "0" or not parts[1].isdigit():
+            return False
+        document, page, _ = parts
+        before = [
+            t
+            for t in self.table_map.values()
+            if t["id"] in self.matrices and t["id"].startswith(f"{document}:{int(page) - 1}:")
+        ]
+        if not before:
+            return False
+        previous = max(before, key=lambda t: int(t["id"].rsplit(":", 1)[1]))
+
+        def header(t):
+            return [
+                canon(c["text"])
+                for c in sorted(t["cells"].values(), key=lambda c: c["column"])
+                if c["row"] == 0
+            ]
+
+        last = max(c["row"] for c in previous["cells"].values())
+        return header(previous) == header(table) and last in self.optional_rows(previous)
+
     def check(self, unit, labels, statement, question):
         main = []
         contexts = []
@@ -370,9 +431,17 @@ class ScopeIndex:
                         "Shared table requires the selected variant/product axis, not another plan column."
                     )
                 table_proven = bool(matrix)
-                if value and any(
-                    value["row"] > r for r in self.table_scope(table)["optional_rows_after"]
-                ):
+                optional_rows = self.table_scope(table)["optional_rows_after"]
+                if matrix and value:
+                    # The selected variant's own cell decides its scope. Wording shared
+                    # by a product family may file a benefit under optional covers that
+                    # this variant's column includes, or mention optional covers in passing.
+                    rows = [table["cells"][k] for k in support.row_label_ids if k in table["cells"]]
+                    required_optional = any(
+                        optional_cover(c["text"]) or PAY_EXTRA.search(c["text"])
+                        for c in [value, *rows]
+                    ) or value["row"] in self.optional_rows(table)
+                elif value and any(value["row"] > r for r in optional_rows):
                     required_optional = True
         shared_topics = {k for t in self.matrices.values() for k in t["topics"]}
         if any(k in shared_topics for k in topics) and not table_proven and not exclusion(raw):
@@ -440,8 +509,84 @@ class ScopedLabels(PacketLabels):
                     "mixed passage; resolve each selected clause separately"
                 )
         for t in result["tables"]:
-            t["scope"] = self.scope.table_scope(self.tables[t["label"]])
+            table = self.tables[t["label"]]
+            t["scope"] = self.scope.table_scope(table)
+            if table["id"] in self.scope.matrices and self.scope.continues_optional(table):
+                t["scope"]["optional_rows_continued_from_previous_page"] = sorted(
+                    self.scope.optional_rows(table)
+                )
         return result
+
+    def table_ref(self, ref):
+        region = self.tables.get(ref.table)
+        if region is None or region["id"] not in self.scope.matrices:
+            return super().table_ref(ref)
+        return region, variant_ref(ref, self.cells[ref.table], region, self.scope.aliases)
+
+
+def squeezed(text):
+    return "".join(ch for ch in normalized(text)[0].casefold() if ch.isalnum())
+
+
+def variant_ref(ref, mapping, region, aliases):
+    """A variant-table reference named by alias or printed text. Models also join
+    adjacent cells ("1.1.b — ICU") and add the table's other headings, so only the
+    labels aligned with the value are kept, and repeated value text is read under
+    the selected variant's column. Validation still checks every kept label."""
+    cells = {alias: region["cells"][key] for alias, key in mapping.items()}
+
+    def meanings(text):
+        if text in cells:
+            return [[text]]
+        wanted = " ".join(normalized(text)[0].split()).casefold()
+        exact = [
+            [alias]
+            for alias, c in cells.items()
+            if wanted
+            in {
+                " ".join(normalized(t)[0].split()).casefold()
+                for t in (c["text"], c["citation"]["quote"])
+            }
+        ]
+        key = squeezed(text)
+        if exact or not key:
+            return exact
+        joined = []
+        for row in sorted({c["row"] for c in cells.values()}):
+            line = sorted((c["column"], alias) for alias, c in cells.items() if c["row"] == row)
+            for i in range(len(line)):
+                for j in range(i + 2, len(line) + 1):
+                    if "".join(squeezed(cells[a]["text"]) for _, a in line[i:j]) == key:
+                        joined.append([a for _, a in line[i:j]])
+        return joined
+
+    def kept(texts, at, same, before):
+        """The cells these texts name that share the value's row (or column) and
+        precede it; a text with no single such meaning is dropped."""
+        result = []
+        for text in texts:
+            groups = [
+                g
+                for g in meanings(text)
+                if all(cells[a][same] == at[same] and cells[a][before] < at[before] for a in g)
+            ]
+            if len(groups) == 1:
+                result.extend(a for a in groups[0] if a not in result)
+        return result
+
+    options = []
+    for value in [g[0] for g in meanings(ref.value) if len(g) == 1]:
+        at = cells[value]
+        rows = kept(ref.rows, at, "row", "column")
+        columns = kept(ref.columns, at, "column", "row")
+        if rows and columns:
+            options.append((value, rows, columns))
+    if len(options) > 1:
+        options = [o for o in options if any(canon(cells[a]["text"]) in aliases for a in o[2])]
+    if len(options) != 1:
+        raise UnknownLabel("Unknown packet table/cell label.")
+    value, rows, columns = options[0]
+    return ref.model_copy(update={"value": value, "rows": rows, "columns": columns})
 
 
 def table_cell_line(raw, match):

@@ -259,6 +259,11 @@ def test_similar_variant_names_do_not_accept_a_different_variant():
         known_variants=("Optima Secure", "Optima Secure+"),
     )
     assert not checked.checks[4]
+    # "MAX" inside "MAX+" reads as MAX's own wording until the sibling's name is known.
+    raw = "Super Credit is available with MAX+."
+    assert validate(answer(raw), packet(raw), variant="MAX", known_variants=("MAX",)).checks[4]
+    checked = validate(answer(raw), packet(raw), variant="MAX", known_variants=("MAX", "MAX+"))
+    assert not checked.checks[4]
 
 
 def table_answer():

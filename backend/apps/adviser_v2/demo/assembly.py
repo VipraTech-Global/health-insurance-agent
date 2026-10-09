@@ -66,6 +66,29 @@ class PacketLabels:
             tables.append({"label": label, "cells": cells})
         return {"schema_version": 2, "passages": passages, "tables": tables}
 
+    def table_ref(self, ref):
+        """The table region and the reference with every cell named by its alias."""
+        region = self.tables.get(ref.table)
+        mapping = self.cells.get(ref.table, {})
+        if region is None:
+            raise UnknownLabel("Unknown packet table/cell label.")
+        # Models sometimes return a cell's printed text instead of its alias.
+        # Accept only an exact, unique printed cell; the value must then sit at
+        # the intersection of the resolved row and column labels.
+        rows = [table_key(k, mapping, region) for k in ref.rows]
+        columns = [table_key(k, mapping, region) for k in ref.columns]
+        if ref.value in mapping:
+            value = ref.value
+        else:
+            value = table_key(
+                ref.value,
+                mapping,
+                region,
+                row=region["cells"][mapping[rows[0]]]["row"],
+                column=region["cells"][mapping[columns[0]]]["column"],
+            )
+        return region, ref.model_copy(update={"value": value, "rows": rows, "columns": columns})
+
 
 def document_source(section, all_sections):
     pieces = sorted(
@@ -208,27 +231,8 @@ def assemble(unit, labels: PacketLabels, packet: Packet, all_sections: list[Sect
 
     table = None
     if unit.table:
-        ref = unit.table
-        region = labels.tables.get(ref.table)
-        mapping = labels.cells.get(ref.table, {})
-        if region is None:
-            raise UnknownLabel("Unknown packet table/cell label.")
-        # Models sometimes return a cell's printed text instead of its alias.
-        # Accept only an exact, unique printed cell; the value must then sit at
-        # the intersection of the resolved row and column labels.
-        rows = [table_key(k, mapping, region) for k in ref.rows]
-        columns = [table_key(k, mapping, region) for k in ref.columns]
-        if ref.value in mapping:
-            value = ref.value
-        else:
-            value = table_key(
-                ref.value,
-                mapping,
-                region,
-                row=region["cells"][mapping[rows[0]]]["row"],
-                column=region["cells"][mapping[columns[0]]]["column"],
-            )
-        ref = ref.model_copy(update={"value": value, "rows": rows, "columns": columns})
+        region, ref = labels.table_ref(unit.table)
+        mapping = labels.cells[ref.table]
         table = TableSupport(
             region_id=region["id"],
             value_cell_id=mapping[ref.value],

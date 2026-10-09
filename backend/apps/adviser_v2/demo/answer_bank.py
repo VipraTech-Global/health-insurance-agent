@@ -88,6 +88,8 @@ NEXT_ENTRY = re.compile(r"\s(?:[A-Z]|\d{1,2})\.\s+[A-Z]")
 # A topic's own entry in such a table; "Air Ambulance" is never the road ambulance's.
 ENTRIES = {"road_ambulance": r"(?<!air )(?<!air-)\bambul\w*"}
 NOT_AVAILABLE = re.compile(r"(?:NA|N\.A\.?|N/A|Not (?:available|applicable|covered)|Nil)\b", re.I)
+# A variant table's cell saying the variant hasn't the benefit: "NA" under MAX.
+NOT_OFFERED = re.compile(r"NA|N\.A|N/A|Not (?:available|applicable|covered|offered)|[-–—]", re.I)
 
 
 def topics_in(text):
@@ -336,6 +338,16 @@ def withheld(statement, topic, variant=None):
     return excludes(statement, topic)
 
 
+def not_offered(statement):
+    """A table statement whose value cell says the variant hasn't the benefit. It is
+    never evidence of cover; in an optional-covers table it often means the cover is
+    already in-built, so there it decides nothing."""
+    excerpts = statement.get("excerpts") or []
+    # A table statement quotes its row labels, column labels and value, in that order.
+    value = " ".join(excerpts[-1].split()).strip(" .") if excerpts else ""
+    return bool(statement.get("table") and NOT_OFFERED.fullmatch(value))
+
+
 def group(result, topic, variant=None):
     """Where the plan's validated wording puts this topic: base, addon, excluded or not_found."""
     if not result or result.get("status") != "answered":
@@ -344,12 +356,18 @@ def group(result, topic, variant=None):
     # Statements that name the topic decide; when none does, the validated set stands.
     found = [s for s in found if relevant(s, topic)] or found
     base = [s for s in found if s.get("coverage_scope", "base") == "base"]
-    optional = [s for s in found if s.get("coverage_scope", "base") != "base"]
-    if base and (topic in TERMS or any(not withheld(s, topic, variant) for s in base)):
+    optional = [
+        s for s in found if s.get("coverage_scope", "base") != "base" and not not_offered(s)
+    ]
+    if any(
+        not not_offered(s) and (topic in TERMS or not withheld(s, topic, variant)) for s in base
+    ):
         return "base"
     if optional:
         return "addon"
-    return "excluded" if base else "not_found"
+    if base:
+        return "base" if topic in TERMS else "excluded"
+    return "not_found"
 
 
 def mentions(result, words):

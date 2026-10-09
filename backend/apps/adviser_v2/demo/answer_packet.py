@@ -13,9 +13,15 @@ def scoped_packet(packet, scope, question):
     topics = question_topic(question)
     selected = {s.id for s in packet.sections}
     tables, required = [], set()
-    for table in scope.table_map.values():
+    # Variant tables come first, in document order, whether or not H retrieved their
+    # page: shared wording never answers for one variant, and only its own column can.
+    # Any other table needs a retrieved cell.
+    ordered = sorted(scope.table_map.values(), key=lambda t: t["id"] not in scope.matrices)
+    for table in ordered:
         cells = table["cells"]
-        if not any(c["citation"]["section_id"] in selected for c in cells.values()):
+        matrix = table["id"] in scope.matrices
+        retrieved = any(c["citation"]["section_id"] in selected for c in cells.values())
+        if not matrix and not retrieved:
             continue
         rows = {
             c["row"]
@@ -24,14 +30,17 @@ def scoped_packet(packet, scope, question):
         }
         if not rows:
             continue
-        matrix = table["id"] in scope.matrices
-        columns = {
-            c["column"]
-            for c in cells.values()
-            if c["row"] <= 2 and canon(c["text"]) in scope.aliases
-        }
+        heads = [c for c in cells.values() if c["row"] <= 2 and canon(c["text"]) in scope.aliases]
+        columns = {c["column"] for c in heads}
         if matrix and not columns:
             continue  # Never manufacture a missing or merged variant header.
+        # A variant table's header ends at the row naming the variants; rows below
+        # it are benefits and join only when queried.
+        top = max(c["row"] for c in heads) if matrix else 2
+        if not retrieved and not any(
+            c["row"] in rows and c["column"] in columns for c in cells.values()
+        ):
+            continue  # An unretrieved table is added only for the variant's own value.
         label_columns = [
             c["column"]
             for c in cells.values()
@@ -41,7 +50,7 @@ def scoped_packet(packet, scope, question):
         kept = {
             k: c
             for k, c in cells.items()
-            if (c["row"] in rows or c["row"] <= 2)
+            if (c["row"] in rows or c["row"] <= top)
             and (not matrix or c["column"] in columns or c["column"] <= row_axes)
         }
         # The source page retains introductions, conditions and footnotes. This
@@ -59,8 +68,8 @@ def scoped_packet(packet, scope, question):
             break
     if not tables:
         return packet
-    # This is deterministic scope completion within the H packet, not another
-    # search/ranking arm. Every added section shares the pinned index edition.
+    # This is deterministic scope completion, not another search/ranking arm: the
+    # added sections are those holding the kept cells, from the pinned index edition.
     sections = [scope.sections[k] for k in scope.sections if k in required]
     reserve = token_count(json.dumps(tables, ensure_ascii=False)) + 1000
     text_packet = pack_sections(

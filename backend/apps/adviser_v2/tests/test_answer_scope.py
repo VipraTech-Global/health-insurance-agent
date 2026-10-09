@@ -2,8 +2,8 @@ from types import SimpleNamespace
 
 import pytest
 
-from apps.adviser_v2.demo.answer_scope import ScopedLabels, ScopeIndex, ScopeViolation
-from apps.adviser_v2.demo.answers import answer_plan
+from apps.adviser_v2.demo.answer_scope import ScopedLabels, ScopeIndex, ScopeViolation, canon
+from apps.adviser_v2.demo.answers import answer_plan, known_variants
 from apps.adviser_v2.demo.assembly import assemble
 from apps.adviser_v2.demo.contracts import Answer, ScopedDraftUnit
 from apps.adviser_v2.demo.evidence import Packet
@@ -214,6 +214,127 @@ def test_shared_wording_requires_selected_variant_axis_and_labels_optional_rows(
     table["cells"]["optional"] = {"text": "Optional Benefits", "row": 2, "column": 0}
     with pytest.raises(ScopeViolation, match="labelled"):
         scope.check(unit, ScopedLabels(p, scope), statement, "What OPD cover applies?")
+
+
+def test_selected_variant_cell_decides_scope_over_family_optional_wording():
+    from apps.adviser_v2.demo.contracts import Statement, TableSupport
+
+    raw = "2. Optional Covers\n2.6. Restore Benefit\nThe sum insured is restored once."
+    quote = "The sum insured is restored once."
+    cells = {
+        "field": {"text": "Restore Benefit", "row": 3, "column": 0},
+        "gold": {"text": "Gold", "row": 0, "column": 1},
+        "silver": {"text": "Silver", "row": 0, "column": 2},
+        "value": {"text": "Equal to 100% of sum insured", "row": 3, "column": 1},
+    }
+    b, p, scope = fixture(raw, tables=[{"id": "table", "cells": cells}])
+    labels = ScopedLabels(p, scope)
+    question = "What restoration benefit applies?"
+
+    def check(kind):
+        unit = ScopedDraftUnit(
+            coverage_scope=kind,
+            benefit=[{"passage": "P1", "quote": quote}],
+            table={"table": "T1", "value": "C4", "rows": ["C1"], "columns": ["C2"]},
+        )
+        statement = Statement(
+            text=quote,
+            citations=[{"section_id": "s1", "page_id": "p1", "quote": quote}],
+            table=TableSupport(
+                region_id="table",
+                value_cell_id="value",
+                row_label_ids=["field"],
+                column_label_ids=["gold"],
+            ),
+        )
+        return scope.check(unit, labels, statement, question).coverage_scope
+
+    # The prose is filed under optional covers; the selected column's value is the
+    # variant's own cover.
+    assert scope.context(*labels.passages["P1"], quote)["coverage_scope"] != "base"
+    assert check("base") == "base"
+    with pytest.raises(ScopeViolation, match="no original-source support"):
+        check("optional, extra premium")
+    for text in ("Optional (100% of sum insured)", "Choose to pay additional premium"):
+        cells["value"]["text"] = text
+        with pytest.raises(ScopeViolation, match="labelled"):
+            check("base")
+        assert check("optional, extra premium") == "optional, extra premium"
+
+
+def test_variant_table_continued_on_the_next_page_keeps_its_optional_section():
+    from dataclasses import replace
+
+    from apps.adviser_v2.demo.contracts import Statement, TableSupport
+
+    def table(page, rows, header=("Benefits", "Gold", "Silver")):
+        cite = {"section_id": "s1", "page_id": "p1", "occurrence": 0}
+        cells = {
+            f"{page}:{r}:{c}": {
+                "text": text,
+                "row": r,
+                "column": c,
+                "citation": {**cite, "quote": text},
+            }
+            for r, row in enumerate([header, *rows])
+            for c, text in enumerate(row)
+        }
+        return {"id": f"doc:{page}:0", "cells": cells}
+
+    earlier = table(
+        4,
+        [["Room Rent", "At actuals", "1%"], ["Optional Covers"], ["Deductible", "INR 5,000", "NA"]],
+    )
+    later = table(
+        5,
+        [
+            ["Deductible", "INR 10,000", "NA"],
+            ["Waiting Period"],
+            ["Initial Waiting", "30 days", "30 days"],
+        ],
+    )
+    quote = "A deductible applies to each claim."
+    b, p, scope = fixture(quote, tables=[earlier, later])
+    labels = ScopedLabels(p, scope)
+
+    def check(kind, row, question="What deductible applies?"):
+        unit = ScopedDraftUnit(
+            coverage_scope=kind,
+            benefit=[{"passage": "P1", "quote": quote}],
+            table={"table": "T2", "value": "C1", "rows": ["C1"], "columns": ["C1"]},
+        )
+        statement = Statement(
+            text=quote,
+            citations=[{"section_id": "s1", "page_id": "p1", "quote": quote}],
+            table=TableSupport(
+                region_id=later["id"],
+                value_cell_id=f"5:{row}:1",
+                row_label_ids=[f"5:{row}:0"],
+                column_label_ids=["5:0:1"],
+            ),
+        )
+        return scope.check(unit, labels, statement, question).coverage_scope
+
+    # Page 5 repeats page 4's header and carries on its optional covers until the
+    # next heading row.
+    assert scope.optional_rows(later) == {1}
+    payload = ScopedLabels(replace(p, tables=(later,)), scope).payload()
+    assert payload["tables"][0]["scope"]["optional_rows_continued_from_previous_page"] == [1]
+    with pytest.raises(ScopeViolation, match="labelled"):
+        check("base", 1)
+    assert check("optional, extra premium", 1) == "optional, extra premium"
+    assert check("base", 3, "What initial waiting period applies?") == "base"
+    # Another header, or a previous page without optional covers, starts afresh.
+    for page in (
+        table(
+            4,
+            [["Optional Covers"], ["Deductible", "INR 5,000", "NA"]],
+            header=("Benefits", "Silver", "Gold"),
+        ),
+        table(4, [["Room Rent", "At actuals", "1%"]]),
+    ):
+        b, p, scope = fixture(quote, tables=[page, later])
+        assert scope.optional_rows(later) == set()
 
 
 def test_shared_illustration_is_not_selected_variant_availability_proof():
@@ -428,3 +549,163 @@ def test_column_headings_are_not_variant_names():
         ],
     )
     assert not {"TITLE", "Policy Clause Number"} & set(s.names)
+
+
+def heading_row(*texts, row=0):
+    return {f"{row}:{n}": {"text": t, "row": row, "column": n} for n, t in enumerate(texts)}
+
+
+def test_other_variant_columns_are_known_and_a_wrapped_plus_is_the_same_name():
+    assert canon("VIP +") == canon("VIP+") != canon("VIP")
+    table = {
+        "id": "t",
+        "cells": {
+            **heading_row("Benefits", "MAX", "MAX+", "VIP +"),
+            **heading_row("Room", "Covered", "Covered", "Covered", row=1),
+        },
+    }
+    b, _, s = fixture(
+        "Benefits.", tables=[table], name="Activ One", variant="MAX", variants=["MAX"]
+    )
+    assert s.matrices["t"]["names"] == ["MAX", "MAX+", "VIP +"]
+    assert known_variants(b, s) == ("MAX", "MAX+", "VIP +")
+    # Without variant tables the bundle's own variants are all there is.
+    b, _, s = fixture("Benefits.")
+    assert known_variants(b, s) == ("Gold", "Silver")
+
+
+def test_wrapped_headings_and_value_rows_do_not_become_variant_names():
+    wrapped = {
+        "id": "w",
+        "cells": {
+            **heading_row("Benefit", "Optima Secure", "Optima", "Optima", "Optima Lite"),
+            **heading_row("", "", "Secure Global", "Secure Global Plus", "", row=1),
+        },
+    }
+    b, _, s = fixture(
+        "Benefits.",
+        tables=[wrapped],
+        name="my: Optima Secure",
+        variant="Optima Secure",
+        variants=["Optima Secure"],
+    )
+    assert "Optima" not in s.names and "Optima Lite" in s.names
+    assert known_variants(b, s) == ("Optima Secure", "Optima Lite")
+    # A first row of values under a variant heading printed lower down names nothing.
+    values = {
+        "id": "v",
+        "cells": {
+            **heading_row("Room Rent", "Covered", "Single room"),
+            **heading_row("", "Gold", "Silver", row=1),
+        },
+    }
+    _, _, s = fixture("Benefits.", tables=[values])
+    assert s.names == {"Gold", "Silver"}
+
+
+def test_packet_adds_an_unretrieved_variant_table_only_for_the_variants_own_value():
+    from apps.adviser_v2.demo.answer_packet import scoped_packet
+
+    page = source("Benefit Gold Silver OPD Covered Not Available", page="p2", identity="s2")
+
+    def table(identity, *rows):
+        cells = {}
+        for r, texts in enumerate(rows):
+            for c, text in enumerate(texts):
+                if text:
+                    cite = {"section_id": "s2", "page_id": "p2", "quote": text, "occurrence": 0}
+                    cells[f"{r}:{c}"] = {"text": text, "row": r, "column": c, "citation": cite}
+        return {"id": identity, "cells": cells}
+
+    own = table(
+        "own",
+        ("Benefit", "Gold", "Silver"),
+        # A benefit row above row 3 is no header; it joins only when queried.
+        ("Entry Age", "18 years", "18 years"),
+        ("OPD", "Covered", "Not Available"),
+    )
+    # Gold's heading prints but its OPD value is merged under Silver.
+    merged = table("merged", ("Benefit", "Silver", "Gold"), ("OPD", "Covered", ""))
+    plain = table("plain", ("Benefit", "Limit"), ("OPD", "Covered"))
+    b, p, scope = fixture(
+        "Outpatient treatment is described in the schedule.",
+        sections=[
+            source("Outpatient treatment is described in the schedule.").payload(),
+            page.payload(),
+        ],
+        tables=[plain, merged, own],
+    )
+    result = scoped_packet(p, scope, "What OPD cover applies?")
+    assert [t["id"] for t in result.tables] == ["own"]
+    assert {c["text"] for c in result.tables[0]["cells"].values()} == {
+        "Benefit",
+        "Gold",
+        "OPD",
+        "Covered",
+    }
+    assert [s.id for s in result.sections] == ["s2", "s1"]
+    # Without a variant table nothing unretrieved is added.
+    b, p, scope = fixture(
+        "Outpatient treatment is described in the schedule.",
+        sections=[
+            source("Outpatient treatment is described in the schedule.").payload(),
+            page.payload(),
+        ],
+        tables=[plain],
+    )
+    assert scoped_packet(p, scope, "What OPD cover applies?") is p
+
+
+def test_variant_table_cells_named_by_printed_text_resolve_under_the_selected_column():
+    from apps.adviser_v2.demo.assembly import UnknownLabel
+
+    raw = "OPD consultations are covered.\nSection Plans Gold Silver\n1.4 OPD Covered Covered"
+    cells = {}
+    for r, texts in enumerate(
+        [("Section", "Plans", "Gold", "Silver"), ("1.4", "OPD", "Covered", "Covered")]
+    ):
+        for c, text in enumerate(texts):
+            # The table's "OPD" and second "Covered" are each the text's second occurrence.
+            occurrence = int((r, c) in {(1, 1), (1, 3)})
+            cite = {"section_id": "s1", "page_id": "p1", "quote": text, "occurrence": occurrence}
+            cells[f"{r}:{c}"] = {"text": text, "row": r, "column": c, "citation": cite}
+    b, p, scope = fixture(raw, tables=[{"id": "t", "cells": cells}])
+    p = Packet("plan", p.sections, (), 16000, tables=({"id": "t", "cells": cells},))
+    labels = ScopedLabels(p, scope)
+
+    def draft(**table):
+        return ScopedDraftUnit(
+            coverage_scope="base",
+            benefit=[{"passage": "P1", "quote": "OPD consultations are covered."}],
+            table={"table": "T1", **table},
+        )
+
+    # The joined section number and benefit name, and the extra headings, as printed.
+    unit = draft(value="Covered", rows=["1.4 — OPD"], columns=["Section", "Plans", "Gold"])
+    _, ref = labels.table_ref(unit.table)
+    names = {alias: cells[key]["text"] for alias, key in labels.cells["T1"].items()}
+    assert [names[a] for a in ref.rows] == ["1.4", "OPD"]
+    assert [names[a] for a in ref.columns] == ["Gold"]
+    assert labels.cells["T1"][ref.value] == "1:2"
+    statement, extended = assemble(unit, labels, p, list(scope.sections.values()))
+    statement = scope.check(unit, labels, statement, "What OPD cover applies?")
+    assert statement.table.value_cell_id == "1:2"
+    assert validate(
+        Answer(plan_id="plan", status="answered", statements=[statement]),
+        extended,
+        variant="Gold",
+        known_variants=("Gold", "Silver"),
+    ).passed
+    # Another variant's column stays another variant's column.
+    unit = draft(value="Covered", rows=["OPD"], columns=["Silver"])
+    statement, _ = assemble(unit, labels, p, list(scope.sections.values()))
+    with pytest.raises(ScopeViolation, match="selected variant/product axis"):
+        scope.check(unit, labels, statement, "What OPD cover applies?")
+    # A value no kept column names, or text naming no cell, is still unknown.
+    for table in (
+        {"value": "Covered", "rows": ["OPD"], "columns": ["Section"]},
+        {"value": "Covered", "rows": ["Room"], "columns": ["Gold"]},
+        {"value": "Covered at actuals", "rows": ["OPD"], "columns": ["Gold"]},
+    ):
+        with pytest.raises(UnknownLabel):
+            labels.table_ref(draft(**table).table)

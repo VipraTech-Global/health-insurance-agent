@@ -245,6 +245,35 @@ def test_a_variant_table_is_read_for_the_plans_own_variant():
     assert answer_bank.group(result, "air_ambulance") == "base"
 
 
+def printed_cell(*excerpts, scope="base"):
+    """A table statement: its row label, column label and value quoted in that order."""
+    return {
+        **says("\n\n".join(excerpts), scope),
+        "heading": "Table excerpts",
+        "excerpts": list(excerpts),
+        "table": {"region_id": "t", "value_cell_id": "v", "row_label_ids": ["r"]},
+    }
+
+
+def test_an_na_variant_cell_is_never_cover():
+    def grouped(topic, *found):
+        return answer_bank.group(engine_result("plan", *found), topic, "MAX")
+
+    na = printed_cell("Maternity Expenses", "MAX", "NA")
+    assert grouped("maternity", na) == "excluded"
+    assert grouped("maternity", na, says("Maternity expenses are covered.")) == "base"
+    # In an optional-covers table "NA" often means the cover is already in-built.
+    in_built = printed_cell("OPD consultations", "MAX", "Covered")
+    optional_na = printed_cell("OPD consultations", "MAX", "NA", scope="optional, extra premium")
+    assert grouped("opd", optional_na) == "not_found"
+    assert grouped("opd", in_built, optional_na) == "base"
+    # A benefit not in-built that the variant can buy is an add-on.
+    sold = printed_cell("OPD consultations", "MAX", "Optional", scope="optional, extra premium")
+    assert grouped("opd", printed_cell("OPD consultations", "MAX", "N.A."), sold) == "addon"
+    # A term printed as "NA" still states the plan's terms.
+    assert grouped("deductible", printed_cell("Deductible", "MAX", "NA")) == "base"
+
+
 def test_the_table_the_counts_and_the_plan_list_give_one_answer_per_plan(v2_user, demo):  # noqa: F811
     _, _, rows = demo
     opd = {
