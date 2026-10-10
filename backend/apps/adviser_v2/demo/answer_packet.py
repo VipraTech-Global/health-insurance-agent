@@ -6,6 +6,7 @@ from dataclasses import replace
 
 from .answer_scope import TOPICS, canon, question_topic
 from .evidence import pack_sections
+from .table_cells import covers, extent, slots
 from .text import token_count
 
 
@@ -23,35 +24,48 @@ def scoped_packet(packet, scope, question):
         retrieved = any(c["citation"]["section_id"] in selected for c in cells.values())
         if not matrix and not retrieved:
             continue
-        rows = {
-            c["row"]
-            for c in cells.values()
-            if any(re.search(TOPICS[t], c["text"], re.I) for t in topics)
-        }
-        if not rows:
-            continue
+        labels = [
+            c for c in cells.values() if any(re.search(TOPICS[t], c["text"], re.I) for t in topics)
+        ]
         heads = [c for c in cells.values() if c["row"] <= 2 and canon(c["text"]) in scope.aliases]
-        columns = {c["column"] for c in heads}
+        columns = {k for c in heads for k in slots(c, "column")}
         if matrix and not columns:
             continue  # Never manufacture a missing or merged variant header.
         # A variant table's header ends at the row naming the variants; rows below
         # it are benefits and join only when queried.
-        top = max(c["row"] for c in heads) if matrix else 2
+        top = max(extent(c, "row")[1] for c in heads) if matrix else 2
+        row_axes = -1
+        if matrix:
+            # Row labels print left of every variant's column. A row is queried when
+            # its label or the selected variant's own entry names the topic, never
+            # when only another variant's entry does.
+            names = {canon(n) for n in scope.matrices[table["id"]]["names"]} | scope.aliases
+            row_axes = (
+                min(
+                    c["column"]
+                    for c in cells.values()
+                    if c["row"] <= top and canon(c["text"]) in names
+                )
+                - 1
+            )
+            labels = [
+                c
+                for c in labels
+                if extent(c, "column")[1] <= row_axes or covers(c, "column", columns)
+            ]
+        rows = {r for c in labels for r in slots(c, "row")}
+        if not rows:
+            continue
+        # A value printed across several variants' columns is each one's own.
         if not retrieved and not any(
-            c["row"] in rows and c["column"] in columns for c in cells.values()
+            covers(c, "row", rows) and covers(c, "column", columns) for c in cells.values()
         ):
             continue  # An unretrieved table is added only for the variant's own value.
-        label_columns = [
-            c["column"]
-            for c in cells.values()
-            if c["row"] in rows and any(re.search(TOPICS[t], c["text"], re.I) for t in topics)
-        ]
-        row_axes = min(label_columns) if label_columns else -1
         kept = {
             k: c
             for k, c in cells.items()
-            if (c["row"] in rows or c["row"] <= top)
-            and (not matrix or c["column"] in columns or c["column"] <= row_axes)
+            if (covers(c, "row", rows) or c["row"] <= top)
+            and (not matrix or covers(c, "column", columns) or c["column"] <= row_axes)
         }
         # The source page retains introductions, conditions and footnotes. This
         # projection exposes only the queried rows, never an exhaustive table.

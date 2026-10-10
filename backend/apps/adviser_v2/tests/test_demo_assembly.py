@@ -264,7 +264,7 @@ def test_table_cell_may_be_named_by_its_unique_printed_text():
     mapping = {"C1": "a", "C2": "b", "C3": "c", "C4": "d"}
     assert table_key("C3", mapping, region) == "C3"
     assert table_key("single  private room", mapping, region) == "C3"
-    assert table_key("Gold", mapping, region, row=0) == "C2"
+    assert table_key("Gold", mapping, region, row=region["cells"]["b"]) == "C2"
     for ambiguous_or_absent in ["Gold", "Shared room"]:
         with pytest.raises(UnknownLabel):
             table_key(ambiguous_or_absent, mapping, region)

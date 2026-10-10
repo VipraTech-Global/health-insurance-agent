@@ -272,6 +272,11 @@ def test_an_na_variant_cell_is_never_cover():
     assert grouped("opd", printed_cell("OPD consultations", "MAX", "N.A."), sold) == "addon"
     # A term printed as "NA" still states the plan's terms.
     assert grouped("deductible", printed_cell("Deductible", "MAX", "NA")) == "base"
+    # A cell labelling several fields says it under the topic's own label.
+    both = "Road Ambulance: INR 2000 per\nHospitalization\nAir Ambulance: NA"
+    travel = printed_cell("Expenses in Reaching the Hospital", "MAX", both)
+    assert grouped("air_ambulance", travel) == "excluded"
+    assert grouped("road_ambulance", travel) == "base"
 
 
 def test_the_table_the_counts_and_the_plan_list_give_one_answer_per_plan(v2_user, demo):  # noqa: F811
@@ -365,7 +370,8 @@ def test_a_long_card_quote_is_shown_from_its_clause_on_the_topic():
 
 # One brochure and one policy wording printed for every ReAssure-style variant. The
 # brochure table prints a benefit every variant shares as one cell across the variant
-# columns; the table reader files that cell under the first column, Classic.
+# columns; the table reader files that cell under the first column, Classic, and
+# records the columns it spans.
 VARIANTS = ["Classic", "Select", "Elite", "Black"]
 BROCHURE = (
     "Benefit Classic Select Elite Black\n"
@@ -439,6 +445,7 @@ def family(tmp_path):
             for r, row in enumerate(TABLE_ROWS)
             for c, text in enumerate(row)
         }
+        cells["t:2:1"]["column_end"] = len(VARIANTS)
         bundle = {
             "policy_version_id": plan,
             "name": "ReAssure 3.0",
@@ -552,7 +559,9 @@ def test_a_variant_line_gives_a_sibling_variant_its_own_entry(family):
     assert groups[elite.id]["air_ambulance"] == "base"
     # The answer building the bank reads each plan's own answers only.
     assert answer_bank.lookup([elite], "air_ambulance", "P") == {}
-    shown = answer_bank.lookup([elite], "air_ambulance", "P", siblings=True)[elite.id]
+    shown = answer_bank.lookup([elite], "air_ambulance", "P", siblings=[classic.id, elite.id])[
+        elite.id
+    ]
     assert shown["shared_from"] == {"index": classic.id, "variant": "Classic"}
     assert shown["plan_id"] == shown["answer"]["plan_id"] == elite.plan_key
     assert shown["index_version"] == elite.id
@@ -569,8 +578,11 @@ def test_a_benefit_cell_printed_across_every_variant_is_each_variants_own(family
     sha, plans = family
     classic, elite = plans["Classic"], plans["Elite"]
     remember(classic, "opd", "P", answered(sha, classic, merged_cell(classic)))
-    assert answer_bank.bank_groups([elite.id], "P")[elite.id]["opd"] == "base"
-    shown = answer_bank.lookup([elite], "opd", "P", siblings=True)[elite.id]
+    assert answer_bank.bank_groups([classic.id, elite.id], "P")[elite.id]["opd"] == "base"
+    # A sibling outside the release (another edition's index) lends nothing.
+    assert "opd" not in answer_bank.bank_groups([elite.id], "P").get(elite.id, {})
+    assert answer_bank.lookup([elite], "opd", "P", siblings=[elite.id]) == {}
+    shown = answer_bank.lookup([elite], "opd", "P", siblings=[classic.id, elite.id])[elite.id]
     (statement,) = answer_bank.statements(shown)
     # The Classic column label is not Elite's wording, so it is neither shown nor linked.
     assert statement["excerpts"] == ["E-Consultation", "Unlimited (Only Cashless)"]
@@ -604,8 +616,8 @@ def test_a_cell_in_a_row_with_other_variants_values_stays_with_its_variant(famil
         },
     )
     remember(classic, "room_rent", "P", answered(sha, classic, room))
-    assert answer_bank.lookup([elite], "room_rent", "P", siblings=True) == {}
-    assert "room_rent" not in answer_bank.bank_groups([elite.id], "P").get(elite.id, {})
+    assert answer_bank.lookup([elite], "room_rent", "P", siblings=[classic.id, elite.id]) == {}
+    assert "room_rent" not in answer_bank.bank_groups([classic.id, elite.id], "P").get(elite.id, {})
 
 
 def test_wording_naming_another_variant_is_not_borrowed(family):
@@ -614,14 +626,14 @@ def test_wording_naming_another_variant_is_not_borrowed(family):
     general = quoted(classic, "page-2", "Day care treatments are covered up to the Sum Insured.")
     own = quoted(classic, "page-2", "Day care for the Classic variant needs 2 hours of admission.")
     remember(classic, "day_care", "P", answered(sha, classic, own, general))
-    shown = answer_bank.lookup([elite], "day_care", "P", siblings=True)[elite.id]
+    shown = answer_bank.lookup([elite], "day_care", "P", siblings=[classic.id, elite.id])[elite.id]
     # Only the wording every variant shares carries over, linked to its own quote.
     (statement,) = answer_bank.statements(shown)
     assert statement["text"] == "Day care treatments are covered up to the Sum Insured."
     assert [a["quote"] for a in shown["validation"]["anchors"]] == [statement["text"]]
     assert shown["validation"]["statement_anchors"] == [[0]]
     remember(classic, "day_care", "P", answered(sha, classic, own))
-    assert answer_bank.lookup([elite], "day_care", "P", siblings=True) == {}
+    assert answer_bank.lookup([elite], "day_care", "P", siblings=[classic.id, elite.id]) == {}
 
 
 def test_an_exclusion_code_heading_further_down_a_list_is_an_exclusion():

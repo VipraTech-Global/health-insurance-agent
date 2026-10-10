@@ -15,6 +15,7 @@ from .assembly import (
 )
 from .evidence import Section
 from .quotations import normalized
+from .table_cells import aligned, fields
 
 SCOPE_VERSION = "original-scope/1"
 OPTIONAL = re.compile(
@@ -421,7 +422,10 @@ class ScopeIndex:
                 ]
                 value = table["cells"].get(support.value_cell_id)
                 matrix = self.matrices.get(table["id"])
-                axis_text = plain(" ".join(c["text"] for c in axes))
+                # A variant's own cell may label its fields ("Road Ambulance: Unlimited")
+                # under a row label that names neither ("Expenses in Reaching the Hospital").
+                printed = list(fields(value["text"])) if matrix and value else []
+                axis_text = plain(" ".join([*(c["text"] for c in axes), *printed]))
                 if topics and not any(re.search(TOPICS[k], axis_text, re.I) for k in topics):
                     raise ScopeViolation(
                         "Table axes do not identify the requested benefit or field."
@@ -532,21 +536,35 @@ def variant_ref(ref, mapping, region, aliases):
     """A variant-table reference named by alias or printed text. Models also join
     adjacent cells ("1.1.b — ICU") and add the table's other headings, so only the
     labels aligned with the value are kept, and repeated value text is read under
-    the selected variant's column. Validation still checks every kept label."""
+    the selected variant's column. A value may also be one field a cell prints
+    ("Road Ambulance: INR 2000"), with or without its label; the whole cell is
+    cited. Validation still checks every kept label."""
     cells = {alias: region["cells"][key] for alias, key in mapping.items()}
+
+    def flat(text):
+        return " ".join(normalized(text)[0].split()).casefold()
+
+    def printing(text):
+        """The cells printing this text as one of their own fields."""
+        wanted = flat(text)
+        return [
+            [alias]
+            for alias, c in cells.items()
+            if wanted
+            and any(
+                wanted in {flat(f"{label}: {entry}"), flat(entry)}
+                for label, entry in fields(c["text"]).items()
+            )
+        ]
 
     def meanings(text):
         if text in cells:
             return [[text]]
-        wanted = " ".join(normalized(text)[0].split()).casefold()
+        wanted = flat(text)
         exact = [
             [alias]
             for alias, c in cells.items()
-            if wanted
-            in {
-                " ".join(normalized(t)[0].split()).casefold()
-                for t in (c["text"], c["citation"]["quote"])
-            }
+            if wanted in {flat(t) for t in (c["text"], c["citation"]["quote"])}
         ]
         key = squeezed(text)
         if exact or not key:
@@ -560,25 +578,21 @@ def variant_ref(ref, mapping, region, aliases):
                         joined.append([a for _, a in line[i:j]])
         return joined
 
-    def kept(texts, at, same, before):
+    def kept(texts, at, same):
         """The cells these texts name that share the value's row (or column) and
         precede it; a text with no single such meaning is dropped."""
         result = []
         for text in texts:
-            groups = [
-                g
-                for g in meanings(text)
-                if all(cells[a][same] == at[same] and cells[a][before] < at[before] for a in g)
-            ]
+            groups = [g for g in meanings(text) if all(aligned(cells[a], at, same) for a in g)]
             if len(groups) == 1:
                 result.extend(a for a in groups[0] if a not in result)
         return result
 
     options = []
-    for value in [g[0] for g in meanings(ref.value) if len(g) == 1]:
+    for value in [g[0] for g in meanings(ref.value) or printing(ref.value) if len(g) == 1]:
         at = cells[value]
-        rows = kept(ref.rows, at, "row", "column")
-        columns = kept(ref.columns, at, "column", "row")
+        rows = kept(ref.rows, at, "row")
+        columns = kept(ref.columns, at, "column")
         if rows and columns:
             options.append((value, rows, columns))
     if len(options) > 1:

@@ -709,3 +709,170 @@ def test_variant_table_cells_named_by_printed_text_resolve_under_the_selected_co
     ):
         with pytest.raises(UnknownLabel):
             labels.table_ref(draft(**table).table)
+
+
+def test_a_value_printed_across_every_variant_column_is_each_variants_own():
+    from apps.adviser_v2.demo.answer_packet import scoped_packet
+    from apps.adviser_v2.demo.assembly import table_key
+
+    raw = (
+        "OPD consultations are covered.\nBenefit Silver Gold\n"
+        "OPD Covered up to Sum Insured\nRoom Single Twin"
+    )
+    rows = [("Benefit", "Silver", "Gold"), ("OPD", "Covered up to Sum Insured"), ("Room", "Single")]
+    cells = {}
+    for r, texts in enumerate(rows):
+        for c, text in enumerate(texts):
+            occurrence = int(text == "OPD")  # The prose names OPD first.
+            cite = {"section_id": "s1", "page_id": "p1", "quote": text, "occurrence": occurrence}
+            cells[f"{r}:{c}"] = {"text": text, "row": r, "column": c, "citation": cite}
+    # The OPD value is one cell printed across both variants' columns.
+    cells["1:1"]["column_end"] = 2
+    question = "What OPD cover applies?"
+    b, p, scope = fixture(raw, tables=[{"id": "t", "cells": cells}])
+    packet = scoped_packet(p, scope, question)
+    (table,) = packet.tables
+    assert {c["text"] for c in table["cells"].values()} == {
+        "Benefit",
+        "Gold",
+        "OPD",
+        "Covered up to Sum Insured",
+    }
+    labels = ScopedLabels(packet, scope)
+    shown = {c["quote"]: c for t in labels.payload()["tables"] for c in t["cells"]}
+    assert shown["Covered up to Sum Insured"]["column_end"] == 2
+    assert "column_end" not in shown["Gold"] and "row_end" not in shown["Covered up to Sum Insured"]
+    mapping = labels.cells["T1"]
+    alias = {key: a for a, key in mapping.items()}
+    assert (
+        table_key(
+            "Covered up to Sum Insured",
+            mapping,
+            table,
+            row=cells["1:0"],
+            column=cells["0:2"],
+        )
+        == alias["1:1"]
+    )
+
+    unit = ScopedDraftUnit(
+        coverage_scope="base",
+        benefit=[{"passage": "P1", "quote": "OPD consultations are covered."}],
+        table={
+            "table": "T1",
+            "value": "Covered up to Sum Insured",
+            "rows": ["OPD"],
+            "columns": ["Gold"],
+        },
+    )
+    statement, extended = assemble(unit, labels, packet, list(scope.sections.values()))
+    statement = scope.check(unit, labels, statement, question)
+    assert statement.table.value_cell_id == "1:1"
+    assert statement.table.column_label_ids == ["0:2"]
+
+    def checked(statement):
+        answer = Answer(plan_id="plan", status="answered", statements=[statement])
+        return validate(answer, extended, variant="Gold", known_variants=("Gold", "Silver"))
+
+    assert checked(statement).passed
+    # Each table cell needs its own occurrence cited, not the same words elsewhere.
+    prose = [
+        c.model_copy(update={"occurrence": 0}) if c.quote == "OPD" else c
+        for c in statement.citations
+    ]
+    result = checked(statement.model_copy(update={"citations": prose}))
+    assert "Every selected table label and value requires its separate exact citation." in (
+        result.problems
+    )
+    # Without its span the value is Silver's alone: Gold's packet leaves it out and
+    # its column no longer heads it.
+    del cells["1:1"]["column_end"]
+    assert "A table column label does not align with its value cell." in (
+        checked(statement).problems
+    )
+    (table,) = scoped_packet(p, scope, question).tables
+    assert "Covered up to Sum Insured" not in {c["text"] for c in table["cells"].values()}
+
+
+def test_a_variant_table_row_is_read_by_its_labels_and_the_selected_variants_entry():
+    from apps.adviser_v2.demo.answer_packet import scoped_packet
+    from apps.adviser_v2.demo.assembly import UnknownLabel
+
+    gold = "Road Ambulance: Unlimited\nAir Ambulance: INR 5L"
+    rows = [
+        ("No", "Benefit", "Silver", "Gold"),
+        (
+            "§1",
+            "Expenses in Reaching the Hospital",
+            "Road Ambulance: INR 2000\nAir Ambulance: NA",
+            gold,
+        ),
+        ("§2", "Room", "Single", "Twin. Co-pay 20%"),
+    ]
+    raw, cells = "Benefits by variant.\n", {}
+    for r, texts in enumerate(rows):
+        for c, text in enumerate(texts):
+            cite = {
+                "section_id": "s1",
+                "page_id": "p1",
+                "quote": text,
+                "occurrence": raw.count(text),
+            }
+            cells[f"{r}:{c}"] = {"text": text, "row": r, "column": c, "citation": cite}
+            raw += text + " "
+        raw += "\n"
+    tables = [{"id": "t", "cells": cells}]
+    question = "What road ambulance cover applies?"
+    b, p, scope = fixture(raw, tables=tables)
+    packet = scoped_packet(p, scope, question)
+    # Every row-label column is kept; another variant's entry naming the topic is not.
+    (table,) = packet.tables
+    assert {c["text"] for c in table["cells"].values()} == {
+        "No",
+        "Benefit",
+        "Gold",
+        "§1",
+        "Expenses in Reaching the Hospital",
+        gold,
+    }
+    # The row label names no ambulance; the variant's own entry labels its fields.
+    # The value may be the whole cell or one field it prints; the cell is cited.
+    labels = ScopedLabels(packet, scope)
+    for value in (gold, "Road Ambulance: Unlimited", "Unlimited", "Unlimited Air"):
+        unit = ScopedDraftUnit(
+            coverage_scope="base",
+            benefit=[{"passage": "P1", "quote": "Benefits by variant."}],
+            table={
+                "table": "T1",
+                "value": value,
+                "rows": ["Expenses in Reaching the Hospital"],
+                "columns": ["Gold"],
+            },
+        )
+        if value == "Unlimited Air":
+            with pytest.raises(UnknownLabel):
+                assemble(unit, labels, packet, list(scope.sections.values()))
+            continue
+        statement, extended = assemble(unit, labels, packet, list(scope.sections.values()))
+        statement = scope.check(unit, labels, statement, question)
+        assert statement.table.value_cell_id == "1:3"
+        answer = Answer(plan_id="plan", status="answered", statements=[statement])
+        assert validate(answer, extended, variant="Gold", known_variants=("Gold", "Silver")).passed
+    # A row only another variant's entry names is not the selected variant's.
+    b, p, scope = fixture(raw, variant="Silver", tables=tables)
+    assert scoped_packet(p, scope, "What co-pay applies?") is p
+
+
+def test_a_label_printed_across_several_rows_heads_each_of_them():
+    from apps.adviser_v2.demo.table_cells import aligned
+
+    label = {"row": 1, "column": 0, "row_end": 2}
+    head = {"row": 0, "column": 1, "column_end": 2}
+    for row, column in ((1, 1), (2, 2)):
+        value = {"row": row, "column": column}
+        assert aligned(label, value, "row") and aligned(head, value, "column")
+    assert not aligned(label, {"row": 3, "column": 1}, "row")
+    assert not aligned(head, {"row": 1, "column": 3}, "column")
+    # A label must end before its value: one printed beside or over it is no axis.
+    assert not aligned({"row": 1, "column": 0, "column_end": 1}, {"row": 1, "column": 1}, "row")
+    assert not aligned({"row": 0, "column": 1, "row_end": 1}, {"row": 1, "column": 1}, "column")

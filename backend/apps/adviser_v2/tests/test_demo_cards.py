@@ -368,3 +368,38 @@ def test_extract_tables_for_selected_plans_leaves_other_plans_untouched(tmp_path
         set(c) == {"id", "table_id", "row", "column", "text", "citation"} for c in cells.values()
     )
     assert saved["sha256"] != "old"
+
+
+def test_a_merged_cell_records_the_last_row_and_column_it_covers(tmp_path, settings):
+    from apps.adviser_v2.demo.charts import cell_payload, grid_spans, physical_cells
+    from apps.adviser_v2.management.commands.extract_demo_tables import stored
+
+    settings.COVERGUIDE_REPORT_ROOT = str(tmp_path)
+    rows = [["Benefits", "Classic", "Select"], ["Home care", "Covered up to Sum Insured"]]
+    pdf = printed_page(rows)
+    table = pdf.pages[0].find_tables.return_value[0]
+    # One value printed across both variants' columns: pdfplumber gives its rectangle
+    # at the first slot and None for the slot it covers.
+    table.rows[1].cells = [table.rows[1].cells[0], (100, 25, 300, 50), None]
+    table.extract.return_value = [rows[0], [*rows[1], None]]
+    bundle = printed_bundle("Benefits Classic Select\nHome care Covered up to Sum Insured")
+    cells = physical_cells(bundle, {"sha256": "a" * 64}, 1, pdf, geometry=True)[0]
+    spans = {(c.row, c.column): (c.row_end, c.column_end) for c in cells.values()}
+    assert spans[1, 1] == (None, 2)
+    assert {k: v for k, v in spans.items() if k != (1, 1)} == dict.fromkeys(
+        [(0, 0), (0, 1), (0, 2), (1, 0)], (None, None)
+    )
+    saved = {(c.row, c.column): stored(cell_payload(c)) for c in cells.values()}
+    assert saved[1, 1]["column_end"] == 2 and "row_end" not in saved[1, 1]
+    assert "column_end" not in saved[0, 1]
+    # The price-chart path reads no rectangles and records no spans.
+    plain = physical_cells(bundle, {"sha256": "a" * 64}, 1, pdf)[0]
+    assert all(c.row_end is None and c.column_end is None for c in plain.values())
+
+    # A label printed down two rows covers both; slots start at each cell's own edge.
+    boxes = [
+        [(0, 0, 100, 25), (100, 0, 200, 25)],
+        [(0, 25, 100, 75), (100, 25, 200, 50)],
+        [None, (100, 50, 200, 75)],
+    ]
+    assert grid_spans(boxes) == {(1, 0): (2, None)}

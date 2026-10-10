@@ -32,7 +32,8 @@ class Command(BaseCommand):
             action="append",
             default=[],
             help="Re-read only these plans (policy version IDs), citing repeated table text "
-            "by its printed position. Other plans keep their tables unchanged.",
+            "by its printed position and recording merged cells' spans. Other plans keep "
+            "their tables unchanged.",
         )
 
     def handle(self, **options):
@@ -44,7 +45,8 @@ class Command(BaseCommand):
         if unknown:
             raise CommandError("Unknown plan key: " + ", ".join(sorted(unknown)))
         geometry = bool(selected)
-        version = "physical-tables/2" if geometry else "physical-tables/1"
+        # Version 3 adds merged cells' spans to version 2's position-cited repeated text.
+        version = "physical-tables/3" if geometry else "physical-tables/1"
 
         def plan_tables(plan):
             regions = []

@@ -2,6 +2,8 @@
 
 import re
 
+from .table_cells import extent
+
 
 def raw_text(statement):
     return " ".join(" ".join(c["quote"].split()) for c in statement["citations"])
@@ -265,7 +267,7 @@ def optional_table(statement, bundle):
     headings = sorted(
         (c["row"], c["text"])
         for c in region["cells"].values()
-        if c["row"] < value["row"]
+        if extent(c, "row")[1] < value["row"]
         and re.fullmatch(r"(?:Optional|Base|Standard) (?:Benefits|Covers)", c["text"].strip(), re.I)
     )
     return bool(headings and headings[-1][1].lower().startswith("optional"))

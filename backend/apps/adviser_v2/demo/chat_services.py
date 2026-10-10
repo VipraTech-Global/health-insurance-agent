@@ -344,7 +344,12 @@ def submit_topic(owner, conversation, state, cards):
     release = conversation.release
     indexes = {i.plan_key: i for i in release.indexes.filter(revoked_at__isnull=True)}
     chosen = [c for c in cards if c["plan_id"] in asked and c["plan_id"] in indexes]
-    stored = lookup([indexes[c["plan_id"]] for c in chosen], topic, release.method, siblings=True)
+    stored = lookup(
+        [indexes[c["plan_id"]] for c in chosen],
+        topic,
+        release.method,
+        siblings=[i.id for i in indexes.values()],
+    )
     if reason != "question":
         chosen = [c for c in chosen if indexes[c["plan_id"]].id in stored]
     if not chosen:

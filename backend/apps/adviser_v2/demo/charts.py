@@ -173,9 +173,35 @@ def geometry_citation(bundle, raw, chars, box, text):
     return citation if inside else None
 
 
+def grid_spans(rectangles):
+    """The inclusive last row and column of each printed rectangle that covers more
+    than its own grid slot, by (row, column). pdfplumber cuts a table's slots at the
+    distinct left edges and tops of its cells, so every slot starts at some cell."""
+    lefts, tops = {}, {}
+    for r, row in enumerate(rectangles):
+        for c, box in enumerate(row):
+            if box:
+                lefts.setdefault(c, box[0])
+                tops.setdefault(r, box[1])
+    spans = {}
+    for r, row in enumerate(rectangles):
+        for c, box in enumerate(row):
+            if not box:
+                continue
+            row_end = max(k for k, top in tops.items() if top < box[3] - 0.5)
+            column_end = max(k for k, left in lefts.items() if left < box[2] - 0.5)
+            if row_end > r or column_end > c:
+                spans[(r, c)] = (
+                    row_end if row_end > r else None,
+                    column_end if column_end > c else None,
+                )
+    return spans
+
+
 def physical_cells(bundle, document, page_number, pdf=None, *, geometry=False):
     """Cells whose printed text occurs once on the page cite it directly. With
-    geometry, repeated text is also cited by its position inside the cell."""
+    geometry, repeated text is also cited by its position inside the cell, and a
+    merged cell records the last row and column it covers."""
     raw = next(
         p
         for p in bundle["pages"]
@@ -192,6 +218,7 @@ def physical_cells(bundle, document, page_number, pdf=None, *, geometry=False):
     result = []
     for n, (grid, rectangles) in enumerate(zip(saved["grids"], boxes, strict=True)):
         table_id = f"{document['sha256']}:{page_number}:{n}"
+        spans = grid_spans(rectangles) if rectangles else {}
         cells = {}
         for r, row in enumerate(grid):
             for c, text in enumerate(row):
@@ -203,7 +230,10 @@ def physical_cells(bundle, document, page_number, pdf=None, *, geometry=False):
                     citation = geometry_citation(bundle, raw, chars, rectangles[r][c], text)
                 if citation:
                     key = f"{table_id}:{r}:{c}"
-                    cells[key] = TableCell(key, table_id, r, c, text, citation)
+                    row_end, column_end = spans.get((r, c), (None, None))
+                    cells[key] = TableCell(
+                        key, table_id, r, c, text, citation, row_end=row_end, column_end=column_end
+                    )
         if cells:
             result.append(cells)
     return result

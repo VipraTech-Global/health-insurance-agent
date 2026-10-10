@@ -7,6 +7,7 @@ from .answer_clauses import clause_bounds, without_boilerplate
 from .contracts import Citation, Statement, SupportedText, TableSupport
 from .evidence import Packet, Section, pack_sections, reference_covered
 from .quotations import QuoteMismatch, locate, normalized
+from .table_cells import shares, spans
 from .text import token_count
 
 DRAFT_VERSION = "scoped-packet-labels/3"
@@ -59,6 +60,7 @@ class PacketLabels:
                             "cell": alias,
                             "row": cell["row"],
                             "column": cell["column"],
+                            **spans(cell),
                             "passage": passage,
                             "quote": cite["quote"],
                         }
@@ -84,8 +86,8 @@ class PacketLabels:
                 ref.value,
                 mapping,
                 region,
-                row=region["cells"][mapping[rows[0]]]["row"],
-                column=region["cells"][mapping[columns[0]]]["column"],
+                row=region["cells"][mapping[rows[0]]],
+                column=region["cells"][mapping[columns[0]]],
             )
         return region, ref.model_copy(update={"value": value, "rows": rows, "columns": columns})
 
@@ -146,7 +148,8 @@ def locate_passage(section, segment, quote, occurrence, source):
 
 
 def table_key(ref_label, mapping, region, *, row=None, column=None):
-    """Resolve a packet cell alias, or the exact printed text of one cell."""
+    """Resolve a packet cell alias, or the exact printed text of one cell; with row
+    and column label cells, the cell must share a row and a column with them."""
     if ref_label in mapping:
         return ref_label
     wanted = " ".join(normalized(ref_label)[0].split()).casefold()
@@ -156,8 +159,8 @@ def table_key(ref_label, mapping, region, *, row=None, column=None):
         alias
         for alias, key in mapping.items()
         if normalized(region["cells"][key].get("text", ""))[0].casefold() == wanted
-        and (row is None or region["cells"][key]["row"] == row)
-        and (column is None or region["cells"][key]["column"] == column)
+        and (row is None or shares(region["cells"][key], row, "row"))
+        and (column is None or shares(region["cells"][key], column, "column"))
     ]
     if len(matches) != 1:
         raise UnknownLabel("Unknown packet table/cell label.")

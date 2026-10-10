@@ -20,6 +20,7 @@ from .answer_scope import TOPICS as SCOPE_TOPICS
 from .answers import DRAFT_VERSION
 from .bakeoff import QUESTIONS
 from .services import bundle_for, decrypted, encrypted
+from .table_cells import fields
 from .validation import VALIDATOR_VERSION
 
 TOPIC_QUESTIONS = {key: text for key, text, _ in QUESTIONS}
@@ -148,10 +149,10 @@ def remember(index, topic, method, result):
     return True
 
 
-def lookup(indexes, topic, method, *, siblings=False):
-    """Current bank answers for these plan indexes, by index ID. With siblings, a plan
-    whose own answer found nothing takes the wording its sibling variants' answers quote
-    for it (see `shared`)."""
+def lookup(indexes, topic, method, *, siblings=()):
+    """Current bank answers for these plan indexes, by index ID. With siblings (the IDs
+    of the release's plan indexes), a plan whose own answer found nothing takes the
+    wording its sibling variants' answers in that release quote for it (see `shared`)."""
     found = {}
     rows = DemoTopicAnswer.objects.filter(
         index__in=[i for i in indexes if not i.revoked_at],
@@ -171,7 +172,9 @@ def lookup(indexes, topic, method, *, siblings=False):
             if not i.revoked_at
             and (i.id not in found or group(found[i.id], topic, i.variant) == "not_found")
         ]
-        found.update({index_id: r for (index_id, _), r in borrowed(wanted, method).items()})
+        found.update(
+            {index_id: r for (index_id, _), r in borrowed(wanted, method, siblings).items()}
+        )
     return found
 
 
@@ -180,9 +183,11 @@ _GROUPS = {}
 
 
 def bank_groups(index_ids, method):
-    """Where each plan's validated wording puts each topic, by index ID then topic."""
+    """Where each plan's validated wording puts each topic, by index ID then topic. The
+    IDs are one release's plan indexes; a variant borrows only from its siblings there."""
+    index_ids = list(index_ids)
     rows = DemoTopicAnswer.objects.filter(
-        index_id__in=list(index_ids),
+        index_id__in=index_ids,
         index__revoked_at__isnull=True,
         method=method,
         validator=VALIDATOR_VERSION,
@@ -200,7 +205,7 @@ def bank_groups(index_ids, method):
         if _GROUPS.get((row_id, updated)):
             found.setdefault(index_id, {})[topic] = _GROUPS[(row_id, updated)]
     # A variant whose own answer found nothing reads what its siblings' answers quote.
-    plans = DemoPlanIndex.objects.filter(pk__in=list(index_ids), revoked_at__isnull=True)
+    plans = DemoPlanIndex.objects.filter(pk__in=index_ids, revoked_at__isnull=True)
     variants = {i.id: i.variant for i in plans}
     wanted = [
         (i, t)
@@ -208,7 +213,7 @@ def bank_groups(index_ids, method):
         for t in TOPICS
         if found.get(i.id, {}).get(t, "not_found") == "not_found"
     ]
-    for (index_id, topic), result in borrowed(wanted, method).items():
+    for (index_id, topic), result in borrowed(wanted, method, index_ids).items():
         found.setdefault(index_id, {})[topic] = group(result, topic, variants[index_id])
     return found
 
@@ -338,14 +343,20 @@ def withheld(statement, topic, variant=None):
     return excludes(statement, topic)
 
 
-def not_offered(statement):
+def not_offered(statement, topic=None):
     """A table statement whose value cell says the variant hasn't the benefit. It is
     never evidence of cover; in an optional-covers table it often means the cover is
-    already in-built, so there it decides nothing."""
+    already in-built, so there it decides nothing. A cell that labels several fields
+    ("Road Ambulance: INR 2000\nAir Ambulance: NA") says it under the topic's label."""
     excerpts = statement.get("excerpts") or []
+    if not statement.get("table") or not excerpts:
+        return False
     # A table statement quotes its row labels, column labels and value, in that order.
-    value = " ".join(excerpts[-1].split()).strip(" .") if excerpts else ""
-    return bool(statement.get("table") and NOT_OFFERED.fullmatch(value))
+    printed = fields(excerpts[-1]) if topic else {}
+    patterns = topic_patterns(topic) if printed else []
+    own = [v for k, v in printed.items() if any(re.search(p, k, re.I) for p in patterns)]
+    values = own or [" ".join(excerpts[-1].split())]
+    return all(NOT_OFFERED.fullmatch(v.strip(" .")) for v in values)
 
 
 def group(result, topic, variant=None):
@@ -357,10 +368,11 @@ def group(result, topic, variant=None):
     found = [s for s in found if relevant(s, topic)] or found
     base = [s for s in found if s.get("coverage_scope", "base") == "base"]
     optional = [
-        s for s in found if s.get("coverage_scope", "base") != "base" and not not_offered(s)
+        s for s in found if s.get("coverage_scope", "base") != "base" and not not_offered(s, topic)
     ]
     if any(
-        not not_offered(s) and (topic in TERMS or not withheld(s, topic, variant)) for s in base
+        not not_offered(s, topic) and (topic in TERMS or not withheld(s, topic, variant))
+        for s in base
     ):
         return "base"
     if optional:
@@ -403,16 +415,20 @@ def index_bundle(index):
     return bundle
 
 
-def borrowed(wanted, method):
+def borrowed(wanted, method, among):
     """What sibling variants' validated answers give each (plan index, topic) pair, by
-    (index ID, topic); pairs no sibling's wording covers are left out."""
+    (index ID, topic); pairs no sibling's wording covers are left out. Siblings come
+    only from these plan index IDs (one release's), never another edition's index."""
     products = {(i.insurer, i.name, i.uin) for i, _ in wanted}
     if not products:
         return {}
     either = Q()
     for insurer, name, uin in products:
         either |= Q(insurer=insurer, name=name, uin=uin)
-    family = {i.id: i for i in DemoPlanIndex.objects.filter(either, revoked_at__isnull=True)}
+    family = {
+        i.id: i
+        for i in DemoPlanIndex.objects.filter(either, pk__in=list(among), revoked_at__isnull=True)
+    }
     rows = DemoTopicAnswer.objects.filter(
         index_id__in=list(family),
         topic__in={t for _, t in wanted},
@@ -572,26 +588,19 @@ def one_line(text):
 
 
 def spanned(statement, variant, bundle):
-    """A benefit-table cell printed once across every variant's column. The table reader
-    files a merged cell under the first column, so the sibling's answer names that
-    variant alone; the cell is this variant's entry too when its row holds no other
-    value, the header names this variant and the value is printed once on its page."""
+    """A benefit-table cell printed once across several variants' columns. The table
+    reader files it under its first column and records the columns it spans, so the
+    sibling's answer is this variant's entry too when the cell spans this variant's
+    column under the header the sibling cites."""
     ref = statement["table"]
     table = next((t for t in bundle.get("tables", []) if t["id"] == ref.get("region_id")), None)
     cells = table["cells"] if table else {}
     value = cells.get(ref.get("value_cell_id"))
-    if not value or not value["row"]:
+    heads = {cells[k]["row"] for k in ref.get("column_label_ids", []) if k in cells}
+    own = [c for c in cells.values() if c["row"] in heads and canon(c["text"]) == canon(variant)]
+    if not value or len(own) != 1 or own[0]["row"] >= value["row"]:
         return None
-    variants = {canon(v) for v in bundle.get("variants", [])}
-    header = [c for c in cells.values() if c["row"] == 0 and canon(c["text"]) in variants]
-    columns = sorted(c["column"] for c in header)
-    own = [c for c in header if canon(c["text"]) == canon(variant)]
-    row = [c for c in cells.values() if c["row"] == value["row"] and c["column"] in columns]
-    if len(columns) < 2 or not own or row != [value] or value["column"] != columns[0]:
-        return None
-    page_id = (value.get("citation") or {}).get("page_id")
-    page = next((p for p in bundle.get("pages", []) if p["evidence_span_id"] == page_id), None)
-    if not page or one_line(page["passage"]).count(one_line(value["text"])) != 1:
+    if not value["column"] <= own[0]["column"] <= value.get("column_end", value["column"]):
         return None
     labels = {cells[k]["text"] for k in ref.get("column_label_ids", []) if k in cells}
     excerpts = [e for e in statement.get("excerpts", []) if e not in labels]

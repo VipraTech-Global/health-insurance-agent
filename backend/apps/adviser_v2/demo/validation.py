@@ -13,6 +13,7 @@ from .contracts import Answer, Citation, SupportedText
 from .evidence import Packet
 from .quantities import quoted_quantities
 from .quotations import locate, normalized
+from .table_cells import aligned
 
 VALIDATOR_VERSION = "demo-six-checks/3"
 NEUTRAL = re.compile(
@@ -99,7 +100,7 @@ def validate(
             or (following and re.match(r"(?:if|when|unless|where|and only|but)\b", following, re.I))
         ):
             fail(2, "A material condition immediately following the quotation was omitted.")
-        is_table_cell = (c.section_id, c.page_id, fold(c.quote)) in table_quotes
+        is_table_cell = (c.section_id, c.page_id, fold(c.quote), c.occurrence) in table_quotes
         preceding = source.text[:a].rstrip()
         if (
             not is_table_cell
@@ -194,23 +195,24 @@ def validate(
             if value is None or any(key not in cells for key in ids):
                 fail(1, "Table support is outside the supplied original table region.")
             else:
-                if any(
-                    cells[key]["row"] != value["row"] or cells[key]["column"] >= value["column"]
-                    for key in support.row_label_ids
-                ):
+                if not all(aligned(cells[key], value, "row") for key in support.row_label_ids):
                     fail(1, "A table row label does not align with its value cell.")
-                if any(
-                    cells[key]["column"] != value["column"] or cells[key]["row"] >= value["row"]
-                    for key in support.column_label_ids
+                if not all(
+                    aligned(cells[key], value, "column") for key in support.column_label_ids
                 ):
                     fail(1, "A table column label does not align with its value cell.")
-                cited = {(c.section_id, c.page_id, fold(c.quote)) for c in statement.citations}
+                # Repeated cell text is told apart by its occurrence on the page.
+                cited = {
+                    (c.section_id, c.page_id, fold(c.quote), c.occurrence)
+                    for c in statement.citations
+                }
                 for key in ids:
                     original = cells[key]["citation"]
                     identity = (
                         original["section_id"],
                         original["page_id"],
                         fold(original["quote"]),
+                        original.get("occurrence", 0),
                     )
                     if identity not in cited:
                         fail(

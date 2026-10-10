@@ -3,6 +3,7 @@
 import re
 
 from .quotations import locate, normalized
+from .table_cells import aligned
 
 HEADINGS = {
     "entry_age": r"(?:Eligibility|Entry\s*age)",
@@ -157,16 +158,9 @@ def variant_proven(statement, bundle):
     labels = [region["cells"].get(k) for k in table["column_label_ids"]]
     value = region["cells"].get(table["value_cell_id"])
     rows = [region["cells"].get(k) for k in table["row_label_ids"]]
-    if (
-        not value
-        or not rows
-        or any(not r or r["row"] != value["row"] or r["column"] >= value["column"] for r in rows)
-    ):
+    if not value or not rows or any(not r or not aligned(r, value, "row") for r in rows):
         return False
     return any(
-        c
-        and c["column"] == value["column"]
-        and c["row"] < value["row"]
-        and normalized(c["text"])[0].casefold() == selected
+        c and aligned(c, value, "column") and normalized(c["text"])[0].casefold() == selected
         for c in labels
     )
