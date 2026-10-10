@@ -118,6 +118,13 @@ def enumeration_end(text: str, end: int) -> bool:
     return bool(token) and (token.isdecimal() or len(token) == 1 and "A" <= token <= "Z")
 
 
+# A line ending in "&", a comma or a function word continues on the next line. A
+# lone capital "A" ends a title instead ("Part A", "Plan A").
+DANGLING = re.compile(
+    r"(?:[&,]|(?<!\S)(?:(?i:and|or|of|for|the|to|in|an|by|on|at|with|under)|a))[ \t]*\n?$"
+)
+
+
 @lru_cache(maxsize=64)
 def boundaries_for(text: str):
     sentence_ends = [
@@ -133,13 +140,16 @@ def boundaries_for(text: str):
         )
     ]
     # Printed title-case headings are source boundaries, unlike ordinary wrapped
-    # prose. Require at least two title words to avoid one-word wrapped lines.
+    # prose. Require at least two title words to avoid one-word wrapped lines, and
+    # a line after a dangling "&", "and", "of" or comma continues that sentence
+    # ("can only be opted for Classic &\nSelect Variants").
     headings.extend(
         m.start()
         for m in re.finditer(
             r"(?m)^[ \t]*[A-Z][A-Za-z/-]*(?:[ \t]+(?:[A-Z][A-Za-z/-]*|of|and|for|in|the|to|under)){1,9}:?[ \t]*$",
             text,
         )
+        if not DANGLING.search(text[text.rfind("\n", 0, max(m.start() - 1, 0)) + 1 : m.start()])
     )
     boundaries = sorted(set([0, *sentence_ends, *headings, len(text)]))
     return tuple(boundaries), frozenset(headings)

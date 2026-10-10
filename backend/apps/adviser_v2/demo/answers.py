@@ -56,6 +56,20 @@ def known_variants(bundle, scope):
     )
 
 
+def check_unit(unit, labels, packet, sources, scope, question, checked):
+    """One drafted unit through the engine's gates, in order: its statement, the packet
+    extended with any context the statement needed, and the validator's verdict.
+    Raises when a gate before validation rejects the unit."""
+    if conditional_unit(unit):
+        raise ScopeViolation("A standalone condition does not constitute a benefit answer.")
+    statement, extended = assemble(unit, labels, packet, sources)
+    statement = scope.check(unit, labels, statement, question)
+    verification = checked(
+        Answer(plan_id=packet.plan_id, status="answered", statements=[statement]), extended
+    )
+    return statement, extended, verification
+
+
 def answer_plan(
     bundle,
     question,
@@ -214,17 +228,8 @@ def answer_plan(
                 failed, unit_checks, passed = [], [], 0
                 for number, unit in enumerate(governing_units(draft.units), 1):
                     try:
-                        if conditional_unit(unit):
-                            raise ScopeViolation(
-                                "A standalone condition does not constitute a benefit answer."
-                            )
-                        statement, extended = assemble(unit, labels, packet, source_sections)
-                        statement = scope.check(unit, labels, statement, question)
-                        verification = checked(
-                            Answer(
-                                plan_id=packet.plan_id, status="answered", statements=[statement]
-                            ),
-                            extended,
+                        statement, extended, verification = check_unit(
+                            unit, labels, packet, source_sections, scope, question, checked
                         )
                         unit_checks.append(asdict(verification))
                         if not verification.passed:

@@ -24,6 +24,15 @@ OPTIONAL = re.compile(
 )
 # A variant table may offer a cover for extra payment without the word "optional".
 PAY_EXTRA = re.compile(r"\bchoose to\b|\bpay\b[^.;]{0,40}\b(?:additional|extra)\b", re.I)
+# Wording that gives a cover only to those who choose it ("If opted, you can avail Air
+# Ambulance", "can only be opted for Classic & Select Variants") supports an optional
+# label; a passing "(if opted)" about other covers does not.
+OPTED = re.compile(r"(?<!\()\bif opted\b|\bcan (?:only )?be opted\b", re.I)
+# A clause limiting wording to the variants it names (see `applies_to`).
+APPLIES = re.compile(
+    r"(?<!not )\b(?:applicable|available|covered|opted)\s+(?:under|for|to)\s+([^.;\n]{1,100})",
+    re.I,
+)
 TOPICS = {
     "icu": r"\bICU\b|intensive care",
     "day_care": r"day[ -]?care",
@@ -62,9 +71,28 @@ def named(text, name):
     return bool(re.search(r"(?<!\w)" + re.escape(canon(name)) + r"(?![\w+])", canon(text)))
 
 
+def printed_name(text, name):
+    """`named`, except that a capitalised name met only in lowercase prose is an
+    ordinary word ("select network hospitals" doesn't name the Select variant)."""
+    if not named(text, name):
+        return False
+    if not any(c.isupper() for c in name):
+        return True
+    pattern = r"(?<!\w)" + r"\s+".join(map(re.escape, name.split())) + r"(?![\w+])"
+    return any(not m[0].islower() for m in re.finditer(pattern, text, re.I))
+
+
 def plain(text):
     """Topic matching reads PDF ligatures as plain text."""
     return unicodedata.normalize("NFKC", text)
+
+
+def applies_to(text, variant):
+    """Whether a clause limiting wording to the variants it names ("can only be opted
+    for Classic &\nSelect Variants") names this variant, with wrapped lines joined."""
+    return bool(variant) and any(
+        printed_name(c, variant) for c in APPLIES.findall(" ".join(plain(text).split()))
+    )
 
 
 def question_topic(question):
@@ -449,14 +477,9 @@ class ScopeIndex:
                     required_optional = True
         shared_topics = {k for t in self.matrices.values() for k in t["topics"]}
         if any(k in shared_topics for k in topics) and not table_proven and not exclusion(raw):
-            named_selected = bool(
-                re.search(
-                    r"(?:applicable|available|covered)\s+(?:under|for|to)\s+"
-                    + re.escape(self.variant)
-                    + r"\b",
-                    raw,
-                    re.I,
-                )
+            named_selected = applies_to(
+                " ".join(r.quote for r in [*unit.benefit, *unit.conditions, *unit.restrictions]),
+                self.variant,
             )
             cis = all(
                 labels.passages[r.passage][0].role == "customer_information_sheet"
@@ -479,7 +502,7 @@ class ScopeIndex:
             raise ScopeViolation(
                 "Optional/add-on/rider cover must be labelled optional, extra premium; it is not base cover."
             )
-        if not required_optional and unit.coverage_scope != "base":
+        if not required_optional and unit.coverage_scope != "base" and not OPTED.search(raw):
             raise ScopeViolation("Optional scope has no original-source support.")
         return statement.model_copy(
             update={

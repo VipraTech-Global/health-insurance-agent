@@ -13,6 +13,7 @@ from apps.adviser_v2.demo.answer_bank import (
     lookup,
     remember,
 )
+from apps.adviser_v2.demo.answer_replay import changed_pairs
 from apps.adviser_v2.demo.answers import answer_plan
 from apps.adviser_v2.demo.services import bundle_for, decrypted
 from apps.adviser_v2.models import DemoQuestion, DemoRelease
@@ -21,8 +22,11 @@ from apps.adviser_v2.models import DemoQuestion, DemoRelease
 class Command(BaseCommand):
     help = (
         "Fill the shared answer bank: the engine's validated answer to every canonical "
-        "topic question for every plan in a release. Imports stored answers first, then "
-        "answers only the missing or out-of-date pairs at background priority."
+        "topic question for every plan in a release. Imports stored answers into missing "
+        "pairs first, then answers only the missing or out-of-date pairs at background "
+        "priority. After a change to checking, scope, quote boundaries or grouping, "
+        "--refresh-changed also re-asks the pairs whose stored drafts now give a "
+        "different answer; a packet, prompt, retrieval or draft change needs a version bump."
     )
 
     def add_arguments(self, parser):
@@ -37,6 +41,12 @@ class Command(BaseCommand):
             "--retry-rejected",
             action="store_true",
             help="Also re-ask pairs whose every drafted unit failed validation.",
+        )
+        parser.add_argument(
+            "--refresh-changed",
+            action="store_true",
+            help="Also re-ask pairs whose stored drafts, checked again by the current code "
+            "without model calls, give a different answer.",
         )
 
     def handle(self, **options):
@@ -54,9 +64,15 @@ class Command(BaseCommand):
             imported = self.import_stored(release, by_id)
             self.stdout.write(f"Imported {imported} stored answers.")
         gaps = self.report(release, indexes, topics, options["retry_rejected"])
+        if options["refresh_changed"]:
+            changed = changed_pairs(indexes, topics, release.method)
+            self.stdout.write(f"{len(changed)} stored answers read differently by this code:")
+            for index, topic, before, after in changed:
+                self.stdout.write(f"  {index.name} ({index.variant}) · {topic}: {before} → {after}")
+            gaps += [(i, t) for i, t, _, _ in changed if (i, t) not in gaps]
         if options["dry_run"] or options["import_only"] or not gaps:
             return
-        self.stdout.write(f"Answering {len(gaps)} missing plan × topic pairs…")
+        self.stdout.write(f"Answering {len(gaps)} plan × topic pairs…")
         failures = Counter()
 
         def one(pair):
@@ -87,7 +103,8 @@ class Command(BaseCommand):
                     failures[result.get("status")] += 1
                 self.stdout.write(
                     f"[{n}/{len(gaps)}] {index.name} ({index.variant}) · {topic}: "
-                    f"{result.get('status')} → {group(result, topic) if kept else 'not kept'}"
+                    f"{result.get('status')} → "
+                    f"{group(result, topic, index.variant) if kept else 'not kept'}"
                     f" in {result.get('total_ms', 0) / 1000:.0f}s"
                 )
         if failures:
@@ -95,8 +112,15 @@ class Command(BaseCommand):
         self.report(release, indexes, topics)
 
     def import_stored(self, release, by_id):
-        """Reuse every current engine answer to a canonical question already stored."""
+        """Reuse current engine answers to canonical questions for the pairs the bank
+        lacks. A current bank row is kept: live answers reach the bank as they finish, and
+        one re-asked by --refresh-changed must not be put back by an older chat."""
         imported = 0
+        have = {
+            (index_id, topic)
+            for topic in TOPICS
+            for index_id in lookup(list(by_id.values()), topic, release.method)
+        }
         questions = DemoQuestion.objects.filter(answers__index__in=list(by_id)).distinct()
         for question in questions.order_by("created_at"):
             try:
@@ -107,7 +131,7 @@ class Command(BaseCommand):
             if topic is None:
                 continue
             for row in question.answers.exclude(result_ciphertext=None):
-                if row.index_id not in by_id:
+                if row.index_id not in by_id or (row.index_id, topic) in have:
                     continue
                 result = decrypted(row.result_ciphertext, row.id)
                 if (
@@ -123,7 +147,7 @@ class Command(BaseCommand):
         self.stdout.write(f"{'topic':18} answered not_found missing  base addon excluded")
         for topic in topics:
             found = lookup(indexes, topic, release.method)
-            groups = Counter(group(found[i.id], topic) for i in indexes if i.id in found)
+            groups = Counter(group(found[i.id], topic, i.variant) for i in indexes if i.id in found)
             missing = [i for i in indexes if i.id not in found]
             gaps += [(i, topic) for i in missing]
             if retry_rejected:

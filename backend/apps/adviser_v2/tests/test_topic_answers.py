@@ -277,6 +277,16 @@ def test_an_na_variant_cell_is_never_cover():
     travel = printed_cell("Expenses in Reaching the Hospital", "MAX", both)
     assert grouped("air_ambulance", travel) == "excluded"
     assert grouped("road_ambulance", travel) == "base"
+    # An add-on whose own wording names the variant among those that can opt for it: the
+    # NA beside it is the variant's base entry, not the add-on's.
+    opted = {
+        **printed_cell(
+            "Expenses in Reaching the Hospital", "MAX", both, scope="optional, extra premium"
+        ),
+        "conditions": [{"text": "This benefit can only be opted for VYTL &\nMAX Variants"}],
+    }
+    assert grouped("air_ambulance", opted) == "addon"
+    assert answer_bank.group(engine_result("plan", opted), "air_ambulance", "VIP") == "not_found"
 
 
 def test_the_table_the_counts_and_the_plan_list_give_one_answer_per_plan(v2_user, demo):  # noqa: F811

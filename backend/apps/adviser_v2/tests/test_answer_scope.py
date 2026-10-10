@@ -2,11 +2,18 @@ from types import SimpleNamespace
 
 import pytest
 
-from apps.adviser_v2.demo.answer_scope import ScopedLabels, ScopeIndex, ScopeViolation, canon
+from apps.adviser_v2.demo.answer_scope import (
+    ScopedLabels,
+    ScopeIndex,
+    ScopeViolation,
+    applies_to,
+    canon,
+)
 from apps.adviser_v2.demo.answers import answer_plan, known_variants
 from apps.adviser_v2.demo.assembly import assemble
 from apps.adviser_v2.demo.contracts import Answer, ScopedDraftUnit
 from apps.adviser_v2.demo.evidence import Packet
+from apps.adviser_v2.demo.quotations import boundaries_for
 from apps.adviser_v2.demo.relay import RelayUnavailable
 from apps.adviser_v2.demo.validation import validate
 from apps.adviser_v2.tests.test_demo_assembly import source
@@ -876,3 +883,89 @@ def test_a_label_printed_across_several_rows_heads_each_of_them():
     # A label must end before its value: one printed beside or over it is no axis.
     assert not aligned({"row": 1, "column": 0, "column_end": 1}, {"row": 1, "column": 1}, "row")
     assert not aligned({"row": 0, "column": 1, "row_end": 1}, {"row": 1, "column": 1}, "column")
+
+
+AIR = (
+    "4.55. Air Ambulance+\nIf opted, you can avail Air Ambulance up to the specified limit. "
+    "This benefit can only be opted for Gold &\nSilver Variants\n"
+    "Note: This will be paid only if the hospitalisation claim is paid by us.\n"
+    "Second Opinion Benefit\nA second opinion is available.\n"
+)
+
+
+def test_a_line_after_a_dangling_conjunction_continues_the_clause():
+    from apps.adviser_v2.demo.answer_clauses import clause_bounds
+
+    left, right = clause_bounds(AIR, 0, len("4.55. Air Ambulance+"))
+    assert "Gold &\nSilver Variants\nNote:" in AIR[left:right]
+    assert "Second Opinion" not in AIR[left:right]
+    # Without the dangling "&", a title-case line is still a printed heading.
+    ended = AIR.replace("Gold &\n", "Gold.\n")
+    left, right = clause_bounds(ended, 0, len("4.55. Air Ambulance+"))
+    assert ended[left:right].rstrip().endswith("Gold.")
+    # A lettered part ends its own title; the title-case line after it is a heading.
+    lettered = "Intro text.\nPart A\nHospitalisation Expenses\nWe cover it.\n"
+    assert lettered.index("Hospitalisation") in boundaries_for(lettered)[1]
+
+
+@pytest.mark.parametrize(
+    ("text", "variant", "expected"),
+    [
+        ("This benefit can only be opted for Gold &\nSilver Variants", "Silver", True),
+        ("THIS BENEFIT CAN ONLY BE OPTED FOR GOLD & SILVER VARIANTS", "Silver", True),
+        ("This benefit can only be opted for Gold & Silver Variants", "Platinum", False),
+        # A variant named by an ordinary word is not named by that word in prose.
+        ("Cashless treatment is available for select network hospitals", "Select", False),
+        ("This cover is available to protect you abroad", "Protect", False),
+    ],
+)
+def test_wording_names_a_variant_only_where_it_prints_the_name(text, variant, expected):
+    assert applies_to(text, variant) is expected
+
+
+@pytest.mark.parametrize("variant", ["Silver", "Platinum"])
+def test_a_cover_opted_only_by_named_variants_is_their_optional_cover(variant):
+    b, p, scope = fixture(AIR, variant=variant, variants=["Gold", "Silver", "Platinum"])
+    scope.matrices = {"shared": {"topics": ["air_ambulance"], "names": ["Gold", "Silver"]}}
+    unit = ScopedDraftUnit(
+        coverage_scope="optional, extra premium",
+        benefit=[
+            {"passage": "P1", "quote": "4.55. Air Ambulance+"},
+            {
+                "passage": "P1",
+                "quote": "If opted, you can avail Air Ambulance up to the specified limit.",
+            },
+        ],
+        conditions=[
+            {
+                "passage": "P1",
+                "quote": "This benefit can only be opted for Gold & Silver Variants",
+            }
+        ],
+    )
+    labels = ScopedLabels(p, scope)
+    statement, extended = assemble(unit, labels, p, list(scope.sections.values()))
+    question = "Is air ambulance covered?"
+    if variant == "Platinum":
+        with pytest.raises(ScopeViolation, match="Shared wording"):
+            scope.check(unit, labels, statement, question)
+        return
+    answer = scope.check(unit, labels, statement, question)
+    assert answer.coverage_scope == "optional, extra premium"
+    assert validate(
+        Answer(plan_id="plan", status="answered", statements=[answer]),
+        extended,
+        variant=variant,
+        known_variants=("Gold", "Silver", "Platinum"),
+    ).passed
+
+
+def test_a_passing_if_opted_about_other_covers_is_no_optional_label():
+    b, p, s = fixture(
+        "Reset Benefit: We reset the Sum Insured (including the Inflation Protector "
+        "(if opted)) once in a policy year."
+    )
+    quote = p.sections[0].text
+    with pytest.raises(ScopeViolation, match="no original-source support"):
+        scoped(b, p, s, quote, "optional, extra premium", question="Is the sum insured reset?")
+    assert scoped(b, p, s, quote, question="Is the sum insured reset?")[0].coverage_scope == "base"

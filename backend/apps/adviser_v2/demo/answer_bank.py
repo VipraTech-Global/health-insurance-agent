@@ -15,7 +15,16 @@ from django.db.models import Q
 
 from ..models import DemoPlanIndex, DemoTopicAnswer
 from .answer_retrieval import EXPANSION_VERSION
-from .answer_scope import SCOPE_VERSION, canon, exclusion, named, plain, question_topic, scope_for
+from .answer_scope import (
+    SCOPE_VERSION,
+    applies_to,
+    canon,
+    exclusion,
+    named,
+    plain,
+    question_topic,
+    scope_for,
+)
 from .answer_scope import TOPICS as SCOPE_TOPICS
 from .answers import DRAFT_VERSION
 from .bakeoff import QUESTIONS
@@ -359,6 +368,21 @@ def not_offered(statement, topic=None):
     return all(NOT_OFFERED.fullmatch(v.strip(" .")) for v in values)
 
 
+def opted_for(statement, variant):
+    """An optional cover whose own wording names the selected variant among those that
+    can opt for it ("can only be opted for Classic & Select Variants"). The benefit
+    table's NA beside it is then that variant's base entry, not the add-on's."""
+    text = " ".join(
+        part.get("text", "")
+        for part in [
+            statement,
+            *statement.get("conditions", []),
+            *statement.get("restrictions", []),
+        ]
+    )
+    return applies_to(text, variant)
+
+
 def group(result, topic, variant=None):
     """Where the plan's validated wording puts this topic: base, addon, excluded or not_found."""
     if not result or result.get("status") != "answered":
@@ -368,7 +392,10 @@ def group(result, topic, variant=None):
     found = [s for s in found if relevant(s, topic)] or found
     base = [s for s in found if s.get("coverage_scope", "base") == "base"]
     optional = [
-        s for s in found if s.get("coverage_scope", "base") != "base" and not not_offered(s, topic)
+        s
+        for s in found
+        if s.get("coverage_scope", "base") != "base"
+        and (not not_offered(s, topic) or opted_for(s, variant))
     ]
     if any(
         not not_offered(s, topic) and (topic in TERMS or not withheld(s, topic, variant))
